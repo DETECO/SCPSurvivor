@@ -1,0 +1,143 @@
+{
+  "version": "P01-local-01",
+  "baseline": "preparacion-01 + RoadmapSCP v0.9",
+  "sourceCommit": "a1006e6e3d0cea9162238a90b0ffdd7fd38397b6",
+  "changes": {
+    "index.html": {
+      "before": "2822d5ef7df0780c551febeacbdde1dfde5bd6d044a4a72c1f215e4796646602",
+      "after": "0a0995612f73a60919ac12fed6ab7483337032fbdff7d58a9022266e45252717"
+    },
+    ".gitignore": {
+      "before": "a9dcc8db856383d5315d7917d6e3e557d907c1a1a01183125682872c56a0b266",
+      "after": "1641a8a463fb57d3cd8fc5015cab756d5ea902653938481c822b98a85f0c7aa4"
+    },
+    "README.md": {
+      "before": "df946800ffa696d5c69f10b25ebe7c92a9b94bb1362eddf2afd05220555e62f3",
+      "after": "23b10332aebc2414e13040e3180153fc6aba211c9155a8a58b39198bb135a4d0"
+    },
+    "package-lock.json": {
+      "before": null,
+      "after": "2119e78ef3fb5acdc895a44bfb9e98b749ff0b54674e029fcaf4b104919bb80e"
+    },
+    "dev.html": {
+      "before": "ffdca50f8dcc034c6bc9c74543aab6b6befe7a10d16c28386a37900e50c028a5",
+      "after": "6c98c6d6a4bd498b3d7308bc626d35ade35f6ed8e3ab946b5d6480a088e5d42d"
+    },
+    "package.json": {
+      "before": null,
+      "after": "d5b3318d0a9c1b3bacba2f5a087928a6187add0be08d15b8c34361b2b4627ace"
+    },
+    "tools/build.js": {
+      "before": "1c23c0d96aa95714bb05a4be8439d64348b9cdb4377d211145d31cf2c96d2f98",
+      "after": "cfe108eabcd2b7e6f25a77a107db707e1839a59cbf66bdc67f1972c1418e23b5"
+    },
+    "tests/p01-browser.py": {
+      "before": null,
+      "after": "c776e11b9bfc55f5415d7d8cbe4ab4ae11fba914d706264000e8be4efda1036f"
+    },
+    "css/style.css": {
+      "before": "6e01b50f1c44d59c9ed3bc1197e2101077a79427d0a2651ea3be7c88c7621cf4",
+      "after": "7bcfb6a7e7cbd4252d972e9af53da930c443f226996198b14850250a74c81aa6"
+    },
+    "css/technical.css": {
+      "before": null,
+      "after": "0d04e3e27f7d72cc5af0ee59346d113adacafe909bae2577bce295f70c5e6ec7"
+    },
+    "js/game.js": {
+      "before": "b21426060591350857518188430eb0e67118ddc930b1b06c61292b8a59ceceef",
+      "after": "b3e8d2a45a201475ac6d93abc509ae19c3c22f2c4f5144b1855ecc6567dea432"
+    },
+    "js/app.min.js": {
+      "before": null,
+      "after": "a1b493e1087bc5314011b07f2fa65be19385f222e1ce2b58faa012f9643dd19d"
+    },
+    "js/main.js": {
+      "before": "73aaf6f551f7a2b3926d5a10c8ae34a8bc503178346e1ba513dd4e50a0a50e1a",
+      "after": "9c047730a6c1644eb6ef95e20b75b54f1071af839f08c3607f6a5d1be3b068d5"
+    },
+    "docs/P01-REPORT.md": {
+      "before": null,
+      "after": "54d6db6c525552fdb8655307f8cbc1b862c208273e520a625d269e673ade9a77"
+    },
+    "docs/ISOLATION.md": {
+      "before": "c282aad82c08b83a92844ec45858cdc8cce2edead215a82f8c9e90c98b83a629",
+      "after": "2d186144413fd4c396fde7e150f3f16e1d48bc062c6152da26f5ede44af72b80"
+    },
+    "docs/P01-validation.json": {
+      "before": null,
+      "after": "89114a40d0de119699d07f22784aab973613c59c24c92b78a6323b58840e1832"
+    },
+    "docs/ORIGIN.md": {
+      "before": "0730d213b7bacd1ea2fa075c3f7d549769def4d6f9f62d94d7870633041931f8",
+      "after": "814b5444b26c495e846d98dc22a35009fd838fd6d1f84a54679d56d519acfa3e"
+    },
+    "js/world/world.js": {
+      "before": "cdcf5a8e721de4f5a810156b3e2bdacdc8b7b56dad900eb82f1be3e3cafac3b6",
+      "after": "19117e564ed420d87702afd32b96446e29cd10e6d464faef25b19841d9cc2751"
+    },
+    "js/ui/settings-ui.js": {
+      "before": "5b90c85c3fdf81861703695a2d6bfb98b0a92aabd17322bfceb2af07b0418bdc",
+      "after": "d76a457877905840e368e30bb8237297e3987b49c761911879afe759ff993902"
+    },
+    "js/ui/technical-ui.js": {
+      "before": null,
+      "after": "1e154083a21f3d9aa18ac7f30bc9a6b8a8603916ca7a034398343d578c8a626f"
+    },
+    "js/ui/support-ui.js": {
+      "before": "df96c800d4b7e91406a726a78fec2b3dd5ba17c4c841a9a356971bbdfb34e4e6",
+      "after": "dcc8070d90da7daf33e5dcb214a3710910b84da9b7d340f20a9d67fc9a841cdb"
+    },
+    "js/ui/run-ui.js": {
+      "before": "35a38c6bdc1155f4da6f6b3d4a5d31f3edff2c2ac904adc58bcf6281a85d676a",
+      "after": "16efb627b12eacca5b0b1547eb94994bf0cf2f9c0daa3d7ab87133a24247384b"
+    },
+    "js/data/lang-en.js": {
+      "before": "e74267f695be7abb984c80fdfbb77ea08427ea4443469133abcd10724bfe7a81",
+      "after": "0096a2dd7728cdce14f3f916124dd0fbe3c3e10f6265ba60e40fe8eae010de95"
+    },
+    "js/data/content.js": {
+      "before": null,
+      "after": "b07b1815b22ec5ee99d8720b12737063379c8b95e729797ff0d7919183a20636"
+    },
+    "js/core/guard.js": {
+      "before": "599278f08f3f351f201f4c9840618d446f2a5287286fa81cd3efcfc9730633c8",
+      "after": "6f9f25a5e471798a9e09acf6aae411482b1978df6ab91b31ab291622412a66a5"
+    },
+    "js/core/input.js": {
+      "before": "453ad7358cec887d85da0a84b022c27378f572dbb618ee9b453de8217054e1d2",
+      "after": "2f2b92b5cb0a995bbfb959478ba71d821e06bfc6dda32b3ca56c547fade431ea"
+    },
+    "js/core/sprites.js": {
+      "before": "71b1ccd6f70d1b18d6704e99b57a9c8e200f396416c10bcd02aca759bc46056d",
+      "after": "43f30dfc56d4a21765c720bf0ec157add4d5fe92f89eeae64b3cd938dacfb0c0"
+    },
+    "js/core/touch.js": {
+      "before": "01f15dd9c40b56eaea35e29c960ccc83fbb9e2414f7a9e13046cf8a9d9a3d4ce",
+      "after": "b2ec354697869a06c4a0b485ba27a79cc98647be4a08969a02f50ffa904df0b7"
+    },
+    "js/core/firebase-config.js": {
+      "before": "20a8429b8206ea3075d7eab6a197647f3c3d7e52d459851e45e19b3ad14324ec",
+      "after": "ca09a8d4ce9cb9065f42bbb71f92f2e51c3d842f33a15e352b7bbf05552b5d4c"
+    },
+    "assets/actors/guard01/Idle.svg": {
+      "before": null,
+      "after": "e6de2ed5a75f80b055d22c513bd357278677354a6659bae54fbe98126550a16c"
+    },
+    "assets/actors/guard01/Walk.svg": {
+      "before": null,
+      "after": "42bdbbfd350e033f45c2f8492974abaee8ecff446fd226d8b2d7e529f0a48753"
+    },
+    "docs/screenshots/P01-local-01.png": {
+      "before": null,
+      "after": "3cf1ca9cb5a6beae47c9f989ddb4c51a95759886d411bd44d27a3b0cb681c672"
+    }
+  },
+  "omittedFromSnapshot": [
+    "RoadmapSCP.json",
+    "RoadmapSCP.md",
+    "node_modules",
+    "__pycache__",
+    "this file"
+  ],
+  "referenceUnmodified": true
+}

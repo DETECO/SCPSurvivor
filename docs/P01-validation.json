@@ -1,0 +1,82 @@
+{
+  "version": "P01-local-01",
+  "date": "2026-10-13",
+  "timezone": "America/Santiago",
+  "sourceCommit": "a1006e6e3d0cea9162238a90b0ffdd7fd38397b6",
+  "build": {
+    "node": "v24.19.0",
+    "terser": "5.51.2",
+    "repeatedBuildIdentical": true,
+    "htmlSha256": "0a0995612f73a60919ac12fed6ab7483337032fbdff7d58a9022266e45252717",
+    "bundleSha256": "a1b493e1087bc5314011b07f2fa65be19385f222e1ce2b58faa012f9643dd19d",
+    "syntaxCheckedJs": 67
+  },
+  "browser": {
+    "browser": "Chromium /usr/bin/chromium",
+    "scenarios": [
+      {
+        "entry": "dev.html",
+        "touchEmulated": false,
+        "requests": 70,
+        "remoteAttempts": 0,
+        "errors": 0,
+        "httpFailures": 0,
+        "status": "PASS"
+      },
+      {
+        "entry": "dev.html",
+        "touchEmulated": true,
+        "requests": 70,
+        "remoteAttempts": 0,
+        "errors": 0,
+        "httpFailures": 0,
+        "status": "PASS"
+      },
+      {
+        "entry": "index.html",
+        "touchEmulated": false,
+        "requests": 5,
+        "remoteAttempts": 0,
+        "errors": 0,
+        "httpFailures": 0,
+        "status": "PASS"
+      },
+      {
+        "entry": "index.html",
+        "touchEmulated": true,
+        "requests": 5,
+        "remoteAttempts": 0,
+        "errors": 0,
+        "httpFailures": 0,
+        "status": "PASS"
+      }
+    ],
+    "failureChecks": [
+      {
+        "fault": "missing_module",
+        "visibleFailure": true,
+        "remoteAttempts": 0,
+        "status": "PASS"
+      },
+      {
+        "fault": "unsafe_config",
+        "visibleFailure": true,
+        "remoteAttempts": 0,
+        "status": "PASS"
+      }
+    ]
+  },
+  "scope": "Escena técnica P01; no partida completa P02",
+  "review": "Revisión estática adicional p01_review sin hallazgos bloqueantes; supervisión root",
+  "physicalDevicesTested": false,
+  "safariTested": false,
+  "cloudActivated": false,
+  "published": false,
+  "firstCompleteRunVerified": false,
+  "image": "screenshots/P01-local-01.png",
+  "keyboardMenuCheck": {
+    "bugReproduced": "Tab bloqueado en menú técnico por handler heredado",
+    "fix": "Mantener eventos nativos de navegación y controles en modo técnico",
+    "regression": "Tab/Enter menú y Tab entre opciones de pausa PASS"
+  }
+}

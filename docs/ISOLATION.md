@@ -1,16 +1,20 @@
-# Aislamiento de la preparación
+# Aislamiento — P01-local-01
 
-- index.html, dev.html y 404.html no habilitan scripts ni conexiones: CSP script-src none y connect-src none.
-- La interfaz original de dev.html está dentro de template; solo se muestra el aviso estático de preparación.
-- js/app.min.js original se omite. No puede reactivar los servicios anteriores desde index.html.
-- firebase-config.js establece preparación activa, funciones remotas desactivadas y URLs/configuración nulas.
-- main.js retorna antes de arrancar o registrar service worker; db.initCloud bloquea configuración y descargas del SDK.
-- Signups exige un flag explícito y URL propia. Net tiene TURN nulo, STUN vacío y guardas de apertura. Social.start queda desactivado.
-- sw.js no registra listeners ni borra cachés. Las claves literales ps.* pasan a scp-survivor.*; no se ejecuta migración ni se toca almacenamiento del navegador.
-- .firebaserc apunta a demo-scp-survivor. No hay objetivo Hosting, RTDB, Functions o Cloudflare preparado para desplegar. Firestore/RTDB deniegan lectura/escritura; functions/index.js no exporta handlers.
-- Herramientas de descarga/dominio/SEO y Cloudflare originales se conservan como referencia .txt. tools/build.js queda bloqueado por PREPARATION_ONLY antes de npx.
-- No hay CNAME/sitemap activos, donaciones ni contacto del autor en configuración UI. Los enlaces de proyecto apuntan a DETECO/SCPSurvivor; la atribución conserva la fuente real.
+## Estado actual
 
-Estas son comprobaciones de estructura y texto. No se han ejecutado navegador, inspección de tráfico, compilación, scripts del repositorio ni emuladores. No se certifica funcionamiento por ejecución.
+- `dev.html` carga 66 scripts locales ordenados; `index.html` usa un bundle propio. La interfaz visible tiene identidad SCP Survivor.
+- CSP: scripts/estilos/imágenes del mismo origen; `connect-src 'none'`, `worker-src 'none'`, sin scripts inline ni formularios remotos.
+- `G.LOCAL_TECHNICAL_MODE = true` habilita solamente el arranque de la escena P01; `G.PREPARATION_MODE = true` sigue bloqueando servicios. Cloud, social, multiplayer y signups permanecen en `false`; configuración/URLs Firebase/TURN/signups en `null`.
+- `main.js` valida módulos y flags antes de iniciar; no llama a Flow/DB/login. No registra service worker. `sw.js` sigue inactivo y no borra cachés.
+- Net mantiene TURN nulo y STUN vacío; Signups/Social/DB conservan sus guardas. Ninguna función se despliega. `.firebaserc` apunta solo a `demo-scp-survivor`; reglas Firestore/RTDB deniegan operaciones.
+- Claves locales usan el namespace propio; no se ejecutó migración de guardados originales. Las pruebas usan contextos de navegador nuevos.
+- Build local utiliza Terser con versión exacta y lock, sin descargar dependencias al ejecutar build. No se instalan dependencias de Functions ni herramientas de cloud.
+- CNAME, objetivos de despliegue antiguos, financiación/contactos del autor y herramientas SEO antiguas solo figuran en referencias archivadas; no se activan. Copyright y procedencia se mantienen.
 
-Se usa una carpeta independiente sin .git para no alterar la referencia. Instalación, TDD del juego, commits, scripts de habilidades y despliegues quedan fuera del alcance estático aprobado. Los sistemas funcionales permanecen para adaptación posterior.
+## Evidencia y límite
+
+Chromium 154/Linux: dev y bundle, teclado y táctil emulado, pausa, foco/segundo plano, menú/reinicio, colisión y orientación. En los cuatro recorridos: **cero intentos remotos, cero errores y cero recursos HTTP fallidos**. El test registra solicitudes y bloquea cualquier destino diferente del servidor HTTP local; una tentativa remota habría hecho fallar la prueba. Los fallos simulados de módulo ausente/configuración de cloud inválida se comprueban por separado.
+
+Esto acredita la versión y las rutas P01 ejecutadas. No acredita módulos de cuentas, economía, red o combate todavía inactivos, ni configuraciones futuras. Repetir la inspección al activarlos. Safari, teléfonos físicos, Firebase propio y publicación están pendientes de sus fases. No hay servicios de seguimiento ni nube activados.
+
+La referencia original permanece intacta y la copia propia no tiene `.git`; entrega manual, sin commits ni ramas.

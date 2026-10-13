@@ -12,6 +12,6 @@ La referencia /workspace/containment-survivor permanece intacta. Esta entrega pa
 
 Se conservan los avisos originales de código y tipografía. Los recursos gráficos originales disponibles están archivados como referencia binaria, no usados en la entrada. Scripts, configuraciones y documentos de despliegue antiguos están en docs/upstream-reference y no representan servicios ni instrucciones de SCP Survivor.
 
-El bundle generado original se omite. Su SHA256 se conserva en el manifiesto; podrá reconstruirse desde las fuentes cuando se autorice.
+El bundle generado original se omitió en preparacion-01 y su SHA256 se conserva en el manifiesto histórico. P01-local-01 incluye un nuevo bundle propio generado desde estas fuentes y la configuración local; no se ejecutó el bundle original.
 
-Autorización concreta: respuesta «1A 2A 3A». Firebase Functions propio y el riesgo residual de avances plausibles aceptados para el plan; solo la preparación local se autoriza para ejecutar ahora. No se activan facturación ni servidores.
+Autorización de preparacion-01: respuesta «1A 2A 3A», limitada a preparación estática. Después el director simplificó el trabajo por etapas y pidió avanzar P01 con subagentes Luna supervisados: se modificó, construyó y probó localmente esta escena. Firebase Functions y los riesgos siguen decisiones de diseño; no se activaron facturación, servidores de juego, nube ni publicación. Se usó únicamente un servidor HTTP local para las pruebas.
