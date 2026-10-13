@@ -1,80 +1,36 @@
 # SCP Survivor
 
-Juego gratuito de supervivencia para navegador, con soldados, armas modificables y expediciones entre escenarios anómalos. **SCP Survivor es el nombre provisional del proyecto.**
+Juego web en preparación, basado directamente en PokéSurvivor. Repositorio de destino: https://github.com/DETECO/SCPSurvivor
 
-El desarrollo tomará como base [PokéSurvivor, de JPTER78](https://github.com/JPTER78/pokesurvivor), adaptando sus sistemas al diseño de nuestro juego.
+**Esta entrega es una base técnica aislada; todavía no es una demo jugable.** El motor y los sistemas se conservan para adaptarlos incrementalmente.
 
-## Estado actual
+## Qué incluye
 
-**En planificación. La adaptación de SCP Survivor todavía no está implementada ni publicada.**
+- Las fuentes JavaScript disponibles de la revisión fijada y la estructura original de módulos.
+- Una página estática de preparación; en dev.html la interfaz y los 64 scripts originales se conservan dentro de un template inactivo.
+- Configuración propia sin Firebase activo, altas, amigos, multijugador, donaciones o service worker habilitados.
+- Procedencia, manifiesto de archivos y comprobación estática. Las referencias de despliegue del autor están archivadas como texto.
 
-Este repositorio está destinado a guardar el roadmap, la base de referencia y los futuros avances del juego. Las funciones descritas a continuación corresponden al diseño previsto; todavía no son funciones jugables de SCP Survivor.
+## Subida manual a GitHub
 
-## Concepto del juego
+1. Descomprime el ZIP.
+2. En DETECO/SCPSurvivor elige Add file → Upload files.
+3. Desde un ordenador puedes arrastrar las carpetas para conservar sus rutas. Haz dos cargas: primero js/, css/, assets/, functions/ y tools/; después docs/ y los archivos de la raíz. Evita crear otra carpeta scp-survivor dentro de la raíz del repositorio. Si tu selector móvil no conserva carpetas, utiliza un ordenador para esta carga.
+4. Incluye .gitignore, .firebaserc y .nojekyll si utilizas la carga web; para una entrega completa también puedes copiar la carpeta con Git desde tu ordenador.
+5. Sustituye el README anterior con este archivo. Conserva el aviso de origen del LICENSE incluido.
 
-Controlas a un soldado que atraviesa sectores conectados, con salas y corredores inspirados en Backrooms. Las expediciones continúan de un escenario al siguiente y aumentan su dificultad por sectores y oleadas.
+No contiene .git, credenciales privadas, node_modules, servicios desplegados ni automatizaciones. No se han realizado commits ni subidas remotas desde este hilo.
 
-- Movimiento manual, apuntado y disparo automáticos, y habilidades activadas por el jugador.
-- Dos armas equipadas, con una activa, cargadores y recarga automática.
-- Modificaciones de armas que permiten combinar ventajas y compensaciones.
-- Preparación de entre 5 y 30 segundos entre oleadas.
-- Entidades hostiles y jefes con patrones propios; siempre será posible intentar escapar de un jefe.
-- Extracción en determinados escenarios, con conservación de recompensas y penalización de puntuación.
-- Pérdida de equipo al morir y recuperación aleatoria simulada de parte de lo perdido.
-- Experiencia, mejoras permanentes del soldado, almacén, mochilas y buzón de excedentes.
+## Estado y siguiente trabajo
 
-## Primera versión completa prevista
+Esta tarea cubre la copia y la preparación estática. No completa P01-T02/T03/T04: faltan construcción reproducible, inspección de tráfico y arranque con contenido propio mínimo, bajo autorización específica.
 
-| Contenido | Alcance inicial |
-|---|---|
-| Soldados | Guardia básico y médico operativo |
-| Armas | Pistola, subfusil y escopeta |
-| Modificaciones | Seis modelos, con dos espacios por arma |
-| Mochilas | Dos modelos con capacidades diferentes |
-| Escenario | Una ambientación modular que genera varios sectores |
-| Enemigos | Dos tipos normales y un jefe |
-| Progresión permanente | Diez categorías de mejora por soldado |
-| Clasificación | Global y por país, después de su validación |
+PREPARATION_ONLY bloquea la construcción; las entradas bloquean scripts y conexiones. La configuración demo-scp-survivor identifica solo un futuro entorno de emulación, no un proyecto real creado. Las referencias archivadas describen el juego original, no instrucciones para configurar este proyecto.
 
-La economía prevista utiliza tickets separados de reclutamiento y suministros. El equipo sobrante se recicla para conseguir suministros; las copias del kit gratuito tienen aporte cero al reciclaje.
+Faltan los sprites de los actores. El bundle original js/app.min.js no se incluye porque contiene configuración del proyecto base; deberá reconstruirse con nuestra configuración. Node, Firebase SDK, dependencias y Terser deben verificarse y fijarse durante la siguiente tarea; no se han instalado ni actualizado.
 
-Se ha aprobado combinar contratos renovables con misiones diarias y semanales. Sus objetivos, premios y límites siguen pendientes de definición. Esta decisión se incorporará al roadmap en su próxima actualización indicada por el director.
+El catálogo, armas, oleadas, gacha, guardado, inventario y ranking aún conservan implementaciones originales pendientes de adaptar. Las decisiones aprobadas del juego no están implementadas por esta entrega.
 
-## Plataformas prioritarias
+RoadmapSCP se actualiza solo cuando lo indique el director. No se ha actualizado ni añadido una copia antigua a este paquete.
 
-- Safari en iPhone 13 y iPhone 15.
-- Chrome en Infinix Note 40 5G.
-- Controles táctiles y adaptación a orientación horizontal y vertical.
-
-La compatibilidad y el rendimiento de la adaptación deberán comprobarse en esos dispositivos.
-
-## Archivos de referencia
-
-Estructura del paquete preparado para la subida manual:
-
-```text
-README.md               Presentación del proyecto
-RoadmapSCP.md            Registro de decisiones, etapas y pendientes
-base-pokesurvivor/       Copia selectiva del código original inspeccionado
-LEEME-PAQUETE.txt        Información sobre el paquete entregado
-```
-
-La base corresponde a la rama `main` de PokéSurvivor, commit:
-
-```text
-a1006e6e3d0cea9162238a90b0ffdd7fd38397b6
-```
-
-Incluye HTML, CSS y JavaScript con Canvas 2D. La copia entregada contiene 118 archivos y conserva la documentación del original en [base-pokesurvivor/README.md](base-pokesurvivor/README.md).
-
-**La copia es parcial:** faltan los sprites de `assets/pokemon/` y el archivo generado `app.min.js`. Conserva configuraciones de servicios del proyecto original; su aislamiento para SCP Survivor sigue pendiente. Este paquete no constituye una versión completa lista para jugar o publicar. No se ha ejecutado el juego ni su build durante esta planificación.
-
-## Roadmap y seguimiento
-
-[RoadmapSCP.md](RoadmapSCP.md) contiene la auditoría, las decisiones registradas, las tareas ponderadas, sus dependencias y los criterios de aceptación. Es el registro maestro; este README ofrece una presentación resumida y no sustituye el plan.
-
-El roadmap se actualizará cuando lo indique el director. La copia entregada actualmente corresponde a la versión **0.7**. Los pesos y el plan integral siguen pendientes de aprobación final; el progreso documental no demuestra funcionalidades implementadas.
-
-La meta es una **primera versión completa, probada y publicada**. La demo y la primera partida mínima son hitos intermedios. Cooperativo, Hardcore con muerte permanente y ranking propio, códigos y regalos quedan para ampliaciones posteriores.
-
-La futura web de seguimiento será independiente y mostrará el plan y sus avances verificados.
+Consulta [Procedencia](docs/ORIGIN.md), [Aislamiento](docs/ISOLATION.md), [Manifiesto](docs/source-manifest.json) y [Comprobación](docs/PREPARATION-REPORT.md).

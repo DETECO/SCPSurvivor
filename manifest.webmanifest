@@ -1,0 +1,8 @@
+{
+  "name": "SCP Survivor — preparación",
+  "short_name": "SCP Survivor",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser"
+}
