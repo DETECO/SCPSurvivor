@@ -1,0 +1,13 @@
+{
+  "name": "scp-survivor-functions",
+  "private": true,
+  "description": "Servidor propio pendiente de implementación y pruebas autorizadas.",
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^6.1.0"
+  }
+}
