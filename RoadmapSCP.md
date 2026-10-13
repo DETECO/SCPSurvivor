@@ -2,9 +2,9 @@
 
 Registro maestro del juego, decisiones, pendientes, etapas, evidencias y seguimiento hasta la primera versión completa publicada.
 
-**Versión:** 0.8 — borrador consolidado hasta D-275, actualizado el 13 de octubre de 2026 (America/Santiago).  
-**Director:** el usuario. **Estado:** planificación avanzada; aprobación integral del plan y sus pesos pendiente. Ninguna fase concreta de implementación, ejecución o publicación autorizada. Preferencia vigente: entrega para subida manual a GitHub.  
-**Copia local vigente:** `/workspace/RoadmapSCP.md`. **Destino aprobado:** [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), archivo raíz `RoadmapSCP.md` en `main`. **GitHub:** esta actualización no se ha subido; la última comprobación de escritura de la integración, el 12/10, devolvió HTTP 403. El director eligió continuar con subidas manuales. **Web:** sin publicar ni sincronizar.  
+**Versión:** 0.9 — plan y pesos aprobados; auditoría estática y preparación local consolidadas hasta D-300, actualizado el 13 de octubre de 2026 (America/Santiago).  
+**Director:** el usuario. **Estado:** plan aprobado, auditoría estática completada y copia independiente preparada. **Progreso global: 12 %**; P00 100 %, P01 25 %. Ninguna partida del juego ejecutada o validada. Preferencia vigente: entrega para subida manual a GitHub.  
+**Fuente editable:** `/workspace/scp-survivor/RoadmapSCP.json`. **Vista generada:** `/workspace/scp-survivor/RoadmapSCP.md`; las copias de `/workspace/` y `entregables/` son espejos de entrega, no registros editables separados. **Destino aprobado:** [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), archivos raíz `RoadmapSCP.json` y su vista `RoadmapSCP.md` en `main`. **GitHub:** esta actualización no se ha subido; la última comprobación de escritura de la integración, el 12/10, devolvió HTTP 403. El director eligió continuar con subidas manuales. **Web:** sin publicar ni sincronizar.  
 **Nombre del juego:** SCP Survivor es un nombre de trabajo; el nombre definitivo está pendiente. El nombre de este registro permanece RoadmapSCP.
 
 ## 1. Objetivo y condición de término
@@ -15,7 +15,7 @@ Adaptar directamente el código funcional de PokéSurvivor para un juego de supe
 
 El director confirmó que cooperativo, Hardcore, códigos y regalos serán ampliaciones posteriores a ese cierre. No se cuentan en el denominador de la primera versión. PC, grandes ampliaciones de catálogo y funciones no aprobadas tampoco entran silenciosamente en el alcance.
 
-Este archivo conserva las decisiones conocidas y propone su organización ejecutable por etapas. **Todavía no es un plan final aprobado para programar:** faltan decisiones, contratos y parámetros señalados más adelante. No autoriza a rellenarlos mediante suposiciones de producto.
+El director aprobó el plan, los pesos y el diseño de fuente JSON mediante «Aprobar el plan y los pesos», y después resolvió servidor/riesgo/preparación con «1A 2A 3A». Las decisiones de producto bloqueantes están cerradas para el alcance inicial. Las mediciones, producción de arte y configuración real tienen método y fase de validación. La aprobación del plan no permite ejecutar fases futuras: solo la copia y el aislamiento estático fueron autorizados y realizados.
 
 ## 2. Autorizaciones y control del documento
 
@@ -23,17 +23,19 @@ Este archivo conserva las decisiones conocidas y propone su organización ejecut
 |---|---|---|
 | A-001 | Lectura, investigación y planificación | Vigente. Se permite inspeccionar código/documentación y mantener el registro. |
 | A-002 | Guardar RoadmapSCP y asignar pesos | Autorización histórica para crear el registro inicial. Crear este archivo, consolidar lo visto, pendientes y etapas hasta publicación; comprobar la integridad del documento. |
-| A-003 | Implementar el juego | No autorizado. Requiere identificar expresamente la fase o tarea que se permite implementar. |
+| A-003 | Implementar el juego | Sin autorización general. A-010 autorizó exclusivamente copia independiente y ajustes de aislamiento estático. Construcción, primer arranque y mecánicas siguen pendientes de autorización concreta. |
 | A-004 | Ejecutar juego, pruebas del repositorio, herramientas de build o instalar dependencias | No autorizado. Las verificaciones de texto de este registro no son pruebas del juego. |
-| A-005 | Crear repositorios, ramas, commits; desplegar o escribir en servicios | No autorizado con carácter general. Excepción documental vigente: subida y commit de RoadmapSCP en el repositorio elegido, A-008. La copia original se conserva intacta. |
+| A-005 | Crear repositorios, ramas, commits; desplegar o escribir en servicios | No autorizado con carácter general. A-008 fue el antecedente de autorización para subir el registro; la preferencia posterior lo sustituye por entrega manual al director. Esta actualización crea archivos locales, sin commits, repositorios nuevos, publicación ni escrituras externas. La copia original se conserva intacta. |
 | A-006 | Construir/publicar la web y activar automatización | No autorizado; otro hilo. |
 | A-007 | Pagar servicios o habilitar facturación | No autorizado. El objetivo de 20 USD/mes no constituye autorización de gasto. |
-| A-008 | Guardar RoadmapSCP en DETECO/SCPSurvivor | Autorizado expresamente por el director. Inspeccionar el repositorio existente, conservar sus archivos, subir este registro mediante un commit documental y verificar el resultado. Los futuros desarrollos del juego se guardarán allí conforme se autoricen; esta elección de destino no autoriza a empezar a programar, copiar la base completa, desplegar, construir la web ni activar automatizaciones. |
-| A-009 | Actualización documental solicitada el 13/10/2026 | El director indicó «actualiza el roadmap». Autoriza consolidar este Markdown, conservar v0.7, entregar una copia actualizada y comprobar su integridad. No autoriza implementar el juego, migrar todavía a la propuesta JSON, ejecutar build/pruebas del juego, configurar servicios, gastar ni publicar. |
+| A-008 | Guardar RoadmapSCP en DETECO/SCPSurvivor | Antecedente autorizado expresamente para guardar el registro en DETECO/SCPSurvivor. La integración devolvió HTTP 403 y el director eligió entrega manual: no hay autorización vigente para continuar intentos automáticos de subida/commit. El destino del proyecto sigue aprobado. Los futuros desarrollos se entregarán conforme se autoricen; esta elección no autoriza programación, despliegue, web ni automatización. |
+| A-009 | Actualización documental anterior del 13/10/2026 | Completada: v0.8 hasta D-275, conservada como antecedente. No era permiso para escrituras automáticas ni para programación. |
+| A-010 | Preparación local, respuesta «3A» dentro de «1A 2A 3A» | Completada: /workspace/scp-survivor, procedencia, 64 scripts conservados, aislamiento por texto y ZIP manual. Sin .git nuevo, commits, ejecución JS/build, instalaciones, conexión de servicios o publicación. No autoriza toda P01. |
+| A-011 | Actualización y cálculo solicitados en este turno | Vigente para esta actualización: conservar v0.8, consolidar decisiones/evidencias, crear fuente documental JSON aprobada, generar Markdown, verificar porcentajes y entregar archivos. No modifica pesos ni alcance, no construye web/automatización, ni instala/ejecuta/publica el juego. |
 
-**Preferencias vigentes:** decisiones claras de planificación a cargo del asesor por delegación D-182, usando la base como primera opción; consultar dudas relevantes; avanzar en bloques de diez previamente aceptados. Guardar el roadmap solo cuando lo solicite el director. Esta autorización cubre la actualización actual, no escrituras automáticas en cada respuesta. La copia descargable se ofrece para subida manual; A-008 es antecedente, no afirmación de subida realizada.
+**Preferencias vigentes:** decisiones claras de planificación a cargo del asesor por delegación D-182, usando la base como primera opción; consultar dudas relevantes; el director posteriormente pidió terminar auditoría/plan de forma autónoma y reunir únicamente dudas delicadas en una sola consulta final (D-299), sustituyendo la necesidad de confirmar cada bloque. Guardar el roadmap solo cuando lo solicite el director. Esta autorización cubre la actualización actual, no escrituras automáticas en cada respuesta. La copia descargable se ofrece para subida manual; A-008 es antecedente, no afirmación de subida realizada.
 
-La copia local del archivo está fuera de la copia del juego para conservarla intacta. No se han guardado nuevos programas, parches, configuraciones ni recursos gráficos. Las ilustraciones adjuntas se describen en ART-001; sus originales no están incrustados en este Markdown.
+La referencia original permanece en /workspace/containment-survivor, intacta. La copia propia autorizada está en /workspace/scp-survivor, con cambios de aislamiento y páginas de preparación inactivas. Esta actualización guarda solo el registro documental y sus vistas; no modifica los programas preparados. Las ilustraciones adjuntas se describen en ART-001; sus originales no están incrustados en este Markdown.
 
 **Acceso parcial y bloqueo de escritura, 12/10/2026:** las consultas iniciales devolvieron HTTP 404. Después de los ajustes del director, la API confirma `DETECO/SCPSurvivor` público y rama predeterminada `main`. Se inspeccionaron `README.md` y `LICENSE`, únicos archivos previos, en la revisión inicial `a8627fbcad05955702cc59c1efa42be14827b345`. Aunque la ficha del repositorio muestra `push: true`, los intentos de crear `RoadmapSCP.md` desde GitHub CLI y desde el conector fueron rechazados con HTTP 403, `Resource not accessible by integration`. Esos permisos de la ficha no prueban el permiso efectivo de escritura de la integración. No se ha subido el archivo ni creado un commit. La autorización documental A-008 se conserva en el historial, pero el director posteriormente eligió la entrega de archivos para subida manual. No reintentar subidas automáticamente como parte de esta actualización. El contenido actual del remoto no se ha vuelto a inspeccionar en este turno.
 
@@ -50,12 +52,13 @@ La aprobación de una decisión de diseño no autoriza implementación, pruebas,
 | Fecha del commit | `2026-10-11T17:23:47+02:00` |
 | Inspección | Lecturas 11–13 de octubre de 2026; HEAD reconfirmado el 13. La comprobación documental de esta actualización verificará también el estado de la copia original. |
 | Copia local consultada | `/workspace/containment-survivor` |
+| Copia propia preparada | /workspace/scp-survivor, sin .git ni commit propio. Paquete SCP-Survivor-preparacion-01.zip: 135 archivos, 669.943 bytes; SHA256 51fca0f214aef3cfb87388c13aed9ce63979c2bc1b084aa6086d3e71a167dfb9. Esta cifra describe el paquete preparado antes de añadir el roadmap. |
 | Estado real de esa copia | Copia del original; el nombre del directorio no demuestra una adaptación SCP implementada |
-| Recursos locales | Copia selectiva; los sprites de `assets/pokemon/` no están completos localmente |
+| Recursos locales | 13.608 archivos registrados, 118 presentes y 13.490 ausentes. Los 64 scripts de dev.html sí están; faltan principalmente sprites. El bundle original app.min.js existe (962.266 bytes) y su huella coincide con index.html; se omite deliberadamente en la copia propia por configuración embebida original. |
 | Repositorio activo propio de SCP Survivor | [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), elegido por el director; público y rama predeterminada `main`, según última comprobación por API del 12/10/2026, no revalidada hoy. Contenido observado entonces: `README.md` y `LICENSE`; commit inicial `a8627fbcad05955702cc59c1efa42be14827b345`. |
 | Repositorio de seguimiento/web | Sin destino confirmado; pendiente de aprobación e implementación en el otro hilo |
 
-No se ha iniciado el juego, ejecutado su build, instalado dependencias, medido FPS ni reproducido defectos durante esta planificación. Las conclusiones de funcionamiento son análisis estático, salvo donde se indique expresamente documentación externa.
+No se ha iniciado el juego, ejecutado su build, instalado dependencias, medido FPS ni reproducido defectos. Sí se ejecutaron comprobaciones documentales de archivos, HTML, JSON, hashes y ZIP; no son pruebas funcionales del juego. Las conclusiones de funcionamiento son análisis estático, salvo donde se indique expresamente documentación externa.
 
 Los documentos anteriores de `/workspace/pokesurvivor-research/` son antecedentes. Sus propuestas de cantidades, controles y arquitectura no sustituyen las decisiones posteriores aquí consolidadas. No se mezclan versiones del repositorio: las referencias de código corresponden al commit fijado.
 
@@ -171,7 +174,7 @@ Esta tabla está aprobada como punto inicial para futuras pruebas; no constituye
 
 **LOCALIZADO EN CÓDIGO original:** `js/data/missions.js` define plantillas diarias/semanales; `G.Progress.ensure` en `js/systems/progress.js` crea tres misiones diarias y dos semanales, y `G.Progress.claim` concede premios al reclamarlas. `js/ui/goals-ui.js` muestra sus listas y reclamación. Se ha leído el código del commit fijado, sin ejecución. Las cantidades, recompensas, renovación y reglas de reclamación del original no se consideran aprobadas automáticamente para SCP Survivor.
 
-**D-133–D-138 — diseño adoptado:** combinación de un contrato renovable, tres misiones diarias y dos semanales. Contrato: 1 ticket de suministros; diaria: 1 por misión; semanal: 3 por misión. Renovable: 50 bajas, 3 oleadas o 2 sectores; diaria: 150 bajas, 6 oleadas o 4 sectores; semanal: 750 bajas o 30 oleadas. Progreso parcial conservado entre expediciones dentro de su período. Premio automático tras confirmación; un contrato nuevo de tipo uniforme, sin repetir inmediatamente el anterior, empieza en cero. Calendario exacto y tratamiento de progreso sobrante siguen en CIE-007; no suponer reparto de excedentes.
+**D-133–D-138 — diseño adoptado:** combinación de un contrato renovable, tres misiones diarias y dos semanales. Contrato: 1 ticket de suministros; diaria: 1 por misión; semanal: 3 por misión. Renovable: 50 bajas, 3 oleadas o 2 sectores; diaria: 150 bajas, 6 oleadas o 4 sectores; semanal: 750 bajas o 30 oleadas. Progreso parcial conservado entre expediciones dentro de su período. Premio automático tras confirmación; un contrato nuevo de tipo uniforme, sin repetir inmediatamente el anterior, empieza en cero. Calendario y excedentes resueltos en D-282: períodos UTC, renovación en cero sin trasladar progreso sobrante y asignación al período de confirmación. CIE-007 cerrado.
 
 ### 4.7 Hitos intermedios que no son el final
 
@@ -226,7 +229,7 @@ XP temporal:14 por enemigo normal y220 total por jefe, Aprendizaje una vez; requ
 
 ## 5. Registro de decisiones y propuestas
 
-**D-001–D-132 son el registro histórico de aprobaciones hasta v0.7.** Sus anotaciones de «pendiente» describen ese momento; las concreciones actuales se encuentran en D-133–D-275 y en la tabla Q actualizada. No interpretar anotaciones históricas como nuevas preguntas ni sustituir una decisión aprobada por su propuesta anterior.
+**D-001–D-132 son el registro histórico de aprobaciones hasta v0.7.** Sus anotaciones de «pendiente» describen ese momento; las concreciones actuales se encuentran en D-133–D-300 y en la tabla Q actualizada. No interpretar anotaciones históricas como nuevas preguntas ni sustituir una decisión aprobada por su propuesta anterior.
 
 Cada decisión tiene alcance de diseño o planificación salvo autorización expresa indicada. Su fundamento procede de las elecciones del director y de la evidencia citada; la columna final conserva su consecuencia principal. Las cifras de equilibrio que no aparecen aquí siguen pendientes.
 
@@ -365,9 +368,9 @@ Cada decisión tiene alcance de diseño o planificación salvo autorización exp
 | D-131 | Reciclaje complementario, misiones como fuente principal de suministros | Opción A aprobada expresamente: referencia inicial de unos cinco objetos comunes por ticket, respetando valores por modelo. No aprueba una tabla exacta ni demuestra ritmo medido; Q-002 parcialmente pendiente. |
 | D-132 | Tabla inicial de reciclaje, conversión y conservación del saldo | Aprobación expresa Sí: 100 puntos por ticket de suministros; once valores de la tabla 4.5; sumar componentes consumidos, copias gratuitas con aporte cero, conservar sobrante en cuenta incluso al morir. Diseño aprobado para futuras pruebas, sin implementación ni equilibrio medido. Q-002 pendiente de análisis/validación restantes. |
 
-### Consolidación de decisiones D-133–D-275
+### Consolidación de decisiones D-133–D-300
 
-Las filas conservan identificadores estables y distinguen aprobación expresa, adopción por delegación y propuesta pendiente. Todos los valores de combate/economía/rendimiento son iniciales y requieren las pruebas previstas; no son comportamiento implementado o equilibrio demostrado. Las decisiones propuestas D-266/D-268/D-272 no se convierten en aprobadas por solicitar guardar este archivo. D-245 contiene estimaciones y avisos propuestos, no contratación ni límite de gasto probado.
+Las filas conservan identificadores estables y distinguen aprobación expresa, adopción por delegación y propuesta pendiente. Todos los valores de combate/economía/rendimiento son iniciales y requieren las pruebas previstas; no son comportamiento implementado o equilibrio demostrado. D-266 y D-268 fueron aprobadas expresamente mediante D-286. D-272 sigue como propuesta de automatización, sin aprobación ni activación; guardar el registro no la autoriza. D-245 contiene estimaciones y avisos propuestos, no contratación ni límite de gasto probado.
 
 **Sustituciones/precisiones:** D-213 precisa D-139 y sustituye la condición de cierre de D-152 para contar puntos pendientes; se conservan ambas anteriores. D-215 completa D-172. D-225 fue pendiente durante la comparación A/B/C y posteriormente el director aprobó expresamente A; reproducción o simulación de combate no entran en primera versión. D-265 fue pendiente hasta aprobación expresa de Firebase Hosting.
 
@@ -378,7 +381,7 @@ Las filas conservan identificadores estables y distinguen aprobación expresa, a
 | D-135 | Progreso de misiones | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Las metas parciales sobreviven a muerte/extracción y nuevas expediciones dentro de su período vigente. |
 | D-136 | Metas iniciales | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Renovable: 50 bajas, 3 oleadas o 2 sectores; diaria: 150 bajas, 6 oleadas o 4 sectores; semanal: 750 bajas o 30 oleadas. Evasión del jefe cuenta para avance, no para victoria. |
 | D-137 | Recompensa confirmada | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Premio automático tras confirmación de servidor y aviso; renovar contrato. Tickets digitales no entran en mochila. |
-| D-138 | Renovación del contrato | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Tipos equiprobables; sin repetir el inmediatamente anterior y nuevo progreso cero. Excedentes y calendario todavía CIE-007. |
+| D-138 | Renovación del contrato | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Tipos equiprobables; sin repetir el inmediatamente anterior y nuevo progreso cero. Calendario UTC y reinicio sin traslado de excedentes resueltos por D-282; CIE-007 cerrado. |
 | D-139 | Duplicado al completar entrenamiento | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Un ticket de suministros si no hay mejora disponible; en otro caso mejora categoría del soldado repetido. Precisado después por D-213, incluidos puntos pendientes. |
 | D-140 | Reclutamiento en cofres | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Cofres aleatorios según combate y sector además de tres hitos únicos de un ticket: primera oleada, llegar a sector 2 y a sector 3. No aprobar una bonificación recurrente cada diez sectores. |
 | D-141 | Reloj de cofres | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Tiempo acumulado de combate activo de la expedición, entre mapas; excluye preparación, pausas y menús. |
@@ -386,7 +389,7 @@ Las filas conservan identificadores estables y distinguen aprobación expresa, a
 | D-143 | Oleadas por mapa normal | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Entre 3 y 5; distribución equiprobable concretada en D-190. |
 | D-144 | Tabla de cofres | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Sectores 1–3: 10 % por oleada, máximo 1 cofre/mapa, 1–2 tickets; 4–7: 15 %, máximo 2, 1–2; 8+: 20 %, máximo 3, 1–3. A 10 minutos de combate: una vez +5 puntos de probabilidad y +1 al máximo de tickets. Abrir no libera cupo y el contenido se fija al aparecer. |
 | D-145 | Salida tras última oleada | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Queda disponible para recoger y salir cuando el jugador quiera; sin traslado forzado. La salida del jefe conserva disponibilidad desde el inicio. |
-| D-146 | Apertura de cofre | Aprobada/adoptada; respuesta o delegación D-182 según conversación | 3,5 segundos de proximidad; continúa el disparo automático y alejarse hace retroceder el progreso. Radio y velocidad de pérdida pendientes CIE-004. |
+| D-146 | Apertura de cofre | Aprobada/adoptada; respuesta o delegación D-182 según conversación | 3,5 segundos de proximidad; continúa el disparo automático y alejarse hace retroceder el progreso. D-279 completa el radio de 50 unidades y la pérdida de 1,5 segundos de progreso por segundo al alejarse; CIE-004 cerrado. |
 | D-147 | Entrega de tickets del cofre | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Van directamente a cuenta tras confirmación; no quedan en suelo ni se pierden con mochila. |
 | D-148 | Descubrimiento de cofre | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Antes de verlo en pantalla solo aviso de cofre sin descubrir; flecha una vez descubierto. Sin minimapa o niebla de guerra añadidos por esta decisión. |
 | D-149 | Fuentes de XP permanente | Aprobada/adoptada; respuesta o delegación D-182 según conversación | Neutralizaciones y bonos por oleada/avance; independientes de XP temporal. |
@@ -437,7 +440,7 @@ Las filas conservan identificadores estables y distinguen aprobación expresa, a
 | D-194 | Bajas reales | Adoptada por delegación D-182; planificación | Eliminar/recolocar por atasco no concede XP, baja ni avance de neutralización. |
 | D-195 | Cartas de atributo temporales | Adoptada por delegación D-182; planificación | Vitalidad +20 vida máxima/actual; Potencia +10 % de daño base; Movilidad +7 % base; Cadencia −8 % de intervalo; Protección +6 pp; Recuperación +0,9 vida/s; Recolección +30 % radio base; Aprendizaje +12 % XP temporal; Curación hasta 45 % de vida máxima si falta vida. Excluir cartas sin efecto por topes; D-253 completa límites. |
 | D-196 | Enemigos normales iniciales | Adoptada por delegación D-182; planificación | Perseguidor: vida 30, velocidad 60, golpe 10, aviso 0,6 s, espera 1,5 s, detenerse y fijar dirección al preparar. Biológico: vida 24, velocidad 50, proyectil 12, aviso 0,6 s, intervalo 2,2 s, rango de ataque 260 y bala 190 unidades/s sin seguimiento. Sin daño por contacto; cada neutralización 14 XP temporal y 5 permanente. |
-| D-197 | Jefe inicial | Adoptada por delegación D-182; planificación | Vida 600, velocidad 45; golpe de área 30, radio 64, aviso 0,85 s, espera 2,5 s. Invocar dos perseguidores cada 8 s, aviso 1 s y máximo cuatro refuerzos vivos, todos dentro de CAP 64. Bajo 50 % de vida: +15 % velocidad, espera de golpe 2 s, sin acortar avisos. Respeta paredes. Derrota: 220 XP temporal, XP/recompensa física acordadas. Huida desde inicio: interacción 2 s, cancelada por movimiento/daño. Refuerzos restantes pendientes CIE-005. |
+| D-197 | Jefe inicial | Adoptada por delegación D-182; planificación | Vida 600, velocidad 45; golpe de área 30, radio 64, aviso 0,85 s, espera 2,5 s. Invocar dos perseguidores cada 8 s, aviso 1 s y máximo cuatro refuerzos vivos, todos dentro de CAP 64. Bajo 50 % de vida: +15 % velocidad, espera de golpe 2 s, sin acortar avisos. Respeta paredes. Derrota: 220 XP temporal, XP/recompensa física acordadas. Huida desde inicio: interacción 2 s, cancelada por movimiento/daño. D-280 resuelve los refuerzos restantes al derrotar al jefe: retirada sin recompensa; CIE-005 cerrado. |
 | D-198 | Calendario de jefes | Adoptada por delegación D-182; planificación | Primeros tres sectores normales; primer jefe en sector 4, 5 o 6 equiprobables. Después de vencer/evadir: tres a cinco sectores normales antes del siguiente. Sorteos persistidos, sin repetir al reanudar. |
 | D-199 | Extracción | Adoptada por delegación D-182; planificación | En mapas normales desde sector 3: 25 % por mapa elegible y garantía en cuarto elegible consecutivo sin extracción. Anuncio al entrar, habilitada tras última oleada; confirmar e interactuar 3 s, moverse cancela. Puede ignorarse; no confundir con huida del jefe. |
 | D-200 | Escalado inicial | Adoptada por delegación D-182; planificación | Para sector s/oleada o: vida ×(1+0,15(s−1)+0,05(o−1)); daño ×(1+0,08(s−1)); velocidad +2 % por sector hasta +20 %. Jefe usa sector sin incremento de oleada. Sustituir escalado temporal y no acumular multiplicadores originales. Hipótesis pendiente de equilibrio. |
@@ -485,7 +488,7 @@ Las filas conservan identificadores estables y distinguen aprobación expresa, a
 | D-242 | Transferencia de dispositivo | Adoptada por delegación D-182; planificación | Confirmar Continuar aquí, revocar permiso anterior y recibir último confirmado. Preparación guardada conserva validez; rollback de combate excluye ranking y avisa actividad no confirmada. |
 | D-243 | Acceso | Adoptada por delegación D-182; planificación | Google o correo real/contraseña con alias separado; correo verificado antes de expediciones, recuperación Firebase Auth, mínimo inicial 8 caracteres. Vincular exige acceso a métodos; mismo correo no fusiona inventarios. No correos ficticios heredados. |
 | D-244 | Versiones | Adoptada por delegación D-182; planificación | Datos, reglas y score versionados; migración/caché con nombres propios. Migraciones persistentes en servidor sin reiniciar progreso; evitar recarga forzada en combate. Checkpoint incompatible conservado hasta migración validada. |
-| D-245 | Escenarios de coste | Adoptada por delegación D-182; planificación | Supuesto 30 oleadas/jugador/día y 4 lecturas+4 escrituras/checkpoint. 50/200/1000 activos: 1500/6000/30000 checkpoints y 6000/24000/120000 lecturas y escrituras/día. Excluye menús/economía/ranking/reintentos/Auth/tráfico/hosting. Avisos propuestos 10/15/18 USD, no corte efectivo ni garantía del objetivo 20. Sin gasto autorizado; actuación CIE-009. |
+| D-245 | Escenarios de coste | Adoptada por delegación D-182; planificación | Supuesto 30 oleadas/jugador/día y 4 lecturas+4 escrituras/checkpoint. 50/200/1000 activos: 1500/6000/30000 checkpoints y 6000/24000/120000 lecturas y escrituras/día. Excluye menús/economía/ranking/reintentos/Auth/tráfico/hosting. Avisos propuestos 10/15/18 USD, no corte efectivo ni garantía del objetivo 20. Sin gasto autorizado; actuación resuelta por D-284 y CIE-009 cerrado. El control de admisiones no garantiza un límite financiero absoluto. |
 | D-246 | Escala gráfica | Adoptada por delegación D-182; planificación | PX=2 unidades por píxel; tiles 16×16 de arte. Marcos transparentes iniciales 64×64 soldados/normales, 96×96 jefe; sin suavizado. Marcos no fijan tamaño de colisión. |
 | D-247 | Radios | Adoptada por delegación D-182; planificación | Soldado/perseguidor 12, biológico 14, jefe 22 unidades, anclados en pies y sujetos a paredes; validar pasos/esquinas/cobertura. |
 | D-248 | Animaciones | Adoptada por delegación D-182; planificación | Ocho direcciones: reposo 2, caminar 4, atacar/disparar 2, preparar 2, daño 1, caída 3 fotogramas/dirección iniciales; avisos coinciden con preparación. Cuatro poses de láminas no equivalen a animación completa. |
@@ -506,20 +509,47 @@ Las filas conservan identificadores estables y distinguen aprobación expresa, a
 | D-263 | Demo invitada | Adoptada por delegación D-182; planificación | Guardia/pistola/Sprint, dos sectores normales de tres oleadas; termina al completar o tras 10 min de combate activo. XP/mejoras temporales, sin ranking/gacha/progreso persistente ni transferencia; aviso previo. No meta final. |
 | D-264 | Copia/build propios | Adoptada por delegación D-182; planificación | DETECO/SCPSurvivor, trazabilidad al commit fijado, JS/Canvas/orden de módulos conservados; configurar rutas/recursos/servicios propios. Editar dev.html, generar distribución con versión exacta futura del Terser ya usado; sin ejecutar ahora. |
 | D-265 | Alojamiento del juego | Aprobada expresamente por el director | APROBACIÓN EXPRESA: Firebase Hosting en proyecto propio, dirección inicial .web.app sin compra de dominio; tráfico dentro de presupuesto 20 USD. No autoriza configuración, billing ni despliegue; web de seguimiento independiente. |
-| D-266 | Fuente de seguimiento propuesta | Propuesta; aprobación/activación pendiente | RoadmapSCP.json como única fuente editable y RoadmapSCP.md generado; diseño/decisiones/fases/tareas/riesgos/evidencias/novedades en repo del juego. Propuesta registrada, transición todavía no realizada ni asumida por la petición actual. |
+| D-266 | Fuente de seguimiento | Diseño aprobado; documento JSON autorizado por A-011 | Fuente única RoadmapSCP.json y RoadmapSCP.md generado. Aprobado por respuesta «Aprobar el plan y los pesos» D-286; transición documental realizada en v0.9. No se ha construido sitio ni automatización. |
 | D-267 | Fases y dependencias | Adoptada por delegación D-182; planificación | Conservar P00–P11 e IDs; partida mínima, sistemas, validación del juego, ranking oficial, comprobación final y publicación. Demo no cierra global. |
-| D-268 | Pesos por aprobar con plan | Propuesta; aprobación/activación pendiente | Conservar 53 tareas con suma 100; fases 10/8/10/12/12/6/10/10/4/8/6/4. Propuesta de cumplimiento, no de duración. Aprobación integral de línea base pendiente. |
+| D-268 | Pesos de la línea base | Aprobados expresamente; D-286 | 53 tareas/100 puntos; fases 10/8/10/12/12/6/10/10/4/8/6/4. Se conservan todos los pesos y pendientes. Porcentaje es cumplimiento; ejecución/publicación requieren permisos propios. |
 | D-269 | Evidencia de finalización | Adoptada por delegación D-182; planificación | Criterios completos más versión/procedimiento/resultado/referencia. Solo CV aporta; documentación no acredita función jugable. Separar planificación/implementación. |
 | D-270 | Versionado y reaperturas | Adoptada por delegación D-182; planificación | Guardar versiones/motivo/aprobación de cambios; regresión reabre y reduce aporte. Bloqueo con causa/dependencia/condición de resolución. No retirar pendientes para subir porcentaje. |
 | D-271 | Novedades verificadas | Adoptada por delegación D-182; planificación | Una por avance significativo, evidencia y versión, una imagen+alt. Captura real para visual; tarjeta basada en hechos para técnico. Sin evidencia/imagen, pendiente de publicación. |
 | D-272 | Automatización propuesta | Propuesta; aprobación/activación pendiente | GitHub Actions con validación/cálculo/publicación de web; manual y comprobación cada 30 min si se aprueba. Sin puntualidad garantizada; conservar última válida y fecha correcta ante fallo. Repo/destino/credenciales de web pendientes; nada activado. |
 | D-273 | Candidato y publicación | Adoptada por delegación D-182; planificación | Commit/version identificados; preview con servicios de prueba, no aislamiento automático por URL. Tras aceptación y autorización, producción/recorridos/score oficial desde cero; nadie publicó por aprobar diseño. |
 | D-274 | Recuperación de publicación | Adoptada por delegación D-182; planificación | Conservar al menos tres versiones de Hosting y referencias de código. Separar rollback de frontend, funciones y reparación de datos; frontend anterior no revierte inventario. Respaldo protegido y ensayo compatible con presupuesto antes de publicar; destino/retención por concretar. |
-| D-275 | Cierre todavía pendiente | Adoptada por delegación D-182; planificación | No declarar plan listo: cerrar CIE-001…010 y consolidar contratos/evidencias. Aprobación del plan, implementación, pruebas, gasto y publicación continúan separadas. |
+| D-275 | Cierre anterior del plan | Histórica; resuelta por D-276–D-298 | En v0.8 no se declaraba listo el plan. CIE-001–010 se cerraron; auditoría/contratos se consolidaron y el director aprobó plan/pesos/servidor/riesgo. Solo preparación estática autorizada; etapas posteriores pendientes de ejecución. |
+| D-276 | Objetos especiales heredados | Adoptada por delegación D-182; plan aprobado | Altares, manantiales y trampas pospuestos. Se conserva referencia; no activar sus multiplicadores/premios/estados en primera versión. |
+| D-277 | Curación e imán | Adoptada por delegación D-182; plan aprobado | Normales: 1,2 % curación y 0,8 % imán; curar30 % vida máxima, permanecer en suelo si vida completa. Imán solo XP, nunca equipo físico. Jefe vencido deja una cura y un imán además de premios acordados. Bomba pospuesta. |
+| D-278 | Destructibles | Adoptada por delegación D-182; plan aprobado | Caja/barricada vida34 radio12, reutilizar helper de roca; paredes/columnas indestructibles. Decoración destruida sin XP/tickets/monedas. Apuntar a destructible cercano con trayectoria despejada solo sin enemigo válido; consume perforación según D-202. |
+| D-279 | Apertura de cofre | Adoptada por delegación D-182; plan aprobado | Radio50 unidades sin pared/obstáculo intermedio; avance1 s/s hasta3,5 s, retroceso1,5 s/s al salir. Pausa congela. Daño solo no cancela; empujón puede alejar. Disparo automático continúa. |
+| D-280 | Cierre del jefe | Adoptada por delegación D-182; plan aprobado | Vencer detiene invocaciones; refuerzos restantes se retiran sin bajas/XP/premios. Resolver victoria una vez, recoger y continuar. Refuerzos muertos durante combate sí cuentan. Evadir conserva sus reglas sin victoria de jefe/oleada. |
+| D-281 | Guardar, salir y abandonar | Adoptada por delegación D-182; plan aprobado | Guardar y salir entre oleadas tras confirmación mantiene expedición activa y equipo reservado; no descarga mochila. Cerrar navegador no equivale a muerte. Recuperar combate desde checkpoint excluye ranking. Abandono definitivo confirmado aplica pérdida/recuperación y factor75 % como muerte. |
+| D-282 | Calendario de misiones | Adoptada por delegación D-182; plan aprobado | Diarias00:00UTC; semanales lunes00:00UTC, según servidor. Progreso al período de confirmación; incompletas caducan al cambio. Renovable sin caducidad; siguiente contrato empieza0 y sin excedentes del mismo lote confirmado. |
+| D-283 | Eliminar cuenta | Adoptada por delegación D-182; plan aprobado | Reautenticación y confirmación; cancelar expedición/entregas, revocar sesiones, retirar perfil/ranking y borrar progreso/equipo. Objetivo operativo de limpieza completa y vencimiento de copias≤30 días, comprobado antes de publicar; caché no restaura cuenta eliminada. |
+| D-284 | Protección del presupuesto | Aprobada expresamente: «dame la opcion a» | Cerca de18 USD mensuales estimados bloquear nuevas expediciones/tiradas; finalizar oleada activa, guardar y pausar conservando equipo/resultados. Presupuesto objetivo20 USD, no límite monetario garantizado. Tráfico/otros servicios pueden seguir generando uso; validar protección/restablecimiento en P10/P11 antes de activación. |
+| D-285 | Primera tarea propuesta | Histórica; aprobada/realizada en D-298 | Preparación de copia independiente y aislamiento por lectura, con entrega manual. No incluye build, instalaciones o ejecución. H-001 puede probar extracción en sector2 solo en fixture aislado; regla normal desde3 se conserva. |
+| D-286 | Aprobación del plan, pesos y registro | Aprobada expresamente: «Aprobar el plan y los pesos» | Primera versión completa publicada, 53 tareas/12 fases/100 puntos, JSON fuente y Markdown generado. Resoluciones críticas posteriores1A2A completan servidor/riesgo. No autoriza implementar todas las fases, guardar automáticamente, activar servicios, gastar, publicar o construir web. |
+| D-287 | Organización incremental | Adoptada por delegación D-182; consolidada en plan | Conservar JS/Canvas, namespace G, orden de módulos y áreas core/data/entities/systems/world/ui/net. Adaptar catálogos/API de persistencia donde sea necesario. Sin motor/framework nuevo ni reconstrucción desde cero. |
+| D-288 | Identidad y catálogos | Adoptada por delegación D-182; consolidada en plan | Modelo estable separado de copia física única y propietario UID autenticado. Origen preservado, incluida entrega gratuita de valor0. Cada copia tiene una ubicación; mods instalados vinculados al arma. Definiciones/reglas versionadas. |
+| D-289 | Contrato de checkpoint | Adoptada por delegación D-182; consolidada en plan | Entre oleadas: expedición/sesión/revisión, sector/oleada/semilla/estado, vida/posición, IDs de equipo, munición/recargas/habilidades, XP/perks/cartas pendientes, cambios y recogibles del sector actual, contadores/validez de ranking. Sin imágenes ni grabación por fotograma. |
+| D-290 | Confirmación y reintentos | Adoptada por delegación D-182; consolidada en plan | Comando con ID, contenido, versión esperada y sesión; UID del token. Confirmación económica atómica y recibo recuperable; mismo ID/contenido no vuelve a gastar/conceder, contenido diferente o revisión/sesión obsoleta se rechaza. Retención/compactación debe conservar deduplicación; medir almacenamiento en P05/P10. |
+| D-291 | Resultado de expedición | Adoptada por delegación D-182; consolidada en plan | Un resultado por expedición: causa, totales, fórmula/score, validez, pérdidas, recuperación sorteada y entregas pendientes. Resolver/sortear una vez; huida de jefe no finaliza expedición ni concede su victoria. Confirmación perdida no autoriza repetir resultados. |
+| D-292 | Caché y versión | Adoptada por delegación D-182; consolidada en plan | Caché propia del último confirmado y acciones pendientes, sin autoridad económica. No usar unión/máximos para equipo perdible. Actualizar/migrar con versión; pausa/reanudación y retroceso según reglas. Evitar cachés/servicios originales. |
+| D-293 | Construcción controlada | Adoptada por delegación D-182; consolidada en plan | Reutilizar dev.html/tools/build.js, fijar herramienta existente y dependencias antes de construir; Terser5.51.2 y Node22 son candidatos consultados, no instalados ni compatibles mediante prueba todavía. P01-T02 registrará versiones exactas y comprobará salida; bundle original no es una adaptación propia. |
+| D-294 | Alcance de preparación estática | Propuesta concreta aprobada mediante D-298/A-010 | Copia de fuentes disponibles a /workspace/scp-survivor, origen/avisos, configuraciones y arranque bloqueados, comprobar archivos y entregar ZIP manual. No descargar faltantes, instalar, ejecutar juego/build, conectar servicios, hacer commits/subidas ni actualizar roadmap automáticamente. |
+| D-295 | Contrato de seguimiento | Diseño aprobado D-286; persistencia A-011 | Estados/pesos/evidencias en JSON; global y fases derivados sin duplicar tareas. Markdown generado. Evidencia documental separada de funcional. Web lee versión vigente, no cambia diseño. Novedad significativa con única imagen; sin imagen queda pendiente. |
+| D-296 | Servidor de confirmaciones | Aprobada expresamente: «1A» | Firebase Functions propio para economía, propiedad y cálculo de ranking. Reutilizar estructura functions; proveedor cerrado para plan. No habilita billing ni crea/despliega funciones; emuladores/proyecto propio y pruebas antes de activar nube. |
+| D-297 | Confianza del combate y recompensas | Aprobada expresamente: «2A» | Además de ranking D-225, aceptar que avances falsos plausibles podrían superar controles y afectar recompensas. Confirmación protege gastos/propiedad/deduplicación; no prueba cada baja. Sesiones/versiones/cuotas/coherencia y ensayos antes de publicar, sin prometer blindaje competitivo. |
+| D-298 | Autorización y entrega inicial | Aprobada expresamente: «3A»; realizada | P01-T01: copia local independiente y paquete135archivos verificados. 64scripts conservados; 58fuentes intactas/17modificadas/42referencias archivadas/1bundle omitido. P01-T03 solo parte estática; falta tráfico. Ningún juego/build/instalación/servicio/commit/publicación ejecutado. |
+| D-299 | Flujo de consultas | Instrucción expresa del director | Terminar autónomamente auditoría/plan y resolver detalles claros usando base primero; reunir solo decisiones delicadas pendientes en una consulta final para contestar juntas. Sustituye obligación de confirmar cada bloque de10; no cambia límites de ejecución/guardado. |
+| D-300 | Progreso global de cumplimiento | Solicitud expresa actual; cálculo sobre pesos aprobados | Incluir toda P00 y preparación realmente verificada, no solo mecánicas ejecutadas. Siete tareas CV:10 puntos P00+2 P01-T01=12 %. P01-T03 EC aporta0. No cambiar pesos, añadir puntos por mensajes o atribuir funcionamiento al código original; registrar cálculo/evidencia única. |
 
-### Últimas decisiones y siguiente bloque
+### Últimas decisiones y siguiente trabajo
 
-D-225 opción A y D-265 Firebase Hosting aprobadas expresamente. D-266–D-275 preparan el cierre documental y de publicación, sin aprobar el plan integral. El bloque siguiente propuesto es CIE-001–CIE-010. La última solicitud del director fue actualizar este registro; no equivale a contestar o autorizar ese siguiente bloque ni a empezar a programar.
+CIE-001–010 cerradas; auditoría crítica/contratos consolidados. D-286 aprueba plan/pesos/JSON; D-296/D-297 aprueban servidor propio y riesgo residual; D-298/A-010 autorizó y completó solo preparación estática. D-299 agrupa consultas delicadas.
+
+El siguiente trabajo es preparar autorización concreta de P01-T02 y completar P01-T03/T04: herramientas controladas, construcción, arranque mínimo y tráfico aislado. No ejecutar esas tareas por actualizar documentos.
 
 ### Alternativas descartadas o desplazadas
 
@@ -550,56 +580,83 @@ D-225 opción A y D-265 Firebase Hosting aprobadas expresamente. D-266–D-275 p
 
 ## 6. Porcentajes, pesos y estado real
 
-### 6.1 Reglas de cómputo
+### 6.1 Regla aprobada
 
-Los porcentajes representan cumplimiento del alcance, **no tiempo restante, coste ni cantidad de código**. Se asignan pesos de planificación a solicitud del director; deben revisarse junto con la aprobación integral del plan antes de convertirse en la línea base oficial. No se deducen de commits, conversaciones, horas o líneas de código.
+El porcentaje mide **cumplimiento de la primera versión completa publicada**, incluyendo auditoría, planificación y preparación técnica; no predice tiempo restante ni cuántas funciones están jugables. Los 53 pesos aprobados suman100 puntos. No cambiaron en v0.9.
 
-Cada tarea tiene un peso global `w`. La suma de tareas del juego es **100 puntos = 100 %**. El peso de una etapa es la suma de sus tareas. Una tarea aporta todo su peso solo cuando está **Completada y verificada (CV)** y tiene evidencias. Las demás aportan cero; no se inventan avances parciales. Si una tarea resulta demasiado grande para medirla, se divide conservando su peso y su historial, antes de marcar avances.
+**Global = 100 × suma de pesos de tareas Completadas y verificadas / suma de pesos de todas las tareas del alcance.**
 
-- Porcentaje de tarea: 100 % si está CV; 0 % en cualquier otro estado.
-- Peso de tarea dentro de etapa: `100 × peso_tarea / peso_etapa`.
-- Avance de etapa: `100 × suma(pesos de sus tareas CV) / peso_etapa`.
-- Avance global: `100 × suma(pesos de todas las tareas CV) / suma(pesos de todas las tareas del alcance)`.
-- Ninguna tarea se cuenta dos veces. Las referencias a una dependencia no duplican su peso.
-- Reabrir una tarea retira su aporte hasta nueva verificación. Cambiar alcance versiona el denominador y explica el cambio; no se borran pendientes para subir el porcentaje.
+**Etapa = 100 × suma de pesos de tareas CV de esa etapa / suma de pesos de todas sus tareas.**
 
-Estados: **P** Pendiente; **EC** En curso; **B** Bloqueada; **EV** En validación; **CV** Completada y verificada. Las tareas de ejecución están pendientes y además carecen de autorización; no se presentan como trabajo iniciado.
+- Cada tarea cuenta una sola vez; no se promedian porcentajes de etapas sin ponderar.
+- P00 cuenta porque es trabajo aprobado del proyecto, aunque no implemente combate.
+- Solo CV aporta peso; EC/EV/B/P aportan0. Tarea completa100 %, demás0; no se inventa avance parcial.
+- No se cuentan commits, horas, decisiones sueltas o líneas. Solo cierre de criterios con evidencia.
+- Reabrir una tarea retira su aporte; cambiar alcance requiere nueva versión y aprobación, conservando la anterior.
+- No sumar global de juego y global de web; son alcances independientes.
+- JSON es la fuente de estados/pesos/evidencias; derivedProgress es un cálculo generado, no editable como cifra independiente. El consumidor recalcula/valida desde tasks y rechaza diferencias.
 
-### 6.2 Indicadores de la actualización v0.8
+Estados: P Pendiente; EC En curso; B Bloqueada; EV En validación; CV Completada y verificada. Estado de avance y autorización se registran por separado. taskAuthorization precisa el alcance concedido; repositoryCodeExecutionAuthorized permanece false para todas las tareas. P01-T03 tiene autorización parcial de preparación estática, sin permiso de arranque ni tráfico.
 
-| Indicador | Estado |
+### 6.2 Indicadores actuales
+
+| Indicador | Resultado |
 |---|---|
-| Avance global oficial del alcance final | **Pendiente de definición y aprobación final**: todavía hay decisiones bloqueantes y este desglose de pesos no es un plan integral aprobado |
-| Índice provisional documental del roadmap v0.8 | **3 %**, exclusivamente por registro documental (2 puntos) y revisión panorámica estática (1 punto); resolver decisiones aisladas no completa por sí solo una tarea ponderada |
-| Planificación P00 | **30 %** del peso de esa etapa; no implica 30 % del diseño completo en términos de esfuerzo |
-| Implementación/validación/publicación P01–P11 | **0 %** de sus 90 puntos |
-| Juego SCP Survivor ejecutado/probado | Ninguna ejecución autorizada ni evidencia disponible |
+| Global de primera versión completa publicada | **12 %**: 12 puntos verificados de 100 |
+| Auditoría/planificación P00 | **100 %**: 10/10, evidencia documental/estática |
+| Copia y fundamento P01 | **25 %**: 2/8, copia preparada |
+| Bloque técnico P01–P11 | **2,22 %**: 2/90; incluye preparación, no mecánicas jugables |
+| Primera partida/mecánicas comprobadas | **Ninguna**; ejecución del juego pendiente de autorización |
 | Juego publicado | No |
-| Web de seguimiento | No construida; última sincronización correcta: ninguna |
+| Web de seguimiento | Sin construir/sin sincronización correcta |
 
-Los dos entregables documentales CV tienen evidencia en este archivo, en las lecturas del commit fijado y en la comprobación textual del propio registro. No se atribuye al juego nuevo el código ya existente del autor original. El 3 % provisional no debe mostrarse como progreso oficial aprobado en una web.
+El archivo anterior no había incorporado los cierres y aprobaciones posteriores: conservaba 3 puntos documentales como índice provisional y cero avance técnico. En esta actualización se registran 10 puntos de P00 y 2 de P01-T01. El indicador vigente se calcula desde las tareas; el cambio de esta versión es **3 → 12 %**. Es cumplimiento del alcance aprobado, no porcentaje de mecánicas jugables ni de tiempo invertido.
 
-### 6.3 Resumen por etapas del juego
+### 6.3 Etapas
 
-| Etapa | Categoría | Peso global | Avance actual | Aporte provisional al global |
+| Etapa | Categoría | Peso global | Avance de etapa | Aporte al global |
 |---|---|---:|---:|---:|
-| P00 | Auditoría, decisiones y plan aprobado | 10 % | 30 % | 3 % |
-| P01 | Copia independiente y fundamento técnico | 8 % | 0 % | 0 % |
+| P00 | Auditoría, decisiones y plan aprobado | 10 % | 100 % | 10 % |
+| P01 | Copia independiente y fundamento técnico | 8 % | 25 % | 2 % |
 | P02 | Primera partida completa mínima H-001 | 10 % | 0 % | 0 % |
 | P03 | Expedición, escenarios, misiones y enemigos finales | 12 % | 0 % | 0 % |
 | P04 | Soldados, armas, modificaciones y combate completo | 12 % | 0 % | 0 % |
 | P05 | Cuentas, autoridad de servidor y continuidad | 6 % | 0 % | 0 % |
-| P06 | Inventario, muerte, recuperación, almacén y buzón | 10 % | 0 % | 0 % |
+| P06 | Inventario, pérdida, recuperación, almacén y buzón | 10 % | 0 % | 0 % |
 | P07 | Progresión, gacha, hitos y economía | 10 % | 0 % | 0 % |
 | P08 | Demo y clasificación de pruebas/oficial | 4 % | 0 % | 0 % |
 | P09 | Interfaz, arte, audio y experiencia móvil final | 8 % | 0 % | 0 % |
 | P10 | Aceptación, rendimiento, integridad y costes | 6 % | 0 % | 0 % |
 | P11 | Distribución, publicación y cierre verificado | 4 % | 0 % | 0 % |
-| TOTAL | Primera versión completa publicada | **100 %** | **3 % provisional** | **3 % documental** |
+| TOTAL | Primera versión completa publicada | **100 %** | **12 % global** | **12 puntos** |
+
+### 6.4 Evidencia de tareas que aportan
+
+| Tarea CV | Peso global aportado | Evidencia |
+|---|---:|---|
+| P00-T01 | 2 % | EV-001 |
+| P00-T02 | 1 % | EV-002 |
+| P00-T03 | 2 % | EV-003 |
+| P00-T04 | 2 % | EV-004 |
+| P00-T05 | 2 % | EV-005 |
+| P00-T06 | 1 % | EV-006 |
+| P01-T01 | 2 % | EV-007 |
+
+Evidencias:
+
+- **EV-001** (documentary): Registro D-001–D-300, alcance, continuidad y autorizaciones; validación documental del JSON y del Markdown. Referencias: [RoadmapSCP.md#5-registro-de-decisiones-y-propuestas](RoadmapSCP.md#5-registro-de-decisiones-y-propuestas), [RoadmapSCP.json](RoadmapSCP.json).
+- **EV-002** (static_analysis): Versión y commit fijados; revisión panorámica de 18 dominios del original. Procedencia, manifiesto y estado de HEAD revalidados. Referencias: [docs/ORIGIN.md](docs/ORIGIN.md), [docs/source-manifest.json](docs/source-manifest.json), [RoadmapSCP.md#9-inventario-técnico-reutilización-y-comparación](RoadmapSCP.md#9-inventario-técnico-reutilización-y-comparación).
+- **EV-003** (static_analysis): Auditoría estática crítica cerrada: guardado, reglas, gacha y confianza en el cliente; colisiones, generación, navegación, cámara, audio, cachés, servicios, build y procedencia. Alternativas y métodos de validación en secciones 9 y 12. Sin defectos reproducidos mediante ejecución. Referencias: [RoadmapSCP.md#9-inventario-técnico-reutilización-y-comparación](RoadmapSCP.md#9-inventario-técnico-reutilización-y-comparación), [RoadmapSCP.md#12-riesgos-e-incertidumbres](RoadmapSCP.md#12-riesgos-e-incertidumbres).
+- **EV-004** (documentary_approval): CIE-001–010 resueltas mediante D-276–285; catálogo, reglas, valores iniciales y plan aprobados. El equilibrio sigue pendiente de pruebas. Referencias: [RoadmapSCP.md#4-alcance-de-la-primera-versión-completa](RoadmapSCP.md#4-alcance-de-la-primera-versión-completa), [RoadmapSCP.md#8-pendientes-de-ejecución-y-puertas-de-validación](RoadmapSCP.md#8-pendientes-de-ejecución-y-puertas-de-validación).
+- **EV-005** (documentary_approval): Responsabilidades, contratos e invariantes de sección 10; criterios VAL-01–19, costes, riesgos y seguimiento. Functions propio y riesgo residual sobre recompensas expresamente aceptados. Referencias: [RoadmapSCP.md#10-arquitectura-y-contratos-mínimos-consolidados](RoadmapSCP.md#10-arquitectura-y-contratos-mínimos-consolidados), [RoadmapSCP.md#11-pruebas-y-criterios-de-aceptación](RoadmapSCP.md#11-pruebas-y-criterios-de-aceptación), [RoadmapSCP.md#15-web-de-seguimiento-y-coordinación-entre-hilos](RoadmapSCP.md#15-web-de-seguimiento-y-coordinación-entre-hilos).
+- **EV-006** (documentary_approval): Aprobación explícita del plan, sus 53 tareas, 12 fases y 100 puntos; fuente JSON y Markdown generado. Resoluciones críticas 1A y 2A incorporadas. Referencias: [RoadmapSCP.md#5-registro-de-decisiones-y-propuestas](RoadmapSCP.md#5-registro-de-decisiones-y-propuestas).
+- **EV-007** (static_files_and_package): Preparación estática autorizada por 3A: 64 módulos disponibles, procedencia, avisos y hashes de 118 fuentes. Entradas, configuración, cachés y servicios aislados mediante revisión de archivos. ZIP de 135 archivos validado por CRC, contenido y hash; revisión estática adicional review_isolation sin fallos importantes. No se ejecutaron JavaScript, build, instalación ni inspección de tráfico. Referencias: [docs/ORIGIN.md](docs/ORIGIN.md), [docs/ISOLATION.md](docs/ISOLATION.md), [docs/source-manifest.json](docs/source-manifest.json), [docs/PREPARATION-REPORT.md](docs/PREPARATION-REPORT.md).
+
+P01-T03 permanece EC/0: la revisión estática está hecha, pero sus criterios exigen observación de tráfico autorizada. Una aprobación de proveedor, una subida documental o el código del original no cierran una funcionalidad propia.
 
 ## 7. Etapas y tareas verificables
 
-Las rutas citadas son módulos **existentes probablemente afectados**, no autorización de modificación. Los módulos nuevos y contratos exactos se fijarán en P00; no se inventan firmas de código mientras haya decisiones pendientes. Cada etapa de ejecución requiere autorización para su alcance y las comprobaciones que necesite. Cualquier acceso de prueba a servicios debe estar aislado de los originales.
+Las rutas citadas son módulos **existentes probablemente afectados**, no autorización de modificación. Los contratos mínimos e invariantes están consolidados en sección10; nombres internos de colecciones/funciones y parámetros dependientes de medición se concretarán en la tarea técnica, sin alterar diseño o introducir servicios no aprobados. Cada etapa de ejecución requiere autorización para su alcance y las comprobaciones que necesite. Cualquier acceso de prueba a servicios debe estar aislado de los originales.
 
 ### P00 — Auditoría, decisiones y plan aprobado · 10 % global
 
@@ -607,14 +664,14 @@ Las rutas citadas son módulos **existentes probablemente afectados**, no autori
 
 | Tarea | Entregable y criterio de aceptación | Peso global | Peso en etapa | Estado | Avance |
 |---|---|---:|---:|---|---:|
-| P00-T01 | Consolidar decisiones, límites, alcance, pendientes y continuidad en RoadmapSCP. Evidencia: registro D-001–D-275, adopciones y propuestas diferenciadas; archivo legible y verificado documentalmente. | 2 % | 20 % | CV | 100 % |
+| P00-T01 | Consolidar decisiones, límites, alcance, pendientes y continuidad en RoadmapSCP. Evidencia: registro D-001–D-300, adopciones y propuestas diferenciadas; archivo legible y verificado documentalmente. Fuente JSON única, Markdown generado y validación documental; sin nueva programación de mecánicas. | 2 % | 20 % | CV | 100 % |
 | P00-T02 | Fijar versión y revisión panorámica con estructura y los 18 dominios. Evidencia: HEAD/estado de la copia y referencias del inventario; clasificar expresamente límites de acceso. No exige auditoría profunda ni ejecución. | 1 % | 10 % | CV | 100 % |
-| P00-T03 | Completar análisis crítico de persistencia, economía, control de servicios, mundo modular, render/móvil y procedencia. Aceptación: cada riesgo crítico tiene evidencia, alternativas y método de validación. | 2 % | 20 % | EC | 0 % |
-| P00-T04 | Resolver decisiones bloqueantes y aprobar catálogo, parámetros iniciales, balance, UX y reglas de misión/extracción. Aceptación: ningún pendiente de producto necesario para implementar queda implícito. | 2 % | 20 % | EC | 0 % |
-| P00-T05 | Consolidar y aprobar arquitectura incremental, contratos, pruebas, escenarios de coste y especificación de seguimiento. Aceptación: responsabilidades cliente/servidor, datos y permisos definidos; riesgos residuales aceptados. | 2 % | 20 % | EC | 0 % |
-| P00-T06 | Revisión y aprobación explícita de la versión final del plan y pesos. Aceptación: resolución del director registrada; siguiente tarea de implementación solo si recibe autorización aparte. | 1 % | 10 % | P | 0 % |
+| P00-T03 | Completar análisis crítico de persistencia, economía, control de servicios, mundo modular, render/móvil y procedencia. Aceptación: cada riesgo crítico tiene evidencia, alternativas y método de validación. Cierre estático: sección9/12, EV-003; falta ejecución funcional en sus fases, no en esta tarea documental. | 2 % | 20 % | CV | 100 % |
+| P00-T04 | Resolver decisiones bloqueantes y aprobar catálogo, parámetros iniciales, balance, UX y reglas de misión/extracción. Aceptación: ningún pendiente de producto necesario para implementar queda implícito. CIE-001–010/D-276–285 cerradas; aprobación y resoluciones D-286/D-296–298, EV-004. | 2 % | 20 % | CV | 100 % |
+| P00-T05 | Consolidar y aprobar arquitectura incremental, contratos, pruebas, escenarios de coste y especificación de seguimiento. Aceptación: responsabilidades cliente/servidor, datos y permisos definidos; riesgos residuales aceptados. Contratos sección10, VAL-01–19, datos/costes/seguimiento y riesgos D-296/D-297: EV-005. | 2 % | 20 % | CV | 100 % |
+| P00-T06 | Revisión y aprobación explícita de la versión final del plan y pesos. Aceptación: resolución del director registrada; siguiente tarea de implementación solo si recibe autorización aparte. Respuesta expresa «Aprobar el plan y los pesos», D-286, completada tras resoluciones1A2A; EV-006. No autorización general de ejecución. | 1 % | 10 % | CV | 100 % |
 
-**Salida:** P00-T03 a T06 cerradas. La verificación de este Markdown no sustituye las pruebas del juego ni la aprobación del director.
+**Salida actual:** P00-T01–T06 CV con evidencias EV-001–006; auditoría estática y plan cerrados. La verificación de este Markdown no sustituye las pruebas del juego ni la aprobación del director.
 
 ### P01 — Copia independiente y fundamento técnico · 8 % global
 
@@ -622,9 +679,9 @@ Las rutas citadas son módulos **existentes probablemente afectados**, no autori
 
 | Tarea | Entregable y prueba de aceptación | Peso global | Peso en etapa | Estado | Avance |
 |---|---|---:|---:|---|---:|
-| P01-T01 | Crear/configurar copia o repositorio independiente, fijar upstream y conservar avisos. Verificar que cambios/remotos no alteran el proyecto original y que se puede reconstruir la revisión. | 2 % | 25 % | P | 0 % |
+| P01-T01 | Crear/configurar copia independiente según modalidad manual autorizada, fijar origen/commit y conservar avisos. Verificado: /workspace/scp-survivor, ORIGIN/manifiesto/ZIP y original intacto; EV-007. Reproducibilidad del paquete preparado, no build ni reconstrucción completa del upstream. No requiere .git/remote nuevo; subida GitHub no afirmada. | 2 % | 25 % | CV | 100 % |
 | P01-T02 | Arranque y build propios reproducibles con dependencias controladas. Probar salida de `dev.html` y bundle equivalentes y errores de carga visibles. | 2 % | 25 % | P | 0 % |
-| P01-T03 | Aislar servicios, orígenes, claves, cachés y ambientes de prueba. Inspección de tráfico debe demostrar ausencia de llamadas de escritura/uso a los servicios originales. | 2 % | 25 % | P | 0 % |
+| P01-T03 | Aislar servicios, orígenes, claves, cachés y ambientes de prueba. Inspección de tráfico debe demostrar ausencia de llamadas de escritura/uso a los servicios originales. Parte estática realizada, EV-007; falta inspección de tráfico y autorización de ejecución para CV. | 2 % | 25 % | EC | 0 % |
 | P01-T04 | Establecer catálogo/configuración mínima y puntos de integración sin romper los módulos reutilizados. Prueba de arranque local aislado, controles y carga del contenido propio mínimo. | 2 % | 25 % | P | 0 % |
 
 **Salida:** arranque reproducible, entorno aislado y evidencia de dependencias. No avanzar sobre servicios del autor mientras se configura el proyecto propio.
@@ -768,7 +825,7 @@ P00 → P01 → P02 → P03/P04. P05 puede avanzar desde P01 una vez aprobados c
 
 El orden no autoriza ejecución paralela por agentes ni implementación automática. Cada tarea debe señalar sus dependencias reales antes de iniciarse. La validación es parte de cada entrega, no se aplaza toda hasta P10.
 
-## 8. Lo que falta definir antes de programar y antes de publicar
+## 8. Pendientes de ejecución y puertas de validación
 
 **C** requiere decisión del director sobre alternativas fundamentadas. **T** requiere investigación/propuesta técnica del asesor; no se pregunta al director un dato comprobable leyendo código. **V** requiere ejecución/medición autorizada. Los temas se pueden agrupar coherentemente para aprobación; no es necesario convertir cada cifra en una pregunta aislada.
 
@@ -778,65 +835,65 @@ El orden no autoriza ejecución paralela por agentes ni implementación automát
 |---|---|---|---|
 | Q-001 | Diseño resuelto D-126: suministros uniformes por grupo. Implementación/pruebas permanecen P07-T03. | Diseño resuelto | P07; no decisión bloqueante |
 | Q-002 | Tablas y fuentes D-132/D-134/D-183/D-220 definidas. Pendiente validar economía conjunta, coste por sesión, duplicados/reciclaje y rutas repetidas; no cambiar cifras aprobadas sin nueva decisión. | Validación / 2 | P06/P07/P10 |
-| Q-003 | Estructura/metas/premios/reclamación definidos D-133–138; calendario y excedentes CIE-007 pendientes. | Parcial / 2 | P07; CIE-007 |
+| Q-003 | Misiones/calendario/excedentes resueltos D-133–138/D-282. Implementar y probar reinicios UTC, confirmación y no excedentes. | Diseño resuelto; validación / 2 | P07 |
 | Q-004 | XP/costes/confirmación/límite de puntos definidos D-149–154/D-212/D-213. Pendiente implementación y casos límite de varios niveles/duplicados. | Diseño resuelto; validación / 2 | P04/P07 |
 | Q-005 | Incrementos, acumulación y topes D-155–160/D-195/D-253 definidos como iniciales. Pendiente validar extremos y equilibrio. | Diseño inicial; validación / 1 | P04/P07/P10 |
 | Q-006 | Tres armas, cambio, recargas y estados D-165–168/D-172/D-215. Pendiente probar; no inventar nuevas magnitudes. | Diseño resuelto; validación / 1 | P02/P04 |
 | Q-007 | Seis mods/capacidades/gestión/intercambio definidos D-169–170/D-185/D-215; falta verificar todas las combinaciones y topes. | Diseño resuelto; validación / 1 | P04/P06 |
 | Q-008 | Kit/origen/disponibilidad D-130/D-217 definidos. Pendiente comprobar reposición, pérdida/recuperación, mods y ubicaciones sin duplicados. | Diseño resuelto; validación / 1 | P06/P07 |
 | Q-009 | Mochilas 8/16, almacén 60, buzón 30, unidades D-173–175/D-216/D-221 definidos. Pendiente concurrencia/overflow. | Diseño resuelto; validación / 1 | P05/P06 |
-| Q-010 | Recogida/gestión/reciclaje/suelo/retorno D-176–187/D-216/D-232 definidos; guardar/salir/abandonar CIE-006 pendiente. | Parcial / 1 | P03/P06; CIE-006 |
+| Q-010 | Recogida/gestión/retorno/guardar/salir/abandonar definidos D-176–187/D-216/D-232/D-281. Implementar y probar sin pérdida ni retiro gratuito. | Diseño resuelto; validación / 1 | P03/P05/P06 |
 | Q-011 | Porcentaje uniforme y selección D-218, regla D-100/D-101 definidos. Pendiente ensayo de distribuciones, grupos y respuesta perdida. | Diseño resuelto; validación / 1 | P05/P06 |
-| Q-012 | Jefe inicial/patrones/huida D-197 definidos; refuerzos al derrotarlo y cierre exacto CIE-005 pendientes. | Parcial / 1 | P03/P08 |
+| Q-012 | Jefe/patrones/huida/refuerzos/cierre definidos D-197/D-280. Probar retiro sin premio y cierre único. | Diseño resuelto; validación / 1 | P03/P08 |
 | Q-013 | Primer jefe sectores 4–6; luego 3–5 normales, sorteo persistido D-198. Pendiente comprobar contador al vencer/evadir/reanudar. | Diseño resuelto; validación / 1 | P03/P08 |
-| Q-014 | Objetivos/cuotas/ritmo/preparación D-190–191/D-206–210. Pendiente cierre del jefe CIE-005 y tratamiento de salida CIE-006. | Parcial / 1 | P02/P03 |
-| Q-015 | Extracción desde sector 3, 25 %/garantía cuarto elegible, activación final y canalización 3 s D-199. Validar accesibilidad y resultado; H-001 de dos sectores requiere caso de ensayo específico, sin alterar reglas normales. | Diseño inicial; adaptación del ensayo / 1 | P02/P03/P06 |
+| Q-014 | Objetivos/cuotas/preparación y cierre de jefe/salida D-190–191/D-206–210/D-280/D-281 definidos. Integración y pruebas pendientes. | Diseño resuelto; validación / 1 | P02/P03 |
+| Q-015 | Extracción normal D-199 preservada desde sector3. H-001 probará extracción en sector2 solo con fixture aislado D-285; no cambia juego normal. | Ensayo definido; ejecución / 1 | P02/P03/P06 |
 | Q-016 | Escalado D-200 y CAP 64 D-192 definidos; 128 proyectiles es carga de prueba D-254, no tope jugable. Pendiente estabilidad de expediciones largas y memoria. | Validación / 1 | P03/P04/P10 |
-| Q-017 | Autoapuntado/histéresis/visión/perforación/trayectoria D-201/D-202 definidos; validar sólidos/propiedades CIE-003. | Diseño inicial; validación / 1 | P02/P04 |
+| Q-017 | Apuntado/visión/perforación/trayectoria y destructibles D-201/D-202/D-278 definidos. Validar orden de impactos, cobertura y fracciones. | Diseño resuelto; validación / 1 | P02/P04 |
 | Q-018 | Geometría/módulos/radios/navegación/atascos D-193/D-203/D-210/D-247/D-250. Semillas y conjuntos reproducibles concretos se fijarán al preparar pruebas; comprobar que rayos/volúmenes corresponden. | Validación y fixtures / 1 | P02/P03 |
 | Q-019 | Paleta/escala/marcos/ciclos/anclajes D-246–251 definidos como iniciales. Falta producir y aprobar recursos finales desde originales accesibles; nombres visuales definitivos pendientes. | Producción/validación / 1 | P02/P09/P11; Q-038 |
 | Q-020 | Audio/legibilidad/efectos reducidos D-234/D-235/D-252 definidos; falta producir avisos/ambiente y probar mezcla/desbloqueo. | Producción/validación / 2 | P09/P10 |
 | Q-021 | Vista/HUD/táctil/inventario/cartas/español D-226–235 definidos; falta pruebas reales en safe areas/ambas orientaciones. | Diseño inicial; validación / 1 | P02/P09 |
-| Q-022 | Acceso Google/correo/verificación/recuperación/vinculación D-243 definidos. Eliminación/retención CIE-008 pendiente; registrar versiones OS/navegador reales antes de ensayos. | Parcial / 1 | P05/P11 |
-| Q-023 | Sesión/dispositivo/checkpoints/red D-238–242 definidos; salida/abandono CIE-006 pendiente y pruebas de carreras/respuestas perdidas necesarias. | Parcial / 1 | P05/P06/P08 |
-| Q-024 | Identidad/revisión/operaciones/autoridad D-236–239/D-244 definidos. Contratos concretos de campos/validaciones y conservación de recibos se concretarán en CIE-010/P05 antes de implementarlos; no heredar merge de equipo. | Contrato pendiente / 1 | P05–P08 |
-| Q-025 | D-225 A aprobada expresamente, riesgo residual aceptado; sin reproducción de combate en servidor. Implementar coherencia, sesiones, cálculo de puntuación y deduplicación; rechazo/revisión de sospechosos sin castigos económicos automáticos por un mero indicio. | Decisión resuelta; validación / 1 | P05/P08/P10 |
-| Q-026 | Fórmula/penalizaciones/tablas/país/empates D-222–224 definidos. Falta comprobar y cerrar episodios de jefe CIE-005/salida CIE-006; revisión del límite de 6 h original necesaria para expedición infinita, no adoptado como duración máxima. | Diseño inicial; integración / 2 | P08/P10 |
+| Q-022 | Acceso/verificación/vinculación y eliminación definidos D-243/D-283. Probar cierre/limpieza≤30d y registrar OS/navegador reales antes de ensayos. | Diseño resuelto; validación / 1 | P05/P11 |
+| Q-023 | Sesión/checkpoint/dispositivo/red/salida D-238–242/D-281 definidos. Probar carreras, respuesta perdida y exclusión de retroceso. | Diseño resuelto; validación / 1 | P05/P06/P08 |
+| Q-024 | Campos mínimos, comandos/respuestas e invariantes se consolidan en sección10/D-288–292. Medir tamaño/coste y demostrar deduplicación/retención en P05 antes de nube; no heredar merge de equipo. | Contrato mínimo cerrado; prueba / 1 | P05–P08 |
+| Q-025 | A D-225 y ampliación de riesgo sobre recompensas D-297 aprobadas. Implementar cálculo/sesiones/coherencia/deduplicación; no afirmar combate probado ni sancionar económicamente por indicio. | Decisión resuelta; validación / 1 | P05/P08/P10 |
+| Q-026 | Fórmula/tablas/desempates/penalizaciones y jefe/salida D-222–224/D-280/D-281 definidos. Probar expedición infinita; no heredar tope6h. | Diseño resuelto; integración / 2 | P08/P10 |
 | Q-027 | Demo online D-263: dos sectores×tres oleadas, límite 10 min activos, sin persistencia/gacha/ranking/transferencia. Verificar límites y comunicación. | Diseño resuelto; validación / 2 | P08-T03 |
-| Q-028 | Pausas/tiempos/red D-159/D-162/D-168/D-178/D-205/D-240 definidos; preparar casos de cierre en preparación/combate CIE-006. | Parcial; validación / 1 | P02/P05/P08 |
-| Q-029 | Test/tipos/evoluciones/clima/eventos/grietas/shiny/social tratados D-256–262. Objetos especiales y pickups heredados CIE-001–003 aún pendientes; posponer no elimina referencia. | Parcial / 1 | P01–P04 |
-| Q-030 | Repo propio D-129 y arquitectura/build D-264; aún sin copia adaptada ni build probado. Manual upload preferido; última integración 403 el 12/10. Primera tarea y runtime/dependencias exactas CIE-010, sin instalación actual. | Preparación pendiente / 1 | P01/P05 |
-| Q-031 | Escenarios/avisos D-245 y Hosting D-265; son estimaciones. Comportamiento al acercarse a 20 USD CIE-009 pendiente; medir consumo total y aprobar billing/controles antes de activar. | Parcial / 1 | P05/P10/P11 |
+| Q-028 | Pausas/tiempos/red/salida D-159/D-162/D-168/D-178/D-205/D-240/D-281 definidos. Implementar preparación/espera/segundo plano y probar relojes. | Diseño resuelto; validación / 1 | P02/P05/P08 |
+| Q-029 | Sistemas heredados D-256–262/D-276–278 clasificados. Imán/curas/destructibles iniciales; altares/manantiales/trampas/bombas pospuestos. Preservar referencias sin activar funciones futuras. | Diseño resuelto; adaptación / 1 | P01–P04 |
+| Q-030 | P01-T01 completada: copia independiente con manifiesto/ZIP; sin .git/commit propio ni subida confirmada. P01-T03 estática realizada; build/tráfico/arranque/runtime exactos pendientes de autorización y ensayo. | Preparación parcial comprobada / 1 | P01 |
+| Q-031 | Firebase Hosting/Functions y protección18estimados/20objetivo aprobados D-265/D-296/D-284. Medir uso real de todos los servicios y tráfico antes de habilitar facturación; protección no es techo garantizado. | Diseño resuelto; medición / 1 | P05/P10/P11 |
 | Q-032 | Objetivos D-254 definidos: 60 FPS, media ≥55, p95 <25 ms, 30 min, carga 64/128 y carga inicial 5 s con red controlada. Sin resultados; procedimiento/memoria/semillas se concretan en ensayos. | Objetivos fijados; medición / 1 | P02/P10 |
 | Q-033 | VAL-01–19 y aceptación D-255 definidos; preparar pasos/semillas/datos ficticios y autorizaciones de ejecución por tarea. No afirmar pruebas de juego realizadas. | Preparación de ensayo / 1 | Todas las fases de ejecución |
-| Q-034 | Hosting D-265/preview D-273/rollback D-274; sin dominio comprado. Falta nombre público final, política de datos/retención CIE-008, respaldo protegido/destino/ensayo y aceptación de producción P11. | Parcial / 3 | P11 |
-| Q-035 | D-266 fuente JSON y MD generado es propuesta, no migración aprobada/realizada. D-268 pesos a aprobar con plan. Source en repo juego; web/repo/permisos/destino pendientes de otro hilo; entrega manual vigente. | Propuesta / 1 | P00-T05/T06; no arranque del juego |
+| Q-034 | Publicación/preview/rollback/eliminación definidos. Nombre público final, destino/retención de respaldo protegido y ensayo real se fijarán antes de publicar P11. No bloquean copia local. | Producción y configuración / 3 | P11 |
+| Q-035 | JSON fuente/MD generado y pesos aprobados D-266/D-268/D-286; registro documental creado v0.9. GitHub upload pendiente de verificación; web/repositorio/permisos y D-272 se resuelven en otro hilo. | Registro cerrado; web pendiente / 2 | Seguimiento independiente |
 | Q-036 | Evidencias/novedades/una imagen y alt D-269/D-271 definidos; implementar solo tras autorización, no existen capturas ni entradas publicadas del juego. | Diseño resuelto; ejecución futura / 2 | Seguimiento independiente |
-| Q-037 | Original functions/index.js llama turn.pokesurvivor.com/mau/new y db.js invoca Signups.report; no reutilizar endpoint, secreto o cuota originales. No activar portero heredado de altas; propia política de gasto CIE-009 y prueba de aislamiento P01-T03. | Hallazgo estático; adaptación / 1 | P01/P05 |
+| Q-037 | Servicios originales bloqueados en fuentes/entradas/config/artefactos de la copia. Portero/Cloudflare originales archivados; Functions propio aprobado pero sin handlers. Tráfico debe verificarse antes de arranque/nube. | Aislamiento estático verificado; tráfico / 1 | P01/P05 |
 | Q-038 | Láminas de chat de 24+24 referencias, no originales ni sprites archivados. Solicitar materiales necesarios al comenzar producción autorizada; definir rutas/manifest y validar transparencias/anclajes/ciclos. | Producción pendiente / 1 | P02/P09/P11 |
 
-### Bloque de cierre propuesto: diez casos todavía sin respuesta
+### Cierre CIE-001–010
 
-Esta cola resume trabajos de Q-001–Q-038; no añade funciones aprobadas ni duplica pesos. Se propuso al terminar D-275. El director pidió guardar el roadmap antes de contestar si continúa con este bloque. Mantener pendiente esa aceptación; la solicitud de actualización no la sustituye.
+Los diez casos se resolvieron en conversación; las respuestas/propuestas se consolidan ahora. Esta tabla no añade tareas ni puntos.
 
-| ID | Tema | Referencias | Criterio para resolver |
+| ID | Tema | Resolución | Ejecución restante |
 |---|---|---|---|
-| CIE-001 | Altares, manantiales y trampas heredados | Q-029; P03/P04 | Conservar/adaptar/posponer con efectos y premios explícitos; no activarlos sin diseño. |
-| CIE-002 | Recogibles de curación, imán y bomba | Q-029; P03/P04/P07 | Acordar disponibilidad, probabilidad, efecto y relación con habilidad/XP. |
-| CIE-003 | Destructibles y cobertura | Q-010/Q-017; P03/P04 | Modelos, vida, bloqueo, daño y consumo de perforación; no asumir árboles/rocas/cofres destructibles originales. |
-| CIE-004 | Proximidad y retroceso al abrir cofres | D-146; P03/UI | Fijar radio/velocidad de pérdida y efecto de pausas/transición, preservando 3,5 s y disparo activo. |
-| CIE-005 | Refuerzos y cierre tras derrotar jefe | Q-012/Q-014/Q-026; P03/P08 | Estado de refuerzos, fin de oleada, preparación, salida y premio sin doble cómputo. |
-| CIE-006 | Guardar, salir y abandonar | Q-010/Q-023/Q-028; P05/P06/P08 | Distinguir pausa, cierre temporal, rollback, abandono definitivo, muerte y extracción. |
-| CIE-007 | Calendario y excedentes de misiones | Q-003; P07 | Zona horaria, reinicio diario/semanal y progreso sobrante entre contratos/recompensas. |
-| CIE-008 | Eliminación y retención de cuenta | Q-022/Q-034; P05/P11 | Confirmaciones, expedición pendiente, datos privados/ranking/alias, recibos y conservación legal/operativa sin inventar plazos. |
-| CIE-009 | Actuación ante presupuesto mensual | Q-031/Q-037; P05/P10/P11 | Límites operativos, reservas para operaciones en curso y recuperación del servicio. Las alertas no garantizan tope monetario. |
-| CIE-010 | Primera tarea de desarrollo | P00/P01/Q-024/Q-030 | Alcance concreto, aislamiento, contratos de entrada/salida, dependencias/fixtures y verificación. Requiere autorización aparte después de preparar propuesta revisable. |
+| CIE-001 | Altares/manantiales/trampas | D-276 pospuestos | Referencias conservadas; no activar en primera versión |
+| CIE-002 | Cura/imán/bomba | D-277 curas/imán; bomba pospuesta | P03/P04/P07 |
+| CIE-003 | Destructibles | D-278 vida34/radio12 y cobertura | P03/P04 |
+| CIE-004 | Abrir cofre | D-279 radio50/3,5s/retroceso1,5 | P03/UI |
+| CIE-005 | Cierre jefe | D-280 victoria única/retirada sin premio | P03/P08 |
+| CIE-006 | Guardar/salir/abandonar | D-281 diferencias y penalización | P05/P06/P08 |
+| CIE-007 | Calendario/excedentes | D-282 UTC/confirmación/sin excedentes | P07 |
+| CIE-008 | Eliminar cuenta | D-283 reautenticar/limpiar/revocar | P05/P11 |
+| CIE-009 | Presupuesto | D-284 A aprobada | P05/P10/P11; no gasto activo |
+| CIE-010 | Primera tarea | D-294/D-298, A-010 realizada | P01-T01 CV; P01-T02/T04 P y T03 EC |
 
-### Puerta para empezar a programar
+### Puertas siguientes
 
-Antes de autorizar una tarea se necesita: alcance de esa tarea aprobado, decisiones bloqueantes resueltas, contrato de entrada/salida acordado, módulos/riesgos identificados, procedimiento de prueba y aislamiento preparado en el plan. El director deberá autorizar expresamente la tarea/fase. La aprobación de este archivo como registro no autoriza automáticamente P01.
+No quedan decisiones de producto que bloqueen la siguiente tarea de base. Se necesita **autorización concreta** para instalar/construir/ejecutar y comprobar arranque/tráfico. Las decisiones claras se resuelven por delegación; dudas delicadas se agrupan al terminar trabajo independiente.
 
-Para aprobar **todo el plan de primera publicación** deben cerrarse los pendientes de producto/arquitectura que bloquean el MVP, fijar parámetros iniciales verificables y señalar qué ajustes dependerán de pruebas. Las mediciones pendientes pueden permanecer como hipótesis con método y momento; no como promesas de rendimiento.
+Antes de una fase que dependa de datos/servicios: comprobar sus contratos, aislamiento, costes y compatibilidad con las reglas. Medidas/tamaños/regiones/versiones exactas requieren ensayos/configuración propios antes de activación, no nuevas funciones asumidas. Preparación de arte, mediciones y publicación siguen pendientes con fase/método, no se confunden con planificación sin terminar.
 
 ## 9. Inventario técnico: reutilización y comparación
 
@@ -848,9 +905,9 @@ Directorios presentes: `css/`, `js/core/`, `js/data/`, `js/entities/`, `js/syste
 
 Sin `package.json` raíz localizado. `functions/package.json` declara Node 20, `firebase-admin ^12.7.0` y `firebase-functions ^6.1.0`, con lockfile. El cliente carga Firebase compat 13.0.0 desde gstatic. El build utiliza Terser mediante npx con versión mayor 5; reproducibilidad exacta pendiente. `.github` contiene FUNDING; no se localizó una suite automatizada/CI en el inventario revisado. Nada de ello se ha instalado ni ejecutado.
 
-### 9.2 Sistemas y tratamiento propuesto
+### 9.2 Sistemas y tratamiento consolidado
 
-**Todos los tratamientos siguientes son recomendaciones técnicas sujetas a P00**, salvo elecciones de producto ya aprobadas. Conservar no significa “validado sin cambios”; modificar significa adaptación incremental. Posponer no equivale a eliminar. LC = LOCALIZADO EN CÓDIGO; DOC = DOCUMENTADO; PC = PENDIENTE DE COMPROBAR en el contexto SCP. Ningún sistema figura como ejecutado/verificado.
+**Tratamiento consolidado en el plan aprobado:** conservar/modificar incrementalmente según tabla y decisiones, sujeto a comprobar compatibilidad mediante las pruebas de cada fase. Conservar no significa “validado sin cambios”; modificar significa adaptación incremental. Posponer no equivale a eliminar. LC = LOCALIZADO EN CÓDIGO; DOC = DOCUMENTADO; PC = PENDIENTE DE COMPROBAR en el contexto SCP. Ningún sistema figura como ejecutado/verificado.
 
 | Dominio | PokéSurvivor observado y evidencia | Adaptación SCP / tratamiento técnico | Entrega | Evidencia |
 |---|---|---|---|---|
@@ -861,7 +918,7 @@ Sin `package.json` raíz localizado. `functions/package.json` declara Node 20, `
 | 5. Combate/proyectiles | `combat.js:21`, `combat.js:86`, `projectile.js`: familias y cooldown | Modificar: cargadores, recarga, mods físicos, selección por amenaza/visión. No había cargador equivalente localizado | MVP | LC; PC combinación |
 | 6. Enemigos/IA/spawn | `enemy.js:339`, `enemy.js:541`, `enemies.js`, `spawner.js:34`: carga, distancia, proyectiles, escalado por tiempo | Modificar con dos roles y dificultad por sector/oleada; reutilizar comportamientos aplicables | MVP | LC; PC balance |
 | 7. XP/mejoras/progreso | `levelup.js:9`, `upgrades.js:5`, `progress.js`; cartas y mejoras compradas | Modificar para XP permanente, categorías, duplicados y mejoras temporales separadas | MVP | LC; PC persistencia |
-| 8. Jefes/oleadas/eventos/arenas | `rift.js:102`, `enemy.js:409`, `spawner.js`: arena cerrada y aparición por tiempo | Modificar hacia objetivos, preparación, azar acotado y escape siempre disponible. Eventos no aprobados, pendientes | MVP / algunos pendientes | LC; PC huida |
+| 8. Jefes/oleadas/eventos/arenas | `rift.js:102`, `enemy.js:409`, `spawner.js`: arena cerrada y aparición por tiempo | Modificar hacia objetivos, preparación, azar acotado y escape siempre disponible. Altares, manantiales y trampas pospuestos por D-276; restantes complementos según D-256–262 | Primera versión / complementos posteriores | LC; PC huida |
 | 9. Mundo/escenarios | `world.js:1`, `world.js:70`: terreno de ruido, chunks y arenas; no ensamblador de habitaciones localizado | Modificar incrementalmente generador y validar conectividad; no reconstrucción total aprobada | MVP | LC; PC viabilidad modular |
 | 10. Sprites/animación/FX | `sprites.js:141`, `sprites.js:210`, `sprites-meta.js`: Animator, filas de ocho direcciones y anclaje al suelo | Modificar composición y anclajes; reemplazar arte temático por original. Arma separada | MVP | LC; PC recursos finales |
 | 11. UI/menús | `js/ui/`, `css/`, HUD y botones de movimientos | Modificar flujos y controles; gacha/equipo/buzón/categorías necesitan adaptación | MVP | DOC+LC; PC visual |
@@ -898,53 +955,87 @@ Sin `package.json` raíz localizado. `functions/package.json` declara Node 20, `
 
 **LOCALIZADO EN CÓDIGO, sin ejecución:** Enemy.bossStart/bossCast/summon y Hazards aportan avisos/invocaciones reutilizables; Player apunta actualmente a jefe antes de amenaza para ataques a distancia. Combat usa hits por proyectil y barrido para enemigos, pero el bloqueo de pared/props se consulta en posición y el daño por contacto sigue activo. World es arena abierta/chunks de ruido, no un ensamblador interior terminado. Pathing usa BFS de radio 28 y 57×57 casillas, reconstruido a intervalos; jefes flying lo omiten. LevelUp/Moves aplican mejoras multiplicativas originales, distintas de D-155. Game.pause solo pausa playing en el original y obliga horizontal; Settings/Audio/Touch ofrecen controles reutilizables. DB.merge usa máximos/uniones y entrada por nombre con correo ficticio, incompatibles con equipo perdible y correo real. Ranking recibe marcas del cliente; firestore.rules impone límites amplios de tiempo/nivel/bajas, no prueba combate. functions/index.js es portero de altas hacia endpoint Cloudflare original, no backend de validación de inventario. No confundir existencia de ese paquete con operaciones propias implementadas.
 
-Estas observaciones sustentan adaptación incremental en los módulos existentes. No se declara sustitución de motor, framework nuevo, benchmark realizado o defecto reproducido. Ver riesgos R-025–R-032.
+Estas observaciones sustentan adaptación incremental en los módulos existentes. No se declara sustitución de motor, framework nuevo, benchmark realizado o defecto reproducido. Ver riesgos R-025–R-034.
 
-## 10. Arquitectura propuesta y contratos a cerrar
+### Cierre de auditoría estática y evidencia de P00-T03
 
-Esta sección es propuesta de arquitectura incremental, no implementación lista para aplicar. Mantener JS/Canvas y adaptar los módulos existentes; no introducir motor, framework o capas nuevas sin necesidad. Separar configuración del contenido evita seguir utilizando tipos, generaciones e identificadores Pokémon como identidad del nuevo juego.
+Revisión terminada para el alcance inicial; no significa ejecutar cada sistema. Fuentes: README/GDD/LICENSE/CREDITS, dev/index y64módulos, core/data/entities/systems/world/ui/net, reglas/configuración, Functions/Cloudflare, build/SW y recursos disponibles del commit fijado.
 
-### 10.1 Responsabilidades
-
-| Área | Responsabilidad propuesta | Qué falta aprobar/precisar |
+| Hallazgo crítico y evidencia | Alternativas examinadas | Tratamiento elegido y validación |
 |---|---|---|
-| Catálogo | Definiciones de soldados, armas, mods, mochilas, enemigos, misiones y módulos del mundo | Identificadores estables, esquemas y ubicación en módulos existentes o nuevos |
-| Simulación cliente | Movimiento, combate, render, orientación, cooldowns y estado local de oleada | Relojes, pausas y nivel de evidencia de eventos que recibe el servidor |
-| Cuenta/servidor | Inventario, tickets, sorteos, reclamaciones, reciclaje, progreso, resultados persistentes | Transacciones, idempotencia, datos versionados y restricciones de reglas |
-| Expedición | Semilla, sector/oleada, checkpoint, equipo comprometido, elegibilidad de ranking | Propiedad de sesión, transferencia y resolución de interrupciones |
-| UI | Mostrar estado confirmado frente a operaciones pendientes; no repetir efectos por reintento | Flujos y textos concretos, controles móviles y accesibilidad |
-| Ranking | Aceptar resultados válidos de la fórmula vigente, separar pruebas/oficial | Verificación competitiva, país, períodos, empates y protocolo de envío |
-| Seguimiento | Leer evidencias y estado de trabajo registrado, sin intervenir en juego | Esquema persistente y automatización en otro hilo |
+| DB.merge, db.js113, restaura por unión/máximos; rules saves19 permite mapa cliente | Heredar merge / adaptar API con propiedad y revisión / sustituir todo guardado | Adaptar API/confirmaciones en Functions D-296; no rehacer Auth/UI. P05/P06: replay, dos dispositivos, bajas/reciclaje |
+| Gacha.pull y UI.pull sortean/descuentan local; combate declarado local | Mantener economía local / confirmar sorteo/propiedad / simular todo combate | Servidor confirma economía y valida coherencia; D-297 acepta avance falso plausible. P07/P10: gasto único, RNG, abuso y límites |
+| Combat.resolve547 barre enemigos, paredes/props en punto final; Enemy.flying49 y Hazards44 | Copia directa / adaptar primitivas / nuevo motor | Adaptar barrido/orden de impactos, jefe terrestre y protección0,45s. P02–P04: cobertura, radios y avisos |
+| World es ruido/chunks, no generador interior; Path BFS R28 y57×57 | Cambiar solo arte / añadir proveedor modular / reemplazar mundo completo | Reusar cuadrícula/cachés/BFS con módulos y conectividad. P03: semillas, radios, salidas y enemigos alcanzables |
+| Spawner.burst149 CAP+10 y summon615 CAP+15; pickups.push33 descarta al saturar | Copiar límites / límites conjuntos y preservar equipo / reducir catálogo | Límites conjuntos64 y protección de equipo sin eliminarlo. P03/P06/P10: saturación, pendientes, XP exacta |
+| Cámara/pausa móvil obliga horizontal; audio scheduler no pausa propia al ocultar | Mantener horizontal / adaptar vista/estados/Audio / nuevo motor | Mantener módulos, vista768² y pausas acordadas; P09/P10 en3móviles2orientaciones |
+| Config/endpoints y bundle activos; SW borra cachés ajenas | Cambiar solo configuración / aislar fuentes+entradas+artefactos / migrar proveedor | Copia estática preparada con guardas/CSP y archivos históricos; runtime/tráfico todavía P01-T03 |
+| Scripts de build requieren npx y documentación dice sin dependencias | Copia no controlada / fijar herramienta existente / introducir framework | Herramienta existente y lock/control de versiones en P01-T02; construcción equivalente y fallos visibles |
+| Sin suite/CI del juego localizada | Afirmar estabilidad / validar cada fase / reconstrucción por falta de pruebas | VAL-01–19 y criterios verificables; no defectos reproducidos ni FPS medidos |
 
-### 10.2 Entidades de información propuestas
+Comprobaciones nuevas: app.min.js original962.266bytes y huella4a05f17d41 coincidente con index;64scripts presentes; SDK13.0.0 app/auth/firestore devuelveHTTP200 en petición HEAD. Esto verifica disponibilidad de archivos públicos, no ejecución. El nombre ui/test.js corresponde al cuestionario, no a pruebas del juego.
 
-No son nombres de colecciones ni firmas aprobadas. Sirven para detectar contratos faltantes antes de programar.
+### Evidencia de preparación técnica
 
-| Entidad conceptual | Información mínima | Invariantes que deben probarse |
+EV-007: docs/ORIGIN.md, ISOLATION.md, source-manifest.json y PREPARATION-REPORT.md en copia propia. Original clean/a1006e6;118hashes de referencia,64scripts conservados; entradas sin scripts activos (dev conserva64externos+1inline dentro de template), CSP bloquea conexiones, flags apagados y SW inerte. Paquete135archivos CRC/hash verificados. Revisión estática independiente por agente review_isolation sin fallos importantes; no navegador/JS/tráfico.
+
+Corrección R-032: app.min.js sí estaba en el original local; su ausencia en la copia propia es deliberada, por configuración original embebida. Faltan sprites y no hay build/partida propios comprobados.
+
+## 10. Arquitectura y contratos mínimos consolidados
+
+Plan incremental D-287–293, con Firebase Functions propio aprobado D-296. Mantener JS/Canvas, namespace G y módulos existentes; no introducir motor/framework. El navegador simula/renderiza; servidor confirma economía/propiedad/resultados. D-297 acepta que los eventos de combate plausibles no quedan demostrados.
+
+### 10.1 Responsabilidades y permisos
+
+| Área | Responsabilidad | Control |
 |---|---|---|
-| Cuenta | ID, alias, país según política, soldados, tickets separados, versión de datos | No mezclar cuentas por alias/correo; actualizaciones económicas confirmadas |
-| Soldado | Modelo desbloqueado, XP/nivel permanente, niveles de las diez categorías | Límite diez por categoría; duplicado mejora al modelo correspondiente |
-| Copia de equipo | ID de instancia, ID de modelo, ubicación/propietario, modificaciones asociadas | Una única ubicación; un mod no puede estar instalado y suelto a la vez |
-| Expedición | ID, dueño de sesión, semilla, sector/oleada, checkpoint, estado, fórmula de score, clasificación válida/no válida | Una activa por cuenta; transiciones no repetidas |
-| Resultado | ID de expedición, causa, puntaje, recompensas, pérdidas, recuperación sorteada, resolución | Sorteo/resolución persistidos una sola vez; no volver a sortear tras recarga |
-| Entrega/buzón | ID, origen, contenido, estado, capacidad usada, vínculo al resultado/tirada | Reclamar una vez; movimiento al almacén atómico; no caducidad en MVP |
-| Operación persistente | ID de solicitud, tipo, versión previa, resultado confirmado | Reintento devuelve el mismo resultado sin gastar/conceder de nuevo |
-| Gacha | Tipo, grupo, coste, versión de tabla, contador de garantía y resultado | Garantía de médico correcta; resultado almacenado antes de mostrar confirmación final |
-| Reciclaje | Componentes consumidos, versión de equivalencias, aporte y remanente | No reciclar dos veces ni convertir kit gratuito en fuente ilimitada |
-| Registro de ranking | Fórmula, temporada/período si se aprueba, país, mejor resultado válido | No importar pruebas al oficial ni acreditar jefe vencido al huir |
+| Catálogo/versiones | Modelos, valores, compatibilidad y probabilidades de versión aprobada | Datos derivados siempre del catálogo, no del valor arbitrario enviado |
+| Navegador | Movimiento/combate/render/controles y cola provisional de oleada | No escritura económica libre ni autoridad por caché |
+| Functions propio | Tickets/sorteos, propiedad/ubicación, progreso, resultados y score | Token UID, sesión, revisión, transacción, validación y deduplicación |
+| Firestore | Estado privado/operaciones y perfil/ranking públicos separados | Lectura propia según área; escrituras económicas/score solo servidor |
+| UI | Confirmado frente a pendiente/rechazado, capacidades y avisos | Mostrar premio definitivo tras confirmación durable; reintento conserva ID |
+| Web de seguimiento | Leer registro y mostrar progreso/evidencia | Sin autoridad para cambiar alcance, diseño o estados del juego |
 
-Los comandos de gasto/entrega y transferencias deben comprobar estado vigente en servidor. La caché permite continuidad y presentación; no debe reponer objetos que el servidor ya retiró. El combate sigue en cliente: validar transacciones no prueba por sí solo que todas las bajas/objetivos declarados ocurrieron.
+Las reglas actuales de la copia son deny-all; Functions no tiene handlers, flags están apagados y no hay servicio configurado. Son bloqueos de preparación, no infraestructura funcional terminada.
 
-### 10.3 Aislamiento y presupuesto
+### 10.2 Campos mínimos e invariantes
 
-- Conservar la copia de referencia intacta y preparar el repositorio activo elegido, `DETECO/SCPSurvivor`, cuando se autorice la tarea correspondiente. Su elección y la subida del roadmap no constituyen una copia de la base ni completan el aislamiento de servicios.
-- Separar desarrollo, pruebas y producción; no heredar `.firebaserc`, endpoints, CNAME, dominios o cuotas originales.
-- Diseñar pruebas contra emuladores o servicios propios autorizados. La existencia de emuladores declarados no significa que se hayan ejecutado ni que estén instalados.
-- Firebase Auth/Firestore es el proveedor previsto. Functions u otra ejecución de servidor deben concretarse; funciones desplegadas requieren condiciones de facturación que no están autorizadas.
-- El presupuesto objetivo de 20 USD/mes requiere escenarios de cuentas activas, sesiones, checkpoints, operaciones y tráfico. No hay previsión de uso aprobada ni gasto medido.
-- Las cuotas gratuitas publicadas de Firestore consultadas el 12/10/2026 incluyen 1 GiB, 50.000 lecturas/día, 20.000 escrituras/día, 20.000 eliminaciones/día y 10 GiB de salida/mes, con condiciones por proyecto/base. Son referencia documental, no capacidad garantizada para nuestro diseño.
-- Los avisos de presupuesto por sí solos no detienen el gasto. Comprobar las medidas de límite realmente compatibles con cada servicio y su efecto sobre los jugadores; no prometer un techo duro sin evidencia.
-- El coste de la web de seguimiento se debe presupuestar por separado; no se ha establecido que esté incluido en los 20 USD.
+Los nombres son contratos conceptuales para la implementación; las colecciones/helpers concretos podrán reutilizar existentes o adaptarse sin alterar estas responsabilidades.
+
+| Entidad | Campos mínimos | Invariante |
+|---|---|---|
+| Cuenta | UID autenticado, alias, país declarado/bloqueo, versión/revisión, estado, soldados, saldos de tickets, remanente de reciclaje | No fusionar por alias/correo; país según D-224; cuenta borrada/cerrada no resucita por caché |
+| Soldado | IDmodelo, desbloqueo, XP/nivel permanente, diez niveles0–10 y puntos pendientes | Cien espacios aplicados+reservados; provisional/confirmado diferenciados |
+| Equipo físico | IDcopia único, IDmodelo, UID, origen, ubicación, vínculo de mods instalados | Ubicación única; arma y mods como unidad de pérdida; kit gratuito origen0 conserva esa condición |
+| Expedición | ID, UID, sesión/época autorizada, estado, semilla, versión de reglas/score, sector/oleada, equipo reservado, checkpoint, contadores/validez | Una activa por cuenta; transferencia revoca sesión anterior; no6h heredadas |
+| Checkpoint | Revisión/expedición/sesión, fase entre oleadas, semilla y cambios del sector, posición/vida, IDs/equipamiento, munición/recarga, cooldowns, XP/perks, ofertas/elecciones pendientes, recogibles/cofres/IDs reclamados y contadores | Sin enemigos de combate continuo, imágenes o frames; no restaurar premiados ni equipo perdido; volver a combate anterior invalida ranking |
+| Operación | IDsolicitud, tipo, contenido/huella, revisión esperada, sesión/época y versión de reglas; UID tomado del token | Transacción atómica; mismo ID/contenido devuelve resultado confirmado; ID con contenido distinto, revisión/sesión obsoleta, objeto ajeno o comando incompatible se rechaza |
+| Recibo | IDoperación, huella, versión anterior/nueva, estado confirmado, resultado o referencia durable, fecha servidor | Recuperar respuesta perdida sin repetir efectos. Retener mientras sea necesario para reclamación/deduplicación; probar compactación y coste en P05/P10 antes de habilitar nube |
+| Resultado final | IDexpedición/causa, totales, score/fórmula/validez, equipo de salida/pérdida, recuperación sorteada, entregas pendientes/resolución | Inmutable en su resolución económica; único por expedición; no volver a sortear al recargar |
+| Entrega/buzón | ID, origen y vínculo a resultado/tirada, IDs de contenido, estado/ubicación | Reclamación una vez, capacidad comprobada; sin caducidad inicial; exceso en resultado pendiente único |
+| Tirada | IDoperación/tipo/grupo, coste, versión tabla, contador garantía y resultado | Sorteo/consumo del servidor; resultado durable antes de revelar; garantía médico/duplicados/tablas aprobadas |
+| Reciclaje | IDs/componentes consumidos, tabla, aporte/remanente y tickets resultantes | Consumo único; instalado suma componentes, kit aporta0; sin ciclos autosostenidos |
+| Ranking | UID, versión/fórmula, modo pruebas/oficial, mes/histórico, país, mejor resultado, sectores, tiempo activo y aceptación servidor | Score calculado servidor; desempate acordado; no importar pruebas/rollback, ni victoria de jefe al huir |
+
+Flujo: comando → verificar cuenta/sesión/revisión/contrato → resolver una vez en transacción → recibo y nuevo estado → confirmar UI. Respuestas: confirmado, rechazo sin efecto o espera/reintento conservando el ID. Desconexión: terminar la oleada local y esperar antes de otra; cola/cache no reemplaza estado autoritativo.
+
+Cofres, XP/misiones y recompensas de combate se validan con IDs/cuotas/versiones/tiempos/coherencia. El servidor no comprueba toda trayectoria/baja; límite D-297 expresamente aceptado, no presentado como seguridad de torneo.
+
+### 10.3 Archivos y evolución
+
+Reutilizar dev.html/main/game, core/db/firebase-config/camera/input/touch/sprites/audio/settings, data, entities, systems, world y UI/net correspondientes a tareas. Servidor propio en functions, reglas/configuración separadas. No presuponer módulos nuevos para cada entidad: primero reutilizar responsabilidad existente.
+
+P01-T02 debe fijar versiones exactas de herramientas/lock y probar dev/bundle; candidates consultados Node22/Terser5.51.2, sin instalación ni prueba de compatibilidad todavía. El SDK13 existente responde en CDN; eso no acredita Auth/Firestore funcionando. No desplegar el portero original de altas ni habilitar Cloudflare/RTDB/cooperativo para la primera versión.
+
+### 10.4 Aislamiento, mediciones y gasto
+
+Copia original intacta; copia propia con prep/CSP, URLs nulas, prefijos propios, proyecto demo y build bloqueado. Preparación estática aprobada/realizada; observar tráfico y retirar bloqueos solo tras autorización de siguiente tarea y configuración propia.
+
+Pruebas primero en entorno local/emuladores autorizados; luego proyecto de prueba propio, distinto de producción. PreviewURL no aísla datos por sí sola. Juego independiente de la web de seguimiento.
+
+Objetivo20 USD/mes para juego; D-245 es hipótesis30oleadas/jugador/día×4lecturas+4escrituras/confirmación, no consumo medido ni capacidad simultánea gratis. Medir también Auth, Functions, recibos, menús/ranking/gacha/reintentos, índices, respaldos y descargas. Functions requiere plan de facturación al activar; ninguna contratación/gasto está autorizada.
+
+D-284 protección cerca18estimados bloquea nuevas expediciones/tiradas y guarda/pausa tras oleada; no es corte exacto de facturación. Alertas no detienen automáticamente gasto, y las descargas pueden continuar. P10/P11 probarán cuotas, controles/recuperación y presupuesto completo antes de publicar. No se ha incluido el coste de la web independiente dentro de20 USD.
 
 ## 11. Pruebas y criterios de aceptación
 
@@ -968,7 +1059,7 @@ Actualmente solo hay lecturas y verificación documental. **La siguiente matriz 
 | VAL-14 | Ranking | Pruebas separadas; fórmula oficial, mejor marca, país/global, empates, penalizaciones y exclusiones concordantes | P08/P10 |
 | VAL-15 | Demo | Contenido aprobado jugable y aviso claro; crear cuenta no transfiere progreso/premios de invitado | P08 |
 | VAL-16 | Teléfonos/orientación | Safari iPhone 13/15 y Chrome Note 40 5G, ambos formatos, safe areas, misma extensión de combate y audio tras interacción | P09/P10 |
-| VAL-17 | Carga y sesiones largas | Escenarios de población/FX aprobados, medición de frame time/FPS, memoria/carga y estabilidad; umbrales aún pendientes | P10 |
+| VAL-17 | Carga y sesiones largas | Escenarios de población/FX aprobados, medición de frame time/FPS, memoria/carga y estabilidad; objetivos definidos en D-254; escenarios y mediciones pendientes | P10 |
 | VAL-18 | Integridad y gastos | Solicitudes manipuladas/repetidas, permisos, límites y proyección de operaciones/coste; riesgo competitivo explícitamente aceptado | P05/P10 |
 | VAL-19 | Actualización/publicación | Build publicado identificado, caché actualizable, datos compatibles, rollback practicable y recorrido real en producción | P11 |
 
@@ -1004,7 +1095,7 @@ Impactos cualitativos; no se asignan probabilidades numéricas sin datos. “Por
 | ID | Riesgo / evidencia | Impacto | Probabilidad | Mitigación propuesta y momento de validación |
 |---|---|---|---|---|
 | R-001 | Acoplamiento Pokémon en tipos, Dex, sprites, guardado y UI; módulos citados en sección 9 | Alto | Por estimar | Mapa de dependencias y adaptación incremental P00/P01; recorrer flujos al ampliar |
-| R-002 | Configuración original activa en Firebase/Cloudflare/RTDB/TURN | Alto | Presencia confirmada; incidencia sin probar | Aislar antes de ejecutar; VAL-02 |
+| R-002 | Configuraciones/artefactos originales tienen servicios activos; copia propia bloqueada estáticamente | Alto | Hallazgo confirmado; uso real sin ejecutar | A-010/EV-007 mitigación estática hecha; VAL-02/P01-T03 debe observar tráfico antes de afirmar aislamiento de ejecución |
 | R-003 | Procedencia distinta por código, tipografía, imágenes y narrativa | Alto para distribución | Por recurso | Matriz de recursos; cerrar solo los efectivamente usados antes de P11 |
 | R-004 | Sin suite automatizada/CI localizada y sin ejecuciones autorizadas | Alto | Ausencia de evidencia confirmada | Plan de validación por tarea; no declarar estabilidad hasta medir |
 | R-005 | Mayor mochila expone más objetos a pérdida | Medio | Regla de diseño conocida | Explicar riesgo y probar economía/capacidades P06/P07 |
@@ -1017,7 +1108,7 @@ Impactos cualitativos; no se asignan probabilidades numéricas sin datos. “Por
 | R-012 | Orientación altera visión y distancia de spawn | Alto para equidad | Acoplamiento localizado | D-049, cámara/spawn desacoplados donde proceda y pruebas equivalentes |
 | R-013 | Ocho direcciones y arma separada elevan trabajo de arte | Medio/alto | Requisito confirmado; esfuerzo sin estimar | Pipeline pequeño con referencias provisionales; P02 antes de producir catálogo final |
 | R-014 | Autoapuntado elige objetivos tapados o cambia continuamente | Alto para control | Filtro ausente en bloque leído | D-067 y prioridades/histéresis; VAL-06 |
-| R-015 | Gacha + reciclaje + compensaciones producen tiradas autosostenidas | Alto | Depende de equivalencias pendientes | Análisis de todas las rutas de conversión y pruebas P07-T05 |
+| R-015 | Gacha + reciclaje + compensaciones producen tiradas autosostenidas | Alto | Por estimar mediante validación de la economía conjunta; equivalencias iniciales aprobadas en D-132 | Analizar todas las rutas de conversión con la tabla D-132 y validar equilibrio y ritmo en P07-T05; ajustar solo mediante decisión correspondiente. |
 | R-016 | Kit gratuito reciclable/reclamable ilimitadamente genera tickets | Alto | D-130 mitiga por diseño: aporte cero; implementación sin validar | Q-008: preservar origen por copia al mover/recuperar, controlar entrega y validar reciclaje repetido |
 | R-017 | Topes antitrampa originales invalidan mejoras legítimas o aceptan fraude | Alto | Estático; alcance por comprobar | Derivar límites del catálogo nuevo y definir confianza de servidor; P05/P08 |
 | R-018 | Almacén+buzón llenos dejan resultado pendiente imposible de resolver | Alto | Caso límite previsto | Acceso a reciclaje/gestión y transacciones recuperables; VAL-10/12/13 |
@@ -1027,14 +1118,16 @@ Impactos cualitativos; no se asignan probabilidades numéricas sin datos. “Por
 | R-022 | Mezclar cambios futuros del original con el avance SCP | Alto para evidencia | Por controlar | Commit fijado, historial de actualizaciones y repositorios distinguidos |
 | R-023 | 20 USD se exceden pese a alertas o cierre de altas | Alto | Sin carga prevista | Escenarios de coste, límites reales por servicio y plan de degradación aprobado |
 | R-024 | Categorías y puntos pendientes pueden dejar XP/duplicados sobrantes | Medio | Diseño precisado D-213; sin ejecución | Contar espacios aplicados/reservados, un ticket sin espacio; probar límites P07 |
-| R-025 | Combate local permite fraude con cifras plausibles incluso calculando score en servidor | Alto para confianza competitiva | No cuantificada; límite arquitectónico confirmado | Riesgo aceptado D-225 A; controles/ensayos VAL-18, sin prometer simulación o ausencia de trampas |
+| R-025 | Combate local admite fraude plausible en ranking y recompensas | Alto para integridad | No cuantificada; limitación arquitectónica | D-225 y D-297 riesgo aceptado explícitamente; sesiones, revisión, cuotas, cálculo servidor y VAL-18; no prometer prueba de combate |
 | R-026 | Jefes originales flying=true, daño por contacto y Hazards reinicia invulnerabilidad | Alto para reglas aprobadas | Hallazgos estáticos, sin reproducción | Adaptar Enemy/Combat/Hazards para D-196/D-197/D-202; P03/P04 y pruebas de avisos/paredes |
 | R-027 | Props/chests originales se generan por ruido, fuera de cuotas de cofres por oleada | Alto para economía | Hallazgo estático world.placeProps | Adaptar puntos de contenido y desactivar sorteo heredado incompatible; P03/P07 |
 | R-028 | Pickup.push elimina el objeto más antiguo si supera MAX y no hay XP; puede perder equipo físico | Alto para integridad | Hallazgo estático pickup.js | Separar o proteger presupuesto de equipo; conservar objetos D-180 y validar saturación P06/P10 |
 | R-029 | Boss dropXp usa ceil(value/14) y puede aumentar la recompensa total | Medio | Hallazgo estático, no prueba ejecutada | Reparto exacto del total 220, sin duplicar Aprendizaje; D-211/VAL-07 |
-| R-030 | H-001 de dos sectores no alcanza extracción normal desde sector 3 | Medio para prueba temprana | Diferencia de alcance entre D-047 y D-199 | Preparar fixture aislado o resolver recorrido de ensayo en CIE-010; no cambiar silenciosamente reglas normales |
+| R-030 | H-001 de2sectores no alcanza extracción normal desde3 | Medio para ensayo | Discrepancia de alcance identificada | D-285 fixture de ensayo permite extraer en2 solo en prueba aislada; producción preserva D-199, verificar P02 |
 | R-031 | Preview de Hosting puede seguir usando Auth/Firestore de producción | Alto | Dependencia por configuración, no por URL | Configuración/proyecto de prueba explícitos y tráfico revisado antes de ejecutar; D-273/VAL-02 |
-| R-032 | Copia parcial sin sprites originales ni app.min.js; el nombre de directorio no acredita juego adaptado arrancable | Alto para P01 | Ausencias localizadas; no se inició el juego | Contenido propio mínimo y build reproducible bajo autorización, sin descarga masiva de sprites originales |
+| R-032 | Sprites ausentes y preparación sin bundle propio; no arranque comprobado | Alto para P01 | Limitación confirmada; dato antiguo app.min ausente corregido | Original app.min sí existe; omitido deliberadamente en copia por servicios embebidos. Recursos propios/build/arranque autorizado en P01/P02; no descargar masivamente sprites |
+| R-033 | Recibos/checkpoints/entregas y almacenamiento crecen y afectan presupuesto | Medio/alto | Sin medición | P05/P10 medir tamaños y carga; compactar/retener sin permitir replay ni perder pendientes; no afirmar coste cero |
+| R-034 | Mostrar solo implementación o un porcentaje almacenado obsoleto oculta planificación y trabajo real | Alto para seguimiento | Problema documental detectado | Fuente JSON con53pesos/estados/evidencias; global incluye P00; vistas generadas y cálculo validado, sin sumar fases dos veces |
 
 ## 13. Recursos, referencias visuales y procedencia
 
@@ -1087,17 +1180,17 @@ La web es un proyecto independiente, desarrollado en otro hilo. El juego no depe
 
 ### 15.1 Fuente compartida y estado actual
 
-**Estado actual:** este Markdown local es el registro maestro. La fuente compartida prevista es `DETECO/SCPSurvivor/RoadmapSCP.md`, en la raíz de `main`, pero el archivo aún no está en GitHub: la integración rechaza la escritura con HTTP 403. El repositorio es público al comprobarlo el 12/10/2026. Cuando se complete y verifique la subida, ambos hilos deberán leer la revisión vigente de GitHub; no asumir memoria compartida automática. Subir el documento no crea la web ni activa su sincronización o automatización.
+D-266/D-286 aprobaron JSON fuente y Markdown generado. A-011 autoriza la transición documental de esta actualización: **/workspace/scp-survivor/RoadmapSCP.json es la única fuente editable**, y RoadmapSCP.md su vista generada. Copias en /workspace y entregables son espejos de entrega; no editar independientemente.
 
-**D-266 — propuesta de transición, todavía no realizada:** `RoadmapSCP.json` será la única fuente editable del diseño/decisiones/fases/tareas/riesgos/evidencias/novedades; `RoadmapSCP.md` una vista generada. Versión de esquema separada de versión del plan. Cada tarea conserva ID, fase, peso, estado, criterios, dependencias y evidencia. No mantener dos fuentes normativas editables. La petición actual solo actualiza este Markdown; no aprueba ni construye generador o web. Hasta que se acepte y prepare la transición, este archivo es la única fuente documental persistente vigente.
+SchemaVersion1 separado de planVersion0.9; cada tarea tiene ID/fase/peso/criterios/estado/evidencias. Las tareas CV aportan, las demás no; derivedProgress se calcula desde ellas. Templates narrativos preservan contexto/historial, con filas/puntos emitidos desde datos estructurados, no un segundo registro editable.
 
-Repositorios que no deben confundirse:
+Destino compartido: raíz de DETECO/SCPSurvivor/main, JSON+MD. Esta actualización está preparada localmente; no hay commit/subida verificados. El error de carga manual mostró el límite de archivos por lote; estos dos archivos se pueden subir juntos. No suponer que los hilos comparten memoria ni que la web se sincronizó.
 
-1. Original: `JPTER78/pokesurvivor`, referencia upstream; sus commits no suman avance SCP.
-2. Juego activo: `DETECO/SCPSurvivor`, destino aprobado para RoadmapSCP y todos los futuros cambios autorizados del juego. Contenido inicial inspeccionado; incorporación documental pendiente de permiso efectivo de escritura. No se ha implementado el juego.
-3. Web/seguimiento: destino pendiente, lector del registro autorizado; no autoridad de diseño.
+Original JPTER78/pokesurvivor no aporta commits al progreso. Juego activo DETECO/SCPSurvivor tiene copia preparada local /workspace/scp-survivor, no nuevo commit propio confirmado. Web/repositorio/destino/credenciales siguen pendientes del otro hilo y su autorización; no son dependencia de arranque del juego.
 
-### 15.2 Contrato de datos propuesto
+La automatización D-272 continúa propuesta/sin activación. Fuente JSON creada no significa generador web, workflow, infraestructura ni servicio remoto ejecutados. Actualizar el registro únicamente por petición del director.
+
+### 15.2 Contrato de datos consolidado
 
 | Tipo de registro | Campos mínimos |
 |---|---|
@@ -1110,7 +1203,7 @@ Repositorios que no deben confundirse:
 | Novedad | ID único, fecha, título, resumen, fase/tareas, evidencias, referencia de versión, una imagen y texto alternativo |
 | Sincronización | Versión origen, resultado de validación, resultado de publicación, última sincronización correcta, error si lo hay |
 
-Los porcentajes se calculan a partir de estados/evidencias y pesos, no se editan manualmente en una segunda lista. Solo CV aporta al cálculo. El sitio deberá distinguir planificación de implementación y mostrar “pendiente de definición” para un global oficial sin plan integral aprobado. El índice provisional documental, si se presenta, debe llevar esa etiqueta explícita.
+Los porcentajes se calculan a partir de estados/evidencias y pesos, no se editan manualmente en una segunda lista. Solo CV aporta al cálculo. El plan y sus pesos ya están aprobados: el global vigente es 12 %, incluyendo auditoría, planificación y preparación técnica verificadas. El sitio deberá distinguirlo de las mecánicas jugables comprobadas. “Pendiente de definición” solo corresponde a un alcance nuevo que aún no tenga línea base aprobada; no se aplica al global actual.
 
 ### 15.3 Novedades e imágenes
 
@@ -1119,6 +1212,8 @@ Los porcentajes se calculan a partir de estados/evidencias y pesos, no se editan
 - Exactamente una imagen por novedad y texto alternativo. Sin imagen o evidencia, la novedad queda pendiente aunque una tarea pueda cerrarse.
 - Conceptos generados se identifican como conceptos, nunca como prueba de implementación. No reutilizar capturas antiguas para aparentar avance nuevo.
 - Capturas automáticas requieren escena reproducible y ejecución autorizada; hoy no existe ninguna escena ejecutada.
+
+**N-001 — pendiente de imagen/publicación:** «Copia independiente preparada», P01-T01/EV-007, versión preparacion-01, paquete135archivos/64scripts y revisión estática. Falta tarjeta técnica de resultados y alt; no captura de juego implementado. Puede constar la tarea CV sin publicar noticia ni web.
 
 ### 15.4 Automatización prevista, todavía no activada
 
@@ -1193,23 +1288,28 @@ Estos pesos suman 100 % **del proyecto web**, no del juego, y siguen siendo prop
 | CHG-007 | 2026-10-12 | RoadmapSCP v0.6: aprobar D-131 opción A, reciclaje complementario; proponer tabla D-132 sin considerarla aprobada. Q-002 parcialmente resuelta; 131 decisiones aprobadas, 37 temas aún pendientes, pesos y porcentajes sin cambios. | Respuesta expresa A del director; A-002/D-127 para mantener el registro |
 | CHG-008 | 2026-10-12 | RoadmapSCP v0.7: aprobar D-132, tabla/conversión/remanente; conservar validaciones pendientes de Q-002. Localizar misiones originales y presentar D-133 pendiente. 132 decisiones aprobadas, 37 temas abiertos, pesos y porcentajes sin cambios. | Respuesta expresa Sí del director; A-002/D-127 para mantener el registro |
 | CHG-009 | 2026-10-13 | RoadmapSCP v0.8: consolidar D-133–D-275, aprobaciones A/ranking y Hosting, escenarios/reglas iniciales, cola CIE-001–010, Q revisadas, riesgos/auditoría/objetivos y traspaso. Conservar v0.7, fuente JSON como propuesta y pesos/indicadores oficiales pendientes. Copia para subida manual, sin GitHub/web actualizados. | Petición expresa «actualiza el roadmap», A-009; decisiones expresas y delegación D-182 |
+| CHG-010 | 2026-10-13 | RoadmapSCP v0.9: consolidar D-276–300 y CIE, aprobación plan/pesos/JSON, Functions propio y riesgo de recompensas, copia estática/ZIP. Siete tareas CV, global12 %, P00 100 %/P01 25 %. P01-T03 EC0; ninguna mecánica ejecutada. Fuente JSON y vistas; v0.8 preservada; sin cambiar pesos o publicar. | A-010 cumplida; solicitud actual A-011 |
 
-**Verificación histórica de v0.7 realizada el 12/10/2026 (no describe el estado de v0.8):** comprobación de lectura del Markdown mediante Python, sin ejecutar programas del repositorio. Resultado: 132 decisiones aprobadas y D-133 pendiente; 12 etapas y 53 tareas de juego con identificadores únicos; pesos globales suman 100 y coinciden con cada etapa; porcentajes relativos correctos dentro del redondeo; avance provisional 3 %, planificación 30 % e implementación 0 %; 37 temas abiertos y Q-001 resuelta, con Q-002, Q-008, Q-030 y Q-035 parcialmente resueltos; seis tareas web con 100 puntos independientes. `git status --short` de la copia base no mostró cambios y HEAD sigue en el commit registrado. Esta comprobación es del registro; no acredita ejecución del juego ni revisión independiente de otro agente. Resolver una decisión aislada o subir el documento a GitHub no completa por sí solo una tarea ni suma avance de implementación.
+**Verificación histórica de v0.7 realizada el 12/10/2026 (no describe el estado actual de v0.9):** comprobación de lectura del Markdown mediante Python, sin ejecutar programas del repositorio. Resultado: 132 decisiones aprobadas y D-133 pendiente; 12 etapas y 53 tareas de juego con identificadores únicos; pesos globales suman 100 y coinciden con cada etapa; porcentajes relativos correctos dentro del redondeo; avance provisional 3 %, planificación 30 % e implementación 0 %; 37 temas abiertos y Q-001 resuelta, con Q-002, Q-008, Q-030 y Q-035 parcialmente resueltos; seis tareas web con 100 puntos independientes. `git status --short` de la copia base no mostró cambios y HEAD sigue en el commit registrado. Esta comprobación es del registro; no acredita ejecución del juego ni revisión independiente de otro agente. Resolver una decisión aislada o subir el documento a GitHub no completa por sí solo una tarea ni suma avance de implementación.
 
-### Verificación de la actualización v0.8
+### Verificación histórica de la actualización v0.8
 
 Verificación documental realizada el 13/10/2026 mediante lectura y análisis del registro con Python: 275 IDs de decisión únicos y consecutivos; 38 áreas Q y diez pendientes CIE; 53 tareas únicas, 12 fases y 100 puntos; porcentajes relativos y estados 0/100 coherentes. Solo P00-T01/T02 están CV: tres puntos documentales provisionales, sin nueva implementación. D-225/D-265 constan aprobadas expresamente; D-266/D-268/D-272 como propuestas. Copia entregable idéntica al maestro. La copia original devuelve git status vacío y mantiene a1006e6e3d0cea9162238a90b0ffdd7fd38397b6. No se ejecutaron programas del repositorio, build o juego; no es verificación independiente ni evidencia de funcionamiento.
 
+### Verificación de la actualización v0.9
+
+Validación documental por Python de las fuentes y cálculos, no ejecución del juego:300IDs decisión consecutivos,38áreasQ,10CIE resueltas,34riesgos,53tareas únicas/12fases/100puntos;7CV y1EC. Evidencias EV-001–007 para tareasCV. Global12, P00 100 yP01 25; técnica P01–P11 2,22 % de90puntos, sin partida/mecánica verificada. JSON/Markdown/copia entregable coherentes; v0.8 archivada. Paquete de juego anterior conserva su identidad; roadmap se entrega por separado.
+
 ### Resumen para continuar en otro hilo
 
-- **Base:** JPTER78/pokesurvivor, rama main, commit a1006e6e3d0cea9162238a90b0ffdd7fd38397b6; commit de 11/10/2026 y lecturas hasta 13/10/2026. Copia /workspace/containment-survivor: referencia original, no SCP implementado.
-- **Proyecto activo:** DETECO/SCPSurvivor, destino del juego y documentación; último remoto inspeccionado el 12/10, no actualizado por este turno. Subida manual elegida por director; no afirmar commits remotos ni cambios de visibilidad actuales sin revisar.
-- **Estado:** planificación avanzada con 275 IDs de decisión, incluidos tres registros expresamente propuestos D-266/D-268/D-272. Plan completo y pesos aún no aprobados. No se ha ejecutado/adaptado/publicado el juego ni construido la web.
-- **Aprobaciones recientes:** D-225 A con riesgo competitivo limitado aceptado; D-265 Firebase Hosting propio .web.app inicial, sin autorizar servicios/billing/deploy. D-182 permite decidir puntos claros usando base primero; consultas en bloques de diez aceptados.
-- **Reglas centrales:** dos soldados/tres armas/seis mods/dos mochilas; mundo modular propio, dos normales/un jefe escapable; olas 3–5, preparación 20 s, XP temporal/permanente separadas; gacha y equipo físico, almacén60/buzón30; recuperación25–50 %; clasificación100×olas+250×sectores+400×jefes con extracción90 %/muerte75 %; secciones 4/5 detallan modelos y excepciones.
-- **Autorizaciones vigentes:** lectura/análisis y esta actualización documental A-009. Ninguna fase concreta de implementación, ejecución de juego/build/pruebas o instalación autorizada; tampoco creación de servicios, facturación, publicación o automatización. La aprobación de plan no las implica.
-- **Persistencia:** guardar RoadmapSCP solamente cuando lo indique el director; no en cada respuesta. Maestro actual /workspace/RoadmapSCP.md v0.8; copia entregable /workspace/entregables/RoadmapSCP.md. v0.7 preservada en historial. No JSON creado: su fuente única/MD generado sigue propuesta D-266.
-- **Pendientes:** CIE-001–010 y remanentes Q-001–038 por validación/contratos/materiales/publicación. El bloque CIE se propuso pero no ha recibido aceptación para continuar: último mensaje solicita actualizar roadmap.
-- **Riesgos:** merge de inventario, aislamiento de endpoints originales, contactos/jefes voladores, pérdida de pickups al saturar, redondeo XP de jefe, acceso a fuentes gráficas, discrepancia de ensayo H-001/extracción sector3, rendimiento/costes no medidos y fraude plausible aceptado en A.
-- **Seguimiento:** 12 fases/53 tareas/100 puntos propuestos; P00 documental30 % y global3 % exclusivamente provisionales, implementación0 %. Oficial pendiente de aprobación. Repositorio/alojamiento/permisos de web siguen pendientes; última sincronización correcta ninguna.
-- **Siguiente paso:** revisar/aceptar CIE-001–010, resolverlos por delegación o pregunta importante, consolidar contratos y plan final para aprobación; después preparar propuesta concreta y pedir autorización de primera tarea. No dar por aprobadas futuras ampliaciones ni sus pesos.
+- Base: JPTER78/pokesurvivor main/a1006e6e3d0cea9162238a90b0ffdd7fd38397b6, lectura hasta13/10/2026; original intacto.
+- Juego: DETECO/SCPSurvivor; copia /workspace/scp-survivor sin.git, commit/subida propios no verificados. ZIPpreparacion-01 verificado,135archivos.
+- Estado: plan aprobado; auditoría estática cerrada; P00 CV yP01-T01 CV; P01-T03 EC por parte estática. No juego/build/instalaciones/tráfico/servicios/publicación/web ejecutados.
+- Decisiones: D-001–300; D-266/D-268 aprobadas por D-286; D-272 sigue propuesta. ServidorFunctions y riesgo de ranking/recompensas aceptados D-296/D-297.
+- Autorizaciones: lectura; A-010 preparación local ya completada; A-011 esta actualización documental. Etapas posteriores, scripts del juego, instalaciones, nube/facturación/publicación/automatización requieren alcance concreto y permiso.
+- Fuente única: /workspace/scp-survivor/RoadmapSCP.json v0.9/schema1; Markdown generado y espejos de entrega. Subida manual a main pendiente de verificación; ninguna sincronización web correcta.
+- Seguimiento: global12 % de primera versión publicada; P00 100 %, P01 25 %, resto0. Incluye preparación/documentación, no12 % de combate funcionando. Pesos53tareas/100 aprobados.
+- Pendientes: construcción/arranque/tráfico y contenido mínimo P01/P02; ejecución/producción de demásfases. Versiones/tamaños/coste/semillas y respaldo se validan antes de la etapa dependiente; nombre/arte/política final antes de publicar.
+- Riesgos: persistencia/inventario/gacha, coherencia de cliente, colisiones/BFS/salidas, FPS/carga/costes y crecimiento de recibos sin medir. Mitigación estática no acredita tráfico; plan tiene métodos/fases.
+- Flujo: resolver claras con base primero; terminar independientes y agrupar dudas delicadas al final. Guardar solo por petición. Web independiente; JSON/documentación no activa automatización.
+- Siguiente: proponer autorización concreta P01-T02 y completar P01-T03/T04. No se empieza por pedir aprobación del plan otra vez.
