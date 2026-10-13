@@ -34,20 +34,28 @@ G.Touch = (() => {
     return null;
   }
 
+  function point(e) {
+    const rect = cv.getBoundingClientRect();
+    return { x: (e.clientX - rect.left) * cv.clientWidth / rect.width,
+             y: (e.clientY - rect.top) * cv.clientHeight / rect.height };
+  }
+
   function down(e) {
     const touchy = e.pointerType !== 'mouse';
     if (touchy && !active) { active = true; document.body.classList.add('touch'); }
-    const b = hit(e.clientX, e.clientY);
+    const pos = point(e);
+    const b = hit(pos.x, pos.y);
     if (b) { e.preventDefault(); b.fn(); return; }
     if (!touchy || stick || !G.Game || G.Game.state !== 'playing') return;
     e.preventDefault();
-    stick = { id: e.pointerId, ox: e.clientX, oy: e.clientY, x: e.clientX, y: e.clientY };
+    stick = { id: e.pointerId, ox: pos.x, oy: pos.y, x: pos.x, y: pos.y };
     try { cv.setPointerCapture(e.pointerId); } catch (err) { /* nada */ }
   }
 
   function move(e) {
     if (!stick || e.pointerId !== stick.id) return;
-    stick.x = e.clientX; stick.y = e.clientY;
+    const pos = point(e);
+    stick.x = pos.x; stick.y = pos.y;
     const dx = stick.x - stick.ox, dy = stick.y - stick.oy, d = Math.hypot(dx, dy), r = R();
     if (d > r) { stick.ox = stick.x - dx / d * r; stick.oy = stick.y - dy / d * r; }
   }

@@ -1,34 +1,22 @@
-/* ============ main.js — arranque ============ */
+/* Arranque local P01. La aplicación completa sigue pendiente de sus fases. */
 (() => {
-  // Bloqueo de preparación: no inicializar juego ni registrar service worker.
-  if (!window.G || G.PREPARATION_MODE !== false) return;
-  // Si un archivo no llega a cargarse (conexión móvil que se corta), mejor
-  // avisar que arrancar a medias.
-  const NEED = ['U', 'I18n', 'Settings', 'DB', 'Audio', 'Input', 'Touch', 'Sprites', 'Camera', 'Moves', 'Enemies', 'Upgrades', 'Items',
-                'World', 'FX', 'Projectiles', 'EnemyMgr', 'Pickups', 'Player', 'Combat', 'Spawner', 'LevelUp', 'Gacha',
-                'Rift', 'Weather', 'Progress', 'Hazards', 'Social', 'Net', 'Coop', 'Ranking', 'Icons', 'UI', 'HUD',
-                'MenuUI', 'RunUI', 'SettingsUI', 'Funding', 'SupportUI', 'Game', 'Flow'];
-  function broken() {
-    const miss = NEED.filter(k => !window.G || !G[k]);
-    if (!miss.length) return false;
-    const el = document.getElementById('boot');
-    el.innerHTML = 'No se pudo cargar todo el juego (¿se cortó la conexión?).<br><button class="btn gold" style="margin-top:12px" onclick="location.reload()">Recargar</button>';
-    console.warn('[Arranque] faltan:', miss.join(', '));
-    return true;
-  }
-
+  const NEED = ['U', 'Settings', 'Input', 'Touch', 'Sprites', 'Camera', 'Tiles', 'World',
+                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'TechnicalUI', 'Game'];
   function boot() {
-    if (broken()) return;
-    G.I18n.startDom();
-    // Espera a la fuente pixel para que la UI no salte al cargarla.
-    const ready = document.fonts && document.fonts.load ? document.fonts.load('16px Pixelify') : Promise.resolve();
-    ready.catch(() => {}).then(() => G.Flow.boot());
+    const miss = NEED.filter(k => !window.G || !G[k]);
+    if (miss.length) {
+      const el = document.getElementById('boot');
+      el.hidden = false; el.textContent = 'No se cargaron todos los módulos. Recarga la página.';
+      console.error('[SCP Survivor] faltan módulos:', miss.join(', ')); return;
+    }
+    if (G.LOCAL_TECHNICAL_MODE !== true || G.ENABLE_CLOUD !== false || G.ENABLE_MULTIPLAYER !== false
+        || G.ENABLE_SOCIAL !== false || G.ENABLE_SIGNUPS !== false || G.FIREBASE_CONFIG !== null) {
+      G.TechnicalUI.fail(new Error('La escena requiere configuración local sin servicios')); return;
+    }
+    try {
+      G.Content.install(); G.Game.init({ technical: true }); G.TechnicalUI.init();
+    } catch (e) { G.TechnicalUI.fail(e); }
   }
   if (document.readyState === 'loading') addEventListener('DOMContentLoaded', boot);
   else boot();
-
-  // Instalable como app (PWA). Sólo con http(s): abierto con doble clic (file://) no hace falta.
-  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-    addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(e => console.warn('[PWA]', e.message)));
-  }
 })();

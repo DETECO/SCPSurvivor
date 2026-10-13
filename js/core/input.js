@@ -15,8 +15,12 @@ G.Input = (() => {
     const c = code(e);
     if (!down.has(c)) pressed.add(c);
     down.add(c);
+    // En el menú técnico se conservan Tab y la activación nativa de controles.
+    const nativeControl = G.LOCAL_TECHNICAL_MODE === true &&
+      (c === 'tab' || !G.Game || G.Game.state !== 'playing' ||
+       ['BUTTON', 'INPUT', 'TEXTAREA', 'SELECT', 'A'].includes(e.target && e.target.tagName));
     // Evita que el navegador haga scroll con flechas/espacio durante el juego.
-    if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'space', 'tab'].includes(c)) e.preventDefault();
+    if (!nativeControl && ['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'space', 'tab'].includes(c)) e.preventDefault();
   });
   addEventListener('keyup', e => down.delete(code(e)));
   addEventListener('blur', () => { down.clear(); });
@@ -24,7 +28,10 @@ G.Input = (() => {
   addEventListener('mousedown', () => mdown = true);
   addEventListener('mouseup', () => mdown = false);
 
+  function reset() { down.clear(); pressed.clear(); mdown = false; }
+
   return {
+    reset,
     /** Vector de movimiento del jugador (teclado o joystick táctil). */
     axis() {
       const t = G.Touch && G.Touch.vector();

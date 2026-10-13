@@ -35,6 +35,7 @@ G.World = (() => {
   const KIND = ['floor', 'wall', 'liquid'];
 
   let seed = 1, biome = 0;
+  let fixture = null;
   let arena = null;                        // { tx, ty, r } en tiles
   const data = new Map();                  // "cx,cy" -> datos del chunk
   let images = new Map();                  // "cx,cy" -> canvas horneado
@@ -68,6 +69,10 @@ G.World = (() => {
   }
 
   function terrainRaw(tx, ty) {
+    if (fixture) {
+      if (tx <= fixture.minX || tx >= fixture.maxX || ty <= fixture.minY || ty >= fixture.maxY) return WALL;
+      return fixture.walls.some(([x, y]) => x === tx && y === ty) ? WALL : FLOOR;
+    }
     const ad = arenaDist(tx, ty);
     if (ad < arena_outer()) {
       if (ad >= arena.r) return WALL;
@@ -116,6 +121,7 @@ G.World = (() => {
   const arena_outer = () => (arena ? arena.r + 7 : 0);
 
   function placeProps(c) {
+    if (fixture) return;
     for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
       if (c.terr[j * N + i] !== FLOOR) continue;
       const tx = c.cx * N + i, ty = c.cy * N + j;
@@ -550,7 +556,7 @@ G.World = (() => {
   function reset(s) {
     seed = (s | 0) || 1;
     data.clear(); images.clear(); broken.clear();
-    fade = null; arena = null;
+    fade = null; arena = null; fixture = null;
   }
 
   /**
@@ -580,6 +586,8 @@ G.World = (() => {
 
   return {
     TS, CW, reset, setBiome, biomeName, liquidKind, liquidEffect, walkable,
+    setFixture(map) { fixture = map; data.clear(); images.clear(); },
+    get fixture() { return fixture; },
     kindAt, isWall, isLiquid, isFree, collide, projectileBlock, propsInCircle, nearestBreakable,
     damageProp, breakAt, specialsNear, update,
     breakProp(p) { if (!broken.has(p.tx + ',' + p.ty)) destroyProp(p); },

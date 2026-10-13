@@ -78,7 +78,7 @@ G.Sprites = (() => {
       return s;
     }
     s = { ready: false, failed: false, img: new Image(), tries: 0, retryAt: 0,
-          src: `assets/pokemon/${dex}/${shiny ? 's/' : ''}${name}.png` };
+          src: m.base ? `${m.base}/${name}.${m.ext || 'png'}` : `assets/pokemon/${dex}/${shiny ? 's/' : ''}${name}.png` };
     s.img.onload = () => { s.ready = true; };
     s.img.onerror = () => { s.failed = true; s.retryAt = performance.now() + 1000 * Math.min(8, 2 ** s.tries++); };
     s.img.src = s.src;

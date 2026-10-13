@@ -1,36 +1,55 @@
 # SCP Survivor
 
-Juego web en preparación, basado directamente en PokéSurvivor. Repositorio de destino: https://github.com/DETECO/SCPSurvivor
+Juego web en desarrollo. Esta entrega **P01-local-01** permite abrir un menú propio y recorrer una escena provisional con el guardia novato. Conserva y adapta los sistemas de la base; no es todavía la primera partida completa ni la versión final.
 
-**Esta entrega es una base técnica aislada; todavía no es una demo jugable.** El motor y los sistemas se conservan para adaptarlos incrementalmente.
+## Qué funciona en esta entrega
 
-## Qué incluye
+- Arranque desde `dev.html` y desde `index.html` compilado.
+- Movimiento con WASD/flechas y joystick táctil flotante; ocho direcciones.
+- Cámara, colisiones y dibujo de terreno reutilizados. El área de mundo visible de esta escena es 768 × 768 unidades en ambas orientaciones.
+- Sprite geométrico propio provisional de ocho direcciones con animación de marcha.
+- Pausa manual y al perder foco o entrar en segundo plano; regreso al menú y reinicio de la escena.
+- Configuración local sin cuentas, Firebase, altas, social, cooperativo, ranking ni service worker activo.
 
-- Las fuentes JavaScript disponibles de la revisión fijada y la estructura original de módulos.
-- Una página estática de preparación; en dev.html la interfaz y los 64 scripts originales se conservan dentro de un template inactivo.
-- Configuración propia sin Firebase activo, altas, amigos, multijugador, donaciones o service worker habilitados.
-- Procedencia, manifiesto de archivos y comprobación estática. Las referencias de despliegue del autor están archivadas como texto.
+Todavía no hay combate, oleadas, recompensas, inventario, gacha adaptado ni guardado de expedición. Sus módulos de origen se conservan para las siguientes fases; no se presentan como funciones terminadas. El arte y el sector de prueba son provisionales.
+
+## Probarlo en tu ordenador
+
+El ZIP ya contiene `index.html` y `js/app.min.js`. Para verlos no necesitas reconstruir el juego:
+
+1. Descomprime los archivos conservando las carpetas.
+2. Desde esa carpeta inicia un servidor local con Python: `python -m http.server 8000 --bind 127.0.0.1` (en Linux puede llamarse `python3`).
+3. Abre http://127.0.0.1:8000/ en el navegador. Para revisar las fuentes abre http://127.0.0.1:8000/dev.html.
+
+No abras el HTML con doble clic: las pruebas de esta entrega utilizan HTTP local. Publicar en Firebase Hosting será una fase posterior; subir los archivos a GitHub no publica por sí solo el juego.
+
+## Reconstruir
+
+Se verificó Node **24.19.0**, npm **11.9.0** y Terser **5.51.2**. Terser es la herramienta que ya utilizaba la base; ahora su versión y dependencias quedan fijadas en el lockfile. No se ha probado otra versión de Node.
+
+```sh
+npm ci --ignore-scripts
+npm run build:check
+npm run build
+```
+
+Edita `dev.html` y los módulos JS; `index.html` y `js/app.min.js` son resultados generados. `PREPARATION_ONLY` identifica la entrega local; `--local` permite construirla sin habilitar servicios. No instales dependencias de `functions/` ni despliegues su configuración.
+
+## Pruebas
+
+`python3 tests/p01-browser.py` utiliza Playwright y Chromium del entorno de desarrollo. Documentación de entorno, recorridos y límites en [P01-REPORT.md](docs/P01-REPORT.md). Las dependencias de pruebas no son dependencias del juego. Esta entrega se comprobó con Chromium en Linux y táctil emulado; Safari y los teléfonos físicos siguen pendientes.
 
 ## Subida manual a GitHub
 
-1. Descomprime el ZIP.
-2. En DETECO/SCPSurvivor elige Add file → Upload files.
-3. Desde un ordenador puedes arrastrar las carpetas para conservar sus rutas. Haz dos cargas: primero js/, css/, assets/, functions/ y tools/; después docs/ y los archivos de la raíz. Evita crear otra carpeta scp-survivor dentro de la raíz del repositorio. Si tu selector móvil no conserva carpetas, utiliza un ordenador para esta carga.
-4. Incluye .gitignore, .firebaserc y .nojekyll si utilizas la carga web; para una entrega completa también puedes copiar la carpeta con Git desde tu ordenador.
-5. Sustituye el README anterior con este archivo. Conserva el aviso de origen del LICENSE incluido.
+Destino: https://github.com/DETECO/SCPSurvivor
 
-No contiene .git, credenciales privadas, node_modules, servicios desplegados ni automatizaciones. No se han realizado commits ni subidas remotas desde este hilo.
+- Arrastra las carpetas desde un ordenador para conservar rutas; no añadas una carpeta contenedora extra.
+- GitHub admite menos de 100 archivos por carga. Divide en dos lotes, por ejemplo `js/`, `css/`, `assets/`, `functions/`, `tools/` primero; `docs/`, `tests/` y archivos raíz después. Comprueba el contador antes de confirmar cada lote.
+- Incluye archivos ocultos de configuración/ignore cuando uses Git desde tu ordenador. No subas `node_modules/`, cachés ni logs.
+- La actualización de RoadmapSCP se entrega por separado: añade `RoadmapSCP.json` y `RoadmapSCP.md` juntos. No mantengas dos registros editables; JSON es la fuente.
 
-## Estado y siguiente trabajo
+No se han hecho commits ni subidas remotas desde este hilo. Los nombres visibles usan SCP Survivor; los avisos de código, recursos y procedencia se conservan en `LICENSE`, `CREDITS.md` y documentación.
 
-Esta tarea cubre la copia y la preparación estática. No completa P01-T02/T03/T04: faltan construcción reproducible, inspección de tráfico y arranque con contenido propio mínimo, bajo autorización específica.
+## Procedencia y aislamiento
 
-PREPARATION_ONLY bloquea la construcción; las entradas bloquean scripts y conexiones. La configuración demo-scp-survivor identifica solo un futuro entorno de emulación, no un proyecto real creado. Las referencias archivadas describen el juego original, no instrucciones para configurar este proyecto.
-
-Faltan los sprites de los actores. El bundle original js/app.min.js no se incluye porque contiene configuración del proyecto base; deberá reconstruirse con nuestra configuración. Node, Firebase SDK, dependencias y Terser deben verificarse y fijarse durante la siguiente tarea; no se han instalado ni actualizado.
-
-El catálogo, armas, oleadas, gacha, guardado, inventario y ranking aún conservan implementaciones originales pendientes de adaptar. Las decisiones aprobadas del juego no están implementadas por esta entrega.
-
-RoadmapSCP se actualiza solo cuando lo indique el director. No se ha actualizado ni añadido una copia antigua a este paquete.
-
-Consulta [Procedencia](docs/ORIGIN.md), [Aislamiento](docs/ISOLATION.md), [Manifiesto](docs/source-manifest.json) y [Comprobación](docs/PREPARATION-REPORT.md).
+Consulta [ORIGIN.md](docs/ORIGIN.md), [ISOLATION.md](docs/ISOLATION.md), [manifiesto de preparación previa](docs/source-manifest.json) y [PREPARATION-REPORT.md](docs/PREPARATION-REPORT.md). Los dos últimos describen **preparacion-01**, anterior a esta escena; no son hashes ni resultados actuales. `docs/upstream-reference/` contiene referencias históricas inactivas, sin instrucciones para configurar servicios propios.

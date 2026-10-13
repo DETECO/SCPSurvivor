@@ -23,7 +23,7 @@ G.Guard = (() => {
   function flag(why) {
     if (!run || run.flags.has(why)) return;
     run.flags.add(why);
-    console.warn('[PokéSurvivor] partida no válida para el ranking:', why);
+    console.warn('[SCP Survivor] partida no válida para el ranking:', why);
   }
 
   /** Una vez por segundo de juego. */

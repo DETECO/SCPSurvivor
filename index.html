@@ -2,17 +2,31 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'none'; connect-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:,">
-<title>SCP Survivor · Preparación</title>
-<style>body{margin:0;background:#111820;color:#edf4fa;font:17px/1.6 system-ui,sans-serif}main{max-width:640px;margin:12vh auto;padding:24px}h1{font-size:32px}p{color:#c1cdd9}.status{color:#88d8c1}code{font-size:15px}</style>
+<link rel="stylesheet" href="css/technical.css">
+<title>SCP Survivor · Escena de prueba</title>
+<!-- GENERADO desde dev.html por tools/build.js: no editar a mano (se edita dev.html). -->
 </head>
 <body>
-<main><p class="status">Base independiente · preparación estática</p><h1>SCP Survivor</h1>
-<p>Los archivos de base están preparados. El juego todavía no está habilitado.</p>
-<p>Construcción, arranque y pruebas serán la siguiente tarea autorizada. Esta página no inicia partidas ni conecta cuentas o servicios.</p>
-<p>Consulta <code>README.md</code> para subir la carpeta a GitHub.</p></main>
-
-</body></html>
+<header><div class="brand">SCP SURVIVOR</div><span class="version">ESCENA DE PRUEBA · 0.1</span></header>
+<main>
+<div id="viewport">
+<canvas id="game" aria-label="Sector de entrenamiento; usa WASD, flechas o arrastra el dedo para moverte"></canvas>
+<div id="boot" role="status" aria-live="polite">Preparando el sector…</div>
+<section id="technical-ready" class="overlay" hidden aria-label="Menú principal">
+<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p>Entra al sector con el guardia novato. Explora y prueba los controles.</p><p>Escena provisional: todavía no hay combate ni recompensas.</p><button id="btn-technical-start" class="primary">Entrar al sector</button></div>
+</section>
+<section id="technical-pause" class="overlay" hidden aria-label="Pausa">
+<div class="panel"><p class="eyebrow">SECTOR DETENIDO</p><h2>Pausa</h2><p>Tu posición se conserva mientras esta página permanezca abierta.</p><button id="btn-technical-resume" class="primary">Continuar</button><button id="btn-technical-menu">Volver al menú</button></div>
+</section>
+<div id="scene-hud" class="hud" hidden><span>GUARDIA NOVATO · <span id="scene-time">0:00</span></span><button id="btn-technical-pause" aria-label="Pausar escena">Pausa</button></div>
+</div>
+</main>
+<footer class="footer"><div id="scene-footer" hidden><p><kbd>WASD</kbd> / flechas · arrastra el dedo para moverte · <kbd>Esc</kbd> pausa</p><p>Sector de entrenamiento · posición <span id="scene-position">0, 0</span></p></div><p>Versión provisional · sin guardado de expedición</p></footer>
+<noscript>Activa JavaScript para entrar al sector de SCP Survivor.</noscript>
+<script defer src="js/app.min.js?v=69eb8341b2"></script>
+</body>
+</html>

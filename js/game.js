@@ -17,6 +17,7 @@
 G.Game = (() => {
   let cv, ctx, dpr = 1, w = 0, h = 0;
   let state = 'ui';
+  let technical = false, initialized = false;
   let time = 0, last = 0, pendingLevels = 0;
   let pl = null;
   let caught = [];          // shinies conseguidos en esta run
@@ -26,7 +27,10 @@ G.Game = (() => {
 
   // ---------------- arranque ----------------
 
-  function init() {
+  function init(options = {}) {
+    if (initialized) return;
+    initialized = true;
+    technical = !!options.technical;
     cv = document.getElementById('game');
     ctx = cv.getContext('2d');
     resize();
@@ -34,8 +38,13 @@ G.Game = (() => {
     G.Touch.init(cv);
     // En móvil: al cambiar de app o girarlo en vertical, la partida se pausa.
     document.addEventListener('visibilitychange', () => { if (document.hidden) autoPause(); });
-    G.RunUI.wirePause(() => { state = 'playing'; G.UI.hideAll(); }, quitRun);
-    Backdrop.init();
+    if (!technical) {
+      G.RunUI.wirePause(() => { state = 'playing'; G.UI.hideAll(); }, quitRun);
+      Backdrop.init();
+    } else {
+      G.World.reset(1337); G.World.setFixture(G.Content.fixture); G.World.setBiome(1, true);
+    }
+    addEventListener('blur', () => { if (technical) autoPause(); });
     last = performance.now();
     requestAnimationFrame(loop);
   }
@@ -53,6 +62,7 @@ G.Game = (() => {
 
   /** Móvil en vertical: aviso de girarlo (y pausa). */
   function checkOrientation() {
+    if (technical) return;
     const portrait = G.Touch.active && innerHeight > innerWidth;
     const el = document.getElementById('rotate');
     if (!el) return;
@@ -64,11 +74,23 @@ G.Game = (() => {
   /** Pausa sola (sólo en solitario: en grupo los demás siguen). */
   function autoPause() {
     G.Touch.reset();
+    if (technical) {
+      G.Input.reset();
+      if (state === 'playing') { state = 'paused'; G.TechnicalUI.state(state); }
+      return;
+    }
     if (state === 'playing' && !G.Coop.active) { state = 'paused'; G.RunUI.showPause(); }
   }
 
   /** Pausa/continúa (tecla Esc o P, o el botón de pausa del móvil). */
   function togglePause() {
+    if (technical) {
+      if (state !== 'playing' && state !== 'paused') return;
+      if (state === 'paused' && document.hidden) return;
+      state = state === 'playing' ? 'paused' : 'playing';
+      G.Input.reset(); G.Touch.reset(); G.TechnicalUI.state(state);
+      return;
+    }
     // En grupo la pausa no para el juego (los demás siguen jugando).
     if (G.Coop.active) {
       if (state !== 'playing') return;
@@ -398,6 +420,10 @@ G.Game = (() => {
   // ---------------- teclado ----------------
 
   function handleKeys() {
+    if (technical) {
+      if (G.Input.tap('escape') || G.Input.tap('keyp')) togglePause();
+      return;
+    }
     if (G.SettingsUI.isOpen) { if (G.Input.tap('escape')) G.SettingsUI.close(); return; }
     if (state === 'levelup') {
       for (let i = 0; i < 3; i++) {
@@ -446,6 +472,7 @@ G.Game = (() => {
     requestAnimationFrame(loop);
     try { frame(ts); }
     catch (e) {
+      if (technical && loopErrs === 0) { state = 'error'; G.TechnicalUI.fail(e); }
       if (loopErrs++ < 5) console.error('[Game] fallo en un fotograma:', e);
       G.Input.endFrame();
     }
@@ -462,6 +489,14 @@ G.Game = (() => {
 
     handleKeys();
 
+    if (technical) {
+      if (state === 'error') { G.Input.endFrame(); return; }
+      if (state === 'playing' && pl) {
+        time += dt; pl.update(dt); G.World.update(dt, G.Camera); G.Camera.follow(pl.x, pl.y, dt);
+      }
+      renderTechnical(); G.TechnicalUI.tick(pl, time); G.Input.endFrame();
+      return;
+    }
     if (state === 'playing') update(dt);
     else if (pl && state !== 'ui') { G.FX.update(dt * 0.25); pl.anim.update(dt * 0.25); }
     // La red se atiende siempre (también con las cartas de nivel abiertas).
@@ -471,6 +506,27 @@ G.Game = (() => {
     G.UI.tick(dt);
 
     G.Input.endFrame();
+  }
+
+  function startTechnical() {
+    if (!technical) throw new Error('Escena local no inicializada');
+    G.Input.reset(); G.Touch.reset();
+    G.EnemyMgr.clear(); G.Projectiles.clear(); G.FX.clear(); G.Weather.reset();
+    G.World.reset(1337); G.World.setFixture(G.Content.fixture); G.World.setBiome(1, true);
+    pl = new G.Player(G.Content.guard);
+    time = 0; G.Camera.x = 0; G.Camera.y = 0; G.Camera.shake = 0;
+    G.Sprites.preload([pl.dex], 2000);
+    state = 'playing'; G.TechnicalUI.state(state);
+  }
+
+  function renderTechnical() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h); ctx.imageSmoothingEnabled = false;
+    ctx.save(); ctx.scale(G.Camera.scale, G.Camera.scale); G.Camera.apply(ctx);
+    G.World.drawGround(ctx, G.Camera);
+    if (pl && state !== 'ui') pl.draw(ctx);
+    ctx.restore(); G.World.drawVignette(ctx, w, h);
+    G.Touch.clearButtons(); G.Touch.draw(ctx);
   }
 
   function update(dt) {
@@ -714,7 +770,7 @@ G.Game = (() => {
   })();
 
   return {
-    init, startRun, everyone, levelXp, flash, offerBond,
+    init, startRun, startTechnical, everyone, levelXp, flash, offerBond,
     /** Para pruebas: salta el reloj de la run. */
     debugTime(t) { G.Guard.flag('debug'); time = t; },
     /** Para grabar vídeos: cámara lenta (0,5 = mitad de velocidad). */
@@ -724,7 +780,11 @@ G.Game = (() => {
     quit() { if (state !== 'ui' && state !== 'over') quitRun(); },
     /** Para grabar vídeos: abre las cartas de subir de nivel. */
     debugLevelUp() { G.Guard.flag('debug'); pl.level++; pendingLevels++; },
-    toUI() { state = 'ui'; Backdrop.restore(); },
+    toUI() {
+      state = 'ui';
+      if (technical) { pl = null; G.Input.reset(); G.Touch.reset(); G.TechnicalUI.state(state); }
+      else Backdrop.restore();
+    },
     get state() { return state; }, get player() { return pl; }, st
   };
 })();
