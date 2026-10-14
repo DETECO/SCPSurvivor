@@ -35,6 +35,7 @@ G.Game = (() => {
     ctx = cv.getContext('2d');
     resize();
     addEventListener('resize', resize);
+    if (technical && typeof ResizeObserver !== 'undefined') new ResizeObserver(resize).observe(cv);
     G.Touch.init(cv);
     // En móvil: al cambiar de app o girarlo en vertical, la partida se pausa.
     document.addEventListener('visibilitychange', () => { if (document.hidden) autoPause(); });
@@ -515,14 +516,14 @@ G.Game = (() => {
     G.Input.endFrame();
   }
 
-  function startTechnical() {
+  function startTechnical(options = {}) {
     if (!technical) throw new Error('Escena local no inicializada');
     G.Input.reset(); G.Touch.reset();
     G.EnemyMgr.clear(); G.Projectiles.clear(); G.FX.clear(); G.Weather.reset();
     G.World.reset(1337); G.World.setFixture(G.Content.fixture); G.World.setBiome(1, true);
     pl = new G.Player(G.Content.guard);
     time = 0; G.Camera.x = 0; G.Camera.y = 0; G.Camera.shake = 0;
-    G.Expedition.start(pl); G.Sprites.preload(['pursuer01'], 2000);
+    G.Expedition.start(pl, options); G.Sprites.preload(['pursuer01','biological01','warden01'], 2000);
     G.Sprites.preload([pl.dex], 2000);
     state = 'playing'; G.TechnicalUI.state(state);
   }

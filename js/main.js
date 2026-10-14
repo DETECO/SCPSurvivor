@@ -1,7 +1,7 @@
 /* Arranque local P01. La aplicación completa sigue pendiente de sus fases. */
 (() => {
   const NEED = ['U', 'Settings', 'Input', 'Touch', 'Sprites', 'Camera', 'Tiles', 'World',
-                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'FieldUpgrades', 'Expedition', 'Game'];
+                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'Expedition', 'Game'];
   function boot() {
     const miss = NEED.filter(k => !window.G || !G[k]);
     if (miss.length) {

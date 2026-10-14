@@ -10,6 +10,8 @@
     return len <= reach;
   }
   function tick(e, dt, pl) {
+    if (e.behavior === 'biological') return G.BiologicalAI.tick(e, dt, pl);
+    if (e.behavior === 'containmentBoss') return G.ContainmentBoss.tick(e, dt, pl);
     if (e.flash > 0) e.flash = Math.max(0, e.flash - dt);
     e.anim.update(dt);
     if (e.dead) { e.fade -= dt; return; }
@@ -50,6 +52,8 @@
     e.anim.loop(moving ? 'Walk' : 'Idle', moving ? Math.max(0.6, e.spd / 70) : 1);
   }
   function draw(ctx, e) {
+    if (e.behavior === 'biological') return G.BiologicalAI.draw(ctx, e);
+    if (e.behavior === 'containmentBoss') return G.ContainmentBoss.draw(ctx, e);
     if (!e.pursuerWarn || e.dead) return;
     ctx.save();
     ctx.globalAlpha = 0.23 + Math.sin((0.6 - e.pursuerWarn) * 35) * 0.08;

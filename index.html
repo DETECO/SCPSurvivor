@@ -11,26 +11,26 @@
 <!-- GENERADO desde dev.html por tools/build.js: no editar a mano (se edita dev.html). -->
 </head>
 <body>
-<header><div class="brand">SCP SURVIVOR</div><span class="version">ALFA · 0.2</span></header>
+<header><div class="brand">SCP SURVIVOR</div><span class="version">ALFA · 0.3</span></header>
 <main>
 <div id="viewport">
 <canvas id="game" aria-label="Sector de entrenamiento; usa WASD, flechas o arrastra el dedo para moverte"></canvas>
 <div id="boot" role="status" aria-live="polite">Preparando el sector…</div>
-<section id="technical-ready" class="overlay" hidden aria-label="Menú principal">
-<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p>Entra al sector con el guardia novato. Sobrevive a las oleadas, mejora tu equipo y cruza al segundo sector.</p><p>Partida local provisional: disparo automático, Sprint y extracción en el segundo sector.</p><button id="btn-technical-start" class="primary">Iniciar expedición</button></div>
+<section id="technical-ready" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Menú principal">
+<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p>Explora sectores conectados, resiste y neutraliza las amenazas. Mejora tu equipo y decide hasta dónde avanzar.</p><p>Partida local provisional: mapas variables, disparo automático y Sprint. Desde el sector 3 pueden aparecer extracciones. Frente al Custodio siempre puedes huir.</p><button id="btn-technical-start" class="primary">Iniciar expedición</button></div>
 </section>
-<section id="technical-pause" class="overlay" hidden aria-label="Pausa">
+<section id="technical-pause" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Pausa">
 <div class="panel"><p class="eyebrow">SECTOR DETENIDO</p><h2>Pausa</h2><p>Tu posición se conserva mientras esta página permanezca abierta.</p><button id="btn-technical-resume" class="primary">Continuar</button><button id="btn-technical-menu">Volver al menú</button></div>
 </section>
-<section id="field-upgrades" class="overlay" hidden><div class="panel"><p class="eyebrow">PREPARACIÓN</p><h2>Elige una mejora</h2><p id="upgrade-count"></p><div id="upgrade-cards"></div></div></section>
-<section id="field-result" class="overlay" hidden><div class="panel"><p class="eyebrow">FIN DE EXPEDICIÓN</p><h2 id="result-title"></h2><p id="result-info"></p><button id="btn-result-restart" class="primary">Nueva expedición</button><button id="btn-result-menu">Volver al menú</button></div></section>
-<div id="field-controls" class="field-controls" hidden><button id="btn-sprint">Sprint</button><button id="btn-field-ready" hidden>Listo</button><button id="btn-field-exit" hidden>Usar salida</button></div>
+<section id="field-upgrades" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="upgrade-title"><div class="panel"><p class="eyebrow">PREPARACIÓN</p><h2 id="upgrade-title">Elige una mejora</h2><p id="upgrade-count"></p><div id="upgrade-cards"></div></div></section>
+<section id="field-result" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="result-title"><div class="panel"><p class="eyebrow">FIN DE EXPEDICIÓN</p><h2 id="result-title"></h2><p id="result-info"></p><button id="btn-result-restart" class="primary">Nueva expedición</button><button id="btn-result-menu">Volver al menú</button></div></section>
+<div id="field-controls" class="field-controls" hidden><button id="btn-sprint">Sprint</button><button id="btn-field-ready" hidden>Listo</button><button id="btn-field-exit" hidden>Usar salida</button><button id="btn-field-extract" hidden>Extraer</button></div>
 <div id="field-status" class="field-status" hidden></div>
 <div id="scene-hud" class="hud" hidden><span>GUARDIA NOVATO · <span id="scene-time">0:00</span></span><button id="btn-technical-pause" aria-label="Pausar escena">Pausa</button></div>
 </div>
 </main>
 <footer class="footer"><div id="scene-footer" hidden><p class="hint-keyboard"><kbd>WASD</kbd> / flechas · arrastra el dedo para moverte · <kbd>Espacio</kbd> Sprint · <kbd>Esc</kbd> pausa</p><p class="hint-touch">Arrastra para moverte · toca Sprint para acelerar</p><span id="scene-position" hidden>0, 0</span></div><p>Partida local · sin guardado ni recompensas persistentes</p></footer>
 <noscript>Activa JavaScript para entrar al sector de SCP Survivor.</noscript>
-<script defer src="js/app.min.js?v=89a7b8782e"></script>
+<script defer src="js/app.min.js?v=762c465db5"></script>
 </body>
 </html>

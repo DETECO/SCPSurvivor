@@ -1,0 +1,150 @@
+{
+  "baseline": "P02 alfa0.2.1 before P03",
+  "sourceReferenceCommit": "a1006e6e3d0cea9162238a90b0ffdd7fd38397b6",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "9e22d55a10710440f7433037bcb62bb2b3610267bea9c8a818e1f13b1b9dd4fa"
+    },
+    {
+      "path": "assets/actors/biological01/Idle.svg",
+      "sha256": "5b13ed27a655a264c4d6941ddb5e2afd930aa45440a70cff5f0593bdc381d5ae"
+    },
+    {
+      "path": "assets/actors/biological01/Walk.svg",
+      "sha256": "e7c2f22e4cc8d7e46eeea11edc4b0dbca97b9e2ec33df8f3de4d9caf14f8dacc"
+    },
+    {
+      "path": "assets/actors/warden01/Idle.svg",
+      "sha256": "4b22dd9733d36ceacd6b20a79f19e311cf3787331c10f6e3b94e014048eac2c3"
+    },
+    {
+      "path": "assets/actors/warden01/Walk.svg",
+      "sha256": "7d16dad976529fc696571f3ff254daeb2449bf0de2b9738dfd885f2e91d59cf3"
+    },
+    {
+      "path": "dev.html",
+      "sha256": "0e5e69fc2e0f8110c9440d03af2149ebf9a31bca668c1330b5dea76a26b48721"
+    },
+    {
+      "path": "docs/P03-REPORT.md",
+      "sha256": "0b83995a910cf0351fbc8c411111d80ed8cca9bedc2d257d5dbe13fb5a9f9b12"
+    },
+    {
+      "path": "docs/P03-death-validation.json",
+      "sha256": "004e494df258b7f46f3aef112787d3502f1fedb88218556eb73af994db1bd1b3"
+    },
+    {
+      "path": "docs/P03-validation.json",
+      "sha256": "99a810e5d7dbf7d1034461e49e2443946d870d9bf237336d9a8db967843e54c2"
+    },
+    {
+      "path": "docs/screenshots/P03-boss.png",
+      "sha256": "eb32725ef6ab742a7eebe9590cad5f948d1f374eb1c223e270e1a6eb3b194a9f"
+    },
+    {
+      "path": "docs/screenshots/P03-local-01.png",
+      "sha256": "f6dd39deaa75174b58d7973ae954bf6a5a3c88fa37847a551494cb35905b59d5"
+    },
+    {
+      "path": "index.html",
+      "sha256": "b7bd472feaf49d62b6122c48cf3bc24a8a50c59a6adf23df404f7c4ba9c249f7"
+    },
+    {
+      "path": "js/app.min.js",
+      "sha256": "d0625bb93e845fa81558e115be69dea3dc5d122eaab381be58f8ac5480cbebb0"
+    },
+    {
+      "path": "js/data/content.js",
+      "sha256": "18f51c32d2928c3100af5f0e77a57d7101e1eb9d8a7eb2b71b13a939a3c6d8be"
+    },
+    {
+      "path": "js/entities/enemy.js",
+      "sha256": "246f066da36145a273e5d59fac149174da6b9d6ea9a4b1de60a7640cca867ef0"
+    },
+    {
+      "path": "js/entities/player.js",
+      "sha256": "4f66eeccbc1478f134399d3fc4055ce6136471b291cf63f44bfb916afaf4b852"
+    },
+    {
+      "path": "js/game.js",
+      "sha256": "ddb2c48ebb42749b7d14f44cfe336ddcba7bfd7709e26b59c676acfe1563efea"
+    },
+    {
+      "path": "js/main.js",
+      "sha256": "f8370e2cc7d3c41f359788fc98c890ffb4ff17c51b67b9ae2dcbe1d0d1e3f6e8"
+    },
+    {
+      "path": "js/systems/biological-ai.js",
+      "sha256": "538ad559d0c1156a87fa5214c89321f8a9e22d89beb58577eb350c6673767943"
+    },
+    {
+      "path": "js/systems/containment-ai.js",
+      "sha256": "50ea3c044bd9f1477c13b03c7881c8dd2431eac0caf906273d9eb1fe53cf652d"
+    },
+    {
+      "path": "js/systems/containment-boss.js",
+      "sha256": "b06b9eeeff654a1086e74c8a0466bfddf9b64a05f841dcef538d226c76f3a488"
+    },
+    {
+      "path": "js/systems/expedition.js",
+      "sha256": "5d8ffcd148e462cffad4670932e48792bcfbb0927601265b0045c604ebccd737"
+    },
+    {
+      "path": "js/systems/pathing.js",
+      "sha256": "0442bb6ae5e92c418e36fb8613f947685fa1aabeb637f5782075a163467b1462"
+    },
+    {
+      "path": "js/ui/technical-ui.js",
+      "sha256": "4d1e7f5951287206c4c99c1d675a5f9b20fe57a3f88c8615f5787567665c9570"
+    },
+    {
+      "path": "js/world/sector-maps.js",
+      "sha256": "27e9657eb5a262d4e4ec0fa604ea9d023d8fb72bb1fb613894d0d2658ac3d076"
+    },
+    {
+      "path": "js/world/world.js",
+      "sha256": "717e3b0754c2de738d9bef60b7e85f808845864fce251cf9f71f23027da77289"
+    },
+    {
+      "path": "tests/helpers/p03-autoplay.js",
+      "sha256": "86d7f8e4c11ad8623fe6643f8f63b69c547c45a381e7115e90d78933180e6add"
+    },
+    {
+      "path": "tests/p01-browser.py",
+      "sha256": "e70caae58846784b6d057d09c5707e1b0fc890df01b6ea326d7efa805b0b17eb"
+    },
+    {
+      "path": "tests/p02-browser.py",
+      "sha256": "b4313727e6a4af625572160545b2fde07b459536edaf80cf667c600d485cf0ff"
+    },
+    {
+      "path": "tests/p03-biological.test.js",
+      "sha256": "aad40c5a2dad9957c915be17d1eb3036f903e05388280bc3f7117be02df004eb"
+    },
+    {
+      "path": "tests/p03-boss.test.js",
+      "sha256": "a2639fef0eefe7c7d2211b7b68dfb6999befbb9daedf730e8cc3fa1e4a7ed7cf"
+    },
+    {
+      "path": "tests/p03-browser.py",
+      "sha256": "e41c5a00429d0d4ba9351503c38d27db1e4a56ed0594ebfa44a89e97c72cb642"
+    },
+    {
+      "path": "tests/p03-death.py",
+      "sha256": "5915b1d57d90d686a7a871a4ffb96f9ad284899f772dd9c15ef8e4f448ff3f4d"
+    },
+    {
+      "path": "tests/p03-director.test.js",
+      "sha256": "1cca9b51f63f5ad7dd2d59f6d469439b3be8966fb9f1cca102a936412e510b6e"
+    },
+    {
+      "path": "tests/p03-maps.test.js",
+      "sha256": "5094207af49c61a2744e8c5564f4faf575afe59892b55a839cb180d69bf6bda5"
+    },
+    {
+      "path": "tests/p03-pathing.test.js",
+      "sha256": "4abefb48956c85d48707d3aa16c17e6bdc8632a98648adcc4ad78b9f84f42833"
+    }
+  ]
+}

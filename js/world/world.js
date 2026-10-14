@@ -36,6 +36,9 @@ G.World = (() => {
 
   let seed = 1, biome = 0;
   let fixture = null;
+  // Fixture maps keep their public array shape for existing callers; hot tile
+  // lookups use this normalized set instead of scanning the array each time.
+  let fixtureWallSet = null;
   let arena = null;                        // { tx, ty, r } en tiles
   const data = new Map();                  // "cx,cy" -> datos del chunk
   let images = new Map();                  // "cx,cy" -> canvas horneado
@@ -71,7 +74,7 @@ G.World = (() => {
   function terrainRaw(tx, ty) {
     if (fixture) {
       if (tx <= fixture.minX || tx >= fixture.maxX || ty <= fixture.minY || ty >= fixture.maxY) return WALL;
-      return fixture.walls.some(([x, y]) => x === tx && y === ty) ? WALL : FLOOR;
+      return fixtureWallSet.has(tx + ',' + ty) ? WALL : FLOOR;
     }
     const ad = arenaDist(tx, ty);
     if (ad < arena_outer()) {
@@ -556,7 +559,7 @@ G.World = (() => {
   function reset(s) {
     seed = (s | 0) || 1;
     data.clear(); images.clear(); broken.clear();
-    fade = null; arena = null; fixture = null;
+    fade = null; arena = null; fixture = null; fixtureWallSet = null;
   }
 
   /**
@@ -586,7 +589,11 @@ G.World = (() => {
 
   return {
     TS, CW, reset, setBiome, biomeName, liquidKind, liquidEffect, walkable,
-    setFixture(map) { fixture = map; data.clear(); images.clear(); },
+    setFixture(map) {
+      fixture = map ? { ...map, walls: Array.isArray(map.walls) ? map.walls : [...(map.walls || [])].map(k => String(k).split(',').map(Number)) } : null;
+      fixtureWallSet = fixture ? new Set(fixture.walls.map(([x, y]) => x + ',' + y)) : null;
+      data.clear(); images.clear();
+    },
     get fixture() { return fixture; },
     kindAt, isWall, isLiquid, isFree, collide, projectileBlock, propsInCircle, nearestBreakable,
     damageProp, breakAt, specialsNear, update,

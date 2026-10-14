@@ -200,6 +200,7 @@ G.Player = class Player {
     }
     const d = Math.max(1, amount * (1 - this.reduction));
     this.hp -= d;
+    if (this.fieldMode) this.fieldDamageRevision = (this.fieldDamageRevision || 0) + 1;
     this.invuln = 0.45;
     this.flash = 0.14;
     G.Audio.sfx('hurt');

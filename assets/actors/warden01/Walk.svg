@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" shape-rendering="crispEdges">
+  <title>Warden 01 procedural placeholder, walk</title>
+  <ellipse cx="32" cy="57" rx="18" ry="4" fill="#10181a" opacity=".45"/>
+  <path d="M20 20h26v27H20z" fill="#344f50" stroke="#101819" stroke-width="4"/>
+  <path d="M24 24h18v14H24z" fill="#65b9a2"/><path d="M27 28h4v4h-4zm9 0h4v4h-4z" fill="#e5ffe8"/>
+  <path d="M18 16h30v8H18zM23 11h20v7H23z" fill="#9aead0" stroke="#101819" stroke-width="3"/>
+  <path d="M16 31h7v17h-7zm27 3h7v15h-7z" fill="#263b3d" stroke="#101819" stroke-width="3"/>
+  <path d="M19 46h10v8H19zm16 1h11v8H35z" fill="#263b3d" stroke="#101819" stroke-width="3"/>
+  <path d="M26 37h14v4H26z" fill="#ff5962"/>
+</svg>

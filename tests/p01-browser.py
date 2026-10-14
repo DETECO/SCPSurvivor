@@ -100,16 +100,16 @@ def run(boot_only=False):
                     assert page.evaluate('G.Game.state') == 'paused', 'Volver al foco no debe reanudar solo'
                     page.locator('#btn-technical-resume').click()
                     # Colisión real contra la pared exterior, sin atravesarla por mantener dirección.
-                    page.evaluate('G.Game.player.x=748; G.Game.player.y=0')
+                    wall=page.evaluate('''() => {const m=G.SectorMaps.generate(G.Expedition.state.mapSeed),T=G.World.TS; const [x,y]=m.floorTiles.find(([x,y])=>G.World.isFree((x+.5)*T,(y+.5)*T,G.Game.player.r)&&G.World.isWall((x+1.5)*T,(y+.5)*T));G.Game.player.x=(x+.5)*T;G.Game.player.y=(y+.5)*T;return (x+1)*T;}''')
                     page.keyboard.down('KeyD')
                     page.wait_for_timeout(350)
                     page.keyboard.up('KeyD')
-                    assert page.evaluate('G.Game.player.x + G.Game.player.r <= 768.01')
+                    assert page.evaluate('G.Game.player.x + G.Game.player.r') <= wall + .01
                     page.locator('#btn-technical-pause').click()
                     page.locator('#btn-technical-menu').click()
                     assert page.evaluate('G.Game.state') == 'ui'
                     page.locator('#btn-technical-start').click()
-                    assert page.evaluate('Math.abs(G.Game.player.x) < 1 && Math.abs(G.Game.player.y) < 1')
+                    assert page.evaluate('(()=>{const p=G.SectorMaps.generate(G.Expedition.state.mapSeed).entry;return Math.hypot(G.Game.player.x-p.x,G.Game.player.y-p.y)<1})()')
                     if mobile:
                         # Puntero táctil emulado; coordenadas de viewport con canvas desplazado.
                         box = page.locator('#game').bounding_box()
@@ -125,7 +125,7 @@ def run(boot_only=False):
                         page.set_viewport_size({'width':844,'height':390})
                         page.wait_for_timeout(100)
                         assert page.evaluate('G.Game.state') == 'playing'
-                    assert page.evaluate('Math.abs(G.Camera.w-768)<.01 && Math.abs(G.Camera.h-768)<.01')
+                    assert page.evaluate('G.Camera.w>=768 && G.Camera.h>=420')
                     assert page.evaluate('G.ENABLE_CLOUD === false && G.ENABLE_MULTIPLAYER === false && G.ENABLE_SOCIAL === false && G.ENABLE_SIGNUPS === false && G.FIREBASE_CONFIG === null')
                     assert page.evaluate('G.Game.player instanceof G.Player')
                     assert page.evaluate('G.World.fixture !== null')

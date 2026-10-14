@@ -1,17 +1,19 @@
 # SCP Survivor
 
-Juego web en desarrollo. **P02-local-01 (alfa 0.2)** incorpora una primera partida completa de prueba sobre los sistemas reutilizados de la base. No es la versión final publicada.
+Juego web en desarrollo. **P03-local-01 (alfa 0.3)** incorpora una primera partida completa de prueba sobre los sistemas reutilizados de la base. No es la versión final publicada.
 
 ## Esta entrega
 
-- Guardia novato con velocidad base **165 unidades/s: 1,5× la velocidad original de 110**.
-- Pistola automática, cargador, recarga y Sprint; enemigos que avisan antes de golpear.
-- Dos sectores provisionales conectados, tres oleadas por sector, experiencia y elección de mejoras temporales.
-- Preparación de 20 segundos entre oleadas, con botón Listo para continuar antes. Elegir mejoras detiene sus temporizadores.
-- Paso al segundo sector conservando el personaje. Extracción confirmada de tres segundos en el segundo sector; moverse la cancela.
-- Derrota, resumen, reinicio y regreso al menú. Pausa manual y al entrar en segundo plano.
+- Mapas modulares propios con salas, pasillos y zonas opcionales, generados con semillas reproducibles.
+- Expedición que continúa por sectores: neutralización, resistencia de 60 segundos y neutralización por mapa normal.
+- Perseguidor y biológico con disparos avisados; jefe Custodio con refuerzos, victoria y huida disponible desde el inicio.
+- Extracciones aleatorias desde el sector 3, con garantía tras varios mapas sin extracción. Puedes ignorarlas y seguir.
+- Guardia novato a **165 unidades/s (1,5× la velocidad original)**, pistola automática y Sprint.
+- Una mejora por nivel ganado y continuación automática tras elegir la última. Descanso de 20 segundos sin mejoras pendientes; Listo permite saltarlo.
+- Canvas que ocupa el área disponible del navegador, controles adaptables y pausa al entrar en segundo plano.
+- Resumen de extracción o muerte, reinicio y regreso al menú.
 
-Los mapas, enemigos y arte son provisionales. Esta extracción en el segundo sector pertenece al recorrido mínimo de prueba; no modifica el diseño posterior del juego. No hay guardado, cuentas, inventario persistente, reclutamiento adaptado, ranking ni servicios de nube activos. La partida se pierde al recargar la página.
+El arte es provisional. No hay guardado, cuentas, inventario persistente, reclutamiento adaptado, ranking ni servicios de nube activos. La partida se pierde al recargar la página. Es una alfa intermedia; la meta sigue siendo la primera versión completa publicada.
 
 ## Controles
 
@@ -31,7 +33,7 @@ Abre http://127.0.0.1:8000/ . Para revisar las fuentes utiliza `/dev.html`. Cons
 
 ## Actualización manual
 
-El ZIP de actualización P02 contiene únicamente archivos nuevos o cambiados y el aviso de licencia. Descomprímelo **sobre la entrega P01**, reemplazando archivos y conservando sus rutas. No borres los demás archivos ni añadas una carpeta contenedora adicional.
+El ZIP de actualización P03 contiene únicamente archivos nuevos o cambiados y el aviso de licencia. Descomprímelo **sobre la entrega P01, P02 o 0.2.1**, reemplazando archivos y conservando sus rutas. No borres los demás archivos ni añadas una carpeta contenedora adicional.
 
 Sube esos archivos a `DETECO/SCPSurvivor`. El paquete se mantiene por debajo de 100 archivos para facilitar una carga desde GitHub. No contiene una actualización de RoadmapSCP. Este hilo no ha realizado commits, subidas ni publicaciones.
 
@@ -46,10 +48,15 @@ npm run build
 node tests/p02-weapon.test.js
 node --test tests/p02-ai.test.js
 node tests/p02-upgrades.test.js
-python3 tests/p02-browser.py
+node tests/p03-maps.test.js
+node tests/p03-pathing.test.js
+node tests/p03-biological.test.js
+node tests/p03-boss.test.js
+node tests/p03-director.test.js
+python3 tests/p03-browser.py
 ```
 
-Las pruebas de navegador requieren Python Playwright y Chromium; no son dependencias del juego. Véase [informe P02](docs/P02-REPORT.md). Se utiliza Chromium en Linux con controles táctiles emulados; Safari e iPhone/Infinix físicos quedan pendientes. La simulación acelerada de la partida no es una medición de FPS.
+Las pruebas de navegador requieren Python Playwright y Chromium; no son dependencias del juego. Véase [informe P03](docs/P03-REPORT.md). Se utiliza Chromium en Linux con controles táctiles emulados; Safari e iPhone/Infinix físicos quedan pendientes. La simulación acelerada de la partida no es una medición de FPS.
 
 No instales dependencias de `functions/` ni despliegues servicios. La configuración mantiene deshabilitadas cuentas, nube y service worker.
 

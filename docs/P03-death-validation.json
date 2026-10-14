@@ -1,0 +1,53 @@
+{
+  "method": "Controlled damage1000, real source/compiled browser run; not gameplay balance",
+  "records": [
+    {
+      "entry": "dev.html",
+      "result": {
+        "reason": "death",
+        "sector": 1,
+        "wave": 1,
+        "kills": 0,
+        "level": 1,
+        "elapsed": 0.06673333333333342,
+        "hp": 0,
+        "runSeed": 2322397724,
+        "wavesCompleted": 0,
+        "sectorsCompleted": 0,
+        "bossesDefeated": 0,
+        "bossesEvaded": 0
+      },
+      "restart": {
+        "hp": 100,
+        "level": 1,
+        "kills": 0
+      },
+      "uniqueResult": true,
+      "status": "PASS"
+    },
+    {
+      "entry": "index.html",
+      "result": {
+        "reason": "death",
+        "sector": 1,
+        "wave": 1,
+        "kills": 0,
+        "level": 1,
+        "elapsed": 0.06673333333333331,
+        "hp": 0,
+        "runSeed": 2956767999,
+        "wavesCompleted": 0,
+        "sectorsCompleted": 0,
+        "bossesDefeated": 0,
+        "bossesEvaded": 0
+      },
+      "restart": {
+        "hp": 100,
+        "level": 1,
+        "kills": 0
+      },
+      "uniqueResult": true,
+      "status": "PASS"
+    }
+  ]
+}

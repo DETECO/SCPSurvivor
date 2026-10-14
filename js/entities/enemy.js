@@ -29,9 +29,9 @@
       this.name = (G.DEX_BY[def.dex] && G.DEX_BY[def.dex].name) || def.name;
       this.x = x; this.y = y;
       this.boss = boss;
-      this.scale = boss ? bossScale(def.dex) : 1;
+      this.scale = def.containment ? 1 : (boss ? bossScale(def.dex) : 1);
       this.anim = new G.Sprites.Animator(def.dex, this.scale);
-      this.r = G.Sprites.bodyRadius(def.dex, this.scale);
+      this.r = def.containment && def.radius ? def.radius : G.Sprites.bodyRadius(def.dex, this.scale);
       this.bodyH = G.Sprites.bodyHeight(def.dex, this.scale);
 
       this.maxHp = def.containment ? def.hp * sc.hp : Math.round(def.hp * sc.hp);
@@ -46,7 +46,7 @@
       this.atkType = this.types[0];         // tipo de sus golpes (tabla de tipos)
       // Vuelan por encima de rocas y agua sólo los que FLOTAN en su sprite (un
       // Rowlet camina aunque sea Volador). Los jefes, por su tamaño, también.
-      this.flying = boss || G.Sprites.hovers(def.dex);
+      this.flying = def.containment ? false : (boss || G.Sprites.hovers(def.dex));
 
       this.flash = 0;
       this.slow = 0; this.slowT = 0;

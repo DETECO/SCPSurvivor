@@ -1,0 +1,1233 @@
+{
+  "version": "P03-local-01 / alfa0.3",
+  "records": [
+    {
+      "entry": "dev.html",
+      "touchEmulated": false,
+      "status": "PASS",
+      "errors": [],
+      "remoteAttempts": [],
+      "httpFailures": [],
+      "completeFlow": null
+    },
+    {
+      "entry": "dev.html",
+      "touchEmulated": true,
+      "status": "PASS",
+      "errors": [],
+      "remoteAttempts": [],
+      "httpFailures": [],
+      "completeFlow": {
+        "mode": "escape",
+        "result": {
+          "reason": "extracted",
+          "sector": 10,
+          "wave": 3,
+          "kills": 1128,
+          "level": 21,
+          "elapsed": 2272.466466665268,
+          "hp": 120,
+          "runSeed": 1337,
+          "wavesCompleted": 27,
+          "sectorsCompleted": 10,
+          "bossesDefeated": 0,
+          "bossesEvaded": 1
+        },
+        "log": [
+          {
+            "id": "1:1:combat:0",
+            "hp": 100,
+            "kills": 0,
+            "level": 1,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:1:combat:1",
+            "hp": 100,
+            "kills": 7,
+            "level": 2,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:1:preparation:2",
+            "hp": 100,
+            "kills": 12,
+            "level": 3,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:2:combat:0",
+            "hp": 100,
+            "kills": 16,
+            "level": 3,
+            "objective": "survive"
+          },
+          {
+            "id": "1:2:combat:1",
+            "hp": 100,
+            "kills": 29,
+            "level": 4,
+            "objective": "survive"
+          },
+          {
+            "id": "1:2:combat:2",
+            "hp": 88,
+            "kills": 48,
+            "level": 5,
+            "objective": "survive"
+          },
+          {
+            "id": "1:2:preparation:2",
+            "hp": 88,
+            "kills": 50,
+            "level": 5,
+            "objective": "survive"
+          },
+          {
+            "id": "1:2:preparation:1",
+            "hp": 88,
+            "kills": 50,
+            "level": 5,
+            "objective": "survive"
+          },
+          {
+            "id": "1:3:combat:0",
+            "hp": 88,
+            "kills": 50,
+            "level": 5,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:3:combat:1",
+            "hp": 76,
+            "kills": 58,
+            "level": 6,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:3:preparation:1",
+            "hp": 76,
+            "kills": 70,
+            "level": 6,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:3:exploration:0",
+            "hp": 76,
+            "kills": 70,
+            "level": 6,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:1:combat:0",
+            "hp": 76,
+            "kills": 70,
+            "level": 6,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:1:combat:1",
+            "hp": 63.04,
+            "kills": 81,
+            "level": 7,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:1:preparation:1",
+            "hp": 63.04,
+            "kills": 90,
+            "level": 7,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:2:combat:0",
+            "hp": 83.03999999999999,
+            "kills": 90,
+            "level": 7,
+            "objective": "survive"
+          },
+          {
+            "id": "2:2:combat:1",
+            "hp": 70.07999999999998,
+            "kills": 110,
+            "level": 8,
+            "objective": "survive"
+          },
+          {
+            "id": "2:2:preparation:1",
+            "hp": 57.11999999999998,
+            "kills": 132,
+            "level": 8,
+            "objective": "survive"
+          },
+          {
+            "id": "2:3:combat:0",
+            "hp": 57.149999999999984,
+            "kills": 132,
+            "level": 8,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:3:combat:1",
+            "hp": 77.37000000000074,
+            "kills": 141,
+            "level": 9,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:3:preparation:1",
+            "hp": 74.16000000000159,
+            "kills": 156,
+            "level": 9,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:3:exploration:0",
+            "hp": 74.16000000000159,
+            "kills": 156,
+            "level": 9,
+            "objective": "neutralize"
+          },
+          {
+            "id": "3:1:combat:0",
+            "hp": 74.19000000000159,
+            "kills": 156,
+            "level": 9,
+            "objective": "neutralize"
+          },
+          {
+            "id": "3:1:preparation:1",
+            "hp": 115.89000000000317,
+            "kills": 180,
+            "level": 10,
+            "objective": "neutralize"
+          },
+          {
+            "id": "3:2:combat:0",
+            "hp": 115.92000000000317,
+            "kills": 180,
+            "level": 10,
+            "objective": "survive"
+          },
+          {
+            "id": "3:2:preparation:1",
+            "hp": 120,
+            "kills": 225,
+            "level": 11,
+            "objective": "survive"
+          },
+          {
+            "id": "3:3:combat:0",
+            "hp": 120,
+            "kills": 225,
+            "level": 11,
+            "objective": "neutralize"
+          },
+          {
+            "id": "3:3:preparation:0",
+            "hp": 120,
+            "kills": 253,
+            "level": 11,
+            "objective": "neutralize"
+          },
+          {
+            "id": "3:3:exploration:0",
+            "hp": 120,
+            "kills": 253,
+            "level": 11,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:1:combat:0",
+            "hp": 120,
+            "kills": 253,
+            "level": 11,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:1:preparation:1",
+            "hp": 120,
+            "kills": 281,
+            "level": 12,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:2:combat:0",
+            "hp": 120,
+            "kills": 281,
+            "level": 12,
+            "objective": "survive"
+          },
+          {
+            "id": "4:2:preparation:0",
+            "hp": 120,
+            "kills": 330,
+            "level": 12,
+            "objective": "survive"
+          },
+          {
+            "id": "4:3:combat:0",
+            "hp": 120,
+            "kills": 330,
+            "level": 12,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:3:combat:1",
+            "hp": 120,
+            "kills": 340,
+            "level": 13,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:3:preparation:1",
+            "hp": 120,
+            "kills": 362,
+            "level": 13,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:3:exploration:0",
+            "hp": 120,
+            "kills": 362,
+            "level": 13,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:1:combat:0",
+            "hp": 120,
+            "kills": 362,
+            "level": 13,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:1:preparation:0",
+            "hp": 120,
+            "kills": 394,
+            "level": 13,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:2:combat:0",
+            "hp": 120,
+            "kills": 394,
+            "level": 13,
+            "objective": "survive"
+          },
+          {
+            "id": "5:2:combat:1",
+            "hp": 108.00000000000014,
+            "kills": 402,
+            "level": 14,
+            "objective": "survive"
+          },
+          {
+            "id": "5:2:preparation:1",
+            "hp": 120,
+            "kills": 447,
+            "level": 14,
+            "objective": "survive"
+          },
+          {
+            "id": "5:3:combat:0",
+            "hp": 120,
+            "kills": 447,
+            "level": 14,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:3:combat:1",
+            "hp": 120,
+            "kills": 475,
+            "level": 15,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:3:preparation:1",
+            "hp": 120,
+            "kills": 483,
+            "level": 15,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:3:exploration:0",
+            "hp": 120,
+            "kills": 483,
+            "level": 15,
+            "objective": "neutralize"
+          },
+          {
+            "id": "6:1:boss:0",
+            "hp": 120,
+            "kills": 483,
+            "level": 15,
+            "objective": "boss"
+          },
+          {
+            "id": "6:1:escaping:0",
+            "hp": 120,
+            "kills": 483,
+            "level": 15,
+            "objective": "boss"
+          },
+          {
+            "id": "7:1:combat:0",
+            "hp": 120,
+            "kills": 483,
+            "level": 15,
+            "objective": "neutralize"
+          },
+          {
+            "id": "7:1:preparation:0",
+            "hp": 120,
+            "kills": 523,
+            "level": 15,
+            "objective": "neutralize"
+          },
+          {
+            "id": "7:2:combat:0",
+            "hp": 120,
+            "kills": 523,
+            "level": 15,
+            "objective": "survive"
+          },
+          {
+            "id": "7:2:combat:1",
+            "hp": 120,
+            "kills": 553,
+            "level": 16,
+            "objective": "survive"
+          },
+          {
+            "id": "7:2:preparation:1",
+            "hp": 120,
+            "kills": 583,
+            "level": 16,
+            "objective": "survive"
+          },
+          {
+            "id": "7:3:combat:0",
+            "hp": 120,
+            "kills": 583,
+            "level": 16,
+            "objective": "neutralize"
+          },
+          {
+            "id": "7:3:preparation:0",
+            "hp": 120,
+            "kills": 627,
+            "level": 16,
+            "objective": "neutralize"
+          },
+          {
+            "id": "7:3:exploration:0",
+            "hp": 120,
+            "kills": 627,
+            "level": 16,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:1:combat:0",
+            "hp": 120,
+            "kills": 627,
+            "level": 16,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:1:combat:1",
+            "hp": 120,
+            "kills": 641,
+            "level": 17,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:1:preparation:1",
+            "hp": 120,
+            "kills": 671,
+            "level": 17,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:2:combat:0",
+            "hp": 120,
+            "kills": 671,
+            "level": 17,
+            "objective": "survive"
+          },
+          {
+            "id": "8:2:preparation:0",
+            "hp": 120,
+            "kills": 734,
+            "level": 17,
+            "objective": "survive"
+          },
+          {
+            "id": "8:3:combat:0",
+            "hp": 120,
+            "kills": 734,
+            "level": 17,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:3:combat:1",
+            "hp": 120,
+            "kills": 737,
+            "level": 18,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:3:preparation:1",
+            "hp": 120,
+            "kills": 782,
+            "level": 18,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:3:exploration:0",
+            "hp": 120,
+            "kills": 782,
+            "level": 18,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:1:combat:0",
+            "hp": 120,
+            "kills": 782,
+            "level": 18,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:1:preparation:0",
+            "hp": 120,
+            "kills": 830,
+            "level": 18,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:2:combat:0",
+            "hp": 120,
+            "kills": 830,
+            "level": 18,
+            "objective": "survive"
+          },
+          {
+            "id": "9:2:combat:1",
+            "hp": 120,
+            "kills": 843,
+            "level": 19,
+            "objective": "survive"
+          },
+          {
+            "id": "9:2:preparation:1",
+            "hp": 120,
+            "kills": 897,
+            "level": 19,
+            "objective": "survive"
+          },
+          {
+            "id": "9:3:combat:0",
+            "hp": 120,
+            "kills": 897,
+            "level": 19,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:3:preparation:0",
+            "hp": 120,
+            "kills": 949,
+            "level": 19,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:3:exploration:0",
+            "hp": 120,
+            "kills": 949,
+            "level": 19,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:1:combat:0",
+            "hp": 120,
+            "kills": 949,
+            "level": 19,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:1:combat:1",
+            "hp": 120,
+            "kills": 958,
+            "level": 20,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:1:preparation:1",
+            "hp": 120,
+            "kills": 1001,
+            "level": 20,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:2:combat:0",
+            "hp": 120,
+            "kills": 1001,
+            "level": 20,
+            "objective": "survive"
+          },
+          {
+            "id": "10:2:preparation:0",
+            "hp": 120,
+            "kills": 1072,
+            "level": 20,
+            "objective": "survive"
+          },
+          {
+            "id": "10:3:combat:0",
+            "hp": 120,
+            "kills": 1072,
+            "level": 20,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:3:combat:1",
+            "hp": 120,
+            "kills": 1079,
+            "level": 21,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:3:preparation:1",
+            "hp": 120,
+            "kills": 1128,
+            "level": 21,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:3:exploration:0",
+            "hp": 120,
+            "kills": 1128,
+            "level": 21,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:3:extracting:0",
+            "hp": 120,
+            "kills": 1128,
+            "level": 21,
+            "objective": "neutralize"
+          }
+        ]
+      }
+    },
+    {
+      "entry": "index.html",
+      "touchEmulated": false,
+      "status": "PASS",
+      "errors": [],
+      "remoteAttempts": [],
+      "httpFailures": [],
+      "completeFlow": null
+    },
+    {
+      "entry": "index.html",
+      "touchEmulated": true,
+      "status": "PASS",
+      "errors": [],
+      "remoteAttempts": [],
+      "httpFailures": [],
+      "completeFlow": {
+        "mode": "win",
+        "result": {
+          "reason": "extracted",
+          "sector": 10,
+          "wave": 3,
+          "kills": 1133,
+          "level": 21,
+          "elapsed": 2143.8995666653846,
+          "hp": 100,
+          "runSeed": 1337,
+          "wavesCompleted": 27,
+          "sectorsCompleted": 10,
+          "bossesDefeated": 1,
+          "bossesEvaded": 0
+        },
+        "log": [
+          {
+            "id": "1:1:combat:0",
+            "hp": 100,
+            "kills": 0,
+            "level": 1,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:1:combat:1",
+            "hp": 100,
+            "kills": 7,
+            "level": 2,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:1:preparation:2",
+            "hp": 100,
+            "kills": 12,
+            "level": 3,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:2:combat:0",
+            "hp": 100,
+            "kills": 16,
+            "level": 3,
+            "objective": "survive"
+          },
+          {
+            "id": "1:2:combat:1",
+            "hp": 100,
+            "kills": 29,
+            "level": 4,
+            "objective": "survive"
+          },
+          {
+            "id": "1:2:preparation:2",
+            "hp": 88,
+            "kills": 50,
+            "level": 5,
+            "objective": "survive"
+          },
+          {
+            "id": "1:2:preparation:1",
+            "hp": 88,
+            "kills": 50,
+            "level": 5,
+            "objective": "survive"
+          },
+          {
+            "id": "1:3:combat:0",
+            "hp": 88.03,
+            "kills": 50,
+            "level": 5,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:3:combat:1",
+            "hp": 88.48000000000002,
+            "kills": 58,
+            "level": 6,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:3:preparation:1",
+            "hp": 100,
+            "kills": 70,
+            "level": 6,
+            "objective": "neutralize"
+          },
+          {
+            "id": "1:3:exploration:0",
+            "hp": 100,
+            "kills": 70,
+            "level": 6,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:1:combat:0",
+            "hp": 100,
+            "kills": 70,
+            "level": 6,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:1:combat:1",
+            "hp": 100,
+            "kills": 84,
+            "level": 7,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:1:preparation:1",
+            "hp": 100,
+            "kills": 90,
+            "level": 7,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:2:combat:0",
+            "hp": 100,
+            "kills": 90,
+            "level": 7,
+            "objective": "survive"
+          },
+          {
+            "id": "2:2:combat:1",
+            "hp": 100,
+            "kills": 110,
+            "level": 8,
+            "objective": "survive"
+          },
+          {
+            "id": "2:2:preparation:1",
+            "hp": 100,
+            "kills": 132,
+            "level": 8,
+            "objective": "survive"
+          },
+          {
+            "id": "2:3:combat:0",
+            "hp": 100,
+            "kills": 132,
+            "level": 8,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:3:combat:1",
+            "hp": 100,
+            "kills": 144,
+            "level": 9,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:3:preparation:1",
+            "hp": 100,
+            "kills": 156,
+            "level": 9,
+            "objective": "neutralize"
+          },
+          {
+            "id": "2:3:exploration:0",
+            "hp": 100,
+            "kills": 156,
+            "level": 9,
+            "objective": "neutralize"
+          },
+          {
+            "id": "3:1:combat:0",
+            "hp": 100,
+            "kills": 156,
+            "level": 9,
+            "objective": "neutralize"
+          },
+          {
+            "id": "3:1:preparation:1",
+            "hp": 90.64000000000017,
+            "kills": 180,
+            "level": 10,
+            "objective": "neutralize"
+          },
+          {
+            "id": "3:2:combat:0",
+            "hp": 90.70000000000017,
+            "kills": 180,
+            "level": 10,
+            "objective": "survive"
+          },
+          {
+            "id": "3:2:preparation:1",
+            "hp": 100,
+            "kills": 225,
+            "level": 11,
+            "objective": "survive"
+          },
+          {
+            "id": "3:3:combat:0",
+            "hp": 100,
+            "kills": 225,
+            "level": 11,
+            "objective": "neutralize"
+          },
+          {
+            "id": "3:3:preparation:0",
+            "hp": 100,
+            "kills": 253,
+            "level": 11,
+            "objective": "neutralize"
+          },
+          {
+            "id": "3:3:exploration:0",
+            "hp": 100,
+            "kills": 253,
+            "level": 11,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:1:combat:0",
+            "hp": 100,
+            "kills": 253,
+            "level": 11,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:1:preparation:1",
+            "hp": 100,
+            "kills": 281,
+            "level": 12,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:2:combat:0",
+            "hp": 100,
+            "kills": 281,
+            "level": 12,
+            "objective": "survive"
+          },
+          {
+            "id": "4:2:preparation:0",
+            "hp": 100,
+            "kills": 330,
+            "level": 12,
+            "objective": "survive"
+          },
+          {
+            "id": "4:3:combat:0",
+            "hp": 100,
+            "kills": 330,
+            "level": 12,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:3:combat:1",
+            "hp": 100,
+            "kills": 336,
+            "level": 13,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:3:preparation:1",
+            "hp": 100,
+            "kills": 362,
+            "level": 13,
+            "objective": "neutralize"
+          },
+          {
+            "id": "4:3:exploration:0",
+            "hp": 100,
+            "kills": 362,
+            "level": 13,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:1:combat:0",
+            "hp": 100,
+            "kills": 362,
+            "level": 13,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:1:preparation:0",
+            "hp": 100,
+            "kills": 394,
+            "level": 13,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:2:combat:0",
+            "hp": 100,
+            "kills": 394,
+            "level": 13,
+            "objective": "survive"
+          },
+          {
+            "id": "5:2:combat:1",
+            "hp": 100,
+            "kills": 401,
+            "level": 14,
+            "objective": "survive"
+          },
+          {
+            "id": "5:2:preparation:1",
+            "hp": 100,
+            "kills": 447,
+            "level": 14,
+            "objective": "survive"
+          },
+          {
+            "id": "5:3:combat:0",
+            "hp": 100,
+            "kills": 447,
+            "level": 14,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:3:combat:1",
+            "hp": 100,
+            "kills": 476,
+            "level": 15,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:3:preparation:1",
+            "hp": 100,
+            "kills": 483,
+            "level": 15,
+            "objective": "neutralize"
+          },
+          {
+            "id": "5:3:exploration:0",
+            "hp": 100,
+            "kills": 483,
+            "level": 15,
+            "objective": "neutralize"
+          },
+          {
+            "id": "6:1:boss:0",
+            "hp": 100,
+            "kills": 483,
+            "level": 15,
+            "objective": "boss"
+          },
+          {
+            "id": "6:1:boss:0",
+            "hp": 100,
+            "kills": 483,
+            "level": 15,
+            "objective": "boss"
+          },
+          {
+            "id": "6:1:preparation:0",
+            "hp": 100,
+            "kills": 488,
+            "level": 15,
+            "objective": "boss"
+          },
+          {
+            "id": "6:1:exploration:0",
+            "hp": 100,
+            "kills": 488,
+            "level": 15,
+            "objective": "boss"
+          },
+          {
+            "id": "7:1:combat:0",
+            "hp": 100,
+            "kills": 488,
+            "level": 15,
+            "objective": "neutralize"
+          },
+          {
+            "id": "7:1:preparation:0",
+            "hp": 100,
+            "kills": 528,
+            "level": 15,
+            "objective": "neutralize"
+          },
+          {
+            "id": "7:2:combat:0",
+            "hp": 100,
+            "kills": 528,
+            "level": 15,
+            "objective": "survive"
+          },
+          {
+            "id": "7:2:combat:1",
+            "hp": 99.10000000000065,
+            "kills": 539,
+            "level": 16,
+            "objective": "survive"
+          },
+          {
+            "id": "7:2:preparation:1",
+            "hp": 100,
+            "kills": 588,
+            "level": 16,
+            "objective": "survive"
+          },
+          {
+            "id": "7:3:combat:0",
+            "hp": 100,
+            "kills": 588,
+            "level": 16,
+            "objective": "neutralize"
+          },
+          {
+            "id": "7:3:combat:1",
+            "hp": 100,
+            "kills": 631,
+            "level": 17,
+            "objective": "neutralize"
+          },
+          {
+            "id": "7:3:preparation:1",
+            "hp": 100,
+            "kills": 632,
+            "level": 17,
+            "objective": "neutralize"
+          },
+          {
+            "id": "7:3:exploration:0",
+            "hp": 100,
+            "kills": 632,
+            "level": 17,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:1:combat:0",
+            "hp": 100,
+            "kills": 632,
+            "level": 17,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:1:preparation:0",
+            "hp": 100,
+            "kills": 676,
+            "level": 17,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:2:combat:0",
+            "hp": 100,
+            "kills": 676,
+            "level": 17,
+            "objective": "survive"
+          },
+          {
+            "id": "8:2:combat:1",
+            "hp": 100,
+            "kills": 726,
+            "level": 18,
+            "objective": "survive"
+          },
+          {
+            "id": "8:2:preparation:1",
+            "hp": 100,
+            "kills": 739,
+            "level": 18,
+            "objective": "survive"
+          },
+          {
+            "id": "8:3:combat:0",
+            "hp": 100,
+            "kills": 739,
+            "level": 18,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:3:preparation:0",
+            "hp": 100,
+            "kills": 787,
+            "level": 18,
+            "objective": "neutralize"
+          },
+          {
+            "id": "8:3:exploration:0",
+            "hp": 100,
+            "kills": 787,
+            "level": 18,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:1:combat:0",
+            "hp": 100,
+            "kills": 787,
+            "level": 18,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:1:preparation:1",
+            "hp": 100,
+            "kills": 835,
+            "level": 19,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:2:combat:0",
+            "hp": 100,
+            "kills": 835,
+            "level": 19,
+            "objective": "survive"
+          },
+          {
+            "id": "9:2:preparation:0",
+            "hp": 100,
+            "kills": 902,
+            "level": 19,
+            "objective": "survive"
+          },
+          {
+            "id": "9:3:combat:0",
+            "hp": 100,
+            "kills": 902,
+            "level": 19,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:3:combat:1",
+            "hp": 100,
+            "kills": 946,
+            "level": 20,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:3:preparation:1",
+            "hp": 100,
+            "kills": 954,
+            "level": 20,
+            "objective": "neutralize"
+          },
+          {
+            "id": "9:3:exploration:0",
+            "hp": 100,
+            "kills": 954,
+            "level": 20,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:1:combat:0",
+            "hp": 100,
+            "kills": 954,
+            "level": 20,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:1:preparation:0",
+            "hp": 100,
+            "kills": 1006,
+            "level": 20,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:2:combat:0",
+            "hp": 100,
+            "kills": 1006,
+            "level": 20,
+            "objective": "survive"
+          },
+          {
+            "id": "10:2:preparation:1",
+            "hp": 100,
+            "kills": 1077,
+            "level": 21,
+            "objective": "survive"
+          },
+          {
+            "id": "10:3:combat:0",
+            "hp": 100,
+            "kills": 1077,
+            "level": 21,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:3:preparation:0",
+            "hp": 100,
+            "kills": 1133,
+            "level": 21,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:3:exploration:0",
+            "hp": 100,
+            "kills": 1133,
+            "level": 21,
+            "objective": "neutralize"
+          },
+          {
+            "id": "10:3:extracting:0",
+            "hp": 100,
+            "kills": 1133,
+            "level": 21,
+            "objective": "neutralize"
+          }
+        ]
+      }
+    }
+  ],
+  "method": "Real controls plus fixed dt1/30 and matching virtual performance.now during autoplay to keep LOS-cache timing faithful. No HP/damage cheats in winning flows. Death and inaccessible-enemy cases use controlled injections. Not FPS/physical/Safari validation."
+}
