@@ -34,7 +34,7 @@
       this.r = G.Sprites.bodyRadius(def.dex, this.scale);
       this.bodyH = G.Sprites.bodyHeight(def.dex, this.scale);
 
-      this.maxHp = Math.round(def.hp * sc.hp);
+      this.maxHp = def.containment ? def.hp * sc.hp : Math.round(def.hp * sc.hp);
       this.hp = this.maxHp;
       this.spd = def.spd * sc.spd;
       this.dmg = def.dmg * sc.dmg;
@@ -99,7 +99,7 @@
     /** @param eff  'super' | 'weak' | null (tabla de tipos, sólo para enseñarlo) */
     hurt(amount, color = '#fff', dirX = 0, dirY = 0, knock = 0, eff = null) {
       if (this.dead) return;
-      const d = Math.max(1, Math.round(amount));
+      const d = this.def.containment ? Math.max(0, amount) : Math.max(1, Math.round(amount));
       // Copia de un enemigo del anfitrión: el golpe se le manda a él, que es
       // quien decide si cae. Aquí sólo se ve (número, destello y animación).
       if (this.remote) {
@@ -115,7 +115,7 @@
         if (a >= d) { G.FX.dmgText(this.x, this.y - this.bodyH - 4, d, '#9fd8ff'); this.flash = 0.05; return; }
         amount = d - a;
       }
-      this.hp -= Math.max(1, Math.round(amount));
+      this.hp -= this.def.containment ? amount : Math.max(1, Math.round(amount));
       this.showHurt(d, color, dirX, dirY, eff);
       if (knock > 0 && !this.boss) {
         const [nx, ny] = G.U.norm(dirX, dirY);
@@ -160,6 +160,11 @@
       const cy = this.y - this.bodyH * 0.5;
       G.FX.burst(this.x, cy, col, this.boss ? 34 : 9, this.boss ? 260 : 120);
       G.FX.ring(this.x, this.y, this.r, this.r * (this.boss ? 6 : 2.6), col, this.boss ? 0.6 : 0.3, this.boss ? 6 : 3);
+      if (this.def.containment) {
+        G.Pickups.drop('xp', this.x, this.y, this.xp);
+        G.Audio.sfx('faint');
+        return;
+      }
       // En una copia, el botín y los shinies los reparte el anfitrión.
       if (this.remote) {
         if (this.boss) G.Camera.kick(0.9);
@@ -232,6 +237,7 @@
     }
 
     update(dt, pl) {
+      if (this.def.containment) { G.ContainmentAI.tick(this, dt, pl); return; }
       // Fuera de pantalla no hace falta animar (sí moverse y pensar).
       const seen = G.Camera.sees(this.x, this.y, 120);
       if (seen || this.dead) this.anim.update(dt);
@@ -688,6 +694,8 @@
       this.anim.draw(ctx, this.x, this.y - lift, { flash: this.flash > 0, alpha });
       ctx.restore();
 
+      if (this.def.containment && G.ContainmentAI) G.ContainmentAI.draw(ctx, this);
+
       if (this.dead) return;
 
       // Escudo: burbuja azul.
@@ -908,6 +916,7 @@
           continue;
         }
         const near = nearestPlayer(players, e.x, e.y) || pl;
+        if (e.def.containment) continue;
         // El duende del tesoro se escapa si no lo atrapas a tiempo.
         if (e.behavior === 'thief' && (e.life -= dt) <= 0) {
           G.FX.burst(e.x, e.y - 10, '#ffd23f', 16, 140);

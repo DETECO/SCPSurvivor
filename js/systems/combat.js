@@ -650,6 +650,7 @@ G.Combat = (() => {
     }
 
     // --- contacto enemigo <-> jugador ---
+    if (pl.fieldMode) return;
     if (pl.dead) return;
     for (const e of G.EnemyMgr.queryCircle(pl.x, pl.y, pl.r + 40)) {
       if (G.U.dist2(e.x, e.y, pl.x, pl.y) > (e.r + pl.r) * (e.r + pl.r)) continue;

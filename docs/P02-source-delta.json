@@ -1,0 +1,121 @@
+{
+  "baseline": "P01 before P02",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "3cb0569ca4140b1d0be2daab86329d724bd4ba046b086554da1d87ffd5bdabc0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5a68480257460e6ad562a1cfbffc4a18634fc1658d95d32f5578b45a96035012"
+    },
+    {
+      "path": "assets/actors/pursuer01/Idle.svg",
+      "sha256": "9c7440fc41ef013abaa022cb13c666e893154ddd6eb9838c73b73a93d3c5415e"
+    },
+    {
+      "path": "assets/actors/pursuer01/Walk.svg",
+      "sha256": "36cbf117ae2b8eccb5039f4efdb0f102e3048241909bd695e1c30b5f7bb520eb"
+    },
+    {
+      "path": "css/technical.css",
+      "sha256": "3eb715be539dc11528ff847e39aa1be788402fb72a70aada80f56413fb9117af"
+    },
+    {
+      "path": "dev.html",
+      "sha256": "7adb2139f4a844208755f88224cee3f7188563324c84ac58ca6548d10a032c9f"
+    },
+    {
+      "path": "docs/P02-REPORT.md",
+      "sha256": "e4676eed89a104d5a4a50ca5ca0cb211bc49a548f69556144b79300fef606b3d"
+    },
+    {
+      "path": "docs/P02-validation.json",
+      "sha256": "021fe00d336b59d4e6cd0169c03286d80a566ba990ac697c3e06b9daba405a09"
+    },
+    {
+      "path": "docs/screenshots/P02-local-01.png",
+      "sha256": "bb1de1cde056fa0d6863a9202a0f2d2ba091df171d8d2dd46e5cabbfb3718b95"
+    },
+    {
+      "path": "index.html",
+      "sha256": "0a9e424b751113cd399f4aae02f4ac667b61fc196eb642e2e80dec3269327bfb"
+    },
+    {
+      "path": "js/app.min.js",
+      "sha256": "03dbe5c9c9c2c47d82afa8ce7272406162a3d3b823cba4b2c82abd1587f08835"
+    },
+    {
+      "path": "js/data/content.js",
+      "sha256": "ab42e7606bb5a15ee6ea500618c604621bedfb870a874ad2912ac50283e8bb69"
+    },
+    {
+      "path": "js/entities/enemy.js",
+      "sha256": "74c5dee6b6587dd59ea861590653fffd9f00b51bfb03009a94186b7a8c2b965b"
+    },
+    {
+      "path": "js/game.js",
+      "sha256": "eb3178004992afb5c517eb7bdb789bceb0c5570560abe75e45f985819f0a8866"
+    },
+    {
+      "path": "js/main.js",
+      "sha256": "0c1be87fa1fc99b1166ec1b7fa9aab54bd3035a6b8baa8f92092ceb9ba134e2c"
+    },
+    {
+      "path": "js/systems/combat.js",
+      "sha256": "866fbd2cd6380fed3980148328360ef26a82d7bf4a1f75a3e06214f083f3696d"
+    },
+    {
+      "path": "js/systems/containment-ai.js",
+      "sha256": "7c7f88669b03fc88c5fd5ea24158a1cbb4d8ec2e8f664443deedf6fb14551e4e"
+    },
+    {
+      "path": "js/systems/expedition.js",
+      "sha256": "5a63c999dc5a26575e4f3e6c6f22beb2dc93d3da0c344b809e53cf9a7760ab64"
+    },
+    {
+      "path": "js/systems/field-combat.js",
+      "sha256": "d06a26622658ced077225dae68888767bc54bd296aea830286bf1cd3b84c57df"
+    },
+    {
+      "path": "js/systems/field-upgrades.js",
+      "sha256": "45612d9cb5c4e758c474636a7e255a1378653efe5fcbd52309cbced9bd4f8bc9"
+    },
+    {
+      "path": "js/systems/pathing.js",
+      "sha256": "bf877f1882752a037e2224d321879405e291ca4662855489dd9dc614cf0d33a2"
+    },
+    {
+      "path": "js/ui/technical-ui.js",
+      "sha256": "7e8e902ed3774e0bc818a4754d7d3f9ca49955fb6676d28aa24fc7451ca852dc"
+    },
+    {
+      "path": "tests/helpers/p02-autoplay.js",
+      "sha256": "29bd7e189c7f53484691e09fb67adbb7eaf31b9c8608f77d938c35440837ea5e"
+    },
+    {
+      "path": "tests/p01-browser.py",
+      "sha256": "86ae0aeab5c7c4a231933c9ed18a068572d0f39d6ce99eff7848295c6c6f2926"
+    },
+    {
+      "path": "tests/p01-movement.py",
+      "sha256": "beb26dbdffe9e6ae706119d620e5b1d12886c0cf1f0841b8fa48e76fad188809"
+    },
+    {
+      "path": "tests/p02-ai.test.js",
+      "sha256": "0a82db3e512d3d6240a71d6ac785ef9819cda8a1a2eb0c420d2566f05c27b0fd"
+    },
+    {
+      "path": "tests/p02-browser.py",
+      "sha256": "3ca9f31f656d7e8298f44eb68c7e34b41828ec67eb108b2643998bcda795ef2e"
+    },
+    {
+      "path": "tests/p02-upgrades.test.js",
+      "sha256": "ba899a18f11eafa42e68dee0353797480f1599cd53833eb607bd64296d2d90c7"
+    },
+    {
+      "path": "tests/p02-weapon.test.js",
+      "sha256": "5500f80b19f90426a7e7ceb73562ba00f6df2568a150bfc419c8ac7df65c2abd"
+    }
+  ]
+}

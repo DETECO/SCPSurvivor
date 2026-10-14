@@ -100,11 +100,11 @@ def run(boot_only=False):
                     assert page.evaluate('G.Game.state') == 'paused', 'Volver al foco no debe reanudar solo'
                     page.locator('#btn-technical-resume').click()
                     # Colisión real contra la pared exterior, sin atravesarla por mantener dirección.
-                    page.evaluate('G.Game.player.x=364; G.Game.player.y=0')
+                    page.evaluate('G.Game.player.x=748; G.Game.player.y=0')
                     page.keyboard.down('KeyD')
                     page.wait_for_timeout(350)
                     page.keyboard.up('KeyD')
-                    assert page.evaluate('G.Game.player.x + G.Game.player.r <= 384.01')
+                    assert page.evaluate('G.Game.player.x + G.Game.player.r <= 768.01')
                     page.locator('#btn-technical-pause').click()
                     page.locator('#btn-technical-menu').click()
                     assert page.evaluate('G.Game.state') == 'ui'

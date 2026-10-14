@@ -119,5 +119,10 @@ G.Path = (() => {
 
   function clear() { fields.clear(); timer = 0; }
 
-  return { update, dirFor, clear };
+  function reachable(x, y, pl) {
+    const f = fields.get(pl); if (!f) return false;
+    const tx = Math.floor(x / G.World.TS) - f.ox, ty = Math.floor(y / G.World.TS) - f.oy;
+    return tx >= 0 && ty >= 0 && tx < N && ty < N && f.dist[ty * N + tx] !== UNSEEN;
+  }
+  return { update, dirFor, reachable, clear };
 })();

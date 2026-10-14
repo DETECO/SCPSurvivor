@@ -422,6 +422,11 @@ G.Game = (() => {
   function handleKeys() {
     if (technical) {
       if (G.Input.tap('escape') || G.Input.tap('keyp')) togglePause();
+      if (state === 'playing' && G.Expedition) {
+        if (G.Input.tap('space')) G.TechnicalUI.sprint();
+        if (G.Expedition.state.phase === 'preparation' && G.Expedition.state.pending)
+          for (let i=0;i<3;i++) if(G.Input.tap('digit'+(i+1))) G.Expedition.choose(i);
+      }
       return;
     }
     if (G.SettingsUI.isOpen) { if (G.Input.tap('escape')) G.SettingsUI.close(); return; }
@@ -492,7 +497,9 @@ G.Game = (() => {
     if (technical) {
       if (state === 'error') { G.Input.endFrame(); return; }
       if (state === 'playing' && pl) {
-        time += dt; pl.update(dt); G.World.update(dt, G.Camera); G.Camera.follow(pl.x, pl.y, dt);
+        const e = G.Expedition.state;
+        if (e.phase !== 'finished' && !(e.phase === 'preparation' && e.pending)) time += dt;
+        G.Expedition.update(dt);
       }
       renderTechnical(); G.TechnicalUI.tick(pl, time); G.Input.endFrame();
       return;
@@ -515,6 +522,7 @@ G.Game = (() => {
     G.World.reset(1337); G.World.setFixture(G.Content.fixture); G.World.setBiome(1, true);
     pl = new G.Player(G.Content.guard);
     time = 0; G.Camera.x = 0; G.Camera.y = 0; G.Camera.shake = 0;
+    G.Expedition.start(pl); G.Sprites.preload(['pursuer01'], 2000);
     G.Sprites.preload([pl.dex], 2000);
     state = 'playing'; G.TechnicalUI.state(state);
   }
@@ -524,7 +532,12 @@ G.Game = (() => {
     ctx.clearRect(0, 0, w, h); ctx.imageSmoothingEnabled = false;
     ctx.save(); ctx.scale(G.Camera.scale, G.Camera.scale); G.Camera.apply(ctx);
     G.World.drawGround(ctx, G.Camera);
-    if (pl && state !== 'ui') pl.draw(ctx);
+    if (pl && state !== 'ui') {
+      G.Pickups.draw(ctx); G.Expedition.draw(ctx);
+      const entities = [...G.EnemyMgr.drawables(G.Camera), pl].sort((a,b) => a.y - b.y);
+      for (const entity of entities) { entity.draw(ctx); if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl); }
+      G.Projectiles.draw(ctx); G.FX.draw(ctx);
+    }
     ctx.restore(); G.World.drawVignette(ctx, w, h);
     G.Touch.clearButtons(); G.Touch.draw(ctx);
   }
@@ -781,6 +794,7 @@ G.Game = (() => {
     /** Para grabar vídeos: abre las cartas de subir de nivel. */
     debugLevelUp() { G.Guard.flag('debug'); pl.level++; pendingLevels++; },
     toUI() {
+      if (technical && G.Expedition && !['idle','finished'].includes(G.Expedition.state.phase)) G.Expedition.finish('abandoned');
       state = 'ui';
       if (technical) { pl = null; G.Input.reset(); G.Touch.reset(); G.TechnicalUI.state(state); }
       else Backdrop.restore();
