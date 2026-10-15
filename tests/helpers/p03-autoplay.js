@@ -13,20 +13,27 @@
   if(!prev.has(end))return[];const out=[];let p=[tx,ty];while(p&&p[0]+','+p[1]!==sx+','+sy){out.push({x:(p[0]+.5)*TS,y:(p[1]+.5)*TS});p=prev.get(p[0]+','+p[1]);}return out.reverse();
  }
  const savedNow=performance.now;let clock=performance.now();performance.now=()=>clock;
+ const cardIndex=(cards,key)=>cards.findIndex(c=>key==='weapon'?c.key.startsWith('weapon:'):c.key===key);
  try {for(let step=0;step<(options.maxSteps||90000);step++){
   clock+=1000/30;
   const s=G.Expedition.state,id=s.sector+':'+s.wave+':'+s.phase+':'+s.pending;
   if(id!==previous){log.push({id,hp:pl.hp,kills:pl.kills,level:pl.level,objective:s.objective});previous=id;}
+  if((options.stopLevel||options.stopLevelup)&&s.phase==='levelup')return{status:'levelup',log,state:s};
+  if(options.stopWave===s.wave&&s.phase==='combat')return{status:'wave',log,state:s};
   if(options.stopPrep&&s.phase==='preparation')return{status:'preparation',log,state:s};
+  if(options.stopExploration&&s.phase==='exploration')return{status:'exploration',log,state:s};
   if(options.stopBossDamaged&&s.phase==='boss'&&s.bossHp<s.bossMaxHp*.98)return{status:'boss-damaged',log,state:s};
   if(options.stopBoss&&s.phase==='boss')return{status:'boss',log,state:s};
   if(options.stopExtraction&&s.phase==='extracting')return{status:'extracting',log,state:s};
   if(s.phase==='finished'){keyAxis(0,0);return{status:s.result.reason,steps:step,log,result:s.result,hp:pl.hp};}
   if(currentSector!==s.sector){currentSector=s.sector;waypoint=0;routeKey='';route=[];cachedGeo=G.SectorMaps.generate(s.mapSeed,{boss:s.kind==='boss'});}
-  if(s.phase==='preparation'){
-   keyAxis(0,0);if(s.pending){const preferred=pl.hp<pl.maxHp*.6?['heal','health','recovery','power','cadence']:['power','cadence','weapon','recovery','health','mobility'];let index=-1;
-    for(const key of preferred){index=s.cards.findIndex(c=>c.key===key);if(index>=0)break;}G.Expedition.choose(index<0?0:index);
-   }else G.Expedition.ready();
+  if(s.phase==='levelup'){
+   keyAxis(0,0);const preferred=pl.hp<pl.maxHp*.6?['heal','health','recovery','power','cadence']:['power','cadence','weapon','recovery','health','mobility'];let index=-1;
+   for(const key of preferred){index=cardIndex(s.cards,key);if(index>=0)break;}G.Expedition.choose(index<0?0:index);
+  }else if(s.phase==='preparation'){
+   keyAxis(0,0);if(s.pending&&s.cards.length){const preferred=pl.hp<pl.maxHp*.6?['heal','health','recovery','power','cadence']:['power','cadence','weapon','recovery','health','mobility'];let index=-1;
+    for(const key of preferred){index=cardIndex(s.cards,key);if(index>=0)break;}G.Expedition.choose(index<0?0:index);
+   }else {G.Expedition.ready();if(options.prepJustReady)return{status:'ready',log,state:G.Expedition.state};}
   }else if(s.phase==='exploration'||(s.phase==='boss'&&options.bossMode==='escape')){
    const dist=Math.hypot(s.exit.x-pl.x,s.exit.y-pl.y);
    if(dist<=60){keyAxis(0,0);const achieved=s.totals.bossesDefeated+s.totals.bossesEvaded;

@@ -5,10 +5,12 @@ G.Expedition = (() => {
   let objectives=[], elapsed=0, interaction=0, startX=0, startY=0, startHp=0, startDamage=0, result=null;
   let runSeed=1, mapSeed=1, geometry=null, boss=null, nextBossSector=4, extractionAvailable=false, drought=0;
   let rng=()=>0, spawnRng=()=>0, totals={wavesCompleted:0,sectorsCompleted:0,bossesDefeated:0,bossesEvaded:0};
+  let upgradesApplied=0;
+  let pendingXp=0, resumePhase='combat';
   const exit={x:0,y:0,r:72};
   function random(seed){let n=seed>>>0;return()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/4294967296;};}
   function snapshot(){return{phase,sector,wave,kind,objective,spawned,quota,kills:pl?pl.kills-waveKills:0,
-    prep,pending,cards,elapsed,remaining:Math.max(0,60-waveTime),extract:interaction,result,exit,
+    prep,pending,cards,pendingXp,resumePhase,upgradesApplied,nextUpgradeLevel:pending&&pl?pl.level:null,elapsed,remaining:Math.max(0,60-waveTime),extract:interaction,result,exit,
     nearExit:!!pl&&G.U.dist(pl.x,pl.y,exit.x,exit.y)<=exit.r,runSeed,mapSeed,nextBossSector,extractionAvailable,
     totals:{...totals},bossHp:boss?Math.max(0,boss.hp):0,bossMaxHp:boss?boss.maxHp:0};}
   function scale(o=wave){return{hp:1+.15*(sector-1)+.05*(o-1),dmg:1+.08*(sector-1),spd:1+Math.min(.2,.02*(sector-1))};}
@@ -24,11 +26,12 @@ G.Expedition = (() => {
     if(extractionAvailable)G.Spawner.say('Este sector tiene extracción · disponible al despejarlo',5,true);
   }
   function start(player,options={}){
-    pl=player;pl.fieldMode=true;pl.r=12;pl.weaponLevel=1;pl.tempStats={};
-    sector=1;wave=1;elapsed=0;result=null;pending=0;cards=[];interaction=0;drought=0;
+    pl=player;pl.fieldMode=true;pl.r=12;pl.soldierId=options.soldierId||pl.soldierId||'guard';pl.tempStats={};
+    sector=1;wave=1;elapsed=0;result=null;pending=0;cards=[];interaction=0;drought=0;upgradesApplied=0;pendingXp=0;resumePhase='combat';
     totals={wavesCompleted:0,sectorsCompleted:0,bossesDefeated:0,bossesEvaded:0};
     runSeed=Number.isFinite(options.seed)?options.seed>>>0:(Math.random()*0xffffffff)>>>0;
-    rng=random(runSeed);nextBossSector=4+Math.floor(rng()*3);G.FieldCombat.reset();map();beginWave();
+    rng=random(runSeed);nextBossSector=4+Math.floor(rng()*3);
+    G.FieldStats.apply(pl);G.FieldAbilities.reset(pl);G.FieldCombat.reset(pl,options.loadout);map();beginWave();
   }
   function freeSpawn(enemy){
     const points=geometry.spawnPoints;
@@ -59,16 +62,38 @@ G.Expedition = (() => {
     boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,geometry.bossSpawn.x,geometry.bossSpawn.y,scale(1),true));
     G.Spawner.say('Custodio · Puedes combatir o huir por la salida señalada',5,true);
   }
-  function collect(item){if(item.kind==='xp'||item.kind==='xpBig')pending+=pl.gainXp(item.value);}
+  function promptUpgrade(){
+    if(!pending||phase==='levelup')return;
+    cards=G.FieldUpgrades.offer(pl);
+    if(!cards.length)return; // D214: a saturated build must not block preparation.
+    resumePhase=phase;phase='levelup';G.Touch.reset();G.Input.reset();
+  }
+  function processXp(){
+    if(pending||pendingXp<=0)return;
+    const amount=Math.min(pendingXp,Math.max(0,pl.xpNext-pl.xp));
+    pendingXp=Math.max(0,pendingXp-amount);
+    if(pl.gainXp(amount,{alreadyScaled:true,maxLevels:1})){
+      pending=1;promptUpgrade();
+    }
+  }
+  function collect(item){
+    if(item.kind==='xp'||item.kind==='xpBig'){
+      // Credit the learning bonus once, at collection; choices cannot rescale leftover XP.
+      pendingXp+=item.value*pl.xpMul;processXp();
+    }
+  }
   function gather(){for(const item of [...G.Pickups.all()])if(item.kind==='xp'||item.kind==='xpBig'){collect(item);G.Pickups.removeId(item.id);}}
-  function preparation(){G.Projectiles.clear();phase='preparation';prep=20;cards=pending?G.FieldUpgrades.offer(pl):[];G.Touch.reset();G.Input.reset();}
-  function closeWave(){gather();totals.wavesCompleted++;if(wave===3)totals.sectorsCompleted++;preparation();}
+  function preparation(){G.Projectiles.clear();phase='preparation';prep=20;cards=[];G.Touch.reset();G.Input.reset();gather();}
+  function closeWave(){totals.wavesCompleted++;if(wave===3)totals.sectorsCompleted++;preparation();}
   function choose(index){
-    if(phase!=='preparation'||pending<=0||!cards[index])return false;
-    cards[index].apply(pl);pending--;cards=pending?G.FieldUpgrades.offer(pl):[];G.Input.reset();G.Touch.reset();if(!pending)ready();return true;
+    if(phase!=='levelup'||pending!==1||!cards[index])return false;
+    cards[index].apply(pl);pending=0;upgradesApplied++;cards=[];phase=resumePhase;
+    G.Input.reset();G.Touch.reset();processXp();
+    if(phase==='preparation')ready();
+    return true;
   }
   function ready(){
-    if(phase!=='preparation'||pending)return false;
+    if(phase!=='preparation')return false;
     if(kind==='normal'&&wave<3){wave++;beginWave();}
     else{phase='exploration';G.Spawner.say(extractionAvailable?'Sector despejado · puedes continuar o extraer':'Sector despejado · busca la salida señalada',4,true);}
     return true;
@@ -98,13 +123,14 @@ G.Expedition = (() => {
   function victory(){
     if(!boss)return;
     // Enemy.die emitted exactly220 rawXP; collect once and withdraw living reinforcements without death/loot.
-    gather();G.EnemyMgr.clear();totals.bossesDefeated++;totals.sectorsCompleted++;
+    G.EnemyMgr.clear();totals.bossesDefeated++;totals.sectorsCompleted++;
     nextBossSector=sector+4+Math.floor(rng()*3);boss=null;preparation();
   }
   function finish(reason){
     if(phase==='finished'||phase==='idle')return;
-    phase='finished';cards=[];G.Input.reset();G.Touch.reset();G.Projectiles.clear();
+    phase='finished';cards=[];pending=0;pendingXp=0;G.Input.reset();G.Touch.reset();G.Projectiles.clear();
     result={reason,sector,wave,kills:pl.kills,level:pl.level,elapsed,hp:pl.hp,runSeed,...totals};
+    G.FieldCombat.clearTemporary(pl);G.FieldAbilities.reset(pl);
   }
   function recover(){
     for(const e of objectives){
@@ -119,8 +145,10 @@ G.Expedition = (() => {
   function update(dt){
     if(!pl||phase==='idle'||phase==='finished')return;
     if(pl.dead||pl.hp<=0){finish('death');return;}
-    if(phase==='preparation'&&pending)return;
+    if(phase==='levelup')return;
+    promptUpgrade();if(phase==='levelup')return;
     elapsed+=dt;lastDt=dt;const combat=['combat','boss','escaping'].includes(phase);
+    G.FieldAbilities.tick(dt,pl);
     G.FieldCombat.tick(dt,pl,combat);const regen=pl.regenFlat;if(!combat&&phase!=='preparation')pl.regenFlat=0;
     pl.update(dt);pl.regenFlat=regen;G.Camera.follow(pl.x,pl.y,dt);G.World.update(dt,G.Camera);G.FX.update(dt);G.Spawner.tickBanner(dt);
     if(combat){
@@ -131,6 +159,8 @@ G.Expedition = (() => {
       }
       G.Path.update(dt,[pl]);G.EnemyMgr.update(dt,[pl]);G.Projectiles.update(dt,pl,G.EnemyMgr.all());G.Combat.resolve(dt,pl,elapsed);G.Pickups.update(dt,pl,collect);
       if(pl.dead||pl.hp<=0){finish('death');return;}
+      promptUpgrade();
+      if(phase==='levelup')return;
       if(kind==='normal'){
         recover();const done=objective==='survive'?waveTime>=60:spawned===quota&&pl.kills-waveKills>=quota;
         if(done&&G.EnemyMgr.count===0){closeWave();return;}

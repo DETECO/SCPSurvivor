@@ -425,8 +425,8 @@ G.Game = (() => {
       if (G.Input.tap('escape') || G.Input.tap('keyp')) togglePause();
       if (state === 'playing' && G.Expedition) {
         if (G.Input.tap('space')) G.TechnicalUI.sprint();
-        if (G.Expedition.state.phase === 'preparation' && G.Expedition.state.pending)
-          for (let i=0;i<3;i++) if(G.Input.tap('digit'+(i+1))) G.Expedition.choose(i);
+        if (G.Expedition.state.phase === 'levelup')
+          for (let i=0;i<3;i++) if(G.Input.tap('digit'+(i+1)) || G.Input.tap('numpad'+(i+1))) { G.Expedition.choose(i); break; }
       }
       return;
     }
@@ -499,7 +499,7 @@ G.Game = (() => {
       if (state === 'error') { G.Input.endFrame(); return; }
       if (state === 'playing' && pl) {
         const e = G.Expedition.state;
-        if (e.phase !== 'finished' && !(e.phase === 'preparation' && e.pending)) time += dt;
+        if (e.phase !== 'finished' && e.phase !== 'levelup') time += dt;
         G.Expedition.update(dt);
       }
       renderTechnical(); G.TechnicalUI.tick(pl, time); G.Input.endFrame();
@@ -521,7 +521,10 @@ G.Game = (() => {
     G.Input.reset(); G.Touch.reset();
     G.EnemyMgr.clear(); G.Projectiles.clear(); G.FX.clear(); G.Weather.reset();
     G.World.reset(1337); G.World.setFixture(G.Content.fixture); G.World.setBiome(1, true);
-    pl = new G.Player(G.Content.guard);
+    const soldierId = options.soldierId || 'guard';
+    if (!G.FieldCatalog.soldiers[soldierId]) throw new Error('Soldado desconocido');
+    pl = new G.Player(G.Content[soldierId]);
+    pl.soldierId = soldierId; pl.training = { ...(options.training || {}) }; pl.baseMaxHp = pl.mon.hp;
     time = 0; G.Camera.x = 0; G.Camera.y = 0; G.Camera.shake = 0;
     G.Expedition.start(pl, options); G.Sprites.preload(['pursuer01','biological01','warden01'], 2000);
     G.Sprites.preload([pl.dex], 2000);
@@ -535,8 +538,14 @@ G.Game = (() => {
     G.World.drawGround(ctx, G.Camera);
     if (pl && state !== 'ui') {
       G.Pickups.draw(ctx); G.Expedition.draw(ctx);
-      const entities = [...G.EnemyMgr.drawables(G.Camera), pl].sort((a,b) => a.y - b.y);
-      for (const entity of entities) { entity.draw(ctx); if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl); }
+      const props = G.World.visibleProps(G.Camera);
+      const entities = [...G.EnemyMgr.drawables(G.Camera), ...props, pl].sort((a,b) => a.y - b.y);
+      const propSet = new Set(props);
+      for (const entity of entities) {
+        if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:true});
+        if(propSet.has(entity)) G.World.drawProp(ctx,entity,time); else entity.draw(ctx);
+        if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:false});
+      }
       G.Projectiles.draw(ctx); G.FX.draw(ctx);
     }
     ctx.restore(); G.World.drawVignette(ctx, w, h);

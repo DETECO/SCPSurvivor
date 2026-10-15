@@ -7,6 +7,7 @@ import json
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
+ThreadingHTTPServer.request_queue_size = 128
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -20,7 +21,7 @@ def run():
     origin = f'http://127.0.0.1:{server.server_port}'
     try:
         with sync_playwright() as pw:
-            browser = pw.chromium.launch(executable_path='/usr/bin/chromium', headless=True,
+            browser = pw.chromium.launch(headless=True,
                                          args=['--no-sandbox', '--disable-dev-shm-usage'])
             context = browser.new_context(viewport={'width': 390, 'height': 844},
                                           is_mobile=True, has_touch=True, device_scale_factor=3)

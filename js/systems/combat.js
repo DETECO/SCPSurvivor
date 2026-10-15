@@ -544,6 +544,106 @@ G.Combat = (() => {
     return qx * qx + qy * qy;
   }
 
+  // Field weapon shots need deterministic, distance ordered impacts. The older
+  // attacks intentionally keep their point-sampled collision path below.
+  function segmentCircleEntry(sx, sy, dx, dy, cx, cy, radius, length) {
+    const a = dx * dx + dy * dy;
+    if (!a) return Math.hypot(sx - cx, sy - cy) <= radius ? 0 : null;
+    const ox = sx - cx, oy = sy - cy, b = 2 * (ox * dx + oy * dy);
+    const c = ox * ox + oy * oy - radius * radius;
+    if (c <= 0) return 0;
+    const disc = b * b - 4 * a * c;
+    if (disc < 0) return null;
+    const t = (-b - Math.sqrt(disc)) / (2 * a);
+    return t >= 0 && t <= 1 ? t * length : null;
+  }
+
+  function resolveFieldWeapon(p, projectiles, index) {
+    const sx = p.px == null ? p.x : p.px, sy = p.py == null ? p.y : p.py;
+    const dx = p.x - sx, dy = p.y - sy, length = Math.hypot(dx, dy);
+    const ux = length ? dx / length : 0, uy = length ? dy / length : 0;
+    const events = [];
+    let solidStopDistance = Infinity;
+    const endAt = (distance, prop) => events.push({ distance, prop, stop: !prop });
+
+    // projectileBlock is the world's authoritative terrain/solid query. Sample
+    // at four-unit intervals so a fast step cannot skip a one-tile wall.
+    const steps = Math.max(1, Math.ceil(length / 4));
+    let previous = 0;
+    for (let i = 0; i <= steps; i++) {
+      const distance = length * i / steps;
+      const block = G.World.projectileBlock(sx + ux * distance, sy + uy * distance, p.r);
+      if (block === 'wall' || (block && !block.destructible)) {
+        let lo = previous, hi = distance;
+        for (let j = 0; j < 8; j++) {
+          const mid = (lo + hi) / 2;
+          const test = G.World.projectileBlock(sx + ux * mid, sy + uy * mid, p.r);
+          if (test === 'wall' || (test && !test.destructible)) hi = mid;
+          else lo = mid;
+        }
+        solidStopDistance = hi;
+        endAt(hi);
+        break;
+      }
+      previous = distance;
+    }
+
+    // Gather the whole swept bounds, then use circle entry distance for exact
+    // ordering against both props and enemies.
+    const mx = (sx + p.x) / 2, my = (sy + p.y) / 2;
+    const broad = length / 2 + p.r;
+    const seenProps = new Set();
+    for (const prop of G.World.propsInCircle(mx, my, broad)) {
+      if (!prop.destructible || prop.hp <= 0 || seenProps.has(prop.id) || p.phits.has(prop.id)) continue;
+      const distance = segmentCircleEntry(sx, sy, dx, dy, prop.x, prop.y, p.r + prop.r, length);
+      if (distance != null) { seenProps.add(prop.id); events.push({ distance, prop }); }
+    }
+    const seenEnemies = new Set();
+    for (const e of G.EnemyMgr.queryCircle(mx, my, broad)) {
+      if (e.dead || seenEnemies.has(e.id) || p.hits.has(e.id)) continue;
+      // A circle may overlap a wall from its far side. Such a target is still
+      // behind cover even if its near edge would otherwise enter the segment first.
+      const centerDistance = (e.x - sx) * ux + (e.y - sy) * uy;
+      if (centerDistance > solidStopDistance) continue;
+      const distance = segmentCircleEntry(sx, sy, dx, dy, e.x, e.y, p.r + e.r, length);
+      if (distance != null) { seenEnemies.add(e.id); events.push({ distance, enemy: e }); }
+    }
+    events.sort((a, b) => a.distance - b.distance || (a.stop === b.stop ? (a.prop === b.prop ? 0 : a.prop ? -1 : 1) : a.stop ? -1 : 1));
+
+    let stopped = false;
+    for (const event of events) {
+      const atX = sx + ux * event.distance, atY = sy + uy * event.distance;
+      p.x = atX; p.y = atY;
+      if (event.stop) { stopped = true; break; }
+      if (event.prop) {
+        const prop = event.prop;
+        if (p.phits.has(prop.id) || prop.hp <= 0) continue;
+        p.phits.add(prop.id);
+        if (!p.ghost) G.World.damageProp(prop, p.dmg, p.color);
+        if (prop.solid) {
+          if (p.pierce > 0) p.pierce--;
+          else { stopped = true; break; }
+        }
+      } else {
+        const e = event.enemy;
+        if (e.dead || p.hits.has(e.id)) continue;
+        p.hits.add(e.id);
+        if (p.ghost) {
+          G.FX.sp('impact', p.vis ? p.vis.pal : 'normal', e.x, e.y - e.bodyH * 0.5, { life: 0.12, scale: 1 });
+        } else {
+          e.hurt(p.dmg, p.color, ux, uy, p.knock || 0);
+          if (p.owner) { p.owner.onDealt(p.dmg); p.owner.dmgDealt += p.dmg; }
+        }
+        if (p.pierce > 0) p.pierce--;
+        else { stopped = true; break; }
+      }
+    }
+    if (stopped) {
+      G.FX.burst(p.x, p.y - G.LIFT, p.color, 5, 80);
+      projectiles.splice(index, 1);
+    } else { p.x = sx + dx; p.y = sy + dy; }
+  }
+
   function resolve(dt, pl, now) {
     const projectiles = G.Projectiles.all();
 
@@ -566,6 +666,10 @@ G.Combat = (() => {
       }
 
       // --- disparos de jugadores ---
+      if (p.fieldWeapon) {
+        resolveFieldWeapon(p, projectiles, i);
+        continue;
+      }
       // Orbes de un compañero: sólo se ven.
       if (p.orb && p.ghost) continue;
       if (!p.orb) {

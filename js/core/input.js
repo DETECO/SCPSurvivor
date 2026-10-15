@@ -13,7 +13,7 @@ G.Input = (() => {
 
   addEventListener('keydown', e => {
     const c = code(e);
-    if (!down.has(c)) pressed.add(c);
+    if (!down.has(c) && !e.repeat) pressed.add(c);
     down.add(c);
     // En el menú técnico se conservan Tab y la activación nativa de controles.
     const nativeControl = G.LOCAL_TECHNICAL_MODE === true &&

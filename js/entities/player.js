@@ -88,7 +88,7 @@ G.Player = class Player {
     const slow = this.inLiquid ? G.World.liquidEffect(this.mon.types).slow || 1 : 1;
     return s * slow * w;
   }
-  get reduction() { return Math.min(0.8, this.dmgReduce + this.buffs.def.n * this.buffs.def.amount); }
+  get reduction() { return Math.min(this.fieldMode ? 0.7 : 0.8, this.dmgReduce + this.buffs.def.n * this.buffs.def.amount); }
   get regen() { return this.regenFlat + this.buffs.regen.n * this.buffs.regen.amount; }
 
   // ---------------- movimientos ----------------
@@ -232,10 +232,10 @@ G.Player = class Player {
   addMaxHp(amount) { this.maxHp += amount; this.hp += amount; }
 
   /** Devuelve cuántos niveles ha subido (pueden ser varios de golpe). */
-  gainXp(amount) {
-    this.xp += amount * this.xpMul;
+  gainXp(amount, { alreadyScaled = false, maxLevels = Infinity } = {}) {
+    this.xp += amount * (alreadyScaled ? 1 : this.xpMul);
     let leveled = 0;
-    while (this.xp >= this.xpNext) {
+    while (this.xp >= this.xpNext && leveled < maxLevels) {
       this.xp -= this.xpNext;
       this.level++;
       this.xpNext = Player.xpFor(this.level);
@@ -328,6 +328,17 @@ G.Player = class Player {
     // Con una horda encima casi siempre te toca algo; si eso ganara siempre,
     // los ataques a distancia no le darían nunca al jefe.
     // Sin enemigos, apunta a la roca o cofre más cercano.
+    if (this.fieldMode) {
+      const tg = G.FieldCombat.targetFor(this);
+      this.target = tg;
+      if (tg) this.weaponAim = Math.atan2(tg.y-this.y,tg.x-this.x);
+      else if (this.walking) this.weaponAim = this.moveAngle;
+      // The soldier follows movement; the gun can aim in another direction.
+      this.aim = this.walking ? this.moveAngle : (this.weaponAim ?? this.aim);
+      this.anim.dir = G.Sprites.dirFromAngle(this.aim);
+      this.anim.loop(this.walking ? 'Walk' : 'Idle', this.walking ? s / 110 : 1);
+      return;
+    }
     const all = G.EnemyMgr.all();
     const m = this.activeMove();
     const ranged = !!m && (m.kind === 'projectile' || m.kind === 'beam');

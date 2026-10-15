@@ -6,6 +6,7 @@ from functools import partial
 from playwright.sync_api import sync_playwright
 import json,os,shutil
 ROOT=Path(__file__).resolve().parents[1]
+ThreadingHTTPServer.request_queue_size = 128
 OUT=Path(os.environ.get('SCP_TEST_ARTIFACTS',str(ROOT/'tests/artifacts/p03')))
 class Quiet(SimpleHTTPRequestHandler):
  def log_message(self,*args):pass
@@ -34,7 +35,7 @@ def main():
       page.wait_for_timeout(180);page.dispatch_event('#game','pointerup',{'pointerType':'touch','pointerId':5,'clientX':x+12,'clientY':y})
      else:page.keyboard.down('KeyD');page.wait_for_timeout(180);page.keyboard.up('KeyD')
      assert page.evaluate('G.Game.player.x')>initial['x']+10
-     page.click('#btn-sprint');page.wait_for_timeout(50);assert page.evaluate('G.FieldCombat.state.sprintRemaining')>1
+     page.click('#btn-ability');page.wait_for_timeout(50);assert page.evaluate('G.FieldCombat.state.sprintRemaining')>1
      page.click('#btn-technical-pause');before=page.evaluate('({e:G.Expedition.state.elapsed,w:G.FieldCombat.state,x:G.Game.player.x})');page.wait_for_timeout(150);assert page.evaluate('({e:G.Expedition.state.elapsed,w:G.FieldCombat.state,x:G.Game.player.x})')==before
      page.click('#btn-technical-resume');page.evaluate("Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'))");assert page.evaluate('G.Game.state')=='paused';page.evaluate("Object.defineProperty(document,'hidden',{configurable:true,value:false});document.dispatchEvent(new Event('visibilitychange'))");assert page.evaluate('G.Game.state')=='paused';page.click('#btn-technical-resume')
      if mobile:
@@ -42,12 +43,31 @@ def main():
      full=None
      if mobile:
       page.evaluate('G.Game.startTechnical({seed:1337})');helper=(ROOT/'tests/helpers/p03-autoplay.js').read_text()
-      first=page.evaluate(helper,{'stopPrep':True});assert first['status']=='preparation',first
-      page.wait_for_timeout(100);assert page.locator('#upgrade-cards button').count()==3;assert 'Nivel 2 de 3' in page.locator('#upgrade-count').inner_text()
-      clock=page.evaluate('G.Expedition.state.elapsed');page.wait_for_timeout(150);assert page.evaluate('G.Expedition.state.elapsed')==clock
-      pending=page.evaluate('G.Expedition.state.pending');page.locator('#upgrade-cards button').first.evaluate('(b)=>{b.click();b.click()}');assert page.evaluate('G.Expedition.state.pending')==pending-1
-      while page.evaluate('G.Expedition.state.pending')>0:page.wait_for_timeout(50);page.locator('#upgrade-cards button').first.click()
-      assert page.evaluate('G.Expedition.state.phase')=='combat';assert page.evaluate('G.Expedition.state.objective')=='survive'
+      clockImpl=page.evaluate('performance.now.toString()')
+      first=page.evaluate(helper,{'stopLevel':True});assert first['status']=='levelup',first
+      assert page.evaluate('performance.now.toString()')==clockImpl
+      assert 5<=first['state']['kills']<12,first['state']
+      assert first['state']['pending']==1 and page.evaluate('G.Game.player.level')==2,first['state']
+      assert page.locator('#upgrade-cards button').count()==3;assert page.locator('#upgrade-title').inner_text()=='Nivel 2 alcanzado'
+      frozen=page.evaluate('''() => ({phase:G.Expedition.state.phase,wave:G.Expedition.state.wave,elapsed:G.Expedition.state.elapsed,
+       remaining:G.Expedition.state.remaining,player:[G.Game.player.x,G.Game.player.y,G.Game.player.hp],weapon:{...G.FieldCombat.state},
+       enemies:G.EnemyMgr.all().map(e=>[e.id,e.x,e.y,e.hp]),projectiles:G.Projectiles.all?G.Projectiles.all().length:null,
+       spawned:G.Expedition.state.spawned,gameTime:G.Game.st.time})''')
+      page.wait_for_timeout(150)
+      assert page.evaluate('''() => ({phase:G.Expedition.state.phase,wave:G.Expedition.state.wave,elapsed:G.Expedition.state.elapsed,
+       remaining:G.Expedition.state.remaining,player:[G.Game.player.x,G.Game.player.y,G.Game.player.hp],weapon:{...G.FieldCombat.state},
+       enemies:G.EnemyMgr.all().map(e=>[e.id,e.x,e.y,e.hp]),projectiles:G.Projectiles.all?G.Projectiles.all().length:null,
+       spawned:G.Expedition.state.spawned,gameTime:G.Game.st.time})''')==frozen,frozen
+      page.evaluate('G.Game.togglePause()');assert page.locator('#technical-pause').is_visible()
+      page.wait_for_timeout(100);assert page.evaluate('G.Expedition.state.phase')=='levelup'
+      page.click('#btn-technical-resume');assert page.locator('#technical-pause').is_hidden()
+      assert page.evaluate('G.Expedition.state.phase')=='levelup'
+      wave=page.evaluate('G.Expedition.state.wave');page.locator('#upgrade-cards button').first.evaluate('(b)=>{b.click();b.click()}')
+      assert page.evaluate('G.Expedition.state.phase')=='combat';assert page.evaluate('G.Expedition.state.wave')==wave
+      first['resumedWave']=wave
+      first['prep']=page.evaluate(helper,{'stopWave':2})
+      assert first['prep']['status']=='wave' and first['prep']['state']['phase']=='combat',first['prep']
+      assert page.evaluate('G.Expedition.state.objective')=='survive'
       page.wait_for_timeout(100);page.screenshot(path=str(OUT/f'{entry[:-5]}-resistance.png'))
       # Recover the same offscreen enemy without invented XP/kills.
       recovery=page.evaluate('''() => {const e=G.EnemyMgr.all()[0],id=e.id,hp=e.hp;e.x=5000;e.y=0;

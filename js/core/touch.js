@@ -69,7 +69,7 @@ G.Touch = (() => {
     const dx = stick.x - stick.ox, dy = stick.y - stick.oy, d = Math.hypot(dx, dy);
     if (d < 7) return [0, 0];
     // A partir de medio radio ya va a toda velocidad.
-    const k = Math.min(1, (d - 7) / (R() * 0.5 - 7));
+    const k = G.LOCAL_TECHNICAL_MODE === true ? 1 : Math.min(1, (d - 7) / (R() * 0.5 - 7));
     return [dx / d * k, dy / d * k];
   }
 

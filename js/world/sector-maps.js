@@ -101,7 +101,36 @@ G.SectorMaps = (() => {
       }
       if (clear) spawnPoints.push({ x: (x + 0.5) * TS, y: (y + 0.5) * TS });
     }
-    return { seed, fixture: { minX, maxX, minY, maxY, walls }, entry, exit, bossSpawn, rooms, modules, floorTiles, spawnPoints };
+    const protectedPoints = [entry, exit, bossSpawn].map(p => ({ x: p.x / TS, y: p.y / TS }));
+    const inHall = (x, y) => modules.some(m => m.role === 'corridor' &&
+      x + 0.5 >= m.x - 1 && x + 0.5 < m.x + m.w + 1 && y + 0.5 >= m.y - 1 && y + 0.5 < m.y + m.h + 1);
+    const clear3x3 = (x, y) => {
+      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) if (!floorSet.has(`${x + dx},${y + dy}`)) return false;
+      return true;
+    };
+    const cornerTiles = [];
+    for (const room of rooms) {
+      if (room.role === 'entry' || room.role === 'exit') continue;
+      for (const x of [room.x + 2, room.x + room.w - 3]) for (const y of [room.y + 2, room.y + room.h - 3]) {
+        const px = x + 0.5, py = y + 0.5;
+        if (!clear3x3(x, y) || inHall(x, y) || protectedPoints.some(p => Math.hypot(px - p.x, py - p.y) < 5)) continue;
+        cornerTiles.push([x, y]);
+      }
+    }
+    cornerTiles.sort((a, b) => hash(seed, 800 + a[0] * 17 + a[1] * 31) - hash(seed, 800 + b[0] * 17 + b[1] * 31));
+    const crateTiles = [];
+    for (const tile of cornerTiles) {
+      if (crateTiles.some(([x, y]) => Math.hypot(tile[0] - x, tile[1] - y) < 5)) continue;
+      crateTiles.push(tile);
+      if (crateTiles.length === 3) break;
+    }
+    const props = crateTiles.map(([tx, ty]) => ({ type: 'fieldCrate', tx, ty }));
+    if (props.length) {
+      const clearSpawn = p => !props.some(box => Math.hypot(p.x / TS - (box.tx + 0.5), p.y / TS - (box.ty + 0.5)) < 2.5);
+      for (let i = spawnPoints.length - 1; i >= 0; i--) if (!clearSpawn(spawnPoints[i])) spawnPoints.splice(i, 1);
+    }
+    const fixture = { minX, maxX, minY, maxY, walls, props };
+    return { seed, fixture, entry, exit, bossSpawn, rooms, modules, floorTiles, spawnPoints };
   }
 
   return { generate };

@@ -1,6 +1,7 @@
 /* Catálogo provisional P01. No es el catálogo final ni una expedición. */
 G.Content = (() => {
-  const guard = Object.freeze({ dex: 'guard01', name: 'Guardia novato', hp: 100, spd: 165, atk: 1, types: ['normal'] });
+  const soldier = (id, dex) => { const d=G.FieldCatalog.soldiers[id]; return Object.freeze({dex,name:d.name,hp:d.maxHp,spd:d.speed,atk:1,types:['normal']}); };
+  const guard = soldier('guard','guard01'), medic = soldier('medic','medic01');
   const fixture = Object.freeze({ minX: -12, maxX: 12, minY: -10, maxY: 10,
     walls: Object.freeze([[3, -5], [3, -4], [3, -3], [3, -2], [3, 2], [3, 3], [3, 4], [3, 5], [-5, -4], [-4, -4], [-5, 4], [-4, 4]].map(Object.freeze)) });
   const pursuer = Object.freeze({ dex: 'pursuer01', name: 'Perseguidor', hp: 30, spd: 60, dmg: 10, xp: 14, radius: 12, behavior: 'pursuer', containment: true });
@@ -10,7 +11,7 @@ G.Content = (() => {
     walls: Array.from({length: 47}, (_,i) => i-23).filter(y => y < -2 || y > 1).map(y => [6*sign,y])
       .concat([[-13,-10],[-12,-10],[-13,-9],[-12,-9],[-13,10],[-12,10],[-13,11],[-12,11]]) }));
   function install() {
-    G.SPRITE_META.guard01 = { s: 1, base: 'assets/actors/guard01', ext: 'svg', a: {
+    for(const dex of ['guard01','medic01']) G.SPRITE_META[dex] = { s: 1, base: 'assets/actors/'+dex, ext: 'svg', a: {
       Idle: { w: 24, h: 28, n: 1, r: 8, ax: 12, ay: 26, d: [12] },
       Walk: { w: 24, h: 28, n: 2, r: 8, ax: 12, ay: 26, d: [10, 10] }
     } };
@@ -29,5 +30,5 @@ G.Content = (() => {
       wallTop: ['#8b8269', '#978d71', '#817960'], wallLight: '#b3a37f', wallEdge: '#262d29',
       wallFace: ['#62634e', '#575843'], wallFaceDark: '#333c34' });
   }
-  return { guard, pursuer, biological, boss, fixture, sectors, install };
+  return { guard, medic, pursuer, biological, boss, fixture, sectors, install };
 })();

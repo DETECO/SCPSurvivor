@@ -5,11 +5,12 @@ from threading import Thread
 from playwright.sync_api import sync_playwright
 import json,os
 r=Path(__file__).resolve().parents[1]
+ThreadingHTTPServer.request_queue_size = 128
 class Q(SimpleHTTPRequestHandler):
  def log_message(self,*a):pass
 s=ThreadingHTTPServer(('127.0.0.1',0),partial(Q,directory=str(r)));Thread(target=s.serve_forever,daemon=True).start();records=[]
 with sync_playwright() as p:
- b=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
+ b=p.chromium.launch(headless=True,args=['--no-sandbox'])
  for entry in ['dev.html','index.html']:
   page=b.new_page(viewport={'width':390,'height':844},is_mobile=True,has_touch=True);page.goto(f'http://127.0.0.1:{s.server_port}/{entry}',wait_until='networkidle');page.click('#btn-technical-start');page.evaluate('G.Game.player.hurt(1000)');page.wait_for_timeout(100)
   result=page.evaluate('G.Expedition.state.result');assert result['reason']=='death' and result['hp']==0;assert page.locator('#field-result').is_visible()

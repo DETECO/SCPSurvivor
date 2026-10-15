@@ -1,0 +1,46 @@
+{
+  "version": "P04-local-01 / alfa0.4",
+  "inspectionDate": "2026-10-14",
+  "sourceReference": {
+    "repository": "JPTER78/pokesurvivor",
+    "branch": "main",
+    "commit": "a1006e6e3d0cea9162238a90b0ffdd7fd38397b6"
+  },
+  "originalReferenceUnchanged": true,
+  "base": "local P03-0.3.2 snapshot, no Git metadata in working copy",
+  "bundleToken": "dd0724d6bd",
+  "changedSourceSha256": {
+    "index.html": "8de13a0eba94cb4bad835c435ae35b9fd0fe2810539a41d28877928a9feaafe5",
+    "dev.html": "0a09297de75310f1a74b94a9f64135ec120dd3b38494e584c9c0ebe433ce1a26",
+    "css/technical.css": "12e8ac3382ebb657ad864f28e3bd5e688993d435eaf384a0ca1f12de4212ae14",
+    "js/game.js": "a7f3ae39dc7c3849a6d1a755d2cf1442b8e851a8386d7ec2ee8e802551fa6170",
+    "js/app.min.js": "3a6f562cf5ee38801c796998d6990230d0d450fed1cbf4b2471ebd9c514abec5",
+    "js/main.js": "b729feee842d926b229f41e2d90b857c643e8c995b91585dd9848913cb9d97b3",
+    "js/systems/field-upgrades.js": "b2944a32c51133c21976be9208014b8abe3da5884325e7f97c75f73f6b10af5c",
+    "js/systems/field-stats.js": "0d3fe07128c115f70945848ae1f9b4f3b1b198615b2c1882599b8492e43b0214",
+    "js/systems/field-combat.js": "dfd7773eea63773a2176d383dbaa7df0473219e1aa9575306b03c530b161ffe1",
+    "js/systems/combat.js": "baadd57780e10233a61cbdb372d8c350cba5c448484c8e07ea41a1e9a583e2e5",
+    "js/systems/field-abilities.js": "8e3cc1b156fb16f902ee32c9ccf9e5b347e6465c0562db2b33b1e92fef68ff7c",
+    "js/systems/expedition.js": "fd3f2fecd0d90866121c2c4b892ac0258af22614472b9f525760499119599d65",
+    "js/world/world.js": "fdd1e0f526ac388866dc24eba67ee9853a6c4564cc46b0d75d884cfedcbbfe1a",
+    "js/world/sector-maps.js": "301afdafba15b03fdf14dc87cf58bebbada8925d9e07f698524e5d625f09848a",
+    "js/ui/field-loadout.js": "040c971b198e1dfb83055e85d20c7a92f5122fc350ec4959f215a3ce3c3fd63c",
+    "js/ui/technical-ui.js": "a5c2d7e4b9a0a13bff510ac735efb0a6a6105c86e8941e34da5b2de1bbe82629",
+    "js/data/content.js": "2998aaf8b785d755026b963135d5b8f30f3389c6a846b15aa3af5cd830141322",
+    "js/data/field-catalog.js": "8773107509da9d755a564e4635a341c09c115edf18b289ce1b395bbb18ea2e0c",
+    "js/entities/player.js": "6bb2a9b8fe9fcc16ef14c9fd35469df3dcbc9e0efd4b0f43d7ff908c2084bb12",
+    "assets/actors/medic01/Idle.svg": "e34fd5a31a916db106ca3c6e654907847d53ff9492408cc0e91e8c89c2aa749d",
+    "assets/actors/medic01/Walk.svg": "0c0babbdfb355b5fb97809192e1d28aefa9642abdba56c0c36b9253155d7a5cc"
+  },
+  "unchangedProtectedFiles": {
+    "RoadmapSCP.json": true,
+    "RoadmapSCP.md": true,
+    "LICENSE": true,
+    "CREDITS.md": true,
+    "package.json": true,
+    "package-lock.json": true,
+    ".firebaserc": true,
+    "firebase.json": true
+  },
+  "noCanonicalRoadmapSync": true
+}

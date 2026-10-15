@@ -1,0 +1,87 @@
+{
+  "records": [
+    {
+      "entry": "dev.html",
+      "before": {
+        "level": 3,
+        "xp": 5,
+        "nextXp": 147,
+        "pending": 2,
+        "kills": 12,
+        "thresholds": [
+          62,
+          101
+        ]
+      },
+      "choices": [
+        {
+          "earnedLevel": 2,
+          "categoryChanges": 1,
+          "pendingAfter": 1,
+          "appliedTotal": 1
+        },
+        {
+          "earnedLevel": 3,
+          "categoryChanges": 1,
+          "pendingAfter": 0,
+          "appliedTotal": 2
+        }
+      ],
+      "oneThreshold": {
+        "first": {
+          "level": 2,
+          "xp": 0,
+          "pending": 1
+        },
+        "after": {
+          "level": 2,
+          "xp": 0,
+          "pending": 1
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "entry": "index.html",
+      "before": {
+        "level": 3,
+        "xp": 5,
+        "nextXp": 147,
+        "pending": 2,
+        "kills": 12,
+        "thresholds": [
+          62,
+          101
+        ]
+      },
+      "choices": [
+        {
+          "earnedLevel": 2,
+          "categoryChanges": 1,
+          "pendingAfter": 1,
+          "appliedTotal": 1
+        },
+        {
+          "earnedLevel": 3,
+          "categoryChanges": 1,
+          "pendingAfter": 0,
+          "appliedTotal": 2
+        }
+      ],
+      "oneThreshold": {
+        "first": {
+          "level": 2,
+          "xp": 0,
+          "pending": 1
+        },
+        "after": {
+          "level": 2,
+          "xp": 0,
+          "pending": 1
+        }
+      },
+      "status": "PASS"
+    }
+  ],
+  "method": "Natural first-wave kills via fixed-step production helper, real card DOM doubleclick guard, controlled exact62XP pickup boundary"
+}

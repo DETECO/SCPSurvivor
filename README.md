@@ -1,6 +1,6 @@
 # SCP Survivor
 
-Juego web en desarrollo. **P03-local-01 (alfa 0.3)** incorpora una primera partida completa de prueba sobre los sistemas reutilizados de la base. No es la versión final publicada.
+Juego web en desarrollo. **P04-local-01 (alfa 0.4)** amplía la expedición con soldados, armas y modificaciones sobre los sistemas reutilizados de la base. No es la versión final publicada.
 
 ## Esta entrega
 
@@ -8,8 +8,12 @@ Juego web en desarrollo. **P03-local-01 (alfa 0.3)** incorpora una primera parti
 - Expedición que continúa por sectores: neutralización, resistencia de 60 segundos y neutralización por mapa normal.
 - Perseguidor y biológico con disparos avisados; jefe Custodio con refuerzos, victoria y huida disponible desde el inicio.
 - Extracciones aleatorias desde el sector 3, con garantía tras varios mapas sin extracción. Puedes ignorarlas y seguir.
-- Guardia novato a **165 unidades/s (1,5× la velocidad original)**, pistola automática y Sprint.
-- Una mejora por nivel ganado y continuación automática tras elegir la última. Descanso de 20 segundos sin mejoras pendientes; Listo permite saltarlo.
+- Guardia con Sprint y médico con curación instantánea; ambos a **165 unidades/s (1,5× la velocidad original)**.
+- Pistola, subfusil y escopeta; dos copias equipadas, incluso del mismo modelo, con munición, recarga y nivel independientes.
+- Seis mods compatibles, dos por arma; selección antes de empezar y cambios confirmados durante la preparación.
+- Fórmulas aditivas, topes aprobados y cartas parciales; el arma apunta por separado del movimiento del soldado. Las paredes bloquean la perforación.
+- Al subir un nivel, la partida se pausa inmediatamente para elegir UNA mejora y luego continúa en la misma oleada. Si sobra XP para otro nivel, se procesa después de esa elección. No se guardan elecciones para el cierre de oleada.
+- Descanso de 20 segundos entre oleadas, separado de las subidas de nivel; Listo permite saltarlo.
 - Canvas que ocupa el área disponible del navegador, controles adaptables y pausa al entrar en segundo plano.
 - Resumen de extracción o muerte, reinicio y regreso al menú.
 
@@ -17,9 +21,9 @@ El arte es provisional. No hay guardado, cuentas, inventario persistente, reclut
 
 ## Controles
 
-**Ordenador:** WASD/flechas para moverse; Espacio o botón Sprint; teclas 1–3 o clic para elegir mejoras; Esc para pausar.
+**Ordenador:** WASD/flechas para moverse; Q/E para seleccionar arma; Espacio o botón de habilidad; teclas 1–3 o clic para elegir mejoras; Esc para pausar.
 
-**Móvil:** arrastra el dedo sobre el área de juego para moverte; utiliza los botones Sprint, Pausa, Listo y salida. El disparo y la recarga son automáticos.
+**Móvil:** arrastra el dedo sobre el área de juego para moverte; toca un arma o la habilidad del soldado. Disparo y recarga son automáticos. Los mods se editan durante preparación; su cuenta atrás sigue avanzando.
 
 ## Abrir el juego
 
@@ -33,7 +37,7 @@ Abre http://127.0.0.1:8000/ . Para revisar las fuentes utiliza `/dev.html`. Cons
 
 ## Actualización manual
 
-El ZIP de actualización P03 contiene únicamente archivos nuevos o cambiados y el aviso de licencia. Descomprímelo **sobre la entrega P01, P02 o 0.2.1**, reemplazando archivos y conservando sus rutas. No borres los demás archivos ni añadas una carpeta contenedora adicional.
+El ZIP de actualización P04 se aplica **sobre la entrega P03 (incluidos los ajustes 0.3.1/0.3.2)**, reemplazando archivos y conservando sus rutas. Incluye el ajuste de elección inmediata. No borres los demás archivos ni añadas una carpeta contenedora adicional.
 
 Sube esos archivos a `DETECO/SCPSurvivor`. El paquete se mantiene por debajo de 100 archivos para facilitar una carga desde GitHub. No contiene una actualización de RoadmapSCP. Este hilo no ha realizado commits, subidas ni publicaciones.
 
@@ -53,10 +57,17 @@ node tests/p03-pathing.test.js
 node tests/p03-biological.test.js
 node tests/p03-boss.test.js
 node tests/p03-director.test.js
+node tests/p04-stats.test.js
+node tests/p04-abilities.test.js
+node tests/p04-weapons.test.js
+node tests/p04-collisions.test.js
+node tests/p04-props.test.js
+python3 tests/p04-browser.py
+python3 tests/p03-levels.py
 python3 tests/p03-browser.py
 ```
 
-Las pruebas de navegador requieren Python Playwright y Chromium; no son dependencias del juego. Véase [informe P03](docs/P03-REPORT.md). Se utiliza Chromium en Linux con controles táctiles emulados; Safari e iPhone/Infinix físicos quedan pendientes. La simulación acelerada de la partida no es una medición de FPS.
+Las pruebas de navegador requieren Python Playwright y Chromium; no son dependencias del juego. Véanse [informe P04](docs/P04-REPORT.md), [informe P03](docs/P03-REPORT.md) y [elección inmediata 0.3.2](docs/P03-0.3.2-REPORT.md). Se utiliza Chromium en Linux con controles táctiles emulados; Safari e iPhone/Infinix físicos quedan pendientes. La simulación acelerada de la partida no es una medición de FPS.
 
 No instales dependencias de `functions/` ni despliegues servicios. La configuración mantiene deshabilitadas cuentas, nube y service worker.
 

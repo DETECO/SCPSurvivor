@@ -8,6 +8,7 @@ import json
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
+ThreadingHTTPServer.request_queue_size = 128
 
 class QuietHandler(SimpleHTTPRequestHandler):
     def log_message(self, *_):
@@ -20,7 +21,7 @@ def run(boot_only=False):
     records = []
     try:
         with sync_playwright() as pw:
-            browser = pw.chromium.launch(executable_path='/usr/bin/chromium', headless=True,
+            browser = pw.chromium.launch(headless=True,
                                          args=['--no-sandbox', '--disable-dev-shm-usage'])
             for entry in (['dev.html'] if boot_only else ['dev.html', 'index.html']):
                 for mobile in ([False] if boot_only else [False, True]):
@@ -167,7 +168,7 @@ def run(boot_only=False):
                     context.close()
             browser.close()
         if not boot_only:
-            result={'browser':'Chromium /usr/bin/chromium','scenarios':records,'failureChecks':failures}
+            result={'browser':'Chromium (Playwright)','scenarios':records,'failureChecks':failures}
             (ROOT.parent/'p01-work'/'browser-results.json').write_text(json.dumps(result,indent=2)+'\n')
             print(json.dumps(result,ensure_ascii=False))
     finally:

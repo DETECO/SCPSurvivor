@@ -124,7 +124,16 @@ G.World = (() => {
   const arena_outer = () => (arena ? arena.r + 7 : 0);
 
   function placeProps(c) {
-    if (fixture) return;
+    if (fixture) {
+      for (const spec of fixture.props || []) {
+        if (spec.type !== 'fieldCrate' || !Number.isInteger(spec.tx) || !Number.isInteger(spec.ty)) continue;
+        if (Math.floor(spec.tx / N) !== c.cx || Math.floor(spec.ty / N) !== c.cy || broken.has(spec.tx + ',' + spec.ty)) continue;
+        const p = makeProp('fieldCrate', spec.tx, spec.ty);
+        c.props.push(p);
+        if (p.solid) c.propAt.set(p.tx + ',' + p.ty, p);
+      }
+      return;
+    }
     for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
       if (c.terr[j * N + i] !== FLOOR) continue;
       const tx = c.cx * N + i, ty = c.cy * N + j;
@@ -174,6 +183,7 @@ G.World = (() => {
   const PROP = {
     tree:  { solid: true,  hp: Infinity, r: 13 },
     rock:  { solid: true,  hp: 34,       r: 12 },
+    fieldCrate: { solid: true, hp: 34, r: 12 },
     chest: { solid: true,  hp: 22,       r: 12 },
     grass: { solid: false, hp: 1,        r: 14 },
     altar:    { solid: true,  hp: Infinity, r: 9 },
@@ -375,6 +385,11 @@ G.World = (() => {
     }
     const B = G.Tiles.BIOMES[biome];
     G.Audio.sfx(p.type === 'grass' ? 'grass' : p.type === 'chest' ? 'chest' : 'break');
+    if (p.type === 'fieldCrate') {
+      G.FX.burst(p.x, p.y - 8, '#b88652', 8, 100);
+      G.FX.ring(p.x, p.y - 6, 4, 20, '#d4a66b', 0.22, 2);
+      return;
+    }
     if (p.type === 'grass') {
       G.FX.burst(p.x, p.y - 6, B.grass[1], 6, 70);
       const r = Math.random();
@@ -501,6 +516,17 @@ G.World = (() => {
                   : p.type === 'altar' ? p.kind * 2 + (p.used ? 1 : 0)
                   : p.type === 'spring' ? (p.charge < 0.15 ? 1 : 0)
                   : p.type === 'trap' ? p.kind : 0;
+    if (p.type === 'fieldCrate') {
+      ctx.save();
+      ctx.fillStyle = p.hp < p.maxHp * 0.5 ? '#755137' : '#9a6b3f';
+      ctx.fillRect(Math.round(p.x - 12), Math.round(p.y - 24), 24, 24);
+      ctx.strokeStyle = '#4f3828'; ctx.lineWidth = 2; ctx.strokeRect(Math.round(p.x - 12), Math.round(p.y - 24), 24, 24);
+      ctx.strokeStyle = '#c29763'; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(p.x - 9, p.y - 12); ctx.lineTo(p.x + 9, p.y - 12);
+      ctx.moveTo(p.x, p.y - 22); ctx.lineTo(p.x, p.y - 2); ctx.stroke();
+      ctx.restore();
+      return;
+    }
     const img = G.Tiles.propSprite(biome, p.type, variant);
     const w = img.width * P, h = img.height * P;
     if (p.flat) {

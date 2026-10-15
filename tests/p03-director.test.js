@@ -8,9 +8,9 @@ function setup(seed=1337){
  Enemy:class{constructor(def,x,y,sc,boss=false){Object.assign(this,{id:++id,def,x,y,sc,boss,hp:def.hp*sc.hp,dead:false,minions:[]});}die(){if(this.dead)return;this.dead=true;items.push({kind:'xp',value:this.def.xp||14,id:this.id});}},
  EnemyMgr:{clear(){list=[]},add(e){list.push(e);return e},get(id){return list.find(e=>e.id===id)},all:()=>list,get count(){return list.length},update(){list=list.filter(e=>!e.dead)}},
  Projectiles:{clear(){},update(){}},Pickups:{clear(){items=[]},all:()=>items,removeId(id){items=items.filter(i=>i.id!==id)},update(){}},
- Input:{reset(){},axis:()=>[0,0]},Touch:{reset(){}},FieldCombat:{reset(){},tick(){}},FX:{update(){}},Spawner:{CAP:64,say(){},tickBanner(){}},Combat:{resolve(){}},FieldUpgrades:{offer:()=>[{key:'health',apply:p=>p.perks++}]} };
- const player={hp:100,maxHp:100,kills:0,bosses:0,r:12,regenFlat:0,perks:0,x:0,y:0,xp:0,level:1,update(){},gainXp(n){this.xp+=n;return 0}};
- vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/expedition.js'),'utf8'),{G,Math});G.Expedition.start(player,{seed});
+ Input:{reset(){},axis:()=>[0,0]},Touch:{reset(){}},FieldCombat:{reset(){},tick(){},clearTemporary(p){p.tempStats={}}},FX:{update(){}},Spawner:{CAP:64,say(){},tickBanner(){}},Combat:{resolve(){}},FieldUpgrades:{offer:()=>[{key:'health',apply:p=>p.perks++}]} };
+ const player={hp:100,maxHp:100,kills:0,bosses:0,r:12,regenFlat:0,perks:0,x:0,y:0,xp:0,xpNext:1e9,xpMul:1,level:1,update(){},gainXp(n){this.xp+=n;return 0}};
+ for(const file of ['../js/data/field-catalog.js','../js/systems/field-stats.js','../js/systems/field-abilities.js','../js/systems/expedition.js'])vm.runInNewContext(fs.readFileSync(require.resolve(file),'utf8'),{G,Math});G.Expedition.start(player,{seed});
  function clearWave(){for(let step=0;step<500;step++){for(const e of G.EnemyMgr.all()){if(!e.dead){e.dead=true;player.kills++;}}G.Expedition.update(1);if(G.Expedition.state.phase==='preparation')return;}throw Error('wave stuck')}
  function clearSector(){for(let n=0;n<3;n++){clearWave();G.Expedition.ready()}player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;}
  return {G,player,clearWave,clearSector};
@@ -21,6 +21,19 @@ test('neutralización, resistencia60s y segunda neutralización; salida continú
  assert.equal(G.Expedition.state.phase,'combat');
  for(const e of G.EnemyMgr.all()){e.dead=true;player.kills++}G.Expedition.update(1);assert.equal(G.Expedition.state.phase,'preparation');G.Expedition.ready();assert.equal(G.Expedition.state.objective,'neutralize');clearWave();G.Expedition.ready();
  player.x=G.Expedition.state.exit.x;G.Expedition.useExit('continue');assert.equal(G.Expedition.state.sector,2);clearSector();G.Expedition.useExit('continue');assert.equal(G.Expedition.state.sector,3);assert.equal(G.Expedition.state.result,null);
+});
+test('D214: at all caps one pending choice never blocks preparation, then injury offers healing',()=>{
+ const a=setup();a.player.xpNext=1;
+ a.player.gainXp=function(n){this.xp+=n;if(this.xp>=this.xpNext){this.level++;this.xp-=this.xpNext;this.xpNext=100;return 1}return 0};
+ a.G.FieldUpgrades.offer=p=>p.hp<p.maxHp?[{key:'heal',apply:q=>q.hp=q.maxHp}]:[];
+ a.G.Pickups.all().push({id:901,kind:'xp',value:2});a.clearWave();
+ assert.equal(a.G.Expedition.state.phase,'preparation');assert.equal(a.G.Expedition.state.pending,1);
+ assert.equal(a.player.level,2);assert.equal(a.G.Expedition.state.pendingXp,1);
+ assert.equal(a.G.Expedition.ready(),true);assert.equal(a.G.Expedition.state.phase,'combat');
+ a.G.Expedition.update(1);assert.equal(a.player.level,2);assert.equal(a.G.Expedition.state.pending,1);
+ a.player.hp=70;a.G.Expedition.update(.1);assert.equal(a.G.Expedition.state.phase,'levelup');
+ assert.equal(a.G.Expedition.state.cards[0].key,'heal');a.G.Expedition.choose(0);
+ assert.equal(a.player.hp,100);assert.equal(a.G.Expedition.state.pending,0);assert.equal(a.G.Expedition.state.phase,'combat');
 });
 test('calendario reproducible, primer jefe4..6 y huida sin victoria con avance',()=>{
  const a=setup(8),b=setup(8);assert.equal(a.G.Expedition.state.nextBossSector,b.G.Expedition.state.nextBossSector);const first=a.G.Expedition.state.nextBossSector;assert.ok(first>=4&&first<=6);
@@ -36,8 +49,8 @@ test('huida cancelada por daño o movimiento no concede avance',()=>{
 });
 test('derrota del jefe:220XP, retirada sin bajas extra y premio único',()=>{
  const a=setup();while(a.G.Expedition.state.kind!=='boss'){a.clearSector();a.G.Expedition.useExit('continue')}
- const boss=a.G.EnemyMgr.all().find(e=>e.boss);a.G.Expedition.summon(boss,2);const kills=a.player.kills,xp=a.player.xp;boss.die();a.player.kills++;a.G.Expedition.update(.1);
- assert.equal(a.G.Expedition.state.totals.bossesDefeated,1);assert.equal(a.player.kills,kills+1);assert.equal(a.G.EnemyMgr.count,0);assert.equal(a.player.xp-xp,220);a.G.Expedition.update(1);assert.equal(a.player.xp-xp,220);
+ const boss=a.G.EnemyMgr.all().find(e=>e.boss);a.G.Expedition.summon(boss,2);const kills=a.player.kills,xp={current:a.player.xp,next:a.player.xpNext,mul:a.player.xpMul,level:a.player.level};boss.die();a.player.kills++;a.G.Expedition.update(.1);
+ assert.equal(a.G.Expedition.state.totals.bossesDefeated,1);assert.equal(a.player.kills,kills+1);assert.equal(a.G.EnemyMgr.count,0);assert.equal(a.player.xp-xp.current,220);assert.equal(a.player.xpNext,xp.next);assert.equal(a.player.xpMul,xp.mul);assert.equal(a.player.level,xp.level);a.G.Expedition.update(1);assert.equal(a.player.xp-xp.current,220);
 });
 test('extraer requiere punto elegible y limpio; cancela con movimiento; resultado único',()=>{
  const a=setup(77);for(let n=0;n<20&&!a.G.Expedition.state.extractionAvailable;n++){if(a.G.Expedition.state.kind==='boss'){a.player.x=a.G.Expedition.state.exit.x;a.player.y=a.G.Expedition.state.exit.y;a.G.Expedition.useExit('escape');a.G.Expedition.update(2.01)}else{a.clearSector();a.G.Expedition.useExit('continue')}}

@@ -23,3 +23,39 @@ body[data-technical-state="ui"] .footer,body[data-technical-state="paused"] .foo
 .overlay{overflow:auto;overscroll-behavior:contain}
 #field-upgrades .panel,#technical-ready .panel,#technical-pause .panel,#field-result .panel{max-height:calc(100% - 24px);overflow:auto;overscroll-behavior:contain}
 @media(max-height:500px){header{height:42px;padding:5px 16px}.footer{min-height:0;padding:5px 12px}#viewport{width:100%;height:100%}}
+
+/* P04 local test loadout and in-run weapon controls. */
+#technical-ready .panel{width:min(700px,100%)}
+.loadout-editor{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}
+.loadout-editor h2{font-size:18px;margin-bottom:8px}
+.loadout-editor label,.loadout-editor select{font-size:13px}
+.loadout-editor select{display:block;width:100%;min-height:40px;margin:4px 0 10px;padding:7px;background:#10211c;color:var(--ink);border:1px solid var(--edge)}
+.loadout-weapons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.loadout-weapons section{min-width:0;border:1px solid var(--edge);padding:9px}
+.loadout-weapons h3{font-size:14px;margin:0 0 5px}
+.loadout-mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.loadout-mod{display:flex;align-items:flex-start;gap:5px;font-size:11px!important;line-height:1.3;padding:4px;background:#1b3028}
+.loadout-mod input{flex:none;margin:1px 0 0;accent-color:var(--accent)}
+.loadout-editor p{font-size:12px;margin:7px 0}
+.loadout-preview{font-size:11px;color:#d6decf;padding-left:20px;margin:4px 0}
+.loadout-error{color:#ff9b91!important;min-height:1.3em}
+.field-controls{align-items:flex-end;flex-wrap:wrap}
+.field-controls button{min-height:48px}
+.field-weapons{display:flex;gap:6px}
+.field-controls .field-weapon{width:76px;height:58px;min-width:48px;min-height:48px;padding:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05}
+.field-weapon strong{font-size:15px}.field-weapon small{font-size:9px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.field-weapon.active{border-color:var(--accent);box-shadow:0 0 0 2px #c9ae6a66 inset}
+#btn-ability{min-width:112px}
+#btn-mods{padding:8px 10px}
+#field-mod-editor{z-index:4}
+#field-mod-editor .panel{max-height:calc(100% - 20px);overflow:auto}
+.field-mod-group{border:1px solid var(--edge);margin:10px 0;padding:8px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+.field-mod-group legend{font-size:13px;font-weight:700;color:var(--accent)}
+.field-mod-group p{grid-column:1/-1;font-size:11px;margin:4px}
+@media(max-width:540px){.loadout-weapons{grid-template-columns:1fr}.loadout-mods{grid-template-columns:repeat(2,minmax(0,1fr))}.field-controls{gap:5px}.field-controls button{padding:7px 8px}.field-controls .field-weapon{width:62px}}
+@media(max-height:560px){#technical-ready .panel{padding:16px}.loadout-editor{margin-top:7px;padding-top:7px}.loadout-weapons section{padding:5px}.loadout-mod{font-size:10px!important}.loadout-preview{margin:1px 0}.field-controls{bottom:6px}.field-controls .field-weapon{height:50px}}
+.loadout-mod{min-height:44px;align-items:center}
+.loadout-mod input{width:18px;height:18px}
+.loadout-weapon-details{display:block;margin:5px 0;color:#aab5a7;line-height:1.35}
+.field-mod-stats{font-size:11px!important;line-height:1.4}
+.field-mod-draft{color:#d5e8b4!important}
