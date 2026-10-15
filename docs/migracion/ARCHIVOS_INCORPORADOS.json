@@ -1,0 +1,308 @@
+[
+  {
+    "path": "LICENSE",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "0d3ea1e9d8fececf7e4205cc57d8192ac0406d39541d32a351c785d64d5c8e60",
+    "after_sha256": "904d9079fcd636f02490e2f627cf330f3f4c8a4fe5a01820377398c0cd74c9d4"
+  },
+  {
+    "path": "README.md",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "73a48e3ebd1872451196a6f0005579ff1659316d9063038f86f37bb6447a559e",
+    "after_sha256": "522b7b4c13a4c4766f260f9a10c2c868636689a959449cabf31e2902ac451186"
+  },
+  {
+    "path": "assets/actors/medic01/Idle.svg",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "e34fd5a31a916db106ca3c6e654907847d53ff9492408cc0e91e8c89c2aa749d"
+  },
+  {
+    "path": "assets/actors/medic01/Walk.svg",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "0c0babbdfb355b5fb97809192e1d28aefa9642abdba56c0c36b9253155d7a5cc"
+  },
+  {
+    "path": "css/technical.css",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "98a12bf08b2307eec170e38babc0b05ba4062fdd7ceb63597141232a91c4410d",
+    "after_sha256": "12e8ac3382ebb657ad864f28e3bd5e688993d435eaf384a0ca1f12de4212ae14"
+  },
+  {
+    "path": "dev.html",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "5993dc94fe4784510e0877734a6569d38a2593dcd73b92d80a7110752a120889",
+    "after_sha256": "0a09297de75310f1a74b94a9f64135ec120dd3b38494e584c9c0ebe433ce1a26"
+  },
+  {
+    "path": "docs/P03-0.3.1-REPORT.md",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "44b5f1422a5ef8fb073d4ae9de2403756310a5113aefd709af5ca7fe74c6e018"
+  },
+  {
+    "path": "docs/P03-0.3.1-level-validation.json",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "743402c18f181b823f4566f3b9d3f79c19ed03e99917385242ffa6882192ef9c"
+  },
+  {
+    "path": "docs/P03-0.3.2-REPORT.md",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "8b43bd327434690dff85445284ff2f11a47744fe1204fa100dde20f5cd771ca6"
+  },
+  {
+    "path": "docs/P03-0.3.2-integration-validation.json",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "8cae8d9511091ba6701a5e29844f0a8c271ef116059c7dad07439a066ada8ff2"
+  },
+  {
+    "path": "docs/P03-0.3.2-level-validation.json",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "a396783f73d5a005738a7942a42b3de5aea012b9eaa1360e2a559abcfd303bf2"
+  },
+  {
+    "path": "docs/P04-REPORT.md",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "6b0fc08fe5811eac06b3b7128f27cbf8a5a0b9814c54ad6bc9bf59d22dce8653"
+  },
+  {
+    "path": "docs/P04-integration-validation.json",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "fe9101231a59be4216349ed5e28f9f088eebe810036a47af6f87b52848f8de6d"
+  },
+  {
+    "path": "docs/P04-level-validation.json",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "68f4dab5d5744ab7bff353aa79405bd3912bf3eb399363bbc492fb3d3f220cec"
+  },
+  {
+    "path": "docs/P04-source-delta.json",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "ec46de2f54f5cc979510a89581eaf1d228436dea6bb20042ab9e662feb6c9271"
+  },
+  {
+    "path": "docs/P04-validation.json",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "2c9380cb52576a6240bb61ed1d5cf05c54903492c1e0ead492c5455471206a48"
+  },
+  {
+    "path": "docs/screenshots/P04-medic.png",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "cf4573f35f691b2bddaff55634a7bea7e30469ced63e6709f69bedc8f83768a7"
+  },
+  {
+    "path": "docs/screenshots/P04-menu.png",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "b7d3267004541d1ecc845e8739735231c28dfe0d463bf321be1f9d400f079136"
+  },
+  {
+    "path": "docs/screenshots/P04-mods.png",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "90d62322939e69155e659df308e127abb99a44fc59d149a8a24ad9f618310a59"
+  },
+  {
+    "path": "index.html",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "706a8b61ffd2175e3adf2ee8e79c4fa119b33e0de8c9c38b20159c2123295996",
+    "after_sha256": "8de13a0eba94cb4bad835c435ae35b9fd0fe2810539a41d28877928a9feaafe5"
+  },
+  {
+    "path": "js/app.min.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "d0625bb93e845fa81558e115be69dea3dc5d122eaab381be58f8ac5480cbebb0",
+    "after_sha256": "3a6f562cf5ee38801c796998d6990230d0d450fed1cbf4b2471ebd9c514abec5"
+  },
+  {
+    "path": "js/core/input.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "f7025dc1f4d4042e9edb1922cff7fbfac0520276f0954d01defb1baffe6fb9d7",
+    "after_sha256": "b8b65df657958784857f3b8780d1a6f91e5f9650d82cefa90c76b91c2720156c"
+  },
+  {
+    "path": "js/data/content.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "6f8fe366eafc6496ce6a9a03fe8e2da25735f3fe3556d26576e7f79d27ed279d",
+    "after_sha256": "2998aaf8b785d755026b963135d5b8f30f3389c6a846b15aa3af5cd830141322"
+  },
+  {
+    "path": "js/data/field-catalog.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "8773107509da9d755a564e4635a341c09c115edf18b289ce1b395bbb18ea2e0c"
+  },
+  {
+    "path": "js/entities/player.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "8d05d6f6f8a5bc00b769bd346841f958b2bb8ec0946ad6908ebb508174d39b23",
+    "after_sha256": "6bb2a9b8fe9fcc16ef14c9fd35469df3dcbc9e0efd4b0f43d7ff908c2084bb12"
+  },
+  {
+    "path": "js/game.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "f20b74c63d11040a5d16266b71e7a8585b9bfb56f3215376292c6099268c924a",
+    "after_sha256": "a7f3ae39dc7c3849a6d1a755d2cf1442b8e851a8386d7ec2ee8e802551fa6170"
+  },
+  {
+    "path": "js/main.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "de009d731928067a9e787efc8b82987b1025a1121f2d6525f8f76b0ff7a54f38",
+    "after_sha256": "b729feee842d926b229f41e2d90b857c643e8c995b91585dd9848913cb9d97b3"
+  },
+  {
+    "path": "js/systems/combat.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "866fbd2cd6380fed3980148328360ef26a82d7bf4a1f75a3e06214f083f3696d",
+    "after_sha256": "baadd57780e10233a61cbdb372d8c350cba5c448484c8e07ea41a1e9a583e2e5"
+  },
+  {
+    "path": "js/systems/expedition.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "d0bf5743c030259011f64f9edc3cba991059a9a0b1b05b75d5844b597b8f7510",
+    "after_sha256": "fd3f2fecd0d90866121c2c4b892ac0258af22614472b9f525760499119599d65"
+  },
+  {
+    "path": "js/systems/field-abilities.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "8e3cc1b156fb16f902ee32c9ccf9e5b347e6465c0562db2b33b1e92fef68ff7c"
+  },
+  {
+    "path": "js/systems/field-combat.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "6d6dac97e5bb20ccfca969c8e0fb15e153400a641c38a4e182fa7508cb3ed7d3",
+    "after_sha256": "dfd7773eea63773a2176d383dbaa7df0473219e1aa9575306b03c530b161ffe1"
+  },
+  {
+    "path": "js/systems/field-stats.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "0d3fe07128c115f70945848ae1f9b4f3b1b198615b2c1882599b8492e43b0214"
+  },
+  {
+    "path": "js/systems/field-upgrades.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "7bd9426ae0aabca0f85b6979a97fbe5276f815ed9b4737784fc58b34c034bcc6",
+    "after_sha256": "b2944a32c51133c21976be9208014b8abe3da5884325e7f97c75f73f6b10af5c"
+  },
+  {
+    "path": "js/ui/field-loadout.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "040c971b198e1dfb83055e85d20c7a92f5122fc350ec4959f215a3ce3c3fd63c"
+  },
+  {
+    "path": "js/ui/technical-ui.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "85baa2ae4016a5c0ba3f810087aeaee075469691feaf2b5d44dd17bbf546c023",
+    "after_sha256": "a5c2d7e4b9a0a13bff510ac735efb0a6a6105c86e8941e34da5b2de1bbe82629"
+  },
+  {
+    "path": "js/world/sector-maps.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "dfa037aa0260bbcbe3a27929e6cf966efe47533b65fff2afdf368042224a5752",
+    "after_sha256": "301afdafba15b03fdf14dc87cf58bebbada8925d9e07f698524e5d625f09848a"
+  },
+  {
+    "path": "js/world/world.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "d0eb0f561bde191d0ff94fd44707fed89a4ca7978e7e450f207e0fd7a1e15383",
+    "after_sha256": "fdd1e0f526ac388866dc24eba67ee9853a6c4564cc46b0d75d884cfedcbbfe1a"
+  },
+  {
+    "path": "tests/helpers/p03-autoplay.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "13e39c6a13fd1cca8804719fce6192a072c61881f162f2a1ef09d3697240544f",
+    "after_sha256": "d038a33258165e72536e6ebdec4410631ffd1d60a511fa6f535f762168e519d1"
+  },
+  {
+    "path": "tests/p02-upgrades.test.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "df7db6a0fa1ee81ef2af6b847e8d5d0df7dc63bf4120fd9da15011e171aba850",
+    "after_sha256": "ed0416fe98890fb42ce6a72d78cba4ed27aaa63e366ebb61f777519773c49789"
+  },
+  {
+    "path": "tests/p02-weapon.test.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "cbdb977823ebcbc7a11f450377c3cae1489d80f7ffdfdbe77219e4b03a06abfe",
+    "after_sha256": "40249f3f37a9bbc81238caa6c0fa4ab2c72090729fd139c737942502c7c22b28"
+  },
+  {
+    "path": "tests/p03-browser.py",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "6123a1d44af3b7e94f928b2f8fe297677ac210477e5754cf337216f1595db737",
+    "after_sha256": "1123714021aa1999e19363d76e8ee0761329e90b28e77cca8c33ea8e5553debd"
+  },
+  {
+    "path": "tests/p03-director.test.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": "7234a7d4aa6a41e122af06445bdc3a8f92397306d15961b17f5be0362190e434",
+    "after_sha256": "b4f5264149a5317ba097047c3678a69d6fe1a9893b7d59ac927032a302bc854a"
+  },
+  {
+    "path": "tests/p03-levels.py",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "df768005d4e3e5df45788093fc8b1e40f18638852b5ab490d4cc5ee18e469d92"
+  },
+  {
+    "path": "tests/p04-abilities.test.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "a23a124d3a2c349da343ea2cb93af898586fee66486bac90bfa99457d57e80e7"
+  },
+  {
+    "path": "tests/p04-browser.py",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "b907fc840e79ba361b0d3a7e9b04238a58917d5066b16b9d3ee4601be3e34539"
+  },
+  {
+    "path": "tests/p04-collisions.test.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "0171a49421342ea64090f63a2684e2f1d0c97e756063adff422e3ec825e77744"
+  },
+  {
+    "path": "tests/p04-props.test.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "dfa677cd0739178ab16db6f3d42d04d6048ed9494668ac5fcb28d270bb2323d2"
+  },
+  {
+    "path": "tests/p04-stats.test.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "eec6ad35a63d7589cef22945b71854fe342e2b1badea11e9d84d9522accd70a6"
+  },
+  {
+    "path": "tests/p04-weapons.test.js",
+    "source": "SCP-Survivor-P04-0.4-actualizacion.zip",
+    "before_sha256": null,
+    "after_sha256": "2bc552852f81fd1c181474f73a59071ee6b53a1f634a4b10ff3b7ebf9bc4f068"
+  },
+  {
+    "path": "RoadmapSCP.json",
+    "source": "RoadmapSCP-v0.11.zip",
+    "before_sha256": "85339dd44fcaf6ae989e689e64991c8f1ae9ef075eeed4cce2adb300a3a48346",
+    "after_sha256": "5cfef7eab20fd8f3194240057fd7437349056b01fbb566f0ddffcc29311bb7e4"
+  },
+  {
+    "path": "RoadmapSCP.md",
+    "source": "RoadmapSCP-v0.11.zip",
+    "before_sha256": "1c340725d4b22a328d6f8bbe33a7b10c9ad5777c5e61494e2045cb252edaeb73",
+    "after_sha256": "167b723000c8934ee652eae02bb7915c2c66a6c844d8eb80f1e069be5dc27486"
+  }
+]

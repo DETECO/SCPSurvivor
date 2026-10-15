@@ -1,0 +1,17 @@
+# Añadido en la migración; no recuperado del manifiesto histórico.
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+tests/artifacts/
+.playwright/
+*.log
+*.tmp
+Thumbs.db
+.DS_Store
+local-data/
+.firebase/

@@ -1,7 +1,7 @@
 /* Arranque local P01. La aplicación completa sigue pendiente de sus fases. */
 (() => {
   const NEED = ['U', 'Settings', 'Input', 'Touch', 'Sprites', 'Camera', 'Tiles', 'World',
-                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'Expedition', 'Game'];
+                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI'];
   function boot() {
     const miss = NEED.filter(k => !window.G || !G[k]);
     if (miss.length) {
@@ -14,7 +14,7 @@
       G.TechnicalUI.fail(new Error('La escena requiere configuración local sin servicios')); return;
     }
     try {
-      G.Content.install(); G.Game.init({ technical: true }); G.TechnicalUI.init();
+      G.Content.install(); G.Game.init({ technical: true }); G.TechnicalUI.init(); G.AccountUI.init();
     } catch (e) { G.TechnicalUI.fail(e); }
   }
   if (document.readyState === 'loading') addEventListener('DOMContentLoaded', boot);

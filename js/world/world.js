@@ -603,6 +603,15 @@ G.World = (() => {
   }
 
   function biomeName() { return G.Tiles.BIOMES[biome].name; }
+  function exportData(){
+    const damaged=[];
+    for(const c of data.values())for(const p of c.props)if(p.destructible&&p.hp>0&&p.hp<p.maxHp)damaged.push({tx:p.tx,ty:p.ty,hp:p.hp});
+    return {broken:[...broken].sort(),damaged:damaged.sort((a,b)=>a.tx-b.tx||a.ty-b.ty)};
+  }
+  function restoreData(saved){
+    data.clear();images.clear();broken.clear();for(const key of saved.broken)broken.add(key);
+    for(const item of saved.damaged){const p=propAtTile(item.tx,item.ty);if(p?.destructible)p.hp=Math.min(p.maxHp,item.hp);}
+  }
 
   /** Viñeta en coordenadas de pantalla. */
   function drawVignette(ctx, w, h) {
@@ -614,7 +623,7 @@ G.World = (() => {
   }
 
   return {
-    TS, CW, reset, setBiome, biomeName, liquidKind, liquidEffect, walkable,
+    TS, CW, reset, setBiome, biomeName, liquidKind, liquidEffect, walkable,exportData,restoreData,
     setFixture(map) {
       fixture = map ? { ...map, walls: Array.isArray(map.walls) ? map.walls : [...(map.walls || [])].map(k => String(k).split(',').map(Number)) } : null;
       fixtureWallSet = fixture ? new Set(fixture.walls.map(([x, y]) => x + ',' + y)) : null;

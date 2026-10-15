@@ -1,0 +1,250 @@
+TAP version 13
+# Subtest: el aviso de alcance detiene y fija dirección sin daño durante 0.6 s
+ok 1 - el aviso de alcance detiene y fija dirección sin daño durante 0.6 s
+  ---
+  duration_ms: 6.5754
+  type: 'test'
+  ...
+# Subtest: golpea solo al cierre del aviso dentro del alcance y respeta cooldown
+ok 2 - golpea solo al cierre del aviso dentro del alcance y respeta cooldown
+  ---
+  duration_ms: 2.6478
+  type: 'test'
+  ...
+# Subtest: un golpe esquivado conserva cooldown y comprueba el cono frontal
+ok 3 - un golpe esquivado conserva cooldown y comprueba el cono frontal
+  ---
+  duration_ms: 2.2248
+  type: 'test'
+  ...
+# Subtest: bloqueo de mundo cancela golpe
+ok 4 - bloqueo de mundo cancela golpe
+  ---
+  duration_ms: 3.624
+  type: 'test'
+  ...
+# Subtest: Enemy conserva HP y daño fraccionarios de containment y escala spd/dmg
+ok 5 - Enemy conserva HP y daño fraccionarios de containment y escala spd/dmg
+  ---
+  duration_ms: 6.8914
+  type: 'test'
+  ...
+# p02 upgrades: migrated to field API ok
+# Subtest: C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p02-upgrades.test.js
+ok 2 - C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p02-upgrades.test.js
+  ---
+  duration_ms: 118.326
+  type: 'test'
+  ...
+# p04 weapons: ok
+# Subtest: C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p02-weapon.test.js
+ok 3 - C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p02-weapon.test.js
+  ---
+  duration_ms: 128.5939
+  type: 'test'
+  ...
+# Subtest: biological shot has a visible fixed-aim warning before firing
+ok 8 - biological shot has a visible fixed-aim warning before firing
+  ---
+  duration_ms: 6.3057
+  type: 'test'
+  ...
+# Subtest: cooldown starts on firing even when the aimed shot misses
+ok 9 - cooldown starts on firing even when the aimed shot misses
+  ---
+  duration_ms: 2.4488
+  type: 'test'
+  ...
+# Subtest: offscreen enemies do not acquire or fire
+ok 10 - offscreen enemies do not acquire or fire
+  ---
+  duration_ms: 2.2624
+  type: 'test'
+  ...
+# Subtest: wall blocks both warning acquisition and a shot during the warning
+ok 11 - wall blocks both warning acquisition and a shot during the warning
+  ---
+  duration_ms: 3.9136
+  type: 'test'
+  ...
+# Subtest: boss telegraph snapshots its center, stops to strike, and damages only at warning end
+ok 12 - boss telegraph snapshots its center, stops to strike, and damages only at warning end
+  ---
+  duration_ms: 8.3724
+  type: 'test'
+  ...
+# Subtest: the strike does not damage through a wall and respects cooldown
+ok 13 - the strike does not damage through a wall and respects cooldown
+  ---
+  duration_ms: 3.6371
+  type: 'test'
+  ...
+# Subtest: low health movement enrage is 15 percent and does not compound
+ok 14 - low health movement enrage is 15 percent and does not compound
+  ---
+  duration_ms: 2.6798
+  type: 'test'
+  ...
+# Subtest: boss keeps approaching outside its AoE reach and enrage starts strictly below half health
+ok 15 - boss keeps approaching outside its AoE reach and enrage starts strictly below half health
+  ---
+  duration_ms: 4.4861
+  type: 'test'
+  ...
+# Subtest: summons use an eight second timer and one second cue, bounded by living minions and global cap
+ok 16 - summons use an eight second timer and one second cue, bounded by living minions and global cap
+  ---
+  duration_ms: 2.7143
+  type: 'test'
+  ...
+# Subtest: dead boss frames do not advance or issue pending summons
+ok 17 - dead boss frames do not advance or issue pending summons
+  ---
+  duration_ms: 2.1622
+  type: 'test'
+  ...
+# Subtest: neutralización, resistencia60s y segunda neutralización; salida continúa infinitamente
+ok 18 - neutralización, resistencia60s y segunda neutralización; salida continúa infinitamente
+  ---
+  duration_ms: 54.0413
+  type: 'test'
+  ...
+# Subtest: D214: at all caps one pending choice never blocks preparation, then injury offers healing
+ok 19 - D214: at all caps one pending choice never blocks preparation, then injury offers healing
+  ---
+  duration_ms: 15.8257
+  type: 'test'
+  ...
+# Subtest: calendario reproducible, primer jefe4..6 y huida sin victoria con avance
+ok 20 - calendario reproducible, primer jefe4..6 y huida sin victoria con avance
+  ---
+  duration_ms: 62.6263
+  type: 'test'
+  ...
+# Subtest: huida cancelada por daño o movimiento no concede avance
+ok 21 - huida cancelada por daño o movimiento no concede avance
+  ---
+  duration_ms: 78.531
+  type: 'test'
+  ...
+# Subtest: derrota del jefe:220XP, retirada sin bajas extra y premio único
+ok 22 - derrota del jefe:220XP, retirada sin bajas extra y premio único
+  ---
+  duration_ms: 68.0361
+  type: 'test'
+  ...
+# Subtest: extraer requiere punto elegible y limpio; cancela con movimiento; resultado único
+ok 23 - extraer requiere punto elegible y limpio; cancela con movimiento; resultado único
+  ---
+  duration_ms: 59.3079
+  type: 'test'
+  ...
+# Subtest: extracción garantizada antes de cuatro normales elegibles sin salida y velocidad acotada
+ok 24 - extracción garantizada antes de cuatro normales elegibles sin salida y velocidad acotada
+  ---
+  duration_ms: 1146.0393
+  type: 'test'
+  ...
+# Subtest: sector generation is stable for a seed and varies between seeds
+ok 25 - sector generation is stable for a seed and varies between seeds
+  ---
+  duration_ms: 63.0006
+  type: 'test'
+  ...
+# Subtest: seeds 0..127 produce six roles, connected floors and reachable exit clearance
+ok 26 - seeds 0..127 produce six roles, connected floors and reachable exit clearance
+  ---
+  duration_ms: 846.5787
+  type: 'test'
+  ...
+# Subtest: every seed offers offscreen first-wave spawn candidates within Path R28
+ok 27 - every seed offers offscreen first-wave spawn candidates within Path R28
+  ---
+  duration_ms: 834.2951
+  type: 'test'
+  ...
+# Subtest: fixture replacement invalidates cached tile data and preserves array walls API
+ok 28 - fixture replacement invalidates cached tile data and preserves array walls API
+  ---
+  duration_ms: 10.2031
+  type: 'test'
+  ...
+# Subtest: generated entry and exit have real World collision clearance for a 22px body
+ok 29 - generated entry and exit have real World collision clearance for a 22px body
+  ---
+  duration_ms: 26.6184
+  type: 'test'
+  ...
+# Subtest: boss layout keeps arena spawn and escape reachable with real collision
+ok 30 - boss layout keeps arena spawn and escape reachable with real collision
+  ---
+  duration_ms: 40.3176
+  type: 'test'
+  ...
+# Subtest: BFS de un sector finito conserva caminos cuyo rodeo sale del antiguo radio28
+ok 31 - BFS de un sector finito conserva caminos cuyo rodeo sale del antiguo radio28
+  ---
+  duration_ms: 51.3588
+  type: 'test'
+  ...
+# Subtest: todos los puntos de aparición reales son alcanzables en semillas0..127
+ok 32 - todos los puntos de aparición reales son alcanzables en semillas0..127
+  ---
+  duration_ms: 1801.7056
+  type: 'test'
+  ...
+# P04 abilities: ok
+# Subtest: C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p04-abilities.test.js
+ok 9 - C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p04-abilities.test.js
+  ---
+  duration_ms: 134.0289
+  type: 'test'
+  ...
+# p04 collisions: ok
+# Subtest: C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p04-collisions.test.js
+ok 10 - C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p04-collisions.test.js
+  ---
+  duration_ms: 128.4793
+  type: 'test'
+  ...
+# Subtest: sector fixtures place deterministic field crates on safe room corners
+ok 35 - sector fixtures place deterministic field crates on safe room corners
+  ---
+  duration_ms: 2318.1244
+  type: 'test'
+  ...
+# Subtest: World crates use normal prop collision and damage, then persist broken for that map without loot
+ok 36 - World crates use normal prop collision and damage, then persist broken for that map without loot
+  ---
+  duration_ms: 28.7252
+  type: 'test'
+  ...
+# Subtest: field crate uses its own plain box drawing
+ok 37 - field crate uses its own plain box drawing
+  ---
+  duration_ms: 10.2452
+  type: 'test'
+  ...
+# p04 stats: ok
+# Subtest: C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p04-stats.test.js
+ok 12 - C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p04-stats.test.js
+  ---
+  duration_ms: 127.825
+  type: 'test'
+  ...
+# p04 weapons: ok
+# Subtest: C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p04-weapons.test.js
+ok 13 - C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p04-weapons.test.js
+  ---
+  duration_ms: 145.868
+  type: 'test'
+  ...
+1..39
+# tests 39
+# suites 0
+# pass 39
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2746.5401

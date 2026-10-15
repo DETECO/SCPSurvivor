@@ -196,5 +196,7 @@ G.Pickups = (() => {
     ctx.globalAlpha = 1;
   }
 
-  return { clear, all, dropXp, drop, update, draw, addRemote, removeId, pullAll, KIND, get count() { return list.length; } };
+  function exportData(){return JSON.parse(JSON.stringify(list));}
+  function restoreData(items){list=JSON.parse(JSON.stringify(items));nextId=Math.max(1,...list.map(p=>p.id+1));}
+  return { clear, all, dropXp, drop, update, draw, addRemote, removeId, pullAll, exportData,restoreData,KIND, get count() { return list.length; } };
 })();

@@ -1,5 +1,9 @@
 # Créditos
 
+## Bibliotecas P05 local
+
+Firebase JavaScript SDK13.0.0 (Google LLC), empaquetado desde sus módulos oficiales y modificado únicamente mediante selección de exports/minificación. Los avisos @license se conservan en SDK y compilado; licencia Apache2.0 en docs/licencias/APACHE-2.0.txt. Licencias auxiliares idb y tslib en docs/licencias/. Estas bibliotecas no sustituyen las licencias del juego ni de sus recursos.
+
 ## Sprites
 
 Los sprites estilo *Pokémon Mundo Misterioso* vienen de

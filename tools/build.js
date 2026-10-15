@@ -18,7 +18,7 @@ const checkOnly = args.has('--check');
 const minifyOptions = {
   compress: { passes: 1 },
   mangle: true,
-  format: { comments: false },
+  format: { comments: /@license|@preserve|^!/ },
   ecma: 2020
 };
 

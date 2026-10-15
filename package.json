@@ -4,10 +4,19 @@
   "private": true,
   "description": "Herramientas locales para construir SCP Survivor",
   "scripts": {
-    "build": "node tools/build.js --local",
-    "build:check": "node tools/build.js --local --check"
+    "build": "node tools/build-firebase.js && node tools/build.js --local",
+    "build:check": "node tools/build-firebase.js --check && node tools/build.js --local --check",
+    "build:sdk": "node tools/build-firebase.js",
+    "emulators": "node tools/start-emulators.js",
+    "emulators:save": "node tools/save-emulators.js",
+    "serve": "node tools/serve-local.js",
+    "correo:local": "node tools/local-auth-mail.js",
+    "test:p05": "node --test tests/p05-*.test.js"
   },
   "devDependencies": {
+    "esbuild": "0.28.2",
+    "firebase": "13.0.0",
+    "firebase-tools": "15.34.0",
     "terser": "5.51.2"
   }
 }

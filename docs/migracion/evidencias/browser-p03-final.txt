@@ -1,0 +1,3 @@
+{"entry": "dev.html", "mode": "escape", "result": {"reason": "extracted", "sector": 10, "wave": 3, "kills": 1128, "level": 21, "elapsed": 2448.666599998444, "hp": 120, "runSeed": 1337, "wavesCompleted": 27, "sectorsCompleted": 10, "bossesDefeated": 0, "bossesEvaded": 1}}
+{"entry": "index.html", "mode": "win", "result": {"reason": "extracted", "sector": 10, "wave": 3, "kills": 1135, "level": 21, "elapsed": 2228.8831333319754, "hp": 120, "runSeed": 1337, "wavesCompleted": 27, "sectorsCompleted": 10, "bossesDefeated": 1, "bossesEvaded": 0}}
+{"scenarios": 4, "fullFlows": 2, "result": "PASS"}

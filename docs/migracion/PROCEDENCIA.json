@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-14",
+  "timezone": "America/Santiago",
+  "scope": "Solo SCP Survivor, sesión principal y archivos del repositorio/ZIP entregados",
+  "repository": "https://github.com/DETECO/SCPSurvivor",
+  "branch": "main",
+  "commit": "78abae79ecef81a4de01068479d872877dd7ed00",
+  "remote_includes_cloud_update": false,
+  "source_files": 212,
+  "input_archives": [
+    {
+      "file": "SCP-Survivor-P04-0.4-actualizacion.zip",
+      "size": 1038159,
+      "sha256": "e7c35e41dece482068baaaf99dd624f253fc972d781bd4acc71a610e7130899d"
+    },
+    {
+      "file": "RoadmapSCP-v0.11.zip",
+      "size": 156684,
+      "sha256": "34dd88168d657c856ac2bf61cc0d920a8fb1758876b0f1c4f2976a3e51a1a559"
+    }
+  ],
+  "migration_modified_existing_files": [
+    "js/core/touch.js",
+    "tests/p01-browser.py",
+    "tests/p01-movement.py",
+    "tests/p03-browser.py",
+    "tests/p03-death.py",
+    "tests/p03-levels.py",
+    "tests/p04-browser.py"
+  ],
+  "cloud_bundle_sha256": "3a6f562cf5ee38801c796998d6990230d0d450fed1cbf4b2471ebd9c514abec5",
+  "original_cloud_or_github_modified": false
+}

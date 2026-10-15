@@ -59,3 +59,6 @@ body[data-technical-state="ui"] .footer,body[data-technical-state="paused"] .foo
 .loadout-weapon-details{display:block;margin:5px 0;color:#aab5a7;line-height:1.35}
 .field-mod-stats{font-size:11px!important;line-height:1.4}
 .field-mod-draft{color:#d5e8b4!important}
+
+/* P05: account controls within the existing menu. */
+.account-panel{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}.account-panel h2{font-size:18px}.account-panel label{display:block;font-size:13px;margin-top:8px}.account-panel input{display:block;width:100%;box-sizing:border-box;min-height:44px;margin-top:4px;padding:8px;background:#10211c;color:var(--ink);border:1px solid var(--edge);font:inherit}.account-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.account-actions button{font-size:12px;padding:8px;min-height:48px}.account-panel p{font-size:12px}#account-notice{color:#ffb49e}#account-sync-overlay{z-index:30}button:disabled{opacity:.55;cursor:default}

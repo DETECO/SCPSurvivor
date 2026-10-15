@@ -79,7 +79,8 @@ def main():
       if mode=='win':
        mid=page.evaluate(helper,{'bossMode':'win','stopBossDamaged':True});assert mid['status']=='boss-damaged',mid
        page.wait_for_timeout(80);page.screenshot(path=str(OUT/'boss-combat.png'))
-      part=page.evaluate(helper,{'bossMode':mode,'minimumBosses':1,'stopExtraction':True});assert part['status']=='extracting',part
+      # GAP-001 adds up to five waves; allow the complete ten-sector route to finish.
+      part=page.evaluate(helper,{'bossMode':mode,'minimumBosses':1,'stopExtraction':True,'maxSteps':150000});assert part['status']=='extracting',part
       assert part['state']['totals']['bossesEvaded' if mode=='escape' else 'bossesDefeated']>=1
       page.keyboard.down('KeyD');page.wait_for_timeout(80);page.keyboard.up('KeyD');assert page.evaluate('G.Expedition.state.phase')=='exploration'
       page.keyboard.down('KeyA');page.wait_for_timeout(160);page.keyboard.up('KeyA');page.wait_for_timeout(100)

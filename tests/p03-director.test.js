@@ -12,7 +12,7 @@ function setup(seed=1337){
  const player={hp:100,maxHp:100,kills:0,bosses:0,r:12,regenFlat:0,perks:0,x:0,y:0,xp:0,xpNext:1e9,xpMul:1,level:1,update(){},gainXp(n){this.xp+=n;return 0}};
  for(const file of ['../js/data/field-catalog.js','../js/systems/field-stats.js','../js/systems/field-abilities.js','../js/systems/expedition.js'])vm.runInNewContext(fs.readFileSync(require.resolve(file),'utf8'),{G,Math});G.Expedition.start(player,{seed});
  function clearWave(){for(let step=0;step<500;step++){for(const e of G.EnemyMgr.all()){if(!e.dead){e.dead=true;player.kills++;}}G.Expedition.update(1);if(G.Expedition.state.phase==='preparation')return;}throw Error('wave stuck')}
- function clearSector(){for(let n=0;n<3;n++){clearWave();G.Expedition.ready()}player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;}
+ function clearSector(){for(let n=0;n<G.Expedition.state.sectorWaves;n++){clearWave();G.Expedition.ready()}player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;}
  return {G,player,clearWave,clearSector};
 }
 test('neutralización, resistencia60s y segunda neutralización; salida continúa infinitamente',()=>{
@@ -20,7 +20,53 @@ test('neutralización, resistencia60s y segunda neutralización; salida continú
  for(let n=0;n<59;n++){for(const e of G.EnemyMgr.all()){e.dead=true;player.kills++}G.Expedition.update(1)}
  assert.equal(G.Expedition.state.phase,'combat');
  for(const e of G.EnemyMgr.all()){e.dead=true;player.kills++}G.Expedition.update(1);assert.equal(G.Expedition.state.phase,'preparation');G.Expedition.ready();assert.equal(G.Expedition.state.objective,'neutralize');clearWave();G.Expedition.ready();
+ while(G.Expedition.state.phase==='combat'){clearWave();G.Expedition.ready();}
  player.x=G.Expedition.state.exit.x;G.Expedition.useExit('continue');assert.equal(G.Expedition.state.sector,2);clearSector();G.Expedition.useExit('continue');assert.equal(G.Expedition.state.sector,3);assert.equal(G.Expedition.state.result,null);
+});
+test('GAP-001: tamaños3/4/5 reproducibles y estables; distribución sobre900 semillas',()=>{
+ const counts={3:0,4:0,5:0};
+ for(let n=0;n<900;n++){
+  const seed=Math.imul(n,0x9e3779b1)>>>0,a=setup(seed),b=setup(seed),size=a.G.Expedition.state.sectorWaves;
+  assert.ok([3,4,5].includes(size),'Normal debe registrar3/4/5');assert.equal(size,b.G.Expedition.state.sectorWaves);
+  a.G.Expedition.update(.1);assert.equal(a.G.Expedition.state.sectorWaves,size);counts[size]++;
+ }
+ for(const count of Object.values(counts))assert.ok(count>=240&&count<=360,JSON.stringify(counts));
+});
+test('GAP-001: alternancia y cierre exacto para3/4/5, preparación y salida',()=>{
+ const found=new Set();
+ for(let n=0;n<100&&found.size<3;n++){
+  const a=setup(Math.imul(n,0x9e3779b1)>>>0),size=a.G.Expedition.state.sectorWaves;if(found.has(size))continue;
+  assert.ok([3,4,5].includes(size));found.add(size);
+  for(let wave=1;wave<=size;wave++){
+   const before=a.G.Expedition.state;assert.equal(before.wave,wave);assert.equal(before.sectorWaves,size);
+   assert.equal(before.objective,wave%2===0?'survive':'neutralize');a.clearWave();
+   const closed=a.G.Expedition.state;assert.equal(closed.phase,'preparation');assert.equal(closed.prep,20);
+   assert.equal(closed.totals.wavesCompleted,wave);assert.equal(closed.totals.sectorsCompleted,wave===size?1:0);
+   a.player.x=closed.exit.x;a.player.y=closed.exit.y;assert.equal(a.G.Expedition.useExit('continue'),false);
+   a.G.Expedition.ready();assert.equal(a.G.Expedition.state.phase,wave===size?'exploration':'combat');
+  }
+  a.G.Expedition.update(1);assert.equal(a.G.Expedition.state.totals.sectorsCompleted,1);
+  a.G.Expedition.useExit('continue');assert.equal(a.G.Expedition.state.sector,2);
+ }
+ assert.equal(found.size,3);
+});
+test('GAP-001: calendario previo de jefe/extracción intacto; jefe sin oleadas normales',()=>{
+ const a=setup(77),expectedBoss=[4,4,4,4,9,9,9,9,9,13,13,13,13,18,18,18,18,18],expectedExit=[false,false,false,false,false,false,true,false,false,false,true,false,false,false,true,false,false,false];
+ for(let n=0;n<18;n++){
+  const s=a.G.Expedition.state;assert.equal(s.nextBossSector,expectedBoss[n]);assert.equal(s.extractionAvailable,expectedExit[n]);
+  if(s.kind==='boss'){assert.equal(s.sectorWaves,0);a.player.x=s.exit.x;a.player.y=s.exit.y;a.G.Expedition.useExit('escape');a.G.Expedition.update(2.01);}
+  else{assert.ok([3,4,5].includes(s.sectorWaves));a.clearSector();a.G.Expedition.useExit('continue');}
+ }
+});
+test('GAP-001: morir en oleada4/5 conserva tamaño y no completa sector',()=>{
+ const found=new Set();
+ for(let n=0;n<100&&found.size<2;n++){
+  const a=setup(Math.imul(n,0x9e3779b1)>>>0),size=a.G.Expedition.state.sectorWaves;if(size<4||found.has(size))continue;
+  assert.ok(size===4||size===5);found.add(size);for(let wave=1;wave<size;wave++){a.clearWave();a.G.Expedition.ready();}
+  a.player.hp=0;a.G.Expedition.update(.1);assert.equal(a.G.Expedition.state.phase,'finished');assert.equal(a.G.Expedition.state.sectorWaves,size);
+  assert.equal(a.G.Expedition.state.result.wave,size);assert.equal(a.G.Expedition.state.result.sectorsCompleted,0);assert.equal(a.G.Expedition.state.result.wavesCompleted,size-1);
+ }
+ assert.equal(found.size,2);
 });
 test('D214: at all caps one pending choice never blocks preparation, then injury offers healing',()=>{
  const a=setup();a.player.xpNext=1;

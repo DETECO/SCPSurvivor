@@ -15,9 +15,10 @@
  const savedNow=performance.now;let clock=performance.now();performance.now=()=>clock;
  const cardIndex=(cards,key)=>cards.findIndex(c=>key==='weapon'?c.key.startsWith('weapon:'):c.key===key);
  try {for(let step=0;step<(options.maxSteps||90000);step++){
+  if(options.stopSync&&G.RunContinuity?.blocked)return{status:'sync',log,state:G.Expedition.state};
   clock+=1000/30;
   const s=G.Expedition.state,id=s.sector+':'+s.wave+':'+s.phase+':'+s.pending;
-  if(id!==previous){log.push({id,hp:pl.hp,kills:pl.kills,level:pl.level,objective:s.objective});previous=id;}
+  if(id!==previous){log.push({id,hp:pl.hp,kills:pl.kills,level:pl.level,objective:s.objective,sectorWaves:s.sectorWaves});previous=id;}
   if((options.stopLevel||options.stopLevelup)&&s.phase==='levelup')return{status:'levelup',log,state:s};
   if(options.stopWave===s.wave&&s.phase==='combat')return{status:'wave',log,state:s};
   if(options.stopPrep&&s.phase==='preparation')return{status:'preparation',log,state:s};

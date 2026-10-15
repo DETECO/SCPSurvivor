@@ -1,0 +1,1953 @@
+{
+  "date": "2026-10-15",
+  "version": "GAP-001 / alfa0.5local",
+  "result": "PASS",
+  "module": {
+    "tests": 11,
+    "failed": 0,
+    "seeds": 900,
+    "normalWaveCounts": [
+      3,
+      4,
+      5
+    ],
+    "historicalCalendarSeed": 77,
+    "historicalCalendarSectors": 18
+  },
+  "integratedBundle": "0109f7a66d",
+  "integration": {
+    "version": "P03-local-01 / alfa0.3",
+    "records": [
+      {
+        "entry": "dev.html",
+        "touchEmulated": false,
+        "status": "PASS",
+        "errors": [],
+        "remoteAttempts": [],
+        "httpFailures": [],
+        "completeFlow": null
+      },
+      {
+        "entry": "dev.html",
+        "touchEmulated": true,
+        "status": "PASS",
+        "errors": [],
+        "remoteAttempts": [],
+        "httpFailures": [],
+        "completeFlow": {
+          "mode": "escape",
+          "result": {
+            "reason": "extracted",
+            "sector": 10,
+            "wave": 4,
+            "kills": 1580,
+            "level": 24,
+            "elapsed": 3146.983299997806,
+            "hp": 120,
+            "runSeed": 1337,
+            "wavesCompleted": 35,
+            "sectorsCompleted": 10,
+            "bossesDefeated": 0,
+            "bossesEvaded": 1
+          },
+          "log": [
+            {
+              "id": "1:1:combat:0",
+              "hp": 100,
+              "kills": 0,
+              "level": 1,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:1:levelup:1",
+              "hp": 100,
+              "kills": 6,
+              "level": 2,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:2:combat:0",
+              "hp": 100,
+              "kills": 14,
+              "level": 3,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:2:levelup:1",
+              "hp": 100,
+              "kills": 33,
+              "level": 4,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:2:combat:0",
+              "hp": 100,
+              "kills": 33,
+              "level": 4,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:2:levelup:1",
+              "hp": 100,
+              "kills": 50,
+              "level": 5,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:3:combat:0",
+              "hp": 100,
+              "kills": 50,
+              "level": 5,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:3:levelup:1",
+              "hp": 100,
+              "kills": 59,
+              "level": 6,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:3:combat:0",
+              "hp": 100,
+              "kills": 60,
+              "level": 6,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:3:preparation:0",
+              "hp": 100,
+              "kills": 70,
+              "level": 6,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:4:combat:0",
+              "hp": 100,
+              "kills": 70,
+              "level": 6,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:4:levelup:1",
+              "hp": 100,
+              "kills": 81,
+              "level": 7,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:4:combat:0",
+              "hp": 100,
+              "kills": 81,
+              "level": 7,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:4:levelup:1",
+              "hp": 100,
+              "kills": 112,
+              "level": 8,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:4:exploration:0",
+              "hp": 100,
+              "kills": 112,
+              "level": 8,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:1:combat:0",
+              "hp": 100,
+              "kills": 112,
+              "level": 8,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:1:preparation:0",
+              "hp": 100,
+              "kills": 132,
+              "level": 8,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:2:combat:0",
+              "hp": 100,
+              "kills": 132,
+              "level": 8,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:2:levelup:1",
+              "hp": 100,
+              "kills": 143,
+              "level": 9,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:2:combat:0",
+              "hp": 100,
+              "kills": 143,
+              "level": 9,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:2:preparation:0",
+              "hp": 100,
+              "kills": 174,
+              "level": 9,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:3:combat:0",
+              "hp": 100,
+              "kills": 174,
+              "level": 9,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:3:levelup:1",
+              "hp": 100,
+              "kills": 184,
+              "level": 10,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:3:combat:0",
+              "hp": 100,
+              "kills": 184,
+              "level": 10,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:3:preparation:0",
+              "hp": 100,
+              "kills": 198,
+              "level": 10,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:4:combat:0",
+              "hp": 100,
+              "kills": 198,
+              "level": 10,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:4:levelup:1",
+              "hp": 100,
+              "kills": 238,
+              "level": 11,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:4:combat:0",
+              "hp": 100,
+              "kills": 238,
+              "level": 11,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:4:preparation:0",
+              "hp": 100,
+              "kills": 243,
+              "level": 11,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:4:exploration:0",
+              "hp": 100,
+              "kills": 243,
+              "level": 11,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "3:1:combat:0",
+              "hp": 100,
+              "kills": 243,
+              "level": 11,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:1:preparation:0",
+              "hp": 100,
+              "kills": 267,
+              "level": 11,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:2:combat:0",
+              "hp": 100,
+              "kills": 267,
+              "level": 11,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:2:levelup:1",
+              "hp": 100,
+              "kills": 277,
+              "level": 12,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:2:combat:0",
+              "hp": 100,
+              "kills": 277,
+              "level": 12,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:2:preparation:0",
+              "hp": 100,
+              "kills": 312,
+              "level": 12,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:3:combat:0",
+              "hp": 100,
+              "kills": 312,
+              "level": 12,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:3:levelup:1",
+              "hp": 100,
+              "kills": 340,
+              "level": 13,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:3:exploration:0",
+              "hp": 100,
+              "kills": 340,
+              "level": 13,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "4:1:combat:0",
+              "hp": 100,
+              "kills": 340,
+              "level": 13,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:1:preparation:0",
+              "hp": 100,
+              "kills": 368,
+              "level": 13,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:2:combat:0",
+              "hp": 100,
+              "kills": 368,
+              "level": 13,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:2:levelup:1",
+              "hp": 100,
+              "kills": 413,
+              "level": 14,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:2:combat:0",
+              "hp": 100,
+              "kills": 413,
+              "level": 14,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:2:preparation:0",
+              "hp": 100,
+              "kills": 417,
+              "level": 14,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:3:combat:0",
+              "hp": 100,
+              "kills": 417,
+              "level": 14,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:3:preparation:0",
+              "hp": 100,
+              "kills": 449,
+              "level": 14,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:4:combat:0",
+              "hp": 100,
+              "kills": 449,
+              "level": 14,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:4:levelup:1",
+              "hp": 100,
+              "kills": 481,
+              "level": 15,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:4:combat:0",
+              "hp": 100,
+              "kills": 481,
+              "level": 15,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:4:preparation:0",
+              "hp": 100,
+              "kills": 502,
+              "level": 15,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:4:exploration:0",
+              "hp": 100,
+              "kills": 502,
+              "level": 15,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:1:combat:0",
+              "hp": 100,
+              "kills": 502,
+              "level": 15,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:1:preparation:0",
+              "hp": 100,
+              "kills": 534,
+              "level": 15,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:2:combat:0",
+              "hp": 100,
+              "kills": 534,
+              "level": 15,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:2:levelup:1",
+              "hp": 100,
+              "kills": 558,
+              "level": 16,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:2:combat:0",
+              "hp": 100,
+              "kills": 558,
+              "level": 16,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:2:preparation:0",
+              "hp": 100,
+              "kills": 587,
+              "level": 16,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:3:combat:0",
+              "hp": 100,
+              "kills": 587,
+              "level": 16,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:3:preparation:0",
+              "hp": 100,
+              "kills": 623,
+              "level": 16,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:4:combat:0",
+              "hp": 100,
+              "kills": 623,
+              "level": 16,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:4:levelup:1",
+              "hp": 91.60000000000028,
+              "kills": 643,
+              "level": 17,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:4:combat:0",
+              "hp": 91.72000000000028,
+              "kills": 643,
+              "level": 17,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:4:preparation:0",
+              "hp": 100,
+              "kills": 679,
+              "level": 17,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:4:exploration:0",
+              "hp": 100,
+              "kills": 679,
+              "level": 17,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "6:1:boss:0",
+              "hp": 100,
+              "kills": 679,
+              "level": 17,
+              "objective": "boss",
+              "sectorWaves": 0
+            },
+            {
+              "id": "6:1:escaping:0",
+              "hp": 100,
+              "kills": 679,
+              "level": 17,
+              "objective": "boss",
+              "sectorWaves": 0
+            },
+            {
+              "id": "7:1:combat:0",
+              "hp": 100,
+              "kills": 679,
+              "level": 17,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:1:preparation:0",
+              "hp": 100,
+              "kills": 719,
+              "level": 17,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:2:combat:0",
+              "hp": 100,
+              "kills": 719,
+              "level": 17,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:2:levelup:1",
+              "hp": 100,
+              "kills": 739,
+              "level": 18,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:2:combat:0",
+              "hp": 100,
+              "kills": 739,
+              "level": 18,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:2:preparation:0",
+              "hp": 100,
+              "kills": 779,
+              "level": 18,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:3:combat:0",
+              "hp": 100,
+              "kills": 779,
+              "level": 18,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:3:preparation:0",
+              "hp": 100,
+              "kills": 823,
+              "level": 18,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:4:combat:0",
+              "hp": 100,
+              "kills": 823,
+              "level": 18,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:4:levelup:1",
+              "hp": 100,
+              "kills": 849,
+              "level": 19,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:4:combat:0",
+              "hp": 100,
+              "kills": 849,
+              "level": 19,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:4:preparation:0",
+              "hp": 100,
+              "kills": 886,
+              "level": 19,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:4:exploration:0",
+              "hp": 100,
+              "kills": 886,
+              "level": 19,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "8:1:combat:0",
+              "hp": 100,
+              "kills": 886,
+              "level": 19,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:1:preparation:0",
+              "hp": 100,
+              "kills": 930,
+              "level": 19,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:2:combat:0",
+              "hp": 100,
+              "kills": 930,
+              "level": 19,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:2:levelup:1",
+              "hp": 100,
+              "kills": 963,
+              "level": 20,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:2:combat:0",
+              "hp": 100,
+              "kills": 963,
+              "level": 20,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:2:preparation:0",
+              "hp": 100,
+              "kills": 993,
+              "level": 20,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:3:combat:0",
+              "hp": 100,
+              "kills": 993,
+              "level": 20,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:3:preparation:0",
+              "hp": 100,
+              "kills": 1041,
+              "level": 20,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:4:combat:0",
+              "hp": 100,
+              "kills": 1041,
+              "level": 20,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:4:levelup:1",
+              "hp": 100,
+              "kills": 1089,
+              "level": 21,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:4:combat:0",
+              "hp": 100,
+              "kills": 1089,
+              "level": 21,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:4:preparation:0",
+              "hp": 100,
+              "kills": 1108,
+              "level": 21,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:5:combat:0",
+              "hp": 100,
+              "kills": 1108,
+              "level": 21,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:5:preparation:0",
+              "hp": 100,
+              "kills": 1160,
+              "level": 21,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:5:exploration:0",
+              "hp": 100,
+              "kills": 1160,
+              "level": 21,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "9:1:combat:0",
+              "hp": 100,
+              "kills": 1160,
+              "level": 21,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:1:preparation:0",
+              "hp": 100,
+              "kills": 1208,
+              "level": 21,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:2:combat:0",
+              "hp": 100,
+              "kills": 1208,
+              "level": 21,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:2:levelup:1",
+              "hp": 100,
+              "kills": 1214,
+              "level": 22,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:2:combat:0",
+              "hp": 100,
+              "kills": 1214,
+              "level": 22,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:2:preparation:0",
+              "hp": 100,
+              "kills": 1275,
+              "level": 22,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:3:combat:0",
+              "hp": 100,
+              "kills": 1275,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:3:preparation:0",
+              "hp": 100,
+              "kills": 1327,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:3:exploration:0",
+              "hp": 100,
+              "kills": 1327,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "10:1:combat:0",
+              "hp": 100,
+              "kills": 1327,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:1:levelup:1",
+              "hp": 100,
+              "kills": 1358,
+              "level": 23,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:1:combat:0",
+              "hp": 120,
+              "kills": 1358,
+              "level": 23,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:1:preparation:0",
+              "hp": 120,
+              "kills": 1379,
+              "level": 23,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:2:combat:0",
+              "hp": 120,
+              "kills": 1379,
+              "level": 23,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:2:preparation:0",
+              "hp": 120,
+              "kills": 1450,
+              "level": 23,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:3:combat:0",
+              "hp": 120,
+              "kills": 1450,
+              "level": 23,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:3:levelup:1",
+              "hp": 120,
+              "kills": 1506,
+              "level": 24,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:4:combat:0",
+              "hp": 120,
+              "kills": 1506,
+              "level": 24,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:4:preparation:0",
+              "hp": 120,
+              "kills": 1580,
+              "level": 24,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:4:exploration:0",
+              "hp": 120,
+              "kills": 1580,
+              "level": 24,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:4:extracting:0",
+              "hp": 120,
+              "kills": 1580,
+              "level": 24,
+              "objective": "survive",
+              "sectorWaves": 4
+            }
+          ]
+        }
+      },
+      {
+        "entry": "index.html",
+        "touchEmulated": false,
+        "status": "PASS",
+        "errors": [],
+        "remoteAttempts": [],
+        "httpFailures": [],
+        "completeFlow": null
+      },
+      {
+        "entry": "index.html",
+        "touchEmulated": true,
+        "status": "PASS",
+        "errors": [],
+        "remoteAttempts": [],
+        "httpFailures": [],
+        "completeFlow": {
+          "mode": "win",
+          "result": {
+            "reason": "extracted",
+            "sector": 10,
+            "wave": 4,
+            "kills": 1587,
+            "level": 24,
+            "elapsed": 3356.0499333309485,
+            "hp": 180,
+            "runSeed": 1337,
+            "wavesCompleted": 35,
+            "sectorsCompleted": 10,
+            "bossesDefeated": 1,
+            "bossesEvaded": 0
+          },
+          "log": [
+            {
+              "id": "1:1:combat:0",
+              "hp": 100,
+              "kills": 0,
+              "level": 1,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:1:levelup:1",
+              "hp": 100,
+              "kills": 6,
+              "level": 2,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:2:combat:0",
+              "hp": 100,
+              "kills": 14,
+              "level": 3,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:2:levelup:1",
+              "hp": 100,
+              "kills": 32,
+              "level": 4,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:2:combat:0",
+              "hp": 100,
+              "kills": 32,
+              "level": 4,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:2:levelup:1",
+              "hp": 88,
+              "kills": 50,
+              "level": 5,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:3:combat:0",
+              "hp": 88,
+              "kills": 50,
+              "level": 5,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:3:levelup:1",
+              "hp": 88,
+              "kills": 59,
+              "level": 6,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:3:combat:0",
+              "hp": 88,
+              "kills": 59,
+              "level": 6,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:3:preparation:0",
+              "hp": 88,
+              "kills": 70,
+              "level": 6,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:4:combat:0",
+              "hp": 88,
+              "kills": 70,
+              "level": 6,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:4:levelup:1",
+              "hp": 76,
+              "kills": 82,
+              "level": 7,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:4:combat:0",
+              "hp": 96,
+              "kills": 82,
+              "level": 7,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:4:levelup:1",
+              "hp": 60,
+              "kills": 112,
+              "level": 8,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "1:4:exploration:0",
+              "hp": 80,
+              "kills": 112,
+              "level": 8,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:1:combat:0",
+              "hp": 80,
+              "kills": 112,
+              "level": 8,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:1:preparation:0",
+              "hp": 67.03999999999999,
+              "kills": 132,
+              "level": 8,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:2:combat:0",
+              "hp": 67.03999999999999,
+              "kills": 132,
+              "level": 8,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:2:levelup:1",
+              "hp": 54.07999999999999,
+              "kills": 141,
+              "level": 9,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:2:combat:0",
+              "hp": 74.07999999999998,
+              "kills": 141,
+              "level": 9,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:2:preparation:0",
+              "hp": 35.19999999999998,
+              "kills": 174,
+              "level": 9,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:3:combat:0",
+              "hp": 35.19999999999998,
+              "kills": 174,
+              "level": 9,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:3:levelup:1",
+              "hp": 35.19999999999998,
+              "kills": 183,
+              "level": 10,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:3:combat:0",
+              "hp": 55.19999999999998,
+              "kills": 183,
+              "level": 10,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:3:preparation:0",
+              "hp": 55.19999999999998,
+              "kills": 198,
+              "level": 10,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:4:combat:0",
+              "hp": 55.19999999999998,
+              "kills": 198,
+              "level": 10,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:4:levelup:1",
+              "hp": 16.31999999999998,
+              "kills": 237,
+              "level": 11,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:4:combat:0",
+              "hp": 16.34999999999998,
+              "kills": 237,
+              "level": 11,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:4:preparation:0",
+              "hp": 22.500000000000213,
+              "kills": 243,
+              "level": 11,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "2:4:exploration:0",
+              "hp": 22.500000000000213,
+              "kills": 243,
+              "level": 11,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "3:1:combat:0",
+              "hp": 22.530000000000214,
+              "kills": 243,
+              "level": 11,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:1:preparation:0",
+              "hp": 65.10000000000183,
+              "kills": 267,
+              "level": 11,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:2:combat:0",
+              "hp": 65.13000000000183,
+              "kills": 267,
+              "level": 11,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:2:levelup:1",
+              "hp": 82.56000000000301,
+              "kills": 279,
+              "level": 12,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:2:combat:0",
+              "hp": 163.59000000000302,
+              "kills": 279,
+              "level": 12,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:2:preparation:0",
+              "hp": 180,
+              "kills": 312,
+              "level": 12,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:3:combat:0",
+              "hp": 180,
+              "kills": 312,
+              "level": 12,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:3:levelup:1",
+              "hp": 180,
+              "kills": 340,
+              "level": 13,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "3:3:exploration:0",
+              "hp": 180,
+              "kills": 340,
+              "level": 13,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "4:1:combat:0",
+              "hp": 180,
+              "kills": 340,
+              "level": 13,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:1:preparation:0",
+              "hp": 180,
+              "kills": 368,
+              "level": 13,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:2:combat:0",
+              "hp": 180,
+              "kills": 368,
+              "level": 13,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:2:levelup:1",
+              "hp": 180,
+              "kills": 400,
+              "level": 14,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:2:combat:0",
+              "hp": 180,
+              "kills": 400,
+              "level": 14,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:2:preparation:0",
+              "hp": 180,
+              "kills": 417,
+              "level": 14,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:3:combat:0",
+              "hp": 180,
+              "kills": 417,
+              "level": 14,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:3:preparation:0",
+              "hp": 169.1400000000013,
+              "kills": 449,
+              "level": 14,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:4:combat:0",
+              "hp": 169.1700000000013,
+              "kills": 449,
+              "level": 14,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:4:levelup:1",
+              "hp": 180,
+              "kills": 478,
+              "level": 15,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:4:combat:0",
+              "hp": 180,
+              "kills": 478,
+              "level": 15,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:4:preparation:0",
+              "hp": 180,
+              "kills": 502,
+              "level": 15,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "4:4:exploration:0",
+              "hp": 180,
+              "kills": 502,
+              "level": 15,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:1:combat:0",
+              "hp": 180,
+              "kills": 502,
+              "level": 15,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:1:preparation:0",
+              "hp": 180,
+              "kills": 534,
+              "level": 15,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:2:combat:0",
+              "hp": 180,
+              "kills": 534,
+              "level": 15,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:2:levelup:1",
+              "hp": 174.12000000000157,
+              "kills": 553,
+              "level": 16,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:2:combat:0",
+              "hp": 174.15000000000157,
+              "kills": 553,
+              "level": 16,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:2:preparation:0",
+              "hp": 180,
+              "kills": 587,
+              "level": 16,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:3:combat:0",
+              "hp": 180,
+              "kills": 587,
+              "level": 16,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:3:preparation:0",
+              "hp": 180,
+              "kills": 623,
+              "level": 16,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:4:combat:0",
+              "hp": 180,
+              "kills": 623,
+              "level": 16,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:4:levelup:1",
+              "hp": 140.7900000000015,
+              "kills": 642,
+              "level": 17,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:4:combat:0",
+              "hp": 140.8200000000015,
+              "kills": 642,
+              "level": 17,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:4:preparation:0",
+              "hp": 180,
+              "kills": 679,
+              "level": 17,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "5:4:exploration:0",
+              "hp": 180,
+              "kills": 679,
+              "level": 17,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "6:1:boss:0",
+              "hp": 180,
+              "kills": 679,
+              "level": 17,
+              "objective": "boss",
+              "sectorWaves": 0
+            },
+            {
+              "id": "6:1:boss:0",
+              "hp": 180,
+              "kills": 679,
+              "level": 17,
+              "objective": "boss",
+              "sectorWaves": 0
+            },
+            {
+              "id": "6:1:preparation:0",
+              "hp": 180,
+              "kills": 686,
+              "level": 17,
+              "objective": "boss",
+              "sectorWaves": 0
+            },
+            {
+              "id": "6:1:exploration:0",
+              "hp": 180,
+              "kills": 686,
+              "level": 17,
+              "objective": "boss",
+              "sectorWaves": 0
+            },
+            {
+              "id": "7:1:combat:0",
+              "hp": 180,
+              "kills": 686,
+              "level": 17,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:1:levelup:1",
+              "hp": 180,
+              "kills": 726,
+              "level": 18,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:2:combat:0",
+              "hp": 180,
+              "kills": 726,
+              "level": 18,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:2:preparation:0",
+              "hp": 180,
+              "kills": 786,
+              "level": 18,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:3:combat:0",
+              "hp": 180,
+              "kills": 786,
+              "level": 18,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:3:levelup:1",
+              "hp": 180,
+              "kills": 830,
+              "level": 19,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:4:combat:0",
+              "hp": 180,
+              "kills": 830,
+              "level": 19,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:4:preparation:0",
+              "hp": 180,
+              "kills": 893,
+              "level": 19,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "7:4:exploration:0",
+              "hp": 180,
+              "kills": 893,
+              "level": 19,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "8:1:combat:0",
+              "hp": 180,
+              "kills": 893,
+              "level": 19,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:1:preparation:0",
+              "hp": 180,
+              "kills": 937,
+              "level": 19,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:2:combat:0",
+              "hp": 180,
+              "kills": 937,
+              "level": 19,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:2:levelup:1",
+              "hp": 180,
+              "kills": 940,
+              "level": 20,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:2:combat:0",
+              "hp": 180,
+              "kills": 940,
+              "level": 20,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:2:preparation:0",
+              "hp": 180,
+              "kills": 1000,
+              "level": 20,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:3:combat:0",
+              "hp": 180,
+              "kills": 1000,
+              "level": 20,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:3:preparation:0",
+              "hp": 180,
+              "kills": 1048,
+              "level": 20,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:4:combat:0",
+              "hp": 180,
+              "kills": 1048,
+              "level": 20,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:4:levelup:1",
+              "hp": 168.8700000000003,
+              "kills": 1064,
+              "level": 21,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:4:combat:0",
+              "hp": 168.9000000000003,
+              "kills": 1064,
+              "level": 21,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:4:preparation:0",
+              "hp": 180,
+              "kills": 1115,
+              "level": 21,
+              "objective": "survive",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:5:combat:0",
+              "hp": 180,
+              "kills": 1115,
+              "level": 21,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:5:preparation:0",
+              "hp": 180,
+              "kills": 1167,
+              "level": 21,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "8:5:exploration:0",
+              "hp": 180,
+              "kills": 1167,
+              "level": 21,
+              "objective": "neutralize",
+              "sectorWaves": 5
+            },
+            {
+              "id": "9:1:combat:0",
+              "hp": 180,
+              "kills": 1167,
+              "level": 21,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:1:levelup:1",
+              "hp": 180,
+              "kills": 1200,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:1:combat:0",
+              "hp": 180,
+              "kills": 1201,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:1:preparation:0",
+              "hp": 180,
+              "kills": 1215,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:2:combat:0",
+              "hp": 180,
+              "kills": 1215,
+              "level": 22,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:2:preparation:0",
+              "hp": 180,
+              "kills": 1282,
+              "level": 22,
+              "objective": "survive",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:3:combat:0",
+              "hp": 180,
+              "kills": 1282,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:3:preparation:0",
+              "hp": 180,
+              "kills": 1334,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "9:3:exploration:0",
+              "hp": 180,
+              "kills": 1334,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 3
+            },
+            {
+              "id": "10:1:combat:0",
+              "hp": 180,
+              "kills": 1334,
+              "level": 22,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:1:levelup:1",
+              "hp": 180,
+              "kills": 1340,
+              "level": 23,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:1:combat:0",
+              "hp": 180,
+              "kills": 1340,
+              "level": 23,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:1:preparation:0",
+              "hp": 180,
+              "kills": 1386,
+              "level": 23,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:2:combat:0",
+              "hp": 180,
+              "kills": 1386,
+              "level": 23,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:2:preparation:0",
+              "hp": 180,
+              "kills": 1457,
+              "level": 23,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:3:combat:0",
+              "hp": 180,
+              "kills": 1457,
+              "level": 23,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:3:levelup:1",
+              "hp": 180,
+              "kills": 1491,
+              "level": 24,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:3:combat:0",
+              "hp": 180,
+              "kills": 1491,
+              "level": 24,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:3:preparation:0",
+              "hp": 180,
+              "kills": 1513,
+              "level": 24,
+              "objective": "neutralize",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:4:combat:0",
+              "hp": 180,
+              "kills": 1513,
+              "level": 24,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:4:preparation:0",
+              "hp": 180,
+              "kills": 1587,
+              "level": 24,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:4:exploration:0",
+              "hp": 180,
+              "kills": 1587,
+              "level": 24,
+              "objective": "survive",
+              "sectorWaves": 4
+            },
+            {
+              "id": "10:4:extracting:0",
+              "hp": 180,
+              "kills": 1587,
+              "level": 24,
+              "objective": "survive",
+              "sectorWaves": 4
+            }
+          ]
+        }
+      }
+    ],
+    "method": "Real controls plus fixed dt1/30 and matching virtual performance.now during autoplay to keep LOS-cache timing faithful. No HP/damage cheats in winning flows. Death and inaccessible-enemy cases use controlled injections. Not FPS/physical/Safari validation."
+  },
+  "scope": "Cierre criterio P03-T02; no rendimiento/balance/dispositivos físicos."
+}

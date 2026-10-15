@@ -1,0 +1,508 @@
+{
+  "version": "P04 local browser",
+  "records": [
+    {
+      "entry": "dev.html",
+      "touchEmulated": false,
+      "medic": {
+        "healed": true,
+        "hp": 80,
+        "max": 100,
+        "cd": 30,
+        "full": false,
+        "fullCd": 0,
+        "denied": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "independent": true,
+        "models": [
+          "pistol",
+          "pistol"
+        ],
+        "ammo": [
+          7,
+          11
+        ]
+      },
+      "weaponControls": {
+        "touchTargets": [
+          {
+            "width": 76,
+            "height": 58
+          },
+          {
+            "width": 76,
+            "height": 58
+          }
+        ],
+        "landscapeTargets": null
+      },
+      "weaponChecks": {
+        "phase": "combat",
+        "locked": true,
+        "first": 1,
+        "second": 2,
+        "blocked": true,
+        "ammoAfterFirst": 11,
+        "ammoA": 11,
+        "ammoB": 11,
+        "reloadStart": 0.8,
+        "reloadAfter": 0.3000000000000001,
+        "sharedWait": 0.5
+      },
+      "orientationWalk": {
+        "bodyAim": 0,
+        "gunAim": -1.5707963267948966,
+        "bodyDirection": 2,
+        "expectedBodyDirection": 2
+      },
+      "sectorPersistence": {
+        "before": {
+          "sector": 1,
+          "ability": {
+            "kind": "sprint",
+            "remaining": 2,
+            "cooldown": 20,
+            "duration": 2,
+            "maxCooldown": 20
+          },
+          "ammo": [
+            5,
+            9
+          ],
+          "ids": [
+            "weapon:pistol-1",
+            "weapon:smg-1"
+          ]
+        },
+        "advanced": true,
+        "after": {
+          "sector": 2,
+          "ability": {
+            "kind": "sprint",
+            "remaining": 2,
+            "cooldown": 20,
+            "duration": 2,
+            "maxCooldown": 20
+          },
+          "ammo": [
+            5,
+            9
+          ],
+          "ids": [
+            "weapon:pistol-1",
+            "weapon:smg-1"
+          ]
+        }
+      },
+      "finishCleanup": {
+        "snapshot": {
+          "tempPower": 1,
+          "copyLevel": 4
+        },
+        "phase": "finished",
+        "tempStats": {},
+        "levels": [
+          1,
+          1
+        ],
+        "cooldown": 0
+      },
+      "weaponBodyLayers": {
+        "bodyBefore": 1,
+        "bodyAfter": 1,
+        "behind": 0,
+        "foreground": 5,
+        "aim": 1.5707963267948966
+      },
+      "upgrade": {
+        "before": [
+          2,
+          2
+        ],
+        "after": [
+          3,
+          2
+        ],
+        "card": true
+      },
+      "editorExpiry": {
+        "expired": true,
+        "draftMods": [
+          [
+            "reinforced",
+            "extended"
+          ],
+          []
+        ],
+        "pendingMods": [
+          [
+            "extended"
+          ],
+          []
+        ],
+        "afterExpiryMods": [
+          [
+            "extended"
+          ],
+          []
+        ]
+      },
+      "sprint": {
+        "kind": "sprint",
+        "remaining": 2,
+        "cooldown": 20,
+        "duration": 2,
+        "maxCooldown": 20
+      },
+      "preparation": "preparation",
+      "status": "PASS",
+      "errors": [],
+      "remoteAttempts": [],
+      "httpFailures": []
+    },
+    {
+      "entry": "dev.html",
+      "touchEmulated": true,
+      "medic": {
+        "healed": true,
+        "hp": 80,
+        "max": 100,
+        "cd": 30,
+        "full": false,
+        "fullCd": 0,
+        "denied": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "independent": true,
+        "models": [
+          "pistol",
+          "pistol"
+        ],
+        "ammo": [
+          7,
+          11
+        ]
+      },
+      "weaponControls": {
+        "touchTargets": [
+          {
+            "width": 62,
+            "height": 58
+          },
+          {
+            "width": 62,
+            "height": 58
+          }
+        ],
+        "landscapeTargets": [
+          {
+            "width": 76,
+            "height": 50
+          },
+          {
+            "width": 76,
+            "height": 50
+          }
+        ]
+      },
+      "weaponChecks": {
+        "phase": "combat",
+        "locked": true,
+        "first": 1,
+        "second": 2,
+        "blocked": true,
+        "ammoAfterFirst": 11,
+        "ammoA": 11,
+        "ammoB": 11,
+        "reloadStart": 0.8,
+        "reloadAfter": 0.3000000000000001,
+        "sharedWait": 0.5
+      },
+      "orientationWalk": {
+        "bodyAim": 0,
+        "gunAim": -1.5707963267948966,
+        "bodyDirection": 2,
+        "expectedBodyDirection": 2
+      },
+      "sectorPersistence": null,
+      "finishCleanup": null,
+      "weaponBodyLayers": null,
+      "upgrade": {
+        "before": [
+          3,
+          1
+        ],
+        "after": [
+          4,
+          1
+        ],
+        "card": true
+      },
+      "editorExpiry": {
+        "expired": true,
+        "draftMods": [
+          [
+            "reinforced",
+            "extended"
+          ],
+          []
+        ],
+        "pendingMods": [
+          [
+            "extended"
+          ],
+          []
+        ],
+        "afterExpiryMods": [
+          [
+            "extended"
+          ],
+          []
+        ]
+      },
+      "sprint": {
+        "kind": "sprint",
+        "remaining": 2,
+        "cooldown": 20,
+        "duration": 2,
+        "maxCooldown": 20
+      },
+      "preparation": "preparation",
+      "status": "PASS",
+      "errors": [],
+      "remoteAttempts": [],
+      "httpFailures": []
+    },
+    {
+      "entry": "index.html",
+      "touchEmulated": false,
+      "medic": {
+        "healed": true,
+        "hp": 80,
+        "max": 100,
+        "cd": 30,
+        "full": false,
+        "fullCd": 0,
+        "denied": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "independent": true,
+        "models": [
+          "pistol",
+          "pistol"
+        ],
+        "ammo": [
+          7,
+          11
+        ]
+      },
+      "weaponControls": {
+        "touchTargets": [
+          {
+            "width": 76,
+            "height": 58
+          },
+          {
+            "width": 76,
+            "height": 58
+          }
+        ],
+        "landscapeTargets": null
+      },
+      "weaponChecks": {
+        "phase": "combat",
+        "locked": true,
+        "first": 1,
+        "second": 2,
+        "blocked": true,
+        "ammoAfterFirst": 11,
+        "ammoA": 11,
+        "ammoB": 11,
+        "reloadStart": 0.8,
+        "reloadAfter": 0.3000000000000001,
+        "sharedWait": 0.5
+      },
+      "orientationWalk": {
+        "bodyAim": 0,
+        "gunAim": -1.5707963267948966,
+        "bodyDirection": 2,
+        "expectedBodyDirection": 2
+      },
+      "sectorPersistence": null,
+      "finishCleanup": null,
+      "weaponBodyLayers": null,
+      "upgrade": {
+        "before": [
+          2,
+          2
+        ],
+        "after": [
+          3,
+          2
+        ],
+        "card": true
+      },
+      "editorExpiry": {
+        "expired": true,
+        "draftMods": [
+          [
+            "reinforced",
+            "extended"
+          ],
+          []
+        ],
+        "pendingMods": [
+          [
+            "extended"
+          ],
+          []
+        ],
+        "afterExpiryMods": [
+          [
+            "extended"
+          ],
+          []
+        ]
+      },
+      "sprint": {
+        "kind": "sprint",
+        "remaining": 2,
+        "cooldown": 20,
+        "duration": 2,
+        "maxCooldown": 20
+      },
+      "preparation": "preparation",
+      "status": "PASS",
+      "errors": [],
+      "remoteAttempts": [],
+      "httpFailures": []
+    },
+    {
+      "entry": "index.html",
+      "touchEmulated": true,
+      "medic": {
+        "healed": true,
+        "hp": 80,
+        "max": 100,
+        "cd": 30,
+        "full": false,
+        "fullCd": 0,
+        "denied": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "independent": true,
+        "models": [
+          "pistol",
+          "pistol"
+        ],
+        "ammo": [
+          7,
+          11
+        ]
+      },
+      "weaponControls": {
+        "touchTargets": [
+          {
+            "width": 62,
+            "height": 58
+          },
+          {
+            "width": 62,
+            "height": 58
+          }
+        ],
+        "landscapeTargets": [
+          {
+            "width": 76,
+            "height": 50
+          },
+          {
+            "width": 76,
+            "height": 50
+          }
+        ]
+      },
+      "weaponChecks": {
+        "phase": "combat",
+        "locked": true,
+        "first": 1,
+        "second": 2,
+        "blocked": true,
+        "ammoAfterFirst": 11,
+        "ammoA": 11,
+        "ammoB": 11,
+        "reloadStart": 0.8,
+        "reloadAfter": 0.3000000000000001,
+        "sharedWait": 0.5
+      },
+      "orientationWalk": {
+        "bodyAim": 0,
+        "gunAim": -1.5707963267948966,
+        "bodyDirection": 2,
+        "expectedBodyDirection": 2
+      },
+      "sectorPersistence": null,
+      "finishCleanup": null,
+      "weaponBodyLayers": null,
+      "upgrade": {
+        "before": [
+          3,
+          1
+        ],
+        "after": [
+          4,
+          1
+        ],
+        "card": true
+      },
+      "editorExpiry": {
+        "expired": true,
+        "draftMods": [
+          [
+            "reinforced",
+            "extended"
+          ],
+          []
+        ],
+        "pendingMods": [
+          [
+            "extended"
+          ],
+          []
+        ],
+        "afterExpiryMods": [
+          [
+            "extended"
+          ],
+          []
+        ]
+      },
+      "sprint": {
+        "kind": "sprint",
+        "remaining": 2,
+        "cooldown": 20,
+        "duration": 2,
+        "maxCooldown": 20
+      },
+      "preparation": "preparation",
+      "status": "PASS",
+      "errors": [],
+      "remoteAttempts": [],
+      "httpFailures": []
+    }
+  ],
+  "method": "Playwright against local HTTP only; actual game pages and fixed seeded combat. No physical Safari validation."
+}

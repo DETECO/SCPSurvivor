@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-15",
+  "version": "P05-local-01 / alfa0.5local",
+  "rootDirectory": "SCP-SURVIVOR",
+  "originalFilesPreserved": 241,
+  "originalAssetsUnchanged": 12,
+  "omitted": [
+    "node_modules y runtimes reinstalables",
+    ".git",
+    "local-data con cuentas/tokens/partidas ficticias",
+    "cachés/logs/temporales",
+    ".env privados"
+  ],
+  "inventory": "docs/INVENTARIO_P05.csv",
+  "historicalInventory": "INVENTARIO_PROYECTO.csv describe la migración alfa0.4",
+  "build": "099c7a1a5c",
+  "githubP05Pushed": false,
+  "realFirebaseActive": false
+}

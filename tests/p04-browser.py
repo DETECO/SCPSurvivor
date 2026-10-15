@@ -149,7 +149,8 @@ def main():
                         assert page.locator('#field-mod-editor').is_visible()
                         page.screenshot(path=str(OUT / f'{entry[:-5]}-mod-editor-{"touch" if mobile else "desktop"}.png'))
                         before = page.evaluate('G.Expedition.state.prep')
-                        page.evaluate('G.Game.player.fieldWeapons[0].ammo=7')
+                        # Isolate mod configuration from an autoplay reload still in progress.
+                        page.evaluate('G.Game.player.fieldWeapons[0].ammo=7;G.Game.player.fieldWeapons[0].reload=0')
                         page.locator('#field-mod-content input[value="extended"]').first.check()
                         page.wait_for_timeout(250)
                         assert page.evaluate('G.Expedition.state.prep') < before

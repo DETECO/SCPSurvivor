@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-14",
+  "source_original_count": 212,
+  "original_files_missing": [],
+  "modified_existing_files": [
+    "tests/p01-browser.py",
+    "tests/p01-movement.py",
+    "tests/p03-browser.py",
+    "tests/p03-death.py",
+    "tests/p03-levels.py",
+    "tests/p04-browser.py",
+    "js/core/touch.js"
+  ],
+  "p04_source_hashes_verified": 21,
+  "entry_references": [
+    {
+      "entry": "dev.html",
+      "local_references": 78,
+      "missing": []
+    },
+    {
+      "entry": "index.html",
+      "local_references": 2,
+      "missing": []
+    }
+  ],
+  "dependency_manifest_lock_consistent": true,
+  "terser_version": "5.51.2",
+  "roadmap_version": "0.11",
+  "roadmap_weight_verified": 49,
+  "missing_local_evidence_references": [],
+  "secret_pattern_matches": [],
+  "identical_file_groups": [],
+  "bundle_matches_cloud": true,
+  "zip_dependencies_excluded": [
+    ".git",
+    "node_modules",
+    ".venv",
+    "browser-cache",
+    "npm-cache",
+    "pip-cache",
+    "__pycache__",
+    "tests/artifacts"
+  ]
+}

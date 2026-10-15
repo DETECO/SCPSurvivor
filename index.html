@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' http://127.0.0.1:9099 http://127.0.0.1:5001; style-src 'self'; img-src 'self' data:; font-src 'self'; frame-src http://127.0.0.1:9099; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="css/technical.css">
@@ -11,7 +11,7 @@
 <!-- GENERADO desde dev.html por tools/build.js: no editar a mano (se edita dev.html). -->
 </head>
 <body>
-<header><div class="brand">SCP SURVIVOR</div><span class="version">ALFA · 0.4</span></header>
+<header><div class="brand">SCP SURVIVOR</div><span class="version">ALFA · 0.5 LOCAL</span></header>
 <main>
 <div id="viewport">
 <canvas id="game" aria-label="Sector de entrenamiento; usa WASD, flechas o arrastra el dedo para moverte"></canvas>
@@ -41,6 +41,6 @@
 </main>
 <footer class="footer"><div id="scene-footer" hidden><p class="hint-keyboard"><kbd>WASD</kbd> / flechas · <kbd>Q</kbd>/<kbd>E</kbd> arma · <kbd>1</kbd>–<kbd>3</kbd> mejora · <kbd>Espacio</kbd> habilidad · <kbd>Esc</kbd> pausa</p><p class="hint-touch">Arrastra para moverte · toca habilidad o un arma</p><span id="scene-position" hidden>0, 0</span></div><p>Partida local · sin guardado ni recompensas persistentes</p></footer>
 <noscript>Activa JavaScript para entrar al sector de SCP Survivor.</noscript>
-<script defer src="js/app.min.js?v=dd0724d6bd"></script>
+<script defer src="js/app.min.js?v=099c7a1a5c"></script>
 </body>
 </html>

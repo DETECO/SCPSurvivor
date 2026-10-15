@@ -1,0 +1,12 @@
+{
+  "candidateSha256": "3a6f562cf5ee38801c796998d6990230d0d450fed1cbf4b2471ebd9c514abec5",
+  "cloudSha256": "3a6f562cf5ee38801c796998d6990230d0d450fed1cbf4b2471ebd9c514abec5",
+  "byteExact": true,
+  "length": 1013991,
+  "change": {
+    "path": "js/core/touch.js",
+    "before": "const k = Math.min(1, (d - 7) / (R() * 0.5 - 7));",
+    "after": "const k = G.LOCAL_TECHNICAL_MODE === true ? 1 : Math.min(1, (d - 7) / (R() * 0.5 - 7));"
+  },
+  "gameFilesWritten": false
+}

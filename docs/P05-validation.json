@@ -1,0 +1,825 @@
+{
+  "date": "2026-10-15",
+  "version": "P05-local-01 / alfa0.5local",
+  "bundle": "099c7a1a5c",
+  "result": "PASS_LOCAL_ONLY",
+  "environment": {
+    "os": "Windows",
+    "node": "24.12.0",
+    "npm": "11.6.2",
+    "java": "Temurin21.0.12.1",
+    "python": "3.12.10",
+    "playwright": "1.64.0",
+    "chromium": "156"
+  },
+  "node": {
+    "tests": 73,
+    "passed": 72,
+    "failed": 0,
+    "skipped": 1,
+    "note": "p02-weapon reejecuta p04-weapons; no representa73sistemas únicos."
+  },
+  "explicitEmulators": {
+    "tests": 1,
+    "passed": 1,
+    "failed": 0,
+    "note": "Incluye Auth/Firestore/Functions, UID/revisiones/receipts/concurrencia/sesión/4checkpointsincompletos sinwrites/escriturasdirectasdenegadas."
+  },
+  "browser": {
+    "project": "demo-scp-survivor",
+    "records": [
+      {
+        "entry": "dev.html",
+        "result": "PASS",
+        "lostResponseRequestId": "6210a434-843f-4d46-8fce-8afb07e9d777",
+        "scenarios": [
+          "signup",
+          "verification-gate",
+          "reload-rollback",
+          "checkpoint",
+          "lost-response-retry",
+          "two-tab-transfer",
+          "death",
+          "password-recovery",
+          "checkpoint-roundtrip-props-ammo",
+          "no-email-auto-merge",
+          "password-to-google-link",
+          "google-to-password-link"
+        ],
+        "remoteAttempts": [],
+        "pageErrors": []
+      },
+      {
+        "entry": "index.html",
+        "result": "PASS",
+        "lostResponseRequestId": "51b539c2-c6de-4b0a-964a-3f1e21ce09d2",
+        "scenarios": [
+          "signup",
+          "verification-gate",
+          "reload-rollback",
+          "checkpoint",
+          "lost-response-retry",
+          "two-tab-transfer",
+          "death",
+          "password-recovery",
+          "checkpoint-roundtrip-props-ammo",
+          "no-email-auto-merge",
+          "password-to-google-link",
+          "google-to-password-link"
+        ],
+        "remoteAttempts": [],
+        "pageErrors": []
+      }
+    ],
+    "limits": "Real local emulators only. No real email delivery or real Google OAuth."
+  },
+  "persistence": {
+    "result": "PASS",
+    "authUidPreserved": true,
+    "firestoreStatePreserved": true,
+    "explicitLinkingConfiguration": true
+  },
+  "build": {
+    "scripts": 82,
+    "buildCheck": "PASS",
+    "artifacts": [
+      {
+        "file": "index.html",
+        "bytes": 5571,
+        "sha256": "c9fa8fe3639d3a5cf289e33d9d37ff1cc32ed1bf97928819b3d37e31abf57301"
+      },
+      {
+        "file": "dev.html",
+        "bytes": 9897,
+        "sha256": "f9186c5dc6d8e33a1c656d3fb5c5bf5147f80b7f85e605ba5f1ed764ddc4293b"
+      },
+      {
+        "file": "js/app.min.js",
+        "bytes": 1236959,
+        "sha256": "e43c570aaf399752ea8b42ce41aca57d041f7facd941520743bed787807f55dd"
+      },
+      {
+        "file": "js/vendor/firebase-client.js",
+        "bytes": 216994,
+        "sha256": "763d85103d230584196c871e2f0222bab918af9327b8fa86350799fdb730fb49"
+      },
+      {
+        "file": "package-lock.json",
+        "bytes": 350694,
+        "sha256": "e9e6421dae8902dd80642a243c9b83bf93daf6a67eb7f9cd3a07ccf915c604c4"
+      },
+      {
+        "file": "functions/package-lock.json",
+        "bytes": 112969,
+        "sha256": "f0f83fdb4205ef71c6e1b689e98bec87f008c1a9cfdb4256aefc7315324cfeb1"
+      }
+    ]
+  },
+  "regressions": {
+    "bundle": "0109f7a66d",
+    "p04": {
+      "version": "P04 local browser",
+      "records": [
+        {
+          "entry": "dev.html",
+          "touchEmulated": false,
+          "medic": {
+            "healed": true,
+            "hp": 80,
+            "max": 100,
+            "cd": 30,
+            "full": false,
+            "fullCd": 0,
+            "denied": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "independent": true,
+            "models": [
+              "pistol",
+              "pistol"
+            ],
+            "ammo": [
+              7,
+              11
+            ]
+          },
+          "weaponControls": {
+            "touchTargets": [
+              {
+                "width": 76,
+                "height": 58
+              },
+              {
+                "width": 76,
+                "height": 58
+              }
+            ],
+            "landscapeTargets": null
+          },
+          "weaponChecks": {
+            "phase": "combat",
+            "locked": true,
+            "first": 1,
+            "second": 2,
+            "blocked": true,
+            "ammoAfterFirst": 11,
+            "ammoA": 11,
+            "ammoB": 11,
+            "reloadStart": 0.8,
+            "reloadAfter": 0.3000000000000001,
+            "sharedWait": 0.5
+          },
+          "orientationWalk": {
+            "bodyAim": 0,
+            "gunAim": -1.5707963267948966,
+            "bodyDirection": 2,
+            "expectedBodyDirection": 2
+          },
+          "sectorPersistence": {
+            "before": {
+              "sector": 1,
+              "ability": {
+                "kind": "sprint",
+                "remaining": 2,
+                "cooldown": 20,
+                "duration": 2,
+                "maxCooldown": 20
+              },
+              "ammo": [
+                5,
+                9
+              ],
+              "ids": [
+                "weapon:pistol-1",
+                "weapon:smg-1"
+              ]
+            },
+            "advanced": true,
+            "after": {
+              "sector": 2,
+              "ability": {
+                "kind": "sprint",
+                "remaining": 2,
+                "cooldown": 20,
+                "duration": 2,
+                "maxCooldown": 20
+              },
+              "ammo": [
+                5,
+                9
+              ],
+              "ids": [
+                "weapon:pistol-1",
+                "weapon:smg-1"
+              ]
+            }
+          },
+          "finishCleanup": {
+            "snapshot": {
+              "tempPower": 1,
+              "copyLevel": 4
+            },
+            "phase": "finished",
+            "tempStats": {},
+            "levels": [
+              1,
+              1
+            ],
+            "cooldown": 0
+          },
+          "weaponBodyLayers": {
+            "bodyBefore": 1,
+            "bodyAfter": 1,
+            "behind": 0,
+            "foreground": 5,
+            "aim": 1.5707963267948966
+          },
+          "upgrade": {
+            "before": [
+              2,
+              1
+            ],
+            "after": [
+              3,
+              1
+            ],
+            "card": true
+          },
+          "editorExpiry": {
+            "expired": true,
+            "draftMods": [
+              [
+                "reinforced",
+                "extended"
+              ],
+              []
+            ],
+            "pendingMods": [
+              [
+                "extended"
+              ],
+              []
+            ],
+            "afterExpiryMods": [
+              [
+                "extended"
+              ],
+              []
+            ]
+          },
+          "sprint": {
+            "kind": "sprint",
+            "remaining": 2,
+            "cooldown": 20,
+            "duration": 2,
+            "maxCooldown": 20
+          },
+          "preparation": "preparation",
+          "status": "PASS",
+          "errors": [],
+          "remoteAttempts": [],
+          "httpFailures": []
+        },
+        {
+          "entry": "dev.html",
+          "touchEmulated": true,
+          "medic": {
+            "healed": true,
+            "hp": 80,
+            "max": 100,
+            "cd": 30,
+            "full": false,
+            "fullCd": 0,
+            "denied": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "independent": true,
+            "models": [
+              "pistol",
+              "pistol"
+            ],
+            "ammo": [
+              7,
+              11
+            ]
+          },
+          "weaponControls": {
+            "touchTargets": [
+              {
+                "width": 62,
+                "height": 58
+              },
+              {
+                "width": 62,
+                "height": 58
+              }
+            ],
+            "landscapeTargets": [
+              {
+                "width": 76,
+                "height": 50
+              },
+              {
+                "width": 76,
+                "height": 50
+              }
+            ]
+          },
+          "weaponChecks": {
+            "phase": "combat",
+            "locked": true,
+            "first": 1,
+            "second": 2,
+            "blocked": true,
+            "ammoAfterFirst": 11,
+            "ammoA": 11,
+            "ammoB": 11,
+            "reloadStart": 0.8,
+            "reloadAfter": 0.3000000000000001,
+            "sharedWait": 0.5
+          },
+          "orientationWalk": {
+            "bodyAim": 0,
+            "gunAim": -1.5707963267948966,
+            "bodyDirection": 2,
+            "expectedBodyDirection": 2
+          },
+          "sectorPersistence": null,
+          "finishCleanup": null,
+          "weaponBodyLayers": null,
+          "upgrade": {
+            "before": [
+              4,
+              1
+            ],
+            "after": [
+              5,
+              1
+            ],
+            "card": true
+          },
+          "editorExpiry": {
+            "expired": true,
+            "draftMods": [
+              [
+                "reinforced",
+                "extended"
+              ],
+              []
+            ],
+            "pendingMods": [
+              [
+                "extended"
+              ],
+              []
+            ],
+            "afterExpiryMods": [
+              [
+                "extended"
+              ],
+              []
+            ]
+          },
+          "sprint": {
+            "kind": "sprint",
+            "remaining": 2,
+            "cooldown": 20,
+            "duration": 2,
+            "maxCooldown": 20
+          },
+          "preparation": "preparation",
+          "status": "PASS",
+          "errors": [],
+          "remoteAttempts": [],
+          "httpFailures": []
+        },
+        {
+          "entry": "index.html",
+          "touchEmulated": false,
+          "medic": {
+            "healed": true,
+            "hp": 80,
+            "max": 100,
+            "cd": 30,
+            "full": false,
+            "fullCd": 0,
+            "denied": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "independent": true,
+            "models": [
+              "pistol",
+              "pistol"
+            ],
+            "ammo": [
+              7,
+              11
+            ]
+          },
+          "weaponControls": {
+            "touchTargets": [
+              {
+                "width": 76,
+                "height": 58
+              },
+              {
+                "width": 76,
+                "height": 58
+              }
+            ],
+            "landscapeTargets": null
+          },
+          "weaponChecks": {
+            "phase": "combat",
+            "locked": true,
+            "first": 1,
+            "second": 2,
+            "blocked": true,
+            "ammoAfterFirst": 11,
+            "ammoA": 11,
+            "ammoB": 11,
+            "reloadStart": 0.8,
+            "reloadAfter": 0.3000000000000001,
+            "sharedWait": 0.5
+          },
+          "orientationWalk": {
+            "bodyAim": 0,
+            "gunAim": -1.5707963267948966,
+            "bodyDirection": 2,
+            "expectedBodyDirection": 2
+          },
+          "sectorPersistence": null,
+          "finishCleanup": null,
+          "weaponBodyLayers": null,
+          "upgrade": {
+            "before": [
+              2,
+              1
+            ],
+            "after": [
+              3,
+              1
+            ],
+            "card": true
+          },
+          "editorExpiry": {
+            "expired": true,
+            "draftMods": [
+              [
+                "reinforced",
+                "extended"
+              ],
+              []
+            ],
+            "pendingMods": [
+              [
+                "extended"
+              ],
+              []
+            ],
+            "afterExpiryMods": [
+              [
+                "extended"
+              ],
+              []
+            ]
+          },
+          "sprint": {
+            "kind": "sprint",
+            "remaining": 2,
+            "cooldown": 20,
+            "duration": 2,
+            "maxCooldown": 20
+          },
+          "preparation": "preparation",
+          "status": "PASS",
+          "errors": [],
+          "remoteAttempts": [],
+          "httpFailures": []
+        },
+        {
+          "entry": "index.html",
+          "touchEmulated": true,
+          "medic": {
+            "healed": true,
+            "hp": 80,
+            "max": 100,
+            "cd": 30,
+            "full": false,
+            "fullCd": 0,
+            "denied": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "independent": true,
+            "models": [
+              "pistol",
+              "pistol"
+            ],
+            "ammo": [
+              7,
+              11
+            ]
+          },
+          "weaponControls": {
+            "touchTargets": [
+              {
+                "width": 62,
+                "height": 58
+              },
+              {
+                "width": 62,
+                "height": 58
+              }
+            ],
+            "landscapeTargets": [
+              {
+                "width": 76,
+                "height": 50
+              },
+              {
+                "width": 76,
+                "height": 50
+              }
+            ]
+          },
+          "weaponChecks": {
+            "phase": "combat",
+            "locked": true,
+            "first": 1,
+            "second": 2,
+            "blocked": true,
+            "ammoAfterFirst": 11,
+            "ammoA": 11,
+            "ammoB": 11,
+            "reloadStart": 0.8,
+            "reloadAfter": 0.3000000000000001,
+            "sharedWait": 0.5
+          },
+          "orientationWalk": {
+            "bodyAim": 0,
+            "gunAim": -1.5707963267948966,
+            "bodyDirection": 2,
+            "expectedBodyDirection": 2
+          },
+          "sectorPersistence": null,
+          "finishCleanup": null,
+          "weaponBodyLayers": null,
+          "upgrade": {
+            "before": [
+              4,
+              1
+            ],
+            "after": [
+              5,
+              1
+            ],
+            "card": true
+          },
+          "editorExpiry": {
+            "expired": true,
+            "draftMods": [
+              [
+                "reinforced",
+                "extended"
+              ],
+              []
+            ],
+            "pendingMods": [
+              [
+                "extended"
+              ],
+              []
+            ],
+            "afterExpiryMods": [
+              [
+                "extended"
+              ],
+              []
+            ]
+          },
+          "sprint": {
+            "kind": "sprint",
+            "remaining": 2,
+            "cooldown": 20,
+            "duration": 2,
+            "maxCooldown": 20
+          },
+          "preparation": "preparation",
+          "status": "PASS",
+          "errors": [],
+          "remoteAttempts": [],
+          "httpFailures": []
+        }
+      ],
+      "method": "Playwright against local HTTP only; actual game pages and fixed seeded combat. No physical Safari validation."
+    },
+    "levels": {
+      "records": [
+        {
+          "entry": "dev.html",
+          "before": {
+            "level": 3,
+            "xp": 16.76000000000001,
+            "pending": 0,
+            "kills": 12,
+            "phase": "combat",
+            "wave": 2
+          },
+          "choices": [
+            {
+              "level": 2,
+              "pauseKills": 5,
+              "resumeWave": 1
+            },
+            {
+              "level": 3,
+              "phase": "levelup",
+              "resumeWave": 1
+            }
+          ],
+          "oneThreshold": {
+            "first": {
+              "phase": "levelup",
+              "level": 2,
+              "xp": 0,
+              "pending": 1
+            },
+            "after": {
+              "phase": "levelup",
+              "level": 2,
+              "xp": 0,
+              "pending": 1
+            }
+          },
+          "bankedPickup": {
+            "first": {
+              "phase": "levelup",
+              "level": 2,
+              "xp": 0,
+              "xpNext": 101,
+              "pending": 1,
+              "pendingXp": 106
+            },
+            "second": {
+              "phase": "levelup",
+              "level": 3,
+              "xp": 0,
+              "pending": 1,
+              "pendingXp": 5,
+              "xpMul": 1.12
+            },
+            "resumed": {
+              "phase": "combat",
+              "level": 3,
+              "xp": 5,
+              "pending": 0,
+              "pendingXp": 0,
+              "learning": 1
+            },
+            "afterFive": {
+              "phase": "combat",
+              "level": 3,
+              "xp": 10.600000000000001,
+              "pending": 0,
+              "learning": 1
+            },
+            "xpBefore": 0,
+            "statsBefore": 0,
+            "statsAfter": 2
+          },
+          "heldKeyRepeat": {
+            "phase": "levelup",
+            "level": 3,
+            "pending": 1,
+            "applied": 1
+          },
+          "numpadChoice": {
+            "phase": "combat",
+            "level": 3,
+            "pending": 0,
+            "applied": 2
+          },
+          "status": "PASS"
+        },
+        {
+          "entry": "index.html",
+          "before": {
+            "level": 3,
+            "xp": 16.76000000000001,
+            "pending": 0,
+            "kills": 12,
+            "phase": "combat",
+            "wave": 2
+          },
+          "choices": [
+            {
+              "level": 2,
+              "pauseKills": 5,
+              "resumeWave": 1
+            },
+            {
+              "level": 3,
+              "phase": "levelup",
+              "resumeWave": 1
+            }
+          ],
+          "oneThreshold": {
+            "first": {
+              "phase": "levelup",
+              "level": 2,
+              "xp": 0,
+              "pending": 1
+            },
+            "after": {
+              "phase": "levelup",
+              "level": 2,
+              "xp": 0,
+              "pending": 1
+            }
+          },
+          "bankedPickup": {
+            "first": {
+              "phase": "levelup",
+              "level": 2,
+              "xp": 0,
+              "xpNext": 101,
+              "pending": 1,
+              "pendingXp": 106
+            },
+            "second": {
+              "phase": "levelup",
+              "level": 3,
+              "xp": 0,
+              "pending": 1,
+              "pendingXp": 5,
+              "xpMul": 1.12
+            },
+            "resumed": {
+              "phase": "combat",
+              "level": 3,
+              "xp": 5,
+              "pending": 0,
+              "pendingXp": 0,
+              "learning": 1
+            },
+            "afterFive": {
+              "phase": "combat",
+              "level": 3,
+              "xp": 10.600000000000001,
+              "pending": 0,
+              "learning": 1
+            },
+            "xpBefore": 0,
+            "statsBefore": 0,
+            "statsAfter": 2
+          },
+          "heldKeyRepeat": {
+            "phase": "levelup",
+            "level": 3,
+            "pending": 1,
+            "applied": 1
+          },
+          "numpadChoice": {
+            "phase": "combat",
+            "level": 3,
+            "pending": 0,
+            "applied": 2
+          },
+          "status": "PASS"
+        }
+      ],
+      "method": "Natural first-wave kills via fixed-step production helper, real card DOM doubleclick guard, controlled exact62XP pickup boundary"
+    },
+    "note": "Antes de endurecer validador P05; modo sin cuentas sin cambios."
+  },
+  "limitations": [
+    "GoogleOAuth/correo reales y backendpropio no aceptados",
+    "No economía/inventario persistente ni score oficial",
+    "Combate local no acredita veracidad/antitrampas",
+    "Sin rendimiento/costes/carga/Safari/dispositivos físicos/publicación"
+  ],
+  "realFirebase": {
+    "project": "scp-survivor",
+    "configurationObserved": true,
+    "activeInGame": false
+  },
+  "github": {
+    "repository": "DETECO/SCPSurvivor",
+    "branch": "main",
+    "lastVerifiedCommit": "39344e77e15bd82c98bacb3e9773ceaa20c1b918",
+    "p05Pushed": false,
+    "remoteRefreshedForThisReport": false
+  }
+}

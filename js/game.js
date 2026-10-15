@@ -88,6 +88,7 @@ G.Game = (() => {
     if (technical) {
       if (state !== 'playing' && state !== 'paused') return;
       if (state === 'paused' && document.hidden) return;
+      if (state === 'paused' && G.RunContinuity?.canResume() === false) return;
       state = state === 'playing' ? 'paused' : 'playing';
       G.Input.reset(); G.Touch.reset(); G.TechnicalUI.state(state);
       return;
@@ -422,6 +423,7 @@ G.Game = (() => {
 
   function handleKeys() {
     if (technical) {
+      G.RunContinuity?.tick();
       if (G.Input.tap('escape') || G.Input.tap('keyp')) togglePause();
       if (state === 'playing' && G.Expedition) {
         if (G.Input.tap('space')) G.TechnicalUI.sprint();
@@ -550,6 +552,22 @@ G.Game = (() => {
     }
     ctx.restore(); G.World.drawVignette(ctx, w, h);
     G.Touch.clearButtons(); G.Touch.draw(ctx);
+  }
+
+  function restoreTechnical(saved){
+    if(!technical)throw new Error('Escena local no inicializada');
+    G.Input.reset();G.Touch.reset();G.EnemyMgr.clear();G.Projectiles.clear();G.FX.clear();G.Weather.reset();
+    const p=saved.player;
+    pl=new G.Player(G.Content[p.soldierId]);Object.assign(pl,p);
+    pl.fieldMode=true;pl.r=12;pl.dead=false;pl.fieldAbility={...saved.ability};
+    G.FieldStats.apply(pl,{sprintBonus:pl.fieldAbility.kind==='sprint'&&pl.fieldAbility.remaining>0?.6:0});pl.hp=p.hp;
+    G.FieldCombat.restoreData(saved.combat,pl);
+    G.Expedition.restoreState(saved.expedition,pl,saved.world);
+    G.Pickups.restoreData(saved.pickups);
+    time=saved.expedition.elapsed;G.Camera.x=pl.x;G.Camera.y=pl.y;G.Camera.shake=0;
+    state='playing';G.TechnicalUI.state(state);
+    G.Sprites.preload([pl.dex,'pursuer01','biological01','warden01'],2000);
+    return pl;
   }
 
   function update(dt) {
@@ -793,7 +811,7 @@ G.Game = (() => {
   })();
 
   return {
-    init, startRun, startTechnical, everyone, levelXp, flash, offerBond,
+    init, startRun, startTechnical, restoreTechnical,everyone, levelXp, flash, offerBond,
     /** Para pruebas: salta el reloj de la run. */
     debugTime(t) { G.Guard.flag('debug'); time = t; },
     /** Para grabar vídeos: cámara lenta (0,5 = mitad de velocidad). */

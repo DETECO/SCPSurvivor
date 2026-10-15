@@ -144,5 +144,14 @@ G.FieldCombat = (() => {
       sprintRemaining:ability?.remaining||0,sprintCooldown:ability?.cooldown||0,ability,currentability:ability};
   }
   function sprint(pl) { return G.FieldAbilities?.sprint?G.FieldAbilities.sprint(pl):false; }
-  return {reset,tick,switchTo,configureMods,upgrade,clearTemporary,targetFor,drawWeapon,sprint,getstate,getweapons:()=>weapons,get state(){return getstate();}};
+  function exportData(){
+    return {weapons:weapons.map(w=>({id:w.id,model:w.model,mods:w.mods.slice(),level:w.level,ammo:w.ammo,reload:w.reload,reloadTime:w.reloadTime})),
+      activeIndex,shotWait,switchRemaining,shots};
+  }
+  function restoreData(data,pl){
+    const next=cloneLoadout(data.weapons);
+    weapons=next;currentPlayer=pl;activeIndex=data.activeIndex;shotWait=data.shotWait;switchRemaining=data.switchRemaining;shots=data.shots;aimTarget=null;
+    pl.fieldWeapons=weapons;for(const w of weapons)sync(pl,w);
+  }
+  return {reset,tick,switchTo,configureMods,upgrade,clearTemporary,targetFor,drawWeapon,sprint,getstate,exportData,restoreData,getweapons:()=>weapons,get state(){return getstate();}};
 })();
