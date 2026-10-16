@@ -520,6 +520,7 @@ G.Game = (() => {
 
   function startTechnical(options = {}) {
     if (!technical) throw new Error('Escena local no inicializada');
+    if(G.InventoryTrial?.enabled)options=G.InventoryTrial.prepare(options);
     G.Input.reset(); G.Touch.reset();
     G.EnemyMgr.clear(); G.Projectiles.clear(); G.FX.clear(); G.Weather.reset();
     G.World.reset(1337); G.World.setFixture(G.Content.fixture); G.World.setBiome(1, true);

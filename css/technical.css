@@ -26,6 +26,7 @@ body[data-technical-state="ui"] .footer,body[data-technical-state="paused"] .foo
 
 /* P04 local test loadout and in-run weapon controls. */
 #technical-ready .panel{width:min(700px,100%)}
+.developer-credit{margin:0 0 14px;color:var(--ink);font-size:13px;font-weight:600}
 .loadout-editor{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}
 .loadout-editor h2{font-size:18px;margin-bottom:8px}
 .loadout-editor label,.loadout-editor select{font-size:13px}
@@ -61,4 +62,16 @@ body[data-technical-state="ui"] .footer,body[data-technical-state="paused"] .foo
 .field-mod-draft{color:#d5e8b4!important}
 
 /* P05: account controls within the existing menu. */
+/* P06: gestión de copias de prueba en la interfaz existente. */
+.inventory-base{margin-top:14px;padding-top:12px;border-top:1px solid var(--edge)}.inventory-base h2{font-size:18px}.inventory-base p{font-size:12px}
+#inventory-overlay{z-index:6}#inventory-overlay .panel{width:min(760px,100%);max-height:calc(100% - 24px);overflow:auto}
+#inventory-content h3{font-size:15px;margin:16px 0 8px}#inventory-content select{min-height:44px;background:#10211c;color:var(--ink);font:inherit}
+.inventory-row{border:1px solid var(--edge);padding:8px;margin:6px 0;display:flex;flex-wrap:wrap;gap:5px}.inventory-row p{flex:1 0 100%;font-size:12px;margin:0}
+.inventory-row button{width:auto;flex:1;min-height:44px;font-size:11px;margin:0;padding:6px 10px}
+#inventory-draft-note{font-size:12px;color:#d5e8b4}
+/* Grietas: señales provisionales de la prueba local; diseño final en P09. */
+.rift-locator,.rift-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;background:#1d1015ed;color:#fff0f0;border:1px solid #f3747b;font-size:13px;line-height:1.4;pointer-events:none}
+.rift-locator{top:100px;font-weight:700}.rift-alert{top:155px;border-left:4px solid #f3747b}
+#rift-test-note{border-left:3px solid #f3747b;padding-left:10px}
+@media(max-width:540px){.rift-locator,.rift-alert{left:8px;right:8px;font-size:12px}.rift-locator{top:118px}.rift-alert{top:184px}}
 .account-panel{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}.account-panel h2{font-size:18px}.account-panel label{display:block;font-size:13px;margin-top:8px}.account-panel input{display:block;width:100%;box-sizing:border-box;min-height:44px;margin-top:4px;padding:8px;background:#10211c;color:var(--ink);border:1px solid var(--edge);font:inherit}.account-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.account-actions button{font-size:12px;padding:8px;min-height:48px}.account-panel p{font-size:12px}#account-notice{color:#ffb49e}#account-sync-overlay{z-index:30}button:disabled{opacity:.55;cursor:default}

@@ -15,6 +15,7 @@ G.RunCheckpoint=(()=>{
    ability:{kind:a.kind,remaining:a.remaining,cooldown:a.cooldown,duration:a.duration},world:G.World.exportData(),pickups:G.Pickups.exportData()});
  }
  function capture(){
+  if(G.DimensionalRifts?.enabled||G.InventoryTrial?.enabled)return null; // Prototipos sin persistencia; no emitir schema1 incompleto.
   const e=G.Expedition.state;if(!G.Game.player)return null;
   if(safe(e))return live(e.phase==='exploration'?'exploration':'preparation');
   if(['combat','boss'].includes(e.phase)&&G.Expedition.captureState().waveTime===0&&lastBoundary&&

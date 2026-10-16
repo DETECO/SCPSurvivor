@@ -1,6 +1,6 @@
 # Contexto del proyecto — SCP Survivor
 
-Actualización15/10/2026. Esta carpeta continúa el videojuego existente de la sesión principal SCP Survivor. Las otras sesiones se excluyeron por instrucción de Iván. No se reconstruyó el juego ni se sustituyeron sus recursos gráficos.
+Actualización16/10/2026. Esta carpeta continúa el videojuego existente de la sesión principal SCP Survivor. Las otras sesiones se excluyeron por instrucción de Iván. No se reconstruyó el juego ni se sustituyeron sus recursos gráficos.
 
 ## Objetivo
 
@@ -65,3 +65,17 @@ Errores de conexión dejan confirmación pendiente y partida detenida: reintenta
 4. P07economía/progresión, P08demo/clasificación, P09arte/UI/audio, P10aceptación/rendimiento/coste y P11publicación según canónico.
 
 Para continuar: seleccionar esta carpeta en Codex Local, leer AGENTS.md/PROMPT_MAESTRO.md, seguir INSTALACION_WINDOWS.md y revisar el diff de P05. No tocar sources/ del espejo padre ni originales Cloud.
+
+## Ampliación local de grietas — 16/10/2026
+
+Iván autorizó el prototipo y realizará la aceptación manual. Abrir ?prueba=grieta para acceso directo o ?grietas=local para aparición opcional; solo loopback y sin cuentas. Grieta física alcanzable, apertura45s activas, cierre e indicador dirección/distancia/tiempo; sonido y alerta al aparecer. Variante Custodio provisional en mismo escenario, entrada voluntaria y retirada. No cambiar jefes normales, arte aprobado ni pesos. P05 de cuentas conserva su esquema: las grietas no se guardan y ambas opciones se desactivan con cuentas=local. P09 debe conservar sonido/aviso/localizador como requisitos permanentes. Leer docs/PRUEBA_GRIETAS.md, docs/OBSERVACIONES_VISUALES.md y docs/GRIETAS-VALIDACION.md. Roadmapv0.13 conserva52/100, P05EV0/6. Prototipo sin publicación externa.
+
+Decisión posterior de Iván (A-023/D-311): ingreso instantáneo al tocar/cruzar la grieta abierta, sin botón, tecla, confirmación ni espera. No detener el movimiento mantenido. La llegada anunciada del jefe sigue siendo aviso de ataque y no retrasa la entrada. Roadmapv0.14;52/100 sin cambios.
+
+## Inicio local P06 — 16/10/2026
+
+A-024 autoriza empezar P06 localmente tras el prototipo de grietas. P06-T01 está EC con un primer tramo de modelo físico y panel base/preparación con confirmación, copias numeradas, mochilas de 8/16 y almacén60 como fixture temporal. `?inventario=local` activa la opción; `?prueba=inventario` muestra el menú y el botón de inicio abre preparación20s. Es solo loopback: sin cuentas, persistencia, inventario real, botín ni kit. El descanso sigue durante preparación; un borrador no confirmado se descarta al vencer el tiempo y reducir la mochila por debajo de su contenido se rechaza sin descartar objetos.
+
+La aceptación de P06-T01 permanece incompleta: requiere autoridad transaccional de servidor según sus dependencias originales (P04-T02/P05-T03), continuidad y aceptación manual de Iván. P06-T02 (kit), T03 (muerte/recuperación), T04 (buzón) y T05 (resultado único) siguen pendientes; están autorizadas para trabajo local, sin contarse como hechas. No se añadió botín ni persistencia al fixture. Roadmap v0.15 conserva las 53 tareas, el global52/100, P05EV0/6, todos los pesos y dependencias. EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida,4 escenarios aislados de inventario y4 de regresión de grietas aprobados. Límites en [docs/P06-REPORT.md](docs/P06-REPORT.md); aceptación humana pendiente en [docs/PRUEBA_INVENTARIO_P06.md](docs/PRUEBA_INVENTARIO_P06.md). La regla de ingreso instantáneo por contacto de grieta D-311 permanece vigente.
+
+Petición posterior A-025 (16/10): crédito exacto «Desarrollado por Ivan Vivanco» visible bajo el título de las pruebas/demo; publicar esta entrega acumulada y roadmapv0.16 en GitHub conservando el historial. Los límites locales y el avance52/100 se mantienen. Consultar docs/PUBLICACION_GITHUB.md; subir el código no activa Firebase real.

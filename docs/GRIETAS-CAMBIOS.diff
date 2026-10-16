@@ -1,0 +1,871 @@
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -33,3 +33,7 @@
+ - PowerShell: npm.cmd. Mantener ambos lockfiles. El frontend no carga .env.
+ - Solo CV con evidencia completa aporta puntos; no cambiar criterios/pesos. P05 real permanece en validación mientras falten servicios propios y flujos reales.
+ - Mostrar diff de cambios existentes y rutas. Mantener contexto e instrucciones Windows coherentes.
++
++## Ampliación local de grietas — 16/10/2026
++
++Iván autorizó el prototipo y realizará la aceptación manual. Abrir ?prueba=grieta para acceso directo o ?grietas=local para aparición opcional; solo loopback y sin cuentas. Grieta física alcanzable, apertura45s activas, cierre e indicador dirección/distancia/tiempo; sonido y alerta al aparecer. Variante Custodio provisional en mismo escenario, entrada voluntaria y retirada. No cambiar jefes normales, arte aprobado ni pesos. P05 de cuentas conserva su esquema: las grietas no se guardan y ambas opciones se desactivan con cuentas=local. P09 debe conservar sonido/aviso/localizador como requisitos permanentes. Leer docs/PRUEBA_GRIETAS.md, docs/OBSERVACIONES_VISUALES.md y docs/GRIETAS-VALIDACION.md. Roadmapv0.13 conserva52/100, P05EV0/6. Prototipo sin publicación externa.
+--- a/CONTEXTO_PROYECTO.md
++++ b/CONTEXTO_PROYECTO.md
+@@ -65,3 +65,7 @@
+ 4. P07economía/progresión, P08demo/clasificación, P09arte/UI/audio, P10aceptación/rendimiento/coste y P11publicación según canónico.
+ 
+ Para continuar: seleccionar esta carpeta en Codex Local, leer AGENTS.md/PROMPT_MAESTRO.md, seguir INSTALACION_WINDOWS.md y revisar el diff de P05. No tocar sources/ del espejo padre ni originales Cloud.
++
++## Ampliación local de grietas — 16/10/2026
++
++Iván autorizó el prototipo y realizará la aceptación manual. Abrir ?prueba=grieta para acceso directo o ?grietas=local para aparición opcional; solo loopback y sin cuentas. Grieta física alcanzable, apertura45s activas, cierre e indicador dirección/distancia/tiempo; sonido y alerta al aparecer. Variante Custodio provisional en mismo escenario, entrada voluntaria y retirada. No cambiar jefes normales, arte aprobado ni pesos. P05 de cuentas conserva su esquema: las grietas no se guardan y ambas opciones se desactivan con cuentas=local. P09 debe conservar sonido/aviso/localizador como requisitos permanentes. Leer docs/PRUEBA_GRIETAS.md, docs/OBSERVACIONES_VISUALES.md y docs/GRIETAS-VALIDACION.md. Roadmapv0.13 conserva52/100, P05EV0/6. Prototipo sin publicación externa.
+# Generado/canónico ROADMAP.md: SHA256 297edf40da45e103d82ca08f264841ed94a62513da8ec60a6c2fd083f67d31fe
+# Generado/canónico RoadmapSCP.json: SHA256 fcd9684e33aaf3827f71114a7d1dfc83e6cbebffd2b14e680584dc3a1b03038c
+# Generado/canónico RoadmapSCP.md: SHA256 7e7348f9e01c36eefdb9036e39d9299c083e01c0b5f7ba6f5aba80b696b2941b
+--- a/css/technical.css
++++ b/css/technical.css
+@@ -61,4 +61,9 @@
+ .field-mod-draft{color:#d5e8b4!important}
+ 
+ /* P05: account controls within the existing menu. */
++/* Grietas: señales provisionales de la prueba local; diseño final en P09. */
++.rift-locator,.rift-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;background:#1d1015ed;color:#fff0f0;border:1px solid #f3747b;font-size:13px;line-height:1.4;pointer-events:none}
++.rift-locator{top:100px;font-weight:700}.rift-alert{top:155px;border-left:4px solid #f3747b}
++#btn-field-rift{border-color:#f3747b}#rift-test-note{border-left:3px solid #f3747b;padding-left:10px}
++@media(max-width:540px){.rift-locator,.rift-alert{left:8px;right:8px;font-size:12px}.rift-locator{top:118px}.rift-alert{top:184px}}
+ .account-panel{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}.account-panel h2{font-size:18px}.account-panel label{display:block;font-size:13px;margin-top:8px}.account-panel input{display:block;width:100%;box-sizing:border-box;min-height:44px;margin-top:4px;padding:8px;background:#10211c;color:var(--ink);border:1px solid var(--edge);font:inherit}.account-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.account-actions button{font-size:12px;padding:8px;min-height:48px}.account-panel p{font-size:12px}#account-notice{color:#ffb49e}#account-sync-overlay{z-index:30}button:disabled{opacity:.55;cursor:default}
+--- a/dev.html
++++ b/dev.html
+@@ -26,15 +26,17 @@
+ <section><h3>Arma 2</h3><label for="loadout-weapon-1">Modelo</label><select id="loadout-weapon-1"></select><div id="loadout-mods-1" class="loadout-mods" aria-label="Mods del arma 2"></div></section>
+ </div>
+ <p id="loadout-role-summary"></p><p id="loadout-preview-summary"></p><ul id="loadout-preview" class="loadout-preview"></ul><p id="loadout-error" class="loadout-error" role="alert"></p>
+-</div><button id="btn-technical-start" class="primary">Iniciar expedición</button></div>
++</div><p id="rift-test-note" hidden></p><button id="btn-technical-start" class="primary">Iniciar expedición</button></div>
+ </section>
+ <section id="technical-pause" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Pausa">
+ <div class="panel"><p class="eyebrow">SECTOR DETENIDO</p><h2>Pausa</h2><p>Tu posición se conserva mientras esta página permanezca abierta.</p><button id="btn-technical-resume" class="primary">Continuar</button><button id="btn-technical-menu">Volver al menú</button></div>
+ </section>
+ <section id="field-upgrades" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="upgrade-title"><div class="panel"><p class="eyebrow">SUBIDA DE NIVEL</p><h2 id="upgrade-title">Elige una mejora</h2><p id="upgrade-count"></p><div id="upgrade-cards"></div></div></section>
+ <section id="field-result" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="result-title"><div class="panel"><p class="eyebrow">FIN DE EXPEDICIÓN</p><h2 id="result-title"></h2><p id="result-info"></p><button id="btn-result-restart" class="primary">Nueva expedición</button><button id="btn-result-menu">Volver al menú</button></div></section>
+-<div id="field-controls" class="field-controls" hidden><div id="field-weapons" class="field-weapons"><button id="btn-field-weapon-0" class="field-weapon" aria-label="Cambiar al arma 1">1</button><button id="btn-field-weapon-1" class="field-weapon" aria-label="Cambiar al arma 2">2</button></div><button id="btn-ability">Sprint</button><button id="btn-mods" hidden>Modificar armas</button><button id="btn-field-ready" hidden>Listo</button><button id="btn-field-exit" hidden>Usar salida</button><button id="btn-field-extract" hidden>Extraer</button></div>
++<div id="field-controls" class="field-controls" hidden><div id="field-weapons" class="field-weapons"><button id="btn-field-weapon-0" class="field-weapon" aria-label="Cambiar al arma 1">1</button><button id="btn-field-weapon-1" class="field-weapon" aria-label="Cambiar al arma 2">2</button></div><button id="btn-ability">Sprint</button><button id="btn-mods" hidden>Modificar armas</button><button id="btn-field-ready" hidden>Listo</button><button id="btn-field-exit" hidden>Usar salida</button><button id="btn-field-extract" hidden>Extraer</button><button id="btn-field-rift" hidden>Entrar en grieta</button></div>
+ <div id="field-status" class="field-status" hidden></div>
++<div id="rift-locator" class="rift-locator" hidden aria-label="Ubicación de la grieta"></div>
++<div id="rift-alert" class="rift-alert" hidden role="alert" aria-live="assertive" aria-atomic="true"></div>
+ <section id="field-mod-editor" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="field-mod-title"><div class="panel"><p class="eyebrow">PREPARACIÓN</p><h2 id="field-mod-title">Modificar armas</h2><p>El descanso sigue avanzando mientras ajustas los mods.</p><div id="field-mod-content"></div><p id="field-mod-error" class="loadout-error" role="alert"></p><button id="btn-field-mod-confirm" class="primary">Confirmar cambios</button><button id="btn-field-mod-cancel">Cancelar</button></div></section>
+ <div id="scene-hud" class="hud" hidden><span><span id="scene-soldier">GUARDIA · SPRINT</span> · <span id="scene-time">0:00</span></span><button id="btn-technical-pause" aria-label="Pausar escena">Pausa</button></div>
+ </div>
+@@ -121,6 +123,7 @@
+ <!-- juego -->
+ <script defer src="js/data/content.js"></script>
+ <script defer src="js/ui/field-loadout.js"></script>
++<script defer src="js/systems/dimensional-rifts.js"></script>
+ <script defer src="js/ui/technical-ui.js"></script>
+ <script defer src="js/systems/field-abilities.js"></script>
+ <script defer src="js/systems/field-combat.js"></script>
+--- /dev/null
++++ b/docs/GRIETAS-VALIDACION.md
+@@ -0,0 +1,34 @@
++# Grietas dimensionales — validación técnica local
++
++16/10/2026. Prototipo optativo basado en el juego existente. **Aceptación manual de Iván pendiente**; instrucciones en [PRUEBA_GRIETAS.md](PRUEBA_GRIETAS.md).
++
++## Resultado técnico
++
++- `node --test tests/*.test.js`: 84 pruebas, **83 aprobadas, 0 fallidas, 1 omitida**. La omitida requiere habilitar explícitamente los emuladores P05; no se ejecutó integración de servicios en esta operación.
++- Incluye 5 pruebas nuevas de grietas, 5 de IA dimensional, 1 de exclusión de checkpoints del prototipo y regresiones existentes de calendario, jefe normal, armas, estadísticas, cuentas y continuidad.
++- `npm.cmd run build` y `npm.cmd run build:check`: correctos, 83 scripts, SDK Firebase sin cambios de dependencia. Bundle `24c29481e1`.
++- `tests/rifts-browser.py`: **4 escenarios aprobados**, fuente/compilado × escritorio/móvil emulado, sin errores JavaScript ni intentos remotos registrados. Gesto de inicio, interfaz, pausa, alerta y WebAudio medido con señal no nula. Apertura/cierre, entrada, cancelación de huida por daño, retirada, victoria y calendario intacto comprobados.
++- La prueba directa encontró una posición libre y alcanzable en **64 semillas distintas**, tanto en fuente como compilado.
++- Capturas de apertura/combate revisadas visualmente. Arte, controles, sonido y balance continúan provisionales.
++
++Los ensayos del navegador son aislados: perfil vacío y servidor de prueba con puerto propio. No se automatizó la pestaña ni se leyeron cuentas del usuario. Posiciones, reloj de cierre, daño cancelador y muerte del jefe se inyectan en los casos de transición; **no demuestran que un jugador haya ganado, aceptado el balance o escuchado los altavoces físicos**. Las subidas de nivel se eligen durante el caso controlado de victoria, respetando la pausa de mejoras.
++
++## Incidencias durante la verificación
++
++- Revisión independiente detectó daño posible si una pared separaba el centro anunciado del pulso y al jugador, aunque la línea desde el jefe quedara libre. Reproducido con prueba fallida y corregido: se verifican ambas líneas antes de dañar. Prueba específica y suite final aprobadas.
++- La cola por defecto del servidor Python de ensayo provocó rechazos intermitentes al cargar los83 scripts de `dev.html` en Windows. Se ajustó a128, igual que el ensayo P03 existente; la ejecución final pasó. El servidor del juego es el existente de Node y no necesitó este cambio.
++- `node --test` sin ruta también intenta ejecutar `js/ui/test.js`, que es una interfaz heredada para navegador y requiere `G`. El comando de suite correcto es el indicado arriba, limitado a `tests/*.test.js`; no se modificó esa interfaz ajena a la tarea.
++
++## Alcance y límites
++
++`?prueba=grieta` prepara el primer sector despejado sin acreditar oleadas. `?grietas=local` prueba apariciones del25% al despejar sectores normales desdeS2. Ambos requieren loopback y quedan deshabilitados si se usa `cuentas=local`.
++
++La grieta vive45 segundos activos, se cierra si se ignora y exige entrada próxima con línea libre. La variante Custodio usa el mismo sprite, vida×1,35, daño×1,15, llegada anunciada1,5s y pulso adicional anunciado1,2s. Victoria/retirada vuelven al sector despejado sin modificar calendario ni contar dos veces un sector. Conserva XP220 temporal habitual; no implementa premios especiales.
++
++No hay persistencia de grietas P05, arena aparte, nuevo catálogo gráfico, economía, ranking, aceptación en teléfonos físicos ni despliegue externo. El requisito permanente de sonido/alerta/localización se conserva en [OBSERVACIONES_VISUALES.md](OBSERVACIONES_VISUALES.md) paraP09.
++
++## Conservación
++
++Respaldo previo: `development-backups/SCP-SURVIVOR-antes-grietas-20261016-131838.zip` en el directorio padre (295 archivos; SHA256 `70cd642acf5d2faf788aa9f01339ecf3c40682529163a7b10e8dc8bee59a42bc`). Los12 archivos originales de assets permanecen idénticos por comparación de bytes; no se eliminó ningún archivo. Originales y ZIP anteriores conservados. No se publicaron estos cambios en GitHub ni se activaron servicios Firebase reales.
++
++Resultados brutos y capturas: `migration-audit/rifts-20261016-node.txt` y `migration-audit/rifts-20261016-browser/` en el padre. [GRIETAS-CAMBIOS.diff](GRIETAS-CAMBIOS.diff) reúne el cambio legible de fuentes y documentación; el bundle generado se resume por hash.
+--- a/docs/OBSERVACIONES_VISUALES.md
++++ b/docs/OBSERVACIONES_VISUALES.md
+@@ -8,6 +8,16 @@
+ 
+ Iván considera los marcadores actuales simples y desproporcionados. En P09 definir tamaño relativo al personaje, tipografía, borde/contraste, colores, duración, animación y agrupación de impactos. Probar legibilidad sin tapar enemigos/avisos; diferenciar tipos de daño solo conforme al diseño aprobado. No considerar aprobado el aspecto del prototipo.
+ 
++## Grietas dimensionales — requisito para P09
++
++Añadido el16/10/2026 por petición de Iván. Al aparecer una grieta debe emitirse **una alerta sonora y un aviso visible en pantalla**. Este requisito se conserva para el acabado P09; su incorporación provisional no acredita audio ni diseño final aprobados.
++
++La grieta debe existir físicamente en un punto alcanzable del escenario, permanecer abierta durante un tiempo limitado y cerrarse si no se utiliza. El jugador debe poder localizarla: marcador en el mundo e indicador en el HUD con dirección, distancia y tiempo restante. El indicador debe seguir siendo útil cuando la grieta quede fuera de la pantalla y no debe tapar los controles, enemigos o avisos de ataque.
++
++Para la prueba local se utilizan efectos, sonido, colores y el sprite existente del Custodio como recursos provisionales. En P09 revisar silueta y lectura del portal, contraste, escala respecto al personaje, animación de apertura/cierre, señal del jefe dimensional y avisos de ataque. La información no puede depender solo del color o del sonido. No generar ni sustituir arte aprobado por esta prueba.
++
++La ubicación, los 45 s de apertura, la aparición del25 % y los multiplicadores de combate son parámetros del prototipo; no son valores de balance final ni amplían el catálogo aprobado. El recorrido de prueba y la aceptación manual pendiente se registran en [PRUEBA_GRIETAS.md](PRUEBA_GRIETAS.md).
++
+ ## Alcance del acabado
+ 
+ P09 reúne interfaz, arte, audio y experiencia móvil final: personajes/criaturas, sprites y animaciones, aspecto de mapas/escenarios, HUD, barras, controles, colores y efectos. La identidad prevista negro/blanco/rojo y las referencias GBA con mayor definición deben concretarse en diseños revisados; no sustituir recursos previamente aprobados.
+--- /dev/null
++++ b/docs/PRUEBA_GRIETAS.md
+@@ -0,0 +1,58 @@
++# Prueba local de grietas dimensionales
++
++Fecha16/10/2026. Prototipo autorizado por Iván para que él realice la siguiente prueba. **Aceptación manual de Iván pendiente.** Este documento describe el alcance preparado; no afirma que los escenarios hayan sido aprobados por el usuario ni sustituye el registro de pruebas automáticas.
++
++## Abrir la prueba
++
++Con el servidor local del juego abierto, utilizar:
++
++- **Prueba directa:** [http://127.0.0.1:8000/?prueba=grieta](http://127.0.0.1:8000/?prueba=grieta). Iniciar la expedición: el primer sector comienza despejado y garantiza una grieta, para probarla sin completar varias oleadas.
++- **Partida con apariciones:** [http://127.0.0.1:8000/?grietas=local](http://127.0.0.1:8000/?grietas=local). Desde el sector2, cada sector normal despejado tiene una probabilidad reproducible del25 % de ofrecer una grieta.
++
++El prototipo solo se habilita en el computador local y **sin cuentas**. No añadir `cuentas=local` a estas direcciones. No requiere iniciar los emuladores de Firebase. Las grietas todavía no forman parte del checkpoint P05; recargar o cerrar esta partida no acredita conservación del encuentro.
++
++Si el servidor está cerrado, abrir PowerShell en la carpeta `SCP-SURVIVOR` y ejecutar:
++
++```powershell
++npm.cmd run serve
++```
++
++Mantener esa ventana abierta mientras se juega.
++
++## Qué probar primero
++
++1. Abrir la prueba directa e iniciar la expedición. Comprobar que la aparición produzca una alerta sonora y un aviso visible en pantalla. El navegador puede necesitar la interacción inicial con el juego para permitir sonido.
++2. Localizar la grieta mediante el indicador de dirección, distancia y tiempo restante. Debe existir también un marcador en su posición física, en un punto libre y alcanzable del escenario.
++3. Acercarse al marcador hasta que esté disponible **Entrar en grieta**. Entrar es voluntario; no debe comenzar el combate por el mero hecho de aparecer la grieta.
++4. Entrar y comprobar el aviso de llegada de1,5 s antes del enfrentamiento con el Custodio dimensional. Observar sus ataques habituales y el pulso adicional, cuyo aviso fija una zona en la posición que ocupaba el jugador: moverse debe permitir esquivarla.
++5. Probar la retirada desde la salida. La interacción dura2 s y se cancela al moverse o recibir daño. Retirarse devuelve al sector despejado, sin avanzar un sector ni acreditar una victoria del jefe dimensional.
++6. Repetir la prueba directa para intentar vencerlo. La victoria devuelve al sector despejado y permite continuar la expedición. No debe contabilizar dos veces ese sector ni alterar el calendario de jefes normales.
++
++## Probar el cierre por tiempo
++
++En otra partida de prueba, dejar la grieta sin utilizar. Debe permanecer abierta **45 s de tiempo activo** y desaparecer al agotarse el tiempo. Pausar el juego o estar eligiendo una mejora congela el contador. Comprobar que dirección, distancia y tiempo correspondan a la grieta visible y que el aviso sonoro de aparición no se repita continuamente.
++
++Se puede ignorar la grieta y continuar por la salida normal. Si se entra mientras sigue abierta, el límite de45 s corresponde a la oportunidad de entrada, no a una cuenta atrás de derrota del combate.
++
++## Parámetros provisionales
++
++| Elemento | Prototipo local |
++| --- | --- |
++| Ubicación | Punto libre y alcanzable, al menos140 unidades del jugador y100 de la salida |
++| Aparición ordinaria | 25 % reproducible al despejar un sector normal desdeS2 |
++| Apertura | 45 s de juego activo; pausa y elección de mejora congelan el tiempo |
++| Entrada | Acercarse a56 unidades o menos y pulsar Entrar en grieta |
++| Arena | Mismo sector; no hay traslado a otra dimensión ni arena separada |
++| Jefe | Custodio existente como variante provisional dimensional |
++| Refuerzo | Vida×1,35 y daño×1,15 respecto al jefe del mismo sector; vida base810 frente a600 |
++| Ataque adicional | Pulso cada6 s, aviso1,2 s, radio60 y centro fijado al comenzar el aviso |
++| Retirada | Salida con interacción2 s cancelable por movimiento o daño |
++| Victoria | 220 XP temporal habituales, sin recompensa especial persistente |
++
++Estos valores permiten evaluar la idea; no constituyen balance final. «Dimensional» describe esta variante de prueba: no implica que exista un nuevo personaje con arte definitivo, una colección de jefes adicionales, botín especial, inventario o economía de servidor.
++
++## Resultado que falta registrar
++
++Después de la prueba de Iván, registrar por separado: localización y lectura del indicador, audio/aviso, cierre por tiempo, entrada, posibilidad de esquivar, retirada, victoria y continuidad de la expedición. Anotar errores reproducibles y preferencias de dificultad o presentación. Hasta entonces la aceptación manual permanece pendiente.
++
++P09 conserva como requisito permanente la alerta sonora, el aviso visible y la localización legible; ver [OBSERVACIONES_VISUALES.md](OBSERVACIONES_VISUALES.md). El prototipo no modifica porcentajes del roadmap, no acepta Firebase real y no acredita rendimiento en teléfonos físicos, balance, audio final o persistencia de grietas.
+--- /dev/null
++++ b/docs/superpowers/plans/2026-10-16-grietas.md
+@@ -0,0 +1,52 @@
++# Grietas dimensionales Implementation Plan
++
++> **For agentic workers:** Use ejecución local con TDD y revisión independiente final. No publicar ni modificar originales.
++
++**Goal:** Entregar a Iván una prueba jugable directa de grietas con posición, caducidad, localizador, sonido y alerta.
++
++**Architecture:** Módulo `G.DimensionalRifts` aislado del sistema heredado `G.Rift`. Integración mínima en Expedition/UI; variante de IA solo con `enemy.dimensional`. Optativo y desactivado para P05, que conserva su formato.
++
++**Tech Stack:** JavaScript/Canvas2D/Web Audio existentes, node:test, Playwright aislado, build Terser actual.
++
++## Global Constraints
++
++- Conservar fuentes/arte aprobado, semilla de jefes/extracción, XP220, velocidad165 y elecciones de nivel existentes.
++- Loopback sin cuenta; 45s apertura, radio entrada56, alcance libre; sorteo25% desde S2 por flujo independiente.
++- No tocar `sources/`, Firebase real, GitHub, dependencias ni ZIP históricos.
++- El usuario hará la aceptación manual; las pruebas automáticas no la sustituyen.
++
++## Task 1: Ciclo de vida e integración
++
++Files: crear `js/systems/dimensional-rifts.js`, `tests/rifts.test.js`; modificar `js/systems/expedition.js`, `dev.html`.
++
++Interfaces: `reset()`, `offer({sector,kind,seed,geometry,player,force})`, `tick(dt)`, `enter(player)`, `complete(result)`, `clear()`, `draw(ctx)` y estado de solo lectura. Expedition ofrece `useRift()` y comunica estado dimensional; no serializa el prototipo.
++
++- [x] Escribir pruebas: elegibilidad/local/cuentas, sorteo reproducible, posición alcanzable, 45s cierre, una oferta por sector, entrada próxima/libre, resolución única y calendario intacto.
++- [x] Ejecutar `node --test tests/rifts.test.js`; observar fallos por módulo/funciones ausentes.
++- [x] Implementar interfaz mínima y ramas de entrada/victoria/retirada; prueba directa empieza exploración sin falsear totales.
++- [x] Ejecutar pruebas nuevas y P03/P05 de continuidad/checkpoints.
++
++## Task 2: Variante dimensional
++
++Files: `js/systems/containment-boss.js`, `tests/rift-boss.test.js`. Implementado por raíz y revisado independientemente.
++
++Interfaces: `e.dimensional`, `e.dimensionalArrival`; `G.ContainmentBoss.tick/draw` conservan API. Pulso fijado en jugador, aviso1,2s, radio60, intervalo6s, paredes y llegada1,5s sin ataque.
++
++- [x] Tests fallidos para llegada, aviso/escape/daño/paredes/muerte y regresión Custodio normal.
++- [x] Implementar y pasar nuevos tests junto a `tests/p03-boss.test.js`.
++
++## Task 3: Interfaz, sonido y entrega
++
++Files: `js/ui/technical-ui.js`, `js/core/audio.js`, `css/technical.css`, `dev.html`, docs de contexto/pauta/prueba y roadmap.
++
++- [x] Aviso accesible separado del localizador, botón de entrada próximo, flecha ocho direcciones/distancia/segundos, marcador físico; ocultar en pausa/fin.
++- [x] Sonido `riftOpen` utiliza bus/volumen existentes y no interrumpe juego si no hay audio.
++- [x] Construir `npm.cmd run build` y verificar `build:check`; probar fuente y compilado en navegador aislado (no controlar pestaña del usuario).
++- [x] Revisión independiente, corregir defectos demostrados, guardar diff y resultados; indicar URL manual y aceptación pendiente. Mantener52/100, P05EV0/6.
++
++## Registro
++
++- Respaldo previo creado en `development-backups/`; no crear repositorio nuevo ni commits en carpeta sin Git.
++- Ruling: encuentro en el mismo escenario, sin arena aparte, para implementar la solicitud sin ampliar mapas/persistencia/economía todavía.
++- Ruling: optativo sin cuentas hasta validar persistencia; evita degradar la continuidad P05 existente.
++- Revisión: P2 reproducido y corregido para cobertura entre centro del pulso y jugador. Suite final84/83 aprobadas/0 fallidas/1 integración omitida; navegador4 escenarios aprobados. Build24c29481e1. Pauta y prueba manual preparadas con subagente; auditoría de invariantes del roadmap delegada, integración canónica por raíz sin alterar tareas/pesos/historia.
+--- /dev/null
++++ b/docs/superpowers/specs/2026-10-16-grietas-design.md
+@@ -0,0 +1,21 @@
++# Grietas dimensionales: prototipo local autorizado
++
++Iván autorizó agregar la propuesta de grietas opcionales, preparar una prueba que realizará él y conservar sonido/alerta para P09. Añadió ubicación física, tiempo limitado de apertura y un indicador para encontrarlas. No se requiere otra consulta para ejecutar ese alcance.
++
++## Comportamiento
++
++- Prototipo optativo en loopback, sin cuentas: `?grietas=local`. Al despejar un sector normal desde S2, sorteo independiente reproducible del 25%; una oportunidad por sector. No consume el azar de jefes/extracción.
++- Prueba directa `?prueba=grieta`: S1 despejado, una grieta garantizada. No acredita oleadas completadas ni modifica guardados; reiniciar permite repetir la prueba.
++- Posición libre y alcanzable del escenario, al menos 140 unidades del jugador y 100 de la salida. Marcador en mundo e indicador permanente de dirección, distancia en unidades del juego y segundos restantes.
++- Apertura 45 segundos de juego activo. Pausa/menú de mejoras detienen el reloj; no se castiga cambiar de ventana. Al agotarse, se cierra y no reaparece en ese sector.
++- Sonido de apertura sintetizado y aviso en pantalla una vez; el aviso no depende del volumen. Respetar silencio/volumen y no tapar controles. El indicador permanece aunque termine el aviso.
++- Entrada voluntaria mediante botón a 56 unidades o menos, con línea libre. El Custodio dimensional emerge allí con 1,5 segundos de aviso sin atacar.
++- Reutilizar el arte provisional existente: vida ×1,35, daño ×1,15 y pulso adicional cada 6 segundos que fija la posición del jugador, avisa 1,2 segundos y permite apartarse de un radio de 60. Respetar paredes.
++- Combatir o huir por salida durante 2 segundos; movimiento/daño cancelan la retirada. Victoria o retirada devuelven el sector despejado, sin avanzar dos veces ni cambiar calendario de jefes normales. XP habitual de 220 al vencer; ninguna recompensa especial/persistente.
++- P05 queda excluido del prototipo hasta diseñar y validar persistencia de aparición, expiración y resultado. Combinar `cuentas=local` con opciones de grietas las desactiva. No modificar esquema de checkpoints ni servicios reales.
++
++## Diseño final y aceptación
++
++Sonido de aparición, alerta visible y localizador con cuenta regresiva son requisitos permanentes para P09. El aspecto de grieta, señales, mezcla sonora y jefe se revisará allí; este prototipo no aprueba arte ni balance. Iván realiza la aceptación manual. Los ensayos internos solo comprueban funcionamiento técnico.
++
++El aplazamiento D-260 sigue aplicando a arena aparte, catálogo adicional y recompensas especiales. Esta autorización habilita el prototipo descrito, no esos subsistemas ni publicación externa.
+# Generado/canónico index.html: SHA256 7f1988509fe976a709cfd2087eff93490b3a9e9719768136aa44e271b353db9f
+# Generado/canónico js/app.min.js: SHA256 0c834bfa2233e561ccd2d44b6e32ab4d5a6c331d0583cef3b5eee27d33a85635
+--- a/js/core/audio.js
++++ b/js/core/audio.js
+@@ -409,6 +409,8 @@
+     levelup: () => { arp('square', [523, 659, 784, 1047], 0.07, 0.14, 0.05); arp('triangle', [1047, 1319, 1568], 0.07, 0.3, 0.05); },
+     hurt:    () => { tone('square', 150, 70, 0.14, 0.06); hiss(0.1, 0.06, 'lowpass', 900); },
+     boss:    () => { [82, 123, 165].forEach(f => tone('sawtooth', f, f * 0.98, 1.3, 0.05)); INST.kick(ctx.currentTime, 1, sfxBus); },
++    // Aviso provisional P09: apertura dimensional, separado de la música.
++    riftOpen: () => { hiss(0.6,0.07,'bandpass',400,1800,0,1.2); arp('triangle',[220,440,220],0.18,0.24,0.07); },
+     surge:   () => hiss(0.7, 0.12, 'lowpass', 500, 120),
+     shiny:   () => [2093, 2637, 3136, 2349, 3520, 4186].forEach((f, i) => INST.bell(ctx.currentTime + i * 0.07, f, 0.3, 0.8, sfxBus)),
+     shinyGet() { SFX.shiny(); arp('square', [784, 988, 1175, 1568], 0.1, 0.35, 0.05); },
+--- a/js/main.js
++++ b/js/main.js
+@@ -1,7 +1,7 @@
+ /* Arranque local P01. La aplicación completa sigue pendiente de sus fases. */
+ (() => {
+   const NEED = ['U', 'Settings', 'Input', 'Touch', 'Sprites', 'Camera', 'Tiles', 'World',
+-                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI'];
++                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'DimensionalRifts', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI'];
+   function boot() {
+     const miss = NEED.filter(k => !window.G || !G[k]);
+     if (miss.length) {
+--- a/js/systems/containment-boss.js
++++ b/js/systems/containment-boss.js
+@@ -6,6 +6,7 @@
+   const SUMMON_WARN = 1;
+   const MAX_MINIONS = 4;
+   const CAP = 64;
++  const DIMENSIONAL_INTERVAL = 6, DIMENSIONAL_WARN = 1.2, DIMENSIONAL_RANGE = 60;
+ 
+   function hasLine(e, x, y) {
+     if (!G.World.projectileBlock) return true;
+@@ -23,11 +24,42 @@
+     return e.minions.length;
+   }
+ 
++  function dimensionalTick(e, dt, pl) {
++    if (e.dimensionalArrival > 0) {
++      e.dimensionalArrival = Math.max(0,e.dimensionalArrival-dt);
++      if(e.dimensionalArrival < 1e-8)e.dimensionalArrival=0;
++      if(e.anim?.loop)e.anim.loop('Idle');
++      return true;
++    }
++    e.bossDimensionalT = (e.bossDimensionalT || 0) + dt;
++    if (e.bossDimensionalWarn > 0) {
++      e.bossDimensionalWarn = Math.max(0,e.bossDimensionalWarn-dt);
++      if(e.anim?.loop)e.anim.loop('Idle');
++      if (e.bossDimensionalWarn < 1e-8) {
++        e.bossDimensionalWarn = 0;
++        const origin={x:e.bossDimensionalX,y:e.bossDimensionalY};
++        if (Math.hypot(pl.x-origin.x,pl.y-origin.y) <= DIMENSIONAL_RANGE+(pl.r||0) &&
++            hasLine(e,pl.x,pl.y) && hasLine(origin,pl.x,pl.y)) pl.hurt(e.dmg);
++        G.FX?.ring?.(e.bossDimensionalX,e.bossDimensionalY,DIMENSIONAL_RANGE,DIMENSIONAL_RANGE*1.3,'#ff5964',.28,3);
++      }
++      return true;
++    }
++    // Nunca congelar otro aviso en curso; el pulso espera hasta que termine.
++    if (e.bossDimensionalT >= DIMENSIONAL_INTERVAL && !(e.bossWarn>0) && !(e.bossSummonWarn>0)) {
++      e.bossDimensionalT = 0;e.bossDimensionalWarn = DIMENSIONAL_WARN;
++      e.bossDimensionalX = pl.x;e.bossDimensionalY = pl.y;
++      if(e.anim?.loop)e.anim.loop('Idle');
++      return true;
++    }
++    return false;
++  }
++
+   function tick(e, dt, pl) {
+     if (e.dead) { if (Number.isFinite(e.fade)) e.fade -= dt; return; }
+     if (!pl || pl.dead) return;
+     if (e.flash > 0) e.flash = Math.max(0, e.flash - dt);
+     if (e.anim && e.anim.update) e.anim.update(dt);
++    if (e.dimensional === true && dimensionalTick(e,dt,pl)) return;
+     const half = e.hp < e.maxHp * 0.5;
+     const speed = (e.spd || 45) * (half ? 1.15 : 1);
+     const d = Math.hypot(pl.x - e.x, pl.y - e.y);
+@@ -92,6 +124,12 @@
+ 
+   function draw(ctx, e) {
+     if (e.dead) return;
++    if (e.dimensional === true && (e.dimensionalArrival > 0 || e.bossDimensionalWarn > 0)) {
++      const pulse=e.bossDimensionalWarn>0,x=pulse?e.bossDimensionalX:e.x,y=pulse?e.bossDimensionalY:e.y;
++      ctx.save();ctx.globalAlpha=.3;ctx.fillStyle='#ff5964';ctx.strokeStyle='#fff0f0';ctx.lineWidth=3;
++      ctx.beginPath();ctx.arc(x,y,pulse?DIMENSIONAL_RANGE:48,0,Math.PI*2);ctx.fill();ctx.globalAlpha=.9;ctx.stroke();
++      ctx.fillStyle='#fff0f0';ctx.font='bold 12px system-ui';ctx.textAlign='center';ctx.fillText(pulse?'PULSO · APÁRTATE':'EMERGIENDO',x,y-(pulse?DIMENSIONAL_RANGE:48)-12);ctx.restore();
++    }
+     if (e.bossWarn > 0) {
+       const p = 1 - e.bossWarn / STRIKE_WARN;
+       ctx.save(); ctx.globalAlpha = 0.25 + 0.55 * p;
+--- /dev/null
++++ b/js/systems/dimensional-rifts.js
+@@ -0,0 +1,79 @@
++/* Prototipo SCP optativo; independiente de G.Rift (sistema heredado). */
++G.DimensionalRifts = (() => {
++  const location = window.location;
++  const query = new URLSearchParams(location.search);
++  const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
++  const directTest = local && query.get('prueba') === 'grieta' && query.get('cuentas') !== 'local';
++  const enabled = local && query.get('cuentas') !== 'local' && (directTest || query.get('grietas') === 'local');
++  const TTL = 45, ENTRY_RADIUS = 56;
++  let seen = new Set(), state;
++  function clear() { state = {status:'idle',remaining:0,x:0,y:0,sector:0,alert:'',alertTime:0,result:null}; }
++  function reset() { seen = new Set(); clear(); }
++  function notify(text) { state.alert = text; state.alertTime = 5; }
++  function hash(seed, sector) {
++    let n = (seed ^ Math.imul(sector, 0x9e3779b9) ^ 0x72941b3d) >>> 0;
++    n = Math.imul(n ^ (n >>> 16), 0x85ebca6b);
++    n = Math.imul(n ^ (n >>> 13), 0xc2b2ae35);
++    return (n ^ (n >>> 16)) >>> 0;
++  }
++  function offer({sector, kind, seed, geometry, player, force=false}) {
++    if (!enabled || kind !== 'normal' || (!force && sector < 2) || seen.has(sector)) return false;
++    seen.add(sector);
++    const n = hash(seed, sector);
++    if (!force && n / 0x100000000 >= 0.25) return false;
++    const points = geometry.spawnPoints.filter(p => {
++      const distance = Math.hypot(p.x-player.x,p.y-player.y);
++      return distance >= 140 && distance <= 900 && Math.hypot(p.x-geometry.exit.x,p.y-geometry.exit.y) >= 100 &&
++        G.World.isFree(p.x,p.y,36) && G.Path.reachable(p.x,p.y,player);
++    });
++    if (!points.length) return false;
++    if (force) points.sort((a,b) => Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y));
++    const point = points[force ? 0 : n % points.length];
++    state = {status:'open',remaining:TTL,x:point.x,y:point.y,sector,alert:'',alertTime:0,result:null};
++    notify('ALERTA · GRIETA DIMENSIONAL ABIERTA · entrada opcional');
++    G.Audio.sfx('riftOpen');
++    return true;
++  }
++  function tick(dt) {
++    state.alertTime = Math.max(0,state.alertTime-dt);
++    if (!state.alertTime) state.alert = '';
++    if (state.status !== 'open') return;
++    state.remaining = Math.max(0,state.remaining-dt);
++    if (state.remaining < 1e-8) {
++      state.remaining = 0; state.status = 'closed';
++      notify('La grieta se ha cerrado. Puedes continuar por la salida.');
++    }
++  }
++  function near(player) {
++    if (state.status !== 'open' || !player) return false;
++    const dx=state.x-player.x, dy=state.y-player.y, distance=Math.hypot(dx,dy);
++    if (distance > ENTRY_RADIUS) return false;
++    for (let t=0;t<distance;t+=8) {
++      if (G.World.projectileBlock(player.x+dx*t/(distance||1),player.y+dy*t/(distance||1),2)) return false;
++    }
++    return true;
++  }
++  function enter(player) {
++    if (!near(player)) return false;
++    state.status = 'active'; state.remaining = 0;
++    notify('CUSTODIO DIMENSIONAL · apártate de la grieta · puedes huir por la salida');
++    return true;
++  }
++  function complete(result) {
++    if (state.status !== 'active' || !['defeated','evaded'].includes(result)) return false;
++    state.status = 'resolved'; state.result = result;
++    notify(result === 'defeated' ? 'Custodio dimensional vencido · sector despejado' : 'Retirada dimensional · sector despejado');
++    return true;
++  }
++  function draw(ctx) {
++    if (!['open','active'].includes(state.status)) return;
++    ctx.save(); ctx.fillStyle='#1c080de6'; ctx.strokeStyle='#ff5e66'; ctx.lineWidth=3;
++    ctx.beginPath(); ctx.ellipse(state.x,state.y,22,38,0,0,Math.PI*2);ctx.fill();ctx.stroke();
++    ctx.strokeStyle='#ffe5e6';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(state.x+5,state.y-27);
++    ctx.lineTo(state.x-6,state.y-6);ctx.lineTo(state.x+4,state.y+4);ctx.lineTo(state.x-5,state.y+28);ctx.stroke();
++    ctx.fillStyle='#ffe5e6';ctx.font='bold 13px system-ui';ctx.textAlign='center';
++    ctx.fillText(state.status==='open' ? `GRIETA · ${Math.ceil(state.remaining)} s` : 'GRIETA ACTIVADA',state.x,state.y-48);ctx.restore();
++  }
++  reset();
++  return {enabled,directTest,reset,clear,offer,tick,near,enter,complete,draw,get state(){return {...state};}};
++})();
+--- a/js/systems/expedition.js
++++ b/js/systems/expedition.js
+@@ -7,9 +7,10 @@
+   let rng=()=>0, spawnRng=()=>0, totals={wavesCompleted:0,sectorsCompleted:0,bossesDefeated:0,bossesEvaded:0};
+   let upgradesApplied=0;
+   let pendingXp=0, resumePhase='combat';
++  let dimensional=false;
+   const exit={x:0,y:0,r:72};
+   function random(seed){let n=seed>>>0;const next=()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/4294967296;};next.state=()=>n;return next;}
+-  function boundary(name){G.RunCheckpoint?.atBoundary(name);}
++  function boundary(name){if(!G.DimensionalRifts?.enabled)G.RunCheckpoint?.atBoundary(name);}
+   function waveCount(){
+     // Independent stream: never consume the boss/extraction or spawn generators.
+     let n=(runSeed^Math.imul(sector,0x9e3779b9)^0xa5b35705)>>>0;
+@@ -19,9 +20,10 @@
+   function snapshot(){return{phase,sector,wave,sectorWaves,kind,objective,spawned,quota,kills:pl?pl.kills-waveKills:0,
+     prep,pending,cards,pendingXp,resumePhase,upgradesApplied,nextUpgradeLevel:pending&&pl?pl.level:null,elapsed,remaining:Math.max(0,60-waveTime),extract:interaction,result,exit,
+     nearExit:!!pl&&G.U.dist(pl.x,pl.y,exit.x,exit.y)<=exit.r,runSeed,mapSeed,nextBossSector,extractionAvailable,
+-    totals:{...totals},bossHp:boss?Math.max(0,boss.hp):0,bossMaxHp:boss?boss.maxHp:0};}
++    totals:{...totals},dimensional,bossHp:boss?Math.max(0,boss.hp):0,bossMaxHp:boss?boss.maxHp:0};}
+   function scale(o=wave){return{hp:1+.15*(sector-1)+.05*(o-1),dmg:1+.08*(sector-1),spd:1+Math.min(.2,.02*(sector-1))};}
+   function map(){
++    dimensional=false;G.DimensionalRifts?.clear();
+     kind=sector===nextBossSector?'boss':'normal';
+     sectorWaves=kind==='normal'?waveCount():0;
+     extractionAvailable=false;
+@@ -39,7 +41,12 @@
+     totals={wavesCompleted:0,sectorsCompleted:0,bossesDefeated:0,bossesEvaded:0};
+     runSeed=Number.isFinite(options.seed)?options.seed>>>0:(Math.random()*0xffffffff)>>>0;
+     rng=random(runSeed);nextBossSector=4+Math.floor(rng()*3);
+-    G.FieldStats.apply(pl);G.FieldAbilities.reset(pl);G.FieldCombat.reset(pl,options.loadout);map();beginWave();
++    G.DimensionalRifts?.reset();
++    G.FieldStats.apply(pl);G.FieldAbilities.reset(pl);G.FieldCombat.reset(pl,options.loadout);map();
++    if(G.DimensionalRifts?.directTest){
++      wave=sectorWaves;phase='exploration';objective=wave%2===0?'survive':'neutralize';spawned=0;waveTime=0;quota=12;
++      G.DimensionalRifts.offer({sector,kind,seed:runSeed,geometry,player:pl,force:true});
++    }else beginWave();
+   }
+   function freeSpawn(enemy){
+     const points=geometry.spawnPoints;
+@@ -107,7 +114,8 @@
+     if(G.RunContinuity?.canAdvance()===false)return false;
+     if(phase!=='preparation')return false;
+     if(kind==='normal'&&wave<sectorWaves){wave++;beginWave();}
+-    else{phase='exploration';G.Spawner.say(extractionAvailable?'Sector despejado · puedes continuar o extraer':'Sector despejado · busca la salida señalada',4,true);boundary('exploration');}
++    else{phase='exploration';G.Spawner.say(extractionAvailable?'Sector despejado · puedes continuar o extraer':'Sector despejado · busca la salida señalada',4,true);boundary('exploration');
++      G.DimensionalRifts?.offer({sector,kind,seed:runSeed,geometry,player:pl});}
+     return true;
+   }
+   function advance(){sector++;wave=1;interaction=0;map();if(kind==='boss')beginBoss();else beginWave();}
+@@ -115,10 +123,21 @@
+   function useExit(action='continue'){
+     if(G.RunContinuity?.canAdvance()===false)return false;
+     if(!pl||G.U.dist(pl.x,pl.y,exit.x,exit.y)>exit.r)return false;
+-    if(action==='escape'&&kind==='boss'&&phase==='boss'){phase='escaping';setInteraction(2);return true;}
++    if(action==='escape'&&(kind==='boss'||dimensional)&&phase==='boss'){phase='escaping';setInteraction(2);return true;}
+     if(phase!=='exploration')return false;
+     if(action==='extract'){if(!extractionAvailable)return false;phase='extracting';setInteraction(3);return true;}
+     if(action==='continue'){advance();return true;}return false;
++  }
++  function useRift(){
++    if(G.RunContinuity?.canAdvance()===false||phase!=='exploration'||!G.DimensionalRifts?.enter(pl))return false;
++    const rift=G.DimensionalRifts.state,sc=scale(1);
++    boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,rift.x,rift.y,{...sc,hp:sc.hp*1.35,dmg:sc.dmg*1.15},true));
++    boss.name='Custodio dimensional';boss.dimensional=true;boss.dimensionalArrival=1.5;
++    dimensional=true;phase='boss';interaction=0;G.Touch.reset();G.Input.reset();return true;
++  }
++  function closeDimensional(result){
++    G.EnemyMgr.clear();G.Projectiles.clear();boss=null;dimensional=false;interaction=0;phase='exploration';
++    G.DimensionalRifts.complete(result);G.Touch.reset();G.Input.reset();gather();
+   }
+   function summon(owner,count){
+     if(!owner||owner!==boss||owner.dead||!['boss','escaping'].includes(phase))return 0;
+@@ -135,6 +154,7 @@
+   }
+   function victory(){
+     if(!boss)return;
++    if(dimensional){closeDimensional('defeated');return;}
+     // Enemy.die emitted exactly220 rawXP; collect once and withdraw living reinforcements without death/loot.
+     G.EnemyMgr.clear();totals.bossesDefeated++;totals.sectorsCompleted++;
+     nextBossSector=sector+4+Math.floor(rng()*3);boss=null;preparation();
+@@ -143,6 +163,7 @@
+     if(phase==='finished'||phase==='idle')return;
+     phase='finished';cards=[];pending=0;pendingXp=0;G.Input.reset();G.Touch.reset();G.Projectiles.clear();
+     result={reason,sector,wave,kills:pl.kills,level:pl.level,elapsed,hp:pl.hp,runSeed,...totals};
++    G.DimensionalRifts?.clear();
+     G.FieldCombat.clearTemporary(pl);G.FieldAbilities.reset(pl);
+     G.RunContinuity?.finish(result);
+   }
+@@ -162,12 +183,13 @@
+     if(pl.dead||pl.hp<=0){finish('death');return;}
+     if(phase==='levelup')return;
+     promptUpgrade();if(phase==='levelup')return;
++    G.DimensionalRifts?.tick(dt);
+     elapsed+=dt;lastDt=dt;const combat=['combat','boss','escaping'].includes(phase);
+     G.FieldAbilities.tick(dt,pl);
+     G.FieldCombat.tick(dt,pl,combat);const regen=pl.regenFlat;if(!combat&&phase!=='preparation')pl.regenFlat=0;
+     pl.update(dt);pl.regenFlat=regen;G.Camera.follow(pl.x,pl.y,dt);G.World.update(dt,G.Camera);G.FX.update(dt);G.Spawner.tickBanner(dt);
+     if(combat){
+-      if(kind==='normal'){
++      if(kind==='normal'&&!dimensional){
+         waveTime+=dt;
+         spawnClock+=dt*Math.min(2,.55+.06*(sector-1)+.03*(wave-1));
+         while(spawnClock>=1){if(!spawnOne()){spawnClock=Math.min(1,spawnClock);break;}spawnClock--;}
+@@ -176,7 +198,7 @@
+       if(pl.dead||pl.hp<=0){finish('death');return;}
+       promptUpgrade();
+       if(phase==='levelup')return;
+-      if(kind==='normal'){
++      if(kind==='normal'&&!dimensional){
+         recover();const done=objective==='survive'?waveTime>=60:spawned===quota&&pl.kills-waveKills>=quota;
+         if(done&&G.EnemyMgr.count===0){closeWave();return;}
+       }else if(boss&&boss.dead&&!G.EnemyMgr.get(boss.id)){victory();return;}
+@@ -185,19 +207,21 @@
+     else if(phase==='escaping'||phase==='extracting'){
+       const moved=Math.hypot(pl.x-startX,pl.y-startY)>1||G.Input.axis().some(n=>n!==0);
+       const hurt=phase==='escaping'&&((pl.fieldDamageRevision||0)!==startDamage||pl.hp<startHp);
+-      if(moved||hurt){phase=kind==='boss'?'boss':'exploration';interaction=0;}
+-      else if((interaction-=dt)<=0){if(phase==='extracting')finish('extracted');else{totals.bossesEvaded++;totals.sectorsCompleted++;nextBossSector=sector+4+Math.floor(rng()*3);advance();}}
++      if(moved||hurt){phase=kind==='boss'||dimensional?'boss':'exploration';interaction=0;}
++      else if((interaction-=dt)<=0){if(phase==='extracting')finish('extracted');else if(dimensional)closeDimensional('evaded');else{totals.bossesEvaded++;totals.sectorsCompleted++;nextBossSector=sector+4+Math.floor(rng()*3);advance();}}
+     }
+   }
+   function draw(ctx){
++    G.DimensionalRifts?.draw(ctx);
+     if(!['exploration','extracting','boss','escaping'].includes(phase))return;
+     ctx.save();ctx.fillStyle='#5ac6a233';ctx.strokeStyle='#99ffd6';ctx.lineWidth=3;ctx.beginPath();ctx.arc(exit.x,exit.y,42,0,Math.PI*2);ctx.fill();ctx.stroke();
+-    ctx.fillStyle='#bdffe0';ctx.font='bold 14px system-ui';ctx.textAlign='center';ctx.fillText(kind==='boss'?'HUIR':'SALIDA',exit.x,exit.y-52);ctx.restore();
++    ctx.fillStyle='#bdffe0';ctx.font='bold 14px system-ui';ctx.textAlign='center';ctx.fillText(kind==='boss'||dimensional?'HUIR':'SALIDA',exit.x,exit.y-52);ctx.restore();
+   }
+   function captureState(){return{phase,sector,wave,sectorWaves,kind,objective,spawned,quota,spawnClock,prep,pending,
+     cards:cards.map(c=>c.key),waveKills,waveTime,elapsed,interaction,startX,startY,startHp,startDamage,runSeed,mapSeed,nextBossSector,
+     extractionAvailable,drought,totals:{...totals},upgradesApplied,pendingXp,resumePhase,rngState:rng.state(),spawnRngState:spawnRng.state()};}
+   function restoreState(saved,player=G.Game.player,world={broken:[],damaged:[]}){
++    dimensional=false;G.DimensionalRifts?.reset();
+     pl=player;
+     ({phase,sector,wave,sectorWaves,kind,objective,spawned,quota,spawnClock,prep,pending,waveKills,waveTime,elapsed,interaction,
+       startX,startY,startHp,startDamage,runSeed,mapSeed,nextBossSector,extractionAvailable,drought,upgradesApplied,pendingXp,resumePhase}=saved);
+@@ -211,5 +235,5 @@
+     else if(phase==='boss')boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,geometry.bossSpawn.x,geometry.bossSpawn.y,scale(1),true));
+     G.Touch.reset();G.Input.reset();
+   }
+-  return{start,update,choose,ready,useExit,summon,finish,draw,captureState,restoreState,get state(){return snapshot();}};
++  return{start,update,choose,ready,useExit,useRift,summon,finish,draw,captureState,restoreState,get state(){return snapshot();}};
+ })();
+--- a/js/systems/run-checkpoint.js
++++ b/js/systems/run-checkpoint.js
+@@ -15,6 +15,7 @@
+    ability:{kind:a.kind,remaining:a.remaining,cooldown:a.cooldown,duration:a.duration},world:G.World.exportData(),pickups:G.Pickups.exportData()});
+  }
+  function capture(){
++  if(G.DimensionalRifts?.enabled)return null; // Prototipo sin persistencia; no emitir schema1 incompleto.
+   const e=G.Expedition.state;if(!G.Game.player)return null;
+   if(safe(e))return live(e.phase==='exploration'?'exploration':'preparation');
+   if(['combat','boss'].includes(e.phase)&&G.Expedition.captureState().waveTime===0&&lastBoundary&&
+--- a/js/ui/technical-ui.js
++++ b/js/ui/technical-ui.js
+@@ -85,6 +85,14 @@
+   }
+   function init() {
+     G.FieldLoadout.init();
++    const rifts=G.DimensionalRifts;
++    if(rifts.enabled){
++      el('rift-test-note').hidden=false;
++      el('rift-test-note').textContent=rifts.directTest
++        ? 'PRUEBA DE GRIETA · Al iniciar tendrás un sector despejado y una grieta durante 45 s. Sigue la flecha, acércate y pulsa Entrar en grieta. Puedes dejarla cerrar o combatir y huir por la salida. Sin cuenta ni guardado.'
++        : 'PRUEBA DE GRIETAS · Pueden aparecer al despejar sectores desde S2. Entrada opcional durante 45 s; sin cuenta ni guardado.';
++      if(rifts.directTest)el('btn-technical-start').textContent='Iniciar prueba de grieta';
++    }
+     el('btn-technical-start').onclick = start;
+     el('btn-technical-pause').onclick = () => G.Game.togglePause();
+     el('btn-technical-resume').onclick = () => G.Game.togglePause();
+@@ -98,8 +106,9 @@
+     el('btn-field-ready').onclick = () => G.Expedition.ready();
+     el('btn-field-exit').onclick = () => {
+       const s = G.Expedition.state;
+-      G.Expedition.useExit(s.kind === 'boss' && s.phase === 'boss' ? 'escape' : 'continue');
++      G.Expedition.useExit(s.phase === 'boss' ? 'escape' : 'continue');
+     };
++    el('btn-field-rift').onclick = () => { if(readyToPlay())G.Expedition.useRift(); };
+     el('btn-field-extract').onclick = () => {
+       if (readyToPlay() && confirm('¿Extraer y terminar esta expedición local?')) G.Expedition.useExit('extract');
+     };
+@@ -120,6 +129,7 @@
+     for (const id of ['scene-hud', 'scene-footer', 'field-controls', 'field-status']) el(id).hidden = value !== 'playing';
+     if (value === 'playing') updateSoldierHud();
+     if (value !== 'playing') {
++      el('rift-alert').hidden=true;el('rift-locator').hidden=true;el('btn-field-rift').hidden=true;
+       el('field-upgrades').hidden = true; el('field-result').hidden = true;
+       el('btn-field-weapon-0').disabled = true; el('btn-field-weapon-1').disabled = true; el('btn-ability').disabled = true; el('btn-mods').disabled = true;
+       closeEditor();
+@@ -133,11 +143,22 @@
+     el('scene-position').textContent = `${Math.round(player.x)}, ${Math.round(player.y)}`;
+     const dx = s.exit.x - player.x, dy = s.exit.y - player.y;
+     const direction = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? '→' : '←') : (dy > 0 ? '↓' : '↑');
+-    const captions = { combat: s.objective === 'survive' ? `Resiste ${Math.ceil(s.remaining)} s y elimina los restantes` : `Neutraliza ${Math.min(s.kills,s.quota)}/${s.quota}`, levelup: `Elige la mejora del nivel ${player.level}`, preparation: `Preparación ${Math.ceil(s.prep)} s`, exploration: `Salida ${direction}${s.extractionAvailable ? ' · puedes extraer' : ''}`, boss: `Custodio ${Math.ceil(s.bossHp)}/${Math.ceil(s.bossMaxHp)} · Huida ${direction}`, escaping: `Huida ${Math.ceil(s.extract)} s · no te muevas`, extracting: `Extracción ${Math.ceil(s.extract)} s`, finished: 'Expedición terminada' };
++    const captions = { combat: s.objective === 'survive' ? `Resiste ${Math.ceil(s.remaining)} s y elimina los restantes` : `Neutraliza ${Math.min(s.kills,s.quota)}/${s.quota}`, levelup: `Elige la mejora del nivel ${player.level}`, preparation: `Preparación ${Math.ceil(s.prep)} s`, exploration: `Salida ${direction}${s.extractionAvailable ? ' · puedes extraer' : ''}`, boss: `${s.dimensional?'Custodio dimensional':'Custodio'} ${Math.ceil(s.bossHp)}/${Math.ceil(s.bossMaxHp)} · Huida ${direction}`, escaping: `Huida ${Math.ceil(s.extract)} s · no te muevas`, extracting: `Extracción ${Math.ceil(s.extract)} s`, finished: 'Expedición terminada' };
+     const soldier = G.FieldCatalog.soldiers[player.soldierId] || G.FieldCatalog.soldiers.guard;
+     updateSoldierHud(player);
+     const weaponSummary = w.weapons.map((weapon, i) => `${i + 1} ${weapon.name} ${Math.floor(weapon.ammo)}/${weapon.capacity}${weapon.reload > 0 ? ' recargando' : ''}`).join(' · ');
+-    el('field-status').textContent = `S${s.sector}${s.kind === 'normal' ? ` · Oleada ${s.wave}/${s.sectorWaves}` : ''} · ${captions[s.phase]} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level}${s.pending ? ` (${s.pending} por mejorar)` : ''} · XP ${Math.floor(player.xp)}/${player.xpNext} | ${weaponSummary}`;
++    el('field-status').textContent = `${G.DimensionalRifts.directTest?'PRUEBA · ':''}S${s.sector}${s.kind === 'normal' && !s.dimensional && !G.DimensionalRifts.directTest ? ` · Oleada ${s.wave}/${s.sectorWaves}` : ''} · ${captions[s.phase]} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level}${s.pending ? ` (${s.pending} por mejorar)` : ''} · XP ${Math.floor(player.xp)}/${player.xpNext} | ${weaponSummary}`;
++    const rift=G.DimensionalRifts.state,open=rift.status==='open',near=G.DimensionalRifts.near(player);
++    el('rift-locator').hidden=!open||s.phase==='finished'||s.phase==='levelup';
++    if(open){
++      const rx=rift.x-player.x,ry=rift.y-player.y;
++      const arrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(ry,rx)/(Math.PI/4))+8)%8];
++      el('rift-locator').textContent=`GRIETA ${arrow} ${Math.ceil(Math.hypot(rx,ry))} u · cierra en ${Math.ceil(rift.remaining)} s${near?' · puedes entrar':' · acércate'}`;
++    }
++    el('rift-alert').hidden=!rift.alert||s.phase==='finished'||s.phase==='levelup';
++    if(el('rift-alert').textContent!==rift.alert)el('rift-alert').textContent=rift.alert;
++    el('btn-field-rift').hidden=!open||s.phase!=='exploration';
++    el('btn-field-rift').disabled=!near;
+     const abilityState = w.currentability || {};
+     el('btn-ability').textContent = abilityState.cooldown > 0 ? `${soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint'} ${Math.ceil(abilityState.cooldown)} s` : (soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint');
+     const canUseAbilityInPhase = soldier.ability === 'heal'
+--- a/tests/p05-checkpoints.test.js
++++ b/tests/p05-checkpoints.test.js
+@@ -19,6 +19,11 @@
+  G.Game.player.hp=10;G.FieldCombat.data.weapons[0].ammo=0;assert.equal(saved.player.hp,75);
+  assert.equal(G.RunCheckpoint.restore(saved).ok,true);assert.equal(G.Game.player.hp,75);assert.equal(G.FieldCombat.data.weapons[0].ammo,3);
+  assert.equal(G.World.data.broken[0],'1,2');assert.equal(G.Pickups.data[0].id,5);
++});
++
++test('prototipo de grietas no produce guardados P05 incompatibles',()=>{
++ const G=setup();G.DimensionalRifts={enabled:true};assert.equal(G.RunCheckpoint.capture(),null);
++ G.DimensionalRifts.enabled=false;assert.ok(G.RunCheckpoint.capture());
+ });
+ test('incompatible version and duplicate copies reject before game mutation',()=>{
+  const G=setup(),saved=G.RunCheckpoint.capture(),before=G.Game.player;saved.buildVersion='other';
+--- /dev/null
++++ b/tests/rift-boss.test.js
+@@ -0,0 +1,39 @@
++const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
++function setup(){
++ const calls=[],G={U:{norm:(x,y)=>{const d=Math.hypot(x,y)||1;return[x/d,y/d]}},
++  World:{projectileBlock:()=>null,collide(){}},Path:{dirFor:()=>null},Sprites:{dirFromAngle:()=>0},
++  EnemyMgr:{count:1},Expedition:{summon:(e,n)=>calls.push(n)},FX:{ring(){}}};
++ vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/containment-boss.js'),'utf8'),{G,Math});
++ const e={x:0,y:0,r:22,hp:810,maxHp:810,spd:45,dmg:34.5,minions:[],dimensional:true,dimensionalArrival:0,
++  anim:{update(){},loop(){},play(){}}};
++ const player={x:400,y:0,r:12,hits:[],hurt(n){this.hits.push(n)}};
++ return{G,e,player,calls,tick:dt=>G.ContainmentBoss.tick(e,dt,player)};
++}
++test('llegada1.5s sin daño, movimiento ni invocaciones; luego actúa',()=>{
++ const a=setup();a.e.dimensionalArrival=1.5;a.player.x=30;
++ a.tick(1.49);assert.equal(a.e.x,0);assert.equal(a.e.bossWarn||0,0);assert.deepEqual(a.player.hits,[]);assert.deepEqual(a.calls,[]);
++ a.tick(.01);assert.equal(a.e.dimensionalArrival,0);assert.deepEqual(a.player.hits,[]);
++ a.tick(.01);assert.equal(a.e.bossWarn,.85);
++});
++test('pulso6s fija centro, pausa movimiento y avisa1.2s antes de dañar',()=>{
++ const a=setup();a.tick(6);assert.equal(a.e.bossDimensionalWarn,1.2);assert.equal(a.e.bossDimensionalX,400);assert.equal(a.e.x,0);
++ a.tick(1.19);assert.deepEqual(a.player.hits,[]);assert.equal(a.e.x,0);
++ a.tick(.01);assert.deepEqual(a.player.hits,[34.5]);assert.equal(a.e.bossDimensionalWarn,0);
++ a.tick(.01);assert.equal(a.player.hits.length,1);
++});
++test('se esquiva al salir de la zona fijada y no atraviesa paredes',()=>{
++ const a=setup();a.tick(6);a.player.x=500;a.tick(1.2);assert.deepEqual(a.player.hits,[]);assert.equal(a.e.bossDimensionalX,400);
++ const b=setup();b.tick(6);b.G.World.projectileBlock=()=>true;b.tick(1.2);assert.deepEqual(b.player.hits,[]);
++});
++test('pulso pendiente no detiene un aviso previo ni golpea después de morir',()=>{
++ const a=setup();a.e.bossWarn=.5;a.e.bossStrikeX=0;a.e.bossStrikeY=0;
++ a.tick(6);assert.equal(a.e.bossDimensionalWarn||0,0);assert.equal(a.e.bossWarn,0);
++ a.tick(.01);assert.equal(a.e.bossDimensionalWarn,1.2);a.e.dead=true;a.e.fade=.9;a.tick(2);
++ assert.deepEqual(a.player.hits,[]);assert.equal(a.e.bossDimensionalWarn,1.2);
++});
++
++test('pared entre centro del pulso y jugador protege aunque la línea desde jefe esté libre',()=>{
++ const a=setup();a.e.x=460;a.tick(6);assert.equal(a.e.bossDimensionalX,400);
++ a.player.x=450;a.G.World.projectileBlock=x=>Math.abs(x-425)<4;
++ a.tick(1.2);assert.deepEqual(a.player.hits,[]);
++});
+--- /dev/null
++++ b/tests/rifts-browser.py
+@@ -0,0 +1,107 @@
++"""Ensayo aislado del prototipo; no usa pestañas/perfil/cuentas del usuario.
++Inyección controlada de posición/tiempo/muerte para verificar transiciones,
++sin atribuir estos casos a aceptación manual, balance o habilidad de juego.
++"""
++from pathlib import Path
++from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
++from threading import Thread
++from functools import partial
++from playwright.sync_api import sync_playwright
++import json, os, shutil
++
++ROOT = Path(__file__).resolve().parents[1]
++ThreadingHTTPServer.request_queue_size = 128  # dev.html carga83 scripts concurrentes en Windows.
++OUT = Path(os.environ.get('SCP_TEST_ARTIFACTS', ROOT/'tests/artifacts/rifts'))
++class Quiet(SimpleHTTPRequestHandler):
++    def log_message(self, *args): pass
++
++def main():
++    OUT.mkdir(parents=True, exist_ok=True)
++    server = ThreadingHTTPServer(('127.0.0.1', 0), partial(Quiet, directory=str(ROOT)))
++    Thread(target=server.serve_forever, daemon=True).start()
++    origin = f'http://127.0.0.1:{server.server_port}'
++    records = []
++    try:
++        with sync_playwright() as pw:
++            browser = pw.chromium.launch(executable_path=shutil.which('chromium'), headless=True)
++            for entry in ['dev.html', 'index.html']:
++                for mobile in [False, True]:
++                    context = browser.new_context(viewport={'width':390 if mobile else 1280,'height':844 if mobile else 900},has_touch=mobile,is_mobile=mobile)
++                    page=context.new_page(); errors=[]; remote=[]; failed=[]
++                    page.on('requestfailed',lambda r: failed.append({'url':r.url,'error':r.failure}))
++                    page.on('pageerror',lambda error: errors.append(str(error)))
++                    page.on('console',lambda m: errors.append(m.text) if m.type=='error' else None)
++                    def route(r):
++                        if r.request.url.startswith(origin+'/'): r.continue_()
++                        else: remote.append(r.request.url);r.abort()
++                    page.route('**/*',route)
++                    page.goto(origin+'/'+entry+'?prueba=grieta');page.wait_for_selector('#btn-technical-start:visible')
++                    assert page.locator('#rift-test-note').is_visible()
++                    page.evaluate("""() => {window.riftSounds=[];const sfx=G.Audio.sfx;G.Audio.sfx=(name,opts)=>{if(name==='riftOpen')riftSounds.push(name);sfx(name,opts);};}""")
++                    page.click('#btn-technical-start')
++                    page.wait_for_selector('#rift-locator:visible')
++                    assert page.locator('#rift-alert').is_visible()
++                    assert page.locator('#btn-field-rift').is_disabled()
++                    assert page.evaluate('!G.LocalAccounts.enabled && G.RunCheckpoint.capture()===null')
++                    assert page.evaluate('G.Expedition.state.phase')=='exploration'
++                    assert page.evaluate('riftSounds.length')==1
++                    audio=page.evaluate('G.Audio.debugMeter(350)')
++                    assert audio and audio['peak']>0, audio
++                    initial=page.evaluate('G.DimensionalRifts.state')
++                    page.click('#btn-technical-pause'); frozen=page.evaluate('G.DimensionalRifts.state.remaining')
++                    page.wait_for_timeout(450)
++                    assert page.evaluate('G.DimensionalRifts.state.remaining')==frozen
++                    assert page.locator('#rift-locator').is_hidden()
++                    page.click('#btn-technical-resume')
++                    page.screenshot(path=str(OUT/f'{entry[:-5]}-{"touch" if mobile else "desktop"}-open.png'))
++                    # Closure is controlled time, not waiting45 wall seconds.
++                    page.evaluate('G.Expedition.update(46)');page.wait_for_timeout(60)
++                    assert page.evaluate('G.DimensionalRifts.state.status')=='closed'
++                    assert page.locator('#btn-field-rift').is_hidden()
++                    assert page.locator('#rift-locator').is_hidden()
++                    assert 'cerrado' in page.locator('#rift-alert').inner_text()
++                    # A fresh trial enables a manual approach or controlled transition QA.
++                    page.evaluate('G.Game.startTechnical({...G.TechnicalUI.options(),seed:1337})')
++                    before=page.evaluate('G.Expedition.captureState()')
++                    page.evaluate('G.Game.player.x=G.DimensionalRifts.state.x;G.Game.player.y=G.DimensionalRifts.state.y;G.Camera.x=G.Game.player.x;G.Camera.y=G.Game.player.y')
++                    page.wait_for_timeout(60);assert page.locator('#btn-field-rift').is_enabled()
++                    page.click('#btn-field-rift');page.wait_for_timeout(70)
++                    assert page.evaluate('G.Expedition.state.dimensional')
++                    assert page.evaluate('G.Expedition.state.bossMaxHp')==810
++                    assert page.locator('#btn-field-rift').is_hidden()
++                    assert 'Custodio dimensional' in page.locator('#field-status').inner_text()
++                    assert page.evaluate('G.EnemyMgr.all().find(e=>e.dimensional).dimensionalArrival')>0
++                    page.screenshot(path=str(OUT/f'{entry[:-5]}-{"touch" if mobile else "desktop"}-boss.png'))
++                    # Escape via real UI; position is injected so this is not a human route test.
++                    page.evaluate('G.Game.player.x=G.Expedition.state.exit.x;G.Game.player.y=G.Expedition.state.exit.y')
++                    page.wait_for_timeout(60);page.click('#btn-field-exit')
++                    page.evaluate('G.Expedition.update(.3);G.Game.player.fieldDamageRevision=(G.Game.player.fieldDamageRevision||0)+1;G.Expedition.update(.01)')
++                    assert page.evaluate('G.Expedition.state.phase')=='boss'
++                    page.wait_for_timeout(60);page.click('#btn-field-exit');page.evaluate('G.Expedition.update(2.01)')
++                    assert page.evaluate('G.Expedition.state.phase')=='exploration'
++                    assert page.evaluate('G.DimensionalRifts.state.result')=='evaded'
++                    after=page.evaluate('G.Expedition.captureState()')
++                    assert before['sector']==after['sector'] and before['totals']==after['totals']
++                    assert before['nextBossSector']==after['nextBossSector'] and before['rngState']==after['rngState']
++                    # Controlled boss death proves unique resolution/XP and return only.
++                    page.evaluate('G.Game.startTechnical({...G.TechnicalUI.options(),seed:1337});G.Game.player.x=G.DimensionalRifts.state.x;G.Game.player.y=G.DimensionalRifts.state.y;G.Expedition.useRift()')
++                    page.evaluate('G.EnemyMgr.all().find(e=>e.dimensional).die();for(let i=0;i<80;i++){if(G.Expedition.state.phase==="levelup")G.Expedition.choose(0);G.Expedition.update(1/30)}')
++                    assert page.evaluate('G.DimensionalRifts.state.result')=='defeated'
++                    assert page.evaluate('G.Expedition.state.nextBossSector')==6
++                    assert page.evaluate('G.Expedition.state.totals.bossesDefeated')==0
++                    if not mobile:
++                        missing=page.evaluate('''() => {const missing=[];for(let seed=0;seed<64;seed++){
++                            G.Game.startTechnical({...G.TechnicalUI.options(),seed});
++                            const r=G.DimensionalRifts.state;
++                            if(r.status!=='open'||!G.Path.reachable(r.x,r.y,G.Game.player)||!G.World.isFree(r.x,r.y,36))missing.push(seed);
++                        }return missing;}''')
++                        assert not missing,{'missingDirectTestSeeds':missing}
++                    assert not errors,{'errors':errors,'remote':remote,'failed':failed}
++                    assert not remote,remote
++                    records.append({'entry':entry,'touchEmulated':mobile,'status':'PASS','initial':initial,'audioMeter':audio,'errors':errors,'remoteAttempts':remote})
++                    context.close()
++            browser.close()
++        (OUT/'results.json').write_text(json.dumps({'records':records,'method':'Aislado. Gesto de inicio real, medidor WebAudio, pausa/UI reales. Posición, tiempo de cierre, daño cancelador y muerte se inyectan para transiciones. No aceptación humana, balance, audición física ni FPS.'},indent=2)+'\n',encoding='utf-8')
++        print(json.dumps({'result':'PASS','scenarios':len(records),'output':str(OUT)}))
++    finally: server.shutdown();server.server_close()
++if __name__=='__main__': main()
+--- /dev/null
++++ b/tests/rifts.test.js
+@@ -0,0 +1,53 @@
++const test = require('node:test');
++const assert = require('node:assert/strict');
++const fs = require('node:fs');
++const vm = require('node:vm');
++
++function setup(search='?prueba=grieta', hostname='127.0.0.1') {
++  const sounds=[], G={Audio:{sfx:id=>sounds.push(id)},World:{isFree:()=>true,projectileBlock:()=>null},Path:{reachable:()=>true}};
++  vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/dimensional-rifts.js'),'utf8'),{G,window:{location:{search,hostname}},URLSearchParams,Math});
++  const player={x:0,y:0,r:12},geometry={exit:{x:600,y:0},spawnPoints:[{x:20,y:0},{x:180,y:0},{x:350,y:0},{x:600,y:0}]};
++  const offer=(extra={})=>G.DimensionalRifts.offer({sector:1,kind:'normal',seed:1337,geometry,player,force:true,...extra});
++  G.DimensionalRifts.reset();return{G,player,geometry,sounds,offer,r:G.DimensionalRifts};
++}
++
++test('solo opción local y sin cuentas; modo normal y servidores públicos intactos',()=>{
++  for(const [search,host] of [['','127.0.0.1'],['?prueba=grieta','example.com'],['?prueba=grieta&cuentas=local','127.0.0.1'],['?grietas=local&cuentas=local','localhost']]){
++    const a=setup(search,host);assert.equal(a.r.enabled,false);assert.equal(a.offer(),false);
++  }
++  assert.equal(setup('?grietas=local').r.enabled,true);assert.equal(setup().r.directTest,true);
++});
++
++test('ubicación libre alcanzable y separada; aviso y sonido una sola vez por sector',()=>{
++  const a=setup();assert.equal(a.offer(),true);const s=a.r.state;
++  assert.equal(s.status,'open');assert.equal(s.remaining,45);assert.ok(Math.hypot(s.x,s.y)>=140);
++  assert.ok(Math.hypot(s.x-600,s.y)>=100);assert.match(s.alert,/GRIETA/);assert.deepEqual(a.sounds,['riftOpen']);
++  assert.equal(a.offer(),false);assert.deepEqual(a.sounds,['riftOpen']);
++  const b=setup();b.G.Path.reachable=()=>false;assert.equal(b.offer(),false);assert.equal(b.sounds.length,0);
++});
++
++test('caduca a45 segundos activos y no acepta entrada ni reabre al expirar',()=>{
++  const a=setup();a.offer();a.r.tick(44.9);assert.equal(a.r.state.status,'open');
++  a.r.tick(.1);assert.equal(a.r.state.status,'closed');assert.equal(a.r.state.remaining,0);
++  assert.equal(a.r.enter(a.player),false);assert.equal(a.offer(),false);
++});
++
++test('entrada voluntaria próxima sin atravesar pared; consume cuenta regresiva y resultado único',()=>{
++  const a=setup();a.offer();assert.equal(a.r.enter(a.player),false);
++  a.player.x=a.r.state.x;a.player.y=a.r.state.y;
++  a.G.World.projectileBlock=()=>true;assert.equal(a.r.enter({...a.player,x:a.player.x-40}),false);
++  a.G.World.projectileBlock=()=>null;assert.equal(a.r.enter(a.player),true);assert.equal(a.r.enter(a.player),false);
++  a.r.tick(100);assert.equal(a.r.state.status,'active');assert.equal(a.r.complete('defeated'),true);
++  assert.equal(a.r.complete('evaded'),false);assert.equal(a.r.state.result,'defeated');assert.equal(a.offer(),false);
++});
++
++test('azar raro reproducible separado del calendario y solo en sectores normales desdeS2',()=>{
++  const a=setup('?grietas=local');assert.equal(a.offer({force:false}),false);
++  assert.equal(a.offer({sector:2,kind:'boss',force:false}),false);
++  let count=0;
++  for(let seed=0;seed<1000;seed++){
++    const x=setup('?grietas=local'),y=setup('?grietas=local');
++    const found=x.offer({sector:2,seed,force:false});assert.equal(found,y.offer({sector:2,seed,force:false}));if(found)count++;
++  }
++  assert.ok(count>180&&count<320,`Distribución 25%: ${count}/1000`);
++});

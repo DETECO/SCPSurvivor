@@ -17,7 +17,7 @@
 <canvas id="game" aria-label="Sector de entrenamiento; usa WASD, flechas o arrastra el dedo para moverte"></canvas>
 <div id="boot" role="status" aria-live="polite">Preparando el sector…</div>
 <section id="technical-ready" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Menú principal">
-<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p>Explora sectores conectados, resiste y neutraliza las amenazas. Mejora tu equipo y decide hasta dónde avanzar.</p><p>Prueba distintos soldados y equipos en una expedición local. No se guarda progreso ni se obtienen recompensas.</p>
+<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p class="developer-credit">Desarrollado por Ivan Vivanco</p><p>Explora sectores conectados, resiste y neutraliza las amenazas. Mejora tu equipo y decide hasta dónde avanzar.</p><p>Prueba distintos soldados y equipos en una expedición local. No se guarda progreso ni se obtienen recompensas.</p>
 <div class="loadout-editor" aria-labelledby="loadout-title">
 <h2 id="loadout-title">Equipo de prueba</h2>
 <label for="field-role">Soldado</label><select id="field-role"><option value="guard">Guardia · Sprint</option><option value="medic">Médico · Primeros auxilios</option></select>
@@ -26,7 +26,7 @@
 <section><h3>Arma 2</h3><label for="loadout-weapon-1">Modelo</label><select id="loadout-weapon-1"></select><div id="loadout-mods-1" class="loadout-mods" aria-label="Mods del arma 2"></div></section>
 </div>
 <p id="loadout-role-summary"></p><p id="loadout-preview-summary"></p><ul id="loadout-preview" class="loadout-preview"></ul><p id="loadout-error" class="loadout-error" role="alert"></p>
-</div><button id="btn-technical-start" class="primary">Iniciar expedición</button></div>
+</div><p id="rift-test-note" hidden></p><button id="btn-technical-start" class="primary">Iniciar expedición</button></div>
 </section>
 <section id="technical-pause" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Pausa">
 <div class="panel"><p class="eyebrow">SECTOR DETENIDO</p><h2>Pausa</h2><p>Tu posición se conserva mientras esta página permanezca abierta.</p><button id="btn-technical-resume" class="primary">Continuar</button><button id="btn-technical-menu">Volver al menú</button></div>
@@ -35,12 +35,14 @@
 <section id="field-result" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="result-title"><div class="panel"><p class="eyebrow">FIN DE EXPEDICIÓN</p><h2 id="result-title"></h2><p id="result-info"></p><button id="btn-result-restart" class="primary">Nueva expedición</button><button id="btn-result-menu">Volver al menú</button></div></section>
 <div id="field-controls" class="field-controls" hidden><div id="field-weapons" class="field-weapons"><button id="btn-field-weapon-0" class="field-weapon" aria-label="Cambiar al arma 1">1</button><button id="btn-field-weapon-1" class="field-weapon" aria-label="Cambiar al arma 2">2</button></div><button id="btn-ability">Sprint</button><button id="btn-mods" hidden>Modificar armas</button><button id="btn-field-ready" hidden>Listo</button><button id="btn-field-exit" hidden>Usar salida</button><button id="btn-field-extract" hidden>Extraer</button></div>
 <div id="field-status" class="field-status" hidden></div>
+<div id="rift-locator" class="rift-locator" hidden aria-label="Ubicación de la grieta"></div>
+<div id="rift-alert" class="rift-alert" hidden role="alert" aria-live="assertive" aria-atomic="true"></div>
 <section id="field-mod-editor" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="field-mod-title"><div class="panel"><p class="eyebrow">PREPARACIÓN</p><h2 id="field-mod-title">Modificar armas</h2><p>El descanso sigue avanzando mientras ajustas los mods.</p><div id="field-mod-content"></div><p id="field-mod-error" class="loadout-error" role="alert"></p><button id="btn-field-mod-confirm" class="primary">Confirmar cambios</button><button id="btn-field-mod-cancel">Cancelar</button></div></section>
 <div id="scene-hud" class="hud" hidden><span><span id="scene-soldier">GUARDIA · SPRINT</span> · <span id="scene-time">0:00</span></span><button id="btn-technical-pause" aria-label="Pausar escena">Pausa</button></div>
 </div>
 </main>
 <footer class="footer"><div id="scene-footer" hidden><p class="hint-keyboard"><kbd>WASD</kbd> / flechas · <kbd>Q</kbd>/<kbd>E</kbd> arma · <kbd>1</kbd>–<kbd>3</kbd> mejora · <kbd>Espacio</kbd> habilidad · <kbd>Esc</kbd> pausa</p><p class="hint-touch">Arrastra para moverte · toca habilidad o un arma</p><span id="scene-position" hidden>0, 0</span></div><p>Partida local · sin guardado ni recompensas persistentes</p></footer>
 <noscript>Activa JavaScript para entrar al sector de SCP Survivor.</noscript>
-<script defer src="js/app.min.js?v=099c7a1a5c"></script>
+<script defer src="js/app.min.js?v=57d8cefba5"></script>
 </body>
 </html>

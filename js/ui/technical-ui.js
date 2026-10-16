@@ -3,7 +3,7 @@ G.TechnicalUI = (() => {
   const el = id => document.getElementById(id);
   let cardSignature = '', editorOpen = false, editorDraft = [[], []];
   const phasesForInput = new Set(['combat', 'preparation', 'exploration', 'boss', 'escaping']);
-  const readyToPlay = () => G.Game.state === 'playing' && phasesForInput.has(G.Expedition.state.phase);
+  const readyToPlay = () => G.Game.state === 'playing' && !G.InventoryTrial?.isOpen && phasesForInput.has(G.Expedition.state.phase);
   function options() { return G.FieldLoadout.options(); }
   function start() {
     G.Audio.unlock();
@@ -61,6 +61,7 @@ G.TechnicalUI = (() => {
     return ({grip:'menos dispersión',assisted:'recarga más rápida',reinforced:'más daño',extended:'más capacidad',rapid:'más cadencia',piercing:'atraviesa un objetivo'})[id] || '';
   }
   function openEditor() {
+    if(G.InventoryTrial?.enabled)return;
     if (!readyToPlay() || G.Expedition.state.phase !== 'preparation') return;
     const state = G.FieldCombat.state;
     editorDraft = state.weapons.map(w => w.mods.slice()); editorOpen = true;
@@ -85,6 +86,14 @@ G.TechnicalUI = (() => {
   }
   function init() {
     G.FieldLoadout.init();
+    const rifts=G.DimensionalRifts;
+    if(rifts.enabled){
+      el('rift-test-note').hidden=false;
+      el('rift-test-note').textContent=rifts.directTest
+        ? 'PRUEBA DE GRIETA · Al iniciar tendrás un sector despejado y una grieta durante 45 s. Sigue la flecha y camina sobre la grieta: entrarás al instante. Puedes dejarla cerrar o combatir y huir por la salida. Sin cuenta ni guardado.'
+        : 'PRUEBA DE GRIETAS · Pueden aparecer al despejar sectores desde S2. Entrada opcional durante 45 s; sin cuenta ni guardado.';
+      if(rifts.directTest)el('btn-technical-start').textContent='Iniciar prueba de grieta';
+    }
     el('btn-technical-start').onclick = start;
     el('btn-technical-pause').onclick = () => G.Game.togglePause();
     el('btn-technical-resume').onclick = () => G.Game.togglePause();
@@ -98,7 +107,7 @@ G.TechnicalUI = (() => {
     el('btn-field-ready').onclick = () => G.Expedition.ready();
     el('btn-field-exit').onclick = () => {
       const s = G.Expedition.state;
-      G.Expedition.useExit(s.kind === 'boss' && s.phase === 'boss' ? 'escape' : 'continue');
+      G.Expedition.useExit(s.phase === 'boss' ? 'escape' : 'continue');
     };
     el('btn-field-extract').onclick = () => {
       if (readyToPlay() && confirm('¿Extraer y terminar esta expedición local?')) G.Expedition.useExit('extract');
@@ -120,12 +129,14 @@ G.TechnicalUI = (() => {
     for (const id of ['scene-hud', 'scene-footer', 'field-controls', 'field-status']) el(id).hidden = value !== 'playing';
     if (value === 'playing') updateSoldierHud();
     if (value !== 'playing') {
+      el('rift-alert').hidden=true;el('rift-locator').hidden=true;
       el('field-upgrades').hidden = true; el('field-result').hidden = true;
       el('btn-field-weapon-0').disabled = true; el('btn-field-weapon-1').disabled = true; el('btn-ability').disabled = true; el('btn-mods').disabled = true;
       closeEditor();
     }
   }
   function tick(player, time) {
+    G.InventoryTrial?.tick();
     if (G.Game.state !== 'playing' || !player) return;
     const s = G.Expedition.state, w = G.FieldCombat.state;
     if (editorOpen && s.phase !== 'preparation') closeEditor();
@@ -133,11 +144,20 @@ G.TechnicalUI = (() => {
     el('scene-position').textContent = `${Math.round(player.x)}, ${Math.round(player.y)}`;
     const dx = s.exit.x - player.x, dy = s.exit.y - player.y;
     const direction = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? '→' : '←') : (dy > 0 ? '↓' : '↑');
-    const captions = { combat: s.objective === 'survive' ? `Resiste ${Math.ceil(s.remaining)} s y elimina los restantes` : `Neutraliza ${Math.min(s.kills,s.quota)}/${s.quota}`, levelup: `Elige la mejora del nivel ${player.level}`, preparation: `Preparación ${Math.ceil(s.prep)} s`, exploration: `Salida ${direction}${s.extractionAvailable ? ' · puedes extraer' : ''}`, boss: `Custodio ${Math.ceil(s.bossHp)}/${Math.ceil(s.bossMaxHp)} · Huida ${direction}`, escaping: `Huida ${Math.ceil(s.extract)} s · no te muevas`, extracting: `Extracción ${Math.ceil(s.extract)} s`, finished: 'Expedición terminada' };
+    const captions = { combat: s.objective === 'survive' ? `Resiste ${Math.ceil(s.remaining)} s y elimina los restantes` : `Neutraliza ${Math.min(s.kills,s.quota)}/${s.quota}`, levelup: `Elige la mejora del nivel ${player.level}`, preparation: `Preparación ${Math.ceil(s.prep)} s`, exploration: `Salida ${direction}${s.extractionAvailable ? ' · puedes extraer' : ''}`, boss: `${s.dimensional?'Custodio dimensional':'Custodio'} ${Math.ceil(s.bossHp)}/${Math.ceil(s.bossMaxHp)} · Huida ${direction}`, escaping: `Huida ${Math.ceil(s.extract)} s · no te muevas`, extracting: `Extracción ${Math.ceil(s.extract)} s`, finished: 'Expedición terminada' };
     const soldier = G.FieldCatalog.soldiers[player.soldierId] || G.FieldCatalog.soldiers.guard;
     updateSoldierHud(player);
     const weaponSummary = w.weapons.map((weapon, i) => `${i + 1} ${weapon.name} ${Math.floor(weapon.ammo)}/${weapon.capacity}${weapon.reload > 0 ? ' recargando' : ''}`).join(' · ');
-    el('field-status').textContent = `S${s.sector}${s.kind === 'normal' ? ` · Oleada ${s.wave}/${s.sectorWaves}` : ''} · ${captions[s.phase]} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level}${s.pending ? ` (${s.pending} por mejorar)` : ''} · XP ${Math.floor(player.xp)}/${player.xpNext} | ${weaponSummary}`;
+    el('field-status').textContent = `${G.DimensionalRifts.directTest?'PRUEBA · ':''}S${s.sector}${s.kind === 'normal' && !s.dimensional && !G.DimensionalRifts.directTest ? ` · Oleada ${s.wave}/${s.sectorWaves}` : ''} · ${captions[s.phase]} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level}${s.pending ? ` (${s.pending} por mejorar)` : ''} · XP ${Math.floor(player.xp)}/${player.xpNext} | ${weaponSummary}`;
+    const rift=G.DimensionalRifts.state,open=rift.status==='open';
+    el('rift-locator').hidden=!open||s.phase==='finished'||s.phase==='levelup';
+    if(open){
+      const rx=rift.x-player.x,ry=rift.y-player.y;
+      const arrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(ry,rx)/(Math.PI/4))+8)%8];
+      el('rift-locator').textContent=`GRIETA ${arrow} ${Math.ceil(Math.hypot(rx,ry))} u · cierra en ${Math.ceil(rift.remaining)} s · entra caminando`;
+    }
+    el('rift-alert').hidden=!rift.alert||s.phase==='finished'||s.phase==='levelup';
+    if(el('rift-alert').textContent!==rift.alert)el('rift-alert').textContent=rift.alert;
     const abilityState = w.currentability || {};
     el('btn-ability').textContent = abilityState.cooldown > 0 ? `${soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint'} ${Math.ceil(abilityState.cooldown)} s` : (soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint');
     const canUseAbilityInPhase = soldier.ability === 'heal'
@@ -152,7 +172,7 @@ G.TechnicalUI = (() => {
       button.disabled = !canSwitch || i === w.activeIndex || w.switchRemaining > 0;
       button.setAttribute('aria-label', `Arma ${i + 1}: ${weapon?.name || 'sin arma'}, ${weapon ? `${Math.floor(weapon.ammo)} de ${weapon.capacity}` : ''}${weapon?.reload > 0 ? ', recargando' : ''}`);
     }
-    el('btn-mods').hidden = s.phase !== 'preparation';
+    el('btn-mods').hidden = s.phase !== 'preparation' || !!G.InventoryTrial?.enabled;
     el('btn-mods').disabled = s.phase !== 'preparation' || editorOpen;
     // During a normal rest, allow continuing early when there are no upgrades.
     el('btn-field-ready').hidden = s.phase !== 'preparation';

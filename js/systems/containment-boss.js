@@ -6,6 +6,7 @@
   const SUMMON_WARN = 1;
   const MAX_MINIONS = 4;
   const CAP = 64;
+  const DIMENSIONAL_INTERVAL = 6, DIMENSIONAL_WARN = 1.2, DIMENSIONAL_RANGE = 60;
 
   function hasLine(e, x, y) {
     if (!G.World.projectileBlock) return true;
@@ -23,11 +24,42 @@
     return e.minions.length;
   }
 
+  function dimensionalTick(e, dt, pl) {
+    if (e.dimensionalArrival > 0) {
+      e.dimensionalArrival = Math.max(0,e.dimensionalArrival-dt);
+      if(e.dimensionalArrival < 1e-8)e.dimensionalArrival=0;
+      if(e.anim?.loop)e.anim.loop('Idle');
+      return true;
+    }
+    e.bossDimensionalT = (e.bossDimensionalT || 0) + dt;
+    if (e.bossDimensionalWarn > 0) {
+      e.bossDimensionalWarn = Math.max(0,e.bossDimensionalWarn-dt);
+      if(e.anim?.loop)e.anim.loop('Idle');
+      if (e.bossDimensionalWarn < 1e-8) {
+        e.bossDimensionalWarn = 0;
+        const origin={x:e.bossDimensionalX,y:e.bossDimensionalY};
+        if (Math.hypot(pl.x-origin.x,pl.y-origin.y) <= DIMENSIONAL_RANGE+(pl.r||0) &&
+            hasLine(e,pl.x,pl.y) && hasLine(origin,pl.x,pl.y)) pl.hurt(e.dmg);
+        G.FX?.ring?.(e.bossDimensionalX,e.bossDimensionalY,DIMENSIONAL_RANGE,DIMENSIONAL_RANGE*1.3,'#ff5964',.28,3);
+      }
+      return true;
+    }
+    // Nunca congelar otro aviso en curso; el pulso espera hasta que termine.
+    if (e.bossDimensionalT >= DIMENSIONAL_INTERVAL && !(e.bossWarn>0) && !(e.bossSummonWarn>0)) {
+      e.bossDimensionalT = 0;e.bossDimensionalWarn = DIMENSIONAL_WARN;
+      e.bossDimensionalX = pl.x;e.bossDimensionalY = pl.y;
+      if(e.anim?.loop)e.anim.loop('Idle');
+      return true;
+    }
+    return false;
+  }
+
   function tick(e, dt, pl) {
     if (e.dead) { if (Number.isFinite(e.fade)) e.fade -= dt; return; }
     if (!pl || pl.dead) return;
     if (e.flash > 0) e.flash = Math.max(0, e.flash - dt);
     if (e.anim && e.anim.update) e.anim.update(dt);
+    if (e.dimensional === true && dimensionalTick(e,dt,pl)) return;
     const half = e.hp < e.maxHp * 0.5;
     const speed = (e.spd || 45) * (half ? 1.15 : 1);
     const d = Math.hypot(pl.x - e.x, pl.y - e.y);
@@ -92,6 +124,12 @@
 
   function draw(ctx, e) {
     if (e.dead) return;
+    if (e.dimensional === true && (e.dimensionalArrival > 0 || e.bossDimensionalWarn > 0)) {
+      const pulse=e.bossDimensionalWarn>0,x=pulse?e.bossDimensionalX:e.x,y=pulse?e.bossDimensionalY:e.y;
+      ctx.save();ctx.globalAlpha=.3;ctx.fillStyle='#ff5964';ctx.strokeStyle='#fff0f0';ctx.lineWidth=3;
+      ctx.beginPath();ctx.arc(x,y,pulse?DIMENSIONAL_RANGE:48,0,Math.PI*2);ctx.fill();ctx.globalAlpha=.9;ctx.stroke();
+      ctx.fillStyle='#fff0f0';ctx.font='bold 12px system-ui';ctx.textAlign='center';ctx.fillText(pulse?'PULSO · APÁRTATE':'EMERGIENDO',x,y-(pulse?DIMENSIONAL_RANGE:48)-12);ctx.restore();
+    }
     if (e.bossWarn > 0) {
       const p = 1 - e.bossWarn / STRIKE_WARN;
       ctx.save(); ctx.globalAlpha = 0.25 + 0.55 * p;

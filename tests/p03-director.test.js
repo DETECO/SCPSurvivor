@@ -1,5 +1,5 @@
 const test=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
-function setup(seed=1337){
+function setup(seed=1337,riftMode='',inventory=false){
  let list=[],items=[],id=0;
  const G={U:{dist:(a,b,x,y)=>Math.hypot(x-a,y-b),rand:()=>0},Camera:{w:768,h:768,x:0,y:0,sees:()=>false,follow(){}},
  World:{reset(){},setFixture(){},setBiome(){},isFree:()=>true,update(){}},Path:{clear(){},update(){},reachable:()=>true},
@@ -10,11 +10,37 @@ function setup(seed=1337){
  Projectiles:{clear(){},update(){}},Pickups:{clear(){items=[]},all:()=>items,removeId(id){items=items.filter(i=>i.id!==id)},update(){}},
  Input:{reset(){},axis:()=>[0,0]},Touch:{reset(){}},FieldCombat:{reset(){},tick(){},clearTemporary(p){p.tempStats={}}},FX:{update(){}},Spawner:{CAP:64,say(){},tickBanner(){}},Combat:{resolve(){}},FieldUpgrades:{offer:()=>[{key:'health',apply:p=>p.perks++}]} };
  const player={hp:100,maxHp:100,kills:0,bosses:0,r:12,regenFlat:0,perks:0,x:0,y:0,xp:0,xpNext:1e9,xpMul:1,level:1,update(){},gainXp(n){this.xp+=n;return 0}};
+ if(riftMode){G.Audio={sfx(){}};G.World.projectileBlock=()=>null;
+  vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/dimensional-rifts.js'),'utf8'),{G,Math,URLSearchParams,window:{location:{hostname:'127.0.0.1',search:riftMode}}});}
+ if(inventory)G.InventoryTrial={enabled:true,directTest:true};
  for(const file of ['../js/data/field-catalog.js','../js/systems/field-stats.js','../js/systems/field-abilities.js','../js/systems/expedition.js'])vm.runInNewContext(fs.readFileSync(require.resolve(file),'utf8'),{G,Math});G.Expedition.start(player,{seed});
  function clearWave(){for(let step=0;step<500;step++){for(const e of G.EnemyMgr.all()){if(!e.dead){e.dead=true;player.kills++;}}G.Expedition.update(1);if(G.Expedition.state.phase==='preparation')return;}throw Error('wave stuck')}
  function clearSector(){for(let n=0;n<G.Expedition.state.sectorWaves;n++){clearWave();G.Expedition.ready()}player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;}
  return {G,player,clearWave,clearSector};
 }
+
+test('grieta: contacto activa al instante una sola vez; cercanía no activa',()=>{
+ const a=setup(1337,'?prueba=grieta'),rift=a.G.DimensionalRifts.state;
+ let resets=0;a.G.Input.reset=()=>resets++;a.G.Touch.reset=()=>resets++;
+ a.player.x=rift.x-40;a.player.y=rift.y;a.G.Expedition.update(.01);assert.equal(a.G.Expedition.state.phase,'exploration');
+ a.player.x=rift.x;a.G.Expedition.update(.01);assert.equal(a.G.Expedition.state.phase,'boss');
+ assert.equal(a.G.Expedition.state.dimensional,true);assert.equal(a.G.EnemyMgr.count,1);
+ a.G.Expedition.update(.01);a.G.Expedition.update(.01);assert.equal(a.G.EnemyMgr.count,1);
+ assert.equal(a.G.DimensionalRifts.state.status,'active');
+ assert.equal(resets,0,'Ingresar no corta el movimiento mantenido');
+});
+
+test('grieta cerrada no activa por contacto',()=>{
+ const a=setup(1337,'?prueba=grieta'),rift=a.G.DimensionalRifts.state;
+ a.G.Expedition.update(45.01);a.player.x=rift.x;a.player.y=rift.y;a.G.Expedition.update(.01);
+ assert.equal(a.G.Expedition.state.phase,'exploration');assert.equal(a.G.EnemyMgr.count,0);
+});
+
+test('P06 prueba directa prepara20s y comienza primera oleada sin saltarla',()=>{
+ const a=setup(1337,'',true);assert.equal(a.G.Expedition.state.phase,'preparation');assert.equal(a.G.EnemyMgr.count,0);
+ assert.equal(a.G.Expedition.state.prep,20);assert.equal(a.G.Expedition.state.totals.wavesCompleted,0);
+ a.G.Expedition.ready();assert.equal(a.G.Expedition.state.wave,1);assert.equal(a.G.Expedition.state.phase,'combat');assert.equal(a.G.EnemyMgr.count,4);
+});
 test('neutralización, resistencia60s y segunda neutralización; salida continúa infinitamente',()=>{
  const {G,clearWave,clearSector,player}=setup();assert.equal(G.Expedition.state.kind,'normal');assert.equal(G.Expedition.state.objective,'neutralize');clearWave();G.Expedition.ready();assert.equal(G.Expedition.state.objective,'survive');
  for(let n=0;n<59;n++){for(const e of G.EnemyMgr.all()){e.dead=true;player.kills++}G.Expedition.update(1)}

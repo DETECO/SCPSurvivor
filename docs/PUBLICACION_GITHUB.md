@@ -1,4 +1,18 @@
-# Actualización del repositorio — P05 local y RoadmapSCP v0.12
+# Publicaciones GitHub — SCP Survivor
+
+## Entrega del 16/10/2026 — crédito, grietas y primer tramo P06
+
+Petición expresa de Iván (A-025): incluir **«Desarrollado por Ivan Vivanco»** en la pantalla de pruebas/demo y después subir la versión a GitHub. El crédito aparece bajo el título del menú compartido en `dev.html` y su entrada compilada `index.html`; no altera las mecánicas.
+
+Destino: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), rama **main**. Base remota consultada el16/10: `fde0d133a6e2e4a66606bebe0e35ea86e108ad6d`. Entrega descendiente, sin sobrescribir historial. Incluye grietas de ingreso instantáneo, señales/localizador, primer tramo de inventario local P06-T01, pruebas y documentación, y **RoadmapSCPv0.16**. P06-T01 sigue EC, P05 EV0/6, global52/100; publicación de código no equivale a aceptación de fase ni despliegue de servicios.
+
+Verificación anterior a la subida: build y build:check aprobados (85 scripts, bundle`57d8cefba5`); suite96 pruebas,95 aprobadas,0 fallos,1 integración optativa omitida;12 recorridos aislados de menú en fuente/compilado, escritorio/móvil emulado y modos general/grieta/inventario, con crédito visible y sin errores JavaScript ni tráfico remoto. Capturas revisadas. Las pruebas de juego del primer tramo P06 y grietas permanecen documentadas en `P06-REPORT.md` y `GRIETAS-VALIDACION.md`.
+
+Se excluyen datos de cuentas/partidas, dependencias instaladas, cachés, logs y configuraciones privadas. Se conservan archivos y recursos anteriores, ambos lockfiles y la configuración pública de Firebase inactiva. Los inventarios/manifiestos P05 y ZIP anteriores son instantáneas históricas, no el inventario vivo de esta entrega.
+
+Commit identificable por el mensaje **«Añadir crédito de Ivan Vivanco, grietas e inventario local P06»**. La confirmación del SHA remoto se realiza después del push; este documento no contiene su propio hash. GitHub aloja el código: los prototipos de grietas/inventario siguen restringidos a localhost/127.0.0.1 y las cuentas requieren emuladores. No se activan Firebase real, facturación ni publicación web.
+
+## Registro histórico — P05 local y RoadmapSCP v0.12
 
 Fecha:15/10/2026. Petición expresa de Iván: «subela. incluye roadmap». Destino: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), rama **main**. Base consultada en remoto: **39344e77e15bd82c98bacb3e9773ceaa20c1b918**, alfa0.4. Esta actualización añade un commit descendiente y conserva el historial, sin force push.
 

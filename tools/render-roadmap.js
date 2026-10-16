@@ -60,7 +60,9 @@ function render(key){
   row('Técnico P01–P11',r.derivedProgress.technical.completedWeight+'/'+r.derivedProgress.technical.totalWeight,fmt(r.derivedProgress.technical.percent)+' %')]);
  if(type==='SUMMARY_PHASES')return table(['Fase','Categoría','Puntos verificados','Avance','Estado'],r.phases.map(p=>{
   const v=byId(phase,p.id);
-  return row(p.id,p.title,v.completedWeight+'/'+v.weight,fmt(v.percent)+' %',p.id==='P05'?'En validación local; aceptación real pendiente':v.percent===100?'Verificada localmente':'Pendiente');
+  const states=r.tasks.filter(t=>t.phaseId===p.id).map(t=>t.status);
+  const state=p.id==='P05'?'En validación local; aceptación real pendiente':v.percent===100?'Verificada localmente':states.includes('EC')?'En curso':states.includes('EV')?'En validación':states.includes('B')?'Bloqueada':'Pendiente';
+  return row(p.id,p.title,v.completedWeight+'/'+v.weight,fmt(v.percent)+' %',state);
  }));
  if(type==='ALL_AUTHORIZATIONS')return table(['ID','Acción','Alcance registrado'],r.authorizations.map(a=>row(a.id,a.action,a.scopeStatus)));
  if(type==='ALL_DECISIONS')return table(['ID','Tema','Aprobación/registro','Resolución'],r.decisions.map(d=>row(d.id,d.topic,d.approvalStatus,d.resolution)));

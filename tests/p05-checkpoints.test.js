@@ -20,6 +20,12 @@ test('checkpoint roundtrip preserves copy identity, timers, props and pending XP
  assert.equal(G.RunCheckpoint.restore(saved).ok,true);assert.equal(G.Game.player.hp,75);assert.equal(G.FieldCombat.data.weapons[0].ammo,3);
  assert.equal(G.World.data.broken[0],'1,2');assert.equal(G.Pickups.data[0].id,5);
 });
+
+test('prototipo de grietas no produce guardados P05 incompatibles',()=>{
+ const G=setup();G.DimensionalRifts={enabled:true};assert.equal(G.RunCheckpoint.capture(),null);
+ G.DimensionalRifts.enabled=false;assert.ok(G.RunCheckpoint.capture());
+ G.InventoryTrial={enabled:true};assert.equal(G.RunCheckpoint.capture(),null);
+});
 test('incompatible version and duplicate copies reject before game mutation',()=>{
  const G=setup(),saved=G.RunCheckpoint.capture(),before=G.Game.player;saved.buildVersion='other';
  assert.equal(G.RunCheckpoint.restore(saved).ok,false);assert.equal(G.Game.player,before);

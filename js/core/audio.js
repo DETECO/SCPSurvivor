@@ -409,6 +409,8 @@ G.Audio = (() => {
     levelup: () => { arp('square', [523, 659, 784, 1047], 0.07, 0.14, 0.05); arp('triangle', [1047, 1319, 1568], 0.07, 0.3, 0.05); },
     hurt:    () => { tone('square', 150, 70, 0.14, 0.06); hiss(0.1, 0.06, 'lowpass', 900); },
     boss:    () => { [82, 123, 165].forEach(f => tone('sawtooth', f, f * 0.98, 1.3, 0.05)); INST.kick(ctx.currentTime, 1, sfxBus); },
+    // Aviso provisional P09: apertura dimensional, separado de la música.
+    riftOpen: () => { hiss(0.6,0.07,'bandpass',400,1800,0,1.2); arp('triangle',[220,440,220],0.18,0.24,0.07); },
     surge:   () => hiss(0.7, 0.12, 'lowpass', 500, 120),
     shiny:   () => [2093, 2637, 3136, 2349, 3520, 4186].forEach((f, i) => INST.bell(ctx.currentTime + i * 0.07, f, 0.3, 0.8, sfxBus)),
     shinyGet() { SFX.shiny(); arp('square', [784, 988, 1175, 1568], 0.1, 0.35, 0.05); },

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "planVersion": "0.12",
-  "updatedOn": "2026-10-15",
+  "planVersion": "0.16",
+  "updatedOn": "2026-10-16",
   "timezone": "America/Santiago",
   "canonicalPath": "RoadmapSCP.json",
   "generatedView": "RoadmapSCP.md",
@@ -16,9 +16,9 @@
       "branch": "main",
       "commit": "a1006e6e3d0cea9162238a90b0ffdd7fd38397b6"
     },
-    "lastVerifiedOwnCommit": "39344e77e15bd82c98bacb3e9773ceaa20c1b918",
-    "lastVerifiedOwnVersion": "Baseline alfa0.4 comprobada en main el15/10/2026 antes de la entrega autorizada A-021.",
-    "deliveryVersion": "P05-local-01 / roadmap v0.12",
+    "lastVerifiedOwnCommit": "fde0d133a6e2e4a66606bebe0e35ea86e108ad6d",
+    "lastVerifiedOwnVersion": "Entrega P05 y roadmapv0.12 comprobada en main el16/10/2026 antes de la entrega autorizada A-025.",
+    "deliveryVersion": "Grietas instantáneas + P06-T01 local + crédito / roadmap v0.16",
     "deliveryCommitReference": "git log -1 --format=%H -- RoadmapSCP.json"
   },
   "baseline": {
@@ -875,22 +875,29 @@
       "id": "P06-T01",
       "phaseId": "P06",
       "weight": 2,
-      "status": "P",
+      "status": "EC",
       "scopeAndAcceptance": "Copias de equipo con identidad, dos mochilas, espacios y slots equipados/reserva. Probar límites, transferencias y gestión entre oleadas con dos armas.",
-      "evidenceIds": [],
+      "evidenceIds": [
+        "EV-030"
+      ],
       "evidenceComplete": false,
       "completionKind": "game_or_release",
-      "authorizationScope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza.",
+      "authorizationScope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable.",
       "dependencies": [
         "P04-T02",
         "P05-T03"
       ],
-      "repositoryCodeExecutionAuthorized": false,
-      "staticPreparationAuthorized": false,
+      "repositoryCodeExecutionAuthorized": true,
+      "staticPreparationAuthorized": true,
       "taskAuthorization": {
-        "status": "pending",
-        "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
-      }
+        "status": "authorized_local",
+        "scope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable."
+      },
+      "remainingAcceptance": [
+        "Integración y autoridad transaccional de servidor conforme a las dependencias originales, incluido P05-T03.",
+        "Continuidad de inventario ante sesión, desconexión y cambio de dispositivo dentro del flujo autorizado.",
+        "Aceptación manual de Iván del flujo local y sus límites."
+      ]
     },
     {
       "id": "P06-T02",
@@ -901,15 +908,15 @@
       "evidenceIds": [],
       "evidenceComplete": false,
       "completionKind": "game_or_release",
-      "authorizationScope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza.",
+      "authorizationScope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable.",
       "dependencies": [
         "P06-T01"
       ],
-      "repositoryCodeExecutionAuthorized": false,
-      "staticPreparationAuthorized": false,
+      "repositoryCodeExecutionAuthorized": true,
+      "staticPreparationAuthorized": true,
       "taskAuthorization": {
-        "status": "pending",
-        "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
+        "status": "authorized_local",
+        "scope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable."
       }
     },
     {
@@ -921,16 +928,16 @@
       "evidenceIds": [],
       "evidenceComplete": false,
       "completionKind": "game_or_release",
-      "authorizationScope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza.",
+      "authorizationScope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable.",
       "dependencies": [
         "P06-T01",
         "P06-T02"
       ],
-      "repositoryCodeExecutionAuthorized": false,
-      "staticPreparationAuthorized": false,
+      "repositoryCodeExecutionAuthorized": true,
+      "staticPreparationAuthorized": true,
       "taskAuthorization": {
-        "status": "pending",
-        "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
+        "status": "authorized_local",
+        "scope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable."
       }
     },
     {
@@ -942,15 +949,15 @@
       "evidenceIds": [],
       "evidenceComplete": false,
       "completionKind": "game_or_release",
-      "authorizationScope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza.",
+      "authorizationScope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable.",
       "dependencies": [
         "P06-T01"
       ],
-      "repositoryCodeExecutionAuthorized": false,
-      "staticPreparationAuthorized": false,
+      "repositoryCodeExecutionAuthorized": true,
+      "staticPreparationAuthorized": true,
       "taskAuthorization": {
-        "status": "pending",
-        "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
+        "status": "authorized_local",
+        "scope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable."
       }
     },
     {
@@ -962,17 +969,17 @@
       "evidenceIds": [],
       "evidenceComplete": false,
       "completionKind": "game_or_release",
-      "authorizationScope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza.",
+      "authorizationScope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable.",
       "dependencies": [
         "P06-T02",
         "P06-T03",
         "P06-T04"
       ],
-      "repositoryCodeExecutionAuthorized": false,
-      "staticPreparationAuthorized": false,
+      "repositoryCodeExecutionAuthorized": true,
+      "staticPreparationAuthorized": true,
       "taskAuthorization": {
-        "status": "pending",
-        "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
+        "status": "authorized_local",
+        "scope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable."
       }
     },
     {
@@ -1826,6 +1833,98 @@
         "allowDuplicateEmails": true,
         "scope": "Exclusivamente Auth Emulator; no configuración de producción"
       }
+    },
+    {
+      "id": "EV-028",
+      "kind": "optional_local_dimensional_rift_prototype",
+      "summary": "Prototipo local optativo implementado. Suite84 casos:83 aprobados,0 fallos,1 integración emulada omitida. Fuente/compilado en escritorio/móvil emulado:4 escenarios aprobados; ubicación libre/alcanzable en64 semillas. Medidor WebAudio con señal y alerta visible. Ensayo aislado con inyección de posición/tiempo/muerte para transiciones; no acredita victoria humana ni balance. Aceptación manual de Iván pendiente.",
+      "references": [
+        "docs/GRIETAS-VALIDACION.md",
+        "docs/PRUEBA_GRIETAS.md",
+        "docs/OBSERVACIONES_VISUALES.md",
+        "tests/rifts.test.js",
+        "tests/rift-boss.test.js",
+        "tests/rifts-browser.py"
+      ],
+      "runtimeProof": true,
+      "evidenceComplete": false,
+      "acceptanceScope": "Prototipo local sin cuenta; aceptación manual pendiente, no cierre de fase",
+      "manualAcceptance": "pending",
+      "bundle": "24c29481e1",
+      "nodeCases": 84,
+      "nodePassed": 83,
+      "nodeFailed": 0,
+      "nodeSkipped": 1,
+      "scenarioCount": 4,
+      "sourceScenarios": 2,
+      "compiledScenarios": 2
+    },
+    {
+      "id": "EV-029",
+      "kind": "instant_rift_contact_local_regression",
+      "summary": "Ingreso instantáneo por contacto conforme A-023/D-311: sin botón/espera, conserva movimiento, no activa por mera cercanía ni al cerrar y no duplica jefe. Suite86 casos:85 aprobados,0 fallos,1 integración emulada omitida; build/check32a01f2dab.4 escenarios fuente/compilado en escritorio/móvil emulado con ingreso por movimiento de teclado,64 semillas de ubicación. Ensayo aislado y controlado; aceptación manual de Iván pendiente.",
+      "references": [
+        "docs/GRIETAS-VALIDACION.md",
+        "docs/PRUEBA_GRIETAS.md",
+        "tests/rifts.test.js",
+        "tests/p03-director.test.js",
+        "tests/rifts-browser.py"
+      ],
+      "runtimeProof": true,
+      "evidenceComplete": false,
+      "manualAcceptance": "pending",
+      "bundle": "32a01f2dab",
+      "nodeCases": 86,
+      "nodePassed": 85,
+      "nodeFailed": 0,
+      "nodeSkipped": 1,
+      "scenarioCount": 4
+    },
+    {
+      "id": "EV-030",
+      "kind": "p06_local_inventory_first_slice",
+      "summary": "Primer tramo P06-T01 local y temporal: copias físicas, mochilas8/16, almacén simulado60 y gestión base/preparación con borrador. Suite96 casos:95 aprobados,0 fallos,1 integración optativa de emuladores omitida. Build/check57d8cefba5,85 scripts.4 escenarios fuente/compilado escritorio/móvil emulado aprobados: confirmar/cancelar, mochila/arma/mod, límite cargador coherente, temporizadores y descarte al expirar.4 escenarios de regresión de grietas aprobados. Ensayos aislados con estados/tiempos controlados; no acredita cuenta, persistencia, economía, dispositivo físico, aceptación humana ni cierreP06. P06-T01EC; global52/100.",
+      "references": [
+        "docs/P06-REPORT.md",
+        "docs/PRUEBA_INVENTARIO_P06.md",
+        "tests/p06-inventory.test.js",
+        "tests/p06-browser.py",
+        "tests/p03-director.test.js",
+        "tests/p05-checkpoints.test.js",
+        "tests/rifts-browser.py"
+      ],
+      "runtimeProof": true,
+      "evidenceComplete": false,
+      "manualAcceptance": "pending",
+      "bundle": "57d8cefba5",
+      "scriptCount": 85,
+      "nodeCases": 96,
+      "nodePassed": 95,
+      "nodeFailed": 0,
+      "nodeSkipped": 1,
+      "scenarioCount": 4,
+      "sourceScenarios": 2,
+      "compiledScenarios": 2,
+      "riftRegressionScenarios": 4,
+      "acceptanceScope": "Prototipo local con fixture temporal y sin cuentas; servidor, continuidad y aceptación manual pendientes"
+    },
+    {
+      "id": "EV-031",
+      "kind": "demo_credit_and_github_prepublication_validation",
+      "summary": "Crédito exacto visible en12 recorridos de menú: fuente/compilado por escritorio/móvil emulado por modos general/grieta/inventario; sin errores JavaScript ni peticiones remotas. Capturas revisadas. Build/check85scripts, bundle57d8cefba5. Suite96casos:95aprobados,0fallos,1integración optativa omitida. Verificación local anterior al push; no evidencia de despliegue ni cierreP05/P06.",
+      "references": [
+        "dev.html",
+        "css/technical.css",
+        "docs/PUBLICACION_GITHUB.md"
+      ],
+      "runtimeProof": true,
+      "scenarioCount": 12,
+      "nodeCases": 96,
+      "nodePassed": 95,
+      "nodeFailed": 0,
+      "nodeSkipped": 1,
+      "bundle": "57d8cefba5",
+      "scriptCount": 85
     }
   ],
   "decisions": [
@@ -3986,6 +4085,39 @@
       "approvalStatus": "Solicitud documental expresa del director A-017; hallazgo estático contrastado con plan",
       "resolution": "Conservar pesos y cerrar solo criterios con evidencia. P03-T02 queda en validación por usar tres oleadas fijas donde D-143/D-190 exige sorteo 3/4/5. P00/P01/P02/P04 completas y cuatro tareas P03 verificadas localmente: 49/100 global y 39/90 técnico. Cierre P03 requiere resolver GAP-001 y repetir integración; no se elimina el requisito para elevar el porcentaje.",
       "tableFormat": "extended"
+    },
+    {
+      "id": "D-309",
+      "topic": "Grietas: prototipo local opcional",
+      "approvalStatus": "Autorizado por Iván el16/10/2026, A-022; aceptación manual pendiente",
+      "resolution": "Habilitar solo en loopback sin cuentas con ?grietas=local; prueba directa ?prueba=grieta. Ubicación libre/alcanzable, apertura45 segundos activos, entrada voluntaria próxima. Variante provisional Custodio dimensional, misma imagen, vida×1,35/daño×1,15 y pulso anunciado; victoria/retirada devuelven sector despejado sin alterar calendario normal ni contar sector doble. D-260 histórico conserva aplazamiento de arena aparte, retorno automático con vida, catálogo y premios especiales. Persistencia P05 no implementada: no habilitar con cuentas. Sin nuevos puntos CV.",
+      "tableFormat": "extended"
+    },
+    {
+      "id": "D-310",
+      "topic": "Grietas: requisitos permanentes de audio, aviso y localización P09",
+      "approvalStatus": "Solicitud expresa de Iván el16/10/2026, A-022",
+      "resolution": "Al aparecer, emitir sonido y mostrar alerta visible en pantalla. Grieta situada físicamente en escenario, tiempo limitado y cierre; mantener marcador e indicador de dirección, distancia y tiempo incluso fuera de pantalla. Pausa congela el reloj del prototipo. Arte, efectos, mezcla sonora, duración y balance finales se revisan en P09; no sustituir diseños aprobados. Ver docs/OBSERVACIONES_VISUALES.md y docs/PRUEBA_GRIETAS.md.",
+      "tableFormat": "extended"
+    },
+    {
+      "id": "D-311",
+      "topic": "Entrada instantánea por contacto",
+      "approvalStatus": "Decisión expresa de Iván el16/10/2026, A-023",
+      "resolution": "Cruzar/tocar la grieta abierta activa el encuentro una sola vez y conserva el movimiento mantenido. Sin botón, tecla, confirmación ni espera. Pasar cerca sin contacto o tocar una grieta cerrada no activa. Prototipo usa radio de contacto22 más radio del jugador y línea libre; la llegada anunciada del jefe1,5s es aviso de ataque, no espera para entrar. Mantener45s activas, localizador, sonido/alerta, aislamiento de cuentas y calendario normal. Corrige únicamente la interacción de entrada de D-309; pesos/criterios y aceptación manual pendientes se conservan.",
+      "tableFormat": "extended"
+    },
+    {
+      "id": "D-312",
+      "topic": "Inicio local del primer tramo de P06",
+      "approvalStatus": "Autorización expresa de Iván el16/10/2026, A-024; aceptación pendiente",
+      "resolution": "A-024 permite avanzar localmente en la fase P06 sin modificar criterios, pesos, dependencias ni el historial. P06-T01 queda EC con un primer tramo de modelo físico y panel de gestión en base/preparación con confirmación; IDs de fixture visibles, mochilas de 8/16 y almacén de 60 temporal. Entrada ?inventario=local o prueba directa ?prueba=inventario, que empieza en preparación de 20 s; solo loopback, sin cuentas/persistencia, inventario real, botín ni kit. P06-T01 conserva evidenceComplete=false y sus tres aceptaciones pendientes: autoridad transaccional de servidor, continuidad y aceptación manual de Iván. P06-T02–T05 siguen P aunque se autoriza trabajo local dentro de sus criterios/dependencias. Pruebas e informe P06 pendientes en esta actualización; no añadir evidencia ni puntos por inferencia. Mantener P05 EV0/6, 53 tareas, pesos y global52/100. Las reglas de grieta instantánea D-311 se conservan."
+    },
+    {
+      "id": "D-313",
+      "topic": "Crédito en las pruebas/demo",
+      "approvalStatus": "Petición expresa de Iván, A-025,16/10/2026",
+      "resolution": "Mostrar el texto exacto «Desarrollado por Ivan Vivanco» bajo el título del menú compartido, visible en la demo y pruebas de grietas/inventario, escritorio y móvil. Conservar recursos, mecánicas y crédito/historial preexistentes."
     }
   ],
   "authorizations": [
@@ -4093,6 +4225,26 @@
       "id": "A-021",
       "action": "Publicar código P05 y roadmap v0.12 en GitHub/main",
       "scopeStatus": "Petición expresa de Iván el15/10/2026: «subela. incluye roadmap». Autoriza subir código P05, GAP-001, documentación y roadmap vigente a DETECO/SCPSurvivor/main. Main se comprobó antes de esta entrega en39344e77e15bd82c98bacb3e9773ceaa20c1b918, sin cambios remotos nuevos. El código y roadmap quedan incluidos en la actualización del repositorio; el SHA de esta entrega se consulta en su commit/git log. No habilita Firebase real, facturación o despliegue del juego; runtime sigue emulado/local y P05 permanece EV0/6."
+    },
+    {
+      "id": "A-022",
+      "action": "Prototipo local de grietas y prueba manual del director",
+      "scopeStatus": "Iván autoriza agregar grietas opcionales y probarlas él: posición física en el escenario, apertura limitada, cierre, indicador de ubicación, sonido y alerta visible. Preparación local sin cuentas; no autoriza servicios reales, economía nueva ni publicación del prototipo."
+    },
+    {
+      "id": "A-023",
+      "action": "Ingreso instantáneo a las grietas",
+      "scopeStatus": "Iván decide ingreso instantáneo para mantenerlo simple. Sustituye la interacción mediante botón: hacer contacto con la grieta abierta activa el encuentro sin tecla, confirmación ni permanencia. Conserva ubicación, apertura limitada, indicador, sonido y alerta; sin ampliar publicación/persistencia."
+    },
+    {
+      "id": "A-024",
+      "action": "Comenzar la fase P06 con preparación e implementación local",
+      "scopeStatus": "Autorización expresa de Iván el16/10/2026 para avanzar localmente en P06. P06-T01 inicia con un primer tramo de inventario temporal: modelo físico, panel en base/preparación con confirmación, IDs visibles, mochilas de 8/16 y almacén de 60 como fixture. Acceso opcional ?inventario=local o directo ?prueba=inventario, solo loopback; la prueba directa comienza en preparación de 20 s. Sin cuentas, persistencia, inventario real, botín ni kit. Las demás tareas P06 quedan autorizadas para trabajo local con sus criterios y dependencias intactos, pero siguen P hasta completar evidencia y aceptación. No autoriza servicios reales, producción, facturación, publicación externa ni cierre de P06. P05 permanece EV0/6 y P06 no suma puntos por este prototipo."
+    },
+    {
+      "id": "A-025",
+      "action": "Crédito visible de Ivan Vivanco y publicación de la versión acumulada en GitHub",
+      "scopeStatus": "Petición expresa el16/10/2026: incluir «Desarrollado por Ivan Vivanco» en la pantalla de pruebas/demo y luego subirla a GitHub. Incluye fuentes/compilado, grietas instantáneas, primer tramoP06 y roadmapv0.16 a DETECO/SCPSurvivor/main conservando historial. Excluir datos privados, cachés y dependencias instaladas. No autoriza activar servicios reales/facturación ni implica aceptaciónP05/P06."
     }
   ],
   "closureCases": [
@@ -4809,6 +4961,36 @@
       "date": "2026-10-15",
       "description": "Registrar A-021: Iván autoriza subir código P05/GAP-001 y roadmap v0.12 a DETECO/SCPSurvivor/main. Baseline39344e77 comprobada en vivo antes de la entrega, sin cambios remotos nuevos. Código/documentación/roadmap incluidos en actualización del repositorio; SHA de entrega consultable por commit/git log. Ejecución Firebase sigue emulada/local, sin facturación o despliegue del juego. Pesos/criterios/estados conservados:52/100global,42/90técnico,P05EV0/6.",
       "approval": "Petición explícita «subela. incluye roadmap», A-021."
+    },
+    {
+      "id": "CHG-018",
+      "date": "2026-10-16",
+      "description": "Registrar A-022, D-309/D-310 y EV-028: grietas físicas opcionales con tiempo limitado, cierre, localizador, sonido y alerta; prueba directa local preparada para Iván. Roadmapv0.13 solo local, sin publicación. Conservados53 tareas, pesos/criterios/dependencias y308 decisiones históricas. Global52/100, técnico42/90, P05EV0/6. Aceptación humana y persistencia de grietas pendientes.",
+      "approval": "Petición expresa de Iván de agregar grietas y preparar su prueba; A-022."
+    },
+    {
+      "id": "CHG-019",
+      "date": "2026-10-16",
+      "description": "Aplicar A-023/D-311: retirar botón de grieta y activar inmediatamente por contacto, conservando movimiento. Actualizar prueba/pauta/contexto, fuentes y compilado. Roadmapv0.14 mantiene53 tareas y52/100; sin nuevos CV ni publicación externa.",
+      "approval": "Decisión expresa de Iván: ingreso instantáneo y simple, A-023."
+    },
+    {
+      "id": "CHG-020",
+      "date": "2026-10-16",
+      "description": "Registrar A-024/D-312 y comienzo del primer tramo local P06-T01: modelo físico, panel base/preparación con confirmación, IDs, mochilas8/16 y almacén60 de fixture temporal; acceso optativo ?inventario=local o directo ?prueba=inventario. Sin cuentas, persistencia, inventario real, botín o kit. T01 queda EC/evidenceComplete=false; T02–T05 siguen P aunque autorizadas para trabajo local. Pruebas, informe y aceptación manual pendientes; no se añaden puntos ni evidencia por inferencia. Conservar53tareas, pesos/dependencias, P05EV0/6, global52/100 y D-311 de grieta instantánea.",
+      "approval": "Autorización expresa de Iván para iniciar localmente P06; A-024."
+    },
+    {
+      "id": "CHG-021",
+      "date": "2026-10-16",
+      "description": "Registrar EV-030 con pruebas ejecutadas del primer tramo local P06-T01 y regresión de grietas. Conservar CHG-020 como registro del inicio; ahora la verificación automatizada está documentada. Aceptación humana, servidor y continuidad pendientes. Ningún nuevo CV;53 tareas,52/100, P05EV0/6. Sin publicación externa.",
+      "approval": "A-024; implementación y pruebas locales autorizadas por Iván."
+    },
+    {
+      "id": "CHG-022",
+      "date": "2026-10-16",
+      "description": "Añadir A-025/D-313/EV-031: crédito visible en menú de pruebas/demo y preparar subida de la versión acumulada de grietas/P06 a GitHub. Roadmapv0.16 conserva53tareas, criterios, pesos/dependencias y52/100. No se acredita aceptación humana o publicación web.",
+      "approval": "Petición expresa de Iván de añadir crédito y subir a GitHub, A-025."
     }
   ],
   "derivedProgress": {
@@ -4944,7 +5126,7 @@
     "gamePublished": false,
     "webPublished": false,
     "editable": false,
-    "computedFromTaskDigest": "b274f106d92d32e813212b5a3c2f45c0d042432430ff97c62c1cdea51ad872b5",
+    "computedFromTaskDigest": "ad26d0613219e95cc9051f600350f147d498cfd23e43bcecf66016019f8d82f4",
     "taskDigestAlgorithm": "SHA256 of JSON.stringify(tasks), UTF-8"
   },
   "sync": {
@@ -5088,7 +5270,7 @@
       "status": "prepared_unpublished"
     }
   ],
-  "markdownTemplate": "# Roadmap SCP Survivor\n\n**Versión {{VERSION}} — {{DATE}} (America/Santiago). Global: {{GLOBAL}} %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).\n\n## 1. Estado vigente\n\nP00–P04 están completadas y verificadas **localmente**. GAP-001 quedó resuelto: sectores normales con 3/4/5 oleadas reproducibles; P03-T02 aporta sus 3 puntos después de pruebas de módulo e integración. P05 está implementada para preparación/pruebas **con emuladores** y permanece en validación: no aporta puntos mientras falten criterios, dependencias y aceptación con servicios propios reales.\n\n{{PROGRESS_SUMMARY}}\n\n{{STATE_COUNTS}}. Son 53 tareas en 12 fases, 100 puntos aprobados y {{CV_COUNT}} tareas CV. Solo CV con evidencia completa aporta peso; no hay crédito parcial. Planificación 10/10 forma parte del global. El porcentaje mide cumplimiento hasta la primera versión completa publicada; no estima tiempo restante ni acredita un juego operativo en producción por subir su código.\n\n{{PHASE_PROGRESS}}\n\n### Implementación local\n\n- Juego HTML/CSS/JavaScript/Canvas2D existente y namespace G; arquitectura, recursos y mecánicas conservados.\n- Guardia/médico, tres modelos de armas, dos copias independientes, seis mods, elección inmediata por nivel y velocidad 165. Arte provisional.\n- Expediciones modulares con objetivos, preparación de 20 s, 3/4/5 oleadas normales, biológico/perseguidor, Custodio con victoria/huida, extracción y muerte.\n- P05 optativa en localhost/127.0.0.1 con ?cuentas=local: Auth SDK, alias/verificación/recuperación/vinculación ficticias, Functions/Firestore emulados, UID/revisión/sesión/recibos y checkpoints. Entrada normal sigue aislada.\n- Una expedición por UID, transferencia explícita y conservación de lo confirmado. Recuperar combate desde su inicio excluye ranking irreversiblemente. Sin ranking oficial ni economía/inventario persistente P06/P07.\n\n### Firebase propio y GitHub\n\nIván creó manualmente scp-survivor, su app web y plan Spark. Las capturas confirman Email/contraseña y Google habilitados, localhost/127.0.0.1 autorizados y política exigida de mínimo 8 sin clases de caracteres obligatorias. [config/firebase-public.json](config/firebase-public.json) conserva configuración pública **inactiva**. No se probaron Google OAuth/correo reales ni se desplegó backend propio. [docs/FIREBASE_PROPIO.md](docs/FIREBASE_PROPIO.md) registra el alcance.\n\nRepositorio: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), main. **Código P05, GAP-001 y roadmap v0.12 incluidos en la actualización del repositorio autorizada A-021.** Main se comprobó en vivo el15/10/2026 antes de esta entrega: baseline39344e77e15bd82c98bacb3e9773ceaa20c1b918, sin cambios remotos nuevos. El commit de la entrega se identifica por P05-local-01 / roadmap v0.12 o con git log -1 --format=%H -- RoadmapSCP.json; no se inventa un SHA antes de crearlo. Esta entrega de código no activa Firebase real, facturación, despliegue o juego operativo en producción: runtime sigue local/emulado. El upstream histórico JPTER78/pokesurvivor/a1006e6e3d0cea9162238a90b0ffdd7fd38397b6 conserva su procedencia. Ruta maestra portable: ./RoadmapSCP.json.\n\n## 2. Evidencia actual y límites\n\nEV-026 acredita cierre local de GAP-001/P03-T02: 11 pruebas Node, 900 semillas, calendario de 18 sectores y 4 escenarios/2 extracciones en S10 con 35 oleadas. {{P05_VALIDATION_SUMMARY}}\n\nResultados detallados: [docs/P05-REPORT.md](docs/P05-REPORT.md), [docs/P05-validation.json](docs/P05-validation.json), [docs/GAP-001-REPORT.md](docs/GAP-001-REPORT.md) y [docs/GAP-001-validation.json](docs/GAP-001-validation.json).\n\nLos ensayos locales no demuestran OAuth/correo real, backend de producción, seguridad completa del combate, FPS/memoria/carga, Safari, teléfonos físicos, costes o juego operativo publicado. EV-001–025 e informes P01–P04 son antecedentes fechados; sus entornos/versiones/limitaciones no se convierten en evidencia nueva de P05.\n\n{{COMPLETED_EVIDENCE}}\n\n## 3. Prioridades\n\n1. Completar aceptación de P05 con servicios propios cuando se autorice la conexión/despliegue concreto: acceso/verificación/recuperación/vinculación reales, backend/reglas/retención, continuidad y cambio real de dispositivo. Conservar modo local reproducible y datos ficticios separados.\n2. Después de cumplir dependencias, P06: propiedad del equipo, ubicaciones únicas, inventario/almacén/buzón, pérdidas/recuperación y operaciones de servidor. P05 local no implementa esas reglas.\n3. P07: progresión/gacha/economía; P08: invitado/ranking; P09: acabado/recursos; P10: dispositivos físicos, carga/costes/aceptación; P11: publicación y operación autorizadas.\n\nConservar pesos, criterios y dependencias. Trabajo independiente puede prepararse sin dar por cerradas dependencias; ranking oficial requiere P10-T01/T02 antes de P08-T02. La web Roadmap tiene presupuesto separado. Cooperativo, Hardcore, códigos, regalos, ampliación 24+24 y PC posterior permanecen fuera del denominador de la primera versión.\n\n## 4. Tareas y criterios conservados\n\nEstados: P pendiente; EC en curso; B bloqueada; EV en validación; CV completada/verificada. Los criterios originales de las 53 tareas y sus dependencias se conservan. Los párrafos de estado explican la evidencia nueva sin sustituirlos.\n\n{{ALL_TASKS}}\n\n## 5. Autorizaciones\n\nA-018–021 registran las peticiones posteriores de Iván. A-001–020 conservan exactamente su alcance al registrarse; A-021 añade la entrega del código P05 y roadmap en GitHub/main. Los límites históricos de subida no revocan esta autorización posterior. La entrega al repositorio conserva runtime Firebase local/emulado, sin facturación o despliegue del juego. Las instrucciones actuales de Iván prevalecen.\n\n{{ALL_AUTHORIZATIONS}}\n\n## 6. Registro íntegro de decisiones\n\nSe conservan D-001–308 sin reescribir su contenido histórico. Una decisión posterior explícita puede sustituir una regla anterior, por ejemplo D-305/D-306. D-308 explica v0.11; el cierre posterior se acredita con EV-026. No inferir aprobaciones de arte ausente ni reconstruir sesiones excluidas.\n\n{{ALL_DECISIONS}}\n\n## 7. Evidencias completas\n\nCada evidencia conserva su alcance, versión y referencias. Las referencias con anclas antiguas de RoadmapSCP.md se resuelven contra la vista v0.11 archivada; las referencias numeradas en registros históricos corresponden a esa versión. “Prueba ejecutada” solo se refiere al ensayo descrito; no equivale a aceptación de toda la fase ni producción.\n\n{{ALL_EVIDENCE}}\n\n## 8. Áreas de continuidad\n\nLas áreas actualizadas conservan su estado v0.11 en previousStateV011 dentro del JSON. Diseño resuelto, código local y aceptación final son estados distintos.\n\n{{ALL_REMAINING}}\n\n## 9. Riesgos\n\nR-035 queda mitigado/verificado localmente con EV-026; conservar pruebas para evitar regresión. Economía/servidor/abuso/costes/dispositivos siguen sujetos a su fase y evidencia.\n\n{{ALL_RISKS}}\n\n## 10. Casos de cierre históricos\n\nCIE-001–010 se conservan como decisiones de planificación. “Ejecución pendiente al registrarse” no es una lista vigente: consultar tareas/áreas/evidencias actuales para el trabajo posterior.\n\n{{ALL_CLOSURES}}\n\n## 11. Novedades y web independiente\n\nN-001–005 son antecedentes de sus entregas, sin publicación web. Se conserva cada captura y texto alternativo. No se agrega noticia/captura nueva de P05 por inferencia. La web Roadmap continúa separada: fuente única, sin autoridad para cambiar alcance/pesos; sin construcción, automatización, sincronización o publicación autorizadas por A-020.\n\n{{ALL_NEWS}}\n\n## 12. Historial íntegro\n\nLos registros anteriores permanecen intactos. V0.11 y su documentación están en [docs/historial-local/alfa-0.4](docs/historial-local/alfa-0.4/); incluyen contexto técnico extenso y la vista original. V0.12 añade hechos posteriores y reemplaza la presentación vigente sin borrar decisiones ni historia.\n\n{{ALL_HISTORY}}\n\n## 13. Continuar en Windows/Codex Local\n\nLeer [AGENTS.md](AGENTS.md), [CONTEXTO_PROYECTO.md](CONTEXTO_PROYECTO.md), [PROMPT_MAESTRO.md](PROMPT_MAESTRO.md), [INSTALACION_WINDOWS.md](INSTALACION_WINDOWS.md) y el informe P05. Editar fuentes, generar compilado/vista y revisar diferencias/pruebas pertinentes. Conservar ambos lockfiles, fuentes Cloud/originales y backups. sources/ del espejo padre es solo lectura. No pegar claves privadas, contraseñas o tokens, convertir cachés en autoridad o activar configuración real por inferencia; la entrega del código en GitHub está autorizada por A-021.\n\nComprobar coherencia documental:\n\n~~~powershell\nnode tools/render-roadmap.js --check\n~~~\n\nEl JSON es canónico; no editar porcentajes de la vista a mano. Código y roadmap incluidos en la actualización GitHub autorizada A-021; la web Roadmap y el despliegue del juego siguen fuera de esta entrega.\n",
+  "markdownTemplate": "# Roadmap SCP Survivor\n\n**Entrega autorizada a GitHub · crédito de Ivan Vivanco · P06-T01 en curso (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).\n\n**Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).\n\n**Versión {{VERSION}} — {{DATE}} (America/Santiago). Global: {{GLOBAL}} %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).\n\n## 1. Estado vigente\n\nP00–P04 están completadas y verificadas **localmente**. GAP-001 quedó resuelto: sectores normales con 3/4/5 oleadas reproducibles; P03-T02 aporta sus 3 puntos después de pruebas de módulo e integración. P05 está implementada para preparación/pruebas **con emuladores** y permanece en validación: no aporta puntos mientras falten criterios, dependencias y aceptación con servicios propios reales.\n\n{{PROGRESS_SUMMARY}}\n\n{{STATE_COUNTS}}. Son 53 tareas en 12 fases, 100 puntos aprobados y {{CV_COUNT}} tareas CV. Solo CV con evidencia completa aporta peso; no hay crédito parcial. Planificación 10/10 forma parte del global. El porcentaje mide cumplimiento hasta la primera versión completa publicada; no estima tiempo restante ni acredita un juego operativo en producción por subir su código.\n\n{{PHASE_PROGRESS}}\n\n### Implementación local\n\n- Juego HTML/CSS/JavaScript/Canvas2D existente y namespace G; arquitectura, recursos y mecánicas conservados.\n- Guardia/médico, tres modelos de armas, dos copias independientes, seis mods, elección inmediata por nivel y velocidad 165. Arte provisional.\n- Expediciones modulares con objetivos, preparación de 20 s, 3/4/5 oleadas normales, biológico/perseguidor, Custodio con victoria/huida, extracción y muerte.\n- P05 optativa en localhost/127.0.0.1 con ?cuentas=local: Auth SDK, alias/verificación/recuperación/vinculación ficticias, Functions/Firestore emulados, UID/revisión/sesión/recibos y checkpoints. Entrada normal sigue aislada.\n- Una expedición por UID, transferencia explícita y conservación de lo confirmado. Recuperar combate desde su inicio excluye ranking irreversiblemente. Sin ranking oficial ni economía/inventario persistente P06/P07.\n\n### Firebase propio y GitHub\n\nIván creó manualmente scp-survivor, su app web y plan Spark. Las capturas confirman Email/contraseña y Google habilitados, localhost/127.0.0.1 autorizados y política exigida de mínimo 8 sin clases de caracteres obligatorias. [config/firebase-public.json](config/firebase-public.json) conserva configuración pública **inactiva**. No se probaron Google OAuth/correo reales ni se desplegó backend propio. [docs/FIREBASE_PROPIO.md](docs/FIREBASE_PROPIO.md) registra el alcance.\n\nRepositorio: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), main. **Código P05, GAP-001 y roadmap v0.12 incluidos en la actualización del repositorio autorizada A-021.** Main se comprobó en vivo el15/10/2026 antes de esta entrega: baseline39344e77e15bd82c98bacb3e9773ceaa20c1b918, sin cambios remotos nuevos. El commit de la entrega se identifica por P05-local-01 / roadmap v0.12 o con git log -1 --format=%H -- RoadmapSCP.json; no se inventa un SHA antes de crearlo. Esta entrega de código no activa Firebase real, facturación, despliegue o juego operativo en producción: runtime sigue local/emulado. El upstream histórico JPTER78/pokesurvivor/a1006e6e3d0cea9162238a90b0ffdd7fd38397b6 conserva su procedencia. Ruta maestra portable: ./RoadmapSCP.json.\n\n## 2. Evidencia actual y límites\n\nEV-026 acredita cierre local de GAP-001/P03-T02: 11 pruebas Node, 900 semillas, calendario de 18 sectores y 4 escenarios/2 extracciones en S10 con 35 oleadas. {{P05_VALIDATION_SUMMARY}}\n\nResultados detallados: [docs/P05-REPORT.md](docs/P05-REPORT.md), [docs/P05-validation.json](docs/P05-validation.json), [docs/GAP-001-REPORT.md](docs/GAP-001-REPORT.md) y [docs/GAP-001-validation.json](docs/GAP-001-validation.json).\n\nLos ensayos locales no demuestran OAuth/correo real, backend de producción, seguridad completa del combate, FPS/memoria/carga, Safari, teléfonos físicos, costes o juego operativo publicado. EV-001–025 e informes P01–P04 son antecedentes fechados; sus entornos/versiones/limitaciones no se convierten en evidencia nueva de P05.\n\n{{COMPLETED_EVIDENCE}}\n\n## 3. Prioridades\n\n1. Completar aceptación de P05 con servicios propios cuando se autorice la conexión/despliegue concreto: acceso/verificación/recuperación/vinculación reales, backend/reglas/retención, continuidad y cambio real de dispositivo. Conservar modo local reproducible y datos ficticios separados.\n2. P06 en trabajo local autorizado por A-024: P06-T01 comienza con el prototipo temporal descrito arriba; la aceptación final conserva sus dependencias P04-T02/P05-T03 y requiere servidor, continuidad y aceptación manual. P06-T02–T05 pueden prepararse/implementarse localmente, pero continúan P hasta contar con evidencia. P05 sigue EV0/6.\n3. P07: progresión/gacha/economía; P08: invitado/ranking; P09: acabado/recursos; P10: dispositivos físicos, carga/costes/aceptación; P11: publicación y operación autorizadas.\n\nConservar pesos, criterios y dependencias. Trabajo independiente puede prepararse sin dar por cerradas dependencias; ranking oficial requiere P10-T01/T02 antes de P08-T02. La web Roadmap tiene presupuesto separado. Cooperativo, Hardcore, códigos, regalos, ampliación 24+24 y PC posterior permanecen fuera del denominador de la primera versión.\n\n## 4. Tareas y criterios conservados\n\nEstados: P pendiente; EC en curso; B bloqueada; EV en validación; CV completada/verificada. Los criterios originales de las 53 tareas y sus dependencias se conservan. Los párrafos de estado explican la evidencia nueva sin sustituirlos.\n\n{{ALL_TASKS}}\n\n## 5. Autorizaciones\n\nA-018–021 registran las peticiones posteriores de Iván. A-001–020 conservan exactamente su alcance al registrarse; A-021 añade la entrega del código P05 y roadmap en GitHub/main. Los límites históricos de subida no revocan esta autorización posterior. La entrega al repositorio conserva runtime Firebase local/emulado, sin facturación o despliegue del juego. Las instrucciones actuales de Iván prevalecen.\n\n{{ALL_AUTHORIZATIONS}}\n\n## 6. Registro íntegro de decisiones\n\nSe conservan D-001–308 sin reescribir su contenido histórico. Una decisión posterior explícita puede sustituir una regla anterior, por ejemplo D-305/D-306. D-308 explica v0.11; el cierre posterior se acredita con EV-026. No inferir aprobaciones de arte ausente ni reconstruir sesiones excluidas.\n\n{{ALL_DECISIONS}}\n\n## 7. Evidencias completas\n\nCada evidencia conserva su alcance, versión y referencias. Las referencias con anclas antiguas de RoadmapSCP.md se resuelven contra la vista v0.11 archivada; las referencias numeradas en registros históricos corresponden a esa versión. “Prueba ejecutada” solo se refiere al ensayo descrito; no equivale a aceptación de toda la fase ni producción.\n\n{{ALL_EVIDENCE}}\n\n## 8. Áreas de continuidad\n\nLas áreas actualizadas conservan su estado v0.11 en previousStateV011 dentro del JSON. Diseño resuelto, código local y aceptación final son estados distintos.\n\n{{ALL_REMAINING}}\n\n## 9. Riesgos\n\nR-035 queda mitigado/verificado localmente con EV-026; conservar pruebas para evitar regresión. Economía/servidor/abuso/costes/dispositivos siguen sujetos a su fase y evidencia.\n\n{{ALL_RISKS}}\n\n## 10. Casos de cierre históricos\n\nCIE-001–010 se conservan como decisiones de planificación. “Ejecución pendiente al registrarse” no es una lista vigente: consultar tareas/áreas/evidencias actuales para el trabajo posterior.\n\n{{ALL_CLOSURES}}\n\n## 11. Novedades y web independiente\n\nN-001–005 son antecedentes de sus entregas, sin publicación web. Se conserva cada captura y texto alternativo. No se agrega noticia/captura nueva de P05 por inferencia. La web Roadmap continúa separada: fuente única, sin autoridad para cambiar alcance/pesos; sin construcción, automatización, sincronización o publicación autorizadas por A-020.\n\n{{ALL_NEWS}}\n\n## 12. Historial íntegro\n\nLos registros anteriores permanecen intactos. V0.11 y su documentación están en [docs/historial-local/alfa-0.4](docs/historial-local/alfa-0.4/); incluyen contexto técnico extenso y la vista original. V0.12 añade hechos posteriores y reemplaza la presentación vigente sin borrar decisiones ni historia.\n\n{{ALL_HISTORY}}\n\n## 13. Continuar en Windows/Codex Local\n\nLeer [AGENTS.md](AGENTS.md), [CONTEXTO_PROYECTO.md](CONTEXTO_PROYECTO.md), [PROMPT_MAESTRO.md](PROMPT_MAESTRO.md), [INSTALACION_WINDOWS.md](INSTALACION_WINDOWS.md) y el informe P05. Editar fuentes, generar compilado/vista y revisar diferencias/pruebas pertinentes. Conservar ambos lockfiles, fuentes Cloud/originales y backups. sources/ del espejo padre es solo lectura. No pegar claves privadas, contraseñas o tokens, convertir cachés en autoridad o activar configuración real por inferencia; la entrega del código en GitHub está autorizada por A-021.\n\nComprobar coherencia documental:\n\n~~~powershell\nnode tools/render-roadmap.js --check\n~~~\n\nEl JSON es canónico; no editar porcentajes de la vista a mano. Código y roadmap incluidos en la actualización GitHub autorizada A-021; la web Roadmap y el despliegue del juego siguen fuera de esta entrega.\n",
   "currentImplementation": {
     "version": "P05-local-01 / alfa0.5 local",
     "localOnly": true,
@@ -5138,7 +5320,59 @@
       "baselineVerifiedCommit": "39344e77e15bd82c98bacb3e9773ceaa20c1b918",
       "baselineVerifiedOn": "2026-10-15",
       "commitReference": "git log -1 --format=%H -- RoadmapSCP.json"
+    },
+    "riftPrototype": {
+      "status": "EV",
+      "scope": "optativo local sin cuentas ni guardado",
+      "directTest": "?prueba=grieta",
+      "optionalAppearance": "?grietas=local",
+      "openSeconds": 45,
+      "physicalLocation": true,
+      "locator": [
+        "direction",
+        "distance",
+        "remainingSeconds"
+      ],
+      "appearanceSignals": [
+        "sound",
+        "screenAlert"
+      ],
+      "manualAcceptance": "pending",
+      "references": [
+        "docs/PRUEBA_GRIETAS.md",
+        "docs/OBSERVACIONES_VISUALES.md",
+        "docs/GRIETAS-VALIDACION.md"
+      ],
+      "entry": "instant_contact_without_button_or_delay"
+    },
+    "inventoryPrototype": {
+      "status": "EC",
+      "taskId": "P06-T01",
+      "scope": "Primer tramo local: modelo de copias físicas y panel en base/preparación con confirmación; IDs de fixture visibles; mochilas8/16 y almacén60 temporal.",
+      "optionalQuery": "?inventario=local",
+      "directTest": "?prueba=inventario",
+      "directTestStartsInPreparationSeconds": 20,
+      "loopbackOnly": true,
+      "accounts": false,
+      "persistent": false,
+      "fixture": "Temporal y ficticio; no acredita propiedad real ni inventario confirmado por servidor.",
+      "excluded": [
+        "botín real",
+        "kit P06-T02",
+        "economía",
+        "persistencia de cuenta"
+      ],
+      "evidenceComplete": false,
+      "automatedValidation": "Pendiente de registrar tras ejecutar y verificar; no se asignan resultados en esta actualización.",
+      "manualAcceptance": "pending",
+      "remainingAcceptance": [
+        "Integración y autoridad transaccional de servidor conforme a las dependencias originales, incluido P05-T03.",
+        "Continuidad de inventario ante sesión, desconexión y cambio de dispositivo dentro del flujo autorizado.",
+        "Aceptación manual de Iván del flujo local y sus límites."
+      ],
+      "reportReference": "docs/P06-REPORT.md (pendiente de verificación)",
+      "manualGuide": "docs/PRUEBA_INVENTARIO_P06.md"
     }
   },
-  "summaryTemplate": "# Roadmap vigente — SCP Survivor\n\nVersión **{{VERSION}}**, {{DATE}}. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.\n\n## Avance basado en evidencia\n\n{{SUMMARY_METRICS}}\n\n{{SUMMARY_COUNTS}} Solo CV con evidencia completa suma; no hay crédito parcial. El avance mide criterios cumplidos, no tiempo restante, producto publicado o porcentaje de arte final.\n\n{{SUMMARY_PHASES}}\n\n## Cambio desde v0.11\n\nGAP-001 está resuelto y P03-T02 pasa de EV a CV: suma sus **3 puntos**, elevando global de 49 a 52 y técnico de 39/90 a 42/90. P03 queda 12/12. Criterios, pesos y dependencias originales permanecen intactos.\n\nLos sectores normales ahora declaran 3/4/5 oleadas reproducibles, con objetivos alternos, preparación de 20 s, HUD/contadores/salidas coherentes y secuencia independiente del calendario de jefe/extracción. EV-026: 11 pruebas Node, 900 semillas y calendario histórico de 18 sectores; cuatro escenarios de navegador fuente/compilado y dos extracciones S10/oleada4/35oleadas. Fuente 1.580 bajas y jefe evadido; compilado 1.587 y jefe vencido. Cero errores de página, peticiones remotas o errores HTTP en esos recorridos.\n\n## P05: implementación local, aceptación pendiente\n\nP05-T01/T02/T03 están **EV y conservan 0/6 puntos**. Se añadieron cuentas ficticias, alias, verificación/recuperación/vinculación explícita, autoridad de comandos emulada, recibos/reintentos, checkpoints seguros y una expedición activa por UID. Transferir revoca la sesión anterior; recuperar combate desde su inicio excluye clasificación irreversiblemente. El juego sin cuentas permanece disponible.\n\n{{P05_VALIDATION_SUMMARY}}\n\nResultados y límites: [docs/P05-REPORT.md](docs/P05-REPORT.md), [docs/P05-validation.json](docs/P05-validation.json) y [docs/GAP-001-validation.json](docs/GAP-001-validation.json).\n\n| Tarea | Preparado/probado localmente | Falta para aceptación completa |\n|---|---|---|\n| P05-T01 | Auth SDK, alias, alta/acceso/cierre y flujos ficticios | Google OAuth/correo/verificación/recuperación/vinculación reales, errores y separación de identidades con servicios propios |\n| P05-T02 | UID del token, revisión, sesión, transacciones/recibos, concurrencia y replay | Cumplir P05-T01; aceptar backend/reglas/persistencia/retención propios con alcance autorizado |\n| P05-T03 | Checkpoints, roundtrip, transferencia, desconexión/respuesta perdida y retroceso no clasificable | Cumplir P05-T02; nube propia y cambio real de dispositivo/red |\n\nLa evidencia local no acredita combate validado por servidor, economía/inventario persistente P06/P07, ranking oficial, OAuth/correo real, dispositivos físicos, Safari, FPS/memoria/carga, costes o juego operativo en producción.\n\n## Proyecto Firebase propio\n\nIván creó manualmente **scp-survivor**, app web y plan Spark. Capturas confirman Email/contraseña y Google habilitados, localhost/127.0.0.1 autorizados y política exigida de mínimo 8 sin clases obligatorias. La configuración pública se conserva **inactiva** en config/firebase-public.json. El juego usa exclusivamente demo-scp-survivor emulado, activado de forma optativa en localhost con ?cuentas=local. No se desplegó backend real ni se habilitó facturación desde Codex. Detalle: [docs/FIREBASE_PROPIO.md](docs/FIREBASE_PROPIO.md).\n\n## Orden de continuación\n\n1. **P05:** completar aceptación real conforme a sus dependencias. Preparar configuración, reglas, pruebas y costes antes de solicitar la autorización concreta necesaria para conexión/despliegue. La configuración manual de Auth no acredita por sí sola un backend de guardado funcional.\n2. **P06:** inventario físico, ubicaciones únicas, pérdidas/recuperación, mochila, almacén y buzón; autoridad de servidor y casos de concurrencia/overflow. Comenzar después de cumplir dependencias P04/P05.\n3. **P07:** progresión permanente, gacha y economía consistente, con P05/P06 completos.\n4. **P08:** invitado/ranking; ranking oficial requiere aceptación P10-T01/T02 antes de P08-T02.\n5. **P09/P10:** acabado/recursos y validación en dispositivos físicos, carga, memoria, rendimiento y costes.\n6. **P11:** despliegue/publicación/operación autorizados y aceptación final de producción.\n\nLa web Roadmap sigue como proyecto independiente sin construcción, automatización o publicación en este alcance. Cooperativo, Hardcore, códigos, regalos, ampliación 24+24 y PC posterior quedan fuera del denominador aprobado.\n\n## Continuidad y sincronización\n\nRepositorio: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), rama main. **Código P05, GAP-001 y roadmap v0.12 incluidos en actualización del repositorio autorizada por Iván: A-021.** Main se comprobó en vivo el15/10/2026 antes de esta entrega: baseline **39344e77e15bd82c98bacb3e9773ceaa20c1b918**, sin cambios remotos nuevos. Consultar el commit de la entrega P05-local-01 / roadmap v0.12 mediante git log -1 --format=%H -- RoadmapSCP.json. Publicar el código no activa Firebase real, facturación o despliegue: **el juego con cuentas sigue ejecutándose localmente con emuladores**.\n\nA-018 registra migración/subida anterior; A-019 autoriza avanzar GAP-001→P05 con implementación, dependencias y emuladores locales; A-020 autoriza este roadmap con subagente y A-021 autoriza entregar código P05 y roadmap en GitHub/main. Iván pide continuar autónomamente sin repetir consultas dentro del alcance local ya autorizado. Autorizaciones/decisiones/historial íntegros en JSON/vista. Los registros históricos no bloquean el alcance local ya autorizado.\n\nLeer [AGENTS.md](AGENTS.md), [CONTEXTO_PROYECTO.md](CONTEXTO_PROYECTO.md), [PROMPT_MAESTRO.md](PROMPT_MAESTRO.md) e [INSTALACION_WINDOWS.md](INSTALACION_WINDOWS.md). Conservar fuentes, arte aprobado y backups. La entrega en GitHub está autorizada por A-021; configuración Firebase real, facturación y despliegue del juego no se activan por esa entrega.\n\n~~~powershell\nnode tools/render-roadmap.js --check\n~~~\n\nAntes de cerrar tareas: comprobar criterio/dependencias/alcance, ejecutar pruebas pertinentes, registrar versión/entorno/evidencia y distinguir implementación local de aceptación real.\n"
+  "summaryTemplate": "# Roadmap vigente — SCP Survivor\n\n**Entrega autorizada a GitHub · crédito de Ivan Vivanco · P06-T01 en curso (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).\n\n**Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).\n\nVersión **{{VERSION}}**, {{DATE}}. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.\n\n## Avance basado en evidencia\n\n{{SUMMARY_METRICS}}\n\n{{SUMMARY_COUNTS}} Solo CV con evidencia completa suma; no hay crédito parcial. El avance mide criterios cumplidos, no tiempo restante, producto publicado o porcentaje de arte final.\n\n{{SUMMARY_PHASES}}\n\n## P06 local en curso desde v0.14\n\nA-024 autoriza avanzar localmente. P06-T01 queda EC/evidenceComplete=false con modelo físico, panel base/preparación con confirmación, IDs y fixture temporal para mochilas8/16 y almacén60. `?prueba=inventario` inicia directamente en preparación20s; `?inventario=local` activa la opción en loopback. No hay cuentas, persistencia ni inventario real, botín o kit. EV-030 registra los ensayos ejecutados en [docs/P06-REPORT.md](docs/P06-REPORT.md); la aceptación manual sigue pendiente. P06-T02–T05 continúan P; P05 EV0/6 y el global52/100 no cambian.\n\n## Cambio desde v0.11\n\nGAP-001 está resuelto y P03-T02 pasa de EV a CV: suma sus **3 puntos**, elevando global de 49 a 52 y técnico de 39/90 a 42/90. P03 queda 12/12. Criterios, pesos y dependencias originales permanecen intactos.\n\nLos sectores normales ahora declaran 3/4/5 oleadas reproducibles, con objetivos alternos, preparación de 20 s, HUD/contadores/salidas coherentes y secuencia independiente del calendario de jefe/extracción. EV-026: 11 pruebas Node, 900 semillas y calendario histórico de 18 sectores; cuatro escenarios de navegador fuente/compilado y dos extracciones S10/oleada4/35oleadas. Fuente 1.580 bajas y jefe evadido; compilado 1.587 y jefe vencido. Cero errores de página, peticiones remotas o errores HTTP en esos recorridos.\n\n## P05: implementación local, aceptación pendiente\n\nP05-T01/T02/T03 están **EV y conservan 0/6 puntos**. Se añadieron cuentas ficticias, alias, verificación/recuperación/vinculación explícita, autoridad de comandos emulada, recibos/reintentos, checkpoints seguros y una expedición activa por UID. Transferir revoca la sesión anterior; recuperar combate desde su inicio excluye clasificación irreversiblemente. El juego sin cuentas permanece disponible.\n\n{{P05_VALIDATION_SUMMARY}}\n\nResultados y límites: [docs/P05-REPORT.md](docs/P05-REPORT.md), [docs/P05-validation.json](docs/P05-validation.json) y [docs/GAP-001-validation.json](docs/GAP-001-validation.json).\n\n| Tarea | Preparado/probado localmente | Falta para aceptación completa |\n|---|---|---|\n| P05-T01 | Auth SDK, alias, alta/acceso/cierre y flujos ficticios | Google OAuth/correo/verificación/recuperación/vinculación reales, errores y separación de identidades con servicios propios |\n| P05-T02 | UID del token, revisión, sesión, transacciones/recibos, concurrencia y replay | Cumplir P05-T01; aceptar backend/reglas/persistencia/retención propios con alcance autorizado |\n| P05-T03 | Checkpoints, roundtrip, transferencia, desconexión/respuesta perdida y retroceso no clasificable | Cumplir P05-T02; nube propia y cambio real de dispositivo/red |\n\nLa evidencia local no acredita combate validado por servidor, economía/inventario persistente P06/P07, ranking oficial, OAuth/correo real, dispositivos físicos, Safari, FPS/memoria/carga, costes o juego operativo en producción.\n\n## Proyecto Firebase propio\n\nIván creó manualmente **scp-survivor**, app web y plan Spark. Capturas confirman Email/contraseña y Google habilitados, localhost/127.0.0.1 autorizados y política exigida de mínimo 8 sin clases obligatorias. La configuración pública se conserva **inactiva** en config/firebase-public.json. El juego usa exclusivamente demo-scp-survivor emulado, activado de forma optativa en localhost con ?cuentas=local. No se desplegó backend real ni se habilitó facturación desde Codex. Detalle: [docs/FIREBASE_PROPIO.md](docs/FIREBASE_PROPIO.md).\n\n## Orden de continuación\n\n1. **P05:** completar aceptación real conforme a sus dependencias. Preparar configuración, reglas, pruebas y costes antes de solicitar la autorización concreta necesaria para conexión/despliegue. La configuración manual de Auth no acredita por sí sola un backend de guardado funcional.\n2. **P06:** trabajo local autorizado por A-024; P06-T01 está EC con su primer prototipo temporal. La aceptación conserva dependencias P04-T02/P05-T03 y requiere servidor, continuidad y aceptación manual. P06-T02–T05 siguen P aunque el trabajo local está autorizado. El fixture no persiste ni representa inventario real, botín o kit.\n3. **P07:** progresión permanente, gacha y economía consistente, con P05/P06 completos.\n4. **P08:** invitado/ranking; ranking oficial requiere aceptación P10-T01/T02 antes de P08-T02.\n5. **P09/P10:** acabado/recursos y validación en dispositivos físicos, carga, memoria, rendimiento y costes.\n6. **P11:** despliegue/publicación/operación autorizados y aceptación final de producción.\n\nLa web Roadmap sigue como proyecto independiente sin construcción, automatización o publicación en este alcance. Cooperativo, Hardcore, códigos, regalos, ampliación 24+24 y PC posterior quedan fuera del denominador aprobado.\n\n## Continuidad y sincronización\n\nRepositorio: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), rama main. **Código P05, GAP-001 y roadmap v0.12 incluidos en actualización del repositorio autorizada por Iván: A-021.** Main se comprobó en vivo el15/10/2026 antes de esta entrega: baseline **39344e77e15bd82c98bacb3e9773ceaa20c1b918**, sin cambios remotos nuevos. Consultar el commit de la entrega P05-local-01 / roadmap v0.12 mediante git log -1 --format=%H -- RoadmapSCP.json. Publicar el código no activa Firebase real, facturación o despliegue: **el juego con cuentas sigue ejecutándose localmente con emuladores**.\n\nA-018 registra migración/subida anterior; A-019 autoriza avanzar GAP-001→P05 con implementación, dependencias y emuladores locales; A-020 autoriza este roadmap con subagente y A-021 autoriza entregar código P05 y roadmap en GitHub/main. Iván pide continuar autónomamente sin repetir consultas dentro del alcance local ya autorizado. Autorizaciones/decisiones/historial íntegros en JSON/vista. Los registros históricos no bloquean el alcance local ya autorizado.\n\nLeer [AGENTS.md](AGENTS.md), [CONTEXTO_PROYECTO.md](CONTEXTO_PROYECTO.md), [PROMPT_MAESTRO.md](PROMPT_MAESTRO.md) e [INSTALACION_WINDOWS.md](INSTALACION_WINDOWS.md). Conservar fuentes, arte aprobado y backups. La entrega en GitHub está autorizada por A-021; configuración Firebase real, facturación y despliegue del juego no se activan por esa entrega.\n\n~~~powershell\nnode tools/render-roadmap.js --check\n~~~\n\nAntes de cerrar tareas: comprobar criterio/dependencias/alcance, ejecutar pruebas pertinentes, registrar versión/entorno/evidencia y distinguir implementación local de aceptación real.\n"
 }

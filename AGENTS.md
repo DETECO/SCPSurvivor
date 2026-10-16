@@ -33,3 +33,19 @@ Iván autorizó avanzar GAP-001→P05 y eligió preparar/probar localmente. Desp
 - PowerShell: npm.cmd. Mantener ambos lockfiles. El frontend no carga .env.
 - Solo CV con evidencia completa aporta puntos; no cambiar criterios/pesos. P05 real permanece en validación mientras falten servicios propios y flujos reales.
 - Mostrar diff de cambios existentes y rutas. Mantener contexto e instrucciones Windows coherentes.
+
+## Ampliación local de grietas — 16/10/2026
+
+Iván autorizó el prototipo y realizará la aceptación manual. Abrir ?prueba=grieta para acceso directo o ?grietas=local para aparición opcional; solo loopback y sin cuentas. Grieta física alcanzable, apertura45s activas, cierre e indicador dirección/distancia/tiempo; sonido y alerta al aparecer. Variante Custodio provisional en mismo escenario, entrada voluntaria y retirada. No cambiar jefes normales, arte aprobado ni pesos. P05 de cuentas conserva su esquema: las grietas no se guardan y ambas opciones se desactivan con cuentas=local. P09 debe conservar sonido/aviso/localizador como requisitos permanentes. Leer docs/PRUEBA_GRIETAS.md, docs/OBSERVACIONES_VISUALES.md y docs/GRIETAS-VALIDACION.md. Roadmapv0.13 conserva52/100, P05EV0/6. Prototipo sin publicación externa.
+
+Decisión posterior de Iván (A-023/D-311): ingreso instantáneo al tocar/cruzar la grieta abierta, sin botón, tecla, confirmación ni espera. No detener el movimiento mantenido. La llegada anunciada del jefe sigue siendo aviso de ataque y no retrasa la entrada. Roadmapv0.14;52/100 sin cambios.
+
+## Inicio local P06 — 16/10/2026
+
+Iván autorizó avanzar localmente en la fase P06 mediante A-024. El primer tramo de P06-T01 queda en curso (EC): prototipo temporal con copias numeradas, gestión en base/preparación con confirmación, mochilas de 8/16 y almacén simulado de 60 como fixture. Entrada optativa `?inventario=local` o prueba directa `?prueba=inventario`; la prueba directa comienza en preparación de 20 s. Solo loopback, sin cuentas, persistencia, inventario real, botín ni kit. El descanso continúa durante la preparación; los borradores no confirmados se descartan al agotarse el tiempo. La reducción de mochila que no admita el contenido se rechaza sin descartar objetos.
+
+P06-T01 conserva sus criterios, peso 2 y dependencias P04-T02/P05-T03. No se acepta con este prototipo: quedan autoridad transaccional de servidor, continuidad y aceptación manual de Iván. P06-T02–T05 están autorizadas para trabajo local, respetando criterios y dependencias, pero siguen P hasta tener evidencia suficiente. P05 sigue EV0/6; global52/100. No afirmar puntos, resultados de pruebas, aceptación ni cierre de fase por inferencia. Registrar verificaciones futuras en docs/P06-REPORT.md y la pauta del usuario en docs/PRUEBA_INVENTARIO_P06.md. Conservar la interacción de grieta instantánea D-311.
+
+## Crédito y publicación — 16/10/2026
+
+Iván pidió el texto exacto «Desarrollado por Ivan Vivanco» en la pantalla de pruebas/demo y después subir esta versión a GitHub (A-025). Conservarlo visible bajo el título del menú compartido. La autorización incluye la entrega acumulada de grietas instantáneas, primer tramo P06 y roadmapv0.16 a DETECO/SCPSurvivor/main, conservando historial. No implica desplegar servicios reales ni aceptar P05/P06. Consultar docs/PUBLICACION_GITHUB.md para la entrega y sus comprobaciones.

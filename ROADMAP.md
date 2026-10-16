@@ -1,6 +1,10 @@
 # Roadmap vigente — SCP Survivor
 
-Versión **0.12**, 2026-10-15. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+**Entrega autorizada a GitHub · crédito de Ivan Vivanco · P06-T01 en curso (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).
+
+**Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
+
+Versión **0.16**, 2026-10-16. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
 
 ## Avance basado en evidencia
 
@@ -20,12 +24,16 @@ Versión **0.12**, 2026-10-15. Juego existente, entrega **P05-local-01 / alfa 0.
 | P03 | Expedición, escenarios, misiones y enemigos finales | 12/12 | 100 % | Verificada localmente |
 | P04 | Soldados, armas, modificaciones y combate completo | 12/12 | 100 % | Verificada localmente |
 | P05 | Cuentas, autoridad de servidor y continuidad | 0/6 | 0 % | En validación local; aceptación real pendiente |
-| P06 | Inventario, pérdida, recuperación, almacén y buzón | 0/10 | 0 % | Pendiente |
+| P06 | Inventario, pérdida, recuperación, almacén y buzón | 0/10 | 0 % | En curso |
 | P07 | Progresión, gacha, hitos y economía | 0/10 | 0 % | Pendiente |
 | P08 | Demo y clasificación de pruebas/oficial | 0/4 | 0 % | Pendiente |
 | P09 | Interfaz, arte, audio y experiencia móvil final | 0/8 | 0 % | Pendiente |
 | P10 | Aceptación, rendimiento, integridad y costes | 0/6 | 0 % | Pendiente |
 | P11 | Distribución, publicación y cierre verificado | 0/4 | 0 % | Pendiente |
+
+## P06 local en curso desde v0.14
+
+A-024 autoriza avanzar localmente. P06-T01 queda EC/evidenceComplete=false con modelo físico, panel base/preparación con confirmación, IDs y fixture temporal para mochilas8/16 y almacén60. `?prueba=inventario` inicia directamente en preparación20s; `?inventario=local` activa la opción en loopback. No hay cuentas, persistencia ni inventario real, botín o kit. EV-030 registra los ensayos ejecutados en [docs/P06-REPORT.md](docs/P06-REPORT.md); la aceptación manual sigue pendiente. P06-T02–T05 continúan P; P05 EV0/6 y el global52/100 no cambian.
 
 ## Cambio desde v0.11
 
@@ -56,7 +64,7 @@ Iván creó manualmente **scp-survivor**, app web y plan Spark. Capturas confirm
 ## Orden de continuación
 
 1. **P05:** completar aceptación real conforme a sus dependencias. Preparar configuración, reglas, pruebas y costes antes de solicitar la autorización concreta necesaria para conexión/despliegue. La configuración manual de Auth no acredita por sí sola un backend de guardado funcional.
-2. **P06:** inventario físico, ubicaciones únicas, pérdidas/recuperación, mochila, almacén y buzón; autoridad de servidor y casos de concurrencia/overflow. Comenzar después de cumplir dependencias P04/P05.
+2. **P06:** trabajo local autorizado por A-024; P06-T01 está EC con su primer prototipo temporal. La aceptación conserva dependencias P04-T02/P05-T03 y requiere servidor, continuidad y aceptación manual. P06-T02–T05 siguen P aunque el trabajo local está autorizado. El fixture no persiste ni representa inventario real, botín o kit.
 3. **P07:** progresión permanente, gacha y economía consistente, con P05/P06 completos.
 4. **P08:** invitado/ranking; ranking oficial requiere aceptación P10-T01/T02 antes de P08-T02.
 5. **P09/P10:** acabado/recursos y validación en dispositivos físicos, carga, memoria, rendimiento y costes.
