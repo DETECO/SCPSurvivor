@@ -1,13 +1,15 @@
 # Relevo para Codex Local — SCP Survivor
 
-Continúa el proyecto de esta carpeta. Lee AGENTS.md, CONTEXTO_PROYECTO.md, PROMPT_MAESTRO.md, ROADMAP.md, docs/P05-REPORT.md e INSTALACION_WINDOWS.md.
+**V2-ESTRUCTURA · 18/10/2026.** Leer primero PAUTA_DESARROLLO.md, docs/ESTRUCTURA_DECISIONES.md, docs/PLAN_CAMBIOS_ESTRUCTURA.md, AGENTS.md y PROMPT_MAESTRO.md. Iván pidió incorporar el chat ESTRUCTURA y preparar la adaptación; no reconstruir el juego.
 
-Repositorio: https://github.com/DETECO/SCPSurvivor, main. Base39344e77/alfa0.4; esta actualización incorpora P05-local-01 y roadmapv0.12 por petición expresa «subela. incluye roadmap». Iván autorizó avanzar GAP-001 y P05 localmente y terminar sin más consultas. Creó manualmente scp-survivor en Firebase; su configuración pública está conservada, inactiva. La entrega del código al repositorio no activa servicios reales. Trazabilidad en docs/PUBLICACION_GITHUB.md.
+Diseño vigente: mapas encadenados5min, monstruos propios con escalada, jefe obligatorio por mapa. A5:00 llega puerta blindada y soldados, cesa todo spawn enemigo y permanecen remanentes. Cruzar exige jefe derrotado, conserva vida/build de la partida y reinicia reloj. La puerta no ejecuta extracción de fin de partida.
 
-Stack HTML/CSS/JavaScript/Canvas2D y namespace G. dev.html es fuente; npm.cmd run build genera compilado y SDKFirebase local. Sin cambio de motor.
+Se retiran extracción voluntaria, accesorios físicos de armas y mochilas. Conservar armas/soldados, estadísticas y mejoras. Armas por familias y mejoras al azar por nivel; cofres, probabilidades, economía y detalles de grietas/saltos siguen abiertos según el registro. No seguir el inventario físico P06 anterior.
 
-Conservar dos soldados, tres armas, seis mods, XP inmediata, mapas, jefe, extracción y resto de mecánicas. P05 añade modo optativo ?cuentas=local en localhost con Auth/Firestore/Functions emulados en demo-scp-survivor. Modo normal aislado. Contratos UID/revisión/sesión/requestId/recibos, una expedición activa y checkpoints seguros. Retroceder combate excluye clasificación. Sin economía/inventario persistente P06/P07 ni ranking oficial.
+El código actual todavía contiene el diseño anterior. Esta entrega es documental, sin cambios de mecánicas. RoadmapSCP.json guarda activeDesignRevisionV2;53tareas/estados/pesos y52/100 son línea base histórica, avanceV2 sin calcular. Generar vistas con node tools/render-roadmap.js y verificar con --check.
 
-Resultados actuales y porcentaje canónico: docs/P05-REPORT.md y RoadmapSCP.json. No inferir aceptación real por emuladores. Google/correo reales, nube, costes, dispositivos físicos y producción pendientes.
+P05 requiere aceptación real y compatibilidad V2 antes de implementar P06 replanteada. Mantener Firebase Spark sin facturación. Emuladores/correo ficticio no acreditan OAuth, correo o persistencia reales. Preparación local de servidor no equivale a despliegue. Mantener UID/revisión/sesión/requestId/recibos, una partida activa y cachés separadas; no sobrescribir guardados de otro contrato ni otorgar premios duplicados.
 
-Comenzar revisando informe y comandos Windows. No tocar sources/ ni originales Cloud. No publicar servicios, habilitar facturación o subir esta fase sin autorización concreta. docs/historial-local/alfa-0.4 contiene antecedentes de esa versión.
+Repositorio: https://github.com/DETECO/SCPSurvivor, main. Subida de código/roadmap autorizada; no activar facturación. Stack HTML/CSS/JavaScript/Canvas2D y namespaceG. dev.html es fuente; build genera index.html/js/app.min.js. Conservar arte aprobado, crédito «Desarrollado por Ivan Vivanco», ZIPoriginales y sources/ de solo lectura.
+
+Comandos de Windows en INSTALACION_WINDOWS.md. Resultados de implementación previos en informes P05/P06; plan futuro en PLAN_CAMBIOS_ESTRUCTURA.md. Mostrar diff, verificar cambios y distinguir implementación local, propuesta y aceptación real.

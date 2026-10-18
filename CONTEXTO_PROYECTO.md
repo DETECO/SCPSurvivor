@@ -1,12 +1,18 @@
 # Contexto del proyecto — SCP Survivor
 
+## Cambio de dirección — V2-ESTRUCTURA, 18/10/2026
+
+Iván incorporó ESTRUCTURA a este hilo y pidió preparar los cambios: mapas5min, jefe obligatorio, puerta blindada/soldados a5:00, cese de apariciones y remanentes vivos; avance por mapas. Se retiran extracción de fin de partida, accesorios físicos y mochilas. La pauta distingue decisiones confirmadas de cofres, economía y reglas todavía abiertas.
+
+Leer [pauta vigente](PAUTA_DESARROLLO.md) y [plan de adaptación](docs/PLAN_CAMBIOS_ESTRUCTURA.md). El código todavía ejecuta el diseño anterior; esta entrega no implementa V2. P05 real sigue pendiente; P06 debe replantearse.52/100 pertenece a la línea base anterior, avanceV2 sin calcular. Los antecedentes de implementación que siguen no prevalecen sobre esta revisión.
+
 **Prioridad vigente17/10/2026 (A-026/D-314): terminar P05 antes de continuarP06.** Se conserva el prototipoP06 y el crédito, sin avanzar funcionesP06. Integración del proyecto propio preparada pero desactivada por defecto; no equivale a conexión o pruebas reales. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. P05 continúa EV0/6, global52/100. Actualización posterior EV-033: CLI del propietario autorizado; acceso y configuración Auth consultados en vivo. Facturación deshabilitada, sin cuenta vinculada; Iván eligió mantener Spark sin facturación (A-028/D-315). Firestore/Functions devuelven403SERVICE_DISABLED y no pudieron listarse; no se afirma ausencia de datos. El backend actual requiere Functions/Blaze y no se despliega. [Estado Spark](docs/P05-ESTADO-SPARK.md). A-027/D-316 registra GitHub y P06 inmediato con multiagentes después del cierre real P05; roadmapv0.18.
 
-Actualización16/10/2026. Esta carpeta continúa el videojuego existente de la sesión principal SCP Survivor. Las otras sesiones se excluyeron por instrucción de Iván. No se reconstruyó el juego ni se sustituyeron sus recursos gráficos.
+Actualización16/10/2026. Esta carpeta continúa el videojuego existente de la sesión principal SCP Survivor. Las otras sesiones se excluyeron entonces por instrucción de Iván; ESTRUCTURA se incorpora ahora por su petición posterior. No se reconstruyó el juego ni se sustituyeron sus recursos gráficos.
 
 ## Objetivo
 
-Juego web de supervivencia por expediciones infinitas: explorar sectores, neutralizar amenazas, resistir oleadas, mejorar temporalmente equipo y decidir entre avanzar, huir de un jefe o extraer. La meta canónica sigue siendo la primera versión completa publicada, no una demo local.
+Juego web de supervivencia con avance por mapas encadenados, cinco minutos de presión por mapa, jefe obligatorio y transición por puerta de la Fundación. Armas distintas por familias y mejoras de nivel al azar; grietas opcionales y saltos dimensionales por concretar. Se continúa el proyecto existente hasta una versión completa aceptada y publicada. El prototipo anterior todavía conserva extracción, mods y mochilas: su retirada está planificada, no implementada.
 
 ## Procedencia y autorización
 
@@ -32,7 +38,7 @@ HTML/CSS/JavaScript y Canvas2D; módulos globales G. Sin motor externo ni framew
 | RoadmapSCP.json | Tareas/decisiones/pesos canónicos; vista generada con tools/render-roadmap.js |
 | tests/,docs/ | Verificaciones, evidencias e historial |
 
-## Mecánicas conservadas
+## Mecánicas presentes en el prototipo anterior; revisar según V2
 
 - Dos soldados: guardia/Sprint y médico/curación. Velocidad165.
 - Pistola/subfusil/escopeta; dos copias equipadas independientes, incluso mismo modelo. Seis mods, dos compatibles por copia.
@@ -61,12 +67,12 @@ Errores de conexión dejan confirmación pendiente y partida detenida: reintenta
 
 ## Próximas tareas
 
-1. Revisar aceptación local P05 y límites antes de configurar servicios reales.
-2. Completar la integración con scp-survivor: proveedores/dominios y mínimo8 ya aparecen configurados en capturas. Faltan correo/verificación/recuperación/vinculación reales, backend/reglas, retención/eliminación y pruebas con esos servicios. Evaluar despliegue y costes antes de activar servicios facturables.
-3. Completar aceptación P05 respetando dependencias. Después P06: inventario, ubicaciones únicas, pérdidas/recuperación, almacén y buzón con operaciones de servidor. No dar por implementadas esas reglas con los contratos genéricos de P05.
-4. P07economía/progresión, P08demo/clasificación, P09arte/UI/audio, P10aceptación/rendimiento/coste y P11publicación según canónico.
+1. Seguir PAUTA_DESARROLLO.md y resolver los contratos abiertos de la adaptación, sin implementar supuestos del chat.
+2. Terminar aceptación real P05 manteniendo Spark sin facturación y definir compatibilidad de guardados con V2. La preparación local de Worker no acredita despliegue ni pruebas reales.
+3. Implementar el plan RC: primero un mapa300s, jefe, puerta/soldados y transición; después armas/mejoras y retirada de extracción/mods/mochilas.
+4. Replantear P06/P07 para colección, gacha y recompensas; cerrar cofres y dimensiones antes de producir mapas finales. Continuar P08–P11 con criterios revisados.
 
-Para continuar: seleccionar esta carpeta en Codex Local, leer AGENTS.md/PROMPT_MAESTRO.md, seguir INSTALACION_WINDOWS.md y revisar el diff de P05. No tocar sources/ del espejo padre ni originales Cloud.
+No tocar sources/ del espejo padre, ZIPoriginales ni datos de cuenta. Los informes siguientes documentan prototipos anteriores; no acreditan funciones V2.
 
 ## Ampliación local de grietas — 16/10/2026
 
@@ -74,7 +80,7 @@ Iván autorizó el prototipo y realizará la aceptación manual. Abrir ?prueba=g
 
 Decisión posterior de Iván (A-023/D-311): ingreso instantáneo al tocar/cruzar la grieta abierta, sin botón, tecla, confirmación ni espera. No detener el movimiento mantenido. La llegada anunciada del jefe sigue siendo aviso de ataque y no retrasa la entrada. Roadmapv0.14;52/100 sin cambios.
 
-## Inicio local P06 — 16/10/2026
+## Antecedente P06 local — 16/10/2026; inventario por replantear
 
 A-024 autoriza empezar P06 localmente tras el prototipo de grietas. P06-T01 está EC con un primer tramo de modelo físico y panel base/preparación con confirmación, copias numeradas, mochilas de 8/16 y almacén60 como fixture temporal. `?inventario=local` activa la opción; `?prueba=inventario` muestra el menú y el botón de inicio abre preparación20s. Es solo loopback: sin cuentas, persistencia, inventario real, botín ni kit. El descanso sigue durante preparación; un borrador no confirmado se descarta al vencer el tiempo y reducir la mochila por debajo de su contenido se rechaza sin descartar objetos.
 

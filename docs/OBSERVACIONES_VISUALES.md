@@ -1,5 +1,7 @@
 # Observaciones visuales — pendientes de P09
 
+**V2-ESTRUCTURA · 18/10/2026.** Mantener estas observaciones compatibles. Añadir al diseño visual/audio la puerta blindada y brecha de transición a5:00, llegada y llamada de los soldados, cobertura aliada, aviso de jefe pendiente y diferenciación de puerta normal/grieta opcional/salto dimensional. No denominar extracción de fin de partida a la transición. Retirar de la futura interfaz mochilas y ranuras de accesorios; conservar crédito y marcadores de daño pendientes. Arte existente intacto. [Pauta vigente](../PAUTA_DESARROLLO.md).
+
 Registradas el15/10/2026 a partir de la prueba de Iván. No son un rediseño aprobado ni cambian los pesos, criterios o avance del roadmap.
 
 ## Marcadores de daño

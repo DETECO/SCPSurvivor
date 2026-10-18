@@ -1,5 +1,7 @@
 # P06 — inicio local: copias, mochilas y gestión de equipo
 
+**V2-ESTRUCTURA · documento histórico desde18/10/2026.** Iván retiró mochilas y accesorios físicos y pidió replantear la pauta. Este informe/prueba describe el prototipo anterior que se conserva; no es la lista vigente para continuar P06 ni se exige aceptar mochilas antes de retirarlas. Consultar [pauta vigente](../PAUTA_DESARROLLO.md) y [plan de cambios](PLAN_CAMBIOS_ESTRUCTURA.md). Las pruebas anteriores no aceptan el diseño nuevo.
+
 16/10/2026. Iván pidió comenzar la siguiente fase después de simplificar las grietas y pidió usar subagentes Luna con razonamiento máximo, manteniendo a raíz al mando. Esta entrega inicia **P06-T01**; **no completa P06** ni sustituye el guardado confirmado por servidor. P05 permanece EV0/6.
 
 ## Implementado en este primer tramo

@@ -1,12 +1,52 @@
 # Roadmap vigente — SCP Survivor
 
-**Prioridad vigente (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Pauta y plan actualizados desde ESTRUCTURA y la petición posterior de Iván; no se implementan mecánicas en esta revisión documental.
 
-**Entrega autorizada a GitHub · crédito de Ivan Vivanco · P06-T01 en curso (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).
+[Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md)
+
+**Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
+
+| Elemento | Tratamiento vigente |
+| --- | --- |
+| Recorrido | Mapas encadenados de cinco minutos; jefe obligatorio en cada mapa. |
+| Puerta y aliados | A5:00 llega puerta blindada y soldados; cesa todo spawn enemigo, permanecen remanentes; cruzar exige jefe derrotado. |
+| Extracción de fin de partida | Retirada del diseño V2; la puerta avanza de mapa, no termina la partida. |
+| Accesorios de armas y mochilas | Retirados del diseño V2; código y datos anteriores conservados hasta adaptar y validar. |
+| Armas | Identidad y estadísticas propias; familias láser, cuerpo a cuerpo, distancia, misiles y arrojadizas; mejoras por nivel al azar, detalles pendientes. |
+| Grietas y saltos | Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas. |
+| Cofres y mapas | Conservar base aprobada D-140–148/D-220/D-279; adaptar intentos por oleada a300s. Presupuesto y tamaño final V2 todavía abiertos. |
+| P06/P07 | Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow. |
+
+| Paso | Trabajo pendiente | Dependencias |
+| --- | --- | --- |
+| RC-01 | Cerrar contratos y parámetros abiertos de V2 | Reglas V2 |
+| RC-02 | Versionar guardado, resultados y compatibilidad | P05 verificado, RC-01 |
+| RC-03 | Director300s y escalada temporal | RC-02 |
+| RC-04 | Jefe obligatorio por mapa | RC-03 |
+| RC-05 | Puerta, soldados y transición sin limpiar remanentes | RC-04 |
+| RC-06 | Retirar extracción del recorrido V2 | RC-05 |
+| RC-07 | Armas por familias y mejoras aleatorias | RC-01, RC-02 |
+| RC-08 | Retirar accesorios/mochilas y replantear P06 | RC-07, RC-02 |
+| RC-09 | Colección, gacha y recompensas revisadas | RC-08, RC-01 |
+| RC-10 | Cofres y dimensiones de mapas | RC-01, RC-03 |
+| RC-11 | Grietas especiales y saltos dimensionales | RC-05, RC-09, O-06/O-07 |
+| RC-12 | Interfaz/audio, regresión y aceptación V2 | RC-06, RC-07, RC-08, RC-09, RC-10, RC-11 |
+
+**P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.
+
+---
+
+## Línea base histórica anterior a V2
+
+Las reglas, tareas, porcentajes y prioridades registradas debajo describen el diseño anterior. En conflicto manda la pauta V2 de arriba.
+
+**Prioridad registrada antes de V2 (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).
+
+**Antecedente histórico · crédito de Ivan Vivanco · prototipo P06-T01 (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-Versión **0.18**, 2026-10-17. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+Versión **0.20**, 2026-10-18. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
 
 ## Avance basado en evidencia
 

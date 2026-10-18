@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-18",
+  "scope": "documentation_and_roadmap_only",
+  "sourceChat": "ESTRUCTURA",
+  "roadmapVersion": "0.20",
+  "activeDesignRevision": "V2-ESTRUCTURA",
+  "canonicalViewsVerified": true,
+  "historicalTaskCriteriaStatusWeightsDependenciesPreserved": 53,
+  "historicalProgress": 52,
+  "v2ProgressPercent": null,
+  "implementationTasksPending": 12,
+  "sourceGameFilesUnchanged": 160,
+  "publicationPriorFilesPreserved": 332,
+  "publicationAssetsUnchangedByteForByte": 12,
+  "documentationLinksChecked": 68,
+  "gameCodeChanged": false,
+  "workerInProgressPublished": false,
+  "ownAccountsEnabled": false,
+  "runtimeTestsExecutedForThisDocumentationDelivery": false,
+  "testScopeExplanation": "Se verificaron generador, JSON, enlaces, trazabilidad, alcance y hashes. No se ejecutan pruebas de mecánicas V2 porque no se implementaron.",
+  "P05RealAcceptance": "pending",
+  "P06": "replan_before_implementation",
+  "cloudOrBillingChangesPerformed": false,
+  "newRuntimeEvidence": false,
+  "publicationParentCommit": "54ed48bab43dcf5fc43a4151858d6ccebc4abdab",
+  "remaining": [
+    "Implementar plan RC-01–RC-12",
+    "Cerrar reglas abiertas registradas",
+    "Aceptar P05 real y contrato de guardado V2",
+    "Revisar pesos/criterios antes de medir V2"
+  ]
+}

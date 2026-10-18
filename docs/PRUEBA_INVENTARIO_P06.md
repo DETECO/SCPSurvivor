@@ -1,5 +1,7 @@
 # Prueba manual — inventario local P06
 
+**V2-ESTRUCTURA · documento histórico desde18/10/2026.** Iván retiró mochilas y accesorios físicos y pidió replantear la pauta. Este informe/prueba describe el prototipo anterior que se conserva; no es la lista vigente para continuar P06 ni se exige aceptar mochilas antes de retirarlas. Consultar [pauta vigente](../PAUTA_DESARROLLO.md) y [plan de cambios](PLAN_CAMBIOS_ESTRUCTURA.md). Las pruebas anteriores no aceptan el diseño nuevo.
+
 **Estado:** pauta preparada; aceptación manual pendiente. No se han consignado resultados de prueba aquí. P06-T01 sigue en curso (EC), con `evidenceComplete=false`.
 
 ## Alcance

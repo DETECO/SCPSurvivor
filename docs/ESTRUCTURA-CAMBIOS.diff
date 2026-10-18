@@ -1,0 +1,1908 @@
+# Diff documental ESTRUCTURA / Roadmap0.20
+# Padre Git: 54ed48bab43dcf5fc43a4151858d6ccebc4abdab
+# Sin cambios del videojuego. Las dos plantillas extensas del JSON se resumen por hash;
+# el resto del JSON y archivos se comparan completos. Ver Git para el diff literal íntegro.
+
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -1,55 +1,63 @@
+-# SCP Survivor — instrucciones para Codex Local
+-
+-Responder en español, directo y práctico. Continuar el juego existente; no reconstruirlo ni sustituir sus diseños.
+-
+-## Prioridad vigente — 17/10/2026
+-
+-A-026/D-314: Iván pidió terminarP05 antes de continuarP06. Conservar todo el primer prototipoP06 sin avanzar nuevas funciones. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. Las tres tareasP05 siguen EV0/6 hasta probar servicios propios; no marcar100% con emuladores. La integración propia se prepara con ownAccountsEnabled=false. No mezclar datos/cachés demo/proyecto propio. CLI del propietario autorizado y acceso/configuración Auth verificados por GET (EV-033). A-028/D-315: mantener Spark sin facturación; no vincular billing ni desplegar Functions. Firestore/Functions no pudieron listarse por403SERVICE_DISABLED; no inferir ausencia de datos. Leer docs/P05-ESTADO-SPARK.md y docs/P05-AUDITORIA-FIREBASE.json. Configuración propia y emuladores usan archivos separados. Roadmapv0.18 conserva criterios/pesos/dependencias y52/100. A-027/D-316: subir código/roadmap autorizados y continuar P06 con multiagentes inmediatamente después del cierre real P05. El backend actual no desplegable en Spark y las pruebas reales pendientes impiden declarar100%.
+-
+-## Leer al comenzar
+-
+-1. CONTEXTO_PROYECTO.md, docs/P05-REPORT.md e INSTALACION_WINDOWS.md.
+-2. PROMPT_MAESTRO.md y ROADMAP.md.
+-3. RoadmapSCP.json para decisiones, tareas, dependencias y pesos completos. RoadmapSCP.md se genera con node tools/render-roadmap.js; no editar su vista a mano.
+-4. Código y pruebas relacionados. AUDITORIA_MIGRACION.md y docs/P01–P04 son antecedentes históricos, no aceptación de P05.
+-
+-## Conservar arquitectura y mecánicas
+-
+-- HTML/CSS/JavaScript, Canvas2D y namespace G. Mantener estructura y orden de scripts en dev.html; no migrar a otro framework por instrucciones de proyectos ajenos.
+-- Editar fuentes. index.html, js/app.min.js y js/vendor/firebase-client.js se generan con npm.cmd run build.
+-- Velocidad base165; una elección inmediata por nivel, copias independientes de armas, reglas y topes aprobados. Recursos provisionales; no sustituir arte aprobado ni ampliar24+24 por inferencia.
+-- No alterar originales Cloud, ZIP de migración o backups. sources/ del padre es solo lectura. docs/historial-local/alfa-0.4 conserva documentación anterior.
+-
+-## Alcance autorizado actual
+-
+-Iván autorizó avanzar GAP-001→P05 y eligió preparar/probar localmente. Después creó manualmente el proyecto Firebase scp-survivor; su configuración pública está conservada e inactiva. El 15/10 reiteró completar la fase sin más consultas de autorización. Se permiten implementación, dependencias y emuladores locales con datos ficticios; continuar dentro de ese alcance sin volver a pedirlo.
+-
+-- P05 optativo: localhost/127.0.0.1 con ?cuentas=local. El modo sin opción conserva la partida aislada.
+-- Firebase Auth/Firestore/Functions oficiales, emulados en demo-scp-survivor. Nunca conectar a servicios heredados o producción. Guardas globales anteriores desactivadas; P05 usa su módulo local separado.
+-- UID del token, revisión esperada, sesión y requestId para mutaciones; recibos idempotentes, una expedición activa y transferencia explícita. Sin escrituras Firestore del cliente ni borrado TTL de recibos.
+-- Checkpoint confirmado y comando pendiente por UID. Ninguna caché es autoridad; no mezclar inventarios por unión/máximos. No guardar contraseñas en código, cachés propias o ZIP.
+-- Fronteras seguras; sin serializar enemigos vivos avanzados. Recuperar combate desde su inicio excluye ranking irreversiblemente. Combate local: no acredita antitrampas ni economía P06/P07.
+-- Iván autorizó expresamente subir P05 y su roadmap a DETECO/SCPSurvivor/main el15/10: «subela. incluye roadmap». Esta entrega incorpora P05-local-01 y RoadmapSCPv0.12 sobre39344e77. Consultar docs/PUBLICACION_GITHUB.md. La ejecución P05 sigue emulada; la subida de código no activa Firebase real ni facturación/despliegue.
+-
+-## Verificar y entregar
+-
+-- Ejecutar pruebas pertinentes y registrar resultados/límites en docs/P05-REPORT.md. No extrapolar emuladores a Google/correo reales, dispositivos físicos, rendimiento o costes.
+-- PowerShell: npm.cmd. Mantener ambos lockfiles. El frontend no carga .env.
+-- Solo CV con evidencia completa aporta puntos; no cambiar criterios/pesos. P05 real permanece en validación mientras falten servicios propios y flujos reales.
+-- Mostrar diff de cambios existentes y rutas. Mantener contexto e instrucciones Windows coherentes.
+-
+-## Ampliación local de grietas — 16/10/2026
+-
+-Iván autorizó el prototipo y realizará la aceptación manual. Abrir ?prueba=grieta para acceso directo o ?grietas=local para aparición opcional; solo loopback y sin cuentas. Grieta física alcanzable, apertura45s activas, cierre e indicador dirección/distancia/tiempo; sonido y alerta al aparecer. Variante Custodio provisional en mismo escenario, entrada voluntaria y retirada. No cambiar jefes normales, arte aprobado ni pesos. P05 de cuentas conserva su esquema: las grietas no se guardan y ambas opciones se desactivan con cuentas=local. P09 debe conservar sonido/aviso/localizador como requisitos permanentes. Leer docs/PRUEBA_GRIETAS.md, docs/OBSERVACIONES_VISUALES.md y docs/GRIETAS-VALIDACION.md. Roadmapv0.13 conserva52/100, P05EV0/6. Prototipo sin publicación externa.
+-
+-Decisión posterior de Iván (A-023/D-311): ingreso instantáneo al tocar/cruzar la grieta abierta, sin botón, tecla, confirmación ni espera. No detener el movimiento mantenido. La llegada anunciada del jefe sigue siendo aviso de ataque y no retrasa la entrada. Roadmapv0.14;52/100 sin cambios.
+-
+-## Inicio local P06 — 16/10/2026
+-
+-Iván autorizó avanzar localmente en la fase P06 mediante A-024. El primer tramo de P06-T01 queda en curso (EC): prototipo temporal con copias numeradas, gestión en base/preparación con confirmación, mochilas de 8/16 y almacén simulado de 60 como fixture. Entrada optativa `?inventario=local` o prueba directa `?prueba=inventario`; la prueba directa comienza en preparación de 20 s. Solo loopback, sin cuentas, persistencia, inventario real, botín ni kit. El descanso continúa durante la preparación; los borradores no confirmados se descartan al agotarse el tiempo. La reducción de mochila que no admita el contenido se rechaza sin descartar objetos.
+-
+-P06-T01 conserva sus criterios, peso 2 y dependencias P04-T02/P05-T03. No se acepta con este prototipo: quedan autoridad transaccional de servidor, continuidad y aceptación manual de Iván. P06-T02–T05 están autorizadas para trabajo local, respetando criterios y dependencias, pero siguen P hasta tener evidencia suficiente. P05 sigue EV0/6; global52/100. No afirmar puntos, resultados de pruebas, aceptación ni cierre de fase por inferencia. Registrar verificaciones futuras en docs/P06-REPORT.md y la pauta del usuario en docs/PRUEBA_INVENTARIO_P06.md. Conservar la interacción de grieta instantánea D-311.
+-
+-## Crédito y publicación — 16/10/2026
+-
+-Iván pidió el texto exacto «Desarrollado por Ivan Vivanco» en la pantalla de pruebas/demo y después subir esta versión a GitHub (A-025). Conservarlo visible bajo el título del menú compartido. La autorización incluye la entrega acumulada de grietas instantáneas, primer tramo P06 y roadmapv0.16 a DETECO/SCPSurvivor/main, conservando historial. No implica desplegar servicios reales ni aceptar P05/P06. Consultar docs/PUBLICACION_GITHUB.md para la entrega y sus comprobaciones.
++# SCP Survivor — instrucciones para Codex Local
++
++## Prioridad vigente — V2-ESTRUCTURA, 18/10/2026
++
++Leer primero [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) y [decisiones/pendientes](docs/ESTRUCTURA_DECISIONES.md). La petición posterior de Iván incorpora el chat ESTRUCTURA y retira extracción de fin de partida, accesorios físicos de armas y mochilas. Mapas5min, jefe obligatorio por mapa, puerta blindada/soldados a5:00, cese de spawn enemigo y remanentes vivos; cruzar exige jefe derrotado. Armas por familias y mejoras por nivel al azar; los detalles abiertos no se inventan.
++
++Esta entrega es documental: el código anterior se conserva. No continuar el prototipo de mochilas/mods ni la lista física anterior de P06. Terminar aceptación real P05 y compatibilidad de guardado antes de implementar P06 replanteada. Mantener Spark sin facturación. Agentes Sol con razonamiento medio; raíz guía, revisa e integra.
++
++RoadmapSCPv0.20 añade `activeDesignRevision`; sus53tareas/estados/pesos y52/100 describen la línea base histórica. AvanceV2 sin calcular; no conceder puntos por retirar funciones. Las reglas incompatibles que aparecen debajo son antecedentes, no instrucciones vigentes para V2.
++
++Responder en español, directo y práctico. Continuar el juego existente; no reconstruirlo ni sustituir sus diseños.
++
++## Antecedentes de P05 — 17/10/2026
++
++A-026/D-314: Iván pidió terminarP05 antes de continuarP06. Conservar todo el primer prototipoP06 sin avanzar nuevas funciones. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. Las tres tareasP05 siguen EV0/6 hasta probar servicios propios; no marcar100% con emuladores. La integración propia se prepara con ownAccountsEnabled=false. No mezclar datos/cachés demo/proyecto propio. CLI del propietario autorizado y acceso/configuración Auth verificados por GET (EV-033). A-028/D-315: mantener Spark sin facturación; no vincular billing ni desplegar Functions. Firestore/Functions no pudieron listarse por403SERVICE_DISABLED; no inferir ausencia de datos. Leer docs/P05-ESTADO-SPARK.md y docs/P05-AUDITORIA-FIREBASE.json. Configuración propia y emuladores usan archivos separados. Roadmapv0.18 conserva criterios/pesos/dependencias y52/100. A-027/D-316: subir código/roadmap autorizados y continuar P06 con multiagentes inmediatamente después del cierre real P05. El backend actual no desplegable en Spark y las pruebas reales pendientes impiden declarar100%.
++
++## Leer al comenzar
++
++1. CONTEXTO_PROYECTO.md, docs/P05-REPORT.md e INSTALACION_WINDOWS.md.
++2. PROMPT_MAESTRO.md y ROADMAP.md.
++3. RoadmapSCP.json para decisiones, tareas, dependencias y pesos completos. RoadmapSCP.md se genera con node tools/render-roadmap.js; no editar su vista a mano.
++4. Código y pruebas relacionados. AUDITORIA_MIGRACION.md y docs/P01–P04 son antecedentes históricos, no aceptación de P05.
++
++## Conservar arquitectura y mecánicas
++
++- HTML/CSS/JavaScript, Canvas2D y namespace G. Mantener estructura y orden de scripts en dev.html; no migrar a otro framework por instrucciones de proyectos ajenos.
++- Editar fuentes. index.html, js/app.min.js y js/vendor/firebase-client.js se generan con npm.cmd run build.
++- Velocidad base165; una elección inmediata por nivel, copias independientes de armas, reglas y topes aprobados. Recursos provisionales; no sustituir arte aprobado ni ampliar24+24 por inferencia.
++- No alterar originales Cloud, ZIP de migración o backups. sources/ del padre es solo lectura. docs/historial-local/alfa-0.4 conserva documentación anterior.
++
++## Alcance autorizado actual
++
++Iván autorizó avanzar GAP-001→P05 y eligió preparar/probar localmente. Después creó manualmente el proyecto Firebase scp-survivor; su configuración pública está conservada e inactiva. El 15/10 reiteró completar la fase sin más consultas de autorización. Se permiten implementación, dependencias y emuladores locales con datos ficticios; continuar dentro de ese alcance sin volver a pedirlo.
++
++- P05 optativo: localhost/127.0.0.1 con ?cuentas=local. El modo sin opción conserva la partida aislada.
++- Firebase Auth/Firestore/Functions oficiales, emulados en demo-scp-survivor. Nunca conectar a servicios heredados o producción. Guardas globales anteriores desactivadas; P05 usa su módulo local separado.
++- UID del token, revisión esperada, sesión y requestId para mutaciones; recibos idempotentes, una expedición activa y transferencia explícita. Sin escrituras Firestore del cliente ni borrado TTL de recibos.
++- Checkpoint confirmado y comando pendiente por UID. Ninguna caché es autoridad; no mezclar inventarios por unión/máximos. No guardar contraseñas en código, cachés propias o ZIP.
++- Fronteras seguras; sin serializar enemigos vivos avanzados. Recuperar combate desde su inicio excluye ranking irreversiblemente. Combate local: no acredita antitrampas ni economía P06/P07.
++- Iván autorizó expresamente subir P05 y su roadmap a DETECO/SCPSurvivor/main el15/10: «subela. incluye roadmap». Esta entrega incorpora P05-local-01 y RoadmapSCPv0.12 sobre39344e77. Consultar docs/PUBLICACION_GITHUB.md. La ejecución P05 sigue emulada; la subida de código no activa Firebase real ni facturación/despliegue.
++
++## Verificar y entregar
++
++- Ejecutar pruebas pertinentes y registrar resultados/límites en docs/P05-REPORT.md. No extrapolar emuladores a Google/correo reales, dispositivos físicos, rendimiento o costes.
++- PowerShell: npm.cmd. Mantener ambos lockfiles. El frontend no carga .env.
++- Solo CV con evidencia completa aporta puntos; no cambiar criterios/pesos. P05 real permanece en validación mientras falten servicios propios y flujos reales.
++- Mostrar diff de cambios existentes y rutas. Mantener contexto e instrucciones Windows coherentes.
++
++## Ampliación local de grietas — 16/10/2026
++
++Iván autorizó el prototipo y realizará la aceptación manual. Abrir ?prueba=grieta para acceso directo o ?grietas=local para aparición opcional; solo loopback y sin cuentas. Grieta física alcanzable, apertura45s activas, cierre e indicador dirección/distancia/tiempo; sonido y alerta al aparecer. Variante Custodio provisional en mismo escenario, entrada voluntaria y retirada. No cambiar jefes normales, arte aprobado ni pesos. P05 de cuentas conserva su esquema: las grietas no se guardan y ambas opciones se desactivan con cuentas=local. P09 debe conservar sonido/aviso/localizador como requisitos permanentes. Leer docs/PRUEBA_GRIETAS.md, docs/OBSERVACIONES_VISUALES.md y docs/GRIETAS-VALIDACION.md. Roadmapv0.13 conserva52/100, P05EV0/6. Prototipo sin publicación externa.
++
++Decisión posterior de Iván (A-023/D-311): ingreso instantáneo al tocar/cruzar la grieta abierta, sin botón, tecla, confirmación ni espera. No detener el movimiento mantenido. La llegada anunciada del jefe sigue siendo aviso de ataque y no retrasa la entrada. Roadmapv0.14;52/100 sin cambios.
++
++## Antecedente P06 local — 16/10/2026; no continuar su inventario físico
++
++Iván autorizó avanzar localmente en la fase P06 mediante A-024. El primer tramo de P06-T01 queda en curso (EC): prototipo temporal con copias numeradas, gestión en base/preparación con confirmación, mochilas de 8/16 y almacén simulado de 60 como fixture. Entrada optativa `?inventario=local` o prueba directa `?prueba=inventario`; la prueba directa comienza en preparación de 20 s. Solo loopback, sin cuentas, persistencia, inventario real, botín ni kit. El descanso continúa durante la preparación; los borradores no confirmados se descartan al agotarse el tiempo. La reducción de mochila que no admita el contenido se rechaza sin descartar objetos.
++
++P06-T01 conserva sus criterios, peso 2 y dependencias P04-T02/P05-T03. No se acepta con este prototipo: quedan autoridad transaccional de servidor, continuidad y aceptación manual de Iván. P06-T02–T05 están autorizadas para trabajo local, respetando criterios y dependencias, pero siguen P hasta tener evidencia suficiente. P05 sigue EV0/6; global52/100. No afirmar puntos, resultados de pruebas, aceptación ni cierre de fase por inferencia. Registrar verificaciones futuras en docs/P06-REPORT.md y la pauta del usuario en docs/PRUEBA_INVENTARIO_P06.md. Conservar la interacción de grieta instantánea D-311.
++
++## Crédito y publicación — 16/10/2026
++
++Iván pidió el texto exacto «Desarrollado por Ivan Vivanco» en la pantalla de pruebas/demo y después subir esta versión a GitHub (A-025). Conservarlo visible bajo el título del menú compartido. La autorización incluye la entrega acumulada de grietas instantáneas, primer tramo P06 y roadmapv0.16 a DETECO/SCPSurvivor/main, conservando historial. No implica desplegar servicios reales ni aceptar P05/P06. Consultar docs/PUBLICACION_GITHUB.md para la entrega y sus comprobaciones.
+--- a/CONTEXTO_PARA_WORK_LOCAL.md
++++ b/CONTEXTO_PARA_WORK_LOCAL.md
+@@ -1,13 +1,15 @@
+ # Relevo para Codex Local — SCP Survivor
+ 
+-Continúa el proyecto de esta carpeta. Lee AGENTS.md, CONTEXTO_PROYECTO.md, PROMPT_MAESTRO.md, ROADMAP.md, docs/P05-REPORT.md e INSTALACION_WINDOWS.md.
++**V2-ESTRUCTURA · 18/10/2026.** Leer primero PAUTA_DESARROLLO.md, docs/ESTRUCTURA_DECISIONES.md, docs/PLAN_CAMBIOS_ESTRUCTURA.md, AGENTS.md y PROMPT_MAESTRO.md. Iván pidió incorporar el chat ESTRUCTURA y preparar la adaptación; no reconstruir el juego.
+ 
+-Repositorio: https://github.com/DETECO/SCPSurvivor, main. Base39344e77/alfa0.4; esta actualización incorpora P05-local-01 y roadmapv0.12 por petición expresa «subela. incluye roadmap». Iván autorizó avanzar GAP-001 y P05 localmente y terminar sin más consultas. Creó manualmente scp-survivor en Firebase; su configuración pública está conservada, inactiva. La entrega del código al repositorio no activa servicios reales. Trazabilidad en docs/PUBLICACION_GITHUB.md.
++Diseño vigente: mapas encadenados5min, monstruos propios con escalada, jefe obligatorio por mapa. A5:00 llega puerta blindada y soldados, cesa todo spawn enemigo y permanecen remanentes. Cruzar exige jefe derrotado, conserva vida/build de la partida y reinicia reloj. La puerta no ejecuta extracción de fin de partida.
+ 
+-Stack HTML/CSS/JavaScript/Canvas2D y namespace G. dev.html es fuente; npm.cmd run build genera compilado y SDKFirebase local. Sin cambio de motor.
++Se retiran extracción voluntaria, accesorios físicos de armas y mochilas. Conservar armas/soldados, estadísticas y mejoras. Armas por familias y mejoras al azar por nivel; cofres, probabilidades, economía y detalles de grietas/saltos siguen abiertos según el registro. No seguir el inventario físico P06 anterior.
+ 
+-Conservar dos soldados, tres armas, seis mods, XP inmediata, mapas, jefe, extracción y resto de mecánicas. P05 añade modo optativo ?cuentas=local en localhost con Auth/Firestore/Functions emulados en demo-scp-survivor. Modo normal aislado. Contratos UID/revisión/sesión/requestId/recibos, una expedición activa y checkpoints seguros. Retroceder combate excluye clasificación. Sin economía/inventario persistente P06/P07 ni ranking oficial.
++El código actual todavía contiene el diseño anterior. Esta entrega es documental, sin cambios de mecánicas. RoadmapSCP.json guarda activeDesignRevisionV2;53tareas/estados/pesos y52/100 son línea base histórica, avanceV2 sin calcular. Generar vistas con node tools/render-roadmap.js y verificar con --check.
+ 
+-Resultados actuales y porcentaje canónico: docs/P05-REPORT.md y RoadmapSCP.json. No inferir aceptación real por emuladores. Google/correo reales, nube, costes, dispositivos físicos y producción pendientes.
++P05 requiere aceptación real y compatibilidad V2 antes de implementar P06 replanteada. Mantener Firebase Spark sin facturación. Emuladores/correo ficticio no acreditan OAuth, correo o persistencia reales. Preparación local de servidor no equivale a despliegue. Mantener UID/revisión/sesión/requestId/recibos, una partida activa y cachés separadas; no sobrescribir guardados de otro contrato ni otorgar premios duplicados.
+ 
+-Comenzar revisando informe y comandos Windows. No tocar sources/ ni originales Cloud. No publicar servicios, habilitar facturación o subir esta fase sin autorización concreta. docs/historial-local/alfa-0.4 contiene antecedentes de esa versión.
++Repositorio: https://github.com/DETECO/SCPSurvivor, main. Subida de código/roadmap autorizada; no activar facturación. Stack HTML/CSS/JavaScript/Canvas2D y namespaceG. dev.html es fuente; build genera index.html/js/app.min.js. Conservar arte aprobado, crédito «Desarrollado por Ivan Vivanco», ZIPoriginales y sources/ de solo lectura.
++
++Comandos de Windows en INSTALACION_WINDOWS.md. Resultados de implementación previos en informes P05/P06; plan futuro en PLAN_CAMBIOS_ESTRUCTURA.md. Mostrar diff, verificar cambios y distinguir implementación local, propuesta y aceptación real.
+--- a/CONTEXTO_PROYECTO.md
++++ b/CONTEXTO_PROYECTO.md
+@@ -1,83 +1,89 @@
+-# Contexto del proyecto — SCP Survivor
+-
+-**Prioridad vigente17/10/2026 (A-026/D-314): terminar P05 antes de continuarP06.** Se conserva el prototipoP06 y el crédito, sin avanzar funcionesP06. Integración del proyecto propio preparada pero desactivada por defecto; no equivale a conexión o pruebas reales. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. P05 continúa EV0/6, global52/100. Actualización posterior EV-033: CLI del propietario autorizado; acceso y configuración Auth consultados en vivo. Facturación deshabilitada, sin cuenta vinculada; Iván eligió mantener Spark sin facturación (A-028/D-315). Firestore/Functions devuelven403SERVICE_DISABLED y no pudieron listarse; no se afirma ausencia de datos. El backend actual requiere Functions/Blaze y no se despliega. [Estado Spark](docs/P05-ESTADO-SPARK.md). A-027/D-316 registra GitHub y P06 inmediato con multiagentes después del cierre real P05; roadmapv0.18.
+-
+-Actualización16/10/2026. Esta carpeta continúa el videojuego existente de la sesión principal SCP Survivor. Las otras sesiones se excluyeron por instrucción de Iván. No se reconstruyó el juego ni se sustituyeron sus recursos gráficos.
+-
+-## Objetivo
+-
+-Juego web de supervivencia por expediciones infinitas: explorar sectores, neutralizar amenazas, resistir oleadas, mejorar temporalmente equipo y decidir entre avanzar, huir de un jefe o extraer. La meta canónica sigue siendo la primera versión completa publicada, no una demo local.
+-
+-## Procedencia y autorización
+-
+-Se consolidó DETECO/SCPSurvivor con SCP-Survivor-P04-0.4-actualizacion.zip y RoadmapSCP-v0.11.zip aportados por Iván. Main fue actualizado y verificado en39344e77e15bd82c98bacb3e9773ceaa20c1b918 con alfa0.4. Después Iván pidió avanzar GAP-001→P05 y eligió preparar/probar localmente. Durante el trabajo creó manualmente su proyecto Firebase scp-survivor; config/firebase-public.json conserva su configuración pública sin activarla. El15/10 pidió terminar la fase sin nuevas consultas y luego «subela. incluye roadmap». Esta entrega GitHub incorpora código P05-local-01 y roadmapv0.12, manteniendo ejecución emulada y servicios reales pendientes. Ver docs/PUBLICACION_GITHUB.md.
+-
+-ZIPoriginal y backup previo P05 se conservan fuera de esta carpeta. docs/historial-local/alfa-0.4 conserva el contexto anterior; AUDITORIA_MIGRACION.md describe aquella entrega. Para resultados actuales consultar docs/P05-REPORT.md.
+-
+-## Arquitectura
+-
+-HTML/CSS/JavaScript y Canvas2D; módulos globales G. Sin motor externo ni framework nuevo. dev.html ordena scripts; tools/build-firebase.js empaqueta SDKoficial y tools/build.js produce index.html/js/app.min.js. CSSactual y arte provisional conservados.
+-
+-| Ruta | Responsabilidad |
+-| --- | --- |
+-| js/systems/expedition.js | Director, semilla/calendarios, oleadas, preparación, salida y resultado |
+-| js/systems/field-combat.js,field-stats.js,field-abilities.js,field-upgrades.js | Equipo por copia, fórmulas/topes, habilidades y mejoras |
+-| js/world/,js/entities/ | Mundo, colisión, mapas, enemigos, jugador y recogibles |
+-| js/net/local-accounts.js | AuthSDK local, caché porUID y comandos/reintentos |
+-| js/systems/run-checkpoint.js | Captura/restauración versionada de fronteras seguras |
+-| js/systems/run-continuity.js | Pausa de confirmación, recuperación y control de sesión |
+-| js/ui/account-ui.js | Controles de cuenta incorporados al menú existente |
+-| functions/account-service.js,index.js | Comandos autenticados y transacciones de Firestore emulado |
+-| tools/start-emulators.js,serve-local.js,local-auth-mail.js | Arranque local, persistencia de emuladores y correo ficticio |
+-| RoadmapSCP.json | Tareas/decisiones/pesos canónicos; vista generada con tools/render-roadmap.js |
+-| tests/,docs/ | Verificaciones, evidencias e historial |
+-
+-## Mecánicas conservadas
+-
+-- Dos soldados: guardia/Sprint y médico/curación. Velocidad165.
+-- Pistola/subfusil/escopeta; dos copias equipadas independientes, incluso mismo modelo. Seis mods, dos compatibles por copia.
+-- Mapas modulares con semilla, perseguidor/biológico, Custodio con avisos/refuerzos y huida disponible.
+-- Oleadas normales3/4/5 reproducibles; impares neutralización, pares resistencia60s. Preparación20s, Listo anticipado y elección inmediata de una mejora por nivel.
+-- XP sobrante procesada después de elegir, topes aditivos y cartas parciales. Pausa/segundo plano conservados.
+-- Extracción desde sector3 según calendario aprobado; muerte, extracción, huida y avance distintos, resultado único.
+-
+-El equipo sigue siendo equipo de prueba: no acredita propiedad, desbloqueos, inventario o recompensas P06/P07. Las láminas24+24 y los tres bosses no son contenido implementado. DISENOS_Y_RECURSOS.md conserva el catálogo real y sus faltantes.
+-
+-## P05 local y límites
+-
+-Entrada normal aislada; solo localhost/127.0.0.1 con ?cuentas=local activa Firebase Auth/Firestore/Functions en demo-scp-survivor. El proyecto real de Iván existe pero no está conectado al juego; ver docs/FIREBASE_PROPIO.md. No se incorporaron claves privadas ni se habilitó facturación. Los servicios heredados permanecen desactivados.
+-
+-Modelo users/UID: perfil alias, revisión, una activeRun y lastResult; subcolección receipts deduplica comandos. UID del token, revisión esperada, sesión propietaria y requestId. Reintento idéntico devuelve confirmación; contenido distinto con mismoID, revisión obsoleta y sesión revocada se rechazan. Firestore niega acceso directo del cliente.
+-
+-Checkpointversionado conserva semilla, estado seguro, jugador/XP/mejoras, armas/munición/recargas/habilidad, mapa/props/recogibles y contadores. El combate avanzado vuelve al inicio confirmado de oleada y queda fuera de clasificación. Caché de navegador no es autoridad ni se mezcla con otroUID. Una transferencia explícita revoca la sesión anterior; durante una confirmación fallida se detiene el juego.
+-
+-No confundir verificación/Google emulados con correo real/OAuthGoogle real. Combate local, sin validación completa antitrampas. No se implementaron economía, inventario persistente, eliminación de cuenta completa, ranking oficial, hosting o publicación. No se midieron FPS, memoria, carga, costes ni dispositivos físicos.
+-
+-## Estado y errores
+-
+-El resultado exacto de pruebas y límites está en docs/P05-REPORT.md, no en informes históricos. RoadmapSCP.json conserva los pesos y solo suma tareas CV con evidencia completa. P05 real permanece en validación mientras falte su entorno propio y aceptación real; no sumar puntos por instalar herramientas o generar este contexto.
+-
+-Errores de conexión dejan confirmación pendiente y partida detenida: reintentar mismo comando. Guardados incompletos o de otra versión se conservan pero no se fuerzan. Antes de cerrar emuladores, ejecutar npm.cmd run emulators:save desde otra terminal y esperar confirmación; cerrar a la fuerza puede perder datos no exportados.
+-
+-## Próximas tareas
+-
+-1. Revisar aceptación local P05 y límites antes de configurar servicios reales.
+-2. Completar la integración con scp-survivor: proveedores/dominios y mínimo8 ya aparecen configurados en capturas. Faltan correo/verificación/recuperación/vinculación reales, backend/reglas, retención/eliminación y pruebas con esos servicios. Evaluar despliegue y costes antes de activar servicios facturables.
+-3. Completar aceptación P05 respetando dependencias. Después P06: inventario, ubicaciones únicas, pérdidas/recuperación, almacén y buzón con operaciones de servidor. No dar por implementadas esas reglas con los contratos genéricos de P05.
+-4. P07economía/progresión, P08demo/clasificación, P09arte/UI/audio, P10aceptación/rendimiento/coste y P11publicación según canónico.
+-
+-Para continuar: seleccionar esta carpeta en Codex Local, leer AGENTS.md/PROMPT_MAESTRO.md, seguir INSTALACION_WINDOWS.md y revisar el diff de P05. No tocar sources/ del espejo padre ni originales Cloud.
+-
+-## Ampliación local de grietas — 16/10/2026
+-
+-Iván autorizó el prototipo y realizará la aceptación manual. Abrir ?prueba=grieta para acceso directo o ?grietas=local para aparición opcional; solo loopback y sin cuentas. Grieta física alcanzable, apertura45s activas, cierre e indicador dirección/distancia/tiempo; sonido y alerta al aparecer. Variante Custodio provisional en mismo escenario, entrada voluntaria y retirada. No cambiar jefes normales, arte aprobado ni pesos. P05 de cuentas conserva su esquema: las grietas no se guardan y ambas opciones se desactivan con cuentas=local. P09 debe conservar sonido/aviso/localizador como requisitos permanentes. Leer docs/PRUEBA_GRIETAS.md, docs/OBSERVACIONES_VISUALES.md y docs/GRIETAS-VALIDACION.md. Roadmapv0.13 conserva52/100, P05EV0/6. Prototipo sin publicación externa.
+-
+-Decisión posterior de Iván (A-023/D-311): ingreso instantáneo al tocar/cruzar la grieta abierta, sin botón, tecla, confirmación ni espera. No detener el movimiento mantenido. La llegada anunciada del jefe sigue siendo aviso de ataque y no retrasa la entrada. Roadmapv0.14;52/100 sin cambios.
+-
+-## Inicio local P06 — 16/10/2026
+-
+-A-024 autoriza empezar P06 localmente tras el prototipo de grietas. P06-T01 está EC con un primer tramo de modelo físico y panel base/preparación con confirmación, copias numeradas, mochilas de 8/16 y almacén60 como fixture temporal. `?inventario=local` activa la opción; `?prueba=inventario` muestra el menú y el botón de inicio abre preparación20s. Es solo loopback: sin cuentas, persistencia, inventario real, botín ni kit. El descanso sigue durante preparación; un borrador no confirmado se descarta al vencer el tiempo y reducir la mochila por debajo de su contenido se rechaza sin descartar objetos.
+-
+-La aceptación de P06-T01 permanece incompleta: requiere autoridad transaccional de servidor según sus dependencias originales (P04-T02/P05-T03), continuidad y aceptación manual de Iván. P06-T02 (kit), T03 (muerte/recuperación), T04 (buzón) y T05 (resultado único) siguen pendientes; están autorizadas para trabajo local, sin contarse como hechas. No se añadió botín ni persistencia al fixture. Roadmap v0.15 conserva las 53 tareas, el global52/100, P05EV0/6, todos los pesos y dependencias. EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida,4 escenarios aislados de inventario y4 de regresión de grietas aprobados. Límites en [docs/P06-REPORT.md](docs/P06-REPORT.md); aceptación humana pendiente en [docs/PRUEBA_INVENTARIO_P06.md](docs/PRUEBA_INVENTARIO_P06.md). La regla de ingreso instantáneo por contacto de grieta D-311 permanece vigente.
+-
+-Petición posterior A-025 (16/10): crédito exacto «Desarrollado por Ivan Vivanco» visible bajo el título de las pruebas/demo; publicar esta entrega acumulada y roadmapv0.16 en GitHub conservando el historial. Los límites locales y el avance52/100 se mantienen. Consultar docs/PUBLICACION_GITHUB.md; subir el código no activa Firebase real.
++# Contexto del proyecto — SCP Survivor
++
++## Cambio de dirección — V2-ESTRUCTURA, 18/10/2026
++
++Iván incorporó ESTRUCTURA a este hilo y pidió preparar los cambios: mapas5min, jefe obligatorio, puerta blindada/soldados a5:00, cese de apariciones y remanentes vivos; avance por mapas. Se retiran extracción de fin de partida, accesorios físicos y mochilas. La pauta distingue decisiones confirmadas de cofres, economía y reglas todavía abiertas.
++
++Leer [pauta vigente](PAUTA_DESARROLLO.md) y [plan de adaptación](docs/PLAN_CAMBIOS_ESTRUCTURA.md). El código todavía ejecuta el diseño anterior; esta entrega no implementa V2. P05 real sigue pendiente; P06 debe replantearse.52/100 pertenece a la línea base anterior, avanceV2 sin calcular. Los antecedentes de implementación que siguen no prevalecen sobre esta revisión.
++
++**Prioridad vigente17/10/2026 (A-026/D-314): terminar P05 antes de continuarP06.** Se conserva el prototipoP06 y el crédito, sin avanzar funcionesP06. Integración del proyecto propio preparada pero desactivada por defecto; no equivale a conexión o pruebas reales. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. P05 continúa EV0/6, global52/100. Actualización posterior EV-033: CLI del propietario autorizado; acceso y configuración Auth consultados en vivo. Facturación deshabilitada, sin cuenta vinculada; Iván eligió mantener Spark sin facturación (A-028/D-315). Firestore/Functions devuelven403SERVICE_DISABLED y no pudieron listarse; no se afirma ausencia de datos. El backend actual requiere Functions/Blaze y no se despliega. [Estado Spark](docs/P05-ESTADO-SPARK.md). A-027/D-316 registra GitHub y P06 inmediato con multiagentes después del cierre real P05; roadmapv0.18.
++
++Actualización16/10/2026. Esta carpeta continúa el videojuego existente de la sesión principal SCP Survivor. Las otras sesiones se excluyeron entonces por instrucción de Iván; ESTRUCTURA se incorpora ahora por su petición posterior. No se reconstruyó el juego ni se sustituyeron sus recursos gráficos.
++
++## Objetivo
++
++Juego web de supervivencia con avance por mapas encadenados, cinco minutos de presión por mapa, jefe obligatorio y transición por puerta de la Fundación. Armas distintas por familias y mejoras de nivel al azar; grietas opcionales y saltos dimensionales por concretar. Se continúa el proyecto existente hasta una versión completa aceptada y publicada. El prototipo anterior todavía conserva extracción, mods y mochilas: su retirada está planificada, no implementada.
++
++## Procedencia y autorización
++
++Se consolidó DETECO/SCPSurvivor con SCP-Survivor-P04-0.4-actualizacion.zip y RoadmapSCP-v0.11.zip aportados por Iván. Main fue actualizado y verificado en39344e77e15bd82c98bacb3e9773ceaa20c1b918 con alfa0.4. Después Iván pidió avanzar GAP-001→P05 y eligió preparar/probar localmente. Durante el trabajo creó manualmente su proyecto Firebase scp-survivor; config/firebase-public.json conserva su configuración pública sin activarla. El15/10 pidió terminar la fase sin nuevas consultas y luego «subela. incluye roadmap». Esta entrega GitHub incorpora código P05-local-01 y roadmapv0.12, manteniendo ejecución emulada y servicios reales pendientes. Ver docs/PUBLICACION_GITHUB.md.
++
++ZIPoriginal y backup previo P05 se conservan fuera de esta carpeta. docs/historial-local/alfa-0.4 conserva el contexto anterior; AUDITORIA_MIGRACION.md describe aquella entrega. Para resultados actuales consultar docs/P05-REPORT.md.
++
++## Arquitectura
++
++HTML/CSS/JavaScript y Canvas2D; módulos globales G. Sin motor externo ni framework nuevo. dev.html ordena scripts; tools/build-firebase.js empaqueta SDKoficial y tools/build.js produce index.html/js/app.min.js. CSSactual y arte provisional conservados.
++
++| Ruta | Responsabilidad |
++| --- | --- |
++| js/systems/expedition.js | Director, semilla/calendarios, oleadas, preparación, salida y resultado |
++| js/systems/field-combat.js,field-stats.js,field-abilities.js,field-upgrades.js | Equipo por copia, fórmulas/topes, habilidades y mejoras |
++| js/world/,js/entities/ | Mundo, colisión, mapas, enemigos, jugador y recogibles |
++| js/net/local-accounts.js | AuthSDK local, caché porUID y comandos/reintentos |
++| js/systems/run-checkpoint.js | Captura/restauración versionada de fronteras seguras |
++| js/systems/run-continuity.js | Pausa de confirmación, recuperación y control de sesión |
++| js/ui/account-ui.js | Controles de cuenta incorporados al menú existente |
++| functions/account-service.js,index.js | Comandos autenticados y transacciones de Firestore emulado |
++| tools/start-emulators.js,serve-local.js,local-auth-mail.js | Arranque local, persistencia de emuladores y correo ficticio |
++| RoadmapSCP.json | Tareas/decisiones/pesos canónicos; vista generada con tools/render-roadmap.js |
++| tests/,docs/ | Verificaciones, evidencias e historial |
++
++## Mecánicas presentes en el prototipo anterior; revisar según V2
++
++- Dos soldados: guardia/Sprint y médico/curación. Velocidad165.
++- Pistola/subfusil/escopeta; dos copias equipadas independientes, incluso mismo modelo. Seis mods, dos compatibles por copia.
++- Mapas modulares con semilla, perseguidor/biológico, Custodio con avisos/refuerzos y huida disponible.
++- Oleadas normales3/4/5 reproducibles; impares neutralización, pares resistencia60s. Preparación20s, Listo anticipado y elección inmediata de una mejora por nivel.
++- XP sobrante procesada después de elegir, topes aditivos y cartas parciales. Pausa/segundo plano conservados.
++- Extracción desde sector3 según calendario aprobado; muerte, extracción, huida y avance distintos, resultado único.
++
++El equipo sigue siendo equipo de prueba: no acredita propiedad, desbloqueos, inventario o recompensas P06/P07. Las láminas24+24 y los tres bosses no son contenido implementado. DISENOS_Y_RECURSOS.md conserva el catálogo real y sus faltantes.
++
++## P05 local y límites
++
++Entrada normal aislada; solo localhost/127.0.0.1 con ?cuentas=local activa Firebase Auth/Firestore/Functions en demo-scp-survivor. El proyecto real de Iván existe pero no está conectado al juego; ver docs/FIREBASE_PROPIO.md. No se incorporaron claves privadas ni se habilitó facturación. Los servicios heredados permanecen desactivados.
++
++Modelo users/UID: perfil alias, revisión, una activeRun y lastResult; subcolección receipts deduplica comandos. UID del token, revisión esperada, sesión propietaria y requestId. Reintento idéntico devuelve confirmación; contenido distinto con mismoID, revisión obsoleta y sesión revocada se rechazan. Firestore niega acceso directo del cliente.
++
++Checkpointversionado conserva semilla, estado seguro, jugador/XP/mejoras, armas/munición/recargas/habilidad, mapa/props/recogibles y contadores. El combate avanzado vuelve al inicio confirmado de oleada y queda fuera de clasificación. Caché de navegador no es autoridad ni se mezcla con otroUID. Una transferencia explícita revoca la sesión anterior; durante una confirmación fallida se detiene el juego.
++
++No confundir verificación/Google emulados con correo real/OAuthGoogle real. Combate local, sin validación completa antitrampas. No se implementaron economía, inventario persistente, eliminación de cuenta completa, ranking oficial, hosting o publicación. No se midieron FPS, memoria, carga, costes ni dispositivos físicos.
++
++## Estado y errores
++
++El resultado exacto de pruebas y límites está en docs/P05-REPORT.md, no en informes históricos. RoadmapSCP.json conserva los pesos y solo suma tareas CV con evidencia completa. P05 real permanece en validación mientras falte su entorno propio y aceptación real; no sumar puntos por instalar herramientas o generar este contexto.
++
++Errores de conexión dejan confirmación pendiente y partida detenida: reintentar mismo comando. Guardados incompletos o de otra versión se conservan pero no se fuerzan. Antes de cerrar emuladores, ejecutar npm.cmd run emulators:save desde otra terminal y esperar confirmación; cerrar a la fuerza puede perder datos no exportados.
++
++## Próximas tareas
++
++1. Seguir PAUTA_DESARROLLO.md y resolver los contratos abiertos de la adaptación, sin implementar supuestos del chat.
++2. Terminar aceptación real P05 manteniendo Spark sin facturación y definir compatibilidad de guardados con V2. La preparación local de Worker no acredita despliegue ni pruebas reales.
++3. Implementar el plan RC: primero un mapa300s, jefe, puerta/soldados y transición; después armas/mejoras y retirada de extracción/mods/mochilas.
++4. Replantear P06/P07 para colección, gacha y recompensas; cerrar cofres y dimensiones antes de producir mapas finales. Continuar P08–P11 con criterios revisados.
++
++No tocar sources/ del espejo padre, ZIPoriginales ni datos de cuenta. Los informes siguientes documentan prototipos anteriores; no acreditan funciones V2.
++
++## Ampliación local de grietas — 16/10/2026
++
++Iván autorizó el prototipo y realizará la aceptación manual. Abrir ?prueba=grieta para acceso directo o ?grietas=local para aparición opcional; solo loopback y sin cuentas. Grieta física alcanzable, apertura45s activas, cierre e indicador dirección/distancia/tiempo; sonido y alerta al aparecer. Variante Custodio provisional en mismo escenario, entrada voluntaria y retirada. No cambiar jefes normales, arte aprobado ni pesos. P05 de cuentas conserva su esquema: las grietas no se guardan y ambas opciones se desactivan con cuentas=local. P09 debe conservar sonido/aviso/localizador como requisitos permanentes. Leer docs/PRUEBA_GRIETAS.md, docs/OBSERVACIONES_VISUALES.md y docs/GRIETAS-VALIDACION.md. Roadmapv0.13 conserva52/100, P05EV0/6. Prototipo sin publicación externa.
++
++Decisión posterior de Iván (A-023/D-311): ingreso instantáneo al tocar/cruzar la grieta abierta, sin botón, tecla, confirmación ni espera. No detener el movimiento mantenido. La llegada anunciada del jefe sigue siendo aviso de ataque y no retrasa la entrada. Roadmapv0.14;52/100 sin cambios.
++
++## Antecedente P06 local — 16/10/2026; inventario por replantear
++
++A-024 autoriza empezar P06 localmente tras el prototipo de grietas. P06-T01 está EC con un primer tramo de modelo físico y panel base/preparación con confirmación, copias numeradas, mochilas de 8/16 y almacén60 como fixture temporal. `?inventario=local` activa la opción; `?prueba=inventario` muestra el menú y el botón de inicio abre preparación20s. Es solo loopback: sin cuentas, persistencia, inventario real, botín ni kit. El descanso sigue durante preparación; un borrador no confirmado se descarta al vencer el tiempo y reducir la mochila por debajo de su contenido se rechaza sin descartar objetos.
++
++La aceptación de P06-T01 permanece incompleta: requiere autoridad transaccional de servidor según sus dependencias originales (P04-T02/P05-T03), continuidad y aceptación manual de Iván. P06-T02 (kit), T03 (muerte/recuperación), T04 (buzón) y T05 (resultado único) siguen pendientes; están autorizadas para trabajo local, sin contarse como hechas. No se añadió botín ni persistencia al fixture. Roadmap v0.15 conserva las 53 tareas, el global52/100, P05EV0/6, todos los pesos y dependencias. EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida,4 escenarios aislados de inventario y4 de regresión de grietas aprobados. Límites en [docs/P06-REPORT.md](docs/P06-REPORT.md); aceptación humana pendiente en [docs/PRUEBA_INVENTARIO_P06.md](docs/PRUEBA_INVENTARIO_P06.md). La regla de ingreso instantáneo por contacto de grieta D-311 permanece vigente.
++
++Petición posterior A-025 (16/10): crédito exacto «Desarrollado por Ivan Vivanco» visible bajo el título de las pruebas/demo; publicar esta entrega acumulada y roadmapv0.16 en GitHub conservando el historial. Los límites locales y el avance52/100 se mantienen. Consultar docs/PUBLICACION_GITHUB.md; subir el código no activa Firebase real.
+--- a/PAUTA_DESARROLLO.md
++++ b/PAUTA_DESARROLLO.md
+@@ -0,0 +1,79 @@
++# Pauta vigente de SCP Survivor — revisión ESTRUCTURA
++
++18/10/2026 · Diseño V2 · **Pauta actualizada; cambios del juego pendientes de implementar.**
++
++Esta pauta incorpora el chat **ESTRUCTURA** y la instrucción posterior de Iván en PROGRAMACION. Sustituye las reglas incompatibles del diseño de extracción. El código actual se conserva como punto de partida; no se reconstruye el juego.
++
++## Recorrido del juego
++
++**Base → mapa de cinco minutos → jefe derrotado + puerta de la Fundación → siguiente mapa.**
++
++Cada mapa tiene sus monstruos básicos/minions y un jefe obligatorio. La presión escala con el tiempo. Al llegar a **5:00 de juego activo**, se abre una brecha con una puerta blindada y salen soldados de la Fundación: llaman al jugador y disparan contra los enemigos restantes.
++
++- Desde 5:00 dejan de aparecer enemigos nuevos en ese mapa. Esto incluye refuerzos del jefe; los soldados aliados sí pueden llegar.
++- Los enemigos que ya estaban vivos permanecen. No se limpian automáticamente al abrir la puerta ni al derrotar al jefe.
++- La puerta aparece a los cinco minutos aunque el jefe siga vivo. **Cruzar requiere derrotarlo**; mientras tanto, los soldados proporcionan cobertura.
++- Derrotar al jefe antes no permite saltarse el tiempo restante. Es necesario esperar la puerta.
++- Al cruzar se pasa al siguiente mapa, conservando las mejoras de esa partida y reiniciando el reloj del mapa.
++- Esa puerta es una **transición de nivel**. No termina la partida ni ejecuta el antiguo resultado de extracción.
++
++La hora exacta de aparición del jefe todavía no está fijada. Debe permitir cumplir la condición de avance sin depender de apariciones nuevas después de 5:00.
++
++## Qué se retira y qué se conserva
++
++| Elemento | Dirección vigente | Estado del código |
++| --- | --- | --- |
++| Extracción voluntaria para terminar y asegurar equipo | Retirar su calendario, opción, interacción y cierre de partida | Todavía existe en el prototipo |
++| Accesorios/mods físicos de armas | Retirar objetos, instalación, compatibilidades y ranuras | Todavía existen |
++| Mochilas | Retirar tamaños, capacidad, equipamiento y gestión | Existe un prototipo local temporal |
++| Armas y soldados | Conservar; ampliar mediante catálogo revisado | Tres armas y dos soldados de prueba |
++| Armas distintas, con estadísticas básicas propias | Mantener identidad por arma; organizar por familias | Categorías nuevas pendientes |
++| Mejoras al subir de nivel | Mejorar armas al azar durante la partida | El sistema de cartas actual necesita adaptación |
++| Gacha | Orientarlo a soldados y armas | Economía/entrega real pendientes |
++| Jefes | Un jefe obligatorio por mapa; encuentros dimensionales aparte | El calendario actual de jefes entre sectores necesita cambio |
++| Grietas especiales | Desafíos opcionales difíciles con recompensas mayores | Existe un prototipo local limitado |
++| Saltos dimensionales | Rutas/saltos entre niveles, inspirados en Backrooms | Diseño detallado e implementación pendientes |
++| Cofres y recompensas del escenario | Definir antes del tamaño final de mapas | Hay sistemas heredados y cajas de campo; reglas V2 abiertas |
++| Arte, identidad visual, controles y crédito | Conservar recursos aprobados y «Desarrollado por Ivan Vivanco» | El acabado final sigue pendiente |
++| Cuentas y guardado P05 | Conservar seguridad y adaptar contratos al nuevo recorrido | Aceptación con servicios propios pendiente |
++
++Retirar accesorios **no elimina las mejoras de nivel ni las estadísticas de las armas**. Retirar mochilas **no autoriza borrar la colección persistente de soldados o armas**.
++
++Almacén físico, buzón por falta de espacio, kit con mochila y recuperación aleatoria del equipo al morir dependían del diseño anterior. Se **replantean** antes de implementar P06; no se asumen aprobados para V2 y tampoco se borran datos por inferencia a partir de «etc.».
++
++## Armas y progresión
++
++Las familias mencionadas por Iván son **láser, cuerpo a cuerpo, a distancia, misiles y arrojadizas**. Es una dirección de catálogo; faltan la lista final, sus estadísticas y las reglas particulares de cada familia. No todas necesitan cargador, recarga o proyectiles iguales a una pistola.
++
++El requisito más reciente es que las mejoras de nivel suban armas **al azar**. Falta concretar qué armas pueden salir, si el jugador sigue eligiendo entre cartas, las probabilidades y los topes. No conservar por defecto el supuesto de que una carta mejora todo el arsenal ni imponer el antiguo límite de dos armas o nivel cinco como regla definitiva de V2.
++
++Soldados y armas obtenidos mediante gacha forman parte de la dirección solicitada. Rarezas, duplicados, probabilidades, recompensas por muerte y progresión permanente se cerrarán antes de implementar la economía. La propuesta de diez atributos nuevos de soldados no se considera aprobada por el hecho de aparecer en una respuesta del asistente.
++
++## Grietas, puerta y saltos
++
++Son tres funciones diferentes:
++
++1. **Puerta blindada de la Fundación:** aparece al minuto cinco; avance normal condicionado al jefe.
++2. **Grieta de anomalía:** desafío opcional, más difícil y con recompensa mayor. Conservar apertura temporal, ubicación alcanzable, indicador de dirección/distancia/tiempo, alerta en pantalla, sonido e **ingreso instantáneo por contacto, sin botón ni espera**.
++3. **Salto dimensional:** salto/ruta entre niveles. Su destino, condiciones y relación con el jefe obligatorio requieren definición; no implementar un atajo que anule esa obligación sin una regla expresa.
++
++El retorno desde la anomalía, la pausa del reloj del mapa al entrar, el tratamiento de 5:00 si hay una grieta abierta y los premios exactos siguen abiertos. El prototipo de Custodio en el mismo escenario no demuestra una dimensión separada ni recompensas persistentes.
++
++## Cofres y tamaño de los mapas
++
++En ESTRUCTURA se está revisando este punto. **Sí hay una base aprobada anterior:** D-140–148/D-220/D-279 fijan sorteos por oleada, probabilidades/topes, tickets, apertura y descubrimiento. Se conserva íntegra en [cofres: base y adaptación](docs/COFRES_BASE_Y_ADAPTACION_V2.md). Falta adaptar el disparador por oleadas a mapas de300s; no hay presupuesto/distribución V2 cerrados. Las cajas de campo actuales no dan botín y no son esos cofres.
++
++Antes de fijar dimensiones finales: revisar sobre esa base los tipos de cofre, apertura, frecuencia, premio, relación con jefes y si su contenido mejora la partida o la colección. Después probar mapas con rutas alternativas, desplazamiento útil y salida alcanzable entre enemigos. No trasladar premios de accesorios o mochilas a V2 ni importar sin revisión los premios genéricos de Pokesurvivor.
++
++## Orden para continuar
++
++1. Usar esta pauta y resolver las reglas abiertas en el [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md).
++2. Terminar P05 y definir compatibilidad de guardados con V2. Mantener Firebase Spark sin facturación; no declarar cierre por emuladores o preparación local.
++3. Implementar primero un mapa completo: cinco minutos, jefe, puerta, soldados y transición. Retirar la extracción del recorrido V2.
++4. Adaptar armas/mejoras y retirar accesorios/mochilas con sus dependencias.
++5. Replantear P06 para colección/equipamiento y adaptar P07 para gacha/recompensas; no continuar la lista anterior de inventario físico.
++6. Integrar cofres, variantes de mapas, grietas y saltos con las reglas cerradas. Después completar arte, audio, controles y pruebas de integración.
++
++**Estado:** esta entrega actualiza planificación, no implementa V2 ni termina P05/P06. El **52/100 pertenece a la línea base anterior**. El avance global del diseño V2 queda sin calcular hasta revisar alcance, aceptación y pesos; quitar funciones no produce avance automático.
++
++Trazabilidad: [decisiones y pendientes de ESTRUCTURA](docs/ESTRUCTURA_DECISIONES.md), [plan técnico y pruebas](docs/PLAN_CAMBIOS_ESTRUCTURA.md), [roadmap](ROADMAP.md).
+--- a/PROMPT_MAESTRO.md
++++ b/PROMPT_MAESTRO.md
+@@ -1,6 +1,8 @@
+ # Prompt maestro de continuidad — SCP Survivor
+ 
+-Síntesis de registros accesibles del repositorio y paquetes de Iván; no es transcripción de las otras sesiones, excluidas del alcance.
++Síntesis del repositorio, paquetes de Iván y decisiones accesibles del chat ESTRUCTURA, incorporado expresamente el18/10/2026. No se afirma haber recuperado materiales inaccesibles.
++
++**Prioridad V2-ESTRUCTURA:** leer [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) y [registro](docs/ESTRUCTURA_DECISIONES.md). Esta revisión prepara la adaptación; no cambia todavía el juego.
+ 
+ Continúa el juego existente de esta carpeta. Responde en español y revisa código antes de editar. Lee AGENTS.md, CONTEXTO_PROYECTO.md, docs/P05-REPORT.md, ROADMAP.md y RoadmapSCP.json. Instrucciones actuales de Iván tienen prioridad; conserva IDs y trazabilidad de decisiones anteriores.
+ 
+@@ -10,11 +12,17 @@
+ 
+ Mantener identidad visual y recursos aprobados, sin sustituirlos ni completar24+24 por inferencia. El arte en esta alfa es provisional; catálogo/faltantes en DISENOS_Y_RECURSOS.md. docs/historial-local/alfa-0.4 conserva el prompt anterior y RoadmapSCP.json contiene decisiones completas.
+ 
+-## Mecánicas aprobadas
++## Diseño vigente y código que se conserva
+ 
+-Velocidad165. Una mejora inmediata por nivel y XP sobrante después de elección, D-306/D-214. Dos copias físicas independientes con munición/recarga/nivel/mods, hasta dos mods compatibles sin duplicados; cambiar capacidad no rellena y cambiar duración conserva porcentaje de recarga. Fórmulas aditivas y topes compartidos; cartas conceden solo margen restante. Arma orientada independientemente del cuerpo, paredes bloquean balas/perforación.
++Mapas encadenados de cinco minutos con escalada de monstruos propios y un jefe obligatorio por mapa. A5:00 aparece brecha/puerta blindada y soldados que llaman y cubren al jugador. Desde ese momento no hay nuevas apariciones enemigas; los remanentes sobreviven. La puerta aparece aunque el jefe viva, pero cruzar exige derrotarlo. La transición conserva vida/mejoras de partida y reinicia el reloj del mapa; no termina la partida por extracción.
+ 
+-Sectores normales3/4/5 reproducibles y equiprobables según D-143/D-190; primera neutralización, pares resistencia60s e impares neutralización. Preparación20s; Listo anticipado. Semilla de tamaño independiente de calendariojefe/extracción y apariciones. Escapar de jefe no concede victoria. Resultado único para muerte/extracción; no duplicar recompensas ni propiedad.
++Retirar del diseño extracción de fin de partida, accesorios físicos de armas y mochilas. No retirar las armas, sus estadísticas o mejoras temporales ni borrar la colección de soldados/armas. Armas distintas por familias (láser, cuerpo a cuerpo, distancia, misiles, arrojadizas) y mejoras de armas al azar por nivel. Candidatos, cartas, topes y catálogo final siguen abiertos; no imponer automáticamente las dos armas o el nivel5 del prototipo como regla V2.
++
++Conservar grietas opcionales difíciles y de mayor recompensa, apertura limitada, ubicación/localizador, sonido/aviso y contacto instantáneo sin botón. Saltos dimensionales, retorno/reloj, cofres, premios y dimensiones finales requieren reglas explícitas. Gacha orientado a soldados/armas; atributos nuevos, rarezas y duplicados propuestos por el asistente no equivalen a aprobación.
++
++El código actual todavía contiene sectores/oleadas, extracción, mods y mochila de prueba. Conservarlo hasta adaptar y validar por el plan RC-01–RC-12. No reconstruir, borrar historial ni continuar el inventario físico anterior P06. Replantear colección, kit, pérdida/recuperación, almacén/buzón y economía según V2; no descartarlos todos por inferencia.
++
++Las fórmulas y controles no afectados siguen siendo referencia del prototipo: velocidad165, orientación cuerpo/arma independiente, paredes que bloquean disparos, recargas coherentes y efectos temporales sin duplicación. Revisarlos cuando una familia nueva lo requiera; ninguna propuesta autoriza cambiar balance sin documentarlo.
+ 
+ ## Alcance vigente P05
+ 
+@@ -34,4 +42,4 @@
+ 
+ Pruebas pertinentes y resultados actuales en docs/P05-REPORT.md; diferencias en docs/P05-CAMBIOS.diff. No confundir informes P01–P04/migración con aceptación nueva. No extrapolar a dispositivos físicos, Safari, FPS, memoria, costes o producción. Mantener ambos lockfiles y comandosWindows.
+ 
+-RoadmapSCP.json es canónico: mismos IDs/pesos/criterios, solo CV aporta. Vista con node tools/render-roadmap.js. Registrar autorización, evidencia y límites, sin porcentaje parcial inventado. Próximo trabajo: servicios propios/aceptación P05 y después P06 conforme a dependencias y alcance aprobado.
++RoadmapSCP.json es canónico. `activeDesignRevision` contiene V2; las53tareas/criterios/pesos y52/100 son la línea base histórica, no aceptación del diseño nuevo. AvanceV2 sin calcular. Generar vistas con node tools/render-roadmap.js. Próximo trabajo: cerrar reglas/contrato de adaptación y aceptación real P05; después implementar el plan RC y P06 replanteada. Registrar evidencia sin inventar porcentajes.
+--- a/README.md
++++ b/README.md
+@@ -1,4 +1,6 @@
+ # SCP Survivor
++
++**Pauta vigente V2-ESTRUCTURA (18/10/2026):** [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md). Avance por mapas5min con jefe y puerta de la Fundación; extracción, accesorios físicos y mochilas se retiran del diseño. [Plan de adaptación y pruebas](docs/PLAN_CAMBIOS_ESTRUCTURA.md). La implementación del juego aún es la anterior; esta revisión cambia documentos y roadmap.52/100 es histórico; avanceV2 sin calcular.
+ 
+ Juego web existente de supervivencia por expediciones. Esta copia desarrolla P05 local sobre alfa0.4 y conserva Canvas2D, arquitectura, mecánicas y recursos. No es una versión publicada ni servicios reales de cuentas.
+ 
+--- a/ROADMAP.md
++++ b/ROADMAP.md
+@@ -1,12 +1,52 @@
+ # Roadmap vigente — SCP Survivor
+ 
+-**Prioridad vigente (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).
++**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Pauta y plan actualizados desde ESTRUCTURA y la petición posterior de Iván; no se implementan mecánicas en esta revisión documental.
+ 
+-**Entrega autorizada a GitHub · crédito de Ivan Vivanco · P06-T01 en curso (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).
++[Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md)
++
++**Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
++
++| Elemento | Tratamiento vigente |
++| --- | --- |
++| Recorrido | Mapas encadenados de cinco minutos; jefe obligatorio en cada mapa. |
++| Puerta y aliados | A5:00 llega puerta blindada y soldados; cesa todo spawn enemigo, permanecen remanentes; cruzar exige jefe derrotado. |
++| Extracción de fin de partida | Retirada del diseño V2; la puerta avanza de mapa, no termina la partida. |
++| Accesorios de armas y mochilas | Retirados del diseño V2; código y datos anteriores conservados hasta adaptar y validar. |
++| Armas | Identidad y estadísticas propias; familias láser, cuerpo a cuerpo, distancia, misiles y arrojadizas; mejoras por nivel al azar, detalles pendientes. |
++| Grietas y saltos | Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas. |
++| Cofres y mapas | Conservar base aprobada D-140–148/D-220/D-279; adaptar intentos por oleada a300s. Presupuesto y tamaño final V2 todavía abiertos. |
++| P06/P07 | Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow. |
++
++| Paso | Trabajo pendiente | Dependencias |
++| --- | --- | --- |
++| RC-01 | Cerrar contratos y parámetros abiertos de V2 | Reglas V2 |
++| RC-02 | Versionar guardado, resultados y compatibilidad | P05 verificado, RC-01 |
++| RC-03 | Director300s y escalada temporal | RC-02 |
++| RC-04 | Jefe obligatorio por mapa | RC-03 |
++| RC-05 | Puerta, soldados y transición sin limpiar remanentes | RC-04 |
++| RC-06 | Retirar extracción del recorrido V2 | RC-05 |
++| RC-07 | Armas por familias y mejoras aleatorias | RC-01, RC-02 |
++| RC-08 | Retirar accesorios/mochilas y replantear P06 | RC-07, RC-02 |
++| RC-09 | Colección, gacha y recompensas revisadas | RC-08, RC-01 |
++| RC-10 | Cofres y dimensiones de mapas | RC-01, RC-03 |
++| RC-11 | Grietas especiales y saltos dimensionales | RC-05, RC-09, O-06/O-07 |
++| RC-12 | Interfaz/audio, regresión y aceptación V2 | RC-06, RC-07, RC-08, RC-09, RC-10, RC-11 |
++
++**P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.
++
++---
++
++## Línea base histórica anterior a V2
++
++Las reglas, tareas, porcentajes y prioridades registradas debajo describen el diseño anterior. En conflicto manda la pauta V2 de arriba.
++
++**Prioridad registrada antes de V2 (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).
++
++**Antecedente histórico · crédito de Ivan Vivanco · prototipo P06-T01 (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).
+ 
+ **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
+ 
+-Versión **0.18**, 2026-10-17. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
++Versión **0.20**, 2026-10-18. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+ 
+ ## Avance basado en evidencia
+ 
+--- a/RoadmapSCP.json
++++ b/RoadmapSCP.json
+@@ -1,7 +1,7 @@
+ {
+   "schemaVersion": 1,
+-  "planVersion": "0.18",
+-  "updatedOn": "2026-10-17",
++  "planVersion": "0.20",
++  "updatedOn": "2026-10-18",
+   "timezone": "America/Santiago",
+   "canonicalPath": "RoadmapSCP.json",
+   "generatedView": "RoadmapSCP.md",
+@@ -62,7 +62,8 @@
+     "includePlanning": true,
+     "roundOnlyForDisplay": true,
+     "neverInferFromCommits": true,
+-    "generatedProgressNeverManuallyEdited": true
++    "generatedProgressNeverManuallyEdited": true,
++    "scopeInterpretation": "Cálculo de la línea base histórica; avance V2 no calculado, ver activeDesignRevision.progress."
+   },
+   "statusLabels": {
+     "P": "Pendiente",
+@@ -241,6 +242,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "Lectura y documentación aprobadas; comprobaciones documentales realizadas. No ejecución de programas del juego."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -261,6 +267,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "Lectura y documentación aprobadas; comprobaciones documentales realizadas. No ejecución de programas del juego."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -283,6 +294,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "Lectura y documentación aprobadas; comprobaciones documentales realizadas. No ejecución de programas del juego."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -305,6 +321,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "Lectura y documentación aprobadas; comprobaciones documentales realizadas. No ejecución de programas del juego."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -327,6 +348,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "Lectura y documentación aprobadas; comprobaciones documentales realizadas. No ejecución de programas del juego."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -349,6 +375,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "Lectura y documentación aprobadas; comprobaciones documentales realizadas. No ejecución de programas del juego."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -371,6 +402,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-010/3A: preparación local estática y paquete entregable, ya realizada; sin ejecutar código del repositorio ni subir a GitHub."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -393,6 +429,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-012: alcance local P01 autorizado por etapas tras presentar el alcance; ejecución local aislada únicamente. Sin GitHub/commits, servicios externos, facturación, publicación o autorización de P02+."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -416,6 +457,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-012: alcance local P01 autorizado por etapas tras presentar el alcance; ejecución local aislada únicamente. Sin GitHub/commits, servicios externos, facturación, publicación o autorización de P02+."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -439,6 +485,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-012: alcance local P01 autorizado por etapas tras presentar el alcance; ejecución local aislada únicamente. Sin GitHub/commits, servicios externos, facturación, publicación o autorización de P02+."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -463,6 +514,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-014: implementación y verificación local de P02 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -486,6 +542,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-014: implementación y verificación local de P02 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -508,6 +569,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-014: implementación y verificación local de P02 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -536,7 +602,12 @@
+       },
+       "completionSummary": "Validado con el flujo aprobado de una elección inmediata por cada nivel: la experiencia procesa los umbrales en orden, las cartas muestran el nivel correspondiente y la última elección continúa a la siguiente fase según el estado de la expedición; no concede más de una mejora por nivel.",
+       "originalScopeAndAcceptance": "Recoger experiencia y elegir mejoras en preparación; enlazar dos sectores de prueba conservando estado aprobado. Verificar temporizador de preparación y transición sin reinicio del personaje.",
+-      "scopeRevisionDecision": "D-306"
++      "scopeRevisionDecision": "D-306",
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
++      }
+     },
+     {
+       "id": "P02-T05",
+@@ -561,6 +632,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-014: implementación y verificación local de P02 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
+       }
+     },
+     {
+@@ -583,6 +659,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-015: implementación y verificación local de P03 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -611,7 +692,12 @@
+       "completionSummary": "Sorteo reproducible3/4/5 con secuencia independiente, objetivos alternos, preparación20s, HUD, contadores y cierres para los tres tamaños.11Node/900semillas/calendario18sectores y4escenarios/2extracciones aprobados; GAP-001 cerrado localmente.",
+       "remainingAcceptance": [],
+       "closureBlock": null,
+-      "repositoryPublicationAuthorization": "A-021"
++      "repositoryPublicationAuthorization": "A-021",
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
++      }
+     },
+     {
+       "id": "P03-T03",
+@@ -634,6 +720,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-015: implementación y verificación local de P03 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -657,6 +748,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-015: implementación y verificación local de P03 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -680,6 +776,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-015: implementación y verificación local de P03 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "retired_from_active_design",
++        "note": "Extracción retirada; RC-06 sustituye el recorrido de salida."
+       }
+     },
+     {
+@@ -703,6 +804,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-016: implementación y verificación local de P04 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -726,6 +832,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-016: implementación y verificación local de P04 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -749,6 +860,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-016: implementación y verificación local de P04 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "retired_from_active_design",
++        "note": "Accesorios físicos retirados; RC-07/RC-08 sustituyen sus criterios."
+       }
+     },
+     {
+@@ -772,6 +888,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-016: implementación y verificación local de P04 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -796,6 +917,11 @@
+       "taskAuthorization": {
+         "status": "fulfilled",
+         "scope": "A-016: implementación y verificación local de P04 conforme a su alcance aprobado, bajo supervisión root. Sin GitHub/commits, nube/servicios externos, facturación, publicación ni ejecución en dispositivos físicos."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -828,7 +954,12 @@
+         "Probar Google OAuth y correo/verificación/recuperación/vinculación reales con servicios propios",
+         "Completar acceso, errores y separación de identidades fuera del emulador sin activar producción por inferencia"
+       ],
+-      "repositoryPublicationAuthorization": "A-027"
++      "repositoryPublicationAuthorization": "A-027",
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
++      }
+     },
+     {
+       "id": "P05-T02",
+@@ -859,7 +990,12 @@
+         "Aceptar operaciones/reglas con backend propio autorizado",
+         "Completar P05-T01 y validación real de persistencia/retención/coherencia; medir límites antes de publicación"
+       ],
+-      "repositoryPublicationAuthorization": "A-027"
++      "repositoryPublicationAuthorization": "A-027",
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "review_reuse_before_v2_acceptance",
++        "note": "Estado y criterios conservados para la línea base histórica; no acreditan aceptación V2."
++      }
+     },
+     {
+       "id": "P05-T03",
+@@ -890,7 +1026,12 @@
+         "Completar P05-T02 y aceptación con nube propia autorizada",
+         "Probar cambio real de dispositivo/red y conservación/recuperación con servicios propios; emulaciones no acreditan dispositivos físicos"
+       ],
+-      "repositoryPublicationAuthorization": "A-027"
++      "repositoryPublicationAuthorization": "A-027",
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
++      }
+     },
+     {
+       "id": "P06-T01",
+@@ -919,7 +1060,12 @@
+         "Continuidad de inventario ante sesión, desconexión y cambio de dispositivo dentro del flujo autorizado.",
+         "Aceptación manual de Iván del flujo local y sus límites."
+       ],
+-      "workOrderHold": "A-026/A-027/D-316: conservar prototipo; retomar inmediatamente con multiagentes después del cierre real P05. No anticipar cierre por limitación de Spark."
++      "workOrderHold": "A-026/A-027/D-316: conservar prototipo; retomar inmediatamente con multiagentes después del cierre real P05. No anticipar cierre por limitación de Spark.",
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "replan_before_implementation",
++        "note": "Mochilas retiradas; revisar colección, kit, pérdida/recuperación, almacén y buzón antes de implementar."
++      }
+     },
+     {
+       "id": "P06-T02",
+@@ -940,7 +1086,12 @@
+         "status": "authorized_local",
+         "scope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable."
+       },
+-      "workOrderHold": "A-026/A-027/D-316: conservar prototipo; retomar inmediatamente con multiagentes después del cierre real P05. No anticipar cierre por limitación de Spark."
++      "workOrderHold": "A-026/A-027/D-316: conservar prototipo; retomar inmediatamente con multiagentes después del cierre real P05. No anticipar cierre por limitación de Spark.",
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "replan_before_implementation",
++        "note": "Mochilas retiradas; revisar colección, kit, pérdida/recuperación, almacén y buzón antes de implementar."
++      }
+     },
+     {
+       "id": "P06-T03",
+@@ -962,7 +1113,12 @@
+         "status": "authorized_local",
+         "scope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable."
+       },
+-      "workOrderHold": "A-026/A-027/D-316: conservar prototipo; retomar inmediatamente con multiagentes después del cierre real P05. No anticipar cierre por limitación de Spark."
++      "workOrderHold": "A-026/A-027/D-316: conservar prototipo; retomar inmediatamente con multiagentes después del cierre real P05. No anticipar cierre por limitación de Spark.",
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "replan_before_implementation",
++        "note": "Mochilas retiradas; revisar colección, kit, pérdida/recuperación, almacén y buzón antes de implementar."
++      }
+     },
+     {
+       "id": "P06-T04",
+@@ -983,7 +1139,12 @@
+         "status": "authorized_local",
+         "scope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable."
+       },
+-      "workOrderHold": "A-026/A-027/D-316: conservar prototipo; retomar inmediatamente con multiagentes después del cierre real P05. No anticipar cierre por limitación de Spark."
++      "workOrderHold": "A-026/A-027/D-316: conservar prototipo; retomar inmediatamente con multiagentes después del cierre real P05. No anticipar cierre por limitación de Spark.",
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "replan_before_implementation",
++        "note": "Mochilas retiradas; revisar colección, kit, pérdida/recuperación, almacén y buzón antes de implementar."
++      }
+     },
+     {
+       "id": "P06-T05",
+@@ -1006,7 +1167,12 @@
+         "status": "authorized_local",
+         "scope": "Autorizada por A-024 para preparación, implementación y pruebas locales con datos ficticios; conservar criterio, peso y dependencias originales. No marcar completada sin evidencia suficiente y aceptación aplicable."
+       },
+-      "workOrderHold": "A-026/A-027/D-316: conservar prototipo; retomar inmediatamente con multiagentes después del cierre real P05. No anticipar cierre por limitación de Spark."
++      "workOrderHold": "A-026/A-027/D-316: conservar prototipo; retomar inmediatamente con multiagentes después del cierre real P05. No anticipar cierre por limitación de Spark.",
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "replan_before_implementation",
++        "note": "Mochilas retiradas; revisar colección, kit, pérdida/recuperación, almacén y buzón antes de implementar."
++      }
+     },
+     {
+       "id": "P07-T01",
+@@ -1026,6 +1192,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1047,6 +1218,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1067,6 +1243,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1088,6 +1269,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1108,6 +1294,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1129,6 +1320,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1151,6 +1347,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1172,6 +1373,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1192,6 +1398,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1212,6 +1423,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1233,6 +1449,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1253,6 +1474,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1275,6 +1501,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1302,6 +1533,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1322,6 +1558,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1344,6 +1585,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1364,6 +1610,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1384,6 +1635,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1404,6 +1660,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     },
+     {
+@@ -1424,6 +1685,11 @@
+       "taskAuthorization": {
+         "status": "pending",
+         "scope": "Ejecución e implementación de esta tarea pendientes de autorización concreta; la aprobación del plan no las autoriza."
++      },
++      "designApplicability": {
++        "revision": "V2-ESTRUCTURA",
++        "action": "acceptance_requires_v2_revision",
++        "note": "Revisar recorrido, armas, guardado o criterios derivados según PAUTA_DESARROLLO.md y plan RC."
+       }
+     }
+   ],
+@@ -2004,6 +2270,19 @@
+       "ownAccountsEnabled": false,
+       "ownGameRuntimeTested": false,
+       "acceptanceScope": "Configuración administrativa y decisión del titular; no aceptación funcional P05."
++    },
++    {
++      "id": "EV-035",
++      "kind": "Auditoría documental de alcance",
++      "summary": "Lectura de los10turnos disponibles de ESTRUCTURA; separación de instrucciones del usuario, propuestas del asistente y reglas abiertas. Pauta V2 y plan RC-01–RC-12 preparados; sin cambios del juego ni aceptación funcional.",
++      "references": [
++        "PAUTA_DESARROLLO.md",
++        "docs/ESTRUCTURA_DECISIONES.md",
++        "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
++        "docs/COFRES_BASE_Y_ADAPTACION_V2.md"
++      ],
++      "runtimeProof": false,
++      "evidenceComplete": false
+     }
+   ],
+   "decisions": [
+@@ -4215,6 +4494,42 @@
+       "topic": "Secuencia P05, GitHub y P06 con multiagentes",
+       "approvalStatus": "Petición expresa de Iván, A-027,17/10/2026",
+       "resolution": "Conservar y publicar el trabajo autorizado junto al roadmap con estado real. La continuidad funcional P06 será inmediata al cierre verificado de P05, con multiagentes bajo coordinación de raíz. La preparación local y auditoría de consola no equivalen a terminar P05. No adelantar tareas P06 para ocultar la limitación Spark."
++    },
++    {
++      "id": "D-318",
++      "topic": "Mapas de cinco minutos, jefe y puerta de la Fundación",
++      "approvalStatus": "Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente.",
++      "resolution": "Recorrido por mapas encadenados. Al5:00 llega puerta/soldados, cesa spawn enemigo y permanecen remanentes. Avance exige jefe derrotado; reloj se reinicia y mejoras se conservan al cambiar de mapa. Hora exacta de jefe y detalles pendientes en O-01–O-11."
++    },
++    {
++      "id": "D-319",
++      "topic": "Retirada de extracción, accesorios físicos y mochilas",
++      "approvalStatus": "Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente.",
++      "resolution": "No implementar esas funciones en V2. Retener código/datos anteriores hasta una adaptación versionada. Replantear kit, recuperación, almacén y buzón sin asumir que toda colección fue descartada."
++    },
++    {
++      "id": "D-320",
++      "topic": "Armas distintas, familias y mejoras por nivel al azar",
++      "approvalStatus": "Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente.",
++      "resolution": "Identidad y estadísticas básicas por arma; familias citadas por Iván. La selección de candidatos, interfaz, distribución y topes requieren cierre. La propuesta de diez atributos nuevos y cinco rarezas no queda aprobada por una respuesta del asistente."
++    },
++    {
++      "id": "D-321",
++      "topic": "Grietas opcionales y saltos dimensionales",
++      "approvalStatus": "Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente.",
++      "resolution": "Desafíos de mayor dificultad/recompensa y rutas dimensionales. Conservar contacto instantáneo, apertura limitada, sonido, aviso y localizador. Retorno/reloj/destinos y relación con jefe obligatorio siguen por definir."
++    },
++    {
++      "id": "D-322",
++      "topic": "Cofres aprobados y adaptación a mapas de300s",
++      "approvalStatus": "Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente.",
++      "resolution": "Conservar la base aprobada D-140–148/D-183/D-220/D-279: sorteos por oleada, probabilidades/topes, tickets, apertura y descubrimiento. Su integración en la partida SCP no está implementada; las cajas de campo no dan botín. Adaptar cadencia y premios incompatibles antes de presupuesto/distribución/tamaño V2. No importar automáticamente premios de Pokesurvivor ni descartar reglas previas por omisión."
++    },
++    {
++      "id": "D-323",
++      "topic": "Trazabilidad y porcentaje después del cambio de alcance",
++      "approvalStatus": "Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente.",
++      "resolution": "Preservar53tareas, pesos y evidencia previa como línea base histórica52/100. V2 no tiene porcentaje calculado. P06 se replantea; no otorgar avance por eliminar funciones ni extrapolar CV antiguos a V2."
+     }
+   ],
+   "authorizations": [
+@@ -4357,6 +4672,11 @@
+       "id": "A-028",
+       "action": "Mantener Spark sin facturación",
+       "scopeStatus": "Respuesta expresa de Iván el17/10/2026 a la consulta sobre Blaze y posibles cargos: «Mantener Spark sin facturación». No vincular cuenta de facturación ni activar Blaze, aunque limite el despliegue del backend actual. Conservar los avances, la verificación local y la configuración propia desactivada."
++    },
++    {
++      "id": "A-030",
++      "action": "Actualizar pauta con ESTRUCTURA y preparar plan de cambios con multiagentes Sol medio",
++      "scopeStatus": "Petición expresa de Iván el18/10: retirar extracciones, accesorios de armas y mochilas, incorporar decisiones accesibles del chat ESTRUCTURA y preparar pauta de cambios para continuar. Revisión documental; no implica que las mecánicas estén implementadas ni autoriza borrar datos o reconstruir el juego."
+     }
+   ],
+   "closureCases": [
+@@ -5121,6 +5441,12 @@
+       "date": "2026-10-17",
+       "description": "A-027/A-028, D-315/D-316 y EV-033: resolver acceso CLI y consultar infraestructura/Auth reales sin mutaciones. Registrar decisión expresa de mantener Spark sin facturación; Functions actual no desplegable, propio desactivado. Preparar publicación autorizada de código/roadmap y continuación P06 condicionada al cierre P05. Conservar53tareas,25CV, criterios/pesos/dependencias y52/100.",
+       "approval": "Elección explícita Spark y peticiones de GitHub/continuación inmediata P06 con multiagentes."
++    },
++    {
++      "id": "CHG-027",
++      "date": "2026-10-18",
++      "description": "Roadmap0.20 incorpora A-030/D-318–323/EV-035 y activeDesignRevisionV2. Retirar extracción/accesorios/mochilas del diseño; plan RC de adaptación y criterios de validación pendientes.53tareas/estados/pesos/dependencias/aceptaciones históricas intactos;52/100 es histórico, avanceV2null.",
++      "approval": "Petición expresa de actualizar la pauta desde ESTRUCTURA con multiagentes Sol medio; raíz revisa e integra."
+     }
+   ],
+   "derivedProgress": {
+@@ -5256,7 +5582,7 @@
+     "gamePublished": false,
+     "webPublished": false,
+     "editable": false,
+-    "computedFromTaskDigest": "f55a323ad414f8dbf5fddafa2cf044eaa6f3e9d6bb5b6566927995cf753cbbef",
++    "computedFromTaskDigest": "2680b639618c6600644915ac8e28f1b6ed39b9a0dda8956c4ef37b9c788c53d6",
+     "taskDigestAlgorithm": "SHA256 of JSON.stringify(tasks), UTF-8"
+   },
+   "sync": {
+@@ -5402,7 +5728,7 @@
+   ],
+   "markdownTemplate": {
+     "reviewSummary": "Plantilla íntegra en RoadmapSCP.json; vista generada en Markdown.",
+-    "sha256": "2e350212efb682bd1a03cc6143ebd2929f97b67500e6e5de5a258ad295769aec"
++    "sha256": "99abe8af3669b9fa33c5e02f4f0f18c034545247badfd67a0137f01b9a5099b6"
+   },
+   "currentImplementation": {
+     "version": "P05-local-01 / alfa0.5 local",
+@@ -5504,11 +5830,227 @@
+         "Aceptación manual de Iván del flujo local y sus límites."
+       ],
+       "reportReference": "docs/P06-REPORT.md (pendiente de verificación)",
+-      "manualGuide": "docs/PRUEBA_INVENTARIO_P06.md"
+-    }
++      "manualGuide": "docs/PRUEBA_INVENTARIO_P06.md",
++      "designDisposition": "historical_fixture_replan_do_not_extend_backpacks_or_mods"
++    },
++    "activeDesignRevision": "V2-ESTRUCTURA",
++    "v2ImplementationStatus": "pending; esta entrega documental no modifica el juego"
+   },
+   "summaryTemplate": {
+     "reviewSummary": "Plantilla íntegra en RoadmapSCP.json; vista generada en Markdown.",
+-    "sha256": "72adeb9a4b69ffc330772d4094dfe73686cf59cd45fbcad11dded8f3ad8bc52d"
++    "sha256": "51cf5dca7e8bc8855cac9f786e32041aa1f960bfa9e2fe0fec8fe34308c4ee03"
++  },
++  "activeDesignRevision": {
++    "id": "V2-ESTRUCTURA",
++    "title": "Avance por mapas; sin extracción, accesorios físicos ni mochilas",
++    "updatedOn": "2026-10-18",
++    "status": "documented_pending_implementation",
++    "authority": "A-030",
++    "summary": "Pauta y plan actualizados desde ESTRUCTURA y la petición posterior de Iván; no se implementan mecánicas en esta revisión documental.",
++    "pautaPath": "PAUTA_DESARROLLO.md",
++    "changePlanPath": "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
++    "decisionsPath": "docs/ESTRUCTURA_DECISIONES.md",
++    "sourceThread": {
++      "id": "01a1457c-c051-73d2-9864-e7deb6435420",
++      "title": "ESTRUCTURA",
++      "readOn": "2026-10-18",
++      "lastTurnWasInProgress": true
++    },
++    "progress": {
++      "percent": null,
++      "baselinePercent": 52,
++      "baselineMeaning": "historical_previous_design",
++      "explanation": "El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador."
++    },
++    "scope": [
++      {
++        "element": "Recorrido",
++        "treatment": "Mapas encadenados de cinco minutos; jefe obligatorio en cada mapa."
++      },
++      {
++        "element": "Puerta y aliados",
++        "treatment": "A5:00 llega puerta blindada y soldados; cesa todo spawn enemigo, permanecen remanentes; cruzar exige jefe derrotado."
++      },
++      {
++        "element": "Extracción de fin de partida",
++        "treatment": "Retirada del diseño V2; la puerta avanza de mapa, no termina la partida."
++      },
++      {
++        "element": "Accesorios de armas y mochilas",
++        "treatment": "Retirados del diseño V2; código y datos anteriores conservados hasta adaptar y validar."
++      },
++      {
++        "element": "Armas",
++        "treatment": "Identidad y estadísticas propias; familias láser, cuerpo a cuerpo, distancia, misiles y arrojadizas; mejoras por nivel al azar, detalles pendientes."
++      },
++      {
++        "element": "Grietas y saltos",
++        "treatment": "Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas."
++      },
++      {
++        "element": "Cofres y mapas",
++        "treatment": "Conservar base aprobada D-140–148/D-220/D-279; adaptar intentos por oleada a300s. Presupuesto y tamaño final V2 todavía abiertos."
++      },
++      {
++        "element": "P06/P07",
++        "treatment": "Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow."
++      }
++    ],
++    "cofreBasis": {
++      "reference": "docs/COFRES_BASE_Y_ADAPTACION_V2.md",
++      "decisions": [
++        "D-140",
++        "D-141",
++        "D-142",
++        "D-144",
++        "D-146",
++        "D-147",
++        "D-148",
++        "D-181",
++        "D-183",
++        "D-220",
++        "D-279"
++      ],
++      "adaptationStatus": "pending_map_300s_trigger_and_compatible_rewards"
++    },
++    "openRuleIds": [
++      "O-01",
++      "O-02",
++      "O-03",
++      "O-04",
++      "O-05",
++      "O-06",
++      "O-07",
++      "O-08",
++      "O-09",
++      "O-10",
++      "O-11"
++    ],
++    "implementationPlan": [
++      {
++        "id": "RC-01",
++        "title": "Cerrar contratos y parámetros abiertos de V2",
++        "dependencies": [],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-02",
++        "title": "Versionar guardado, resultados y compatibilidad",
++        "dependencies": [
++          "P05 verificado",
++          "RC-01"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-03",
++        "title": "Director300s y escalada temporal",
++        "dependencies": [
++          "RC-02"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-04",
++        "title": "Jefe obligatorio por mapa",
++        "dependencies": [
++          "RC-03"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-05",
++        "title": "Puerta, soldados y transición sin limpiar remanentes",
++        "dependencies": [
++          "RC-04"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-06",
++        "title": "Retirar extracción del recorrido V2",
++        "dependencies": [
++          "RC-05"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-07",
++        "title": "Armas por familias y mejoras aleatorias",
++        "dependencies": [
++          "RC-01",
++          "RC-02"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-08",
++        "title": "Retirar accesorios/mochilas y replantear P06",
++        "dependencies": [
++          "RC-07",
++          "RC-02"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-09",
++        "title": "Colección, gacha y recompensas revisadas",
++        "dependencies": [
++          "RC-08",
++          "RC-01"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-10",
++        "title": "Cofres y dimensiones de mapas",
++        "dependencies": [
++          "RC-01",
++          "RC-03"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-11",
++        "title": "Grietas especiales y saltos dimensionales",
++        "dependencies": [
++          "RC-05",
++          "RC-09",
++          "O-06/O-07"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      },
++      {
++        "id": "RC-12",
++        "title": "Interfaz/audio, regresión y aceptación V2",
++        "dependencies": [
++          "RC-06",
++          "RC-07",
++          "RC-08",
++          "RC-09",
++          "RC-10",
++          "RC-11"
++        ],
++        "status": "P",
++        "evidenceComplete": false
++      }
++    ],
++    "phasePolicy": {
++      "P05": "Completar aceptación real y compatibilidad V2; mantener Spark sin facturación.",
++      "P06": "Replantear antes de implementar. No continuar inventario físico antiguo.",
++      "P07": "Revisar colección/gacha/recompensas de soldados y armas tras P05/P06 revisados."
++    },
++    "gameCodeChangedByThisRevision": false
+   }
+ }
+--- a/RoadmapSCP.md
++++ b/RoadmapSCP.md
+@@ -1,12 +1,52 @@
+ # Roadmap SCP Survivor
+ 
+-**Prioridad vigente (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).
+-
+-**Entrega autorizada a GitHub · crédito de Ivan Vivanco · P06-T01 en curso (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).
++**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Pauta y plan actualizados desde ESTRUCTURA y la petición posterior de Iván; no se implementan mecánicas en esta revisión documental.
++
++[Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md)
++
++**Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
++
++| Elemento | Tratamiento vigente |
++| --- | --- |
++| Recorrido | Mapas encadenados de cinco minutos; jefe obligatorio en cada mapa. |
++| Puerta y aliados | A5:00 llega puerta blindada y soldados; cesa todo spawn enemigo, permanecen remanentes; cruzar exige jefe derrotado. |
++| Extracción de fin de partida | Retirada del diseño V2; la puerta avanza de mapa, no termina la partida. |
++| Accesorios de armas y mochilas | Retirados del diseño V2; código y datos anteriores conservados hasta adaptar y validar. |
++| Armas | Identidad y estadísticas propias; familias láser, cuerpo a cuerpo, distancia, misiles y arrojadizas; mejoras por nivel al azar, detalles pendientes. |
++| Grietas y saltos | Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas. |
++| Cofres y mapas | Conservar base aprobada D-140–148/D-220/D-279; adaptar intentos por oleada a300s. Presupuesto y tamaño final V2 todavía abiertos. |
++| P06/P07 | Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow. |
++
++| Paso | Trabajo pendiente | Dependencias |
++| --- | --- | --- |
++| RC-01 | Cerrar contratos y parámetros abiertos de V2 | Reglas V2 |
++| RC-02 | Versionar guardado, resultados y compatibilidad | P05 verificado, RC-01 |
++| RC-03 | Director300s y escalada temporal | RC-02 |
++| RC-04 | Jefe obligatorio por mapa | RC-03 |
++| RC-05 | Puerta, soldados y transición sin limpiar remanentes | RC-04 |
++| RC-06 | Retirar extracción del recorrido V2 | RC-05 |
++| RC-07 | Armas por familias y mejoras aleatorias | RC-01, RC-02 |
++| RC-08 | Retirar accesorios/mochilas y replantear P06 | RC-07, RC-02 |
++| RC-09 | Colección, gacha y recompensas revisadas | RC-08, RC-01 |
++| RC-10 | Cofres y dimensiones de mapas | RC-01, RC-03 |
++| RC-11 | Grietas especiales y saltos dimensionales | RC-05, RC-09, O-06/O-07 |
++| RC-12 | Interfaz/audio, regresión y aceptación V2 | RC-06, RC-07, RC-08, RC-09, RC-10, RC-11 |
++
++**P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.
++
++---
++
++## Línea base histórica anterior a V2
++
++Las reglas, tareas, porcentajes y prioridades registradas debajo describen el diseño anterior. En conflicto manda la pauta V2 de arriba.
++
++**Prioridad registrada antes de V2 (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).
++
++**Antecedente histórico · crédito de Ivan Vivanco · prototipo P06-T01 (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).
+ 
+ **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
+ 
+-**Versión 0.18 — 2026-10-17 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
++**Versión 0.20 — 2026-10-18 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
+ 
+ ## 1. Estado vigente
+ 
+@@ -283,6 +323,7 @@
+ | A-026 | Completar P05 antes de continuar P06 | Petición expresa de Iván el17/10/2026. Priorizar implementación/verificación y preparación de integración con proyecto propio; conservar el prototipoP06 sin continuar sus funciones. No modificar criterios/pesos ni declarar100% por simulación. Autenticación del propietario y gasto/facturación siguen sujetos a su disponibilidad y D-068; no activar billing ni desplegar una conexión incompleta por inferencia. |
+ | A-027 | Subir el trabajo a GitHub y continuar P06 inmediatamente después del cierre P05 con multiagentes | Petición expresa de Iván el17/10/2026: «al terminar subelo al github» y «cuando termines las fase 5, vamos altiro a la fase 6. usa multiagentes». Se conserva la autorización previa de subir código/roadmap a DETECO/SCPSurvivor/main, sin sobrescribir historial. P06 se continúa cuando P05 cierre; no autoriza declarar aceptación por inferencia ni cambiar criterios. |
+ | A-028 | Mantener Spark sin facturación | Respuesta expresa de Iván el17/10/2026 a la consulta sobre Blaze y posibles cargos: «Mantener Spark sin facturación». No vincular cuenta de facturación ni activar Blaze, aunque limite el despliegue del backend actual. Conservar los avances, la verificación local y la configuración propia desactivada. |
++| A-030 | Actualizar pauta con ESTRUCTURA y preparar plan de cambios con multiagentes Sol medio | Petición expresa de Iván el18/10: retirar extracciones, accesorios de armas y mochilas, incorporar decisiones accesibles del chat ESTRUCTURA y preparar pauta de cambios para continuar. Revisión documental; no implica que las mecánicas estén implementadas ni autoriza borrar datos o reconstruir el juego. |
+ 
+ ## 6. Registro íntegro de decisiones
+ 
+@@ -606,6 +647,12 @@
+ | D-314 | Cerrar P05 antes de continuar P06 | Petición expresa de Iván, A-026,17/10/2026 | PrioridadP05. Conservar todoP06 ya desarrollado, sin avanzar nuevas tareas hasta aceptarP05. Preparar separación explícita entre emuladores/proyecto propio, con activación propia inicialmente deshabilitada y cachés aisladas. Conservar criterios/dependencias/pesos y52/100. El cierre exige las pruebas reales pendientes ya descritas; no sustituirlas por mocks o capturas de consola. |
+ | D-315 | Mantener Spark; sin autorización de facturación | Elección expresa de Iván, A-028,17/10/2026 | Mantener Spark sin facturación. La consulta real confirma billingEnabled=false y ninguna cuenta vinculada. El backend existente requiere Cloud Functions y no se puede desplegar en Spark. No sustituirlo por escrituras económicas libres del cliente ni afirmar que cambiar de plan garantiza coste cero. Conservar preparación desactivada y P05EV0/6; una alternativa de servidor exigiría evaluar arquitectura y pruebas, no está implementada por esta decisión. |
+ | D-316 | Secuencia P05, GitHub y P06 con multiagentes | Petición expresa de Iván, A-027,17/10/2026 | Conservar y publicar el trabajo autorizado junto al roadmap con estado real. La continuidad funcional P06 será inmediata al cierre verificado de P05, con multiagentes bajo coordinación de raíz. La preparación local y auditoría de consola no equivalen a terminar P05. No adelantar tareas P06 para ocultar la limitación Spark. |
++| D-318 | Mapas de cinco minutos, jefe y puerta de la Fundación | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | Recorrido por mapas encadenados. Al5:00 llega puerta/soldados, cesa spawn enemigo y permanecen remanentes. Avance exige jefe derrotado; reloj se reinicia y mejoras se conservan al cambiar de mapa. Hora exacta de jefe y detalles pendientes en O-01–O-11. |
++| D-319 | Retirada de extracción, accesorios físicos y mochilas | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | No implementar esas funciones en V2. Retener código/datos anteriores hasta una adaptación versionada. Replantear kit, recuperación, almacén y buzón sin asumir que toda colección fue descartada. |
++| D-320 | Armas distintas, familias y mejoras por nivel al azar | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | Identidad y estadísticas básicas por arma; familias citadas por Iván. La selección de candidatos, interfaz, distribución y topes requieren cierre. La propuesta de diez atributos nuevos y cinco rarezas no queda aprobada por una respuesta del asistente. |
++| D-321 | Grietas opcionales y saltos dimensionales | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | Desafíos de mayor dificultad/recompensa y rutas dimensionales. Conservar contacto instantáneo, apertura limitada, sonido, aviso y localizador. Retorno/reloj/destinos y relación con jefe obligatorio siguen por definir. |
++| D-322 | Cofres aprobados y adaptación a mapas de300s | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | Conservar la base aprobada D-140–148/D-183/D-220/D-279: sorteos por oleada, probabilidades/topes, tickets, apertura y descubrimiento. Su integración en la partida SCP no está implementada; las cajas de campo no dan botín. Adaptar cadencia y premios incompatibles antes de presupuesto/distribución/tamaño V2. No importar automáticamente premios de Pokesurvivor ni descartar reglas previas por omisión. |
++| D-323 | Trazabilidad y porcentaje después del cambio de alcance | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | Preservar53tareas, pesos y evidencia previa como línea base histórica52/100. V2 no tiene porcentaje calculado. P06 se replantea; no otorgar avance por eliminar funciones ni extrapolar CV antiguos a V2. |
+ 
+ ## 7. Evidencias completas
+ 
+@@ -646,6 +693,7 @@
+ | EV-031 | demo_credit_and_github_prepublication_validation: Crédito exacto visible en12 recorridos de menú: fuente/compilado por escritorio/móvil emulado por modos general/grieta/inventario; sin errores JavaScript ni peticiones remotas. Capturas revisadas. Build/check85scripts, bundle57d8cefba5. Suite96casos:95aprobados,0fallos,1integración optativa omitida. Verificación local anterior al push; no evidencia de despliegue ni cierreP05/P06. | Sí, dentro del alcance descrito | [dev.html](dev.html), [css/technical.css](css/technical.css), [docs/PUBLICACION_GITHUB.md](docs/PUBLICACION_GITHUB.md) | scenarioCount: 12; nodeCases: 96; nodePassed: 95; nodeFailed: 0; nodeSkipped: 1; bundle: 57d8cefba5; scriptCount: 85 |
+ | EV-032 | p05_own_runtime_preparation_and_local_regression: Preparación propia desactivada: OAuth/vinculación oficiales seleccionados por entorno, cachés aisladas, guardias de proyecto, CORS y configuración propia. Suite112casos:111aprobados,0fallos,1integración optativa omitida. Integración emulada explícita1PASS. Navegador local24escenariosPASS ypropio desactivado8PASS; build/check6382978a6a,85scripts,SDK227024bytes. CLI sin cuenta autorizada; no consulta/despliegue del proyecto real, correo/Google/dispositivos propios ni cierreP05. P06 se conserva sin continuación; global52/100. | Sí, dentro del alcance descrito | [docs/P05-CIERRE-REPORT.md](docs/P05-CIERRE-REPORT.md), [docs/CIERRE_P05.md](docs/CIERRE_P05.md), [docs/ACTIVACION_FIREBASE_PROPIO.md](docs/ACTIVACION_FIREBASE_PROPIO.md), [tests/p05-own-client.test.js](tests/p05-own-client.test.js), [tests/p05-own-server.test.js](tests/p05-own-server.test.js), [tests/p05-cors.test.js](tests/p05-cors.test.js), [tests/p05-own-disabled-browser.py](tests/p05-own-disabled-browser.py), [tests/p05-browser.py](tests/p05-browser.py), [tests/p05-emulators.test.js](tests/p05-emulators.test.js) | evidenceComplete: false; ownRuntimeTested: false; ownAccountsEnabled: false; manualAcceptance: pending; bundle: 6382978a6a; scriptCount: 85; sdkBytes: 227024; nodeCases: 112; nodePassed: 111; nodeFailed: 0; nodeSkipped: 1; explicitEmulatorIntegrationPassed: 1; localBrowserScenarios: 24; disabledOwnBrowserScenarios: 8; firebaseCliAuthorized: false; acceptanceScope: Preparación/pruebas locales. Los SDK mocks, emuladores y servidor HTTP local no acreditan servicios propios reales. |
+ | EV-033 | firebase_own_readonly_configuration_audit_and_spark_decision: Consultas GET reales: CLI del propietario autorizado y acceso scp-survivor confirmado; billingEnabled=false, sin cuenta de facturación. Auth correo/Google habilitados, dominios localhost/127.0.0.1 y dos hosts del proyecto; política ENFORCE8..4096 sin clases. allowDuplicateEmails omitido y no inferido. Firestore/Functions devuelven403SERVICE_DISABLED; no se listaron datos/funciones. Hosting tiene sitio predeterminado, release no comprobada. Iván elige Spark sin facturación. No se despliega, habilita cuenta propia ni prueba OAuth/correo/guardado real; P05EV0/6, global52/100. | Sí, dentro del alcance descrito | [docs/P05-AUDITORIA-FIREBASE.json](docs/P05-AUDITORIA-FIREBASE.json), [docs/P05-ESTADO-SPARK.md](docs/P05-ESTADO-SPARK.md), [docs/CIERRE_P05.md](docs/CIERRE_P05.md) | evidenceComplete: false; firebaseCliAuthorized: true; projectAccessVerified: true; billingEnabled: false; billingAuthorized: false; readOnly: true; ownAccountsEnabled: false; ownGameRuntimeTested: false; acceptanceScope: Configuración administrativa y decisión del titular; no aceptación funcional P05. |
++| EV-035 | Auditoría documental de alcance: Lectura de los10turnos disponibles de ESTRUCTURA; separación de instrucciones del usuario, propuestas del asistente y reglas abiertas. Pauta V2 y plan RC-01–RC-12 preparados; sin cambios del juego ni aceptación funcional. | Documental; sin prueba de ejecución | [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [docs/ESTRUCTURA_DECISIONES.md](docs/ESTRUCTURA_DECISIONES.md), [docs/PLAN_CAMBIOS_ESTRUCTURA.md](docs/PLAN_CAMBIOS_ESTRUCTURA.md), [docs/COFRES_BASE_Y_ADAPTACION_V2.md](docs/COFRES_BASE_Y_ADAPTACION_V2.md) | evidenceComplete: false |
+ 
+ ## 8. Áreas de continuidad
+ 
+@@ -794,6 +842,7 @@
+ | CHG-023 | 2026-10-17 | A-026/D-314: priorizar cierreP05 y suspender continuación deP06 conservando su prototipo. Preparar configuración, OAuth/vinculación y guardias para proyecto propio desactivado. Acceso CLI no autorizado; plan real aún no consultado. Conservar53 tareas,25CV, pesos/criterios/dependencias y52/100; ningún cierre anticipado. | Petición expresa de Iván de completar la fase anterior al100% antes de P06. |
+ | CHG-024 | 2026-10-17 | Registrar EV-032 de preparación propia y regresión local. Corregir CORS IPv6 y confirmación del proveedor Google local; conservar registro del primer timeout y sus límites. Propio desactivado, acceso Firebase pendiente. P05 no se cierra y P06 no se continúa. Mantener53tareas,25CV y52/100; no nueva publicación GitHub. | A-026; prioridad expresa de completar P05 antes de continuar P06. |
+ | CHG-025 | 2026-10-17 | A-027/A-028, D-315/D-316 y EV-033: resolver acceso CLI y consultar infraestructura/Auth reales sin mutaciones. Registrar decisión expresa de mantener Spark sin facturación; Functions actual no desplegable, propio desactivado. Preparar publicación autorizada de código/roadmap y continuación P06 condicionada al cierre P05. Conservar53tareas,25CV, criterios/pesos/dependencias y52/100. | Elección explícita Spark y peticiones de GitHub/continuación inmediata P06 con multiagentes. |
++| CHG-027 | 2026-10-18 | Roadmap0.20 incorpora A-030/D-318–323/EV-035 y activeDesignRevisionV2. Retirar extracción/accesorios/mochilas del diseño; plan RC de adaptación y criterios de validación pendientes.53tareas/estados/pesos/dependencias/aceptaciones históricas intactos;52/100 es histórico, avanceV2null. | Petición expresa de actualizar la pauta desde ESTRUCTURA con multiagentes Sol medio; raíz revisa e integra. |
+ 
+ ## 13. Continuar en Windows/Codex Local
+ 
+--- a/docs/COFRES_BASE_Y_ADAPTACION_V2.md
++++ b/docs/COFRES_BASE_Y_ADAPTACION_V2.md
+@@ -0,0 +1,40 @@
++# Cofres: base aprobada y adaptación a mapas de cinco minutos
++
++18/10/2026. Aclaración incorporada al volver a consultar ESTRUCTURA: **sí existen reglas aprobadas de cofres en el roadmap anterior**. No deben descartarse ni sustituirse por las reglas genéricas de Pokesurvivor. Su integración en el recorrido SCP todavía no está implementada.
++
++## Base documental que se conserva
++
++Fuente: decisiones de `RoadmapSCP.json`, no resultados de juego.
++
++| Decisión | Regla anterior |
++| --- | --- |
++| D-140 | Cofres de reclutamiento aleatorios y tres hitos únicos de un ticket: primera oleada, llegar al sector2 y al sector3 |
++| D-141 | Reloj de combate activo acumulado entre mapas; excluye preparación, pausas y menús |
++| D-142 | Un intento al completar cada oleada; como máximo un cofre por intento exitoso |
++| D-144 / D-220 | Sectores1–3:10% por intento, máximo1cofre/mapa,1–2tickets; sectores4–7:15%, máximo2,1–2tickets;8+:20%, máximo3,1–3tickets. Cantidades enteras equiprobables |
++| D-144 / D-220 | A10min de combate activo: una vez+5puntos de probabilidad y+1al máximo de tickets. Contenido fijado al aparecer; abrir no libera cupo |
++| D-146 / D-279 | Apertura por proximidad3,5s, radio50 y sin obstáculo; avance1s/s y retroceso1,5s/s al alejarse. Pausa congela; disparo continúa; daño por sí solo no cancela |
++| D-147 | Tickets directamente a la cuenta tras confirmación; no caen al suelo ni dependen de la mochila |
++| D-148 | Aviso de cofre sin descubrir; flecha después de verlo en pantalla. No añade minimapa/niebla |
++| D-181 / D-183 | Botín físico previsto solo desde cofres/jefes: cofre grande50% de un objeto y jefe vencido siempre uno; tickets independientes |
++
++Estas cifras pertenecen al diseño por oleadas. **10% por oleada no significa10% por segundo ni10% por mapa.** No convertirlas automáticamente al reloj de300s, multiplicarlas por fotogramas ni garantizar máximos que eran límites.
++
++## Qué existe realmente en el código
++
++- `js/world/sector-maps.js` coloca hasta tres `fieldCrate` según puntos válidos de la geometría. Son cajas destructibles, no los cofres de tickets aprobados.
++- `js/world/world.js` acepta `fieldCrate` en el escenario SCP y su destrucción genera efectos sin botín. D-278 también documenta decoración sin XP/tickets/monedas.
++- En la rama procedural heredada existen `chest` y `bigchest`, con sus premios originales. Esa rama no demuestra cofres de reclutamiento activos dentro del escenario SCP configurado por fixture.
++
++Ni las tres cajas ni las probabilidades de la base heredada fijan la cantidad final de cofres del mapa V2.
++
++## Adaptación pendiente, sin perder la base anterior
++
++1. Sustituir el disparador «completar oleada» por una cadencia explícita compatible con300s. Precisar número de intentos, relación con jefe y momento de aparición.
++2. Revisar la correspondencia de sector/mapa y el reloj acumulado de combate, incluido el tiempo con enemigos restantes después de5:00 o dentro de grietas.
++3. Tomar probabilidades, topes, tickets, apertura y descubrimiento anteriores como base de revisión. Documentar qué se conserva y qué cambia; no reiniciar esas decisiones como si nunca hubieran existido.
++4. Replantear el objeto físico y la entrega al quitar mochilas/accesorios. Los tickets ya iban a cuenta y esa separación puede reutilizarse. No convertir objetos retirados en moneda por inferencia.
++5. Adaptar hitos de la primera oleada a un recorrido sin esa misma estructura; no conceder ni duplicar el premio de un hito por cada mapa.
++6. Con la cadencia y premios cerrados, fijar presupuesto de puntos de aparición y probar distancias/rutas en un mapa de cinco minutos. El tamaño final todavía no queda aprobado.
++
++Las decisiones compatibles se conservan como antecedentes aprobados; los cambios de regla se registrarán antes de implementar RC-09/RC-10. No se cambian cofres, cantidades ni premios en esta entrega documental.
+--- a/docs/ESTRUCTURA-VERIFICACION.json
++++ b/docs/ESTRUCTURA-VERIFICACION.json
+@@ -0,0 +1,32 @@
++{
++  "date": "2026-10-18",
++  "scope": "documentation_and_roadmap_only",
++  "sourceChat": "ESTRUCTURA",
++  "roadmapVersion": "0.20",
++  "activeDesignRevision": "V2-ESTRUCTURA",
++  "canonicalViewsVerified": true,
++  "historicalTaskCriteriaStatusWeightsDependenciesPreserved": 53,
++  "historicalProgress": 52,
++  "v2ProgressPercent": null,
++  "implementationTasksPending": 12,
++  "sourceGameFilesUnchanged": 160,
++  "publicationPriorFilesPreserved": 332,
++  "publicationAssetsUnchangedByteForByte": 12,
++  "documentationLinksChecked": 68,
++  "gameCodeChanged": false,
++  "workerInProgressPublished": false,
++  "ownAccountsEnabled": false,
++  "runtimeTestsExecutedForThisDocumentationDelivery": false,
++  "testScopeExplanation": "Se verificaron generador, JSON, enlaces, trazabilidad, alcance y hashes. No se ejecutan pruebas de mecánicas V2 porque no se implementaron.",
++  "P05RealAcceptance": "pending",
++  "P06": "replan_before_implementation",
++  "cloudOrBillingChangesPerformed": false,
++  "newRuntimeEvidence": false,
++  "publicationParentCommit": "54ed48bab43dcf5fc43a4151858d6ccebc4abdab",
++  "remaining": [
++    "Implementar plan RC-01–RC-12",
++    "Cerrar reglas abiertas registradas",
++    "Aceptar P05 real y contrato de guardado V2",
++    "Revisar pesos/criterios antes de medir V2"
++  ]
++}
+--- a/docs/ESTRUCTURA_DECISIONES.md
++++ b/docs/ESTRUCTURA_DECISIONES.md
+@@ -0,0 +1,50 @@
++# Registro de decisiones — chat ESTRUCTURA
++
++Consulta y relectura: 18/10/2026. Chat accesible: **ESTRUCTURA**, ID `01a1457c-c051-73d2-9864-e7deb6435420`, mismo directorio del proyecto. Se revisaron sus diez turnos disponibles mediante lectura del historial. El último estaba en curso: la discusión de cofres todavía podía continuar. Una actualización del asistente precisó que el roadmap sí contiene reglas de cofres anteriores aprobadas; se comprobaron directamente D-140–148/D-183/D-220/D-279 y se conservan en [la base de cofres](COFRES_BASE_Y_ADAPTACION_V2.md). Este documento registra el corte consultado, no una exportación íntegra ni aprobación de todas las recomendaciones del asistente.
++
++La instrucción más reciente en PROGRAMACION pide actualizar la pauta, retirar extracciones, accesorios de armas y mochilas, y preparar los cambios antes de continuar. Tiene prioridad sobre decisiones incompatibles anteriores.
++
++## Confirmado por intervenciones del usuario
++
++| ID | Regla | Evidencia |
++| --- | --- | --- |
++| E-01 | Pasar del objetivo de extracción al avance por varios mapas | ESTRUCTURA: turno `01a15055-d621-7a21-8f1a-7e80c7cab1dc`; retirada expresa en PROGRAMACION el 18/10 |
++| E-02 | Cada mapa tiene un jefe final para pasar al siguiente | ESTRUCTURA: turno `01a15061-05ac-7642-a20b-6d123d1e3f01` |
++| E-03 | Monstruos/minions básicos propios de cada nivel y escalada con el tiempo | Mismo turno; mensajes posteriores del usuario |
++| E-04 | A cinco minutos aparece brecha/puerta blindada y soldados que llaman y combaten a los enemigos restantes | Mismo turno: «no spawnean mas a llegar a los 5 min, solo lo que quedan» |
++| E-05 | La puerta llega a los cinco minutos y el jefe debe estar derrotado para avanzar | El usuario respondió «Si» en `01a15094-b621-7043-9863-09f2246a79a9` a la pregunta de mantener al jefe como requisito |
++| E-06 | Armas distintas con estadísticas básicas; familias láser, cuerpo a cuerpo, a distancia, misil y arrojadizas; mejoras por nivel al azar | ESTRUCTURA: `01a150d7-62e0-7d23-9b6a-f8a5091d7839` |
++| E-07 | Quitar mochilas | Petición expresa en ese turno y reiteración en PROGRAMACION |
++| E-08 | Quitar accesorios físicos de armas y la extracción como opción de cierre | Petición expresa en PROGRAMACION, 18/10/2026 |
++| E-09 | Grietas con anomalías difíciles y premios mayores; saltos entre niveles; variedad de mapas y monstruos inspirados en SCP | ESTRUCTURA: `01a15061-05ac-7642-a20b-6d123d1e3f01` |
++| E-10 | Dirección de gacha: soldados y armas | Petición del usuario en `01a15055-d621-7a21-8f1a-7e80c7cab1dc`; tablas y duplicados sin cerrar |
++| E-11 | Aclarar cofres antes de dimensionar mapas | Última petición del usuario en `01a150d7-62e0-7d23-9b6a-f8a5091d7839`; el turno siguiente seguía investigando |
++
++La continuidad de vida/mejoras entre mapas y el reinicio del reloj se incorporan al recorrido descrito tras la aceptación E-05. Los detalles nuevos de recuperación, economía y fin definitivo de una partida requieren contratos propios, no se deducen de esa aceptación.
++
++## Requisitos previos compatibles que se conservan
++
++- Contacto instantáneo al entrar en la grieta opcional, sin botón, tecla ni espera: A-023/D-311 del proyecto.
++- Grieta localizada en el escenario, tiempo abierto limitado, indicador de dirección/distancia/tiempo y aviso sonoro y visual: solicitudes previas de Iván.
++- Recursos visuales aprobados, arquitectura HTML/CSS/JavaScript/Canvas2D y crédito exacto «Desarrollado por Ivan Vivanco».
++- Firebase Spark sin facturación; completar aceptación real de P05 antes de continuar implementación P06. No publicar secretos, sobrescribir guardados ni reconstruir el juego.
++
++## Propuestas o parámetros todavía abiertos
++
++| ID | Pendiente | Qué no se debe asumir |
++| --- | --- | --- |
++| O-01 | Hora de aparición del jefe | El minuto cuatro fue propuesta del asistente, no valor final aprobado |
++| O-02 | Objetivo aleatorio de cada mejora, cartas, elegibilidad, topes y probabilidades | No imponer mejora automática ni bono global a todas las armas |
++| O-03 | Límite de armas y catálogo por familia | Las dos armas y nivel cinco del prototipo no fijan V2 |
++| O-04 | Atributos definitivos de soldados, rarezas y duplicados | Diez atributos nuevos, cinco rarezas y habilidades propuestas no son aprobación del usuario |
++| O-05 | Colección, recompensas, muerte y fin de partida | No importar pérdida del 25–50 %, kit con mochila, almacén60/buzón30 ni asegurar moneda al morir |
++| O-06 | Grieta: retorno, reloj, cierre y premio | Pausar reloj y regresar al origen fueron propuestas; el prototipo usa el mismo escenario |
++| O-07 | Saltos: destinos, desbloqueo, jefe obligatorio y recompensas | No permitir saltarse jefes o cobrar niveles omitidos sin definir reglas |
++| O-08 | Adaptar cofres aprobados por oleada a mapas300s: cadencia, presupuesto y premios compatibles | Conservar la base D-140–148/D-220/D-279; no hay presupuesto V2 cerrado ni se importa la tabla genérica de Pokesurvivor |
++| O-09 | Tamaño final y densidad de mapas | Se dimensionan después de O-08 y de probar recorridos con enemigos |
++| O-10 | Puerta: contacto/entrada y comportamiento de soldados | La entrada instantánea aprobada para grietas no fija por sí sola todos los detalles de la puerta |
++| O-11 | Alcance de progresión permanente y desbloqueo de mapas | No fijar cantidad total de mapas, último jefe ni final de campaña por una sugerencia del asistente |
++
++Los documentos antiguos y las decisiones anteriores se conservan para trazabilidad. Cuando contradicen E-01–E-11, no constituyen instrucciones vigentes de implementación. La lista «etc.» no se usa como autorización para descartar otras funciones sin identificar la dependencia concreta.
++
++Aplicación: [pauta vigente](../PAUTA_DESARROLLO.md) y [plan de cambios](PLAN_CAMBIOS_ESTRUCTURA.md). No se cambió el código del juego con esta revisión documental.
+--- a/docs/OBSERVACIONES_VISUALES.md
++++ b/docs/OBSERVACIONES_VISUALES.md
+@@ -1,4 +1,6 @@
+ # Observaciones visuales — pendientes de P09
++
++**V2-ESTRUCTURA · 18/10/2026.** Mantener estas observaciones compatibles. Añadir al diseño visual/audio la puerta blindada y brecha de transición a5:00, llegada y llamada de los soldados, cobertura aliada, aviso de jefe pendiente y diferenciación de puerta normal/grieta opcional/salto dimensional. No denominar extracción de fin de partida a la transición. Retirar de la futura interfaz mochilas y ranuras de accesorios; conservar crédito y marcadores de daño pendientes. Arte existente intacto. [Pauta vigente](../PAUTA_DESARROLLO.md).
+ 
+ Registradas el15/10/2026 a partir de la prueba de Iván. No son un rediseño aprobado ni cambian los pesos, criterios o avance del roadmap.
+ 
+--- a/docs/P06-REPORT.md
++++ b/docs/P06-REPORT.md
+@@ -1,4 +1,6 @@
+ # P06 — inicio local: copias, mochilas y gestión de equipo
++
++**V2-ESTRUCTURA · documento histórico desde18/10/2026.** Iván retiró mochilas y accesorios físicos y pidió replantear la pauta. Este informe/prueba describe el prototipo anterior que se conserva; no es la lista vigente para continuar P06 ni se exige aceptar mochilas antes de retirarlas. Consultar [pauta vigente](../PAUTA_DESARROLLO.md) y [plan de cambios](PLAN_CAMBIOS_ESTRUCTURA.md). Las pruebas anteriores no aceptan el diseño nuevo.
+ 
+ 16/10/2026. Iván pidió comenzar la siguiente fase después de simplificar las grietas y pidió usar subagentes Luna con razonamiento máximo, manteniendo a raíz al mando. Esta entrega inicia **P06-T01**; **no completa P06** ni sustituye el guardado confirmado por servidor. P05 permanece EV0/6.
+ 
+--- a/docs/PLAN_CAMBIOS_ESTRUCTURA.md
++++ b/docs/PLAN_CAMBIOS_ESTRUCTURA.md
+@@ -0,0 +1,86 @@
++# Plan de adaptación a ESTRUCTURA — SCP Survivor
++
++18/10/2026 · Plan técnico V2 · **Pendiente de implementación.**
++
++Objetivo: adaptar el proyecto existente a [la pauta vigente](../PAUTA_DESARROLLO.md). Esta revisión cambia documentación y seguimiento; conserva el juego y los datos. No sustituye el cierre pendiente de P05.
++
++## Matriz de impacto
++
++| Sistema actual | Cambio necesario | Rutas de referencia |
++| --- | --- | --- |
++| Sectores de 3/4/5 oleadas, preparación20s y jefe cada4–6 sectores | Director por mapa con reloj300s, escalada temporal y jefe obligatorio en cada mapa; revisar las antiguas pausas entre oleadas | `js/systems/expedition.js`, `js/world/sector-maps.js` |
++| Extracción aleatoria, espera3s y resultado `extracted` | Retirar del recorrido V2; la puerta cambia de mapa, no termina la partida | `js/systems/expedition.js`, `js/ui/`, `js/core/`, `dev.html` |
++| Victoria del jefe limpia enemigos y prepara otro sector | Conservar enemigos restantes; desbloquear avance solo con jefe derrotado y puerta llegada a5:00 | `js/systems/expedition.js`, `js/systems/containment-boss.js` |
++| Sin equipo aliado de transición | Incorporar puerta y soldados con llamada/cobertura, aparición única y ubicación alcanzable; aliados no generan recompensas por matar aliados | `js/entities/`, `js/systems/`, `js/world/`, `js/ui/`, audio |
++| Armas de fuego con mods y estadísticas combinadas | Separar identidad/familia/estadísticas; quitar ranuras y efectos de accesorios sin quitar las mejoras temporales | `js/data/field-catalog.js`, `js/systems/field-stats.js`, `field-combat.js`, `field-upgrades.js`, `js/ui/field-loadout.js` |
++| Inventario temporal con mochila8/16, mods y almacén60 | Retirar la gestión de mochila/mods del recorrido nuevo; replantear colección y equipamiento | `js/systems/inventory-model.js`, `js/ui/inventory-trial.js`, `dev.html`, estilos, pruebas P06 |
++| Guardado de dos armas con mods, oleadas y calendario de extracción | Definir contrato V2, versión/migración y fronteras seguras antes de conectarlo | `js/systems/run-checkpoint.js`, `run-continuity.js`, `functions/account-service.js`; el Worker preparado también reutiliza ese contrato |
++| Grieta local en el mismo escenario | Mantener señales, duración/localizador/contacto; especificar encuentro separado, retorno y premio si se decide esa modalidad | `js/systems/dimensional-rifts.js`, `expedition.js`, `js/ui/`, `docs/PRUEBA_GRIETAS.md` |
++| Cofres aprobados por oleadas no integrados; hasta tres cajas de campo sin botín | Adaptar base D-140–148/D-220/D-279 a300s antes de fijar presupuesto y dimensiones finales; las cajas no equivalen a cofres | `js/world/world.js`, `sector-maps.js`, `js/systems/interact.js`, [base de cofres](COFRES_BASE_Y_ADAPTACION_V2.md) |
++| Gacha/kit/recuperación/buzón concebidos para objetos físicos | Rediseñar tablas/entrega según colección de soldados y armas; no entregar mods/mochilas ni copiar overflow sin revisar | Roadmap P06/P07, `docs/P06-REPORT.md`, futuros comandos de servidor |
++| Ranking y resultados basados en expedición/extracción | Versionar reglas y decidir métrica para mapas de5min; no mezclar marcas antiguas | Roadmap P08/P10, resultado de expedición y persistencia |
++
++Las rutas son puntos de inspección, no instrucciones de borrar carpetas. El código heredado de Pokesurvivor que no participa en el recorrido actual se conserva como referencia; no se reactiva por encontrar allí un cofre o premio.
++
++## Trabajo ordenado y aceptación
++
++Todas las tareas RC están **pendientes**. No son puntos completados ni modifican los pesos históricos.
++
++| ID | Trabajo | Depende de | Se acepta cuando |
++| --- | --- | --- | --- |
++| RC-01 | Cerrar contrato de diseño V2: armas/azar, muerte/fin, cofres, grietas/saltos y alcance de colección | Registro O-01–O-11 | Cada regla necesaria para el siguiente cambio tiene resolución explícita; parámetros abiertos identificados y sin supuestos económicos |
++| RC-02 | Compatibilidad de guardado y resultado V2 | P05 verificado + RC-01 para sus campos | Versiones identificadas, partida antigua conservada, reintentos/sesión/UID intactos, recuperación definida; ningún guardado anterior se borra o interpreta como V2 por defecto |
++| RC-03 | Director de mapa300s y escalada temporal | RC-02 | Casos299,99/300/300,01s correctos; reloj activo coherente con pausa/segundo plano; semillas y transiciones reproducibles |
++| RC-04 | Jefe obligatorio por mapa | RC-03 | Aparece a tiempo según regla cerrada, no se duplica, no hay salida anticipada ni bloqueo porque nunca apareció; refuerzos respetan corte5:00 |
++| RC-05 | Puerta blindada, soldados y transición | RC-04 | Puerta llega una vez a300s, soldados llaman/combaten, no aparecen enemigos nuevos, sobreviven los remanentes; solo cruza con jefe derrotado; siguiente mapa conserva vida/build y reinicia reloj |
++| RC-06 | Retirar extracción del recorrido V2 | RC-05 | Sin opción/calendario/espera/cobro de extracción en V2; cruzar no ejecuta `finish('extracted')`; muerte y fin real producen resultado único |
++| RC-07 | Armas por familias y mejoras aleatorias | RC-01 + RC-02 | Categorías y reglas cerradas; cada arma conserva identidad; azar/topes comprobables; familias sin cargador no heredan recarga ficticia; no aumentan copias ajenas por accidente |
++| RC-08 | Retirar accesorios y mochilas; replantear P06 | RC-07 + RC-02 | Sin ranuras, objetos ni paneles de mochila/mods en V2; colección de armas/soldados conservada; guardados anteriores tratados según migración; pruebas de inicio/cambio/recuperación pasan |
++| RC-09 | Colección, gacha y recompensas P06/P07 revisadas | RC-08 + RC-01 | Solo catálogo vigente; premios y gastos confirmados por servidor, recibos idempotentes, concurrencia y respuesta perdida probadas; sin economía libre del cliente |
++| RC-10 | Cofres y dimensiones de mapas | RC-01 + RC-03 | Tipos/frecuencia/premios cerrados; presupuesto y distribución reproducibles, rutas accesibles, desplazamiento probado en cinco minutos; sin premios de mods/mochilas |
++| RC-11 | Grietas especiales y saltos dimensionales | RC-05 + RC-09 y reglas O-06/O-07 | Aviso sonoro/visual/localizador, tiempo limitado e ingreso inmediato; reloj/retorno/saltos respetan contrato y jefe obligatorio; premio único sin duplicación |
++| RC-12 | Interfaz, audio, regresión y aceptación de V2 | RC-06–RC-11 | Fuente/compilado y escritorio/táctil verificados; controles/avisos legibles; crédito visible; resultados/guardado/ranking versionados; defectos bloqueantes resueltos y aceptación registrada |
++
++RC-07 y RC-10 pueden desarrollarse en paralelo después de sus dependencias. La primera entrega jugable debe ser RC-03–RC-06 con el arte existente y sin ampliar catálogo: prueba el recorrido nuevo antes de producir mapas y recursos finales. No requiere reconstruir el motor.
++
++## Compatibilidad y conservación
++
++1. Respaldar estado local y comprobar versión antes de cualquier migración. Los ZIP y `sources/` originales quedan intactos.
++2. Inventariar dónde existen datos reales y dónde solo hay fixtures. El prototipo P06 usa datos temporales; eso no acredita ausencia de otros datos de cuenta.
++3. Separar versión de diseño/reglas, versión del checkpoint y versión de build. Un guardado de oleadas con mods no se carga bajo reglas V2 sin validación.
++4. Definir qué se conserva/migra de armas y soldados. No transformar accesorios en moneda, borrar mochilas persistentes ni conceder compensaciones inventadas.
++5. Conservar un guardado incompatible y mostrar su estado con claridad. No forzar su carga ni reiniciar silenciosamente la cuenta.
++6. Mantener propiedad por UID, revisión esperada, una partida activa, sesión propietaria y recibos. La transición de mapa no puede cobrar dos premios después de una desconexión.
++7. Adaptar las fronteras seguras: entrada/salida de mapa, jefe, puerta y eventual dimensión. Recuperar combate no concede elegibilidad al ranking por repetir una recompensa.
++
++**Riesgo concreto detectado:** hoy preparación/exploración se consideran fronteras seguras sin enemigos serializados y restaurar limpia `EnemyMgr`. En V2 puede haber enemigos vivos frente a la puerta. No guardar esa situación como si fuera la exploración antigua: definir conservación de remanentes o recuperación de combate explícita y probarla. El reloj de mapa debe distinguirse del tiempo total de partida y respetar las pausas del juego, incluida la selección de mejora.
++
++## Pautas mínimas de prueba de la implementación futura
++
++- Jefe derrotado antes de5:00: puerta aún no disponible; llega al tiempo correcto.
++- Jefe vivo a5:00: puerta visible pero avance bloqueado; cobertura aliada activa; jefe y enemigos siguen vivos.
++- En300s se bloquea cada productor de enemigos, incluidos refuerzos de jefe. Ningún contador acumulado genera una ráfaga de apariciones después del corte.
++- Al derrotar al jefe después de5:00 se habilita cruzar sin exigir exterminar a todos los remanentes ni ejecutar la extracción anterior.
++- Permanecer sobre la puerta o reenviar un comando no duplica mapa, resultado o recompensa. Nueva semilla/reloj una sola vez.
++- Un aliado no cuenta como enemigo, no bloquea el objetivo y no da XP/botín explotable. Camino al portal y coberturas alcanzables bajo presión.
++- Guardado/recuperación antes y después de300s conserva `spawnClosed`, estado del jefe, puerta y efectos de transición según contrato. No acepta reloj/estado alterados por cliente como autoridad económica.
++- Retirar mods no elimina progreso de arma. Quitar mochila no elimina la colección. Versiones antiguas siguen conservadas.
++- Mejoras aleatorias: casos sin candidatos, candidatos al tope, duplicados, varias subidas juntas y recarga/cambio de arma. Ningún menú queda bloqueado.
++- Cofres/grietas: reabrir/reconectar no duplica premios; localizador y aviso funcionan fuera de pantalla; sin dependencia exclusiva del color o sonido.
++- Pausa, segundo plano, desconexión, sesión transferida, móvil emulado y compilado preservan el recorrido y sus límites.
++
++Estas son pruebas **por ejecutar cuando se implementen los cambios**, no resultados obtenidos en esta revisión.
++
++## Cómo quedan las fases
++
++| Fase | Tratamiento después de ESTRUCTURA |
++| --- | --- |
++| P01/P02 | Reutilizar base técnica y controles; repetir regresiones afectadas |
++| P03 | Reabrir criterios de recorrido/director/jefes/salida para V2; la aceptación anterior queda como histórica |
++| P04 | Conservar combate útil; retirar criterio de mods y revisar armas/mejoras |
++| P05 | Continúa pendiente de aceptación real y compatibilidad V2; mantener Spark sin facturación |
++| P06 | **Replantear antes de implementar**; no seguir construyendo mochila, extracción, kit o recuperación física por la lista anterior |
++| P07 | Ajustar colección/gacha/recompensas a soldados y armas, con economía coherente |
++| P08–P11 | Revisar resultados/ranking, interfaz/audio, aceptación y publicación para el nuevo recorrido |
++
++El JSON conserva las53 tareas, pesos y evidencias anteriores como línea base histórica; `activeDesignRevision` identifica alcance activo, tareas afectadas y esta secuencia. **52/100 no es el porcentaje de V2.** No se recalcula un avance nuevo suprimiendo del denominador las funciones descartadas.
+--- a/docs/PRUEBA_INVENTARIO_P06.md
++++ b/docs/PRUEBA_INVENTARIO_P06.md
+@@ -1,4 +1,6 @@
+ # Prueba manual — inventario local P06
++
++**V2-ESTRUCTURA · documento histórico desde18/10/2026.** Iván retiró mochilas y accesorios físicos y pidió replantear la pauta. Este informe/prueba describe el prototipo anterior que se conserva; no es la lista vigente para continuar P06 ni se exige aceptar mochilas antes de retirarlas. Consultar [pauta vigente](../PAUTA_DESARROLLO.md) y [plan de cambios](PLAN_CAMBIOS_ESTRUCTURA.md). Las pruebas anteriores no aceptan el diseño nuevo.
+ 
+ **Estado:** pauta preparada; aceptación manual pendiente. No se han consignado resultados de prueba aquí. P06-T01 sigue en curso (EC), con `evidenceComplete=false`.
+ 
+--- a/docs/PUBLICACION_GITHUB.md
++++ b/docs/PUBLICACION_GITHUB.md
+@@ -1,4 +1,14 @@
+ # Publicaciones GitHub — SCP Survivor
++
++## Entrega del18/10/2026 — pauta ESTRUCTURA y plan de adaptación
++
++Iván pidió incorporar el chat **ESTRUCTURA**, retirar extracción de fin de partida, accesorios físicos de armas y mochilas, y preparar el plan de cambios con multiagentes Sol medio bajo revisión de raíz (A-030). Se conserva el juego existente. Esta entrega es **documental**: no implementa las mecánicas V2 ni publica la adaptación Worker que continúa en preparación local.
++
++Incluye [pauta vigente](../PAUTA_DESARROLLO.md), [decisiones y reglas abiertas](ESTRUCTURA_DECISIONES.md), [plan RC-01–RC-12](PLAN_CAMBIOS_ESTRUCTURA.md), [base aprobada de cofres y adaptación](COFRES_BASE_Y_ADAPTACION_V2.md), instrucciones de continuidad actualizadas y RoadmapSCPv0.20 con `activeDesignRevision`. Las53tareas y criterios/estados/pesos/dependencias históricos permanecen; **52/100 es la línea base anterior y V2 sigue sin porcentaje calculado**. P05 real pendiente; P06 se replantea antes de continuar.
++
++Verificación documental: generador y coherencia JSON/vistas, enlaces relativos, preservación de historial y alcance. Los160archivos de juego local controlados permanecen iguales al inicio de esta revisión; se preservan los332archivos previos del repositorio y sus12assets byte a byte. No se ejecutaron ni se atribuyen pruebas funcionales de V2. Evidencia y límites en [ESTRUCTURA-VERIFICACION.json](ESTRUCTURA-VERIFICACION.json); [diff revisable](ESTRUCTURA-CAMBIOS.diff).
++
++Destino autorizado: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), **main**; padre remoto verificado `54ed48bab43dcf5fc43a4151858d6ccebc4abdab`. Commit identificable por **«Actualizar pauta desde ESTRUCTURA y planificar adaptación V2»**; comprobar SHA y sincronización después del push. Sin force push, cambios en servicios/facturación, cuentas reales o eliminación de originales. Consultar el historial Git para verificar publicación; preparar estos documentos no basta para probar el push.
+ 
+ ## Entrega del 17/10/2026 — preparación P05 y decisión Spark
+ 
+--- a/tools/render-roadmap.js
++++ b/tools/render-roadmap.js
+@@ -47,6 +47,17 @@
+  .map(([key,value])=>key+': '+(typeof value==='object'?JSON.stringify(value):value)).join('; ');
+ function render(key){
+  const [type,id]=key.split(':');
++ if(type==='ACTIVE_DESIGN'){
++  const d=r.activeDesignRevision;
++  if(!d)throw Error('Falta la revisión de diseño vigente.');
++  return '**Diseño vigente '+d.id+' — '+d.title+' ('+d.updatedOn+').** '+d.summary+'\n\n'+
++   '[Pauta vigente]('+d.pautaPath+') · [Plan de cambios]('+d.changePlanPath+') · [Decisiones y pendientes]('+d.decisionsPath+')\n\n'+
++   '**Avance V2: sin calcular.** '+d.progress.explanation+'\n\n'+
++   table(['Elemento','Tratamiento vigente'],d.scope.map(x=>row(x.element,x.treatment)))+'\n\n'+
++   table(['Paso','Trabajo pendiente','Dependencias'],d.implementationPlan.map(x=>row(x.id,x.title,x.dependencies.join(', ')||'Reglas V2')))+'\n\n'+
++   '**P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. '+
++   'Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.';
++ }
+  if(type==='GLOBAL')return fmt(r.derivedProgress.global.percent);
+  if(type==='VERSION')return r.planVersion;
+  if(type==='DATE')return r.updatedOn;

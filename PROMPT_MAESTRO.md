@@ -1,6 +1,8 @@
 # Prompt maestro de continuidad — SCP Survivor
 
-Síntesis de registros accesibles del repositorio y paquetes de Iván; no es transcripción de las otras sesiones, excluidas del alcance.
+Síntesis del repositorio, paquetes de Iván y decisiones accesibles del chat ESTRUCTURA, incorporado expresamente el18/10/2026. No se afirma haber recuperado materiales inaccesibles.
+
+**Prioridad V2-ESTRUCTURA:** leer [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) y [registro](docs/ESTRUCTURA_DECISIONES.md). Esta revisión prepara la adaptación; no cambia todavía el juego.
 
 Continúa el juego existente de esta carpeta. Responde en español y revisa código antes de editar. Lee AGENTS.md, CONTEXTO_PROYECTO.md, docs/P05-REPORT.md, ROADMAP.md y RoadmapSCP.json. Instrucciones actuales de Iván tienen prioridad; conserva IDs y trazabilidad de decisiones anteriores.
 
@@ -10,11 +12,17 @@ HTML/CSS/JavaScript/Canvas2D, namespaceG, estructura y orden en dev.html. Editar
 
 Mantener identidad visual y recursos aprobados, sin sustituirlos ni completar24+24 por inferencia. El arte en esta alfa es provisional; catálogo/faltantes en DISENOS_Y_RECURSOS.md. docs/historial-local/alfa-0.4 conserva el prompt anterior y RoadmapSCP.json contiene decisiones completas.
 
-## Mecánicas aprobadas
+## Diseño vigente y código que se conserva
 
-Velocidad165. Una mejora inmediata por nivel y XP sobrante después de elección, D-306/D-214. Dos copias físicas independientes con munición/recarga/nivel/mods, hasta dos mods compatibles sin duplicados; cambiar capacidad no rellena y cambiar duración conserva porcentaje de recarga. Fórmulas aditivas y topes compartidos; cartas conceden solo margen restante. Arma orientada independientemente del cuerpo, paredes bloquean balas/perforación.
+Mapas encadenados de cinco minutos con escalada de monstruos propios y un jefe obligatorio por mapa. A5:00 aparece brecha/puerta blindada y soldados que llaman y cubren al jugador. Desde ese momento no hay nuevas apariciones enemigas; los remanentes sobreviven. La puerta aparece aunque el jefe viva, pero cruzar exige derrotarlo. La transición conserva vida/mejoras de partida y reinicia el reloj del mapa; no termina la partida por extracción.
 
-Sectores normales3/4/5 reproducibles y equiprobables según D-143/D-190; primera neutralización, pares resistencia60s e impares neutralización. Preparación20s; Listo anticipado. Semilla de tamaño independiente de calendariojefe/extracción y apariciones. Escapar de jefe no concede victoria. Resultado único para muerte/extracción; no duplicar recompensas ni propiedad.
+Retirar del diseño extracción de fin de partida, accesorios físicos de armas y mochilas. No retirar las armas, sus estadísticas o mejoras temporales ni borrar la colección de soldados/armas. Armas distintas por familias (láser, cuerpo a cuerpo, distancia, misiles, arrojadizas) y mejoras de armas al azar por nivel. Candidatos, cartas, topes y catálogo final siguen abiertos; no imponer automáticamente las dos armas o el nivel5 del prototipo como regla V2.
+
+Conservar grietas opcionales difíciles y de mayor recompensa, apertura limitada, ubicación/localizador, sonido/aviso y contacto instantáneo sin botón. Saltos dimensionales, retorno/reloj, cofres, premios y dimensiones finales requieren reglas explícitas. Gacha orientado a soldados/armas; atributos nuevos, rarezas y duplicados propuestos por el asistente no equivalen a aprobación.
+
+El código actual todavía contiene sectores/oleadas, extracción, mods y mochila de prueba. Conservarlo hasta adaptar y validar por el plan RC-01–RC-12. No reconstruir, borrar historial ni continuar el inventario físico anterior P06. Replantear colección, kit, pérdida/recuperación, almacén/buzón y economía según V2; no descartarlos todos por inferencia.
+
+Las fórmulas y controles no afectados siguen siendo referencia del prototipo: velocidad165, orientación cuerpo/arma independiente, paredes que bloquean disparos, recargas coherentes y efectos temporales sin duplicación. Revisarlos cuando una familia nueva lo requiera; ninguna propuesta autoriza cambiar balance sin documentarlo.
 
 ## Alcance vigente P05
 
@@ -34,4 +42,4 @@ Completar implementación/pruebas locales autorizadas sin volver a pedir lo mism
 
 Pruebas pertinentes y resultados actuales en docs/P05-REPORT.md; diferencias en docs/P05-CAMBIOS.diff. No confundir informes P01–P04/migración con aceptación nueva. No extrapolar a dispositivos físicos, Safari, FPS, memoria, costes o producción. Mantener ambos lockfiles y comandosWindows.
 
-RoadmapSCP.json es canónico: mismos IDs/pesos/criterios, solo CV aporta. Vista con node tools/render-roadmap.js. Registrar autorización, evidencia y límites, sin porcentaje parcial inventado. Próximo trabajo: servicios propios/aceptación P05 y después P06 conforme a dependencias y alcance aprobado.
+RoadmapSCP.json es canónico. `activeDesignRevision` contiene V2; las53tareas/criterios/pesos y52/100 son la línea base histórica, no aceptación del diseño nuevo. AvanceV2 sin calcular. Generar vistas con node tools/render-roadmap.js. Próximo trabajo: cerrar reglas/contrato de adaptación y aceptación real P05; después implementar el plan RC y P06 replanteada. Registrar evidencia sin inventar porcentajes.

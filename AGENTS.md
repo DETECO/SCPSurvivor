@@ -1,8 +1,16 @@
 # SCP Survivor — instrucciones para Codex Local
 
+## Prioridad vigente — V2-ESTRUCTURA, 18/10/2026
+
+Leer primero [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) y [decisiones/pendientes](docs/ESTRUCTURA_DECISIONES.md). La petición posterior de Iván incorpora el chat ESTRUCTURA y retira extracción de fin de partida, accesorios físicos de armas y mochilas. Mapas5min, jefe obligatorio por mapa, puerta blindada/soldados a5:00, cese de spawn enemigo y remanentes vivos; cruzar exige jefe derrotado. Armas por familias y mejoras por nivel al azar; los detalles abiertos no se inventan.
+
+Esta entrega es documental: el código anterior se conserva. No continuar el prototipo de mochilas/mods ni la lista física anterior de P06. Terminar aceptación real P05 y compatibilidad de guardado antes de implementar P06 replanteada. Mantener Spark sin facturación. Agentes Sol con razonamiento medio; raíz guía, revisa e integra.
+
+RoadmapSCPv0.20 añade `activeDesignRevision`; sus53tareas/estados/pesos y52/100 describen la línea base histórica. AvanceV2 sin calcular; no conceder puntos por retirar funciones. Las reglas incompatibles que aparecen debajo son antecedentes, no instrucciones vigentes para V2.
+
 Responder en español, directo y práctico. Continuar el juego existente; no reconstruirlo ni sustituir sus diseños.
 
-## Prioridad vigente — 17/10/2026
+## Antecedentes de P05 — 17/10/2026
 
 A-026/D-314: Iván pidió terminarP05 antes de continuarP06. Conservar todo el primer prototipoP06 sin avanzar nuevas funciones. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. Las tres tareasP05 siguen EV0/6 hasta probar servicios propios; no marcar100% con emuladores. La integración propia se prepara con ownAccountsEnabled=false. No mezclar datos/cachés demo/proyecto propio. CLI del propietario autorizado y acceso/configuración Auth verificados por GET (EV-033). A-028/D-315: mantener Spark sin facturación; no vincular billing ni desplegar Functions. Firestore/Functions no pudieron listarse por403SERVICE_DISABLED; no inferir ausencia de datos. Leer docs/P05-ESTADO-SPARK.md y docs/P05-AUDITORIA-FIREBASE.json. Configuración propia y emuladores usan archivos separados. Roadmapv0.18 conserva criterios/pesos/dependencias y52/100. A-027/D-316: subir código/roadmap autorizados y continuar P06 con multiagentes inmediatamente después del cierre real P05. El backend actual no desplegable en Spark y las pruebas reales pendientes impiden declarar100%.
 
@@ -44,7 +52,7 @@ Iván autorizó el prototipo y realizará la aceptación manual. Abrir ?prueba=g
 
 Decisión posterior de Iván (A-023/D-311): ingreso instantáneo al tocar/cruzar la grieta abierta, sin botón, tecla, confirmación ni espera. No detener el movimiento mantenido. La llegada anunciada del jefe sigue siendo aviso de ataque y no retrasa la entrada. Roadmapv0.14;52/100 sin cambios.
 
-## Inicio local P06 — 16/10/2026
+## Antecedente P06 local — 16/10/2026; no continuar su inventario físico
 
 Iván autorizó avanzar localmente en la fase P06 mediante A-024. El primer tramo de P06-T01 queda en curso (EC): prototipo temporal con copias numeradas, gestión en base/preparación con confirmación, mochilas de 8/16 y almacén simulado de 60 como fixture. Entrada optativa `?inventario=local` o prueba directa `?prueba=inventario`; la prueba directa comienza en preparación de 20 s. Solo loopback, sin cuentas, persistencia, inventario real, botín ni kit. El descanso continúa durante la preparación; los borradores no confirmados se descartan al agotarse el tiempo. La reducción de mochila que no admita el contenido se rechaza sin descartar objetos.
 

@@ -1,5 +1,15 @@
 # Publicaciones GitHub — SCP Survivor
 
+## Entrega del18/10/2026 — pauta ESTRUCTURA y plan de adaptación
+
+Iván pidió incorporar el chat **ESTRUCTURA**, retirar extracción de fin de partida, accesorios físicos de armas y mochilas, y preparar el plan de cambios con multiagentes Sol medio bajo revisión de raíz (A-030). Se conserva el juego existente. Esta entrega es **documental**: no implementa las mecánicas V2 ni publica la adaptación Worker que continúa en preparación local.
+
+Incluye [pauta vigente](../PAUTA_DESARROLLO.md), [decisiones y reglas abiertas](ESTRUCTURA_DECISIONES.md), [plan RC-01–RC-12](PLAN_CAMBIOS_ESTRUCTURA.md), [base aprobada de cofres y adaptación](COFRES_BASE_Y_ADAPTACION_V2.md), instrucciones de continuidad actualizadas y RoadmapSCPv0.20 con `activeDesignRevision`. Las53tareas y criterios/estados/pesos/dependencias históricos permanecen; **52/100 es la línea base anterior y V2 sigue sin porcentaje calculado**. P05 real pendiente; P06 se replantea antes de continuar.
+
+Verificación documental: generador y coherencia JSON/vistas, enlaces relativos, preservación de historial y alcance. Los160archivos de juego local controlados permanecen iguales al inicio de esta revisión; se preservan los332archivos previos del repositorio y sus12assets byte a byte. No se ejecutaron ni se atribuyen pruebas funcionales de V2. Evidencia y límites en [ESTRUCTURA-VERIFICACION.json](ESTRUCTURA-VERIFICACION.json); [diff revisable](ESTRUCTURA-CAMBIOS.diff).
+
+Destino autorizado: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), **main**; padre remoto verificado `54ed48bab43dcf5fc43a4151858d6ccebc4abdab`. Commit identificable por **«Actualizar pauta desde ESTRUCTURA y planificar adaptación V2»**; comprobar SHA y sincronización después del push. Sin force push, cambios en servicios/facturación, cuentas reales o eliminación de originales. Consultar el historial Git para verificar publicación; preparar estos documentos no basta para probar el push.
+
 ## Entrega del 17/10/2026 — preparación P05 y decisión Spark
 
 Iván reiteró subir el trabajo a GitHub y continuar P06 inmediatamente después de terminar P05 con multiagentes (A-027). Eligió expresamente **mantener Spark sin facturación** (A-028/D-315). Esta entrega conserva esa decisión y registra el estado real: **P05 sigue EV0/6; P06 conserva su prototipo y espera el cierre de P05; global52/100**.

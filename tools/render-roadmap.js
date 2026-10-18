@@ -47,6 +47,17 @@ const details=item=>Object.entries(item).filter(([key])=>!['id','kind','summary'
  .map(([key,value])=>key+': '+(typeof value==='object'?JSON.stringify(value):value)).join('; ');
 function render(key){
  const [type,id]=key.split(':');
+ if(type==='ACTIVE_DESIGN'){
+  const d=r.activeDesignRevision;
+  if(!d)throw Error('Falta la revisión de diseño vigente.');
+  return '**Diseño vigente '+d.id+' — '+d.title+' ('+d.updatedOn+').** '+d.summary+'\n\n'+
+   '[Pauta vigente]('+d.pautaPath+') · [Plan de cambios]('+d.changePlanPath+') · [Decisiones y pendientes]('+d.decisionsPath+')\n\n'+
+   '**Avance V2: sin calcular.** '+d.progress.explanation+'\n\n'+
+   table(['Elemento','Tratamiento vigente'],d.scope.map(x=>row(x.element,x.treatment)))+'\n\n'+
+   table(['Paso','Trabajo pendiente','Dependencias'],d.implementationPlan.map(x=>row(x.id,x.title,x.dependencies.join(', ')||'Reglas V2')))+'\n\n'+
+   '**P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. '+
+   'Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.';
+ }
  if(type==='GLOBAL')return fmt(r.derivedProgress.global.percent);
  if(type==='VERSION')return r.planVersion;
  if(type==='DATE')return r.updatedOn;
