@@ -1,0 +1,17 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": [{
+    "source": "functions",
+    "codebase": "scp-own",
+    "runtime": "nodejs24",
+    "ignore": ["node_modules", ".git", "*.log", ".env*"]
+  }],
+  "hosting": {
+    "public": "dist-own",
+    "ignore": ["**/.*", "**/node_modules/**"],
+    "headers": [{"source": "**", "headers": [{"key": "Cache-Control", "value": "no-store"}]}]
+  }
+}

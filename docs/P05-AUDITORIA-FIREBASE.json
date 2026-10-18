@@ -1,0 +1,80 @@
+{
+  "projectId": "scp-survivor",
+  "scope": "Consultas administrativas GET; no prueba de acceso de jugador, correo recibido, guardado ni continuidad.",
+  "localDate": "2026-10-17",
+  "timezone": "America/Santiago",
+  "readOnly": true,
+  "infrastructureQueriedAt": "2026-10-18T00:51:00.585Z",
+  "authQueriedAt": "2026-10-18T01:02:01.946Z",
+  "ownerCliAuthorized": true,
+  "projectAccessVerified": true,
+  "billing": {
+    "queried": true,
+    "billingEnabled": false,
+    "hasBillingAccount": false
+  },
+  "firestore": {
+    "queried": false,
+    "httpCode": 403,
+    "status": "PERMISSION_DENIED",
+    "reasons": [
+      "SERVICE_DISABLED"
+    ]
+  },
+  "functions": {
+    "queried": false,
+    "httpCode": 403,
+    "status": "PERMISSION_DENIED",
+    "reasons": [
+      "SERVICE_DISABLED"
+    ]
+  },
+  "hosting": {
+    "siteExists": true,
+    "releaseVerified": false,
+    "defaultUrl": "https://scp-survivor.web.app"
+  },
+  "authConfig": {
+    "httpStatus": 200,
+    "result": "ok",
+    "email": {
+      "enabled": true,
+      "passwordRequired": true
+    },
+    "authorizedDomains": [
+      "localhost",
+      "scp-survivor.firebaseapp.com",
+      "scp-survivor.web.app",
+      "127.0.0.1"
+    ],
+    "allowDuplicateEmails": {
+      "fieldPresent": false,
+      "value": null
+    },
+    "passwordPolicy": {
+      "enforcementState": "ENFORCE",
+      "forceUpgradeOnSignin": null,
+      "minPasswordLength": 8,
+      "maxPasswordLength": 4096,
+      "containsLowercaseCharacter": false,
+      "containsUppercaseCharacter": false,
+      "containsNumericCharacter": false,
+      "containsNonAlphanumericCharacter": false
+    }
+  },
+  "googleProvider": {
+    "httpStatus": 200,
+    "enabled": true,
+    "oauthConfigurationPresent": true
+  },
+  "userDecision": {
+    "plan": "Spark",
+    "authorizeBilling": false,
+    "ownAccountsEnabled": false
+  },
+  "limitations": [
+    "403 SERVICE_DISABLED impide listar bases/funciones; no demuestra que no existan datos.",
+    "allowDuplicateEmails omitido por la API; valor efectivo sin confirmar.",
+    "No se ejecutaron OAuth, recepción de correo, vinculación, persistencia ni dispositivos reales."
+  ]
+}

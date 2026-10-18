@@ -1,0 +1,1239 @@
+# P05: preparación propia desactivada y prioridad de cierre; frente al respaldo previo.
+# Sin servicios reales desplegados ni100% de aceptación. Criterios/pesos/dependencias e historial preservados.
+# Recursos/dependencias declaradas sin cambios. Generados/canónico resumidos por SHA256.
+
+--- a/.gitignore
++++ b/.gitignore
+@@ -15,3 +15,4 @@
+ .DS_Store
+ local-data/
+ .firebase/
++dist-own/
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -1,6 +1,10 @@
+ # SCP Survivor — instrucciones para Codex Local
+ 
+ Responder en español, directo y práctico. Continuar el juego existente; no reconstruirlo ni sustituir sus diseños.
++
++## Prioridad vigente — 17/10/2026
++
++A-026/D-314: Iván pidió terminarP05 antes de continuarP06. Conservar todo el primer prototipoP06 sin avanzar nuevas funciones. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. Las tres tareasP05 siguen EV0/6 hasta probar servicios propios; no marcar100% con emuladores. La integración propia se prepara con ownAccountsEnabled=false. No mezclar datos/cachés demo/proyecto propio. CLI del propietario autorizado y acceso/configuración Auth verificados por GET (EV-033). A-028/D-315: mantener Spark sin facturación; no vincular billing ni desplegar Functions. Firestore/Functions no pudieron listarse por403SERVICE_DISABLED; no inferir ausencia de datos. Leer docs/P05-ESTADO-SPARK.md y docs/P05-AUDITORIA-FIREBASE.json. Configuración propia y emuladores usan archivos separados. Roadmapv0.18 conserva criterios/pesos/dependencias y52/100. A-027/D-316: subir código/roadmap autorizados y continuar P06 con multiagentes inmediatamente después del cierre real P05. El backend actual no desplegable en Spark y las pruebas reales pendientes impiden declarar100%.
+ 
+ ## Leer al comenzar
+ 
+--- a/CONTEXTO_PROYECTO.md
++++ b/CONTEXTO_PROYECTO.md
+@@ -1,4 +1,6 @@
+ # Contexto del proyecto — SCP Survivor
++
++**Prioridad vigente17/10/2026 (A-026/D-314): terminar P05 antes de continuarP06.** Se conserva el prototipoP06 y el crédito, sin avanzar funcionesP06. Integración del proyecto propio preparada pero desactivada por defecto; no equivale a conexión o pruebas reales. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. P05 continúa EV0/6, global52/100. Actualización posterior EV-033: CLI del propietario autorizado; acceso y configuración Auth consultados en vivo. Facturación deshabilitada, sin cuenta vinculada; Iván eligió mantener Spark sin facturación (A-028/D-315). Firestore/Functions devuelven403SERVICE_DISABLED y no pudieron listarse; no se afirma ausencia de datos. El backend actual requiere Functions/Blaze y no se despliega. [Estado Spark](docs/P05-ESTADO-SPARK.md). A-027/D-316 registra GitHub y P06 inmediato con multiagentes después del cierre real P05; roadmapv0.18.
+ 
+ Actualización16/10/2026. Esta carpeta continúa el videojuego existente de la sesión principal SCP Survivor. Las otras sesiones se excluyeron por instrucción de Iván. No se reconstruyó el juego ni se sustituyeron sus recursos gráficos.
+ 
+--- a/INSTALACION_WINDOWS.md
++++ b/INSTALACION_WINDOWS.md
+@@ -1,4 +1,6 @@
+ # Instalación Windows — SCP Survivor P05 local
++
++**Prioridad17/10/2026:** cerrar P05 antes de continuarP06. Las instrucciones de abajo mantienen el entorno local, sin coste. La integración propia sigue desactivada. El acceso CLI del titular ya está autorizado; EV-033 confirma proveedores/dominios/política Auth. Iván eligió Spark sin facturación (A-028/D-315): no ejecutar despliegues propios ni habilitar ownAccountsEnabled. El backend Functions actual no se puede desplegar en ese plan. Leer [estado Spark](docs/P05-ESTADO-SPARK.md) y, como referencia condicionada, [docs/ACTIVACION_FIREBASE_PROPIO.md](docs/ACTIVACION_FIREBASE_PROPIO.md) y [docs/CIERRE_P05.md](docs/CIERRE_P05.md). No activar facturación como parte de esta instalación local.
+ 
+ Esta entrega continúa alfa0.4. P05 utiliza Firebase emulado en este computador; no necesita proyecto Firebase real, facturación, Google real ni claves privadas. El modo sin cuentas continúa disponible.
+ 
+# ROADMAP.md: SHA256 617ff6bf5e6bdea380c01452385a813de341bf854deed307ae3ec6d1bd501cec
+# RoadmapSCP.json: SHA256 509d427764179de1752c9e4fcd1ca4e74929c12b8a40df6f939c0fe26f0e0361
+# RoadmapSCP.md: SHA256 af5c64f8757e916aec52c2e4f28d3047922cb5e3a56614917fefb5a8218614f1
+--- /dev/null
++++ b/config/accounts-runtime.json
+@@ -0,0 +1,5 @@
++{
++  "ownAccountsEnabled": false,
++  "projectId": "scp-survivor",
++  "region": "us-central1"
++}
+--- a/dev.html
++++ b/dev.html
+@@ -3,7 +3,7 @@
+ <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' http://127.0.0.1:9099 http://127.0.0.1:5001; style-src 'self'; img-src 'self' data:; font-src 'self'; frame-src http://127.0.0.1:9099; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
++<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' http://127.0.0.1:9099 http://127.0.0.1:5001 https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://scp-survivor.firebaseapp.com https://us-central1-scp-survivor.cloudfunctions.net; style-src 'self'; img-src 'self' data:; font-src 'self'; frame-src http://127.0.0.1:9099 https://scp-survivor.firebaseapp.com; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+ <meta name="robots" content="noindex,nofollow">
+ <link rel="icon" href="data:,">
+ <link rel="stylesheet" href="css/technical.css">
+@@ -17,7 +17,7 @@
+ <canvas id="game" aria-label="Sector de entrenamiento; usa WASD, flechas o arrastra el dedo para moverte"></canvas>
+ <div id="boot" role="status" aria-live="polite">Preparando el sector…</div>
+ <section id="technical-ready" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Menú principal">
+-<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p class="developer-credit">Desarrollado por Ivan Vivanco</p><p>Explora sectores conectados, resiste y neutraliza las amenazas. Mejora tu equipo y decide hasta dónde avanzar.</p><p>Prueba distintos soldados y equipos en una expedición local. No se guarda progreso ni se obtienen recompensas.</p>
++<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p class="developer-credit">Desarrollado por Ivan Vivanco</p><p id="technical-intro">Explora sectores conectados, resiste y neutraliza las amenazas. Mejora tu equipo y decide hasta dónde avanzar.</p><p id="technical-account-hint">Prueba distintos soldados y equipos en una expedición local. No se guarda progreso ni se obtienen recompensas.</p>
+ <div class="loadout-editor" aria-labelledby="loadout-title">
+ <h2 id="loadout-title">Equipo de prueba</h2>
+ <label for="field-role">Soldado</label><select id="field-role"><option value="guard">Guardia · Sprint</option><option value="medic">Médico · Primeros auxilios</option></select>
+--- /dev/null
++++ b/docs/ACTIVACION_FIREBASE_PROPIO.md
+@@ -0,0 +1,59 @@
++# Activación de Firebase propio para cerrar P05
++
++Estado vigente17/10/2026: acceso CLI y configuración Auth comprobados en vivo (EV-033). Iván eligió **mantener Spark sin facturación** (A-028/D-315). El backend actual Functions no se despliega en Spark; `ownAccountsEnabled=false`. Las secciones de despliegue de abajo son una referencia condicionada y **NO DEBEN EJECUTARSE bajo la decisión vigente**. Leer [estado Spark](P05-ESTADO-SPARK.md). No cambiar los estados del roadmap por seguir estos comandos sin ejecutar y revisar las pruebas de CIERRE_P05.md.
++
++## Acceso del propietario y coste
++
++Desde PowerShell en la carpeta SCP-SURVIVOR, con las dependencias instaladas:
++
++```powershell
++npx.cmd firebase login:list --non-interactive
++node tools/check-firebase-own.js
++```
++
++El propietario ya autorizó Google directamente; no repetir el login mientras sea válido. El comprobador confirma acceso y solo consulta proyectos. No pegar códigos, tokens o contraseñas en el chat. Si una sesión futura realmente caduca, usar `npx.cmd firebase login --interactive --reauth` para el flujo interactivo oficial. En esta ejecución Windows mostró Success seguido de una aserción nativa al salir; login:list y el preflight confirmaron que la sesión sí quedó persistida.
++
++La consulta real confirmó facturación deshabilitada y ninguna cuenta vinculada. El titular eligió conservar Spark sin facturación; no volver a proponer activarlo como paso automático. [Cloud Functions requiere Blaze para desplegar](https://firebase.google.com/docs/functions/get-started): vincula facturación y puede generar cargos. D-068 fija objetivo20USD/mes, sin autorización de gasto; D-284 no es un tope monetario garantizado. No activar Blaze automáticamente por una petición general de desarrollo. Revisar ese paso con el titular antes de desplegar.
++
++## Comprobar proyecto, Firestore y configuración
++
++- Usar exclusivamente `scp-survivor`; la configuración web pública está en config/firebase-public.json.
++- Las consultas de Firestore/Functions devolvieron403SERVICE_DISABLED: no pudieron listarse y no prueban ausencia de datos. No habilitar APIs o crear bases como parte de esta auditoría. Si una implementación futura compatible con Spark requiere una base, revisar antes la configuración existente y usar una base protegida en el proyecto correcto. La ubicación debe revisarse antes de crearla; las funciones actuales usan us-central1. No usar reglas abiertas ni modo de prueba para resolver errores de permisos.
++- EV-033 confirma administrativamente Google/correo,localhost/127.0.0.1 y ambos hosts del proyecto, política ENFORCE8..4096 sin clases. `allowDuplicateEmails` fue omitido y queda sin confirmar. Las consultas no prueban OAuth o recepción de correo.
++- Revisar templates de correo y flujos reales de verificación/recuperación. [Guía de correo/contraseña](https://firebase.google.com/docs/auth/web/password-auth) y [vinculación explícita](https://firebase.google.com/docs/auth/web/account-linking).
++- La plantilla firebase.own.json es independiente del archivo de emuladores. Las reglas mantienen denegación total al cliente; solo Functions usa Admin con identidad del runtime, sin descargar una clave privada.
++
++## Referencia de backend — NO EJECUTAR con Spark
++
++Conservar cualquier configuración preexistente; no sobrescribir .env.scp-survivor sin revisarla. El único valor de activación necesario no es secreto:
++
++```powershell
++if (Test-Path 'functions/.env.scp-survivor') { throw 'Revisar configuración existente antes de continuar.' }
++Set-Content -LiteralPath 'functions/.env.scp-survivor' -Value 'SCP_ACCOUNT_PROJECT=scp-survivor' -Encoding ascii
++npx.cmd firebase functions:list --project scp-survivor
++npx.cmd firebase deploy --project scp-survivor --config firebase.own.json --only 'functions:scp-own,firestore:rules,firestore:indexes'
++```
++
++No ejecutar el despliegue si las funciones existentes pertenecen a otro código/base sin revisar. El runtime propio rechaza otro proyecto, habilitación ausente o variables de emuladores mezcladas. Conserva la misma propiedad/versión/sesión/recibos y checkpoint schema1; no migra datos de cuentas ficticias.
++
++Instancias mínimas0 y máximas1/concurrencia20 acotan capacidad; no equivalen a una garantía de coste mensual. No existe aquí una protección monetaria P10/P11 validada. No borrar recibos por TTL: se debe conservar deduplicación conforme a D-290. Falta revisar y probar la política de retención/eliminación para cerrar la aceptación real.
++
++## Referencia de frontend propio — NO EJECUTAR sin backend aceptado
++
++config/accounts-runtime.json mantiene ownAccountsEnabled=false. No habilitarlo hasta comprobar el backend propio. Después:
++
++```powershell
++node -e "const fs=require('fs');const p='config/accounts-runtime.json';const c=JSON.parse(fs.readFileSync(p,'utf8'));c.ownAccountsEnabled=true;fs.writeFileSync(p,JSON.stringify(c,null,2)+'\n');"
++npm.cmd run build
++npm.cmd run build:check
++node tools/prepare-own-hosting.js
++npx.cmd firebase deploy --project scp-survivor --config firebase.own.json --only hosting
++```
++
++El preparador crea dist-own con frontend público solamente: no expone backend, docs, pruebas ni datos locales. Si ya existe, se detiene y conserva la copia; revisar/archivar antes de preparar otra. dist-own está excluido de Git. El despliegue de Hosting requiere revisar antes cualquier sitio existente para no reemplazar contenido ajeno.
++
++Abrir https://scp-survivor.web.app/?cuentas=propias para las pruebas entre dispositivos. También se admite el modo propio explícito en localhost/127.0.0.1. Un dominio cualquiera no activa cuentas aunque lleve el parámetro. `?cuentas=local` sigue siendo exclusivamente emulado y nunca utiliza el proyecto real. Las cachés de ambos modos son independientes.
++
++## Evidencia exigida para terminar
++
++Completar CIERRE_P05.md con cuentas del titular y una segunda identidad de ensayo real, sin registrar secretos: OAuth, correo recibido, vinculación/UID, aislamiento, reintentos/concurrencia y recuperación entre dispositivos/redes. Guardar resultados observados, build y proyecto. Los mocks y emuladores acreditan regresión/preparación; no estos casos reales. Hasta entonces, P05 sigue EV0/6 y P06 no se continúa.
+--- /dev/null
++++ b/docs/CIERRE_P05.md
+@@ -0,0 +1,34 @@
++# Pauta de aceptación real de P05
++
++## Estado y alcance
++
++P05 sigue en validación: P05-T01, P05-T02 y P05-T03 están en EV, con 0/6 puntos. La preparación más reciente documenta24escenarios de navegador local,8del modo propio desactivado,111pruebas Node aprobadas,0fallos y1omitida por opt-in, además de un ensayo explícito de Auth/Firestore/Functions Emulator. Véase P05-CIERRE-REPORT.md; las cifras anteriores del reporte P05-local-01 son históricas. Es evidencia del prototipo local; no acredita servicios reales ni cambia el estado del roadmap.
++
++Esta pauta registra las pruebas reales pendientes de las tareas ya aprobadas. No agrega criterios, pesos ni créditos. La prioridad acordada es cerrar y revisar P05 antes de continuar P06; su primer prototipo se conserva. La configuración propia puede prepararse en paralelo, siempre desactivada.
++
++## Condiciones previas
++
++- Acceso CLI del propietario y al proyecto confirmados el17/10/2026 (EV-033). No solicitar otro login mientras la sesión sea válida. `node tools/check-firebase-own.js` es lectura; no compartir credenciales, códigos ni tokens por chat.
++- Consulta real: facturación deshabilitada y sin cuenta vinculada. Iván eligió mantener Spark sin facturación (A-028/D-315). El backend actual requiere Functions y [Blaze para desplegar](https://firebase.google.com/docs/functions/get-started): no ejecutar ese despliegue. Resolver alojamiento de servidor compatible antes de aceptación real; [estado Spark](P05-ESTADO-SPARK.md).
++- D-068 (USD 20) no autoriza gasto; D-284 no establece un límite máximo de gasto. Cualquier cambio de plan o gasto requiere la autorización que corresponda.
++- No se ejecutaron aquí Google OAuth real ni pruebas en dispositivos físicos. La configuración de Firebase propio sigue inactiva hasta que corresponda validarla.
++
++## Registro de aceptación pendiente
++
++Todos los casos parten como NO EJECUTADO. Los identificadores de esta tabla solo organizan la pauta; no son nuevos IDs de evidencia ni cambian el roadmap. Registrar el resultado observado, el criterio aplicable y evidencia con UID(s), entorno y versión, sin secretos. No marcar un caso aprobado por inferencia a partir de emuladores.
++
++| Caso | Resultado | Criterio de aceptación ya aprobado | Evidencia que se debe registrar |
++|---|---|---|---|
++| R01 Correo real | **NO EJECUTADO** | Alta y acceso con correo real; el correo de verificación llega y el acceso queda bloqueado hasta verificar. Recuperación llega y permite restablecer acceso. Los errores de credenciales o enlaces inválidos, vencidos o ya usados se manejan sin alterar otra cuenta. | UID-A; proyecto/entorno; versión; fecha; resultado de cada flujo y registro de correo sin códigos ni tokens. |
++| R02 Google y vinculación | **NO EJECUTADO** | OAuth Google real y vinculación explícita en ambos sentidos: correo → Google y Google → correo. El UID se mantiene en cada vinculación; cancelación, identidad ya usada o error no fusiona cuentas ni cambia su UID. | UID antes/después por flujo; proveedor probado; proyecto/entorno; versión y resultado, sin tokens ni datos de acceso. |
++| R03 Aislamiento entre cuentas | **NO EJECUTADO** | Con dos cuentas reales, A no puede leer ni modificar estado de B, ni directamente ni mediante funciones. La identidad se obtiene del token autenticado, no de un UID enviado por el cliente. | UID-A y UID-B; intentos permitidos/denegados; estado antes/después; resultado y registros saneados. |
++| R04 requestId y concurrencia | **NO EJECUTADO** | Repetir el mismo requestId y contenido no duplica el efecto; reutilizarlo con contenido distinto se rechaza. Solicitudes concurrentes equivalentes dejan un único efecto/recibo. | UID; requestId no secreto; revisiones y resultado de cada solicitud; estado/recibos antes/después. |
++| R05 Versión y sesión | **NO EJECUTADO** | Revisión obsoleta, sesión revocada y checkpoint incompleto o incoherente se rechazan sin mutación ni recibo inválido. | UID; revisión/build de esquema; sesión identificada sin credenciales; respuesta y estado antes/después. |
++| R06 Dos dispositivos, corte y reenvío | **NO EJECUTADO** | En dos clientes para el mismo UID, comprobar transferencia explícita de sesión y que la sesión anterior pierde autoridad en los puntos de comprobación existentes. Cortar conexión/cerrar cliente tras enviar una operación pendiente; al volver, reenviar el mismo requestId y confirmar un único efecto y continuidad del estado. | UID; etiquetas de cliente/dispositivo; operación y requestId; secuencia de corte/reinicio/reenvío; estado y revisión antes/después. |
++| R07 Retención/compactación y deduplicación (D-290) | **NO EJECUTADO** | Conservar deduplicación al retener o compactar recibos; un requestId ya procesado no duplica una mutación. Medir almacenamiento. D-290 no fija plazos ni obliga a implementar borrado de cuenta: no agregar esos requisitos por inferencia. Si en el futuro se autoriza borrado, probar que no restaure estado eliminado. | UID; referencia a D-290; recibos/almacenamiento y resultado de reintento; fecha. No aplicar políticas destructivas nuevas. |
++
++**Formato de evidencia por caso:** caso; resultado (NO EJECUTADO hasta que se corra y revise); criterio aprobado; UID-A/UID-B cuando corresponda; proyecto y entorno; versión/build; fecha; observación y evidencia técnica saneada. Los UID identifican cuentas, no son credenciales. Nunca adjuntar contraseñas, códigos de un solo uso, tokens, claves privadas ni cookies.
++
++## Regla de cierre
++
++Mantener los tres estados P05 en EV y el avance en 0/6 mientras falte evidencia real o revisión del criterio correspondiente. No convertir pruebas de emulador en aceptación real, no ajustar pesos y no marcar CV por anticipado. P06 se retoma después de que P05 tenga evidencia real revisada y su cierre se resuelva conforme al roadmap.
+--- a/docs/FIREBASE_PROPIO.md
++++ b/docs/FIREBASE_PROPIO.md
+@@ -1,4 +1,14 @@
+-# Firebase propio — estado observado el 15/10/2026
++# Firebase propio — estado vigente e historial
++
++## Auditoría posterior17/10/2026 — estado vigente
++
++EV-033: CLI del propietario autorizado y acceso a scp-survivor; facturación deshabilitada, sin cuenta vinculada. GET200 confirma correo/Google, los cuatro dominios y política ENFORCE8..4096 sin clases; allowDuplicateEmails omitido, no inferido. Firestore/Functions no pudieron listarse por403SERVICE_DISABLED. Hosting tiene sitio predeterminado, release sin comprobar. A-028/D-315: mantener Spark sin facturación. El backend Functions actual no se despliega; modo propio desactivado y P05EV0/6. [Informe saneado](P05-AUDITORIA-FIREBASE.json) y [estado Spark](P05-ESTADO-SPARK.md). A-027/D-316: P06 inmediato con multiagentes después del cierre real P05.
++
++Las secciones siguientes conservan observaciones anteriores; sus limitaciones de acceso reflejan el momento original, no la sesión actual.
++
++## Preparación inicial17/10 — registro histórico anterior al login
++
++La integración propia ya se prepara en el código: configuración empaquetada, OAuth/vinculación oficiales, cachés separadas y runtime propio con opt-in. `config/accounts-runtime.json` conserva `ownAccountsEnabled=false`; aún no conecta a servicios reales. Firebase CLI no tiene cuenta autorizada, por lo que no se han consultado de nuevo el plan, Firestore, proveedores o despliegues de scp-survivor. La sección histórica de abajo conserva lo observado en capturas. Leer [activación preparada](ACTIVACION_FIREBASE_PROPIO.md) y [pauta de aceptación pendiente](CIERRE_P05.md). P06 se conserva sin continuar hasta cerrar P05.
+ 
+ Iván creó manualmente **scp-survivor**, plan Spark, y registró su app web. Su configuración pública está conservada en config/firebase-public.json, sin claves privadas de cuentas de servicio y todavía inactiva en el juego.
+ 
+--- /dev/null
++++ b/docs/P05-AUDITORIA-FIREBASE.json
+@@ -0,0 +1,80 @@
++{
++  "projectId": "scp-survivor",
++  "scope": "Consultas administrativas GET; no prueba de acceso de jugador, correo recibido, guardado ni continuidad.",
++  "localDate": "2026-10-17",
++  "timezone": "America/Santiago",
++  "readOnly": true,
++  "infrastructureQueriedAt": "2026-10-18T00:51:00.585Z",
++  "authQueriedAt": "2026-10-18T01:02:01.946Z",
++  "ownerCliAuthorized": true,
++  "projectAccessVerified": true,
++  "billing": {
++    "queried": true,
++    "billingEnabled": false,
++    "hasBillingAccount": false
++  },
++  "firestore": {
++    "queried": false,
++    "httpCode": 403,
++    "status": "PERMISSION_DENIED",
++    "reasons": [
++      "SERVICE_DISABLED"
++    ]
++  },
++  "functions": {
++    "queried": false,
++    "httpCode": 403,
++    "status": "PERMISSION_DENIED",
++    "reasons": [
++      "SERVICE_DISABLED"
++    ]
++  },
++  "hosting": {
++    "siteExists": true,
++    "releaseVerified": false,
++    "defaultUrl": "https://scp-survivor.web.app"
++  },
++  "authConfig": {
++    "httpStatus": 200,
++    "result": "ok",
++    "email": {
++      "enabled": true,
++      "passwordRequired": true
++    },
++    "authorizedDomains": [
++      "localhost",
++      "scp-survivor.firebaseapp.com",
++      "scp-survivor.web.app",
++      "127.0.0.1"
++    ],
++    "allowDuplicateEmails": {
++      "fieldPresent": false,
++      "value": null
++    },
++    "passwordPolicy": {
++      "enforcementState": "ENFORCE",
++      "forceUpgradeOnSignin": null,
++      "minPasswordLength": 8,
++      "maxPasswordLength": 4096,
++      "containsLowercaseCharacter": false,
++      "containsUppercaseCharacter": false,
++      "containsNumericCharacter": false,
++      "containsNonAlphanumericCharacter": false
++    }
++  },
++  "googleProvider": {
++    "httpStatus": 200,
++    "enabled": true,
++    "oauthConfigurationPresent": true
++  },
++  "userDecision": {
++    "plan": "Spark",
++    "authorizeBilling": false,
++    "ownAccountsEnabled": false
++  },
++  "limitations": [
++    "403 SERVICE_DISABLED impide listar bases/funciones; no demuestra que no existan datos.",
++    "allowDuplicateEmails omitido por la API; valor efectivo sin confirmar.",
++    "No se ejecutaron OAuth, recepción de correo, vinculación, persistencia ni dispositivos reales."
++  ]
++}
+--- /dev/null
++++ b/docs/P05-CIERRE-REPORT.md
+@@ -0,0 +1,45 @@
++# P05: preparación de cierre y verificación del17/10/2026
++
++**Actualización posterior a la preparación local:** [EV-033 / auditoría Firebase](P05-AUDITORIA-FIREBASE.json) y [decisión Spark](P05-ESTADO-SPARK.md). Se repitieron suiteNode111PASS/0FAIL/1omitida y build:check85scripts antes de preparar la publicación. Los24+8escenarios de navegador y la integración explícita listados abajo corresponden a la verificación local previa del mismo código; no se presentan como pruebas reales nuevas.
++
++## Estado real
++
++Iván pidió completarP05 antes de continuarP06 (A-026/D-314). Se conserva todoP06 sin desarrollar nuevas funciones. **P05 sigue EV0/6; no está al100%.** Las pruebas pendientes con servicios propios y su aceptación no se han ejecutado. Global52/100,53tareas/25CV; criterios, pesos, dependencias e historial anteriores conservados. A-027 reitera la publicación del código y roadmap autorizados; el registro de la entrega está en PUBLICACION_GITHUB.md. A-028/D-315 conserva Spark sin facturación. El acceso CLI y la configuración Auth ya fueron consultados en vivo (EV-033); eso no acredita acceso de jugador o guardado real.
++
++## Preparado y corregido
++
++- Modos explícitos `?cuentas=local` y `?cuentas=propias`, configuración pública empaquetada y cachés/sesiones separadas. Proyecto propio fijo scp-survivor y emulado demo-scp-survivor.
++- El modo propio usa las llamadas oficiales de Google popup, vinculación Google y EmailAuthProvider; revisa UID y token. Las pruebas de esas llamadas usan un SDK simulado, no una cuenta Google real.
++- `ownAccountsEnabled=false`: panel propio informa desactivación y bloquea iniciar antes de inicializar SDK o escribir sesión. Los prototipos de grietas/inventario no se mezclan con cuentas propias.
++- Backend con habilitación explícita, proyecto exacto y rechazo de variables de emuladores mezcladas. Admin usa identidad normal del runtime propio; se conserva el servicio transaccional, schema1, propiedad/versión/sesión/recibo y Firestore deny-all. Sin TTL que elimine deduplicación.
++- Callable con capacidad min0/max1,256MiB,30s,concurrencia20. Esto no garantiza el objetivo20USD ni activa facturación. CORS comprueba los dos orígenes Firebase y loopback IPv4/IPv6; otras direcciones se rechazan en el manejador real del SDK.
++- UI distingue correo/cuenta reales de pruebas; los textos ya usan un ID específico y conservan el crédito «Desarrollado por Ivan Vivanco».
++- Configuración de despliegue independiente, preflight solo lectura y preparador de Hosting que copia solo frontend público, rechaza enlaces y conserva destinos existentes. No se crean ni despliegan archivos públicos mientras la activación propia sea falsa.
++
++## Evidencia ejecutada
++
++| Comprobación | Resultado y límite |
++| --- | --- |
++| SuiteNode final |112casos:111aprobados,0fallos,1integración optativa omitida. Incluye guardias de runtime, llamadas OAuth/vinculación simuladas y aislamiento de cachés. |
++| Integración explícita con emuladores |1 ensayo aprobado: UID/revisiones/recibos/concurrencia/sesión y escrituras directas denegadas. Proyecto demo local. |
++| Navegador P05 local final |24escenarios aprobados,12por fuente/compilado. Identidades ficticias y servicios emulados; no acredita OAuth/correo real. |
++| Propio desactivado |8escenarios aprobados, fuente/compilado ×escritorio/móvil emulado ×con/sin flags de prototipos. Cero peticiones remotas y errores de página; iniciar bloqueado, sesión propia sin crear. |
++| CORS real del manejador SDK |Prueba HTTP local sobre callable exportada: acepta dominios propios y ambos formatos loopback; rechaza otros orígenes. Sin Auth/ADC ni nube. El emulador añade respuestas CORS propias, por lo que no se usó como evidencia de esta restricción. |
++| Build/check |85scripts, bundle6382978a6a, SDK227024bytes; correctos. Versiones de dependencias declaradas sin cambios. |
++| Acceso/configuración propios |Consulta posterior EV-033: CLI autorizado y proyecto accesible; facturación deshabilitada, sin cuenta vinculada; Auth Google/correo/dominios/política confirmados por GET. Firestore/Functions no listados por403SERVICE_DISABLED. Sitio Hosting existente, release no comprobada. Sin mutaciones ni pruebas funcionales reales. |
++| Preparación de Hosting desactivado |Rechazo esperado con código1, dist-own no creado. Sin despliegue. |
++
++Artefactos locales: `../migration-audit/p05-closure-node-final.txt`, `p05-closure-emulators.txt`, `p05-closure-local-browser-final/results.json` y `p05-closure-own-disabled-browser-final/results.json`. Scripts reproducibles en tests/. Las capturas finales fueron revisadas. Son perfiles de navegador aislados; no se accedió al navegador personal del titular.
++
++## Incidencias de esta revisión
++
++1. La revisión encontró que CORS omitía IPv6 pese a permitirlo en el cliente. Se reprodujo con prueba fallida del manejador HTTP real, se corrigió el patrón y la prueba pasó. OPTIONS del emulador refleja orígenes por su propia capa y no prueba esa política de producción.
++2. La primera ejecución del navegador agotó la espera de providerData después de una vinculación local, mientras la UI mostraba éxito. Una prueba mínima independiente y la repetición completa pasaron; no se aisló la causa de la variación entre pestañas. Sí se confirmó que el código local podía anunciar éxito sin recargar/comprobar el proveedor: nueva prueba unitaria fallida, recarga del usuario actual/IDtoken y postcondición de Google+UID, prueba verde. El recorrido completo final volvió a pasar24casos. Esto no acredita vinculación real; se conserva la incidencia en el registro, sin relajar aserciones ni ampliar tiempos.
++
++## Lo que impide cerrar el100%
++
++- El acceso CLI y consulta de infraestructura/Auth ya se resolvieron. Iván eligió mantener Spark sin facturación; [Cloud Functions requiere Blaze para desplegar](https://firebase.google.com/docs/functions/get-started). El backend actual no se despliega en ese plan. Resolver un alojamiento de servidor compatible y probarlo antes de habilitar cuentas propias; no hay alternativa implementada en esta entrega. No se activó billing.
++- Revisar Firestore/ubicación/configuración y el servicio confiable compatible con Spark antes de conectar el modo propio. Las APIs deshabilitadas impidieron el listado; no se crearon bases ni habilitaron APIs por inferencia.
++- Probar Google OAuth y correo recibido, recuperación y vinculación reales, separación de identidades, transacciones y continuidad entre dispositivos/redes. Completar [CIERRE_P05.md](CIERRE_P05.md); revisar retención/eliminación conservando D-290. No hay evidencia real de esos puntos en este informe.
++
++Continuación concreta: [ACTIVACION_FIREBASE_PROPIO.md](ACTIVACION_FIREBASE_PROPIO.md). [Diff de esta preparación](P05-CIERRE-CAMBIOS.diff). El respaldo previo `development-backups/SCP-SURVIVOR-antes-cierre-P05.zip` se conserva fuera de la carpeta del proyecto. No cambiar estados a CV hasta obtener la evidencia real pendiente.
+--- /dev/null
++++ b/docs/P05-ESTADO-SPARK.md
+@@ -0,0 +1,38 @@
++# P05 con Spark sin facturación
++
++Estado del17/10/2026, America/Santiago. Decisión expresa de Iván: **«Mantener Spark sin facturación»** (A-028/D-315). No vincular facturación ni desplegar recursos que la requieran. Esta elección conserva el trabajo existente y no reduce los criterios de aceptación.
++
++## Resultado de la auditoría real
++
++| Elemento | Resultado comprobado | Límite |
++| --- | --- | --- |
++| Acceso del propietario | Firebase CLI autorizado; acceso a `scp-survivor` confirmado. | No equivale al acceso de un jugador. |
++| Facturación | `billingEnabled=false`, sin cuenta vinculada. | No se modificó el plan. |
++| Correo y Google | Consultas administrativas HTTP200; ambos habilitados. | OAuth, verificación recibida, recuperación y vinculación reales sin probar. |
++| Dominios | `localhost`, `127.0.0.1`, `scp-survivor.firebaseapp.com`, `scp-survivor.web.app`. | No se desplegó el juego por existir esos dominios. |
++| Contraseñas | ENFORCE, mínimo8/máximo4096, sin clases obligatorias. | `allowDuplicateEmails` omitido en la respuesta; valor efectivo sin confirmar. |
++| Firestore y Functions | Las consultas de listado devolvieron403, `SERVICE_DISABLED`. | No permiten afirmar ausencia de bases, datos o funciones. No se habilitaron APIs. |
++| Hosting | Existe el sitio predeterminado del proyecto. | No se comprobó una release ni se reemplazó contenido. |
++
++[Evidencia administrativa saneada](P05-AUDITORIA-FIREBASE.json). No contiene tokens, contraseñas, dirección personal del propietario ni secretos OAuth. Sus timestamps UTC del18/10 corresponden al17/10 en Chile.
++
++## Compatibilidad con el código actual
++
++Spark ofrece Authentication y cuotas sin coste de Firestore/Hosting; su disponibilidad no significa que esos flujos del juego estén integrados o probados. [Comparación oficial de planes](https://firebase.google.com/pricing).
++
++El backend existente usa `onCall` de Cloud Functions en `functions/index.js`, el servicio transaccional de `functions/account-service.js` y Firestore con escrituras directas del cliente denegadas en `firestore.rules`. Ese servicio obtiene el UID autenticado y comprueba revisión, sesión, contenido del comando y recibos idempotentes. P05-T02 exige operaciones persistentes de servidor; P05-T03 depende de ellas.
++
++**Firebase permite emular Functions sin Blaze, pero exige Blaze para desplegarlas.** [Requisito oficial de despliegue](https://firebase.google.com/docs/functions/get-started). Por eso el backend actual no se puede desplegar manteniendo Spark sin facturación. Es una limitación de esta implementación; no una afirmación de que cualquier servidor posible deba ser de pago.
++
++Permitir que el navegador escriba libremente partidas, premios o recibos no sería un reemplazo equivalente: quitaría la validación del servicio existente. Una alternativa fuera de Cloud Functions necesitaría un servidor confiable disponible, autenticación, persistencia, operación y pruebas equivalentes. No hay una alternativa así implementada o validada en esta entrega. No se cambia de proveedor ni se promete alojamiento gratuito para ocultar el pendiente.
++
++## Qué se conserva y cómo continuar
++
++- Cliente y servidor propio preparados, con `config/accounts-runtime.json` en `ownAccountsEnabled=false`; sin inicialización propia desde la demo desactivada.
++- Demo local `?cuentas=local` con Auth/Firestore/Functions Emulator y datos ficticios. No se migran esas identidades al proyecto real.
++- Preparación del modo propio con configuración y cachés separadas, guardias de runtime/CORS y sus pruebas. [Informe de verificación](P05-CIERRE-REPORT.md).
++- Código, recursos, crédito de Ivan Vivanco y primer prototipo P06 conservados. GitHub recibe código y roadmap; no activa servicios.
++
++**P05 sigue EV0/6; global52/100.** Las consultas administrativas y los ensayos locales no acreditan las pruebas reales de [CIERRE_P05.md](CIERRE_P05.md). Para terminar P05 bajo la decisión Spark hace falta resolver el alojamiento del servicio confiable y después ejecutar los flujos reales pendientes. No se inventan plazos de retención o requisitos nuevos: D-290 exige conservar deduplicación y medir almacenamiento.
++
++A-027/D-316 registra la secuencia pedida por Iván: subir el trabajo autorizado a GitHub y continuar P06 inmediatamente después del cierre verificado de P05, con multiagentes bajo coordinación de raíz. Mientras tanto no se desarrollan nuevas funciones P06 ni se altera su prototipo.
+--- a/docs/P05-REPORT.md
++++ b/docs/P05-REPORT.md
+@@ -1,4 +1,6 @@
+ # P05-local-01 — cuentas y continuidad, alfa 0.5 local
++
++**Actualización17/10/2026:** P05 vuelve a ser prioridad antes de continuarP06. El informe de esta nueva preparación/verificación se conserva en [P05-CIERRE-REPORT.md](P05-CIERRE-REPORT.md); este documento mantiene la evidencia histórica de P05-local-01. No confundir la integración propia preparada y desactivada con pruebas reales ejecutadas o cierre de fase.
+ 
+ Entrega15/10/2026 sobre alfa0.4/main39344e77. Iván autorizó avanzar GAP-001→P05, eligió preparar/probar localmente y reiteró completar ese alcance sin más consultas. Original Cloud, ZIP de migración y backup anterior se conservan. Después de recibir el paquete local pidió «subela. incluye roadmap»: esta actualización del repositorio incorpora P05-local-01 y roadmapv0.12. Firebase real sigue sin desplegar. docs/PUBLICACION_GITHUB.md distingue la subida del código de su ejecución local; los JSON de prueba conservan el estado observado antes de esa petición posterior.
+ 
+--- a/docs/PUBLICACION_GITHUB.md
++++ b/docs/PUBLICACION_GITHUB.md
+@@ -1,4 +1,16 @@
+ # Publicaciones GitHub — SCP Survivor
++
++## Entrega del 17/10/2026 — preparación P05 y decisión Spark
++
++Iván reiteró subir el trabajo a GitHub y continuar P06 inmediatamente después de terminar P05 con multiagentes (A-027). Eligió expresamente **mantener Spark sin facturación** (A-028/D-315). Esta entrega conserva esa decisión y registra el estado real: **P05 sigue EV0/6; P06 conserva su prototipo y espera el cierre de P05; global52/100**.
++
++Incluye preparación del cliente/servidor propio desactivada, guardias de proyecto y separación de cachés, correcciones de CORS IPv6 y confirmación del proveedor Google local, pruebas, documentación de Windows, pauta de cierre y RoadmapSCPv0.18. La auditoría administrativa real confirma acceso del propietario, proveedores/dominios/política Auth y ausencia de facturación; las APIs Firestore/Functions devolvieron403SERVICE_DISABLED. Son consultas GET, no aceptación de OAuth, correo recibido o guardado. Véanse [estado Spark](P05-ESTADO-SPARK.md), [evidencia saneada](P05-AUDITORIA-FIREBASE.json) e [informe de preparación](P05-CIERRE-REPORT.md).
++
++Verificación repetida antes de preparar esta subida: **112 pruebas Node:111 aprobadas,0 fallos,1 integración optativa omitida**; build:check correcto,85scripts, SDK227024bytes, bundle6382978a6a. El informe conserva la integración explícita aprobada y los24recorridos de navegador local y8del modo propio desactivado ejecutados sobre esta preparación. No se repiten ni acreditan pruebas reales de cuentas por subir el código.
++
++Destino: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), rama **main**. Base remota comprobada con fetch y ls-remote el17/10/2026: `0eb52bc08bb01da98f8dd06c7d1d7c484207504b`. Commit identificable por **«Preparar cierre P05 y registrar Spark sin facturación»**; el SHA remoto se verifica después del push. Se conserva el historial sin force push, todos los archivos anteriores y los12recursos originales. Se excluyen dependencias instaladas, enlaces locales de verificación, cuentas/partidas, cachés, logs y credenciales.
++
++GitHub recibe código y roadmap. Esta entrega no activa Blaze, despliega Functions/Hosting ni habilita `ownAccountsEnabled`; tampoco declara100% de P05 ni comienza nuevas funciones P06. [Diff revisable de la preparación](P05-CIERRE-CAMBIOS.diff).
+ 
+ ## Entrega del 16/10/2026 — crédito, grietas y primer tramo P06
+ 
+--- /dev/null
++++ b/docs/superpowers/plans/p05-cierre-real.md
+@@ -0,0 +1,33 @@
++# P05 real Implementation Plan
++
++**Goal:** completar todo lo verificable de P05 y preparar su integración real, conservando P06 hasta cerrar aceptaciónP05.
++
++**Architecture:** ampliar el adaptador Firebase existente con selección/activación explícita; guardias de runtime propias sobre el mismo servicio transaccional.
++
++**Tech Stack:** JavaScript/Canvas2D, Firebase SDK/Functions/Firestore actuales, Node test y emuladores.
++
++## Restricciones
++
++No fuentes Cloud ni mecánicas, nuevos criterios/pesos o borrado de avancesP06. No billing, claves privadas en código, escritura Firestore directa ni recibos eliminados por TTL. Proyecto exacto `scp-survivor`, emulado exacto `demo-scp-survivor`. A-028/D-315: Iván eligió mantener Spark sin facturación. El backend Cloud Functions actual no se despliega; conservar preparación propia desactivada. A-027/D-316: continuar P06 con multiagentes inmediatamente después del cierre real P05.
++
++## Cliente (Luna)
++
++- [x] Tests rojos y verdes de selección de modo propio, activación deshabilitada antes de efectos SDK, orígenes permitidos, separación de caché y selección de OAuth/vinculación oficial. Son pruebas unitarias con SDK simulado; no prueban cuentas reales.
++- [x] Configuración propia empaquetada, rama propia sin emuladores y mensajes según entorno; conservar intacta la ruta local.
++- [x] Suite de cliente propio y regresión local verdes. Fuente, SDK entry y pruebas del cliente completadas; la integración real y aceptación permanecen pendientes.
++
++## Servidor (Luna)
++
++- [x] Tests rojos de guardias por proyecto/habilitación/emuladores mezclados.
++- [x] Guardia propia y configuración acotada sobre callable existente; mantener semántica y reglas.
++- [x] Tests verdes y regresión de servicio. No despliegue hasta cumplir requisitos externos.
++
++## Integración y aceptación (raíz)
++
++- [x] CSP/orígenes, exclusión de prototipos cuando hay cuentas propias y configuración separada de despliegue/preflight.
++- [x] Build, suiteNode, integración explícita de emuladores y navegador aislado; registrar resultados y límites.
++- [x] Documentar prioridadP05, pasos reales, costes/requisitos y diff. Conservar52/100 hasta cierre demostrado.
++- [x] Autenticación CLI del propietario y consulta real de acceso/facturación/Auth: EV-033. Sin facturación; correo/Google/dominios/política confirmados administrativamente.
++- [x] Registrar decisión expresa de mantener Spark y limitación del backend actual, sin activar APIs ni confundir403SERVICE_DISABLED con ausencia de datos.
++- [ ] Resolver alojamiento del servicio confiable compatible con la decisión Spark; comprobar Firestore/ubicación/reglas antes de conectar la implementación propia. No se ha implementado ni validado un servidor alternativo.
++- [ ] Comprobación real de identidad/correo/vinculación, transacciones y continuidad; retención/deduplicación conforme a D-290 y aceptación integrada. Solo entonces P05-T01/T02/T03 CV. No desplegar Cloud Functions bajo la decisión Spark.
+--- /dev/null
++++ b/docs/superpowers/specs/p05-cierre-real-design.md
+@@ -0,0 +1,13 @@
++# P05: cierre antes de continuar P06
++
++Iván pidió completar P05 al100% antes de seguir P06. Se conserva lo implementado de P06, sin avanzar sus funciones ni marcarlo aceptado. Los criterios y pesos originales no cambian.
++
++Diseño existente: Firebase Auth + callable Functions + Firestore transaccional. Mantenerlo y añadir una selección explícita entre emuladores y proyecto propio `scp-survivor`; sin cambiar mecánicas ni esquema1 de checkpoints. No sustituirlo por escrituras libres desde el cliente o una arquitectura nueva para evitar el requisito externo de despliegue.
++
++- Cliente: modo local conserva endpoints, credencial simulada y claves `scp:p05:*` actuales. `?cuentas=propias` se limita a loopback y HTTPS `scp-survivor.web.app`/`scp-survivor.firebaseapp.com`; muestra el panel, pero `ownAccountsEnabled:false` rechaza inicialización antes de llamar al SDK. Al habilitarse con proyecto y región coincidentes, usa la configuración pública empaquetada, el resolver oficial de popup, Google OAuth real y `EmailAuthProvider.credential` + `linkWithCredential` para la contraseña. Ambas vinculaciones comprueban UID y recargan usuario/token. Las claves propias usan `scp:p05:scp-survivor:*`; nunca comparten sesión, caché o recibos con demo. Las pruebas unitarias solo verifican selección y llamadas SDK simuladas, no OAuth/correos reales ni aceptación de P05.
++- Servidor: guardia explícita para proyecto propio, ausencia de variables de emuladores y habilitación por entorno. Mantener denegación total de Firestore directo, UID del token, revisión, sesión, hash y recibo transaccional. No añadir TTL que pierda deduplicación (D-290).
++- Despliegue: comprobar acceso al proyecto, plan y Firestore; separar configuración de emuladores. Configurar instancia mínima0/máxima1 como mitigación de uso, sin presentarlo como tope de20USD. Facturación no se activa automáticamente: D-068 no autoriza gasto. Firebase CLI no tiene cuenta autorizada al auditar.
++- Verificación: mocks prueban selección/llamadas/aislamiento; emuladores prueban regresión local. Solo pruebas ejecutadas con servicios propios pueden cerrarP05. Google, correo recibido y continuidad entre dispositivos no se sustituyen por resultados simulados.
++- La retención no borra recibos por tiempo en esta entrega. La política de eliminación/copia de seguridad y su prueba deben estar resueltas antes de aceptar servidor propio; no inventar aceptación ni plazos legales.
++
++Se prioriza preparar la integración real manteniéndola inactiva frente a reconstruir o publicar una conexión incompleta. La autenticación del propietario, vinculación de facturación y pruebas personales requieren participación externa; dejarlas explícitas si no están disponibles.
+--- /dev/null
++++ b/firebase.own.json
+@@ -0,0 +1,17 @@
++{
++  "firestore": {
++    "rules": "firestore.rules",
++    "indexes": "firestore.indexes.json"
++  },
++  "functions": [{
++    "source": "functions",
++    "codebase": "scp-own",
++    "runtime": "nodejs24",
++    "ignore": ["node_modules", ".git", "*.log", ".env*"]
++  }],
++  "hosting": {
++    "public": "dist-own",
++    "ignore": ["**/.*", "**/node_modules/**"],
++    "headers": [{"source": "**", "headers": [{"key": "Cache-Control", "value": "no-store"}]}]
++  }
++}
+--- /dev/null
++++ b/functions/.env.example
+@@ -0,0 +1,5 @@
++# Ejemplo no secreto para Functions propias. No lo usa el lanzador de emuladores.
++# Solo tras autorizar/acceder al proyecto y comprobar Firestore/plan/despliegue:
++# copiar como functions/.env.scp-survivor (excluido de Git) y quitar # de la línea.
++# SCP_ACCOUNT_PROJECT=scp-survivor
++# No poner cuentas de servicio, claves privadas ni tokens en este archivo.
+--- a/functions/account-service.js
++++ b/functions/account-service.js
+@@ -1,14 +1,8 @@
+ 'use strict';
+ const crypto=require('node:crypto');
++const {ServiceError,assertLocalEmulators,assertAccountRuntime}=require('./project-runtime');
+ const VERSION={schemaVersion:1,buildVersion:'0.5-local-01'};
+-class ServiceError extends Error{constructor(code,message){super(message);this.code=code;}}
+ const fail=(code,message)=>{throw new ServiceError(code,message);};
+-function assertLocalEmulators(env=process.env){
+- const local=value=>/^(127\.0\.0\.1|localhost|\[::1\]):\d+$/.test(value||'');
+- if(env.FUNCTIONS_EMULATOR!=='true'||(env.GCLOUD_PROJECT||env.GCP_PROJECT)!=='demo-scp-survivor'||
+-  !local(env.FIRESTORE_EMULATOR_HOST)||!local(env.FIREBASE_AUTH_EMULATOR_HOST))
+-  fail('failed-precondition','Esta versión funciona exclusivamente con los emuladores locales demo-scp-survivor.');
+-}
+ function canonical(value){
+  if(value===null||typeof value==='string'||typeof value==='boolean')return JSON.stringify(value);
+  if(typeof value==='number'&&Number.isFinite(value))return JSON.stringify(value);
+@@ -100,7 +94,7 @@
+ }
+ const state=stored=>({...VERSION,revision:stored?.revision||0,profile:stored?.profile||null,activeRun:stored?.activeRun||null,lastResult:stored?.lastResult||null});
+ async function executeCommand(db,auth,request,env=process.env){
+- assertLocalEmulators(env);
++ assertAccountRuntime(env);
+  if(!auth?.uid||typeof auth.uid!=='string'||auth.uid.includes('/')||auth.uid.length>128)fail('unauthenticated','Inicia sesión.');
+  keys(request,['type','requestId','expectedRevision','sessionId','runId','payload'],'Comando');
+  const ref=db.collection('users').doc(auth.uid);
+@@ -156,4 +150,4 @@
+   tx.set(ref,next);tx.set(receipt,{commandHash:hash,result:next,createdAt:now});return next;
+  });
+ }
+-module.exports={executeCommand,assertLocalEmulators,commandHash,ServiceError};
++module.exports={executeCommand,assertLocalEmulators,assertAccountRuntime,commandHash,ServiceError};
+--- a/functions/index.js
++++ b/functions/index.js
+@@ -2,16 +2,18 @@
+ const {onCall,HttpsError}=require('firebase-functions/v2/https');
+ const {initializeApp,getApps}=require('firebase-admin/app');
+ const {getFirestore}=require('firebase-admin/firestore');
+-const {executeCommand,assertLocalEmulators,ServiceError}=require('./account-service');
+-exports.accountCommand=onCall({region:'us-central1',cors:[/^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/]},async request=>{
++const {executeCommand,assertAccountRuntime,ServiceError}=require('./account-service');
++exports.accountCommand=onCall({region:'us-central1',cors:[/^http:\/\/(127\.0\.0\.1|localhost|\[::1\])(:\d+)?$/,
++ 'https://scp-survivor.web.app','https://scp-survivor.firebaseapp.com'],minInstances:0,maxInstances:1,
++ memory:'256MiB',timeoutSeconds:30,concurrency:20},async request=>{
+  try{
+-  assertLocalEmulators();
+-  process.env.METADATA_SERVER_DETECTION='none';
+-  if(!getApps().length)initializeApp({projectId:'demo-scp-survivor'});
++  const runtime=assertAccountRuntime();
++  if(runtime.mode==='local')process.env.METADATA_SERVER_DETECTION='none';
++  if(!getApps().length)initializeApp({projectId:runtime.projectId});
+   return await executeCommand(getFirestore(),request.auth,request.data);
+  }catch(error){
+   if(error instanceof ServiceError)throw new HttpsError(error.code,error.message);
+-  console.error('No se pudo confirmar la operación local:',error.code||error.name);
++  console.error('No se pudo confirmar la operación de cuenta:',error.code||error.name);
+   throw new HttpsError('internal','No se pudo confirmar. Conserva el comando pendiente y reintenta.');
+  }
+ });
+--- /dev/null
++++ b/functions/project-runtime.js
+@@ -0,0 +1,36 @@
++'use strict';
++
++class ServiceError extends Error {
++ constructor(code,message){super(message);this.code=code;}
++}
++const fail=(code,message)=>{throw new ServiceError(code,message);};
++
++function assertLocalEmulators(env=process.env){
++ const local=value=>/^(127\.0\.0\.1|localhost|\[::1\]):\d+$/.test(value||'');
++ if(env.FUNCTIONS_EMULATOR!=='true'||(env.GCLOUD_PROJECT||env.GCP_PROJECT)!=='demo-scp-survivor'||
++  !local(env.FIRESTORE_EMULATOR_HOST)||!local(env.FIREBASE_AUTH_EMULATOR_HOST))
++  fail('failed-precondition','Esta versión funciona exclusivamente con los emuladores locales demo-scp-survivor.');
++}
++
++function assertAccountRuntime(env=process.env){
++ const projectIds=[env.GCLOUD_PROJECT,env.GCP_PROJECT].filter(value=>value!==undefined);
++ const hasEmulatorHost=Object.entries(env).some(([name,value])=>
++  /(?:EMULATOR_HOST|EMULATOR_HUB)$/i.test(name)&&value!==undefined&&value!==null&&String(value)!=='');
++ const functionsEmulator=String(env.FUNCTIONS_EMULATOR||'').trim().toLowerCase()==='true';
++ const localCandidate=functionsEmulator||projectIds.includes('demo-scp-survivor')||hasEmulatorHost;
++
++ if(localCandidate){
++  if(projectIds.some(projectId=>projectId!=='demo-scp-survivor')||
++   (env.SCP_ACCOUNT_PROJECT!==undefined&&env.SCP_ACCOUNT_PROJECT!==''))
++   fail('failed-precondition','Runtime local mezclado con otro proyecto o habilitación de cuentas propias.');
++  assertLocalEmulators(env);
++  return{mode:'local',projectId:'demo-scp-survivor'};
++ }
++
++ if(env.SCP_ACCOUNT_PROJECT!=='scp-survivor'||projectIds.length===0||
++  projectIds.some(projectId=>projectId!=='scp-survivor')||functionsEmulator||hasEmulatorHost)
++  fail('failed-precondition','Runtime de cuentas no autorizado: usa demo-scp-survivor local o habilita exactamente scp-survivor.');
++ return{mode:'own',projectId:'scp-survivor'};
++}
++
++module.exports={ServiceError,assertLocalEmulators,assertAccountRuntime};
+# index.html: SHA256 93f7e8df30c0cf8604030627e3f431a41f62a21fbc7f4ec72a434e3b93a655da
+# js/app.min.js: SHA256 b53cd187c6f88112e1d1e93e679665f02b227d4218fa762ed050e52aa520e719
+--- a/js/net/local-accounts.js
++++ b/js/net/local-accounts.js
+@@ -1,18 +1,30 @@
+-/* P05 opt-in: official Firebase SDK connected only to the local demo emulators. */
++/* P05 keeps the demo emulator and the explicitly gated own Firebase project separate. */
+ G.LocalAccounts = (() => {
+   const host = window.location.hostname;
+-  const enabled = ['localhost','127.0.0.1','[::1]'].includes(host) &&
+-    new URLSearchParams(window.location.search).get('cuentas') === 'local';
++  const loopback = ['localhost','127.0.0.1','[::1]'].includes(host);
++  const params = new URLSearchParams(window.location.search);
++  const ownHostingDomain = ['scp-survivor.web.app','scp-survivor.firebaseapp.com'].includes(host);
++  const ownOriginAllowed = loopback || (window.location.protocol === 'https:' && ownHostingDomain);
++  const mode = params.get('cuentas') === 'local' && loopback ? 'local' :
++    params.get('cuentas') === 'propias' && ownOriginAllowed ? 'own' : 'disabled';
++  const enabled = mode !== 'disabled';
++  const isLocal = mode === 'local';
++  const ownProjectId = window.SCPFirebase?.accountsRuntime?.projectId || 'scp-survivor';
++  const cacheNamespace = mode === 'own' ? `scp:p05:${ownProjectId}` : 'scp:p05';
++  const sessionKey = `${cacheNamespace}:session`;
++  const confirmedKey = uid => `${cacheNamespace}:confirmed:${uid}`;
++  const pendingPrefix = uid => `${cacheNamespace}:pending:${uid}:`;
+   const listeners = new Set();
+   let sdk, auth, call, ready = false, data = null, error = '', inFlight = false, currentUid = null;
+   let sessionId = null, initialization = null;
+-  const state = () => ({enabled,ready,user:auth?.currentUser || null,data,error,busy:inFlight,sessionId});
++  const state = () => ({enabled,mode,isLocal,cacheNamespace,ownAccountsEnabled:mode === 'own' ? !!window.SCPFirebase?.accountsRuntime?.ownAccountsEnabled : null,
++    ready,user:auth?.currentUser || null,data,error,busy:inFlight,sessionId});
+   const notify = () => { for (const fn of listeners) fn(state()); };
+   const user = () => auth?.currentUser || null;
+-  function cacheKey(uid = user()?.uid,sid=sessionId) { return `scp:p05:pending:${uid}:${sid}`; }
++  function cacheKey(uid = user()?.uid,sid=sessionId) { return `${pendingPrefix(uid)}${sid}`; }
+   function pending() {
+     if (!user() || !sessionId) return null;
+-    const prefix=`scp:p05:pending:${user().uid}:`,keys=[cacheKey()];
++    const prefix=pendingPrefix(user().uid),keys=[cacheKey()];
+     for(let i=0;i<window.localStorage.length;i++){
+       const key=window.localStorage.key(i);if(key?.startsWith(prefix)&&!keys.includes(key))keys.push(key);
+     }
+@@ -27,7 +39,7 @@
+     if (uid !== user()?.uid) throw new Error('La cuenta cambió durante la confirmación.');
+     if (authoritative || !data || next.revision >= data.revision) {
+       data = next;
+-      window.localStorage.setItem(`scp:p05:confirmed:${uid}`,JSON.stringify({uid,data:next}));
++      window.localStorage.setItem(confirmedKey(uid),JSON.stringify({uid,data:next}));
+     }
+     error = ''; notify(); return next;
+   }
+@@ -42,7 +54,7 @@
+       data = null; error = ''; currentUid = uid;
+       // Cached data is only a preview. start/resume must refresh with the server.
+       if (uid) try {
+-        const cache=JSON.parse(window.localStorage.getItem(`scp:p05:confirmed:${uid}`));
++        const cache=JSON.parse(window.localStorage.getItem(confirmedKey(uid)));
+         if (cache?.uid===uid && cache.data?.schemaVersion===1 && cache.data.buildVersion==='0.5-local-01') data=cache.data;
+       } catch (_) { /* Ignore an incomplete local cache. */ }
+     }
+@@ -51,17 +63,34 @@
+   }
+   async function init() {
+     if (!enabled) return;
++    if (mode === 'own') {
++      const runtime = window.SCPFirebase?.accountsRuntime;
++      const publicConfig = window.SCPFirebase?.publicConfig;
++      if (!runtime?.ownAccountsEnabled) {
++        error = 'El acceso a Firebase scp-survivor está desactivado para este entorno.';
++        notify(); throw new Error(error);
++      }
++      if (runtime.projectId !== 'scp-survivor' || publicConfig?.projectId !== runtime.projectId || !runtime.region) {
++        error = 'La configuración de la cuenta propia no coincide con el proyecto esperado.';
++        notify(); throw new Error(error);
++      }
++    }
+     if (initialization) return initialization;
+     initialization = (async () => {
+       sdk = window.SCPFirebase;
+       if (!sdk) throw new Error('Falta el módulo local de cuentas.');
+-      sessionId = window.sessionStorage.getItem('scp:p05:session');
+-      if (!sessionId) { sessionId = window.crypto.randomUUID(); window.sessionStorage.setItem('scp:p05:session',sessionId); }
+-      const app = sdk.initializeApp({apiKey:'demo-scp-survivor-local',projectId:'demo-scp-survivor',authDomain:'127.0.0.1'},'scp-local-p05');
+-      auth = sdk.initializeAuth(app,{persistence:sdk.browserLocalPersistence}); sdk.connectAuthEmulator(auth,'http://127.0.0.1:9099',{disableWarnings:true});
++      sessionId = window.sessionStorage.getItem(sessionKey);
++      if (!sessionId) { sessionId = window.crypto.randomUUID(); window.sessionStorage.setItem(sessionKey,sessionId); }
++      const appConfig = mode === 'own' ? sdk.publicConfig :
++        {apiKey:'demo-scp-survivor-local',projectId:'demo-scp-survivor',authDomain:'127.0.0.1'};
++      const app = sdk.initializeApp(appConfig,mode === 'own' ? 'scp-own-p05' : 'scp-local-p05');
++      const authDependencies = {persistence:sdk.browserLocalPersistence};
++      if (mode === 'own') authDependencies.popupRedirectResolver = sdk.browserPopupRedirectResolver;
++      auth = sdk.initializeAuth(app,authDependencies);
++      if (isLocal) sdk.connectAuthEmulator(auth,'http://127.0.0.1:9099',{disableWarnings:true});
+       await sdk.setPersistence(auth,sdk.browserLocalPersistence);
+-      const functions = sdk.getFunctions(app,'us-central1');
+-      sdk.connectFunctionsEmulator(functions,'127.0.0.1',5001);
++      const functions = sdk.getFunctions(app,mode === 'own' ? window.SCPFirebase.accountsRuntime.region : 'us-central1');
++      if (isLocal) sdk.connectFunctionsEmulator(functions,'127.0.0.1',5001);
+       call = sdk.httpsCallable(functions,'accountCommand',{timeout:12000});
+       ready = true; sdk.onAuthStateChanged(auth,acceptUser); notify();
+     })();
+@@ -116,10 +145,23 @@
+     acceptUser(result.user); await refresh(); return result.user;
+   }
+   async function google(alias,link = false,emailValue = '') {
++    if (mode === 'own') {
++      const existing = link ? user() : null;
++      if (link && !existing) throw new Error('Inicia sesión antes de vincular Google.');
++      const result = link ? await sdk.linkWithPopup(existing,new sdk.GoogleAuthProvider()) :
++        await sdk.signInWithPopup(auth,new sdk.GoogleAuthProvider());
++      if (link && result.user?.uid !== existing.uid) throw new Error('La vinculación cambió la cuenta. Inicia sesión de nuevo.');
++      await sdk.reload(result.user); await result.user.getIdToken(true);
++      acceptUser(result.user); await refresh();
++      if (!data?.profile && alias.trim().length >= 3) await command('initializeProfile',{alias:alias.trim()});
++      if (!link && !result.user.emailVerified) await sdk.sendEmailVerification(result.user);
++      return result.user;
++    }
+     if (!enabled || auth?.emulatorConfig?.host!=='127.0.0.1' || auth.emulatorConfig.port!==9099)
+       throw new Error('Google de prueba solo está disponible con emuladores locales.');
+     const email=String(link?user()?.email:emailValue).trim().toLowerCase();
+     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) throw new Error('Escribe un correo ficticio para Google de prueba.');
++    const linkingUid=link?user()?.uid:null;
+     const provider=sdk.GoogleAuthProvider.credential(JSON.stringify({sub:`scp-local-google:${email}`,email,email_verified:true,name:alias.trim()||'Google de prueba'}));
+     const result = link ? await sdk.linkWithCredential(user(),provider) : await sdk.signInWithCredential(auth,provider);
+     // With automatic email merging disabled, the primary email is explicit too.
+@@ -131,13 +173,27 @@
+       await sdk.signOut(auth);
+       throw new Error('Ese correo ya tiene una cuenta. Entra con su contraseña y usa Vincular Google de prueba.');
+     }
+-    acceptUser(result.user); await refresh();
++    if(link){
++      if(user()?.uid!==linkingUid||result.user?.uid!==linkingUid)throw new Error('La cuenta cambió durante la vinculación. Inicia sesión de nuevo.');
++      await sdk.reload(user());await user().getIdToken(true);
++      if(!user().providerData.some(p=>p.providerId==='google.com'))throw new Error('Google todavía no está confirmado. Actualiza la cuenta antes de continuar.');
++    }
++    acceptUser(link?user():result.user); await refresh();
+     if (!data?.profile) await command('initializeProfile',{alias:alias.trim()});
+     if (!link && !result.user.emailVerified) await sdk.sendEmailVerification(result.user);
+-    return result.user;
++    return link?user():result.user;
+   }
+   async function linkPassword(pass) {
+     password(pass);
++    if (mode === 'own') {
++      const existing=user();
++      if (!existing?.email) throw new Error('La cuenta no tiene un correo para vincular.');
++      const credential=sdk.EmailAuthProvider.credential(existing.email,pass);
++      const result=await sdk.linkWithCredential(existing,credential);
++      if (result.user?.uid !== existing.uid) throw new Error('La vinculación cambió la cuenta. Inicia sesión de nuevo.');
++      await sdk.reload(result.user); await result.user.getIdToken(true);
++      acceptUser(result.user); await refresh(); return result.user;
++    }
+     if (!enabled || auth?.emulatorConfig?.host!=='127.0.0.1' || auth.emulatorConfig.port!==9099)
+       throw new Error('La vinculación de prueba solo está disponible con emuladores locales.');
+     if (!user()?.email) throw new Error('La cuenta no tiene un correo para vincular.');
+@@ -155,11 +211,12 @@
+   async function logout() { await sdk.signOut(auth); data=null; currentUid=null; error=''; notify(); }
+   function rotateSession() {
+     if (pending()) throw new Error('Resuelve la confirmación pendiente antes de cambiar de sesión.');
+-    sessionId=window.crypto.randomUUID();window.sessionStorage.setItem('scp:p05:session',sessionId);notify();
++    sessionId=window.crypto.randomUUID();window.sessionStorage.setItem(sessionKey,sessionId);notify();
+     return sessionId;
+   }
+   return {enabled,init,refresh,command,retry,signUp,signIn,google,linkPassword,resetPassword,verifyEmail,
+     refreshVerification,logout,rotateSession,subscribe(fn){listeners.add(fn);return()=>listeners.delete(fn);},
++    mode,isLocal,cacheNamespace,
+     get data(){return data;},get user(){return user();},get sessionId(){return sessionId;},
+     get pending(){return pending();},get busy(){return inFlight;},get status(){return state();}};
+ })();
+--- a/js/systems/dimensional-rifts.js
++++ b/js/systems/dimensional-rifts.js
+@@ -3,8 +3,9 @@
+   const location = window.location;
+   const query = new URLSearchParams(location.search);
+   const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+-  const directTest = local && query.get('prueba') === 'grieta' && query.get('cuentas') !== 'local';
+-  const enabled = local && query.get('cuentas') !== 'local' && (directTest || query.get('grietas') === 'local');
++  const accounts = ['local','propias'].includes(query.get('cuentas'));
++  const directTest = local && query.get('prueba') === 'grieta' && !accounts;
++  const enabled = local && !accounts && (directTest || query.get('grietas') === 'local');
+   const TTL = 45, ENTRY_RADIUS = 22;
+   let seen = new Set(), state;
+   function clear() { state = {status:'idle',remaining:0,x:0,y:0,sector:0,alert:'',alertTime:0,result:null}; }
+--- a/js/ui/account-ui.js
++++ b/js/ui/account-ui.js
+@@ -11,17 +11,23 @@
+   }
+   function init() {
+     if (!G.LocalAccounts.enabled) return;
++    const own=G.LocalAccounts.mode==='own';
++    const ownActive=!!G.LocalAccounts.status.ownAccountsEnabled;
++    const accountTitle=own?'Cuenta Firebase propia':'Cuenta de prueba';
++    const accountIntro=own?(ownActive?'La autenticación y el correo usan el proyecto Firebase scp-survivor.':'Modo de cuenta propia seleccionado; la autenticación real está desactivada en este entorno.'):'Los datos de esta prueba se guardan en este computador.';
++    const googleLabel=own?'Continuar con Google':'Google de prueba';
++    const googleLinkLabel=own?'Vincular Google':'Vincular Google de prueba';
+     const section=document.createElement('section');section.id='account-panel';section.className='account-panel';
+-    section.innerHTML=`<h2>Cuenta de prueba</h2><p>Los datos de esta prueba se guardan en este computador.</p>
++    section.innerHTML=`<h2>${accountTitle}</h2><p>${accountIntro}</p>
+       <div id="account-profile"><label for="account-alias">Alias</label><input id="account-alias" maxlength="24" autocomplete="nickname"><button id="account-save-profile" hidden>Guardar alias</button></div>
+       <div id="account-credentials">
+       <label for="account-email">Correo</label><input id="account-email" type="email" autocomplete="email">
+       <label for="account-password">Contraseña</label><input id="account-password" type="password" minlength="8" autocomplete="current-password">
+       <div class="account-actions"><button id="account-login">Entrar</button><button id="account-signup">Crear cuenta</button>
+-      <button id="account-google">Google de prueba</button><button id="account-reset">Recuperar contraseña</button></div></div>
++      <button id="account-google">${googleLabel}</button><button id="account-reset">Recuperar contraseña</button></div></div>
+       <div id="account-signed-in" hidden><p id="account-identity"></p><div class="account-actions">
+       <button id="account-verify">Enviar verificación</button><button id="account-check">Actualizar verificación</button>
+-      <button id="account-link">Vincular Google de prueba</button><button id="account-logout">Cerrar sesión</button></div>
++      <button id="account-link">${googleLinkLabel}</button><button id="account-logout">Cerrar sesión</button></div>
+       <div id="account-add-password" hidden><label for="account-link-password">Contraseña para entrar también con este correo</label>
+       <input id="account-link-password" type="password" minlength="8" autocomplete="new-password"><button id="account-link-email">Vincular correo y contraseña</button></div></div>
+       <p id="account-state" role="status" aria-live="polite"></p><p id="account-notice" role="alert"></p>
+@@ -31,19 +37,23 @@
+     overlay.setAttribute('role','dialog');overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-label','Confirmación de guardado');
+     overlay.innerHTML='<div class="panel"><h2>Expedición detenida</h2><p id="account-sync-message" role="status" aria-live="polite"></p><button id="account-sync-retry">Reintentar</button><button id="account-sync-menu">Volver al menú</button></div>';
+     el('viewport').append(overlay);
+-    el('technical-ready').querySelector('.panel > p:not(.eyebrow)').nextElementSibling.textContent='Tu expedición se confirma entre oleadas. Puedes cerrar y reanudar desde el último punto guardado.';
+-    el('technical-pause').querySelector('.panel > p:not(.eyebrow)').textContent='La partida se guarda entre oleadas. Si cierras durante el combate, volverás al último punto confirmado y quedarás fuera de clasificación.';
+-    document.querySelector('.footer > p').textContent='Prueba local de cuentas y guardado · sin recompensas persistentes';
++    const accountHint=el('technical-account-hint');
++    if(accountHint) accountHint.textContent='La expedición se confirma entre oleadas. Puedes cerrar y reanudar desde el último punto guardado.';
++    const pausePanel=el('technical-pause').querySelector('.panel');
++    const pauseHint=Array.from(pausePanel.querySelectorAll(':scope > p')).find(p=>p.textContent.startsWith('Tu posición se conserva'));
++    if(pauseHint){pauseHint.id='account-pause-hint';pauseHint.textContent='La partida se guarda entre oleadas. Si cierras durante el combate, volverás al último punto confirmado y quedarás fuera de clasificación.';}
++    const footerCopy=document.querySelector('.footer > p');
++    if(footerCopy) footerCopy.textContent=own?'Cuenta Firebase propia · autenticación real según configuración':'Prueba local de cuentas y guardado · sin recompensas persistentes';
+     const email=()=>el('account-email').value,pass=()=>el('account-password').value,alias=()=>el('account-alias').value;
+     const A=G.LocalAccounts;
+     el('account-login').onclick=()=>action(()=>A.signIn(email(),pass()));
+     el('account-save-profile').onclick=()=>action(()=>A.command('initializeProfile',{alias:alias().trim()}));
+-    el('account-signup').onclick=()=>action(()=>A.signUp(email(),pass(),alias()),'Cuenta creada. Abre el enlace de verificación del correo de prueba.');
++    el('account-signup').onclick=()=>action(()=>A.signUp(email(),pass(),alias()),own?'Cuenta creada. Revisa el correo real para verificarla.':'Cuenta creada. Abre el enlace de verificación del correo de prueba.');
+     el('account-google').onclick=()=>action(()=>A.google(alias(),false,email()));
+     el('account-link').onclick=()=>action(()=>A.google('',true),'Métodos de acceso vinculados.');
+     el('account-link-email').onclick=()=>action(()=>A.linkPassword(el('account-link-password').value),'Correo y contraseña vinculados a la misma cuenta.');
+-    el('account-reset').onclick=()=>action(()=>A.resetPassword(email()),'Solicitud enviada. Abre el enlace del correo de prueba.');
+-    el('account-verify').onclick=()=>action(()=>A.verifyEmail(),'Verificación enviada al correo de prueba.');
++    el('account-reset').onclick=()=>action(()=>A.resetPassword(email()),own?'Solicitud enviada. Abre el enlace del correo real.':'Solicitud enviada. Abre el enlace del correo de prueba.');
++    el('account-verify').onclick=()=>action(()=>A.verifyEmail(),own?'Verificación enviada al correo real.':'Verificación enviada al correo de prueba.');
+     el('account-check').onclick=()=>action(()=>A.refreshVerification());
+     el('account-logout').onclick=()=>action(async()=>{if(G.RunContinuity.busy)return;G.RunContinuity.signedOut();await A.logout();});
+     el('account-resume').onclick=()=>action(()=>G.RunContinuity.resume());
+--- a/js/ui/inventory-trial.js
++++ b/js/ui/inventory-trial.js
+@@ -1,8 +1,9 @@
+ /* P06-T01: gestión local de copias ficticias; no guardar ni presentar como inventario de cuenta. */
+ G.InventoryTrial=(()=>{
+   const q=new URLSearchParams(window.location.search),local=['localhost','127.0.0.1','[::1]'].includes(window.location.hostname);
+-  const directTest=local&&q.get('prueba')==='inventario'&&q.get('cuentas')!=='local';
+-  const enabled=local&&q.get('cuentas')!=='local'&&(directTest||q.get('inventario')==='local');
++  const accounts=['local','propias'].includes(q.get('cuentas'));
++  const directTest=local&&q.get('prueba')==='inventario'&&!accounts;
++  const enabled=local&&!accounts&&(directTest||q.get('inventario')==='local');
+   const M=()=>G.InventoryModel,el=id=>document.getElementById(id),clone=s=>JSON.parse(JSON.stringify(s));
+   let owned=null,draft=null,draftPhase=null,slot=0,message='';
+   function phase(){return G.Game.state==='ui'?'base':G.Game.state==='playing'&&G.Expedition.state.phase==='preparation'?'preparation':null;}
+# js/vendor/firebase-client.js: SHA256 21128b23930e1ba252d595195911065e92cc578bf0c4c7f9218a9670fa45cd2c
+--- a/tests/p05-browser.py
++++ b/tests/p05-browser.py
+@@ -42,7 +42,18 @@
+         if page.evaluate('() => ('+expression+')'):
+             return
+         page.wait_for_timeout(75)
+-    raise AssertionError('Timeout: '+expression+'; '+page.locator('#account-notice').inner_text())
++    details=page.evaluate('''async()=>{
++      const A=G.LocalAccounts,u=A.user;if(!u)return{mode:A.mode,user:null};
++      const state={mode:A.mode,uid:u.uid,providers:u.providerData.map(p=>p.providerId)};
++      if(A.mode==='local')try{
++        const idToken=await u.getIdToken();
++        const data=await fetch('http://127.0.0.1:9099/identitytoolkit.googleapis.com/v1/accounts:lookup?key=demo-scp-survivor-local',{
++          method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({idToken})}).then(r=>r.json());
++        state.serverProviders=data.users?.[0]?.providerUserInfo?.map(p=>p.providerId);
++      }catch(_){state.serverLookupFailed=true;}
++      return state;
++    }''')
++    raise AssertionError('Timeout: '+expression+'; '+page.locator('#account-notice').inner_text()+'; '+json.dumps(details))
+ 
+ def main():
+     OUT.mkdir(parents=True, exist_ok=True)
+--- a/tests/p05-client.test.js
++++ b/tests/p05-client.test.js
+@@ -3,13 +3,14 @@
+ const source=()=>fs.readFileSync(require.resolve('../js/net/local-accounts.js'),'utf8');
+ function setup(host='127.0.0.1',memory=new Map()){
+  const calls=[];let failures=0,revision=0;
+- const user={uid:'user-a',email:'a@example.test',emailVerified:true,getIdToken:async()=>{},reload:async()=>{}};
++ const user={uid:'user-a',email:'a@example.test',emailVerified:true,providerData:[{providerId:'password'}],getIdToken:async()=>{},reload:async()=>{}};
++ let pendingProvider=null;
+  const auth={currentUser:user,emulatorConfig:{host:'127.0.0.1',port:9099}};
+  const SDK={initializeApp:()=>({}),getAuth:()=>auth,initializeAuth:()=>auth,connectAuthEmulator(){},setPersistence:async()=>{},browserLocalPersistence:{},
+   GoogleAuthProvider:class{static credential(token){return{providerId:'google.com',token}}},
+   signInWithCredential:async(a,credential)=>{calls.push({credential:JSON.parse(credential.token)});return{user:a.currentUser}},
+-  linkWithCredential:async(u,credential)=>{calls.push({credential:JSON.parse(credential.token)});return{user:u}},
+-  updatePassword:async(u,pass)=>{calls.push({passwordUpdatedFor:u.uid,length:pass.length});},reload:async()=>{},
++  linkWithCredential:async(u,credential)=>{calls.push({credential:JSON.parse(credential.token)});pendingProvider='google.com';return{user:u}},
++  updatePassword:async(u,pass)=>{calls.push({passwordUpdatedFor:u.uid,length:pass.length});},reload:async u=>{calls.push({reloadedUid:u.uid});if(pendingProvider&&!u.providerData.some(p=>p.providerId===pendingProvider)){u.providerData.push({providerId:pendingProvider});pendingProvider=null;}},
+   onAuthStateChanged:(a,fn)=>{fn(a.currentUser);return()=>{}},getFunctions:()=>({}),connectFunctionsEmulator(){},
+   httpsCallable:()=>async data=>{calls.push(JSON.parse(JSON.stringify(data)));if(data.type==='getState')return{data:{revision,profile:{alias:'Prueba'},activeRun:null}};
+    if(failures-->0)throw Object.assign(new Error('offline'),{code:'functions/unavailable'});
+@@ -52,6 +53,13 @@
+  assert.equal(credential.email,'google@example.test');assert.equal(credential.email_verified,true);
+ });
+ 
++test('Google linking confirms refreshed provider data before reporting success',async()=>{
++ const a=setup();await a.G.LocalAccounts.init();await a.G.LocalAccounts.google('',true);
++ assert.equal(a.auth.currentUser.providerData.some(p=>p.providerId==='google.com'),true);
++ assert.equal(a.calls.some(c=>c.reloadedUid==='user-a'),true);
++ assert.equal(a.G.LocalAccounts.user.uid,'user-a');
++});
++
+ test('adding a password in the emulator preserves the authenticated Google UID',async()=>{
+  const a=setup();await a.G.LocalAccounts.init();await a.G.LocalAccounts.linkPassword('LocalPass2026');
+  assert.equal(a.G.LocalAccounts.user.uid,'user-a');
+--- /dev/null
++++ b/tests/p05-cors.test.js
+@@ -0,0 +1,19 @@
++'use strict';
++const test=require('node:test'),assert=require('node:assert/strict'),http=require('node:http');
++let handler;
++try{handler=require('../functions/index.js').accountCommand;}catch(e){if(e.code!=='MODULE_NOT_FOUND')throw e;}
++test('callable real handler CORS allows owned origins and both loopback formats',{skip:!handler&&'Instalar dependencias de functions para comprobar su manejador'},async()=>{
++ const server=http.createServer((req,res)=>handler(req,res));
++ await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
++ const url=`http://127.0.0.1:${server.address().port}/accountCommand`;
++ try{
++  for(const origin of ['http://127.0.0.1:8000','http://localhost:8000','http://[::1]:8000','https://scp-survivor.web.app','https://scp-survivor.firebaseapp.com']){
++   const response=await fetch(url,{method:'OPTIONS',headers:{Origin:origin,'Access-Control-Request-Method':'POST'}});
++   assert.equal(response.headers.get('access-control-allow-origin'),origin,origin);
++  }
++  for(const origin of ['https://evil.example','http://localhost.evil.example','http://scp-survivor.web.app']){
++   const response=await fetch(url,{method:'OPTIONS',headers:{Origin:origin,'Access-Control-Request-Method':'POST'}});
++   assert.equal(response.headers.get('access-control-allow-origin'),null,origin);
++  }
++ }finally{await new Promise(resolve=>server.close(resolve));}
++});
+--- /dev/null
++++ b/tests/p05-own-client.test.js
+@@ -0,0 +1,103 @@
++'use strict';
++const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
++const source=()=>fs.readFileSync(require.resolve('../js/net/local-accounts.js'),'utf8');
++
++function setup({host='localhost',protocol='http:',query='?cuentas=propias',enabled=false,projectId='scp-survivor',region='us-central1',currentUser=null,failCommand=false}={}){
++ const calls=[],memory=new Map();let id=0,revision=0;
++ const publicConfig={apiKey:'public-web-key',authDomain:'scp-survivor.firebaseapp.com',projectId:'scp-survivor'};
++ const runtime={ownAccountsEnabled:enabled,projectId,region};
++ const user={uid:'own-user',email:'survivor@example.test',emailVerified:true,providerData:[{providerId:'google.com'}],reload:async()=>calls.push({type:'user.reload'}),getIdToken:async force=>calls.push({type:'user.getIdToken',force})};
++ const auth={currentUser};
++ const SDK={accountsRuntime:runtime,publicConfig,browserLocalPersistence:{kind:'local'},browserPopupRedirectResolver:{kind:'official-popup-resolver'},
++  initializeApp:(config,name)=>{calls.push({type:'initializeApp',config,name});return{name};},
++  initializeAuth:(app,dependencies)=>{calls.push({type:'initializeAuth',app,dependencies});return auth;},
++  setPersistence:async(a,p)=>calls.push({type:'setPersistence',a,p}),
++  onAuthStateChanged:(a,fn)=>{calls.push({type:'onAuthStateChanged'});fn(a.currentUser);return()=>{};},
++  GoogleAuthProvider:class{constructor(){this.providerId='google.com';}},
++  EmailAuthProvider:{credential:(email,password)=>{calls.push({type:'passwordCredential',email,password});return{providerId:'password',email,password};}},
++  signInWithPopup:async(a,p)=>{calls.push({type:'signInWithPopup',auth:a,provider:p});a.currentUser=user;return{user};},
++  linkWithPopup:async(u,p)=>{calls.push({type:'linkWithPopup',user:u,provider:p});return{user:u};},
++  linkWithCredential:async(u,c)=>{calls.push({type:'linkWithCredential',user:u,credential:c});return{user:u};},
++  reload:async u=>calls.push({type:'reload',user:u}),
++  signOut:async a=>{a.currentUser=null;},
++  getFunctions:(app,regionValue)=>{calls.push({type:'getFunctions',app,region:regionValue});return{};},
++  httpsCallable:()=>async request=>{calls.push({type:'accountCommand',request});if(request.type==='getState')return{data:{revision,profile:{alias:'Cuenta propia'},activeRun:null}};if(failCommand)throw Object.assign(new Error('offline'),{code:'functions/unavailable'});return{data:{revision:++revision,profile:{alias:'Cuenta propia'},activeRun:null}};},
++  connectAuthEmulator:(...args)=>calls.push({type:'connectAuthEmulator',args}),
++  connectFunctionsEmulator:(...args)=>calls.push({type:'connectFunctionsEmulator',args}),
++  updatePassword:(...args)=>calls.push({type:'updatePassword',args})
++ };
++ const storage={getItem:k=>memory.get(k)||null,setItem:(k,v)=>memory.set(k,v),removeItem:k=>memory.delete(k),get length(){return memory.size;},key:i=>[...memory.keys()][i]};
++ const G={},window={G,SCPFirebase:SDK,location:{hostname:host,protocol,search:query},crypto:{randomUUID:()=>`id-${++id}`},localStorage:storage,
++  sessionStorage:{getItem:k=>memory.get(`session:${k}`)||null,setItem:(k,v)=>memory.set(`session:${k}`,v)}};
++ vm.runInNewContext(source(),{G,window,URLSearchParams,console,CustomEvent:class{},setTimeout,clearTimeout});
++ return{G,calls,memory,auth,user,runtime,SDK};
++}
++
++test('own mode shows its panel while disabled and rejects before any Firebase side effect',async()=>{
++ const a=setup();const A=a.G.LocalAccounts;
++ assert.equal(A.mode,'own');assert.equal(A.enabled,true);assert.equal(A.isLocal,false);
++ assert.equal(A.cacheNamespace,'scp:p05:scp-survivor');assert.equal(A.status.ready,false);
++ await assert.rejects(A.init(),/desactivado/i);
++ assert.equal(A.status.ready,false);assert.match(A.status.error,/scp-survivor/i);assert.deepEqual(a.calls,[]);
++});
++
++test('own mode is limited to loopback or the project HTTPS hosting domains',async()=>{
++ for(const [host,protocol] of [['scp-survivor.web.app','http:'],['scp-survivor.firebaseapp.com','http:'],['evil.example','https:']]){
++  const a=setup({host,protocol,enabled:true});assert.equal(a.G.LocalAccounts.enabled,false);assert.equal(a.G.LocalAccounts.mode,'disabled');
++  await a.G.LocalAccounts.init();assert.deepEqual(a.calls,[]);
++ }
++ for(const [host,protocol] of [['localhost','http:'],['127.0.0.1','http:'],['scp-survivor.web.app','https:'],['scp-survivor.firebaseapp.com','https:']]){
++  const a=setup({host,protocol,enabled:false});assert.equal(a.G.LocalAccounts.enabled,true);assert.equal(a.G.LocalAccounts.mode,'own');
++ }
++});
++
++test('own initialization uses the bundled project config and never connects emulators',async()=>{
++ const a=setup({enabled:true});await a.G.LocalAccounts.init();
++ assert.equal(a.G.LocalAccounts.status.ready,true);
++ const app=a.calls.find(c=>c.type==='initializeApp');assert.equal(app.config.projectId,'scp-survivor');assert.equal(app.name,'scp-own-p05');
++ const auth=a.calls.find(c=>c.type==='initializeAuth');assert.equal(auth.dependencies.popupRedirectResolver,a.SDK.browserPopupRedirectResolver);
++ assert.ok(a.calls.some(c=>c.type==='getFunctions'&&c.region==='us-central1'));
++ assert.equal(a.calls.some(c=>c.type==='connectAuthEmulator'||c.type==='connectFunctionsEmulator'),false);
++});
++
++test('own Google sign-in uses the official popup and ignores the typed email as identity',async()=>{
++ const a=setup({enabled:true});await a.G.LocalAccounts.init();const result=await a.G.LocalAccounts.google('Alias',false,'typed@example.test');
++ assert.equal(a.calls.filter(c=>c.type==='signInWithPopup').length,1);
++ assert.equal(a.calls.some(c=>c.type==='linkWithPopup'),false);
++ assert.equal(result.uid,'own-user');assert.equal(a.G.LocalAccounts.user.uid,'own-user');
++ assert.equal(a.calls.some(c=>c.type==='connectAuthEmulator'),false);
++});
++
++test('own Google linking keeps the current UID and refreshes the user token',async()=>{
++ const a=setup({enabled:true,currentUser:null});await a.G.LocalAccounts.init();
++ const signedIn=await a.G.LocalAccounts.google('Alias',false,'');const result=await a.G.LocalAccounts.google('',true);
++ assert.equal(result.uid,signedIn.uid);assert.equal(a.G.LocalAccounts.user.uid,signedIn.uid);
++ assert.equal(a.calls.some(c=>c.type==='linkWithPopup'&&c.user.uid===signedIn.uid),true);
++ assert.equal(a.calls.some(c=>c.type==='user.getIdToken'&&c.force===true),true);
++});
++
++test('own password linking uses EmailAuthProvider credentials on the authenticated UID',async()=>{
++ const a=setup({enabled:true});await a.G.LocalAccounts.init();await a.G.LocalAccounts.google('Alias',false,'');
++ const result=await a.G.LocalAccounts.linkPassword('StrongPassword2026');
++ assert.equal(result.uid,'own-user');
++ const credential=a.calls.find(c=>c.type==='passwordCredential');assert.equal(credential.email,'survivor@example.test');assert.equal(credential.password,'StrongPassword2026');
++ assert.equal(a.calls.some(c=>c.type==='linkWithCredential'&&c.user.uid==='own-user'&&c.credential.providerId==='password'),true);
++ assert.equal(a.calls.some(c=>c.type==='updatePassword'),false);
++ assert.equal(a.calls.some(c=>c.type==='user.getIdToken'&&c.force===true),true);
++});
++
++test('own session and cached data use a project namespace distinct from local demo keys',async()=>{
++ const a=setup({enabled:true});await a.G.LocalAccounts.init();await a.G.LocalAccounts.google('Alias',false,'');
++ await a.G.LocalAccounts.refresh();
++ assert.equal(a.memory.has('session:scp:p05:scp-survivor:session'),true);
++ assert.equal(a.memory.has('scp:p05:scp-survivor:confirmed:own-user'),true,[...a.memory.keys()].join(','));
++ assert.equal(a.memory.has('session:scp:p05:session'),false);
++ assert.equal(a.memory.has('scp:p05:confirmed:own-user'),false);
++});
++
++test('own pending confirmations stay within the project namespace',async()=>{
++ const a=setup({enabled:true,failCommand:true});await a.G.LocalAccounts.init();await a.G.LocalAccounts.google('Alias',false,'');
++ await assert.rejects(a.G.LocalAccounts.command('initializeProfile',{alias:'Own'}));
++ assert.equal(a.memory.has(`scp:p05:scp-survivor:pending:own-user:${a.G.LocalAccounts.sessionId}`),true);
++ assert.equal(a.memory.has(`scp:p05:pending:own-user:${a.G.LocalAccounts.sessionId}`),false);
++});
+--- /dev/null
++++ b/tests/p05-own-disabled-browser.py
+@@ -0,0 +1,47 @@
++"""Guardia propia desactivada: navegador aislado, sin cuentas/servicios reales."""
++from pathlib import Path
++from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
++from functools import partial
++from threading import Thread
++from playwright.sync_api import sync_playwright
++import os,json
++ROOT=Path(__file__).resolve().parents[1]
++OUT=Path(os.environ.get('SCP_TEST_ARTIFACTS',ROOT/'tests/artifacts/p05-own-disabled'))
++class Quiet(SimpleHTTPRequestHandler):
++ def log_message(self,*args):pass
++def main():
++ OUT.mkdir(parents=True,exist_ok=True);ThreadingHTTPServer.request_queue_size=128
++ server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT)))
++ Thread(target=server.serve_forever,daemon=True).start();origin=f'http://127.0.0.1:{server.server_port}';records=[]
++ try:
++  with sync_playwright() as pw:
++   browser=pw.chromium.launch(headless=True)
++   for entry in ['dev.html','index.html']:
++    for mobile in [False,True]:
++     for mixed in [False,True]:
++      context=browser.new_context(viewport={'width':390 if mobile else 1280,'height':844 if mobile else 900},has_touch=mobile,is_mobile=mobile)
++      page=context.new_page();errors=[];remote=[]
++      page.on('pageerror',lambda e:errors.append(str(e)))
++      def route(r):
++       if r.request.url.startswith(origin+'/'):r.continue_()
++       else:remote.append(r.request.url);r.abort()
++      page.route('**/*',route)
++      page.goto(origin+'/'+entry+'?cuentas=propias'+('&prueba=grieta&inventario=local' if mixed else ''))
++      page.wait_for_selector('#account-panel')
++      assert page.locator('.developer-credit').inner_text()=='Desarrollado por Ivan Vivanco'
++      state=page.evaluate('({mode:G.LocalAccounts.mode,ready:G.LocalAccounts.status.ready,session:G.LocalAccounts.sessionId,rift:G.DimensionalRifts.enabled,inventory:G.InventoryTrial.enabled})')
++      assert state=={'mode':'own','ready':False,'session':None,'rift':False,'inventory':False},state
++      assert page.locator('#btn-technical-start').is_disabled()
++      assert page.locator('#account-google').is_disabled()
++      assert 'desactivado' in page.locator('#account-notice').inner_text()
++      assert not remote and not errors,(remote,errors)
++      if not mixed:
++       page.locator('#account-notice').scroll_into_view_if_needed()
++       page.screenshot(path=str(OUT/f'{entry[:-5]}-{"mobile" if mobile else "desktop"}.png'))
++      records.append({'entry':entry,'mobileEmulated':mobile,'mixedTrialFlags':mixed,'state':state,'remoteAttempts':remote,'pageErrors':errors,'status':'PASS'})
++      context.close()
++   browser.close()
++ finally:server.shutdown();server.server_close()
++ (OUT/'results.json').write_text(json.dumps({'records':records,'scope':'Modo propio desactivado. No OAuth/correo real, despliegue, dispositivos físicos ni aceptación P05.'},ensure_ascii=False,indent=2),encoding='utf-8')
++ print('PASS: '+str(len(records))+' escenarios de activación propia deshabilitada.')
++if __name__=='__main__':main()
+--- /dev/null
++++ b/tests/p05-own-server.test.js
+@@ -0,0 +1,92 @@
++'use strict';
++const assert=require('node:assert/strict');
++const test=require('node:test');
++const service=require('../functions/account-service.js');
++
++const localEnv={FUNCTIONS_EMULATOR:'true',GCLOUD_PROJECT:'demo-scp-survivor',
++ FIRESTORE_EMULATOR_HOST:'127.0.0.1:8080',FIREBASE_AUTH_EMULATOR_HOST:'127.0.0.1:9099'};
++const ownEnv={GCLOUD_PROJECT:'scp-survivor',SCP_ACCOUNT_PROJECT:'scp-survivor'};
++
++function memoryDb(initial={}){
++ const docs=new Map(Object.entries(initial).map(([path,data])=>[path,structuredClone(data)]));
++ const writes=[];
++ const ref=path=>({path,collection:name=>({doc:id=>ref(path+'/'+name+'/'+id)}),
++  async get(){const value=docs.get(path);return{exists:value!==undefined,data:()=>structuredClone(value)};}});
++ return{writes,docs,collection:name=>({doc:id=>ref(name+'/'+id)}),
++  async runTransaction(callback){
++   const staged=new Map();
++   const result=await callback({
++    async get(document){const value=staged.has(document.path)?staged.get(document.path):docs.get(document.path);
++     return{exists:value!==undefined,data:()=>structuredClone(value)};},
++    set(document,value){staged.set(document.path,structuredClone(value));}
++   });
++   for(const [path,value] of staged){docs.set(path,value);writes.push({path,data:structuredClone(value)});}
++   return result;
++  }};
++}
++
++function command(type,overrides={}){
++ return{type,requestId:'request-1234',expectedRevision:0,sessionId:'session-1234',payload:{alias:'Propio P05'},...overrides};
++}
++
++test('P05 acepta emulador local válido y un runtime propio solo con habilitación exacta',()=>{
++ assert.equal(typeof service.assertAccountRuntime,'function');
++ assert.deepEqual(service.assertAccountRuntime(localEnv),{mode:'local',projectId:'demo-scp-survivor'});
++ assert.deepEqual(service.assertAccountRuntime(ownEnv),{mode:'own',projectId:'scp-survivor'});
++ assert.equal(service.assertLocalEmulators(localEnv),undefined);
++});
++
++test('P05 runtime propio falla cerrado ante proyecto ausente, distinto o habilitación incompleta',()=>{
++ for(const env of [
++  {},
++  {GCLOUD_PROJECT:'scp-survivor'},
++  {...ownEnv,GCP_PROJECT:''},
++  {...ownEnv,GCLOUD_PROJECT:'otro-proyecto'},
++  {...ownEnv,GCP_PROJECT:'otro-proyecto'},
++  {...ownEnv,SCP_ACCOUNT_PROJECT:'demo-scp-survivor'},
++  {...ownEnv,FUNCTIONS_EMULATOR:'true'},
++  {...ownEnv,FIREBASE_AUTH_EMULATOR_HOST:'127.0.0.1:9099'},
++  {...ownEnv,FIRESTORE_EMULATOR_HOST:'127.0.0.1:8080'},
++  {...ownEnv,FIREBASE_STORAGE_EMULATOR_HOST:'127.0.0.1:9199'},
++  {...ownEnv,FIREBASE_DATABASE_EMULATOR_HOST:'127.0.0.1:9000'},
++  {...ownEnv,PUBSUB_EMULATOR_HOST:'127.0.0.1:8085'},
++  {...ownEnv,DATASTORE_EMULATOR_HOST:'127.0.0.1:8081'},
++  {...ownEnv,FIREBASE_EMULATOR_HUB:'127.0.0.1:4400'}
++ ])assert.throws(()=>service.assertAccountRuntime(env),/runtime|proyecto|emulador|habilit/i);
++});
++
++test('P05 servicio propio exige Auth y nunca acepta UID indicado por el cliente',async()=>{
++ const db=memoryDb();
++ await assert.rejects(service.executeCommand(db,null,command('initializeProfile'),ownEnv),error=>error.code==='unauthenticated');
++ await assert.rejects(service.executeCommand(db,{uid:'user-owner'},command('initializeProfile',{uid:'user-victim'}),ownEnv),error=>error.code==='invalid-argument');
++ assert.equal(db.writes.length,0);
++});
++
++test('P05 servicio propio escribe bajo UID autenticado y conserva reintento idempotente',async()=>{
++ const db=memoryDb(),auth={uid:'user-owner'};
++ const request=command('initializeProfile');
++ const first=await service.executeCommand(db,auth,request,ownEnv);
++ const retried=await service.executeCommand(db,auth,request,ownEnv);
++ assert.deepEqual(retried,first);
++ assert.equal(db.writes.length,2);
++ assert.ok(db.docs.has('users/user-owner'));
++ assert.ok(db.docs.has('users/user-owner/receipts/request-1234'));
++ assert.equal((await service.executeCommand(db,{uid:'other-user'},{type:'getState'},ownEnv)).profile,null);
++});
++
++test('P05 servicio propio rechaza reusar requestId con otro contenido',async()=>{
++ const db=memoryDb(),auth={uid:'user-owner'},request=command('initializeProfile');
++ await service.executeCommand(db,auth,request,ownEnv);
++ await assert.rejects(service.executeCommand(db,auth,{...request,payload:{alias:'Otro alias'}},ownEnv),error=>error.code==='already-exists');
++ assert.equal(db.docs.get('users/user-owner').revision,1);
++});
++
++test('P05 servicio propio rechaza sesión ajena antes de mutar estado o recibos',async()=>{
++ const db=memoryDb({'users/user-owner':{schemaVersion:1,buildVersion:'0.5-local-01',revision:7,
++  profile:{alias:'Propio'},activeRun:{id:'run-12345678',sessionId:'session-owner'},lastResult:null}});
++ await assert.rejects(service.executeCommand(db,{uid:'user-owner'},
++  command('saveCheckpoint',{requestId:'save-12345678',expectedRevision:7,sessionId:'session-attacker',runId:'run-12345678',payload:{}}),ownEnv),
++  error=>error.code==='permission-denied');
++ assert.equal(db.docs.get('users/user-owner').revision,7);
++ assert.equal(db.writes.length,0);
++});
+--- a/tests/p06-inventory.test.js
++++ b/tests/p06-inventory.test.js
+@@ -53,7 +53,8 @@
+ test('P06 prototipo solo loopback optativo, deshabilitado con cuentas',()=>{
+  for(const [hostname,search,expected] of [
+   ['127.0.0.1','',false],['127.0.0.1','?prueba=inventario',true],['localhost','?inventario=local',true],
+-  ['example.com','?prueba=inventario',false],['127.0.0.1','?inventario=local&cuentas=local',false]]){
++  ['example.com','?prueba=inventario',false],['127.0.0.1','?inventario=local&cuentas=local',false],
++  ['127.0.0.1','?prueba=inventario&cuentas=propias',false]]){
+    const G={};vm.runInNewContext(fs.readFileSync(require.resolve('../js/ui/inventory-trial.js'),'utf8'),{G,URLSearchParams,window:{location:{hostname,search}}});assert.equal(G.InventoryTrial.enabled,expected);
+  }
+ });
+--- a/tests/rifts.test.js
++++ b/tests/rifts.test.js
+@@ -12,7 +12,7 @@
+ }
+ 
+ test('solo opción local y sin cuentas; modo normal y servidores públicos intactos',()=>{
+-  for(const [search,host] of [['','127.0.0.1'],['?prueba=grieta','example.com'],['?prueba=grieta&cuentas=local','127.0.0.1'],['?grietas=local&cuentas=local','localhost']]){
++  for(const [search,host] of [['','127.0.0.1'],['?prueba=grieta','example.com'],['?prueba=grieta&cuentas=local','127.0.0.1'],['?grietas=local&cuentas=local','localhost'],['?prueba=grieta&cuentas=propias','127.0.0.1']]){
+     const a=setup(search,host);assert.equal(a.r.enabled,false);assert.equal(a.offer(),false);
+   }
+   assert.equal(setup('?grietas=local').r.enabled,true);assert.equal(setup().r.directTest,true);
+--- /dev/null
++++ b/tools/check-firebase-own.js
+@@ -0,0 +1,20 @@
++'use strict';
++// Inspección: nunca activa APIs, billing, base de datos ni despliega.
++const fs=require('node:fs'),path=require('node:path'),{spawnSync}=require('node:child_process');
++const root=path.resolve(__dirname,'..');
++const config=JSON.parse(fs.readFileSync(path.join(root,'config/firebase-public.json'),'utf8'));
++if(config.projectId!=='scp-survivor')throw Error('Proyecto propio inesperado.');
++const cli=require.resolve('firebase-tools/lib/bin/firebase.js');
++const result=spawnSync(process.execPath,[cli,'projects:list','--json','--non-interactive'],{
++ cwd:root,encoding:'utf8',timeout:60000,env:{...process.env,FIREBASE_CLI_DISABLE_UPDATE_CHECK:'true'}});
++if(result.error||result.status!==0){
++ console.error('No se pudo comprobar acceso a scp-survivor. Inicia sesión con npx.cmd firebase login y repite. No compartas tokens por el chat.');
++ process.exitCode=2;
++}else{
++ let parsed;try{parsed=JSON.parse(result.stdout);}catch(_){console.error('Respuesta CLI no reconocida; no se modifica el proyecto.');process.exit(2);}
++ const projects=Array.isArray(parsed.result)?parsed.result:parsed.result?.projects||[];
++ const project=projects.find(p=>p.projectId==='scp-survivor');
++ if(!project){console.error('La cuenta autenticada no muestra acceso a scp-survivor.');process.exitCode=2;}
++ else console.log(JSON.stringify({projectId:project.projectId,accessVerified:true,billingVerified:false,firestoreVerified:false,deployed:false,
++  next:'Revisar Blaze, ubicación/base Firestore, presupuesto y aceptación antes del despliegue.'}));
++}
+--- a/tools/firebase-client-entry.js
++++ b/tools/firebase-client-entry.js
+@@ -1,8 +1,12 @@
++import publicConfig from '../config/firebase-public.json';
++import accountsRuntime from '../config/accounts-runtime.json';
++export { publicConfig, accountsRuntime };
+ export { initializeApp } from 'firebase/app';
+ export { initializeAuth, connectAuthEmulator, createUserWithEmailAndPassword,
+   signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile,
+   sendPasswordResetEmail, sendEmailVerification, reload, GoogleAuthProvider, updateEmail, updatePassword,
+   signInWithCredential, browserLocalPersistence, setPersistence,
++  browserPopupRedirectResolver, signInWithPopup, linkWithPopup,
+   verifyPasswordResetCode, confirmPasswordReset, applyActionCode,
+   EmailAuthProvider, linkWithCredential, getAdditionalUserInfo, deleteUser } from 'firebase/auth';
+ export { getFunctions, connectFunctionsEmulator, httpsCallable } from 'firebase/functions';
+--- /dev/null
++++ b/tools/prepare-own-hosting.js
+@@ -0,0 +1,21 @@
++'use strict';
++// Copia únicamente frontend público. No expone Functions, documentos o datos locales.
++const fs=require('node:fs'),path=require('node:path');
++const root=path.resolve(__dirname,'..'),out=path.join(root,'dist-own');
++const runtime=JSON.parse(fs.readFileSync(path.join(root,'config/accounts-runtime.json'),'utf8'));
++if(runtime.ownAccountsEnabled!==true||runtime.projectId!=='scp-survivor')throw Error('Las cuentas propias siguen desactivadas. Completa el preflight y despliega el backend antes de habilitar el frontend.');
++// No limpiar una carpeta calculada: rechazar destino previo y conservarlo para revisión.
++if(fs.existsSync(out))throw Error('dist-own ya existe. Conserva o mueve esa copia antes de preparar otra.');
++function inspect(source){
++ const stat=fs.lstatSync(source);
++ if(stat.isSymbolicLink())throw Error('No se admiten enlaces en el frontend público.');
++ if(stat.isDirectory())for(const name of fs.readdirSync(source))inspect(path.join(source,name));
++}
++for(const name of ['index.html','404.html','robots.txt','manifest.webmanifest','js','css','assets']){
++ const source=path.join(root,name);
++ if(!fs.existsSync(source))throw Error('Falta el archivo público '+name);
++ inspect(source);
++}
++fs.mkdirSync(out);
++for(const name of ['index.html','404.html','robots.txt','manifest.webmanifest','js','css','assets'])fs.cpSync(path.join(root,name),path.join(out,name),{recursive:true,dereference:false});
++console.log('Frontend público preparado en dist-own; no se ha desplegado.');

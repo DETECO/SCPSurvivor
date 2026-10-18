@@ -53,7 +53,8 @@ test('P06 valida duplicados, referencias, tipos y bloqueo en combate/pausa/subid
 test('P06 prototipo solo loopback optativo, deshabilitado con cuentas',()=>{
  for(const [hostname,search,expected] of [
   ['127.0.0.1','',false],['127.0.0.1','?prueba=inventario',true],['localhost','?inventario=local',true],
-  ['example.com','?prueba=inventario',false],['127.0.0.1','?inventario=local&cuentas=local',false]]){
+  ['example.com','?prueba=inventario',false],['127.0.0.1','?inventario=local&cuentas=local',false],
+  ['127.0.0.1','?prueba=inventario&cuentas=propias',false]]){
    const G={};vm.runInNewContext(fs.readFileSync(require.resolve('../js/ui/inventory-trial.js'),'utf8'),{G,URLSearchParams,window:{location:{hostname,search}}});assert.equal(G.InventoryTrial.enabled,expected);
  }
 });

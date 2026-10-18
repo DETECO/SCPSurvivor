@@ -2,6 +2,10 @@
 
 Responder en español, directo y práctico. Continuar el juego existente; no reconstruirlo ni sustituir sus diseños.
 
+## Prioridad vigente — 17/10/2026
+
+A-026/D-314: Iván pidió terminarP05 antes de continuarP06. Conservar todo el primer prototipoP06 sin avanzar nuevas funciones. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. Las tres tareasP05 siguen EV0/6 hasta probar servicios propios; no marcar100% con emuladores. La integración propia se prepara con ownAccountsEnabled=false. No mezclar datos/cachés demo/proyecto propio. CLI del propietario autorizado y acceso/configuración Auth verificados por GET (EV-033). A-028/D-315: mantener Spark sin facturación; no vincular billing ni desplegar Functions. Firestore/Functions no pudieron listarse por403SERVICE_DISABLED; no inferir ausencia de datos. Leer docs/P05-ESTADO-SPARK.md y docs/P05-AUDITORIA-FIREBASE.json. Configuración propia y emuladores usan archivos separados. Roadmapv0.18 conserva criterios/pesos/dependencias y52/100. A-027/D-316: subir código/roadmap autorizados y continuar P06 con multiagentes inmediatamente después del cierre real P05. El backend actual no desplegable en Spark y las pruebas reales pendientes impiden declarar100%.
+
 ## Leer al comenzar
 
 1. CONTEXTO_PROYECTO.md, docs/P05-REPORT.md e INSTALACION_WINDOWS.md.

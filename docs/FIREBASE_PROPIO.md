@@ -1,4 +1,14 @@
-# Firebase propio — estado observado el 15/10/2026
+# Firebase propio — estado vigente e historial
+
+## Auditoría posterior17/10/2026 — estado vigente
+
+EV-033: CLI del propietario autorizado y acceso a scp-survivor; facturación deshabilitada, sin cuenta vinculada. GET200 confirma correo/Google, los cuatro dominios y política ENFORCE8..4096 sin clases; allowDuplicateEmails omitido, no inferido. Firestore/Functions no pudieron listarse por403SERVICE_DISABLED. Hosting tiene sitio predeterminado, release sin comprobar. A-028/D-315: mantener Spark sin facturación. El backend Functions actual no se despliega; modo propio desactivado y P05EV0/6. [Informe saneado](P05-AUDITORIA-FIREBASE.json) y [estado Spark](P05-ESTADO-SPARK.md). A-027/D-316: P06 inmediato con multiagentes después del cierre real P05.
+
+Las secciones siguientes conservan observaciones anteriores; sus limitaciones de acceso reflejan el momento original, no la sesión actual.
+
+## Preparación inicial17/10 — registro histórico anterior al login
+
+La integración propia ya se prepara en el código: configuración empaquetada, OAuth/vinculación oficiales, cachés separadas y runtime propio con opt-in. `config/accounts-runtime.json` conserva `ownAccountsEnabled=false`; aún no conecta a servicios reales. Firebase CLI no tiene cuenta autorizada, por lo que no se han consultado de nuevo el plan, Firestore, proveedores o despliegues de scp-survivor. La sección histórica de abajo conserva lo observado en capturas. Leer [activación preparada](ACTIVACION_FIREBASE_PROPIO.md) y [pauta de aceptación pendiente](CIERRE_P05.md). P06 se conserva sin continuar hasta cerrar P05.
 
 Iván creó manualmente **scp-survivor**, plan Spark, y registró su app web. Su configuración pública está conservada en config/firebase-public.json, sin claves privadas de cuentas de servicio y todavía inactiva en el juego.
 

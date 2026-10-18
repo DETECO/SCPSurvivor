@@ -1,5 +1,7 @@
 # P05-local-01 — cuentas y continuidad, alfa 0.5 local
 
+**Actualización17/10/2026:** P05 vuelve a ser prioridad antes de continuarP06. El informe de esta nueva preparación/verificación se conserva en [P05-CIERRE-REPORT.md](P05-CIERRE-REPORT.md); este documento mantiene la evidencia histórica de P05-local-01. No confundir la integración propia preparada y desactivada con pruebas reales ejecutadas o cierre de fase.
+
 Entrega15/10/2026 sobre alfa0.4/main39344e77. Iván autorizó avanzar GAP-001→P05, eligió preparar/probar localmente y reiteró completar ese alcance sin más consultas. Original Cloud, ZIP de migración y backup anterior se conservan. Después de recibir el paquete local pidió «subela. incluye roadmap»: esta actualización del repositorio incorpora P05-local-01 y roadmapv0.12. Firebase real sigue sin desplegar. docs/PUBLICACION_GITHUB.md distingue la subida del código de su ejecución local; los JSON de prueba conservan el estado observado antes de esa petición posterior.
 
 ## Resultado

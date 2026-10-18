@@ -1,5 +1,7 @@
 # Instalación Windows — SCP Survivor P05 local
 
+**Prioridad17/10/2026:** cerrar P05 antes de continuarP06. Las instrucciones de abajo mantienen el entorno local, sin coste. La integración propia sigue desactivada. El acceso CLI del titular ya está autorizado; EV-033 confirma proveedores/dominios/política Auth. Iván eligió Spark sin facturación (A-028/D-315): no ejecutar despliegues propios ni habilitar ownAccountsEnabled. El backend Functions actual no se puede desplegar en ese plan. Leer [estado Spark](docs/P05-ESTADO-SPARK.md) y, como referencia condicionada, [docs/ACTIVACION_FIREBASE_PROPIO.md](docs/ACTIVACION_FIREBASE_PROPIO.md) y [docs/CIERRE_P05.md](docs/CIERRE_P05.md). No activar facturación como parte de esta instalación local.
+
 Esta entrega continúa alfa0.4. P05 utiliza Firebase emulado en este computador; no necesita proyecto Firebase real, facturación, Google real ni claves privadas. El modo sin cuentas continúa disponible.
 
 ## 1. Herramientas

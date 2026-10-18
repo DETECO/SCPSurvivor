@@ -3,8 +3,9 @@ G.DimensionalRifts = (() => {
   const location = window.location;
   const query = new URLSearchParams(location.search);
   const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
-  const directTest = local && query.get('prueba') === 'grieta' && query.get('cuentas') !== 'local';
-  const enabled = local && query.get('cuentas') !== 'local' && (directTest || query.get('grietas') === 'local');
+  const accounts = ['local','propias'].includes(query.get('cuentas'));
+  const directTest = local && query.get('prueba') === 'grieta' && !accounts;
+  const enabled = local && !accounts && (directTest || query.get('grietas') === 'local');
   const TTL = 45, ENTRY_RADIUS = 22;
   let seen = new Set(), state;
   function clear() { state = {status:'idle',remaining:0,x:0,y:0,sector:0,alert:'',alertTime:0,result:null}; }

@@ -1,5 +1,7 @@
 # Contexto del proyecto — SCP Survivor
 
+**Prioridad vigente17/10/2026 (A-026/D-314): terminar P05 antes de continuarP06.** Se conserva el prototipoP06 y el crédito, sin avanzar funcionesP06. Integración del proyecto propio preparada pero desactivada por defecto; no equivale a conexión o pruebas reales. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. P05 continúa EV0/6, global52/100. Actualización posterior EV-033: CLI del propietario autorizado; acceso y configuración Auth consultados en vivo. Facturación deshabilitada, sin cuenta vinculada; Iván eligió mantener Spark sin facturación (A-028/D-315). Firestore/Functions devuelven403SERVICE_DISABLED y no pudieron listarse; no se afirma ausencia de datos. El backend actual requiere Functions/Blaze y no se despliega. [Estado Spark](docs/P05-ESTADO-SPARK.md). A-027/D-316 registra GitHub y P06 inmediato con multiagentes después del cierre real P05; roadmapv0.18.
+
 Actualización16/10/2026. Esta carpeta continúa el videojuego existente de la sesión principal SCP Survivor. Las otras sesiones se excluyeron por instrucción de Iván. No se reconstruyó el juego ni se sustituyeron sus recursos gráficos.
 
 ## Objetivo

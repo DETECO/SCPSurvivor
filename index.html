@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' http://127.0.0.1:9099 http://127.0.0.1:5001; style-src 'self'; img-src 'self' data:; font-src 'self'; frame-src http://127.0.0.1:9099; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' http://127.0.0.1:9099 http://127.0.0.1:5001 https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://scp-survivor.firebaseapp.com https://us-central1-scp-survivor.cloudfunctions.net; style-src 'self'; img-src 'self' data:; font-src 'self'; frame-src http://127.0.0.1:9099 https://scp-survivor.firebaseapp.com; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="css/technical.css">
@@ -17,7 +17,7 @@
 <canvas id="game" aria-label="Sector de entrenamiento; usa WASD, flechas o arrastra el dedo para moverte"></canvas>
 <div id="boot" role="status" aria-live="polite">Preparando el sector…</div>
 <section id="technical-ready" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Menú principal">
-<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p class="developer-credit">Desarrollado por Ivan Vivanco</p><p>Explora sectores conectados, resiste y neutraliza las amenazas. Mejora tu equipo y decide hasta dónde avanzar.</p><p>Prueba distintos soldados y equipos en una expedición local. No se guarda progreso ni se obtienen recompensas.</p>
+<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p class="developer-credit">Desarrollado por Ivan Vivanco</p><p id="technical-intro">Explora sectores conectados, resiste y neutraliza las amenazas. Mejora tu equipo y decide hasta dónde avanzar.</p><p id="technical-account-hint">Prueba distintos soldados y equipos en una expedición local. No se guarda progreso ni se obtienen recompensas.</p>
 <div class="loadout-editor" aria-labelledby="loadout-title">
 <h2 id="loadout-title">Equipo de prueba</h2>
 <label for="field-role">Soldado</label><select id="field-role"><option value="guard">Guardia · Sprint</option><option value="medic">Médico · Primeros auxilios</option></select>
@@ -43,6 +43,6 @@
 </main>
 <footer class="footer"><div id="scene-footer" hidden><p class="hint-keyboard"><kbd>WASD</kbd> / flechas · <kbd>Q</kbd>/<kbd>E</kbd> arma · <kbd>1</kbd>–<kbd>3</kbd> mejora · <kbd>Espacio</kbd> habilidad · <kbd>Esc</kbd> pausa</p><p class="hint-touch">Arrastra para moverte · toca habilidad o un arma</p><span id="scene-position" hidden>0, 0</span></div><p>Partida local · sin guardado ni recompensas persistentes</p></footer>
 <noscript>Activa JavaScript para entrar al sector de SCP Survivor.</noscript>
-<script defer src="js/app.min.js?v=57d8cefba5"></script>
+<script defer src="js/app.min.js?v=6382978a6a"></script>
 </body>
 </html>

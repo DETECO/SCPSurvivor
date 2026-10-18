@@ -11,17 +11,23 @@ G.AccountUI = (() => {
   }
   function init() {
     if (!G.LocalAccounts.enabled) return;
+    const own=G.LocalAccounts.mode==='own';
+    const ownActive=!!G.LocalAccounts.status.ownAccountsEnabled;
+    const accountTitle=own?'Cuenta Firebase propia':'Cuenta de prueba';
+    const accountIntro=own?(ownActive?'La autenticación y el correo usan el proyecto Firebase scp-survivor.':'Modo de cuenta propia seleccionado; la autenticación real está desactivada en este entorno.'):'Los datos de esta prueba se guardan en este computador.';
+    const googleLabel=own?'Continuar con Google':'Google de prueba';
+    const googleLinkLabel=own?'Vincular Google':'Vincular Google de prueba';
     const section=document.createElement('section');section.id='account-panel';section.className='account-panel';
-    section.innerHTML=`<h2>Cuenta de prueba</h2><p>Los datos de esta prueba se guardan en este computador.</p>
+    section.innerHTML=`<h2>${accountTitle}</h2><p>${accountIntro}</p>
       <div id="account-profile"><label for="account-alias">Alias</label><input id="account-alias" maxlength="24" autocomplete="nickname"><button id="account-save-profile" hidden>Guardar alias</button></div>
       <div id="account-credentials">
       <label for="account-email">Correo</label><input id="account-email" type="email" autocomplete="email">
       <label for="account-password">Contraseña</label><input id="account-password" type="password" minlength="8" autocomplete="current-password">
       <div class="account-actions"><button id="account-login">Entrar</button><button id="account-signup">Crear cuenta</button>
-      <button id="account-google">Google de prueba</button><button id="account-reset">Recuperar contraseña</button></div></div>
+      <button id="account-google">${googleLabel}</button><button id="account-reset">Recuperar contraseña</button></div></div>
       <div id="account-signed-in" hidden><p id="account-identity"></p><div class="account-actions">
       <button id="account-verify">Enviar verificación</button><button id="account-check">Actualizar verificación</button>
-      <button id="account-link">Vincular Google de prueba</button><button id="account-logout">Cerrar sesión</button></div>
+      <button id="account-link">${googleLinkLabel}</button><button id="account-logout">Cerrar sesión</button></div>
       <div id="account-add-password" hidden><label for="account-link-password">Contraseña para entrar también con este correo</label>
       <input id="account-link-password" type="password" minlength="8" autocomplete="new-password"><button id="account-link-email">Vincular correo y contraseña</button></div></div>
       <p id="account-state" role="status" aria-live="polite"></p><p id="account-notice" role="alert"></p>
@@ -31,19 +37,23 @@ G.AccountUI = (() => {
     overlay.setAttribute('role','dialog');overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-label','Confirmación de guardado');
     overlay.innerHTML='<div class="panel"><h2>Expedición detenida</h2><p id="account-sync-message" role="status" aria-live="polite"></p><button id="account-sync-retry">Reintentar</button><button id="account-sync-menu">Volver al menú</button></div>';
     el('viewport').append(overlay);
-    el('technical-ready').querySelector('.panel > p:not(.eyebrow)').nextElementSibling.textContent='Tu expedición se confirma entre oleadas. Puedes cerrar y reanudar desde el último punto guardado.';
-    el('technical-pause').querySelector('.panel > p:not(.eyebrow)').textContent='La partida se guarda entre oleadas. Si cierras durante el combate, volverás al último punto confirmado y quedarás fuera de clasificación.';
-    document.querySelector('.footer > p').textContent='Prueba local de cuentas y guardado · sin recompensas persistentes';
+    const accountHint=el('technical-account-hint');
+    if(accountHint) accountHint.textContent='La expedición se confirma entre oleadas. Puedes cerrar y reanudar desde el último punto guardado.';
+    const pausePanel=el('technical-pause').querySelector('.panel');
+    const pauseHint=Array.from(pausePanel.querySelectorAll(':scope > p')).find(p=>p.textContent.startsWith('Tu posición se conserva'));
+    if(pauseHint){pauseHint.id='account-pause-hint';pauseHint.textContent='La partida se guarda entre oleadas. Si cierras durante el combate, volverás al último punto confirmado y quedarás fuera de clasificación.';}
+    const footerCopy=document.querySelector('.footer > p');
+    if(footerCopy) footerCopy.textContent=own?'Cuenta Firebase propia · autenticación real según configuración':'Prueba local de cuentas y guardado · sin recompensas persistentes';
     const email=()=>el('account-email').value,pass=()=>el('account-password').value,alias=()=>el('account-alias').value;
     const A=G.LocalAccounts;
     el('account-login').onclick=()=>action(()=>A.signIn(email(),pass()));
     el('account-save-profile').onclick=()=>action(()=>A.command('initializeProfile',{alias:alias().trim()}));
-    el('account-signup').onclick=()=>action(()=>A.signUp(email(),pass(),alias()),'Cuenta creada. Abre el enlace de verificación del correo de prueba.');
+    el('account-signup').onclick=()=>action(()=>A.signUp(email(),pass(),alias()),own?'Cuenta creada. Revisa el correo real para verificarla.':'Cuenta creada. Abre el enlace de verificación del correo de prueba.');
     el('account-google').onclick=()=>action(()=>A.google(alias(),false,email()));
     el('account-link').onclick=()=>action(()=>A.google('',true),'Métodos de acceso vinculados.');
     el('account-link-email').onclick=()=>action(()=>A.linkPassword(el('account-link-password').value),'Correo y contraseña vinculados a la misma cuenta.');
-    el('account-reset').onclick=()=>action(()=>A.resetPassword(email()),'Solicitud enviada. Abre el enlace del correo de prueba.');
-    el('account-verify').onclick=()=>action(()=>A.verifyEmail(),'Verificación enviada al correo de prueba.');
+    el('account-reset').onclick=()=>action(()=>A.resetPassword(email()),own?'Solicitud enviada. Abre el enlace del correo real.':'Solicitud enviada. Abre el enlace del correo de prueba.');
+    el('account-verify').onclick=()=>action(()=>A.verifyEmail(),own?'Verificación enviada al correo real.':'Verificación enviada al correo de prueba.');
     el('account-check').onclick=()=>action(()=>A.refreshVerification());
     el('account-logout').onclick=()=>action(async()=>{if(G.RunContinuity.busy)return;G.RunContinuity.signedOut();await A.logout();});
     el('account-resume').onclick=()=>action(()=>G.RunContinuity.resume());

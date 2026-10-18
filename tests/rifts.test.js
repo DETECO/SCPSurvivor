@@ -12,7 +12,7 @@ function setup(search='?prueba=grieta', hostname='127.0.0.1') {
 }
 
 test('solo opción local y sin cuentas; modo normal y servidores públicos intactos',()=>{
-  for(const [search,host] of [['','127.0.0.1'],['?prueba=grieta','example.com'],['?prueba=grieta&cuentas=local','127.0.0.1'],['?grietas=local&cuentas=local','localhost']]){
+  for(const [search,host] of [['','127.0.0.1'],['?prueba=grieta','example.com'],['?prueba=grieta&cuentas=local','127.0.0.1'],['?grietas=local&cuentas=local','localhost'],['?prueba=grieta&cuentas=propias','127.0.0.1']]){
     const a=setup(search,host);assert.equal(a.r.enabled,false);assert.equal(a.offer(),false);
   }
   assert.equal(setup('?grietas=local').r.enabled,true);assert.equal(setup().r.directTest,true);

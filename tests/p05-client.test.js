@@ -3,13 +3,14 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const source=()=>fs.readFileSync(require.resolve('../js/net/local-accounts.js'),'utf8');
 function setup(host='127.0.0.1',memory=new Map()){
  const calls=[];let failures=0,revision=0;
- const user={uid:'user-a',email:'a@example.test',emailVerified:true,getIdToken:async()=>{},reload:async()=>{}};
+ const user={uid:'user-a',email:'a@example.test',emailVerified:true,providerData:[{providerId:'password'}],getIdToken:async()=>{},reload:async()=>{}};
+ let pendingProvider=null;
  const auth={currentUser:user,emulatorConfig:{host:'127.0.0.1',port:9099}};
  const SDK={initializeApp:()=>({}),getAuth:()=>auth,initializeAuth:()=>auth,connectAuthEmulator(){},setPersistence:async()=>{},browserLocalPersistence:{},
   GoogleAuthProvider:class{static credential(token){return{providerId:'google.com',token}}},
   signInWithCredential:async(a,credential)=>{calls.push({credential:JSON.parse(credential.token)});return{user:a.currentUser}},
-  linkWithCredential:async(u,credential)=>{calls.push({credential:JSON.parse(credential.token)});return{user:u}},
-  updatePassword:async(u,pass)=>{calls.push({passwordUpdatedFor:u.uid,length:pass.length});},reload:async()=>{},
+  linkWithCredential:async(u,credential)=>{calls.push({credential:JSON.parse(credential.token)});pendingProvider='google.com';return{user:u}},
+  updatePassword:async(u,pass)=>{calls.push({passwordUpdatedFor:u.uid,length:pass.length});},reload:async u=>{calls.push({reloadedUid:u.uid});if(pendingProvider&&!u.providerData.some(p=>p.providerId===pendingProvider)){u.providerData.push({providerId:pendingProvider});pendingProvider=null;}},
   onAuthStateChanged:(a,fn)=>{fn(a.currentUser);return()=>{}},getFunctions:()=>({}),connectFunctionsEmulator(){},
   httpsCallable:()=>async data=>{calls.push(JSON.parse(JSON.stringify(data)));if(data.type==='getState')return{data:{revision,profile:{alias:'Prueba'},activeRun:null}};
    if(failures-->0)throw Object.assign(new Error('offline'),{code:'functions/unavailable'});
@@ -50,6 +51,13 @@ test('Google test uses an emulator-only mock credential without external popups'
  const a=setup();await a.G.LocalAccounts.init();await a.G.LocalAccounts.google('Prueba',false,'google@example.test');
  const credential=a.calls.find(c=>c.credential)?.credential;assert.ok(credential);
  assert.equal(credential.email,'google@example.test');assert.equal(credential.email_verified,true);
+});
+
+test('Google linking confirms refreshed provider data before reporting success',async()=>{
+ const a=setup();await a.G.LocalAccounts.init();await a.G.LocalAccounts.google('',true);
+ assert.equal(a.auth.currentUser.providerData.some(p=>p.providerId==='google.com'),true);
+ assert.equal(a.calls.some(c=>c.reloadedUid==='user-a'),true);
+ assert.equal(a.G.LocalAccounts.user.uid,'user-a');
 });
 
 test('adding a password in the emulator preserves the authenticated Google UID',async()=>{

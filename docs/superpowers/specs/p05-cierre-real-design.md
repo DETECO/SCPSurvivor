@@ -1,0 +1,13 @@
+# P05: cierre antes de continuar P06
+
+Iván pidió completar P05 al100% antes de seguir P06. Se conserva lo implementado de P06, sin avanzar sus funciones ni marcarlo aceptado. Los criterios y pesos originales no cambian.
+
+Diseño existente: Firebase Auth + callable Functions + Firestore transaccional. Mantenerlo y añadir una selección explícita entre emuladores y proyecto propio `scp-survivor`; sin cambiar mecánicas ni esquema1 de checkpoints. No sustituirlo por escrituras libres desde el cliente o una arquitectura nueva para evitar el requisito externo de despliegue.
+
+- Cliente: modo local conserva endpoints, credencial simulada y claves `scp:p05:*` actuales. `?cuentas=propias` se limita a loopback y HTTPS `scp-survivor.web.app`/`scp-survivor.firebaseapp.com`; muestra el panel, pero `ownAccountsEnabled:false` rechaza inicialización antes de llamar al SDK. Al habilitarse con proyecto y región coincidentes, usa la configuración pública empaquetada, el resolver oficial de popup, Google OAuth real y `EmailAuthProvider.credential` + `linkWithCredential` para la contraseña. Ambas vinculaciones comprueban UID y recargan usuario/token. Las claves propias usan `scp:p05:scp-survivor:*`; nunca comparten sesión, caché o recibos con demo. Las pruebas unitarias solo verifican selección y llamadas SDK simuladas, no OAuth/correos reales ni aceptación de P05.
+- Servidor: guardia explícita para proyecto propio, ausencia de variables de emuladores y habilitación por entorno. Mantener denegación total de Firestore directo, UID del token, revisión, sesión, hash y recibo transaccional. No añadir TTL que pierda deduplicación (D-290).
+- Despliegue: comprobar acceso al proyecto, plan y Firestore; separar configuración de emuladores. Configurar instancia mínima0/máxima1 como mitigación de uso, sin presentarlo como tope de20USD. Facturación no se activa automáticamente: D-068 no autoriza gasto. Firebase CLI no tiene cuenta autorizada al auditar.
+- Verificación: mocks prueban selección/llamadas/aislamiento; emuladores prueban regresión local. Solo pruebas ejecutadas con servicios propios pueden cerrarP05. Google, correo recibido y continuidad entre dispositivos no se sustituyen por resultados simulados.
+- La retención no borra recibos por tiempo en esta entrega. La política de eliminación/copia de seguridad y su prueba deben estar resueltas antes de aceptar servidor propio; no inventar aceptación ni plazos legales.
+
+Se prioriza preparar la integración real manteniéndola inactiva frente a reconstruir o publicar una conexión incompleta. La autenticación del propietario, vinculación de facturación y pruebas personales requieren participación externa; dejarlas explícitas si no están disponibles.

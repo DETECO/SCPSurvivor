@@ -1,5 +1,17 @@
 # Publicaciones GitHub — SCP Survivor
 
+## Entrega del 17/10/2026 — preparación P05 y decisión Spark
+
+Iván reiteró subir el trabajo a GitHub y continuar P06 inmediatamente después de terminar P05 con multiagentes (A-027). Eligió expresamente **mantener Spark sin facturación** (A-028/D-315). Esta entrega conserva esa decisión y registra el estado real: **P05 sigue EV0/6; P06 conserva su prototipo y espera el cierre de P05; global52/100**.
+
+Incluye preparación del cliente/servidor propio desactivada, guardias de proyecto y separación de cachés, correcciones de CORS IPv6 y confirmación del proveedor Google local, pruebas, documentación de Windows, pauta de cierre y RoadmapSCPv0.18. La auditoría administrativa real confirma acceso del propietario, proveedores/dominios/política Auth y ausencia de facturación; las APIs Firestore/Functions devolvieron403SERVICE_DISABLED. Son consultas GET, no aceptación de OAuth, correo recibido o guardado. Véanse [estado Spark](P05-ESTADO-SPARK.md), [evidencia saneada](P05-AUDITORIA-FIREBASE.json) e [informe de preparación](P05-CIERRE-REPORT.md).
+
+Verificación repetida antes de preparar esta subida: **112 pruebas Node:111 aprobadas,0 fallos,1 integración optativa omitida**; build:check correcto,85scripts, SDK227024bytes, bundle6382978a6a. El informe conserva la integración explícita aprobada y los24recorridos de navegador local y8del modo propio desactivado ejecutados sobre esta preparación. No se repiten ni acreditan pruebas reales de cuentas por subir el código.
+
+Destino: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), rama **main**. Base remota comprobada con fetch y ls-remote el17/10/2026: `0eb52bc08bb01da98f8dd06c7d1d7c484207504b`. Commit identificable por **«Preparar cierre P05 y registrar Spark sin facturación»**; el SHA remoto se verifica después del push. Se conserva el historial sin force push, todos los archivos anteriores y los12recursos originales. Se excluyen dependencias instaladas, enlaces locales de verificación, cuentas/partidas, cachés, logs y credenciales.
+
+GitHub recibe código y roadmap. Esta entrega no activa Blaze, despliega Functions/Hosting ni habilita `ownAccountsEnabled`; tampoco declara100% de P05 ni comienza nuevas funciones P06. [Diff revisable de la preparación](P05-CIERRE-CAMBIOS.diff).
+
 ## Entrega del 16/10/2026 — crédito, grietas y primer tramo P06
 
 Petición expresa de Iván (A-025): incluir **«Desarrollado por Ivan Vivanco»** en la pantalla de pruebas/demo y después subir la versión a GitHub. El crédito aparece bajo el título del menú compartido en `dev.html` y su entrada compilada `index.html`; no altera las mecánicas.

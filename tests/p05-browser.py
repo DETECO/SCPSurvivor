@@ -42,7 +42,18 @@ def wait(page, expression, timeout=30):
         if page.evaluate('() => ('+expression+')'):
             return
         page.wait_for_timeout(75)
-    raise AssertionError('Timeout: '+expression+'; '+page.locator('#account-notice').inner_text())
+    details=page.evaluate('''async()=>{
+      const A=G.LocalAccounts,u=A.user;if(!u)return{mode:A.mode,user:null};
+      const state={mode:A.mode,uid:u.uid,providers:u.providerData.map(p=>p.providerId)};
+      if(A.mode==='local')try{
+        const idToken=await u.getIdToken();
+        const data=await fetch('http://127.0.0.1:9099/identitytoolkit.googleapis.com/v1/accounts:lookup?key=demo-scp-survivor-local',{
+          method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({idToken})}).then(r=>r.json());
+        state.serverProviders=data.users?.[0]?.providerUserInfo?.map(p=>p.providerId);
+      }catch(_){state.serverLookupFailed=true;}
+      return state;
+    }''')
+    raise AssertionError('Timeout: '+expression+'; '+page.locator('#account-notice').inner_text()+'; '+json.dumps(details))
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)

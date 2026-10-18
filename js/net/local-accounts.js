@@ -1,18 +1,30 @@
-/* P05 opt-in: official Firebase SDK connected only to the local demo emulators. */
+/* P05 keeps the demo emulator and the explicitly gated own Firebase project separate. */
 G.LocalAccounts = (() => {
   const host = window.location.hostname;
-  const enabled = ['localhost','127.0.0.1','[::1]'].includes(host) &&
-    new URLSearchParams(window.location.search).get('cuentas') === 'local';
+  const loopback = ['localhost','127.0.0.1','[::1]'].includes(host);
+  const params = new URLSearchParams(window.location.search);
+  const ownHostingDomain = ['scp-survivor.web.app','scp-survivor.firebaseapp.com'].includes(host);
+  const ownOriginAllowed = loopback || (window.location.protocol === 'https:' && ownHostingDomain);
+  const mode = params.get('cuentas') === 'local' && loopback ? 'local' :
+    params.get('cuentas') === 'propias' && ownOriginAllowed ? 'own' : 'disabled';
+  const enabled = mode !== 'disabled';
+  const isLocal = mode === 'local';
+  const ownProjectId = window.SCPFirebase?.accountsRuntime?.projectId || 'scp-survivor';
+  const cacheNamespace = mode === 'own' ? `scp:p05:${ownProjectId}` : 'scp:p05';
+  const sessionKey = `${cacheNamespace}:session`;
+  const confirmedKey = uid => `${cacheNamespace}:confirmed:${uid}`;
+  const pendingPrefix = uid => `${cacheNamespace}:pending:${uid}:`;
   const listeners = new Set();
   let sdk, auth, call, ready = false, data = null, error = '', inFlight = false, currentUid = null;
   let sessionId = null, initialization = null;
-  const state = () => ({enabled,ready,user:auth?.currentUser || null,data,error,busy:inFlight,sessionId});
+  const state = () => ({enabled,mode,isLocal,cacheNamespace,ownAccountsEnabled:mode === 'own' ? !!window.SCPFirebase?.accountsRuntime?.ownAccountsEnabled : null,
+    ready,user:auth?.currentUser || null,data,error,busy:inFlight,sessionId});
   const notify = () => { for (const fn of listeners) fn(state()); };
   const user = () => auth?.currentUser || null;
-  function cacheKey(uid = user()?.uid,sid=sessionId) { return `scp:p05:pending:${uid}:${sid}`; }
+  function cacheKey(uid = user()?.uid,sid=sessionId) { return `${pendingPrefix(uid)}${sid}`; }
   function pending() {
     if (!user() || !sessionId) return null;
-    const prefix=`scp:p05:pending:${user().uid}:`,keys=[cacheKey()];
+    const prefix=pendingPrefix(user().uid),keys=[cacheKey()];
     for(let i=0;i<window.localStorage.length;i++){
       const key=window.localStorage.key(i);if(key?.startsWith(prefix)&&!keys.includes(key))keys.push(key);
     }
@@ -27,7 +39,7 @@ G.LocalAccounts = (() => {
     if (uid !== user()?.uid) throw new Error('La cuenta cambió durante la confirmación.');
     if (authoritative || !data || next.revision >= data.revision) {
       data = next;
-      window.localStorage.setItem(`scp:p05:confirmed:${uid}`,JSON.stringify({uid,data:next}));
+      window.localStorage.setItem(confirmedKey(uid),JSON.stringify({uid,data:next}));
     }
     error = ''; notify(); return next;
   }
@@ -42,7 +54,7 @@ G.LocalAccounts = (() => {
       data = null; error = ''; currentUid = uid;
       // Cached data is only a preview. start/resume must refresh with the server.
       if (uid) try {
-        const cache=JSON.parse(window.localStorage.getItem(`scp:p05:confirmed:${uid}`));
+        const cache=JSON.parse(window.localStorage.getItem(confirmedKey(uid)));
         if (cache?.uid===uid && cache.data?.schemaVersion===1 && cache.data.buildVersion==='0.5-local-01') data=cache.data;
       } catch (_) { /* Ignore an incomplete local cache. */ }
     }
@@ -51,17 +63,34 @@ G.LocalAccounts = (() => {
   }
   async function init() {
     if (!enabled) return;
+    if (mode === 'own') {
+      const runtime = window.SCPFirebase?.accountsRuntime;
+      const publicConfig = window.SCPFirebase?.publicConfig;
+      if (!runtime?.ownAccountsEnabled) {
+        error = 'El acceso a Firebase scp-survivor está desactivado para este entorno.';
+        notify(); throw new Error(error);
+      }
+      if (runtime.projectId !== 'scp-survivor' || publicConfig?.projectId !== runtime.projectId || !runtime.region) {
+        error = 'La configuración de la cuenta propia no coincide con el proyecto esperado.';
+        notify(); throw new Error(error);
+      }
+    }
     if (initialization) return initialization;
     initialization = (async () => {
       sdk = window.SCPFirebase;
       if (!sdk) throw new Error('Falta el módulo local de cuentas.');
-      sessionId = window.sessionStorage.getItem('scp:p05:session');
-      if (!sessionId) { sessionId = window.crypto.randomUUID(); window.sessionStorage.setItem('scp:p05:session',sessionId); }
-      const app = sdk.initializeApp({apiKey:'demo-scp-survivor-local',projectId:'demo-scp-survivor',authDomain:'127.0.0.1'},'scp-local-p05');
-      auth = sdk.initializeAuth(app,{persistence:sdk.browserLocalPersistence}); sdk.connectAuthEmulator(auth,'http://127.0.0.1:9099',{disableWarnings:true});
+      sessionId = window.sessionStorage.getItem(sessionKey);
+      if (!sessionId) { sessionId = window.crypto.randomUUID(); window.sessionStorage.setItem(sessionKey,sessionId); }
+      const appConfig = mode === 'own' ? sdk.publicConfig :
+        {apiKey:'demo-scp-survivor-local',projectId:'demo-scp-survivor',authDomain:'127.0.0.1'};
+      const app = sdk.initializeApp(appConfig,mode === 'own' ? 'scp-own-p05' : 'scp-local-p05');
+      const authDependencies = {persistence:sdk.browserLocalPersistence};
+      if (mode === 'own') authDependencies.popupRedirectResolver = sdk.browserPopupRedirectResolver;
+      auth = sdk.initializeAuth(app,authDependencies);
+      if (isLocal) sdk.connectAuthEmulator(auth,'http://127.0.0.1:9099',{disableWarnings:true});
       await sdk.setPersistence(auth,sdk.browserLocalPersistence);
-      const functions = sdk.getFunctions(app,'us-central1');
-      sdk.connectFunctionsEmulator(functions,'127.0.0.1',5001);
+      const functions = sdk.getFunctions(app,mode === 'own' ? window.SCPFirebase.accountsRuntime.region : 'us-central1');
+      if (isLocal) sdk.connectFunctionsEmulator(functions,'127.0.0.1',5001);
       call = sdk.httpsCallable(functions,'accountCommand',{timeout:12000});
       ready = true; sdk.onAuthStateChanged(auth,acceptUser); notify();
     })();
@@ -116,10 +145,23 @@ G.LocalAccounts = (() => {
     acceptUser(result.user); await refresh(); return result.user;
   }
   async function google(alias,link = false,emailValue = '') {
+    if (mode === 'own') {
+      const existing = link ? user() : null;
+      if (link && !existing) throw new Error('Inicia sesión antes de vincular Google.');
+      const result = link ? await sdk.linkWithPopup(existing,new sdk.GoogleAuthProvider()) :
+        await sdk.signInWithPopup(auth,new sdk.GoogleAuthProvider());
+      if (link && result.user?.uid !== existing.uid) throw new Error('La vinculación cambió la cuenta. Inicia sesión de nuevo.');
+      await sdk.reload(result.user); await result.user.getIdToken(true);
+      acceptUser(result.user); await refresh();
+      if (!data?.profile && alias.trim().length >= 3) await command('initializeProfile',{alias:alias.trim()});
+      if (!link && !result.user.emailVerified) await sdk.sendEmailVerification(result.user);
+      return result.user;
+    }
     if (!enabled || auth?.emulatorConfig?.host!=='127.0.0.1' || auth.emulatorConfig.port!==9099)
       throw new Error('Google de prueba solo está disponible con emuladores locales.');
     const email=String(link?user()?.email:emailValue).trim().toLowerCase();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) throw new Error('Escribe un correo ficticio para Google de prueba.');
+    const linkingUid=link?user()?.uid:null;
     const provider=sdk.GoogleAuthProvider.credential(JSON.stringify({sub:`scp-local-google:${email}`,email,email_verified:true,name:alias.trim()||'Google de prueba'}));
     const result = link ? await sdk.linkWithCredential(user(),provider) : await sdk.signInWithCredential(auth,provider);
     // With automatic email merging disabled, the primary email is explicit too.
@@ -131,13 +173,27 @@ G.LocalAccounts = (() => {
       await sdk.signOut(auth);
       throw new Error('Ese correo ya tiene una cuenta. Entra con su contraseña y usa Vincular Google de prueba.');
     }
-    acceptUser(result.user); await refresh();
+    if(link){
+      if(user()?.uid!==linkingUid||result.user?.uid!==linkingUid)throw new Error('La cuenta cambió durante la vinculación. Inicia sesión de nuevo.');
+      await sdk.reload(user());await user().getIdToken(true);
+      if(!user().providerData.some(p=>p.providerId==='google.com'))throw new Error('Google todavía no está confirmado. Actualiza la cuenta antes de continuar.');
+    }
+    acceptUser(link?user():result.user); await refresh();
     if (!data?.profile) await command('initializeProfile',{alias:alias.trim()});
     if (!link && !result.user.emailVerified) await sdk.sendEmailVerification(result.user);
-    return result.user;
+    return link?user():result.user;
   }
   async function linkPassword(pass) {
     password(pass);
+    if (mode === 'own') {
+      const existing=user();
+      if (!existing?.email) throw new Error('La cuenta no tiene un correo para vincular.');
+      const credential=sdk.EmailAuthProvider.credential(existing.email,pass);
+      const result=await sdk.linkWithCredential(existing,credential);
+      if (result.user?.uid !== existing.uid) throw new Error('La vinculación cambió la cuenta. Inicia sesión de nuevo.');
+      await sdk.reload(result.user); await result.user.getIdToken(true);
+      acceptUser(result.user); await refresh(); return result.user;
+    }
     if (!enabled || auth?.emulatorConfig?.host!=='127.0.0.1' || auth.emulatorConfig.port!==9099)
       throw new Error('La vinculación de prueba solo está disponible con emuladores locales.');
     if (!user()?.email) throw new Error('La cuenta no tiene un correo para vincular.');
@@ -155,11 +211,12 @@ G.LocalAccounts = (() => {
   async function logout() { await sdk.signOut(auth); data=null; currentUid=null; error=''; notify(); }
   function rotateSession() {
     if (pending()) throw new Error('Resuelve la confirmación pendiente antes de cambiar de sesión.');
-    sessionId=window.crypto.randomUUID();window.sessionStorage.setItem('scp:p05:session',sessionId);notify();
+    sessionId=window.crypto.randomUUID();window.sessionStorage.setItem(sessionKey,sessionId);notify();
     return sessionId;
   }
   return {enabled,init,refresh,command,retry,signUp,signIn,google,linkPassword,resetPassword,verifyEmail,
     refreshVerification,logout,rotateSession,subscribe(fn){listeners.add(fn);return()=>listeners.delete(fn);},
+    mode,isLocal,cacheNamespace,
     get data(){return data;},get user(){return user();},get sessionId(){return sessionId;},
     get pending(){return pending();},get busy(){return inFlight;},get status(){return state();}};
 })();

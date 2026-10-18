@@ -1,14 +1,8 @@
 'use strict';
 const crypto=require('node:crypto');
+const {ServiceError,assertLocalEmulators,assertAccountRuntime}=require('./project-runtime');
 const VERSION={schemaVersion:1,buildVersion:'0.5-local-01'};
-class ServiceError extends Error{constructor(code,message){super(message);this.code=code;}}
 const fail=(code,message)=>{throw new ServiceError(code,message);};
-function assertLocalEmulators(env=process.env){
- const local=value=>/^(127\.0\.0\.1|localhost|\[::1\]):\d+$/.test(value||'');
- if(env.FUNCTIONS_EMULATOR!=='true'||(env.GCLOUD_PROJECT||env.GCP_PROJECT)!=='demo-scp-survivor'||
-  !local(env.FIRESTORE_EMULATOR_HOST)||!local(env.FIREBASE_AUTH_EMULATOR_HOST))
-  fail('failed-precondition','Esta versión funciona exclusivamente con los emuladores locales demo-scp-survivor.');
-}
 function canonical(value){
  if(value===null||typeof value==='string'||typeof value==='boolean')return JSON.stringify(value);
  if(typeof value==='number'&&Number.isFinite(value))return JSON.stringify(value);
@@ -100,7 +94,7 @@ function result(value){
 }
 const state=stored=>({...VERSION,revision:stored?.revision||0,profile:stored?.profile||null,activeRun:stored?.activeRun||null,lastResult:stored?.lastResult||null});
 async function executeCommand(db,auth,request,env=process.env){
- assertLocalEmulators(env);
+ assertAccountRuntime(env);
  if(!auth?.uid||typeof auth.uid!=='string'||auth.uid.includes('/')||auth.uid.length>128)fail('unauthenticated','Inicia sesión.');
  keys(request,['type','requestId','expectedRevision','sessionId','runId','payload'],'Comando');
  const ref=db.collection('users').doc(auth.uid);
@@ -156,4 +150,4 @@ async function executeCommand(db,auth,request,env=process.env){
   tx.set(ref,next);tx.set(receipt,{commandHash:hash,result:next,createdAt:now});return next;
  });
 }
-module.exports={executeCommand,assertLocalEmulators,commandHash,ServiceError};
+module.exports={executeCommand,assertLocalEmulators,assertAccountRuntime,commandHash,ServiceError};
