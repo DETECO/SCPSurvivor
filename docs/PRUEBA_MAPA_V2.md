@@ -1,5 +1,9 @@
 # Primera prueba de mapas V2
 
+## Probar online con GitHub Pages
+
+[Jugar mapa completo](https://deteco.github.io/SCPSurvivor/) · [Prueba rápida: empezar en 4:30](https://deteco.github.io/SCPSurvivor/?rapida=1). Pulsa el botón de inicio del menú; no necesitas instalar ni mantener un servidor local. Mismas reglas del ensayo, sin cuentas ni guardado. Los cofres y la escala nueva todavía no están implementados. [Publicación y límites](GITHUB_PAGES.md).
+
 18/10/2026. Prototipo local del recorrido nuevo. No cierra P05 ni integra guardado, economía, gacha, cofres o ranking. Arte y balance provisionales; las mejoras todavía usan las cartas anteriores.
 
 ## Abrir la prueba

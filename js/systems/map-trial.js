@@ -1,7 +1,11 @@
-/* V2 local trial: isolated from accounts and version1 checkpoints. Provisional art/tuning. */
+/* V2 trial (loopback or authorized Pages demo): isolated from accounts and version1 checkpoints. Provisional art/tuning. */
 G.MapTrial=(()=>{
  const q=new URLSearchParams(window.location.search);
- const enabled=['localhost','127.0.0.1','[::1]'].includes(window.location.hostname)&&q.get('prueba')==='mapa-v2'&&!q.has('cuentas');
+ const location=window.location;
+ const loopback=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
+ const publicDemo=location.protocol==='https:'&&location.hostname==='deteco.github.io'&&location.pathname.startsWith('/SCPSurvivor/');
+ const requested=q.get('prueba')==='mapa-v2'||(publicDemo&&!q.has('prueba'));
+ const enabled=(loopback||publicDemo)&&requested&&!q.has('cuentas');
  const quick=enabled&&q.get('rapida')==='1';
  const RANGE=440,INTERVAL=.65,DAMAGE=9;
  let geometry=null,team=[],arrived=false,alertTime=0;
@@ -67,7 +71,7 @@ G.MapTrial=(()=>{
    ctx.fillStyle='#d9efe3';ctx.font='9px system-ui';ctx.fillText('ALIADO',ally.x,ally.y-35);
    ctx.restore();
  }
- return{enabled,quick,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
+ return{enabled,publicDemo,quick,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
   drawables:()=>enabled&&arrived?team.map(a=>({x:a.x,y:a.y,draw:ctx=>drawAlly(ctx,a)})):[],
   get allies(){return team.map(a=>({x:a.x,y:a.y}));},get alertTime(){return alertTime;}};
 })();

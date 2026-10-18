@@ -1,15 +1,63 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
-function setup(search='?prueba=mapa-v2',hostname='127.0.0.1'){
+function setup(search='?prueba=mapa-v2',hostname='127.0.0.1',protocol='http:',pathname='/'){
  const enemies=[],sounds=[];
  const G={World:{isFree:()=>true,projectileBlock:()=>false},Path:{reachable:()=>true},EnemyMgr:{all:()=>enemies},
   Content:{guard:{dex:'guard01'}},Audio:{sfx:key=>sounds.push(key)}};
  const file=path.join(__dirname,'../js/systems/map-trial.js');
- if(fs.existsSync(file))vm.runInNewContext(fs.readFileSync(file,'utf8'),{G,window:{location:{search,hostname}},URLSearchParams,Math});
+ if(fs.existsSync(file))vm.runInNewContext(fs.readFileSync(file,'utf8'),{G,window:{location:{search,hostname,protocol,pathname}},URLSearchParams,Math});
  return{G,enemies,sounds};
 }
-test('V2 is loopback-only, explicit and never combined with account modes',()=>{
+test('local V2 remains explicit and never combines with account modes',()=>{
  for(const [query,host,expected]of[['?prueba=mapa-v2','127.0.0.1',true],['?prueba=mapa-v2','localhost',true],['?prueba=mapa-v2','[::1]',true],['','127.0.0.1',false],['?prueba=mapa-v2','example.com',false],['?prueba=mapa-v2&cuentas=local','127.0.0.1',false],['?prueba=mapa-v2&cuentas=propias','127.0.0.1',false],['?prueba=mapa-v2&cuentas=invalid','127.0.0.1',false]]){
   const {G}=setup(query,host);assert.equal(G.MapTrial?.enabled,expected,query+' / '+host);
+ }
+});
+
+test('the exact HTTPS Pages project enables the public V2 demo by default or explicitly',()=>{
+ for(const search of ['', '?prueba=mapa-v2']){
+  const {G}=setup(search,'deteco.github.io','https:','/SCPSurvivor/');
+  assert.equal(G.MapTrial?.enabled,true,search||'default public demo');
+  assert.equal(G.MapTrial.publicDemo,true);
+ }
+ const url=new URL('https://DETECO.GITHUB.IO/SCPSurvivor/');
+ const {G}=setup(url.search,url.hostname,url.protocol,url.pathname);
+ assert.equal(url.hostname,'deteco.github.io','browser URL normalizes hostname case');
+ assert.equal(G.MapTrial.enabled,true);assert.equal(G.MapTrial.publicDemo,true);
+ const nested=setup('','deteco.github.io','https:','/SCPSurvivor/index.html').G.MapTrial;
+ assert.equal(nested.enabled,true);assert.equal(nested.publicDemo,true);
+});
+
+test('the public demo preserves the explicit quick five-minute trial',()=>{
+ for(const search of ['?rapida=1','?prueba=mapa-v2&rapida=1']){
+  const trial=setup(search,'deteco.github.io','https:','/SCPSurvivor/').G.MapTrial;
+  assert.equal(trial?.enabled,true);assert.equal(trial.publicDemo,true);
+  assert.equal(trial.startTime,270);assert.equal(trial.duration,300);
+ }
+});
+
+test('publicDemo requires the exact allowed HTTPS host and project path prefix',()=>{
+ for(const [host,protocol,pathname]of [
+  ['example.com','https:','/SCPSurvivor/'],
+  ['deteco.github.io.example.com','https:','/SCPSurvivor/'],
+  ['deteco.github.io','http:','/SCPSurvivor/'],
+  ['deteco.github.io','https:','/Otro/'],
+  ['deteco.github.io','https:','/SCPSurvivor-mal/'],
+  ['deteco.github.io','https:','/scpsurvivor/'],
+  ['deteco.github.io','https:','/']
+ ]){
+  const trial=setup('?prueba=mapa-v2',host,protocol,pathname).G.MapTrial;
+  assert.equal(trial?.enabled,false,`${protocol}//${host}${pathname}`);
+  assert.equal(trial.publicDemo,false);
+ }
+ assert.equal(setup().G.MapTrial.publicDemo,false,'loopback is not the public demo');
+});
+
+test('the Pages demo never enables V2 alongside any account query parameter',()=>{
+ for(const accounts of ['cuentas','cuentas=','cuentas=local','cuentas=propias','cuentas=invalid','cuentas=0']){
+  for(const query of [`?${accounts}`,`?prueba=mapa-v2&${accounts}`]){
+   const trial=setup(query,'deteco.github.io','https:','/SCPSurvivor/').G.MapTrial;
+   assert.equal(trial?.enabled,false,query);
+  }
  }
 });
 test('quick trial is explicit and keeps the five-minute contract',()=>{

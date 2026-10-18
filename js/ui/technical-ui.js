@@ -90,7 +90,11 @@ G.TechnicalUI = (() => {
     if(G.MapTrial?.enabled){
       document.body.dataset.mapTrial='v2';
       el('technical-intro').textContent='PRIMERA PRUEBA V2 · Resiste, derrota al jefe de cada mapa y avanza por la puerta de la Fundación.';
-      el('technical-account-hint').textContent='Prueba local sin cuentas, guardado ni recompensas persistentes. Sin mochilas ni accesorios de armas.';
+      el('technical-account-hint').textContent=(G.MapTrial.publicDemo?'Demo web':'Prueba local')+' sin cuentas, guardado ni recompensas persistentes. Sin mochilas ni accesorios de armas.';
+      if(G.MapTrial.publicDemo){
+        document.querySelector('header .version').textContent='ALFA · DEMO V2';
+        document.querySelector('.footer > p').textContent='Demo web · sin guardado ni recompensas persistentes';
+      }
       el('map-test-note').hidden=false;
       el('map-test-note').textContent=G.MapTrial.quick
         ? 'PRUEBA RÁPIDA · Empiezas en 4:30 con el jefe vivo. A 5:00 llega la puerta y dejan de aparecer enemigos. Derrota al jefe y camina sobre la puerta para pasar al siguiente mapa. Los mapas siguientes comienzan en 0:00.'

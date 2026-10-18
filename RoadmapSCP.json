@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "planVersion": "0.22",
+  "planVersion": "0.23",
   "updatedOn": "2026-10-18",
   "timezone": "America/Santiago",
   "canonicalPath": "RoadmapSCP.json",
@@ -2308,6 +2308,17 @@
       ],
       "runtimeProof": false,
       "evidenceComplete": false
+    },
+    {
+      "id": "EV-038",
+      "kind": "Preparación y preflight de demo web",
+      "summary": "Pages existente consultado vía API: main /, construido, repositorio público, sin cambios de configuración. Cambio de acceso: rojo 3 fallos; verde 27/27 Node. Build/check 86 scripts en ambas copias. Dos recorridos HTTPS virtuales de escritorio/táctil: inicio, pausa y aislamiento sin errores. El origen virtual no acredita despliegue real; verificar Pages y smoke --live después del push, con recibo en auditoría local.",
+      "runtimeProof": true,
+      "evidenceComplete": false,
+      "references": [
+        "docs/GITHUB_PAGES.md",
+        "tests/v2-pages-browser.py"
+      ]
     }
   ],
   "decisions": [
@@ -4573,6 +4584,12 @@
       "topic": "Escala inicial y pauta única de diseño de mapas V2",
       "approvalStatus": "Misma aprobación de Iván; escala de ensayo, no aceptación de mapa o dimensiones finales.",
       "resolution": "Ensayar 160 × 100 casillas de 32 unidades, seis ubicaciones alternativas de cofres, circuitos amplios, zona de jefe y puerta/soldados. Medir 30–45 s entre extremos útiles sin combate y desvíos 10–15 s; aún no medidos. Usar PAUTA_DESARROLLO.md y corte de ESTRUCTURA como autoridad, conservando primer prototipo y documentos de decisiones abiertas."
+    },
+    {
+      "id": "D-327",
+      "topic": "Demo V2 accesible en GitHub Pages",
+      "approvalStatus": "Petición expresa A-033; aceptación del juego completo pendiente.",
+      "resolution": "Permitir V2 por defecto en HTTPS deteco.github.io/SCPSurvivor/ y prueba rápida ?rapida=1. Conservar localhost explícito y excluir cualquier parámetro de cuentas. Misma duración, jefe, puerta y transición. Publicar compilado y verificar inicio/aislamiento en el sitio real después del build. No implementar cofres/geometría nuevos por esta publicación."
     }
   ],
   "authorizations": [
@@ -4730,6 +4747,11 @@
       "id": "A-032",
       "action": "Usar la pauta vigente de ESTRUCTURA para diseño y actualización de estructura",
       "scopeStatus": "Petición actual de Iván en PROGRAMACION y aprobación de recomendaciones en ESTRUCTURA, turno 01a15142-340f-7400-8660-f8d2502ce2aa. Sincronizar tipos/cadencia de cofres y escala inicial con alcance explícito. No equivale a aceptación del ejecutable, cierre P05, cambios de economía o aprobación de futuras respuestas."
+    },
+    {
+      "id": "A-033",
+      "action": "Publicar demo jugable en GitHub Pages",
+      "scopeStatus": "Iván pide probar en GitHub y subirlo. Autoriza servir la prueba V2 existente desde https://deteco.github.io/SCPSurvivor/; no solo subir código. Excepción acotada al límite loopback; sin activar cuentas, backend, guardado, economía o facturación."
     }
   ],
   "closureCases": [
@@ -5512,6 +5534,12 @@
       "date": "2026-10-18",
       "description": "Roadmap 0.22 / A-032 / D-325–326 / EV-037: incorporar aprobación más reciente de ESTRUCTURA. Cofres exploración/jefe/grieta, cuatro sorteos, seis puntos y escala de ensayo 160 × 100 establecidos para adaptar; detalles abiertos explícitos. Sin cambios del ejecutable, tareas históricas, aceptación, cuentas o facturación.",
       "approval": "Instrucción de Iván de usar esa pauta y aprobación registrada en ESTRUCTURA; no aceptación funcional."
+    },
+    {
+      "id": "CHG-030",
+      "date": "2026-10-18",
+      "description": "Roadmap 0.23 / A-033 / D-327 / EV-038: habilitar la demo V2 en GitHub Pages para prueba online; compilado renovado y pruebas de acceso público. Sin cambios de mecánicas, arte, cuentas, economía o facturación. P05 y aceptación V2 pendientes.",
+      "approval": "Solicitud de Iván de probar en GitHub; no aceptación funcional completa."
     }
   ],
   "derivedProgress": {
@@ -5896,7 +5924,7 @@
       "designDisposition": "historical_fixture_replan_do_not_extend_backpacks_or_mods"
     },
     "activeDesignRevision": "V2-ESTRUCTURA",
-    "v2ImplementationStatus": "V2-trial-01 local y sin guardado; aceptación humana pendiente",
+    "v2ImplementationStatus": "V2-trial-01 local y demo web autorizada, sin guardado; aceptación humana pendiente",
     "v2Trial": {
       "version": "V2-trial-01",
       "guide": "docs/PRUEBA_MAPA_V2.md",
@@ -5907,7 +5935,10 @@
       "persisted": false,
       "bossAtSecondsProvisional": 240,
       "mapSeconds": 300,
-      "firstMapQuickSeconds": 270
+      "firstMapQuickSeconds": 270,
+      "publicUrl": "https://deteco.github.io/SCPSurvivor/",
+      "publicQuickUrl": "https://deteco.github.io/SCPSurvivor/?rapida=1",
+      "webGuide": "docs/GITHUB_PAGES.md"
     }
   },
   "summaryTemplate": "# Roadmap vigente — SCP Survivor\n\n{{ACTIVE_DESIGN}}\n\n---\n\n## Línea base histórica anterior a V2\n\nLas reglas, tareas, porcentajes y prioridades registradas debajo describen el diseño anterior. En conflicto manda la pauta V2 de arriba.\n\n**Prioridad registrada antes de V2 (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).\n\n**Antecedente histórico · crédito de Ivan Vivanco · prototipo P06-T01 (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).\n\n**Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).\n\nVersión **{{VERSION}}**, {{DATE}}. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.\n\n## Avance basado en evidencia\n\n{{SUMMARY_METRICS}}\n\n{{SUMMARY_COUNTS}} Solo CV con evidencia completa suma; no hay crédito parcial. El avance mide criterios cumplidos, no tiempo restante, producto publicado o porcentaje de arte final.\n\n{{SUMMARY_PHASES}}\n\n## P06 local en curso desde v0.14\n\nA-024 autoriza avanzar localmente. P06-T01 queda EC/evidenceComplete=false con modelo físico, panel base/preparación con confirmación, IDs y fixture temporal para mochilas8/16 y almacén60. `?prueba=inventario` inicia directamente en preparación20s; `?inventario=local` activa la opción en loopback. No hay cuentas, persistencia ni inventario real, botín o kit. EV-030 registra los ensayos ejecutados en [docs/P06-REPORT.md](docs/P06-REPORT.md); la aceptación manual sigue pendiente. P06-T02–T05 continúan P; P05 EV0/6 y el global52/100 no cambian.\n\n## Cambio desde v0.11\n\nGAP-001 está resuelto y P03-T02 pasa de EV a CV: suma sus **3 puntos**, elevando global de 49 a 52 y técnico de 39/90 a 42/90. P03 queda 12/12. Criterios, pesos y dependencias originales permanecen intactos.\n\nLos sectores normales ahora declaran 3/4/5 oleadas reproducibles, con objetivos alternos, preparación de 20 s, HUD/contadores/salidas coherentes y secuencia independiente del calendario de jefe/extracción. EV-026: 11 pruebas Node, 900 semillas y calendario histórico de 18 sectores; cuatro escenarios de navegador fuente/compilado y dos extracciones S10/oleada4/35oleadas. Fuente 1.580 bajas y jefe evadido; compilado 1.587 y jefe vencido. Cero errores de página, peticiones remotas o errores HTTP en esos recorridos.\n\n## P05: implementación local, aceptación pendiente\n\nP05-T01/T02/T03 están **EV y conservan 0/6 puntos**. Se añadieron cuentas ficticias, alias, verificación/recuperación/vinculación explícita, autoridad de comandos emulada, recibos/reintentos, checkpoints seguros y una expedición activa por UID. Transferir revoca la sesión anterior; recuperar combate desde su inicio excluye clasificación irreversiblemente. El juego sin cuentas permanece disponible.\n\n{{P05_VALIDATION_SUMMARY}}\n\nResultados y límites: [docs/P05-REPORT.md](docs/P05-REPORT.md), [docs/P05-validation.json](docs/P05-validation.json) y [docs/GAP-001-validation.json](docs/GAP-001-validation.json).\n\n| Tarea | Preparado/probado localmente | Falta para aceptación completa |\n|---|---|---|\n| P05-T01 | Auth SDK, alias, alta/acceso/cierre y flujos ficticios | Google OAuth/correo/verificación/recuperación/vinculación reales, errores y separación de identidades con servicios propios |\n| P05-T02 | UID del token, revisión, sesión, transacciones/recibos, concurrencia y replay | Cumplir P05-T01; aceptar backend/reglas/persistencia/retención propios con alcance autorizado |\n| P05-T03 | Checkpoints, roundtrip, transferencia, desconexión/respuesta perdida y retroceso no clasificable | Cumplir P05-T02; nube propia y cambio real de dispositivo/red |\n\nLa evidencia local no acredita combate validado por servidor, economía/inventario persistente P06/P07, ranking oficial, OAuth/correo real, dispositivos físicos, Safari, FPS/memoria/carga, costes o juego operativo en producción.\n\n## Proyecto Firebase propio\n\nIván creó manualmente **scp-survivor**, app web y plan Spark. Capturas confirman Email/contraseña y Google habilitados, localhost/127.0.0.1 autorizados y política exigida de mínimo 8 sin clases obligatorias. La configuración pública se conserva **inactiva** en config/firebase-public.json. El juego usa exclusivamente demo-scp-survivor emulado, activado de forma optativa en localhost con ?cuentas=local. No se desplegó backend real ni se habilitó facturación desde Codex. Detalle: [docs/FIREBASE_PROPIO.md](docs/FIREBASE_PROPIO.md).\n\n## Orden de continuación\n\n1. **P05:** completar aceptación real conforme a sus dependencias. Preparar configuración, reglas, pruebas y costes antes de solicitar la autorización concreta necesaria para conexión/despliegue. La configuración manual de Auth no acredita por sí sola un backend de guardado funcional.\n2. **P06:** trabajo local autorizado por A-024; P06-T01 está EC con su primer prototipo temporal. La aceptación conserva dependencias P04-T02/P05-T03 y requiere servidor, continuidad y aceptación manual. P06-T02–T05 siguen P aunque el trabajo local está autorizado. El fixture no persiste ni representa inventario real, botín o kit.\n3. **P07:** progresión permanente, gacha y economía consistente, con P05/P06 completos.\n4. **P08:** invitado/ranking; ranking oficial requiere aceptación P10-T01/T02 antes de P08-T02.\n5. **P09/P10:** acabado/recursos y validación en dispositivos físicos, carga, memoria, rendimiento y costes.\n6. **P11:** despliegue/publicación/operación autorizados y aceptación final de producción.\n\nLa web Roadmap sigue como proyecto independiente sin construcción, automatización o publicación en este alcance. Cooperativo, Hardcore, códigos, regalos, ampliación 24+24 y PC posterior quedan fuera del denominador aprobado.\n\n## Continuidad y sincronización\n\nRepositorio: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), rama main. **Código P05, GAP-001 y roadmap v0.12 incluidos en actualización del repositorio autorizada por Iván: A-021.** Main se comprobó en vivo el15/10/2026 antes de esta entrega: baseline **39344e77e15bd82c98bacb3e9773ceaa20c1b918**, sin cambios remotos nuevos. Consultar el commit de la entrega P05-local-01 / roadmap v0.12 mediante git log -1 --format=%H -- RoadmapSCP.json. Publicar el código no activa Firebase real, facturación o despliegue: **el juego con cuentas sigue ejecutándose localmente con emuladores**.\n\nA-018 registra migración/subida anterior; A-019 autoriza avanzar GAP-001→P05 con implementación, dependencias y emuladores locales; A-020 autoriza este roadmap con subagente y A-021 autoriza entregar código P05 y roadmap en GitHub/main. Iván pide continuar autónomamente sin repetir consultas dentro del alcance local ya autorizado. Autorizaciones/decisiones/historial íntegros en JSON/vista. Los registros históricos no bloquean el alcance local ya autorizado.\n\nLeer [AGENTS.md](AGENTS.md), [CONTEXTO_PROYECTO.md](CONTEXTO_PROYECTO.md), [PROMPT_MAESTRO.md](PROMPT_MAESTRO.md) e [INSTALACION_WINDOWS.md](INSTALACION_WINDOWS.md). Conservar fuentes, arte aprobado y backups. La entrega en GitHub está autorizada por A-021; configuración Firebase real, facturación y despliegue del juego no se activan por esa entrega.\n\n~~~powershell\nnode tools/render-roadmap.js --check\n~~~\n\nAntes de cerrar tareas: comprobar criterio/dependencias/alcance, ejecutar pruebas pertinentes, registrar versión/entorno/evidencia y distinguir implementación local de aceptación real.\n",
@@ -6152,7 +6183,10 @@
       "persisted": false,
       "bossAtSecondsProvisional": 240,
       "mapSeconds": 300,
-      "firstMapQuickSeconds": 270
+      "firstMapQuickSeconds": 270,
+      "publicUrl": "https://deteco.github.io/SCPSurvivor/",
+      "publicQuickUrl": "https://deteco.github.io/SCPSurvivor/?rapida=1",
+      "webGuide": "docs/GITHUB_PAGES.md"
     },
     "approvedDesignCutPath": "docs/ESTRUCTURA_REGLAS_APROBADAS.md",
     "playableDesignPlanPath": "docs/PLAN_DISENO_JUGABLE_V2.md",
@@ -6228,6 +6262,18 @@
       "bossChest": "Garantizado al vencer; mejora temporal aleatoria compatible, elegibilidad pendiente.",
       "riftReward": "Superior al ordinario; tabla exacta pendiente.",
       "accountRewardsEnabled": false
+    },
+    "publicDemo": {
+      "url": "https://deteco.github.io/SCPSurvivor/",
+      "quickUrl": "https://deteco.github.io/SCPSurvivor/?rapida=1",
+      "status": "configured_for_publication",
+      "defaultOnPages": true,
+      "accountsEnabled": false,
+      "persistentRewards": false,
+      "authority": "A-033",
+      "evidenceIds": [
+        "EV-038"
+      ]
     }
   }
 }

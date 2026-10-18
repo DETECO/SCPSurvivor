@@ -1,5 +1,9 @@
 # Publicaciones GitHub — SCP Survivor
 
+## Demo V2 en GitHub Pages — 18/10/2026
+
+A-033 autoriza probar online. [Demo](https://deteco.github.io/SCPSurvivor/) · [Rápida](https://deteco.github.io/SCPSurvivor/?rapida=1) · [Alcance y preflight](GITHUB_PAGES.md). Padre `76fd580e05ee567d64cca847acc874ec33ceb8b6`. Commit: **Publicar demo V2 jugable en GitHub Pages**. GitHub Pages ya estaba configurado para main /; el cambio habilita el ensayo en ese destino, sin servicios ni facturación. Verificar despliegue y prueba viva después del push; esta entrada por sí sola no lo acredita.
+
 ## Pauta ESTRUCTURA 0.22 — 18/10/2026
 
 [Validación documental](ESTRUCTURA_0.22_VALIDACION.md) · [Diff de la entrega](ESTRUCTURA_0.22_CAMBIOS.diff)

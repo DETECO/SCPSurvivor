@@ -1,5 +1,7 @@
 # SCP Survivor
 
+**Jugar en la web:** [SCP Survivor — demo V2](https://deteco.github.io/SCPSurvivor/) · [Prueba rápida desde 4:30](https://deteco.github.io/SCPSurvivor/?rapida=1). No requiere ejecutar un servidor en tu PC. Demo sin cuenta, guardado ni recompensas persistentes. [Alcance y pruebas](docs/GITHUB_PAGES.md).
+
 **Diseño y estructura:** usar la [pauta vigente](PAUTA_DESARROLLO.md), las [reglas aprobadas de ESTRUCTURA](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y el [plan de adaptación jugable](docs/PLAN_DISENO_JUGABLE_V2.md). Roadmap 0.22; el ejecutable sigue siendo V2-trial-01. Cofres nuevos y escala 160 × 100 pendientes de implementar y probar.
 
 **Primera prueba V2 lista para probar localmente:** [rápida desde4:30](http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1) · [mapa completo](http://127.0.0.1:8000/?prueba=mapa-v2). Ejecutar `npm.cmd run serve` si el servidor está cerrado. [Guía y límites](docs/PRUEBA_MAPA_V2.md). Aceptación de Iván pendiente; sin cuentas ni guardado.
