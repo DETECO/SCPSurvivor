@@ -8,9 +8,11 @@ G.Expedition = (() => {
   let upgradesApplied=0;
   let pendingXp=0, resumePhase='combat';
   let dimensional=false,trialPreparation=false;
+  let mapTime=0,doorOpen=false,bossSpawned=false,bossDefeated=false,spawnClosed=false;
+  const v2=()=>!!G.MapTrial?.enabled;
   const exit={x:0,y:0,r:72};
   function random(seed){let n=seed>>>0;const next=()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/4294967296;};next.state=()=>n;return next;}
-  function boundary(name){if(!G.DimensionalRifts?.enabled&&!G.InventoryTrial?.enabled)G.RunCheckpoint?.atBoundary(name);}
+  function boundary(name){if(v2())return;if(!G.DimensionalRifts?.enabled&&!G.InventoryTrial?.enabled)G.RunCheckpoint?.atBoundary(name);}
   function waveCount(){
     // Independent stream: never consume the boss/extraction or spawn generators.
     let n=(runSeed^Math.imul(sector,0x9e3779b9)^0xa5b35705)>>>0;
@@ -20,19 +22,25 @@ G.Expedition = (() => {
   function snapshot(){return{phase,sector,wave,sectorWaves,kind,objective,spawned,quota,kills:pl?pl.kills-waveKills:0,
     prep,pending,cards,pendingXp,resumePhase,upgradesApplied,nextUpgradeLevel:pending&&pl?pl.level:null,elapsed,remaining:Math.max(0,60-waveTime),extract:interaction,result,exit,
     nearExit:!!pl&&G.U.dist(pl.x,pl.y,exit.x,exit.y)<=exit.r,runSeed,mapSeed,nextBossSector,extractionAvailable,
-    totals:{...totals},dimensional,bossHp:boss?Math.max(0,boss.hp):0,bossMaxHp:boss?boss.maxHp:0};}
+    totals:{...totals},dimensional,bossHp:boss?Math.max(0,boss.hp):0,bossMaxHp:boss?boss.maxHp:0,
+    ...(v2()?{v2:{mapTime,doorOpen,bossSpawned,bossDefeated,spawnClosed,quick:!!G.MapTrial.quick,allies:G.MapTrial.allies||[]}}:{})};}
   function scale(o=wave){return{hp:1+.15*(sector-1)+.05*(o-1),dmg:1+.08*(sector-1),spd:1+Math.min(.2,.02*(sector-1))};}
   function map(){
     dimensional=false;trialPreparation=false;G.DimensionalRifts?.clear();
-    kind=sector===nextBossSector?'boss':'normal';
+    kind=!v2()&&sector===nextBossSector?'boss':'normal';
     sectorWaves=kind==='normal'?waveCount():0;
     extractionAvailable=false;
-    if(kind==='normal'&&sector>=3){extractionAvailable=rng()<.25||drought>=3;drought=extractionAvailable?0:drought+1;}
+    if(!v2()&&kind==='normal'&&sector>=3){extractionAvailable=rng()<.25||drought>=3;drought=extractionAvailable?0:drought+1;}
     mapSeed=Math.imul(runSeed^sector,0x45d9f3b)>>>0;spawnRng=random(mapSeed);
     geometry=G.SectorMaps.generate(mapSeed,{boss:kind==='boss'});
     G.World.reset(mapSeed);G.World.setFixture(geometry.fixture);G.World.setBiome(1,true);G.Path.clear();G.Pickups.clear();G.EnemyMgr.clear();G.Projectiles.clear();
     pl.x=geometry.entry.x;pl.y=geometry.entry.y;exit.x=geometry.exit.x;exit.y=geometry.exit.y;
     G.Camera.x=pl.x;G.Camera.y=pl.y;G.Path.update(1,[pl]);G.Touch.reset();G.Input.reset();objectives=[];boss=null;
+    if(v2()){
+      mapTime=sector===1&&G.MapTrial.quick?(G.MapTrial.startTime??270):0;
+      doorOpen=false;bossSpawned=false;bossDefeated=false;spawnClosed=false;spawnClock=0;sectorWaves=0;
+      G.MapTrial.reset?.(geometry);
+    }
     if(extractionAvailable)G.Spawner.say('Este sector tiene extracción · disponible al despejarlo',5,true);
   }
   function start(player,options={}){
@@ -43,7 +51,8 @@ G.Expedition = (() => {
     rng=random(runSeed);nextBossSector=4+Math.floor(rng()*3);
     G.DimensionalRifts?.reset();
     G.FieldStats.apply(pl);G.FieldAbilities.reset(pl);G.FieldCombat.reset(pl,options.loadout);map();
-    if(G.InventoryTrial?.directTest){
+    if(v2())beginMapTrial();
+    else if(G.InventoryTrial?.directTest){
       trialPreparation=true;phase='preparation';prep=20;objective='neutralize';spawned=0;waveTime=0;quota=12;waveKills=pl.kills;
     }else if(G.DimensionalRifts?.directTest){
       wave=sectorWaves;phase='exploration';objective=wave%2===0?'survive':'neutralize';spawned=0;waveTime=0;quota=12;
@@ -63,10 +72,42 @@ G.Expedition = (() => {
     return null;
   }
   function spawnOne(){
+    if(v2()){
+      const cap=Math.min(24,G.Spawner.CAP)-(bossSpawned?0:1); // Reserve the mandatory boss slot.
+      if(spawnClosed||mapTime>=(G.MapTrial.duration??300)||G.EnemyMgr.count>=cap)return false;
+      const pos=freeSpawn();if(!pos)return false;
+      const def=spawned%4===3?G.Content.biological:G.Content.pursuer;
+      const e=G.EnemyMgr.add(new G.Enemy(def,pos[0],pos[1],scale(1+Math.floor(mapTime/60))));objectives.push(e);spawned++;return true;
+    }
     if((objective==='neutralize'&&spawned>=quota)||(objective==='survive'&&waveTime>=60)||G.EnemyMgr.count>=G.Spawner.CAP)return false;
     const pos=freeSpawn();if(!pos)return false;
     const def=(sector===1&&wave===1)||spawned%4!==3?G.Content.pursuer:G.Content.biological;
     const e=G.EnemyMgr.add(new G.Enemy(def,pos[0],pos[1],scale()));objectives.push(e);spawned++;return true;
+  }
+  function trialBoss(){
+    if(bossSpawned||spawnClosed)return;
+    // The mandatory boss is independent of the regular enemy cap and camera visibility.
+    const points=[geometry.bossSpawn,...geometry.spawnPoints,geometry.entry].filter(Boolean);
+    const usable=p=>G.World.isFree(p.x,p.y,22)&&G.Path.reachable(p.x,p.y,pl);
+    const point=points.find(p=>G.U.dist(pl.x,pl.y,p.x,p.y)>100&&usable(p))||points.find(usable);
+    if(!point)return;
+    boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,point.x,point.y,scale(1+Math.floor(mapTime/60)),true));
+    bossSpawned=true;phase='boss';G.Spawner.say('Custodio · derrótalo para cruzar la puerta a los 5:00',5,true);
+  }
+  function beginMapTrial(){
+    phase='combat';objective='survive';spawned=0;waveTime=0;waveKills=pl.kills;cards=[];spawnClock=0;
+    for(let i=0;i<4;i++)spawnOne();
+    if(mapTime>=(G.MapTrial.bossAt??240))trialBoss();
+    G.Spawner.say(`Mapa ${sector} · resiste hasta la puerta de la Fundación`,4,true);
+  }
+  function trialVictory(){
+    if(!boss||!boss.dead||bossDefeated)return;
+    bossDefeated=true;totals.bossesDefeated++;
+    if(phase==='levelup')resumePhase='combat';else phase='combat';
+  }
+  function trialCross(){
+    if(!doorOpen||!bossDefeated||!['combat','boss'].includes(phase)||G.U.dist(pl.x,pl.y,exit.x,exit.y)>24+pl.r)return false;
+    totals.sectorsCompleted++;sector++;wave=1;interaction=0;map();beginMapTrial();return true;
   }
   function beginWave(){
     phase='combat';objective=wave%2===0?'survive':'neutralize';spawned=0;objectives=[];spawnClock=0;cards=[];waveTime=0;waveKills=pl.kills;
@@ -113,6 +154,7 @@ G.Expedition = (() => {
     return true;
   }
   function ready(){
+    if(v2())return false;
     if(G.RunContinuity?.canAdvance()===false)return false;
     if(phase!=='preparation')return false;
     if(trialPreparation){trialPreparation=false;beginWave();return true;}
@@ -125,6 +167,7 @@ G.Expedition = (() => {
   function setInteraction(seconds){interaction=seconds;startX=pl.x;startY=pl.y;startHp=pl.hp;startDamage=pl.fieldDamageRevision||0;G.Touch.reset();G.Input.reset();}
   function useExit(action='continue'){
     if(G.RunContinuity?.canAdvance()===false)return false;
+    if(v2())return action==='continue'&&!!pl&&trialCross();
     if(!pl||G.U.dist(pl.x,pl.y,exit.x,exit.y)>exit.r)return false;
     if(action==='escape'&&(kind==='boss'||dimensional)&&phase==='boss'){phase='escaping';setInteraction(2);return true;}
     if(phase!=='exploration')return false;
@@ -132,6 +175,7 @@ G.Expedition = (() => {
     if(action==='continue'){advance();return true;}return false;
   }
   function useRift(){
+    if(v2())return false;
     if(G.RunContinuity?.canAdvance()===false||phase!=='exploration'||!G.DimensionalRifts?.enter(pl))return false;
     const rift=G.DimensionalRifts.state,sc=scale(1);
     boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,rift.x,rift.y,{...sc,hp:sc.hp*1.35,dmg:sc.dmg*1.15},true));
@@ -143,6 +187,7 @@ G.Expedition = (() => {
     G.DimensionalRifts.complete(result);G.Touch.reset();G.Input.reset();gather();
   }
   function summon(owner,count){
+    if(v2()&&(spawnClosed||mapTime>=(G.MapTrial.duration??300)))return 0;
     if(!owner||owner!==boss||owner.dead||!['boss','escaping'].includes(phase))return 0;
     owner.minions=owner.minions.filter(e=>!e.dead);let made=0;
     const max=Math.min(count,4-owner.minions.length,G.Spawner.CAP-G.EnemyMgr.count);
@@ -180,10 +225,36 @@ G.Expedition = (() => {
     }
   }
   let lastDt=0;
+  function updateMapTrial(dt){
+    trialVictory();
+    if(phase==='levelup')return;
+    promptUpgrade();if(phase==='levelup')return;
+    elapsed+=dt;lastDt=dt;
+    const nextTime=Math.min(G.MapTrial.duration??300,mapTime+dt),bossAt=G.MapTrial.bossAt??240;
+    // Process the boss event before the later cutoff, including a single long frame.
+    if(!bossSpawned&&!spawnClosed&&nextTime>=bossAt){mapTime=Math.max(mapTime,bossAt);trialBoss();}
+    mapTime=nextTime;
+    // Close before enemy AI runs: a pending boss summon cannot cross this boundary.
+    if(!spawnClosed&&mapTime>=(G.MapTrial.duration??300)){
+      spawnClosed=true;spawnClock=0;doorOpen=true;G.MapTrial.arrive?.();
+    }
+    G.FieldAbilities.tick(dt,pl);G.FieldCombat.tick(dt,pl,true);pl.update(dt);
+    G.Camera.follow(pl.x,pl.y,dt);G.World.update(dt,G.Camera);G.FX.update(dt);G.Spawner.tickBanner(dt);
+    if(!spawnClosed){
+      spawnClock+=dt*Math.min(2,.55+.06*(sector-1)+mapTime/200);
+      while(spawnClock>=1){if(!spawnOne()){spawnClock=Math.min(1,spawnClock);break;}spawnClock--;}
+    }
+    G.Path.update(dt,[pl]);G.EnemyMgr.update(dt,[pl]);G.Projectiles.update(dt,pl,G.EnemyMgr.all());
+    G.Combat.resolve(dt,pl,elapsed);G.MapTrial.updateAllies?.(dt,pl);G.Pickups.update(dt,pl,collect);
+    if(pl.dead||pl.hp<=0){finish('death');return;}
+    trialVictory();promptUpgrade();if(phase==='levelup')return;
+    if(!spawnClosed)recover();trialCross();
+  }
   function update(dt){
     if(G.RunContinuity?.canAdvance()===false)return;
     if(!pl||phase==='idle'||phase==='finished')return;
     if(pl.dead||pl.hp<=0){finish('death');return;}
+    if(v2()){updateMapTrial(dt);return;}
     if(phase==='levelup')return;
     promptUpgrade();if(phase==='levelup')return;
     G.DimensionalRifts?.tick(dt);
@@ -216,15 +287,17 @@ G.Expedition = (() => {
     }
   }
   function draw(ctx){
+    if(v2()){G.MapTrial.draw?.(ctx,snapshot());return;}
     G.DimensionalRifts?.draw(ctx);
     if(!['exploration','extracting','boss','escaping'].includes(phase))return;
     ctx.save();ctx.fillStyle='#5ac6a233';ctx.strokeStyle='#99ffd6';ctx.lineWidth=3;ctx.beginPath();ctx.arc(exit.x,exit.y,42,0,Math.PI*2);ctx.fill();ctx.stroke();
     ctx.fillStyle='#bdffe0';ctx.font='bold 14px system-ui';ctx.textAlign='center';ctx.fillText(kind==='boss'||dimensional?'HUIR':'SALIDA',exit.x,exit.y-52);ctx.restore();
   }
-  function captureState(){return{phase,sector,wave,sectorWaves,kind,objective,spawned,quota,spawnClock,prep,pending,
+  function captureState(){if(v2())return null;return{phase,sector,wave,sectorWaves,kind,objective,spawned,quota,spawnClock,prep,pending,
     cards:cards.map(c=>c.key),waveKills,waveTime,elapsed,interaction,startX,startY,startHp,startDamage,runSeed,mapSeed,nextBossSector,
     extractionAvailable,drought,totals:{...totals},upgradesApplied,pendingXp,resumePhase,rngState:rng.state(),spawnRngState:spawnRng.state()};}
-  function restoreState(saved,player=G.Game.player,world={broken:[],damaged:[]}){
+  function restoreState(saved,player=G.Game?.player,world={broken:[],damaged:[]}){
+    if(v2())throw new Error('V2: el prototipo de mapas no admite checkpoints heredados');
     dimensional=false;trialPreparation=false;G.DimensionalRifts?.reset();
     pl=player;
     ({phase,sector,wave,sectorWaves,kind,objective,spawned,quota,spawnClock,prep,pending,waveKills,waveTime,elapsed,interaction,

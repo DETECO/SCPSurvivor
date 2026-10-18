@@ -1,5 +1,7 @@
 # Prompt maestro de continuidad — SCP Survivor
 
+**A-031/V2-trial-01:** Iván pidió comenzar la adaptación para su primera prueba. El ensayo local de mapa300s/jefe/puerta/aliados está implementado; conservarlo y leer docs/PRUEBA_MAPA_V2.md e informe antes de modificar. Su horario de jefe240s es provisional. No presentar cartas anteriores como nuevo azar por armas, ni cerrar P05, P06 o V2 con este prototipo.
+
 Síntesis del repositorio, paquetes de Iván y decisiones accesibles del chat ESTRUCTURA, incorporado expresamente el18/10/2026. No se afirma haber recuperado materiales inaccesibles.
 
 **Prioridad V2-ESTRUCTURA:** leer [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) y [registro](docs/ESTRUCTURA_DECISIONES.md). Esta revisión prepara la adaptación; no cambia todavía el juego.

@@ -5,7 +5,7 @@ G.DimensionalRifts = (() => {
   const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
   const accounts = ['local','propias'].includes(query.get('cuentas'));
   const directTest = local && query.get('prueba') === 'grieta' && !accounts;
-  const enabled = local && !accounts && (directTest || query.get('grietas') === 'local');
+  const enabled = local && !accounts && !G.MapTrial?.enabled && (directTest || query.get('grietas') === 'local');
   const TTL = 45, ENTRY_RADIUS = 22;
   let seen = new Set(), state;
   function clear() { state = {status:'idle',remaining:0,x:0,y:0,sector:0,alert:'',alertTime:0,result:null}; }

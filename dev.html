@@ -26,7 +26,7 @@
 <section><h3>Arma 2</h3><label for="loadout-weapon-1">Modelo</label><select id="loadout-weapon-1"></select><div id="loadout-mods-1" class="loadout-mods" aria-label="Mods del arma 2"></div></section>
 </div>
 <p id="loadout-role-summary"></p><p id="loadout-preview-summary"></p><ul id="loadout-preview" class="loadout-preview"></ul><p id="loadout-error" class="loadout-error" role="alert"></p>
-</div><p id="rift-test-note" hidden></p><button id="btn-technical-start" class="primary">Iniciar expedición</button></div>
+</div><p id="rift-test-note" hidden></p><p id="map-test-note" hidden></p><button id="btn-technical-start" class="primary">Iniciar expedición</button><a id="map-trial-quick" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;rapida=1">Prueba rápida: empezar en 4:30</a></div>
 </section>
 <section id="technical-pause" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Pausa">
 <div class="panel"><p class="eyebrow">SECTOR DETENIDO</p><h2>Pausa</h2><p>Tu posición se conserva mientras esta página permanezca abierta.</p><button id="btn-technical-resume" class="primary">Continuar</button><button id="btn-technical-menu">Volver al menú</button></div>
@@ -37,6 +37,8 @@
 <div id="field-status" class="field-status" hidden></div>
 <div id="rift-locator" class="rift-locator" hidden aria-label="Ubicación de la grieta"></div>
 <div id="rift-alert" class="rift-alert" hidden role="alert" aria-live="assertive" aria-atomic="true"></div>
+<div id="map-locator" class="map-locator" hidden aria-label="Objetivo del mapa"></div>
+<div id="map-alert" class="map-alert" hidden role="alert" aria-live="assertive" aria-atomic="true"></div>
 <section id="field-mod-editor" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="field-mod-title"><div class="panel"><p class="eyebrow">PREPARACIÓN</p><h2 id="field-mod-title">Modificar armas</h2><p>El descanso sigue avanzando mientras ajustas los mods.</p><div id="field-mod-content"></div><p id="field-mod-error" class="loadout-error" role="alert"></p><button id="btn-field-mod-confirm" class="primary">Confirmar cambios</button><button id="btn-field-mod-cancel">Cancelar</button></div></section>
 <div id="scene-hud" class="hud" hidden><span><span id="scene-soldier">GUARDIA · SPRINT</span> · <span id="scene-time">0:00</span></span><button id="btn-technical-pause" aria-label="Pausar escena">Pausa</button></div>
 </div>
@@ -45,6 +47,7 @@
 <noscript>Activa JavaScript para entrar al sector de SCP Survivor.</noscript>
 <!-- scripts:begin -->
 <script defer src="js/core/util.js"></script>
+<script defer src="js/systems/map-trial.js"></script>
 <script defer src="js/vendor/firebase-client.js"></script>
 <script defer src="js/data/field-catalog.js"></script>
 <script defer src="js/systems/inventory-model.js"></script>

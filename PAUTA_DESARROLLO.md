@@ -1,8 +1,10 @@
 # Pauta vigente de SCP Survivor — revisión ESTRUCTURA
 
-18/10/2026 · Diseño V2 · **Pauta actualizada; cambios del juego pendientes de implementar.**
+18/10/2026 · Diseño V2 · **Primer prototipo del recorrido disponible; adaptación completa y aceptación pendientes.**
 
 Esta pauta incorpora el chat **ESTRUCTURA** y la instrucción posterior de Iván en PROGRAMACION. Sustituye las reglas incompatibles del diseño de extracción. El código actual se conserva como punto de partida; no se reconstruye el juego.
+
+**Prueba V2-trial-01:** [guía manual](docs/PRUEBA_MAPA_V2.md). El recorrido de mapas300s, jefe y puerta con aliados está implementado como ensayo local sin guardado. Jefe240s y acceso rápido270s son parámetros provisionales de prueba. No implementa aún familias/azar final, gacha, cofres de premios, grietas nuevas o persistencia. [Resultados](docs/V2-PRIMERA-PRUEBA-REPORT.md).
 
 ## Recorrido del juego
 
@@ -23,9 +25,9 @@ La hora exacta de aparición del jefe todavía no está fijada. Debe permitir cu
 
 | Elemento | Dirección vigente | Estado del código |
 | --- | --- | --- |
-| Extracción voluntaria para terminar y asegurar equipo | Retirar su calendario, opción, interacción y cierre de partida | Todavía existe en el prototipo |
-| Accesorios/mods físicos de armas | Retirar objetos, instalación, compatibilidades y ranuras | Todavía existen |
-| Mochilas | Retirar tamaños, capacidad, equipamiento y gestión | Existe un prototipo local temporal |
+| Extracción voluntaria para terminar y asegurar equipo | Retirar su calendario, opción, interacción y cierre de partida | Ausente en la prueba V2; conservada en el modo anterior |
+| Accesorios/mods físicos de armas | Retirar objetos, instalación, compatibilidades y ranuras | No se usan en la prueba V2; código anterior conservado |
+| Mochilas | Retirar tamaños, capacidad, equipamiento y gestión | Desactivado en V2; prototipo anterior conservado |
 | Armas y soldados | Conservar; ampliar mediante catálogo revisado | Tres armas y dos soldados de prueba |
 | Armas distintas, con estadísticas básicas propias | Mantener identidad por arma; organizar por familias | Categorías nuevas pendientes |
 | Mejoras al subir de nivel | Mejorar armas al azar durante la partida | El sistema de cartas actual necesita adaptación |
@@ -74,6 +76,6 @@ Antes de fijar dimensiones finales: revisar sobre esa base los tipos de cofre, a
 5. Replantear P06 para colección/equipamiento y adaptar P07 para gacha/recompensas; no continuar la lista anterior de inventario físico.
 6. Integrar cofres, variantes de mapas, grietas y saltos con las reglas cerradas. Después completar arte, audio, controles y pruebas de integración.
 
-**Estado:** esta entrega actualiza planificación, no implementa V2 ni termina P05/P06. El **52/100 pertenece a la línea base anterior**. El avance global del diseño V2 queda sin calcular hasta revisar alcance, aceptación y pesos; quitar funciones no produce avance automático.
+**Estado:** primer prototipo del recorrido verificado automáticamente y pendiente de prueba de Iván. La adaptación completa V2 y P05/P06 siguen pendientes. El **52/100 pertenece a la línea base anterior**. El avance global del diseño V2 queda sin calcular hasta revisar alcance, aceptación y pesos; quitar funciones no produce avance automático.
 
 Trazabilidad: [decisiones y pendientes de ESTRUCTURA](docs/ESTRUCTURA_DECISIONES.md), [plan técnico y pruebas](docs/PLAN_CAMBIOS_ESTRUCTURA.md), [roadmap](ROADMAP.md).

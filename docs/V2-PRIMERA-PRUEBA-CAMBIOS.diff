@@ -1,0 +1,1834 @@
+# Diff V2-trial-01 / Roadmap0.21
+# Padre: 9947505a9a52f9e6de4879dd14feb467e85dded3
+# Generados index.html y app.min.js resumidos por hash; fuentes y otros archivos completos.
+# Las plantillas extensas JSON se resumen por hash; consultar Git para diff literal.
+
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -1,10 +1,12 @@
+ # SCP Survivor — instrucciones para Codex Local
++
++**Primera prueba V2 autorizada (A-031,18/10/2026):** prototipo local `?prueba=mapa-v2` o rápido `&rapida=1`; leer [guía](docs/PRUEBA_MAPA_V2.md) e [informe](docs/V2-PRIMERA-PRUEBA-REPORT.md). Mapas300s/jefe/puerta/aliados funcionan dentro de este ensayo. No cuentas ni guardado; nunca emitir/restaurar schema1 en V2. La petición posterior autoriza probar el recorrido ahora, sin declarar P05 completo ni continuar inventario físico P06. Código anterior conservado para regresión. Roadmap0.21; aceptación humana pendiente.
+ 
+ ## Prioridad vigente — V2-ESTRUCTURA, 18/10/2026
+ 
+ Leer primero [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) y [decisiones/pendientes](docs/ESTRUCTURA_DECISIONES.md). La petición posterior de Iván incorpora el chat ESTRUCTURA y retira extracción de fin de partida, accesorios físicos de armas y mochilas. Mapas5min, jefe obligatorio por mapa, puerta blindada/soldados a5:00, cese de spawn enemigo y remanentes vivos; cruzar exige jefe derrotado. Armas por familias y mejoras por nivel al azar; los detalles abiertos no se inventan.
+ 
+-Esta entrega es documental: el código anterior se conserva. No continuar el prototipo de mochilas/mods ni la lista física anterior de P06. Terminar aceptación real P05 y compatibilidad de guardado antes de implementar P06 replanteada. Mantener Spark sin facturación. Agentes Sol con razonamiento medio; raíz guía, revisa e integra.
++La revisión inicial V2 fue documental; ahora existe el primer ensayo local descrito arriba. El código anterior se conserva para regresión. No continuar el prototipo de mochilas/mods ni la lista física anterior de P06. Terminar aceptación real P05 y compatibilidad de guardado antes de implementar P06 replanteada. Mantener Spark sin facturación. Agentes Sol con razonamiento medio; raíz guía, revisa e integra.
+ 
+ RoadmapSCPv0.20 añade `activeDesignRevision`; sus53tareas/estados/pesos y52/100 describen la línea base histórica. AvanceV2 sin calcular; no conceder puntos por retirar funciones. Las reglas incompatibles que aparecen debajo son antecedentes, no instrucciones vigentes para V2.
+ 
+--- a/CONTEXTO_PARA_WORK_LOCAL.md
++++ b/CONTEXTO_PARA_WORK_LOCAL.md
+@@ -1,4 +1,6 @@
+ # Relevo para Codex Local — SCP Survivor
++
++**Primer prototipo disponible:** `?prueba=mapa-v2` y `&rapida=1`, solo local sin cuentas/guardado. Consultar [guía](docs/PRUEBA_MAPA_V2.md) e [informe](docs/V2-PRIMERA-PRUEBA-REPORT.md). Esta ejecución A-031 sustituye la frase anterior «entrega documental» para el recorrido de prueba; las demás funciones V2 siguen pendientes. P05 real no está cerrado.
+ 
+ **V2-ESTRUCTURA · 18/10/2026.** Leer primero PAUTA_DESARROLLO.md, docs/ESTRUCTURA_DECISIONES.md, docs/PLAN_CAMBIOS_ESTRUCTURA.md, AGENTS.md y PROMPT_MAESTRO.md. Iván pidió incorporar el chat ESTRUCTURA y preparar la adaptación; no reconstruir el juego.
+ 
+--- a/CONTEXTO_PROYECTO.md
++++ b/CONTEXTO_PROYECTO.md
+@@ -1,4 +1,6 @@
+ # Contexto del proyecto — SCP Survivor
++
++**Ensayo V2-trial-01 (18/10/2026):** primer recorrido local implementado por petición de Iván A-031. Entradas `?prueba=mapa-v2` / `&rapida=1`; jefe provisional240s y puerta300s, aliados, corte de spawn y transición por contacto. Sin guardado, cuentas, extracción, mochila o accesorios en la interfaz del ensayo. No son las familias/azar/economía finales ni cierra P05. [Guía manual](docs/PRUEBA_MAPA_V2.md) · [Resultados y límites](docs/V2-PRIMERA-PRUEBA-REPORT.md).
+ 
+ ## Cambio de dirección — V2-ESTRUCTURA, 18/10/2026
+ 
+--- a/PAUTA_DESARROLLO.md
++++ b/PAUTA_DESARROLLO.md
+@@ -1,8 +1,10 @@
+ # Pauta vigente de SCP Survivor — revisión ESTRUCTURA
+ 
+-18/10/2026 · Diseño V2 · **Pauta actualizada; cambios del juego pendientes de implementar.**
++18/10/2026 · Diseño V2 · **Primer prototipo del recorrido disponible; adaptación completa y aceptación pendientes.**
+ 
+ Esta pauta incorpora el chat **ESTRUCTURA** y la instrucción posterior de Iván en PROGRAMACION. Sustituye las reglas incompatibles del diseño de extracción. El código actual se conserva como punto de partida; no se reconstruye el juego.
++
++**Prueba V2-trial-01:** [guía manual](docs/PRUEBA_MAPA_V2.md). El recorrido de mapas300s, jefe y puerta con aliados está implementado como ensayo local sin guardado. Jefe240s y acceso rápido270s son parámetros provisionales de prueba. No implementa aún familias/azar final, gacha, cofres de premios, grietas nuevas o persistencia. [Resultados](docs/V2-PRIMERA-PRUEBA-REPORT.md).
+ 
+ ## Recorrido del juego
+ 
+@@ -23,9 +25,9 @@
+ 
+ | Elemento | Dirección vigente | Estado del código |
+ | --- | --- | --- |
+-| Extracción voluntaria para terminar y asegurar equipo | Retirar su calendario, opción, interacción y cierre de partida | Todavía existe en el prototipo |
+-| Accesorios/mods físicos de armas | Retirar objetos, instalación, compatibilidades y ranuras | Todavía existen |
+-| Mochilas | Retirar tamaños, capacidad, equipamiento y gestión | Existe un prototipo local temporal |
++| Extracción voluntaria para terminar y asegurar equipo | Retirar su calendario, opción, interacción y cierre de partida | Ausente en la prueba V2; conservada en el modo anterior |
++| Accesorios/mods físicos de armas | Retirar objetos, instalación, compatibilidades y ranuras | No se usan en la prueba V2; código anterior conservado |
++| Mochilas | Retirar tamaños, capacidad, equipamiento y gestión | Desactivado en V2; prototipo anterior conservado |
+ | Armas y soldados | Conservar; ampliar mediante catálogo revisado | Tres armas y dos soldados de prueba |
+ | Armas distintas, con estadísticas básicas propias | Mantener identidad por arma; organizar por familias | Categorías nuevas pendientes |
+ | Mejoras al subir de nivel | Mejorar armas al azar durante la partida | El sistema de cartas actual necesita adaptación |
+@@ -74,6 +76,6 @@
+ 5. Replantear P06 para colección/equipamiento y adaptar P07 para gacha/recompensas; no continuar la lista anterior de inventario físico.
+ 6. Integrar cofres, variantes de mapas, grietas y saltos con las reglas cerradas. Después completar arte, audio, controles y pruebas de integración.
+ 
+-**Estado:** esta entrega actualiza planificación, no implementa V2 ni termina P05/P06. El **52/100 pertenece a la línea base anterior**. El avance global del diseño V2 queda sin calcular hasta revisar alcance, aceptación y pesos; quitar funciones no produce avance automático.
++**Estado:** primer prototipo del recorrido verificado automáticamente y pendiente de prueba de Iván. La adaptación completa V2 y P05/P06 siguen pendientes. El **52/100 pertenece a la línea base anterior**. El avance global del diseño V2 queda sin calcular hasta revisar alcance, aceptación y pesos; quitar funciones no produce avance automático.
+ 
+ Trazabilidad: [decisiones y pendientes de ESTRUCTURA](docs/ESTRUCTURA_DECISIONES.md), [plan técnico y pruebas](docs/PLAN_CAMBIOS_ESTRUCTURA.md), [roadmap](ROADMAP.md).
+--- a/PROMPT_MAESTRO.md
++++ b/PROMPT_MAESTRO.md
+@@ -1,4 +1,6 @@
+ # Prompt maestro de continuidad — SCP Survivor
++
++**A-031/V2-trial-01:** Iván pidió comenzar la adaptación para su primera prueba. El ensayo local de mapa300s/jefe/puerta/aliados está implementado; conservarlo y leer docs/PRUEBA_MAPA_V2.md e informe antes de modificar. Su horario de jefe240s es provisional. No presentar cartas anteriores como nuevo azar por armas, ni cerrar P05, P06 o V2 con este prototipo.
+ 
+ Síntesis del repositorio, paquetes de Iván y decisiones accesibles del chat ESTRUCTURA, incorporado expresamente el18/10/2026. No se afirma haber recuperado materiales inaccesibles.
+ 
+--- a/README.md
++++ b/README.md
+@@ -1,4 +1,6 @@
+ # SCP Survivor
++
++**Primera prueba V2 lista para probar localmente:** [rápida desde4:30](http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1) · [mapa completo](http://127.0.0.1:8000/?prueba=mapa-v2). Ejecutar `npm.cmd run serve` si el servidor está cerrado. [Guía y límites](docs/PRUEBA_MAPA_V2.md). Aceptación de Iván pendiente; sin cuentas ni guardado.
+ 
+ **Pauta vigente V2-ESTRUCTURA (18/10/2026):** [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md). Avance por mapas5min con jefe y puerta de la Fundación; extracción, accesorios físicos y mochilas se retiran del diseño. [Plan de adaptación y pruebas](docs/PLAN_CAMBIOS_ESTRUCTURA.md). La implementación del juego aún es la anterior; esta revisión cambia documentos y roadmap.52/100 es histórico; avanceV2 sin calcular.
+ 
+--- a/ROADMAP.md
++++ b/ROADMAP.md
+@@ -1,8 +1,10 @@
+ # Roadmap vigente — SCP Survivor
+ 
+-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Pauta y plan actualizados desde ESTRUCTURA y la petición posterior de Iván; no se implementan mecánicas en esta revisión documental.
++**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Primera prueba local del recorrido V2 implementada y verificada automáticamente; falta aceptación de Iván y completar el diseño. No cierra P05/P06.
+ 
+ [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md)
++
++**Primera prueba local disponible:** [guía](docs/PRUEBA_MAPA_V2.md) · [prueba rápida](http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1) · [mapa completo](http://127.0.0.1:8000/?prueba=mapa-v2). Sin cuentas ni guardado; aceptación de Iván pendiente.
+ 
+ **Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
+ 
+@@ -17,14 +19,14 @@
+ | Cofres y mapas | Conservar base aprobada D-140–148/D-220/D-279; adaptar intentos por oleada a300s. Presupuesto y tamaño final V2 todavía abiertos. |
+ | P06/P07 | Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow. |
+ 
+-| Paso | Trabajo pendiente | Dependencias |
++| Paso | Trabajo y estado | Dependencias |
+ | --- | --- | --- |
+ | RC-01 | Cerrar contratos y parámetros abiertos de V2 | Reglas V2 |
+ | RC-02 | Versionar guardado, resultados y compatibilidad | P05 verificado, RC-01 |
+-| RC-03 | Director300s y escalada temporal | RC-02 |
+-| RC-04 | Jefe obligatorio por mapa | RC-03 |
+-| RC-05 | Puerta, soldados y transición sin limpiar remanentes | RC-04 |
+-| RC-06 | Retirar extracción del recorrido V2 | RC-05 |
++| RC-03 | Director300s y escalada temporal — prototipo local; aceptación pendiente | RC-02 |
++| RC-04 | Jefe obligatorio por mapa — prototipo local; aceptación pendiente | RC-03 |
++| RC-05 | Puerta, soldados y transición sin limpiar remanentes — prototipo local; aceptación pendiente | RC-04 |
++| RC-06 | Retirar extracción del recorrido V2 — prototipo local; aceptación pendiente | RC-05 |
+ | RC-07 | Armas por familias y mejoras aleatorias | RC-01, RC-02 |
+ | RC-08 | Retirar accesorios/mochilas y replantear P06 | RC-07, RC-02 |
+ | RC-09 | Colección, gacha y recompensas revisadas | RC-08, RC-01 |
+@@ -46,7 +48,7 @@
+ 
+ **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
+ 
+-Versión **0.20**, 2026-10-18. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
++Versión **0.21**, 2026-10-18. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+ 
+ ## Avance basado en evidencia
+ 
+--- a/RoadmapSCP.json
++++ b/RoadmapSCP.json
+@@ -1,6 +1,6 @@
+ {
+   "schemaVersion": 1,
+-  "planVersion": "0.20",
++  "planVersion": "0.21",
+   "updatedOn": "2026-10-18",
+   "timezone": "America/Santiago",
+   "canonicalPath": "RoadmapSCP.json",
+@@ -2283,6 +2283,18 @@
+       ],
+       "runtimeProof": false,
+       "evidenceComplete": false
++    },
++    {
++      "id": "EV-036",
++      "kind": "Prueba automatizada de prototipo local V2",
++      "summary": "Ensayo V2 del recorrido sobre el juego existente. Copia local:126Node,125aprobadas,0fallos,1integraciónoptativa omitida. Copia publicación:126Node,124aprobadas,0fallos,2omitidas por entorno.4recorridos navegador por copia (8 en total) fuente/compilado y escritorio/táctil emulado: inicio, pausa, corte300, jefe obligatorio, remanentes, daño aliado, transición y mapa2en0. Build/check86scripts. Estados/tiempo/HP/posición controlados; no acredita aceptación humana, balance, servicios reales, economía o cierreV2/P05.",
++      "runtimeProof": true,
++      "evidenceComplete": false,
++      "references": [
++        "docs/PRUEBA_MAPA_V2.md",
++        "docs/V2-PRIMERA-PRUEBA-REPORT.md",
++        "docs/V2-PRIMERA-PRUEBA-VALIDACION.json"
++      ]
+     }
+   ],
+   "decisions": [
+@@ -4530,6 +4542,12 @@
+       "topic": "Trazabilidad y porcentaje después del cambio de alcance",
+       "approvalStatus": "Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente.",
+       "resolution": "Preservar53tareas, pesos y evidencia previa como línea base histórica52/100. V2 no tiene porcentaje calculado. P06 se replantea; no otorgar avance por eliminar funciones ni extrapolar CV antiguos a V2."
++    },
++    {
++      "id": "D-324",
++      "topic": "Primera prueba local del recorrido V2",
++      "approvalStatus": "Ejecución solicitada por Iván A-031; horarios/ajustes del ensayo provisionales, aceptación humana pendiente.",
++      "resolution": "Modo loopback ?prueba=mapa-v2 sin cuentas ni esquema1. Reloj300s, jefe a240s provisional, puerta/soldados y corte total de spawn a300, remanentes vivos, contacto condicionado a jefe muerto para cambiar mapa. &rapida=1 comienza270s solo en primer mapa. Preservar vida/build; sin extracción/mods/mochilas en interfaz de ensayo. Cartas anteriores conservadas, no se implementa azar final ni premios. P05 real sigue pendiente."
+     }
+   ],
+   "authorizations": [
+@@ -4677,6 +4695,11 @@
+       "id": "A-030",
+       "action": "Actualizar pauta con ESTRUCTURA y preparar plan de cambios con multiagentes Sol medio",
+       "scopeStatus": "Petición expresa de Iván el18/10: retirar extracciones, accesorios de armas y mochilas, incorporar decisiones accesibles del chat ESTRUCTURA y preparar pauta de cambios para continuar. Revisión documental; no implica que las mecánicas estén implementadas ni autoriza borrar datos o reconstruir el juego."
++    },
++    {
++      "id": "A-031",
++      "action": "Comenzar adaptación para realizar primera prueba V2",
++      "scopeStatus": "Iván pidió «Comienza con la adaptación. Para realizar la primera prueba». Autoriza ensayo local del recorrido y su preparación con agentes Sol medio; no equivale a aceptar P05 real ni implementar economía/inventario P06."
+     }
+   ],
+   "closureCases": [
+@@ -5447,6 +5470,12 @@
+       "date": "2026-10-18",
+       "description": "Roadmap0.20 incorpora A-030/D-318–323/EV-035 y activeDesignRevisionV2. Retirar extracción/accesorios/mochilas del diseño; plan RC de adaptación y criterios de validación pendientes.53tareas/estados/pesos/dependencias/aceptaciones históricas intactos;52/100 es histórico, avanceV2null.",
+       "approval": "Petición expresa de actualizar la pauta desde ESTRUCTURA con multiagentes Sol medio; raíz revisa e integra."
++    },
++    {
++      "id": "CHG-028",
++      "date": "2026-10-18",
++      "description": "Roadmap0.21/A-031/D-324/EV-036: primer prototipo local RC-03–RC-06 para prueba de Iván. Interfaz sin extracción/accesorios/mochilas; aliados, puerta y guardias de esquema. Se conserva juego anterior y12assets; sin cuentas ni facturación. AvanceV2sin calcular,52/100histórico; P05real pendiente.",
++      "approval": "Petición expresa de comenzar adaptación para primera prueba; no aceptación final."
+     }
+   ],
+   "derivedProgress": {
+@@ -5834,7 +5863,19 @@
+       "designDisposition": "historical_fixture_replan_do_not_extend_backpacks_or_mods"
+     },
+     "activeDesignRevision": "V2-ESTRUCTURA",
+-    "v2ImplementationStatus": "pending; esta entrega documental no modifica el juego"
++    "v2ImplementationStatus": "V2-trial-01 local y sin guardado; aceptación humana pendiente",
++    "v2Trial": {
++      "version": "V2-trial-01",
++      "guide": "docs/PRUEBA_MAPA_V2.md",
++      "report": "docs/V2-PRIMERA-PRUEBA-REPORT.md",
++      "url": "http://127.0.0.1:8000/?prueba=mapa-v2",
++      "quickUrl": "http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1",
++      "manualAcceptance": "pending",
++      "persisted": false,
++      "bossAtSecondsProvisional": 240,
++      "mapSeconds": 300,
++      "firstMapQuickSeconds": 270
++    }
+   },
+   "summaryTemplate": {
+     "sha256": "51cf5dca7e8bc8855cac9f786e32041aa1f960bfa9e2fe0fec8fe34308c4ee03",
+@@ -5844,9 +5885,9 @@
+     "id": "V2-ESTRUCTURA",
+     "title": "Avance por mapas; sin extracción, accesorios físicos ni mochilas",
+     "updatedOn": "2026-10-18",
+-    "status": "documented_pending_implementation",
++    "status": "local_trial_pending_manual_acceptance",
+     "authority": "A-030",
+-    "summary": "Pauta y plan actualizados desde ESTRUCTURA y la petición posterior de Iván; no se implementan mecánicas en esta revisión documental.",
++    "summary": "Primera prueba local del recorrido V2 implementada y verificada automáticamente; falta aceptación de Iván y completar el diseño. No cierra P05/P06.",
+     "pautaPath": "PAUTA_DESARROLLO.md",
+     "changePlanPath": "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
+     "decisionsPath": "docs/ESTRUCTURA_DECISIONES.md",
+@@ -5950,8 +5991,12 @@
+         "dependencies": [
+           "RC-02"
+         ],
+-        "status": "P",
+-        "evidenceComplete": false
++        "status": "EC",
++        "evidenceComplete": false,
++        "evidenceIds": [
++          "EV-036"
++        ],
++        "implementationScope": "Prototipo optativo local; sin contrato persistente V2 ni aceptación humana. Dependencias completas y cierre final pendientes."
+       },
+       {
+         "id": "RC-04",
+@@ -5959,8 +6004,12 @@
+         "dependencies": [
+           "RC-03"
+         ],
+-        "status": "P",
+-        "evidenceComplete": false
++        "status": "EC",
++        "evidenceComplete": false,
++        "evidenceIds": [
++          "EV-036"
++        ],
++        "implementationScope": "Prototipo optativo local; sin contrato persistente V2 ni aceptación humana. Dependencias completas y cierre final pendientes."
+       },
+       {
+         "id": "RC-05",
+@@ -5968,8 +6017,12 @@
+         "dependencies": [
+           "RC-04"
+         ],
+-        "status": "P",
+-        "evidenceComplete": false
++        "status": "EC",
++        "evidenceComplete": false,
++        "evidenceIds": [
++          "EV-036"
++        ],
++        "implementationScope": "Prototipo optativo local; sin contrato persistente V2 ni aceptación humana. Dependencias completas y cierre final pendientes."
+       },
+       {
+         "id": "RC-06",
+@@ -5977,8 +6030,12 @@
+         "dependencies": [
+           "RC-05"
+         ],
+-        "status": "P",
+-        "evidenceComplete": false
++        "status": "EC",
++        "evidenceComplete": false,
++        "evidenceIds": [
++          "EV-036"
++        ],
++        "implementationScope": "Prototipo optativo local; sin contrato persistente V2 ni aceptación humana. Dependencias completas y cierre final pendientes."
+       },
+       {
+         "id": "RC-07",
+@@ -6051,6 +6108,18 @@
+       "P06": "Replantear antes de implementar. No continuar inventario físico antiguo.",
+       "P07": "Revisar colección/gacha/recompensas de soldados y armas tras P05/P06 revisados."
+     },
+-    "gameCodeChangedByThisRevision": false
++    "gameCodeChangedByThisRevision": true,
++    "firstTrial": {
++      "version": "V2-trial-01",
++      "guide": "docs/PRUEBA_MAPA_V2.md",
++      "report": "docs/V2-PRIMERA-PRUEBA-REPORT.md",
++      "url": "http://127.0.0.1:8000/?prueba=mapa-v2",
++      "quickUrl": "http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1",
++      "manualAcceptance": "pending",
++      "persisted": false,
++      "bossAtSecondsProvisional": 240,
++      "mapSeconds": 300,
++      "firstMapQuickSeconds": 270
++    }
+   }
+ }
+--- a/RoadmapSCP.md
++++ b/RoadmapSCP.md
+@@ -1,8 +1,10 @@
+ # Roadmap SCP Survivor
+ 
+-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Pauta y plan actualizados desde ESTRUCTURA y la petición posterior de Iván; no se implementan mecánicas en esta revisión documental.
++**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Primera prueba local del recorrido V2 implementada y verificada automáticamente; falta aceptación de Iván y completar el diseño. No cierra P05/P06.
+ 
+ [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md)
++
++**Primera prueba local disponible:** [guía](docs/PRUEBA_MAPA_V2.md) · [prueba rápida](http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1) · [mapa completo](http://127.0.0.1:8000/?prueba=mapa-v2). Sin cuentas ni guardado; aceptación de Iván pendiente.
+ 
+ **Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
+ 
+@@ -17,14 +19,14 @@
+ | Cofres y mapas | Conservar base aprobada D-140–148/D-220/D-279; adaptar intentos por oleada a300s. Presupuesto y tamaño final V2 todavía abiertos. |
+ | P06/P07 | Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow. |
+ 
+-| Paso | Trabajo pendiente | Dependencias |
++| Paso | Trabajo y estado | Dependencias |
+ | --- | --- | --- |
+ | RC-01 | Cerrar contratos y parámetros abiertos de V2 | Reglas V2 |
+ | RC-02 | Versionar guardado, resultados y compatibilidad | P05 verificado, RC-01 |
+-| RC-03 | Director300s y escalada temporal | RC-02 |
+-| RC-04 | Jefe obligatorio por mapa | RC-03 |
+-| RC-05 | Puerta, soldados y transición sin limpiar remanentes | RC-04 |
+-| RC-06 | Retirar extracción del recorrido V2 | RC-05 |
++| RC-03 | Director300s y escalada temporal — prototipo local; aceptación pendiente | RC-02 |
++| RC-04 | Jefe obligatorio por mapa — prototipo local; aceptación pendiente | RC-03 |
++| RC-05 | Puerta, soldados y transición sin limpiar remanentes — prototipo local; aceptación pendiente | RC-04 |
++| RC-06 | Retirar extracción del recorrido V2 — prototipo local; aceptación pendiente | RC-05 |
+ | RC-07 | Armas por familias y mejoras aleatorias | RC-01, RC-02 |
+ | RC-08 | Retirar accesorios/mochilas y replantear P06 | RC-07, RC-02 |
+ | RC-09 | Colección, gacha y recompensas revisadas | RC-08, RC-01 |
+@@ -46,7 +48,7 @@
+ 
+ **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
+ 
+-**Versión 0.20 — 2026-10-18 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
++**Versión 0.21 — 2026-10-18 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
+ 
+ ## 1. Estado vigente
+ 
+@@ -324,6 +326,7 @@
+ | A-027 | Subir el trabajo a GitHub y continuar P06 inmediatamente después del cierre P05 con multiagentes | Petición expresa de Iván el17/10/2026: «al terminar subelo al github» y «cuando termines las fase 5, vamos altiro a la fase 6. usa multiagentes». Se conserva la autorización previa de subir código/roadmap a DETECO/SCPSurvivor/main, sin sobrescribir historial. P06 se continúa cuando P05 cierre; no autoriza declarar aceptación por inferencia ni cambiar criterios. |
+ | A-028 | Mantener Spark sin facturación | Respuesta expresa de Iván el17/10/2026 a la consulta sobre Blaze y posibles cargos: «Mantener Spark sin facturación». No vincular cuenta de facturación ni activar Blaze, aunque limite el despliegue del backend actual. Conservar los avances, la verificación local y la configuración propia desactivada. |
+ | A-030 | Actualizar pauta con ESTRUCTURA y preparar plan de cambios con multiagentes Sol medio | Petición expresa de Iván el18/10: retirar extracciones, accesorios de armas y mochilas, incorporar decisiones accesibles del chat ESTRUCTURA y preparar pauta de cambios para continuar. Revisión documental; no implica que las mecánicas estén implementadas ni autoriza borrar datos o reconstruir el juego. |
++| A-031 | Comenzar adaptación para realizar primera prueba V2 | Iván pidió «Comienza con la adaptación. Para realizar la primera prueba». Autoriza ensayo local del recorrido y su preparación con agentes Sol medio; no equivale a aceptar P05 real ni implementar economía/inventario P06. |
+ 
+ ## 6. Registro íntegro de decisiones
+ 
+@@ -653,6 +656,7 @@
+ | D-321 | Grietas opcionales y saltos dimensionales | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | Desafíos de mayor dificultad/recompensa y rutas dimensionales. Conservar contacto instantáneo, apertura limitada, sonido, aviso y localizador. Retorno/reloj/destinos y relación con jefe obligatorio siguen por definir. |
+ | D-322 | Cofres aprobados y adaptación a mapas de300s | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | Conservar la base aprobada D-140–148/D-183/D-220/D-279: sorteos por oleada, probabilidades/topes, tickets, apertura y descubrimiento. Su integración en la partida SCP no está implementada; las cajas de campo no dan botín. Adaptar cadencia y premios incompatibles antes de presupuesto/distribución/tamaño V2. No importar automáticamente premios de Pokesurvivor ni descartar reglas previas por omisión. |
+ | D-323 | Trazabilidad y porcentaje después del cambio de alcance | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | Preservar53tareas, pesos y evidencia previa como línea base histórica52/100. V2 no tiene porcentaje calculado. P06 se replantea; no otorgar avance por eliminar funciones ni extrapolar CV antiguos a V2. |
++| D-324 | Primera prueba local del recorrido V2 | Ejecución solicitada por Iván A-031; horarios/ajustes del ensayo provisionales, aceptación humana pendiente. | Modo loopback ?prueba=mapa-v2 sin cuentas ni esquema1. Reloj300s, jefe a240s provisional, puerta/soldados y corte total de spawn a300, remanentes vivos, contacto condicionado a jefe muerto para cambiar mapa. &rapida=1 comienza270s solo en primer mapa. Preservar vida/build; sin extracción/mods/mochilas en interfaz de ensayo. Cartas anteriores conservadas, no se implementa azar final ni premios. P05 real sigue pendiente. |
+ 
+ ## 7. Evidencias completas
+ 
+@@ -694,6 +698,7 @@
+ | EV-032 | p05_own_runtime_preparation_and_local_regression: Preparación propia desactivada: OAuth/vinculación oficiales seleccionados por entorno, cachés aisladas, guardias de proyecto, CORS y configuración propia. Suite112casos:111aprobados,0fallos,1integración optativa omitida. Integración emulada explícita1PASS. Navegador local24escenariosPASS ypropio desactivado8PASS; build/check6382978a6a,85scripts,SDK227024bytes. CLI sin cuenta autorizada; no consulta/despliegue del proyecto real, correo/Google/dispositivos propios ni cierreP05. P06 se conserva sin continuación; global52/100. | Sí, dentro del alcance descrito | [docs/P05-CIERRE-REPORT.md](docs/P05-CIERRE-REPORT.md), [docs/CIERRE_P05.md](docs/CIERRE_P05.md), [docs/ACTIVACION_FIREBASE_PROPIO.md](docs/ACTIVACION_FIREBASE_PROPIO.md), [tests/p05-own-client.test.js](tests/p05-own-client.test.js), [tests/p05-own-server.test.js](tests/p05-own-server.test.js), [tests/p05-cors.test.js](tests/p05-cors.test.js), [tests/p05-own-disabled-browser.py](tests/p05-own-disabled-browser.py), [tests/p05-browser.py](tests/p05-browser.py), [tests/p05-emulators.test.js](tests/p05-emulators.test.js) | evidenceComplete: false; ownRuntimeTested: false; ownAccountsEnabled: false; manualAcceptance: pending; bundle: 6382978a6a; scriptCount: 85; sdkBytes: 227024; nodeCases: 112; nodePassed: 111; nodeFailed: 0; nodeSkipped: 1; explicitEmulatorIntegrationPassed: 1; localBrowserScenarios: 24; disabledOwnBrowserScenarios: 8; firebaseCliAuthorized: false; acceptanceScope: Preparación/pruebas locales. Los SDK mocks, emuladores y servidor HTTP local no acreditan servicios propios reales. |
+ | EV-033 | firebase_own_readonly_configuration_audit_and_spark_decision: Consultas GET reales: CLI del propietario autorizado y acceso scp-survivor confirmado; billingEnabled=false, sin cuenta de facturación. Auth correo/Google habilitados, dominios localhost/127.0.0.1 y dos hosts del proyecto; política ENFORCE8..4096 sin clases. allowDuplicateEmails omitido y no inferido. Firestore/Functions devuelven403SERVICE_DISABLED; no se listaron datos/funciones. Hosting tiene sitio predeterminado, release no comprobada. Iván elige Spark sin facturación. No se despliega, habilita cuenta propia ni prueba OAuth/correo/guardado real; P05EV0/6, global52/100. | Sí, dentro del alcance descrito | [docs/P05-AUDITORIA-FIREBASE.json](docs/P05-AUDITORIA-FIREBASE.json), [docs/P05-ESTADO-SPARK.md](docs/P05-ESTADO-SPARK.md), [docs/CIERRE_P05.md](docs/CIERRE_P05.md) | evidenceComplete: false; firebaseCliAuthorized: true; projectAccessVerified: true; billingEnabled: false; billingAuthorized: false; readOnly: true; ownAccountsEnabled: false; ownGameRuntimeTested: false; acceptanceScope: Configuración administrativa y decisión del titular; no aceptación funcional P05. |
+ | EV-035 | Auditoría documental de alcance: Lectura de los10turnos disponibles de ESTRUCTURA; separación de instrucciones del usuario, propuestas del asistente y reglas abiertas. Pauta V2 y plan RC-01–RC-12 preparados; sin cambios del juego ni aceptación funcional. | Documental; sin prueba de ejecución | [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [docs/ESTRUCTURA_DECISIONES.md](docs/ESTRUCTURA_DECISIONES.md), [docs/PLAN_CAMBIOS_ESTRUCTURA.md](docs/PLAN_CAMBIOS_ESTRUCTURA.md), [docs/COFRES_BASE_Y_ADAPTACION_V2.md](docs/COFRES_BASE_Y_ADAPTACION_V2.md) | evidenceComplete: false |
++| EV-036 | Prueba automatizada de prototipo local V2: Ensayo V2 del recorrido sobre el juego existente. Copia local:126Node,125aprobadas,0fallos,1integraciónoptativa omitida. Copia publicación:126Node,124aprobadas,0fallos,2omitidas por entorno.4recorridos navegador por copia (8 en total) fuente/compilado y escritorio/táctil emulado: inicio, pausa, corte300, jefe obligatorio, remanentes, daño aliado, transición y mapa2en0. Build/check86scripts. Estados/tiempo/HP/posición controlados; no acredita aceptación humana, balance, servicios reales, economía o cierreV2/P05. | Sí, dentro del alcance descrito | [docs/PRUEBA_MAPA_V2.md](docs/PRUEBA_MAPA_V2.md), [docs/V2-PRIMERA-PRUEBA-REPORT.md](docs/V2-PRIMERA-PRUEBA-REPORT.md), [docs/V2-PRIMERA-PRUEBA-VALIDACION.json](docs/V2-PRIMERA-PRUEBA-VALIDACION.json) | evidenceComplete: false |
+ 
+ ## 8. Áreas de continuidad
+ 
+@@ -843,6 +848,7 @@
+ | CHG-024 | 2026-10-17 | Registrar EV-032 de preparación propia y regresión local. Corregir CORS IPv6 y confirmación del proveedor Google local; conservar registro del primer timeout y sus límites. Propio desactivado, acceso Firebase pendiente. P05 no se cierra y P06 no se continúa. Mantener53tareas,25CV y52/100; no nueva publicación GitHub. | A-026; prioridad expresa de completar P05 antes de continuar P06. |
+ | CHG-025 | 2026-10-17 | A-027/A-028, D-315/D-316 y EV-033: resolver acceso CLI y consultar infraestructura/Auth reales sin mutaciones. Registrar decisión expresa de mantener Spark sin facturación; Functions actual no desplegable, propio desactivado. Preparar publicación autorizada de código/roadmap y continuación P06 condicionada al cierre P05. Conservar53tareas,25CV, criterios/pesos/dependencias y52/100. | Elección explícita Spark y peticiones de GitHub/continuación inmediata P06 con multiagentes. |
+ | CHG-027 | 2026-10-18 | Roadmap0.20 incorpora A-030/D-318–323/EV-035 y activeDesignRevisionV2. Retirar extracción/accesorios/mochilas del diseño; plan RC de adaptación y criterios de validación pendientes.53tareas/estados/pesos/dependencias/aceptaciones históricas intactos;52/100 es histórico, avanceV2null. | Petición expresa de actualizar la pauta desde ESTRUCTURA con multiagentes Sol medio; raíz revisa e integra. |
++| CHG-028 | 2026-10-18 | Roadmap0.21/A-031/D-324/EV-036: primer prototipo local RC-03–RC-06 para prueba de Iván. Interfaz sin extracción/accesorios/mochilas; aliados, puerta y guardias de esquema. Se conserva juego anterior y12assets; sin cuentas ni facturación. AvanceV2sin calcular,52/100histórico; P05real pendiente. | Petición expresa de comenzar adaptación para primera prueba; no aceptación final. |
+ 
+ ## 13. Continuar en Windows/Codex Local
+ 
+--- a/css/technical.css
++++ b/css/technical.css
+@@ -1,77 +1,82 @@
+-/* Interfaz provisional P01: identidad final pendiente de producción. */
+-:root{color-scheme:dark;--bg:#111b19;--ink:#ece7d5;--muted:#aab5a7;--edge:#47584c;--accent:#c9ae6a;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}body{height:100svh;overflow:hidden;display:flex;flex-direction:column;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+-header{height:68px;flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 24px;border-bottom:1px solid var(--edge)}.brand{letter-spacing:.16em;font-size:15px;font-weight:800}.version{font-size:11px;letter-spacing:.1em;color:var(--muted)}
+-main{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}#viewport{position:relative;width:min(calc(100vw - 24px),calc(100svh - 156px - env(safe-area-inset-top) - env(safe-area-inset-bottom)),960px);aspect-ratio:1;border:1px solid var(--edge);box-shadow:0 24px 70px #0006;background:#303d33}#game{display:block;width:100%;height:100%;touch-action:none;image-rendering:pixelated}
+-.overlay{position:absolute;inset:0;display:grid;place-items:center;background:#0b171bbd;padding:20px}.panel{width:min(410px,100%);border:1px solid #6c785a;background:#14241ff2;padding:30px;box-shadow:0 20px 60px #0007}.eyebrow{color:var(--accent);letter-spacing:.17em;font-size:11px;font-weight:700;margin:0 0 12px}h1{font-size:clamp(25px,6vw,39px);letter-spacing:.04em;line-height:1.05;margin:0 0 14px}h2{font-size:25px;margin:0 0 12px}p{font-size:14px;line-height:1.5;color:var(--muted)}button{font:inherit;cursor:pointer;border:1px solid #8c9a77;background:#283d30;color:var(--ink);min-height:46px;padding:10px 18px;font-weight:700}button.primary{background:var(--accent);border-color:var(--accent);color:#18241f}.panel button{width:100%;margin-top:12px}button:focus-visible{outline:3px solid #ddebba;outline-offset:3px}.hud{position:absolute;top:10px;left:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;pointer-events:none}.hud button{pointer-events:auto;min-height:40px;padding:8px 12px;font-size:13px}.hud span{font-size:12px;letter-spacing:.04em;padding:8px;background:#11211fe0}.footer{flex:none;min-height:64px;text-align:center;padding:10px 18px;font-size:12px;color:var(--muted)}kbd{font:inherit;color:var(--ink);border:1px solid var(--edge);padding:1px 4px}.footer p{font-size:12px;margin:2px 0}#boot{position:absolute;z-index:4;inset:0;display:grid;place-items:center;text-align:center;padding:30px;background:#15231f}noscript{position:absolute;inset:68px 0 0;background:#15231f;padding:40px;z-index:9}[hidden]{display:none!important}
+-@media(max-height:500px){header{height:42px;padding:5px 16px}.footer{min-height:42px;padding:5px 12px}#viewport{width:min(calc(100vw - 24px),calc(100svh - 98px - env(safe-area-inset-top) - env(safe-area-inset-bottom)))}.panel{padding:16px}.panel p{font-size:12px}h1{font-size:23px;margin-bottom:8px}.eyebrow{margin-bottom:8px}.panel button{min-height:38px;margin-top:8px}.version{font-size:10px}}
+-.field-controls{position:absolute;bottom:12px;left:12px;right:12px;display:flex;gap:8px;justify-content:space-between}.field-controls button{font-size:12px;min-height:42px}.field-status{position:absolute;top:64px;left:12px;right:12px;padding:7px;background:#10261ddd;color:#e4edc7;font-size:11px;line-height:1.5;pointer-events:none}.upgrade-card{text-align:left!important;padding:12px!important}.upgrade-card strong,.upgrade-card small{display:block}.upgrade-card small{font-size:12px;font-weight:400;margin-top:5px;color:#c7cfc0}button:disabled{opacity:.45;cursor:default}#field-upgrades,#field-result{z-index:3}#technical-pause{z-index:4}@media(max-height:500px){.field-status{font-size:9px;top:55px;padding:4px}.field-controls{bottom:7px}.field-controls button{font-size:10px;min-height:33px;padding:6px}.upgrade-card{padding:7px!important}.upgrade-card small{font-size:10px}.panel h2{font-size:20px}}
+-
+-#field-upgrades .panel{max-height:calc(100svh - 120px);overflow:auto}#field-upgrades .panel p{margin:6px 0}#field-upgrades .panel h2{margin-bottom:8px}
+-
+-.hint-touch{display:none}@media(pointer:coarse){.hint-keyboard{display:none}.hint-touch{display:block}}
+-
+-/* P02: la escena ocupa todo el espacio visible, también en móviles. */
+-html,body{width:100%;height:100%;min-height:0}
+-body{height:100vh;height:100dvh;min-height:0;display:block;position:relative;padding:0}
+-header{position:absolute;z-index:5;top:env(safe-area-inset-top);left:env(safe-area-inset-left);right:env(safe-area-inset-right);height:56px;pointer-events:none}
+-main{position:absolute;inset:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);display:block;width:auto;height:auto}
+-#viewport{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;border:0;box-shadow:none;overflow:hidden}
+-.footer{position:absolute;z-index:5;bottom:env(safe-area-inset-bottom);left:env(safe-area-inset-left);right:env(safe-area-inset-right);pointer-events:none}
+-body[data-technical-state="playing"] header,body[data-technical-state="playing"] .footer{display:none}
+-body[data-technical-state="ui"] .footer,body[data-technical-state="paused"] .footer{display:none}
+-.overlay{overflow:auto;overscroll-behavior:contain}
+-#field-upgrades .panel,#technical-ready .panel,#technical-pause .panel,#field-result .panel{max-height:calc(100% - 24px);overflow:auto;overscroll-behavior:contain}
+-@media(max-height:500px){header{height:42px;padding:5px 16px}.footer{min-height:0;padding:5px 12px}#viewport{width:100%;height:100%}}
+-
+-/* P04 local test loadout and in-run weapon controls. */
+-#technical-ready .panel{width:min(700px,100%)}
+-.developer-credit{margin:0 0 14px;color:var(--ink);font-size:13px;font-weight:600}
+-.loadout-editor{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}
+-.loadout-editor h2{font-size:18px;margin-bottom:8px}
+-.loadout-editor label,.loadout-editor select{font-size:13px}
+-.loadout-editor select{display:block;width:100%;min-height:40px;margin:4px 0 10px;padding:7px;background:#10211c;color:var(--ink);border:1px solid var(--edge)}
+-.loadout-weapons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+-.loadout-weapons section{min-width:0;border:1px solid var(--edge);padding:9px}
+-.loadout-weapons h3{font-size:14px;margin:0 0 5px}
+-.loadout-mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+-.loadout-mod{display:flex;align-items:flex-start;gap:5px;font-size:11px!important;line-height:1.3;padding:4px;background:#1b3028}
+-.loadout-mod input{flex:none;margin:1px 0 0;accent-color:var(--accent)}
+-.loadout-editor p{font-size:12px;margin:7px 0}
+-.loadout-preview{font-size:11px;color:#d6decf;padding-left:20px;margin:4px 0}
+-.loadout-error{color:#ff9b91!important;min-height:1.3em}
+-.field-controls{align-items:flex-end;flex-wrap:wrap}
+-.field-controls button{min-height:48px}
+-.field-weapons{display:flex;gap:6px}
+-.field-controls .field-weapon{width:76px;height:58px;min-width:48px;min-height:48px;padding:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05}
+-.field-weapon strong{font-size:15px}.field-weapon small{font-size:9px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+-.field-weapon.active{border-color:var(--accent);box-shadow:0 0 0 2px #c9ae6a66 inset}
+-#btn-ability{min-width:112px}
+-#btn-mods{padding:8px 10px}
+-#field-mod-editor{z-index:4}
+-#field-mod-editor .panel{max-height:calc(100% - 20px);overflow:auto}
+-.field-mod-group{border:1px solid var(--edge);margin:10px 0;padding:8px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+-.field-mod-group legend{font-size:13px;font-weight:700;color:var(--accent)}
+-.field-mod-group p{grid-column:1/-1;font-size:11px;margin:4px}
+-@media(max-width:540px){.loadout-weapons{grid-template-columns:1fr}.loadout-mods{grid-template-columns:repeat(2,minmax(0,1fr))}.field-controls{gap:5px}.field-controls button{padding:7px 8px}.field-controls .field-weapon{width:62px}}
+-@media(max-height:560px){#technical-ready .panel{padding:16px}.loadout-editor{margin-top:7px;padding-top:7px}.loadout-weapons section{padding:5px}.loadout-mod{font-size:10px!important}.loadout-preview{margin:1px 0}.field-controls{bottom:6px}.field-controls .field-weapon{height:50px}}
+-.loadout-mod{min-height:44px;align-items:center}
+-.loadout-mod input{width:18px;height:18px}
+-.loadout-weapon-details{display:block;margin:5px 0;color:#aab5a7;line-height:1.35}
+-.field-mod-stats{font-size:11px!important;line-height:1.4}
+-.field-mod-draft{color:#d5e8b4!important}
+-
+-/* P05: account controls within the existing menu. */
+-/* P06: gestión de copias de prueba en la interfaz existente. */
+-.inventory-base{margin-top:14px;padding-top:12px;border-top:1px solid var(--edge)}.inventory-base h2{font-size:18px}.inventory-base p{font-size:12px}
+-#inventory-overlay{z-index:6}#inventory-overlay .panel{width:min(760px,100%);max-height:calc(100% - 24px);overflow:auto}
+-#inventory-content h3{font-size:15px;margin:16px 0 8px}#inventory-content select{min-height:44px;background:#10211c;color:var(--ink);font:inherit}
+-.inventory-row{border:1px solid var(--edge);padding:8px;margin:6px 0;display:flex;flex-wrap:wrap;gap:5px}.inventory-row p{flex:1 0 100%;font-size:12px;margin:0}
+-.inventory-row button{width:auto;flex:1;min-height:44px;font-size:11px;margin:0;padding:6px 10px}
+-#inventory-draft-note{font-size:12px;color:#d5e8b4}
+-/* Grietas: señales provisionales de la prueba local; diseño final en P09. */
+-.rift-locator,.rift-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;background:#1d1015ed;color:#fff0f0;border:1px solid #f3747b;font-size:13px;line-height:1.4;pointer-events:none}
+-.rift-locator{top:100px;font-weight:700}.rift-alert{top:155px;border-left:4px solid #f3747b}
+-#rift-test-note{border-left:3px solid #f3747b;padding-left:10px}
+-@media(max-width:540px){.rift-locator,.rift-alert{left:8px;right:8px;font-size:12px}.rift-locator{top:118px}.rift-alert{top:184px}}
+-.account-panel{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}.account-panel h2{font-size:18px}.account-panel label{display:block;font-size:13px;margin-top:8px}.account-panel input{display:block;width:100%;box-sizing:border-box;min-height:44px;margin-top:4px;padding:8px;background:#10211c;color:var(--ink);border:1px solid var(--edge);font:inherit}.account-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.account-actions button{font-size:12px;padding:8px;min-height:48px}.account-panel p{font-size:12px}#account-notice{color:#ffb49e}#account-sync-overlay{z-index:30}button:disabled{opacity:.55;cursor:default}
++/* Interfaz provisional P01: identidad final pendiente de producción. */
++:root{color-scheme:dark;--bg:#111b19;--ink:#ece7d5;--muted:#aab5a7;--edge:#47584c;--accent:#c9ae6a;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
++*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}body{height:100svh;overflow:hidden;display:flex;flex-direction:column;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
++header{height:68px;flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 24px;border-bottom:1px solid var(--edge)}.brand{letter-spacing:.16em;font-size:15px;font-weight:800}.version{font-size:11px;letter-spacing:.1em;color:var(--muted)}
++main{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}#viewport{position:relative;width:min(calc(100vw - 24px),calc(100svh - 156px - env(safe-area-inset-top) - env(safe-area-inset-bottom)),960px);aspect-ratio:1;border:1px solid var(--edge);box-shadow:0 24px 70px #0006;background:#303d33}#game{display:block;width:100%;height:100%;touch-action:none;image-rendering:pixelated}
++.overlay{position:absolute;inset:0;display:grid;place-items:center;background:#0b171bbd;padding:20px}.panel{width:min(410px,100%);border:1px solid #6c785a;background:#14241ff2;padding:30px;box-shadow:0 20px 60px #0007}.eyebrow{color:var(--accent);letter-spacing:.17em;font-size:11px;font-weight:700;margin:0 0 12px}h1{font-size:clamp(25px,6vw,39px);letter-spacing:.04em;line-height:1.05;margin:0 0 14px}h2{font-size:25px;margin:0 0 12px}p{font-size:14px;line-height:1.5;color:var(--muted)}button{font:inherit;cursor:pointer;border:1px solid #8c9a77;background:#283d30;color:var(--ink);min-height:46px;padding:10px 18px;font-weight:700}button.primary{background:var(--accent);border-color:var(--accent);color:#18241f}.panel button{width:100%;margin-top:12px}button:focus-visible{outline:3px solid #ddebba;outline-offset:3px}.hud{position:absolute;top:10px;left:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;pointer-events:none}.hud button{pointer-events:auto;min-height:40px;padding:8px 12px;font-size:13px}.hud span{font-size:12px;letter-spacing:.04em;padding:8px;background:#11211fe0}.footer{flex:none;min-height:64px;text-align:center;padding:10px 18px;font-size:12px;color:var(--muted)}kbd{font:inherit;color:var(--ink);border:1px solid var(--edge);padding:1px 4px}.footer p{font-size:12px;margin:2px 0}#boot{position:absolute;z-index:4;inset:0;display:grid;place-items:center;text-align:center;padding:30px;background:#15231f}noscript{position:absolute;inset:68px 0 0;background:#15231f;padding:40px;z-index:9}[hidden]{display:none!important}
++@media(max-height:500px){header{height:42px;padding:5px 16px}.footer{min-height:42px;padding:5px 12px}#viewport{width:min(calc(100vw - 24px),calc(100svh - 98px - env(safe-area-inset-top) - env(safe-area-inset-bottom)))}.panel{padding:16px}.panel p{font-size:12px}h1{font-size:23px;margin-bottom:8px}.eyebrow{margin-bottom:8px}.panel button{min-height:38px;margin-top:8px}.version{font-size:10px}}
++.field-controls{position:absolute;bottom:12px;left:12px;right:12px;display:flex;gap:8px;justify-content:space-between}.field-controls button{font-size:12px;min-height:42px}.field-status{position:absolute;top:64px;left:12px;right:12px;padding:7px;background:#10261ddd;color:#e4edc7;font-size:11px;line-height:1.5;pointer-events:none}.upgrade-card{text-align:left!important;padding:12px!important}.upgrade-card strong,.upgrade-card small{display:block}.upgrade-card small{font-size:12px;font-weight:400;margin-top:5px;color:#c7cfc0}button:disabled{opacity:.45;cursor:default}#field-upgrades,#field-result{z-index:3}#technical-pause{z-index:4}@media(max-height:500px){.field-status{font-size:9px;top:55px;padding:4px}.field-controls{bottom:7px}.field-controls button{font-size:10px;min-height:33px;padding:6px}.upgrade-card{padding:7px!important}.upgrade-card small{font-size:10px}.panel h2{font-size:20px}}
++
++#field-upgrades .panel{max-height:calc(100svh - 120px);overflow:auto}#field-upgrades .panel p{margin:6px 0}#field-upgrades .panel h2{margin-bottom:8px}
++
++.hint-touch{display:none}@media(pointer:coarse){.hint-keyboard{display:none}.hint-touch{display:block}}
++
++/* P02: la escena ocupa todo el espacio visible, también en móviles. */
++html,body{width:100%;height:100%;min-height:0}
++body{height:100vh;height:100dvh;min-height:0;display:block;position:relative;padding:0}
++header{position:absolute;z-index:5;top:env(safe-area-inset-top);left:env(safe-area-inset-left);right:env(safe-area-inset-right);height:56px;pointer-events:none}
++main{position:absolute;inset:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);display:block;width:auto;height:auto}
++#viewport{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;border:0;box-shadow:none;overflow:hidden}
++.footer{position:absolute;z-index:5;bottom:env(safe-area-inset-bottom);left:env(safe-area-inset-left);right:env(safe-area-inset-right);pointer-events:none}
++body[data-technical-state="playing"] header,body[data-technical-state="playing"] .footer{display:none}
++body[data-technical-state="ui"] .footer,body[data-technical-state="paused"] .footer{display:none}
++.overlay{overflow:auto;overscroll-behavior:contain}
++#field-upgrades .panel,#technical-ready .panel,#technical-pause .panel,#field-result .panel{max-height:calc(100% - 24px);overflow:auto;overscroll-behavior:contain}
++@media(max-height:500px){header{height:42px;padding:5px 16px}.footer{min-height:0;padding:5px 12px}#viewport{width:100%;height:100%}}
++
++/* P04 local test loadout and in-run weapon controls. */
++#technical-ready .panel{width:min(700px,100%)}
++.developer-credit{margin:0 0 14px;color:var(--ink);font-size:13px;font-weight:600}
++.loadout-editor{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}
++.loadout-editor h2{font-size:18px;margin-bottom:8px}
++.loadout-editor label,.loadout-editor select{font-size:13px}
++.loadout-editor select{display:block;width:100%;min-height:40px;margin:4px 0 10px;padding:7px;background:#10211c;color:var(--ink);border:1px solid var(--edge)}
++.loadout-weapons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
++.loadout-weapons section{min-width:0;border:1px solid var(--edge);padding:9px}
++.loadout-weapons h3{font-size:14px;margin:0 0 5px}
++.loadout-mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
++.loadout-mod{display:flex;align-items:flex-start;gap:5px;font-size:11px!important;line-height:1.3;padding:4px;background:#1b3028}
++.loadout-mod input{flex:none;margin:1px 0 0;accent-color:var(--accent)}
++.loadout-editor p{font-size:12px;margin:7px 0}
++.loadout-preview{font-size:11px;color:#d6decf;padding-left:20px;margin:4px 0}
++.loadout-error{color:#ff9b91!important;min-height:1.3em}
++.field-controls{align-items:flex-end;flex-wrap:wrap}
++.field-controls button{min-height:48px}
++.field-weapons{display:flex;gap:6px}
++.field-controls .field-weapon{width:76px;height:58px;min-width:48px;min-height:48px;padding:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05}
++.field-weapon strong{font-size:15px}.field-weapon small{font-size:9px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
++.field-weapon.active{border-color:var(--accent);box-shadow:0 0 0 2px #c9ae6a66 inset}
++#btn-ability{min-width:112px}
++#btn-mods{padding:8px 10px}
++#field-mod-editor{z-index:4}
++#field-mod-editor .panel{max-height:calc(100% - 20px);overflow:auto}
++.field-mod-group{border:1px solid var(--edge);margin:10px 0;padding:8px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
++.field-mod-group legend{font-size:13px;font-weight:700;color:var(--accent)}
++.field-mod-group p{grid-column:1/-1;font-size:11px;margin:4px}
++@media(max-width:540px){.loadout-weapons{grid-template-columns:1fr}.loadout-mods{grid-template-columns:repeat(2,minmax(0,1fr))}.field-controls{gap:5px}.field-controls button{padding:7px 8px}.field-controls .field-weapon{width:62px}}
++@media(max-height:560px){#technical-ready .panel{padding:16px}.loadout-editor{margin-top:7px;padding-top:7px}.loadout-weapons section{padding:5px}.loadout-mod{font-size:10px!important}.loadout-preview{margin:1px 0}.field-controls{bottom:6px}.field-controls .field-weapon{height:50px}}
++.loadout-mod{min-height:44px;align-items:center}
++.loadout-mod input{width:18px;height:18px}
++.loadout-weapon-details{display:block;margin:5px 0;color:#aab5a7;line-height:1.35}
++.field-mod-stats{font-size:11px!important;line-height:1.4}
++.field-mod-draft{color:#d5e8b4!important}
++
++/* P05: account controls within the existing menu. */
++/* P06: gestión de copias de prueba en la interfaz existente. */
++.inventory-base{margin-top:14px;padding-top:12px;border-top:1px solid var(--edge)}.inventory-base h2{font-size:18px}.inventory-base p{font-size:12px}
++#inventory-overlay{z-index:6}#inventory-overlay .panel{width:min(760px,100%);max-height:calc(100% - 24px);overflow:auto}
++#inventory-content h3{font-size:15px;margin:16px 0 8px}#inventory-content select{min-height:44px;background:#10211c;color:var(--ink);font:inherit}
++.inventory-row{border:1px solid var(--edge);padding:8px;margin:6px 0;display:flex;flex-wrap:wrap;gap:5px}.inventory-row p{flex:1 0 100%;font-size:12px;margin:0}
++.inventory-row button{width:auto;flex:1;min-height:44px;font-size:11px;margin:0;padding:6px 10px}
++#inventory-draft-note{font-size:12px;color:#d5e8b4}
++/* Grietas: señales provisionales de la prueba local; diseño final en P09. */
++.rift-locator,.rift-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;background:#1d1015ed;color:#fff0f0;border:1px solid #f3747b;font-size:13px;line-height:1.4;pointer-events:none}
++.map-trial-link{display:block;margin-top:12px;padding:10px;color:#eee8dc;text-align:center;border:1px solid var(--edge);font-size:13px;min-height:44px}
++#map-test-note{border-left:3px solid #ef6571;padding-left:10px;font-size:13px;line-height:1.5}
++.map-locator,.map-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;border:1px solid #ddd8c9;background:#10201ded;color:#fff3dc;font-size:13px;line-height:1.4;pointer-events:none}
++.map-locator{top:100px}.map-alert{top:155px;border-left:4px solid #ef6571}
++@media(max-width:540px){.map-locator,.map-alert{left:8px;right:8px;font-size:12px}.map-locator{top:118px}.map-alert{top:184px}}
++.rift-locator{top:100px;font-weight:700}.rift-alert{top:155px;border-left:4px solid #f3747b}
++#rift-test-note{border-left:3px solid #f3747b;padding-left:10px}
++@media(max-width:540px){.rift-locator,.rift-alert{left:8px;right:8px;font-size:12px}.rift-locator{top:118px}.rift-alert{top:184px}}
++.account-panel{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}.account-panel h2{font-size:18px}.account-panel label{display:block;font-size:13px;margin-top:8px}.account-panel input{display:block;width:100%;box-sizing:border-box;min-height:44px;margin-top:4px;padding:8px;background:#10211c;color:var(--ink);border:1px solid var(--edge);font:inherit}.account-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.account-actions button{font-size:12px;padding:8px;min-height:48px}.account-panel p{font-size:12px}#account-notice{color:#ffb49e}#account-sync-overlay{z-index:30}button:disabled{opacity:.55;cursor:default}
+--- a/dev.html
++++ b/dev.html
+@@ -1,142 +1,145 @@
+-<!doctype html>
+-<html lang="es">
+-<head>
+-<meta charset="utf-8">
+-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' http://127.0.0.1:9099 http://127.0.0.1:5001 https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://scp-survivor.firebaseapp.com https://us-central1-scp-survivor.cloudfunctions.net; style-src 'self'; img-src 'self' data:; font-src 'self'; frame-src http://127.0.0.1:9099 https://scp-survivor.firebaseapp.com; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+-<meta name="robots" content="noindex,nofollow">
+-<link rel="icon" href="data:,">
+-<link rel="stylesheet" href="css/technical.css">
+-<title>SCP Survivor · Expedición</title>
+-<!-- dev.html: página fuente local de P02 -->
+-</head>
+-<body>
+-<header><div class="brand">SCP SURVIVOR</div><span class="version">ALFA · 0.5 LOCAL</span></header>
+-<main>
+-<div id="viewport">
+-<canvas id="game" aria-label="Sector de entrenamiento; usa WASD, flechas o arrastra el dedo para moverte"></canvas>
+-<div id="boot" role="status" aria-live="polite">Preparando el sector…</div>
+-<section id="technical-ready" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Menú principal">
+-<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p class="developer-credit">Desarrollado por Ivan Vivanco</p><p id="technical-intro">Explora sectores conectados, resiste y neutraliza las amenazas. Mejora tu equipo y decide hasta dónde avanzar.</p><p id="technical-account-hint">Prueba distintos soldados y equipos en una expedición local. No se guarda progreso ni se obtienen recompensas.</p>
+-<div class="loadout-editor" aria-labelledby="loadout-title">
+-<h2 id="loadout-title">Equipo de prueba</h2>
+-<label for="field-role">Soldado</label><select id="field-role"><option value="guard">Guardia · Sprint</option><option value="medic">Médico · Primeros auxilios</option></select>
+-<div class="loadout-weapons">
+-<section><h3>Arma 1</h3><label for="loadout-weapon-0">Modelo</label><select id="loadout-weapon-0"></select><div id="loadout-mods-0" class="loadout-mods" aria-label="Mods del arma 1"></div></section>
+-<section><h3>Arma 2</h3><label for="loadout-weapon-1">Modelo</label><select id="loadout-weapon-1"></select><div id="loadout-mods-1" class="loadout-mods" aria-label="Mods del arma 2"></div></section>
+-</div>
+-<p id="loadout-role-summary"></p><p id="loadout-preview-summary"></p><ul id="loadout-preview" class="loadout-preview"></ul><p id="loadout-error" class="loadout-error" role="alert"></p>
+-</div><p id="rift-test-note" hidden></p><button id="btn-technical-start" class="primary">Iniciar expedición</button></div>
+-</section>
+-<section id="technical-pause" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Pausa">
+-<div class="panel"><p class="eyebrow">SECTOR DETENIDO</p><h2>Pausa</h2><p>Tu posición se conserva mientras esta página permanezca abierta.</p><button id="btn-technical-resume" class="primary">Continuar</button><button id="btn-technical-menu">Volver al menú</button></div>
+-</section>
+-<section id="field-upgrades" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="upgrade-title"><div class="panel"><p class="eyebrow">SUBIDA DE NIVEL</p><h2 id="upgrade-title">Elige una mejora</h2><p id="upgrade-count"></p><div id="upgrade-cards"></div></div></section>
+-<section id="field-result" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="result-title"><div class="panel"><p class="eyebrow">FIN DE EXPEDICIÓN</p><h2 id="result-title"></h2><p id="result-info"></p><button id="btn-result-restart" class="primary">Nueva expedición</button><button id="btn-result-menu">Volver al menú</button></div></section>
+-<div id="field-controls" class="field-controls" hidden><div id="field-weapons" class="field-weapons"><button id="btn-field-weapon-0" class="field-weapon" aria-label="Cambiar al arma 1">1</button><button id="btn-field-weapon-1" class="field-weapon" aria-label="Cambiar al arma 2">2</button></div><button id="btn-ability">Sprint</button><button id="btn-mods" hidden>Modificar armas</button><button id="btn-field-ready" hidden>Listo</button><button id="btn-field-exit" hidden>Usar salida</button><button id="btn-field-extract" hidden>Extraer</button></div>
+-<div id="field-status" class="field-status" hidden></div>
+-<div id="rift-locator" class="rift-locator" hidden aria-label="Ubicación de la grieta"></div>
+-<div id="rift-alert" class="rift-alert" hidden role="alert" aria-live="assertive" aria-atomic="true"></div>
+-<section id="field-mod-editor" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="field-mod-title"><div class="panel"><p class="eyebrow">PREPARACIÓN</p><h2 id="field-mod-title">Modificar armas</h2><p>El descanso sigue avanzando mientras ajustas los mods.</p><div id="field-mod-content"></div><p id="field-mod-error" class="loadout-error" role="alert"></p><button id="btn-field-mod-confirm" class="primary">Confirmar cambios</button><button id="btn-field-mod-cancel">Cancelar</button></div></section>
+-<div id="scene-hud" class="hud" hidden><span><span id="scene-soldier">GUARDIA · SPRINT</span> · <span id="scene-time">0:00</span></span><button id="btn-technical-pause" aria-label="Pausar escena">Pausa</button></div>
+-</div>
+-</main>
+-<footer class="footer"><div id="scene-footer" hidden><p class="hint-keyboard"><kbd>WASD</kbd> / flechas · <kbd>Q</kbd>/<kbd>E</kbd> arma · <kbd>1</kbd>–<kbd>3</kbd> mejora · <kbd>Espacio</kbd> habilidad · <kbd>Esc</kbd> pausa</p><p class="hint-touch">Arrastra para moverte · toca habilidad o un arma</p><span id="scene-position" hidden>0, 0</span></div><p>Partida local · sin guardado ni recompensas persistentes</p></footer>
+-<noscript>Activa JavaScript para entrar al sector de SCP Survivor.</noscript>
+-<!-- scripts:begin -->
+-<script defer src="js/core/util.js"></script>
+-<script defer src="js/vendor/firebase-client.js"></script>
+-<script defer src="js/data/field-catalog.js"></script>
+-<script defer src="js/systems/inventory-model.js"></script>
+-<script defer src="js/systems/field-stats.js"></script>
+-<script defer src="js/core/i18n.js"></script>
+-<script defer src="js/data/lang-en.js"></script>
+-<script defer src="js/core/settings.js"></script>
+-<script defer src="js/data/music.js"></script>
+-<script defer src="js/data/pokedex.js"></script>
+-<script defer src="js/data/sprites-meta.js"></script>
+-<!-- núcleo -->
+-<script defer src="js/core/firebase-config.js"></script>
+-<script defer src="js/core/db.js"></script>
+-<script defer src="js/core/audio.js"></script>
+-<script defer src="js/core/input.js"></script>
+-<script defer src="js/core/touch.js"></script>
+-<script defer src="js/core/sprites.js"></script>
+-<script defer src="js/core/camera.js"></script>
+-<script defer src="js/core/guard.js"></script>
+-<!-- datos de juego -->
+-<script defer src="js/data/moves.js"></script>
+-<script defer src="js/data/types.js"></script>
+-<script defer src="js/data/starters.js"></script>
+-<script defer src="js/data/enemies.js"></script>
+-<script defer src="js/data/upgrades.js"></script>
+-<script defer src="js/data/items.js"></script>
+-<script defer src="js/data/missions.js"></script>
+-<script defer src="js/data/achievements.js"></script>
+-<script defer src="js/data/funding.js"></script>
+-<!-- mundo -->
+-<script defer src="js/world/tiles.js"></script>
+-<script defer src="js/world/world.js"></script>
+-<script defer src="js/world/sector-maps.js"></script>
+-<!-- entidades -->
+-<script defer src="js/entities/vfx.js"></script>
+-<script defer src="js/entities/fx.js"></script>
+-<script defer src="js/entities/projectile.js"></script>
+-<script defer src="js/systems/biological-ai.js"></script>
+-<script defer src="js/systems/containment-boss.js"></script>
+-<script defer src="js/systems/containment-ai.js"></script>
+-<script defer src="js/entities/enemy.js"></script>
+-<script defer src="js/entities/pickup.js"></script>
+-<script defer src="js/entities/player.js"></script>
+-<!-- sistemas -->
+-<script defer src="js/systems/combat.js"></script>
+-<script defer src="js/systems/spawner.js"></script>
+-<script defer src="js/systems/levelup.js"></script>
+-<script defer src="js/systems/gacha.js"></script>
+-<script defer src="js/systems/interact.js"></script>
+-<script defer src="js/systems/rift.js"></script>
+-<script defer src="js/systems/events.js"></script>
+-<script defer src="js/systems/weather.js"></script>
+-<script defer src="js/systems/pathing.js"></script>
+-<script defer src="js/systems/progress.js"></script>
+-<script defer src="js/systems/hazards.js"></script>
+-<!-- red: amigos, salas, cooperativo y ranking -->
+-<script defer src="js/net/social.js"></script>
+-<script defer src="js/net/signups.js"></script>
+-<script defer src="js/net/net.js"></script>
+-<script defer src="js/net/coop.js"></script>
+-<script defer src="js/net/ranking.js"></script>
+-<!-- interfaz -->
+-<script defer src="js/ui/icons.js"></script>
+-<script defer src="js/ui/ui.js"></script>
+-<script defer src="js/ui/hud.js"></script>
+-<script defer src="js/ui/login.js"></script>
+-<script defer src="js/ui/test.js"></script>
+-<script defer src="js/ui/menu.js"></script>
+-<script defer src="js/ui/slots.js"></script>
+-<script defer src="js/ui/gacha-ui.js"></script>
+-<script defer src="js/ui/run-ui.js"></script>
+-<script defer src="js/ui/social-ui.js"></script>
+-<script defer src="js/ui/ranking-ui.js"></script>
+-<script defer src="js/ui/goals-ui.js"></script>
+-<script defer src="js/ui/settings-ui.js"></script>
+-<script defer src="js/ui/support-ui.js"></script>
+-<!-- juego -->
+-<script defer src="js/data/content.js"></script>
+-<script defer src="js/ui/field-loadout.js"></script>
+-<script defer src="js/systems/dimensional-rifts.js"></script>
+-<script defer src="js/ui/technical-ui.js"></script>
+-<script defer src="js/ui/inventory-trial.js"></script>
+-<script defer src="js/systems/field-abilities.js"></script>
+-<script defer src="js/systems/field-combat.js"></script>
+-<script defer src="js/systems/field-upgrades.js"></script>
+-<script defer src="js/systems/expedition.js"></script>
+-<script defer src="js/game.js"></script>
+-<script defer src="js/net/local-accounts.js"></script>
+-<script defer src="js/systems/run-checkpoint.js"></script>
+-<script defer src="js/systems/run-continuity.js"></script>
+-<script defer src="js/ui/account-ui.js"></script>
+-<script defer src="js/main.js"></script>
+-<!-- scripts:end -->
+-</body>
+-</html>
++<!doctype html>
++<html lang="es">
++<head>
++<meta charset="utf-8">
++<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
++<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' http://127.0.0.1:9099 http://127.0.0.1:5001 https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://scp-survivor.firebaseapp.com https://us-central1-scp-survivor.cloudfunctions.net; style-src 'self'; img-src 'self' data:; font-src 'self'; frame-src http://127.0.0.1:9099 https://scp-survivor.firebaseapp.com; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
++<meta name="robots" content="noindex,nofollow">
++<link rel="icon" href="data:,">
++<link rel="stylesheet" href="css/technical.css">
++<title>SCP Survivor · Expedición</title>
++<!-- dev.html: página fuente local de P02 -->
++</head>
++<body>
++<header><div class="brand">SCP SURVIVOR</div><span class="version">ALFA · 0.5 LOCAL</span></header>
++<main>
++<div id="viewport">
++<canvas id="game" aria-label="Sector de entrenamiento; usa WASD, flechas o arrastra el dedo para moverte"></canvas>
++<div id="boot" role="status" aria-live="polite">Preparando el sector…</div>
++<section id="technical-ready" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Menú principal">
++<div class="panel"><p class="eyebrow">OPERACIÓN · ENTRENAMIENTO</p><h1>SCP<br>SURVIVOR</h1><p class="developer-credit">Desarrollado por Ivan Vivanco</p><p id="technical-intro">Explora sectores conectados, resiste y neutraliza las amenazas. Mejora tu equipo y decide hasta dónde avanzar.</p><p id="technical-account-hint">Prueba distintos soldados y equipos en una expedición local. No se guarda progreso ni se obtienen recompensas.</p>
++<div class="loadout-editor" aria-labelledby="loadout-title">
++<h2 id="loadout-title">Equipo de prueba</h2>
++<label for="field-role">Soldado</label><select id="field-role"><option value="guard">Guardia · Sprint</option><option value="medic">Médico · Primeros auxilios</option></select>
++<div class="loadout-weapons">
++<section><h3>Arma 1</h3><label for="loadout-weapon-0">Modelo</label><select id="loadout-weapon-0"></select><div id="loadout-mods-0" class="loadout-mods" aria-label="Mods del arma 1"></div></section>
++<section><h3>Arma 2</h3><label for="loadout-weapon-1">Modelo</label><select id="loadout-weapon-1"></select><div id="loadout-mods-1" class="loadout-mods" aria-label="Mods del arma 2"></div></section>
++</div>
++<p id="loadout-role-summary"></p><p id="loadout-preview-summary"></p><ul id="loadout-preview" class="loadout-preview"></ul><p id="loadout-error" class="loadout-error" role="alert"></p>
++</div><p id="rift-test-note" hidden></p><p id="map-test-note" hidden></p><button id="btn-technical-start" class="primary">Iniciar expedición</button><a id="map-trial-quick" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;rapida=1">Prueba rápida: empezar en 4:30</a></div>
++</section>
++<section id="technical-pause" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Pausa">
++<div class="panel"><p class="eyebrow">SECTOR DETENIDO</p><h2>Pausa</h2><p>Tu posición se conserva mientras esta página permanezca abierta.</p><button id="btn-technical-resume" class="primary">Continuar</button><button id="btn-technical-menu">Volver al menú</button></div>
++</section>
++<section id="field-upgrades" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="upgrade-title"><div class="panel"><p class="eyebrow">SUBIDA DE NIVEL</p><h2 id="upgrade-title">Elige una mejora</h2><p id="upgrade-count"></p><div id="upgrade-cards"></div></div></section>
++<section id="field-result" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="result-title"><div class="panel"><p class="eyebrow">FIN DE EXPEDICIÓN</p><h2 id="result-title"></h2><p id="result-info"></p><button id="btn-result-restart" class="primary">Nueva expedición</button><button id="btn-result-menu">Volver al menú</button></div></section>
++<div id="field-controls" class="field-controls" hidden><div id="field-weapons" class="field-weapons"><button id="btn-field-weapon-0" class="field-weapon" aria-label="Cambiar al arma 1">1</button><button id="btn-field-weapon-1" class="field-weapon" aria-label="Cambiar al arma 2">2</button></div><button id="btn-ability">Sprint</button><button id="btn-mods" hidden>Modificar armas</button><button id="btn-field-ready" hidden>Listo</button><button id="btn-field-exit" hidden>Usar salida</button><button id="btn-field-extract" hidden>Extraer</button></div>
++<div id="field-status" class="field-status" hidden></div>
++<div id="rift-locator" class="rift-locator" hidden aria-label="Ubicación de la grieta"></div>
++<div id="rift-alert" class="rift-alert" hidden role="alert" aria-live="assertive" aria-atomic="true"></div>
++<div id="map-locator" class="map-locator" hidden aria-label="Objetivo del mapa"></div>
++<div id="map-alert" class="map-alert" hidden role="alert" aria-live="assertive" aria-atomic="true"></div>
++<section id="field-mod-editor" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="field-mod-title"><div class="panel"><p class="eyebrow">PREPARACIÓN</p><h2 id="field-mod-title">Modificar armas</h2><p>El descanso sigue avanzando mientras ajustas los mods.</p><div id="field-mod-content"></div><p id="field-mod-error" class="loadout-error" role="alert"></p><button id="btn-field-mod-confirm" class="primary">Confirmar cambios</button><button id="btn-field-mod-cancel">Cancelar</button></div></section>
++<div id="scene-hud" class="hud" hidden><span><span id="scene-soldier">GUARDIA · SPRINT</span> · <span id="scene-time">0:00</span></span><button id="btn-technical-pause" aria-label="Pausar escena">Pausa</button></div>
++</div>
++</main>
++<footer class="footer"><div id="scene-footer" hidden><p class="hint-keyboard"><kbd>WASD</kbd> / flechas · <kbd>Q</kbd>/<kbd>E</kbd> arma · <kbd>1</kbd>–<kbd>3</kbd> mejora · <kbd>Espacio</kbd> habilidad · <kbd>Esc</kbd> pausa</p><p class="hint-touch">Arrastra para moverte · toca habilidad o un arma</p><span id="scene-position" hidden>0, 0</span></div><p>Partida local · sin guardado ni recompensas persistentes</p></footer>
++<noscript>Activa JavaScript para entrar al sector de SCP Survivor.</noscript>
++<!-- scripts:begin -->
++<script defer src="js/core/util.js"></script>
++<script defer src="js/systems/map-trial.js"></script>
++<script defer src="js/vendor/firebase-client.js"></script>
++<script defer src="js/data/field-catalog.js"></script>
++<script defer src="js/systems/inventory-model.js"></script>
++<script defer src="js/systems/field-stats.js"></script>
++<script defer src="js/core/i18n.js"></script>
++<script defer src="js/data/lang-en.js"></script>
++<script defer src="js/core/settings.js"></script>
++<script defer src="js/data/music.js"></script>
++<script defer src="js/data/pokedex.js"></script>
++<script defer src="js/data/sprites-meta.js"></script>
++<!-- núcleo -->
++<script defer src="js/core/firebase-config.js"></script>
++<script defer src="js/core/db.js"></script>
++<script defer src="js/core/audio.js"></script>
++<script defer src="js/core/input.js"></script>
++<script defer src="js/core/touch.js"></script>
++<script defer src="js/core/sprites.js"></script>
++<script defer src="js/core/camera.js"></script>
++<script defer src="js/core/guard.js"></script>
++<!-- datos de juego -->
++<script defer src="js/data/moves.js"></script>
++<script defer src="js/data/types.js"></script>
++<script defer src="js/data/starters.js"></script>
++<script defer src="js/data/enemies.js"></script>
++<script defer src="js/data/upgrades.js"></script>
++<script defer src="js/data/items.js"></script>
++<script defer src="js/data/missions.js"></script>
++<script defer src="js/data/achievements.js"></script>
++<script defer src="js/data/funding.js"></script>
++<!-- mundo -->
++<script defer src="js/world/tiles.js"></script>
++<script defer src="js/world/world.js"></script>
++<script defer src="js/world/sector-maps.js"></script>
++<!-- entidades -->
++<script defer src="js/entities/vfx.js"></script>
++<script defer src="js/entities/fx.js"></script>
++<script defer src="js/entities/projectile.js"></script>
++<script defer src="js/systems/biological-ai.js"></script>
++<script defer src="js/systems/containment-boss.js"></script>
++<script defer src="js/systems/containment-ai.js"></script>
++<script defer src="js/entities/enemy.js"></script>
++<script defer src="js/entities/pickup.js"></script>
++<script defer src="js/entities/player.js"></script>
++<!-- sistemas -->
++<script defer src="js/systems/combat.js"></script>
++<script defer src="js/systems/spawner.js"></script>
++<script defer src="js/systems/levelup.js"></script>
++<script defer src="js/systems/gacha.js"></script>
++<script defer src="js/systems/interact.js"></script>
++<script defer src="js/systems/rift.js"></script>
++<script defer src="js/systems/events.js"></script>
++<script defer src="js/systems/weather.js"></script>
++<script defer src="js/systems/pathing.js"></script>
++<script defer src="js/systems/progress.js"></script>
++<script defer src="js/systems/hazards.js"></script>
++<!-- red: amigos, salas, cooperativo y ranking -->
++<script defer src="js/net/social.js"></script>
++<script defer src="js/net/signups.js"></script>
++<script defer src="js/net/net.js"></script>
++<script defer src="js/net/coop.js"></script>
++<script defer src="js/net/ranking.js"></script>
++<!-- interfaz -->
++<script defer src="js/ui/icons.js"></script>
++<script defer src="js/ui/ui.js"></script>
++<script defer src="js/ui/hud.js"></script>
++<script defer src="js/ui/login.js"></script>
++<script defer src="js/ui/test.js"></script>
++<script defer src="js/ui/menu.js"></script>
++<script defer src="js/ui/slots.js"></script>
++<script defer src="js/ui/gacha-ui.js"></script>
++<script defer src="js/ui/run-ui.js"></script>
++<script defer src="js/ui/social-ui.js"></script>
++<script defer src="js/ui/ranking-ui.js"></script>
++<script defer src="js/ui/goals-ui.js"></script>
++<script defer src="js/ui/settings-ui.js"></script>
++<script defer src="js/ui/support-ui.js"></script>
++<!-- juego -->
++<script defer src="js/data/content.js"></script>
++<script defer src="js/ui/field-loadout.js"></script>
++<script defer src="js/systems/dimensional-rifts.js"></script>
++<script defer src="js/ui/technical-ui.js"></script>
++<script defer src="js/ui/inventory-trial.js"></script>
++<script defer src="js/systems/field-abilities.js"></script>
++<script defer src="js/systems/field-combat.js"></script>
++<script defer src="js/systems/field-upgrades.js"></script>
++<script defer src="js/systems/expedition.js"></script>
++<script defer src="js/game.js"></script>
++<script defer src="js/net/local-accounts.js"></script>
++<script defer src="js/systems/run-checkpoint.js"></script>
++<script defer src="js/systems/run-continuity.js"></script>
++<script defer src="js/ui/account-ui.js"></script>
++<script defer src="js/main.js"></script>
++<!-- scripts:end -->
++</body>
++</html>
+--- a/docs/OBSERVACIONES_VISUALES.md
++++ b/docs/OBSERVACIONES_VISUALES.md
+@@ -1,4 +1,6 @@
+ # Observaciones visuales — pendientes de P09
++
++**Prototipo V2-trial-01:** puerta y soldados reutilizan sprites existentes y dibujo temporal; llamada visible y tono sintetizado, sin voz final grabada. Se ordenan aliados/props/jugador por profundidad. Revisar en P09 escala, silueta, legibilidad, llegada, efectos y voz; la prueba actual no aprueba arte definitivo.
+ 
+ **V2-ESTRUCTURA · 18/10/2026.** Mantener estas observaciones compatibles. Añadir al diseño visual/audio la puerta blindada y brecha de transición a5:00, llegada y llamada de los soldados, cobertura aliada, aviso de jefe pendiente y diferenciación de puerta normal/grieta opcional/salto dimensional. No denominar extracción de fin de partida a la transición. Retirar de la futura interfaz mochilas y ranuras de accesorios; conservar crédito y marcadores de daño pendientes. Arte existente intacto. [Pauta vigente](../PAUTA_DESARROLLO.md).
+ 
+--- a/docs/PLAN_CAMBIOS_ESTRUCTURA.md
++++ b/docs/PLAN_CAMBIOS_ESTRUCTURA.md
+@@ -1,4 +1,6 @@
+ # Plan de adaptación a ESTRUCTURA — SCP Survivor
++
++**Primer ensayo A-031 disponible:** RC-03–RC-06 tienen prototipo local en prueba, sin aceptación final, contrato persistente ni cierre de dependencias. Consultar [prueba manual](PRUEBA_MAPA_V2.md). Las tareas/casos de abajo siguen siendo criterios de la adaptación completa; no exigir terminar la economía o P06 anterior para ejecutar este ensayo sin guardado.
+ 
+ 18/10/2026 · Plan técnico V2 · **Pendiente de implementación.**
+ 
+@@ -24,7 +26,7 @@
+ 
+ ## Trabajo ordenado y aceptación
+ 
+-Todas las tareas RC están **pendientes**. No son puntos completados ni modifican los pesos históricos.
++Todas las tareas RC siguen pendientes de **aceptación final**. RC-03–RC-06 tienen un prototipo local en prueba (EV-036), sin contrato persistente ni cierre de dependencias. No son puntos completados ni modifican los pesos históricos.
+ 
+ | ID | Trabajo | Depende de | Se acepta cuando |
+ | --- | --- | --- | --- |
+--- a/docs/PRUEBA_MAPA_V2.md
++++ b/docs/PRUEBA_MAPA_V2.md
+@@ -0,0 +1,43 @@
++# Primera prueba de mapas V2
++
++18/10/2026. Prototipo local del recorrido nuevo. No cierra P05 ni integra guardado, economía, gacha, cofres o ranking. Arte y balance provisionales; las mejoras todavía usan las cartas anteriores.
++
++## Abrir la prueba
++
++Con el servidor local abierto:
++
++- [Prueba rápida: comenzar en 4:30](http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1).
++- [Mapa completo: comenzar en 0:00](http://127.0.0.1:8000/?prueba=mapa-v2).
++
++Si el servidor está cerrado, abrir PowerShell en la carpeta del proyecto y ejecutar:
++
++```powershell
++npm.cmd run serve
++```
++
++En el menú elige Guardia o Médico y las dos armas de prueba. Pulsa **Iniciar prueba rápida V2** o **Iniciar mapa V2 · 5 minutos**. No necesitas iniciar sesión. El crédito «Desarrollado por Ivan Vivanco» se conserva.
++
++## Qué probar
++
++1. Muévete con WASD/flechas o arrastrando en pantalla táctil. Disparo automático; Q/E o botones para cambiar arma y Espacio/habilidad para Sprint o curación.
++2. En la prueba rápida ya aparece el jefe. En la completa aparece provisionalmente en 4:00. Debes derrotarlo para avanzar.
++3. En 5:00 llega la brecha/puerta blindada con dos soldados aliados. Suena una alerta y aparece la llamada «¡Por aquí, te cubrimos!». Los disparos aliados usan daño real; la voz grabada queda para el acabado de audio.
++4. Comprueba que dejan de aparecer enemigos y refuerzos. Los que queden siguen vivos y peligrosos; los soldados proporcionan cobertura junto a la puerta.
++5. Sigue el indicador de dirección/distancia. Si el jefe vive, la puerta indica **DERROTA AL JEFE** y no permite pasar.
++6. Cuando esté derrotado y hayan pasado cinco minutos, camina sobre la puerta: pasas al siguiente mapa **al instante**, sin botón ni espera.
++7. En el siguiente mapa el reloj vuelve a 0:00 y conservas vida, experiencia, mejoras y estado de armas. La prueba rápida solo adelanta el primer mapa.
++8. Pausa y continúa. El reloj del mapa debe quedarse detenido durante la pausa y mientras eliges una mejora.
++
++Si derrotas al jefe antes de 5:00, debes esperar la llegada de la puerta. Si mueres, aparece el resultado y puedes reiniciar. No hay opción de extraer, huir del jefe, accesorios ni mochilas en este modo.
++
++## Qué todavía no representa
++
++- Usa las armas, soldados, enemigos y escenarios disponibles; no añade el catálogo final por familias ni sustituye diseños aprobados.
++- Los aliados son cobertura de prueba, separados de la lista enemiga y sin daño recibido; no es la IA aliada final.
++- Se conservan las cartas de mejora anteriores. El nuevo reparto aleatorio por arma se implementa después de cerrar sus reglas.
++- Grietas opcionales, saltos dimensionales, cofres de premios y tamaños finales de mapa se adaptarán en entregas posteriores.
++- Sin cuentas ni guardado: recargar pierde esta partida de prueba. Se bloquea la captura/restauración del esquema antiguo y se conservan sus datos.
++- El modo anterior sigue disponible sin este parámetro. Esta convivencia permite comprobar regresiones; el diseño vigente sigue siendo V2.
++- La aceptación de Iván sigue pendiente. Las simulaciones automáticas registradas no demuestran balance, FPS, rendimiento, dispositivo físico o funcionamiento en producción.
++
++Las pruebas técnicas y sus límites se registran en `V2-PRIMERA-PRUEBA-REPORT.md` después de ejecutarlas. La pauta funcional vigente permanece en [PAUTA_DESARROLLO.md](../PAUTA_DESARROLLO.md).
+--- a/docs/PUBLICACION_GITHUB.md
++++ b/docs/PUBLICACION_GITHUB.md
+@@ -1,4 +1,14 @@
+ # Publicaciones GitHub — SCP Survivor
++
++## Primera prueba V2 — 18/10/2026
++
++Petición de Iván A-031: comenzar la adaptación para su primera prueba. Entrega **V2-trial-01/Roadmap0.21**: modo local300s con jefe obligatorio, puerta de la Fundación, dos aliados y transición por contacto; sin extracción, accesorios o mochilas en la interfaz del ensayo. [Guía](PRUEBA_MAPA_V2.md), [informe](V2-PRIMERA-PRUEBA-REPORT.md), [validación](V2-PRIMERA-PRUEBA-VALIDACION.json) y [diff](V2-PRIMERA-PRUEBA-CAMBIOS.diff).
++
++Verificación: copia local126casosNode(125aprobados/0fallos/1omitido); copia de publicación126(124aprobados/0fallos/2omitidos por entorno).8escenarios de navegador en total, fuente/index y escritorio/táctil emulado, sin errores JavaScript, intentos remotos o fallosHTTP en esos recorridos controlados. Build/check86scripts; inspección visual de escritorio/táctil. Los ensayos controlan tiempo/posición/HP y no acreditan aceptación humana, balance, dispositivos físicos o servicios propios.
++
++Se preservan338archivos previos,12assets originales y las53tareas/criterios/pesos/estados históricos.52/100sigue histórico, V2sin porcentaje, P05realpendiente. Backend/cuentas inacabados conservados localmente y excluidos de esta publicación. Ningún cambio de facturación o servicio externo.
++
++Destino autorizado [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), **main**, padre verificado `9947505a9a52f9e6de4879dd14feb467e85dded3`. Commit identificable por **«Preparar primera prueba V2 de mapas y puerta de la Fundación»**; verificar SHA remoto después del push. Sin sobrescribir historial. Preparar esta entrada no demuestra por sí solo la publicación.
+ 
+ ## Entrega del18/10/2026 — pauta ESTRUCTURA y plan de adaptación
+ 
+--- a/docs/V2-PRIMERA-PRUEBA-REPORT.md
++++ b/docs/V2-PRIMERA-PRUEBA-REPORT.md
+@@ -0,0 +1,52 @@
++# V2-trial-01 — primera prueba del recorrido
++
++18/10/2026. Petición A-031 de Iván: comenzar la adaptación para realizar la primera prueba. Se continúa el juego existente con agentes Sol medio, implementación/pruebas acotadas y revisión de raíz.
++
++## Implementado en este ensayo
++
++- Modo optativo `?prueba=mapa-v2`, solo loopback y sin cuentas. Acceso `&rapida=1` inicia el primer mapa en 4:30; los siguientes empiezan 0:00.
++- Reloj de 300 s de juego activo y jefe obligatorio por mapa. Aparición a los 240 s y semilla 1337 son parámetros provisionales y reproducibles del ensayo.
++- A los 300 s aparece puerta blindada, señal sonora/llamada visible y dos soldados de cobertura. Se cierra el spawn normal y los refuerzos antes de ejecutar IA enemiga. El jefe se procesa antes del corte, incluso con un salto grande de tiempo simulado.
++- Enemigos vivos permanecen tras abrir puerta o derrotar jefe. No se reintroducen/reposicionan remanentes después del corte.
++- La puerta bloquea avance con jefe vivo. Con jefe derrotado y puerta llegada, contacto inmediato cambia de mapa y conserva vida/build/armas; no hay extracción ni huida en V2.
++- Aliados separados de EnemyMgr, ordenados visualmente por profundidad, con sprite Guardia existente. Daño 9, intervalo 0,65 s y alcance 440 provisionales; línea de visión, sin daño al jugador. EnemyMgr registra bajas una sola vez.
++- Localizador de objetivo/puerta y reloj por mapa. Interfaz de ensayo sin accesorios ni mochila. Se conservan crédito y controles existentes.
++- Captura/restauración del esquema de guardado anterior bloqueadas en V2; datos previos conservados. Modo anterior disponible para regresión.
++
++## Verificación ejecutada
++
++| Copia | Verificación | Resultado |
++| --- | --- | --- |
++| Local de desarrollo | 26 archivos Node, 126 casos | 125 aprobados, 0 fallos, 1 integración optativa de emuladores omitida |
++| Preparada para GitHub | 26 archivos Node, 126 casos | 124 aprobados, 0 fallos, 2 omitidos: emuladores y callable real sin dependencias de `functions` en ese checkout |
++| Ambas | 13 pruebas específicas nuevas de V2 y guardia de checkpoint |Aprobadas; reloj/corte, jefe, contacto, remanentes, mezcla/escalada, aislamiento, daño aliado y regresiones |
++| Ambas |Build y build:check |Aprobados; 86 scripts en orden y sintaxis válida |
++| Local |Fuente/index × escritorio/táctil emulado | 4 escenarios aprobados |
++| Publicación |Fuente/index × escritorio/táctil emulado | 4 escenarios aprobados |
++
++La prueba de callable real omitida en el checkout de publicación sí pasó en la copia local con sus dependencias. Los emuladores no se ejecutaron de nuevo para esta entrega de recorrido sin cuentas. No se modificó el backend ni se usa esta omisión como aceptación P05.
++
++Ensayos de navegador aislados: comprobaron menú/crédito, ausencia de selección de mods, inicio en 270 s, pausa, puerta a los 300 s con jefe vivo, bloqueo de cruce, cese de refuerzos, conservación de remanente, daño aliado con disparos del jugador temporalmente desactivados, muerte de jefe, contacto inmediato, conservación de vida/build/armas, nuevo mapa 0:00 e inicio normal en 0:00. Ningún error JavaScript, intento remoto o fallo HTTP registrado en esos ocho escenarios.
++
++Se controlaron posición, tiempo, HP de jefe/remanente e invulnerabilidad. No es una partida humana de cinco minutos ni prueba de balance, rendimiento o dispositivo físico. El fixture de remanente se introdujo antes del corte en la versión final del ensayo. Tras 300 s puede bajar el número de enemigos por muertes: la comprobación usa identidades para verificar que no aparecen enemigos nuevos.
++
++Rojo/verde: 5 pruebas del director fallaron antes de su implementación y 5 del módulo de prueba antes de existir. Se añadieron regresiones para evitar doble cómputo de bajas y para usar el campo de rutas del jugador real al colocar aliados. La inspección visual detectó y corrigió su superposición en la puerta.
++
++Comandos ejecutados en PowerShell:
++
++```powershell
++node --test tests/v2-map-director.test.js tests/v2-map-trial.test.js tests/p05-checkpoints.test.js
++npm.cmd run build
++npm.cmd run build:check
++node tools/render-roadmap.js --check
++```
++
++La suite completa utilizó los 26 archivos `.test.js` de juego/P05 y V2 disponibles; la adaptación Worker local en curso se excluyó de esta entrega y de su suite. `tests/v2-map-browser.py` requiere Playwright/Chromium y admite `SCP_TEST_ROOT`/`SCP_TEST_ARTIFACTS`. JSON de resultados y hashes: [V2-PRIMERA-PRUEBA-VALIDACION.json](V2-PRIMERA-PRUEBA-VALIDACION.json).
++
++## Qué no se cierra
++
++La aceptación manual de Iván sigue pendiente. RC-03–RC-06 tienen un prototipo local, no aceptación final ni todas sus dependencias persistentes cerradas. P05 real, colección/economía, P06 replanteada, azar definitivo de armas, cofres de premios, nuevos mapas/grietas/saltos, voz y acabado visual continúan pendientes. El 52/100 es histórico; avance V2 sin calcular.
++
++El SDK/bundle local incluye preparación de cuentas anterior que todavía no se publica. La copia de GitHub se construyó y probó por separado desde su fuente conservada: no incorpora el Worker o configuración de backend incompletos. Los hashes de ambas copias se registran por separado; no se exige que sean iguales.
++
++Prueba del usuario: [PRUEBA_MAPA_V2.md](PRUEBA_MAPA_V2.md). Diff de esta entrega: [V2-PRIMERA-PRUEBA-CAMBIOS.diff](V2-PRIMERA-PRUEBA-CAMBIOS.diff). No se cambió facturación ni se sustituyeron assets aprobados.
+--- a/docs/V2-PRIMERA-PRUEBA-VALIDACION.json
++++ b/docs/V2-PRIMERA-PRUEBA-VALIDACION.json
+@@ -0,0 +1,61 @@
++{
++  "date": "2026-10-18",
++  "version": "V2-trial-01",
++  "localOnly": true,
++  "manualAcceptance": "pending",
++  "nodeSource": {
++    "tests": 126,
++    "pass": 125,
++    "fail": 0,
++    "skipped": 1
++  },
++  "nodePublication": {
++    "tests": 126,
++    "pass": 124,
++    "fail": 0,
++    "skipped": 2
++  },
++  "browser": {
++    "source": {
++      "scenarios": 4,
++      "passed": 4,
++      "errors": 0,
++      "remoteAttempts": 0,
++      "httpFailures": 0,
++      "method": "Navegador aislado. Posición, HP del jefe/remanente, invulnerabilidad y tiempo controlados. Disparos del jugador temporalmente desactivados para aislar daño aliado. No aceptación humana, balance, rendimiento ni dispositivo físico."
++    },
++    "publication": {
++      "scenarios": 4,
++      "passed": 4,
++      "errors": 0,
++      "remoteAttempts": 0,
++      "httpFailures": 0,
++      "method": "Navegador aislado. Posición, HP del jefe/remanente, invulnerabilidad y tiempo controlados. Disparos del jugador temporalmente desactivados para aislar daño aliado. No aceptación humana, balance, rendimiento ni dispositivo físico."
++    }
++  },
++  "nodeSourceSkipped": "Integración optativa de emuladores no ejecutada en esta entrega.",
++  "nodePublicationSkipped": "Integración optativa de emuladores y prueba del callable real sin dependencias de functions en este checkout. Esta última sí pasó en la copia local con esas dependencias.",
++  "builds": {
++    "source": {
++      "scriptCount": 86,
++      "bundleSha256": "039e4c11594b98a5e24413046fff0e58b892fef92bfc6a96f37f96b35d2ee3bb",
++      "sdkBytes": 227131,
++      "buildCheck": "passed"
++    },
++    "publication": {
++      "scriptCount": 86,
++      "bundleSha256": "7383ed52b625ef0df757dde65d1099dd6d87d8ea7d8977651cdf0daff421b8bc",
++      "sdkBytes": 227024,
++      "buildCheck": "passed"
++    }
++  },
++  "newAssetsGenerated": false,
++  "oldAccountsEnabled": false,
++  "billingChanges": false,
++  "limits": [
++    "Simulación con tiempo/posición/HP e invulnerabilidad controlados; no aceptación humana ni balance.",
++    "No prueba de dispositivo físico, FPS/carga, servicios propios, persistencia, economía o ranking.",
++    "El modo normal anterior se conserva para regresión. V2 es optativa, solo loopback sin cuentas.",
++    "Mejoras al azar, catálogo por familias, cofres de premios y dimensiones/grietas nuevas pendientes."
++  ]
++}
+--- a/docs/superpowers/plans/2026-10-18-v2-primera-prueba.md
++++ b/docs/superpowers/plans/2026-10-18-v2-primera-prueba.md
+@@ -0,0 +1,29 @@
++# Primera prueba V2 — plan de implementación
++
++**Objetivo:** probar localmente mapa de 300 s, jefe obligatorio, llegada de puerta/soldados y transición sin extracción. Iván autorizó comenzar el 18/10 después de revisar la pauta. No representa cierre P05 ni implementación de inventario P06.
++
++**Arquitectura:** extender G.Expedition mediante una opción local G.MapTrial. Reutilizar mundo, enemigos, combate, soldados existentes, interfaz y compilador. No reemplazar el motor ni diseños. Modo normal anterior conservado para regresión.
++
++**Tecnología:** JavaScript/Canvas2D, Node test y Chromium local.
++
++## Contrato de la primera prueba
++
++- `?prueba=mapa-v2`, solo loopback y sin parámetro de cuentas. `&rapida=1` inicia en 4:30 para probar la llegada; no simula una victoria ni acelera el reloj del modo normal. Cada nuevo mapa comienza 0:00.
++- Reloj de 300 s de juego activo, pausa/menú de mejoras detenidos. Jefe a los 240 s provisional; en acceso rápido aparece al empezar. Aparición del jefe garantizada sin depender del cupo normal.
++- A los 300 s: cerrar todos los productores enemigos, incluidos refuerzos; abrir puerta, alertar y llegar dos soldados aliados de cobertura. Conservar remanentes, también al morir jefe.
++- Cruzar por contacto, sin botón/espera, solo con puerta llegada y jefe derrotado. Llegar cerca sin tocar no cruza. Nuevo mapa conserva vida/build y reinicia reloj. No extracción ni huida del jefe en este modo.
++- Puerta/localizador/estado claros; sprites y efectos provisionales, sin generar ni sustituir arte aprobado.
++- Aliados separados de EnemyMgr; disparan con alcance/línea de visión, sin daño al jugador. Su muerte de enemigos usa el mecanismo normal de daño/XP, sin economía persistente. Parámetros provisionales.
++- Sin UI de accesorios ni mochilas; seleccionar armas/soldado de prueba sin mods. Familias nuevas y azar de mejoras permanecen pendientes: se conservan las cartas actuales para este ensayo del recorrido.
++- No cuentas, guardado, ranking o premios reales. Capturar/restaurar checkpoint V2 no puede emitir/aceptar esquema 1. No mezclar con prototipos de grietas/inventario.
++
++## Tareas y verificación
++
++- [x] Respaldar fuente y registrar hashes previos.
++- [x] Escribir prueba de comportamiento que falle antes de extender director.
++- [x] Director: reloj/corte, jefe, remanentes, transición, modo rápido y rechazo de extracción.
++- [x] Interfaz y aliados: menú/HUD/localizador/puerta/cobertura; ocultar accesorios/mochilas y aislar guardado.
++- [x] Pruebas Node/regresiones pertinentes y compilación/check.
++- [x] Navegador fuente/compilado, escritorio/móvil emulado: iniciar, pausar, puerta bloqueada/desbloqueada, daño aliado, transición, ausencia de servicios remotos.
++- [x] Revisar diff con agente y raíz; corregir hallazgos. Revisión independiente de cumplimiento y calidad aprobada; corregidos doble cómputo de bajas y superposición de aliados.
++- [x] Registrar resultados/límites, pauta manual y roadmap; servidor de prueba local disponible. Publicación autorizada: verificar su commit en Git.
+# index.html SHA256 93f7e8df30c0cf8604030627e3f431a41f62a21fbc7f4ec72a434e3b93a655da -> 51752cc6237ee4841984402719b92f2ebc6206a64bb7bbf25acffb0655eb3dcc
+
+# js/app.min.js SHA256 b53cd187c6f88112e1d1e93e679665f02b227d4218fa762ed050e52aa520e719 -> 7383ed52b625ef0df757dde65d1099dd6d87d8ea7d8977651cdf0daff421b8bc
+
+--- a/js/game.js
++++ b/js/game.js
+@@ -542,7 +542,7 @@
+     if (pl && state !== 'ui') {
+       G.Pickups.draw(ctx); G.Expedition.draw(ctx);
+       const props = G.World.visibleProps(G.Camera);
+-      const entities = [...G.EnemyMgr.drawables(G.Camera), ...props, pl].sort((a,b) => a.y - b.y);
++      const entities = [...G.EnemyMgr.drawables(G.Camera), ...(G.MapTrial?.drawables?.()||[]), ...props, pl].sort((a,b) => a.y - b.y);
+       const propSet = new Set(props);
+       for (const entity of entities) {
+         if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:true});
+--- a/js/systems/dimensional-rifts.js
++++ b/js/systems/dimensional-rifts.js
+@@ -5,7 +5,7 @@
+   const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+   const accounts = ['local','propias'].includes(query.get('cuentas'));
+   const directTest = local && query.get('prueba') === 'grieta' && !accounts;
+-  const enabled = local && !accounts && (directTest || query.get('grietas') === 'local');
++  const enabled = local && !accounts && !G.MapTrial?.enabled && (directTest || query.get('grietas') === 'local');
+   const TTL = 45, ENTRY_RADIUS = 22;
+   let seen = new Set(), state;
+   function clear() { state = {status:'idle',remaining:0,x:0,y:0,sector:0,alert:'',alertTime:0,result:null}; }
+--- a/js/systems/expedition.js
++++ b/js/systems/expedition.js
+@@ -8,9 +8,11 @@
+   let upgradesApplied=0;
+   let pendingXp=0, resumePhase='combat';
+   let dimensional=false,trialPreparation=false;
++  let mapTime=0,doorOpen=false,bossSpawned=false,bossDefeated=false,spawnClosed=false;
++  const v2=()=>!!G.MapTrial?.enabled;
+   const exit={x:0,y:0,r:72};
+   function random(seed){let n=seed>>>0;const next=()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/4294967296;};next.state=()=>n;return next;}
+-  function boundary(name){if(!G.DimensionalRifts?.enabled&&!G.InventoryTrial?.enabled)G.RunCheckpoint?.atBoundary(name);}
++  function boundary(name){if(v2())return;if(!G.DimensionalRifts?.enabled&&!G.InventoryTrial?.enabled)G.RunCheckpoint?.atBoundary(name);}
+   function waveCount(){
+     // Independent stream: never consume the boss/extraction or spawn generators.
+     let n=(runSeed^Math.imul(sector,0x9e3779b9)^0xa5b35705)>>>0;
+@@ -20,19 +22,25 @@
+   function snapshot(){return{phase,sector,wave,sectorWaves,kind,objective,spawned,quota,kills:pl?pl.kills-waveKills:0,
+     prep,pending,cards,pendingXp,resumePhase,upgradesApplied,nextUpgradeLevel:pending&&pl?pl.level:null,elapsed,remaining:Math.max(0,60-waveTime),extract:interaction,result,exit,
+     nearExit:!!pl&&G.U.dist(pl.x,pl.y,exit.x,exit.y)<=exit.r,runSeed,mapSeed,nextBossSector,extractionAvailable,
+-    totals:{...totals},dimensional,bossHp:boss?Math.max(0,boss.hp):0,bossMaxHp:boss?boss.maxHp:0};}
++    totals:{...totals},dimensional,bossHp:boss?Math.max(0,boss.hp):0,bossMaxHp:boss?boss.maxHp:0,
++    ...(v2()?{v2:{mapTime,doorOpen,bossSpawned,bossDefeated,spawnClosed,quick:!!G.MapTrial.quick,allies:G.MapTrial.allies||[]}}:{})};}
+   function scale(o=wave){return{hp:1+.15*(sector-1)+.05*(o-1),dmg:1+.08*(sector-1),spd:1+Math.min(.2,.02*(sector-1))};}
+   function map(){
+     dimensional=false;trialPreparation=false;G.DimensionalRifts?.clear();
+-    kind=sector===nextBossSector?'boss':'normal';
++    kind=!v2()&&sector===nextBossSector?'boss':'normal';
+     sectorWaves=kind==='normal'?waveCount():0;
+     extractionAvailable=false;
+-    if(kind==='normal'&&sector>=3){extractionAvailable=rng()<.25||drought>=3;drought=extractionAvailable?0:drought+1;}
++    if(!v2()&&kind==='normal'&&sector>=3){extractionAvailable=rng()<.25||drought>=3;drought=extractionAvailable?0:drought+1;}
+     mapSeed=Math.imul(runSeed^sector,0x45d9f3b)>>>0;spawnRng=random(mapSeed);
+     geometry=G.SectorMaps.generate(mapSeed,{boss:kind==='boss'});
+     G.World.reset(mapSeed);G.World.setFixture(geometry.fixture);G.World.setBiome(1,true);G.Path.clear();G.Pickups.clear();G.EnemyMgr.clear();G.Projectiles.clear();
+     pl.x=geometry.entry.x;pl.y=geometry.entry.y;exit.x=geometry.exit.x;exit.y=geometry.exit.y;
+     G.Camera.x=pl.x;G.Camera.y=pl.y;G.Path.update(1,[pl]);G.Touch.reset();G.Input.reset();objectives=[];boss=null;
++    if(v2()){
++      mapTime=sector===1&&G.MapTrial.quick?(G.MapTrial.startTime??270):0;
++      doorOpen=false;bossSpawned=false;bossDefeated=false;spawnClosed=false;spawnClock=0;sectorWaves=0;
++      G.MapTrial.reset?.(geometry);
++    }
+     if(extractionAvailable)G.Spawner.say('Este sector tiene extracción · disponible al despejarlo',5,true);
+   }
+   function start(player,options={}){
+@@ -43,7 +51,8 @@
+     rng=random(runSeed);nextBossSector=4+Math.floor(rng()*3);
+     G.DimensionalRifts?.reset();
+     G.FieldStats.apply(pl);G.FieldAbilities.reset(pl);G.FieldCombat.reset(pl,options.loadout);map();
+-    if(G.InventoryTrial?.directTest){
++    if(v2())beginMapTrial();
++    else if(G.InventoryTrial?.directTest){
+       trialPreparation=true;phase='preparation';prep=20;objective='neutralize';spawned=0;waveTime=0;quota=12;waveKills=pl.kills;
+     }else if(G.DimensionalRifts?.directTest){
+       wave=sectorWaves;phase='exploration';objective=wave%2===0?'survive':'neutralize';spawned=0;waveTime=0;quota=12;
+@@ -63,10 +72,42 @@
+     return null;
+   }
+   function spawnOne(){
++    if(v2()){
++      const cap=Math.min(24,G.Spawner.CAP)-(bossSpawned?0:1); // Reserve the mandatory boss slot.
++      if(spawnClosed||mapTime>=(G.MapTrial.duration??300)||G.EnemyMgr.count>=cap)return false;
++      const pos=freeSpawn();if(!pos)return false;
++      const def=spawned%4===3?G.Content.biological:G.Content.pursuer;
++      const e=G.EnemyMgr.add(new G.Enemy(def,pos[0],pos[1],scale(1+Math.floor(mapTime/60))));objectives.push(e);spawned++;return true;
++    }
+     if((objective==='neutralize'&&spawned>=quota)||(objective==='survive'&&waveTime>=60)||G.EnemyMgr.count>=G.Spawner.CAP)return false;
+     const pos=freeSpawn();if(!pos)return false;
+     const def=(sector===1&&wave===1)||spawned%4!==3?G.Content.pursuer:G.Content.biological;
+     const e=G.EnemyMgr.add(new G.Enemy(def,pos[0],pos[1],scale()));objectives.push(e);spawned++;return true;
++  }
++  function trialBoss(){
++    if(bossSpawned||spawnClosed)return;
++    // The mandatory boss is independent of the regular enemy cap and camera visibility.
++    const points=[geometry.bossSpawn,...geometry.spawnPoints,geometry.entry].filter(Boolean);
++    const usable=p=>G.World.isFree(p.x,p.y,22)&&G.Path.reachable(p.x,p.y,pl);
++    const point=points.find(p=>G.U.dist(pl.x,pl.y,p.x,p.y)>100&&usable(p))||points.find(usable);
++    if(!point)return;
++    boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,point.x,point.y,scale(1+Math.floor(mapTime/60)),true));
++    bossSpawned=true;phase='boss';G.Spawner.say('Custodio · derrótalo para cruzar la puerta a los 5:00',5,true);
++  }
++  function beginMapTrial(){
++    phase='combat';objective='survive';spawned=0;waveTime=0;waveKills=pl.kills;cards=[];spawnClock=0;
++    for(let i=0;i<4;i++)spawnOne();
++    if(mapTime>=(G.MapTrial.bossAt??240))trialBoss();
++    G.Spawner.say(`Mapa ${sector} · resiste hasta la puerta de la Fundación`,4,true);
++  }
++  function trialVictory(){
++    if(!boss||!boss.dead||bossDefeated)return;
++    bossDefeated=true;totals.bossesDefeated++;
++    if(phase==='levelup')resumePhase='combat';else phase='combat';
++  }
++  function trialCross(){
++    if(!doorOpen||!bossDefeated||!['combat','boss'].includes(phase)||G.U.dist(pl.x,pl.y,exit.x,exit.y)>24+pl.r)return false;
++    totals.sectorsCompleted++;sector++;wave=1;interaction=0;map();beginMapTrial();return true;
+   }
+   function beginWave(){
+     phase='combat';objective=wave%2===0?'survive':'neutralize';spawned=0;objectives=[];spawnClock=0;cards=[];waveTime=0;waveKills=pl.kills;
+@@ -113,6 +154,7 @@
+     return true;
+   }
+   function ready(){
++    if(v2())return false;
+     if(G.RunContinuity?.canAdvance()===false)return false;
+     if(phase!=='preparation')return false;
+     if(trialPreparation){trialPreparation=false;beginWave();return true;}
+@@ -125,6 +167,7 @@
+   function setInteraction(seconds){interaction=seconds;startX=pl.x;startY=pl.y;startHp=pl.hp;startDamage=pl.fieldDamageRevision||0;G.Touch.reset();G.Input.reset();}
+   function useExit(action='continue'){
+     if(G.RunContinuity?.canAdvance()===false)return false;
++    if(v2())return action==='continue'&&!!pl&&trialCross();
+     if(!pl||G.U.dist(pl.x,pl.y,exit.x,exit.y)>exit.r)return false;
+     if(action==='escape'&&(kind==='boss'||dimensional)&&phase==='boss'){phase='escaping';setInteraction(2);return true;}
+     if(phase!=='exploration')return false;
+@@ -132,6 +175,7 @@
+     if(action==='continue'){advance();return true;}return false;
+   }
+   function useRift(){
++    if(v2())return false;
+     if(G.RunContinuity?.canAdvance()===false||phase!=='exploration'||!G.DimensionalRifts?.enter(pl))return false;
+     const rift=G.DimensionalRifts.state,sc=scale(1);
+     boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,rift.x,rift.y,{...sc,hp:sc.hp*1.35,dmg:sc.dmg*1.15},true));
+@@ -143,6 +187,7 @@
+     G.DimensionalRifts.complete(result);G.Touch.reset();G.Input.reset();gather();
+   }
+   function summon(owner,count){
++    if(v2()&&(spawnClosed||mapTime>=(G.MapTrial.duration??300)))return 0;
+     if(!owner||owner!==boss||owner.dead||!['boss','escaping'].includes(phase))return 0;
+     owner.minions=owner.minions.filter(e=>!e.dead);let made=0;
+     const max=Math.min(count,4-owner.minions.length,G.Spawner.CAP-G.EnemyMgr.count);
+@@ -180,10 +225,36 @@
+     }
+   }
+   let lastDt=0;
++  function updateMapTrial(dt){
++    trialVictory();
++    if(phase==='levelup')return;
++    promptUpgrade();if(phase==='levelup')return;
++    elapsed+=dt;lastDt=dt;
++    const nextTime=Math.min(G.MapTrial.duration??300,mapTime+dt),bossAt=G.MapTrial.bossAt??240;
++    // Process the boss event before the later cutoff, including a single long frame.
++    if(!bossSpawned&&!spawnClosed&&nextTime>=bossAt){mapTime=Math.max(mapTime,bossAt);trialBoss();}
++    mapTime=nextTime;
++    // Close before enemy AI runs: a pending boss summon cannot cross this boundary.
++    if(!spawnClosed&&mapTime>=(G.MapTrial.duration??300)){
++      spawnClosed=true;spawnClock=0;doorOpen=true;G.MapTrial.arrive?.();
++    }
++    G.FieldAbilities.tick(dt,pl);G.FieldCombat.tick(dt,pl,true);pl.update(dt);
++    G.Camera.follow(pl.x,pl.y,dt);G.World.update(dt,G.Camera);G.FX.update(dt);G.Spawner.tickBanner(dt);
++    if(!spawnClosed){
++      spawnClock+=dt*Math.min(2,.55+.06*(sector-1)+mapTime/200);
++      while(spawnClock>=1){if(!spawnOne()){spawnClock=Math.min(1,spawnClock);break;}spawnClock--;}
++    }
++    G.Path.update(dt,[pl]);G.EnemyMgr.update(dt,[pl]);G.Projectiles.update(dt,pl,G.EnemyMgr.all());
++    G.Combat.resolve(dt,pl,elapsed);G.MapTrial.updateAllies?.(dt,pl);G.Pickups.update(dt,pl,collect);
++    if(pl.dead||pl.hp<=0){finish('death');return;}
++    trialVictory();promptUpgrade();if(phase==='levelup')return;
++    if(!spawnClosed)recover();trialCross();
++  }
+   function update(dt){
+     if(G.RunContinuity?.canAdvance()===false)return;
+     if(!pl||phase==='idle'||phase==='finished')return;
+     if(pl.dead||pl.hp<=0){finish('death');return;}
++    if(v2()){updateMapTrial(dt);return;}
+     if(phase==='levelup')return;
+     promptUpgrade();if(phase==='levelup')return;
+     G.DimensionalRifts?.tick(dt);
+@@ -216,15 +287,17 @@
+     }
+   }
+   function draw(ctx){
++    if(v2()){G.MapTrial.draw?.(ctx,snapshot());return;}
+     G.DimensionalRifts?.draw(ctx);
+     if(!['exploration','extracting','boss','escaping'].includes(phase))return;
+     ctx.save();ctx.fillStyle='#5ac6a233';ctx.strokeStyle='#99ffd6';ctx.lineWidth=3;ctx.beginPath();ctx.arc(exit.x,exit.y,42,0,Math.PI*2);ctx.fill();ctx.stroke();
+     ctx.fillStyle='#bdffe0';ctx.font='bold 14px system-ui';ctx.textAlign='center';ctx.fillText(kind==='boss'||dimensional?'HUIR':'SALIDA',exit.x,exit.y-52);ctx.restore();
+   }
+-  function captureState(){return{phase,sector,wave,sectorWaves,kind,objective,spawned,quota,spawnClock,prep,pending,
++  function captureState(){if(v2())return null;return{phase,sector,wave,sectorWaves,kind,objective,spawned,quota,spawnClock,prep,pending,
+     cards:cards.map(c=>c.key),waveKills,waveTime,elapsed,interaction,startX,startY,startHp,startDamage,runSeed,mapSeed,nextBossSector,
+     extractionAvailable,drought,totals:{...totals},upgradesApplied,pendingXp,resumePhase,rngState:rng.state(),spawnRngState:spawnRng.state()};}
+-  function restoreState(saved,player=G.Game.player,world={broken:[],damaged:[]}){
++  function restoreState(saved,player=G.Game?.player,world={broken:[],damaged:[]}){
++    if(v2())throw new Error('V2: el prototipo de mapas no admite checkpoints heredados');
+     dimensional=false;trialPreparation=false;G.DimensionalRifts?.reset();
+     pl=player;
+     ({phase,sector,wave,sectorWaves,kind,objective,spawned,quota,spawnClock,prep,pending,waveKills,waveTime,elapsed,interaction,
+--- a/js/systems/map-trial.js
++++ b/js/systems/map-trial.js
+@@ -0,0 +1,73 @@
++/* V2 local trial: isolated from accounts and version1 checkpoints. Provisional art/tuning. */
++G.MapTrial=(()=>{
++ const q=new URLSearchParams(window.location.search);
++ const enabled=['localhost','127.0.0.1','[::1]'].includes(window.location.hostname)&&q.get('prueba')==='mapa-v2'&&!q.has('cuentas');
++ const quick=enabled&&q.get('rapida')==='1';
++ const RANGE=440,INTERVAL=.65,DAMAGE=9;
++ let geometry=null,team=[],arrived=false,alertTime=0;
++ function clearLine(ax,ay,bx,by){
++  const distance=Math.hypot(bx-ax,by-ay);
++  for(let n=8;n<distance;n+=8)if(G.World.projectileBlock?.(ax+(bx-ax)*n/distance,ay+(by-ay)*n/distance,2))return false;
++  return true;
++ }
++ function reset(map){geometry=map;team=[];arrived=false;alertTime=0;}
++ function arrive(){
++  if(!enabled||arrived||!geometry)return;
++  arrived=true;alertTime=7;const exit=geometry.exit;
++  const positions=[[-36,24],[36,24],[-36,-24],[36,-24],[0,36],[0,-36]]
++   .map(([dx,dy])=>({x:exit.x+dx,y:exit.y+dy}))
++   .filter(p=>G.World.isFree(p.x,p.y,12)&&clearLine(exit.x,exit.y,p.x,p.y)&&
++    (!G.Game?.player||!G.Path?.reachable||G.Path.reachable(p.x,p.y,G.Game.player)));
++  for(let i=0;i<2;i++){
++   const target=positions[i]||exit;
++   const anim=G.Sprites?.Animator?new G.Sprites.Animator(G.Content.guard.dex,1,false):null;
++   team.push({x:exit.x,y:exit.y,tx:target.x,ty:target.y,anim,wait:i*.15,flash:0,aim:-Math.PI/2,shot:null});
++  }
++  G.Audio?.sfx('rift');
++ }
++ function updateAllies(dt,player){
++  if(!enabled||!arrived||!Number.isFinite(dt)||dt<=0)return;
++  alertTime=Math.max(0,alertTime-dt);
++  for(const ally of team){
++   ally.flash=Math.max(0,ally.flash-dt);ally.wait=Math.max(0,ally.wait-dt);
++   const dx=ally.tx-ally.x,dy=ally.ty-ally.y,distance=Math.hypot(dx,dy);
++   if(distance>1){const step=Math.min(distance,72*dt);ally.x+=dx/distance*step;ally.y+=dy/distance*step;}
++   ally.anim?.update(dt);ally.anim?.loop(distance>1?'Walk':'Idle');
++   if(ally.wait>0)continue;
++   const target=G.EnemyMgr.all().filter(e=>!e.dead&&e.hp>0&&Math.hypot(e.x-ally.x,e.y-ally.y)<=RANGE&&clearLine(ally.x,ally.y,e.x,e.y))
++    .sort((a,b)=>Math.hypot(a.x-ally.x,a.y-ally.y)-Math.hypot(b.x-ally.x,b.y-ally.y))[0];
++   if(!target||typeof target.hurt!=='function')continue;
++   ally.aim=Math.atan2(target.y-ally.y,target.x-ally.x);
++   if(ally.anim)ally.anim.dir=G.Sprites.dirFromAngle(ally.aim);
++   ally.shot={x:target.x,y:target.y};ally.wait=INTERVAL;ally.flash=.09;
++   G.Audio?.sfx('shot');
++   target.hurt(DAMAGE,'#e2f1e8',target.x-ally.x,target.y-ally.y,0);
++   // EnemyMgr accounts for every death once when removing it, including allied shots.
++  }
++ }
++ function draw(ctx,state){
++  if(!enabled||!geometry||!state?.v2?.doorOpen)return;
++  const {x,y}=geometry.exit,unlocked=state.v2.bossDefeated;
++  ctx.save();ctx.strokeStyle=unlocked?'#dbece4':'#ec5361';ctx.fillStyle='#080d13aa';ctx.lineWidth=3;
++  ctx.beginPath();ctx.ellipse(x,y,42,48,0,0,Math.PI*2);ctx.fill();ctx.stroke();
++  ctx.fillStyle='#172125';ctx.fillRect(x-24,y-36,48,66);ctx.strokeRect(x-24,y-36,48,66);
++  ctx.fillStyle='#35434a';ctx.fillRect(x-18,y-30,15,54);ctx.fillRect(x+3,y-30,15,54);
++  ctx.fillStyle=unlocked?'#b9eed0':'#e54b5b';ctx.fillRect(x-3,y-25,6,42);
++  ctx.fillStyle='#f0eee4';ctx.font='bold 12px system-ui';ctx.textAlign='center';
++  ctx.fillText('FUNDACIÓN',x,y-64);ctx.fillText(unlocked?'CRUZA PARA AVANZAR':'DERROTA AL JEFE',x,y-49);
++  ctx.restore();
++ }
++ function drawAlly(ctx,ally){
++   ctx.save();ctx.textAlign='center';
++   G.Sprites?.drawShadow(ctx,G.Content.guard.dex,ally.x,ally.y);
++   ally.anim?.draw(ctx,ally.x,ally.y);
++   ctx.strokeStyle='#d6eee0';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(ally.x,ally.y-11);
++   ctx.lineTo(ally.x+Math.cos(ally.aim)*20,ally.y-11+Math.sin(ally.aim)*20);ctx.stroke();
++   if(ally.flash>0&&ally.shot){ctx.strokeStyle='#fff2af';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(ally.x,ally.y-11);ctx.lineTo(ally.shot.x,ally.shot.y-10);ctx.stroke();}
++   ctx.fillStyle='#d9efe3';ctx.font='9px system-ui';ctx.fillText('ALIADO',ally.x,ally.y-35);
++   ctx.restore();
++ }
++ return{enabled,quick,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
++  drawables:()=>enabled&&arrived?team.map(a=>({x:a.x,y:a.y,draw:ctx=>drawAlly(ctx,a)})):[],
++  get allies(){return team.map(a=>({x:a.x,y:a.y}));},get alertTime(){return alertTime;}};
++})();
+--- a/js/systems/run-checkpoint.js
++++ b/js/systems/run-checkpoint.js
+@@ -15,15 +15,16 @@
+    ability:{kind:a.kind,remaining:a.remaining,cooldown:a.cooldown,duration:a.duration},world:G.World.exportData(),pickups:G.Pickups.exportData()});
+  }
+  function capture(){
+-  if(G.DimensionalRifts?.enabled||G.InventoryTrial?.enabled)return null; // Prototipos sin persistencia; no emitir schema1 incompleto.
++  if(G.MapTrial?.enabled||G.DimensionalRifts?.enabled||G.InventoryTrial?.enabled)return null; // Prototipos sin persistencia; no emitir schema1 incompleto.
+   const e=G.Expedition.state;if(!G.Game.player)return null;
+   if(safe(e))return live(e.phase==='exploration'?'exploration':'preparation');
+   if(['combat','boss'].includes(e.phase)&&G.Expedition.captureState().waveTime===0&&lastBoundary&&
+    lastBoundary.expedition.runSeed===e.runSeed&&lastBoundary.expedition.sector===e.sector&&lastBoundary.expedition.wave===e.wave)return clone(lastBoundary);
+   return null;
+  }
+- function atBoundary(name){lastBoundary=live(name);G.RunContinuity?.boundary(name);}
++ function atBoundary(name){if(G.MapTrial?.enabled)return;lastBoundary=live(name);G.RunContinuity?.boundary(name);}
+  function validate(input){
++  if(G.MapTrial?.enabled)throw new Error('La prueba V2 no carga guardados de la versión anterior. Los datos se conservan.');
+   const check=(condition,message)=>{if(!condition)throw new Error(message);};
+   check(input&&input.schemaVersion===1&&input.buildVersion==='0.5-local-01','Versión de guardado incompatible. Conserva los datos.');
+   function finite(value){
+--- a/js/ui/field-loadout.js
++++ b/js/ui/field-loadout.js
+@@ -27,6 +27,7 @@
+   function renderMods() {
+     for (let i = 0; i < 2; i++) {
+       const host = el(`loadout-mods-${i}`); host.replaceChildren();
++      if(G.MapTrial?.enabled){host.hidden=true;continue;}
+       const def = G.FieldCatalog.models[models[i]];
+       for (const [id, mod] of Object.entries(G.FieldCatalog.mods)) {
+         const label = document.createElement('label'); label.className = 'loadout-mod';
+@@ -51,7 +52,7 @@
+     el('loadout-role-summary').textContent = `${soldier.name} · ${soldier.ability === 'sprint' ? 'Sprint: velocidad extra durante 2 s' : 'Primeros auxilios: recupera vida'}`;
+     el('loadout-preview').replaceChildren();
+     for (let i = 0; i < 2; i++) {
+-      const w = G.FieldStats.weapon({training:{},tempStats:{}}, {model:models[i],mods:mods[i],level:1});
++      const w = G.FieldStats.weapon({training:{},tempStats:{}}, {model:models[i],mods:G.MapTrial?.enabled?[]:mods[i],level:1});
+       const item = document.createElement('li');
+       const details = document.createElement('details');
+       const summary = document.createElement('summary');
+@@ -70,7 +71,7 @@
+       return null;
+     }
+     error.textContent = '';
+-    return { soldierId, loadout: models.map((model, i) => G.FieldCatalog.makeWeapon(model, `local:${i + 1}`, mods[i])) };
++    return { soldierId, loadout: models.map((model, i) => G.FieldCatalog.makeWeapon(model, `local:${i + 1}`, G.MapTrial?.enabled?[]:mods[i])) };
+   }
+   return { init, options };
+ })();
+--- a/js/ui/inventory-trial.js
++++ b/js/ui/inventory-trial.js
+@@ -3,7 +3,7 @@
+   const q=new URLSearchParams(window.location.search),local=['localhost','127.0.0.1','[::1]'].includes(window.location.hostname);
+   const accounts=['local','propias'].includes(q.get('cuentas'));
+   const directTest=local&&q.get('prueba')==='inventario'&&!accounts;
+-  const enabled=local&&!accounts&&(directTest||q.get('inventario')==='local');
++  const enabled=local&&!accounts&&!G.MapTrial?.enabled&&(directTest||q.get('inventario')==='local');
+   const M=()=>G.InventoryModel,el=id=>document.getElementById(id),clone=s=>JSON.parse(JSON.stringify(s));
+   let owned=null,draft=null,draftPhase=null,slot=0,message='';
+   function phase(){return G.Game.state==='ui'?'base':G.Game.state==='playing'&&G.Expedition.state.phase==='preparation'?'preparation':null;}
+--- a/js/ui/technical-ui.js
++++ b/js/ui/technical-ui.js
+@@ -9,6 +9,7 @@
+     G.Audio.unlock();
+     const selected = options();
+     if (!selected) return;
++    if(G.MapTrial?.enabled)selected.seed=1337;
+     G.Game.startTechnical(selected);
+   }
+   function ability() {
+@@ -61,7 +62,7 @@
+     return ({grip:'menos dispersión',assisted:'recarga más rápida',reinforced:'más daño',extended:'más capacidad',rapid:'más cadencia',piercing:'atraviesa un objetivo'})[id] || '';
+   }
+   function openEditor() {
+-    if(G.InventoryTrial?.enabled)return;
++    if(G.MapTrial?.enabled||G.InventoryTrial?.enabled)return;
+     if (!readyToPlay() || G.Expedition.state.phase !== 'preparation') return;
+     const state = G.FieldCombat.state;
+     editorDraft = state.weapons.map(w => w.mods.slice()); editorOpen = true;
+@@ -86,6 +87,18 @@
+   }
+   function init() {
+     G.FieldLoadout.init();
++    if(G.MapTrial?.enabled){
++      document.body.dataset.mapTrial='v2';
++      el('technical-intro').textContent='PRIMERA PRUEBA V2 · Resiste, derrota al jefe de cada mapa y avanza por la puerta de la Fundación.';
++      el('technical-account-hint').textContent='Prueba local sin cuentas, guardado ni recompensas persistentes. Sin mochilas ni accesorios de armas.';
++      el('map-test-note').hidden=false;
++      el('map-test-note').textContent=G.MapTrial.quick
++        ? 'PRUEBA RÁPIDA · Empiezas en 4:30 con el jefe vivo. A 5:00 llega la puerta y dejan de aparecer enemigos. Derrota al jefe y camina sobre la puerta para pasar al siguiente mapa. Los mapas siguientes comienzan en 0:00.'
++        : 'MAPAS DE 5 MINUTOS · Jefe provisional en 4:00. A 5:00 llega la puerta con soldados de cobertura. Debes derrotar al jefe para cruzar; los enemigos restantes siguen vivos. Arte y balance provisionales. Las mejoras por nivel todavía usan las cartas anteriores.';
++      el('btn-technical-start').textContent=G.MapTrial.quick?'Iniciar prueba rápida V2':'Iniciar mapa V2 · 5 minutos';
++      el('map-trial-quick').hidden=false;
++      if(G.MapTrial.quick){el('map-trial-quick').href='?prueba=mapa-v2';el('map-trial-quick').textContent='Probar mapa completo: empezar en 0:00';}
++    }
+     const rifts=G.DimensionalRifts;
+     if(rifts.enabled){
+       el('rift-test-note').hidden=false;
+@@ -129,6 +142,7 @@
+     for (const id of ['scene-hud', 'scene-footer', 'field-controls', 'field-status']) el(id).hidden = value !== 'playing';
+     if (value === 'playing') updateSoldierHud();
+     if (value !== 'playing') {
++      el('map-locator').hidden=true;el('map-alert').hidden=true;
+       el('rift-alert').hidden=true;el('rift-locator').hidden=true;
+       el('field-upgrades').hidden = true; el('field-result').hidden = true;
+       el('btn-field-weapon-0').disabled = true; el('btn-field-weapon-1').disabled = true; el('btn-ability').disabled = true; el('btn-mods').disabled = true;
+@@ -140,7 +154,7 @@
+     if (G.Game.state !== 'playing' || !player) return;
+     const s = G.Expedition.state, w = G.FieldCombat.state;
+     if (editorOpen && s.phase !== 'preparation') closeEditor();
+-    el('scene-time').textContent = G.U.mmss(s.elapsed);
++    el('scene-time').textContent = s.v2?`${G.U.mmss(s.v2.mapTime)} / 5:00`:G.U.mmss(s.elapsed);
+     el('scene-position').textContent = `${Math.round(player.x)}, ${Math.round(player.y)}`;
+     const dx = s.exit.x - player.x, dy = s.exit.y - player.y;
+     const direction = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? '→' : '←') : (dy > 0 ? '↓' : '↑');
+@@ -149,6 +163,19 @@
+     updateSoldierHud(player);
+     const weaponSummary = w.weapons.map((weapon, i) => `${i + 1} ${weapon.name} ${Math.floor(weapon.ammo)}/${weapon.capacity}${weapon.reload > 0 ? ' recargando' : ''}`).join(' · ');
+     el('field-status').textContent = `${G.DimensionalRifts.directTest?'PRUEBA · ':''}S${s.sector}${s.kind === 'normal' && !s.dimensional && !G.DimensionalRifts.directTest ? ` · Oleada ${s.wave}/${s.sectorWaves}` : ''} · ${captions[s.phase]} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level}${s.pending ? ` (${s.pending} por mejorar)` : ''} · XP ${Math.floor(player.xp)}/${player.xpNext} | ${weaponSummary}`;
++    if(s.v2){
++      const v=s.v2,active=s.phase!=='finished',canShow=active&&s.phase!=='levelup';
++      const target=v.doorOpen?s.exit:G.EnemyMgr.all().find(e=>e.boss&&!e.dead);
++      const tx=target?target.x-player.x:0,ty=target?target.y-player.y:0;
++      const arrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(ty,tx)/(Math.PI/4))+8)%8];
++      let goal=v.doorOpen?(v.bossDefeated?'PUERTA ABIERTA · cruza caminando':'PUERTA BLOQUEADA · derrota al jefe'):
++        v.bossDefeated?'Jefe derrotado · resiste hasta 5:00':v.bossSpawned?'JEFE DEL MAPA · debes derrotarlo':`Puerta en ${G.U.mmss(Math.max(0,300-v.mapTime))}`;
++      el('map-locator').hidden=!canShow;
++      el('map-locator').textContent=goal+(target?` · ${arrow} ${Math.ceil(Math.hypot(tx,ty))} u`:'');
++      el('map-alert').hidden=!canShow||!(G.MapTrial.alertTime>0);
++      el('map-alert').textContent='¡Equipo de la Fundación! «¡Por aquí, te cubrimos!» · '+(v.bossDefeated?'Cruza la puerta.':'Termina con el jefe para avanzar.');
++      el('field-status').textContent=`PRUEBA V2 · Mapa ${s.sector} · ${G.U.mmss(v.mapTime)} / 5:00 · ${s.phase==='levelup'?captions.levelup:goal} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level} | ${weaponSummary}`;
++    }
+     const rift=G.DimensionalRifts.state,open=rift.status==='open';
+     el('rift-locator').hidden=!open||s.phase==='finished'||s.phase==='levelup';
+     if(open){
+@@ -172,15 +199,15 @@
+       button.disabled = !canSwitch || i === w.activeIndex || w.switchRemaining > 0;
+       button.setAttribute('aria-label', `Arma ${i + 1}: ${weapon?.name || 'sin arma'}, ${weapon ? `${Math.floor(weapon.ammo)} de ${weapon.capacity}` : ''}${weapon?.reload > 0 ? ', recargando' : ''}`);
+     }
+-    el('btn-mods').hidden = s.phase !== 'preparation' || !!G.InventoryTrial?.enabled;
++    el('btn-mods').hidden = !!s.v2 || s.phase !== 'preparation' || !!G.InventoryTrial?.enabled;
+     el('btn-mods').disabled = s.phase !== 'preparation' || editorOpen;
+     // During a normal rest, allow continuing early when there are no upgrades.
+     el('btn-field-ready').hidden = s.phase !== 'preparation';
+     el('btn-field-ready').disabled = false;
+-    el('btn-field-exit').hidden = s.phase !== 'exploration' && s.phase !== 'boss';
++    el('btn-field-exit').hidden = !!s.v2 || (s.phase !== 'exploration' && s.phase !== 'boss');
+     el('btn-field-exit').disabled = !s.nearExit;
+     el('btn-field-exit').textContent = s.phase === 'boss' ? 'Huir · 2 s' : 'Siguiente sector';
+-    el('btn-field-extract').hidden = s.phase !== 'exploration' || !s.extractionAvailable;
++    el('btn-field-extract').hidden = !!s.v2 || s.phase !== 'exploration' || !s.extractionAvailable;
+     el('btn-field-extract').disabled = !s.nearExit;
+     const showCards = s.phase === 'levelup' && s.pending === 1;
+     el('field-upgrades').hidden = !showCards;
+--- a/tests/p05-checkpoints.test.js
++++ b/tests/p05-checkpoints.test.js
+@@ -25,6 +25,17 @@
+  const G=setup();G.DimensionalRifts={enabled:true};assert.equal(G.RunCheckpoint.capture(),null);
+  G.DimensionalRifts.enabled=false;assert.ok(G.RunCheckpoint.capture());
+  G.InventoryTrial={enabled:true};assert.equal(G.RunCheckpoint.capture(),null);
++});
++
++test('prueba V2 no captura ni restaura checkpoint schema1 y conserva datos previos',()=>{
++ const G=setup(),saved=G.RunCheckpoint.capture(),before=G.Game.player;
++ G.MapTrial={enabled:true};
++ assert.equal(G.RunCheckpoint.capture(),null);
++ G.RunCheckpoint.atBoundary('map-door');
++ assert.equal(G.RunCheckpoint.restore(saved).ok,false);
++ assert.equal(G.Game.player,before);
++ G.MapTrial.enabled=false;
++ assert.equal(G.RunCheckpoint.restore(saved).ok,true);
+ });
+ test('incompatible version and duplicate copies reject before game mutation',()=>{
+  const G=setup(),saved=G.RunCheckpoint.capture(),before=G.Game.player;saved.buildVersion='other';
+--- a/tests/v2-map-browser.py
++++ b/tests/v2-map-browser.py
+@@ -0,0 +1,137 @@
++"""QA V2 aislado: tiempo, posición, invulnerabilidad y HP controlados.
++No es aceptación humana, balance, rendimiento ni prueba en dispositivo físico.
++Ejecutar después del build. Sin cuentas, perfil previo ni solicitudes externas.
++"""
++from pathlib import Path
++from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
++from functools import partial
++from threading import Thread
++from playwright.sync_api import sync_playwright
++import json, os
++
++ROOT = Path(os.environ.get('SCP_TEST_ROOT', Path(__file__).resolve().parents[1])).resolve()
++OUT = Path(os.environ.get('SCP_TEST_ARTIFACTS', ROOT/'tests/artifacts/v2-map'))
++ThreadingHTTPServer.request_queue_size = 128
++
++class Quiet(SimpleHTTPRequestHandler):
++    def log_message(self, *args): pass
++
++def main():
++    OUT.mkdir(parents=True, exist_ok=True)
++    server = ThreadingHTTPServer(('127.0.0.1', 0), partial(Quiet, directory=str(ROOT)))
++    Thread(target=server.serve_forever, daemon=True).start()
++    origin = f'http://127.0.0.1:{server.server_port}'
++    records = []
++    try:
++        with sync_playwright() as pw:
++            browser = pw.chromium.launch(headless=True)
++            for entry in ['dev.html', 'index.html']:
++                for mobile in [False, True]:
++                    context = browser.new_context(viewport={'width':390 if mobile else 1280, 'height':844 if mobile else 900}, has_touch=mobile, is_mobile=mobile)
++                    page = context.new_page(); errors=[]; remote=[]; bad=[]
++                    page.on('pageerror', lambda e: errors.append(str(e)))
++                    page.on('console', lambda m: errors.append(m.text) if m.type=='error' else None)
++                    page.on('response', lambda r: bad.append([r.status,r.url]) if r.status>=400 else None)
++                    def route(r):
++                        if r.request.url.startswith(origin+'/'): r.continue_()
++                        else: remote.append(r.request.url); r.abort()
++                    page.route('**/*', route)
++                    page.goto(origin+'/'+entry+'?prueba=mapa-v2&rapida=1')
++                    page.wait_for_selector('#btn-technical-start:visible')
++                    assert page.get_by_text('Desarrollado por Ivan Vivanco', exact=True).is_visible()
++                    assert page.locator('#loadout-mods-0 input, #loadout-mods-1 input').count()==0
++                    page.click('#btn-technical-start')
++                    page.wait_for_function('() => G.Game.state === "playing" && !!G.Expedition.state.v2')
++                    page.click('#btn-technical-pause')
++                    frozen=page.evaluate('G.Expedition.state.v2.mapTime')
++                    page.wait_for_timeout(180)
++                    assert page.evaluate('G.Expedition.state.v2.mapTime')==frozen
++                    assert 270<=frozen<273, frozen
++                    assert page.evaluate('!G.LocalAccounts.enabled && !G.InventoryTrial.enabled && !G.DimensionalRifts.enabled && G.RunCheckpoint.capture()===null')
++                    door=page.evaluate('''() => {
++                        const p=G.Game.player, boss=G.EnemyMgr.all().find(e=>e.boss&&!e.dead);
++                        if(!boss)throw Error('Falta jefe vivo al iniciar prueba rápida');
++                        boss.hp=boss.maxHp=1e7; p.invuln=1e6;
++                        const exit=G.Expedition.state.exit;
++                        // Fixture real anterior al corte: conserva posición/vida durante los30s simulados.
++                        const remnant=G.EnemyMgr.add(new G.Enemy(G.Content.pursuer,exit.x,exit.y,{hp:1,spd:1,dmg:1}));
++                        remnant.hp=remnant.maxHp=10000; remnant.spd=0; remnant.update=()=>{};
++                        window.v2QA={boss,remnant};
++                        for(let i=0;i<1000&&!G.Expedition.state.v2.doorOpen;i++){
++                            if(G.Expedition.state.phase==='levelup')G.Expedition.choose(0);
++                            G.Expedition.update(1/30);
++                        }
++                        const s=G.Expedition.state;
++                        if(!s.v2.doorOpen)throw Error('Puerta no apareció en300s');
++                        if(!G.EnemyMgr.get(remnant.id)||remnant.dead)throw Error('Remanente anterior al corte eliminado');
++                        p.x=exit.x;p.y=exit.y;
++                        const sector=s.sector, count=G.EnemyMgr.count,idsBefore=G.EnemyMgr.all().map(e=>e.id);
++                        const summoned=G.Expedition.summon(boss,3);
++                        G.Expedition.update(1/30);
++                        return {s:G.Expedition.state,sector,count,summoned,after:G.EnemyMgr.count,idsBefore,idsAfter:G.EnemyMgr.all().map(e=>e.id),remnantId:remnant.id};
++                    }''')
++                    assert door['s']['v2']['spawnClosed'] and door['s']['v2']['bossSpawned']
++                    assert not door['s']['v2']['bossDefeated']
++                    assert door['s']['sector']==door['sector'], door
++                    # Deaths may reduce count. No new identity may appear after the cutoff.
++                    assert door['summoned']==0 and set(door['idsAfter']) <= set(door['idsBefore']), door
++                    assert len(door['s']['v2']['allies'])>=2, door
++                    # Retirar jugador de la puerta y aislar disparos aliados de los del jugador.
++                    allied=page.evaluate('''() => {
++                        const p=G.Game.player,r=v2QA.remnant,exit=G.Expedition.state.exit;
++                        p.x=exit.x-150;p.y=exit.y;
++                        const before=r.hp, tick=G.FieldCombat.tick;
++                        G.Projectiles.clear();G.FieldCombat.tick=()=>{};
++                        try{for(let i=0;i<45;i++)G.Expedition.update(1/30);}finally{G.FieldCombat.tick=tick;}
++                        return {before,after:r.hp,exists:!!G.EnemyMgr.get(r.id)};
++                    }''')
++                    assert allied['exists'] and allied['after']<allied['before'], allied
++                    unlocked=page.evaluate('''() => {
++                        v2QA.boss.hurt(v2QA.boss.hp+1);
++                        for(let i=0;i<35;i++){
++                            if(G.Expedition.state.phase==='levelup')G.Expedition.choose(0);
++                            G.Expedition.update(1/30);
++                        }
++                        G.TechnicalUI.tick(G.Game.player,G.Expedition.state.elapsed);
++                        return {s:G.Expedition.state,remnant:!!G.EnemyMgr.get(v2QA.remnant.id)};
++                    }''')
++                    assert unlocked['s']['v2']['bossDefeated'] and unlocked['remnant'], unlocked
++                    assert page.locator('#btn-field-extract').is_hidden()
++                    assert page.locator('#btn-mods').is_hidden()
++                    # Mostrar mundo sin overlay: pausa global reactivada inmediatamente tras captura.
++                    page.click('#btn-technical-resume')
++                    page.screenshot(path=str(OUT/f'{entry[:-5]}-{"touch" if mobile else "desktop"}-door.png'))
++                    page.click('#btn-technical-pause')
++                    transition=page.evaluate('''() => {
++                        while(G.Expedition.state.phase==='levelup')G.Expedition.choose(0);
++                        const p=G.Game.player,exit=G.Expedition.state.exit;
++                        p.x=exit.x;p.y=exit.y;p.invuln=1e6;
++                        const snapshot=()=>({hp:p.hp,temp:JSON.stringify(p.tempStats),weapons:G.FieldCombat.exportData().weapons.map(w=>({id:w.id,model:w.model,level:w.level,mods:w.mods}))});
++                        const before=snapshot();G.Expedition.update(1/30);
++                        const after=snapshot(),s=G.Expedition.state;
++                        G.Expedition.update(1/30);
++                        return {before,after,s,next:G.Expedition.state};
++                    }''')
++                    assert transition['before']==transition['after'], transition
++                    assert transition['s']['sector']==door['sector']+1, transition
++                    assert transition['s']['v2']['mapTime']==0, transition
++                    assert transition['next']['sector']==transition['s']['sector'], transition
++                    assert transition['next']['v2']['mapTime']<1, transition
++                    # Variante completa: arranca en0, sin jefe ni puerta.
++                    page.goto(origin+'/'+entry+'?prueba=mapa-v2')
++                    page.wait_for_selector('#btn-technical-start:visible');page.click('#btn-technical-start')
++                    page.wait_for_function('() => G.Game.state === "playing" && !!G.Expedition.state.v2')
++                    normal=page.evaluate('G.Expedition.state.v2')
++                    assert 0<=normal['mapTime']<2 and not normal['bossSpawned'] and not normal['doorOpen'], normal
++                    assert not errors, errors
++                    assert not remote, remote
++                    assert not bad, bad
++                    records.append({'entry':entry,'touchEmulated':mobile,'status':'PASS','door':door,'alliedDamage':allied,'unlocked':unlocked,'transition':transition,'normal':normal,'errors':errors,'remoteAttempts':remote,'httpFailures':bad})
++                    context.close()
++            browser.close()
++        (OUT/'results.json').write_text(json.dumps({'records':records,'method':'Navegador aislado. Posición, HP del jefe/remanente, invulnerabilidad y tiempo controlados. Disparos del jugador temporalmente desactivados para aislar daño aliado. No aceptación humana, balance, rendimiento ni dispositivo físico.'},indent=2)+'\n',encoding='utf-8')
++        print(json.dumps({'result':'PASS','scenarios':len(records),'output':str(OUT)}))
++    finally:
++        server.shutdown();server.server_close()
++
++if __name__=='__main__':main()
+--- a/tests/v2-map-director.test.js
++++ b/tests/v2-map-director.test.js
+@@ -0,0 +1,69 @@
++const test=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
++function setup(seed=1337,quick=false,enabled=true){
++ let list=[],items=[],id=0;
++ const G={U:{dist:(a,b,x,y)=>Math.hypot(x-a,y-b),rand:()=>0},Camera:{w:768,h:768,x:0,y:0,sees:()=>false,follow(){}},
++ World:{reset(){},setFixture(){},setBiome(){},isFree:()=>true,update(){}},Path:{clear(){},update(){},reachable:()=>true},
++ SectorMaps:{generate:s=>({seed:s,fixture:{},entry:{x:0,y:0},exit:{x:32,y:0},bossSpawn:{x:256,y:0},spawnPoints:Array.from({length:100},(_,i)=>({x:450+i,y:0}))})},
++ Content:{sectors:[{},{}],pursuer:{hp:30,dex:'pursuer01'},biological:{hp:24,dex:'biological01'},boss:{hp:600,dex:'warden01',xp:220}},
++ Enemy:class{constructor(def,x,y,sc,boss=false){Object.assign(this,{id:++id,def,x,y,sc,boss,hp:def.hp*sc.hp,dead:false,minions:[]});}die(){if(this.dead)return;this.dead=true;items.push({kind:'xp',value:this.def.xp||14,id:this.id});}},
++ EnemyMgr:{clear(){list=[]},add(e){list.push(e);return e},get(id){return list.find(e=>e.id===id)},all:()=>list,get count(){return list.length},update(){list=list.filter(e=>!e.dead)}},
++ Projectiles:{clear(){},update(){}},Pickups:{clear(){items=[]},all:()=>items,removeId(id){items=items.filter(i=>i.id!==id)},update(){}},
++ Input:{reset(){},axis:()=>[0,0]},Touch:{reset(){}},FieldCombat:{reset(){},tick(){},clearTemporary(p){p.tempStats={}}},FX:{update(){}},Spawner:{CAP:64,say(){},tickBanner(){}},Combat:{resolve(){}},FieldUpgrades:{offer:()=>[{key:'health',apply:p=>p.perks++}]} };
++ const player={hp:100,maxHp:100,kills:0,bosses:0,r:12,regenFlat:0,perks:0,x:0,y:0,xp:0,xpNext:1e9,xpMul:1,level:1,update(){},gainXp(n){this.xp+=n;return 0}};
++ const riftMode='';const inventory=false;
++ if(riftMode){G.Audio={sfx(){}};G.World.projectileBlock=()=>null;
++  vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/dimensional-rifts.js'),'utf8'),{G,Math,URLSearchParams,window:{location:{hostname:'127.0.0.1',search:riftMode}}});}
++ if(inventory)G.InventoryTrial={enabled:true,directTest:true};
++ G.MapTrial={enabled,quick,duration:300,bossAt:240,startTime:quick?270:0,allies:[],resets:0,arrivals:0,reset(g){this.resets++;this.geometry=g},arrive(){this.arrivals++},updateAllies(){},draw(){}};
++ for(const file of ['../js/data/field-catalog.js','../js/systems/field-stats.js','../js/systems/field-abilities.js','../js/systems/expedition.js'])vm.runInNewContext(fs.readFileSync(require.resolve(file),'utf8'),{G,Math});G.Expedition.start(player,{seed});
++ function clearWave(){for(let step=0;step<500;step++){for(const e of G.EnemyMgr.all()){if(!e.dead){e.dead=true;player.kills++;}}G.Expedition.update(1);if(G.Expedition.state.phase==='preparation')return;}throw Error('wave stuck')}
++ function clearSector(){for(let n=0;n<G.Expedition.state.sectorWaves;n++){clearWave();G.Expedition.ready()}player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;}
++ return {G,player,clearWave,clearSector};
++}
++
++test('V2 reloj exacto y corte previo al update: no normales ni refuerzos desde300',()=>{
++ const {G}=setup();G.Expedition.update(239);G.Expedition.update(.99);assert.equal(G.Expedition.state.v2.bossSpawned,false);
++ G.Expedition.update(.01);const boss=G.EnemyMgr.all().find(e=>e.boss);assert.ok(boss);
++ G.Expedition.update(59.99);assert.equal(G.Expedition.state.v2.doorOpen,false);
++ let calls=0;G.EnemyMgr.update=()=>{calls++;assert.equal(G.Expedition.summon(boss,2),0)};
++ const count=G.EnemyMgr.count;G.Expedition.update(.01);assert.equal(G.EnemyMgr.count,count);assert.equal(calls,1);
++ assert.equal(G.Expedition.state.v2.mapTime,300);assert.equal(G.Expedition.state.v2.spawnClosed,true);assert.equal(G.MapTrial.arrivals,1);
++ G.Expedition.update(5);assert.equal(G.Expedition.state.v2.mapTime,300);assert.equal(G.EnemyMgr.count,count);assert.equal(G.MapTrial.arrivals,1);
++});
++test('V2 jefe temprano espera puerta; remanentes permanecen y transición conserva build/vida',()=>{
++ const {G,player}=setup();G.Expedition.update(240);const boss=G.EnemyMgr.all().find(e=>e.boss),remnant=G.EnemyMgr.all().find(e=>!e.boss);
++ player.hp=73;player.tempStats.power=7;player.weapons=[{id:'kept'}];const weapons=player.weapons,stats=player.tempStats;
++ boss.dead=true;G.Expedition.update(.01);assert.equal(G.Expedition.state.v2.bossDefeated,true);assert.ok(G.EnemyMgr.get(remnant.id));assert.equal(G.Expedition.state.phase,'combat');
++ player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;assert.equal(G.Expedition.useExit(),false);
++ const seed=G.Expedition.state.mapSeed;G.Expedition.update(59.99);assert.equal(G.Expedition.state.sector,2);assert.equal(G.Expedition.state.v2.mapTime,0);
++ assert.equal(player.hp,73);assert.equal(player.tempStats,stats);assert.equal(player.weapons,weapons);assert.notEqual(G.Expedition.state.mapSeed,seed);
++ assert.equal(G.Expedition.state.totals.sectorsCompleted,1);assert.equal(G.Expedition.state.totals.bossesDefeated,1);assert.equal(G.MapTrial.resets,2);
++});
++test('V2 puerta con jefe vivo bloqueada y rechaza escape/extract; contacto exige radio de puerta',()=>{
++ const {G,player}=setup(),add=G.EnemyMgr.add;G.EnemyMgr.add=e=>{assert.ok(G.Expedition.state.v2.mapTime<300);assert.equal(G.Expedition.state.v2.spawnClosed,false);return add(e)};
++ G.Expedition.update(300);G.EnemyMgr.add=add;player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;
++ assert.equal(G.Expedition.useExit(),false);assert.equal(G.Expedition.useExit('escape'),false);assert.equal(G.Expedition.useExit('extract'),false);
++ G.EnemyMgr.all().find(e=>e.boss).dead=true;player.x+=50;G.Expedition.update(.01);assert.equal(G.Expedition.state.sector,1);
++ player.x-=50;G.Expedition.update(.01);assert.equal(G.Expedition.state.sector,2);G.Expedition.update(.01);assert.equal(G.Expedition.state.sector,2);
++});
++test('V2 quick solo primer mapa, jefe garantizado con cap y respeta nivel/pausa',()=>{
++ const {G,player}=setup(42,true);assert.equal(G.Expedition.state.v2.mapTime,270);assert.equal(G.Expedition.state.v2.bossSpawned,true);
++ G.Expedition.update(30);G.EnemyMgr.all().find(e=>e.boss).dead=true;player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;G.Expedition.update(.01);
++ assert.equal(G.Expedition.state.v2.mapTime,0);G.Spawner.CAP=4;G.Expedition.update(240);assert.ok(G.EnemyMgr.all().find(e=>e.boss));
++ G.Pickups.update=(dt,p,collect)=>collect({kind:'xp',value:1});player.gainXp=()=>1;player.xpNext=1;G.Expedition.update(.01);
++ assert.equal(G.Expedition.state.phase,'levelup');const t=G.Expedition.state.v2.mapTime;G.EnemyMgr.all().find(e=>e.boss).dead=true;G.Expedition.update(10);
++ assert.equal(G.Expedition.state.v2.mapTime,t);assert.equal(G.Expedition.state.v2.bossDefeated,true);assert.equal(G.Expedition.choose(0),true);
++});
++test('V2 mezcla enemigos y escala con tiempo sin cerrar oleadas ni exceder cap normal',()=>{
++ const {G}=setup();assert.ok(G.EnemyMgr.all().some(e=>e.def===G.Content.biological));
++ G.Expedition.update(60);assert.equal(G.Expedition.state.phase,'combat');assert.equal(G.Expedition.state.totals.wavesCompleted,0);
++ assert.ok(G.EnemyMgr.all().some(e=>e.sc.hp>1));G.Expedition.update(180);assert.equal(G.EnemyMgr.count,24);
++ const boss=G.EnemyMgr.all().find(e=>e.boss);assert.ok(boss);boss.dead=true;G.Expedition.update(.01);G.Expedition.update(.01);
++ assert.equal(G.Expedition.state.totals.bossesDefeated,1);assert.equal(G.Expedition.state.sector,1);
++ const copy=setup();assert.equal(copy.G.Expedition.state.mapSeed,G.Expedition.state.mapSeed);
++});
++test('V2 no checkpoint/restauración heredada; muerte normal y legacy sin campo V2',()=>{
++ const a=setup();let boundaries=0;a.G.RunCheckpoint={atBoundary(){boundaries++}};assert.equal(a.G.Expedition.captureState(),null);assert.throws(()=>a.G.Expedition.restoreState({}),/V2/);
++ a.G.Expedition.update(300);assert.equal(boundaries,0);a.player.hp=0;a.G.Expedition.update(.1);assert.equal(a.G.Expedition.state.result.reason,'death');
++ const legacy=setup(1337,false,false);assert.equal('v2' in legacy.G.Expedition.state,false);assert.ok(legacy.G.Expedition.captureState());legacy.clearWave();assert.equal(legacy.G.Expedition.state.phase,'preparation');
++});
+--- a/tests/v2-map-trial.test.js
++++ b/tests/v2-map-trial.test.js
+@@ -0,0 +1,57 @@
++const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
++function setup(search='?prueba=mapa-v2',hostname='127.0.0.1'){
++ const enemies=[],sounds=[];
++ const G={World:{isFree:()=>true,projectileBlock:()=>false},Path:{reachable:()=>true},EnemyMgr:{all:()=>enemies},
++  Content:{guard:{dex:'guard01'}},Audio:{sfx:key=>sounds.push(key)}};
++ const file=path.join(__dirname,'../js/systems/map-trial.js');
++ if(fs.existsSync(file))vm.runInNewContext(fs.readFileSync(file,'utf8'),{G,window:{location:{search,hostname}},URLSearchParams,Math});
++ return{G,enemies,sounds};
++}
++test('V2 is loopback-only, explicit and never combined with account modes',()=>{
++ for(const [query,host,expected]of[['?prueba=mapa-v2','127.0.0.1',true],['?prueba=mapa-v2','localhost',true],['?prueba=mapa-v2','[::1]',true],['','127.0.0.1',false],['?prueba=mapa-v2','example.com',false],['?prueba=mapa-v2&cuentas=local','127.0.0.1',false],['?prueba=mapa-v2&cuentas=propias','127.0.0.1',false],['?prueba=mapa-v2&cuentas=invalid','127.0.0.1',false]]){
++  const {G}=setup(query,host);assert.equal(G.MapTrial?.enabled,expected,query+' / '+host);
++ }
++});
++test('quick trial is explicit and keeps the five-minute contract',()=>{
++ const normal=setup().G.MapTrial,fast=setup('?prueba=mapa-v2&rapida=1').G.MapTrial;
++ assert.equal(normal?.duration,300);assert.equal(normal.startTime,0);assert.equal(normal.bossAt,240);
++ assert.equal(fast.startTime,270);assert.equal(fast.duration,300);
++});
++test('V2 cannot be mixed with the old rift or backpack trial switches',()=>{
++ const search='?prueba=mapa-v2&grietas=local&inventario=local',{G}=setup(search);
++ const context={G,window:{location:{hostname:'127.0.0.1',search}},URLSearchParams,Math};
++ for(const file of ['dimensional-rifts.js','../ui/inventory-trial.js']){
++  const resolved=path.resolve(__dirname,'../js/systems',file);
++  vm.runInNewContext(fs.readFileSync(resolved,'utf8'),context);
++ }
++ assert.equal(G.MapTrial.enabled,true);assert.equal(G.DimensionalRifts.enabled,false);assert.equal(G.InventoryTrial.enabled,false);
++});
++test('allies arrive once, reset between maps and use reachable positions',()=>{
++ const {G,sounds}=setup();assert.ok(G.MapTrial);
++ G.MapTrial.reset({exit:{x:100,y:100}});assert.equal(G.MapTrial.allies.length,0);
++ G.MapTrial.arrive();G.MapTrial.arrive();assert.equal(G.MapTrial.allies.length,2);assert.equal(sounds.length,1);
++ assert.ok(G.MapTrial.allies.every(a=>Number.isFinite(a.x)&&Number.isFinite(a.y)));
++ G.MapTrial.reset({exit:{x:200,y:100}});assert.equal(G.MapTrial.allies.length,0);
++});
++test('allied fire respects walls and range and deals actual enemy damage',()=>{
++ const {G,enemies}=setup();assert.ok(G.MapTrial);
++ G.MapTrial.reset({exit:{x:0,y:0}});G.MapTrial.arrive();
++ const p={kills:0},e={x:140,y:0,hp:100,dead:false,hurt(n){this.hp-=n;if(this.hp<=0)this.dead=true;}};enemies.push(e);
++ G.World.projectileBlock=()=>true;G.MapTrial.updateAllies(1,p);assert.equal(e.hp,100);
++ G.World.projectileBlock=()=>false;e.x=10000;G.MapTrial.updateAllies(1,p);assert.equal(e.hp,100);
++ e.x=140;G.MapTrial.updateAllies(1,p);assert.ok(e.hp<100);
++});
++test('allies use the actual player path field and spread out from the doorway',()=>{
++ const {G}=setup(),player={kills:0};G.Game={player};
++ G.Path.reachable=(x,y,anchor)=>anchor===player;
++ G.MapTrial.reset({exit:{x:0,y:0}});G.MapTrial.arrive();G.MapTrial.updateAllies(1,player);
++ const [a,b]=G.MapTrial.allies;
++ assert.ok(Math.hypot(a.x-b.x,a.y-b.y)>20,'two allies need distinct reachable cover positions');
++});
++test('an allied kill resolves once and allies are not hostile enemies',()=>{
++ const {G,enemies}=setup();assert.ok(G.MapTrial);
++ G.MapTrial.reset({exit:{x:0,y:0}});G.MapTrial.arrive();
++ let deaths=0;const p={kills:0},e={x:100,y:0,hp:1,dead:false,hurt(n){if(this.dead)return;this.hp-=n;if(this.hp<=0){this.dead=true;deaths++;}}};enemies.push(e);
++ G.MapTrial.updateAllies(1,p);G.MapTrial.updateAllies(1,p);
++ assert.equal(deaths,1);assert.equal(p.kills,0,'EnemyMgr owns kill accounting when removing the dead enemy');assert.equal(enemies.length,1);assert.equal(G.MapTrial.allies.length,2);
++});
+--- a/tools/render-roadmap.js
++++ b/tools/render-roadmap.js
+@@ -50,11 +50,12 @@
+  if(type==='ACTIVE_DESIGN'){
+   const d=r.activeDesignRevision;
+   if(!d)throw Error('Falta la revisión de diseño vigente.');
++  const trial=d.firstTrial?'\n\n**Primera prueba local disponible:** [guía]('+d.firstTrial.guide+') · [prueba rápida]('+d.firstTrial.quickUrl+') · [mapa completo]('+d.firstTrial.url+'). Sin cuentas ni guardado; aceptación de Iván pendiente.':'';
+   return '**Diseño vigente '+d.id+' — '+d.title+' ('+d.updatedOn+').** '+d.summary+'\n\n'+
+-   '[Pauta vigente]('+d.pautaPath+') · [Plan de cambios]('+d.changePlanPath+') · [Decisiones y pendientes]('+d.decisionsPath+')\n\n'+
++   '[Pauta vigente]('+d.pautaPath+') · [Plan de cambios]('+d.changePlanPath+') · [Decisiones y pendientes]('+d.decisionsPath+')'+trial+'\n\n'+
+    '**Avance V2: sin calcular.** '+d.progress.explanation+'\n\n'+
+    table(['Elemento','Tratamiento vigente'],d.scope.map(x=>row(x.element,x.treatment)))+'\n\n'+
+-   table(['Paso','Trabajo pendiente','Dependencias'],d.implementationPlan.map(x=>row(x.id,x.title,x.dependencies.join(', ')||'Reglas V2')))+'\n\n'+
++   table(['Paso','Trabajo y estado','Dependencias'],d.implementationPlan.map(x=>row(x.id,x.title+(x.status==='EC'?' — prototipo local; aceptación pendiente':''),x.dependencies.join(', ')||'Reglas V2')))+'\n\n'+
+    '**P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. '+
+    'Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.';
+  }

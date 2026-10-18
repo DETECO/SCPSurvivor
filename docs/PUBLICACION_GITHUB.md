@@ -1,5 +1,15 @@
 # Publicaciones GitHub — SCP Survivor
 
+## Primera prueba V2 — 18/10/2026
+
+Petición de Iván A-031: comenzar la adaptación para su primera prueba. Entrega **V2-trial-01/Roadmap0.21**: modo local300s con jefe obligatorio, puerta de la Fundación, dos aliados y transición por contacto; sin extracción, accesorios o mochilas en la interfaz del ensayo. [Guía](PRUEBA_MAPA_V2.md), [informe](V2-PRIMERA-PRUEBA-REPORT.md), [validación](V2-PRIMERA-PRUEBA-VALIDACION.json) y [diff](V2-PRIMERA-PRUEBA-CAMBIOS.diff).
+
+Verificación: copia local126casosNode(125aprobados/0fallos/1omitido); copia de publicación126(124aprobados/0fallos/2omitidos por entorno).8escenarios de navegador en total, fuente/index y escritorio/táctil emulado, sin errores JavaScript, intentos remotos o fallosHTTP en esos recorridos controlados. Build/check86scripts; inspección visual de escritorio/táctil. Los ensayos controlan tiempo/posición/HP y no acreditan aceptación humana, balance, dispositivos físicos o servicios propios.
+
+Se preservan338archivos previos,12assets originales y las53tareas/criterios/pesos/estados históricos.52/100sigue histórico, V2sin porcentaje, P05realpendiente. Backend/cuentas inacabados conservados localmente y excluidos de esta publicación. Ningún cambio de facturación o servicio externo.
+
+Destino autorizado [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), **main**, padre verificado `9947505a9a52f9e6de4879dd14feb467e85dded3`. Commit identificable por **«Preparar primera prueba V2 de mapas y puerta de la Fundación»**; verificar SHA remoto después del push. Sin sobrescribir historial. Preparar esta entrada no demuestra por sí solo la publicación.
+
 ## Entrega del18/10/2026 — pauta ESTRUCTURA y plan de adaptación
 
 Iván pidió incorporar el chat **ESTRUCTURA**, retirar extracción de fin de partida, accesorios físicos de armas y mochilas, y preparar el plan de cambios con multiagentes Sol medio bajo revisión de raíz (A-030). Se conserva el juego existente. Esta entrega es **documental**: no implementa las mecánicas V2 ni publica la adaptación Worker que continúa en preparación local.

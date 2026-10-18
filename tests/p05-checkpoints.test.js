@@ -26,6 +26,17 @@ test('prototipo de grietas no produce guardados P05 incompatibles',()=>{
  G.DimensionalRifts.enabled=false;assert.ok(G.RunCheckpoint.capture());
  G.InventoryTrial={enabled:true};assert.equal(G.RunCheckpoint.capture(),null);
 });
+
+test('prueba V2 no captura ni restaura checkpoint schema1 y conserva datos previos',()=>{
+ const G=setup(),saved=G.RunCheckpoint.capture(),before=G.Game.player;
+ G.MapTrial={enabled:true};
+ assert.equal(G.RunCheckpoint.capture(),null);
+ G.RunCheckpoint.atBoundary('map-door');
+ assert.equal(G.RunCheckpoint.restore(saved).ok,false);
+ assert.equal(G.Game.player,before);
+ G.MapTrial.enabled=false;
+ assert.equal(G.RunCheckpoint.restore(saved).ok,true);
+});
 test('incompatible version and duplicate copies reject before game mutation',()=>{
  const G=setup(),saved=G.RunCheckpoint.capture(),before=G.Game.player;saved.buildVersion='other';
  assert.equal(G.RunCheckpoint.restore(saved).ok,false);assert.equal(G.Game.player,before);

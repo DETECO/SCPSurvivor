@@ -3,7 +3,7 @@ G.InventoryTrial=(()=>{
   const q=new URLSearchParams(window.location.search),local=['localhost','127.0.0.1','[::1]'].includes(window.location.hostname);
   const accounts=['local','propias'].includes(q.get('cuentas'));
   const directTest=local&&q.get('prueba')==='inventario'&&!accounts;
-  const enabled=local&&!accounts&&(directTest||q.get('inventario')==='local');
+  const enabled=local&&!accounts&&!G.MapTrial?.enabled&&(directTest||q.get('inventario')==='local');
   const M=()=>G.InventoryModel,el=id=>document.getElementById(id),clone=s=>JSON.parse(JSON.stringify(s));
   let owned=null,draft=null,draftPhase=null,slot=0,message='';
   function phase(){return G.Game.state==='ui'?'base':G.Game.state==='playing'&&G.Expedition.state.phase==='preparation'?'preparation':null;}

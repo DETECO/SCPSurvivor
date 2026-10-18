@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-18",
+  "version": "V2-trial-01",
+  "localOnly": true,
+  "manualAcceptance": "pending",
+  "nodeSource": {
+    "tests": 126,
+    "pass": 125,
+    "fail": 0,
+    "skipped": 1
+  },
+  "nodePublication": {
+    "tests": 126,
+    "pass": 124,
+    "fail": 0,
+    "skipped": 2
+  },
+  "browser": {
+    "source": {
+      "scenarios": 4,
+      "passed": 4,
+      "errors": 0,
+      "remoteAttempts": 0,
+      "httpFailures": 0,
+      "method": "Navegador aislado. Posición, HP del jefe/remanente, invulnerabilidad y tiempo controlados. Disparos del jugador temporalmente desactivados para aislar daño aliado. No aceptación humana, balance, rendimiento ni dispositivo físico."
+    },
+    "publication": {
+      "scenarios": 4,
+      "passed": 4,
+      "errors": 0,
+      "remoteAttempts": 0,
+      "httpFailures": 0,
+      "method": "Navegador aislado. Posición, HP del jefe/remanente, invulnerabilidad y tiempo controlados. Disparos del jugador temporalmente desactivados para aislar daño aliado. No aceptación humana, balance, rendimiento ni dispositivo físico."
+    }
+  },
+  "nodeSourceSkipped": "Integración optativa de emuladores no ejecutada en esta entrega.",
+  "nodePublicationSkipped": "Integración optativa de emuladores y prueba del callable real sin dependencias de functions en este checkout. Esta última sí pasó en la copia local con esas dependencias.",
+  "builds": {
+    "source": {
+      "scriptCount": 86,
+      "bundleSha256": "039e4c11594b98a5e24413046fff0e58b892fef92bfc6a96f37f96b35d2ee3bb",
+      "sdkBytes": 227131,
+      "buildCheck": "passed"
+    },
+    "publication": {
+      "scriptCount": 86,
+      "bundleSha256": "7383ed52b625ef0df757dde65d1099dd6d87d8ea7d8977651cdf0daff421b8bc",
+      "sdkBytes": 227024,
+      "buildCheck": "passed"
+    }
+  },
+  "newAssetsGenerated": false,
+  "oldAccountsEnabled": false,
+  "billingChanges": false,
+  "limits": [
+    "Simulación con tiempo/posición/HP e invulnerabilidad controlados; no aceptación humana ni balance.",
+    "No prueba de dispositivo físico, FPS/carga, servicios propios, persistencia, economía o ranking.",
+    "El modo normal anterior se conserva para regresión. V2 es optativa, solo loopback sin cuentas.",
+    "Mejoras al azar, catálogo por familias, cofres de premios y dimensiones/grietas nuevas pendientes."
+  ]
+}

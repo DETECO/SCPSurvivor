@@ -1,5 +1,7 @@
 # Contexto del proyecto — SCP Survivor
 
+**Ensayo V2-trial-01 (18/10/2026):** primer recorrido local implementado por petición de Iván A-031. Entradas `?prueba=mapa-v2` / `&rapida=1`; jefe provisional240s y puerta300s, aliados, corte de spawn y transición por contacto. Sin guardado, cuentas, extracción, mochila o accesorios en la interfaz del ensayo. No son las familias/azar/economía finales ni cierra P05. [Guía manual](docs/PRUEBA_MAPA_V2.md) · [Resultados y límites](docs/V2-PRIMERA-PRUEBA-REPORT.md).
+
 ## Cambio de dirección — V2-ESTRUCTURA, 18/10/2026
 
 Iván incorporó ESTRUCTURA a este hilo y pidió preparar los cambios: mapas5min, jefe obligatorio, puerta blindada/soldados a5:00, cese de apariciones y remanentes vivos; avance por mapas. Se retiran extracción de fin de partida, accesorios físicos y mochilas. La pauta distingue decisiones confirmadas de cofres, economía y reglas todavía abiertas.

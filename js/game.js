@@ -542,7 +542,7 @@ G.Game = (() => {
     if (pl && state !== 'ui') {
       G.Pickups.draw(ctx); G.Expedition.draw(ctx);
       const props = G.World.visibleProps(G.Camera);
-      const entities = [...G.EnemyMgr.drawables(G.Camera), ...props, pl].sort((a,b) => a.y - b.y);
+      const entities = [...G.EnemyMgr.drawables(G.Camera), ...(G.MapTrial?.drawables?.()||[]), ...props, pl].sort((a,b) => a.y - b.y);
       const propSet = new Set(props);
       for (const entity of entities) {
         if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:true});

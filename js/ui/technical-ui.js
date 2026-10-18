@@ -9,6 +9,7 @@ G.TechnicalUI = (() => {
     G.Audio.unlock();
     const selected = options();
     if (!selected) return;
+    if(G.MapTrial?.enabled)selected.seed=1337;
     G.Game.startTechnical(selected);
   }
   function ability() {
@@ -61,7 +62,7 @@ G.TechnicalUI = (() => {
     return ({grip:'menos dispersión',assisted:'recarga más rápida',reinforced:'más daño',extended:'más capacidad',rapid:'más cadencia',piercing:'atraviesa un objetivo'})[id] || '';
   }
   function openEditor() {
-    if(G.InventoryTrial?.enabled)return;
+    if(G.MapTrial?.enabled||G.InventoryTrial?.enabled)return;
     if (!readyToPlay() || G.Expedition.state.phase !== 'preparation') return;
     const state = G.FieldCombat.state;
     editorDraft = state.weapons.map(w => w.mods.slice()); editorOpen = true;
@@ -86,6 +87,18 @@ G.TechnicalUI = (() => {
   }
   function init() {
     G.FieldLoadout.init();
+    if(G.MapTrial?.enabled){
+      document.body.dataset.mapTrial='v2';
+      el('technical-intro').textContent='PRIMERA PRUEBA V2 · Resiste, derrota al jefe de cada mapa y avanza por la puerta de la Fundación.';
+      el('technical-account-hint').textContent='Prueba local sin cuentas, guardado ni recompensas persistentes. Sin mochilas ni accesorios de armas.';
+      el('map-test-note').hidden=false;
+      el('map-test-note').textContent=G.MapTrial.quick
+        ? 'PRUEBA RÁPIDA · Empiezas en 4:30 con el jefe vivo. A 5:00 llega la puerta y dejan de aparecer enemigos. Derrota al jefe y camina sobre la puerta para pasar al siguiente mapa. Los mapas siguientes comienzan en 0:00.'
+        : 'MAPAS DE 5 MINUTOS · Jefe provisional en 4:00. A 5:00 llega la puerta con soldados de cobertura. Debes derrotar al jefe para cruzar; los enemigos restantes siguen vivos. Arte y balance provisionales. Las mejoras por nivel todavía usan las cartas anteriores.';
+      el('btn-technical-start').textContent=G.MapTrial.quick?'Iniciar prueba rápida V2':'Iniciar mapa V2 · 5 minutos';
+      el('map-trial-quick').hidden=false;
+      if(G.MapTrial.quick){el('map-trial-quick').href='?prueba=mapa-v2';el('map-trial-quick').textContent='Probar mapa completo: empezar en 0:00';}
+    }
     const rifts=G.DimensionalRifts;
     if(rifts.enabled){
       el('rift-test-note').hidden=false;
@@ -129,6 +142,7 @@ G.TechnicalUI = (() => {
     for (const id of ['scene-hud', 'scene-footer', 'field-controls', 'field-status']) el(id).hidden = value !== 'playing';
     if (value === 'playing') updateSoldierHud();
     if (value !== 'playing') {
+      el('map-locator').hidden=true;el('map-alert').hidden=true;
       el('rift-alert').hidden=true;el('rift-locator').hidden=true;
       el('field-upgrades').hidden = true; el('field-result').hidden = true;
       el('btn-field-weapon-0').disabled = true; el('btn-field-weapon-1').disabled = true; el('btn-ability').disabled = true; el('btn-mods').disabled = true;
@@ -140,7 +154,7 @@ G.TechnicalUI = (() => {
     if (G.Game.state !== 'playing' || !player) return;
     const s = G.Expedition.state, w = G.FieldCombat.state;
     if (editorOpen && s.phase !== 'preparation') closeEditor();
-    el('scene-time').textContent = G.U.mmss(s.elapsed);
+    el('scene-time').textContent = s.v2?`${G.U.mmss(s.v2.mapTime)} / 5:00`:G.U.mmss(s.elapsed);
     el('scene-position').textContent = `${Math.round(player.x)}, ${Math.round(player.y)}`;
     const dx = s.exit.x - player.x, dy = s.exit.y - player.y;
     const direction = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? '→' : '←') : (dy > 0 ? '↓' : '↑');
@@ -149,6 +163,19 @@ G.TechnicalUI = (() => {
     updateSoldierHud(player);
     const weaponSummary = w.weapons.map((weapon, i) => `${i + 1} ${weapon.name} ${Math.floor(weapon.ammo)}/${weapon.capacity}${weapon.reload > 0 ? ' recargando' : ''}`).join(' · ');
     el('field-status').textContent = `${G.DimensionalRifts.directTest?'PRUEBA · ':''}S${s.sector}${s.kind === 'normal' && !s.dimensional && !G.DimensionalRifts.directTest ? ` · Oleada ${s.wave}/${s.sectorWaves}` : ''} · ${captions[s.phase]} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level}${s.pending ? ` (${s.pending} por mejorar)` : ''} · XP ${Math.floor(player.xp)}/${player.xpNext} | ${weaponSummary}`;
+    if(s.v2){
+      const v=s.v2,active=s.phase!=='finished',canShow=active&&s.phase!=='levelup';
+      const target=v.doorOpen?s.exit:G.EnemyMgr.all().find(e=>e.boss&&!e.dead);
+      const tx=target?target.x-player.x:0,ty=target?target.y-player.y:0;
+      const arrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(ty,tx)/(Math.PI/4))+8)%8];
+      let goal=v.doorOpen?(v.bossDefeated?'PUERTA ABIERTA · cruza caminando':'PUERTA BLOQUEADA · derrota al jefe'):
+        v.bossDefeated?'Jefe derrotado · resiste hasta 5:00':v.bossSpawned?'JEFE DEL MAPA · debes derrotarlo':`Puerta en ${G.U.mmss(Math.max(0,300-v.mapTime))}`;
+      el('map-locator').hidden=!canShow;
+      el('map-locator').textContent=goal+(target?` · ${arrow} ${Math.ceil(Math.hypot(tx,ty))} u`:'');
+      el('map-alert').hidden=!canShow||!(G.MapTrial.alertTime>0);
+      el('map-alert').textContent='¡Equipo de la Fundación! «¡Por aquí, te cubrimos!» · '+(v.bossDefeated?'Cruza la puerta.':'Termina con el jefe para avanzar.');
+      el('field-status').textContent=`PRUEBA V2 · Mapa ${s.sector} · ${G.U.mmss(v.mapTime)} / 5:00 · ${s.phase==='levelup'?captions.levelup:goal} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level} | ${weaponSummary}`;
+    }
     const rift=G.DimensionalRifts.state,open=rift.status==='open';
     el('rift-locator').hidden=!open||s.phase==='finished'||s.phase==='levelup';
     if(open){
@@ -172,15 +199,15 @@ G.TechnicalUI = (() => {
       button.disabled = !canSwitch || i === w.activeIndex || w.switchRemaining > 0;
       button.setAttribute('aria-label', `Arma ${i + 1}: ${weapon?.name || 'sin arma'}, ${weapon ? `${Math.floor(weapon.ammo)} de ${weapon.capacity}` : ''}${weapon?.reload > 0 ? ', recargando' : ''}`);
     }
-    el('btn-mods').hidden = s.phase !== 'preparation' || !!G.InventoryTrial?.enabled;
+    el('btn-mods').hidden = !!s.v2 || s.phase !== 'preparation' || !!G.InventoryTrial?.enabled;
     el('btn-mods').disabled = s.phase !== 'preparation' || editorOpen;
     // During a normal rest, allow continuing early when there are no upgrades.
     el('btn-field-ready').hidden = s.phase !== 'preparation';
     el('btn-field-ready').disabled = false;
-    el('btn-field-exit').hidden = s.phase !== 'exploration' && s.phase !== 'boss';
+    el('btn-field-exit').hidden = !!s.v2 || (s.phase !== 'exploration' && s.phase !== 'boss');
     el('btn-field-exit').disabled = !s.nearExit;
     el('btn-field-exit').textContent = s.phase === 'boss' ? 'Huir · 2 s' : 'Siguiente sector';
-    el('btn-field-extract').hidden = s.phase !== 'exploration' || !s.extractionAvailable;
+    el('btn-field-extract').hidden = !!s.v2 || s.phase !== 'exploration' || !s.extractionAvailable;
     el('btn-field-extract').disabled = !s.nearExit;
     const showCards = s.phase === 'levelup' && s.pending === 1;
     el('field-upgrades').hidden = !showCards;

@@ -1,5 +1,7 @@
 # SCP Survivor
 
+**Primera prueba V2 lista para probar localmente:** [rápida desde4:30](http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1) · [mapa completo](http://127.0.0.1:8000/?prueba=mapa-v2). Ejecutar `npm.cmd run serve` si el servidor está cerrado. [Guía y límites](docs/PRUEBA_MAPA_V2.md). Aceptación de Iván pendiente; sin cuentas ni guardado.
+
 **Pauta vigente V2-ESTRUCTURA (18/10/2026):** [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md). Avance por mapas5min con jefe y puerta de la Fundación; extracción, accesorios físicos y mochilas se retiran del diseño. [Plan de adaptación y pruebas](docs/PLAN_CAMBIOS_ESTRUCTURA.md). La implementación del juego aún es la anterior; esta revisión cambia documentos y roadmap.52/100 es histórico; avanceV2 sin calcular.
 
 Juego web existente de supervivencia por expediciones. Esta copia desarrolla P05 local sobre alfa0.4 y conserva Canvas2D, arquitectura, mecánicas y recursos. No es una versión publicada ni servicios reales de cuentas.

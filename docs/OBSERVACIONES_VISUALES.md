@@ -1,5 +1,7 @@
 # Observaciones visuales — pendientes de P09
 
+**Prototipo V2-trial-01:** puerta y soldados reutilizan sprites existentes y dibujo temporal; llamada visible y tono sintetizado, sin voz final grabada. Se ordenan aliados/props/jugador por profundidad. Revisar en P09 escala, silueta, legibilidad, llegada, efectos y voz; la prueba actual no aprueba arte definitivo.
+
 **V2-ESTRUCTURA · 18/10/2026.** Mantener estas observaciones compatibles. Añadir al diseño visual/audio la puerta blindada y brecha de transición a5:00, llegada y llamada de los soldados, cobertura aliada, aviso de jefe pendiente y diferenciación de puerta normal/grieta opcional/salto dimensional. No denominar extracción de fin de partida a la transición. Retirar de la futura interfaz mochilas y ranuras de accesorios; conservar crédito y marcadores de daño pendientes. Arte existente intacto. [Pauta vigente](../PAUTA_DESARROLLO.md).
 
 Registradas el15/10/2026 a partir de la prueba de Iván. No son un rediseño aprobado ni cambian los pesos, criterios o avance del roadmap.

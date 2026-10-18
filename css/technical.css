@@ -71,6 +71,11 @@ body[data-technical-state="ui"] .footer,body[data-technical-state="paused"] .foo
 #inventory-draft-note{font-size:12px;color:#d5e8b4}
 /* Grietas: señales provisionales de la prueba local; diseño final en P09. */
 .rift-locator,.rift-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;background:#1d1015ed;color:#fff0f0;border:1px solid #f3747b;font-size:13px;line-height:1.4;pointer-events:none}
+.map-trial-link{display:block;margin-top:12px;padding:10px;color:#eee8dc;text-align:center;border:1px solid var(--edge);font-size:13px;min-height:44px}
+#map-test-note{border-left:3px solid #ef6571;padding-left:10px;font-size:13px;line-height:1.5}
+.map-locator,.map-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;border:1px solid #ddd8c9;background:#10201ded;color:#fff3dc;font-size:13px;line-height:1.4;pointer-events:none}
+.map-locator{top:100px}.map-alert{top:155px;border-left:4px solid #ef6571}
+@media(max-width:540px){.map-locator,.map-alert{left:8px;right:8px;font-size:12px}.map-locator{top:118px}.map-alert{top:184px}}
 .rift-locator{top:100px;font-weight:700}.rift-alert{top:155px;border-left:4px solid #f3747b}
 #rift-test-note{border-left:3px solid #f3747b;padding-left:10px}
 @media(max-width:540px){.rift-locator,.rift-alert{left:8px;right:8px;font-size:12px}.rift-locator{top:118px}.rift-alert{top:184px}}

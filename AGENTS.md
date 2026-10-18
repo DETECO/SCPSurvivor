@@ -1,10 +1,12 @@
 # SCP Survivor — instrucciones para Codex Local
 
+**Primera prueba V2 autorizada (A-031,18/10/2026):** prototipo local `?prueba=mapa-v2` o rápido `&rapida=1`; leer [guía](docs/PRUEBA_MAPA_V2.md) e [informe](docs/V2-PRIMERA-PRUEBA-REPORT.md). Mapas300s/jefe/puerta/aliados funcionan dentro de este ensayo. No cuentas ni guardado; nunca emitir/restaurar schema1 en V2. La petición posterior autoriza probar el recorrido ahora, sin declarar P05 completo ni continuar inventario físico P06. Código anterior conservado para regresión. Roadmap0.21; aceptación humana pendiente.
+
 ## Prioridad vigente — V2-ESTRUCTURA, 18/10/2026
 
 Leer primero [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) y [decisiones/pendientes](docs/ESTRUCTURA_DECISIONES.md). La petición posterior de Iván incorpora el chat ESTRUCTURA y retira extracción de fin de partida, accesorios físicos de armas y mochilas. Mapas5min, jefe obligatorio por mapa, puerta blindada/soldados a5:00, cese de spawn enemigo y remanentes vivos; cruzar exige jefe derrotado. Armas por familias y mejoras por nivel al azar; los detalles abiertos no se inventan.
 
-Esta entrega es documental: el código anterior se conserva. No continuar el prototipo de mochilas/mods ni la lista física anterior de P06. Terminar aceptación real P05 y compatibilidad de guardado antes de implementar P06 replanteada. Mantener Spark sin facturación. Agentes Sol con razonamiento medio; raíz guía, revisa e integra.
+La revisión inicial V2 fue documental; ahora existe el primer ensayo local descrito arriba. El código anterior se conserva para regresión. No continuar el prototipo de mochilas/mods ni la lista física anterior de P06. Terminar aceptación real P05 y compatibilidad de guardado antes de implementar P06 replanteada. Mantener Spark sin facturación. Agentes Sol con razonamiento medio; raíz guía, revisa e integra.
 
 RoadmapSCPv0.20 añade `activeDesignRevision`; sus53tareas/estados/pesos y52/100 describen la línea base histórica. AvanceV2 sin calcular; no conceder puntos por retirar funciones. Las reglas incompatibles que aparecen debajo son antecedentes, no instrucciones vigentes para V2.
 

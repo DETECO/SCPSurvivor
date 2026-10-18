@@ -1,5 +1,7 @@
 # Plan de adaptación a ESTRUCTURA — SCP Survivor
 
+**Primer ensayo A-031 disponible:** RC-03–RC-06 tienen prototipo local en prueba, sin aceptación final, contrato persistente ni cierre de dependencias. Consultar [prueba manual](PRUEBA_MAPA_V2.md). Las tareas/casos de abajo siguen siendo criterios de la adaptación completa; no exigir terminar la economía o P06 anterior para ejecutar este ensayo sin guardado.
+
 18/10/2026 · Plan técnico V2 · **Pendiente de implementación.**
 
 Objetivo: adaptar el proyecto existente a [la pauta vigente](../PAUTA_DESARROLLO.md). Esta revisión cambia documentación y seguimiento; conserva el juego y los datos. No sustituye el cierre pendiente de P05.
@@ -24,7 +26,7 @@ Las rutas son puntos de inspección, no instrucciones de borrar carpetas. El có
 
 ## Trabajo ordenado y aceptación
 
-Todas las tareas RC están **pendientes**. No son puntos completados ni modifican los pesos históricos.
+Todas las tareas RC siguen pendientes de **aceptación final**. RC-03–RC-06 tienen un prototipo local en prueba (EV-036), sin contrato persistente ni cierre de dependencias. No son puntos completados ni modifican los pesos históricos.
 
 | ID | Trabajo | Depende de | Se acepta cuando |
 | --- | --- | --- | --- |

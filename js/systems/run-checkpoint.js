@@ -15,15 +15,16 @@ G.RunCheckpoint=(()=>{
    ability:{kind:a.kind,remaining:a.remaining,cooldown:a.cooldown,duration:a.duration},world:G.World.exportData(),pickups:G.Pickups.exportData()});
  }
  function capture(){
-  if(G.DimensionalRifts?.enabled||G.InventoryTrial?.enabled)return null; // Prototipos sin persistencia; no emitir schema1 incompleto.
+  if(G.MapTrial?.enabled||G.DimensionalRifts?.enabled||G.InventoryTrial?.enabled)return null; // Prototipos sin persistencia; no emitir schema1 incompleto.
   const e=G.Expedition.state;if(!G.Game.player)return null;
   if(safe(e))return live(e.phase==='exploration'?'exploration':'preparation');
   if(['combat','boss'].includes(e.phase)&&G.Expedition.captureState().waveTime===0&&lastBoundary&&
    lastBoundary.expedition.runSeed===e.runSeed&&lastBoundary.expedition.sector===e.sector&&lastBoundary.expedition.wave===e.wave)return clone(lastBoundary);
   return null;
  }
- function atBoundary(name){lastBoundary=live(name);G.RunContinuity?.boundary(name);}
+ function atBoundary(name){if(G.MapTrial?.enabled)return;lastBoundary=live(name);G.RunContinuity?.boundary(name);}
  function validate(input){
+  if(G.MapTrial?.enabled)throw new Error('La prueba V2 no carga guardados de la versión anterior. Los datos se conservan.');
   const check=(condition,message)=>{if(!condition)throw new Error(message);};
   check(input&&input.schemaVersion===1&&input.buildVersion==='0.5-local-01','Versión de guardado incompatible. Conserva los datos.');
   function finite(value){

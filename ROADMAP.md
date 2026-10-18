@@ -1,8 +1,10 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Pauta y plan actualizados desde ESTRUCTURA y la petición posterior de Iván; no se implementan mecánicas en esta revisión documental.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Primera prueba local del recorrido V2 implementada y verificada automáticamente; falta aceptación de Iván y completar el diseño. No cierra P05/P06.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md)
+
+**Primera prueba local disponible:** [guía](docs/PRUEBA_MAPA_V2.md) · [prueba rápida](http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1) · [mapa completo](http://127.0.0.1:8000/?prueba=mapa-v2). Sin cuentas ni guardado; aceptación de Iván pendiente.
 
 **Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
 
@@ -17,14 +19,14 @@
 | Cofres y mapas | Conservar base aprobada D-140–148/D-220/D-279; adaptar intentos por oleada a300s. Presupuesto y tamaño final V2 todavía abiertos. |
 | P06/P07 | Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow. |
 
-| Paso | Trabajo pendiente | Dependencias |
+| Paso | Trabajo y estado | Dependencias |
 | --- | --- | --- |
 | RC-01 | Cerrar contratos y parámetros abiertos de V2 | Reglas V2 |
 | RC-02 | Versionar guardado, resultados y compatibilidad | P05 verificado, RC-01 |
-| RC-03 | Director300s y escalada temporal | RC-02 |
-| RC-04 | Jefe obligatorio por mapa | RC-03 |
-| RC-05 | Puerta, soldados y transición sin limpiar remanentes | RC-04 |
-| RC-06 | Retirar extracción del recorrido V2 | RC-05 |
+| RC-03 | Director300s y escalada temporal — prototipo local; aceptación pendiente | RC-02 |
+| RC-04 | Jefe obligatorio por mapa — prototipo local; aceptación pendiente | RC-03 |
+| RC-05 | Puerta, soldados y transición sin limpiar remanentes — prototipo local; aceptación pendiente | RC-04 |
+| RC-06 | Retirar extracción del recorrido V2 — prototipo local; aceptación pendiente | RC-05 |
 | RC-07 | Armas por familias y mejoras aleatorias | RC-01, RC-02 |
 | RC-08 | Retirar accesorios/mochilas y replantear P06 | RC-07, RC-02 |
 | RC-09 | Colección, gacha y recompensas revisadas | RC-08, RC-01 |
@@ -46,7 +48,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-Versión **0.20**, 2026-10-18. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+Versión **0.21**, 2026-10-18. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
 
 ## Avance basado en evidencia
 

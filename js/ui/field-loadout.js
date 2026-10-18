@@ -27,6 +27,7 @@ G.FieldLoadout = (() => {
   function renderMods() {
     for (let i = 0; i < 2; i++) {
       const host = el(`loadout-mods-${i}`); host.replaceChildren();
+      if(G.MapTrial?.enabled){host.hidden=true;continue;}
       const def = G.FieldCatalog.models[models[i]];
       for (const [id, mod] of Object.entries(G.FieldCatalog.mods)) {
         const label = document.createElement('label'); label.className = 'loadout-mod';
@@ -51,7 +52,7 @@ G.FieldLoadout = (() => {
     el('loadout-role-summary').textContent = `${soldier.name} · ${soldier.ability === 'sprint' ? 'Sprint: velocidad extra durante 2 s' : 'Primeros auxilios: recupera vida'}`;
     el('loadout-preview').replaceChildren();
     for (let i = 0; i < 2; i++) {
-      const w = G.FieldStats.weapon({training:{},tempStats:{}}, {model:models[i],mods:mods[i],level:1});
+      const w = G.FieldStats.weapon({training:{},tempStats:{}}, {model:models[i],mods:G.MapTrial?.enabled?[]:mods[i],level:1});
       const item = document.createElement('li');
       const details = document.createElement('details');
       const summary = document.createElement('summary');
@@ -70,7 +71,7 @@ G.FieldLoadout = (() => {
       return null;
     }
     error.textContent = '';
-    return { soldierId, loadout: models.map((model, i) => G.FieldCatalog.makeWeapon(model, `local:${i + 1}`, mods[i])) };
+    return { soldierId, loadout: models.map((model, i) => G.FieldCatalog.makeWeapon(model, `local:${i + 1}`, G.MapTrial?.enabled?[]:mods[i])) };
   }
   return { init, options };
 })();
