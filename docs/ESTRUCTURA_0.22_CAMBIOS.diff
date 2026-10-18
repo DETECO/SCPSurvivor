@@ -1,0 +1,704 @@
+# ESTRUCTURA / Roadmap 0.22
+# Padre: 20b72aecf0c5235ddd0227964b82a65c396f0617
+# Entrega documental; ejecutable V2-trial-01 conservado.
+
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -1,4 +1,6 @@
+ # SCP Survivor — instrucciones para Codex Local
++
++**Pauta sincronizada con ESTRUCTURA — 0.22 (18/10/2026):** aplicar [reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y [siguiente bloque de adaptación](docs/PLAN_DISENO_JUGABLE_V2.md). Iván aprobó los tipos de cofre, cuatro sorteos por mapa en 1:00/2:00/3:00/4:00, seis puntos alternativos y escala inicial de ensayo 160 × 100. Se conserva la prueba V2-trial-01; estos cofres y geometría aún no están implementados. No reintroducir extracción, accesorios físicos ni mochilas. No cambiar datos/cuentas ni conceder premios reales desde un ensayo local. Las reglas de armas, economía, grietas y saltos que siguen abiertas no se completan por inferencia.
+ 
+ **Primera prueba V2 autorizada (A-031,18/10/2026):** prototipo local `?prueba=mapa-v2` o rápido `&rapida=1`; leer [guía](docs/PRUEBA_MAPA_V2.md) e [informe](docs/V2-PRIMERA-PRUEBA-REPORT.md). Mapas300s/jefe/puerta/aliados funcionan dentro de este ensayo. No cuentas ni guardado; nunca emitir/restaurar schema1 en V2. La petición posterior autoriza probar el recorrido ahora, sin declarar P05 completo ni continuar inventario físico P06. Código anterior conservado para regresión. Roadmap0.21; aceptación humana pendiente.
+ 
+@@ -27,7 +29,7 @@
+ 
+ - HTML/CSS/JavaScript, Canvas2D y namespace G. Mantener estructura y orden de scripts en dev.html; no migrar a otro framework por instrucciones de proyectos ajenos.
+ - Editar fuentes. index.html, js/app.min.js y js/vendor/firebase-client.js se generan con npm.cmd run build.
+-- Velocidad base165; una elección inmediata por nivel, copias independientes de armas, reglas y topes aprobados. Recursos provisionales; no sustituir arte aprobado ni ampliar24+24 por inferencia.
++- Velocidad base165; el prototipo conservado usa una elección inmediata por nivel y copias independientes de armas. Las cartas y reglas definitivas del azar V2 siguen abiertas; no trasladar automáticamente sus límites anteriores. Recursos provisionales; no sustituir arte aprobado ni ampliar24+24 por inferencia.
+ - No alterar originales Cloud, ZIP de migración o backups. sources/ del padre es solo lectura. docs/historial-local/alfa-0.4 conserva documentación anterior.
+ 
+ ## Alcance autorizado actual
+--- a/CONTEXTO_PARA_WORK_LOCAL.md
++++ b/CONTEXTO_PARA_WORK_LOCAL.md
+@@ -1,4 +1,6 @@
+ # Relevo para Codex Local — SCP Survivor
++
++**Pauta sincronizada con ESTRUCTURA — 0.22 (18/10/2026):** aplicar [reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y [siguiente bloque de adaptación](docs/PLAN_DISENO_JUGABLE_V2.md). Iván aprobó los tipos de cofre, cuatro sorteos por mapa en 1:00/2:00/3:00/4:00, seis puntos alternativos y escala inicial de ensayo 160 × 100. Se conserva la prueba V2-trial-01; estos cofres y geometría aún no están implementados. No reintroducir extracción, accesorios físicos ni mochilas. No cambiar datos/cuentas ni conceder premios reales desde un ensayo local. Las reglas de armas, economía, grietas y saltos que siguen abiertas no se completan por inferencia.
+ 
+ **Primer prototipo disponible:** `?prueba=mapa-v2` y `&rapida=1`, solo local sin cuentas/guardado. Consultar [guía](docs/PRUEBA_MAPA_V2.md) e [informe](docs/V2-PRIMERA-PRUEBA-REPORT.md). Esta ejecución A-031 sustituye la frase anterior «entrega documental» para el recorrido de prueba; las demás funciones V2 siguen pendientes. P05 real no está cerrado.
+ 
+--- a/CONTEXTO_PROYECTO.md
++++ b/CONTEXTO_PROYECTO.md
+@@ -1,4 +1,6 @@
+ # Contexto del proyecto — SCP Survivor
++
++**Pauta sincronizada con ESTRUCTURA — 0.22 (18/10/2026):** aplicar [reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y [siguiente bloque de adaptación](docs/PLAN_DISENO_JUGABLE_V2.md). Iván aprobó los tipos de cofre, cuatro sorteos por mapa en 1:00/2:00/3:00/4:00, seis puntos alternativos y escala inicial de ensayo 160 × 100. Se conserva la prueba V2-trial-01; estos cofres y geometría aún no están implementados. No reintroducir extracción, accesorios físicos ni mochilas. No cambiar datos/cuentas ni conceder premios reales desde un ensayo local. Las reglas de armas, economía, grietas y saltos que siguen abiertas no se completan por inferencia.
+ 
+ **Ensayo V2-trial-01 (18/10/2026):** primer recorrido local implementado por petición de Iván A-031. Entradas `?prueba=mapa-v2` / `&rapida=1`; jefe provisional240s y puerta300s, aliados, corte de spawn y transición por contacto. Sin guardado, cuentas, extracción, mochila o accesorios en la interfaz del ensayo. No son las familias/azar/economía finales ni cierra P05. [Guía manual](docs/PRUEBA_MAPA_V2.md) · [Resultados y límites](docs/V2-PRIMERA-PRUEBA-REPORT.md).
+ 
+@@ -14,7 +16,7 @@
+ 
+ ## Objetivo
+ 
+-Juego web de supervivencia con avance por mapas encadenados, cinco minutos de presión por mapa, jefe obligatorio y transición por puerta de la Fundación. Armas distintas por familias y mejoras de nivel al azar; grietas opcionales y saltos dimensionales por concretar. Se continúa el proyecto existente hasta una versión completa aceptada y publicada. El prototipo anterior todavía conserva extracción, mods y mochilas: su retirada está planificada, no implementada.
++Juego web de supervivencia con avance por mapas encadenados, cinco minutos de presión por mapa, jefe obligatorio y transición por puerta de la Fundación. Armas distintas por familias y mejoras de nivel al azar; grietas opcionales y saltos dimensionales por concretar. Se continúa el proyecto existente hasta una versión completa aceptada y publicada. El modo anterior conserva extracción, mods y mochilas como antecedente. La prueba V2 los excluye de su recorrido; su retirada integral y compatibilidad persistente siguen pendientes.
+ 
+ ## Procedencia y autorización
+ 
+--- a/PAUTA_DESARROLLO.md
++++ b/PAUTA_DESARROLLO.md
+@@ -2,7 +2,7 @@
+ 
+ 18/10/2026 · Diseño V2 · **Primer prototipo del recorrido disponible; adaptación completa y aceptación pendientes.**
+ 
+-Esta pauta incorpora el chat **ESTRUCTURA** y la instrucción posterior de Iván en PROGRAMACION. Sustituye las reglas incompatibles del diseño de extracción. El código actual se conserva como punto de partida; no se reconstruye el juego.
++Esta pauta incorpora el chat **ESTRUCTURA**, incluida su aprobación de cofres y escala inicial en el turno `01a15142-340f-7400-8660-f8d2502ce2aa`, y la instrucción posterior de Iván en PROGRAMACION. [Corte de reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md). Sustituye las reglas incompatibles del diseño de extracción. El código actual se conserva como punto de partida; no se reconstruye el juego.
+ 
+ **Prueba V2-trial-01:** [guía manual](docs/PRUEBA_MAPA_V2.md). El recorrido de mapas300s, jefe y puerta con aliados está implementado como ensayo local sin guardado. Jefe240s y acceso rápido270s son parámetros provisionales de prueba. No implementa aún familias/azar final, gacha, cofres de premios, grietas nuevas o persistencia. [Resultados](docs/V2-PRIMERA-PRUEBA-REPORT.md).
+ 
+@@ -32,10 +32,10 @@
+ | Armas distintas, con estadísticas básicas propias | Mantener identidad por arma; organizar por familias | Categorías nuevas pendientes |
+ | Mejoras al subir de nivel | Mejorar armas al azar durante la partida | El sistema de cartas actual necesita adaptación |
+ | Gacha | Orientarlo a soldados y armas | Economía/entrega real pendientes |
+-| Jefes | Un jefe obligatorio por mapa; encuentros dimensionales aparte | El calendario actual de jefes entre sectores necesita cambio |
++| Jefes | Un jefe obligatorio por mapa; encuentros dimensionales aparte | Implementado en ensayo V2; horario de 4:00 provisional; calendario anterior conservado fuera del ensayo |
+ | Grietas especiales | Desafíos opcionales difíciles con recompensas mayores | Existe un prototipo local limitado |
+ | Saltos dimensionales | Rutas/saltos entre niveles, inspirados en Backrooms | Diseño detallado e implementación pendientes |
+-| Cofres y recompensas del escenario | Definir antes del tamaño final de mapas | Hay sistemas heredados y cajas de campo; reglas V2 abiertas |
++| Cofres y recompensas del escenario | Exploración, jefe y grieta; sorteos y escala inicial aprobados | Pendientes de implementar; cajas de campo actuales sin botín |
+ | Arte, identidad visual, controles y crédito | Conservar recursos aprobados y «Desarrollado por Ivan Vivanco» | El acabado final sigue pendiente |
+ | Cuentas y guardado P05 | Conservar seguridad y adaptar contratos al nuevo recorrido | Aceptación con servicios propios pendiente |
+ 
+@@ -63,15 +63,25 @@
+ 
+ ## Cofres y tamaño de los mapas
+ 
+-En ESTRUCTURA se está revisando este punto. **Sí hay una base aprobada anterior:** D-140–148/D-220/D-279 fijan sorteos por oleada, probabilidades/topes, tickets, apertura y descubrimiento. Se conserva íntegra en [cofres: base y adaptación](docs/COFRES_BASE_Y_ADAPTACION_V2.md). Falta adaptar el disparador por oleadas a mapas de300s; no hay presupuesto/distribución V2 cerrados. Las cajas de campo actuales no dan botín y no son esos cofres.
++Iván aprobó las recomendaciones del hilo ESTRUCTURA. Se conserva la base D-140–148/D-220/D-279 y se adapta el disparador a **cuatro oportunidades por mapa en 1:00, 2:00, 3:00 y 4:00 de juego activo**. No se sortea por fotograma ni durante la pausa.
+ 
+-Antes de fijar dimensiones finales: revisar sobre esa base los tipos de cofre, apertura, frecuencia, premio, relación con jefes y si su contenido mejora la partida o la colección. Después probar mapas con rutas alternativas, desplazamiento útil y salida alcanzable entre enemigos. No trasladar premios de accesorios o mochilas a V2 ni importar sin revisión los premios genéricos de Pokesurvivor.
++| Cofre | Regla vigente para la adaptación |
++| --- | --- |
++| Exploración | Recursos de gacha. Mapas 1–3: 10 % por intento, máximo 1, 1–2 tickets; mapas 4–7: 15 %, máximo 2, 1–2 tickets; mapas 8+: 20 %, máximo 3, 1–3 tickets |
++| Jefe | Garantizado al derrotarlo; una mejora temporal aleatoria compatible con las armas equipadas |
++| Grieta | Solo al superar la anomalía difícil; premio superior, con tabla exacta todavía pendiente |
++
++Los topes de exploración no garantizan premios. Abrir no libera cupo y el contenido se fija al aparecer. Jefe y grieta son eventos separados. Los tickets de cuenta requieren confirmación del servidor: el ensayo local no los acredita. Apertura/descubrimiento y reglas históricas compatibles permanecen en [la base de cofres](docs/COFRES_BASE_Y_ADAPTACION_V2.md); falta encajar hitos antiguos y detalles del reloj acumulado de diez minutos.
++
++Se aprueba **160 × 100 casillas como escala inicial de prueba**, reservando **seis ubicaciones alternativas** de cofres, una zona amplia de jefe/puerta y circuitos para rodear hordas. Objetivos a medir: 30–45 segundos entre extremos útiles sin combate y 10–15 segundos de desvío hacia un punto opcional. El tamaño final, los recorridos, el balance y el rendimiento no se dan por validados.
++
++**Todavía no implementado:** cofres de premios, cuatro sorteos, seis puntos y nueva geometría. Las `fieldCrate` actuales siguen siendo cajas sin botín. No importar premios genéricos de Pokesurvivor ni accesorios/mochilas. [Reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md) · [Siguiente adaptación](docs/PLAN_DISENO_JUGABLE_V2.md).
+ 
+ ## Orden para continuar
+ 
+-1. Usar esta pauta y resolver las reglas abiertas en el [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md).
+-2. Terminar P05 y definir compatibilidad de guardados con V2. Mantener Firebase Spark sin facturación; no declarar cierre por emuladores o preparación local.
+-3. Implementar primero un mapa completo: cinco minutos, jefe, puerta, soldados y transición. Retirar la extracción del recorrido V2.
++1. Usar esta pauta, el [corte aprobado de ESTRUCTURA](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y el [plan de diseño jugable](docs/PLAN_DISENO_JUGABLE_V2.md); resolver solo las reglas abiertas necesarias para cada bloque.
++2. Continuar los ensayos locales aislados del plan jugable: geometría, puntos de interés y después cofres ficticios. Conservar la prueba de cinco minutos y su aceptación pendiente.
++3. Terminar P05 real y definir compatibilidad de guardados antes de conectar V2 a cuentas, economía o P06 replanteada. Mantener Spark sin facturación; el ensayo local no acredita ese cierre.
+ 4. Adaptar armas/mejoras y retirar accesorios/mochilas con sus dependencias.
+ 5. Replantear P06 para colección/equipamiento y adaptar P07 para gacha/recompensas; no continuar la lista anterior de inventario físico.
+ 6. Integrar cofres, variantes de mapas, grietas y saltos con las reglas cerradas. Después completar arte, audio, controles y pruebas de integración.
+--- a/PROMPT_MAESTRO.md
++++ b/PROMPT_MAESTRO.md
+@@ -1,10 +1,12 @@
+ # Prompt maestro de continuidad — SCP Survivor
++
++**Pauta sincronizada con ESTRUCTURA — 0.22 (18/10/2026):** aplicar [reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y [siguiente bloque de adaptación](docs/PLAN_DISENO_JUGABLE_V2.md). Iván aprobó los tipos de cofre, cuatro sorteos por mapa en 1:00/2:00/3:00/4:00, seis puntos alternativos y escala inicial de ensayo 160 × 100. Se conserva la prueba V2-trial-01; estos cofres y geometría aún no están implementados. No reintroducir extracción, accesorios físicos ni mochilas. No cambiar datos/cuentas ni conceder premios reales desde un ensayo local. Las reglas de armas, economía, grietas y saltos que siguen abiertas no se completan por inferencia.
+ 
+ **A-031/V2-trial-01:** Iván pidió comenzar la adaptación para su primera prueba. El ensayo local de mapa300s/jefe/puerta/aliados está implementado; conservarlo y leer docs/PRUEBA_MAPA_V2.md e informe antes de modificar. Su horario de jefe240s es provisional. No presentar cartas anteriores como nuevo azar por armas, ni cerrar P05, P06 o V2 con este prototipo.
+ 
+ Síntesis del repositorio, paquetes de Iván y decisiones accesibles del chat ESTRUCTURA, incorporado expresamente el18/10/2026. No se afirma haber recuperado materiales inaccesibles.
+ 
+-**Prioridad V2-ESTRUCTURA:** leer [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) y [registro](docs/ESTRUCTURA_DECISIONES.md). Esta revisión prepara la adaptación; no cambia todavía el juego.
++**Prioridad V2-ESTRUCTURA:** leer [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) y [registro](docs/ESTRUCTURA_DECISIONES.md). El ensayo V2-trial-01 ya permite probar el recorrido; esta sincronización documental prepara los siguientes bloques sin cambiar el ejecutable.
+ 
+ Continúa el juego existente de esta carpeta. Responde en español y revisa código antes de editar. Lee AGENTS.md, CONTEXTO_PROYECTO.md, docs/P05-REPORT.md, ROADMAP.md y RoadmapSCP.json. Instrucciones actuales de Iván tienen prioridad; conserva IDs y trazabilidad de decisiones anteriores.
+ 
+@@ -20,7 +22,7 @@
+ 
+ Retirar del diseño extracción de fin de partida, accesorios físicos de armas y mochilas. No retirar las armas, sus estadísticas o mejoras temporales ni borrar la colección de soldados/armas. Armas distintas por familias (láser, cuerpo a cuerpo, distancia, misiles, arrojadizas) y mejoras de armas al azar por nivel. Candidatos, cartas, topes y catálogo final siguen abiertos; no imponer automáticamente las dos armas o el nivel5 del prototipo como regla V2.
+ 
+-Conservar grietas opcionales difíciles y de mayor recompensa, apertura limitada, ubicación/localizador, sonido/aviso y contacto instantáneo sin botón. Saltos dimensionales, retorno/reloj, cofres, premios y dimensiones finales requieren reglas explícitas. Gacha orientado a soldados/armas; atributos nuevos, rarezas y duplicados propuestos por el asistente no equivalen a aprobación.
++Conservar grietas opcionales difíciles y de mayor recompensa, apertura limitada, ubicación/localizador, sonido/aviso y contacto instantáneo sin botón. Los cofres y la escala inicial de ensayo siguen las reglas aprobadas de ESTRUCTURA 0.22. Retorno/reloj de grietas, saltos, tablas pendientes de premios y dimensiones finales requieren reglas explícitas. Gacha orientado a soldados/armas; atributos nuevos, rarezas y duplicados propuestos por el asistente no equivalen a aprobación.
+ 
+ El código actual todavía contiene sectores/oleadas, extracción, mods y mochila de prueba. Conservarlo hasta adaptar y validar por el plan RC-01–RC-12. No reconstruir, borrar historial ni continuar el inventario físico anterior P06. Replantear colección, kit, pérdida/recuperación, almacén/buzón y economía según V2; no descartarlos todos por inferencia.
+ 
+@@ -44,4 +46,4 @@
+ 
+ Pruebas pertinentes y resultados actuales en docs/P05-REPORT.md; diferencias en docs/P05-CAMBIOS.diff. No confundir informes P01–P04/migración con aceptación nueva. No extrapolar a dispositivos físicos, Safari, FPS, memoria, costes o producción. Mantener ambos lockfiles y comandosWindows.
+ 
+-RoadmapSCP.json es canónico. `activeDesignRevision` contiene V2; las53tareas/criterios/pesos y52/100 son la línea base histórica, no aceptación del diseño nuevo. AvanceV2 sin calcular. Generar vistas con node tools/render-roadmap.js. Próximo trabajo: cerrar reglas/contrato de adaptación y aceptación real P05; después implementar el plan RC y P06 replanteada. Registrar evidencia sin inventar porcentajes.
++RoadmapSCP.json es canónico. `activeDesignRevision` contiene V2; las53tareas/criterios/pesos y52/100 son la línea base histórica, no aceptación del diseño nuevo. AvanceV2 sin calcular. Generar vistas con node tools/render-roadmap.js. Próximo trabajo: completar la adaptación según los bloques del plan jugable, con geometría y cofres locales aislados como siguiente ensayo. Cerrar reglas necesarias, contrato V2 y aceptación real P05 antes de conectar cuentas, economía o P06 replanteada. El primer recorrido RC-03–RC-06 ya tiene prototipo y conserva aceptación pendiente. Registrar evidencia sin inventar porcentajes.
+--- a/README.md
++++ b/README.md
+@@ -1,8 +1,10 @@
+ # SCP Survivor
++
++**Diseño y estructura:** usar la [pauta vigente](PAUTA_DESARROLLO.md), las [reglas aprobadas de ESTRUCTURA](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y el [plan de adaptación jugable](docs/PLAN_DISENO_JUGABLE_V2.md). Roadmap 0.22; el ejecutable sigue siendo V2-trial-01. Cofres nuevos y escala 160 × 100 pendientes de implementar y probar.
+ 
+ **Primera prueba V2 lista para probar localmente:** [rápida desde4:30](http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1) · [mapa completo](http://127.0.0.1:8000/?prueba=mapa-v2). Ejecutar `npm.cmd run serve` si el servidor está cerrado. [Guía y límites](docs/PRUEBA_MAPA_V2.md). Aceptación de Iván pendiente; sin cuentas ni guardado.
+ 
+-**Pauta vigente V2-ESTRUCTURA (18/10/2026):** [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md). Avance por mapas5min con jefe y puerta de la Fundación; extracción, accesorios físicos y mochilas se retiran del diseño. [Plan de adaptación y pruebas](docs/PLAN_CAMBIOS_ESTRUCTURA.md). La implementación del juego aún es la anterior; esta revisión cambia documentos y roadmap.52/100 es histórico; avanceV2 sin calcular.
++**Pauta vigente V2-ESTRUCTURA (18/10/2026):** [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md). Avance por mapas5min con jefe y puerta de la Fundación; extracción, accesorios físicos y mochilas se retiran del diseño. [Plan de adaptación y pruebas](docs/PLAN_CAMBIOS_ESTRUCTURA.md). El recorrido tiene un primer ensayo local; el modo anterior se conserva. Esta sincronización 0.22 cambia documentos y roadmap. El 52/100 es histórico; avance V2 sin calcular.
+ 
+ Juego web existente de supervivencia por expediciones. Esta copia desarrolla P05 local sobre alfa0.4 y conserva Canvas2D, arquitectura, mecánicas y recursos. No es una versión publicada ni servicios reales de cuentas.
+ 
+--- a/ROADMAP.md
++++ b/ROADMAP.md
+@@ -1,6 +1,6 @@
+ # Roadmap vigente — SCP Survivor
+ 
+-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Primera prueba local del recorrido V2 implementada y verificada automáticamente; falta aceptación de Iván y completar el diseño. No cierra P05/P06.
++**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Pauta sincronizada con la aprobación más reciente de ESTRUCTURA: cofres y escala inicial establecidos para adaptar. Primer recorrido V2-trial-01 conservado, aceptación manual y adaptación completa pendientes. No cierra P05/P06.
+ 
+ [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md)
+ 
+@@ -16,7 +16,7 @@
+ | Accesorios de armas y mochilas | Retirados del diseño V2; código y datos anteriores conservados hasta adaptar y validar. |
+ | Armas | Identidad y estadísticas propias; familias láser, cuerpo a cuerpo, distancia, misiles y arrojadizas; mejoras por nivel al azar, detalles pendientes. |
+ | Grietas y saltos | Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas. |
+-| Cofres y mapas | Conservar base aprobada D-140–148/D-220/D-279; adaptar intentos por oleada a300s. Presupuesto y tamaño final V2 todavía abiertos. |
++| Cofres y mapas | Aprobados tres tipos de cofre, intentos de exploración 1:00/2:00/3:00/4:00 con tabla/topes anteriores y seis puntos alternativos. Escala inicial 160 × 100; metas de rutas 30–45 s y desvíos 10–15 s. Pendientes implementación, medición y detalles de premios. |
+ | P06/P07 | Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow. |
+ 
+ | Paso | Trabajo y estado | Dependencias |
+@@ -48,7 +48,7 @@
+ 
+ **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
+ 
+-Versión **0.21**, 2026-10-18. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
++Versión **0.22**, 2026-10-18. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+ 
+ ## Avance basado en evidencia
+ 
+--- a/RoadmapSCP.json
++++ b/RoadmapSCP.json
+@@ -1,6 +1,6 @@
+ {
+   "schemaVersion": 1,
+-  "planVersion": "0.21",
++  "planVersion": "0.22",
+   "updatedOn": "2026-10-18",
+   "timezone": "America/Santiago",
+   "canonicalPath": "RoadmapSCP.json",
+@@ -2295,6 +2295,19 @@
+         "docs/V2-PRIMERA-PRUEBA-REPORT.md",
+         "docs/V2-PRIMERA-PRUEBA-VALIDACION.json"
+       ]
++    },
++    {
++      "id": "EV-037",
++      "kind": "Relectura de ESTRUCTURA y sincronización documental",
++      "summary": "Se consultó el historial accesible y se encontró la aprobación de Iván a tipos/cadencia de cofres y escala inicial. Se alinearon pauta, decisiones, contexto y plan; no se modificó el ejecutable ni se ejecutaron nuevas pruebas de juego. El último turno del hilo seguía en curso. Aceptación del primer ensayo y P05 real pendientes.",
++      "references": [
++        "docs/ESTRUCTURA_REGLAS_APROBADAS.md",
++        "docs/PLAN_DISENO_JUGABLE_V2.md",
++        "PAUTA_DESARROLLO.md",
++        "docs/COFRES_BASE_Y_ADAPTACION_V2.md"
++      ],
++      "runtimeProof": false,
++      "evidenceComplete": false
+     }
+   ],
+   "decisions": [
+@@ -4548,6 +4561,18 @@
+       "topic": "Primera prueba local del recorrido V2",
+       "approvalStatus": "Ejecución solicitada por Iván A-031; horarios/ajustes del ensayo provisionales, aceptación humana pendiente.",
+       "resolution": "Modo loopback ?prueba=mapa-v2 sin cuentas ni esquema1. Reloj300s, jefe a240s provisional, puerta/soldados y corte total de spawn a300, remanentes vivos, contacto condicionado a jefe muerto para cambiar mapa. &rapida=1 comienza270s solo en primer mapa. Preservar vida/build; sin extracción/mods/mochilas en interfaz de ensayo. Cartas anteriores conservadas, no se implementa azar final ni premios. P05 real sigue pendiente."
++    },
++    {
++      "id": "D-325",
++      "topic": "Cofres del recorrido V2 aprobados en ESTRUCTURA",
++      "approvalStatus": "Iván aprobó las recomendaciones del turno 01a150fe en 01a15142; A-032. Implementación pendiente.",
++      "resolution": "Exploración: cuatro intentos por mapa en 60/120/180/240 segundos activos, tabla histórica 10/15/20 %, topes 1/2/3 y tickets 1–2/1–2/1–3 para mapas 1–3/4–7/8+. Reservar seis ubicaciones alternativas. Jefe: garantizado al vencer, mejora temporal aleatoria compatible con armas equipadas. Grieta: premio superior al superarla, tabla pendiente. Contenido fijo al aparecer; abrir no libera cupo; no garantizar máximos. Hitos, reloj acumulado y elegibilidad de mejoras requieren encaje explícito; tickets reales exigen servidor."
++    },
++    {
++      "id": "D-326",
++      "topic": "Escala inicial y pauta única de diseño de mapas V2",
++      "approvalStatus": "Misma aprobación de Iván; escala de ensayo, no aceptación de mapa o dimensiones finales.",
++      "resolution": "Ensayar 160 × 100 casillas de 32 unidades, seis ubicaciones alternativas de cofres, circuitos amplios, zona de jefe y puerta/soldados. Medir 30–45 s entre extremos útiles sin combate y desvíos 10–15 s; aún no medidos. Usar PAUTA_DESARROLLO.md y corte de ESTRUCTURA como autoridad, conservando primer prototipo y documentos de decisiones abiertas."
+     }
+   ],
+   "authorizations": [
+@@ -4700,6 +4725,11 @@
+       "id": "A-031",
+       "action": "Comenzar adaptación para realizar primera prueba V2",
+       "scopeStatus": "Iván pidió «Comienza con la adaptación. Para realizar la primera prueba». Autoriza ensayo local del recorrido y su preparación con agentes Sol medio; no equivale a aceptar P05 real ni implementar economía/inventario P06."
++    },
++    {
++      "id": "A-032",
++      "action": "Usar la pauta vigente de ESTRUCTURA para diseño y actualización de estructura",
++      "scopeStatus": "Petición actual de Iván en PROGRAMACION y aprobación de recomendaciones en ESTRUCTURA, turno 01a15142-340f-7400-8660-f8d2502ce2aa. Sincronizar tipos/cadencia de cofres y escala inicial con alcance explícito. No equivale a aceptación del ejecutable, cierre P05, cambios de economía o aprobación de futuras respuestas."
+     }
+   ],
+   "closureCases": [
+@@ -5476,6 +5506,12 @@
+       "date": "2026-10-18",
+       "description": "Roadmap0.21/A-031/D-324/EV-036: primer prototipo local RC-03–RC-06 para prueba de Iván. Interfaz sin extracción/accesorios/mochilas; aliados, puerta y guardias de esquema. Se conserva juego anterior y12assets; sin cuentas ni facturación. AvanceV2sin calcular,52/100histórico; P05real pendiente.",
+       "approval": "Petición expresa de comenzar adaptación para primera prueba; no aceptación final."
++    },
++    {
++      "id": "CHG-029",
++      "date": "2026-10-18",
++      "description": "Roadmap 0.22 / A-032 / D-325–326 / EV-037: incorporar aprobación más reciente de ESTRUCTURA. Cofres exploración/jefe/grieta, cuatro sorteos, seis puntos y escala de ensayo 160 × 100 establecidos para adaptar; detalles abiertos explícitos. Sin cambios del ejecutable, tareas históricas, aceptación, cuentas o facturación.",
++      "approval": "Instrucción de Iván de usar esa pauta y aprobación registrada en ESTRUCTURA; no aceptación funcional."
+     }
+   ],
+   "derivedProgress": {
+@@ -5880,8 +5916,8 @@
+     "title": "Avance por mapas; sin extracción, accesorios físicos ni mochilas",
+     "updatedOn": "2026-10-18",
+     "status": "local_trial_pending_manual_acceptance",
+-    "authority": "A-030",
+-    "summary": "Primera prueba local del recorrido V2 implementada y verificada automáticamente; falta aceptación de Iván y completar el diseño. No cierra P05/P06.",
++    "authority": "A-032",
++    "summary": "Pauta sincronizada con la aprobación más reciente de ESTRUCTURA: cofres y escala inicial establecidos para adaptar. Primer recorrido V2-trial-01 conservado, aceptación manual y adaptación completa pendientes. No cierra P05/P06.",
+     "pautaPath": "PAUTA_DESARROLLO.md",
+     "changePlanPath": "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
+     "decisionsPath": "docs/ESTRUCTURA_DECISIONES.md",
+@@ -5889,7 +5925,10 @@
+       "id": "01a1457c-c051-73d2-9864-e7deb6435420",
+       "title": "ESTRUCTURA",
+       "readOn": "2026-10-18",
+-      "lastTurnWasInProgress": true
++      "lastTurnWasInProgress": true,
++      "lastReadTurnId": "01a15142-340f-7400-8660-f8d2502ce2aa",
++      "approvalResponseTurnId": "01a150fe-66ad-7040-b2dd-67d4c73f3244",
++      "approvalCaptured": true
+     },
+     "progress": {
+       "percent": null,
+@@ -5924,7 +5963,7 @@
+       },
+       {
+         "element": "Cofres y mapas",
+-        "treatment": "Conservar base aprobada D-140–148/D-220/D-279; adaptar intentos por oleada a300s. Presupuesto y tamaño final V2 todavía abiertos."
++        "treatment": "Aprobados tres tipos de cofre, intentos de exploración 1:00/2:00/3:00/4:00 con tabla/topes anteriores y seis puntos alternativos. Escala inicial 160 × 100; metas de rutas 30–45 s y desvíos 10–15 s. Pendientes implementación, medición y detalles de premios."
+       },
+       {
+         "element": "P06/P07",
+@@ -5946,7 +5985,7 @@
+         "D-220",
+         "D-279"
+       ],
+-      "adaptationStatus": "pending_map_300s_trigger_and_compatible_rewards"
++      "adaptationStatus": "approved_trial_cadence_types_and_scale_pending_implementation"
+     },
+     "openRuleIds": [
+       "O-01",
+@@ -6114,6 +6153,81 @@
+       "bossAtSecondsProvisional": 240,
+       "mapSeconds": 300,
+       "firstMapQuickSeconds": 270
++    },
++    "approvedDesignCutPath": "docs/ESTRUCTURA_REGLAS_APROBADAS.md",
++    "playableDesignPlanPath": "docs/PLAN_DISENO_JUGABLE_V2.md",
++    "latestDocumentationSyncChangedGameCode": false,
++    "approvedNextBlock": {
++      "authority": "A-032",
++      "decisionIds": [
++        "D-325",
++        "D-326"
++      ],
++      "implemented": false,
++      "explorationAttemptSeconds": [
++        60,
++        120,
++        180,
++        240
++      ],
++      "tiers": [
++        {
++          "maps": [
++            1,
++            3
++          ],
++          "chancePercent": 10,
++          "cap": 1,
++          "tickets": [
++            1,
++            2
++          ]
++        },
++        {
++          "maps": [
++            4,
++            7
++          ],
++          "chancePercent": 15,
++          "cap": 2,
++          "tickets": [
++            1,
++            2
++          ]
++        },
++        {
++          "maps": [
++            8,
++            null
++          ],
++          "chancePercent": 20,
++          "cap": 3,
++          "tickets": [
++            1,
++            3
++          ]
++        }
++      ],
++      "alternativeExplorationLocations": 6,
++      "initialMapTiles": [
++        160,
++        100
++      ],
++      "tileUnits": 32,
++      "baseSpeedUnitsPerSecond": 165,
++      "targetRouteSeconds": [
++        30,
++        45
++      ],
++      "targetDetourSeconds": [
++        10,
++        15
++      ],
++      "routeTargetsMeasured": false,
++      "finalMapSizeApproved": false,
++      "bossChest": "Garantizado al vencer; mejora temporal aleatoria compatible, elegibilidad pendiente.",
++      "riftReward": "Superior al ordinario; tabla exacta pendiente.",
++      "accountRewardsEnabled": false
+     }
+   }
+ }
+--- a/RoadmapSCP.md
++++ b/RoadmapSCP.md
+@@ -1,6 +1,6 @@
+ # Roadmap SCP Survivor
+ 
+-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Primera prueba local del recorrido V2 implementada y verificada automáticamente; falta aceptación de Iván y completar el diseño. No cierra P05/P06.
++**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Pauta sincronizada con la aprobación más reciente de ESTRUCTURA: cofres y escala inicial establecidos para adaptar. Primer recorrido V2-trial-01 conservado, aceptación manual y adaptación completa pendientes. No cierra P05/P06.
+ 
+ [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md)
+ 
+@@ -16,7 +16,7 @@
+ | Accesorios de armas y mochilas | Retirados del diseño V2; código y datos anteriores conservados hasta adaptar y validar. |
+ | Armas | Identidad y estadísticas propias; familias láser, cuerpo a cuerpo, distancia, misiles y arrojadizas; mejoras por nivel al azar, detalles pendientes. |
+ | Grietas y saltos | Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas. |
+-| Cofres y mapas | Conservar base aprobada D-140–148/D-220/D-279; adaptar intentos por oleada a300s. Presupuesto y tamaño final V2 todavía abiertos. |
++| Cofres y mapas | Aprobados tres tipos de cofre, intentos de exploración 1:00/2:00/3:00/4:00 con tabla/topes anteriores y seis puntos alternativos. Escala inicial 160 × 100; metas de rutas 30–45 s y desvíos 10–15 s. Pendientes implementación, medición y detalles de premios. |
+ | P06/P07 | Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow. |
+ 
+ | Paso | Trabajo y estado | Dependencias |
+@@ -48,7 +48,7 @@
+ 
+ **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
+ 
+-**Versión 0.21 — 2026-10-18 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
++**Versión 0.22 — 2026-10-18 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
+ 
+ ## 1. Estado vigente
+ 
+@@ -327,6 +327,7 @@
+ | A-028 | Mantener Spark sin facturación | Respuesta expresa de Iván el17/10/2026 a la consulta sobre Blaze y posibles cargos: «Mantener Spark sin facturación». No vincular cuenta de facturación ni activar Blaze, aunque limite el despliegue del backend actual. Conservar los avances, la verificación local y la configuración propia desactivada. |
+ | A-030 | Actualizar pauta con ESTRUCTURA y preparar plan de cambios con multiagentes Sol medio | Petición expresa de Iván el18/10: retirar extracciones, accesorios de armas y mochilas, incorporar decisiones accesibles del chat ESTRUCTURA y preparar pauta de cambios para continuar. Revisión documental; no implica que las mecánicas estén implementadas ni autoriza borrar datos o reconstruir el juego. |
+ | A-031 | Comenzar adaptación para realizar primera prueba V2 | Iván pidió «Comienza con la adaptación. Para realizar la primera prueba». Autoriza ensayo local del recorrido y su preparación con agentes Sol medio; no equivale a aceptar P05 real ni implementar economía/inventario P06. |
++| A-032 | Usar la pauta vigente de ESTRUCTURA para diseño y actualización de estructura | Petición actual de Iván en PROGRAMACION y aprobación de recomendaciones en ESTRUCTURA, turno 01a15142-340f-7400-8660-f8d2502ce2aa. Sincronizar tipos/cadencia de cofres y escala inicial con alcance explícito. No equivale a aceptación del ejecutable, cierre P05, cambios de economía o aprobación de futuras respuestas. |
+ 
+ ## 6. Registro íntegro de decisiones
+ 
+@@ -657,6 +658,8 @@
+ | D-322 | Cofres aprobados y adaptación a mapas de300s | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | Conservar la base aprobada D-140–148/D-183/D-220/D-279: sorteos por oleada, probabilidades/topes, tickets, apertura y descubrimiento. Su integración en la partida SCP no está implementada; las cajas de campo no dan botín. Adaptar cadencia y premios incompatibles antes de presupuesto/distribución/tamaño V2. No importar automáticamente premios de Pokesurvivor ni descartar reglas previas por omisión. |
+ | D-323 | Trazabilidad y porcentaje después del cambio de alcance | Petición de Iván y decisiones explícitas de ESTRUCTURA; A-030. Implementación pendiente. | Preservar53tareas, pesos y evidencia previa como línea base histórica52/100. V2 no tiene porcentaje calculado. P06 se replantea; no otorgar avance por eliminar funciones ni extrapolar CV antiguos a V2. |
+ | D-324 | Primera prueba local del recorrido V2 | Ejecución solicitada por Iván A-031; horarios/ajustes del ensayo provisionales, aceptación humana pendiente. | Modo loopback ?prueba=mapa-v2 sin cuentas ni esquema1. Reloj300s, jefe a240s provisional, puerta/soldados y corte total de spawn a300, remanentes vivos, contacto condicionado a jefe muerto para cambiar mapa. &rapida=1 comienza270s solo en primer mapa. Preservar vida/build; sin extracción/mods/mochilas en interfaz de ensayo. Cartas anteriores conservadas, no se implementa azar final ni premios. P05 real sigue pendiente. |
++| D-325 | Cofres del recorrido V2 aprobados en ESTRUCTURA | Iván aprobó las recomendaciones del turno 01a150fe en 01a15142; A-032. Implementación pendiente. | Exploración: cuatro intentos por mapa en 60/120/180/240 segundos activos, tabla histórica 10/15/20 %, topes 1/2/3 y tickets 1–2/1–2/1–3 para mapas 1–3/4–7/8+. Reservar seis ubicaciones alternativas. Jefe: garantizado al vencer, mejora temporal aleatoria compatible con armas equipadas. Grieta: premio superior al superarla, tabla pendiente. Contenido fijo al aparecer; abrir no libera cupo; no garantizar máximos. Hitos, reloj acumulado y elegibilidad de mejoras requieren encaje explícito; tickets reales exigen servidor. |
++| D-326 | Escala inicial y pauta única de diseño de mapas V2 | Misma aprobación de Iván; escala de ensayo, no aceptación de mapa o dimensiones finales. | Ensayar 160 × 100 casillas de 32 unidades, seis ubicaciones alternativas de cofres, circuitos amplios, zona de jefe y puerta/soldados. Medir 30–45 s entre extremos útiles sin combate y desvíos 10–15 s; aún no medidos. Usar PAUTA_DESARROLLO.md y corte de ESTRUCTURA como autoridad, conservando primer prototipo y documentos de decisiones abiertas. |
+ 
+ ## 7. Evidencias completas
+ 
+@@ -699,6 +702,7 @@
+ | EV-033 | firebase_own_readonly_configuration_audit_and_spark_decision: Consultas GET reales: CLI del propietario autorizado y acceso scp-survivor confirmado; billingEnabled=false, sin cuenta de facturación. Auth correo/Google habilitados, dominios localhost/127.0.0.1 y dos hosts del proyecto; política ENFORCE8..4096 sin clases. allowDuplicateEmails omitido y no inferido. Firestore/Functions devuelven403SERVICE_DISABLED; no se listaron datos/funciones. Hosting tiene sitio predeterminado, release no comprobada. Iván elige Spark sin facturación. No se despliega, habilita cuenta propia ni prueba OAuth/correo/guardado real; P05EV0/6, global52/100. | Sí, dentro del alcance descrito | [docs/P05-AUDITORIA-FIREBASE.json](docs/P05-AUDITORIA-FIREBASE.json), [docs/P05-ESTADO-SPARK.md](docs/P05-ESTADO-SPARK.md), [docs/CIERRE_P05.md](docs/CIERRE_P05.md) | evidenceComplete: false; firebaseCliAuthorized: true; projectAccessVerified: true; billingEnabled: false; billingAuthorized: false; readOnly: true; ownAccountsEnabled: false; ownGameRuntimeTested: false; acceptanceScope: Configuración administrativa y decisión del titular; no aceptación funcional P05. |
+ | EV-035 | Auditoría documental de alcance: Lectura de los10turnos disponibles de ESTRUCTURA; separación de instrucciones del usuario, propuestas del asistente y reglas abiertas. Pauta V2 y plan RC-01–RC-12 preparados; sin cambios del juego ni aceptación funcional. | Documental; sin prueba de ejecución | [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [docs/ESTRUCTURA_DECISIONES.md](docs/ESTRUCTURA_DECISIONES.md), [docs/PLAN_CAMBIOS_ESTRUCTURA.md](docs/PLAN_CAMBIOS_ESTRUCTURA.md), [docs/COFRES_BASE_Y_ADAPTACION_V2.md](docs/COFRES_BASE_Y_ADAPTACION_V2.md) | evidenceComplete: false |
+ | EV-036 | Prueba automatizada de prototipo local V2: Ensayo V2 del recorrido sobre el juego existente. Copia local:126Node,125aprobadas,0fallos,1integraciónoptativa omitida. Copia publicación:126Node,124aprobadas,0fallos,2omitidas por entorno.4recorridos navegador por copia (8 en total) fuente/compilado y escritorio/táctil emulado: inicio, pausa, corte300, jefe obligatorio, remanentes, daño aliado, transición y mapa2en0. Build/check86scripts. Estados/tiempo/HP/posición controlados; no acredita aceptación humana, balance, servicios reales, economía o cierreV2/P05. | Sí, dentro del alcance descrito | [docs/PRUEBA_MAPA_V2.md](docs/PRUEBA_MAPA_V2.md), [docs/V2-PRIMERA-PRUEBA-REPORT.md](docs/V2-PRIMERA-PRUEBA-REPORT.md), [docs/V2-PRIMERA-PRUEBA-VALIDACION.json](docs/V2-PRIMERA-PRUEBA-VALIDACION.json) | evidenceComplete: false |
++| EV-037 | Relectura de ESTRUCTURA y sincronización documental: Se consultó el historial accesible y se encontró la aprobación de Iván a tipos/cadencia de cofres y escala inicial. Se alinearon pauta, decisiones, contexto y plan; no se modificó el ejecutable ni se ejecutaron nuevas pruebas de juego. El último turno del hilo seguía en curso. Aceptación del primer ensayo y P05 real pendientes. | Documental; sin prueba de ejecución | [docs/ESTRUCTURA_REGLAS_APROBADAS.md](docs/ESTRUCTURA_REGLAS_APROBADAS.md), [docs/PLAN_DISENO_JUGABLE_V2.md](docs/PLAN_DISENO_JUGABLE_V2.md), [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [docs/COFRES_BASE_Y_ADAPTACION_V2.md](docs/COFRES_BASE_Y_ADAPTACION_V2.md) | evidenceComplete: false |
+ 
+ ## 8. Áreas de continuidad
+ 
+@@ -849,6 +853,7 @@
+ | CHG-025 | 2026-10-17 | A-027/A-028, D-315/D-316 y EV-033: resolver acceso CLI y consultar infraestructura/Auth reales sin mutaciones. Registrar decisión expresa de mantener Spark sin facturación; Functions actual no desplegable, propio desactivado. Preparar publicación autorizada de código/roadmap y continuación P06 condicionada al cierre P05. Conservar53tareas,25CV, criterios/pesos/dependencias y52/100. | Elección explícita Spark y peticiones de GitHub/continuación inmediata P06 con multiagentes. |
+ | CHG-027 | 2026-10-18 | Roadmap0.20 incorpora A-030/D-318–323/EV-035 y activeDesignRevisionV2. Retirar extracción/accesorios/mochilas del diseño; plan RC de adaptación y criterios de validación pendientes.53tareas/estados/pesos/dependencias/aceptaciones históricas intactos;52/100 es histórico, avanceV2null. | Petición expresa de actualizar la pauta desde ESTRUCTURA con multiagentes Sol medio; raíz revisa e integra. |
+ | CHG-028 | 2026-10-18 | Roadmap0.21/A-031/D-324/EV-036: primer prototipo local RC-03–RC-06 para prueba de Iván. Interfaz sin extracción/accesorios/mochilas; aliados, puerta y guardias de esquema. Se conserva juego anterior y12assets; sin cuentas ni facturación. AvanceV2sin calcular,52/100histórico; P05real pendiente. | Petición expresa de comenzar adaptación para primera prueba; no aceptación final. |
++| CHG-029 | 2026-10-18 | Roadmap 0.22 / A-032 / D-325–326 / EV-037: incorporar aprobación más reciente de ESTRUCTURA. Cofres exploración/jefe/grieta, cuatro sorteos, seis puntos y escala de ensayo 160 × 100 establecidos para adaptar; detalles abiertos explícitos. Sin cambios del ejecutable, tareas históricas, aceptación, cuentas o facturación. | Instrucción de Iván de usar esa pauta y aprobación registrada en ESTRUCTURA; no aceptación funcional. |
+ 
+ ## 13. Continuar en Windows/Codex Local
+ 
+--- a/docs/COFRES_BASE_Y_ADAPTACION_V2.md
++++ b/docs/COFRES_BASE_Y_ADAPTACION_V2.md
+@@ -28,13 +28,22 @@
+ 
+ Ni las tres cajas ni las probabilidades de la base heredada fijan la cantidad final de cofres del mapa V2.
+ 
+-## Adaptación pendiente, sin perder la base anterior
++## Adaptación aprobada en ESTRUCTURA; implementación pendiente
+ 
+-1. Sustituir el disparador «completar oleada» por una cadencia explícita compatible con300s. Precisar número de intentos, relación con jefe y momento de aparición.
+-2. Revisar la correspondencia de sector/mapa y el reloj acumulado de combate, incluido el tiempo con enemigos restantes después de5:00 o dentro de grietas.
+-3. Tomar probabilidades, topes, tickets, apertura y descubrimiento anteriores como base de revisión. Documentar qué se conserva y qué cambia; no reiniciar esas decisiones como si nunca hubieran existido.
+-4. Replantear el objeto físico y la entrega al quitar mochilas/accesorios. Los tickets ya iban a cuenta y esa separación puede reutilizarse. No convertir objetos retirados en moneda por inferencia.
+-5. Adaptar hitos de la primera oleada a un recorrido sin esa misma estructura; no conceder ni duplicar el premio de un hito por cada mapa.
+-6. Con la cadencia y premios cerrados, fijar presupuesto de puntos de aparición y probar distancias/rutas en un mapa de cinco minutos. El tamaño final todavía no queda aprobado.
++Iván aprobó el último bloque de recomendaciones en el turno `01a15142-340f-7400-8660-f8d2502ce2aa`. [Corte estable](ESTRUCTURA_REGLAS_APROBADAS.md):
+ 
+-Las decisiones compatibles se conservan como antecedentes aprobados; los cambios de regla se registrarán antes de implementar RC-09/RC-10. No se cambian cofres, cantidades ni premios en esta entrega documental.
++1. Exploración: un intento en 60, 120, 180 y 240 segundos activos de cada mapa. Conservar tabla 10/15/20 %, topes 1/2/3 y tickets 1–2/1–2/1–3 para mapas 1–3/4–7/8+. Sorteos únicos; pausa no añade intentos.
++2. Jefe: cofre garantizado al derrotarlo, con una mejora temporal aleatoria compatible con armas equipadas. Elegibilidad, tope y alternativa sin candidatos requieren especificación antes de aplicar la mejora.
++3. Grieta: recompensa superior solo tras superar la anomalía; tabla exacta pendiente. Es un evento distinto del cupo de exploración.
++4. Reservar seis posiciones alternativas válidas para exploración y zona propia para jefe/puerta. La escala inicial de ensayo es 160 × 100 casillas; medir desplazamientos de 30–45 s entre extremos útiles y desvíos de 10–15 s.
++
++Los valores aprobados son contrato de diseño para adaptar, no resultados de implementación. El máximo sigue siendo límite, abrir no libera cupo y el contenido queda fijado al aparecer. Se conserva la apertura/descubrimiento de la base; no sustituirlos por la apertura de una grieta, que es instantánea por contacto.
++
++## Detalles que todavía deben cerrarse
++
++- Hitos de primera oleada/sectores 2 y 3: definir su correspondencia en V2 sin duplicar premios por mapa.
++- Reloj acumulado de diez minutos: mantener la regla histórica como base y precisar qué ocurre con remanentes después de 5:00 y dentro de grietas. No borrarla ni aplicarla de forma distinta silenciosamente.
++- Armas compatibles al tope o sin mejora candidata y entrega única de premio de jefe.
++- Tabla de grieta y entrega confirmada de tickets. La colección/economía y compatibilidad de guardados no están resueltas por esta aprobación.
++
++La próxima entrega local puede probar geometría, puntos y sorteos con premios ficticios aislados. No debe conceder tickets reales, activar gacha ni escribir cuentas. [Plan de adaptación jugable](PLAN_DISENO_JUGABLE_V2.md). P05 real y aceptación del primer recorrido siguen pendientes.
+--- a/docs/ESTRUCTURA_0.22_VALIDACION.md
++++ b/docs/ESTRUCTURA_0.22_VALIDACION.md
+@@ -0,0 +1,16 @@
++# Sincronización ESTRUCTURA 0.22 — verificación
++
++18/10/2026. Se incorpora el corte aprobado del hilo ESTRUCTURA y se ordenan los siguientes bloques de adaptación. Esta entrega cambia documentación y seguimiento; conserva el ejecutable V2-trial-01 y su aceptación manual pendiente.
++
++## Comprobado en esta entrega
++
++| Copia | Archivos de ejecución/pruebas conservados por SHA-256 | Tareas históricas intactas | Enlaces relativos válidos |
++| --- | --- | --- | --- |
++| source | 163 | 53 | 49 |
++| publication | 154 | 53 | 48 |
++
++La comprobación conserva también dependencias, configuración, assets, fases, criterios, pesos, estados y evidencias anteriores. El JSON 0.22 identifica la aprobación de los tres tipos de cofre, cuatro intentos, seis puntos y escala inicial; marca expresamente que no están implementados ni medidos. El 52/100 es histórico y V2 sigue sin porcentaje. No hay cambios de facturación ni credenciales privadas añadidas.
++
++No se ejecutaron nuevas pruebas del juego en esta sincronización: no cambió ningún archivo de ejecución ni prueba. Los resultados anteriores de V2-trial-01 permanecen en su informe histórico; no se presentan como evidencia nueva de cofres, mapas o balance. Las vistas del roadmap se regeneran y verifican con `node tools/render-roadmap.js --check`.
++
++Se trabajó con agentes Sol medio para auditoría y preparación de contexto. La revisión independiente de consistencia no encontró contradicciones materiales; raíz contrastó la aprobación real del hilo, consolidó el plan y verificó los archivos. [Reglas aprobadas](ESTRUCTURA_REGLAS_APROBADAS.md), [plan de adaptación](PLAN_DISENO_JUGABLE_V2.md) y [diff](ESTRUCTURA_0.22_CAMBIOS.diff). P05 real, persistencia V2, economía y aceptación del primer ensayo siguen pendientes.
+--- a/docs/ESTRUCTURA_DECISIONES.md
++++ b/docs/ESTRUCTURA_DECISIONES.md
+@@ -1,8 +1,8 @@
+ # Registro de decisiones — chat ESTRUCTURA
+ 
+-Consulta y relectura: 18/10/2026. Chat accesible: **ESTRUCTURA**, ID `01a1457c-c051-73d2-9864-e7deb6435420`, mismo directorio del proyecto. Se revisaron sus diez turnos disponibles mediante lectura del historial. El último estaba en curso: la discusión de cofres todavía podía continuar. Una actualización del asistente precisó que el roadmap sí contiene reglas de cofres anteriores aprobadas; se comprobaron directamente D-140–148/D-183/D-220/D-279 y se conservan en [la base de cofres](COFRES_BASE_Y_ADAPTACION_V2.md). Este documento registra el corte consultado, no una exportación íntegra ni aprobación de todas las recomendaciones del asistente.
++Consulta actualizada: 18/10/2026. Chat accesible **ESTRUCTURA**, ID `01a1457c-c051-73d2-9864-e7deb6435420`, mismo directorio. Se releyeron los diez turnos accesibles. El nuevo turno `01a15142-340f-7400-8660-f8d2502ce2aa` contiene la aprobación de las recomendaciones anteriores de cofres y escala inicial. Seguía en curso: no se atribuye aprobación a nuevas respuestas aún no leídas.
+ 
+-La instrucción más reciente en PROGRAMACION pide actualizar la pauta, retirar extracciones, accesorios de armas y mochilas, y preparar los cambios antes de continuar. Tiene prioridad sobre decisiones incompatibles anteriores.
++La petición actual en PROGRAMACION exige usar esa pauta para diseño y actualización de estructura. [Reglas aprobadas y alcance del corte](ESTRUCTURA_REGLAS_APROBADAS.md). Se conserva la primera prueba V2-trial-01. Las decisiones incompatibles del diseño de extracción no recuperan vigencia por permanecer en archivos históricos.
+ 
+ ## Confirmado por intervenciones del usuario
+ 
+@@ -18,7 +18,11 @@
+ | E-08 | Quitar accesorios físicos de armas y la extracción como opción de cierre | Petición expresa en PROGRAMACION, 18/10/2026 |
+ | E-09 | Grietas con anomalías difíciles y premios mayores; saltos entre niveles; variedad de mapas y monstruos inspirados en SCP | ESTRUCTURA: `01a15061-05ac-7642-a20b-6d123d1e3f01` |
+ | E-10 | Dirección de gacha: soldados y armas | Petición del usuario en `01a15055-d621-7a21-8f1a-7e80c7cab1dc`; tablas y duplicados sin cerrar |
+-| E-11 | Aclarar cofres antes de dimensionar mapas | Última petición del usuario en `01a150d7-62e0-7d23-9b6a-f8a5091d7839`; el turno siguiente seguía investigando |
++| E-11 | Aclarar cofres antes de dimensionar mapas | Petición en `01a150d7-62e0-7d23-9b6a-f8a5091d7839`; recomendaciones posteriores aprobadas en E-12–E-15 |
++| E-12 | Tres tipos: exploración para recursos gacha; jefe garantizado con mejora temporal aleatoria compatible; grieta superada con premio superior | Aprobación de recomendaciones en `01a15142-340f-7400-8660-f8d2502ce2aa` |
++| E-13 | Cuatro intentos de exploración a 1:00/2:00/3:00/4:00 activos; conservar tabla 10/15/20 %, topes 1/2/3 y tickets 1–2/1–2/1–3 | Misma aprobación; tablas exactas en el corte de reglas |
++| E-14 | Reservar seis ubicaciones alternativas y circuitos amplios; zona de jefe/puerta | Misma aprobación; no son seis cofres garantizados |
++| E-15 | Ensayar escala 160 × 100 casillas; medir recorridos 30–45 s y desvíos 10–15 s | Misma aprobación; escala inicial y objetivos, no tamaño final ni mediciones realizadas |
+ 
+ La continuidad de vida/mejoras entre mapas y el reinicio del reloj se incorporan al recorrido descrito tras la aceptación E-05. Los detalles nuevos de recuperación, economía y fin definitivo de una partida requieren contratos propios, no se deducen de esa aceptación.
+ 
+@@ -40,11 +44,11 @@
+ | O-05 | Colección, recompensas, muerte y fin de partida | No importar pérdida del 25–50 %, kit con mochila, almacén60/buzón30 ni asegurar moneda al morir |
+ | O-06 | Grieta: retorno, reloj, cierre y premio | Pausar reloj y regresar al origen fueron propuestas; el prototipo usa el mismo escenario |
+ | O-07 | Saltos: destinos, desbloqueo, jefe obligatorio y recompensas | No permitir saltarse jefes o cobrar niveles omitidos sin definir reglas |
+-| O-08 | Adaptar cofres aprobados por oleada a mapas300s: cadencia, presupuesto y premios compatibles | Conservar la base D-140–148/D-220/D-279; no hay presupuesto V2 cerrado ni se importa la tabla genérica de Pokesurvivor |
+-| O-09 | Tamaño final y densidad de mapas | Se dimensionan después de O-08 y de probar recorridos con enemigos |
+-| O-10 | Puerta: contacto/entrada y comportamiento de soldados | La entrada instantánea aprobada para grietas no fija por sí sola todos los detalles de la puerta |
++| O-08 | Parcialmente resuelto por E-12/E-13: tipos, cuatro intentos y topes; faltan hitos, reloj acumulado y detalles de premios | No reabrir lo aprobado; no acreditar tickets reales ni inventar tabla de grieta o candidatos de mejora |
++| O-09 | Escala inicial y seis puntos aprobados por E-14/E-15; tamaño final/densidad pendientes de medición | 160 × 100 es el primer ensayo; 30–45 s y 10–15 s son objetivos, no resultados de juego |
++| O-10 | Acabado y comportamiento final de aliados; contacto de puerta ya implementado en primer ensayo | Conservar contacto inmediato de V2-trial-01; no confundir cobertura provisional con IA/voz finales |
+ | O-11 | Alcance de progresión permanente y desbloqueo de mapas | No fijar cantidad total de mapas, último jefe ni final de campaña por una sugerencia del asistente |
+ 
+-Los documentos antiguos y las decisiones anteriores se conservan para trazabilidad. Cuando contradicen E-01–E-11, no constituyen instrucciones vigentes de implementación. La lista «etc.» no se usa como autorización para descartar otras funciones sin identificar la dependencia concreta.
++Los documentos antiguos y las decisiones anteriores se conservan para trazabilidad. Cuando contradicen E-01–E-15, no constituyen instrucciones vigentes de implementación. La lista «etc.» no se usa como autorización para descartar otras funciones sin identificar la dependencia concreta.
+ 
+-Aplicación: [pauta vigente](../PAUTA_DESARROLLO.md) y [plan de cambios](PLAN_CAMBIOS_ESTRUCTURA.md). No se cambió el código del juego con esta revisión documental.
++Aplicación: [pauta vigente](../PAUTA_DESARROLLO.md) y [plan de cambios](PLAN_CAMBIOS_ESTRUCTURA.md). Esta sincronización 0.22 no cambia el código; el primer ensayo V2 ya existe y conserva su aceptación pendiente.
+--- a/docs/ESTRUCTURA_REGLAS_APROBADAS.md
++++ b/docs/ESTRUCTURA_REGLAS_APROBADAS.md
+@@ -0,0 +1,44 @@
++# Reglas aprobadas de ESTRUCTURA — corte de programación
++
++18/10/2026 · Sincronización documental 0.22. Fuente: hilo **ESTRUCTURA**, ID `01a1457c-c051-73d2-9864-e7deb6435420`. Se releyó el historial accesible, incluida la aprobación de Iván en el turno `01a15142-340f-7400-8660-f8d2502ce2aa`: «Me guata tus recomendaciones. Establecelos». Responde a las recomendaciones de `01a150fe-66ad-7040-b2dd-67d4c73f3244`.
++
++El último turno seguía en curso. Este es un corte explícito de lo confirmado, no una exportación íntegra ni una aprobación de futuras respuestas. La wiki de trabajo del hilo se conserva sin modificar desde PROGRAMACION; este documento deja una referencia estable para el repositorio.
++
++## Recorrido que permanece vigente
++
++Mapas de cinco minutos activos, jefe obligatorio, puerta blindada y soldados a 5:00. Desde ese momento cesan las nuevas apariciones enemigas; los vivos permanecen. Se cruza al derrotar al jefe. El primer ensayo usa contacto instantáneo, conserva vida/build/armas y reinicia el reloj del siguiente mapa. Extracción de fin de partida, accesorios físicos y mochilas quedan fuera del diseño nuevo.
++
++## Cofres establecidos para la adaptación
++
++| Tipo | Aparición | Recompensa y alcance |
++| --- | --- | --- |
++| Exploración | Cuatro oportunidades por mapa: 1:00, 2:00, 3:00 y 4:00 activos | Tickets para obtener soldados y armas mediante gacha; probabilidades y topes de la base aprobada |
++| Jefe | Garantizado al derrotar al jefe del mapa | Una mejora temporal aleatoria compatible con las armas equipadas; elegibilidad, topes y caso sin candidatos todavía por precisar |
++| Grieta especial | Solo al superar la anomalía difícil | Premio superior al ordinario; su tabla exacta sigue abierta |
++
++| Mapa | Probabilidad por intento | Máximo de exploración por mapa | Tickets por cofre |
++| --- | --- | --- | --- |
++| 1–3 | 10 % | 1 | 1–2 |
++| 4–7 | 15 % | 2 | 1–2 |
++| 8 en adelante | 20 % | 3 | 1–3 |
++
++Cada oportunidad ocurre una sola vez por mapa; pausa o menú no crean sorteos nuevos. El máximo es un límite, no una cantidad garantizada. Abrir un cofre no libera cupo. El contenido se fija al aparecer. El cofre de jefe y la recompensa de grieta son eventos distintos del cupo de exploración.
++
++Se conservan como base las decisiones D-140–148/D-220/D-279 de [cofres](COFRES_BASE_Y_ADAPTACION_V2.md), incluida apertura y descubrimiento. Los recursos de cuenta requieren confirmación del servidor; ningún ensayo local concede tickets reales. Falta adaptar hitos antiguos por oleada y precisar el contador acumulado de diez minutos en el nuevo recorrido, incluidos remanentes/grietas. No borrar sus reglas históricas ni inventar compensaciones.
++
++## Escala y disposición para probar
++
++- Primer bloque: **160 × 100 casillas**, con 32 unidades por casilla. Es una escala inicial de ensayo, no tamaño final de todos los mapas.
++- Reservar **seis ubicaciones alternativas** alcanzables para cofres de exploración. Se activan como máximo 1/2/3 según mapa y resultados del sorteo; no seis premios garantizados.
++- Colocar puntos laterales conectados mediante circuitos amplios y rutas alternativas. Mantener libres acceso, puerta y camino principal; dejar espacio para rodear hordas.
++- Reservar una zona amplia de jefe y anclajes alcanzables para puerta y cobertura aliada.
++- Medir **30–45 segundos** entre extremos útiles sin combatir y desvíos de **10–15 segundos** hacia puntos opcionales. Son objetivos, no mediciones conseguidas.
++- 160 × 32 / 165 = aproximadamente **31 segundos** en línea recta a velocidad base. Este cálculo no valida rutas con obstáculos, densidad, balance o rendimiento.
++
++## Estado real y reglas todavía abiertas
++
++La primera prueba V2-trial-01 ya implementa el recorrido local de jefe/puerta/aliados; su aceptación manual sigue pendiente. Esta sincronización **no cambia el ejecutable** ni incorpora todavía cofres de premio, mapa 160 × 100, gacha, familias nuevas o guardado V2. Las cajas `fieldCrate` actuales siguen sin botín.
++
++Siguen abiertos el azar de mejoras/armas, las reglas de muerte y fin de partida, economía/duplicados, retorno/reloj y premios de grietas, saltos y alcance permanente. El jefe a 4:00 es provisional para el ensayo: la aprobación de recomendaciones de cofres no fija por sí sola todos esos parámetros.
++
++Próximos bloques y aceptación: [plan de diseño jugable](PLAN_DISENO_JUGABLE_V2.md) y [plan RC](PLAN_CAMBIOS_ESTRUCTURA.md). P05 real sigue pendiente; Firebase Spark se mantiene sin facturación. El 52/100 es histórico; V2 aún no tiene porcentaje calculado.
+--- a/docs/OBSERVACIONES_VISUALES.md
++++ b/docs/OBSERVACIONES_VISUALES.md
+@@ -1,4 +1,6 @@
+ # Observaciones visuales — pendientes de P09
++
++**Estructura 0.22:** distinguir visualmente cofre de exploración, premio de jefe y premio de grieta; no presentar las cajas decorativas como cofres funcionales. Diseñar puntos laterales sin tapar el paso, zona de jefe/puerta y lecturas de descubrimiento/apertura. La escala 160 × 100 es de prueba. Estos requisitos usan [las reglas aprobadas](ESTRUCTURA_REGLAS_APROBADAS.md); no sustituyen arte aprobado ni acreditan su acabado.
+ 
+ **Prototipo V2-trial-01:** puerta y soldados reutilizan sprites existentes y dibujo temporal; llamada visible y tono sintetizado, sin voz final grabada. Se ordenan aliados/props/jugador por profundidad. Revisar en P09 escala, silueta, legibilidad, llegada, efectos y voz; la prueba actual no aprueba arte definitivo.
+ 
+--- a/docs/PLAN_CAMBIOS_ESTRUCTURA.md
++++ b/docs/PLAN_CAMBIOS_ESTRUCTURA.md
+@@ -2,9 +2,9 @@
+ 
+ **Primer ensayo A-031 disponible:** RC-03–RC-06 tienen prototipo local en prueba, sin aceptación final, contrato persistente ni cierre de dependencias. Consultar [prueba manual](PRUEBA_MAPA_V2.md). Las tareas/casos de abajo siguen siendo criterios de la adaptación completa; no exigir terminar la economía o P06 anterior para ejecutar este ensayo sin guardado.
+ 
+-18/10/2026 · Plan técnico V2 · **Pendiente de implementación.**
++18/10/2026 · Plan técnico V2 · **Recorrido en prototipo; siguiente bloque de diseño aprobado, implementación restante pendiente.**
+ 
+-Objetivo: adaptar el proyecto existente a [la pauta vigente](../PAUTA_DESARROLLO.md). Esta revisión cambia documentación y seguimiento; conserva el juego y los datos. No sustituye el cierre pendiente de P05.
++Objetivo: adaptar el proyecto existente a [la pauta vigente](../PAUTA_DESARROLLO.md). La sincronización 0.22 actualiza documentación y seguimiento sobre el primer prototipo disponible; conserva el ejecutable y los datos. No sustituye el cierre pendiente de P05.
+ 
+ ## Matriz de impacto
+ 
+@@ -18,7 +18,7 @@
+ | Inventario temporal con mochila8/16, mods y almacén60 | Retirar la gestión de mochila/mods del recorrido nuevo; replantear colección y equipamiento | `js/systems/inventory-model.js`, `js/ui/inventory-trial.js`, `dev.html`, estilos, pruebas P06 |
+ | Guardado de dos armas con mods, oleadas y calendario de extracción | Definir contrato V2, versión/migración y fronteras seguras antes de conectarlo | `js/systems/run-checkpoint.js`, `run-continuity.js`, `functions/account-service.js`; el Worker preparado también reutiliza ese contrato |
+ | Grieta local en el mismo escenario | Mantener señales, duración/localizador/contacto; especificar encuentro separado, retorno y premio si se decide esa modalidad | `js/systems/dimensional-rifts.js`, `expedition.js`, `js/ui/`, `docs/PRUEBA_GRIETAS.md` |
+-| Cofres aprobados por oleadas no integrados; hasta tres cajas de campo sin botín | Adaptar base D-140–148/D-220/D-279 a300s antes de fijar presupuesto y dimensiones finales; las cajas no equivalen a cofres | `js/world/world.js`, `sector-maps.js`, `js/systems/interact.js`, [base de cofres](COFRES_BASE_Y_ADAPTACION_V2.md) |
++| Cofres aprobados por oleadas no integrados; hasta tres cajas de campo sin botín | Aplicar cuatro intentos 60/120/180/240 s, tabla/topes aprobados, tres tipos y seis puntos; ensayar 160 × 100 antes de validar dimensiones finales. Las cajas no equivalen a cofres | `js/world/world.js`, `sector-maps.js`, `js/systems/interact.js`, [base de cofres](COFRES_BASE_Y_ADAPTACION_V2.md) |
+ | Gacha/kit/recuperación/buzón concebidos para objetos físicos | Rediseñar tablas/entrega según colección de soldados y armas; no entregar mods/mochilas ni copiar overflow sin revisar | Roadmap P06/P07, `docs/P06-REPORT.md`, futuros comandos de servidor |
+ | Ranking y resultados basados en expedición/extracción | Versionar reglas y decidir métrica para mapas de5min; no mezclar marcas antiguas | Roadmap P08/P10, resultado de expedición y persistencia |
+ 
+@@ -26,7 +26,7 @@
+ 
+ ## Trabajo ordenado y aceptación
+ 
+-Todas las tareas RC siguen pendientes de **aceptación final**. RC-03–RC-06 tienen un prototipo local en prueba (EV-036), sin contrato persistente ni cierre de dependencias. No son puntos completados ni modifican los pesos históricos.
++Todas las tareas RC siguen pendientes de **aceptación final**. La cadencia/tipos de cofres y escala inicial ya tienen aprobación E-12–E-15; O-08/O-09 solo mantienen abiertos los detalles restantes y la validación final. RC-03–RC-06 tienen un prototipo local en prueba (EV-036), sin contrato persistente ni cierre de dependencias. No son puntos completados ni modifican los pesos históricos.
+ 
+ | ID | Trabajo | Depende de | Se acepta cuando |
+ | --- | --- | --- | --- |
+@@ -86,3 +86,7 @@
+ | P08–P11 | Revisar resultados/ranking, interfaz/audio, aceptación y publicación para el nuevo recorrido |
+ 
+ El JSON conserva las53 tareas, pesos y evidencias anteriores como línea base histórica; `activeDesignRevision` identifica alcance activo, tareas afectadas y esta secuencia. **52/100 no es el porcentaje de V2.** No se recalcula un avance nuevo suprimiendo del denominador las funciones descartadas.
++
++## Siguiente bloque de trabajo vigente — 0.22
++
++Usar [PLAN_DISENO_JUGABLE_V2.md](PLAN_DISENO_JUGABLE_V2.md) y [reglas aprobadas](ESTRUCTURA_REGLAS_APROBADAS.md). Primero geometría y puntos de interés para el ensayo; después cofres locales con sorteos únicos y premios ficticios. No se ejecutan en esta sincronización. Las pruebas de RC-03–RC-06 ya registradas no se repiten como evidencia nueva ni cierran aceptación. El contrato persistente, azar detallado de armas y economía necesitan sus propias dependencias.
+--- a/docs/PLAN_DISENO_JUGABLE_V2.md
++++ b/docs/PLAN_DISENO_JUGABLE_V2.md
+@@ -0,0 +1,62 @@
++# Plan de adaptación del diseño jugable V2
++
++18/10/2026 · Pauta sincronizada 0.22 · **Trabajo siguiente definido; no ejecutado en esta entrega documental.**
++
++Autoridad: [pauta vigente](../PAUTA_DESARROLLO.md), [corte aprobado de ESTRUCTURA](ESTRUCTURA_REGLAS_APROBADAS.md) y [decisiones abiertas](ESTRUCTURA_DECISIONES.md). Se adapta el juego existente. Las decisiones anteriores incompatibles de extracción, mochilas y accesorios físicos no gobiernan V2.
++
++## Punto de partida
++
++- **Implementado como ensayo local:** V2-trial-01, mapa de 300 segundos activos, jefe obligatorio, puerta y dos soldados a 5:00, corte de apariciones enemigas, remanentes vivos y transición inmediata por contacto. [Guía](PRUEBA_MAPA_V2.md).
++- **Aceptación pendiente:** prueba manual de Iván, balance, rendimiento y dispositivos físicos. No cerrar P05 ni V2 por simulaciones.
++- **Aprobado para adaptar:** tres tipos de cofre, sorteos de exploración en 60/120/180/240 segundos, probabilidades 10/15/20 %, topes 1/2/3 y tickets 1–2/1–2/1–3 según mapas 1–3/4–7/8+. Seis puntos alternativos y escala inicial 160 × 100 casillas.
++- **Todavía no implementado:** esa geometría, cofres de premios, familias/azar finales de armas, gacha, persistencia V2, dimensiones de grieta y saltos. Las cajas de campo siguen sin botín.
++
++## Bloques y orden de ejecución
++
++| Bloque | Cambio acotado | Rutas reales que revisar | Condición de cierre |
++| --- | --- | --- | --- |
++| B1 — Geometría del ensayo | Crear variante inicial de 160 × 100, circuitos amplios, seis puntos alternativos de exploración y espacios de jefe/puerta | `js/world/sector-maps.js`, `js/world/world.js`, `js/systems/expedition.js`, `js/systems/map-trial.js` | Rutas, colisión y puntos alcanzables comprobados; puerta y jefe no quedan aislados; se registran mediciones de desplazamiento |
++| B2 — Cofres locales | Incorporar sorteos y descubrimiento/apertura en el ensayo aislado, con tickets ficticios en memoria | `js/systems/expedition.js`, `js/systems/interact.js`, `js/world/world.js`, `js/ui/technical-ui.js` | Cada intento ocurre una sola vez; topes/contenido fijo/apertura funcionan; ningún premio llega a cuentas o gacha |
++| B3 — Premio de jefe y grieta | Resolver candidatos/topes/sin candidatos y tabla de grieta antes de integrar sus premios | `js/systems/field-upgrades.js`, `js/systems/containment-boss.js`, `js/systems/dimensional-rifts.js` | Contrato explícito; premio único, compatible y comprobable. No decidir por inferencia retorno/reloj de grieta |
++| B4 — Armas y equipamiento V2 | Separar familias, estadísticas propias y selección aleatoria de mejoras; retirar dependencias de accesorios/mochilas | `js/data/field-catalog.js`, `js/systems/field-stats.js`, `js/systems/field-combat.js`, `js/systems/field-upgrades.js`, `js/ui/field-loadout.js`, `js/systems/inventory-model.js` | Reglas abiertas de cartas/candidatos/topes cerradas; copias independientes; sin recargas ficticias en familias que no las necesitan |
++| B5 — Guardado, colección y economía | Versionar contrato V2 y conectar las funciones aceptadas a cuentas/recompensas | `js/systems/run-checkpoint.js`, `js/systems/run-continuity.js`, `js/net/local-accounts.js`, `functions/account-service.js` | P05 real aceptado y contrato V2 definido; propiedad, revisión, sesión, recibos e idempotencia verificados; datos antiguos conservados |
++| B6 — Acabado y aceptación | Integrar mapas variados, señalización, arte/audio, controles y regresión | `dev.html`, `css/technical.css`, `js/ui/technical-ui.js`, `docs/OBSERVACIONES_VISUALES.md` | Recursos aprobados conservados; lectura clara; sonido/alerta/localizador de grietas; crédito visible; pruebas y aceptación registradas |
++
++**La siguiente entrega será B1 y después B2**, como ensayo local sin guardado. Puede prepararse mientras P05 real sigue pendiente. No adelanta la economía P06/P07 ni convierte premios ficticios en saldo. La conexión persistente de B5 exige sus dependencias; B3/B4 no se ejecutan con reglas incompletas.
++
++La preparación local Worker/SQLite, si existe en la copia de desarrollo, no se publica ni activa por esta planificación. La selección de backend y sus pruebas se documentan en P05. Firebase permanece en Spark, sin facturación.
++
++## Aceptación de geometría B1
++
++1. Conservar la semilla y una variante anterior para comprobar regresiones; no sustituir arte aprobado.
++2. Identificar seis ubicaciones alternativas, con espacio de maniobra y rutas laterales. No representan seis cofres activos garantizados.
++3. Mantener libres entrada, puerta, paso principal y área de combate del jefe. Probar llegada de soldados y acceso bajo presión de enemigos restantes.
++4. Medir rutas transitables: objetivo 30–45 segundos entre extremos útiles sin combate y 10–15 segundos de desvío hacia un punto opcional. Documentar método y resultados; no usar solo distancia recta.
++5. Revisar navegación enemiga, colisión y distribución de apariciones en la escala mayor. Repetir límites de 299,99/300/300,01 segundos y transición al segundo mapa.
++6. Probar fuente/compilado y escritorio/táctil emulado. Las dimensiones finales y el rendimiento real quedan pendientes hasta medirse.
++
++## Aceptación de cofres B2
++
++1. Sorteos con semilla en 60/120/180/240 segundos activos; probar salto de tiempo, pausa, menú y continuación sin repetir oportunidades. El acceso rápido debe distinguir la preparación de prueba de una partida realmente recorrida.
++2. Respetar probabilidades y topes de cada franja de mapas. Fijar contenido al aparecer y no liberar cupo al abrir. No garantizar el máximo.
++3. Elegir posiciones válidas entre las seis alternativas; no bloquear rutas ni superponer objetivos. Diferenciar cofres funcionales de `fieldCrate` decorativas.
++4. Conservar apertura por proximidad de la base: 3,5 segundos, radio 50, sin pared, retroceso de progreso al alejarse, pausa congelada y disparo permitido. La entrada instantánea de grietas es otra interacción.
++5. Mantener aviso sin descubrir y flecha después de verlo. Verificar visibilidad sin depender solo del color o sonido.
++6. Usar identificadores únicos por mapa/evento para evitar doble apertura o doble premio ficticio. Recargar pierde el ensayo; nunca escribe cuentas, gacha ni guardados anteriores.
++7. Resolver explícitamente los hitos antiguos y la regla acumulada de diez minutos antes de representar sus premios como reglas V2 completas. No borrar esa base ni aplicar compensaciones inventadas.
++
++## Reglas que todavía necesitan definición
++
++- Objetivo del azar al subir de nivel: arma/copia/familia, cartas frente a aplicación automática, candidatos, probabilidades y topes.
++- Elegibilidad del premio de jefe, caso sin candidatos y tabla de premios superiores de grieta.
++- Muerte y fin definitivo de partida, progresión permanente, duplicados, rarezas y desbloqueos.
++- Grietas: recinto, retorno, reloj, cierre y premios. Saltos: destinos y compatibilidad con el jefe obligatorio.
++- Recuperación persistente cuando quedan enemigos vivos junto a la puerta; no reutilizar el checkpoint antiguo que limpia enemigos.
++
++No se bloquea todo el diseño por estas preguntas: cada bloque avanza con su contrato cerrado y conserva pendientes explícitos. No se inventa economía para resolverlos.
++
++## Entrega y trazabilidad
++
++Respaldar antes de modificar. Editar fuentes; conservar estructura y orden en `dev.html`. Ejecutar las pruebas afectadas y generar/verificar compilado con `npm.cmd run build` y `npm.cmd run build:check`. Las regresiones del recorrido están en `tests/v2-map-director.test.js`, `tests/v2-map-trial.test.js` y `tests/v2-map-browser.py`; ampliar solo para comportamientos nuevos verificables.
++
++Registrar resultados, límites y diff. Actualizar `RoadmapSCP.json` y generar vistas con `node tools/render-roadmap.js`; los 53 criterios y 52/100 anteriores permanecen históricos. No otorgar avance por retirar funciones o redactar este plan. Las tareas RC y la aceptación completa se conservan en [PLAN_CAMBIOS_ESTRUCTURA.md](PLAN_CAMBIOS_ESTRUCTURA.md).
+--- a/docs/PUBLICACION_GITHUB.md
++++ b/docs/PUBLICACION_GITHUB.md
+@@ -1,4 +1,10 @@
+ # Publicaciones GitHub — SCP Survivor
++
++## Pauta ESTRUCTURA 0.22 — 18/10/2026
++
++[Validación documental](ESTRUCTURA_0.22_VALIDACION.md) · [Diff de la entrega](ESTRUCTURA_0.22_CAMBIOS.diff)
++
++Sincronización documental autorizada A-032. Se incorpora la aprobación de cofres y escala inicial, se ordena el plan de adaptación y se conserva V2-trial-01. [Reglas aprobadas](ESTRUCTURA_REGLAS_APROBADAS.md) · [Plan jugable](PLAN_DISENO_JUGABLE_V2.md). No cambia ejecutable, assets, cuentas, facturación ni tareas históricas. Padre verificado `20b72aecf0c5235ddd0227964b82a65c396f0617`. Commit previsto: **Sincronizar pauta de ESTRUCTURA y plan de adaptación V2**. La publicación debe verificarse contra el SHA remoto después del push; esta entrada no la acredita por sí sola.
+ 
+ ## Primera prueba V2 — 18/10/2026
+ 

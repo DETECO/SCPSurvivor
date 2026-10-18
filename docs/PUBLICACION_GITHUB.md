@@ -1,5 +1,11 @@
 # Publicaciones GitHub — SCP Survivor
 
+## Pauta ESTRUCTURA 0.22 — 18/10/2026
+
+[Validación documental](ESTRUCTURA_0.22_VALIDACION.md) · [Diff de la entrega](ESTRUCTURA_0.22_CAMBIOS.diff)
+
+Sincronización documental autorizada A-032. Se incorpora la aprobación de cofres y escala inicial, se ordena el plan de adaptación y se conserva V2-trial-01. [Reglas aprobadas](ESTRUCTURA_REGLAS_APROBADAS.md) · [Plan jugable](PLAN_DISENO_JUGABLE_V2.md). No cambia ejecutable, assets, cuentas, facturación ni tareas históricas. Padre verificado `20b72aecf0c5235ddd0227964b82a65c396f0617`. Commit previsto: **Sincronizar pauta de ESTRUCTURA y plan de adaptación V2**. La publicación debe verificarse contra el SHA remoto después del push; esta entrada no la acredita por sí sola.
+
 ## Primera prueba V2 — 18/10/2026
 
 Petición de Iván A-031: comenzar la adaptación para su primera prueba. Entrega **V2-trial-01/Roadmap0.21**: modo local300s con jefe obligatorio, puerta de la Fundación, dos aliados y transición por contacto; sin extracción, accesorios o mochilas en la interfaz del ensayo. [Guía](PRUEBA_MAPA_V2.md), [informe](V2-PRIMERA-PRUEBA-REPORT.md), [validación](V2-PRIMERA-PRUEBA-VALIDACION.json) y [diff](V2-PRIMERA-PRUEBA-CAMBIOS.diff).

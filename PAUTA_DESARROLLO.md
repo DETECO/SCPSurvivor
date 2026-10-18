@@ -2,7 +2,7 @@
 
 18/10/2026 · Diseño V2 · **Primer prototipo del recorrido disponible; adaptación completa y aceptación pendientes.**
 
-Esta pauta incorpora el chat **ESTRUCTURA** y la instrucción posterior de Iván en PROGRAMACION. Sustituye las reglas incompatibles del diseño de extracción. El código actual se conserva como punto de partida; no se reconstruye el juego.
+Esta pauta incorpora el chat **ESTRUCTURA**, incluida su aprobación de cofres y escala inicial en el turno `01a15142-340f-7400-8660-f8d2502ce2aa`, y la instrucción posterior de Iván en PROGRAMACION. [Corte de reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md). Sustituye las reglas incompatibles del diseño de extracción. El código actual se conserva como punto de partida; no se reconstruye el juego.
 
 **Prueba V2-trial-01:** [guía manual](docs/PRUEBA_MAPA_V2.md). El recorrido de mapas300s, jefe y puerta con aliados está implementado como ensayo local sin guardado. Jefe240s y acceso rápido270s son parámetros provisionales de prueba. No implementa aún familias/azar final, gacha, cofres de premios, grietas nuevas o persistencia. [Resultados](docs/V2-PRIMERA-PRUEBA-REPORT.md).
 
@@ -32,10 +32,10 @@ La hora exacta de aparición del jefe todavía no está fijada. Debe permitir cu
 | Armas distintas, con estadísticas básicas propias | Mantener identidad por arma; organizar por familias | Categorías nuevas pendientes |
 | Mejoras al subir de nivel | Mejorar armas al azar durante la partida | El sistema de cartas actual necesita adaptación |
 | Gacha | Orientarlo a soldados y armas | Economía/entrega real pendientes |
-| Jefes | Un jefe obligatorio por mapa; encuentros dimensionales aparte | El calendario actual de jefes entre sectores necesita cambio |
+| Jefes | Un jefe obligatorio por mapa; encuentros dimensionales aparte | Implementado en ensayo V2; horario de 4:00 provisional; calendario anterior conservado fuera del ensayo |
 | Grietas especiales | Desafíos opcionales difíciles con recompensas mayores | Existe un prototipo local limitado |
 | Saltos dimensionales | Rutas/saltos entre niveles, inspirados en Backrooms | Diseño detallado e implementación pendientes |
-| Cofres y recompensas del escenario | Definir antes del tamaño final de mapas | Hay sistemas heredados y cajas de campo; reglas V2 abiertas |
+| Cofres y recompensas del escenario | Exploración, jefe y grieta; sorteos y escala inicial aprobados | Pendientes de implementar; cajas de campo actuales sin botín |
 | Arte, identidad visual, controles y crédito | Conservar recursos aprobados y «Desarrollado por Ivan Vivanco» | El acabado final sigue pendiente |
 | Cuentas y guardado P05 | Conservar seguridad y adaptar contratos al nuevo recorrido | Aceptación con servicios propios pendiente |
 
@@ -63,15 +63,25 @@ El retorno desde la anomalía, la pausa del reloj del mapa al entrar, el tratami
 
 ## Cofres y tamaño de los mapas
 
-En ESTRUCTURA se está revisando este punto. **Sí hay una base aprobada anterior:** D-140–148/D-220/D-279 fijan sorteos por oleada, probabilidades/topes, tickets, apertura y descubrimiento. Se conserva íntegra en [cofres: base y adaptación](docs/COFRES_BASE_Y_ADAPTACION_V2.md). Falta adaptar el disparador por oleadas a mapas de300s; no hay presupuesto/distribución V2 cerrados. Las cajas de campo actuales no dan botín y no son esos cofres.
+Iván aprobó las recomendaciones del hilo ESTRUCTURA. Se conserva la base D-140–148/D-220/D-279 y se adapta el disparador a **cuatro oportunidades por mapa en 1:00, 2:00, 3:00 y 4:00 de juego activo**. No se sortea por fotograma ni durante la pausa.
 
-Antes de fijar dimensiones finales: revisar sobre esa base los tipos de cofre, apertura, frecuencia, premio, relación con jefes y si su contenido mejora la partida o la colección. Después probar mapas con rutas alternativas, desplazamiento útil y salida alcanzable entre enemigos. No trasladar premios de accesorios o mochilas a V2 ni importar sin revisión los premios genéricos de Pokesurvivor.
+| Cofre | Regla vigente para la adaptación |
+| --- | --- |
+| Exploración | Recursos de gacha. Mapas 1–3: 10 % por intento, máximo 1, 1–2 tickets; mapas 4–7: 15 %, máximo 2, 1–2 tickets; mapas 8+: 20 %, máximo 3, 1–3 tickets |
+| Jefe | Garantizado al derrotarlo; una mejora temporal aleatoria compatible con las armas equipadas |
+| Grieta | Solo al superar la anomalía difícil; premio superior, con tabla exacta todavía pendiente |
+
+Los topes de exploración no garantizan premios. Abrir no libera cupo y el contenido se fija al aparecer. Jefe y grieta son eventos separados. Los tickets de cuenta requieren confirmación del servidor: el ensayo local no los acredita. Apertura/descubrimiento y reglas históricas compatibles permanecen en [la base de cofres](docs/COFRES_BASE_Y_ADAPTACION_V2.md); falta encajar hitos antiguos y detalles del reloj acumulado de diez minutos.
+
+Se aprueba **160 × 100 casillas como escala inicial de prueba**, reservando **seis ubicaciones alternativas** de cofres, una zona amplia de jefe/puerta y circuitos para rodear hordas. Objetivos a medir: 30–45 segundos entre extremos útiles sin combate y 10–15 segundos de desvío hacia un punto opcional. El tamaño final, los recorridos, el balance y el rendimiento no se dan por validados.
+
+**Todavía no implementado:** cofres de premios, cuatro sorteos, seis puntos y nueva geometría. Las `fieldCrate` actuales siguen siendo cajas sin botín. No importar premios genéricos de Pokesurvivor ni accesorios/mochilas. [Reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md) · [Siguiente adaptación](docs/PLAN_DISENO_JUGABLE_V2.md).
 
 ## Orden para continuar
 
-1. Usar esta pauta y resolver las reglas abiertas en el [plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md).
-2. Terminar P05 y definir compatibilidad de guardados con V2. Mantener Firebase Spark sin facturación; no declarar cierre por emuladores o preparación local.
-3. Implementar primero un mapa completo: cinco minutos, jefe, puerta, soldados y transición. Retirar la extracción del recorrido V2.
+1. Usar esta pauta, el [corte aprobado de ESTRUCTURA](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y el [plan de diseño jugable](docs/PLAN_DISENO_JUGABLE_V2.md); resolver solo las reglas abiertas necesarias para cada bloque.
+2. Continuar los ensayos locales aislados del plan jugable: geometría, puntos de interés y después cofres ficticios. Conservar la prueba de cinco minutos y su aceptación pendiente.
+3. Terminar P05 real y definir compatibilidad de guardados antes de conectar V2 a cuentas, economía o P06 replanteada. Mantener Spark sin facturación; el ensayo local no acredita ese cierre.
 4. Adaptar armas/mejoras y retirar accesorios/mochilas con sus dependencias.
 5. Replantear P06 para colección/equipamiento y adaptar P07 para gacha/recompensas; no continuar la lista anterior de inventario físico.
 6. Integrar cofres, variantes de mapas, grietas y saltos con las reglas cerradas. Después completar arte, audio, controles y pruebas de integración.

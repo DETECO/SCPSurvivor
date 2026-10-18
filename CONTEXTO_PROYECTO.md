@@ -1,5 +1,7 @@
 # Contexto del proyecto — SCP Survivor
 
+**Pauta sincronizada con ESTRUCTURA — 0.22 (18/10/2026):** aplicar [reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y [siguiente bloque de adaptación](docs/PLAN_DISENO_JUGABLE_V2.md). Iván aprobó los tipos de cofre, cuatro sorteos por mapa en 1:00/2:00/3:00/4:00, seis puntos alternativos y escala inicial de ensayo 160 × 100. Se conserva la prueba V2-trial-01; estos cofres y geometría aún no están implementados. No reintroducir extracción, accesorios físicos ni mochilas. No cambiar datos/cuentas ni conceder premios reales desde un ensayo local. Las reglas de armas, economía, grietas y saltos que siguen abiertas no se completan por inferencia.
+
 **Ensayo V2-trial-01 (18/10/2026):** primer recorrido local implementado por petición de Iván A-031. Entradas `?prueba=mapa-v2` / `&rapida=1`; jefe provisional240s y puerta300s, aliados, corte de spawn y transición por contacto. Sin guardado, cuentas, extracción, mochila o accesorios en la interfaz del ensayo. No son las familias/azar/economía finales ni cierra P05. [Guía manual](docs/PRUEBA_MAPA_V2.md) · [Resultados y límites](docs/V2-PRIMERA-PRUEBA-REPORT.md).
 
 ## Cambio de dirección — V2-ESTRUCTURA, 18/10/2026
@@ -14,7 +16,7 @@ Actualización16/10/2026. Esta carpeta continúa el videojuego existente de la s
 
 ## Objetivo
 
-Juego web de supervivencia con avance por mapas encadenados, cinco minutos de presión por mapa, jefe obligatorio y transición por puerta de la Fundación. Armas distintas por familias y mejoras de nivel al azar; grietas opcionales y saltos dimensionales por concretar. Se continúa el proyecto existente hasta una versión completa aceptada y publicada. El prototipo anterior todavía conserva extracción, mods y mochilas: su retirada está planificada, no implementada.
+Juego web de supervivencia con avance por mapas encadenados, cinco minutos de presión por mapa, jefe obligatorio y transición por puerta de la Fundación. Armas distintas por familias y mejoras de nivel al azar; grietas opcionales y saltos dimensionales por concretar. Se continúa el proyecto existente hasta una versión completa aceptada y publicada. El modo anterior conserva extracción, mods y mochilas como antecedente. La prueba V2 los excluye de su recorrido; su retirada integral y compatibilidad persistente siguen pendientes.
 
 ## Procedencia y autorización
 

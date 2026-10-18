@@ -28,13 +28,22 @@ Estas cifras pertenecen al diseño por oleadas. **10% por oleada no significa10%
 
 Ni las tres cajas ni las probabilidades de la base heredada fijan la cantidad final de cofres del mapa V2.
 
-## Adaptación pendiente, sin perder la base anterior
+## Adaptación aprobada en ESTRUCTURA; implementación pendiente
 
-1. Sustituir el disparador «completar oleada» por una cadencia explícita compatible con300s. Precisar número de intentos, relación con jefe y momento de aparición.
-2. Revisar la correspondencia de sector/mapa y el reloj acumulado de combate, incluido el tiempo con enemigos restantes después de5:00 o dentro de grietas.
-3. Tomar probabilidades, topes, tickets, apertura y descubrimiento anteriores como base de revisión. Documentar qué se conserva y qué cambia; no reiniciar esas decisiones como si nunca hubieran existido.
-4. Replantear el objeto físico y la entrega al quitar mochilas/accesorios. Los tickets ya iban a cuenta y esa separación puede reutilizarse. No convertir objetos retirados en moneda por inferencia.
-5. Adaptar hitos de la primera oleada a un recorrido sin esa misma estructura; no conceder ni duplicar el premio de un hito por cada mapa.
-6. Con la cadencia y premios cerrados, fijar presupuesto de puntos de aparición y probar distancias/rutas en un mapa de cinco minutos. El tamaño final todavía no queda aprobado.
+Iván aprobó el último bloque de recomendaciones en el turno `01a15142-340f-7400-8660-f8d2502ce2aa`. [Corte estable](ESTRUCTURA_REGLAS_APROBADAS.md):
 
-Las decisiones compatibles se conservan como antecedentes aprobados; los cambios de regla se registrarán antes de implementar RC-09/RC-10. No se cambian cofres, cantidades ni premios en esta entrega documental.
+1. Exploración: un intento en 60, 120, 180 y 240 segundos activos de cada mapa. Conservar tabla 10/15/20 %, topes 1/2/3 y tickets 1–2/1–2/1–3 para mapas 1–3/4–7/8+. Sorteos únicos; pausa no añade intentos.
+2. Jefe: cofre garantizado al derrotarlo, con una mejora temporal aleatoria compatible con armas equipadas. Elegibilidad, tope y alternativa sin candidatos requieren especificación antes de aplicar la mejora.
+3. Grieta: recompensa superior solo tras superar la anomalía; tabla exacta pendiente. Es un evento distinto del cupo de exploración.
+4. Reservar seis posiciones alternativas válidas para exploración y zona propia para jefe/puerta. La escala inicial de ensayo es 160 × 100 casillas; medir desplazamientos de 30–45 s entre extremos útiles y desvíos de 10–15 s.
+
+Los valores aprobados son contrato de diseño para adaptar, no resultados de implementación. El máximo sigue siendo límite, abrir no libera cupo y el contenido queda fijado al aparecer. Se conserva la apertura/descubrimiento de la base; no sustituirlos por la apertura de una grieta, que es instantánea por contacto.
+
+## Detalles que todavía deben cerrarse
+
+- Hitos de primera oleada/sectores 2 y 3: definir su correspondencia en V2 sin duplicar premios por mapa.
+- Reloj acumulado de diez minutos: mantener la regla histórica como base y precisar qué ocurre con remanentes después de 5:00 y dentro de grietas. No borrarla ni aplicarla de forma distinta silenciosamente.
+- Armas compatibles al tope o sin mejora candidata y entrega única de premio de jefe.
+- Tabla de grieta y entrega confirmada de tickets. La colección/economía y compatibilidad de guardados no están resueltas por esta aprobación.
+
+La próxima entrega local puede probar geometría, puntos y sorteos con premios ficticios aislados. No debe conceder tickets reales, activar gacha ni escribir cuentas. [Plan de adaptación jugable](PLAN_DISENO_JUGABLE_V2.md). P05 real y aceptación del primer recorrido siguen pendientes.

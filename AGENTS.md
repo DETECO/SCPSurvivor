@@ -1,5 +1,7 @@
 # SCP Survivor — instrucciones para Codex Local
 
+**Pauta sincronizada con ESTRUCTURA — 0.22 (18/10/2026):** aplicar [reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y [siguiente bloque de adaptación](docs/PLAN_DISENO_JUGABLE_V2.md). Iván aprobó los tipos de cofre, cuatro sorteos por mapa en 1:00/2:00/3:00/4:00, seis puntos alternativos y escala inicial de ensayo 160 × 100. Se conserva la prueba V2-trial-01; estos cofres y geometría aún no están implementados. No reintroducir extracción, accesorios físicos ni mochilas. No cambiar datos/cuentas ni conceder premios reales desde un ensayo local. Las reglas de armas, economía, grietas y saltos que siguen abiertas no se completan por inferencia.
+
 **Primera prueba V2 autorizada (A-031,18/10/2026):** prototipo local `?prueba=mapa-v2` o rápido `&rapida=1`; leer [guía](docs/PRUEBA_MAPA_V2.md) e [informe](docs/V2-PRIMERA-PRUEBA-REPORT.md). Mapas300s/jefe/puerta/aliados funcionan dentro de este ensayo. No cuentas ni guardado; nunca emitir/restaurar schema1 en V2. La petición posterior autoriza probar el recorrido ahora, sin declarar P05 completo ni continuar inventario físico P06. Código anterior conservado para regresión. Roadmap0.21; aceptación humana pendiente.
 
 ## Prioridad vigente — V2-ESTRUCTURA, 18/10/2026
@@ -27,7 +29,7 @@ A-026/D-314: Iván pidió terminarP05 antes de continuarP06. Conservar todo el p
 
 - HTML/CSS/JavaScript, Canvas2D y namespace G. Mantener estructura y orden de scripts en dev.html; no migrar a otro framework por instrucciones de proyectos ajenos.
 - Editar fuentes. index.html, js/app.min.js y js/vendor/firebase-client.js se generan con npm.cmd run build.
-- Velocidad base165; una elección inmediata por nivel, copias independientes de armas, reglas y topes aprobados. Recursos provisionales; no sustituir arte aprobado ni ampliar24+24 por inferencia.
+- Velocidad base165; el prototipo conservado usa una elección inmediata por nivel y copias independientes de armas. Las cartas y reglas definitivas del azar V2 siguen abiertas; no trasladar automáticamente sus límites anteriores. Recursos provisionales; no sustituir arte aprobado ni ampliar24+24 por inferencia.
 - No alterar originales Cloud, ZIP de migración o backups. sources/ del padre es solo lectura. docs/historial-local/alfa-0.4 conserva documentación anterior.
 
 ## Alcance autorizado actual

@@ -2,9 +2,9 @@
 
 **Primer ensayo A-031 disponible:** RC-03–RC-06 tienen prototipo local en prueba, sin aceptación final, contrato persistente ni cierre de dependencias. Consultar [prueba manual](PRUEBA_MAPA_V2.md). Las tareas/casos de abajo siguen siendo criterios de la adaptación completa; no exigir terminar la economía o P06 anterior para ejecutar este ensayo sin guardado.
 
-18/10/2026 · Plan técnico V2 · **Pendiente de implementación.**
+18/10/2026 · Plan técnico V2 · **Recorrido en prototipo; siguiente bloque de diseño aprobado, implementación restante pendiente.**
 
-Objetivo: adaptar el proyecto existente a [la pauta vigente](../PAUTA_DESARROLLO.md). Esta revisión cambia documentación y seguimiento; conserva el juego y los datos. No sustituye el cierre pendiente de P05.
+Objetivo: adaptar el proyecto existente a [la pauta vigente](../PAUTA_DESARROLLO.md). La sincronización 0.22 actualiza documentación y seguimiento sobre el primer prototipo disponible; conserva el ejecutable y los datos. No sustituye el cierre pendiente de P05.
 
 ## Matriz de impacto
 
@@ -18,7 +18,7 @@ Objetivo: adaptar el proyecto existente a [la pauta vigente](../PAUTA_DESARROLLO
 | Inventario temporal con mochila8/16, mods y almacén60 | Retirar la gestión de mochila/mods del recorrido nuevo; replantear colección y equipamiento | `js/systems/inventory-model.js`, `js/ui/inventory-trial.js`, `dev.html`, estilos, pruebas P06 |
 | Guardado de dos armas con mods, oleadas y calendario de extracción | Definir contrato V2, versión/migración y fronteras seguras antes de conectarlo | `js/systems/run-checkpoint.js`, `run-continuity.js`, `functions/account-service.js`; el Worker preparado también reutiliza ese contrato |
 | Grieta local en el mismo escenario | Mantener señales, duración/localizador/contacto; especificar encuentro separado, retorno y premio si se decide esa modalidad | `js/systems/dimensional-rifts.js`, `expedition.js`, `js/ui/`, `docs/PRUEBA_GRIETAS.md` |
-| Cofres aprobados por oleadas no integrados; hasta tres cajas de campo sin botín | Adaptar base D-140–148/D-220/D-279 a300s antes de fijar presupuesto y dimensiones finales; las cajas no equivalen a cofres | `js/world/world.js`, `sector-maps.js`, `js/systems/interact.js`, [base de cofres](COFRES_BASE_Y_ADAPTACION_V2.md) |
+| Cofres aprobados por oleadas no integrados; hasta tres cajas de campo sin botín | Aplicar cuatro intentos 60/120/180/240 s, tabla/topes aprobados, tres tipos y seis puntos; ensayar 160 × 100 antes de validar dimensiones finales. Las cajas no equivalen a cofres | `js/world/world.js`, `sector-maps.js`, `js/systems/interact.js`, [base de cofres](COFRES_BASE_Y_ADAPTACION_V2.md) |
 | Gacha/kit/recuperación/buzón concebidos para objetos físicos | Rediseñar tablas/entrega según colección de soldados y armas; no entregar mods/mochilas ni copiar overflow sin revisar | Roadmap P06/P07, `docs/P06-REPORT.md`, futuros comandos de servidor |
 | Ranking y resultados basados en expedición/extracción | Versionar reglas y decidir métrica para mapas de5min; no mezclar marcas antiguas | Roadmap P08/P10, resultado de expedición y persistencia |
 
@@ -26,7 +26,7 @@ Las rutas son puntos de inspección, no instrucciones de borrar carpetas. El có
 
 ## Trabajo ordenado y aceptación
 
-Todas las tareas RC siguen pendientes de **aceptación final**. RC-03–RC-06 tienen un prototipo local en prueba (EV-036), sin contrato persistente ni cierre de dependencias. No son puntos completados ni modifican los pesos históricos.
+Todas las tareas RC siguen pendientes de **aceptación final**. La cadencia/tipos de cofres y escala inicial ya tienen aprobación E-12–E-15; O-08/O-09 solo mantienen abiertos los detalles restantes y la validación final. RC-03–RC-06 tienen un prototipo local en prueba (EV-036), sin contrato persistente ni cierre de dependencias. No son puntos completados ni modifican los pesos históricos.
 
 | ID | Trabajo | Depende de | Se acepta cuando |
 | --- | --- | --- | --- |
@@ -86,3 +86,7 @@ Estas son pruebas **por ejecutar cuando se implementen los cambios**, no resulta
 | P08–P11 | Revisar resultados/ranking, interfaz/audio, aceptación y publicación para el nuevo recorrido |
 
 El JSON conserva las53 tareas, pesos y evidencias anteriores como línea base histórica; `activeDesignRevision` identifica alcance activo, tareas afectadas y esta secuencia. **52/100 no es el porcentaje de V2.** No se recalcula un avance nuevo suprimiendo del denominador las funciones descartadas.
+
+## Siguiente bloque de trabajo vigente — 0.22
+
+Usar [PLAN_DISENO_JUGABLE_V2.md](PLAN_DISENO_JUGABLE_V2.md) y [reglas aprobadas](ESTRUCTURA_REGLAS_APROBADAS.md). Primero geometría y puntos de interés para el ensayo; después cofres locales con sorteos únicos y premios ficticios. No se ejecutan en esta sincronización. Las pruebas de RC-03–RC-06 ya registradas no se repiten como evidencia nueva ni cierran aceptación. El contrato persistente, azar detallado de armas y economía necesitan sus propias dependencias.
