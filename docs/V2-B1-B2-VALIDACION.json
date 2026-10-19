@@ -1,7 +1,7 @@
 {
   "date": "2026-10-19",
   "version": "V2-trial-02",
-  "stage": "verified_local_before_publication",
+  "stage": "runtime_published_and_verified",
   "authorization": "A-035; prior GitHub/Pages authorization retained",
   "node": {
     "source": {
@@ -112,5 +112,12 @@
     "V2 persistence/economy",
     "final art/audio"
   ],
-  "postPushVerification": "GitHub Pages build commit, served bundle SHA256 and live browser checks; receipt in local migration-audit/b1b2-pages-live-receipt.json"
+  "postPushVerification": "GitHub Pages build commit, served bundle SHA256 and live browser checks; receipt in local migration-audit/b1b2-pages-live-receipt.json",
+  "publicationVerification": {
+    "verifiedAt": "2026-10-19T13:09:24.004561+00:00",
+    "runtimeCommit": "957bc9b67c33996bf1579bc91dd29c421a5c358a",
+    "bundleSha256": "27373c595c3a6a37c43c83c6e5776794d650cf3159946257675567d03c09542a",
+    "liveScenarios": 4,
+    "scope": "demo_only; manual acceptance and real account services pending"
+  }
 }

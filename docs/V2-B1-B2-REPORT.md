@@ -41,3 +41,7 @@ Firebase sigue en Spark, sin facturación; cuentas propias y preparación Worker
 La publicación y el roadmap están autorizados. Tras el push, comprobar el build de Pages, la igualdad SHA-256 del compilado servido y los ensayos `--live`. El recibo posterior se conserva en la auditoría local para evitar inscribir un SHA autorreferente antes de crear el commit.
 
 [Validación y hashes](V2-B1-B2-VALIDACION.json) · [Diff revisable](V2-B1-B2-CAMBIOS.diff) · [Plan ejecutado](superpowers/plans/2026-10-19-b1-b2.md).
+
+## Publicación comprobada
+
+Runtime publicado en `957bc9b67c33996bf1579bc91dd29c421a5c358a`. Pages construyó ese commit. El índice, compilado y roadmap servidos coinciden con lo probado; SHA-256 del compilado `27373c595c3a6a37c43c83c6e5776794d650cf3159946257675567d03c09542a`. Cuatro recorridos online aprobados: cofre de práctica en escritorio/táctil y accesos normal/rápido. Sin errores JavaScript, HTTP ni solicitudes externas. Este registro documental posterior conserva ese mismo compilado; no modifica el juego ni sustituye la aceptación manual. [Recibo](V2-B1-B2-PUBLICACION.json).

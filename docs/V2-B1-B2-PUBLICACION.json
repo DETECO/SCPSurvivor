@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-19T13:09:24.004561+00:00",
+  "commit": "957bc9b67c33996bf1579bc91dd29c421a5c358a",
+  "remoteMain": "957bc9b67c33996bf1579bc91dd29c421a5c358a",
+  "clean": true,
+  "url": "https://deteco.github.io/SCPSurvivor/",
+  "practiceUrl": "https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba",
+  "bundleSha256": "27373c595c3a6a37c43c83c6e5776794d650cf3159946257675567d03c09542a",
+  "matchesTestedBundle": true,
+  "roadmapVersion": "0.25",
+  "roadmapHashMatched": true,
+  "liveChestScenariosPassed": 2,
+  "liveDefaultQuickScenariosPassed": 2,
+  "realAccountsEnabled": false,
+  "manualAcceptance": "pending",
+  "subsequentDocumentationCommit": "See git log for the verification record; it retains the exact runtime bundle verified here."
+}
