@@ -1,10 +1,10 @@
 # Roadmap SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Pauta sincronizada con la aprobación más reciente de ESTRUCTURA: cofres y escala inicial establecidos para adaptar. Primer recorrido V2-trial-01 conservado, aceptación manual y adaptación completa pendientes. No cierra P05/P06.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-19).** Diseño actualizado desde ESTRUCTURA: dos armas simultáneas, hasta tres poderes y una ultimate única de máximo nivel 5. Nuevas tareas pendientes; se conserva la demo del recorrido y su aceptación pendiente. Cofres, mapa 160 × 100, combate ampliado y P05 real aún sin completar.
 
-[Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md)
+[Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md)
 
-**Primera prueba local disponible:** [guía](docs/PRUEBA_MAPA_V2.md) · [prueba rápida](http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1) · [mapa completo](http://127.0.0.1:8000/?prueba=mapa-v2). Sin cuentas ni guardado; aceptación de Iván pendiente.
+**Demo disponible:** [guía](docs/PRUEBA_MAPA_V2.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?rapida=1) · [jugar](https://deteco.github.io/SCPSurvivor/). Sin cuentas ni guardado; aceptación de Iván pendiente.
 
 **Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
 
@@ -14,25 +14,29 @@
 | Puerta y aliados | A5:00 llega puerta blindada y soldados; cesa todo spawn enemigo, permanecen remanentes; cruzar exige jefe derrotado. |
 | Extracción de fin de partida | Retirada del diseño V2; la puerta avanza de mapa, no termina la partida. |
 | Accesorios de armas y mochilas | Retirados del diseño V2; código y datos anteriores conservados hasta adaptar y validar. |
-| Armas | Identidad y estadísticas propias; familias láser, cuerpo a cuerpo, distancia, misiles y arrojadizas; mejoras por nivel al azar, detalles pendientes. |
+| Armas | Dos armas elegidas antes de salir y activas simultáneamente; identidad/familias propias. Tres ofertas aleatorias, mejoras de arma solo para equipadas. Mezcla, ramas y topes pendientes; simultaneidad aún sin implementar. |
+| Poderes anómalos | Hasta tres, con opción de reemplazo al aparecer un cuarto. No sumar otras dos ranuras de apoyo. Catálogo, adquisición/rangos y aplicación de reemplazo pendientes. |
+| Ultimate | Una habilidad única de defensa, curación, evasión o ataque; cooldown largo propio por definir, máximo nivel 5 y progresión difícil; gacha. Sin duración/costes aprobados ni implementación. |
 | Grietas y saltos | Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas. |
 | Cofres y mapas | Aprobados tres tipos de cofre, intentos de exploración 1:00/2:00/3:00/4:00 con tabla/topes anteriores y seis puntos alternativos. Escala inicial 160 × 100; metas de rutas 30–45 s y desvíos 10–15 s. Pendientes implementación, medición y detalles de premios. |
-| P06/P07 | Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow. |
+| P06/P07 | Revisar colección/gacha de soldados, armas, skins y ultimates sin retirar reclutamiento anterior por inferencia. Costes, duplicados y efectos de skins pendientes; sin mochilas ni accesorios físicos. |
 
 | Paso | Trabajo y estado | Dependencias |
 | --- | --- | --- |
-| RC-01 | Cerrar contratos y parámetros abiertos de V2 | Reglas V2 |
-| RC-02 | Versionar guardado, resultados y compatibilidad | P05 verificado, RC-01 |
-| RC-03 | Director300s y escalada temporal — prototipo local; aceptación pendiente | RC-02 |
-| RC-04 | Jefe obligatorio por mapa — prototipo local; aceptación pendiente | RC-03 |
-| RC-05 | Puerta, soldados y transición sin limpiar remanentes — prototipo local; aceptación pendiente | RC-04 |
-| RC-06 | Retirar extracción del recorrido V2 — prototipo local; aceptación pendiente | RC-05 |
-| RC-07 | Armas por familias y mejoras aleatorias | RC-01, RC-02 |
-| RC-08 | Retirar accesorios/mochilas y replantear P06 | RC-07, RC-02 |
-| RC-09 | Colección, gacha y recompensas revisadas | RC-08, RC-01 |
-| RC-10 | Cofres y dimensiones de mapas | RC-01, RC-03 |
-| RC-11 | Grietas especiales y saltos dimensionales | RC-05, RC-09, O-06/O-07 |
-| RC-12 | Interfaz/audio, regresión y aceptación V2 | RC-06, RC-07, RC-08, RC-09, RC-10, RC-11 |
+| RC-01 | Cerrar contratos y parámetros abiertos de V2 — pendiente de implementar | Reglas V2 |
+| RC-02 | Versionar guardado, resultados y compatibilidad — pendiente de implementar | P05 verificado, RC-01 |
+| RC-03 | Director300s y escalada temporal — prototipo; aceptación pendiente | RC-02 |
+| RC-04 | Jefe obligatorio por mapa — prototipo; aceptación pendiente | RC-03 |
+| RC-05 | Puerta, soldados y transición sin limpiar remanentes — prototipo; aceptación pendiente | RC-04 |
+| RC-06 | Retirar extracción del recorrido V2 — prototipo; aceptación pendiente | RC-05 |
+| RC-07 | Dos armas simultáneas, familias y tres ofertas compatibles — pendiente de implementar | RC-01, RC-02 |
+| RC-08 | Retirar accesorios/mochilas y replantear P06 — pendiente de implementar | RC-07, RC-02 |
+| RC-13 | Hasta tres poderes anómalos y reemplazo del cuarto — pendiente de implementar | RC-01, RC-07 |
+| RC-14 | Ultimate única: efecto propio, cooldown largo y máximo nivel 5 — pendiente de implementar | RC-01, RC-07 |
+| RC-09 | Colección/gacha de armas, soldados, skins y ultimates; premios revisados — pendiente de implementar | RC-08, RC-01, RC-14 |
+| RC-10 | Cofres y dimensiones de mapas — pendiente de implementar | RC-01, RC-03 |
+| RC-11 | Grietas especiales y saltos dimensionales — pendiente de implementar | RC-05, RC-09, O-06/O-07, RC-13 |
+| RC-12 | Interfaz/audio, regresión y aceptación V2 — pendiente de implementar | RC-06, RC-07, RC-08, RC-09, RC-10, RC-11, RC-13, RC-14 |
 
 **P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.
 
@@ -48,7 +52,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-**Versión 0.23 — 2026-10-18 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
+**Versión 0.24 — 2026-10-19 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
 
 ## 1. Estado vigente
 
@@ -329,6 +333,7 @@ A-018–021 registran las peticiones posteriores de Iván. A-001–020 conservan
 | A-031 | Comenzar adaptación para realizar primera prueba V2 | Iván pidió «Comienza con la adaptación. Para realizar la primera prueba». Autoriza ensayo local del recorrido y su preparación con agentes Sol medio; no equivale a aceptar P05 real ni implementar economía/inventario P06. |
 | A-032 | Usar la pauta vigente de ESTRUCTURA para diseño y actualización de estructura | Petición actual de Iván en PROGRAMACION y aprobación de recomendaciones en ESTRUCTURA, turno 01a15142-340f-7400-8660-f8d2502ce2aa. Sincronizar tipos/cadencia de cofres y escala inicial con alcance explícito. No equivale a aceptación del ejecutable, cierre P05, cambios de economía o aprobación de futuras respuestas. |
 | A-033 | Publicar demo jugable en GitHub Pages | Iván pide probar en GitHub y subirlo. Autoriza servir la prueba V2 existente desde https://deteco.github.io/SCPSurvivor/; no solo subir código. Excepción acotada al límite loopback; sin activar cuentas, backend, guardado, economía o facturación. |
+| A-034 | Actualizar roadmap con las decisiones recientes de ESTRUCTURA | Petición del 19/10/2026. Registrar dos armas simultáneas, tres poderes, ultimate única y gacha ampliado según intervenciones reales de Iván; separar propuestas y pendientes. Actualización documental, sin implementar combate ni conceder avance funcional. |
 
 ## 6. Registro íntegro de decisiones
 
@@ -662,6 +667,9 @@ Se conservan D-001–308 sin reescribir su contenido histórico. Una decisión p
 | D-325 | Cofres del recorrido V2 aprobados en ESTRUCTURA | Iván aprobó las recomendaciones del turno 01a150fe en 01a15142; A-032. Implementación pendiente. | Exploración: cuatro intentos por mapa en 60/120/180/240 segundos activos, tabla histórica 10/15/20 %, topes 1/2/3 y tickets 1–2/1–2/1–3 para mapas 1–3/4–7/8+. Reservar seis ubicaciones alternativas. Jefe: garantizado al vencer, mejora temporal aleatoria compatible con armas equipadas. Grieta: premio superior al superarla, tabla pendiente. Contenido fijo al aparecer; abrir no libera cupo; no garantizar máximos. Hitos, reloj acumulado y elegibilidad de mejoras requieren encaje explícito; tickets reales exigen servidor. |
 | D-326 | Escala inicial y pauta única de diseño de mapas V2 | Misma aprobación de Iván; escala de ensayo, no aceptación de mapa o dimensiones finales. | Ensayar 160 × 100 casillas de 32 unidades, seis ubicaciones alternativas de cofres, circuitos amplios, zona de jefe y puerta/soldados. Medir 30–45 s entre extremos útiles sin combate y desvíos 10–15 s; aún no medidos. Usar PAUTA_DESARROLLO.md y corte de ESTRUCTURA como autoridad, conservando primer prototipo y documentos de decisiones abiertas. |
 | D-327 | Demo V2 accesible en GitHub Pages | Petición expresa A-033; aceptación del juego completo pendiente. | Permitir V2 por defecto en HTTPS deteco.github.io/SCPSurvivor/ y prueba rápida ?rapida=1. Conservar localhost explícito y excluir cualquier parámetro de cuentas. Misma duración, jefe, puerta y transición. Publicar compilado y verificar inicio/aislamiento en el sitio real después del build. No implementar cofres/geometría nuevos por esta publicación. |
+| D-328 | Equipo y ofertas de mejoras de V2 | Instrucciones de Iván en ESTRUCTURA: 01a1515b, 01a15404 y 01a15409; A-034. Implementación pendiente. | Dos armas elegidas antes de comenzar y activas simultáneamente. Tres ofertas aleatorias; las mejoras de arma reconocen solo armas equipadas. Mezcla de grupos, ramas y topes siguen sin aprobación; no conservar la regla anterior de un arma activa como dirección V2. |
+| D-329 | Tres poderes anómalos y reemplazo | Instrucciones de Iván en ESTRUCTURA: 01a1515b, 01a15404 y 01a15409; A-034. Implementación pendiente. | Hasta tres poderes anómalos; posibilidad de reemplazar al aparecer un cuarto. La antigua propuesta de dos apoyos más un protocolo queda sustituida, no suma otras ranuras. Catálogo, adquisición, rangos, pausa y tratamiento de efectos/costes al cambiar requieren contrato. |
+| D-330 | Ultimate única y gacha ampliado | Instrucciones de Iván en ESTRUCTURA: 01a1515b, 01a15404 y 01a15409; A-034. Implementación pendiente. | Una ultimate de gran impacto y efecto único, defensivo, curativo, evasivo u ofensivo; cooldown largo, máximo nivel 5 y progresión difícil; obtenible en gacha junto a armas y skins de soldados. No aprobar 120 s universales, escala común de potencia, fragmentos, costes o skins cosméticas por aparecer en propuestas. Relación con habilidad del soldado y reclutamiento previo sigue abierta. |
 
 ## 7. Evidencias completas
 
@@ -706,6 +714,7 @@ Cada evidencia conserva su alcance, versión y referencias. Las referencias con 
 | EV-036 | Prueba automatizada de prototipo local V2: Ensayo V2 del recorrido sobre el juego existente. Copia local:126Node,125aprobadas,0fallos,1integraciónoptativa omitida. Copia publicación:126Node,124aprobadas,0fallos,2omitidas por entorno.4recorridos navegador por copia (8 en total) fuente/compilado y escritorio/táctil emulado: inicio, pausa, corte300, jefe obligatorio, remanentes, daño aliado, transición y mapa2en0. Build/check86scripts. Estados/tiempo/HP/posición controlados; no acredita aceptación humana, balance, servicios reales, economía o cierreV2/P05. | Sí, dentro del alcance descrito | [docs/PRUEBA_MAPA_V2.md](docs/PRUEBA_MAPA_V2.md), [docs/V2-PRIMERA-PRUEBA-REPORT.md](docs/V2-PRIMERA-PRUEBA-REPORT.md), [docs/V2-PRIMERA-PRUEBA-VALIDACION.json](docs/V2-PRIMERA-PRUEBA-VALIDACION.json) | evidenceComplete: false |
 | EV-037 | Relectura de ESTRUCTURA y sincronización documental: Se consultó el historial accesible y se encontró la aprobación de Iván a tipos/cadencia de cofres y escala inicial. Se alinearon pauta, decisiones, contexto y plan; no se modificó el ejecutable ni se ejecutaron nuevas pruebas de juego. El último turno del hilo seguía en curso. Aceptación del primer ensayo y P05 real pendientes. | Documental; sin prueba de ejecución | [docs/ESTRUCTURA_REGLAS_APROBADAS.md](docs/ESTRUCTURA_REGLAS_APROBADAS.md), [docs/PLAN_DISENO_JUGABLE_V2.md](docs/PLAN_DISENO_JUGABLE_V2.md), [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [docs/COFRES_BASE_Y_ADAPTACION_V2.md](docs/COFRES_BASE_Y_ADAPTACION_V2.md) | evidenceComplete: false |
 | EV-038 | Preparación y preflight de demo web: Pages existente consultado vía API: main /, construido, repositorio público, sin cambios de configuración. Cambio de acceso: rojo 3 fallos; verde 27/27 Node. Build/check 86 scripts en ambas copias. Dos recorridos HTTPS virtuales de escritorio/táctil: inicio, pausa y aislamiento sin errores. El origen virtual no acredita despliegue real; verificar Pages y smoke --live después del push, con recibo en auditoría local. | Sí, dentro del alcance descrito | [docs/GITHUB_PAGES.md](docs/GITHUB_PAGES.md), [tests/v2-pages-browser.py](tests/v2-pages-browser.py) | evidenceComplete: false |
+| EV-039 | Auditoría documental de decisiones recientes de ESTRUCTURA: Lectura de los últimos diez turnos disponibles hasta 01a15409 completado, con corte anterior alcanzado; contraste con documentos de armas/combate. Se confirman cupos 2+3+1, simultaneidad, tres ofertas filtradas, ultimate única de máximo nivel 5 y gacha de armas/ultimates/skins. Parámetros propuestos siguen abiertos. No se modificó el ejecutable ni se ejecutaron nuevas pruebas de juego. | Documental; sin prueba de ejecución | [docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md), [docs/ESTRUCTURA_COMBATE_2026-10-19_REFERENCIA.md](docs/ESTRUCTURA_COMBATE_2026-10-19_REFERENCIA.md), [docs/ESTRUCTURA_DECISIONES.md](docs/ESTRUCTURA_DECISIONES.md) | evidenceComplete: false |
 
 ## 8. Áreas de continuidad
 
@@ -858,6 +867,7 @@ Los registros anteriores permanecen intactos. V0.11 y su documentación están e
 | CHG-028 | 2026-10-18 | Roadmap0.21/A-031/D-324/EV-036: primer prototipo local RC-03–RC-06 para prueba de Iván. Interfaz sin extracción/accesorios/mochilas; aliados, puerta y guardias de esquema. Se conserva juego anterior y12assets; sin cuentas ni facturación. AvanceV2sin calcular,52/100histórico; P05real pendiente. | Petición expresa de comenzar adaptación para primera prueba; no aceptación final. |
 | CHG-029 | 2026-10-18 | Roadmap 0.22 / A-032 / D-325–326 / EV-037: incorporar aprobación más reciente de ESTRUCTURA. Cofres exploración/jefe/grieta, cuatro sorteos, seis puntos y escala de ensayo 160 × 100 establecidos para adaptar; detalles abiertos explícitos. Sin cambios del ejecutable, tareas históricas, aceptación, cuentas o facturación. | Instrucción de Iván de usar esa pauta y aprobación registrada en ESTRUCTURA; no aceptación funcional. |
 | CHG-030 | 2026-10-18 | Roadmap 0.23 / A-033 / D-327 / EV-038: habilitar la demo V2 en GitHub Pages para prueba online; compilado renovado y pruebas de acceso público. Sin cambios de mecánicas, arte, cuentas, economía o facturación. P05 y aceptación V2 pendientes. | Solicitud de Iván de probar en GitHub; no aceptación funcional completa. |
+| CHG-031 | 2026-10-19 | Roadmap 0.24 / A-034 / D-328–330 / EV-039: incorporar combate 2 armas simultáneas + 3 poderes + 1 ultimate, ofertas compatibles y gacha ampliado. RC-07/RC-09/RC-11/RC-12 se adaptan y RC-13/RC-14 se añaden pendientes. Sin cambios de juego, aceptación ni pesos históricos. | Petición actual y mensajes explícitos de Iván; no aprobación de balances/costes propuestos. |
 
 ## 13. Continuar en Windows/Codex Local
 

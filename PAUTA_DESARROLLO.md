@@ -33,7 +33,7 @@ La hora exacta de aparición del jefe todavía no está fijada. Debe permitir cu
 | Armas y soldados | Conservar; ampliar mediante catálogo revisado | Tres armas y dos soldados de prueba |
 | Armas distintas, con estadísticas básicas propias | Mantener identidad por arma; organizar por familias | Categorías nuevas pendientes |
 | Mejoras al subir de nivel | Mejorar armas al azar durante la partida | El sistema de cartas actual necesita adaptación |
-| Gacha | Orientarlo a soldados y armas | Economía/entrega real pendientes |
+| Gacha | Colección de soldados y armas; incorporar skins y ultimates según catálogo cerrado | Economía, tablas, duplicados y entrega real pendientes |
 | Jefes | Un jefe obligatorio por mapa; encuentros dimensionales aparte | Implementado en ensayo V2; horario de 4:00 provisional; calendario anterior conservado fuera del ensayo |
 | Grietas especiales | Desafíos opcionales difíciles con recompensas mayores | Existe un prototipo local limitado |
 | Saltos dimensionales | Rutas/saltos entre niveles, inspirados en Backrooms | Diseño detallado e implementación pendientes |
@@ -45,11 +45,17 @@ Retirar accesorios **no elimina las mejoras de nivel ni las estadísticas de las
 
 Almacén físico, buzón por falta de espacio, kit con mochila y recuperación aleatoria del equipo al morir dependían del diseño anterior. Se **replantean** antes de implementar P06; no se asumen aprobados para V2 y tampoco se borran datos por inferencia a partir de «etc.».
 
+## Combate vigente: 2 armas + 3 poderes + 1 ultimate
+
+Actualización de ESTRUCTURA del 19/10/2026: dos armas se eligen antes de empezar y atacan simultáneamente. Hasta tres poderes anómalos, con opción de reemplazo al aparecer un cuarto. Una ultimate única de efecto defensivo, curativo, evasivo u ofensivo, cooldown largo, máximo nivel 5 y progresión difícil; se obtiene en gacha, que también contempla armas y skins de soldados.
+
+No se suman las dos ranuras extra de apoyo de una propuesta anterior. La relación con la habilidad manual del soldado todavía no está fijada. Catálogos, valores, costes, duplicados y efectos de skins permanecen abiertos. Estas funciones no están implementadas en la demo. [Detalle y tareas RC-07/RC-13/RC-14/RC-09](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md).
+
 ## Armas y progresión
 
 Las familias mencionadas por Iván son **láser, cuerpo a cuerpo, a distancia, misiles y arrojadizas**. Es una dirección de catálogo; faltan la lista final, sus estadísticas y las reglas particulares de cada familia. No todas necesitan cargador, recarga o proyectiles iguales a una pistola.
 
-El requisito más reciente es que las mejoras de nivel suban armas **al azar**. Falta concretar qué armas pueden salir, si el jugador sigue eligiendo entre cartas, las probabilidades y los topes. No conservar por defecto el supuesto de que una carta mejora todo el arsenal ni imponer el antiguo límite de dos armas o nivel cinco como regla definitiva de V2.
+El requisito vigente son **tres ofertas aleatorias**, con mejoras de arma que reconocen exclusivamente las **dos armas equipadas**. El ejemplo de Iván es pistola y katana. Se conserva la referencia de elegir una; mezcla exacta de grupos, categorías, rangos, saturación y probabilidades requieren contrato. No ofrecer un arma ajena ni aplicar una mejora a todo el arsenal. El nivel máximo 5 confirmado corresponde a ultimates; no aprueba automáticamente los topes propuestos de todas las ramas.
 
 Soldados y armas obtenidos mediante gacha forman parte de la dirección solicitada. Rarezas, duplicados, probabilidades, recompensas por muerte y progresión permanente se cerrarán antes de implementar la economía. La propuesta de diez atributos nuevos de soldados no se considera aprobada por el hecho de aparecer en una respuesta del asistente.
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "planVersion": "0.23",
-  "updatedOn": "2026-10-18",
+  "planVersion": "0.24",
+  "updatedOn": "2026-10-19",
   "timezone": "America/Santiago",
   "canonicalPath": "RoadmapSCP.json",
   "generatedView": "RoadmapSCP.md",
@@ -2319,6 +2319,18 @@
         "docs/GITHUB_PAGES.md",
         "tests/v2-pages-browser.py"
       ]
+    },
+    {
+      "id": "EV-039",
+      "kind": "Auditoría documental de decisiones recientes de ESTRUCTURA",
+      "summary": "Lectura de los últimos diez turnos disponibles hasta 01a15409 completado, con corte anterior alcanzado; contraste con documentos de armas/combate. Se confirman cupos 2+3+1, simultaneidad, tres ofertas filtradas, ultimate única de máximo nivel 5 y gacha de armas/ultimates/skins. Parámetros propuestos siguen abiertos. No se modificó el ejecutable ni se ejecutaron nuevas pruebas de juego.",
+      "runtimeProof": false,
+      "evidenceComplete": false,
+      "references": [
+        "docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md",
+        "docs/ESTRUCTURA_COMBATE_2026-10-19_REFERENCIA.md",
+        "docs/ESTRUCTURA_DECISIONES.md"
+      ]
     }
   ],
   "decisions": [
@@ -4590,6 +4602,24 @@
       "topic": "Demo V2 accesible en GitHub Pages",
       "approvalStatus": "Petición expresa A-033; aceptación del juego completo pendiente.",
       "resolution": "Permitir V2 por defecto en HTTPS deteco.github.io/SCPSurvivor/ y prueba rápida ?rapida=1. Conservar localhost explícito y excluir cualquier parámetro de cuentas. Misma duración, jefe, puerta y transición. Publicar compilado y verificar inicio/aislamiento en el sitio real después del build. No implementar cofres/geometría nuevos por esta publicación."
+    },
+    {
+      "id": "D-328",
+      "topic": "Equipo y ofertas de mejoras de V2",
+      "approvalStatus": "Instrucciones de Iván en ESTRUCTURA: 01a1515b, 01a15404 y 01a15409; A-034. Implementación pendiente.",
+      "resolution": "Dos armas elegidas antes de comenzar y activas simultáneamente. Tres ofertas aleatorias; las mejoras de arma reconocen solo armas equipadas. Mezcla de grupos, ramas y topes siguen sin aprobación; no conservar la regla anterior de un arma activa como dirección V2."
+    },
+    {
+      "id": "D-329",
+      "topic": "Tres poderes anómalos y reemplazo",
+      "approvalStatus": "Instrucciones de Iván en ESTRUCTURA: 01a1515b, 01a15404 y 01a15409; A-034. Implementación pendiente.",
+      "resolution": "Hasta tres poderes anómalos; posibilidad de reemplazar al aparecer un cuarto. La antigua propuesta de dos apoyos más un protocolo queda sustituida, no suma otras ranuras. Catálogo, adquisición, rangos, pausa y tratamiento de efectos/costes al cambiar requieren contrato."
+    },
+    {
+      "id": "D-330",
+      "topic": "Ultimate única y gacha ampliado",
+      "approvalStatus": "Instrucciones de Iván en ESTRUCTURA: 01a1515b, 01a15404 y 01a15409; A-034. Implementación pendiente.",
+      "resolution": "Una ultimate de gran impacto y efecto único, defensivo, curativo, evasivo u ofensivo; cooldown largo, máximo nivel 5 y progresión difícil; obtenible en gacha junto a armas y skins de soldados. No aprobar 120 s universales, escala común de potencia, fragmentos, costes o skins cosméticas por aparecer en propuestas. Relación con habilidad del soldado y reclutamiento previo sigue abierta."
     }
   ],
   "authorizations": [
@@ -4752,6 +4782,11 @@
       "id": "A-033",
       "action": "Publicar demo jugable en GitHub Pages",
       "scopeStatus": "Iván pide probar en GitHub y subirlo. Autoriza servir la prueba V2 existente desde https://deteco.github.io/SCPSurvivor/; no solo subir código. Excepción acotada al límite loopback; sin activar cuentas, backend, guardado, economía o facturación."
+    },
+    {
+      "id": "A-034",
+      "action": "Actualizar roadmap con las decisiones recientes de ESTRUCTURA",
+      "scopeStatus": "Petición del 19/10/2026. Registrar dos armas simultáneas, tres poderes, ultimate única y gacha ampliado según intervenciones reales de Iván; separar propuestas y pendientes. Actualización documental, sin implementar combate ni conceder avance funcional."
     }
   ],
   "closureCases": [
@@ -5540,6 +5575,12 @@
       "date": "2026-10-18",
       "description": "Roadmap 0.23 / A-033 / D-327 / EV-038: habilitar la demo V2 en GitHub Pages para prueba online; compilado renovado y pruebas de acceso público. Sin cambios de mecánicas, arte, cuentas, economía o facturación. P05 y aceptación V2 pendientes.",
       "approval": "Solicitud de Iván de probar en GitHub; no aceptación funcional completa."
+    },
+    {
+      "id": "CHG-031",
+      "date": "2026-10-19",
+      "description": "Roadmap 0.24 / A-034 / D-328–330 / EV-039: incorporar combate 2 armas simultáneas + 3 poderes + 1 ultimate, ofertas compatibles y gacha ampliado. RC-07/RC-09/RC-11/RC-12 se adaptan y RC-13/RC-14 se añaden pendientes. Sin cambios de juego, aceptación ni pesos históricos.",
+      "approval": "Petición actual y mensajes explícitos de Iván; no aprobación de balances/costes propuestos."
     }
   ],
   "derivedProgress": {
@@ -5945,21 +5986,27 @@
   "activeDesignRevision": {
     "id": "V2-ESTRUCTURA",
     "title": "Avance por mapas; sin extracción, accesorios físicos ni mochilas",
-    "updatedOn": "2026-10-18",
+    "updatedOn": "2026-10-19",
     "status": "local_trial_pending_manual_acceptance",
-    "authority": "A-032",
-    "summary": "Pauta sincronizada con la aprobación más reciente de ESTRUCTURA: cofres y escala inicial establecidos para adaptar. Primer recorrido V2-trial-01 conservado, aceptación manual y adaptación completa pendientes. No cierra P05/P06.",
+    "authority": "A-034",
+    "summary": "Diseño actualizado desde ESTRUCTURA: dos armas simultáneas, hasta tres poderes y una ultimate única de máximo nivel 5. Nuevas tareas pendientes; se conserva la demo del recorrido y su aceptación pendiente. Cofres, mapa 160 × 100, combate ampliado y P05 real aún sin completar.",
     "pautaPath": "PAUTA_DESARROLLO.md",
     "changePlanPath": "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
     "decisionsPath": "docs/ESTRUCTURA_DECISIONES.md",
     "sourceThread": {
       "id": "01a1457c-c051-73d2-9864-e7deb6435420",
       "title": "ESTRUCTURA",
-      "readOn": "2026-10-18",
-      "lastTurnWasInProgress": true,
-      "lastReadTurnId": "01a15142-340f-7400-8660-f8d2502ce2aa",
+      "readOn": "2026-10-19",
+      "lastTurnWasInProgress": false,
+      "lastReadTurnId": "01a15409-96d6-72a1-a825-4038ce3a6007",
       "approvalResponseTurnId": "01a150fe-66ad-7040-b2dd-67d4c73f3244",
-      "approvalCaptured": true
+      "approvalCaptured": true,
+      "confirmedCombatUserTurnIds": [
+        "01a1515b-5135-7273-bb10-dc9122a7e754",
+        "01a15404-6977-77c0-b895-56721a1ba418",
+        "01a15409-96d6-72a1-a825-4038ce3a6007"
+      ],
+      "readScope": "Últimos diez turnos; alcanza el corte anterior de cofres. No es exportación íntegra."
     },
     "progress": {
       "percent": null,
@@ -5986,7 +6033,15 @@
       },
       {
         "element": "Armas",
-        "treatment": "Identidad y estadísticas propias; familias láser, cuerpo a cuerpo, distancia, misiles y arrojadizas; mejoras por nivel al azar, detalles pendientes."
+        "treatment": "Dos armas elegidas antes de salir y activas simultáneamente; identidad/familias propias. Tres ofertas aleatorias, mejoras de arma solo para equipadas. Mezcla, ramas y topes pendientes; simultaneidad aún sin implementar."
+      },
+      {
+        "element": "Poderes anómalos",
+        "treatment": "Hasta tres, con opción de reemplazo al aparecer un cuarto. No sumar otras dos ranuras de apoyo. Catálogo, adquisición/rangos y aplicación de reemplazo pendientes."
+      },
+      {
+        "element": "Ultimate",
+        "treatment": "Una habilidad única de defensa, curación, evasión o ataque; cooldown largo propio por definir, máximo nivel 5 y progresión difícil; gacha. Sin duración/costes aprobados ni implementación."
       },
       {
         "element": "Grietas y saltos",
@@ -5998,7 +6053,7 @@
       },
       {
         "element": "P06/P07",
-        "treatment": "Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow."
+        "treatment": "Revisar colección/gacha de soldados, armas, skins y ultimates sin retirar reclutamiento anterior por inferencia. Costes, duplicados y efectos de skins pendientes; sin mochilas ni accesorios físicos."
       }
     ],
     "cofreBasis": {
@@ -6029,7 +6084,10 @@
       "O-08",
       "O-09",
       "O-10",
-      "O-11"
+      "O-11",
+      "O-12",
+      "O-13",
+      "O-14"
     ],
     "implementationPlan": [
       {
@@ -6103,13 +6161,14 @@
       },
       {
         "id": "RC-07",
-        "title": "Armas por familias y mejoras aleatorias",
+        "title": "Dos armas simultáneas, familias y tres ofertas compatibles",
         "dependencies": [
           "RC-01",
           "RC-02"
         ],
         "status": "P",
-        "evidenceComplete": false
+        "evidenceComplete": false,
+        "scopeAndAcceptance": "Dos ataques independientes según arma/alcance/tiempos; ofertas de mejora solo para equipadas, sin recarga ficticia en familias ajenas, topes y saturación resueltos. Cupos y filtros aprobados; mezcla/categorías exactas pendientes."
       },
       {
         "id": "RC-08",
@@ -6122,11 +6181,34 @@
         "evidenceComplete": false
       },
       {
+        "id": "RC-13",
+        "title": "Hasta tres poderes anómalos y reemplazo del cuarto",
+        "dependencies": [
+          "RC-01",
+          "RC-07"
+        ],
+        "status": "P",
+        "evidenceComplete": false,
+        "scopeAndAcceptance": "Cerrar catálogo/adquisición/rangos y decisión de reemplazo; máximo tres poderes, retirar efectos salientes y no añadir dos apoyos gratuitos. Pruebas de acumulación, elegibilidad y recuperación según contrato."
+      },
+      {
+        "id": "RC-14",
+        "title": "Ultimate única: efecto propio, cooldown largo y máximo nivel 5",
+        "dependencies": [
+          "RC-01",
+          "RC-07"
+        ],
+        "status": "P",
+        "evidenceComplete": false,
+        "scopeAndAcceptance": "Una ultimate, hasta cinco niveles; contrato por habilidad de efecto, límites, cooldown/reloj y controles, relación con habilidad de soldado. Progresión difícil y obtención por gacha se integran transaccionalmente en RC-09; valores/costes aún abiertos."
+      },
+      {
         "id": "RC-09",
-        "title": "Colección, gacha y recompensas revisadas",
+        "title": "Colección/gacha de armas, soldados, skins y ultimates; premios revisados",
         "dependencies": [
           "RC-08",
-          "RC-01"
+          "RC-01",
+          "RC-14"
         ],
         "status": "P",
         "evidenceComplete": false
@@ -6147,7 +6229,8 @@
         "dependencies": [
           "RC-05",
           "RC-09",
-          "O-06/O-07"
+          "O-06/O-07",
+          "RC-13"
         ],
         "status": "P",
         "evidenceComplete": false
@@ -6161,7 +6244,9 @@
           "RC-08",
           "RC-09",
           "RC-10",
-          "RC-11"
+          "RC-11",
+          "RC-13",
+          "RC-14"
         ],
         "status": "P",
         "evidenceComplete": false
@@ -6274,6 +6359,50 @@
       "evidenceIds": [
         "EV-038"
       ]
+    },
+    "combatUpdatePath": "docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md",
+    "combatContract": {
+      "authority": "A-034",
+      "reference": "docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md",
+      "implemented": false,
+      "equippedWeapons": 2,
+      "simultaneousWeapons": true,
+      "chosenBeforeRun": true,
+      "levelUpOffers": 3,
+      "weaponOffersOnlyForEquippedWeapons": true,
+      "anomalousPowerSlots": 3,
+      "replacementOnFourthPower": true,
+      "extraSupportSlotsApproved": false,
+      "ultimateSlots": 1,
+      "ultimateMaxLevel": 5,
+      "ultimateUniqueEffects": true,
+      "ultimateLongCooldown": true,
+      "ultimateProgression": "difficult",
+      "ultimateExamples": [
+        "escudo",
+        "curación instantánea",
+        "modo fantasma",
+        "explosión",
+        "lluvia de meteoritos"
+      ],
+      "gachaNewlyMentioned": [
+        "armas",
+        "ultimates",
+        "skins de soldados"
+      ],
+      "priorSoldierRecruitmentRemoved": false,
+      "unapprovedParameters": [
+        "cooldown universal de 120 s",
+        "escala común 100–120 %",
+        "rangos de ramas 5/3",
+        "mezcla exacta de cartas",
+        "fragmentos/materiales/costes",
+        "skins exclusivamente cosméticas"
+      ],
+      "exactCooldownSeconds": null,
+      "ultimateUpgradeCosts": null,
+      "powerRankCap": null,
+      "ultimateSoldierAbilityRelation": null
     }
   }
 }

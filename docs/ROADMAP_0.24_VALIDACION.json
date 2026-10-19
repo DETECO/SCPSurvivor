@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-19",
+  "version": "0.24",
+  "scope": "Documentación/roadmap; sin cambios del juego.",
+  "copies": [
+    {
+      "copy": "source",
+      "runtimeFilesUnchangedBySHA256": 164,
+      "historicalTasksPreserved": 53,
+      "historicalPointsPreserved": 52,
+      "activeAdaptationSteps": 14,
+      "dependencyGraph": "acyclic",
+      "relativeLinksChecked": 82
+    },
+    {
+      "copy": "publication",
+      "runtimeFilesUnchangedBySHA256": 155,
+      "historicalTasksPreserved": 53,
+      "historicalPointsPreserved": 52,
+      "activeAdaptationSteps": 14,
+      "dependencyGraph": "acyclic",
+      "relativeLinksChecked": 81
+    }
+  ],
+  "originalDesignThreadFilesUnmodified": true,
+  "gameTestsRun": false,
+  "newRuntimeEvidence": false,
+  "V2Progress": null,
+  "manualAcceptance": "pending",
+  "sourceThread": "ESTRUCTURA",
+  "lastReadTurnId": "01a15409-96d6-72a1-a825-4038ce3a6007"
+}

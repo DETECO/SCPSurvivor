@@ -1,10 +1,10 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-18).** Pauta sincronizada con la aprobación más reciente de ESTRUCTURA: cofres y escala inicial establecidos para adaptar. Primer recorrido V2-trial-01 conservado, aceptación manual y adaptación completa pendientes. No cierra P05/P06.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-19).** Diseño actualizado desde ESTRUCTURA: dos armas simultáneas, hasta tres poderes y una ultimate única de máximo nivel 5. Nuevas tareas pendientes; se conserva la demo del recorrido y su aceptación pendiente. Cofres, mapa 160 × 100, combate ampliado y P05 real aún sin completar.
 
-[Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md)
+[Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md)
 
-**Primera prueba local disponible:** [guía](docs/PRUEBA_MAPA_V2.md) · [prueba rápida](http://127.0.0.1:8000/?prueba=mapa-v2&rapida=1) · [mapa completo](http://127.0.0.1:8000/?prueba=mapa-v2). Sin cuentas ni guardado; aceptación de Iván pendiente.
+**Demo disponible:** [guía](docs/PRUEBA_MAPA_V2.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?rapida=1) · [jugar](https://deteco.github.io/SCPSurvivor/). Sin cuentas ni guardado; aceptación de Iván pendiente.
 
 **Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
 
@@ -14,25 +14,29 @@
 | Puerta y aliados | A5:00 llega puerta blindada y soldados; cesa todo spawn enemigo, permanecen remanentes; cruzar exige jefe derrotado. |
 | Extracción de fin de partida | Retirada del diseño V2; la puerta avanza de mapa, no termina la partida. |
 | Accesorios de armas y mochilas | Retirados del diseño V2; código y datos anteriores conservados hasta adaptar y validar. |
-| Armas | Identidad y estadísticas propias; familias láser, cuerpo a cuerpo, distancia, misiles y arrojadizas; mejoras por nivel al azar, detalles pendientes. |
+| Armas | Dos armas elegidas antes de salir y activas simultáneamente; identidad/familias propias. Tres ofertas aleatorias, mejoras de arma solo para equipadas. Mezcla, ramas y topes pendientes; simultaneidad aún sin implementar. |
+| Poderes anómalos | Hasta tres, con opción de reemplazo al aparecer un cuarto. No sumar otras dos ranuras de apoyo. Catálogo, adquisición/rangos y aplicación de reemplazo pendientes. |
+| Ultimate | Una habilidad única de defensa, curación, evasión o ataque; cooldown largo propio por definir, máximo nivel 5 y progresión difícil; gacha. Sin duración/costes aprobados ni implementación. |
 | Grietas y saltos | Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas. |
 | Cofres y mapas | Aprobados tres tipos de cofre, intentos de exploración 1:00/2:00/3:00/4:00 con tabla/topes anteriores y seis puntos alternativos. Escala inicial 160 × 100; metas de rutas 30–45 s y desvíos 10–15 s. Pendientes implementación, medición y detalles de premios. |
-| P06/P07 | Replantear colección/equipamiento, gacha de soldados/armas y recompensas; no reutilizar por defecto mochila/kit/recuperación/overflow. |
+| P06/P07 | Revisar colección/gacha de soldados, armas, skins y ultimates sin retirar reclutamiento anterior por inferencia. Costes, duplicados y efectos de skins pendientes; sin mochilas ni accesorios físicos. |
 
 | Paso | Trabajo y estado | Dependencias |
 | --- | --- | --- |
-| RC-01 | Cerrar contratos y parámetros abiertos de V2 | Reglas V2 |
-| RC-02 | Versionar guardado, resultados y compatibilidad | P05 verificado, RC-01 |
-| RC-03 | Director300s y escalada temporal — prototipo local; aceptación pendiente | RC-02 |
-| RC-04 | Jefe obligatorio por mapa — prototipo local; aceptación pendiente | RC-03 |
-| RC-05 | Puerta, soldados y transición sin limpiar remanentes — prototipo local; aceptación pendiente | RC-04 |
-| RC-06 | Retirar extracción del recorrido V2 — prototipo local; aceptación pendiente | RC-05 |
-| RC-07 | Armas por familias y mejoras aleatorias | RC-01, RC-02 |
-| RC-08 | Retirar accesorios/mochilas y replantear P06 | RC-07, RC-02 |
-| RC-09 | Colección, gacha y recompensas revisadas | RC-08, RC-01 |
-| RC-10 | Cofres y dimensiones de mapas | RC-01, RC-03 |
-| RC-11 | Grietas especiales y saltos dimensionales | RC-05, RC-09, O-06/O-07 |
-| RC-12 | Interfaz/audio, regresión y aceptación V2 | RC-06, RC-07, RC-08, RC-09, RC-10, RC-11 |
+| RC-01 | Cerrar contratos y parámetros abiertos de V2 — pendiente de implementar | Reglas V2 |
+| RC-02 | Versionar guardado, resultados y compatibilidad — pendiente de implementar | P05 verificado, RC-01 |
+| RC-03 | Director300s y escalada temporal — prototipo; aceptación pendiente | RC-02 |
+| RC-04 | Jefe obligatorio por mapa — prototipo; aceptación pendiente | RC-03 |
+| RC-05 | Puerta, soldados y transición sin limpiar remanentes — prototipo; aceptación pendiente | RC-04 |
+| RC-06 | Retirar extracción del recorrido V2 — prototipo; aceptación pendiente | RC-05 |
+| RC-07 | Dos armas simultáneas, familias y tres ofertas compatibles — pendiente de implementar | RC-01, RC-02 |
+| RC-08 | Retirar accesorios/mochilas y replantear P06 — pendiente de implementar | RC-07, RC-02 |
+| RC-13 | Hasta tres poderes anómalos y reemplazo del cuarto — pendiente de implementar | RC-01, RC-07 |
+| RC-14 | Ultimate única: efecto propio, cooldown largo y máximo nivel 5 — pendiente de implementar | RC-01, RC-07 |
+| RC-09 | Colección/gacha de armas, soldados, skins y ultimates; premios revisados — pendiente de implementar | RC-08, RC-01, RC-14 |
+| RC-10 | Cofres y dimensiones de mapas — pendiente de implementar | RC-01, RC-03 |
+| RC-11 | Grietas especiales y saltos dimensionales — pendiente de implementar | RC-05, RC-09, O-06/O-07, RC-13 |
+| RC-12 | Interfaz/audio, regresión y aceptación V2 — pendiente de implementar | RC-06, RC-07, RC-08, RC-09, RC-10, RC-11, RC-13, RC-14 |
 
 **P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.
 
@@ -48,7 +52,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-Versión **0.23**, 2026-10-18. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+Versión **0.24**, 2026-10-19. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
 
 ## Avance basado en evidencia
 

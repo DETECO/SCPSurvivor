@@ -1,5 +1,9 @@
 # Publicaciones GitHub — SCP Survivor
 
+## Roadmap ESTRUCTURA 0.24 — 19/10/2026
+
+A-034/D-328–330/EV-039 incorporan decisiones de combate 2+3+1 y tareas pendientes, sin alterar ejecutable, assets, cuentas o facturación. [Resumen de cambios](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). Padre `d85f1f3e978342d45ca1ef494ff4c5d43ef7858c`. Commit previsto: **Actualizar roadmap con combate y ultimates de ESTRUCTURA**. Publicación por verificar después del push; no aceptación del juego por documentarlo.
+
 ## Demo V2 en GitHub Pages — 18/10/2026
 
 A-033 autoriza probar online. [Demo](https://deteco.github.io/SCPSurvivor/) · [Rápida](https://deteco.github.io/SCPSurvivor/?rapida=1) · [Alcance y preflight](GITHUB_PAGES.md). Padre `76fd580e05ee567d64cca847acc874ec33ceb8b6`. Commit: **Publicar demo V2 jugable en GitHub Pages**. GitHub Pages ya estaba configurado para main /; el cambio habilita el ensayo en ese destino, sin servicios ni facturación. Verificar despliegue y prueba viva después del push; esta entrada por sí sola no lo acredita.

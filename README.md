@@ -1,5 +1,7 @@
 # SCP Survivor
 
+**Roadmap actualizado 0.24 (19/10/2026):** [ver roadmap](ROADMAP.md) · [cambios desde ESTRUCTURA](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). Combate 2 armas simultáneas + 3 poderes + 1 ultimate establecido como diseño; implementación pendiente. La demo actual no cambia.
+
 **Jugar en la web:** [SCP Survivor — demo V2](https://deteco.github.io/SCPSurvivor/) · [Prueba rápida desde 4:30](https://deteco.github.io/SCPSurvivor/?rapida=1). No requiere ejecutar un servidor en tu PC. Demo sin cuenta, guardado ni recompensas persistentes. [Alcance y pruebas](docs/GITHUB_PAGES.md).
 
 **Diseño y estructura:** usar la [pauta vigente](PAUTA_DESARROLLO.md), las [reglas aprobadas de ESTRUCTURA](docs/ESTRUCTURA_REGLAS_APROBADAS.md) y el [plan de adaptación jugable](docs/PLAN_DISENO_JUGABLE_V2.md). Roadmap 0.22; el ejecutable sigue siendo V2-trial-01. Cofres nuevos y escala 160 × 100 pendientes de implementar y probar.

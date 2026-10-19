@@ -1,5 +1,7 @@
 # Plan de adaptación del diseño jugable V2
 
+**Cambio vigente 0.24:** el bloque B4 debe cubrir dos armas simultáneas y tres ofertas compatibles; añadir poderes (RC-13) y ultimate (RC-14) antes de aceptar la build completa. B5 revisa gacha de armas, soldados, skins y ultimates. Cooldowns, cartas, costes y relación con habilidad de soldado siguen abiertos. [Contratos y dependencias](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). B1/B2 siguen siendo el siguiente ensayo local; esta actualización no los implementa.
+
 18/10/2026 · Pauta sincronizada 0.22 · **Trabajo siguiente definido; no ejecutado en esta entrega documental.**
 
 Autoridad: [pauta vigente](../PAUTA_DESARROLLO.md), [corte aprobado de ESTRUCTURA](ESTRUCTURA_REGLAS_APROBADAS.md) y [decisiones abiertas](ESTRUCTURA_DECISIONES.md). Se adapta el juego existente. Las decisiones anteriores incompatibles de extracción, mochilas y accesorios físicos no gobiernan V2.
@@ -19,7 +21,7 @@ Autoridad: [pauta vigente](../PAUTA_DESARROLLO.md), [corte aprobado de ESTRUCTUR
 | B2 — Cofres locales | Incorporar sorteos y descubrimiento/apertura en el ensayo aislado, con tickets ficticios en memoria | `js/systems/expedition.js`, `js/systems/interact.js`, `js/world/world.js`, `js/ui/technical-ui.js` | Cada intento ocurre una sola vez; topes/contenido fijo/apertura funcionan; ningún premio llega a cuentas o gacha |
 | B3 — Premio de jefe y grieta | Resolver candidatos/topes/sin candidatos y tabla de grieta antes de integrar sus premios | `js/systems/field-upgrades.js`, `js/systems/containment-boss.js`, `js/systems/dimensional-rifts.js` | Contrato explícito; premio único, compatible y comprobable. No decidir por inferencia retorno/reloj de grieta |
 | B4 — Armas y equipamiento V2 | Separar familias, estadísticas propias y selección aleatoria de mejoras; retirar dependencias de accesorios/mochilas | `js/data/field-catalog.js`, `js/systems/field-stats.js`, `js/systems/field-combat.js`, `js/systems/field-upgrades.js`, `js/ui/field-loadout.js`, `js/systems/inventory-model.js` | Reglas abiertas de cartas/candidatos/topes cerradas; copias independientes; sin recargas ficticias en familias que no las necesitan |
-| B5 — Guardado, colección y economía | Versionar contrato V2 y conectar las funciones aceptadas a cuentas/recompensas | `js/systems/run-checkpoint.js`, `js/systems/run-continuity.js`, `js/net/local-accounts.js`, `functions/account-service.js` | P05 real aceptado y contrato V2 definido; propiedad, revisión, sesión, recibos e idempotencia verificados; datos antiguos conservados |
+| B5 — Guardado, colección y economía | Versionar contrato V2 e integrar colección/gacha de armas, soldados, skins y ultimates con funciones aceptadas y premios | `js/systems/run-checkpoint.js`, `js/systems/run-continuity.js`, `js/net/local-accounts.js`, `functions/account-service.js` | P05 real aceptado y contrato V2 definido; propiedad, revisión, sesión, recibos e idempotencia verificados; datos antiguos conservados |
 | B6 — Acabado y aceptación | Integrar mapas variados, señalización, arte/audio, controles y regresión | `dev.html`, `css/technical.css`, `js/ui/technical-ui.js`, `docs/OBSERVACIONES_VISUALES.md` | Recursos aprobados conservados; lectura clara; sonido/alerta/localizador de grietas; crédito visible; pruebas y aceptación registradas |
 
 **La siguiente entrega será B1 y después B2**, como ensayo local sin guardado. Puede prepararse mientras P05 real sigue pendiente. No adelanta la economía P06/P07 ni convierte premios ficticios en saldo. La conexión persistente de B5 exige sus dependencias; B3/B4 no se ejecutan con reglas incompletas.
@@ -47,7 +49,7 @@ La preparación local Worker/SQLite, si existe en la copia de desarrollo, no se 
 
 ## Reglas que todavía necesitan definición
 
-- Objetivo del azar al subir de nivel: arma/copia/familia, cartas frente a aplicación automática, candidatos, probabilidades y topes.
+- Tres ofertas aleatorias y filtro de armas equipadas ya están confirmados. Falta concretar mezcla entre grupos, categorías, probabilidades, topes y saturación; no volver al supuesto de mejora automática ni a un arma ajena.
 - Elegibilidad del premio de jefe, caso sin candidatos y tabla de premios superiores de grieta.
 - Muerte y fin definitivo de partida, progresión permanente, duplicados, rarezas y desbloqueos.
 - Grietas: recinto, retorno, reloj, cierre y premios. Saltos: destinos y compatibilidad con el jefe obligatorio.

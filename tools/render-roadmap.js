@@ -50,12 +50,12 @@ function render(key){
  if(type==='ACTIVE_DESIGN'){
   const d=r.activeDesignRevision;
   if(!d)throw Error('Falta la revisión de diseño vigente.');
-  const trial=d.firstTrial?'\n\n**Primera prueba local disponible:** [guía]('+d.firstTrial.guide+') · [prueba rápida]('+d.firstTrial.quickUrl+') · [mapa completo]('+d.firstTrial.url+'). Sin cuentas ni guardado; aceptación de Iván pendiente.':'';
+  const trial=d.firstTrial?'\n\n**Demo disponible:** [guía]('+d.firstTrial.guide+') · [prueba rápida]('+(d.firstTrial.publicQuickUrl||d.firstTrial.quickUrl)+') · [jugar]('+(d.firstTrial.publicUrl||d.firstTrial.url)+'). Sin cuentas ni guardado; aceptación de Iván pendiente.':'';
   return '**Diseño vigente '+d.id+' — '+d.title+' ('+d.updatedOn+').** '+d.summary+'\n\n'+
-   '[Pauta vigente]('+d.pautaPath+') · [Plan de cambios]('+d.changePlanPath+') · [Decisiones y pendientes]('+d.decisionsPath+')'+trial+'\n\n'+
+   '[Pauta vigente]('+d.pautaPath+') · [Plan de cambios]('+d.changePlanPath+') · [Decisiones y pendientes]('+d.decisionsPath+')'+(d.combatUpdatePath?' · [Últimos cambios de combate]('+d.combatUpdatePath+')':'')+trial+'\n\n'+
    '**Avance V2: sin calcular.** '+d.progress.explanation+'\n\n'+
    table(['Elemento','Tratamiento vigente'],d.scope.map(x=>row(x.element,x.treatment)))+'\n\n'+
-   table(['Paso','Trabajo y estado','Dependencias'],d.implementationPlan.map(x=>row(x.id,x.title+(x.status==='EC'?' — prototipo local; aceptación pendiente':''),x.dependencies.join(', ')||'Reglas V2')))+'\n\n'+
+   table(['Paso','Trabajo y estado','Dependencias'],d.implementationPlan.map(x=>row(x.id,x.title+(x.status==='EC'?' — prototipo; aceptación pendiente':x.status==='P'?' — pendiente de implementar':''),x.dependencies.join(', ')||'Reglas V2')))+'\n\n'+
    '**P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. '+
    'Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.';
  }

@@ -1,5 +1,7 @@
 # Plan de adaptación a ESTRUCTURA — SCP Survivor
 
+**Actualización 0.24 (19/10/2026):** RC-07 ahora exige dos armas simultáneas y tres ofertas compatibles; se añaden RC-13 (tres poderes y reemplazo) y RC-14 (ultimate única, máximo nivel 5), pendientes. RC-09/RC-11/RC-12 incorporan esas dependencias. [Detalle y aceptación](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). La demo y los criterios históricos no cambian.
+
 **Primer ensayo A-031 disponible:** RC-03–RC-06 tienen prototipo local en prueba, sin aceptación final, contrato persistente ni cierre de dependencias. Consultar [prueba manual](PRUEBA_MAPA_V2.md). Las tareas/casos de abajo siguen siendo criterios de la adaptación completa; no exigir terminar la economía o P06 anterior para ejecutar este ensayo sin guardado.
 
 18/10/2026 · Plan técnico V2 · **Recorrido en prototipo; siguiente bloque de diseño aprobado, implementación restante pendiente.**
@@ -36,12 +38,12 @@ Todas las tareas RC siguen pendientes de **aceptación final**. La cadencia/tipo
 | RC-04 | Jefe obligatorio por mapa | RC-03 | Aparece a tiempo según regla cerrada, no se duplica, no hay salida anticipada ni bloqueo porque nunca apareció; refuerzos respetan corte5:00 |
 | RC-05 | Puerta blindada, soldados y transición | RC-04 | Puerta llega una vez a300s, soldados llaman/combaten, no aparecen enemigos nuevos, sobreviven los remanentes; solo cruza con jefe derrotado; siguiente mapa conserva vida/build y reinicia reloj |
 | RC-06 | Retirar extracción del recorrido V2 | RC-05 | Sin opción/calendario/espera/cobro de extracción en V2; cruzar no ejecuta `finish('extracted')`; muerte y fin real producen resultado único |
-| RC-07 | Armas por familias y mejoras aleatorias | RC-01 + RC-02 | Categorías y reglas cerradas; cada arma conserva identidad; azar/topes comprobables; familias sin cargador no heredan recarga ficticia; no aumentan copias ajenas por accidente |
+| RC-07 | Dos armas simultáneas, familias y tres ofertas compatibles | RC-01 + RC-02 | Categorías y reglas cerradas; cada arma conserva identidad; azar/topes comprobables; familias sin cargador no heredan recarga ficticia; no aumentan copias ajenas por accidente |
 | RC-08 | Retirar accesorios y mochilas; replantear P06 | RC-07 + RC-02 | Sin ranuras, objetos ni paneles de mochila/mods en V2; colección de armas/soldados conservada; guardados anteriores tratados según migración; pruebas de inicio/cambio/recuperación pasan |
-| RC-09 | Colección, gacha y recompensas P06/P07 revisadas | RC-08 + RC-01 | Solo catálogo vigente; premios y gastos confirmados por servidor, recibos idempotentes, concurrencia y respuesta perdida probadas; sin economía libre del cliente |
+| RC-09 | Colección, gacha de armas/soldados/skins/ultimates y premios | RC-08 + RC-01 + RC-14 | Solo catálogo vigente; premios y gastos confirmados por servidor, recibos idempotentes, concurrencia y respuesta perdida probadas; sin economía libre del cliente |
 | RC-10 | Cofres y dimensiones de mapas | RC-01 + RC-03 | Tipos/frecuencia/premios cerrados; presupuesto y distribución reproducibles, rutas accesibles, desplazamiento probado en cinco minutos; sin premios de mods/mochilas |
-| RC-11 | Grietas especiales y saltos dimensionales | RC-05 + RC-09 y reglas O-06/O-07 | Aviso sonoro/visual/localizador, tiempo limitado e ingreso inmediato; reloj/retorno/saltos respetan contrato y jefe obligatorio; premio único sin duplicación |
-| RC-12 | Interfaz, audio, regresión y aceptación de V2 | RC-06–RC-11 | Fuente/compilado y escritorio/táctil verificados; controles/avisos legibles; crédito visible; resultados/guardado/ranking versionados; defectos bloqueantes resueltos y aceptación registrada |
+| RC-11 | Grietas especiales y saltos dimensionales | RC-05 + RC-09 + RC-13 y reglas O-06/O-07 | Aviso sonoro/visual/localizador, tiempo limitado e ingreso inmediato; reloj/retorno/saltos respetan contrato y jefe obligatorio; premio único sin duplicación |
+| RC-12 | Interfaz, audio, regresión y aceptación de V2 | RC-06–RC-11 + RC-13 + RC-14 | Fuente/compilado y escritorio/táctil verificados; controles/avisos legibles; crédito visible; resultados/guardado/ranking versionados; defectos bloqueantes resueltos y aceptación registrada |
 
 RC-07 y RC-10 pueden desarrollarse en paralelo después de sus dependencias. La primera entrega jugable debe ser RC-03–RC-06 con el arte existente y sin ampliar catálogo: prueba el recorrido nuevo antes de producir mapas y recursos finales. No requiere reconstruir el motor.
 
@@ -90,3 +92,12 @@ El JSON conserva las53 tareas, pesos y evidencias anteriores como línea base hi
 ## Siguiente bloque de trabajo vigente — 0.22
 
 Usar [PLAN_DISENO_JUGABLE_V2.md](PLAN_DISENO_JUGABLE_V2.md) y [reglas aprobadas](ESTRUCTURA_REGLAS_APROBADAS.md). Primero geometría y puntos de interés para el ensayo; después cofres locales con sorteos únicos y premios ficticios. No se ejecutan en esta sincronización. Las pruebas de RC-03–RC-06 ya registradas no se repiten como evidencia nueva ni cierran aceptación. El contrato persistente, azar detallado de armas y economía necesitan sus propias dependencias.
+
+## Combate ampliado pendiente
+
+| ID | Trabajo | Depende de | Se acepta cuando |
+| --- | --- | --- | --- |
+| RC-13 | Hasta tres poderes y reemplazo del cuarto | RC-01 + RC-07 | Catálogo/adquisición/rangos cerrados; máximo tres; retirada de efectos salientes comprobada; sin apoyos extra ni acumulación oculta |
+| RC-14 | Una ultimate de efecto único y máximo nivel 5 | RC-01 + RC-07 | Efecto, límites, cinco niveles, reloj/cooldown y controles definidos por habilidad; relación con habilidad del soldado resuelta; integración de gacha transaccional en RC-09 |
+
+Son tareas pendientes sin nuevos puntos. Las propuestas de balance/economía no se adoptan como reglas cerradas.
