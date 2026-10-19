@@ -89,7 +89,7 @@ G.TechnicalUI = (() => {
     G.FieldLoadout.init();
     if(G.MapTrial?.enabled){
       document.body.dataset.mapTrial='v2';
-      el('technical-intro').textContent='PRIMERA PRUEBA V2 · Resiste, derrota al jefe de cada mapa y avanza por la puerta de la Fundación.';
+      el('technical-intro').textContent='PRUEBA V2 · Mapa abierto de 160 × 100 casillas con seis ubicaciones alternativas de exploración. Resiste, derrota al jefe y avanza por la puerta de la Fundación.';
       el('technical-account-hint').textContent=(G.MapTrial.publicDemo?'Demo web':'Prueba local')+' sin cuentas, guardado ni recompensas persistentes. Sin mochilas ni accesorios de armas.';
       if(G.MapTrial.publicDemo){
         document.querySelector('header .version').textContent='ALFA · DEMO V2';
@@ -102,6 +102,12 @@ G.TechnicalUI = (() => {
       el('btn-technical-start').textContent=G.MapTrial.quick?'Iniciar prueba rápida V2':'Iniciar mapa V2 · 5 minutos';
       el('map-trial-quick').hidden=false;
       if(G.MapTrial.quick){el('map-trial-quick').href='?prueba=mapa-v2';el('map-trial-quick').textContent='Probar mapa completo: empezar en 0:00';}
+      el('chest-trial-link').hidden=false;
+      el('chest-test-note').hidden=false;
+      el('chest-test-note').textContent=G.MapTrial.chestPractice
+        ? 'PRÁCTICA DE COFRES · Empiezas junto a un cofre garantizado. Acércate y permanece 3,5 s; alejarte reduce la apertura. Otorga solo tickets ficticios, sin cuenta ni guardado. Este cofre es una ayuda de prueba: no representa la probabilidad normal.'
+        : 'COFRES DE EXPLORACIÓN · Intentos a 1:00, 2:00, 3:00 y 4:00; pueden no aparecer. Solo se indica su ubicación después de descubrirlos. Acércate 3,5 s para abrir. Premios ficticios, sin cuenta ni guardado. La prueba rápida no concede intentos anteriores.';
+      if(G.MapTrial.chestPractice)el('btn-technical-start').textContent='Iniciar prueba de cofres';
     }
     const rifts=G.DimensionalRifts;
     if(rifts.enabled){
@@ -147,6 +153,7 @@ G.TechnicalUI = (() => {
     if (value === 'playing') updateSoldierHud();
     if (value !== 'playing') {
       el('map-locator').hidden=true;el('map-alert').hidden=true;
+      el('chest-status').hidden=true;
       el('rift-alert').hidden=true;el('rift-locator').hidden=true;
       el('field-upgrades').hidden = true; el('field-result').hidden = true;
       el('btn-field-weapon-0').disabled = true; el('btn-field-weapon-1').disabled = true; el('btn-ability').disabled = true; el('btn-mods').disabled = true;
@@ -179,6 +186,16 @@ G.TechnicalUI = (() => {
       el('map-alert').hidden=!canShow||!(G.MapTrial.alertTime>0);
       el('map-alert').textContent='¡Equipo de la Fundación! «¡Por aquí, te cubrimos!» · '+(v.bossDefeated?'Cruza la puerta.':'Termina con el jefe para avanzar.');
       el('field-status').textContent=`PRUEBA V2 · Mapa ${s.sector} · ${G.U.mmss(v.mapTime)} / 5:00 · ${s.phase==='levelup'?captions.levelup:goal} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level} | ${weaponSummary}`;
+      const chests=G.ExplorationChests?.state;
+      el('chest-status').hidden=!canShow||!chests;
+      if(chests){
+        const known=chests.chests.filter(c=>c.discovered&&!c.opened).sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y));
+        const chest=known[0],cx=chest?chest.x-player.x:0,cy=chest?chest.y-player.y:0;
+        const chestArrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(cy,cx)/(Math.PI/4))+8)%8];
+        const hint=chest?`Cofre ${chestArrow} ${Math.ceil(Math.hypot(cx,cy))} u · ${chest.progress>0?`abriendo ${Math.floor(chest.progress/3.5*100)} %`:'acércate y permanece 3,5 s'}`:
+          chests.chests.some(c=>!c.opened)?'Cofre sin descubrir · explora el mapa':chests.spawned?'Cofres abiertos':'Explora · puede aparecer un cofre';
+        el('chest-status').textContent=`${hint} · ${chests.ticketTotal} tickets ficticios (sin cuenta)`;
+      }
     }
     const rift=G.DimensionalRifts.state,open=rift.status==='open';
     el('rift-locator').hidden=!open||s.phase==='finished'||s.phase==='levelup';

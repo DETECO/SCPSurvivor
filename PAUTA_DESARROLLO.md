@@ -1,12 +1,14 @@
 # Pauta vigente de SCP Survivor — revisión ESTRUCTURA
 
-**Publicación de la prueba existente (A-033):** disponible mediante [GitHub Pages](https://deteco.github.io/SCPSurvivor/) y [acceso rápido](https://deteco.github.io/SCPSurvivor/?rapida=1), con las mismas mecánicas V2-trial-01. La adaptación de cofres y escala 160 × 100 sigue pendiente. Esta publicación no cierra P05 ni la aceptación completa de V2.
+**Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](docs/PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](docs/V2-B1-B2-REPORT.md). Publicación viva pendiente de verificar; consultar el informe antes de afirmar resultados.
+
+**Publicación de la prueba existente (A-033):** disponible mediante [GitHub Pages](https://deteco.github.io/SCPSurvivor/) y [acceso rápido](https://deteco.github.io/SCPSurvivor/?rapida=1), con las mismas mecánicas V2-trial-01. La ampliación B1/B2 incorpora cofres ficticios de exploración y escala inicial 160 × 100; aceptación pendiente. Esta publicación no cierra P05 ni la aceptación completa de V2.
 
 18/10/2026 · Diseño V2 · **Primer prototipo del recorrido disponible; adaptación completa y aceptación pendientes.**
 
 Esta pauta incorpora el chat **ESTRUCTURA**, incluida su aprobación de cofres y escala inicial en el turno `01a15142-340f-7400-8660-f8d2502ce2aa`, y la instrucción posterior de Iván en PROGRAMACION. [Corte de reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md). Sustituye las reglas incompatibles del diseño de extracción. El código actual se conserva como punto de partida; no se reconstruye el juego.
 
-**Prueba V2-trial-01:** [guía manual](docs/PRUEBA_MAPA_V2.md). El recorrido de mapas300s, jefe y puerta con aliados está implementado como ensayo local sin guardado. Jefe240s y acceso rápido270s son parámetros provisionales de prueba. No implementa aún familias/azar final, gacha, cofres de premios, grietas nuevas o persistencia. [Resultados](docs/V2-PRIMERA-PRUEBA-REPORT.md).
+**Prueba V2-trial-01:** [guía manual](docs/PRUEBA_MAPA_V2.md). El recorrido de mapas300s, jefe y puerta con aliados está implementado como ensayo local sin guardado. Jefe240s y acceso rápido270s son parámetros provisionales de prueba. El corte original no implementaba cofres. B1/B2 añade exploración ficticia; familias/azar final, gacha, cofres de jefe/grieta, grietas nuevas y persistencia siguen pendientes. [Resultados](docs/V2-PRIMERA-PRUEBA-REPORT.md).
 
 ## Recorrido del juego
 
@@ -37,7 +39,7 @@ La hora exacta de aparición del jefe todavía no está fijada. Debe permitir cu
 | Jefes | Un jefe obligatorio por mapa; encuentros dimensionales aparte | Implementado en ensayo V2; horario de 4:00 provisional; calendario anterior conservado fuera del ensayo |
 | Grietas especiales | Desafíos opcionales difíciles con recompensas mayores | Existe un prototipo local limitado |
 | Saltos dimensionales | Rutas/saltos entre niveles, inspirados en Backrooms | Diseño detallado e implementación pendientes |
-| Cofres y recompensas del escenario | Exploración, jefe y grieta; sorteos y escala inicial aprobados | Pendientes de implementar; cajas de campo actuales sin botín |
+| Cofres y recompensas del escenario | Exploración, jefe y grieta; sorteos y escala inicial aprobados | Exploración ficticia implementada como prototipo B1/B2; jefe/grieta/bono/hitos pendientes; cajas de campo sin botín |
 | Arte, identidad visual, controles y crédito | Conservar recursos aprobados y «Desarrollado por Ivan Vivanco» | El acabado final sigue pendiente |
 | Cuentas y guardado P05 | Conservar seguridad y adaptar contratos al nuevo recorrido | Aceptación con servicios propios pendiente |
 
@@ -83,7 +85,7 @@ Los topes de exploración no garantizan premios. Abrir no libera cupo y el conte
 
 Se aprueba **160 × 100 casillas como escala inicial de prueba**, reservando **seis ubicaciones alternativas** de cofres, una zona amplia de jefe/puerta y circuitos para rodear hordas. Objetivos a medir: 30–45 segundos entre extremos útiles sin combate y 10–15 segundos de desvío hacia un punto opcional. El tamaño final, los recorridos, el balance y el rendimiento no se dan por validados.
 
-**Todavía no implementado:** cofres de premios, cuatro sorteos, seis puntos y nueva geometría. Las `fieldCrate` actuales siguen siendo cajas sin botín. No importar premios genéricos de Pokesurvivor ni accesorios/mochilas. [Reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md) · [Siguiente adaptación](docs/PLAN_DISENO_JUGABLE_V2.md).
+**Prototipo B1/B2 actual:** cuatro sorteos de exploración, seis puntos y geometría inicial implementados; tickets ficticios en memoria. Cofres de jefe/grieta, bono e hitos siguen pendientes. Las `fieldCrate` actuales siguen siendo cajas sin botín. No importar premios genéricos de Pokesurvivor ni accesorios/mochilas. [Reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md) · [Siguiente adaptación](docs/PLAN_DISENO_JUGABLE_V2.md).
 
 ## Orden para continuar
 

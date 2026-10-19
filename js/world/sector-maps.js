@@ -133,5 +133,57 @@ G.SectorMaps = (() => {
     return { seed, fixture, entry, exit, bossSpawn, rooms, modules, floorTiles, spawnPoints };
   }
 
-  return { generate };
+  // V2 is deliberately separate: saved/legacy sectors retain their geometry.
+  function generateV2(seed = 1) {
+    seed = Number.isFinite(Number(seed)) ? Number(seed) | 0 : 1;
+    const minX = 0, maxX = 159, minY = 0, maxY = 99;
+    const walls = [], floorTiles = [], blocked = new Set();
+    const point = (x, y) => ({ x: (x + .5) * TS, y: (y + .5) * TS });
+    const entry = point(5, 5), exit = point(154, 94);
+    const bossSpawn = point(113, 50), routeAnchor = point(80, 50);
+    const chestCandidates = [[20, 20], [20, 50], [20, 80], [140, 20], [140, 50], [140, 80]]
+      .map(([x, y], i) => ({ id: `v2-chest-${i + 1}`, ...point(x, y) }));
+    const rooms = [
+      { id: 'v2-entry', role: 'entry', x: 1, y: 1, w: 20, h: 16, cx: 5, cy: 5 },
+      { id: 'v2-plaza', role: 'openroom', x: 29, y: 39, w: 102, h: 23, cx: 80, cy: 50 },
+      { id: 'v2-arena', role: 'openroom', x: 97, y: 38, w: 33, h: 27, cx: 113, cy: 50 },
+      { id: 'v2-arrival', role: 'exit', x: 133, y: 83, w: 25, h: 15, cx: 154, cy: 94 }
+    ];
+    const modules = rooms.map(({ id, role, x, y, w, h }) => ({ id, role, x, y, w, h }));
+    // Compact, separated islands leave wide circuits on all four sides.
+    // The central crossing, arena, arrival area and exploration nodes stay free.
+    const islands = [[48, 28], [48, 73], [112, 28], [112, 73], [66, 20], [94, 80]];
+    for (let i = 0; i < islands.length; i++) {
+      const cx = islands[i][0] + jitter(seed, 1100 + i * 4, 2);
+      const cy = islands[i][1] + jitter(seed, 1101 + i * 4, 2);
+      const w = 8 + Math.floor(hash(seed, 1102 + i * 4) * 4);
+      const h = 6 + Math.floor(hash(seed, 1103 + i * 4) * 4);
+      const x = cx - Math.floor(w / 2), y = cy - Math.floor(h / 2);
+      modules.push({ id: `v2-island-${i + 1}`, role: 'cover', x, y, w, h });
+      for (let dy = 0; dy < h; dy++) for (let dx = 0; dx < w; dx++) blocked.add(`${x + dx},${y + dy}`);
+    }
+    for (let y = minY + 1; y < maxY; y++) for (let x = minX + 1; x < maxX; x++) {
+      if (blocked.has(`${x},${y}`)) walls.push([x, y]);
+      else floorTiles.push([x, y]);
+    }
+    const clear = (x, y) => {
+      if (x < minX + 2 || x > maxX - 2 || y < minY + 2 || y > maxY - 2) return false;
+      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+        if (blocked.has(`${x + dx},${y + dy}`)) return false;
+      }
+      return true;
+    };
+    const spawnPoints = [];
+    // Distributed across the map; the director chooses candidates near the
+    // current player rather than spawning enemies at the far side of the map.
+    for (let y = 3; y < maxY - 2; y += 4) for (let x = 3; x < maxX - 2; x += 4) {
+      if (!clear(x, y) || Math.hypot(x - 5, y - 5) < 7) continue;
+      spawnPoints.push(point(x, y));
+    }
+    const fixture = { minX, maxX, minY, maxY, walls, props: [] };
+    return { seed, fixture, entry, exit, bossSpawn, rooms, modules, floorTiles, spawnPoints,
+      chestCandidates, routeAnchor, layout: 'v2-open-160x100' };
+  }
+
+  return { generate, generateV2 };
 })();

@@ -73,6 +73,9 @@ body[data-technical-state="ui"] .footer,body[data-technical-state="paused"] .foo
 .rift-locator,.rift-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;background:#1d1015ed;color:#fff0f0;border:1px solid #f3747b;font-size:13px;line-height:1.4;pointer-events:none}
 .map-trial-link{display:block;margin-top:12px;padding:10px;color:#eee8dc;text-align:center;border:1px solid var(--edge);font-size:13px;min-height:44px}
 #map-test-note{border-left:3px solid #ef6571;padding-left:10px;font-size:13px;line-height:1.5}
+#chest-test-note{border-left:3px solid #ddd8c9;padding-left:10px;font-size:13px;line-height:1.5}
+.chest-status{position:absolute;z-index:2;left:12px;right:12px;bottom:86px;max-width:620px;margin:auto;padding:7px 10px;border:1px solid #a7b0a5;background:#10201ded;color:#f3ebd9;font-size:12px;line-height:1.4;pointer-events:none}
+@media(max-width:540px){.chest-status{left:8px;right:8px;bottom:88px;font-size:11px}}
 .map-locator,.map-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;border:1px solid #ddd8c9;background:#10201ded;color:#fff3dc;font-size:13px;line-height:1.4;pointer-events:none}
 .map-locator{top:100px}.map-alert{top:155px;border-left:4px solid #ef6571}
 @media(max-width:540px){.map-locator,.map-alert{left:8px;right:8px;font-size:12px}.map-locator{top:118px}.map-alert{top:184px}}

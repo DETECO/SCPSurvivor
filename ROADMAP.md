@@ -1,6 +1,6 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-19).** Diseño actualizado desde ESTRUCTURA: dos armas simultáneas, hasta tres poderes y una ultimate única de máximo nivel 5. Nuevas tareas pendientes; se conserva la demo del recorrido y su aceptación pendiente. Cofres, mapa 160 × 100, combate ampliado y P05 real aún sin completar.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-19).** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía B1/B2](docs/PRUEBA_MAPA_COFRES_V2.md) · [Demo de cofres](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](docs/V2-B1-B2-REPORT.md). Publicación viva pendiente de verificar.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md)
 
@@ -18,7 +18,7 @@
 | Poderes anómalos | Hasta tres, con opción de reemplazo al aparecer un cuarto. No sumar otras dos ranuras de apoyo. Catálogo, adquisición/rangos y aplicación de reemplazo pendientes. |
 | Ultimate | Una habilidad única de defensa, curación, evasión o ataque; cooldown largo propio por definir, máximo nivel 5 y progresión difícil; gacha. Sin duración/costes aprobados ni implementación. |
 | Grietas y saltos | Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas. |
-| Cofres y mapas | Aprobados tres tipos de cofre, intentos de exploración 1:00/2:00/3:00/4:00 con tabla/topes anteriores y seis puntos alternativos. Escala inicial 160 × 100; metas de rutas 30–45 s y desvíos 10–15 s. Pendientes implementación, medición y detalles de premios. |
+| Cofres y mapas | B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. |
 | P06/P07 | Revisar colección/gacha de soldados, armas, skins y ultimates sin retirar reclutamiento anterior por inferencia. Costes, duplicados y efectos de skins pendientes; sin mochilas ni accesorios físicos. |
 
 | Paso | Trabajo y estado | Dependencias |
@@ -34,7 +34,7 @@
 | RC-13 | Hasta tres poderes anómalos y reemplazo del cuarto — pendiente de implementar | RC-01, RC-07 |
 | RC-14 | Ultimate única: efecto propio, cooldown largo y máximo nivel 5 — pendiente de implementar | RC-01, RC-07 |
 | RC-09 | Colección/gacha de armas, soldados, skins y ultimates; premios revisados — pendiente de implementar | RC-08, RC-01, RC-14 |
-| RC-10 | Cofres y dimensiones de mapas — pendiente de implementar | RC-01, RC-03 |
+| RC-10 | Cofres y dimensiones de mapas — prototipo; aceptación pendiente | RC-01, RC-03 |
 | RC-11 | Grietas especiales y saltos dimensionales — pendiente de implementar | RC-05, RC-09, O-06/O-07, RC-13 |
 | RC-12 | Interfaz/audio, regresión y aceptación V2 — pendiente de implementar | RC-06, RC-07, RC-08, RC-09, RC-10, RC-11, RC-13, RC-14 |
 
@@ -52,7 +52,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-Versión **0.24**, 2026-10-19. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+Versión **0.25**, 2026-10-19. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
 
 ## Avance basado en evidencia
 

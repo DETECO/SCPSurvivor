@@ -1,5 +1,7 @@
 # Demo web V2 en GitHub Pages
 
+**Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](V2-B1-B2-REPORT.md). Publicación viva pendiente de verificar; consultar el informe antes de afirmar resultados.
+
 18/10/2026 · Iván pidió «Pero quiero probarlo en github subelo». Se publica la primera prueba existente, conservando la pauta ESTRUCTURA y los pendientes de la adaptación.
 
 - [Mapa completo](https://deteco.github.io/SCPSurvivor/).
@@ -10,7 +12,7 @@
 
 El ensayo V2 solo se activaba en loopback. Ahora permite además el origen HTTPS `deteco.github.io` y el prefijo exacto `/SCPSurvivor/`. En ese sitio inicia V2 por defecto; la prueba rápida conserva los 300 segundos por mapa. Dominios ajenos, HTTP y rutas parecidas no habilitan esta excepción. Ningún parámetro de cuentas se combina con V2.
 
-El menú identifica la demo web. No hay servicios locales necesarios para jugar online. El backend propio y la preparación Worker siguen desactivados; no se publican cambios de esos servicios. La partida se pierde al recargar. No se añaden cofres, mapa 160 × 100, economía, familias nuevas ni diseños finales.
+El menú identifica la demo web. No hay servicios locales necesarios para jugar online. El backend propio y la preparación Worker siguen desactivados; no se publican cambios de esos servicios. La partida se pierde al recargar. La publicación original no añadía cofres ni mapa 160 × 100. La entrega B1/B2 actual incorpora esos prototipos; economía, familias nuevas y diseños finales siguen pendientes.
 
 ## Verificación antes de publicar
 

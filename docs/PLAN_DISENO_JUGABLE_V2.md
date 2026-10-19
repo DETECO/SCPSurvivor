@@ -1,6 +1,8 @@
 # Plan de adaptación del diseño jugable V2
 
-**Cambio vigente 0.24:** el bloque B4 debe cubrir dos armas simultáneas y tres ofertas compatibles; añadir poderes (RC-13) y ultimate (RC-14) antes de aceptar la build completa. B5 revisa gacha de armas, soldados, skins y ultimates. Cooldowns, cartas, costes y relación con habilidad de soldado siguen abiertos. [Contratos y dependencias](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). B1/B2 siguen siendo el siguiente ensayo local; esta actualización no los implementa.
+**Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](V2-B1-B2-REPORT.md). Publicación viva pendiente de verificar; consultar el informe antes de afirmar resultados.
+
+**Cambio vigente 0.24:** el bloque B4 debe cubrir dos armas simultáneas y tres ofertas compatibles; añadir poderes (RC-13) y ultimate (RC-14) antes de aceptar la build completa. B5 revisa gacha de armas, soldados, skins y ultimates. Cooldowns, cartas, costes y relación con habilidad de soldado siguen abiertos. [Contratos y dependencias](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). Este corte 0.24 fue documental; la entrega actual 0.25 implementa B1/B2 como prototipo aislado.
 
 18/10/2026 · Pauta sincronizada 0.22 · **Trabajo siguiente definido; no ejecutado en esta entrega documental.**
 
@@ -11,7 +13,7 @@ Autoridad: [pauta vigente](../PAUTA_DESARROLLO.md), [corte aprobado de ESTRUCTUR
 - **Implementado como ensayo local:** V2-trial-01, mapa de 300 segundos activos, jefe obligatorio, puerta y dos soldados a 5:00, corte de apariciones enemigas, remanentes vivos y transición inmediata por contacto. [Guía](PRUEBA_MAPA_V2.md).
 - **Aceptación pendiente:** prueba manual de Iván, balance, rendimiento y dispositivos físicos. No cerrar P05 ni V2 por simulaciones.
 - **Aprobado para adaptar:** tres tipos de cofre, sorteos de exploración en 60/120/180/240 segundos, probabilidades 10/15/20 %, topes 1/2/3 y tickets 1–2/1–2/1–3 según mapas 1–3/4–7/8+. Seis puntos alternativos y escala inicial 160 × 100 casillas.
-- **Todavía no implementado:** esa geometría, cofres de premios, familias/azar finales de armas, gacha, persistencia V2, dimensiones de grieta y saltos. Las cajas de campo siguen sin botín.
+- **Pendiente tras B1/B2:** cofres de jefe/grieta, bono de diez minutos/hitos, familias/azar finales de armas, combate 2+3+1, gacha, persistencia V2, dimensiones de grieta y saltos. Las cajas de campo siguen sin botín.
 
 ## Bloques y orden de ejecución
 
@@ -24,7 +26,7 @@ Autoridad: [pauta vigente](../PAUTA_DESARROLLO.md), [corte aprobado de ESTRUCTUR
 | B5 — Guardado, colección y economía | Versionar contrato V2 e integrar colección/gacha de armas, soldados, skins y ultimates con funciones aceptadas y premios | `js/systems/run-checkpoint.js`, `js/systems/run-continuity.js`, `js/net/local-accounts.js`, `functions/account-service.js` | P05 real aceptado y contrato V2 definido; propiedad, revisión, sesión, recibos e idempotencia verificados; datos antiguos conservados |
 | B6 — Acabado y aceptación | Integrar mapas variados, señalización, arte/audio, controles y regresión | `dev.html`, `css/technical.css`, `js/ui/technical-ui.js`, `docs/OBSERVACIONES_VISUALES.md` | Recursos aprobados conservados; lectura clara; sonido/alerta/localizador de grietas; crédito visible; pruebas y aceptación registradas |
 
-**La siguiente entrega será B1 y después B2**, como ensayo local sin guardado. Puede prepararse mientras P05 real sigue pendiente. No adelanta la economía P06/P07 ni convierte premios ficticios en saldo. La conexión persistente de B5 exige sus dependencias; B3/B4 no se ejecutan con reglas incompletas.
+**B1/B2 entregados como prototipo aislado sin guardado; aceptación pendiente.** Puede prepararse mientras P05 real sigue pendiente. No adelanta la economía P06/P07 ni convierte premios ficticios en saldo. La conexión persistente de B5 exige sus dependencias; B3/B4 no se ejecutan con reglas incompletas.
 
 La preparación local Worker/SQLite, si existe en la copia de desarrollo, no se publica ni activa por esta planificación. La selección de backend y sus pruebas se documentan en P05. Firebase permanece en Spark, sin facturación.
 

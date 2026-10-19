@@ -1,5 +1,7 @@
 # Plan de adaptación a ESTRUCTURA — SCP Survivor
 
+**Entrega 0.25 · 19/10/2026:** RC-10 tiene el prototipo B1/B2: mapa inicial 160 × 100, seis ubicaciones y cofres de exploración con tabla base y tickets ficticios. [Prueba](PRUEBA_MAPA_COFRES_V2.md) · [Verificación](V2-B1-B2-REPORT.md). Conserva aceptación final y dependencias pendientes, incluidos premios de jefe/grieta, hitos, bono de diez minutos y economía persistente. Los criterios completos siguientes no se dan por cerrados.
+
 **Actualización 0.24 (19/10/2026):** RC-07 ahora exige dos armas simultáneas y tres ofertas compatibles; se añaden RC-13 (tres poderes y reemplazo) y RC-14 (ultimate única, máximo nivel 5), pendientes. RC-09/RC-11/RC-12 incorporan esas dependencias. [Detalle y aceptación](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). La demo y los criterios históricos no cambian.
 
 **Primer ensayo A-031 disponible:** RC-03–RC-06 tienen prototipo local en prueba, sin aceptación final, contrato persistente ni cierre de dependencias. Consultar [prueba manual](PRUEBA_MAPA_V2.md). Las tareas/casos de abajo siguen siendo criterios de la adaptación completa; no exigir terminar la economía o P06 anterior para ejecutar este ensayo sin guardado.
@@ -89,9 +91,9 @@ Estas son pruebas **por ejecutar cuando se implementen los cambios**, no resulta
 
 El JSON conserva las53 tareas, pesos y evidencias anteriores como línea base histórica; `activeDesignRevision` identifica alcance activo, tareas afectadas y esta secuencia. **52/100 no es el porcentaje de V2.** No se recalcula un avance nuevo suprimiendo del denominador las funciones descartadas.
 
-## Siguiente bloque de trabajo vigente — 0.22
+## Antecedente del siguiente bloque — 0.22
 
-Usar [PLAN_DISENO_JUGABLE_V2.md](PLAN_DISENO_JUGABLE_V2.md) y [reglas aprobadas](ESTRUCTURA_REGLAS_APROBADAS.md). Primero geometría y puntos de interés para el ensayo; después cofres locales con sorteos únicos y premios ficticios. No se ejecutan en esta sincronización. Las pruebas de RC-03–RC-06 ya registradas no se repiten como evidencia nueva ni cierran aceptación. El contrato persistente, azar detallado de armas y economía necesitan sus propias dependencias.
+El corte 0.22 dejó definido B1 (geometría) y después B2 (cofres ficticios), ahora ejecutados como prototipo 0.25. Usar el [plan jugable actualizado](PLAN_DISENO_JUGABLE_V2.md) para sus pendientes y siguientes bloques. Las nuevas regresiones del recorrido se registran como regresiones de esta build, sin convertirlas en aceptación humana ni cierre de dependencias. El contrato persistente, azar detallado de armas y economía necesitan sus propias definiciones.
 
 ## Combate ampliado pendiente
 

@@ -1,5 +1,5 @@
 const test=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
-function setup(seed=1337,quick=false,enabled=true){
+function setup(seed=1337,quick=false,enabled=true,options={}){
  let list=[],items=[],id=0;
  const G={U:{dist:(a,b,x,y)=>Math.hypot(x-a,y-b),rand:()=>0},Camera:{w:768,h:768,x:0,y:0,sees:()=>false,follow(){}},
  World:{reset(){},setFixture(){},setBiome(){},isFree:()=>true,update(){}},Path:{clear(){},update(){},reachable:()=>true},
@@ -15,6 +15,11 @@ function setup(seed=1337,quick=false,enabled=true){
   vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/dimensional-rifts.js'),'utf8'),{G,Math,URLSearchParams,window:{location:{hostname:'127.0.0.1',search:riftMode}}});}
  if(inventory)G.InventoryTrial={enabled:true,directTest:true};
  G.MapTrial={enabled,quick,duration:300,bossAt:240,startTime:quick?270:0,allies:[],resets:0,arrivals:0,reset(g){this.resets++;this.geometry=g},arrive(){this.arrivals++},updateAllies(){},draw(){}};
+ if(options.chests){
+  G.SectorMaps.generateV2=s=>({...G.SectorMaps.generate(s),layout:'v2-open-160x100',chestCandidates:Array.from({length:6},(_,id)=>({id,x:100+id*100,y:100}))});
+  G.ExplorationChests={runs:0,resets:[],ticks:[],startRun(){this.runs++},reset(g,o){this.resets.push({g,o})},tick(...args){this.ticks.push(args)},draw(){},state:{chests:[]}};
+ }
+ if(options.prepare)options.prepare(G,player);
  for(const file of ['../js/data/field-catalog.js','../js/systems/field-stats.js','../js/systems/field-abilities.js','../js/systems/expedition.js'])vm.runInNewContext(fs.readFileSync(require.resolve(file),'utf8'),{G,Math});G.Expedition.start(player,{seed});
  function clearWave(){for(let step=0;step<500;step++){for(const e of G.EnemyMgr.all()){if(!e.dead){e.dead=true;player.kills++;}}G.Expedition.update(1);if(G.Expedition.state.phase==='preparation')return;}throw Error('wave stuck')}
  function clearSector(){for(let n=0;n<G.Expedition.state.sectorWaves;n++){clearWave();G.Expedition.ready()}player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;}
@@ -66,4 +71,31 @@ test('V2 no checkpoint/restauración heredada; muerte normal y legacy sin campo 
  const a=setup();let boundaries=0;a.G.RunCheckpoint={atBoundary(){boundaries++}};assert.equal(a.G.Expedition.captureState(),null);assert.throws(()=>a.G.Expedition.restoreState({}),/V2/);
  a.G.Expedition.update(300);assert.equal(boundaries,0);a.player.hp=0;a.G.Expedition.update(.1);assert.equal(a.G.Expedition.state.result.reason,'death');
  const legacy=setup(1337,false,false);assert.equal('v2' in legacy.G.Expedition.state,false);assert.ok(legacy.G.Expedition.captureState());legacy.clearWave();assert.equal(legacy.G.Expedition.state.phase,'preparation');
+});
+
+test('V2 integra geometría y cofres, reloj rápido sin regalos retroactivos y reinicio por mapa',()=>{
+ const {G,player}=setup(42,true,true,{chests:true});
+ assert.equal(G.MapTrial.geometry.layout,'v2-open-160x100');
+ assert.equal(G.ExplorationChests.runs,1);assert.equal(G.ExplorationChests.resets.length,1);
+ assert.equal(G.ExplorationChests.resets[0].o.startTime,270);
+ assert.equal(G.ExplorationChests.resets[0].o.sector,1);
+ G.Expedition.update(1);assert.equal(G.ExplorationChests.ticks.length,1);
+ assert.equal(G.ExplorationChests.ticks[0][1],271);assert.equal(G.ExplorationChests.ticks[0][2],player);
+ G.Expedition.update(29);G.EnemyMgr.all().find(e=>e.boss).dead=true;
+ player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;G.Expedition.update(.01);
+ assert.equal(G.ExplorationChests.runs,1);assert.equal(G.ExplorationChests.resets.length,2);
+ assert.equal(G.ExplorationChests.resets[1].o.startTime,0);assert.equal(G.ExplorationChests.resets[1].o.sector,2);
+ G.Pickups.update=(dt,p,collect)=>collect({kind:'xp',value:1});player.gainXp=()=>1;player.xpNext=1;
+ G.Expedition.update(.01);assert.equal(G.Expedition.state.phase,'levelup');
+ const ticks=G.ExplorationChests.ticks.length;G.Expedition.update(10);assert.equal(G.ExplorationChests.ticks.length,ticks);
+ player.hp=0;G.Expedition.update(.1);assert.equal(G.ExplorationChests.ticks.length,ticks);
+ const legacy=setup(42,false,false,{chests:true});assert.equal(legacy.G.ExplorationChests.runs,0);assert.equal(legacy.G.ExplorationChests.resets.length,0);
+});
+
+test('V2 mapa grande genera la horda cerca del jugador, sin llenar el cupo con enemigos remotos',()=>{
+ const {G,player}=setup(42,false,true,{chests:true,prepare(g,p){
+  g.SectorMaps.generateV2=s=>({...g.SectorMaps.generate(s),layout:'v2-open-160x100',spawnPoints:[{x:2400,y:0},{x:500,y:0},{x:2800,y:0},{x:-500,y:0}]});
+ }});
+ assert.equal(G.EnemyMgr.count,4);
+ for(const e of G.EnemyMgr.all())assert.ok(Math.hypot(e.x-player.x,e.y-player.y)<=800,'spawn remoto');
 });

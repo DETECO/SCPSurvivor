@@ -1,10 +1,12 @@
 # Primera prueba de mapas V2
 
+**Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](V2-B1-B2-REPORT.md). Publicación viva pendiente de verificar; consultar el informe antes de afirmar resultados.
+
 ## Probar online con GitHub Pages
 
-[Jugar mapa completo](https://deteco.github.io/SCPSurvivor/) · [Prueba rápida: empezar en 4:30](https://deteco.github.io/SCPSurvivor/?rapida=1). Pulsa el botón de inicio del menú; no necesitas instalar ni mantener un servidor local. Mismas reglas del ensayo, sin cuentas ni guardado. Los cofres y la escala nueva todavía no están implementados. [Publicación y límites](GITHUB_PAGES.md).
+[Jugar mapa completo](https://deteco.github.io/SCPSurvivor/) · [Prueba rápida: empezar en 4:30](https://deteco.github.io/SCPSurvivor/?rapida=1). Pulsa el botón de inicio del menú; no necesitas instalar ni mantener un servidor local. Mismas reglas del ensayo, sin cuentas ni guardado. La ampliación actual B1/B2 añade geometría inicial y cofres ficticios de exploración; ver la guía vigente. [Publicación y límites](GITHUB_PAGES.md).
 
-18/10/2026. Prototipo local del recorrido nuevo. No cierra P05 ni integra guardado, economía, gacha, cofres o ranking. Arte y balance provisionales; las mejoras todavía usan las cartas anteriores.
+Antecedente del 18/10/2026: primer prototipo del recorrido sin cofres. B1/B2 lo amplía con exploración ficticia; no cierra P05 ni integra guardado, economía, gacha o ranking. Arte y balance provisionales; las mejoras todavía usan las cartas anteriores.
 
 ## Abrir la prueba
 
@@ -39,7 +41,7 @@ Si derrotas al jefe antes de 5:00, debes esperar la llegada de la puerta. Si mue
 - Usa las armas, soldados, enemigos y escenarios disponibles; no añade el catálogo final por familias ni sustituye diseños aprobados.
 - Los aliados son cobertura de prueba, separados de la lista enemiga y sin daño recibido; no es la IA aliada final.
 - Se conservan las cartas de mejora anteriores. El nuevo reparto aleatorio por arma se implementa después de cerrar sus reglas.
-- Grietas opcionales, saltos dimensionales, cofres de premios y tamaños finales de mapa se adaptarán en entregas posteriores.
+- Grietas opcionales, saltos dimensionales, cofres de jefe/grieta y tamaños finales de mapa se adaptarán después; B1/B2 incorpora exploración ficticia y escala inicial.
 - Sin cuentas ni guardado: recargar pierde esta partida de prueba. Se bloquea la captura/restauración del esquema antiguo y se conservan sus datos.
 - El modo anterior sigue disponible sin este parámetro. Esta convivencia permite comprobar regresiones; el diseño vigente sigue siendo V2.
 - La aceptación de Iván sigue pendiente. Las simulaciones automáticas registradas no demuestran balance, FPS, rendimiento, dispositivo físico o funcionamiento en producción.

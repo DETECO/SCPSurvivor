@@ -1,6 +1,8 @@
 # Cofres: base aprobada y adaptación a mapas de cinco minutos
 
-18/10/2026. Aclaración incorporada al volver a consultar ESTRUCTURA: **sí existen reglas aprobadas de cofres en el roadmap anterior**. No deben descartarse ni sustituirse por las reglas genéricas de Pokesurvivor. Su integración en el recorrido SCP todavía no está implementada.
+**Estado 0.25 · 19/10/2026:** B1/B2 incorpora la geometría inicial y los cofres de exploración con tabla base, descubrimiento y apertura, únicamente con tickets ficticios en memoria. [Guía](PRUEBA_MAPA_COFRES_V2.md) e [informe verificado](V2-B1-B2-REPORT.md). Bono de diez minutos, hitos antiguos, premios de jefe/grieta y economía siguen pendientes; no es integración completa ni aceptación final.
+
+Antecedente del 18/10/2026: al volver a consultar ESTRUCTURA se confirmó que **sí existen reglas aprobadas de cofres en el roadmap anterior**. No deben descartarse ni sustituirse por las reglas genéricas de Pokesurvivor. En ese corte documental todavía no estaban implementadas.
 
 ## Base documental que se conserva
 
@@ -46,4 +48,4 @@ Los valores aprobados son contrato de diseño para adaptar, no resultados de imp
 - Armas compatibles al tope o sin mejora candidata y entrega única de premio de jefe.
 - Tabla de grieta y entrega confirmada de tickets. La colección/economía y compatibilidad de guardados no están resueltas por esta aprobación.
 
-La próxima entrega local puede probar geometría, puntos y sorteos con premios ficticios aislados. No debe conceder tickets reales, activar gacha ni escribir cuentas. [Plan de adaptación jugable](PLAN_DISENO_JUGABLE_V2.md). P05 real y aceptación del primer recorrido siguen pendientes.
+El ensayo B1/B2 prueba geometría, puntos y sorteos con premios ficticios aislados. No debe conceder tickets reales, activar gacha ni escribir cuentas. [Plan de adaptación jugable](PLAN_DISENO_JUGABLE_V2.md). P05 real y aceptación del recorrido siguen pendientes.

@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-19",
+  "version": "V2-trial-02",
+  "stage": "verified_local_before_publication",
+  "authorization": "A-035; prior GitHub/Pages authorization retained",
+  "node": {
+    "source": {
+      "testFiles": 28,
+      "tests": 151,
+      "pass": 150,
+      "fail": 0,
+      "skipped": 1,
+      "workerTestsExcluded": true
+    },
+    "publication": {
+      "testFiles": 28,
+      "tests": 151,
+      "pass": 149,
+      "fail": 0,
+      "skipped": 2,
+      "workerTestsExcluded": true
+    }
+  },
+  "build": {
+    "source": {
+      "scripts": 87,
+      "build": "PASS",
+      "buildCheck": "PASS",
+      "bundleSha256": "a0a52f898fb2e4a01c7c1eb8972193d9affbcfabcdf30e114524d5d73c597bc1",
+      "indexSha256": "111ec79754aa0877f6c1e4d71f5d22b49bb0cb7ac1b8a9ae1066dca2079c51c8"
+    },
+    "publication": {
+      "scripts": 87,
+      "build": "PASS",
+      "buildCheck": "PASS",
+      "bundleSha256": "27373c595c3a6a37c43c83c6e5776794d650cf3159946257675567d03c09542a",
+      "indexSha256": "8302acc9a23bfbe6bad496e22d519b30e6e0fb5fe14174fac05cdde4bb37773e"
+    }
+  },
+  "browser": {
+    "chests": {
+      "development": 4,
+      "publication": 4,
+      "status": "PASS"
+    },
+    "bossDoorRegression": {
+      "publication": 4,
+      "status": "PASS"
+    },
+    "errors": 0,
+    "httpFailures": 0,
+    "externalRequests": 0,
+    "checkpoint": null,
+    "accountsEnabled": false,
+    "touch": "emulated"
+  },
+  "geometry": {
+    "tiles": [
+      160,
+      100
+    ],
+    "candidates": 6,
+    "tileUnits": 32,
+    "speed": 165,
+    "seeds": [
+      0,
+      1,
+      19,
+      42,
+      73,
+      127,
+      -1,
+      3585071513
+    ],
+    "collisionRadius": 22,
+    "neighbors": 8,
+    "cornerCutting": false,
+    "entryExitSeconds": [
+      36.05,
+      36.05
+    ],
+    "centerAnchorToCandidatesSeconds": [
+      11.64,
+      14.05
+    ],
+    "allReachable": true
+  },
+  "historicalTasksUnchanged": true,
+  "historicalPercent": 52,
+  "v2Percent": null,
+  "manualAcceptance": "pending",
+  "p05RealAcceptance": "pending",
+  "persistentRewards": false,
+  "omissions": [
+    "source: real emulator acceptance skipped",
+    "publication: real emulator acceptance and Functions CORS handler skipped; Functions dependencies absent",
+    "incomplete Worker tests excluded; no Worker code changed or deployed"
+  ],
+  "notVerified": [
+    "human acceptance",
+    "game balance",
+    "physical device performance",
+    "real account flows",
+    "production backend"
+  ],
+  "pending": [
+    "10-minute bonus and prior milestones contract",
+    "boss and rift rewards",
+    "two simultaneous weapons",
+    "three anomalous powers",
+    "ultimate",
+    "V2 persistence/economy",
+    "final art/audio"
+  ],
+  "postPushVerification": "GitHub Pages build commit, served bundle SHA256 and live browser checks; receipt in local migration-audit/b1b2-pages-live-receipt.json"
+}

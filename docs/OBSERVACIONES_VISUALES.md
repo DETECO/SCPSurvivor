@@ -1,5 +1,7 @@
 # Observaciones visuales — pendientes de P09
 
+**Ensayo B1/B2 · 19/10/2026:** los cofres funcionales de exploración usan dibujo temporal de Canvas y progreso de apertura. El indicador inferior distingue tickets ficticios, ubicación descubierta y apertura; no revela dirección antes de ver el cofre. En P09 revisar silueta, escala, contraste, animación y separación respecto de las cajas decorativas, controles, flechas de jefe/puerta y avisos. El ensayo no aprueba este dibujo como arte final ni incorpora nuevos diseños al catálogo aprobado. [Guía de prueba](PRUEBA_MAPA_COFRES_V2.md).
+
 **Estructura 0.22:** distinguir visualmente cofre de exploración, premio de jefe y premio de grieta; no presentar las cajas decorativas como cofres funcionales. Diseñar puntos laterales sin tapar el paso, zona de jefe/puerta y lecturas de descubrimiento/apertura. La escala 160 × 100 es de prueba. Estos requisitos usan [las reglas aprobadas](ESTRUCTURA_REGLAS_APROBADAS.md); no sustituyen arte aprobado ni acreditan su acabado.
 
 **Prototipo V2-trial-01:** puerta y soldados reutilizan sprites existentes y dibujo temporal; llamada visible y tono sintetizado, sin voz final grabada. Se ordenan aliados/props/jugador por profundidad. Revisar en P09 escala, silueta, legibilidad, llegada, efectos y voz; la prueba actual no aprueba arte definitivo.

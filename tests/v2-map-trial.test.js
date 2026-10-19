@@ -65,6 +65,15 @@ test('quick trial is explicit and keeps the five-minute contract',()=>{
  assert.equal(normal?.duration,300);assert.equal(normal.startTime,0);assert.equal(normal.bossAt,240);
  assert.equal(fast.startTime,270);assert.equal(fast.duration,300);
 });
+
+test('chest practice requires the isolated V2 gate and is explicit',()=>{
+ assert.equal(setup().G.MapTrial.chestPractice,false);
+ assert.equal(setup('?prueba=mapa-v2&cofres=prueba').G.MapTrial.chestPractice,true);
+ assert.equal(setup('?cofres=prueba').G.MapTrial.chestPractice,false);
+ assert.equal(setup('?cofres=prueba','deteco.github.io','https:','/SCPSurvivor/').G.MapTrial.chestPractice,true);
+ assert.equal(setup('?prueba=mapa-v2&cofres=prueba&cuentas=local').G.MapTrial.chestPractice,false);
+ assert.equal(setup('?prueba=mapa-v2&cofres=prueba','example.com').G.MapTrial.chestPractice,false);
+});
 test('V2 cannot be mixed with the old rift or backpack trial switches',()=>{
  const search='?prueba=mapa-v2&grietas=local&inventario=local',{G}=setup(search);
  const context={G,window:{location:{hostname:'127.0.0.1',search}},URLSearchParams,Math};

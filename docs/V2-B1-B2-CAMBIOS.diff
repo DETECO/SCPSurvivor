@@ -1,0 +1,770 @@
+--- a/css/technical.css
++++ b/css/technical.css
+@@ -73,6 +73,9 @@
+ .rift-locator,.rift-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;background:#1d1015ed;color:#fff0f0;border:1px solid #f3747b;font-size:13px;line-height:1.4;pointer-events:none}
+ .map-trial-link{display:block;margin-top:12px;padding:10px;color:#eee8dc;text-align:center;border:1px solid var(--edge);font-size:13px;min-height:44px}
+ #map-test-note{border-left:3px solid #ef6571;padding-left:10px;font-size:13px;line-height:1.5}
++#chest-test-note{border-left:3px solid #ddd8c9;padding-left:10px;font-size:13px;line-height:1.5}
++.chest-status{position:absolute;z-index:2;left:12px;right:12px;bottom:86px;max-width:620px;margin:auto;padding:7px 10px;border:1px solid #a7b0a5;background:#10201ded;color:#f3ebd9;font-size:12px;line-height:1.4;pointer-events:none}
++@media(max-width:540px){.chest-status{left:8px;right:8px;bottom:88px;font-size:11px}}
+ .map-locator,.map-alert{position:absolute;z-index:3;left:12px;right:12px;max-width:620px;margin:auto;padding:9px 12px;border:1px solid #ddd8c9;background:#10201ded;color:#fff3dc;font-size:13px;line-height:1.4;pointer-events:none}
+ .map-locator{top:100px}.map-alert{top:155px;border-left:4px solid #ef6571}
+ @media(max-width:540px){.map-locator,.map-alert{left:8px;right:8px;font-size:12px}.map-locator{top:118px}.map-alert{top:184px}}
+
+--- a/dev.html
++++ b/dev.html
+@@ -26,7 +26,7 @@
+ <section><h3>Arma 2</h3><label for="loadout-weapon-1">Modelo</label><select id="loadout-weapon-1"></select><div id="loadout-mods-1" class="loadout-mods" aria-label="Mods del arma 2"></div></section>
+ </div>
+ <p id="loadout-role-summary"></p><p id="loadout-preview-summary"></p><ul id="loadout-preview" class="loadout-preview"></ul><p id="loadout-error" class="loadout-error" role="alert"></p>
+-</div><p id="rift-test-note" hidden></p><p id="map-test-note" hidden></p><button id="btn-technical-start" class="primary">Iniciar expedición</button><a id="map-trial-quick" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;rapida=1">Prueba rápida: empezar en 4:30</a></div>
++</div><p id="rift-test-note" hidden></p><p id="map-test-note" hidden></p><p id="chest-test-note" hidden></p><button id="btn-technical-start" class="primary">Iniciar expedición</button><a id="map-trial-quick" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;rapida=1">Prueba rápida: empezar en 4:30</a><a id="chest-trial-link" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;cofres=prueba">Practicar cofres: uno garantizado, sin cuenta</a></div>
+ </section>
+ <section id="technical-pause" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Pausa">
+ <div class="panel"><p class="eyebrow">SECTOR DETENIDO</p><h2>Pausa</h2><p>Tu posición se conserva mientras esta página permanezca abierta.</p><button id="btn-technical-resume" class="primary">Continuar</button><button id="btn-technical-menu">Volver al menú</button></div>
+@@ -39,6 +39,7 @@
+ <div id="rift-alert" class="rift-alert" hidden role="alert" aria-live="assertive" aria-atomic="true"></div>
+ <div id="map-locator" class="map-locator" hidden aria-label="Objetivo del mapa"></div>
+ <div id="map-alert" class="map-alert" hidden role="alert" aria-live="assertive" aria-atomic="true"></div>
++<div id="chest-status" class="chest-status" hidden role="status" aria-live="polite" aria-atomic="true"></div>
+ <section id="field-mod-editor" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="field-mod-title"><div class="panel"><p class="eyebrow">PREPARACIÓN</p><h2 id="field-mod-title">Modificar armas</h2><p>El descanso sigue avanzando mientras ajustas los mods.</p><div id="field-mod-content"></div><p id="field-mod-error" class="loadout-error" role="alert"></p><button id="btn-field-mod-confirm" class="primary">Confirmar cambios</button><button id="btn-field-mod-cancel">Cancelar</button></div></section>
+ <div id="scene-hud" class="hud" hidden><span><span id="scene-soldier">GUARDIA · SPRINT</span> · <span id="scene-time">0:00</span></span><button id="btn-technical-pause" aria-label="Pausar escena">Pausa</button></div>
+ </div>
+@@ -48,6 +49,7 @@
+ <!-- scripts:begin -->
+ <script defer src="js/core/util.js"></script>
+ <script defer src="js/systems/map-trial.js"></script>
++<script defer src="js/systems/exploration-chests.js"></script>
+ <script defer src="js/vendor/firebase-client.js"></script>
+ <script defer src="js/data/field-catalog.js"></script>
+ <script defer src="js/systems/inventory-model.js"></script>
+
+--- a/js/world/sector-maps.js
++++ b/js/world/sector-maps.js
+@@ -133,5 +133,57 @@
+     return { seed, fixture, entry, exit, bossSpawn, rooms, modules, floorTiles, spawnPoints };
+   }
+ 
+-  return { generate };
++  // V2 is deliberately separate: saved/legacy sectors retain their geometry.
++  function generateV2(seed = 1) {
++    seed = Number.isFinite(Number(seed)) ? Number(seed) | 0 : 1;
++    const minX = 0, maxX = 159, minY = 0, maxY = 99;
++    const walls = [], floorTiles = [], blocked = new Set();
++    const point = (x, y) => ({ x: (x + .5) * TS, y: (y + .5) * TS });
++    const entry = point(5, 5), exit = point(154, 94);
++    const bossSpawn = point(113, 50), routeAnchor = point(80, 50);
++    const chestCandidates = [[20, 20], [20, 50], [20, 80], [140, 20], [140, 50], [140, 80]]
++      .map(([x, y], i) => ({ id: `v2-chest-${i + 1}`, ...point(x, y) }));
++    const rooms = [
++      { id: 'v2-entry', role: 'entry', x: 1, y: 1, w: 20, h: 16, cx: 5, cy: 5 },
++      { id: 'v2-plaza', role: 'openroom', x: 29, y: 39, w: 102, h: 23, cx: 80, cy: 50 },
++      { id: 'v2-arena', role: 'openroom', x: 97, y: 38, w: 33, h: 27, cx: 113, cy: 50 },
++      { id: 'v2-arrival', role: 'exit', x: 133, y: 83, w: 25, h: 15, cx: 154, cy: 94 }
++    ];
++    const modules = rooms.map(({ id, role, x, y, w, h }) => ({ id, role, x, y, w, h }));
++    // Compact, separated islands leave wide circuits on all four sides.
++    // The central crossing, arena, arrival area and exploration nodes stay free.
++    const islands = [[48, 28], [48, 73], [112, 28], [112, 73], [66, 20], [94, 80]];
++    for (let i = 0; i < islands.length; i++) {
++      const cx = islands[i][0] + jitter(seed, 1100 + i * 4, 2);
++      const cy = islands[i][1] + jitter(seed, 1101 + i * 4, 2);
++      const w = 8 + Math.floor(hash(seed, 1102 + i * 4) * 4);
++      const h = 6 + Math.floor(hash(seed, 1103 + i * 4) * 4);
++      const x = cx - Math.floor(w / 2), y = cy - Math.floor(h / 2);
++      modules.push({ id: `v2-island-${i + 1}`, role: 'cover', x, y, w, h });
++      for (let dy = 0; dy < h; dy++) for (let dx = 0; dx < w; dx++) blocked.add(`${x + dx},${y + dy}`);
++    }
++    for (let y = minY + 1; y < maxY; y++) for (let x = minX + 1; x < maxX; x++) {
++      if (blocked.has(`${x},${y}`)) walls.push([x, y]);
++      else floorTiles.push([x, y]);
++    }
++    const clear = (x, y) => {
++      if (x < minX + 2 || x > maxX - 2 || y < minY + 2 || y > maxY - 2) return false;
++      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
++        if (blocked.has(`${x + dx},${y + dy}`)) return false;
++      }
++      return true;
++    };
++    const spawnPoints = [];
++    // Distributed across the map; the director chooses candidates near the
++    // current player rather than spawning enemies at the far side of the map.
++    for (let y = 3; y < maxY - 2; y += 4) for (let x = 3; x < maxX - 2; x += 4) {
++      if (!clear(x, y) || Math.hypot(x - 5, y - 5) < 7) continue;
++      spawnPoints.push(point(x, y));
++    }
++    const fixture = { minX, maxX, minY, maxY, walls, props: [] };
++    return { seed, fixture, entry, exit, bossSpawn, rooms, modules, floorTiles, spawnPoints,
++      chestCandidates, routeAnchor, layout: 'v2-open-160x100' };
++  }
++
++  return { generate, generateV2 };
+ })();
+
+--- a/js/systems/map-trial.js
++++ b/js/systems/map-trial.js
+@@ -7,6 +7,7 @@
+  const requested=q.get('prueba')==='mapa-v2'||(publicDemo&&!q.has('prueba'));
+  const enabled=(loopback||publicDemo)&&requested&&!q.has('cuentas');
+  const quick=enabled&&q.get('rapida')==='1';
++ const chestPractice=enabled&&q.get('cofres')==='prueba';
+  const RANGE=440,INTERVAL=.65,DAMAGE=9;
+  let geometry=null,team=[],arrived=false,alertTime=0;
+  function clearLine(ax,ay,bx,by){
+@@ -71,7 +72,7 @@
+    ctx.fillStyle='#d9efe3';ctx.font='9px system-ui';ctx.fillText('ALIADO',ally.x,ally.y-35);
+    ctx.restore();
+  }
+- return{enabled,publicDemo,quick,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
++ return{enabled,publicDemo,quick,chestPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
+   drawables:()=>enabled&&arrived?team.map(a=>({x:a.x,y:a.y,draw:ctx=>drawAlly(ctx,a)})):[],
+   get allies(){return team.map(a=>({x:a.x,y:a.y}));},get alertTime(){return alertTime;}};
+ })();
+
+--- a/js/systems/exploration-chests.js
++++ b/js/systems/exploration-chests.js
+@@ -0,0 +1,98 @@
++/* B2: ensayo aislado de cofres de exploración V2 y tickets FICTICIOS en memoria.
++ * No incluye cofre de jefe, grietas, bono de 10 minutos ni hitos: contratos abiertos.
++ * No escribe cuentas ni inventarios. reset conserva el total local; startRun lo borra.
++ */
++G.ExplorationChests = (() => {
++  const TIMES=[60,120,180,240],OPEN_TIME=3.5,RADIUS=50;
++  let chests=[],candidates=[],ticketTotal=0,attempts=0,cap=1,chance=.10,maxTickets=2;
++  let cursor=0,rng=()=>0,practice=false,notice='';
++  const enabled=()=>!!G.MapTrial?.enabled;
++  function random(seed){
++    // Independent domain and stream; never consume gameplay's global RNG.
++    let n=((seed>>>0)^0x6c8e9cf5)>>>0;
++    return()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/4294967296;};
++  }
++  function roll(){const n=rng();return Number.isFinite(n)?Math.max(0,Math.min(1-Number.EPSILON,n)):1-Number.EPSILON;}
++  function startRun(){
++    ticketTotal=0;chests=[];candidates=[];attempts=0;cursor=0;practice=false;notice='';
++  }
++  function spawn(point,isPractice=false){
++    if(!point||chests.length>=cap)return;
++    chests.push({id:point.id,x:point.x,y:point.y,opened:false,discovered:false,progress:0,
++      tickets:1+Math.floor(roll()*maxTickets),practice:isPractice});
++    notice=isPractice?'Cofre de práctica · tickets ficticios · acércate para descubrirlo.':
++      'Ha aparecido un cofre de exploración · busca en el sector.';
++  }
++  function reset(geometry,{sector=1,seed=0,startTime=0,forcePreview=false,rng:override}={}){
++    chests=[];candidates=[];practice=false;notice='';
++    cap=sector>=8?3:sector>=4?2:1;chance=sector>=8?.20:sector>=4?.15:.10;maxTickets=sector>=8?3:2;
++    cursor=Number.isFinite(startTime)?Math.max(0,startTime):0;
++    attempts=TIMES.filter(t=>t<=cursor).length;
++    // Optional override is only a deterministic test seam, never reward authority.
++    rng=typeof override==='function'?override:random(seed);
++    if(!enabled())return;
++    const ids=new Set();
++    candidates=(geometry?.chestCandidates||[]).filter(p=>{
++      if(!p||ids.has(p.id)||!Number.isFinite(p.x)||!Number.isFinite(p.y))return false;
++      ids.add(p.id);return true;
++    }).map(p=>({id:`${sector}:${seed>>>0}:${p.id}`,x:p.x,y:p.y}));
++    if(forcePreview&&candidates.length){
++      const entry=geometry.entry||{x:0,y:0};
++      const nearest=candidates.reduce((a,b)=>Math.hypot(a.x-entry.x,a.y-entry.y)<=Math.hypot(b.x-entry.x,b.y-entry.y)?a:b);
++      practice=true;spawn(nearest,true);
++    }
++  }
++  function visible(chest){return !!G.Camera?.sees?.(chest.x,chest.y,0);}
++  function clearLine(player,chest){
++    if(!G.World?.projectileBlock)return false;
++    const dx=chest.x-player.x,dy=chest.y-player.y,length=Math.hypot(dx,dy),steps=Math.max(1,Math.ceil(length/4));
++    // Include both endpoints and use the authoritative solid query at radius 2.
++    for(let i=0;i<=steps;i++)if(G.World.projectileBlock(player.x+dx*i/steps,player.y+dy*i/steps,2))return false;
++    return true;
++  }
++  function tick(dt,mapTime,player){
++    if(!enabled()||!Number.isFinite(dt)||dt<=0||!Number.isFinite(mapTime)||!player||player.dead||
++      (Number.isFinite(player.hp)&&player.hp<=0)||(G.Game?.state&&G.Game.state!=='playing'))return;
++    cursor=Math.max(cursor,mapTime);
++    while(attempts<TIMES.length&&TIMES[attempts]<=cursor){
++      attempts++;
++      // Attempts remain consumed after reaching the cap; opening never frees it.
++      if(chests.length>=cap)continue;
++      if(roll()>=chance)continue;
++      const unused=candidates.filter(p=>!chests.some(c=>c.id===p.id));
++      if(unused.length)spawn(unused[Math.floor(roll()*unused.length)]);
++    }
++    for(const chest of chests){
++      if(!chest.discovered&&visible(chest)){
++        chest.discovered=true;
++        notice=chest.practice?'Cofre de práctica descubierto · mantente cerca 3,5 s.':
++          'Cofre descubierto · mantente cerca 3,5 s.';
++      }
++      if(chest.opened)continue;
++      const near=chest.discovered&&Math.hypot(player.x-chest.x,player.y-chest.y)<=RADIUS&&clearLine(player,chest);
++      chest.progress=Math.max(0,Math.min(OPEN_TIME,chest.progress+(near?dt:-1.5*dt)));
++      if(chest.progress>=OPEN_TIME-1e-9){
++        chest.progress=OPEN_TIME;chest.opened=true;ticketTotal+=chest.tickets;
++        notice=`${chest.practice?'Práctica · ':''}Cofre abierto · +${chest.tickets} tickets ficticios.`;
++      }
++    }
++  }
++  function draw(ctx){
++    if(!enabled())return;
++    for(const chest of chests){
++      if(!chest.discovered||!visible(chest))continue;
++      ctx.save();ctx.translate(chest.x,chest.y);
++      ctx.fillStyle=chest.opened?'#3b3333':'#e9e6e0';ctx.strokeStyle='#d63642';ctx.lineWidth=2;
++      ctx.fillRect(-13,-8,26,18);ctx.strokeRect(-13,-8,26,18);
++      ctx.fillStyle='#b62032';ctx.fillRect(-13,-3,26,4);ctx.fillRect(-3,-8,6,18);
++      if(chest.opened){ctx.fillStyle='#30282b';ctx.fillRect(-10,-6,20,7);}
++      else if(chest.progress>0){
++        ctx.fillStyle='#16151c';ctx.fillRect(-20,17,40,5);
++        ctx.fillStyle='#f8eeee';ctx.fillRect(-20,17,40*chest.progress/OPEN_TIME,5);
++      }
++      ctx.restore();
++    }
++  }
++  return{startRun,reset,tick,draw,get state(){return{chests:chests.map(c=>({...c})),ticketTotal,
++    spawned:chests.length,attempts,cap,chance,practice,notice};}};
++})();
+
+--- a/js/systems/expedition.js
++++ b/js/systems/expedition.js
+@@ -32,7 +32,7 @@
+     extractionAvailable=false;
+     if(!v2()&&kind==='normal'&&sector>=3){extractionAvailable=rng()<.25||drought>=3;drought=extractionAvailable?0:drought+1;}
+     mapSeed=Math.imul(runSeed^sector,0x45d9f3b)>>>0;spawnRng=random(mapSeed);
+-    geometry=G.SectorMaps.generate(mapSeed,{boss:kind==='boss'});
++    geometry=v2()&&G.SectorMaps.generateV2?G.SectorMaps.generateV2(mapSeed):G.SectorMaps.generate(mapSeed,{boss:kind==='boss'});
+     G.World.reset(mapSeed);G.World.setFixture(geometry.fixture);G.World.setBiome(1,true);G.Path.clear();G.Pickups.clear();G.EnemyMgr.clear();G.Projectiles.clear();
+     pl.x=geometry.entry.x;pl.y=geometry.entry.y;exit.x=geometry.exit.x;exit.y=geometry.exit.y;
+     G.Camera.x=pl.x;G.Camera.y=pl.y;G.Path.update(1,[pl]);G.Touch.reset();G.Input.reset();objectives=[];boss=null;
+@@ -40,6 +40,15 @@
+       mapTime=sector===1&&G.MapTrial.quick?(G.MapTrial.startTime??270):0;
+       doorOpen=false;bossSpawned=false;bossDefeated=false;spawnClosed=false;spawnClock=0;sectorWaves=0;
+       G.MapTrial.reset?.(geometry);
++      G.ExplorationChests?.reset(geometry,{sector,seed:mapSeed,startTime:mapTime,forcePreview:sector===1&&!!G.MapTrial.chestPractice});
++      if(sector===1&&G.MapTrial.chestPractice){
++        const chest=G.ExplorationChests?.state.chests.find(c=>c.practice);
++        if(chest)for(const [dx,dy] of [[-72,0],[72,0],[0,-72],[0,72],[-51,-51],[51,51]]){
++          const x=chest.x+dx,y=chest.y+dy;
++          if(!G.World.isFree(x,y,pl.r)||!G.Path.reachable(x,y,pl))continue;
++          pl.x=x;pl.y=y;G.Camera.x=x;G.Camera.y=y;G.Path.update(1,[pl]);break;
++        }
++      }
+     }
+     if(extractionAvailable)G.Spawner.say('Este sector tiene extracción · disponible al despejarlo',5,true);
+   }
+@@ -50,6 +59,7 @@
+     runSeed=Number.isFinite(options.seed)?options.seed>>>0:(Math.random()*0xffffffff)>>>0;
+     rng=random(runSeed);nextBossSector=4+Math.floor(rng()*3);
+     G.DimensionalRifts?.reset();
++    if(v2())G.ExplorationChests?.startRun();
+     G.FieldStats.apply(pl);G.FieldAbilities.reset(pl);G.FieldCombat.reset(pl,options.loadout);map();
+     if(v2())beginMapTrial();
+     else if(G.InventoryTrial?.directTest){
+@@ -60,7 +70,9 @@
+     }else beginWave();
+   }
+   function freeSpawn(enemy){
+-    const points=geometry.spawnPoints;
++    // Select from the nearby pool before drawing the seeded offset; scanning the
++    // entire large map from a remote offset would repeatedly pick its first edge.
++    const points=v2()?geometry.spawnPoints.filter(p=>Math.abs(p.x-pl.x)<=G.Camera.w/2+240&&Math.abs(p.y-pl.y)<=G.Camera.h/2+240):geometry.spawnPoints;
+     if(!points.length)return null;
+     const offset=Math.floor(spawnRng()*points.length);
+     for(let n=0;n<points.length;n++){
+@@ -248,6 +260,7 @@
+     G.Combat.resolve(dt,pl,elapsed);G.MapTrial.updateAllies?.(dt,pl);G.Pickups.update(dt,pl,collect);
+     if(pl.dead||pl.hp<=0){finish('death');return;}
+     trialVictory();promptUpgrade();if(phase==='levelup')return;
++    G.ExplorationChests?.tick(dt,mapTime,pl);
+     if(!spawnClosed)recover();trialCross();
+   }
+   function update(dt){
+@@ -287,7 +300,7 @@
+     }
+   }
+   function draw(ctx){
+-    if(v2()){G.MapTrial.draw?.(ctx,snapshot());return;}
++    if(v2()){G.ExplorationChests?.draw(ctx);G.MapTrial.draw?.(ctx,snapshot());return;}
+     G.DimensionalRifts?.draw(ctx);
+     if(!['exploration','extracting','boss','escaping'].includes(phase))return;
+     ctx.save();ctx.fillStyle='#5ac6a233';ctx.strokeStyle='#99ffd6';ctx.lineWidth=3;ctx.beginPath();ctx.arc(exit.x,exit.y,42,0,Math.PI*2);ctx.fill();ctx.stroke();
+
+--- a/js/ui/technical-ui.js
++++ b/js/ui/technical-ui.js
+@@ -89,7 +89,7 @@
+     G.FieldLoadout.init();
+     if(G.MapTrial?.enabled){
+       document.body.dataset.mapTrial='v2';
+-      el('technical-intro').textContent='PRIMERA PRUEBA V2 · Resiste, derrota al jefe de cada mapa y avanza por la puerta de la Fundación.';
++      el('technical-intro').textContent='PRUEBA V2 · Mapa abierto de 160 × 100 casillas con seis ubicaciones alternativas de exploración. Resiste, derrota al jefe y avanza por la puerta de la Fundación.';
+       el('technical-account-hint').textContent=(G.MapTrial.publicDemo?'Demo web':'Prueba local')+' sin cuentas, guardado ni recompensas persistentes. Sin mochilas ni accesorios de armas.';
+       if(G.MapTrial.publicDemo){
+         document.querySelector('header .version').textContent='ALFA · DEMO V2';
+@@ -102,6 +102,12 @@
+       el('btn-technical-start').textContent=G.MapTrial.quick?'Iniciar prueba rápida V2':'Iniciar mapa V2 · 5 minutos';
+       el('map-trial-quick').hidden=false;
+       if(G.MapTrial.quick){el('map-trial-quick').href='?prueba=mapa-v2';el('map-trial-quick').textContent='Probar mapa completo: empezar en 0:00';}
++      el('chest-trial-link').hidden=false;
++      el('chest-test-note').hidden=false;
++      el('chest-test-note').textContent=G.MapTrial.chestPractice
++        ? 'PRÁCTICA DE COFRES · Empiezas junto a un cofre garantizado. Acércate y permanece 3,5 s; alejarte reduce la apertura. Otorga solo tickets ficticios, sin cuenta ni guardado. Este cofre es una ayuda de prueba: no representa la probabilidad normal.'
++        : 'COFRES DE EXPLORACIÓN · Intentos a 1:00, 2:00, 3:00 y 4:00; pueden no aparecer. Solo se indica su ubicación después de descubrirlos. Acércate 3,5 s para abrir. Premios ficticios, sin cuenta ni guardado. La prueba rápida no concede intentos anteriores.';
++      if(G.MapTrial.chestPractice)el('btn-technical-start').textContent='Iniciar prueba de cofres';
+     }
+     const rifts=G.DimensionalRifts;
+     if(rifts.enabled){
+@@ -147,6 +153,7 @@
+     if (value === 'playing') updateSoldierHud();
+     if (value !== 'playing') {
+       el('map-locator').hidden=true;el('map-alert').hidden=true;
++      el('chest-status').hidden=true;
+       el('rift-alert').hidden=true;el('rift-locator').hidden=true;
+       el('field-upgrades').hidden = true; el('field-result').hidden = true;
+       el('btn-field-weapon-0').disabled = true; el('btn-field-weapon-1').disabled = true; el('btn-ability').disabled = true; el('btn-mods').disabled = true;
+@@ -179,6 +186,16 @@
+       el('map-alert').hidden=!canShow||!(G.MapTrial.alertTime>0);
+       el('map-alert').textContent='¡Equipo de la Fundación! «¡Por aquí, te cubrimos!» · '+(v.bossDefeated?'Cruza la puerta.':'Termina con el jefe para avanzar.');
+       el('field-status').textContent=`PRUEBA V2 · Mapa ${s.sector} · ${G.U.mmss(v.mapTime)} / 5:00 · ${s.phase==='levelup'?captions.levelup:goal} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level} | ${weaponSummary}`;
++      const chests=G.ExplorationChests?.state;
++      el('chest-status').hidden=!canShow||!chests;
++      if(chests){
++        const known=chests.chests.filter(c=>c.discovered&&!c.opened).sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y));
++        const chest=known[0],cx=chest?chest.x-player.x:0,cy=chest?chest.y-player.y:0;
++        const chestArrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(cy,cx)/(Math.PI/4))+8)%8];
++        const hint=chest?`Cofre ${chestArrow} ${Math.ceil(Math.hypot(cx,cy))} u · ${chest.progress>0?`abriendo ${Math.floor(chest.progress/3.5*100)} %`:'acércate y permanece 3,5 s'}`:
++          chests.chests.some(c=>!c.opened)?'Cofre sin descubrir · explora el mapa':chests.spawned?'Cofres abiertos':'Explora · puede aparecer un cofre';
++        el('chest-status').textContent=`${hint} · ${chests.ticketTotal} tickets ficticios (sin cuenta)`;
++      }
+     }
+     const rift=G.DimensionalRifts.state,open=rift.status==='open';
+     el('rift-locator').hidden=!open||s.phase==='finished'||s.phase==='levelup';
+
+--- a/tests/v2-map-director.test.js
++++ b/tests/v2-map-director.test.js
+@@ -1,5 +1,5 @@
+ const test=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
+-function setup(seed=1337,quick=false,enabled=true){
++function setup(seed=1337,quick=false,enabled=true,options={}){
+  let list=[],items=[],id=0;
+  const G={U:{dist:(a,b,x,y)=>Math.hypot(x-a,y-b),rand:()=>0},Camera:{w:768,h:768,x:0,y:0,sees:()=>false,follow(){}},
+  World:{reset(){},setFixture(){},setBiome(){},isFree:()=>true,update(){}},Path:{clear(){},update(){},reachable:()=>true},
+@@ -15,6 +15,11 @@
+   vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/dimensional-rifts.js'),'utf8'),{G,Math,URLSearchParams,window:{location:{hostname:'127.0.0.1',search:riftMode}}});}
+  if(inventory)G.InventoryTrial={enabled:true,directTest:true};
+  G.MapTrial={enabled,quick,duration:300,bossAt:240,startTime:quick?270:0,allies:[],resets:0,arrivals:0,reset(g){this.resets++;this.geometry=g},arrive(){this.arrivals++},updateAllies(){},draw(){}};
++ if(options.chests){
++  G.SectorMaps.generateV2=s=>({...G.SectorMaps.generate(s),layout:'v2-open-160x100',chestCandidates:Array.from({length:6},(_,id)=>({id,x:100+id*100,y:100}))});
++  G.ExplorationChests={runs:0,resets:[],ticks:[],startRun(){this.runs++},reset(g,o){this.resets.push({g,o})},tick(...args){this.ticks.push(args)},draw(){},state:{chests:[]}};
++ }
++ if(options.prepare)options.prepare(G,player);
+  for(const file of ['../js/data/field-catalog.js','../js/systems/field-stats.js','../js/systems/field-abilities.js','../js/systems/expedition.js'])vm.runInNewContext(fs.readFileSync(require.resolve(file),'utf8'),{G,Math});G.Expedition.start(player,{seed});
+  function clearWave(){for(let step=0;step<500;step++){for(const e of G.EnemyMgr.all()){if(!e.dead){e.dead=true;player.kills++;}}G.Expedition.update(1);if(G.Expedition.state.phase==='preparation')return;}throw Error('wave stuck')}
+  function clearSector(){for(let n=0;n<G.Expedition.state.sectorWaves;n++){clearWave();G.Expedition.ready()}player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;}
+@@ -67,3 +72,30 @@
+  a.G.Expedition.update(300);assert.equal(boundaries,0);a.player.hp=0;a.G.Expedition.update(.1);assert.equal(a.G.Expedition.state.result.reason,'death');
+  const legacy=setup(1337,false,false);assert.equal('v2' in legacy.G.Expedition.state,false);assert.ok(legacy.G.Expedition.captureState());legacy.clearWave();assert.equal(legacy.G.Expedition.state.phase,'preparation');
+ });
++
++test('V2 integra geometría y cofres, reloj rápido sin regalos retroactivos y reinicio por mapa',()=>{
++ const {G,player}=setup(42,true,true,{chests:true});
++ assert.equal(G.MapTrial.geometry.layout,'v2-open-160x100');
++ assert.equal(G.ExplorationChests.runs,1);assert.equal(G.ExplorationChests.resets.length,1);
++ assert.equal(G.ExplorationChests.resets[0].o.startTime,270);
++ assert.equal(G.ExplorationChests.resets[0].o.sector,1);
++ G.Expedition.update(1);assert.equal(G.ExplorationChests.ticks.length,1);
++ assert.equal(G.ExplorationChests.ticks[0][1],271);assert.equal(G.ExplorationChests.ticks[0][2],player);
++ G.Expedition.update(29);G.EnemyMgr.all().find(e=>e.boss).dead=true;
++ player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;G.Expedition.update(.01);
++ assert.equal(G.ExplorationChests.runs,1);assert.equal(G.ExplorationChests.resets.length,2);
++ assert.equal(G.ExplorationChests.resets[1].o.startTime,0);assert.equal(G.ExplorationChests.resets[1].o.sector,2);
++ G.Pickups.update=(dt,p,collect)=>collect({kind:'xp',value:1});player.gainXp=()=>1;player.xpNext=1;
++ G.Expedition.update(.01);assert.equal(G.Expedition.state.phase,'levelup');
++ const ticks=G.ExplorationChests.ticks.length;G.Expedition.update(10);assert.equal(G.ExplorationChests.ticks.length,ticks);
++ player.hp=0;G.Expedition.update(.1);assert.equal(G.ExplorationChests.ticks.length,ticks);
++ const legacy=setup(42,false,false,{chests:true});assert.equal(legacy.G.ExplorationChests.runs,0);assert.equal(legacy.G.ExplorationChests.resets.length,0);
++});
++
++test('V2 mapa grande genera la horda cerca del jugador, sin llenar el cupo con enemigos remotos',()=>{
++ const {G,player}=setup(42,false,true,{chests:true,prepare(g,p){
++  g.SectorMaps.generateV2=s=>({...g.SectorMaps.generate(s),layout:'v2-open-160x100',spawnPoints:[{x:2400,y:0},{x:500,y:0},{x:2800,y:0},{x:-500,y:0}]});
++ }});
++ assert.equal(G.EnemyMgr.count,4);
++ for(const e of G.EnemyMgr.all())assert.ok(Math.hypot(e.x-player.x,e.y-player.y)<=800,'spawn remoto');
++});
+
+--- a/tests/v2-map-trial.test.js
++++ b/tests/v2-map-trial.test.js
+@@ -65,6 +65,15 @@
+  assert.equal(normal?.duration,300);assert.equal(normal.startTime,0);assert.equal(normal.bossAt,240);
+  assert.equal(fast.startTime,270);assert.equal(fast.duration,300);
+ });
++
++test('chest practice requires the isolated V2 gate and is explicit',()=>{
++ assert.equal(setup().G.MapTrial.chestPractice,false);
++ assert.equal(setup('?prueba=mapa-v2&cofres=prueba').G.MapTrial.chestPractice,true);
++ assert.equal(setup('?cofres=prueba').G.MapTrial.chestPractice,false);
++ assert.equal(setup('?cofres=prueba','deteco.github.io','https:','/SCPSurvivor/').G.MapTrial.chestPractice,true);
++ assert.equal(setup('?prueba=mapa-v2&cofres=prueba&cuentas=local').G.MapTrial.chestPractice,false);
++ assert.equal(setup('?prueba=mapa-v2&cofres=prueba','example.com').G.MapTrial.chestPractice,false);
++});
+ test('V2 cannot be mixed with the old rift or backpack trial switches',()=>{
+  const search='?prueba=mapa-v2&grietas=local&inventario=local',{G}=setup(search);
+  const context={G,window:{location:{hostname:'127.0.0.1',search}},URLSearchParams,Math};
+
+--- a/tests/v2-map-geometry.test.js
++++ b/tests/v2-map-geometry.test.js
+@@ -0,0 +1,109 @@
++const test = require('node:test');
++const assert = require('node:assert/strict');
++const fs = require('node:fs');
++const vm = require('node:vm');
++
++function setup() {
++  const context = { Math, Map, Set, Uint8Array, Int16Array, Int32Array, performance: { now: () => 1000 } };
++  context.window = context;
++  vm.createContext(context);
++  vm.runInContext(fs.readFileSync(require.resolve('../js/core/util.js'), 'utf8'), context);
++  const G = context.G;
++  G.Tiles = { T: 8, NORMAL: 1, ARENA: 1, BIOMES: [{ liquid: 'water' }] };
++  G.Sprites = { PX: 4 };
++  for (const name of ['world/world', 'world/sector-maps', 'systems/pathing']) {
++    vm.runInContext(fs.readFileSync(require.resolve(`../js/${name}.js`), 'utf8'), context);
++  }
++  return G;
++}
++
++// Dijkstra on the collision-safe 8-neighbor graph. Diagonals cost sqrt(2)
++// tiles and cannot cut corners; reported times exclude combat and pauses.
++function distances(map, start, radius = 22, G) {
++  G.World.setFixture(map.fixture);
++  const width = 160, height = 100, open = new Uint8Array(width * height);
++  for (const [x, y] of map.floorTiles) open[y * width + x] = G.World.isFree((x + .5) * 32, (y + .5) * 32, radius) ? 1 : 0;
++  const source = Math.floor(start.y / 32) * width + Math.floor(start.x / 32);
++  const dist = new Float64Array(width * height).fill(Infinity), heap = [];
++  function push(item) {
++    let i = heap.length; heap.push(item);
++    while (i && heap[(i - 1) >> 1][0] > item[0]) { heap[i] = heap[(i - 1) >> 1]; i = (i - 1) >> 1; }
++    heap[i] = item;
++  }
++  function pop() {
++    const first = heap[0], last = heap.pop();
++    if (heap.length) {
++      let i = 0;
++      while (i * 2 + 1 < heap.length) {
++        let j = i * 2 + 1;
++        if (j + 1 < heap.length && heap[j + 1][0] < heap[j][0]) j++;
++        if (heap[j][0] >= last[0]) break;
++        heap[i] = heap[j]; i = j;
++      }
++      heap[i] = last;
++    }
++    return first;
++  }
++  dist[source] = 0; push([0, source]);
++  while (heap.length) {
++    const [cost, index] = pop();
++    if (cost !== dist[index]) continue;
++    const x = index % width, y = Math.floor(index / width);
++    for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
++      if (!dx && !dy) continue;
++      const nx = x + dx, ny = y + dy, next = ny * width + nx;
++      if (nx < 0 || nx >= width || ny < 0 || ny >= height || !open[next]) continue;
++      if (dx && dy && (!open[y * width + nx] || !open[ny * width + x])) continue;
++      const candidate = cost + (dx && dy ? Math.SQRT2 : 1);
++      if (candidate < dist[next]) { dist[next] = candidate; push([candidate, next]); }
++    }
++  }
++  return { dist, seconds: p => dist[Math.floor(p.y / 32) * width + Math.floor(p.x / 32)] * 32 / 165 };
++}
++
++test('V2 geometry is stable, varied, bounded and preserves the legacy API', () => {
++  const G = setup(), legacy = JSON.stringify(G.SectorMaps.generate(42));
++  assert.equal(typeof G.SectorMaps.generateV2, 'function');
++  const a = G.SectorMaps.generateV2(42), b = G.SectorMaps.generateV2(42), c = G.SectorMaps.generateV2(43);
++  assert.equal(JSON.stringify(a), JSON.stringify(b));
++  assert.notEqual(JSON.stringify(a.floorTiles), JSON.stringify(c.floorTiles));
++  assert.equal(JSON.stringify(G.SectorMaps.generate(42)), legacy);
++  assert.equal(G.SectorMaps.generate(42, { boss: true }).layout, undefined);
++  assert.equal(a.layout, 'v2-open-160x100');
++  assert.equal(a.fixture.maxX - a.fixture.minX + 1, 160);
++  assert.equal(a.fixture.maxY - a.fixture.minY + 1, 100);
++});
++
++test('V2 seeds keep full connectivity, clearance, broad alternative routes and measured travel targets', t => {
++  const G = setup(), mainTimes = [], optionalTimes = [];
++  for (const seed of [0, 1, 19, 42, 73, 127, -1, 3585071513]) {
++    const map = G.SectorMaps.generateV2(seed), floors = new Set(map.floorTiles.map(p => p.join(',')));
++    G.World.setFixture(map.fixture);
++    assert.equal(map.chestCandidates.length, 6);
++    assert.equal(new Set(map.chestCandidates.map(p => p.id)).size, 6);
++    assert.ok(map.floorTiles.length > 13000, 'large open floor rather than a maze');
++    for (const p of [map.entry, map.exit, map.bossSpawn, map.routeAnchor, ...map.chestCandidates, ...map.spawnPoints]) {
++      const x = Math.floor(p.x / 32), y = Math.floor(p.y / 32);
++      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) assert.ok(floors.has(`${x + dx},${y + dy}`), `${seed}: 3x3 clearance`);
++      assert.equal(G.World.isFree(p.x, p.y, 22), true);
++    }
++    const fromEntry = distances(map, map.entry, 0, G);
++    for (const [x, y] of map.floorTiles) assert.ok(Number.isFinite(fromEntry.dist[y * 160 + x]), `${seed}: isolated floor`);
++    const route = distances(map, map.entry, 22, G), optional = distances(map, map.routeAnchor, 22, G);
++    const main = route.seconds(map.exit); mainTimes.push(main);
++    assert.ok(main >= 30 && main <= 45, `${seed}: main ${main}s`);
++    for (const p of map.chestCandidates) {
++      const seconds = optional.seconds(p); optionalTimes.push(seconds);
++      assert.ok(seconds >= 10 && seconds <= 15, `${seed}: optional ${seconds}s`);
++    }
++    // Ten-tile perimeter circuits stay free: every island can be bypassed.
++    for (let x = 3; x <= 156; x++) for (const y of [10, 50, 89]) assert.ok(floors.has(`${x},${y}`));
++    for (let y = 3; y <= 96; y++) for (const x of [10, 80, 149]) assert.ok(floors.has(`${x},${y}`));
++    assert.ok(map.spawnPoints.some(p => p.x < 32 * 40));
++    assert.ok(map.spawnPoints.some(p => p.x > 32 * 120));
++    G.World.setFixture(map.fixture); G.Path.clear();
++    const player = { ...map.entry, fieldMode: true }; G.Path.update(1, [player]);
++    for (const p of map.spawnPoints) assert.equal(G.Path.reachable(p.x, p.y, player), true);
++  }
++  t.diagnostic(`165u/s, radius22, 8-neighbor collision paths: main ${Math.min(...mainTimes).toFixed(2)}–${Math.max(...mainTimes).toFixed(2)}s; anchor to optional ${Math.min(...optionalTimes).toFixed(2)}–${Math.max(...optionalTimes).toFixed(2)}s`);
++});
+
+--- a/tests/v2-exploration-chests.test.js
++++ b/tests/v2-exploration-chests.test.js
+@@ -0,0 +1,103 @@
++const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
++const file=path.join(__dirname,'../js/systems/exploration-chests.js');
++const geometry={entry:{x:0,y:0},chestCandidates:Array.from({length:6},(_,id)=>({id:'c'+id,x:100+id*200,y:0}))};
++function setup(options={}){
++ const G={MapTrial:{enabled:true},Game:{state:'playing'},Camera:{sees:()=>false},World:{projectileBlock:()=>false}};
++ for(const name of ['DB','Account','Inventory'])Object.defineProperty(G,name,{get(){throw Error('account accessed');}});
++ if(fs.existsSync(file))vm.runInNewContext(fs.readFileSync(file,'utf8'),{G,Math:Object.assign(Object.create(Math),{random(){throw Error('global RNG accessed');}}),localStorage:new Proxy({},{get(){throw Error('storage accessed');}}),fetch(){throw Error('network accessed');}});
++ assert.ok(G.ExplorationChests,'exposes the exploration chest API');
++ const C=G.ExplorationChests;C.startRun();C.reset(geometry,{sector:1,seed:123,...options});
++ const p={x:-500,y:0,hp:100,t1:55};return{G,C,p};
++}
++test('all four time boundaries process once, including jumps and rewinds',()=>{
++ const {C,p}=setup({sector:8,rng:()=>0});
++ C.tick(.1,59.9,p);assert.equal(C.state.attempts,0);
++ C.tick(.1,60,p);assert.equal(C.state.attempts,1);
++ C.tick(.1,60,p);C.tick(.1,30,p);assert.equal(C.state.attempts,1);
++ C.tick(.1,999,p);assert.equal(C.state.attempts,4);assert.equal(C.state.spawned,3);
++ C.tick(.1,1000,p);assert.equal(C.state.attempts,4);
++});
++test('sector chance, caps and fixed ticket limits match the contract',()=>{
++ for(const [sector,chance,cap,max] of [[1,.10,1,2],[3,.10,1,2],[4,.15,2,2],[7,.15,2,2],[8,.20,3,3],[50,.20,3,3]]){
++  const {C,p}=setup({sector,rng:()=>0});C.tick(.1,240,p);
++  assert.equal(C.state.chance,chance);assert.equal(C.state.cap,cap);assert.equal(C.state.spawned,cap);
++  assert.equal(new Set(C.state.chests.map(c=>c.id)).size,cap);
++  for(const chest of C.state.chests)assert.ok(chest.tickets>=1&&chest.tickets<=max);
++  const failed=setup({sector,rng:()=>chance});failed.C.tick(.1,240,failed.p);assert.equal(failed.C.state.spawned,0);
++ }
++});
++test('quickstart skips historical attempts without RNG or retroactive chests',()=>{
++ const {C,p}=setup({startTime:270,rng:()=>{throw Error('retroactive roll');}});
++ assert.equal(C.state.attempts,4);C.tick(.1,300,p);assert.equal(C.state.spawned,0);
++});
++test('practice uses nearest entry candidate, consumes cap and says it is practice',()=>{
++ const {C,p}=setup({forcePreview:true,rng:()=>0});
++ assert.equal(C.state.spawned,1);assert.equal(C.state.practice,true);assert.equal(C.state.chests[0].id,'1:123:c0');
++ assert.equal(C.state.chests[0].practice,true);assert.match(C.state.notice,/práctica/i);
++ C.tick(.1,240,p);assert.equal(C.state.spawned,1);assert.equal(C.state.attempts,4);
++});
++test('only Camera.sees discovers; discovery persists after leaving the view',()=>{
++ const {C,G,p}=setup({forcePreview:true});C.tick(.1,1,p);assert.equal(C.state.chests[0].discovered,false);
++ G.Camera.sees=(x,y,pad)=>{assert.equal(pad,0);return true;};C.tick(.1,2,p);assert.equal(C.state.chests[0].discovered,true);
++ G.Camera.sees=()=>false;C.tick(.1,3,p);assert.equal(C.state.chests[0].discovered,true);
++});
++test('opening needs 3.5 seconds within inclusive 50 radius and awards once',()=>{
++ const {C,G,p}=setup({forcePreview:true,rng:()=>0});G.Camera.sees=()=>true;p.x=150;
++ C.tick(3.4,3.4,p);assert.equal(C.state.ticketTotal,0);assert.equal(C.state.chests[0].progress,3.4);
++ C.tick(.1,3.5,p);assert.equal(C.state.chests[0].opened,true);const total=C.state.ticketTotal;
++ assert.equal(total,C.state.chests[0].tickets);for(let n=0;n<10;n++)C.tick(1,5+n,p);
++ assert.equal(C.state.ticketTotal,total);assert.equal(p.t1,55);C.tick(1,240,p);assert.equal(C.state.spawned,1);
++});
++test('out of range or occlusion decays progress by 1.5 seconds per second',()=>{
++ const {C,G,p}=setup({forcePreview:true});p.x=100;G.Camera.sees=()=>true;
++ C.tick(2,2,p);p.x=151;C.tick(.5,2.5,p);assert.equal(C.state.chests[0].progress,1.25);
++ p.x=60;let samples=0;G.World.projectileBlock=(x,y,r)=>{samples++;assert.equal(r,2);return x>=75&&x<=85;};
++ C.tick(.5,3,p);assert.ok(samples>0);assert.equal(C.state.chests[0].progress,.5);
++ C.tick(2,5,p);assert.equal(C.state.chests[0].progress,0);
++});
++test('LOS samples endpoints even with zero distance and missing terrain fails closed',()=>{
++ const {C,G,p}=setup({forcePreview:true});p.x=100;G.Camera.sees=()=>true;G.World.projectileBlock=()=>true;
++ C.tick(4,4,p);assert.equal(C.state.chests[0].progress,0);
++ delete G.World.projectileBlock;C.tick(4,8,p);assert.equal(C.state.chests[0].progress,0);
++});
++test('damage does not cancel progress and module never changes firing or account fields',()=>{
++ const {C,G,p}=setup({forcePreview:true});p.x=100;p.firing=true;G.Camera.sees=()=>true;
++ C.tick(2,2,p);p.hp=1;C.tick(1.5,3.5,p);assert.equal(C.state.chests[0].opened,true);assert.equal(p.firing,true);assert.equal(p.t1,55);
++});
++test('pause, no player, death and disabled trial freeze attempts and opening',()=>{
++ const {C,G,p}=setup({forcePreview:true,sector:8,rng:()=>0});p.x=100;G.Camera.sees=()=>true;C.tick(1,1,p);
++ G.Game.state='paused';C.tick(100,240,p);G.Game.state='playing';C.tick(100,240,null);
++ p.dead=true;C.tick(100,240,p);p.dead=false;p.hp=0;C.tick(100,240,p);p.hp=100;
++ G.MapTrial.enabled=false;C.tick(100,240,p);assert.equal(C.state.chests[0].progress,1);assert.equal(C.state.attempts,0);
++ G.MapTrial.enabled=true;C.tick(1,2,p);assert.equal(C.state.chests[0].progress,2);
++});
++test('reset preserves fictional run total, startRun clears it and snapshots are safe',()=>{
++ const {C,G,p}=setup({forcePreview:true});p.x=100;G.Camera.sees=()=>true;C.tick(3.5,3.5,p);const total=C.state.ticketTotal;
++ const snapshot=C.state;snapshot.chests[0].tickets=999;snapshot.chests.length=0;assert.equal(C.state.chests.length,1);
++ C.reset(geometry,{sector:4,seed:5});assert.equal(C.state.ticketTotal,total);assert.equal(C.state.spawned,0);assert.equal(C.state.attempts,0);
++ C.startRun();assert.equal(C.state.ticketTotal,0);assert.equal(C.state.chests.length,0);
++});
++test('equal seeds generate equal spawn and ticket results independently of global RNG',()=>{
++ const a=setup({sector:8,seed:173}),b=setup({sector:8,seed:173});a.C.tick(.1,240,a.p);b.C.tick(.1,240,b.p);
++ assert.equal(JSON.stringify(a.C.state),JSON.stringify(b.C.state));
++});
++test('chest ids distinguish sector and map seed',()=>{
++ const {C}=setup({forcePreview:true});const first=C.state.chests[0].id;
++ C.reset(geometry,{sector:2,seed:123,forcePreview:true});const second=C.state.chests[0].id;
++ C.reset(geometry,{sector:1,seed:124,forcePreview:true});assert.notEqual(first,second);assert.notEqual(first,C.state.chests[0].id);
++});
++test('disabled mode and empty geometry do not create even practice rewards',()=>{
++ const {C,G,p}=setup();G.MapTrial.enabled=false;C.reset(geometry,{sector:8,seed:1,forcePreview:true,rng:()=>0});C.tick(5,240,p);assert.equal(C.state.spawned,0);
++ G.MapTrial.enabled=true;C.reset({entry:{x:0,y:0},chestCandidates:[]},{sector:8,seed:1,forcePreview:true,rng:()=>0});C.tick(5,240,p);assert.equal(C.state.spawned,0);
++});
++test('invalid dt and times cannot corrupt progress or repeat lottery attempts',()=>{
++ const {C,p}=setup({forcePreview:true});for(const dt of [0,-1,NaN,Infinity])C.tick(dt,240,p);
++ assert.equal(C.state.attempts,0);assert.equal(C.state.chests[0].progress,0);
++ C.tick(1,NaN,p);C.tick(1,Infinity,p);assert.equal(C.state.attempts,0);
++});
++test('draw uses temporary canvas artwork and respects visibility and disabled mode',()=>{
++ const {C,G,p}=setup({forcePreview:true});let calls=0;
++ const ctx=new Proxy({},{get:(_,key)=>()=>{calls++;},set:()=>true});
++ C.draw(ctx);assert.equal(calls,0);G.Camera.sees=()=>true;C.tick(1,1,p);C.draw(ctx);assert.ok(calls>0);
++ G.MapTrial.enabled=false;const previous=calls;C.draw(ctx);assert.equal(calls,previous);
++});
+
+--- a/tests/v2-b1b2-browser.py
++++ b/tests/v2-b1b2-browser.py
+@@ -0,0 +1,136 @@
++"""QA B1/B2 con posición, invulnerabilidad y tiempo controlados.
++Ejecutar después del build; --live verifica solamente index público.
++No es aceptación humana, balance, rendimiento ni dispositivo físico.
++"""
++from pathlib import Path
++from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
++from functools import partial
++from threading import Thread
++from urllib.parse import urlsplit
++from playwright.sync_api import sync_playwright
++import argparse, json, os
++
++ROOT = Path(os.environ.get('SCP_TEST_ROOT', Path(__file__).resolve().parents[1])).resolve()
++OUT = Path(os.environ.get('SCP_TEST_ARTIFACTS', ROOT/'tests/artifacts/v2-b1b2'))
++ThreadingHTTPServer.request_queue_size = 128
++
++class Quiet(SimpleHTTPRequestHandler):
++    def log_message(self, *args): pass
++
++def main():
++    parser = argparse.ArgumentParser(); parser.add_argument('--live', action='store_true')
++    args = parser.parse_args(); OUT.mkdir(parents=True, exist_ok=True)
++    server = None
++    if args.live:
++        base = 'https://deteco.github.io/SCPSurvivor/'
++    else:
++        server = ThreadingHTTPServer(('127.0.0.1', 0), partial(Quiet, directory=str(ROOT)))
++        Thread(target=server.serve_forever, daemon=True).start()
++        base = f'http://127.0.0.1:{server.server_port}/'
++    origin = urlsplit(base).netloc; records = []
++    try:
++        with sync_playwright() as pw:
++            browser = pw.chromium.launch(headless=True)
++            for entry in (['index.html'] if args.live else ['dev.html', 'index.html']):
++                for touch in [False, True]:
++                    context = browser.new_context(viewport={'width':390 if touch else 1280, 'height':844 if touch else 900}, has_touch=touch, is_mobile=touch)
++                    page = context.new_page(); errors=[]; remote=[]; bad=[]
++                    page.on('pageerror', lambda e: errors.append(str(e)))
++                    page.on('console', lambda m: errors.append(m.text) if m.type=='error' else None)
++                    page.on('response', lambda r: bad.append([r.status,r.url]) if r.status>=400 else None)
++                    def route(r):
++                        if urlsplit(r.request.url).netloc == origin: r.continue_()
++                        else: remote.append(r.request.url); r.abort()
++                    page.route('**/*', route)
++                    page.goto(base+entry+'?prueba=mapa-v2&cofres=prueba')
++                    page.wait_for_selector('#btn-technical-start:visible')
++                    assert page.locator('#chest-test-note').is_visible()
++                    page.click('#btn-technical-start')
++                    page.wait_for_function('() => G.Game.state === "playing" && !!G.Expedition.state.v2')
++                    page.click('#btn-technical-pause')
++                    initial=page.evaluate('''() => {
++                        const p=G.Game.player,s=G.Expedition.state,f=G.World.fixture;
++                        p.invuln=1e6;
++                        const map=G.SectorMaps.generateV2(s.mapSeed);
++                        G.Path.update(1,[p]);
++                        const candidates=map.chestCandidates.map(c=>({...c,free:G.World.isFree(c.x,c.y),reachable:G.Path.reachable(c.x,c.y,p)}));
++                        window.chestQA={
++                            step(n){
++                                if(G.Game.state==='paused')G.Game.togglePause();
++                                if(G.Game.state!=='playing')throw Error('QA no pudo reanudar');
++                                let visible=[];
++                                try{
++                                    for(let i=0;i<n;i++){
++                                        if(G.Expedition.state.phase==='levelup')G.Expedition.choose(0);
++                                        G.Expedition.update(1/30);
++                                    }
++                                    G.TechnicalUI.tick(p,G.Expedition.state.elapsed);
++                                    visible=['chest-status','map-locator','map-alert'].map(id=>[id,document.getElementById(id).hidden]);
++                                }finally{
++                                    if(G.Game.state==='playing')G.Game.togglePause();
++                                    // Retain the actual HUD snapshot for a frozen screenshot.
++                                    G.TechnicalUI.state('playing');
++                                    for(const [id,hidden]of visible)document.getElementById(id).hidden=hidden;
++                                }
++                            },
++                            at(x,y){p.x=x;p.y=y;G.Path.update(1,[p]);}
++                        };
++                        const chest=G.ExplorationChests.state.chests[0];
++                        return {width:f.maxX-f.minX+1,height:f.maxY-f.minY+1,mapTime:s.v2.mapTime,initialDistance:chest?Math.hypot(p.x-chest.x,p.y-chest.y):null,layout:map.layout,candidates,chests:G.ExplorationChests.state,accounts:G.LocalAccounts.enabled,checkpoint:G.RunCheckpoint.capture()};
++                    }''')
++                    assert (initial['width'],initial['height']) == (160,100), initial
++                    assert 0 <= initial['mapTime'] < 2, initial
++                    assert initial['initialDistance']>50, initial
++                    assert initial['layout']=='v2-open-160x100', initial
++                    assert len(initial['candidates'])==6 and all(c['free'] and c['reachable'] for c in initial['candidates']), initial
++                    assert initial['accounts'] is False and initial['checkpoint'] is None, initial
++                    state=initial['chests']
++                    assert set(['chests','ticketTotal','spawned','attempts','cap','chance','practice','notice']) <= state.keys(), state
++                    assert state['practice'] and len(state['chests'])==1 and state['ticketTotal']==0, state
++                    assert set(['id','x','y','opened','discovered','progress','tickets','practice']) <= state['chests'][0].keys(), state
++                    assert not state['chests'][0]['opened'] and state['chests'][0]['practice'], state
++                    before=page.evaluate('''() => {
++                        const c=G.ExplorationChests.state.chests[0];chestQA.at(c.x,c.y);chestQA.step(60);
++                        return JSON.parse(JSON.stringify(G.ExplorationChests.state));
++                    }''')
++                    assert 1.9<=before['chests'][0]['progress']<=2.1 and not before['chests'][0]['opened'], before
++                    assert 'fictici' in page.locator('#chest-status').inner_text().lower()
++                    assert page.locator('#chest-status').is_visible()
++                    stem=f'{entry[:-5]}-{"touch" if touch else "desktop"}'
++                    page.screenshot(path=str(OUT/f'{stem}-progress.png'))
++                    page.wait_for_timeout(220)
++                    assert page.evaluate('G.ExplorationChests.state.chests[0].progress')==before['chests'][0]['progress']
++                    decay=page.evaluate('''() => {
++                        const c=G.ExplorationChests.state.chests[0];chestQA.at(c.x+72,c.y);chestQA.step(30);
++                        return JSON.parse(JSON.stringify(G.ExplorationChests.state));
++                    }''')
++                    assert abs(before['chests'][0]['progress']-decay['chests'][0]['progress']-1.5)<0.08, decay
++                    assert not decay['chests'][0]['opened'] and decay['ticketTotal']==0, decay
++                    threshold=page.evaluate('''() => {
++                        const c=G.ExplorationChests.state.chests[0];chestQA.at(c.x,c.y);chestQA.step(88);
++                        return JSON.parse(JSON.stringify(G.ExplorationChests.state));
++                    }''')
++                    assert not threshold['chests'][0]['opened'] and threshold['ticketTotal']==0, threshold
++                    opened=page.evaluate('''() => {
++                        chestQA.step(3);
++                        return JSON.parse(JSON.stringify(G.ExplorationChests.state));
++                    }''')
++                    assert opened['chests'][0]['opened'] and opened['ticketTotal']>0, opened
++                    repeated=page.evaluate('''() => {chestQA.step(150);return JSON.parse(JSON.stringify(G.ExplorationChests.state));}''')
++                    assert repeated['ticketTotal']==opened['ticketTotal'], repeated
++                    assert len(repeated['chests'])==1, repeated
++                    assert page.evaluate('!G.LocalAccounts.enabled && G.RunCheckpoint.capture()===null')
++                    assert 'fictici' in page.locator('#chest-status').inner_text().lower()
++                    page.screenshot(path=str(OUT/f'{stem}-opened.png'))
++                    assert not errors, errors
++                    assert not remote, remote
++                    assert not bad, bad
++                    records.append({'entry':entry,'touchEmulated':touch,'status':'PASS','initial':initial,'progress':before,'decay':decay,'opened':opened,'repeated':repeated,'errors':errors,'remoteAttempts':remote,'httpFailures':bad})
++                    context.close()
++            browser.close()
++        (OUT/'results.json').write_text(json.dumps({'live':args.live,'records':records,'method':'Navegador aislado con posición, invulnerabilidad y pasos de tiempo controlados. Pausa global verificada con tiempo real. Cofres y tickets de práctica. Sin cuentas ni solicitudes externas; no acredita aceptación humana, balance, rendimiento ni dispositivo físico.'},indent=2)+'\n',encoding='utf-8')
++        print(json.dumps({'result':'PASS','scenarios':len(records),'output':str(OUT)}))
++    finally:
++        if server: server.shutdown(); server.server_close()
++
++if __name__=='__main__': main()
