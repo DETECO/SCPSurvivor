@@ -1,5 +1,8 @@
 # Plan de adaptación a ESTRUCTURA — SCP Survivor
 
+**Prioridad vigente 0.27 · 20/10/2026 (A-037/D-333):** Iván da por aceptado lo pendiente de P05 para continuar y prioriza llegar al diseño visual. Aceptación del propietario registrada; las comprobaciones técnicas de servicios reales no ejecutadas se difieren, sin declararlas aprobadas. P05 deja de bloquear el prototipo local B4 y la preparación visual. Cuentas propias, economía persistente y facturación siguen desactivadas. [Mecánicas pendientes y ruta al diseño](PRIORIDAD_MECANICAS_Y_DISENO.md). Esta instrucción posterior sustituye el bloqueo anterior por aceptación P05 para esos trabajos locales; no autoriza activar servicios reales ni reintroducir mochilas, accesorios o extracciones.
+
+
 **Entrega 0.25 · 19/10/2026:** RC-10 tiene el prototipo B1/B2: mapa inicial 160 × 100, seis ubicaciones y cofres de exploración con tabla base y tickets ficticios. [Prueba](PRUEBA_MAPA_COFRES_V2.md) · [Verificación](V2-B1-B2-REPORT.md). Conserva aceptación final y dependencias pendientes, incluidos premios de jefe/grieta, hitos, bono de diez minutos y economía persistente. Los criterios completos siguientes no se dan por cerrados.
 
 **Actualización 0.24 (19/10/2026):** RC-07 ahora exige dos armas simultáneas y tres ofertas compatibles; se añaden RC-13 (tres poderes y reemplazo) y RC-14 (ultimate única, máximo nivel 5), pendientes. RC-09/RC-11/RC-12 incorporan esas dependencias. [Detalle y aceptación](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). La demo y los criterios históricos no cambian.

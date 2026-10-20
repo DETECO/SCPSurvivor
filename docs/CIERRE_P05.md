@@ -1,5 +1,8 @@
 # Pauta de aceptación real de P05
 
+**Prioridad vigente 0.27 · 20/10/2026 (A-037/D-333):** Iván da por aceptado lo pendiente de P05 para continuar y prioriza llegar al diseño visual. Aceptación del propietario registrada; las comprobaciones técnicas de servicios reales no ejecutadas se difieren, sin declararlas aprobadas. P05 deja de bloquear el prototipo local B4 y la preparación visual. Cuentas propias, economía persistente y facturación siguen desactivadas. [Mecánicas pendientes y ruta al diseño](PRIORIDAD_MECANICAS_Y_DISENO.md). Esta instrucción posterior sustituye el bloqueo anterior por aceptación P05 para esos trabajos locales; no autoriza activar servicios reales ni reintroducir mochilas, accesorios o extracciones.
+
+
 ## Estado y alcance
 
 P05 sigue en validación: P05-T01, P05-T02 y P05-T03 están en EV, con 0/6 puntos. La preparación más reciente documenta24escenarios de navegador local,8del modo propio desactivado,111pruebas Node aprobadas,0fallos y1omitida por opt-in, además de un ensayo explícito de Auth/Firestore/Functions Emulator. Véase P05-CIERRE-REPORT.md; las cifras anteriores del reporte P05-local-01 son históricas. Es evidencia del prototipo local; no acredita servicios reales ni cambia el estado del roadmap.
