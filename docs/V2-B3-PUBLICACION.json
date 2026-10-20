@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-20T10:53:03.854898+00:00",
+  "commit": "8f2a509ca4583cb190f3f426c778aa5bc7008342",
+  "remoteMain": "8f2a509ca4583cb190f3f426c778aa5bc7008342",
+  "clean": true,
+  "url": "https://deteco.github.io/SCPSurvivor/",
+  "bossPracticeUrl": "https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&premios=jefe",
+  "riftPracticeUrl": "https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&premios=grieta",
+  "bundleSha256": "01e751b946a58a8c557d1eca02dbe0d97c8982fba316475837cbf1db5c36c093",
+  "matchesTestedBundle": true,
+  "indexHashMatched": true,
+  "roadmapHashMatched": true,
+  "roadmapVersion": "0.26",
+  "realAccountsEnabled": false,
+  "manualAcceptance": "pending",
+  "liveScenariosPassed": 2,
+  "modesPerScenario": [
+    "boss",
+    "rift",
+    "expiry_no_reward"
+  ]
+}

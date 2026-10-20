@@ -10,7 +10,7 @@ Los cofres comparten descubrimiento, apertura por proximidad 50 u sin pared dura
 
 ## Verificación
 
-Los resultados concretos y hashes se conservan en [V2-B3-VALIDACION.json](V2-B3-VALIDACION.json). Publicación online pendiente de comprobación al preparar este registro; el recibo posterior identifica el commit servido sin incorporar un SHA autorreferente antes del commit.
+Los resultados concretos y hashes se conservan en [V2-B3-VALIDACION.json](V2-B3-VALIDACION.json). Publicación online comprobada; el recibo identifica el commit del runtime probado. Esta actualización documental conserva el compilado.
 
 - B1/B2 publicados: revalidación inicial de dos escenarios online, escritorio/táctil emulado, sin errores ni solicitudes externas.
 - Source: suite Node de 29 archivos, 172 casos, **171 aprobados, 1 omitido, cero fallos**. Se excluye la preparación Worker incompleta; se omite un caso que requiere emuladores activos.
@@ -33,3 +33,7 @@ No hay viaje a otra dimensión, retorno, nueva aparición aleatoria V2 de grieta
 Las 53 tareas, estados, criterios y pesos históricos conservan52/100. Avance V2 sin calcular; B3 y RC-10 no se declaran aceptados. Originales Cloud, ZIPs y `sources/` intactos. Respaldo previo `development-backups/b3-20261020-antes.zip` fuera del repositorio. Se publican solo cambios de esta entrega; la preparación Worker no publicada permanece aislada.
 
 [Guía manual](PRUEBA_PREMIOS_B3.md) · [Plan](superpowers/plans/2026-10-20-b3-premios.md) · [Diff](V2-B3-CAMBIOS.diff).
+
+## Publicación comprobada
+
+Runtime `8f2a509ca4583cb190f3f426c778aa5bc7008342` construido por Pages. Índice, compilado y roadmap0.26 servidos coinciden con la copia probada. Dos escenarios online aprobados, escritorio y táctil emulado, cada uno con jefe, grieta y cierre sin premio; sin errores de página/consola, HTTP fallido ni solicitudes fuera del origen. SHA-256 del compilado `01e751b946a58a8c557d1eca02dbe0d97c8982fba316475837cbf1db5c36c093`. [Recibo](V2-B3-PUBLICACION.json). Tu aceptación manual sigue pendiente.

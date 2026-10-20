@@ -77,8 +77,15 @@
     "riftTicketTable": "2 or 3 equiprobable fictional tickets; provisional test parameters"
   },
   "publication": {
-    "status": "pending_live_check",
+    "status": "verified_live",
     "url": "https://deteco.github.io/SCPSurvivor/",
-    "roadmapVersion": "0.26"
+    "roadmapVersion": "0.26",
+    "runtimeCommit": "8f2a509ca4583cb190f3f426c778aa5bc7008342",
+    "liveScenariosPassed": 2,
+    "modesPerScenario": 3,
+    "receipt": "docs/V2-B3-PUBLICACION.json",
+    "indexHashMatched": true,
+    "bundleHashMatched": true,
+    "roadmapHashMatched": true
   }
 }
