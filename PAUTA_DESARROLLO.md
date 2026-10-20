@@ -1,6 +1,6 @@
 # Pauta vigente de SCP Survivor — revisión ESTRUCTURA
 
-**Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](docs/PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](docs/V2-B1-B2-REPORT.md). Demo publicada y verificada online; aceptación manual pendiente; consultar el informe antes de afirmar resultados.
+**Actualización vigente 0.26 · B3, 20/10/2026 (A-036/D-332/EV-041):** B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. [Guía B3](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites B3](docs/V2-B3-REPORT.md). Build/check y navegador B3 aprobados localmente en ambas copias; comprobación online pendiente. Aceptación humana pendiente.
 
 **Publicación de la prueba existente (A-033):** disponible mediante [GitHub Pages](https://deteco.github.io/SCPSurvivor/) y [acceso rápido](https://deteco.github.io/SCPSurvivor/?rapida=1), con las mismas mecánicas V2-trial-01. La ampliación B1/B2 incorpora cofres ficticios de exploración y escala inicial 160 × 100; aceptación pendiente. Esta publicación no cierra P05 ni la aceptación completa de V2.
 
@@ -8,7 +8,7 @@
 
 Esta pauta incorpora el chat **ESTRUCTURA**, incluida su aprobación de cofres y escala inicial en el turno `01a15142-340f-7400-8660-f8d2502ce2aa`, y la instrucción posterior de Iván en PROGRAMACION. [Corte de reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md). Sustituye las reglas incompatibles del diseño de extracción. El código actual se conserva como punto de partida; no se reconstruye el juego.
 
-**Prueba V2-trial-01:** [guía manual](docs/PRUEBA_MAPA_V2.md). El recorrido de mapas300s, jefe y puerta con aliados está implementado como ensayo local sin guardado. Jefe240s y acceso rápido270s son parámetros provisionales de prueba. El corte original no implementaba cofres. B1/B2 añade exploración ficticia; familias/azar final, gacha, cofres de jefe/grieta, grietas nuevas y persistencia siguen pendientes. [Resultados](docs/V2-PRIMERA-PRUEBA-REPORT.md).
+**Prueba V2-trial-01:** [guía manual](docs/PRUEBA_MAPA_V2.md). El recorrido de mapas300s, jefe y puerta con aliados está implementado como ensayo local sin guardado. Jefe240s y acceso rápido270s son parámetros provisionales de prueba. El corte original no implementaba cofres. B1/B2 añade exploración ficticia y B3 incorpora premios de jefe y práctica de grieta en el mismo mapa; familias/azar final, gacha, dimensiones nuevas y persistencia siguen pendientes. [Resultados](docs/V2-PRIMERA-PRUEBA-REPORT.md).
 
 ## Recorrido del juego
 
@@ -39,7 +39,7 @@ La hora exacta de aparición del jefe todavía no está fijada. Debe permitir cu
 | Jefes | Un jefe obligatorio por mapa; encuentros dimensionales aparte | Implementado en ensayo V2; horario de 4:00 provisional; calendario anterior conservado fuera del ensayo |
 | Grietas especiales | Desafíos opcionales difíciles con recompensas mayores | Existe un prototipo local limitado |
 | Saltos dimensionales | Rutas/saltos entre niveles, inspirados en Backrooms | Diseño detallado e implementación pendientes |
-| Cofres y recompensas del escenario | Exploración, jefe y grieta; sorteos y escala inicial aprobados | Exploración ficticia implementada como prototipo B1/B2; jefe/grieta/bono/hitos pendientes; cajas de campo sin botín |
+| Cofres y recompensas del escenario | Exploración, jefe y grieta; sorteos y escala inicial aprobados | Exploración ficticia B1/B2 y premios temporales de jefe/grieta B3 implementados como prototipos; bono/hitos y economía final pendientes; cajas de campo sin botín |
 | Arte, identidad visual, controles y crédito | Conservar recursos aprobados y «Desarrollado por Ivan Vivanco» | El acabado final sigue pendiente |
 | Cuentas y guardado P05 | Conservar seguridad y adaptar contratos al nuevo recorrido | Aceptación con servicios propios pendiente |
 

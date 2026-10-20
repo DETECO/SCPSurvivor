@@ -35,6 +35,53 @@ test('V2 reloj exacto y corte previo al update: no normales ni refuerzos desde30
  assert.equal(G.Expedition.state.v2.mapTime,300);assert.equal(G.Expedition.state.v2.spawnClosed,true);assert.equal(G.MapTrial.arrivals,1);
  G.Expedition.update(5);assert.equal(G.Expedition.state.v2.mapTime,300);assert.equal(G.EnemyMgr.count,count);assert.equal(G.MapTrial.arrivals,1);
 });
+function rewardSetup(practice=false){
+ const offers=[],rewards=[];let rift={status:'idle',x:450,y:0,remaining:45};
+ const fixture=setup(42,false,true,{prepare(G){
+  G.MapTrial.rewardRiftPractice=practice;
+  G.EventRewards={runs:0,startRun(){this.runs++},offer(o){offers.push(o);return{id:o.id,kind:o.kind,tickets:o.kind==='rift'?2:0}}};
+  G.ExplorationChests={startRun(){},reset(){},tick(){},addReward(plan,point){rewards.push({plan,point})}};
+  G.DimensionalRifts={enabled:practice,reset(){},clear(){rift.status='idle'},offer(){rift.status='open';return true},
+   enter(p){if(rift.status!=='open'||Math.hypot(p.x-rift.x,p.y-rift.y)>34)return false;rift.status='active';return true},
+   tick(dt){if(rift.status==='open'){rift.remaining=Math.max(0,rift.remaining-dt);if(!rift.remaining)rift.status='closed'}},
+   complete(result){rift.status='resolved';rift.result=result},get state(){return{...rift}}};
+ }});
+ return{...fixture,offers,rewards};
+}
+test('B3 jefe obligatorio ofrece cofre una vez; premio no se aplica por matar',()=>{
+ const {G,player,offers,rewards}=rewardSetup();assert.equal(G.EventRewards.runs,1);
+ G.Expedition.update(240);const boss=G.EnemyMgr.all().find(e=>e.boss);boss.dead=true;
+ G.Expedition.update(.01);G.Expedition.update(.01);
+ assert.equal(offers.length,1);assert.equal(offers[0].kind,'boss');assert.equal(offers[0].player,player);
+ assert.equal(rewards.length,1);assert.equal(rewards[0].point.x,boss.x);assert.equal(G.Expedition.state.v2.bossDefeated,true);
+});
+test('B3 contacto dimensional no limpia remanentes ni sustituye jefe obligatorio; victoria entrega otro cofre',()=>{
+ const {G,player,offers,rewards}=rewardSetup(true),remnant=G.EnemyMgr.all()[0];
+ assert.equal(G.DimensionalRifts.state.status,'open');assert.equal(G.Expedition.useRift(),false);
+ const p=G.DimensionalRifts.state;player.x=p.x;player.y=p.y;G.Expedition.update(.01);
+ const dimensional=G.EnemyMgr.all().find(e=>e.dimensional);assert.ok(dimensional);assert.equal(offers.length,0);
+ assert.ok(G.EnemyMgr.get(remnant.id));assert.equal(G.Expedition.state.v2.bossDefeated,false);
+ G.Expedition.update(240);const mandatory=G.EnemyMgr.all().find(e=>e.boss&&!e.dimensional);assert.ok(mandatory);
+ dimensional.dead=true;G.Expedition.update(.01);G.Expedition.update(.01);
+ assert.equal(G.DimensionalRifts.state.result,'defeated');assert.equal(offers.length,1);assert.equal(offers[0].kind,'rift');
+ assert.equal(rewards.length,1);assert.equal(G.Expedition.state.v2.bossDefeated,false);assert.ok(G.EnemyMgr.get(mandatory.id));assert.ok(G.EnemyMgr.get(remnant.id));
+ mandatory.dead=true;G.Expedition.update(.01);assert.equal(offers.length,2);assert.equal(offers[1].kind,'boss');
+ assert.equal(G.Expedition.captureState(),null);
+});
+test('B3 grieta expirada o muerte no concede premio',()=>{
+ const {G,player,offers}=rewardSetup(true);G.Expedition.update(46);
+ const r=G.DimensionalRifts.state;assert.equal(r.status,'closed');player.x=r.x;player.y=r.y;
+ assert.equal(G.Expedition.useRift(),false);player.hp=0;G.Expedition.update(.01);assert.equal(offers.length,0);
+});
+test('B3 refuerzos dimensionales reservan al jefe obligatorio y respetan24 enemigos',()=>{
+ const {G,player}=rewardSetup(true),r=G.DimensionalRifts.state;
+ player.x=r.x;player.y=r.y;G.Expedition.update(.01);
+ const boss=G.EnemyMgr.all().find(e=>e.dimensional);
+ while(G.EnemyMgr.count<22)G.EnemyMgr.add(new G.Enemy(G.Content.pursuer,600,0,{hp:1}));
+ assert.equal(G.Expedition.summon(boss,4),1);assert.equal(G.EnemyMgr.count,23);
+ assert.equal(G.Expedition.summon(boss,4),0);
+ G.Expedition.update(240);assert.equal(G.EnemyMgr.count,24);assert.equal(G.Expedition.summon(boss,4),0);
+});
 test('V2 jefe temprano espera puerta; remanentes permanecen y transición conserva build/vida',()=>{
  const {G,player}=setup();G.Expedition.update(240);const boss=G.EnemyMgr.all().find(e=>e.boss),remnant=G.EnemyMgr.all().find(e=>!e.boss);
  player.hp=73;player.tempStats.power=7;player.weapons=[{id:'kept'}];const weapons=player.weapons,stats=player.tempStats;

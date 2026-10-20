@@ -1,8 +1,8 @@
 # Plan de adaptación del diseño jugable V2
 
-**Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](V2-B1-B2-REPORT.md). Demo publicada y verificada online; aceptación manual pendiente; consultar el informe antes de afirmar resultados.
+**Actualización vigente 0.26 · B3, 20/10/2026 (A-036/D-332/EV-041):** B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. [Guía B3](PRUEBA_PREMIOS_B3.md) · [Resultados y límites B3](V2-B3-REPORT.md). Build/check y navegador B3 aprobados localmente en ambas copias; comprobación online pendiente. Aceptación humana pendiente.
 
-**Cambio vigente 0.24:** el bloque B4 debe cubrir dos armas simultáneas y tres ofertas compatibles; añadir poderes (RC-13) y ultimate (RC-14) antes de aceptar la build completa. B5 revisa gacha de armas, soldados, skins y ultimates. Cooldowns, cartas, costes y relación con habilidad de soldado siguen abiertos. [Contratos y dependencias](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). Este corte 0.24 fue documental; la entrega actual 0.25 implementa B1/B2 como prototipo aislado.
+**Cambio vigente 0.24:** el bloque B4 debe cubrir dos armas simultáneas y tres ofertas compatibles; añadir poderes (RC-13) y ultimate (RC-14) antes de aceptar la build completa. B5 revisa gacha de armas, soldados, skins y ultimates. Cooldowns, cartas, costes y relación con habilidad de soldado siguen abiertos. [Contratos y dependencias](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). Este corte 0.24 fue documental; la entrega 0.25 implementó B1/B2 y la 0.26 añade B3 como prototipo aislado, con verificación local aprobada y comprobación online pendiente.
 
 18/10/2026 · Pauta sincronizada 0.22 · **Trabajo siguiente definido; no ejecutado en esta entrega documental.**
 
@@ -13,7 +13,7 @@ Autoridad: [pauta vigente](../PAUTA_DESARROLLO.md), [corte aprobado de ESTRUCTUR
 - **Implementado como ensayo local:** V2-trial-01, mapa de 300 segundos activos, jefe obligatorio, puerta y dos soldados a 5:00, corte de apariciones enemigas, remanentes vivos y transición inmediata por contacto. [Guía](PRUEBA_MAPA_V2.md).
 - **Aceptación pendiente:** prueba manual de Iván, balance, rendimiento y dispositivos físicos. No cerrar P05 ni V2 por simulaciones.
 - **Aprobado para adaptar:** tres tipos de cofre, sorteos de exploración en 60/120/180/240 segundos, probabilidades 10/15/20 %, topes 1/2/3 y tickets 1–2/1–2/1–3 según mapas 1–3/4–7/8+. Seis puntos alternativos y escala inicial 160 × 100 casillas.
-- **Pendiente tras B1/B2:** cofres de jefe/grieta, bono de diez minutos/hitos, familias/azar finales de armas, combate 2+3+1, gacha, persistencia V2, dimensiones de grieta y saltos. Las cajas de campo siguen sin botín.
+- **Implementado en B3 como ensayo:** cofre de jefe y práctica explícita de grieta, con mejora temporal por copia y tabla provisional ficticia. **Pendiente:** bono de diez minutos/hitos, familias/azar finales de armas, B4/combate 2+3+1, gacha, persistencia V2, dimensiones de grieta y saltos. Las cajas de campo siguen sin botín.
 
 ## Bloques y orden de ejecución
 
@@ -21,12 +21,12 @@ Autoridad: [pauta vigente](../PAUTA_DESARROLLO.md), [corte aprobado de ESTRUCTUR
 | --- | --- | --- | --- |
 | B1 — Geometría del ensayo | Crear variante inicial de 160 × 100, circuitos amplios, seis puntos alternativos de exploración y espacios de jefe/puerta | `js/world/sector-maps.js`, `js/world/world.js`, `js/systems/expedition.js`, `js/systems/map-trial.js` | Rutas, colisión y puntos alcanzables comprobados; puerta y jefe no quedan aislados; se registran mediciones de desplazamiento |
 | B2 — Cofres locales | Incorporar sorteos y descubrimiento/apertura en el ensayo aislado, con tickets ficticios en memoria | `js/systems/expedition.js`, `js/systems/interact.js`, `js/world/world.js`, `js/ui/technical-ui.js` | Cada intento ocurre una sola vez; topes/contenido fijo/apertura funcionan; ningún premio llega a cuentas o gacha |
-| B3 — Premio de jefe y grieta | Resolver candidatos/topes/sin candidatos y tabla de grieta antes de integrar sus premios | `js/systems/field-upgrades.js`, `js/systems/containment-boss.js`, `js/systems/dimensional-rifts.js` | Contrato explícito; premio único, compatible y comprobable. No decidir por inferencia retorno/reloj de grieta |
+| B3 — Premio de jefe y grieta | Prototipo implementado: copia equipada +1 nivel hasta 5; grieta explícita añade 2–3 tickets ficticios provisionales | `js/systems/event-rewards.js`, `js/systems/exploration-chests.js`, `js/systems/expedition.js`, `js/systems/dimensional-rifts.js` | Premio único tras victoria y apertura 3,5 s; saturación sin compensación adicional; verificación integral y aceptación manual pendientes. No define retorno/reloj dimensional |
 | B4 — Armas y equipamiento V2 | Separar familias, estadísticas propias y selección aleatoria de mejoras; retirar dependencias de accesorios/mochilas | `js/data/field-catalog.js`, `js/systems/field-stats.js`, `js/systems/field-combat.js`, `js/systems/field-upgrades.js`, `js/ui/field-loadout.js`, `js/systems/inventory-model.js` | Reglas abiertas de cartas/candidatos/topes cerradas; copias independientes; sin recargas ficticias en familias que no las necesitan |
 | B5 — Guardado, colección y economía | Versionar contrato V2 e integrar colección/gacha de armas, soldados, skins y ultimates con funciones aceptadas y premios | `js/systems/run-checkpoint.js`, `js/systems/run-continuity.js`, `js/net/local-accounts.js`, `functions/account-service.js` | P05 real aceptado y contrato V2 definido; propiedad, revisión, sesión, recibos e idempotencia verificados; datos antiguos conservados |
 | B6 — Acabado y aceptación | Integrar mapas variados, señalización, arte/audio, controles y regresión | `dev.html`, `css/technical.css`, `js/ui/technical-ui.js`, `docs/OBSERVACIONES_VISUALES.md` | Recursos aprobados conservados; lectura clara; sonido/alerta/localizador de grietas; crédito visible; pruebas y aceptación registradas |
 
-**B1/B2 entregados como prototipo aislado sin guardado; aceptación pendiente.** Puede prepararse mientras P05 real sigue pendiente. No adelanta la economía P06/P07 ni convierte premios ficticios en saldo. La conexión persistente de B5 exige sus dependencias; B3/B4 no se ejecutan con reglas incompletas.
+**B1/B2 y B3 implementados como prototipos aislados sin guardado; aceptación pendiente.** Puede prepararse mientras P05 real sigue pendiente. No adelanta la economía P06/P07 ni convierte premios ficticios en saldo. La conexión persistente de B5 exige sus dependencias; B3 aplica exclusivamente su contrato de ensayo; B4 no se implementa con reglas incompletas.
 
 La preparación local Worker/SQLite, si existe en la copia de desarrollo, no se publica ni activa por esta planificación. La selección de backend y sus pruebas se documentan en P05. Firebase permanece en Spark, sin facturación.
 
@@ -49,10 +49,16 @@ La preparación local Worker/SQLite, si existe en la copia de desarrollo, no se 
 6. Usar identificadores únicos por mapa/evento para evitar doble apertura o doble premio ficticio. Recargar pierde el ensayo; nunca escribe cuentas, gacha ni guardados anteriores.
 7. Resolver explícitamente los hitos antiguos y la regla acumulada de diez minutos antes de representar sus premios como reglas V2 completas. No borrar esa base ni aplicar compensaciones inventadas.
 
+## Contrato del ensayo B3
+
+Jefe: contenido fijo al aparecer, +1 nivel temporal de una copia equipada válida elegible, identificada por ID/modelo; máximo 5 heredado. Abrir por proximidad durante 3,5 s, sin pared; premio único independiente del cupo de exploración. Si no hay candidata o la elegida llegó al tope, sin mejora ni compensación inventada. Datos incompatibles bloquean entrega y tickets. Grieta: práctica explícita premios=grieta, portal físico de 45 s activos con sonido, alerta y localizador; ingreso instantáneo por contacto, Custodio separado del jefe obligatorio y encuentro en el mismo mapa. Solo victoria y apertura del cofre conceden mejora compatible y 2–3 tickets ficticios equiprobables de tabla provisional; saturación conserva solo esos tickets base. Entrar, expirar, abandonar o morir no concede premio. No define otra dimensión, retorno, reloj dimensional, economía real, radar ni combate 2+3+1.
+
+[Guía de premios](PRUEBA_PREMIOS_B3.md) · [Informe y límites](V2-B3-REPORT.md). Build, navegador y publicación en curso hasta evidencia de raíz; aceptación de Iván pendiente.
+
 ## Reglas que todavía necesitan definición
 
 - Tres ofertas aleatorias y filtro de armas equipadas ya están confirmados. Falta concretar mezcla entre grupos, categorías, probabilidades, topes y saturación; no volver al supuesto de mejora automática ni a un arma ajena.
-- Elegibilidad del premio de jefe, caso sin candidatos y tabla de premios superiores de grieta.
+- Economía final de premios de jefe/grieta: B3 solo fija contrato de ensayo, máximo 5 heredado y tickets ficticios 2–3 provisionales; no aprueba balance ni economía definitiva.
 - Muerte y fin definitivo de partida, progresión permanente, duplicados, rarezas y desbloqueos.
 - Grietas: recinto, retorno, reloj, cierre y premios. Saltos: destinos y compatibilidad con el jefe obligatorio.
 - Recuperación persistente cuando quedan enemigos vivos junto a la puerta; no reutilizar el checkpoint antiguo que limpia enemigos.

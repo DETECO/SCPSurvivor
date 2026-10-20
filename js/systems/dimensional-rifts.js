@@ -5,7 +5,8 @@ G.DimensionalRifts = (() => {
   const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
   const accounts = ['local','propias'].includes(query.get('cuentas'));
   const directTest = local && query.get('prueba') === 'grieta' && !accounts;
-  const enabled = local && !accounts && !G.MapTrial?.enabled && (directTest || query.get('grietas') === 'local');
+  const v2Practice = G.MapTrial?.enabled === true && G.MapTrial?.rewardRiftPractice === true;
+  const enabled = v2Practice || (local && !accounts && !G.MapTrial?.enabled && (directTest || query.get('grietas') === 'local'));
   const TTL = 45, ENTRY_RADIUS = 22;
   let seen = new Set(), state;
   function clear() { state = {status:'idle',remaining:0,x:0,y:0,sector:0,alert:'',alertTime:0,result:null}; }
@@ -42,7 +43,7 @@ G.DimensionalRifts = (() => {
     state.remaining = Math.max(0,state.remaining-dt);
     if (state.remaining < 1e-8) {
       state.remaining = 0; state.status = 'closed';
-      notify('La grieta se ha cerrado. Puedes continuar por la salida.');
+      notify(v2Practice ? 'La grieta se ha cerrado. Continúa resistiendo.' : 'La grieta se ha cerrado. Puedes continuar por la salida.');
     }
   }
   function near(player) {
@@ -57,13 +58,14 @@ G.DimensionalRifts = (() => {
   function enter(player) {
     if (!near(player)) return false;
     state.status = 'active'; state.remaining = 0;
-    notify('CUSTODIO DIMENSIONAL · apártate de la grieta · puedes huir por la salida');
+    notify(v2Practice ? 'CUSTODIO DIMENSIONAL · encuentro de prueba en este mapa' : 'CUSTODIO DIMENSIONAL · apártate de la grieta · puedes huir por la salida');
     return true;
   }
   function complete(result) {
     if (state.status !== 'active' || !['defeated','evaded'].includes(result)) return false;
     state.status = 'resolved'; state.result = result;
-    notify(result === 'defeated' ? 'Custodio dimensional vencido · sector despejado' : 'Retirada dimensional · sector despejado');
+    notify(v2Practice ? (result === 'defeated' ? 'Custodio dimensional vencido · continúa resistiendo' : 'Encuentro dimensional terminado · continúa resistiendo') :
+      (result === 'defeated' ? 'Custodio dimensional vencido · sector despejado' : 'Retirada dimensional · sector despejado'));
     return true;
   }
   function draw(ctx) {

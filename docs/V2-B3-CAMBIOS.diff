@@ -1,0 +1,1544 @@
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -1,6 +1,6 @@
+ # SCP Survivor — instrucciones para Codex Local
+ 
+-**Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](docs/PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](docs/V2-B1-B2-REPORT.md). Demo publicada y verificada online; aceptación manual pendiente; consultar el informe antes de afirmar resultados.
++**Actualización vigente 0.26 · B3, 20/10/2026 (A-036/D-332/EV-041):** B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. [Guía B3](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites B3](docs/V2-B3-REPORT.md). Build/check y navegador B3 aprobados localmente en ambas copias; comprobación online pendiente. Aceptación humana pendiente.
+ 
+ **Roadmap 0.24 · ESTRUCTURA, 19/10/2026:** diseño confirmado **2 armas simultáneas + hasta 3 poderes anómalos + 1 ultimate** (máximo nivel 5, cooldown largo y progresión difícil). Tres ofertas aleatorias, mejoras de arma solo para equipadas. Armas/ultimates/skins en gacha; parámetros y economía todavía abiertos. RC-13/RC-14 pendientes, sin cambios del ejecutable ni cierre de P05. [Decisiones, propuestas y tareas](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md).
+ 
+--- a/CONTEXTO_PARA_WORK_LOCAL.md
++++ b/CONTEXTO_PARA_WORK_LOCAL.md
+@@ -1,4 +1,7 @@
+ # Relevo para Codex Local — SCP Survivor
++
++**20/10/2026 · B3 / roadmap 0.26:** cofre del jefe y práctica explícita dimensional implementados; premios temporales y tickets ficticios, sin cuentas. [Prueba manual](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites](docs/V2-B3-REPORT.md). Aceptación de Iván pendiente; B4 y P05 real continúan pendientes.
++
+ 
+ **Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](docs/PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](docs/V2-B1-B2-REPORT.md). Demo publicada y verificada online; aceptación manual pendiente; consultar el informe antes de afirmar resultados.
+ 
+--- a/CONTEXTO_PROYECTO.md
++++ b/CONTEXTO_PROYECTO.md
+@@ -1,4 +1,7 @@
+ # Contexto del proyecto — SCP Survivor
++
++**20/10/2026 · B3 / roadmap 0.26:** cofre del jefe y práctica explícita dimensional implementados; premios temporales y tickets ficticios, sin cuentas. [Prueba manual](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites](docs/V2-B3-REPORT.md). Aceptación de Iván pendiente; B4 y P05 real continúan pendientes.
++
+ 
+ **Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](docs/PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](docs/V2-B1-B2-REPORT.md). Demo publicada y verificada online; aceptación manual pendiente; consultar el informe antes de afirmar resultados.
+ 
+--- a/LEEME_PRIMERO.md
++++ b/LEEME_PRIMERO.md
+@@ -1,4 +1,7 @@
+ # SCP Survivor — continuidad local
++
++**20/10/2026 · B3 / roadmap 0.26:** cofre del jefe y práctica explícita dimensional implementados; premios temporales y tickets ficticios, sin cuentas. [Prueba manual](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites](docs/V2-B3-REPORT.md). Aceptación de Iván pendiente; B4 y P05 real continúan pendientes.
++
+ 
+ Este es el juego existente, con P05 preparada para cuentas y guardado emulados. No necesitas reconstruirlo. Consulta docs/P05-REPORT.md para resultados exactos y límites de verificación.
+ 
+--- a/PAUTA_DESARROLLO.md
++++ b/PAUTA_DESARROLLO.md
+@@ -1,6 +1,6 @@
+ # Pauta vigente de SCP Survivor — revisión ESTRUCTURA
+ 
+-**Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](docs/PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](docs/V2-B1-B2-REPORT.md). Demo publicada y verificada online; aceptación manual pendiente; consultar el informe antes de afirmar resultados.
++**Actualización vigente 0.26 · B3, 20/10/2026 (A-036/D-332/EV-041):** B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. [Guía B3](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites B3](docs/V2-B3-REPORT.md). Build/check y navegador B3 aprobados localmente en ambas copias; comprobación online pendiente. Aceptación humana pendiente.
+ 
+ **Publicación de la prueba existente (A-033):** disponible mediante [GitHub Pages](https://deteco.github.io/SCPSurvivor/) y [acceso rápido](https://deteco.github.io/SCPSurvivor/?rapida=1), con las mismas mecánicas V2-trial-01. La ampliación B1/B2 incorpora cofres ficticios de exploración y escala inicial 160 × 100; aceptación pendiente. Esta publicación no cierra P05 ni la aceptación completa de V2.
+ 
+@@ -8,7 +8,7 @@
+ 
+ Esta pauta incorpora el chat **ESTRUCTURA**, incluida su aprobación de cofres y escala inicial en el turno `01a15142-340f-7400-8660-f8d2502ce2aa`, y la instrucción posterior de Iván en PROGRAMACION. [Corte de reglas aprobadas](docs/ESTRUCTURA_REGLAS_APROBADAS.md). Sustituye las reglas incompatibles del diseño de extracción. El código actual se conserva como punto de partida; no se reconstruye el juego.
+ 
+-**Prueba V2-trial-01:** [guía manual](docs/PRUEBA_MAPA_V2.md). El recorrido de mapas300s, jefe y puerta con aliados está implementado como ensayo local sin guardado. Jefe240s y acceso rápido270s son parámetros provisionales de prueba. El corte original no implementaba cofres. B1/B2 añade exploración ficticia; familias/azar final, gacha, cofres de jefe/grieta, grietas nuevas y persistencia siguen pendientes. [Resultados](docs/V2-PRIMERA-PRUEBA-REPORT.md).
++**Prueba V2-trial-01:** [guía manual](docs/PRUEBA_MAPA_V2.md). El recorrido de mapas300s, jefe y puerta con aliados está implementado como ensayo local sin guardado. Jefe240s y acceso rápido270s son parámetros provisionales de prueba. El corte original no implementaba cofres. B1/B2 añade exploración ficticia y B3 incorpora premios de jefe y práctica de grieta en el mismo mapa; familias/azar final, gacha, dimensiones nuevas y persistencia siguen pendientes. [Resultados](docs/V2-PRIMERA-PRUEBA-REPORT.md).
+ 
+ ## Recorrido del juego
+ 
+@@ -39,7 +39,7 @@
+ | Jefes | Un jefe obligatorio por mapa; encuentros dimensionales aparte | Implementado en ensayo V2; horario de 4:00 provisional; calendario anterior conservado fuera del ensayo |
+ | Grietas especiales | Desafíos opcionales difíciles con recompensas mayores | Existe un prototipo local limitado |
+ | Saltos dimensionales | Rutas/saltos entre niveles, inspirados en Backrooms | Diseño detallado e implementación pendientes |
+-| Cofres y recompensas del escenario | Exploración, jefe y grieta; sorteos y escala inicial aprobados | Exploración ficticia implementada como prototipo B1/B2; jefe/grieta/bono/hitos pendientes; cajas de campo sin botín |
++| Cofres y recompensas del escenario | Exploración, jefe y grieta; sorteos y escala inicial aprobados | Exploración ficticia B1/B2 y premios temporales de jefe/grieta B3 implementados como prototipos; bono/hitos y economía final pendientes; cajas de campo sin botín |
+ | Arte, identidad visual, controles y crédito | Conservar recursos aprobados y «Desarrollado por Ivan Vivanco» | El acabado final sigue pendiente |
+ | Cuentas y guardado P05 | Conservar seguridad y adaptar contratos al nuevo recorrido | Aceptación con servicios propios pendiente |
+ 
+--- a/ROADMAP.md
++++ b/ROADMAP.md
+@@ -1,6 +1,6 @@
+ # Roadmap vigente — SCP Survivor
+ 
+-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-19).** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía B1/B2](docs/PRUEBA_MAPA_COFRES_V2.md) · [Demo de cofres](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](docs/V2-B1-B2-REPORT.md). Demo publicada y verificada online; aceptación manual pendiente.
++**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-20).** B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. [Guía B3](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites B3](docs/V2-B3-REPORT.md). Verificación de build, navegador y publicación B3 en curso; no equivale a demo B3 publicada ni aceptación humana.
+ 
+ [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md)
+ 
+@@ -17,8 +17,8 @@
+ | Armas | Dos armas elegidas antes de salir y activas simultáneamente; identidad/familias propias. Tres ofertas aleatorias, mejoras de arma solo para equipadas. Mezcla, ramas y topes pendientes; simultaneidad aún sin implementar. |
+ | Poderes anómalos | Hasta tres, con opción de reemplazo al aparecer un cuarto. No sumar otras dos ranuras de apoyo. Catálogo, adquisición/rangos y aplicación de reemplazo pendientes. |
+ | Ultimate | Una habilidad única de defensa, curación, evasión o ataque; cooldown largo propio por definir, máximo nivel 5 y progresión difícil; gacha. Sin duración/costes aprobados ni implementación. |
+-| Grietas y saltos | Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas. |
+-| Cofres y mapas | B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. |
++| Grietas y saltos | Práctica B3 explícita de 45 s, con señales/localizador e ingreso instantáneo; Custodio y cofre en el mismo mapa. No implementa dimensión nueva ni saltos; retorno/reloj/destino y economía final abiertos. |
++| Cofres y mapas | B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. |
+ | P06/P07 | Revisar colección/gacha de soldados, armas, skins y ultimates sin retirar reclutamiento anterior por inferencia. Costes, duplicados y efectos de skins pendientes; sin mochilas ni accesorios físicos. |
+ 
+ | Paso | Trabajo y estado | Dependencias |
+@@ -52,7 +52,7 @@
+ 
+ **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
+ 
+-Versión **0.25**, 2026-10-19. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
++Versión **0.26**, 2026-10-20. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+ 
+ ## Avance basado en evidencia
+ 
+--- a/RoadmapSCP.json
++++ b/RoadmapSCP.json
+@@ -1,7 +1,7 @@
+ {
+   "schemaVersion": 1,
+-  "planVersion": "0.25",
+-  "updatedOn": "2026-10-19",
++  "planVersion": "0.26",
++  "updatedOn": "2026-10-20",
+   "timezone": "America/Santiago",
+   "canonicalPath": "RoadmapSCP.json",
+   "generatedView": "RoadmapSCP.md",
+@@ -18,7 +18,7 @@
+     },
+     "lastVerifiedOwnCommit": "957bc9b67c33996bf1579bc91dd29c421a5c358a",
+     "lastVerifiedOwnVersion": "V2-trial-02: compilado y roadmap leídos desde Pages; cuatro escenarios automáticos online aprobados.",
+-    "deliveryVersion": "V2-trial-02 / roadmap 0.25; prototipo B1/B2 sin aceptación final",
++    "deliveryVersion": "V2-trial-03 / roadmap 0.26; B3 probado localmente, publicación online por verificar; aceptación pendiente",
+     "deliveryCommitReference": "git log -1 --format=%H -- RoadmapSCP.json",
+     "currentPriority": {
+       "phase": "P05",
+@@ -2353,6 +2353,26 @@
+         "liveScenarios": 4,
+         "scope": "demo_only; manual acceptance and real account services pending"
+       }
++    },
++    {
++      "id": "EV-041",
++      "kind": "Prototipo B3 verificado localmente y revalidación B1/B2; aceptación pendiente",
++      "summary": "B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. Revalidación online B1/B2: dos escenarios comprobados por raíz. Build/check de ambas copias y ocho escenarios B3 locales aprobados (cada uno jefe/grieta/cierre). Cero fallos Node; omisiones documentadas. Publicación online por verificar; aceptación humana pendiente.",
++      "runtimeProof": true,
++      "evidenceComplete": false,
++      "references": [
++        "docs/V2-B3-REPORT.md",
++        "docs/PRUEBA_PREMIOS_B3.md",
++        "docs/V2-B1-B2-REPORT.md",
++        "tests/v2-event-rewards.test.js",
++        "tests/v2-map-director.test.js",
++        "tests/v2-map-trial.test.js",
++        "tests/rifts.test.js",
++        "docs/V2-B3-VALIDACION.json",
++        "tests/v2-b3-browser.py"
++      ],
++      "validationStatus": "local_passed_publication_pending",
++      "manualAcceptance": "pending"
+     }
+   ],
+   "decisions": [
+@@ -4648,6 +4668,12 @@
+       "topic": "B1/B2: geometría y cofres de exploración del ensayo",
+       "approvalStatus": "A-035, reglas aprobadas A-032 y autorización previa de demo A-033.",
+       "resolution": "B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. Consulta la guía docs/PRUEBA_MAPA_COFRES_V2.md y los resultados efectivos en docs/V2-B1-B2-REPORT.md. El fixture cofres=prueba fuerza un cofre didáctico, empieza en 0:00 y no representa la probabilidad ordinaria."
++    },
++    {
++      "id": "D-332",
++      "topic": "B3: premio único de jefe y tabla provisional de práctica de grieta",
++      "approvalStatus": "A-036; contrato de ensayo acotado, sin aprobar economía final ni las reglas abiertas de dimensiones.",
++      "resolution": "Jefe: contenido fijo al aparecer, +1 nivel temporal de una copia equipada válida elegible, identificada por ID/modelo; máximo 5 heredado. Abrir por proximidad durante 3,5 s, sin pared; premio único independiente del cupo de exploración. Si no hay candidata o la elegida llegó al tope, sin mejora ni compensación inventada. Datos incompatibles bloquean entrega y tickets. Grieta: práctica explícita premios=grieta, portal físico de 45 s activos con sonido, alerta y localizador; ingreso instantáneo por contacto, Custodio separado del jefe obligatorio y encuentro en el mismo mapa. Solo victoria y apertura del cofre conceden mejora compatible y 2–3 tickets ficticios equiprobables de tabla provisional; saturación conserva solo esos tickets base. Entrar, expirar, abandonar o morir no concede premio. No define otra dimensión, retorno, reloj dimensional, economía real, radar ni combate 2+3+1."
+     }
+   ],
+   "authorizations": [
+@@ -4820,6 +4846,11 @@
+       "id": "A-035",
+       "action": "Continuar la siguiente fase: prototipo B1/B2",
+       "scopeStatus": "Petición actual de Iván del 19/10/2026: «CONTINUEMOS CON LA SIGUIENTE FASE». Implementar geometría y cofres ficticios de exploración del ensayo aislado conforme A-032; autorización previa A-033 de publicación de la demo. Sin cuentas, premios reales ni cierre de P05; despliegue vivo sujeto a verificación de raíz."
++    },
++    {
++      "id": "A-036",
++      "action": "Revalidar B1/B2 y avanzar B3: premios de jefe y grieta de prueba",
++      "scopeStatus": "Petición de Iván del 20/10/2026: «Hagamos la 1-2. Para ir avanzando». Conserva autorización de entrega de código, demo y roadmap en GitHub. Prototipo aislado sin cuentas, premios reales ni cierre de P05; balance final y aceptación humana pendientes."
+     }
+   ],
+   "closureCases": [
+@@ -5620,6 +5651,12 @@
+       "date": "2026-10-19",
+       "description": "Roadmap 0.25 / A-035 / D-331 / EV-040: entrega prototipo B1/B2 de geometría 160 × 100, seis candidatos y cofres ficticios de exploración. RC-10 EC y evidenceComplete=false; resultados en informe de entrega. Sin cambios de tareas, estados, pesos ni evidencias históricas; aceptación manual y P05 pendientes.",
+       "approval": "CONTINUEMOS CON LA SIGUIENTE FASE; A-032 y autorización previa de publicación A-033."
++    },
++    {
++      "id": "CHG-033",
++      "date": "2026-10-20",
++      "description": "Roadmap 0.26 / A-036 / D-332 / EV-041: prototipo B3 de cofres de jefe y práctica explícita de grieta, premios temporales y tickets ficticios. B1/B2 revalidados online; build/navegador/publicación B3 en curso. RC-10 EC/evidenceComplete=false, V2 sin porcentaje; 53 tareas y 52/100 históricos intactos.",
++      "approval": "Hagamos la 1-2. Para ir avanzando; alcance de ensayo aislado y autorización de publicación previa conservada."
+     }
+   ],
+   "derivedProgress": {
+@@ -5759,15 +5796,15 @@
+     "taskDigestAlgorithm": "SHA256 of JSON.stringify(tasks), UTF-8"
+   },
+   "sync": {
+-    "githubUpload": "verified",
+-    "webSync": "github_pages_demo_verified",
++    "githubUpload": "in_progress",
++    "webSync": "b3_verification_in_progress",
+     "lastSuccessfulWebSync": "2026-10-19T13:09:24.004561+00:00",
+     "lastVerifiedUpstreamCommit": "a1006e6e3d0cea9162238a90b0ffdd7fd38397b6",
+     "lastVerifiedProjectCommit": "957bc9b67c33996bf1579bc91dd29c421a5c358a",
+     "projectCommitVerificationScope": "Demo B1/B2 y roadmap 0.25 verificados desde Pages; no cierre de P05 ni publicación de versión completa.",
+-    "localChanges": "Entrega B1/B2 y roadmap 0.25; fuentes y compilado conservan aislamiento de cuentas y premios ficticios.",
++    "localChanges": "Roadmap 0.26 y prototipo B3; B1/B2 revalidados online, build/navegador/publicación B3 en curso.",
+     "deliveryCommitReference": "git log -1 --format=%H -- RoadmapSCP.json",
+-    "deliveryAuthorization": "A-035"
++    "deliveryAuthorization": "A-036"
+   },
+   "news": [
+     {
+@@ -5901,7 +5938,7 @@
+   ],
+   "markdownTemplate": "# Roadmap SCP Survivor\n\n{{ACTIVE_DESIGN}}\n\n---\n\n## Línea base histórica anterior a V2\n\nLas reglas, tareas, porcentajes y prioridades registradas debajo describen el diseño anterior. En conflicto manda la pauta V2 de arriba.\n\n**Prioridad registrada antes de V2 (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).\n\n**Antecedente histórico · crédito de Ivan Vivanco · prototipo P06-T01 (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).\n\n**Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).\n\n**Versión {{VERSION}} — {{DATE}} (America/Santiago). Global: {{GLOBAL}} %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).\n\n## 1. Estado vigente\n\nP00–P04 están completadas y verificadas **localmente**. GAP-001 quedó resuelto: sectores normales con 3/4/5 oleadas reproducibles; P03-T02 aporta sus 3 puntos después de pruebas de módulo e integración. P05 está implementada para preparación/pruebas **con emuladores** y permanece en validación: no aporta puntos mientras falten criterios, dependencias y aceptación con servicios propios reales.\n\n{{PROGRESS_SUMMARY}}\n\n{{STATE_COUNTS}}. Son 53 tareas en 12 fases, 100 puntos aprobados y {{CV_COUNT}} tareas CV. Solo CV con evidencia completa aporta peso; no hay crédito parcial. Planificación 10/10 forma parte del global. El porcentaje mide cumplimiento hasta la primera versión completa publicada; no estima tiempo restante ni acredita un juego operativo en producción por subir su código.\n\n{{PHASE_PROGRESS}}\n\n### Implementación local\n\n- Juego HTML/CSS/JavaScript/Canvas2D existente y namespace G; arquitectura, recursos y mecánicas conservados.\n- Guardia/médico, tres modelos de armas, dos copias independientes, seis mods, elección inmediata por nivel y velocidad 165. Arte provisional.\n- Expediciones modulares con objetivos, preparación de 20 s, 3/4/5 oleadas normales, biológico/perseguidor, Custodio con victoria/huida, extracción y muerte.\n- P05 optativa en localhost/127.0.0.1 con ?cuentas=local: Auth SDK, alias/verificación/recuperación/vinculación ficticias, Functions/Firestore emulados, UID/revisión/sesión/recibos y checkpoints. Entrada normal sigue aislada.\n- Una expedición por UID, transferencia explícita y conservación de lo confirmado. Recuperar combate desde su inicio excluye ranking irreversiblemente. Sin ranking oficial ni economía/inventario persistente P06/P07.\n\n### Firebase propio y GitHub\n\nIván creó manualmente scp-survivor, su app web y plan Spark. Las capturas confirman Email/contraseña y Google habilitados, localhost/127.0.0.1 autorizados y política exigida de mínimo 8 sin clases de caracteres obligatorias. [config/firebase-public.json](config/firebase-public.json) conserva configuración pública **inactiva**. No se probaron Google OAuth/correo reales ni se desplegó backend propio. [docs/FIREBASE_PROPIO.md](docs/FIREBASE_PROPIO.md) registra el alcance.\n\nRepositorio: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), main. **Código P05, GAP-001 y roadmap v0.12 incluidos en la actualización del repositorio autorizada A-021.** Main se comprobó en vivo el15/10/2026 antes de esta entrega: baseline39344e77e15bd82c98bacb3e9773ceaa20c1b918, sin cambios remotos nuevos. El commit de la entrega se identifica por P05-local-01 / roadmap v0.12 o con git log -1 --format=%H -- RoadmapSCP.json; no se inventa un SHA antes de crearlo. Esta entrega de código no activa Firebase real, facturación, despliegue o juego operativo en producción: runtime sigue local/emulado. El upstream histórico JPTER78/pokesurvivor/a1006e6e3d0cea9162238a90b0ffdd7fd38397b6 conserva su procedencia. Ruta maestra portable: ./RoadmapSCP.json.\n\n## 2. Evidencia actual y límites\n\nEV-026 acredita cierre local de GAP-001/P03-T02: 11 pruebas Node, 900 semillas, calendario de 18 sectores y 4 escenarios/2 extracciones en S10 con 35 oleadas. {{P05_VALIDATION_SUMMARY}}\n\nResultados detallados: [docs/P05-REPORT.md](docs/P05-REPORT.md), [docs/P05-validation.json](docs/P05-validation.json), [docs/GAP-001-REPORT.md](docs/GAP-001-REPORT.md) y [docs/GAP-001-validation.json](docs/GAP-001-validation.json).\n\nLos ensayos locales no demuestran OAuth/correo real, backend de producción, seguridad completa del combate, FPS/memoria/carga, Safari, teléfonos físicos, costes o juego operativo publicado. EV-001–025 e informes P01–P04 son antecedentes fechados; sus entornos/versiones/limitaciones no se convierten en evidencia nueva de P05.\n\n{{COMPLETED_EVIDENCE}}\n\n## 3. Prioridades\n\n1. Completar aceptación de P05 con servicios propios cuando se autorice la conexión/despliegue concreto: acceso/verificación/recuperación/vinculación reales, backend/reglas/retención, continuidad y cambio real de dispositivo. Conservar modo local reproducible y datos ficticios separados.\n2. P06 en trabajo local autorizado por A-024: P06-T01 comienza con el prototipo temporal descrito arriba; la aceptación final conserva sus dependencias P04-T02/P05-T03 y requiere servidor, continuidad y aceptación manual. P06-T02–T05 pueden prepararse/implementarse localmente, pero continúan P hasta contar con evidencia. P05 sigue EV0/6.\n3. P07: progresión/gacha/economía; P08: invitado/ranking; P09: acabado/recursos; P10: dispositivos físicos, carga/costes/aceptación; P11: publicación y operación autorizadas.\n\nConservar pesos, criterios y dependencias. Trabajo independiente puede prepararse sin dar por cerradas dependencias; ranking oficial requiere P10-T01/T02 antes de P08-T02. La web Roadmap tiene presupuesto separado. Cooperativo, Hardcore, códigos, regalos, ampliación 24+24 y PC posterior permanecen fuera del denominador de la primera versión.\n\n## 4. Tareas y criterios conservados\n\nEstados: P pendiente; EC en curso; B bloqueada; EV en validación; CV completada/verificada. Los criterios originales de las 53 tareas y sus dependencias se conservan. Los párrafos de estado explican la evidencia nueva sin sustituirlos.\n\n{{ALL_TASKS}}\n\n## 5. Autorizaciones\n\nA-018–021 registran las peticiones posteriores de Iván. A-001–020 conservan exactamente su alcance al registrarse; A-021 añade la entrega del código P05 y roadmap en GitHub/main. Los límites históricos de subida no revocan esta autorización posterior. La entrega al repositorio conserva runtime Firebase local/emulado, sin facturación o despliegue del juego. Las instrucciones actuales de Iván prevalecen.\n\n{{ALL_AUTHORIZATIONS}}\n\n## 6. Registro íntegro de decisiones\n\nSe conservan D-001–308 sin reescribir su contenido histórico. Una decisión posterior explícita puede sustituir una regla anterior, por ejemplo D-305/D-306. D-308 explica v0.11; el cierre posterior se acredita con EV-026. No inferir aprobaciones de arte ausente ni reconstruir sesiones excluidas.\n\n{{ALL_DECISIONS}}\n\n## 7. Evidencias completas\n\nCada evidencia conserva su alcance, versión y referencias. Las referencias con anclas antiguas de RoadmapSCP.md se resuelven contra la vista v0.11 archivada; las referencias numeradas en registros históricos corresponden a esa versión. “Prueba ejecutada” solo se refiere al ensayo descrito; no equivale a aceptación de toda la fase ni producción.\n\n{{ALL_EVIDENCE}}\n\n## 8. Áreas de continuidad\n\nLas áreas actualizadas conservan su estado v0.11 en previousStateV011 dentro del JSON. Diseño resuelto, código local y aceptación final son estados distintos.\n\n{{ALL_REMAINING}}\n\n## 9. Riesgos\n\nR-035 queda mitigado/verificado localmente con EV-026; conservar pruebas para evitar regresión. Economía/servidor/abuso/costes/dispositivos siguen sujetos a su fase y evidencia.\n\n{{ALL_RISKS}}\n\n## 10. Casos de cierre históricos\n\nCIE-001–010 se conservan como decisiones de planificación. “Ejecución pendiente al registrarse” no es una lista vigente: consultar tareas/áreas/evidencias actuales para el trabajo posterior.\n\n{{ALL_CLOSURES}}\n\n## 11. Novedades y web independiente\n\nN-001–005 son antecedentes de sus entregas, sin publicación web. Se conserva cada captura y texto alternativo. No se agrega noticia/captura nueva de P05 por inferencia. La web Roadmap continúa separada: fuente única, sin autoridad para cambiar alcance/pesos; sin construcción, automatización, sincronización o publicación autorizadas por A-020.\n\n{{ALL_NEWS}}\n\n## 12. Historial íntegro\n\nLos registros anteriores permanecen intactos. V0.11 y su documentación están en [docs/historial-local/alfa-0.4](docs/historial-local/alfa-0.4/); incluyen contexto técnico extenso y la vista original. V0.12 añade hechos posteriores y reemplaza la presentación vigente sin borrar decisiones ni historia.\n\n{{ALL_HISTORY}}\n\n## 13. Continuar en Windows/Codex Local\n\nLeer [AGENTS.md](AGENTS.md), [CONTEXTO_PROYECTO.md](CONTEXTO_PROYECTO.md), [PROMPT_MAESTRO.md](PROMPT_MAESTRO.md), [INSTALACION_WINDOWS.md](INSTALACION_WINDOWS.md) y el informe P05. Editar fuentes, generar compilado/vista y revisar diferencias/pruebas pertinentes. Conservar ambos lockfiles, fuentes Cloud/originales y backups. sources/ del espejo padre es solo lectura. No pegar claves privadas, contraseñas o tokens, convertir cachés en autoridad o activar configuración real por inferencia; la entrega del código en GitHub está autorizada por A-021.\n\nComprobar coherencia documental:\n\n~~~powershell\nnode tools/render-roadmap.js --check\n~~~\n\nEl JSON es canónico; no editar porcentajes de la vista a mano. Código y roadmap incluidos en la actualización GitHub autorizada A-021; la web Roadmap y el despliegue del juego siguen fuera de esta entrega.\n",
+   "currentImplementation": {
+-    "version": "V2-trial-02 / demo B1-B2",
++    "version": "V2-trial-03 / prototipo B3 en verificación",
+     "localOnly": false,
+     "defaultMode": "Partida aislada sin cuentas; HTML/CSS/JavaScript/Canvas2D y namespaceG conservados.",
+     "accountMode": "Optativo ?cuentas=local solo en localhost/127.0.0.1; Auth/Firestore/Functions oficiales emulados en demo-scp-survivor.",
+@@ -6004,7 +6041,7 @@
+       "designDisposition": "historical_fixture_replan_do_not_extend_backpacks_or_mods"
+     },
+     "activeDesignRevision": "V2-ESTRUCTURA",
+-    "v2ImplementationStatus": "V2-trial-02: mapa inicial y cofres ficticios publicados y verificados; aceptación manual y adaptación completa pendientes.",
++    "v2ImplementationStatus": "B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. Verificación integral y publicación B3 en curso.",
+     "v2Trial": {
+       "version": "V2-trial-01",
+       "guide": "docs/PRUEBA_MAPA_V2.md",
+@@ -6039,16 +6076,39 @@
+         "scope": "demo_only; manual acceptance and real account services pending"
+       }
+     },
+-    "previousCoreVersion": "P05-local-01 / alfa0.5 local"
++    "previousCoreVersion": "P05-local-01 / alfa0.5 local",
++    "v2EventRewardsTrial": {
++      "version": "V2-trial-03",
++      "status": "EC",
++      "authority": "A-036",
++      "decisionId": "D-332",
++      "evidenceIds": [
++        "EV-041"
++      ],
++      "evidenceComplete": false,
++      "guide": "docs/PRUEBA_PREMIOS_B3.md",
++      "report": "docs/V2-B3-REPORT.md",
++      "bossPracticeQuery": "?prueba=mapa-v2&premios=jefe",
++      "riftPracticeQuery": "?prueba=mapa-v2&premios=grieta",
++      "manualAcceptance": "pending",
++      "accountsEnabled": false,
++      "persisted": false,
++      "ticketEconomy": "fictional_run_only_provisional_table",
++      "buildVerification": "passed",
++      "browserVerification": "passed_local",
++      "publicationVerification": "pending_live_check",
++      "liveDeploymentVerified": false,
++      "contract": "Jefe: contenido fijo al aparecer, +1 nivel temporal de una copia equipada válida elegible, identificada por ID/modelo; máximo 5 heredado. Abrir por proximidad durante 3,5 s, sin pared; premio único independiente del cupo de exploración. Si no hay candidata o la elegida llegó al tope, sin mejora ni compensación inventada. Datos incompatibles bloquean entrega y tickets. Grieta: práctica explícita premios=grieta, portal físico de 45 s activos con sonido, alerta y localizador; ingreso instantáneo por contacto, Custodio separado del jefe obligatorio y encuentro en el mismo mapa. Solo victoria y apertura del cofre conceden mejora compatible y 2–3 tickets ficticios equiprobables de tabla provisional; saturación conserva solo esos tickets base. Entrar, expirar, abandonar o morir no concede premio. No define otra dimensión, retorno, reloj dimensional, economía real, radar ni combate 2+3+1."
++    }
+   },
+   "summaryTemplate": "# Roadmap vigente — SCP Survivor\n\n{{ACTIVE_DESIGN}}\n\n---\n\n## Línea base histórica anterior a V2\n\nLas reglas, tareas, porcentajes y prioridades registradas debajo describen el diseño anterior. En conflicto manda la pauta V2 de arriba.\n\n**Prioridad registrada antes de V2 (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).\n\n**Antecedente histórico · crédito de Ivan Vivanco · prototipo P06-T01 (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).\n\n**Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).\n\nVersión **{{VERSION}}**, {{DATE}}. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.\n\n## Avance basado en evidencia\n\n{{SUMMARY_METRICS}}\n\n{{SUMMARY_COUNTS}} Solo CV con evidencia completa suma; no hay crédito parcial. El avance mide criterios cumplidos, no tiempo restante, producto publicado o porcentaje de arte final.\n\n{{SUMMARY_PHASES}}\n\n## P06 local en curso desde v0.14\n\nA-024 autoriza avanzar localmente. P06-T01 queda EC/evidenceComplete=false con modelo físico, panel base/preparación con confirmación, IDs y fixture temporal para mochilas8/16 y almacén60. `?prueba=inventario` inicia directamente en preparación20s; `?inventario=local` activa la opción en loopback. No hay cuentas, persistencia ni inventario real, botín o kit. EV-030 registra los ensayos ejecutados en [docs/P06-REPORT.md](docs/P06-REPORT.md); la aceptación manual sigue pendiente. P06-T02–T05 continúan P; P05 EV0/6 y el global52/100 no cambian.\n\n## Cambio desde v0.11\n\nGAP-001 está resuelto y P03-T02 pasa de EV a CV: suma sus **3 puntos**, elevando global de 49 a 52 y técnico de 39/90 a 42/90. P03 queda 12/12. Criterios, pesos y dependencias originales permanecen intactos.\n\nLos sectores normales ahora declaran 3/4/5 oleadas reproducibles, con objetivos alternos, preparación de 20 s, HUD/contadores/salidas coherentes y secuencia independiente del calendario de jefe/extracción. EV-026: 11 pruebas Node, 900 semillas y calendario histórico de 18 sectores; cuatro escenarios de navegador fuente/compilado y dos extracciones S10/oleada4/35oleadas. Fuente 1.580 bajas y jefe evadido; compilado 1.587 y jefe vencido. Cero errores de página, peticiones remotas o errores HTTP en esos recorridos.\n\n## P05: implementación local, aceptación pendiente\n\nP05-T01/T02/T03 están **EV y conservan 0/6 puntos**. Se añadieron cuentas ficticias, alias, verificación/recuperación/vinculación explícita, autoridad de comandos emulada, recibos/reintentos, checkpoints seguros y una expedición activa por UID. Transferir revoca la sesión anterior; recuperar combate desde su inicio excluye clasificación irreversiblemente. El juego sin cuentas permanece disponible.\n\n{{P05_VALIDATION_SUMMARY}}\n\nResultados y límites: [docs/P05-REPORT.md](docs/P05-REPORT.md), [docs/P05-validation.json](docs/P05-validation.json) y [docs/GAP-001-validation.json](docs/GAP-001-validation.json).\n\n| Tarea | Preparado/probado localmente | Falta para aceptación completa |\n|---|---|---|\n| P05-T01 | Auth SDK, alias, alta/acceso/cierre y flujos ficticios | Google OAuth/correo/verificación/recuperación/vinculación reales, errores y separación de identidades con servicios propios |\n| P05-T02 | UID del token, revisión, sesión, transacciones/recibos, concurrencia y replay | Cumplir P05-T01; aceptar backend/reglas/persistencia/retención propios con alcance autorizado |\n| P05-T03 | Checkpoints, roundtrip, transferencia, desconexión/respuesta perdida y retroceso no clasificable | Cumplir P05-T02; nube propia y cambio real de dispositivo/red |\n\nLa evidencia local no acredita combate validado por servidor, economía/inventario persistente P06/P07, ranking oficial, OAuth/correo real, dispositivos físicos, Safari, FPS/memoria/carga, costes o juego operativo en producción.\n\n## Proyecto Firebase propio\n\nIván creó manualmente **scp-survivor**, app web y plan Spark. Capturas confirman Email/contraseña y Google habilitados, localhost/127.0.0.1 autorizados y política exigida de mínimo 8 sin clases obligatorias. La configuración pública se conserva **inactiva** en config/firebase-public.json. El juego usa exclusivamente demo-scp-survivor emulado, activado de forma optativa en localhost con ?cuentas=local. No se desplegó backend real ni se habilitó facturación desde Codex. Detalle: [docs/FIREBASE_PROPIO.md](docs/FIREBASE_PROPIO.md).\n\n## Orden de continuación\n\n1. **P05:** completar aceptación real conforme a sus dependencias. Preparar configuración, reglas, pruebas y costes antes de solicitar la autorización concreta necesaria para conexión/despliegue. La configuración manual de Auth no acredita por sí sola un backend de guardado funcional.\n2. **P06:** trabajo local autorizado por A-024; P06-T01 está EC con su primer prototipo temporal. La aceptación conserva dependencias P04-T02/P05-T03 y requiere servidor, continuidad y aceptación manual. P06-T02–T05 siguen P aunque el trabajo local está autorizado. El fixture no persiste ni representa inventario real, botín o kit.\n3. **P07:** progresión permanente, gacha y economía consistente, con P05/P06 completos.\n4. **P08:** invitado/ranking; ranking oficial requiere aceptación P10-T01/T02 antes de P08-T02.\n5. **P09/P10:** acabado/recursos y validación en dispositivos físicos, carga, memoria, rendimiento y costes.\n6. **P11:** despliegue/publicación/operación autorizados y aceptación final de producción.\n\nLa web Roadmap sigue como proyecto independiente sin construcción, automatización o publicación en este alcance. Cooperativo, Hardcore, códigos, regalos, ampliación 24+24 y PC posterior quedan fuera del denominador aprobado.\n\n## Continuidad y sincronización\n\nRepositorio: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), rama main. **Código P05, GAP-001 y roadmap v0.12 incluidos en actualización del repositorio autorizada por Iván: A-021.** Main se comprobó en vivo el15/10/2026 antes de esta entrega: baseline **39344e77e15bd82c98bacb3e9773ceaa20c1b918**, sin cambios remotos nuevos. Consultar el commit de la entrega P05-local-01 / roadmap v0.12 mediante git log -1 --format=%H -- RoadmapSCP.json. Publicar el código no activa Firebase real, facturación o despliegue: **el juego con cuentas sigue ejecutándose localmente con emuladores**.\n\nA-018 registra migración/subida anterior; A-019 autoriza avanzar GAP-001→P05 con implementación, dependencias y emuladores locales; A-020 autoriza este roadmap con subagente y A-021 autoriza entregar código P05 y roadmap en GitHub/main. Iván pide continuar autónomamente sin repetir consultas dentro del alcance local ya autorizado. Autorizaciones/decisiones/historial íntegros en JSON/vista. Los registros históricos no bloquean el alcance local ya autorizado.\n\nLeer [AGENTS.md](AGENTS.md), [CONTEXTO_PROYECTO.md](CONTEXTO_PROYECTO.md), [PROMPT_MAESTRO.md](PROMPT_MAESTRO.md) e [INSTALACION_WINDOWS.md](INSTALACION_WINDOWS.md). Conservar fuentes, arte aprobado y backups. La entrega en GitHub está autorizada por A-021; configuración Firebase real, facturación y despliegue del juego no se activan por esa entrega.\n\n~~~powershell\nnode tools/render-roadmap.js --check\n~~~\n\nAntes de cerrar tareas: comprobar criterio/dependencias/alcance, ejecutar pruebas pertinentes, registrar versión/entorno/evidencia y distinguir implementación local de aceptación real.\n",
+   "activeDesignRevision": {
+     "id": "V2-ESTRUCTURA",
+     "title": "Avance por mapas; sin extracción, accesorios físicos ni mochilas",
+-    "updatedOn": "2026-10-19",
++    "updatedOn": "2026-10-20",
+     "status": "local_trial_pending_manual_acceptance",
+-    "authority": "A-035",
+-    "summary": "B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía B1/B2](docs/PRUEBA_MAPA_COFRES_V2.md) · [Demo de cofres](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](docs/V2-B1-B2-REPORT.md). Demo publicada y verificada online; aceptación manual pendiente.",
++    "authority": "A-036",
++    "summary": "B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. [Guía B3](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites B3](docs/V2-B3-REPORT.md). Verificación de build, navegador y publicación B3 en curso; no equivale a demo B3 publicada ni aceptación humana.",
+     "pautaPath": "PAUTA_DESARROLLO.md",
+     "changePlanPath": "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
+     "decisionsPath": "docs/ESTRUCTURA_DECISIONES.md",
+@@ -6104,11 +6164,11 @@
+       },
+       {
+         "element": "Grietas y saltos",
+-        "treatment": "Desafíos opcionales con premios mayores y saltos dimensionales; conservar contacto inmediato, señales y localizador; reglas de retorno/reloj/destino abiertas."
++        "treatment": "Práctica B3 explícita de 45 s, con señales/localizador e ingreso instantáneo; Custodio y cofre en el mismo mapa. No implementa dimensión nueva ni saltos; retorno/reloj/destino y economía final abiertos."
+       },
+       {
+         "element": "Cofres y mapas",
+-        "treatment": "B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes."
++        "treatment": "B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes."
+       },
+       {
+         "element": "P06/P07",
+@@ -6130,7 +6190,7 @@
+         "D-220",
+         "D-279"
+       ],
+-      "adaptationStatus": "exploration_and_initial_geometry_prototype_pending_manual_acceptance"
++      "adaptationStatus": "exploration_and_event_rewards_prototype_pending_manual_acceptance"
+     },
+     "openRuleIds": [
+       "O-01",
+@@ -6282,9 +6342,10 @@
+         "status": "EC",
+         "evidenceComplete": false,
+         "evidenceIds": [
+-          "EV-040"
++          "EV-040",
++          "EV-041"
+         ],
+-        "implementationScope": "B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes."
++        "implementationScope": "B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes."
+       },
+       {
+         "id": "RC-11",
+@@ -6296,7 +6357,8 @@
+           "RC-13"
+         ],
+         "status": "P",
+-        "evidenceComplete": false
++        "evidenceComplete": false,
++        "implementationScope": "B3 ensaya un Custodio y su cofre en el mismo mapa mediante opción explícita; no implementa dimensiones, retorno ni saltos. RC-11 completo sigue pendiente."
+       },
+       {
+         "id": "RC-12",
+@@ -6340,10 +6402,11 @@
+     "playableDesignPlanPath": "docs/PLAN_DISENO_JUGABLE_V2.md",
+     "latestDocumentationSyncChangedGameCode": true,
+     "approvedNextBlock": {
+-      "authority": "A-035",
++      "authority": "A-036",
+       "decisionIds": [
+         "D-325",
+-        "D-326"
++        "D-326",
++        "D-332"
+       ],
+       "implemented": false,
+       "explorationAttemptSeconds": [
+@@ -6407,10 +6470,10 @@
+       ],
+       "routeTargetsMeasured": true,
+       "finalMapSizeApproved": false,
+-      "bossChest": "Garantizado al vencer; mejora temporal aleatoria compatible, elegibilidad pendiente.",
+-      "riftReward": "Superior al ordinario; tabla exacta pendiente.",
++      "bossChest": "Prototipo B3: cofre garantizado tras victoria; +1 nivel de copia equipada elegible con ID/modelo y tope heredado 5; saturación sin compensación.",
++      "riftReward": "Prototipo explícito B3: tras victoria y apertura, mejora compatible +2–3 tickets ficticios; tabla provisional, sin mejora al saturar y sin conversión adicional.",
+       "accountRewardsEnabled": false,
+-      "implementationScope": "Solo B1/B2: geometría inicial y cofres ficticios de exploración; jefe/grieta/bono/hitos siguen pendientes.",
++      "implementationScope": "B1/B2 más B3 de premios temporales y práctica explícita; bono/hitos, economía real, dimensión/retorno y aceptación completa pendientes.",
+       "manualAcceptance": "pending",
+       "evidenceComplete": false,
+       "report": "docs/V2-B1-B2-REPORT.md",
+@@ -6446,7 +6509,9 @@
+         "bundleSha256": "27373c595c3a6a37c43c83c6e5776794d650cf3159946257675567d03c09542a",
+         "liveScenarios": 4,
+         "scope": "demo_only; manual acceptance and real account services pending"
+-      }
++      },
++      "currentRevisionPublicationStatus": "B3_pending_verification",
++      "previousVerifiedVersion": "V2-trial-02 / roadmap 0.25"
+     },
+     "combatUpdatePath": "docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md",
+     "combatContract": {
+@@ -6503,6 +6568,29 @@
+       "accountsEnabled": false,
+       "persisted": false,
+       "liveDeploymentVerified": false
++    },
++    "b3Trial": {
++      "version": "V2-trial-03",
++      "status": "EC",
++      "authority": "A-036",
++      "decisionId": "D-332",
++      "evidenceIds": [
++        "EV-041"
++      ],
++      "evidenceComplete": false,
++      "guide": "docs/PRUEBA_PREMIOS_B3.md",
++      "report": "docs/V2-B3-REPORT.md",
++      "bossPracticeQuery": "?prueba=mapa-v2&premios=jefe",
++      "riftPracticeQuery": "?prueba=mapa-v2&premios=grieta",
++      "manualAcceptance": "pending",
++      "accountsEnabled": false,
++      "persisted": false,
++      "ticketEconomy": "fictional_run_only_provisional_table",
++      "buildVerification": "passed",
++      "browserVerification": "passed_local",
++      "publicationVerification": "pending_live_check",
++      "liveDeploymentVerified": false,
++      "contract": "Jefe: contenido fijo al aparecer, +1 nivel temporal de una copia equipada válida elegible, identificada por ID/modelo; máximo 5 heredado. Abrir por proximidad durante 3,5 s, sin pared; premio único independiente del cupo de exploración. Si no hay candidata o la elegida llegó al tope, sin mejora ni compensación inventada. Datos incompatibles bloquean entrega y tickets. Grieta: práctica explícita premios=grieta, portal físico de 45 s activos con sonido, alerta y localizador; ingreso instantáneo por contacto, Custodio separado del jefe obligatorio y encuentro en el mismo mapa. Solo victoria y apertura del cofre conceden mejora compatible y 2–3 tickets ficticios equiprobables de tabla provisional; saturación conserva solo esos tickets base. Entrar, expirar, abandonar o morir no concede premio. No define otra dimensión, retorno, reloj dimensional, economía real, radar ni combate 2+3+1."
+     }
+   }
+ }
+--- a/dev.html
++++ b/dev.html
+@@ -26,7 +26,7 @@
+ <section><h3>Arma 2</h3><label for="loadout-weapon-1">Modelo</label><select id="loadout-weapon-1"></select><div id="loadout-mods-1" class="loadout-mods" aria-label="Mods del arma 2"></div></section>
+ </div>
+ <p id="loadout-role-summary"></p><p id="loadout-preview-summary"></p><ul id="loadout-preview" class="loadout-preview"></ul><p id="loadout-error" class="loadout-error" role="alert"></p>
+-</div><p id="rift-test-note" hidden></p><p id="map-test-note" hidden></p><p id="chest-test-note" hidden></p><button id="btn-technical-start" class="primary">Iniciar expedición</button><a id="map-trial-quick" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;rapida=1">Prueba rápida: empezar en 4:30</a><a id="chest-trial-link" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;cofres=prueba">Practicar cofres: uno garantizado, sin cuenta</a></div>
++</div><p id="rift-test-note" hidden></p><p id="map-test-note" hidden></p><p id="chest-test-note" hidden></p><p id="b3-test-note" hidden></p><button id="btn-technical-start" class="primary">Iniciar expedición</button><a id="map-trial-quick" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;rapida=1">Prueba rápida: empezar en 4:30</a><a id="chest-trial-link" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;cofres=prueba">Practicar cofres: uno garantizado, sin cuenta</a><a id="boss-reward-trial-link" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;premios=jefe">Premio del jefe: empezar en 4:30</a><a id="rift-reward-trial-link" class="map-trial-link" hidden href="?prueba=mapa-v2&amp;premios=grieta">Premio dimensional: probar grieta de 45 s</a></div>
+ </section>
+ <section id="technical-pause" class="overlay" hidden role="dialog" aria-modal="true" aria-label="Pausa">
+ <div class="panel"><p class="eyebrow">SECTOR DETENIDO</p><h2>Pausa</h2><p>Tu posición se conserva mientras esta página permanezca abierta.</p><button id="btn-technical-resume" class="primary">Continuar</button><button id="btn-technical-menu">Volver al menú</button></div>
+@@ -50,6 +50,7 @@
+ <script defer src="js/core/util.js"></script>
+ <script defer src="js/systems/map-trial.js"></script>
+ <script defer src="js/systems/exploration-chests.js"></script>
++<script defer src="js/systems/event-rewards.js"></script>
+ <script defer src="js/vendor/firebase-client.js"></script>
+ <script defer src="js/data/field-catalog.js"></script>
+ <script defer src="js/systems/inventory-model.js"></script>
+--- a/docs/PLAN_DISENO_JUGABLE_V2.md
++++ b/docs/PLAN_DISENO_JUGABLE_V2.md
+@@ -1,8 +1,8 @@
+ # Plan de adaptación del diseño jugable V2
+ 
+-**Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](V2-B1-B2-REPORT.md). Demo publicada y verificada online; aceptación manual pendiente; consultar el informe antes de afirmar resultados.
++**Actualización vigente 0.26 · B3, 20/10/2026 (A-036/D-332/EV-041):** B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. [Guía B3](PRUEBA_PREMIOS_B3.md) · [Resultados y límites B3](V2-B3-REPORT.md). Build/check y navegador B3 aprobados localmente en ambas copias; comprobación online pendiente. Aceptación humana pendiente.
+ 
+-**Cambio vigente 0.24:** el bloque B4 debe cubrir dos armas simultáneas y tres ofertas compatibles; añadir poderes (RC-13) y ultimate (RC-14) antes de aceptar la build completa. B5 revisa gacha de armas, soldados, skins y ultimates. Cooldowns, cartas, costes y relación con habilidad de soldado siguen abiertos. [Contratos y dependencias](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). Este corte 0.24 fue documental; la entrega actual 0.25 implementa B1/B2 como prototipo aislado.
++**Cambio vigente 0.24:** el bloque B4 debe cubrir dos armas simultáneas y tres ofertas compatibles; añadir poderes (RC-13) y ultimate (RC-14) antes de aceptar la build completa. B5 revisa gacha de armas, soldados, skins y ultimates. Cooldowns, cartas, costes y relación con habilidad de soldado siguen abiertos. [Contratos y dependencias](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). Este corte 0.24 fue documental; la entrega 0.25 implementó B1/B2 y la 0.26 añade B3 como prototipo aislado, con verificación local aprobada y comprobación online pendiente.
+ 
+ 18/10/2026 · Pauta sincronizada 0.22 · **Trabajo siguiente definido; no ejecutado en esta entrega documental.**
+ 
+@@ -13,7 +13,7 @@
+ - **Implementado como ensayo local:** V2-trial-01, mapa de 300 segundos activos, jefe obligatorio, puerta y dos soldados a 5:00, corte de apariciones enemigas, remanentes vivos y transición inmediata por contacto. [Guía](PRUEBA_MAPA_V2.md).
+ - **Aceptación pendiente:** prueba manual de Iván, balance, rendimiento y dispositivos físicos. No cerrar P05 ni V2 por simulaciones.
+ - **Aprobado para adaptar:** tres tipos de cofre, sorteos de exploración en 60/120/180/240 segundos, probabilidades 10/15/20 %, topes 1/2/3 y tickets 1–2/1–2/1–3 según mapas 1–3/4–7/8+. Seis puntos alternativos y escala inicial 160 × 100 casillas.
+-- **Pendiente tras B1/B2:** cofres de jefe/grieta, bono de diez minutos/hitos, familias/azar finales de armas, combate 2+3+1, gacha, persistencia V2, dimensiones de grieta y saltos. Las cajas de campo siguen sin botín.
++- **Implementado en B3 como ensayo:** cofre de jefe y práctica explícita de grieta, con mejora temporal por copia y tabla provisional ficticia. **Pendiente:** bono de diez minutos/hitos, familias/azar finales de armas, B4/combate 2+3+1, gacha, persistencia V2, dimensiones de grieta y saltos. Las cajas de campo siguen sin botín.
+ 
+ ## Bloques y orden de ejecución
+ 
+@@ -21,12 +21,12 @@
+ | --- | --- | --- | --- |
+ | B1 — Geometría del ensayo | Crear variante inicial de 160 × 100, circuitos amplios, seis puntos alternativos de exploración y espacios de jefe/puerta | `js/world/sector-maps.js`, `js/world/world.js`, `js/systems/expedition.js`, `js/systems/map-trial.js` | Rutas, colisión y puntos alcanzables comprobados; puerta y jefe no quedan aislados; se registran mediciones de desplazamiento |
+ | B2 — Cofres locales | Incorporar sorteos y descubrimiento/apertura en el ensayo aislado, con tickets ficticios en memoria | `js/systems/expedition.js`, `js/systems/interact.js`, `js/world/world.js`, `js/ui/technical-ui.js` | Cada intento ocurre una sola vez; topes/contenido fijo/apertura funcionan; ningún premio llega a cuentas o gacha |
+-| B3 — Premio de jefe y grieta | Resolver candidatos/topes/sin candidatos y tabla de grieta antes de integrar sus premios | `js/systems/field-upgrades.js`, `js/systems/containment-boss.js`, `js/systems/dimensional-rifts.js` | Contrato explícito; premio único, compatible y comprobable. No decidir por inferencia retorno/reloj de grieta |
++| B3 — Premio de jefe y grieta | Prototipo implementado: copia equipada +1 nivel hasta 5; grieta explícita añade 2–3 tickets ficticios provisionales | `js/systems/event-rewards.js`, `js/systems/exploration-chests.js`, `js/systems/expedition.js`, `js/systems/dimensional-rifts.js` | Premio único tras victoria y apertura 3,5 s; saturación sin compensación adicional; verificación integral y aceptación manual pendientes. No define retorno/reloj dimensional |
+ | B4 — Armas y equipamiento V2 | Separar familias, estadísticas propias y selección aleatoria de mejoras; retirar dependencias de accesorios/mochilas | `js/data/field-catalog.js`, `js/systems/field-stats.js`, `js/systems/field-combat.js`, `js/systems/field-upgrades.js`, `js/ui/field-loadout.js`, `js/systems/inventory-model.js` | Reglas abiertas de cartas/candidatos/topes cerradas; copias independientes; sin recargas ficticias en familias que no las necesitan |
+ | B5 — Guardado, colección y economía | Versionar contrato V2 e integrar colección/gacha de armas, soldados, skins y ultimates con funciones aceptadas y premios | `js/systems/run-checkpoint.js`, `js/systems/run-continuity.js`, `js/net/local-accounts.js`, `functions/account-service.js` | P05 real aceptado y contrato V2 definido; propiedad, revisión, sesión, recibos e idempotencia verificados; datos antiguos conservados |
+ | B6 — Acabado y aceptación | Integrar mapas variados, señalización, arte/audio, controles y regresión | `dev.html`, `css/technical.css`, `js/ui/technical-ui.js`, `docs/OBSERVACIONES_VISUALES.md` | Recursos aprobados conservados; lectura clara; sonido/alerta/localizador de grietas; crédito visible; pruebas y aceptación registradas |
+ 
+-**B1/B2 entregados como prototipo aislado sin guardado; aceptación pendiente.** Puede prepararse mientras P05 real sigue pendiente. No adelanta la economía P06/P07 ni convierte premios ficticios en saldo. La conexión persistente de B5 exige sus dependencias; B3/B4 no se ejecutan con reglas incompletas.
++**B1/B2 y B3 implementados como prototipos aislados sin guardado; aceptación pendiente.** Puede prepararse mientras P05 real sigue pendiente. No adelanta la economía P06/P07 ni convierte premios ficticios en saldo. La conexión persistente de B5 exige sus dependencias; B3 aplica exclusivamente su contrato de ensayo; B4 no se implementa con reglas incompletas.
+ 
+ La preparación local Worker/SQLite, si existe en la copia de desarrollo, no se publica ni activa por esta planificación. La selección de backend y sus pruebas se documentan en P05. Firebase permanece en Spark, sin facturación.
+ 
+@@ -49,10 +49,16 @@
+ 6. Usar identificadores únicos por mapa/evento para evitar doble apertura o doble premio ficticio. Recargar pierde el ensayo; nunca escribe cuentas, gacha ni guardados anteriores.
+ 7. Resolver explícitamente los hitos antiguos y la regla acumulada de diez minutos antes de representar sus premios como reglas V2 completas. No borrar esa base ni aplicar compensaciones inventadas.
+ 
++## Contrato del ensayo B3
++
++Jefe: contenido fijo al aparecer, +1 nivel temporal de una copia equipada válida elegible, identificada por ID/modelo; máximo 5 heredado. Abrir por proximidad durante 3,5 s, sin pared; premio único independiente del cupo de exploración. Si no hay candidata o la elegida llegó al tope, sin mejora ni compensación inventada. Datos incompatibles bloquean entrega y tickets. Grieta: práctica explícita premios=grieta, portal físico de 45 s activos con sonido, alerta y localizador; ingreso instantáneo por contacto, Custodio separado del jefe obligatorio y encuentro en el mismo mapa. Solo victoria y apertura del cofre conceden mejora compatible y 2–3 tickets ficticios equiprobables de tabla provisional; saturación conserva solo esos tickets base. Entrar, expirar, abandonar o morir no concede premio. No define otra dimensión, retorno, reloj dimensional, economía real, radar ni combate 2+3+1.
++
++[Guía de premios](PRUEBA_PREMIOS_B3.md) · [Informe y límites](V2-B3-REPORT.md). Build, navegador y publicación en curso hasta evidencia de raíz; aceptación de Iván pendiente.
++
+ ## Reglas que todavía necesitan definición
+ 
+ - Tres ofertas aleatorias y filtro de armas equipadas ya están confirmados. Falta concretar mezcla entre grupos, categorías, probabilidades, topes y saturación; no volver al supuesto de mejora automática ni a un arma ajena.
+-- Elegibilidad del premio de jefe, caso sin candidatos y tabla de premios superiores de grieta.
++- Economía final de premios de jefe/grieta: B3 solo fija contrato de ensayo, máximo 5 heredado y tickets ficticios 2–3 provisionales; no aprueba balance ni economía definitiva.
+ - Muerte y fin definitivo de partida, progresión permanente, duplicados, rarezas y desbloqueos.
+ - Grietas: recinto, retorno, reloj, cierre y premios. Saltos: destinos y compatibilidad con el jefe obligatorio.
+ - Recuperación persistente cuando quedan enemigos vivos junto a la puerta; no reutilizar el checkpoint antiguo que limpia enemigos.
+--- a/docs/PRUEBA_PREMIOS_B3.md
++++ b/docs/PRUEBA_PREMIOS_B3.md
+@@ -0,0 +1,50 @@
++# Prueba de premios B3
++
++20/10/2026 · Roadmap 0.26 · Tu aceptación manual sigue pendiente.
++
++## Accesos
++
++- [Mapa y cofre de exploración garantizado](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba).
++- [Cofre del jefe: comenzar en 4:30](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&premios=jefe).
++- [Grieta: comenzar en 0:00](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&premios=grieta).
++
++Pulsa el botón de inicio del menú. Si tienes la demo anterior abierta, recarga con Ctrl+F5. No agregues `cuentas` a estas direcciones. Para probar localmente, usa las mismas consultas sobre el servidor indicado en INSTALACION_WINDOWS.md.
++
++## 1. Recorrido y exploración
++
++1. Inicia la práctica de cofres. Explora alrededor de los obstáculos, comprueba el espacio para esquivar y acércate al cofre.
++2. El indicador de ubicación debe aparecer cuando lo descubras. Permanece a 50 unidades o menos, sin pared entre ambos, durante 3,5 segundos activos para abrirlo.
++3. Aléjate durante la apertura: pierde 1,5 segundos de progreso por segundo. Pausar y elegir cartas detiene la apertura.
++4. Anota si el mapa, las distancias, el indicador y los controles son cómodos. Este cofre está forzado para probarlo; en una partida normal puede no aparecer ninguno.
++
++## 2. Premio del jefe
++
++1. Inicia la práctica del jefe. Comienza cerca del Custodio vivo en 4:30. Derrótalo jugando; las pruebas automáticas usan daño controlado, pero esta demo no te concede una victoria automática.
++2. Aparece su cofre en el lugar donde murió. No consumes el cupo de cofres de exploración.
++3. Descúbrelo y permanece cerca 3,5 segundos. Entrega **+1 nivel temporal de una copia de arma equipada elegible**, una sola vez. El contenido se fija al aparecer, sin volver a sortearlo al abrir.
++4. El límite 5 se conserva del prototipo anterior. Si no existe una mejora compatible o la copia elegida ya llegó al máximo, lo indica sin inventar curación ni moneda compensatoria.
++5. A 5:00 llega la puerta con aliados y termina la aparición de enemigos. El jefe obligatorio debe estar derrotado para cruzar; los remanentes siguen vivos.
++
++## 3. Grieta y premio dimensional
++
++1. Inicia la práctica dimensional. La grieta está físicamente en el mapa, con sonido de aparición, alerta y flecha de dirección/distancia. Se mantiene abierta **45 segundos activos**.
++2. Camina sobre ella para entrar **al instante**, sin botón ni espera. Aparece el Custodio dimensional en este mismo escenario; el ensayo todavía no viaja a otro mapa.
++3. Entrar no entrega premio. El reloj del mapa sigue avanzando y los enemigos presentes permanecen.
++4. Vence al Custodio y abre su cofre por proximidad durante 3,5 segundos. La tabla provisional del ensayo entrega una mejora temporal compatible y **2–3 tickets ficticios**, equiprobables. Si las armas están al máximo, conserva solo esos tickets base.
++5. El dimensional no sustituye al jefe obligatorio ni desbloquea su puerta. Dejar cerrar la grieta, abandonar el mapa o morir no concede premio.
++6. Repite sin entrar y comprueba que desaparezca al agotarse el tiempo, sin premio.
++
++## Pauta para Iván
++
++Registrar cada punto como aprobado o describir el problema; todavía no hay resultados manuales registrados:
++
++- [ ] Desplazamiento, espacio y distancias del mapa cómodos.
++- [ ] Cofre descubierto, indicador, apertura, retroceso y pausa comprensibles.
++- [ ] Jefe vencido genera un cofre; mejora visible y sin duplicarse.
++- [ ] Grieta localizada antes del cierre; sonido y alerta perceptibles.
++- [ ] Contacto instantáneo sin botón, incluso con enemigos alrededor.
++- [ ] Dimensional y jefe obligatorio independientes; remanentes conservados.
++- [ ] Cofre dimensional entrega mejora compatible y tickets ficticios una sola vez.
++- [ ] Grieta expirada no permite ingreso ni entrega premio.
++
++Los tickets existen solo en memoria durante esta partida. No son saldo, gacha ni guardado de cuenta. El aspecto, audio y balance son provisionales; P09 debe conservar sonido, alerta y localizador al desarrollar los efectos definitivos. La aparición aleatoria V2, dimensión/retorno, economía, radar, dos armas simultáneas, tres poderes y ultimate quedan pendientes. Ver [informe](V2-B3-REPORT.md).
+--- a/docs/V2-B3-REPORT.md
++++ b/docs/V2-B3-REPORT.md
+@@ -0,0 +1,35 @@
++# V2-trial-03: premios de jefe y práctica dimensional
++
++20/10/2026 · B1/B2 revalidados y B3 implementado como prototipo. Aceptación manual de Iván pendiente; RC-10 permanece EC.
++
++El jefe obligatorio genera un cofre separado del cupo de exploración. Su contenido fijo mejora en +1 nivel una copia equipada elegible, por ID/modelo, con el máximo 5 del prototipo. Revalida la copia al abrir y concede una única entrega. Si está saturada, muestra «Sin mejora compatible» sin compensación inventada; datos incompatibles bloquean también los tickets.
++
++La práctica `premios=grieta` reutiliza el portal físico y el Custodio en el mismo escenario: apertura 45 segundos activos, sonido, alerta, localizador y contacto instantáneo. El reloj continúa; el jefe dimensional tiene una referencia independiente del obligatorio. Vencerlo no limpia enemigos ni desbloquea la puerta. Solo vencer y abrir el cofre otorga una mejora compatible y 2–3 tickets ficticios equiprobables, **parámetros provisionales del ensayo**, sin saldo real. No se entrega nada por entrar, expirar, abandonar o morir.
++
++Los cofres comparten descubrimiento, apertura por proximidad 50 u sin pared durante 3,5 s y retroceso 1,5 s/s. Pausa global y cartas congelan el proceso. Los tickets se acumulan en memoria, separados de cuentas, `player.t1`, gacha y checkpoints. Nueva partida reinicia el registro.
++
++## Verificación
++
++Los resultados concretos y hashes se conservan en [V2-B3-VALIDACION.json](V2-B3-VALIDACION.json). Publicación online pendiente de comprobación al preparar este registro; el recibo posterior identifica el commit servido sin incorporar un SHA autorreferente antes del commit.
++
++- B1/B2 publicados: revalidación inicial de dos escenarios online, escritorio/táctil emulado, sin errores ni solicitudes externas.
++- Source: suite Node de 29 archivos, 172 casos, **171 aprobados, 1 omitido, cero fallos**. Se excluye la preparación Worker incompleta; se omite un caso que requiere emuladores activos.
++- Publicación: suite Node de 29 archivos, 172 casos, **170 aprobados, 2 omitidos, cero fallos**. Además del emulador, un caso CORS exige dependencias de `functions` no instaladas en esta copia. Sin cambios en esos servicios.
++- Build y build:check: aprobados en ambas copias, **88 scripts**; configuraciones de cuentas anteriores conservadas.
++- Navegador source: cuatro escenarios B3 (fuente/compilado × escritorio/táctil), cada uno con jefe, grieta y cierre sin premio. Regresiones independientes: cuatro recorridos de cofres y cuatro de jefe/puerta.
++- Revisión independiente: detectó que invocar refuerzos usaba el tope heredado64. Corregido con límite compartido24 y reserva para el jefe obligatorio. Prueba de regresión observada roja antes y verde después. El corte de nuevos enemigos a300s se conserva.
++- Revisión visual: captura táctil del resultado del premio dimensional legible y separada de controles. Arte provisional.
++
++El simulador mueve al jugador, concede invulnerabilidad y derrota al jefe con daño controlado. Usa pausa real, tiempo activo y proximidad para comprobar el premio. Se corrigieron dos supuestos del simulador: las cartas no cuentan como tiempo de apertura y permanecer sobre el lugar de muerte puede empezar a abrir el cofre automáticamente. No se quitaron las guardas del juego para hacer pasar las pruebas.
++
++La versión de publicación también pasó cuatro escenarios B3, cada uno con jefe, grieta y expiración, más cuatro recorridos de regresión de cofres y cuatro de jefe/puerta. Total local: ocho escenarios B3 y dieciséis recorridos de regresión.
++
++La versión de publicación se compila y comprueba por separado para conservar su configuración anterior de cuentas. Ningún resultado acredita balance, FPS, dispositivo físico o aceptación humana. La comprobación de sonido registra la emisión del evento; Iván debe confirmar su percepción en la prueba manual.
++
++## Límites y continuidad
++
++No hay viaje a otra dimensión, retorno, nueva aparición aleatoria V2 de grietas, persistencia, economía real ni cierre de P05. Firebase continúa Spark, sin facturación y con cuentas propias desactivadas. Las reglas 2+3+1 y radar aprobadas permanecen para B4 y siguientes bloques, sin implementarlas aquí. No se sustituyeron gráficos ni se reintrodujeron mochilas, accesorios o extracciones.
++
++Las 53 tareas, estados, criterios y pesos históricos conservan52/100. Avance V2 sin calcular; B3 y RC-10 no se declaran aceptados. Originales Cloud, ZIPs y `sources/` intactos. Respaldo previo `development-backups/b3-20261020-antes.zip` fuera del repositorio. Se publican solo cambios de esta entrega; la preparación Worker no publicada permanece aislada.
++
++[Guía manual](PRUEBA_PREMIOS_B3.md) · [Plan](superpowers/plans/2026-10-20-b3-premios.md) · [Diff](V2-B3-CAMBIOS.diff).
+--- a/docs/V2-B3-VALIDACION.json
++++ b/docs/V2-B3-VALIDACION.json
+@@ -0,0 +1,84 @@
++{
++  "version": "V2-trial-03",
++  "checkedAt": "2026-10-20T10:49:37.861153+00:00",
++  "build": {
++    "source": {
++      "bundleSha256": "5e6e3f76d0cb7950566cdc8ec4a030e95283bcc56fd4dfe072e4e366a6960dfe",
++      "indexSha256": "b86efe8f82975155764d45d86cd6ecde9a383dae1b0d4e67dcb6a2bdc577015a",
++      "scripts": 88,
++      "build": "passed",
++      "check": "passed"
++    },
++    "publication": {
++      "bundleSha256": "01e751b946a58a8c557d1eca02dbe0d97c8982fba316475837cbf1db5c36c093",
++      "indexSha256": "f49581b12e13702510745d4b0e9b570b688774ea7589d9eebf3e15db7dc01c12",
++      "scripts": 88,
++      "build": "passed",
++      "check": "passed"
++    }
++  },
++  "node": {
++    "source": {
++      "cases": 172,
++      "passed": 171,
++      "skipped": 1,
++      "failed": 0
++    },
++    "publication": {
++      "cases": 172,
++      "passed": 170,
++      "skipped": 2,
++      "failed": 0
++    },
++    "excluded": "p05-worker*.test.js: preparación incompleta preexistente, no incluida en esta entrega",
++    "skipReasons": [
++      "Emuladores no activos",
++      "Publicación: CORS exige dependencias functions no instaladas"
++    ]
++  },
++  "browserB3": {
++    "localScenarios": 8,
++    "modesPerScenario": [
++      "boss_victory_chest",
++      "rift_contact_victory_chest",
++      "rift_expiry_no_reward"
++    ],
++    "method": "Posición, invulnerabilidad, daño letal y pasos temporales controlados. Pausa pública real, apertura física y aislamiento de contexto. No aceptación humana, balance, rendimiento ni dispositivo físico.",
++    "allPassed": true
++  },
++  "regressions": {
++    "sourceChests": 4,
++    "sourceMapDoor": 4,
++    "publicationChests": 4,
++    "publicationMapDoor": 4,
++    "baselineOnlineChests": 2
++  },
++  "review": {
++    "independent": "Sol medio; raíz revisó e integró",
++    "finding": "Invocaciones podían exceder24; corregido con cap compartido y reserva del obligatorio",
++    "regression": "rojo antes, verde después"
++  },
++  "preservation": {
++    "historicalTasks": 53,
++    "historicalPercent": 52,
++    "tasksPhasesUnchanged": true,
++    "v2Percent": null,
++    "originalCloudAndSourcesUnchanged": true,
++    "unpublishedWorkerConfigNotCopied": true
++  },
++  "limits": {
++    "manualAcceptance": "pending",
++    "physicalDevice": false,
++    "balanceOrFpsMeasured": false,
++    "ownAccountsEnabled": false,
++    "billingAuthorized": false,
++    "persistentRewards": false,
++    "rift": "explicit practice, same map, no travel or return",
++    "riftTicketTable": "2 or 3 equiprobable fictional tickets; provisional test parameters"
++  },
++  "publication": {
++    "status": "pending_live_check",
++    "url": "https://deteco.github.io/SCPSurvivor/",
++    "roadmapVersion": "0.26"
++  }
++}
+--- a/docs/superpowers/plans/2026-10-20-b3-premios.md
++++ b/docs/superpowers/plans/2026-10-20-b3-premios.md
+@@ -0,0 +1,34 @@
++# B3: premios de jefe y prueba de grieta
++
++> Ejecución: subagent-driven-development, tareas acotadas y revisión de raíz.
++
++**Objetivo:** ejecutar la comprobación automática de B1/B2 y preparar el ensayo jugable de premios solicitado por Iván: «Hagamos la 1-2. Para ir avanzando».
++
++**Arquitectura:** conservar HTML/CSS/JavaScript/Canvas2D, namespace G, mapa V2 y módulos actuales. Un módulo de premios planifica contenido fijo y aplica una entrega por evento; los cofres existentes conservan descubrimiento y apertura. La grieta se ensaya expresamente en el mismo escenario, reutilizando el portal anterior, sin definir una dimensión nueva, retorno ni economía real.
++
++## Contrato del ensayo y decisiones
++
++- La instrucción actual aprueba ejecutar la propuesta previa: validar el mapa/cofre y avanzar B3. Continúa la autorización de publicar código, demo y roadmap en GitHub. No volver a solicitar permiso para estas tareas.
++- B1/B2: repetir pruebas online y mantener la aceptación humana pendiente; una simulación no se registra como prueba manual de Iván.
++- Jefe obligatorio derrotado: un cofre independiente del cupo de exploración. Contenido fijo: +1 nivel de una copia equipada elegible, seleccionada con semilla independiente; se reutiliza el límite actual 5 del prototipo, sin aprobar los rangos definitivos B4.
++- Se conserva ID/modelo de copia y se revalida al abrir. Nunca mejorar arma ajena ni volver a sortear silenciosamente. Si ambas copias están al máximo, mostrar «Sin mejora compatible» y cerrar sin compensación inventada. Si se saturó después de aparecer, mismo tratamiento. Datos incompatibles se rechazan sin acreditar premios.
++- Tabla **provisional de prueba**, no economía aprobada: vencer el Custodio dimensional concede una mejora elegible y 2–3 tickets ficticios equiprobables. Si no hay mejora elegible, solo los tickets de esa tabla, sin conversión adicional. Entrar, dejar cerrar, abandonar o morir no concede premio.
++- Para comprobar el contrato de grieta sin resolver O-06/O-07 se habilita únicamente `premios=grieta` en V2: portal físico, 45 s activos, aviso/sonido/localizador, contacto instantáneo y Custodio en el mismo mapa. El reloj del mapa sigue su funcionamiento actual; no hay viaje/retorno ni aparición aleatoria nueva en la partida normal. El jefe obligatorio y puerta conservan sus reglas; no se limpian remanentes al vencer al dimensional.
++- Ambos cofres se abren por proximidad 50 u sin pared, 3,5 s, retroceso 1,5 s/s, pausa y cartas congeladas. No habrá botón de apertura. El premio se concede una sola vez y solo al abrir el cofre de victoria.
++- Tickets ficticios separados de cuenta, player.t1, gacha y guardado. Copias/estadísticas temporales únicamente para esta partida. Sin Firebase propio, Worker, dependencias nuevas ni facturación.
++- Alternativas descartadas para este ensayo: aplicar automáticamente al morir el jefe (omite la interacción del cofre); implementar ya otra dimensión/economía (requiere contratos ajenos a B3). Se elige reutilizar el cofre físico y un encuentro de prueba aislado.
++- No implementar radar, ultimates, poderes o simultaneidad de armas; las aprobaciones de ESTRUCTURA se conservan como trabajo posterior.
++
++## Tareas y verificación
++
++- [x] Respaldo previo de ambas copias y manifiesto SHA-256; revisión de código y contratos.
++- [x] Revalidar demo publicada B1/B2 en escritorio y táctil emulado, sin errores ni servicios externos.
++- [x] Premios: tests rojo/verde para contenido fijo, copia correcta, saturación, incompatibilidad, doble entrega y tabla ficticia.
++- [x] Cofres de eventos: extender módulo sin consumir cupo de exploración; interacción y HUD claros, apertura única y congelación durante pausa/cartas.
++- [x] Director: integrar victoria de jefe, prueba de grieta independiente, encuentro y premio dimensional sin alterar requisito de puerta ni corte de apariciones en 300 s.
++- [x] Accesos directos `premios=jefe` y `premios=grieta`, instrucciones y límites en menú; conservar crédito.
++- [x] Node, build/check de ambas copias y navegador fuente/compilado, escritorio/táctil; regresión de B1/B2 y puerta.
++- [x] Revisión final, inventario de cambios, documentación y roadmap 0.26 preservando 53 tareas/criterios/estados/pesos históricos y el 52/100 histórico; V2 sin porcentaje y P05 real pendiente.
++- [ ] Publicar y comprobar build de Pages, hashes servidos y pruebas online. Guardar resultados y diff; aceptación humana permanece pendiente.
++
++Archivos principales: `js/systems/event-rewards.js`, `exploration-chests.js`, `expedition.js`, `dimensional-rifts.js`, `map-trial.js`, `js/ui/technical-ui.js`, `dev.html`, pruebas `v2-event-rewards`, `v2-map-director` y nuevo recorrido de navegador. No editar `sources/` ni originales Cloud/ZIP.
+--- a/js/systems/dimensional-rifts.js
++++ b/js/systems/dimensional-rifts.js
+@@ -5,7 +5,8 @@
+   const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+   const accounts = ['local','propias'].includes(query.get('cuentas'));
+   const directTest = local && query.get('prueba') === 'grieta' && !accounts;
+-  const enabled = local && !accounts && !G.MapTrial?.enabled && (directTest || query.get('grietas') === 'local');
++  const v2Practice = G.MapTrial?.enabled === true && G.MapTrial?.rewardRiftPractice === true;
++  const enabled = v2Practice || (local && !accounts && !G.MapTrial?.enabled && (directTest || query.get('grietas') === 'local'));
+   const TTL = 45, ENTRY_RADIUS = 22;
+   let seen = new Set(), state;
+   function clear() { state = {status:'idle',remaining:0,x:0,y:0,sector:0,alert:'',alertTime:0,result:null}; }
+@@ -42,7 +43,7 @@
+     state.remaining = Math.max(0,state.remaining-dt);
+     if (state.remaining < 1e-8) {
+       state.remaining = 0; state.status = 'closed';
+-      notify('La grieta se ha cerrado. Puedes continuar por la salida.');
++      notify(v2Practice ? 'La grieta se ha cerrado. Continúa resistiendo.' : 'La grieta se ha cerrado. Puedes continuar por la salida.');
+     }
+   }
+   function near(player) {
+@@ -57,13 +58,14 @@
+   function enter(player) {
+     if (!near(player)) return false;
+     state.status = 'active'; state.remaining = 0;
+-    notify('CUSTODIO DIMENSIONAL · apártate de la grieta · puedes huir por la salida');
++    notify(v2Practice ? 'CUSTODIO DIMENSIONAL · encuentro de prueba en este mapa' : 'CUSTODIO DIMENSIONAL · apártate de la grieta · puedes huir por la salida');
+     return true;
+   }
+   function complete(result) {
+     if (state.status !== 'active' || !['defeated','evaded'].includes(result)) return false;
+     state.status = 'resolved'; state.result = result;
+-    notify(result === 'defeated' ? 'Custodio dimensional vencido · sector despejado' : 'Retirada dimensional · sector despejado');
++    notify(v2Practice ? (result === 'defeated' ? 'Custodio dimensional vencido · continúa resistiendo' : 'Encuentro dimensional terminado · continúa resistiendo') :
++      (result === 'defeated' ? 'Custodio dimensional vencido · sector despejado' : 'Retirada dimensional · sector despejado'));
+     return true;
+   }
+   function draw(ctx) {
+--- a/js/systems/event-rewards.js
++++ b/js/systems/event-rewards.js
+@@ -0,0 +1,76 @@
++/* B3 trial rewards: fixed content, temporary copies and fictional run tickets only. */
++G.EventRewards = (() => {
++  const plans = new Map(), receipts = new Map();
++  let ticketTotal = 0, lastNotice = '';
++  const enabled = () => G.MapTrial?.enabled === true;
++  function startRun() {
++    plans.clear(); receipts.clear(); ticketTotal = 0; lastNotice = '';
++  }
++  function validLoadout(player) {
++    if (!player || !G.FieldCombat?.getweapons || !G.FieldCombat?.upgrade || !G.FieldCatalog?.models || !G.FieldCatalog?.validateMods) return false;
++    const copies = player.fieldWeapons, combat = G.FieldCombat.getweapons();
++    if (!Array.isArray(copies) || copies.length !== 2 || combat !== copies) return false;
++    const ids = new Set();
++    for (const copy of copies) {
++      if (!copy || typeof copy.id !== 'string' || !copy.id.trim() || ids.has(copy.id) ||
++          !Number.isInteger(copy.level) || copy.level < 1 || copy.level > 5 ||
++          typeof copy.model !== 'string' || !Object.prototype.hasOwnProperty.call(G.FieldCatalog.models, copy.model) || !Array.isArray(copy.mods) ||
++          !G.FieldCatalog.validateMods(copy.model, copy.mods)) return false;
++      ids.add(copy.id);
++    }
++    return true;
++  }
++  // Independent salted draws keep ticket contents stable when eligible weapons change.
++  function draw(seed, id, kind, salt) {
++    const input = `${seed}:${id}:${kind}:${salt}`;
++    let h = 2166136261;
++    for (let i = 0; i < input.length; i++) h = Math.imul(h ^ input.charCodeAt(i), 16777619);
++    h ^= h >>> 16; h = Math.imul(h, 0x7feb352d);
++    h ^= h >>> 15; h = Math.imul(h, 0x846ca68b); h ^= h >>> 16;
++    return (h >>> 0) / 4294967296;
++  }
++  function describe(model, tickets) {
++    const improvement = model ? `+1 nivel temporal: ${G.FieldCatalog.models[model].name} (máximo 5).` : 'Sin mejora compatible.';
++    return improvement + (tickets ? ` +${tickets} tickets ficticios de prueba.` : '');
++  }
++  function offer({ id, kind, seed, player } = {}) {
++    if (!enabled() || typeof id !== 'string' || !id.trim()) return null;
++    if (plans.has(id)) return { ...plans.get(id).plan };
++    if ((kind !== 'boss' && kind !== 'rift') || !Number.isFinite(seed) || !validLoadout(player)) return null;
++    const candidates = player.fieldWeapons.filter(copy => copy.level < 5);
++    const target = candidates[Math.floor(draw(seed, id, kind, 'weapon') * candidates.length)] || null;
++    const tickets = kind === 'rift' ? 2 + Math.floor(draw(seed, id, kind, 'tickets') * 2) : 0;
++    const plan = { id, kind, weaponId: target?.id || null, model: target?.model || null, tickets, description: describe(target?.model, tickets) };
++    plans.set(id, { plan, player });
++    return { ...plan };
++  }
++  function rejected(outcome, description) {
++    lastNotice = description;
++    return { ok: false, outcome, description, tickets: 0 };
++  }
++  function claim(id, player) {
++    if (!enabled()) return rejected('blocked', 'Premio disponible solo en la prueba V2.');
++    if (receipts.has(id)) return rejected('already-claimed', 'Este premio ya fue entregado.');
++    const entry = plans.get(id);
++    if (!entry || entry.player !== player || !validLoadout(player)) return rejected('blocked', 'Premio bloqueado: datos de armas incompatibles.');
++    const plan = entry.plan;
++    let outcome = 'no-upgrade', model = null;
++    if (plan.weaponId) {
++      const target = player.fieldWeapons.find(copy => copy.id === plan.weaponId);
++      if (!target || target.model !== plan.model) return rejected('blocked', 'Premio bloqueado: la copia de arma cambió.');
++      if (target.level < 5) {
++        if (G.FieldCombat.upgrade(plan.weaponId) !== true) return rejected('blocked', 'Premio bloqueado: no se pudo aplicar la mejora temporal.');
++        outcome = 'upgraded'; model = plan.model;
++      }
++    }
++    const description = describe(model, plan.tickets);
++    const result = { ok: true, outcome, description, tickets: plan.tickets };
++    receipts.set(id, { id, kind: plan.kind, weaponId: plan.weaponId, model: plan.model, ...result });
++    ticketTotal += plan.tickets;
++    lastNotice = description;
++    return { ...result };
++  }
++  return { startRun, offer, claim, get state() {
++    return { ticketTotal, receipts: Array.from(receipts.values(), receipt => ({ ...receipt })), lastNotice };
++  } };
++})();
+--- a/js/systems/expedition.js
++++ b/js/systems/expedition.js
+@@ -9,6 +9,7 @@
+   let pendingXp=0, resumePhase='combat';
+   let dimensional=false,trialPreparation=false;
+   let mapTime=0,doorOpen=false,bossSpawned=false,bossDefeated=false,spawnClosed=false;
++  let riftBoss=null,riftBossDefeated=false;
+   const v2=()=>!!G.MapTrial?.enabled;
+   const exit={x:0,y:0,r:72};
+   function random(seed){let n=seed>>>0;const next=()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/4294967296;};next.state=()=>n;return next;}
+@@ -26,7 +27,7 @@
+     ...(v2()?{v2:{mapTime,doorOpen,bossSpawned,bossDefeated,spawnClosed,quick:!!G.MapTrial.quick,allies:G.MapTrial.allies||[]}}:{})};}
+   function scale(o=wave){return{hp:1+.15*(sector-1)+.05*(o-1),dmg:1+.08*(sector-1),spd:1+Math.min(.2,.02*(sector-1))};}
+   function map(){
+-    dimensional=false;trialPreparation=false;G.DimensionalRifts?.clear();
++    dimensional=false;trialPreparation=false;riftBoss=null;riftBossDefeated=false;G.DimensionalRifts?.clear();
+     kind=!v2()&&sector===nextBossSector?'boss':'normal';
+     sectorWaves=kind==='normal'?waveCount():0;
+     extractionAvailable=false;
+@@ -41,6 +42,14 @@
+       doorOpen=false;bossSpawned=false;bossDefeated=false;spawnClosed=false;spawnClock=0;sectorWaves=0;
+       G.MapTrial.reset?.(geometry);
+       G.ExplorationChests?.reset(geometry,{sector,seed:mapSeed,startTime:mapTime,forcePreview:sector===1&&!!G.MapTrial.chestPractice});
++      if(sector===1&&G.MapTrial.rewardBossPractice){
++        for(const [dx,dy] of [[-200,0],[200,0],[0,-200],[0,200],[-144,-144],[144,144]]){
++          const x=geometry.bossSpawn.x+dx,y=geometry.bossSpawn.y+dy;
++          if(!G.World.isFree(x,y,pl.r)||!G.Path.reachable(x,y,pl))continue;
++          pl.x=x;pl.y=y;G.Camera.x=x;G.Camera.y=y;G.Path.update(1,[pl]);break;
++        }
++      }
++      if(sector===1&&G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.offer({sector,kind,seed:runSeed,geometry,player:pl,force:true});
+       if(sector===1&&G.MapTrial.chestPractice){
+         const chest=G.ExplorationChests?.state.chests.find(c=>c.practice);
+         if(chest)for(const [dx,dy] of [[-72,0],[72,0],[0,-72],[0,72],[-51,-51],[51,51]]){
+@@ -59,7 +68,7 @@
+     runSeed=Number.isFinite(options.seed)?options.seed>>>0:(Math.random()*0xffffffff)>>>0;
+     rng=random(runSeed);nextBossSector=4+Math.floor(rng()*3);
+     G.DimensionalRifts?.reset();
+-    if(v2())G.ExplorationChests?.startRun();
++    if(v2()){G.ExplorationChests?.startRun();G.EventRewards?.startRun();}
+     G.FieldStats.apply(pl);G.FieldAbilities.reset(pl);G.FieldCombat.reset(pl,options.loadout);map();
+     if(v2())beginMapTrial();
+     else if(G.InventoryTrial?.directTest){
+@@ -85,7 +94,7 @@
+   }
+   function spawnOne(){
+     if(v2()){
+-      const cap=Math.min(24,G.Spawner.CAP)-(bossSpawned?0:1); // Reserve the mandatory boss slot.
++      const cap=trialEnemyCap();
+       if(spawnClosed||mapTime>=(G.MapTrial.duration??300)||G.EnemyMgr.count>=cap)return false;
+       const pos=freeSpawn();if(!pos)return false;
+       const def=spawned%4===3?G.Content.biological:G.Content.pursuer;
+@@ -96,6 +105,7 @@
+     const def=(sector===1&&wave===1)||spawned%4!==3?G.Content.pursuer:G.Content.biological;
+     const e=G.EnemyMgr.add(new G.Enemy(def,pos[0],pos[1],scale()));objectives.push(e);spawned++;return true;
+   }
++  function trialEnemyCap(){return Math.min(24,G.Spawner.CAP)-(bossSpawned?0:1)-(G.MapTrial.rewardRiftPractice&&G.DimensionalRifts?.state.status==='open'?1:0);}
+   function trialBoss(){
+     if(bossSpawned||spawnClosed)return;
+     // The mandatory boss is independent of the regular enemy cap and camera visibility.
+@@ -115,7 +125,16 @@
+   function trialVictory(){
+     if(!boss||!boss.dead||bossDefeated)return;
+     bossDefeated=true;totals.bossesDefeated++;
++    offerTrialReward('boss',boss);
+     if(phase==='levelup')resumePhase='combat';else phase='combat';
++  }
++  function offerTrialReward(kind,enemy){
++    const plan=G.EventRewards?.offer({id:`${runSeed}:${sector}:${kind}`,kind,seed:mapSeed,player:pl});
++    if(plan)G.ExplorationChests?.addReward?.(plan,{x:enemy.x,y:enemy.y});
++  }
++  function trialRiftVictory(){
++    if(!riftBoss||!riftBoss.dead||riftBossDefeated)return;
++    riftBossDefeated=true;G.DimensionalRifts?.complete('defeated');offerTrialReward('rift',riftBoss);
+   }
+   function trialCross(){
+     if(!doorOpen||!bossDefeated||!['combat','boss'].includes(phase)||G.U.dist(pl.x,pl.y,exit.x,exit.y)>24+pl.r)return false;
+@@ -187,7 +206,14 @@
+     if(action==='continue'){advance();return true;}return false;
+   }
+   function useRift(){
+-    if(v2())return false;
++    if(v2()){
++      if(!G.MapTrial.rewardRiftPractice||sector!==1||spawnClosed||mapTime>=(G.MapTrial.duration??300)||
++        !['combat','boss'].includes(phase)||!pl||pl.dead||pl.hp<=0||riftBoss||!G.DimensionalRifts?.enter(pl))return false;
++      const rift=G.DimensionalRifts.state,sc=scale(1);
++      riftBoss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,rift.x,rift.y,{...sc,hp:sc.hp*1.35,dmg:sc.dmg*1.15},true));
++      riftBoss.name='Custodio dimensional';riftBoss.dimensional=true;riftBoss.dimensionalArrival=1.5;
++      return true;
++    }
+     if(G.RunContinuity?.canAdvance()===false||phase!=='exploration'||!G.DimensionalRifts?.enter(pl))return false;
+     const rift=G.DimensionalRifts.state,sc=scale(1);
+     boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,rift.x,rift.y,{...sc,hp:sc.hp*1.35,dmg:sc.dmg*1.15},true));
+@@ -200,9 +226,9 @@
+   }
+   function summon(owner,count){
+     if(v2()&&(spawnClosed||mapTime>=(G.MapTrial.duration??300)))return 0;
+-    if(!owner||owner!==boss||owner.dead||!['boss','escaping'].includes(phase))return 0;
++    if(!owner||owner.dead||(v2()?(![boss,riftBoss].includes(owner)||!['combat','boss'].includes(phase)):owner!==boss||!['boss','escaping'].includes(phase)))return 0;
+     owner.minions=owner.minions.filter(e=>!e.dead);let made=0;
+-    const max=Math.min(count,4-owner.minions.length,G.Spawner.CAP-G.EnemyMgr.count);
++    const max=Math.min(count,4-owner.minions.length,(v2()?trialEnemyCap():G.Spawner.CAP)-G.EnemyMgr.count);
+     for(let i=0;i<max;i++){
+       let pos=null;
+       for(let n=0;n<16;n++){const a=(n+i*8)*Math.PI/8,x=owner.x+Math.cos(a)*100,y=owner.y+Math.sin(a)*100;
+@@ -238,9 +264,10 @@
+   }
+   let lastDt=0;
+   function updateMapTrial(dt){
+-    trialVictory();
++    trialVictory();trialRiftVictory();
+     if(phase==='levelup')return;
+     promptUpgrade();if(phase==='levelup')return;
++    if(G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.tick(dt);
+     elapsed+=dt;lastDt=dt;
+     const nextTime=Math.min(G.MapTrial.duration??300,mapTime+dt),bossAt=G.MapTrial.bossAt??240;
+     // Process the boss event before the later cutoff, including a single long frame.
+@@ -251,6 +278,7 @@
+       spawnClosed=true;spawnClock=0;doorOpen=true;G.MapTrial.arrive?.();
+     }
+     G.FieldAbilities.tick(dt,pl);G.FieldCombat.tick(dt,pl,true);pl.update(dt);
++    if(G.MapTrial.rewardRiftPractice)useRift(); // Contacto instantáneo, sin botón y sin limpiar el escenario.
+     G.Camera.follow(pl.x,pl.y,dt);G.World.update(dt,G.Camera);G.FX.update(dt);G.Spawner.tickBanner(dt);
+     if(!spawnClosed){
+       spawnClock+=dt*Math.min(2,.55+.06*(sector-1)+mapTime/200);
+@@ -259,7 +287,7 @@
+     G.Path.update(dt,[pl]);G.EnemyMgr.update(dt,[pl]);G.Projectiles.update(dt,pl,G.EnemyMgr.all());
+     G.Combat.resolve(dt,pl,elapsed);G.MapTrial.updateAllies?.(dt,pl);G.Pickups.update(dt,pl,collect);
+     if(pl.dead||pl.hp<=0){finish('death');return;}
+-    trialVictory();promptUpgrade();if(phase==='levelup')return;
++    trialVictory();trialRiftVictory();promptUpgrade();if(phase==='levelup')return;
+     G.ExplorationChests?.tick(dt,mapTime,pl);
+     if(!spawnClosed)recover();trialCross();
+   }
+@@ -300,7 +328,7 @@
+     }
+   }
+   function draw(ctx){
+-    if(v2()){G.ExplorationChests?.draw(ctx);G.MapTrial.draw?.(ctx,snapshot());return;}
++    if(v2()){G.ExplorationChests?.draw(ctx);if(G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.draw(ctx);G.MapTrial.draw?.(ctx,snapshot());return;}
+     G.DimensionalRifts?.draw(ctx);
+     if(!['exploration','extracting','boss','escaping'].includes(phase))return;
+     ctx.save();ctx.fillStyle='#5ac6a233';ctx.strokeStyle='#99ffd6';ctx.lineWidth=3;ctx.beginPath();ctx.arc(exit.x,exit.y,42,0,Math.PI*2);ctx.fill();ctx.stroke();
+--- a/js/systems/exploration-chests.js
++++ b/js/systems/exploration-chests.js
+@@ -4,7 +4,8 @@
+  */
+ G.ExplorationChests = (() => {
+   const TIMES=[60,120,180,240],OPEN_TIME=3.5,RADIUS=50;
+-  let chests=[],candidates=[],ticketTotal=0,attempts=0,cap=1,chance=.10,maxTickets=2;
++  let chests=[],eventChests=[],candidates=[],ticketTotal=0,attempts=0,cap=1,chance=.10,maxTickets=2;
++  const allChests=()=>[...chests,...eventChests];
+   let cursor=0,rng=()=>0,practice=false,notice='';
+   const enabled=()=>!!G.MapTrial?.enabled;
+   function random(seed){
+@@ -14,7 +15,7 @@
+   }
+   function roll(){const n=rng();return Number.isFinite(n)?Math.max(0,Math.min(1-Number.EPSILON,n)):1-Number.EPSILON;}
+   function startRun(){
+-    ticketTotal=0;chests=[];candidates=[];attempts=0;cursor=0;practice=false;notice='';
++    ticketTotal=0;chests=[];eventChests=[];candidates=[];attempts=0;cursor=0;practice=false;notice='';
+   }
+   function spawn(point,isPractice=false){
+     if(!point||chests.length>=cap)return;
+@@ -24,7 +25,7 @@
+       'Ha aparecido un cofre de exploración · busca en el sector.';
+   }
+   function reset(geometry,{sector=1,seed=0,startTime=0,forcePreview=false,rng:override}={}){
+-    chests=[];candidates=[];practice=false;notice='';
++    chests=[];eventChests=[];candidates=[];practice=false;notice='';
+     cap=sector>=8?3:sector>=4?2:1;chance=sector>=8?.20:sector>=4?.15:.10;maxTickets=sector>=8?3:2;
+     cursor=Number.isFinite(startTime)?Math.max(0,startTime):0;
+     attempts=TIMES.filter(t=>t<=cursor).length;
+@@ -41,6 +42,12 @@
+       const nearest=candidates.reduce((a,b)=>Math.hypot(a.x-entry.x,a.y-entry.y)<=Math.hypot(b.x-entry.x,b.y-entry.y)?a:b);
+       practice=true;spawn(nearest,true);
+     }
++  }
++  function addReward(plan,point){
++    if(!enabled()||!plan?.id||!['boss','rift'].includes(plan.kind)||!Number.isFinite(point?.x)||!Number.isFinite(point?.y)||allChests().some(c=>c.id===plan.id))return false;
++    eventChests.push({id:plan.id,rewardId:plan.id,type:plan.kind,x:point.x,y:point.y,opened:false,discovered:false,progress:0,tickets:plan.tickets||0,description:plan.description||'',practice:false});
++    notice=plan.kind==='rift'?'Premio dimensional disponible · busca el cofre.':'Jefe vencido · cofre de mejora disponible.';
++    return true;
+   }
+   function visible(chest){return !!G.Camera?.sees?.(chest.x,chest.y,0);}
+   function clearLine(player,chest){
+@@ -62,7 +69,7 @@
+       const unused=candidates.filter(p=>!chests.some(c=>c.id===p.id));
+       if(unused.length)spawn(unused[Math.floor(roll()*unused.length)]);
+     }
+-    for(const chest of chests){
++    for(const chest of allChests()){
+       if(!chest.discovered&&visible(chest)){
+         chest.discovered=true;
+         notice=chest.practice?'Cofre de práctica descubierto · mantente cerca 3,5 s.':
+@@ -72,14 +79,20 @@
+       const near=chest.discovered&&Math.hypot(player.x-chest.x,player.y-chest.y)<=RADIUS&&clearLine(player,chest);
+       chest.progress=Math.max(0,Math.min(OPEN_TIME,chest.progress+(near?dt:-1.5*dt)));
+       if(chest.progress>=OPEN_TIME-1e-9){
+-        chest.progress=OPEN_TIME;chest.opened=true;ticketTotal+=chest.tickets;
+-        notice=`${chest.practice?'Práctica · ':''}Cofre abierto · +${chest.tickets} tickets ficticios.`;
++        chest.progress=OPEN_TIME;chest.opened=true;
++        if(chest.rewardId){
++          const result=G.EventRewards?.claim(chest.rewardId,player);
++          notice=result?.description||'Premio no aplicado · estado incompatible.';
++        }else{
++          ticketTotal+=chest.tickets;
++          notice=`${chest.practice?'Práctica · ':''}Cofre abierto · +${chest.tickets} tickets ficticios.`;
++        }
+       }
+     }
+   }
+   function draw(ctx){
+     if(!enabled())return;
+-    for(const chest of chests){
++    for(const chest of allChests()){
+       if(!chest.discovered||!visible(chest))continue;
+       ctx.save();ctx.translate(chest.x,chest.y);
+       ctx.fillStyle=chest.opened?'#3b3333':'#e9e6e0';ctx.strokeStyle='#d63642';ctx.lineWidth=2;
+@@ -93,6 +106,6 @@
+       ctx.restore();
+     }
+   }
+-  return{startRun,reset,tick,draw,get state(){return{chests:chests.map(c=>({...c})),ticketTotal,
+-    spawned:chests.length,attempts,cap,chance,practice,notice};}};
++  return{startRun,reset,addReward,tick,draw,get state(){return{chests:allChests().map(c=>({...c})),ticketTotal:ticketTotal+(G.EventRewards?.state.ticketTotal||0),
++    spawned:chests.length,eventCount:eventChests.length,attempts,cap,chance,practice,notice};}};
+ })();
+--- a/js/systems/map-trial.js
++++ b/js/systems/map-trial.js
+@@ -6,8 +6,10 @@
+  const publicDemo=location.protocol==='https:'&&location.hostname==='deteco.github.io'&&location.pathname.startsWith('/SCPSurvivor/');
+  const requested=q.get('prueba')==='mapa-v2'||(publicDemo&&!q.has('prueba'));
+  const enabled=(loopback||publicDemo)&&requested&&!q.has('cuentas');
+- const quick=enabled&&q.get('rapida')==='1';
+- const chestPractice=enabled&&q.get('cofres')==='prueba';
++ const rewardBossPractice=enabled&&q.get('premios')==='jefe';
++ const rewardRiftPractice=enabled&&q.get('premios')==='grieta';
++ const quick=enabled&&!rewardRiftPractice&&(q.get('rapida')==='1'||rewardBossPractice);
++ const chestPractice=enabled&&!rewardBossPractice&&!rewardRiftPractice&&q.get('cofres')==='prueba';
+  const RANGE=440,INTERVAL=.65,DAMAGE=9;
+  let geometry=null,team=[],arrived=false,alertTime=0;
+  function clearLine(ax,ay,bx,by){
+@@ -72,7 +74,7 @@
+    ctx.fillStyle='#d9efe3';ctx.font='9px system-ui';ctx.fillText('ALIADO',ally.x,ally.y-35);
+    ctx.restore();
+  }
+- return{enabled,publicDemo,quick,chestPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
++ return{enabled,publicDemo,quick,chestPractice,rewardBossPractice,rewardRiftPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
+   drawables:()=>enabled&&arrived?team.map(a=>({x:a.x,y:a.y,draw:ctx=>drawAlly(ctx,a)})):[],
+   get allies(){return team.map(a=>({x:a.x,y:a.y}));},get alertTime(){return alertTime;}};
+ })();
+--- a/js/ui/technical-ui.js
++++ b/js/ui/technical-ui.js
+@@ -108,9 +108,18 @@
+         ? 'PRÁCTICA DE COFRES · Empiezas junto a un cofre garantizado. Acércate y permanece 3,5 s; alejarte reduce la apertura. Otorga solo tickets ficticios, sin cuenta ni guardado. Este cofre es una ayuda de prueba: no representa la probabilidad normal.'
+         : 'COFRES DE EXPLORACIÓN · Intentos a 1:00, 2:00, 3:00 y 4:00; pueden no aparecer. Solo se indica su ubicación después de descubrirlos. Acércate 3,5 s para abrir. Premios ficticios, sin cuenta ni guardado. La prueba rápida no concede intentos anteriores.';
+       if(G.MapTrial.chestPractice)el('btn-technical-start').textContent='Iniciar prueba de cofres';
++      el('boss-reward-trial-link').hidden=false;
++      el('rift-reward-trial-link').hidden=false;
++      if(G.MapTrial.rewardBossPractice||G.MapTrial.rewardRiftPractice){
++        el('b3-test-note').hidden=false;
++        el('b3-test-note').textContent=G.MapTrial.rewardBossPractice
++          ? 'PREMIO DEL JEFE · Empiezas en 4:30 junto al jefe vivo. Derrótalo y permanece 3,5 s junto a su cofre: mejora en +1 nivel temporal una copia de arma equipada elegible (máximo 5). Si no hay mejora compatible, el cofre lo indicará. Sin cuenta ni guardado.'
++          : 'PREMIO DIMENSIONAL · Empiezas en 0:00 con una grieta abierta durante 45 s. Entra caminando: el Custodio dimensional aparece en este mismo mapa. Véncelo y abre su cofre permaneciendo cerca 3,5 s: +1 nivel temporal de una copia equipada elegible y 2–3 tickets ficticios. Tabla provisional de prueba; sin mejora compatible, solo esos tickets. Entrar o dejar cerrar la grieta no da premios. El jefe obligatorio y la puerta conservan sus reglas. Sin cuenta ni guardado.';
++        el('btn-technical-start').textContent=G.MapTrial.rewardBossPractice?'Probar premio del jefe':'Probar premio dimensional';
++      }
+     }
+     const rifts=G.DimensionalRifts;
+-    if(rifts.enabled){
++    if(rifts.enabled&&!G.MapTrial?.enabled){
+       el('rift-test-note').hidden=false;
+       el('rift-test-note').textContent=rifts.directTest
+         ? 'PRUEBA DE GRIETA · Al iniciar tendrás un sector despejado y una grieta durante 45 s. Sigue la flecha y camina sobre la grieta: entrarás al instante. Puedes dejarla cerrar o combatir y huir por la salida. Sin cuenta ni guardado.'
+@@ -176,7 +185,7 @@
+     el('field-status').textContent = `${G.DimensionalRifts.directTest?'PRUEBA · ':''}S${s.sector}${s.kind === 'normal' && !s.dimensional && !G.DimensionalRifts.directTest ? ` · Oleada ${s.wave}/${s.sectorWaves}` : ''} · ${captions[s.phase]} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level}${s.pending ? ` (${s.pending} por mejorar)` : ''} · XP ${Math.floor(player.xp)}/${player.xpNext} | ${weaponSummary}`;
+     if(s.v2){
+       const v=s.v2,active=s.phase!=='finished',canShow=active&&s.phase!=='levelup';
+-      const target=v.doorOpen?s.exit:G.EnemyMgr.all().find(e=>e.boss&&!e.dead);
++      const target=v.doorOpen?s.exit:G.EnemyMgr.all().find(e=>e.boss&&!e.dimensional&&!e.dead);
+       const tx=target?target.x-player.x:0,ty=target?target.y-player.y:0;
+       const arrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(ty,tx)/(Math.PI/4))+8)%8];
+       let goal=v.doorOpen?(v.bossDefeated?'PUERTA ABIERTA · cruza caminando':'PUERTA BLOQUEADA · derrota al jefe'):
+@@ -192,9 +201,11 @@
+         const known=chests.chests.filter(c=>c.discovered&&!c.opened).sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y));
+         const chest=known[0],cx=chest?chest.x-player.x:0,cy=chest?chest.y-player.y:0;
+         const chestArrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(cy,cx)/(Math.PI/4))+8)%8];
+-        const hint=chest?`Cofre ${chestArrow} ${Math.ceil(Math.hypot(cx,cy))} u · ${chest.progress>0?`abriendo ${Math.floor(chest.progress/3.5*100)} %`:'acércate y permanece 3,5 s'}`:
+-          chests.chests.some(c=>!c.opened)?'Cofre sin descubrir · explora el mapa':chests.spawned?'Cofres abiertos':'Explora · puede aparecer un cofre';
+-        el('chest-status').textContent=`${hint} · ${chests.ticketTotal} tickets ficticios (sin cuenta)`;
++        const chestName=c=>c.type==='boss'?'Cofre del jefe':c.type==='rift'?'Cofre dimensional':'Cofre de exploración';
++        const hint=chest?`${chestName(chest)} ${chestArrow} ${Math.ceil(Math.hypot(cx,cy))} u · ${chest.progress>0?`abriendo ${Math.floor(chest.progress/3.5*100)} %`:'acércate y permanece 3,5 s'}`:
++          chests.chests.some(c=>!c.opened)?'Cofre sin descubrir · explora el mapa':chests.chests.length?'Cofres abiertos':'Explora · puede aparecer un cofre';
++        const outcome=chests.chests.some(c=>c.opened)?chests.notice:'';
++        el('chest-status').textContent=`${hint}${outcome?' · '+outcome:''} · ${chests.ticketTotal} tickets ficticios (sin cuenta)`;
+       }
+     }
+     const rift=G.DimensionalRifts.state,open=rift.status==='open';
+--- a/tests/rifts.test.js
++++ b/tests/rifts.test.js
+@@ -3,9 +3,10 @@
+ const fs = require('node:fs');
+ const vm = require('node:vm');
+ 
+-function setup(search='?prueba=grieta', hostname='127.0.0.1') {
++function setup(search='?prueba=grieta', hostname='127.0.0.1', protocol='http:', pathname='/') {
+   const sounds=[], G={Audio:{sfx:id=>sounds.push(id)},World:{isFree:()=>true,projectileBlock:()=>null},Path:{reachable:()=>true}};
+-  vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/dimensional-rifts.js'),'utf8'),{G,window:{location:{search,hostname}},URLSearchParams,Math});
++  const context={G,window:{location:{search,hostname,protocol,pathname}},URLSearchParams,Math};
++  for(const name of ['map-trial.js','dimensional-rifts.js'])vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/'+name),'utf8'),context);
+   const player={x:0,y:0,r:12},geometry={exit:{x:600,y:0},spawnPoints:[{x:20,y:0},{x:180,y:0},{x:350,y:0},{x:600,y:0}]};
+   const offer=(extra={})=>G.DimensionalRifts.offer({sector:1,kind:'normal',seed:1337,geometry,player,force:true,...extra});
+   G.DimensionalRifts.reset();return{G,player,geometry,sounds,offer,r:G.DimensionalRifts};
+@@ -16,6 +17,34 @@
+     const a=setup(search,host);assert.equal(a.r.enabled,false);assert.equal(a.offer(),false);
+   }
+   assert.equal(setup('?grietas=local').r.enabled,true);assert.equal(setup().r.directTest,true);
++});
++
++test('V2 rift practice is explicit on loopback and authorized Pages only',()=>{
++ for(const [search,host,protocol,pathname]of [
++  ['?prueba=mapa-v2&premios=grieta','127.0.0.1','http:','/'],
++  ['?premios=grieta','deteco.github.io','https:','/SCPSurvivor/']
++ ]){
++  const a=setup(search,host,protocol,pathname);assert.equal(a.G.MapTrial.enabled,true);assert.equal(a.r.enabled,true);assert.equal(a.r.directTest,false);assert.equal(a.offer(),true);assert.equal(a.r.state.remaining,45);
++ }
++ for(const [search,host,protocol,pathname]of [
++  ['?prueba=mapa-v2&grietas=local','127.0.0.1','http:','/'],
++  ['?prueba=mapa-v2&premios=jefe&grietas=local','127.0.0.1','http:','/'],
++  ['?premios=grieta','127.0.0.1','http:','/'],
++  ['?prueba=mapa-v2&premios=grieta','example.com','https:','/SCPSurvivor/'],
++  ['?premios=grieta','deteco.github.io','http:','/SCPSurvivor/'],
++  ...['cuentas','cuentas=','cuentas=local','cuentas=propias','cuentas=invalid'].map(accounts=>[`?premios=grieta&${accounts}`,'deteco.github.io','https:','/SCPSurvivor/']),
++  ...['cuentas=local','cuentas=propias','cuentas=invalid'].map(accounts=>[`?prueba=mapa-v2&premios=grieta&${accounts}`,'127.0.0.1','http:','/'])
++ ]){
++  const a=setup(search,host,protocol,pathname);assert.equal(a.r.enabled,false,search+' / '+host);assert.equal(a.offer(),false);
++ }
++});
++
++test('V2 encounter texts never imply escape, cleared remnants or an available exit',()=>{
++ const a=setup('?prueba=mapa-v2&premios=grieta');a.offer();a.r.tick(45);
++ assert.equal(a.r.state.status,'closed');assert.match(a.r.state.alert,/continúa resistiendo/i);assert.doesNotMatch(a.r.state.alert,/salida/i);
++ a.r.reset();a.offer();a.player.x=a.r.state.x;a.player.y=a.r.state.y;assert.equal(a.r.enter(a.player),true);assert.doesNotMatch(a.r.state.alert,/puedes huir|salida/i);
++ assert.equal(a.r.complete('defeated'),true);assert.doesNotMatch(a.r.state.alert,/sector despejado/i);
++ const legacy=setup();legacy.offer();legacy.player.x=legacy.r.state.x;assert.equal(legacy.r.enter(legacy.player),true);assert.match(legacy.r.state.alert,/puedes huir/);legacy.r.complete('defeated');assert.match(legacy.r.state.alert,/sector despejado/);
+ });
+ 
+ test('ubicación libre alcanzable y separada; aviso y sonido una sola vez por sector',()=>{
+--- a/tests/v2-b3-browser.py
++++ b/tests/v2-b3-browser.py
+@@ -0,0 +1,217 @@
++"""B3: transiciones controladas; no aceptación humana, balance ni móvil físico.
++Ejecutar tras build. --live usa solo index público y artefactos separados.
++"""
++from pathlib import Path
++from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
++from functools import partial
++from threading import Thread
++from urllib.parse import urlsplit
++from playwright.sync_api import sync_playwright
++import argparse, json, os
++
++ROOT = Path(os.environ.get('SCP_TEST_ROOT', Path(__file__).resolve().parents[1])).resolve()
++ThreadingHTTPServer.request_queue_size = 128
++
++
++class Quiet(SimpleHTTPRequestHandler):
++    def log_message(self, *args): pass
++
++
++HELPERS = '''() => {
++    const p=G.Game.player;p.invuln=1e6;
++    window.b3QA={
++        at(x,y){p.x=x;p.y=y;G.Camera.x=x;G.Camera.y=y;G.Path.update(1,[p]);},
++        step(n){
++            if(G.Game.state==='paused')G.Game.togglePause();
++            if(G.Game.state!=='playing')throw Error('QA no pudo reanudar');
++            try{
++                for(let i=0;i<n;i++){
++                    if(G.Expedition.state.phase==='levelup')G.Expedition.choose(0);
++                    G.Expedition.update(1/30);
++                }
++                G.TechnicalUI.tick(p,G.Expedition.state.elapsed);
++            }finally{
++                if(G.Game.state==='playing')G.Game.togglePause();
++            }
++        },
++        snap(){return JSON.parse(JSON.stringify({
++            expedition:G.Expedition.state,chests:G.ExplorationChests.state,
++            rewards:G.EventRewards.state,rift:G.DimensionalRifts.state,
++            weapons:p.fieldWeapons.map(w=>({id:w.id,model:w.model,level:w.level})),
++            accounts:G.LocalAccounts.enabled,checkpoint:G.RunCheckpoint.capture(),
++            sdk:{firebase:typeof window.firebase,supabase:typeof window.supabase},
++            enemies:G.EnemyMgr.all().map(e=>({id:e.id,boss:e.boss,dimensional:!!e.dimensional,dead:e.dead}))
++        }));},
++        defeat(dimensional){
++            const e=G.EnemyMgr.all().find(e=>e.boss&&!e.dead&&!!e.dimensional===dimensional);
++            if(!e)throw Error('No existe el jefe esperado');
++            e.hurt(e.hp+e.shield+1e6);
++            const safe=[[144,0],[-144,0],[0,144],[0,-144],[144,144],[-144,-144]]
++                .map(([dx,dy])=>({x:e.x+dx,y:e.y+dy}))
++                .find(q=>G.World.isFree(q.x,q.y,p.r)&&G.Path.reachable(q.x,q.y,p));
++            if(!safe)throw Error('QA no encontró punto fuera del radio del cofre');
++            this.at(safe.x,safe.y);this.step(90);
++        },
++        chest(type){return G.ExplorationChests.state.chests.find(c=>c.type===type);},
++        show(){
++            if(G.Game.state==='paused')G.Game.togglePause();
++            G.TechnicalUI.tick(p,G.Expedition.state.elapsed);
++            const ids=['map-locator','map-alert','chest-status','rift-alert','rift-locator'];
++            const visibility=ids.map(id=>[id,document.getElementById(id).hidden]);
++            if(G.Game.state==='playing')G.Game.togglePause();
++            G.TechnicalUI.state('playing');
++            for(const [id,hidden]of visibility)document.getElementById(id).hidden=hidden;
++        }
++    };
++    return b3QA.snap();
++}'''
++
++
++def level_sum(snapshot):
++    return sum(w['level'] for w in snapshot['weapons'])
++
++
++def assert_isolated(snapshot):
++    assert snapshot['accounts'] is False and snapshot['checkpoint'] is None, snapshot
++    assert all(v == 'undefined' for v in snapshot['sdk'].values()), snapshot['sdk']
++
++
++def run_mode(browser, base, origin, entry, touch, mode, out):
++    context = browser.new_context(viewport={'width':390 if touch else 1280, 'height':844 if touch else 900}, has_touch=touch, is_mobile=touch)
++    errors, remote, bad, failed = [], [], [], []
++    page = context.new_page()
++    page.on('pageerror', lambda e: errors.append(str(e)))
++    page.on('console', lambda m: errors.append(m.text) if m.type == 'error' else None)
++    page.on('response', lambda r: bad.append([r.status, r.url]) if r.status >= 400 else None)
++    page.on('requestfailed', lambda r: failed.append({'url':r.url, 'error':r.failure}))
++
++    def route(r):
++        if urlsplit(r.request.url).netloc == origin: r.continue_()
++        else: remote.append(r.request.url); r.abort()
++
++    page.route('**/*', route)
++    try:
++        page.goto(base+entry+'?prueba=mapa-v2&premios='+('grieta' if mode == 'expiry' else mode))
++        page.wait_for_selector('#btn-technical-start:visible')
++        assert page.locator('#b3-test-note').is_visible()
++        assert page.locator('#btn-field-rift').count() == 0
++        page.click('#btn-technical-start')
++        page.wait_for_function('() => G.Game.state === "playing" && !!G.Expedition.state.v2')
++        page.click('#btn-technical-pause')
++        initial = page.evaluate(HELPERS)
++        assert_isolated(initial)
++        assert initial['rewards']['ticketTotal'] == 0 and not initial['rewards']['receipts'], initial
++        assert not any(c['type'] in ['boss','rift'] for c in initial['chests']['chests']), initial
++        stem = f'{entry[:-5]}-{"touch" if touch else "desktop"}-{mode}'
++        if mode == 'jefe':
++            assert 270 <= initial['expedition']['v2']['mapTime'] < 272, initial
++            assert initial['expedition']['v2']['bossSpawned'] and not initial['expedition']['v2']['bossDefeated'], initial
++            assert any(e['boss'] and not e['dimensional'] and not e['dead'] for e in initial['enemies']), initial
++        else:
++            assert initial['expedition']['v2']['mapTime'] < 2, initial
++            assert not initial['expedition']['v2']['bossSpawned'], initial
++            assert initial['rift']['status'] == 'open' and 43 < initial['rift']['remaining'] <= 45, initial
++            frozen = initial['rift']['remaining']
++            page.wait_for_timeout(220)
++            assert page.evaluate('G.DimensionalRifts.state.remaining') == frozen
++            if mode == 'expiry':
++                page.evaluate('b3QA.step(1380)')
++                closed = page.evaluate('b3QA.snap()')
++                assert closed['rift']['status'] == 'closed', closed
++                assert closed['rewards']['ticketTotal'] == 0 and not closed['rewards']['receipts'], closed
++                assert not any(c['type'] == 'rift' for c in closed['chests']['chests']), closed
++                assert not closed['expedition']['v2']['bossDefeated'], closed
++                result = {'initial':initial, 'closed':closed}
++            else:
++                page.evaluate('''() => {
++                    const e=G.EnemyMgr.all().find(e=>!e.boss&&!e.dead);
++                    if(!e)throw Error('Falta remanente para comprobar conservación');
++                    window.b3Remnant=e.id;e.hp=e.maxHp=1e9;
++                    const r=G.DimensionalRifts.state;b3QA.at(r.x,r.y);b3QA.step(1);
++                }''')
++                contact = page.evaluate('b3QA.snap()')
++                assert contact['rift']['status'] == 'active', contact
++                assert any(e['dimensional'] and not e['dead'] for e in contact['enemies']), contact
++                assert contact['rewards']['ticketTotal'] == 0 and not contact['rewards']['receipts'], contact
++                assert not any(c['type'] == 'rift' for c in contact['chests']['chests']), contact
++                assert not contact['expedition']['v2']['bossDefeated'], contact
++        if mode != 'expiry':
++            chest_type = 'boss' if mode == 'jefe' else 'rift'
++            page.evaluate('(dimensional) => b3QA.defeat(dimensional)', mode == 'grieta')
++            victory = page.evaluate('b3QA.snap()')
++            assert victory['rewards']['ticketTotal'] == 0 and not victory['rewards']['receipts'], victory
++            chest = next(c for c in victory['chests']['chests'] if c['type'] == chest_type)
++            assert chest['rewardId'] and not chest['opened'], chest
++            if mode == 'grieta':
++                assert not victory['expedition']['v2']['bossDefeated'], victory
++                assert victory['expedition']['totals']['bossesDefeated'] == initial['expedition']['totals']['bossesDefeated'], victory
++                assert page.evaluate('G.EnemyMgr.all().some(e=>e.id===b3Remnant&&!e.dead)')
++            else:
++                assert victory['expedition']['v2']['bossDefeated'], victory
++            # Move to the physical chest; only proximity and controlled active time open it.
++            page.evaluate('(type) => {const c=b3QA.chest(type);b3QA.at(c.x,c.y);b3QA.step(60);b3QA.show();}', chest_type)
++            progress = page.evaluate('b3QA.snap()')
++            active = next(c for c in progress['chests']['chests'] if c['rewardId'] == chest['rewardId'])
++            assert 1.9 <= active['progress'] <= 2.1 and not active['opened'], active
++            assert page.locator('#chest-status').is_visible()
++            assert 'fictici' in page.locator('#chest-status').inner_text().lower()
++            page.screenshot(path=str(out/f'{stem}-progress.png'))
++            page.wait_for_timeout(220)
++            assert page.evaluate('(type) => b3QA.chest(type).progress', chest_type) == active['progress']
++            page.evaluate('''(type) => {
++                for(let i=0;i<60&&b3QA.chest(type).progress<3.45;i++)b3QA.step(1);
++            }''', chest_type)
++            assert not page.evaluate('(type) => b3QA.chest(type).opened', chest_type)
++            before_open = page.evaluate('b3QA.snap()')
++            page.evaluate('''(type) => {
++                for(let i=0;i<6&&!b3QA.chest(type).opened;i++)b3QA.step(1);
++            }''', chest_type)
++            opened = page.evaluate('b3QA.snap()')
++            assert next(c for c in opened['chests']['chests'] if c['rewardId'] == chest['rewardId'])['opened'], opened
++            assert level_sum(opened) == level_sum(before_open)+1, {'before':before_open, 'after':opened}
++            assert len(opened['rewards']['receipts']) == 1, opened
++            assert opened['rewards']['ticketTotal'] in ([0] if mode == 'jefe' else [2,3]), opened
++            page.evaluate('b3QA.step(120);b3QA.show()')
++            repeated = page.evaluate('b3QA.snap()')
++            assert repeated['rewards'] == opened['rewards'], repeated
++            assert repeated['weapons'] == opened['weapons'], repeated
++            assert_isolated(repeated)
++            page.screenshot(path=str(out/f'{stem}-opened.png'))
++            result = {'initial':initial, 'victory':victory, 'progress':progress, 'opened':opened, 'repeated':repeated}
++        assert not errors and not remote and not bad and not failed, {'errors':errors,'remote':remote,'httpFailures':bad,'failed':failed}
++        return {'mode':mode,'status':'PASS',**result,'errors':errors,'remoteAttempts':remote,'httpFailures':bad,'requestFailures':failed}
++    finally:
++        context.close()
++
++
++def main():
++    parser = argparse.ArgumentParser(); parser.add_argument('--live', action='store_true')
++    args = parser.parse_args()
++    # A live run always has its own child directory, even with an override.
++    out = Path(os.environ.get('SCP_TEST_ARTIFACTS', ROOT/'tests/artifacts/v2-b3')) / ('live' if args.live else 'local')
++    out.mkdir(parents=True, exist_ok=True)
++    server = None; records = []
++    try:
++        if args.live:
++            base = 'https://deteco.github.io/SCPSurvivor/'
++        else:
++            server = ThreadingHTTPServer(('127.0.0.1',0), partial(Quiet,directory=str(ROOT)))
++            Thread(target=server.serve_forever,daemon=True).start()
++            base = f'http://127.0.0.1:{server.server_port}/'
++        with sync_playwright() as pw:
++            browser = pw.chromium.launch(headless=True)
++            try:
++                for entry in (['index.html'] if args.live else ['dev.html','index.html']):
++                    for touch in [False,True]:
++                        modes = [run_mode(browser,base,urlsplit(base).netloc,entry,touch,mode,out) for mode in ['jefe','grieta','expiry']]
++                        records.append({'entry':entry,'touchEmulated':touch,'status':'PASS','modes':modes})
++            finally:
++                browser.close()
++        method = 'Posición, invulnerabilidad, daño letal y pasos temporales controlados. Pausa pública real, apertura física y aislamiento de contexto. No aceptación humana, balance, rendimiento ni dispositivo físico.'
++        (out/'results.json').write_text(json.dumps({'live':args.live,'records':records,'method':method},indent=2)+'\n',encoding='utf-8')
++        print(json.dumps({'result':'PASS','scenarios':len(records),'modesPerScenario':3,'output':str(out)}))
++    finally:
++        if server: server.shutdown(); server.server_close()
++
++
++if __name__ == '__main__': main()
+--- a/tests/v2-event-rewards.test.js
++++ b/tests/v2-event-rewards.test.js
+@@ -0,0 +1,62 @@
++const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
++function setup(){
++ const G={MapTrial:{enabled:true}};
++ for(const name of ['DB','Account','Inventory'])Object.defineProperty(G,name,{get(){throw Error('account accessed');}});
++ const context={G,Math:Object.assign(Object.create(Math),{random(){throw Error('global RNG accessed');}}),localStorage:new Proxy({},{get(){throw Error('storage accessed');}}),fetch(){throw Error('network accessed');}};
++ for(const file of ['data/field-catalog.js','systems/field-stats.js','systems/field-combat.js','systems/field-upgrades.js','systems/event-rewards.js']){
++  const filename=path.join(__dirname,'../js',file);if(fs.existsSync(filename))vm.runInNewContext(fs.readFileSync(filename,'utf8'),context);
++ }
++ assert.ok(G.EventRewards,'exposes event reward API');
++ const p={hp:40,maxHp:100,t1:77};G.FieldCombat.reset(p);const R=G.EventRewards;R.startRun();return{G,R,p};
++}
++const offer=(R,p,options={})=>R.offer({id:'event:1',kind:'boss',seed:77,player:p,...options});
++test('fixed offer selects an equipped copy, upgrades once and never changes permanent data',()=>{
++ const {G,R,p}=setup();const plan=offer(R,p);assert.ok(p.fieldWeapons.some(w=>w.id===plan.weaponId));assert.equal(plan.tickets,0);
++ plan.weaponId='tamper';plan.tickets=100;const fixed=offer(R,p,{seed:999,kind:'rift'});assert.notEqual(fixed.weaponId,'tamper');assert.equal(fixed.kind,'boss');assert.equal(fixed.tickets,0);
++ const result=R.claim(fixed.id,p);assert.equal(result.ok,true);assert.equal(result.outcome,'upgraded');assert.equal(p.fieldWeapons.find(w=>w.id===fixed.weaponId).level,2);
++ assert.equal(p.fieldWeapons.filter(w=>w.level===1).length,1);assert.equal(R.claim(fixed.id,p).ok,false);assert.equal(R.state.receipts.length,1);assert.equal(p.t1,77);assert.equal(p.hp,40);assert.equal(R.state.ticketTotal,0);
++});
++test('same model copies are distinct and inactive eligible weapon receives the upgrade',()=>{
++ const {G,R,p}=setup();G.FieldCombat.reset(p,[{id:'first',model:'pistol',mods:[],level:5},{id:'second',model:'pistol',mods:[],level:4}]);
++ const plan=offer(R,p);assert.equal(plan.weaponId,'second');assert.equal(R.claim(plan.id,p).ok,true);assert.equal(p.fieldWeapons[0].level,5);assert.equal(p.fieldWeapons[1].level,5);
++});
++test('saturation grants no healing or substitution, including saturation after offer',()=>{
++ const {R,p}=setup();p.fieldWeapons.forEach(w=>w.level=5);const plan=offer(R,p);assert.equal(plan.weaponId,null);assert.equal(R.claim(plan.id,p).outcome,'no-upgrade');assert.equal(p.hp,40);
++ R.startRun();p.fieldWeapons[0].level=4;const next=offer(R,p);p.fieldWeapons[0].level=5;assert.equal(R.claim(next.id,p).outcome,'no-upgrade');assert.equal(p.fieldWeapons[1].level,5);assert.equal(p.hp,40);
++});
++test('rift seeded table is fixed and independent from candidate count, credits fictional tickets once',()=>{
++ const counts={2:0,3:0};
++ for(let seed=0;seed<128;seed++){
++  const a=setup(),b=setup();b.p.fieldWeapons.forEach(w=>w.level=5);
++  const plan=offer(a.R,a.p,{kind:'rift',seed}),empty=offer(b.R,b.p,{kind:'rift',seed});assert.ok(plan.tickets===2||plan.tickets===3);counts[plan.tickets]++;
++  assert.equal(plan.tickets,empty.tickets);assert.match(plan.description,/ficticios/i);assert.equal(a.R.claim(plan.id,a.p).tickets,plan.tickets);assert.equal(a.R.state.ticketTotal,plan.tickets);
++  assert.equal(a.R.claim(plan.id,a.p).ok,false);assert.equal(a.R.state.ticketTotal,plan.tickets);assert.equal(b.R.claim(empty.id,b.p).outcome,'no-upgrade');assert.equal(b.R.state.ticketTotal,empty.tickets);assert.equal(a.p.t1,77);
++ }
++ assert.ok(counts[2]>40&&counts[3]>40);
++});
++test('invalid and desynchronized loadouts reject before upgrade or fictional tickets',()=>{
++ for(const mutate of [p=>p.fieldWeapons[0].id='',p=>p.fieldWeapons[1].id=p.fieldWeapons[0].id,p=>p.fieldWeapons[0].model='unknown',p=>p.fieldWeapons[0].mods=['missing'],p=>p.fieldWeapons=p.fieldWeapons.map(w=>({...w})),p=>p.fieldWeapons[0].level=NaN]){
++  const {R,p}=setup();const plan=offer(R,p,{kind:'rift'});mutate(p);const before=JSON.stringify(p);const result=R.claim(plan.id,p);
++  assert.equal(result.ok,false);assert.equal(result.outcome,'blocked');assert.equal(R.state.ticketTotal,0);assert.equal(JSON.stringify(p),before);assert.equal(R.state.receipts.length,0);
++ }
++});
++test('model changes under the same copy ID are incompatible and never rerolled',()=>{
++ const {R,p}=setup();const plan=offer(R,p,{kind:'rift'});p.fieldWeapons.find(w=>w.id===plan.weaponId).model='shotgun';assert.equal(R.claim(plan.id,p).outcome,'blocked');assert.equal(R.state.ticketTotal,0);
++});
++test('upgrade rejection cannot credit tickets or create a receipt',()=>{
++ const {G,R,p}=setup();const plan=offer(R,p,{kind:'rift'});G.FieldCombat.upgrade=()=>false;assert.equal(R.claim(plan.id,p).outcome,'blocked');assert.equal(R.state.ticketTotal,0);assert.equal(R.state.receipts.length,0);
++});
++test('safe state copies and startRun reset event identities and fictional totals',()=>{
++ const {R,p}=setup();const plan=offer(R,p,{kind:'rift'});R.claim(plan.id,p);const s=R.state;s.receipts[0].tickets=999;s.receipts.length=0;s.ticketTotal=999;assert.equal(R.state.receipts.length,1);assert.notEqual(R.state.ticketTotal,999);
++ R.startRun();assert.equal(R.state.ticketTotal,0);assert.equal(R.state.receipts.length,0);assert.equal(R.state.lastNotice,'');assert.equal(R.claim(plan.id,p).outcome,'blocked');assert.ok(offer(R,p));
++});
++test('disabled trial cannot plan, claim or alter a pending event',()=>{
++ const {G,R,p}=setup();const plan=offer(R,p,{kind:'rift'});G.MapTrial.enabled=false;assert.equal(offer(R,p,{id:'other'}),null);assert.equal(R.claim(plan.id,p).ok,false);assert.equal(R.state.ticketTotal,0);assert.ok(p.fieldWeapons.every(w=>w.level===1));G.MapTrial.enabled=true;assert.equal(R.claim(plan.id,p).ok,true);
++});
++test('invalid event input and offer-time incompatibility cannot become a valid award',()=>{
++ const {R,p}=setup();for(const options of [{id:''},{kind:'other'},{seed:Infinity},{player:null}])assert.equal(offer(R,p,options),null);
++ p.fieldWeapons[0].mods=['unknown'];assert.equal(offer(R,p),null);p.fieldWeapons[0].mods=[];assert.ok(offer(R,p));
++});
++test('prototype property names cannot impersonate valid weapon catalog models',()=>{
++ const {R,p}=setup();p.fieldWeapons[0].model='__proto__';assert.equal(offer(R,p),null);
++});
+--- a/tests/v2-exploration-chests.test.js
++++ b/tests/v2-exploration-chests.test.js
+@@ -101,3 +101,25 @@
+  C.draw(ctx);assert.equal(calls,0);G.Camera.sees=()=>true;C.tick(1,1,p);C.draw(ctx);assert.ok(calls>0);
+  G.MapTrial.enabled=false;const previous=calls;C.draw(ctx);assert.equal(calls,previous);
+ });
++
++test('event chests have their own quota, fixed reward and one claim after proximity opening',()=>{
++ const {C,G,p}=setup({forcePreview:true,rng:()=>0});let calls=0,total=0;
++ G.EventRewards={claim(id,player){assert.equal(id,'boss:1');assert.equal(player,p);calls++;total+=2;return{ok:true,description:'Mejora de prueba aplicada'};},get state(){return{ticketTotal:total}}};
++ assert.equal(C.addReward({id:'boss:1',kind:'boss',tickets:0,description:'Mejora para arma'},{x:300,y:0}),true);
++ assert.equal(C.addReward({id:'boss:1',kind:'boss'},{x:300,y:0}),false);
++ assert.equal(C.state.spawned,1);assert.equal(C.state.chests.length,2);
++ G.Camera.sees=()=>true;p.x=300;C.tick(3.4,3.4,p);assert.equal(calls,0);
++ C.tick(.1,3.5,p);assert.equal(calls,1);assert.equal(C.state.ticketTotal,2);
++ C.tick(5,10,p);assert.equal(calls,1);assert.equal(C.state.chests.find(c=>c.rewardId==='boss:1').opened,true);
++ C.reset(geometry,{sector:2});assert.equal(C.state.chests.length,0);assert.equal(C.state.ticketTotal,2);
++});
++
++test('invalid or blocked event reward cannot fabricate tickets or repeatedly call a failed grant',()=>{
++ const {C,G,p}=setup();let calls=0;
++ G.EventRewards={claim(){calls++;return{ok:false,description:'Premio bloqueado por equipo incompatible'};},state:{ticketTotal:0}};
++ assert.equal(C.addReward({id:'bad',kind:'other'},{x:100,y:0}),false);
++ assert.equal(C.addReward({id:'bad',kind:'rift'},{x:NaN,y:0}),false);
++ assert.equal(C.addReward({id:'bad',kind:'rift',tickets:3},{x:100,y:0}),true);
++ G.Camera.sees=()=>true;p.x=100;C.tick(4,4,p);C.tick(4,8,p);
++ assert.equal(calls,1);assert.equal(C.state.ticketTotal,0);assert.match(C.state.notice,/bloqueado/);
++});
+--- a/tests/v2-map-director.test.js
++++ b/tests/v2-map-director.test.js
+@@ -34,6 +34,53 @@
+  const count=G.EnemyMgr.count;G.Expedition.update(.01);assert.equal(G.EnemyMgr.count,count);assert.equal(calls,1);
+  assert.equal(G.Expedition.state.v2.mapTime,300);assert.equal(G.Expedition.state.v2.spawnClosed,true);assert.equal(G.MapTrial.arrivals,1);
+  G.Expedition.update(5);assert.equal(G.Expedition.state.v2.mapTime,300);assert.equal(G.EnemyMgr.count,count);assert.equal(G.MapTrial.arrivals,1);
++});
++function rewardSetup(practice=false){
++ const offers=[],rewards=[];let rift={status:'idle',x:450,y:0,remaining:45};
++ const fixture=setup(42,false,true,{prepare(G){
++  G.MapTrial.rewardRiftPractice=practice;
++  G.EventRewards={runs:0,startRun(){this.runs++},offer(o){offers.push(o);return{id:o.id,kind:o.kind,tickets:o.kind==='rift'?2:0}}};
++  G.ExplorationChests={startRun(){},reset(){},tick(){},addReward(plan,point){rewards.push({plan,point})}};
++  G.DimensionalRifts={enabled:practice,reset(){},clear(){rift.status='idle'},offer(){rift.status='open';return true},
++   enter(p){if(rift.status!=='open'||Math.hypot(p.x-rift.x,p.y-rift.y)>34)return false;rift.status='active';return true},
++   tick(dt){if(rift.status==='open'){rift.remaining=Math.max(0,rift.remaining-dt);if(!rift.remaining)rift.status='closed'}},
++   complete(result){rift.status='resolved';rift.result=result},get state(){return{...rift}}};
++ }});
++ return{...fixture,offers,rewards};
++}
++test('B3 jefe obligatorio ofrece cofre una vez; premio no se aplica por matar',()=>{
++ const {G,player,offers,rewards}=rewardSetup();assert.equal(G.EventRewards.runs,1);
++ G.Expedition.update(240);const boss=G.EnemyMgr.all().find(e=>e.boss);boss.dead=true;
++ G.Expedition.update(.01);G.Expedition.update(.01);
++ assert.equal(offers.length,1);assert.equal(offers[0].kind,'boss');assert.equal(offers[0].player,player);
++ assert.equal(rewards.length,1);assert.equal(rewards[0].point.x,boss.x);assert.equal(G.Expedition.state.v2.bossDefeated,true);
++});
++test('B3 contacto dimensional no limpia remanentes ni sustituye jefe obligatorio; victoria entrega otro cofre',()=>{
++ const {G,player,offers,rewards}=rewardSetup(true),remnant=G.EnemyMgr.all()[0];
++ assert.equal(G.DimensionalRifts.state.status,'open');assert.equal(G.Expedition.useRift(),false);
++ const p=G.DimensionalRifts.state;player.x=p.x;player.y=p.y;G.Expedition.update(.01);
++ const dimensional=G.EnemyMgr.all().find(e=>e.dimensional);assert.ok(dimensional);assert.equal(offers.length,0);
++ assert.ok(G.EnemyMgr.get(remnant.id));assert.equal(G.Expedition.state.v2.bossDefeated,false);
++ G.Expedition.update(240);const mandatory=G.EnemyMgr.all().find(e=>e.boss&&!e.dimensional);assert.ok(mandatory);
++ dimensional.dead=true;G.Expedition.update(.01);G.Expedition.update(.01);
++ assert.equal(G.DimensionalRifts.state.result,'defeated');assert.equal(offers.length,1);assert.equal(offers[0].kind,'rift');
++ assert.equal(rewards.length,1);assert.equal(G.Expedition.state.v2.bossDefeated,false);assert.ok(G.EnemyMgr.get(mandatory.id));assert.ok(G.EnemyMgr.get(remnant.id));
++ mandatory.dead=true;G.Expedition.update(.01);assert.equal(offers.length,2);assert.equal(offers[1].kind,'boss');
++ assert.equal(G.Expedition.captureState(),null);
++});
++test('B3 grieta expirada o muerte no concede premio',()=>{
++ const {G,player,offers}=rewardSetup(true);G.Expedition.update(46);
++ const r=G.DimensionalRifts.state;assert.equal(r.status,'closed');player.x=r.x;player.y=r.y;
++ assert.equal(G.Expedition.useRift(),false);player.hp=0;G.Expedition.update(.01);assert.equal(offers.length,0);
++});
++test('B3 refuerzos dimensionales reservan al jefe obligatorio y respetan24 enemigos',()=>{
++ const {G,player}=rewardSetup(true),r=G.DimensionalRifts.state;
++ player.x=r.x;player.y=r.y;G.Expedition.update(.01);
++ const boss=G.EnemyMgr.all().find(e=>e.dimensional);
++ while(G.EnemyMgr.count<22)G.EnemyMgr.add(new G.Enemy(G.Content.pursuer,600,0,{hp:1}));
++ assert.equal(G.Expedition.summon(boss,4),1);assert.equal(G.EnemyMgr.count,23);
++ assert.equal(G.Expedition.summon(boss,4),0);
++ G.Expedition.update(240);assert.equal(G.EnemyMgr.count,24);assert.equal(G.Expedition.summon(boss,4),0);
+ });
+ test('V2 jefe temprano espera puerta; remanentes permanecen y transición conserva build/vida',()=>{
+  const {G,player}=setup();G.Expedition.update(240);const boss=G.EnemyMgr.all().find(e=>e.boss),remnant=G.EnemyMgr.all().find(e=>!e.boss);
+--- a/tests/v2-map-trial.test.js
++++ b/tests/v2-map-trial.test.js
+@@ -74,6 +74,37 @@
+  assert.equal(setup('?prueba=mapa-v2&cofres=prueba&cuentas=local').G.MapTrial.chestPractice,false);
+  assert.equal(setup('?prueba=mapa-v2&cofres=prueba','example.com').G.MapTrial.chestPractice,false);
+ });
++
++test('boss and rift reward practices require V2 and exclude the exploration preview',()=>{
++ for(const [search,host,protocol,pathname]of [
++  ['?prueba=mapa-v2&premios=jefe&cofres=prueba','127.0.0.1','http:','/'],
++  ['?premios=jefe&cofres=prueba','deteco.github.io','https:','/SCPSurvivor/']
++ ]){
++  const t=setup(search,host,protocol,pathname).G.MapTrial;
++  assert.equal(t.rewardBossPractice,true);assert.equal(t.rewardRiftPractice,false);assert.equal(t.quick,true);assert.equal(t.startTime,270);assert.equal(t.chestPractice,false);
++ }
++ const r=setup('?prueba=mapa-v2&premios=grieta&cofres=prueba').G.MapTrial;
++ assert.equal(r.rewardBossPractice,false);assert.equal(r.rewardRiftPractice,true);assert.equal(r.quick,false);assert.equal(r.startTime,0);assert.equal(r.chestPractice,false);
++ const mixed=setup('?prueba=mapa-v2&premios=grieta&rapida=1').G.MapTrial;
++ assert.equal(mixed.quick,false);assert.equal(mixed.startTime,0);
++});
++
++test('reward flags never bypass local, public or account gates',()=>{
++ for(const kind of ['jefe','grieta']){
++  for(const [search,host,protocol,pathname]of [
++   [`?premios=${kind}`,'127.0.0.1','http:','/'],
++   [`?prueba=mapa-v2&premios=${kind}`,'example.com','https:','/SCPSurvivor/'],
++   [`?premios=${kind}`,'deteco.github.io','http:','/SCPSurvivor/'],
++   ...['cuentas','cuentas=','cuentas=local','cuentas=propias','cuentas=invalid'].map(accounts=>[`?prueba=mapa-v2&premios=${kind}&${accounts}`,'127.0.0.1','http:','/']),
++   ...['cuentas','cuentas=invalid'].map(accounts=>[`?premios=${kind}&${accounts}`,'deteco.github.io','https:','/SCPSurvivor/'])
++  ]){
++   const t=setup(search,host,protocol,pathname).G.MapTrial;assert.equal(t.rewardBossPractice,false,search);assert.equal(t.rewardRiftPractice,false,search);assert.equal(t.quick,false,search);
++  }
++ }
++ for(const query of ['?prueba=mapa-v2','?prueba=mapa-v2&premios=unknown']){
++  const t=setup(query).G.MapTrial;assert.equal(t.rewardBossPractice,false);assert.equal(t.rewardRiftPractice,false);
++ }
++});
+ test('V2 cannot be mixed with the old rift or backpack trial switches',()=>{
+  const search='?prueba=mapa-v2&grietas=local&inventario=local',{G}=setup(search);
+  const context={G,window:{location:{hostname:'127.0.0.1',search}},URLSearchParams,Math};

@@ -9,6 +9,7 @@ G.Expedition = (() => {
   let pendingXp=0, resumePhase='combat';
   let dimensional=false,trialPreparation=false;
   let mapTime=0,doorOpen=false,bossSpawned=false,bossDefeated=false,spawnClosed=false;
+  let riftBoss=null,riftBossDefeated=false;
   const v2=()=>!!G.MapTrial?.enabled;
   const exit={x:0,y:0,r:72};
   function random(seed){let n=seed>>>0;const next=()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/4294967296;};next.state=()=>n;return next;}
@@ -26,7 +27,7 @@ G.Expedition = (() => {
     ...(v2()?{v2:{mapTime,doorOpen,bossSpawned,bossDefeated,spawnClosed,quick:!!G.MapTrial.quick,allies:G.MapTrial.allies||[]}}:{})};}
   function scale(o=wave){return{hp:1+.15*(sector-1)+.05*(o-1),dmg:1+.08*(sector-1),spd:1+Math.min(.2,.02*(sector-1))};}
   function map(){
-    dimensional=false;trialPreparation=false;G.DimensionalRifts?.clear();
+    dimensional=false;trialPreparation=false;riftBoss=null;riftBossDefeated=false;G.DimensionalRifts?.clear();
     kind=!v2()&&sector===nextBossSector?'boss':'normal';
     sectorWaves=kind==='normal'?waveCount():0;
     extractionAvailable=false;
@@ -41,6 +42,14 @@ G.Expedition = (() => {
       doorOpen=false;bossSpawned=false;bossDefeated=false;spawnClosed=false;spawnClock=0;sectorWaves=0;
       G.MapTrial.reset?.(geometry);
       G.ExplorationChests?.reset(geometry,{sector,seed:mapSeed,startTime:mapTime,forcePreview:sector===1&&!!G.MapTrial.chestPractice});
+      if(sector===1&&G.MapTrial.rewardBossPractice){
+        for(const [dx,dy] of [[-200,0],[200,0],[0,-200],[0,200],[-144,-144],[144,144]]){
+          const x=geometry.bossSpawn.x+dx,y=geometry.bossSpawn.y+dy;
+          if(!G.World.isFree(x,y,pl.r)||!G.Path.reachable(x,y,pl))continue;
+          pl.x=x;pl.y=y;G.Camera.x=x;G.Camera.y=y;G.Path.update(1,[pl]);break;
+        }
+      }
+      if(sector===1&&G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.offer({sector,kind,seed:runSeed,geometry,player:pl,force:true});
       if(sector===1&&G.MapTrial.chestPractice){
         const chest=G.ExplorationChests?.state.chests.find(c=>c.practice);
         if(chest)for(const [dx,dy] of [[-72,0],[72,0],[0,-72],[0,72],[-51,-51],[51,51]]){
@@ -59,7 +68,7 @@ G.Expedition = (() => {
     runSeed=Number.isFinite(options.seed)?options.seed>>>0:(Math.random()*0xffffffff)>>>0;
     rng=random(runSeed);nextBossSector=4+Math.floor(rng()*3);
     G.DimensionalRifts?.reset();
-    if(v2())G.ExplorationChests?.startRun();
+    if(v2()){G.ExplorationChests?.startRun();G.EventRewards?.startRun();}
     G.FieldStats.apply(pl);G.FieldAbilities.reset(pl);G.FieldCombat.reset(pl,options.loadout);map();
     if(v2())beginMapTrial();
     else if(G.InventoryTrial?.directTest){
@@ -85,7 +94,7 @@ G.Expedition = (() => {
   }
   function spawnOne(){
     if(v2()){
-      const cap=Math.min(24,G.Spawner.CAP)-(bossSpawned?0:1); // Reserve the mandatory boss slot.
+      const cap=trialEnemyCap();
       if(spawnClosed||mapTime>=(G.MapTrial.duration??300)||G.EnemyMgr.count>=cap)return false;
       const pos=freeSpawn();if(!pos)return false;
       const def=spawned%4===3?G.Content.biological:G.Content.pursuer;
@@ -96,6 +105,7 @@ G.Expedition = (() => {
     const def=(sector===1&&wave===1)||spawned%4!==3?G.Content.pursuer:G.Content.biological;
     const e=G.EnemyMgr.add(new G.Enemy(def,pos[0],pos[1],scale()));objectives.push(e);spawned++;return true;
   }
+  function trialEnemyCap(){return Math.min(24,G.Spawner.CAP)-(bossSpawned?0:1)-(G.MapTrial.rewardRiftPractice&&G.DimensionalRifts?.state.status==='open'?1:0);}
   function trialBoss(){
     if(bossSpawned||spawnClosed)return;
     // The mandatory boss is independent of the regular enemy cap and camera visibility.
@@ -115,7 +125,16 @@ G.Expedition = (() => {
   function trialVictory(){
     if(!boss||!boss.dead||bossDefeated)return;
     bossDefeated=true;totals.bossesDefeated++;
+    offerTrialReward('boss',boss);
     if(phase==='levelup')resumePhase='combat';else phase='combat';
+  }
+  function offerTrialReward(kind,enemy){
+    const plan=G.EventRewards?.offer({id:`${runSeed}:${sector}:${kind}`,kind,seed:mapSeed,player:pl});
+    if(plan)G.ExplorationChests?.addReward?.(plan,{x:enemy.x,y:enemy.y});
+  }
+  function trialRiftVictory(){
+    if(!riftBoss||!riftBoss.dead||riftBossDefeated)return;
+    riftBossDefeated=true;G.DimensionalRifts?.complete('defeated');offerTrialReward('rift',riftBoss);
   }
   function trialCross(){
     if(!doorOpen||!bossDefeated||!['combat','boss'].includes(phase)||G.U.dist(pl.x,pl.y,exit.x,exit.y)>24+pl.r)return false;
@@ -187,7 +206,14 @@ G.Expedition = (() => {
     if(action==='continue'){advance();return true;}return false;
   }
   function useRift(){
-    if(v2())return false;
+    if(v2()){
+      if(!G.MapTrial.rewardRiftPractice||sector!==1||spawnClosed||mapTime>=(G.MapTrial.duration??300)||
+        !['combat','boss'].includes(phase)||!pl||pl.dead||pl.hp<=0||riftBoss||!G.DimensionalRifts?.enter(pl))return false;
+      const rift=G.DimensionalRifts.state,sc=scale(1);
+      riftBoss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,rift.x,rift.y,{...sc,hp:sc.hp*1.35,dmg:sc.dmg*1.15},true));
+      riftBoss.name='Custodio dimensional';riftBoss.dimensional=true;riftBoss.dimensionalArrival=1.5;
+      return true;
+    }
     if(G.RunContinuity?.canAdvance()===false||phase!=='exploration'||!G.DimensionalRifts?.enter(pl))return false;
     const rift=G.DimensionalRifts.state,sc=scale(1);
     boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,rift.x,rift.y,{...sc,hp:sc.hp*1.35,dmg:sc.dmg*1.15},true));
@@ -200,9 +226,9 @@ G.Expedition = (() => {
   }
   function summon(owner,count){
     if(v2()&&(spawnClosed||mapTime>=(G.MapTrial.duration??300)))return 0;
-    if(!owner||owner!==boss||owner.dead||!['boss','escaping'].includes(phase))return 0;
+    if(!owner||owner.dead||(v2()?(![boss,riftBoss].includes(owner)||!['combat','boss'].includes(phase)):owner!==boss||!['boss','escaping'].includes(phase)))return 0;
     owner.minions=owner.minions.filter(e=>!e.dead);let made=0;
-    const max=Math.min(count,4-owner.minions.length,G.Spawner.CAP-G.EnemyMgr.count);
+    const max=Math.min(count,4-owner.minions.length,(v2()?trialEnemyCap():G.Spawner.CAP)-G.EnemyMgr.count);
     for(let i=0;i<max;i++){
       let pos=null;
       for(let n=0;n<16;n++){const a=(n+i*8)*Math.PI/8,x=owner.x+Math.cos(a)*100,y=owner.y+Math.sin(a)*100;
@@ -238,9 +264,10 @@ G.Expedition = (() => {
   }
   let lastDt=0;
   function updateMapTrial(dt){
-    trialVictory();
+    trialVictory();trialRiftVictory();
     if(phase==='levelup')return;
     promptUpgrade();if(phase==='levelup')return;
+    if(G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.tick(dt);
     elapsed+=dt;lastDt=dt;
     const nextTime=Math.min(G.MapTrial.duration??300,mapTime+dt),bossAt=G.MapTrial.bossAt??240;
     // Process the boss event before the later cutoff, including a single long frame.
@@ -251,6 +278,7 @@ G.Expedition = (() => {
       spawnClosed=true;spawnClock=0;doorOpen=true;G.MapTrial.arrive?.();
     }
     G.FieldAbilities.tick(dt,pl);G.FieldCombat.tick(dt,pl,true);pl.update(dt);
+    if(G.MapTrial.rewardRiftPractice)useRift(); // Contacto instantáneo, sin botón y sin limpiar el escenario.
     G.Camera.follow(pl.x,pl.y,dt);G.World.update(dt,G.Camera);G.FX.update(dt);G.Spawner.tickBanner(dt);
     if(!spawnClosed){
       spawnClock+=dt*Math.min(2,.55+.06*(sector-1)+mapTime/200);
@@ -259,7 +287,7 @@ G.Expedition = (() => {
     G.Path.update(dt,[pl]);G.EnemyMgr.update(dt,[pl]);G.Projectiles.update(dt,pl,G.EnemyMgr.all());
     G.Combat.resolve(dt,pl,elapsed);G.MapTrial.updateAllies?.(dt,pl);G.Pickups.update(dt,pl,collect);
     if(pl.dead||pl.hp<=0){finish('death');return;}
-    trialVictory();promptUpgrade();if(phase==='levelup')return;
+    trialVictory();trialRiftVictory();promptUpgrade();if(phase==='levelup')return;
     G.ExplorationChests?.tick(dt,mapTime,pl);
     if(!spawnClosed)recover();trialCross();
   }
@@ -300,7 +328,7 @@ G.Expedition = (() => {
     }
   }
   function draw(ctx){
-    if(v2()){G.ExplorationChests?.draw(ctx);G.MapTrial.draw?.(ctx,snapshot());return;}
+    if(v2()){G.ExplorationChests?.draw(ctx);if(G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.draw(ctx);G.MapTrial.draw?.(ctx,snapshot());return;}
     G.DimensionalRifts?.draw(ctx);
     if(!['exploration','extracting','boss','escaping'].includes(phase))return;
     ctx.save();ctx.fillStyle='#5ac6a233';ctx.strokeStyle='#99ffd6';ctx.lineWidth=3;ctx.beginPath();ctx.arc(exit.x,exit.y,42,0,Math.PI*2);ctx.fill();ctx.stroke();

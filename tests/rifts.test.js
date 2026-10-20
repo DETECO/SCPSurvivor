@@ -3,9 +3,10 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 
-function setup(search='?prueba=grieta', hostname='127.0.0.1') {
+function setup(search='?prueba=grieta', hostname='127.0.0.1', protocol='http:', pathname='/') {
   const sounds=[], G={Audio:{sfx:id=>sounds.push(id)},World:{isFree:()=>true,projectileBlock:()=>null},Path:{reachable:()=>true}};
-  vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/dimensional-rifts.js'),'utf8'),{G,window:{location:{search,hostname}},URLSearchParams,Math});
+  const context={G,window:{location:{search,hostname,protocol,pathname}},URLSearchParams,Math};
+  for(const name of ['map-trial.js','dimensional-rifts.js'])vm.runInNewContext(fs.readFileSync(require.resolve('../js/systems/'+name),'utf8'),context);
   const player={x:0,y:0,r:12},geometry={exit:{x:600,y:0},spawnPoints:[{x:20,y:0},{x:180,y:0},{x:350,y:0},{x:600,y:0}]};
   const offer=(extra={})=>G.DimensionalRifts.offer({sector:1,kind:'normal',seed:1337,geometry,player,force:true,...extra});
   G.DimensionalRifts.reset();return{G,player,geometry,sounds,offer,r:G.DimensionalRifts};
@@ -16,6 +17,34 @@ test('solo opción local y sin cuentas; modo normal y servidores públicos intac
     const a=setup(search,host);assert.equal(a.r.enabled,false);assert.equal(a.offer(),false);
   }
   assert.equal(setup('?grietas=local').r.enabled,true);assert.equal(setup().r.directTest,true);
+});
+
+test('V2 rift practice is explicit on loopback and authorized Pages only',()=>{
+ for(const [search,host,protocol,pathname]of [
+  ['?prueba=mapa-v2&premios=grieta','127.0.0.1','http:','/'],
+  ['?premios=grieta','deteco.github.io','https:','/SCPSurvivor/']
+ ]){
+  const a=setup(search,host,protocol,pathname);assert.equal(a.G.MapTrial.enabled,true);assert.equal(a.r.enabled,true);assert.equal(a.r.directTest,false);assert.equal(a.offer(),true);assert.equal(a.r.state.remaining,45);
+ }
+ for(const [search,host,protocol,pathname]of [
+  ['?prueba=mapa-v2&grietas=local','127.0.0.1','http:','/'],
+  ['?prueba=mapa-v2&premios=jefe&grietas=local','127.0.0.1','http:','/'],
+  ['?premios=grieta','127.0.0.1','http:','/'],
+  ['?prueba=mapa-v2&premios=grieta','example.com','https:','/SCPSurvivor/'],
+  ['?premios=grieta','deteco.github.io','http:','/SCPSurvivor/'],
+  ...['cuentas','cuentas=','cuentas=local','cuentas=propias','cuentas=invalid'].map(accounts=>[`?premios=grieta&${accounts}`,'deteco.github.io','https:','/SCPSurvivor/']),
+  ...['cuentas=local','cuentas=propias','cuentas=invalid'].map(accounts=>[`?prueba=mapa-v2&premios=grieta&${accounts}`,'127.0.0.1','http:','/'])
+ ]){
+  const a=setup(search,host,protocol,pathname);assert.equal(a.r.enabled,false,search+' / '+host);assert.equal(a.offer(),false);
+ }
+});
+
+test('V2 encounter texts never imply escape, cleared remnants or an available exit',()=>{
+ const a=setup('?prueba=mapa-v2&premios=grieta');a.offer();a.r.tick(45);
+ assert.equal(a.r.state.status,'closed');assert.match(a.r.state.alert,/continúa resistiendo/i);assert.doesNotMatch(a.r.state.alert,/salida/i);
+ a.r.reset();a.offer();a.player.x=a.r.state.x;a.player.y=a.r.state.y;assert.equal(a.r.enter(a.player),true);assert.doesNotMatch(a.r.state.alert,/puedes huir|salida/i);
+ assert.equal(a.r.complete('defeated'),true);assert.doesNotMatch(a.r.state.alert,/sector despejado/i);
+ const legacy=setup();legacy.offer();legacy.player.x=legacy.r.state.x;assert.equal(legacy.r.enter(legacy.player),true);assert.match(legacy.r.state.alert,/puedes huir/);legacy.r.complete('defeated');assert.match(legacy.r.state.alert,/sector despejado/);
 });
 
 test('ubicación libre alcanzable y separada; aviso y sonido una sola vez por sector',()=>{

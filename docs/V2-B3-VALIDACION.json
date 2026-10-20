@@ -1,0 +1,84 @@
+{
+  "version": "V2-trial-03",
+  "checkedAt": "2026-10-20T10:49:37.861153+00:00",
+  "build": {
+    "source": {
+      "bundleSha256": "5e6e3f76d0cb7950566cdc8ec4a030e95283bcc56fd4dfe072e4e366a6960dfe",
+      "indexSha256": "b86efe8f82975155764d45d86cd6ecde9a383dae1b0d4e67dcb6a2bdc577015a",
+      "scripts": 88,
+      "build": "passed",
+      "check": "passed"
+    },
+    "publication": {
+      "bundleSha256": "01e751b946a58a8c557d1eca02dbe0d97c8982fba316475837cbf1db5c36c093",
+      "indexSha256": "f49581b12e13702510745d4b0e9b570b688774ea7589d9eebf3e15db7dc01c12",
+      "scripts": 88,
+      "build": "passed",
+      "check": "passed"
+    }
+  },
+  "node": {
+    "source": {
+      "cases": 172,
+      "passed": 171,
+      "skipped": 1,
+      "failed": 0
+    },
+    "publication": {
+      "cases": 172,
+      "passed": 170,
+      "skipped": 2,
+      "failed": 0
+    },
+    "excluded": "p05-worker*.test.js: preparación incompleta preexistente, no incluida en esta entrega",
+    "skipReasons": [
+      "Emuladores no activos",
+      "Publicación: CORS exige dependencias functions no instaladas"
+    ]
+  },
+  "browserB3": {
+    "localScenarios": 8,
+    "modesPerScenario": [
+      "boss_victory_chest",
+      "rift_contact_victory_chest",
+      "rift_expiry_no_reward"
+    ],
+    "method": "Posición, invulnerabilidad, daño letal y pasos temporales controlados. Pausa pública real, apertura física y aislamiento de contexto. No aceptación humana, balance, rendimiento ni dispositivo físico.",
+    "allPassed": true
+  },
+  "regressions": {
+    "sourceChests": 4,
+    "sourceMapDoor": 4,
+    "publicationChests": 4,
+    "publicationMapDoor": 4,
+    "baselineOnlineChests": 2
+  },
+  "review": {
+    "independent": "Sol medio; raíz revisó e integró",
+    "finding": "Invocaciones podían exceder24; corregido con cap compartido y reserva del obligatorio",
+    "regression": "rojo antes, verde después"
+  },
+  "preservation": {
+    "historicalTasks": 53,
+    "historicalPercent": 52,
+    "tasksPhasesUnchanged": true,
+    "v2Percent": null,
+    "originalCloudAndSourcesUnchanged": true,
+    "unpublishedWorkerConfigNotCopied": true
+  },
+  "limits": {
+    "manualAcceptance": "pending",
+    "physicalDevice": false,
+    "balanceOrFpsMeasured": false,
+    "ownAccountsEnabled": false,
+    "billingAuthorized": false,
+    "persistentRewards": false,
+    "rift": "explicit practice, same map, no travel or return",
+    "riftTicketTable": "2 or 3 equiprobable fictional tickets; provisional test parameters"
+  },
+  "publication": {
+    "status": "pending_live_check",
+    "url": "https://deteco.github.io/SCPSurvivor/",
+    "roadmapVersion": "0.26"
+  }
+}

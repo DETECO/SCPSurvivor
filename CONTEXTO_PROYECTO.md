@@ -1,5 +1,8 @@
 # Contexto del proyecto — SCP Survivor
 
+**20/10/2026 · B3 / roadmap 0.26:** cofre del jefe y práctica explícita dimensional implementados; premios temporales y tickets ficticios, sin cuentas. [Prueba manual](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites](docs/V2-B3-REPORT.md). Aceptación de Iván pendiente; B4 y P05 real continúan pendientes.
+
+
 **Actualización vigente 0.25 · B1/B2, 19/10/2026 (A-035/D-331/EV-040):** B1/B2 implementados como prototipo aislado: geometría inicial 160 × 100 y seis nodos alternativos; cuatro intentos de exploración en 60/120/180/240 s con probabilidades/topes por tramo y tickets ficticios en memoria. RC-10 sigue EC, evidenceComplete=false. Aceptación manual y P05 real pendientes; combate 2+3+1, bono de diez minutos/hitos, cofres de jefe/grieta y economía persistente pendientes. [Guía de mapa y cofres](docs/PRUEBA_MAPA_COFRES_V2.md) · [Demo de práctica](https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba) · [Resultados y límites](docs/V2-B1-B2-REPORT.md). Demo publicada y verificada online; aceptación manual pendiente; consultar el informe antes de afirmar resultados.
 
 **Roadmap 0.24 · ESTRUCTURA, 19/10/2026:** diseño confirmado **2 armas simultáneas + hasta 3 poderes anómalos + 1 ultimate** (máximo nivel 5, cooldown largo y progresión difícil). Tres ofertas aleatorias, mejoras de arma solo para equipadas. Armas/ultimates/skins en gacha; parámetros y economía todavía abiertos. RC-13/RC-14 pendientes, sin cambios del ejecutable ni cierre de P05. [Decisiones, propuestas y tareas](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md).

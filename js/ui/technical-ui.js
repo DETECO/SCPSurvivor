@@ -108,9 +108,18 @@ G.TechnicalUI = (() => {
         ? 'PRÁCTICA DE COFRES · Empiezas junto a un cofre garantizado. Acércate y permanece 3,5 s; alejarte reduce la apertura. Otorga solo tickets ficticios, sin cuenta ni guardado. Este cofre es una ayuda de prueba: no representa la probabilidad normal.'
         : 'COFRES DE EXPLORACIÓN · Intentos a 1:00, 2:00, 3:00 y 4:00; pueden no aparecer. Solo se indica su ubicación después de descubrirlos. Acércate 3,5 s para abrir. Premios ficticios, sin cuenta ni guardado. La prueba rápida no concede intentos anteriores.';
       if(G.MapTrial.chestPractice)el('btn-technical-start').textContent='Iniciar prueba de cofres';
+      el('boss-reward-trial-link').hidden=false;
+      el('rift-reward-trial-link').hidden=false;
+      if(G.MapTrial.rewardBossPractice||G.MapTrial.rewardRiftPractice){
+        el('b3-test-note').hidden=false;
+        el('b3-test-note').textContent=G.MapTrial.rewardBossPractice
+          ? 'PREMIO DEL JEFE · Empiezas en 4:30 junto al jefe vivo. Derrótalo y permanece 3,5 s junto a su cofre: mejora en +1 nivel temporal una copia de arma equipada elegible (máximo 5). Si no hay mejora compatible, el cofre lo indicará. Sin cuenta ni guardado.'
+          : 'PREMIO DIMENSIONAL · Empiezas en 0:00 con una grieta abierta durante 45 s. Entra caminando: el Custodio dimensional aparece en este mismo mapa. Véncelo y abre su cofre permaneciendo cerca 3,5 s: +1 nivel temporal de una copia equipada elegible y 2–3 tickets ficticios. Tabla provisional de prueba; sin mejora compatible, solo esos tickets. Entrar o dejar cerrar la grieta no da premios. El jefe obligatorio y la puerta conservan sus reglas. Sin cuenta ni guardado.';
+        el('btn-technical-start').textContent=G.MapTrial.rewardBossPractice?'Probar premio del jefe':'Probar premio dimensional';
+      }
     }
     const rifts=G.DimensionalRifts;
-    if(rifts.enabled){
+    if(rifts.enabled&&!G.MapTrial?.enabled){
       el('rift-test-note').hidden=false;
       el('rift-test-note').textContent=rifts.directTest
         ? 'PRUEBA DE GRIETA · Al iniciar tendrás un sector despejado y una grieta durante 45 s. Sigue la flecha y camina sobre la grieta: entrarás al instante. Puedes dejarla cerrar o combatir y huir por la salida. Sin cuenta ni guardado.'
@@ -176,7 +185,7 @@ G.TechnicalUI = (() => {
     el('field-status').textContent = `${G.DimensionalRifts.directTest?'PRUEBA · ':''}S${s.sector}${s.kind === 'normal' && !s.dimensional && !G.DimensionalRifts.directTest ? ` · Oleada ${s.wave}/${s.sectorWaves}` : ''} · ${captions[s.phase]} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level}${s.pending ? ` (${s.pending} por mejorar)` : ''} · XP ${Math.floor(player.xp)}/${player.xpNext} | ${weaponSummary}`;
     if(s.v2){
       const v=s.v2,active=s.phase!=='finished',canShow=active&&s.phase!=='levelup';
-      const target=v.doorOpen?s.exit:G.EnemyMgr.all().find(e=>e.boss&&!e.dead);
+      const target=v.doorOpen?s.exit:G.EnemyMgr.all().find(e=>e.boss&&!e.dimensional&&!e.dead);
       const tx=target?target.x-player.x:0,ty=target?target.y-player.y:0;
       const arrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(ty,tx)/(Math.PI/4))+8)%8];
       let goal=v.doorOpen?(v.bossDefeated?'PUERTA ABIERTA · cruza caminando':'PUERTA BLOQUEADA · derrota al jefe'):
@@ -192,9 +201,11 @@ G.TechnicalUI = (() => {
         const known=chests.chests.filter(c=>c.discovered&&!c.opened).sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y));
         const chest=known[0],cx=chest?chest.x-player.x:0,cy=chest?chest.y-player.y:0;
         const chestArrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(cy,cx)/(Math.PI/4))+8)%8];
-        const hint=chest?`Cofre ${chestArrow} ${Math.ceil(Math.hypot(cx,cy))} u · ${chest.progress>0?`abriendo ${Math.floor(chest.progress/3.5*100)} %`:'acércate y permanece 3,5 s'}`:
-          chests.chests.some(c=>!c.opened)?'Cofre sin descubrir · explora el mapa':chests.spawned?'Cofres abiertos':'Explora · puede aparecer un cofre';
-        el('chest-status').textContent=`${hint} · ${chests.ticketTotal} tickets ficticios (sin cuenta)`;
+        const chestName=c=>c.type==='boss'?'Cofre del jefe':c.type==='rift'?'Cofre dimensional':'Cofre de exploración';
+        const hint=chest?`${chestName(chest)} ${chestArrow} ${Math.ceil(Math.hypot(cx,cy))} u · ${chest.progress>0?`abriendo ${Math.floor(chest.progress/3.5*100)} %`:'acércate y permanece 3,5 s'}`:
+          chests.chests.some(c=>!c.opened)?'Cofre sin descubrir · explora el mapa':chests.chests.length?'Cofres abiertos':'Explora · puede aparecer un cofre';
+        const outcome=chests.chests.some(c=>c.opened)?chests.notice:'';
+        el('chest-status').textContent=`${hint}${outcome?' · '+outcome:''} · ${chests.ticketTotal} tickets ficticios (sin cuenta)`;
       }
     }
     const rift=G.DimensionalRifts.state,open=rift.status==='open';

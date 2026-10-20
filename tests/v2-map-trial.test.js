@@ -74,6 +74,37 @@ test('chest practice requires the isolated V2 gate and is explicit',()=>{
  assert.equal(setup('?prueba=mapa-v2&cofres=prueba&cuentas=local').G.MapTrial.chestPractice,false);
  assert.equal(setup('?prueba=mapa-v2&cofres=prueba','example.com').G.MapTrial.chestPractice,false);
 });
+
+test('boss and rift reward practices require V2 and exclude the exploration preview',()=>{
+ for(const [search,host,protocol,pathname]of [
+  ['?prueba=mapa-v2&premios=jefe&cofres=prueba','127.0.0.1','http:','/'],
+  ['?premios=jefe&cofres=prueba','deteco.github.io','https:','/SCPSurvivor/']
+ ]){
+  const t=setup(search,host,protocol,pathname).G.MapTrial;
+  assert.equal(t.rewardBossPractice,true);assert.equal(t.rewardRiftPractice,false);assert.equal(t.quick,true);assert.equal(t.startTime,270);assert.equal(t.chestPractice,false);
+ }
+ const r=setup('?prueba=mapa-v2&premios=grieta&cofres=prueba').G.MapTrial;
+ assert.equal(r.rewardBossPractice,false);assert.equal(r.rewardRiftPractice,true);assert.equal(r.quick,false);assert.equal(r.startTime,0);assert.equal(r.chestPractice,false);
+ const mixed=setup('?prueba=mapa-v2&premios=grieta&rapida=1').G.MapTrial;
+ assert.equal(mixed.quick,false);assert.equal(mixed.startTime,0);
+});
+
+test('reward flags never bypass local, public or account gates',()=>{
+ for(const kind of ['jefe','grieta']){
+  for(const [search,host,protocol,pathname]of [
+   [`?premios=${kind}`,'127.0.0.1','http:','/'],
+   [`?prueba=mapa-v2&premios=${kind}`,'example.com','https:','/SCPSurvivor/'],
+   [`?premios=${kind}`,'deteco.github.io','http:','/SCPSurvivor/'],
+   ...['cuentas','cuentas=','cuentas=local','cuentas=propias','cuentas=invalid'].map(accounts=>[`?prueba=mapa-v2&premios=${kind}&${accounts}`,'127.0.0.1','http:','/']),
+   ...['cuentas','cuentas=invalid'].map(accounts=>[`?premios=${kind}&${accounts}`,'deteco.github.io','https:','/SCPSurvivor/'])
+  ]){
+   const t=setup(search,host,protocol,pathname).G.MapTrial;assert.equal(t.rewardBossPractice,false,search);assert.equal(t.rewardRiftPractice,false,search);assert.equal(t.quick,false,search);
+  }
+ }
+ for(const query of ['?prueba=mapa-v2','?prueba=mapa-v2&premios=unknown']){
+  const t=setup(query).G.MapTrial;assert.equal(t.rewardBossPractice,false);assert.equal(t.rewardRiftPractice,false);
+ }
+});
 test('V2 cannot be mixed with the old rift or backpack trial switches',()=>{
  const search='?prueba=mapa-v2&grietas=local&inventario=local',{G}=setup(search);
  const context={G,window:{location:{hostname:'127.0.0.1',search}},URLSearchParams,Math};

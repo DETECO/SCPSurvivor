@@ -1,5 +1,8 @@
 # SCP Survivor — continuidad local
 
+**20/10/2026 · B3 / roadmap 0.26:** cofre del jefe y práctica explícita dimensional implementados; premios temporales y tickets ficticios, sin cuentas. [Prueba manual](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites](docs/V2-B3-REPORT.md). Aceptación de Iván pendiente; B4 y P05 real continúan pendientes.
+
+
 Este es el juego existente, con P05 preparada para cuentas y guardado emulados. No necesitas reconstruirlo. Consulta docs/P05-REPORT.md para resultados exactos y límites de verificación.
 
 1. INSTALACION_WINDOWS.md: herramientas, arranque y pruebas.

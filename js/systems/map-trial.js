@@ -6,8 +6,10 @@ G.MapTrial=(()=>{
  const publicDemo=location.protocol==='https:'&&location.hostname==='deteco.github.io'&&location.pathname.startsWith('/SCPSurvivor/');
  const requested=q.get('prueba')==='mapa-v2'||(publicDemo&&!q.has('prueba'));
  const enabled=(loopback||publicDemo)&&requested&&!q.has('cuentas');
- const quick=enabled&&q.get('rapida')==='1';
- const chestPractice=enabled&&q.get('cofres')==='prueba';
+ const rewardBossPractice=enabled&&q.get('premios')==='jefe';
+ const rewardRiftPractice=enabled&&q.get('premios')==='grieta';
+ const quick=enabled&&!rewardRiftPractice&&(q.get('rapida')==='1'||rewardBossPractice);
+ const chestPractice=enabled&&!rewardBossPractice&&!rewardRiftPractice&&q.get('cofres')==='prueba';
  const RANGE=440,INTERVAL=.65,DAMAGE=9;
  let geometry=null,team=[],arrived=false,alertTime=0;
  function clearLine(ax,ay,bx,by){
@@ -72,7 +74,7 @@ G.MapTrial=(()=>{
    ctx.fillStyle='#d9efe3';ctx.font='9px system-ui';ctx.fillText('ALIADO',ally.x,ally.y-35);
    ctx.restore();
  }
- return{enabled,publicDemo,quick,chestPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
+ return{enabled,publicDemo,quick,chestPractice,rewardBossPractice,rewardRiftPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
   drawables:()=>enabled&&arrived?team.map(a=>({x:a.x,y:a.y,draw:ctx=>drawAlly(ctx,a)})):[],
   get allies(){return team.map(a=>({x:a.x,y:a.y}));},get alertTime(){return alertTime;}};
 })();

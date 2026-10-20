@@ -4,7 +4,8 @@
  */
 G.ExplorationChests = (() => {
   const TIMES=[60,120,180,240],OPEN_TIME=3.5,RADIUS=50;
-  let chests=[],candidates=[],ticketTotal=0,attempts=0,cap=1,chance=.10,maxTickets=2;
+  let chests=[],eventChests=[],candidates=[],ticketTotal=0,attempts=0,cap=1,chance=.10,maxTickets=2;
+  const allChests=()=>[...chests,...eventChests];
   let cursor=0,rng=()=>0,practice=false,notice='';
   const enabled=()=>!!G.MapTrial?.enabled;
   function random(seed){
@@ -14,7 +15,7 @@ G.ExplorationChests = (() => {
   }
   function roll(){const n=rng();return Number.isFinite(n)?Math.max(0,Math.min(1-Number.EPSILON,n)):1-Number.EPSILON;}
   function startRun(){
-    ticketTotal=0;chests=[];candidates=[];attempts=0;cursor=0;practice=false;notice='';
+    ticketTotal=0;chests=[];eventChests=[];candidates=[];attempts=0;cursor=0;practice=false;notice='';
   }
   function spawn(point,isPractice=false){
     if(!point||chests.length>=cap)return;
@@ -24,7 +25,7 @@ G.ExplorationChests = (() => {
       'Ha aparecido un cofre de exploración · busca en el sector.';
   }
   function reset(geometry,{sector=1,seed=0,startTime=0,forcePreview=false,rng:override}={}){
-    chests=[];candidates=[];practice=false;notice='';
+    chests=[];eventChests=[];candidates=[];practice=false;notice='';
     cap=sector>=8?3:sector>=4?2:1;chance=sector>=8?.20:sector>=4?.15:.10;maxTickets=sector>=8?3:2;
     cursor=Number.isFinite(startTime)?Math.max(0,startTime):0;
     attempts=TIMES.filter(t=>t<=cursor).length;
@@ -41,6 +42,12 @@ G.ExplorationChests = (() => {
       const nearest=candidates.reduce((a,b)=>Math.hypot(a.x-entry.x,a.y-entry.y)<=Math.hypot(b.x-entry.x,b.y-entry.y)?a:b);
       practice=true;spawn(nearest,true);
     }
+  }
+  function addReward(plan,point){
+    if(!enabled()||!plan?.id||!['boss','rift'].includes(plan.kind)||!Number.isFinite(point?.x)||!Number.isFinite(point?.y)||allChests().some(c=>c.id===plan.id))return false;
+    eventChests.push({id:plan.id,rewardId:plan.id,type:plan.kind,x:point.x,y:point.y,opened:false,discovered:false,progress:0,tickets:plan.tickets||0,description:plan.description||'',practice:false});
+    notice=plan.kind==='rift'?'Premio dimensional disponible · busca el cofre.':'Jefe vencido · cofre de mejora disponible.';
+    return true;
   }
   function visible(chest){return !!G.Camera?.sees?.(chest.x,chest.y,0);}
   function clearLine(player,chest){
@@ -62,7 +69,7 @@ G.ExplorationChests = (() => {
       const unused=candidates.filter(p=>!chests.some(c=>c.id===p.id));
       if(unused.length)spawn(unused[Math.floor(roll()*unused.length)]);
     }
-    for(const chest of chests){
+    for(const chest of allChests()){
       if(!chest.discovered&&visible(chest)){
         chest.discovered=true;
         notice=chest.practice?'Cofre de práctica descubierto · mantente cerca 3,5 s.':
@@ -72,14 +79,20 @@ G.ExplorationChests = (() => {
       const near=chest.discovered&&Math.hypot(player.x-chest.x,player.y-chest.y)<=RADIUS&&clearLine(player,chest);
       chest.progress=Math.max(0,Math.min(OPEN_TIME,chest.progress+(near?dt:-1.5*dt)));
       if(chest.progress>=OPEN_TIME-1e-9){
-        chest.progress=OPEN_TIME;chest.opened=true;ticketTotal+=chest.tickets;
-        notice=`${chest.practice?'Práctica · ':''}Cofre abierto · +${chest.tickets} tickets ficticios.`;
+        chest.progress=OPEN_TIME;chest.opened=true;
+        if(chest.rewardId){
+          const result=G.EventRewards?.claim(chest.rewardId,player);
+          notice=result?.description||'Premio no aplicado · estado incompatible.';
+        }else{
+          ticketTotal+=chest.tickets;
+          notice=`${chest.practice?'Práctica · ':''}Cofre abierto · +${chest.tickets} tickets ficticios.`;
+        }
       }
     }
   }
   function draw(ctx){
     if(!enabled())return;
-    for(const chest of chests){
+    for(const chest of allChests()){
       if(!chest.discovered||!visible(chest))continue;
       ctx.save();ctx.translate(chest.x,chest.y);
       ctx.fillStyle=chest.opened?'#3b3333':'#e9e6e0';ctx.strokeStyle='#d63642';ctx.lineWidth=2;
@@ -93,6 +106,6 @@ G.ExplorationChests = (() => {
       ctx.restore();
     }
   }
-  return{startRun,reset,tick,draw,get state(){return{chests:chests.map(c=>({...c})),ticketTotal,
-    spawned:chests.length,attempts,cap,chance,practice,notice};}};
+  return{startRun,reset,addReward,tick,draw,get state(){return{chests:allChests().map(c=>({...c})),ticketTotal:ticketTotal+(G.EventRewards?.state.ticketTotal||0),
+    spawned:chests.length,eventCount:eventChests.length,attempts,cap,chance,practice,notice};}};
 })();

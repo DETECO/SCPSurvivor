@@ -101,3 +101,25 @@ test('draw uses temporary canvas artwork and respects visibility and disabled mo
  C.draw(ctx);assert.equal(calls,0);G.Camera.sees=()=>true;C.tick(1,1,p);C.draw(ctx);assert.ok(calls>0);
  G.MapTrial.enabled=false;const previous=calls;C.draw(ctx);assert.equal(calls,previous);
 });
+
+test('event chests have their own quota, fixed reward and one claim after proximity opening',()=>{
+ const {C,G,p}=setup({forcePreview:true,rng:()=>0});let calls=0,total=0;
+ G.EventRewards={claim(id,player){assert.equal(id,'boss:1');assert.equal(player,p);calls++;total+=2;return{ok:true,description:'Mejora de prueba aplicada'};},get state(){return{ticketTotal:total}}};
+ assert.equal(C.addReward({id:'boss:1',kind:'boss',tickets:0,description:'Mejora para arma'},{x:300,y:0}),true);
+ assert.equal(C.addReward({id:'boss:1',kind:'boss'},{x:300,y:0}),false);
+ assert.equal(C.state.spawned,1);assert.equal(C.state.chests.length,2);
+ G.Camera.sees=()=>true;p.x=300;C.tick(3.4,3.4,p);assert.equal(calls,0);
+ C.tick(.1,3.5,p);assert.equal(calls,1);assert.equal(C.state.ticketTotal,2);
+ C.tick(5,10,p);assert.equal(calls,1);assert.equal(C.state.chests.find(c=>c.rewardId==='boss:1').opened,true);
+ C.reset(geometry,{sector:2});assert.equal(C.state.chests.length,0);assert.equal(C.state.ticketTotal,2);
+});
+
+test('invalid or blocked event reward cannot fabricate tickets or repeatedly call a failed grant',()=>{
+ const {C,G,p}=setup();let calls=0;
+ G.EventRewards={claim(){calls++;return{ok:false,description:'Premio bloqueado por equipo incompatible'};},state:{ticketTotal:0}};
+ assert.equal(C.addReward({id:'bad',kind:'other'},{x:100,y:0}),false);
+ assert.equal(C.addReward({id:'bad',kind:'rift'},{x:NaN,y:0}),false);
+ assert.equal(C.addReward({id:'bad',kind:'rift',tickets:3},{x:100,y:0}),true);
+ G.Camera.sees=()=>true;p.x=100;C.tick(4,4,p);C.tick(4,8,p);
+ assert.equal(calls,1);assert.equal(C.state.ticketTotal,0);assert.match(C.state.notice,/bloqueado/);
+});
