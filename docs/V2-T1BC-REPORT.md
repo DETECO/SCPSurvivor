@@ -1,5 +1,7 @@
 # Resultados T1B + T1C
 
+**Publicación comprobada:** runtime `00d5770`, índice/compilado/CSS/roadmap coincidentes; diez recorridos online aprobados (escritorio/táctil × cinco modos). [Recibo](V2-T1BC-PUBLICACION.json). Aceptación manual y teléfono físico pendientes.
+
 21/10/2026 · Roadmap 0.30 · A-040/D-336/EV-045. **Implementado como ensayo, aceptación manual pendiente.** La publicación se acredita por el recibo de Pages cuando esté disponible.
 
 T1B + T1C implementados como ensayo: terminal voluntario con reemplazo de una copia y pausa completa; ramas/cartas revisadas por familia; cuarta arma, porra de corto alcance sin munición; HUD de ramas/recargas y consulta de equipo; daño compacto y radar circular fijo sin revelar cofres desconocidos. Cuatro prácticas explícitas: terminal, máximos, saturación y melee. Sin cuentas/guardado/economía real. Arte y balance provisionales; fusión, grieta separada, poderes y ultimate pendientes.
@@ -24,6 +26,8 @@ Prácticas explícitas terminal/maximos/saturacion/melee, identificadas en menú
 - Regresión T1A/B3 ejecutada sobre fuente/compilado y escritorio/táctil emulado. Validación registra cantidades exactas, omisiones y hashes.
 - QA usa posiciones, tiempo, invulnerabilidad y blancos durables controlados para comprobar UI y daño real; no demuestra dificultad natural, balance, rendimiento ni teléfono físico. Las prácticas públicas no añaden esa invulnerabilidad.
 - Revisar recibo de publicación para resultados online; subir código no acredita por sí solo el despliegue.
+
+Revisión de integración realizada por root; corrigió aislamiento del catálogo anterior y bloqueo melee por cobertura destructible, con regresiones aprobadas. Luna max entregó los marcadores de daño; root integró el resto. La revisión adicional de Luna se interrumpió sin informe y no se presenta como completada.
 
 ## Pendientes
 

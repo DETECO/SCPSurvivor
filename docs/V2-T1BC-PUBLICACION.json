@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-21T19:47:59.918023+00:00",
+  "runtimeCommit": "00d577042de8467126501456183631aaaaa108e1",
+  "verifiedMainCommit": "00d577042de8467126501456183631aaaaa108e1",
+  "remoteMain": "00d577042de8467126501456183631aaaaa108e1",
+  "clean": true,
+  "url": "https://deteco.github.io/SCPSurvivor/",
+  "terminalUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=terminal",
+  "meleeUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=melee",
+  "roadmapVersion": "0.30",
+  "bundleSha256": "fb6b3aa6381b96857cd5f8082b83dd4657a0c188ecc34fd5cfc4a1999d11fa5e",
+  "indexHashMatched": true,
+  "bundleHashMatched": true,
+  "cssHashMatched": true,
+  "roadmapHashMatched": true,
+  "manualAcceptance": "pending",
+  "realAccountsEnabled": false,
+  "billingChanges": false,
+  "liveBrowserScenarios": 2,
+  "modesPerScenario": [
+    "default_normal",
+    "terminal",
+    "maximos",
+    "saturacion",
+    "melee"
+  ],
+  "method": "Disclosed fixtures, controlled position/invulnerability/time and durable QA targets; real UI choices and melee hurt. Not natural balance, performance or physical phone evidence."
+}
