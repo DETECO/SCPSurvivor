@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-21T11:28:40.633567+00:00",
+  "runtimeCommit": "4ab58d4",
+  "verifiedMainCommit": "4ab58d4342739e9597fce0a8077b96fa35c9b491",
+  "remoteMain": "4ab58d4342739e9597fce0a8077b96fa35c9b491",
+  "clean": true,
+  "url": "https://deteco.github.io/SCPSurvivor/",
+  "eliteUrl": "https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2&premios=elite",
+  "bossUrl": "https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2&premios=jefe",
+  "roadmapVersion": "0.29",
+  "bundleSha256": "9fd595a5ba788cb6b9fc631d89b4ebc512f564a6c5c301d5eea7ff94381dbea1",
+  "indexHashMatched": true,
+  "bundleHashMatched": true,
+  "roadmapHashMatched": true,
+  "manualAcceptance": "pending",
+  "realAccountsEnabled": false,
+  "billingChanges": false,
+  "liveBrowserScenarios": 2,
+  "modesPerScenario": [
+    "default_normal",
+    "boss",
+    "elite"
+  ],
+  "method": "Controlled position, invulnerability, lethal QA damage and time; real UI choices and projectile damage. Not manual acceptance, balance, performance or physical phone evidence."
+}

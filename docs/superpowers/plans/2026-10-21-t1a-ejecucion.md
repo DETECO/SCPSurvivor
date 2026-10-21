@@ -20,7 +20,7 @@ Conservar B3 explícito `?prueba=mapa-v2`; en Pages la entrada sin consulta pasa
 - [x] Build/check de fuente y publicación, sin copiar preparación Worker ni configuraciones distintas.
 - [x] Navegador fuente/compilado y escritorio/táctil; adquisición por jefe/élite y daño real de proyectiles. Regresión B3 explícita.
 - [x] Reporte, roadmap0.29 y diff; conservar53tareas/pesos/criterios y52/100 históricos, sin marcar aceptación manual ni V2 completo.
-- [ ] Commit/push, Pages y hashes; verificar nueva prueba online y entregar enlaces jugables.
+- [x] Commit/push, Pages y hashes: runtime4ab58d4, hashes coincidentes y seis recorridos online; enlaces jugables disponibles.
 
 Los valores numéricos de ramas y apoyo se documentarán en el informe como calibración de ensayo, no economía o balance final. No omitir una limitación para llamar completa a una entrega parcial.
 

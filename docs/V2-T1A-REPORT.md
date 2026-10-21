@@ -1,5 +1,7 @@
 # T1A — prueba jugable del modo infinito
 
+**Publicación comprobada:** runtime `4ab58d4`; GitHub Pages sirvió índice, compilado y roadmap coincidentes. Seis recorridos online (escritorio/táctil emulado × inicio por defecto/jefe/élite) aprobados, sin errores ni servicios externos. [Recibo](V2-T1A-PUBLICACION.json). Sigue pendiente la prueba de Iván y un teléfono físico.
+
 21/10/2026 · Roadmap 0.29 · A-039 / D-335 / EV-044.
 
 Implementada y verificada automáticamente como **prototipo parcial**, pendiente de aceptación de Iván. No equivale a completar B4 ni todo el diseño infinito. La publicación se comprueba mediante el recibo `V2-T1A-PUBLICACION.json` cuando esté disponible.
