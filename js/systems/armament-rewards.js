@@ -34,7 +34,8 @@ G.ArmamentRewards=(()=>{
   if(receipts.has(id))return{ok:false,outcome:'already-claimed',description:'Este premio ya fue entregado.'};
   if(pending)return pending.id===id?{ok:true,outcome:'choice',description:notice}:{ok:false,outcome:'busy',description:'Resuelve primero la elección de armamento.'};
   if(player.fieldWeapons.length===2)return improve(plan);
-  const models=Object.keys(G.FieldCatalog.models).filter(m=>['pistol','smg','shotgun'].includes(m));
+  const wanted=G.MapTrial?.expanded?['pistol',draw(plan)<.5?'smg':'shotgun','baton']:['pistol','smg','shotgun'];
+  const models=wanted.filter(m=>own(G.FieldCatalog.models,m));
   if(!models.length)return{ok:false,outcome:'blocked',description:'No hay modelos compatibles.'};
   pending={id,models,description:'Elige la segunda arma · la acción está detenida.',plan};notice=pending.description;
   G.Expedition?.awaitArmament?.();

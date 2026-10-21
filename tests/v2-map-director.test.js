@@ -60,6 +60,12 @@ test('infinite armament choice freezes time and crossing resolves reward and XP 
  waiting=true;player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;assert.equal(G.Expedition.useExit(),false);assert.equal(G.Expedition.state.sector,1);
  waiting=false;G.Expedition.resolveArmament();assert.equal(G.Expedition.useExit(),true);assert.equal(G.Expedition.state.sector,2);assert.ok(claims.length>=2);
 });
+test('expanded terminal phase freezes director and restores combat without changing build',()=>{
+ let resets=0;const{G,player}=setup(42,false,true,{prepare(G){G.MapTrial.infinite=true;G.MapTrial.expanded=true;G.WeaponTerminal={reset(){resets++},tick(){},draw(){}};}});
+ const build=player.tempStats;assert.equal(resets,1);assert.equal(G.Expedition.awaitTerminal(),true);const time=G.Expedition.state.v2.mapTime;
+ G.Expedition.update(30);assert.equal(G.Expedition.state.v2.mapTime,time);assert.equal(G.Expedition.state.phase,'terminal');assert.equal(player.tempStats,build);
+ assert.equal(G.Expedition.resolveTerminal(),true);G.Expedition.update(1);assert.equal(G.Expedition.state.v2.mapTime,time+1);assert.equal(G.Expedition.resolveTerminal(),false);
+});
 test('infinite recovery counts only the part before300s, while active durations expire',()=>{
  const {G,player}=setup(42,true,true,{prepare(G){G.MapTrial.infinite=true}});
  player.hp=10;player.training={recovery:5};player.update=dt=>{player.hp+=player.regenFlat*dt};G.FieldAbilities.sprint(player);

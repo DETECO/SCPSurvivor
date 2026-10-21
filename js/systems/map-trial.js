@@ -4,9 +4,11 @@ G.MapTrial=(()=>{
  const location=window.location;
  const loopback=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
  const publicDemo=location.protocol==='https:'&&location.hostname==='deteco.github.io'&&location.pathname.startsWith('/SCPSurvivor/');
- const requested=['mapa-v2','infinito-v2'].includes(q.get('prueba'))||(publicDemo&&!q.has('prueba'));
+ const requested=['mapa-v2','infinito-v2','combate-v2'].includes(q.get('prueba'))||(publicDemo&&!q.has('prueba'));
  const enabled=(loopback||publicDemo)&&requested&&!q.has('cuentas');
- const infinite=enabled&&(q.get('prueba')==='infinito-v2'||(publicDemo&&!q.has('prueba')&&q.get('premios')!=='grieta'));
+ const expanded=enabled&&(q.get('prueba')==='combate-v2'||(publicDemo&&!q.has('prueba')&&q.get('premios')!=='grieta'));
+ const infinite=enabled&&(expanded||q.get('prueba')==='infinito-v2'||(publicDemo&&!q.has('prueba')&&q.get('premios')!=='grieta'));
+ const practice=expanded&&['terminal','maximos','saturacion','melee'].includes(q.get('ensayo'))?q.get('ensayo'):null;
  const elitePractice=infinite&&q.get('premios')==='elite';
  const rewardBossPractice=enabled&&q.get('premios')==='jefe';
  const rewardRiftPractice=enabled&&!infinite&&q.get('premios')==='grieta';
@@ -84,7 +86,7 @@ G.MapTrial=(()=>{
    ctx.fillStyle='#d9efe3';ctx.font='9px system-ui';ctx.fillText('ALIADO',ally.x,ally.y-35);
    ctx.restore();
  }
- return{enabled,publicDemo,infinite,elitePractice,quick,chestPractice,rewardBossPractice,rewardRiftPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
+ return{enabled,publicDemo,infinite,expanded,practice,elitePractice,quick,chestPractice,rewardBossPractice,rewardRiftPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
   drawables:()=>enabled&&arrived?team.filter(a=>!a.hidden).map(a=>({x:a.x,y:a.y,draw:ctx=>drawAlly(ctx,a)})):[],
   get allies(){return team.map(a=>({x:a.x,y:a.y,...(infinite?{fleeing:!!a.fleeing,hidden:!!a.hidden}:{})}));},get alertTime(){return alertTime;}};
 })();

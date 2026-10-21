@@ -40,6 +40,7 @@ G.FieldCombat = (() => {
   }
   function sync(pl,copy) {
     const e=effective(pl,copy), cap=Math.max(1,e.capacity|0);
+    if(e.family==='melee'){copy.ammo=0;copy.reload=0;copy.reloadTime=0;copy._initialized=true;return e;}
     if (copy._initialized !== true) { if (!Number.isFinite(copy.ammo)) copy.ammo=cap; copy._initialized=true; }
     copy.ammo=Math.min(cap,Math.max(0,copy.ammo));
     if (copy.reload>0 && copy.reloadTime>0 && e.reloadTime!==copy.reloadTime) copy.reload=copy.reload/copy.reloadTime*e.reloadTime;
@@ -55,11 +56,12 @@ G.FieldCombat = (() => {
     const block=G.World?.projectileBlock?.(x,y,2);
     return block==='wall'||!!(block&&!block.destructible);
   }
-  function visible(pl,target) {
+  function visible(pl,target,strict=false) {
     const dx=target.x-pl.x,dy=target.y-pl.y,len=Math.hypot(dx,dy);
     if (!G.World?.projectileBlock) return true;
-    for (let d=8;d<len;d+=8) if (blocksLOS(pl,pl.x+dx*d/len,pl.y+dy*d/len)) return false;
-    return blocksLOS(pl,target.x,target.y)===false;
+    const blocked=(x,y)=>strict?!!G.World.projectileBlock(x,y,2):blocksLOS(pl,x,y);
+    for (let d=8;d<len;d+=8) if (blocked(pl.x+dx*d/len,pl.y+dy*d/len)) return false;
+    return blocked(target.x,target.y)===false;
   }
   function priority(pl,e) { return distance(pl,e)<=80?0:e.boss?1:2; }
   function targetFor(pl, copy=active()) {
@@ -67,7 +69,8 @@ G.FieldCombat = (() => {
     const oldTarget=infinite()?copy._aimTarget:aimTarget;
     const remember=target=>{if(infinite())copy._aimTarget=target;else aimTarget=target;return target;};
     const range=effective(pl,copy).range;
-    const candidates=(G.EnemyMgr?.all?.()||[]).filter(e=>e&&!e.dead&&distance(pl,e)<=range&&visible(pl,e));
+    const strict=G.FieldCatalog.models[copy.model]?.family==='melee';
+    const candidates=(G.EnemyMgr?.all?.()||[]).filter(e=>e&&!e.dead&&distance(pl,e)<=range&&visible(pl,e,strict));
     candidates.sort((a,b)=>priority(pl,a)-priority(pl,b)||distance(pl,a)-distance(pl,b));
     if (candidates.length) {
       const best=candidates[0];
@@ -78,6 +81,7 @@ G.FieldCombat = (() => {
       return remember(best);
     }
     remember(null);
+    if(effective(pl,copy).family==='melee')return null;
     const props=G.World?.propsInCircle?.(pl.x,pl.y,range)||[];
     const breakables=props.filter(p=>p&&p.destructible&&p.solid&&p.hp>0&&distance(pl,p)<=range&&visible(pl,p));
     if (!G.World?.propsInCircle&&G.World?.nearestBreakable) {
@@ -106,6 +110,17 @@ G.FieldCombat = (() => {
     if (G.Audio) G.Audio.sfx('shot',{kind:'projectile',type:'normal'});
     if (copy.ammo<=0) beginReload(pl,copy,e);
   }
+  function strike(pl,copy,e,target){
+    const aim=Math.atan2(target.y-pl.y,target.x-pl.x);pl.weaponAim=aim;pl.attackFace=.25;
+    const list=(G.EnemyMgr?.all?.()||[]).filter(enemy=>enemy&&!enemy.dead&&enemy.hp>0&&distance(pl,enemy)<=e.range&&visible(pl,enemy,true)&&
+      Math.abs(Math.atan2(Math.sin(Math.atan2(enemy.y-pl.y,enemy.x-pl.x)-aim),Math.cos(Math.atan2(enemy.y-pl.y,enemy.x-pl.x)-aim)))<=e.arc/2)
+      .sort((a,b)=>distance(pl,a)-distance(pl,b)).slice(0,e.maxTargets);
+    if(!list.length)return;
+    for(const enemy of list)enemy.hurt(e.damage,'#eee4e7',enemy.x-pl.x,enemy.y-pl.y,0);
+    copy.shotWait=e.interval;copy.flash=.09;shots++;
+    G.FX?.slash?.(pl.x,pl.y,aim,e.range,e.arc,'#eee4e7',{melee:'impact',pal:'normal'});
+    G.Audio?.sfx('shot',{kind:'melee',type:'normal'});
+  }
   function tick(dt,pl,fireAllowed) {
     dt=Math.max(0,dt||0); shotWait=Math.max(0,shotWait-dt); switchRemaining=Math.max(0,switchRemaining-dt);
     if (!pl) return; currentPlayer=pl; pl.fieldWeapons=weapons;
@@ -118,6 +133,7 @@ G.FieldCombat = (() => {
       if(pl.dead||!(pl.hp>0)||!fireAllowed)return;
       for(const copy of weapons){
         const e=effective(pl,copy);if(copy.reload>0||copy.shotWait>0)continue;
+        if(e.family==='melee'){const target=targetFor(pl,copy);if(target)strike(pl,copy,e,target);continue;}
         if(copy.ammo<=0){beginReload(pl,copy,e);continue;}
         const target=targetFor(pl,copy);if(target)fire(pl,copy,e,target);
       }
@@ -149,8 +165,15 @@ G.FieldCombat = (() => {
   }
   function acquire(model,id){
     if(!infinite()||!currentPlayer||currentPlayer.dead||!(currentPlayer.hp>0)||weapons.length!==1||
-      typeof id!=='string'||!id.trim()||weapons.some(w=>w.id===id)||!Object.prototype.hasOwnProperty.call(G.FieldCatalog.models,model))return false;
+      typeof id!=='string'||!id.trim()||weapons.some(w=>w.id===id)||!Object.prototype.hasOwnProperty.call(G.FieldCatalog.models,model)||!G.FieldCatalog.validateMods(model,[]))return false;
     const next=cloneLoadout([{model,id,mods:[]}])[0];sync(currentPlayer,next);weapons.push(next);currentPlayer.fieldWeapons=weapons;return true;
+  }
+  function replace(id,model,newId){
+    const index=weapons.findIndex(w=>w.id===id);
+    if(G.MapTrial?.expanded!==true||G.Expedition?.state?.phase!=='terminal'||!currentPlayer||currentPlayer.dead||!(currentPlayer.hp>0)||
+      currentPlayer.fieldWeapons!==weapons||index<0||typeof newId!=='string'||!newId.trim()||weapons.some(w=>w.id===newId)||
+      !G.FieldCatalog.validateMods(model,[]))return false;
+    const fresh=cloneLoadout([{id:newId,model,mods:[]}])[0];sync(currentPlayer,fresh);weapons[index]=fresh;return true;
   }
   function upgrade(id,branch) { const w=weapons.find(x=>x.id===id);if(infinite())return !!w&&G.InfiniteProgression.upgrade(w,branch); if(!w||w.level>=5)return false; w.level++; return true; }
   function clearTemporary(pl) { currentPlayer=pl||currentPlayer; for(const w of weapons){w.level=1;if(infinite())w.branches=Object.fromEntries(G.InfiniteProgression.branches.map(k=>[k,0]));}if(infinite()&&pl)pl.infiniteTactical=null; if(pl){pl.tempStats={}; if(G.FieldStats?.apply) G.FieldStats.apply(pl);} }
@@ -181,5 +204,5 @@ G.FieldCombat = (() => {
     weapons=next;currentPlayer=pl;activeIndex=data.activeIndex;shotWait=data.shotWait;switchRemaining=data.switchRemaining;shots=data.shots;aimTarget=null;
     pl.fieldWeapons=weapons;for(const w of weapons)sync(pl,w);
   }
-  return {reset,tick,switchTo,configureMods,acquire,upgrade,clearTemporary,targetFor,drawWeapon,sprint,getstate,exportData,restoreData,getweapons:()=>weapons,get state(){return getstate();}};
+  return {reset,tick,switchTo,configureMods,acquire,replace,upgrade,clearTemporary,targetFor,drawWeapon,sprint,getstate,exportData,restoreData,getweapons:()=>weapons,get state(){return getstate();}};
 })();

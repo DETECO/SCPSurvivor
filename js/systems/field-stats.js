@@ -90,6 +90,11 @@ G.FieldStats = (() => {
       out.interval=Math.max(d.interval*.25,out.interval);
       out.reloadTime=Math.max(d.reloadTime*.25,out.reloadTime);
     }
+    if(d.family==='melee'){
+      const b=copy.branches||{},amount=G.InfiniteProgression.amount;
+      out.family='melee';out.arc=d.arc+amount(b.handling||0,4,10)*Math.PI/180;
+      out.maxTargets=d.maxTargets+(b.specialization===6?1:0);out.capacity=0;out.reloadTime=0;out.pierce=0;
+    }
     return out;
   }
   function capFor(key, pl) {

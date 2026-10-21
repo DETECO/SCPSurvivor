@@ -1,7 +1,7 @@
 /* Local test loadout editor. Selections are prototypes for this run only. */
 G.FieldLoadout = (() => {
   const el = id => document.getElementById(id);
-  const weapons = ['pistol', 'smg', 'shotgun'];
+  const weapons = ['pistol', 'smg', 'shotgun', ...(G.MapTrial?.expanded?['baton']:[])];
   let soldierId = 'guard';
   let models = ['pistol', 'smg'];
   let mods = [[], []];
@@ -57,9 +57,9 @@ G.FieldLoadout = (() => {
       const item = document.createElement('li');
       const details = document.createElement('details');
       const summary = document.createElement('summary');
-      summary.textContent = `${i + 1}. ${w.name}: ${w.damage.toFixed(1)} daño · ${w.interval.toFixed(2)} s entre disparos · ${w.capacity} disparos`;
+      summary.textContent = `${i + 1}. ${w.name}: ${w.damage.toFixed(1)} daño · ${w.interval.toFixed(2)} s entre disparos · ${w.family==='melee'?'cuerpo a cuerpo':w.capacity+' disparos'}`;
       const advanced = document.createElement('small'); advanced.className = 'loadout-weapon-details';
-      advanced.textContent = `Recarga ${w.reloadTime.toFixed(2)} s · alcance ${w.range} · velocidad ${w.speed} · dispersión ${w.spread.toFixed(1)}° · perdigones ${w.pellets} · perforación ${w.pierce}`;
+      advanced.textContent = w.family==='melee'?`Alcance ${Math.round(w.range)} · arco ${Math.round(w.arc*180/Math.PI)}° · máximo ${w.maxTargets} blancos · sin munición`:`Recarga ${w.reloadTime.toFixed(2)} s · alcance ${w.range} · velocidad ${w.speed} · dispersión ${w.spread.toFixed(1)}° · perdigones ${w.pellets} · perforación ${w.pierce}`;
       details.append(summary, advanced); item.append(details); el('loadout-preview').append(item);
     }
     el('loadout-preview-summary').textContent = G.MapTrial?.infinite ? `Vida ${stats.maxHp} · empiezas con una sola arma. La segunda se obtiene en un cofre de armamento; ambas disparan automáticamente.` : `Vida ${stats.maxHp} · velocidad 165 · mejoras permanentes 0/10.`;

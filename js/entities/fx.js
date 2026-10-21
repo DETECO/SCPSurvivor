@@ -13,6 +13,35 @@ G.FX = (() => {
   const q = () => G.Settings.fx;
   let parts = [], sprites = [], texts = [], rings = [], slashes = [], beams = [];
 
+  function formatExpandedDamage(value) {
+    let number, raw;
+    if (typeof value === 'number') {
+      number = value;
+    } else if (typeof value === 'string' && /^[+-]?(?:(?:\d+(?:\.\d*)?)|(?:\.\d+))(?:e[+-]?\d+)?$/i.test(value.trim())) {
+      raw = value.trim();
+      number = Number(raw);
+    } else return null;
+    if (!Number.isFinite(number)) return null;
+
+    const explicitPlus = typeof value === 'string' && raw.startsWith('+');
+    const units = [{ scale: 1e12, suffix: 'T' }, { scale: 1e9, suffix: 'G' },
+      { scale: 1e6, suffix: 'M' }, { scale: 1e3, suffix: 'k' }, { scale: 1, suffix: '' }];
+    const roundedText = n => {
+      const rounded = Math.round(n * 10 + Number.EPSILON) / 10;
+      return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1).replace(/\.0$/, '');
+    };
+    const magnitude = Math.abs(number);
+    let unitIndex = units.findIndex(unit => magnitude >= unit.scale);
+    if (unitIndex < 0) unitIndex = units.length - 1;
+    let rounded = Math.round((magnitude / units[unitIndex].scale) * 10 + Number.EPSILON) / 10;
+    if (rounded >= 1000 && unitIndex > 0) {
+      unitIndex--;
+      rounded = Math.round((magnitude / units[unitIndex].scale) * 10 + Number.EPSILON) / 10;
+    }
+    const sign = rounded === 0 ? (explicitPlus ? '+' : '') : number < 0 ? '-' : explicitPlus ? '+' : '';
+    return sign + roundedText(rounded) + units[unitIndex].suffix;
+  }
+
   function clear() { parts = []; sprites = []; texts = []; rings = []; slashes = []; beams = []; }
 
   const snap = v => Math.round(v / PX) * PX;
@@ -77,9 +106,16 @@ G.FX = (() => {
     // Con cientos de golpes por segundo no se leen igual: tope de 70 (los
     // grandes, como "¡Muy eficaz!" o los de jefe, siempre entran).
     // Ajustes → "Números de daño": los números se ocultan; los avisos de texto no.
-    if ((typeof value === 'number' || /^-\d/.test(value)) && !G.Settings.get('dmgNumbers')) return;
+    const expanded = G.MapTrial?.expanded === true;
+    if(expanded&&((typeof value==='number'&&!Number.isFinite(value))||
+      (typeof value==='string'&&/^[+-]?(?:(?:\d+(?:\.\d*)?)|(?:\.\d+))(?:e[+-]?\d+)?$/i.test(value.trim())&&!Number.isFinite(Number(value)))))return;
+    const formatted = expanded ? formatExpandedDamage(value) : null;
+    if (expanded ? formatted !== null && !G.Settings.get('dmgNumbers')
+      : (typeof value === 'number' || /^-\d/.test(value)) && !G.Settings.get('dmgNumbers')) return;
     if (texts.length >= CAP_TEXTS[q()]) { if (!big) return; texts.shift(); }
-    texts.push({ x: x + G.U.rand(-6, 6), y, vy: -46, t: 0, life: big ? 0.95 : 0.62, s: value, color, big });
+    const compact = expanded && formatted !== null;
+    texts.push({ x: x + G.U.rand(-6, 6), y, vy: compact ? -36 : -46, t: 0,
+      life: compact ? 0.42 : big ? 0.95 : 0.62, s: compact ? formatted : value, color, big, compact });
   }
 
   /** Anillo de onda (puntos de píxel). */
@@ -254,10 +290,11 @@ G.FX = (() => {
       const k = 1 - t.t / t.life;
       ctx.save();
       ctx.globalAlpha = Math.min(1, k * 2.2);
-      ctx.font = (t.big ? '700 20px' : '700 13px') + ' Pixelify,"Segoe UI",sans-serif';
+      const compactSize = Math.max(10, Math.min(14, PX * (t.big ? 7 : 6)));
+      ctx.font = (t.compact ? `700 ${compactSize}px` : t.big ? '700 20px' : '700 13px') + ' Pixelify,"Segoe UI",sans-serif';
       ctx.textAlign = 'center';
-      ctx.lineWidth = 3;
-      ctx.strokeStyle = 'rgba(0,0,0,.75)';
+      ctx.lineWidth = t.compact ? Math.max(3, PX * 1.5) : 3;
+      ctx.strokeStyle = t.compact ? 'rgba(0,0,0,.95)' : 'rgba(0,0,0,.75)';
       ctx.strokeText(t.s, t.x, t.y);
       ctx.fillStyle = t.color;
       ctx.fillText(t.s, t.x, t.y);

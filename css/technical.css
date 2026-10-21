@@ -83,3 +83,17 @@ body[data-technical-state="ui"] .footer,body[data-technical-state="paused"] .foo
 #rift-test-note{border-left:3px solid #f3747b;padding-left:10px}
 @media(max-width:540px){.rift-locator,.rift-alert{left:8px;right:8px;font-size:12px}.rift-locator{top:118px}.rift-alert{top:184px}}
 .account-panel{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}.account-panel h2{font-size:18px}.account-panel label{display:block;font-size:13px;margin-top:8px}.account-panel input{display:block;width:100%;box-sizing:border-box;min-height:44px;margin-top:4px;padding:8px;background:#10211c;color:var(--ink);border:1px solid var(--edge);font:inherit}.account-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.account-actions button{font-size:12px;padding:8px;min-height:48px}.account-panel p{font-size:12px}#account-notice{color:#ffb49e}#account-sync-overlay{z-index:30}button:disabled{opacity:.55;cursor:default}
+
+/* T1B/C: functional information; final approved art remains separate. */
+#weapon-terminal,#armament-choice{z-index:6}#weapon-terminal .panel,#armament-choice .panel{max-height:calc(100% - 24px);overflow:auto}
+#weapon-terminal select{display:block;width:100%;min-height:46px;margin:8px 0 16px;background:#181519;color:#fff3f3;border:1px solid #b1747d;font:inherit;padding:8px}
+#weapon-terminal label{font-size:13px}#expanded-test-note{border-left:3px solid #e54a59;padding-left:10px;color:#f0dfe3}
+#radar-wrap{position:absolute;z-index:2;right:10px;top:150px;width:112px;background:#141116db;border:1px solid #7e515a;pointer-events:none;text-align:center}
+#field-radar{display:block;width:112px;height:112px}#radar-wrap small{display:block;font:9px monospace;color:#f0dfe3;padding-bottom:4px}
+#terminal-prompt{position:absolute;bottom:170px;left:10px;right:10px;max-width:620px;margin:auto;border:1px solid #ed6472;background:#191217ed;color:#fff0f3;padding:9px;font-size:12px;pointer-events:none}
+#tactical-status{position:absolute;bottom:155px;left:12px;padding:5px 8px;background:#23141ced;border-left:3px solid #ed6472;color:#fff0f3;font-size:11px;pointer-events:none}
+#expanded-build{margin:15px 0;text-align:left}#expanded-build summary{cursor:pointer;padding:8px;border:1px solid #796166;font-size:13px}#expanded-build p{font-size:12px}
+body[data-expanded-trial] .field-controls .field-weapon{width:124px;height:74px;border-color:#a87a82;background:#21191fe8}body[data-expanded-trial] .field-weapon small{font-size:10px;line-height:1.4}body[data-expanded-trial] .field-weapon.active{border-color:#f0c8d0;box-shadow:0 0 0 1px #b9324666 inset}
+body[data-expanded-trial] .chest-status{bottom:100px}body[data-expanded-trial] #btn-terminal{border-color:#ed6472;font-size:11px;padding:6px;max-width:94px}
+@media(max-width:540px){#radar-wrap{top:168px;right:8px}body[data-expanded-trial] .field-controls .field-weapon{width:94px}body[data-expanded-trial] .field-weapon small{font-size:9px}#terminal-prompt{bottom:172px}#weapon-terminal .panel{padding:18px}}
+@media(max-height:520px){#radar-wrap{top:128px;transform:scale(.75);transform-origin:top right}body[data-expanded-trial] .field-controls .field-weapon{height:62px}body[data-expanded-trial] .chest-status{bottom:80px}#terminal-prompt{bottom:130px}}

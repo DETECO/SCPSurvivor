@@ -34,3 +34,9 @@ test('disabled and dead players cannot obtain rewards; snapshots do not mutate p
  R.state.pending.models.length=0;assert.equal(R.state.pending.models.length,3);p.hp=0;assert.equal(R.choose('pistol'),false);
  G.MapTrial.infinite=false;assert.equal(R.offer({id:'z',kind:'boss',seed:1,player:p}),null);assert.equal(R.claim('x',p).ok,false);
 });
+test('expanded armament offers three stable choices including melee, legacy keeps ballistics',()=>{
+ const{G,p}=setup();G.MapTrial.expanded=true;G.FieldCatalog.models.baton={name:'Porra de ensayo'};
+ const R=G.ArmamentRewards;R.offer({id:'bc',kind:'boss',seed:42,player:p});R.claim('bc',p);
+ assert.equal(R.state.pending.models.length,3);assert.ok(R.state.pending.models.includes('baton'));assert.ok(R.state.pending.models.includes('pistol'));
+ assert.equal(R.choose('baton'),true);assert.equal(p.fieldWeapons[1].model,'baton');
+});

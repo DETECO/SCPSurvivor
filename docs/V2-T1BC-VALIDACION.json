@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "version": "V2-INFINITO-02-T1BC",
+  "checkedAt": "2026-10-21T19:42:57.962753+00:00",
+  "build": {
+    "source": {
+      "bundleSha256": "0b485d511363a2f42491a6cc1b94630c77dc5d7d645e7c7f0c3e1abfb8aabcfb",
+      "indexSha256": "61e1af0c4776b6f8ed110b4bb759175ddac44b231359e7b209b305a02cd6e12e",
+      "scripts": 94,
+      "build": "passed",
+      "check": "passed"
+    },
+    "publication": {
+      "bundleSha256": "fb6b3aa6381b96857cd5f8082b83dd4657a0c188ecc34fd5cfc4a1999d11fa5e",
+      "indexSha256": "039858418818e860f5119daf8602dfbd559be01cd71a56560d3aeae243996dfe",
+      "scripts": 94,
+      "build": "passed",
+      "check": "passed"
+    }
+  },
+  "node": {
+    "source": {
+      "tests": 208,
+      "pass": 207,
+      "fail": 0,
+      "skipped": 1,
+      "skipReasons": [
+        "Real P05 emulators absent"
+      ]
+    },
+    "publication": {
+      "tests": 208,
+      "pass": 206,
+      "fail": 0,
+      "skipped": 2,
+      "skipReasons": [
+        "Real P05 emulators absent",
+        "Functions handler dependencies absent in publication clone"
+      ]
+    }
+  },
+  "browser": {
+    "source": {
+      "status": "PASS",
+      "scenarios": 4,
+      "modesPerScenario": 5,
+      "resultsSha256": "8d2ddaa2d61aea2249c71a34968c1949c0d2653f9be9b168d64a44d84e5ea7fe"
+    },
+    "publication": {
+      "status": "PASS",
+      "scenarios": 4,
+      "modesPerScenario": 5,
+      "resultsSha256": "9711f621e690cf899924646af7dbf9afe804ab99de597fe61dc9748413bb0ba6"
+    }
+  },
+  "regression": {
+    "source": {
+      "v2-infinite": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": 3,
+        "resultsSha256": "8d2e6badcd79686cadf7edb87bd8e1a3d63cbfb664e061341094b49879bc2903"
+      },
+      "v2-b3": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": 3,
+        "resultsSha256": "304ed27809101c8b35e9624daca944d99eafb44dfc559462f43b5f583cc5e5fc"
+      }
+    },
+    "publication": {
+      "v2-infinite": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": 3,
+        "resultsSha256": "9945737722826d2114fb81661c463f7893b7dd653d4ed09c2aeb0a4b6f39512a"
+      },
+      "v2-b3": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": 3,
+        "resultsSha256": "e5df987e69c7c07fbc1e07dbda5b1c3b198130b6719d0e5f612a419d8f2f496b"
+      }
+    }
+  },
+  "realAccountsEnabled": false,
+  "billingChanges": false,
+  "manualAcceptance": "pending",
+  "physicalPhoneTested": false,
+  "p05WorkerTests": "excluded unpublished backend preparation, no changes deployed",
+  "method": "Disclosed practice fixtures plus controlled QA position/invulnerability/time/targets. Real DOM choices and real melee damage, not balance/natural progression/performance/physical phone acceptance."
+}

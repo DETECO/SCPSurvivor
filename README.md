@@ -1,5 +1,8 @@
 # SCP Survivor
 
+**Entrega vigente 0.30 · T1B + T1C, 21/10/2026 (A-040/D-336/EV-045):** T1B + T1C implementados como ensayo: terminal voluntario con reemplazo de una copia y pausa completa; ramas/cartas revisadas por familia; cuarta arma, porra de corto alcance sin munición; HUD de ramas/recargas y consulta de equipo; daño compacto y radar circular fijo sin revelar cofres desconocidos. Cuatro prácticas explícitas: terminal, máximos, saturación y melee. Sin cuentas/guardado/economía real. Arte y balance provisionales; fusión, grieta separada, poderes y ultimate pendientes. [Práctica de terminal](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=terminal) · [Mapa completo](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2) · [Guía](docs/PRUEBA_T1BC.md) · [Resultados](docs/V2-T1BC-REPORT.md). Iván informó que T1A funciona bien: aceptación general de esa demo, sin extrapolar a todas las pruebas/dispositivos ni a esta entrega nueva. La entrada pública por defecto abre T1BC; se conservan accesos anteriores. Spark sin facturación; servicios reales desactivados.
+
+
 **T1A · 21/10/2026 · Roadmap0.29:** nueva prueba jugable parcial con una arma inicial, segunda por cofre de jefe/élite y dos disparando automáticamente. [Élite de práctica](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2&premios=elite) · [Mapa completo](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2) · [Guía](docs/PRUEBA_V2_INFINITO_01.md) · [Resultados y límites](docs/V2-T1A-REPORT.md). Ramas y cartas usan valores de ensayo; aceptación manual pendiente. La entrada pública sin consulta abreT1A; B3 se conserva explícitamente con `?prueba=mapa-v2`. No activa cuentas, guardado ni facturación.
 
 

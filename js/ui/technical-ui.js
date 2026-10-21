@@ -10,7 +10,7 @@ G.TechnicalUI = (() => {
     const selected = options();
     if (!selected) return;
     if(G.MapTrial?.enabled)selected.seed=1337;
-    G.Game.startTechnical(selected);
+    G.Game.startTechnical(G.ExpandedPractice.prepare(selected));
   }
   function ability() {
     const s = G.Expedition.state;
@@ -160,10 +160,12 @@ G.TechnicalUI = (() => {
       if (key === 'q') { event.preventDefault(); switchWeapon(0); }
       else if (key === 'e') { event.preventDefault(); switchWeapon(1); }
     });
+    G.ExpandedUI.init();
     el('boot').hidden = true; state('ui');
   }
   function state(value) {
     document.body.dataset.technicalState = value;
+    G.ExpandedUI.state(value);
     el('technical-ready').hidden = value !== 'ui';
     el('technical-pause').hidden = value !== 'paused';
     for (const id of ['scene-hud', 'scene-footer', 'field-controls', 'field-status']) el(id).hidden = value !== 'playing';
@@ -286,6 +288,7 @@ G.TechnicalUI = (() => {
         armamentHost.append(button);
       }
     } else if(!showArmament) armamentHost.dataset.reward='';
+    G.ExpandedUI.tick(player,s,w);
     el('field-result').hidden = s.phase !== 'finished';
     if (s.phase === 'finished') {
       const r = s.result;

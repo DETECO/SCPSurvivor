@@ -1,10 +1,10 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-21).** T1A implementada como prueba parcial: una arma inicial, segunda por cofre de jefe o élite de práctica, hasta dos balísticas simultáneas con recursos propios. Cuatro ramas5+extra, cartas arma/general/libre y apoyo táctico temporal con valores de ensayo. Premios/XP resueltos antes de puerta, aliados sinXP/sin remate y congelación de recuperación a300s. Sin cuentas/guardado. Fusión, poderes, ultimate, terminales, otras familias, radar y economía siguen pendientes; no equivale aB4 completo. Aceptación de Iván pendiente.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-21).** T1B + T1C implementados como ensayo: terminal voluntario con reemplazo de una copia y pausa completa; ramas/cartas revisadas por familia; cuarta arma, porra de corto alcance sin munición; HUD de ramas/recargas y consulta de equipo; daño compacto y radar circular fijo sin revelar cofres desconocidos. Cuatro prácticas explícitas: terminal, máximos, saturación y melee. Sin cuentas/guardado/economía real. Arte y balance provisionales; fusión, grieta separada, poderes y ultimate pendientes.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
-**Demo disponible:** [guía](docs/PRUEBA_V2_INFINITO_01.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2&premios=elite) · [jugar](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2). Sin cuentas ni guardado; aceptación de Iván pendiente.
+**Demo disponible:** [guía](docs/PRUEBA_T1BC.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=terminal) · [jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2). Sin cuentas ni guardado; aceptación de Iván pendiente.
 
 **Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
 
@@ -41,7 +41,7 @@
 | RC-12 | Interfaz/audio, regresión y aceptación V2 — pendiente de implementar | RC-06, RC-07, RC-08, RC-09, RC-10, RC-11, RC-13, RC-14 |
 | RC-15 | Fusión en sala y adquisición posterior de arma — pendiente de implementar | RC-07, I-02 |
 | RC-16 | Monedas y diez compras independientes por soldado — pendiente de implementar | RC-01, I-03 |
-| RC-17 | Radar e indicadores funcionales — pendiente de implementar | RC-05 |
+| RC-17 | Radar e indicadores funcionales — prototipo; aceptación pendiente | RC-05 |
 | RC-18 | Procedural modular con rutas reproducibles — pendiente de implementar | RC-03 |
 
 **P05 aceptado por el propietario para avanzar; servicios reales diferidos. P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.
@@ -58,7 +58,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-Versión **0.29**, 2026-10-21. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+Versión **0.30**, 2026-10-21. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
 
 ## Avance basado en evidencia
 

@@ -83,7 +83,9 @@ G.FieldUpgrades = (() => {
         const id=copy.id,model=copy.model;
         out.push({key:`weapon:${id}:${branch}`,category:'weapon',weaponId:id,branch,w:8,
           title:`${G.FieldCatalog.models[model].name} · ${branchNames[branch]} ${rank===5?'extra':rank+1+'/5'}`,
-          desc:branchEffects[branch]+' · Valores de ensayo; intervalo/recarga mínimos25% de base.',
+          desc:(G.MapTrial?.expanded&&G.FieldCatalog.models[model].family==='melee'
+            ? ({...branchEffects,handling:'+4° de arco por rango; extra +10°',specialization:'+3% alcance por rango; extra +10% y +1 blanco'})[branch]+' · Ensayo cuerpo a cuerpo, sin munición.'
+            : branchEffects[branch]+' · Valores de ensayo; intervalo/recarga mínimos25% de base.'),
           apply(p){const target=(p.fieldWeapons||[]).find(c=>c.id===id);
             if(!target||target.model!==model||!P.ensure(target)||target.branches[branch]!==rank)return false;
             const ok=P.upgrade(target,branch);if(ok)G.FieldStats.apply(p);return ok;}});

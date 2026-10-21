@@ -10,7 +10,7 @@ G.Expedition = (() => {
   let dimensional=false,trialPreparation=false;
   let mapTime=0,doorOpen=false,bossSpawned=false,bossDefeated=false,spawnClosed=false;
   let riftBoss=null,riftBossDefeated=false;
-  let elite=null,eliteDefeated=false,armamentResume='combat';
+  let elite=null,eliteDefeated=false,armamentResume='combat',terminalResume='combat';
   const v2=()=>!!G.MapTrial?.enabled;
   const exit={x:0,y:0,r:72};
   function random(seed){let n=seed>>>0;const next=()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/4294967296;};next.state=()=>n;return next;}
@@ -42,6 +42,7 @@ G.Expedition = (() => {
       mapTime=sector===1&&G.MapTrial.quick?(G.MapTrial.startTime??270):0;
       doorOpen=false;bossSpawned=false;bossDefeated=false;spawnClosed=false;spawnClock=0;sectorWaves=0;
       G.MapTrial.reset?.(geometry);
+      if(G.MapTrial.expanded)G.WeaponTerminal?.reset(geometry,{sector,seed:mapSeed,player:pl});
       G.ExplorationChests?.reset(geometry,{sector,seed:mapSeed,startTime:mapTime,forcePreview:sector===1&&!!G.MapTrial.chestPractice});
       if(sector===1&&G.MapTrial.rewardBossPractice){
         for(const [dx,dy] of [[-200,0],[200,0],[0,-200],[0,200],[-144,-144],[144,144]]){
@@ -72,7 +73,7 @@ G.Expedition = (() => {
     if(v2()){G.ExplorationChests?.startRun();G.EventRewards?.startRun();}
     if(G.MapTrial?.infinite){G.ArmamentRewards?.startRun();pl.infiniteTactical=null;}
     G.FieldStats.apply(pl);G.FieldAbilities.reset(pl);G.FieldCombat.reset(pl,options.loadout);map();
-    if(v2()){beginMapTrial();if(sector===1&&G.MapTrial.elitePractice)spawnElite();}
+    if(v2()){beginMapTrial();if(sector===1&&G.MapTrial.elitePractice)spawnElite();G.ExpandedPractice?.apply(pl);if(G.MapTrial.expanded&&G.MapTrial.practice==='melee')spawnPracticeTarget();}
     else if(G.InventoryTrial?.directTest){
       trialPreparation=true;phase='preparation';prep=20;objective='neutralize';spawned=0;waveTime=0;quota=12;waveKills=pl.kills;
     }else if(G.DimensionalRifts?.directTest){
@@ -143,6 +144,17 @@ G.Expedition = (() => {
     G.Spawner.say('PRÁCTICA · vence a la élite para adelantar tu segunda arma',5,true);
   }
   function eliteVictory(){if(elite?.dead&&!eliteDefeated){eliteDefeated=true;offerTrialReward('elite',elite);}}
+  function spawnPracticeTarget(){
+    const p=[[56,0],[-56,0],[0,56],[0,-56]].map(([dx,dy])=>({x:pl.x+dx,y:pl.y+dy})).find(p=>G.World.isFree(p.x,p.y,18)&&G.Path.reachable(p.x,p.y,pl));
+    if(!p)return;const sc=scale(1);const e=G.EnemyMgr.add(new G.Enemy(G.Content.pursuer,p.x,p.y,{...sc,hp:sc.hp*8}));e.practiceTarget=true;
+  }
+  function awaitTerminal(){
+    if(!G.MapTrial?.expanded||!pl||pl.dead||!(pl.hp>0)||!['combat','boss'].includes(phase)||pending||G.ArmamentRewards?.state.pending)return false;
+    terminalResume=phase;phase='terminal';G.Touch.reset();G.Input.reset();return true;
+  }
+  function resolveTerminal(){
+    if(phase!=='terminal')return false;phase=terminalResume;G.Touch.reset();G.Input.reset();processXp();return true;
+  }
   function awaitArmament(){
     if(!G.MapTrial?.infinite||!['combat','boss'].includes(phase))return false;
     armamentResume=phase;phase='armament';G.Touch.reset();G.Input.reset();return true;
@@ -288,7 +300,8 @@ G.Expedition = (() => {
   }
   let lastDt=0;
   function updateMapTrial(dt){
-    if(phase==='armament')return;
+    if(phase==='armament'||phase==='terminal')return;
+    if(G.MapTrial.expanded)G.WeaponTerminal?.tick(dt,pl);
     trialVictory();trialRiftVictory();eliteVictory();
     if(phase==='levelup')return;
     promptUpgrade();if(phase==='levelup')return;
@@ -358,7 +371,7 @@ G.Expedition = (() => {
     }
   }
   function draw(ctx){
-    if(v2()){G.ExplorationChests?.draw(ctx);if(G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.draw(ctx);G.MapTrial.draw?.(ctx,snapshot());return;}
+    if(v2()){G.ExplorationChests?.draw(ctx);if(G.MapTrial.expanded)G.WeaponTerminal?.draw(ctx);if(G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.draw(ctx);G.MapTrial.draw?.(ctx,snapshot());return;}
     G.DimensionalRifts?.draw(ctx);
     if(!['exploration','extracting','boss','escaping'].includes(phase))return;
     ctx.save();ctx.fillStyle='#5ac6a233';ctx.strokeStyle='#99ffd6';ctx.lineWidth=3;ctx.beginPath();ctx.arc(exit.x,exit.y,42,0,Math.PI*2);ctx.fill();ctx.stroke();
@@ -383,5 +396,5 @@ G.Expedition = (() => {
     else if(phase==='boss')boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,geometry.bossSpawn.x,geometry.bossSpawn.y,scale(1),true));
     G.Touch.reset();G.Input.reset();
   }
-  return{start,update,choose,ready,useExit,useRift,summon,finish,draw,captureState,restoreState,awaitArmament,resolveArmament,get state(){return snapshot();}};
+  return{start,update,choose,ready,useExit,useRift,summon,finish,draw,captureState,restoreState,awaitArmament,resolveArmament,awaitTerminal,resolveTerminal,get state(){return snapshot();}};
 })();
