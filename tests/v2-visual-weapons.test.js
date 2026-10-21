@@ -10,12 +10,12 @@ vm.createContext(sandbox);
 vm.runInContext(fs.readFileSync(path.join(root, 'js/ui/trial-weapon-art.js'), 'utf8'), sandbox);
 
 function contextSpy() {
-  const calls = { rects: [], arcs: [], saves: 0, restores: 0, depth: 0, maxDepth: 0 };
+  const calls = { rects: [], arcs: [], anchors: [], saves: 0, restores: 0, depth: 0, maxDepth: 0 };
   const ctx = {
     fillStyle: '#000', globalAlpha: 1,
     save() { calls.saves++; calls.depth++; calls.maxDepth = Math.max(calls.maxDepth, calls.depth); },
     restore() { calls.restores++; calls.depth--; },
-    translate() {}, rotate() {}, scale() {},
+    translate(x,y) { calls.anchors.push({x,y}); }, rotate() {}, scale() {},
     fillRect(x, y, w, h) { calls.rects.push({ x, y, w, h, color: this.fillStyle }); },
     beginPath() {}, arc(x, y, radius) { calls.arcs.push({ x, y, radius }); }, fill() {}
   };
@@ -34,6 +34,7 @@ const render = model => {
 
 // The four silhouettes use distinct pixel footprints.
 const models = ['pistol', 'smg', 'shotgun', 'baton'].map(model => render(model));
+for(const calls of models)assert.ok(calls.anchors[0].y>=player.y-24&&calls.anchors[0].y<=player.y-12,'weapon held at the new sprite hands, above boots');
 const footprints = models.map(c => c.rects.map(r => `${r.x},${r.y},${r.w},${r.h}`).join('|'));
 assert.equal(new Set(footprints).size, 4, 'each model has a recognizable silhouette');
 

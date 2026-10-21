@@ -23,7 +23,7 @@ Diez SVG nuevos en `assets/actors-demo-v1/`: Idle y Walk por actor, ocho filas d
 
 `tools/build-trial-art.py` reproduce las hojas y su manifiesto de hashes. Se adaptaron los recursos SVG nativos mediante código; no se usó generación raster ni paquetes externos. Los diez SVG originales en `assets/actors/` se conservan byte por byte. Los recursos nuevos son originales de esta pasada; no copian criaturas concretas ni usan arte externo atribuido incorrectamente. Se conservan licencias/créditos del proyecto.
 
-Pistola, subfusil, escopeta y porra reciben dibujo distinguible en manos. Se muestran ambas copias equipadas, sin cambiar objetivos, daño, cadencia o recursos. La porra no usa fogonazo de pistola. No son accesorios equipables.
+Pistola, subfusil, escopeta y porra reciben dibujo distinguible, con anclaje ajustado a las manos de los nuevos actores; el origen físico de proyectiles y ataques se conserva. Se muestran ambas copias equipadas, sin cambiar objetivos, daño, cadencia o recursos. La porra no usa fogonazo de pistola. No son accesorios equipables.
 
 Solo T1BC activa esta capa. T1A/B3 y cuentas conservan su presentación anterior; `graficos=clasicos` permite comparar en T1BC. Si una hoja nueva no carga, se intenta el archivo original con sus filas/fotogramas originales. El menú identifica el arte como ensayo y conserva «Desarrollado por Ivan Vivanco».
 

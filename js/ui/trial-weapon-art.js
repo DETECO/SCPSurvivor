@@ -88,7 +88,7 @@
 
       const side = i === 0 ? 5 : -3.5;
       const x = pl.x + ca * 7 - sa * side;
-      const y = pl.y - 9 + sa * 7 + ca * side;
+      const y = pl.y - 20 + sa * 7 + ca * side;
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(aim);
