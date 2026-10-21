@@ -1,5 +1,10 @@
 # Plan de desarrollo vigente — SCP Survivor infinito
 
+**Entrega vigente 0.29 · T1A, 21/10/2026 (A-039/D-335/EV-044):** T1A implementada como prueba parcial: una arma inicial, segunda por cofre de jefe o élite de práctica, hasta dos balísticas simultáneas con recursos propios. Cuatro ramas5+extra, cartas arma/general/libre y apoyo táctico temporal con valores de ensayo. Premios/XP resueltos antes de puerta, aliados sinXP/sin remate y congelación de recuperación a300s. Sin cuentas/guardado. Fusión, poderes, ultimate, terminales, otras familias, radar y economía siguen pendientes; no equivale aB4 completo. Aceptación de Iván pendiente. [Jugar T1A](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2) · [Práctica de élite](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2&premios=elite) · [Práctica de jefe](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2&premios=jefe) · [Resultados y límites](V2-T1A-REPORT.md). Esta entrega sustituye el estado «solo planificado» de0.28. B3 se conserva mediante `?prueba=mapa-v2`; la entrada pública sin consulta abreT1A. Mantener Spark sin facturación y servicios reales desactivados.
+
+## Antecedentes de planificación 0.28
+
+
 20/10/2026 · Roadmap 0.28 · Sincronización documental y próxima prueba planificada.
 
 ## Fuente, prioridad y estado real

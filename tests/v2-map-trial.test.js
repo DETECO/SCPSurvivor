@@ -12,6 +12,22 @@ test('local V2 remains explicit and never combines with account modes',()=>{
   const {G}=setup(query,host);assert.equal(G.MapTrial?.enabled,expected,query+' / '+host);
  }
 });
+test('infinite T1A is explicit locally, defaults only on authorized Pages and blocks all account flags',()=>{
+ const normal=setup('?prueba=infinito-v2').G.MapTrial;assert.equal(normal.enabled,true);assert.equal(normal.infinite,true);
+ assert.equal(setup('?prueba=mapa-v2').G.MapTrial.infinite,false);
+ assert.equal(setup('','deteco.github.io','https:','/SCPSurvivor/').G.MapTrial.infinite,true);
+ for(const q of ['?prueba=infinito-v2&cuentas=local','?prueba=infinito-v2&cuentas=','?prueba=infinito-v2&cuentas=wrong'])assert.equal(setup(q).G.MapTrial.infinite,false);
+ assert.equal(setup('?prueba=infinito-v2','example.com').G.MapTrial.infinite,false);
+ const elite=setup('?prueba=infinito-v2&premios=elite').G.MapTrial;assert.equal(elite.elitePractice,true);assert.equal(elite.quick,false);
+});
+test('infinite allies withdraw once, cannot finish the boss and drop no XP for their kills',()=>{
+ const {G,enemies}=setup('?prueba=infinito-v2');G.Camera={sees:()=>true};G.MapTrial.reset({exit:{x:0,y:0}});G.MapTrial.arrive();
+ const drops=[];const boss={boss:true,x:50,y:0,hp:4,xp:200,hurt(n){this.hp-=n;if(this.hp<=0){this.dead=true;drops.push(this.xp)}}};enemies.push(boss);
+ G.MapTrial.updateAllies(1,{});assert.equal(boss.hp,1);assert.equal(G.MapTrial.allies.filter(a=>a.fleeing).length,1);
+ G.MapTrial.updateAllies(1,{});assert.equal(boss.hp,1);assert.deepEqual(drops,[]);
+ enemies.length=0;enemies.push({x:50,y:0,hp:4,xp:14,hurt(n){this.hp-=n;if(this.hp<=0){this.dead=true;drops.push(this.xp)}}});
+ G.MapTrial.updateAllies(1,{});assert.deepEqual(drops,[0]);
+});
 
 test('the exact HTTPS Pages project enables the public V2 demo by default or explicitly',()=>{
  for(const search of ['', '?prueba=mapa-v2']){

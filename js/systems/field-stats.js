@@ -14,11 +14,14 @@ G.FieldStats = (() => {
     const x = pl.tempStats || {};
     const n = Object.fromEntries(TRAINING.map(k => [k, count(t, k, 10)]));
     const q = Object.fromEntries(TEMP.map(k => [k, count(x, k)]));
+    const infinite=G.MapTrial?.infinite===true;
+    const gain=(key,each,extra=each)=>infinite?Math.min(5,q[key])*each+(q[key]>=6?extra:0):q[key]*each;
+    const tactical=infinite&&pl.infiniteTactical?.remaining>0?pl.infiniteTactical.type:null;
     const baseHp = Number.isFinite(pl.baseMaxHp) ? pl.baseMaxHp :
       (Number.isFinite(pl.baseHp) ? pl.baseHp : (pl.mon && Number.isFinite(pl.mon.hp) ? pl.mon.hp : (Number.isFinite(pl.maxHp) ? pl.maxHp : 100)));
     const sprintBonus = Number(options.sprintBonus) || 0;
     const permanentHp = baseHp * (1 + 0.05 * n.health);
-    const hpBonus = Math.min(200, 20 * q.health);
+    const hpBonus = Math.min(200, gain('health',20,40));
     const permMob = 0.02 * n.mobility;
     const permCadence = 0.02 * n.cadence;
     const permReload = 0.03 * n.reload;
@@ -26,15 +29,15 @@ G.FieldStats = (() => {
     const permProt = 0.02 * n.protection;
     return {
       maxHp: permanentHp + hpBonus,
-      spdMul: 1 + Math.min(0.5, permMob + q.mobility * 0.07) + sprintBonus,
-      dmgReduce: Math.min(0.7, permProt + q.protection * 0.06),
-      regenFlat: 0.1 * n.recovery + Math.min(4.5, 0.9 * q.recovery),
-      magnet: 78 * (1 + 0.1 * n.collection + Math.min(1.5, 0.3 * q.collection)),
-      xpMul: 1 + 0.05 * n.learning + Math.min(1.2, 0.12 * q.learning),
-      cadenceReduction: Math.min(0.6, permCadence + q.cadence * 0.08),
+      spdMul: 1 + Math.min(0.5, permMob + gain('mobility',0.07,.10)+(tactical==='mobility'?.15:0)) + sprintBonus,
+      dmgReduce: Math.min(0.7, permProt + gain('protection',0.06,.12)+(tactical==='protection'?.15:0)),
+      regenFlat: 0.1 * n.recovery + Math.min(4.5, gain('recovery',infinite?.6:.9,1.5)),
+      magnet: 78 * (1 + 0.1 * n.collection + Math.min(1.5, gain('collection',infinite?.2:.3,.5))),
+      xpMul: 1 + 0.05 * n.learning + Math.min(1.2, gain('learning',0.12,.30)),
+      cadenceReduction: Math.min(0.6, permCadence + gain('cadence',0.08,.12)),
       reloadReduction: permReload,
       skillReduction: Math.min(0.6, permSkill),
-      powerBonus: 0.03 * n.power + Math.min(1, 0.1 * q.power),
+      powerBonus: 0.03 * n.power + Math.min(1, gain('power',0.1,.2))+(tactical==='power'?.25:0),
       training: n,
       tempStats: q
     };
@@ -78,13 +81,19 @@ G.FieldStats = (() => {
       if (m.pierce) out.pierce += m.pierce;
     }
     const stats = player(pl || {});
-    out.damage *= 1 + modDamage + stats.powerBonus + 0.1 * (Math.max(1, Math.min(5, Number(copy && copy.level) || 1)) - 1);
+    out.damage *= 1 + modDamage + stats.powerBonus + (G.MapTrial?.infinite?0:0.1 * (Math.max(1, Math.min(5, Number(copy && copy.level) || 1)) - 1));
     out.interval *= 1 - Math.min(0.6, stats.cadenceReduction - modInterval);
     out.reloadTime *= 1 - Math.min(0.6, stats.reloadReduction - modReload);
     out.spread *= 1 + modSpread;
+    if(G.MapTrial?.infinite){
+      G.InfiniteProgression?.applyWeapon(out,copy);
+      out.interval=Math.max(d.interval*.25,out.interval);
+      out.reloadTime=Math.max(d.reloadTime*.25,out.reloadTime);
+    }
     return out;
   }
   function capFor(key, pl) {
+    if(G.MapTrial?.infinite)return TEMP.includes(key)?6:0;
     const p = player(pl), t = p.training;
     if (key === 'health') return 10;
     if (key === 'power') return 10;

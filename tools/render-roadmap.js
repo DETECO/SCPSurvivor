@@ -56,7 +56,7 @@ function render(key){
    '**Avance V2: sin calcular.** '+d.progress.explanation+'\n\n'+
    table(['Elemento','Tratamiento vigente'],d.scope.map(x=>row(x.element,x.treatment)))+'\n\n'+
    table(['Paso','Trabajo y estado','Dependencias'],d.implementationPlan.map(x=>row(x.id,x.title+(x.status==='EC'?' — prototipo; aceptación pendiente':x.status==='P'?' — pendiente de implementar':''),x.dependencies.join(', ')||'Reglas V2')))+'\n\n'+
-   '**P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. '+
+   '**P05 aceptado por el propietario para avanzar; servicios reales diferidos. P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. '+
    'Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.';
  }
  if(type==='GLOBAL')return fmt(r.derivedProgress.global.percent);

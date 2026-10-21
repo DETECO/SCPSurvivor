@@ -48,6 +48,25 @@ function rewardSetup(practice=false){
  }});
  return{...fixture,offers,rewards};
 }
+test('infinite armament choice freezes time and crossing resolves reward and XP before preserving build',()=>{
+ const rewards=[],claims=[];let waiting=false;
+ const {G,player}=setup(42,true,true,{prepare(G){
+  G.MapTrial.infinite=true;
+  G.ArmamentRewards={startRun(){},offer(p){rewards.push(p);return{id:p.id,kind:p.kind}},claimAll(){claims.push(1);if(waiting)G.Expedition.awaitArmament();return !waiting},state:{pending:null}};
+  G.ExplorationChests={startRun(){},reset(){},tick(){},addReward(){return true}};
+ }});
+ G.Expedition.awaitArmament();const time=G.Expedition.state.v2.mapTime;G.Expedition.update(10);assert.equal(G.Expedition.state.v2.mapTime,time);
+ G.Expedition.resolveArmament();player.x=-200;G.EnemyMgr.all().find(e=>e.boss).dead=true;G.Expedition.update(30);assert.equal(rewards.length,1);
+ waiting=true;player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;assert.equal(G.Expedition.useExit(),false);assert.equal(G.Expedition.state.sector,1);
+ waiting=false;G.Expedition.resolveArmament();assert.equal(G.Expedition.useExit(),true);assert.equal(G.Expedition.state.sector,2);assert.ok(claims.length>=2);
+});
+test('infinite recovery counts only the part before300s, while active durations expire',()=>{
+ const {G,player}=setup(42,true,true,{prepare(G){G.MapTrial.infinite=true}});
+ player.hp=10;player.training={recovery:5};player.update=dt=>{player.hp+=player.regenFlat*dt};G.FieldAbilities.sprint(player);
+ G.Expedition.update(30);assert.equal(player.hp,25);assert.equal(G.FieldAbilities.state(player).cooldown,0);
+ player.fieldAbility.cooldown=10;player.fieldAbility.remaining=2;G.Expedition.update(5);
+ assert.equal(player.hp,25);assert.equal(G.FieldAbilities.state(player).cooldown,10);assert.equal(G.FieldAbilities.state(player).remaining,0);
+});
 test('B3 jefe obligatorio ofrece cofre una vez; premio no se aplica por matar',()=>{
  const {G,player,offers,rewards}=rewardSetup();assert.equal(G.EventRewards.runs,1);
  G.Expedition.update(240);const boss=G.EnemyMgr.all().find(e=>e.boss);boss.dead=true;

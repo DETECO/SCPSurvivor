@@ -4,10 +4,12 @@ G.MapTrial=(()=>{
  const location=window.location;
  const loopback=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
  const publicDemo=location.protocol==='https:'&&location.hostname==='deteco.github.io'&&location.pathname.startsWith('/SCPSurvivor/');
- const requested=q.get('prueba')==='mapa-v2'||(publicDemo&&!q.has('prueba'));
+ const requested=['mapa-v2','infinito-v2'].includes(q.get('prueba'))||(publicDemo&&!q.has('prueba'));
  const enabled=(loopback||publicDemo)&&requested&&!q.has('cuentas');
+ const infinite=enabled&&(q.get('prueba')==='infinito-v2'||(publicDemo&&!q.has('prueba')&&q.get('premios')!=='grieta'));
+ const elitePractice=infinite&&q.get('premios')==='elite';
  const rewardBossPractice=enabled&&q.get('premios')==='jefe';
- const rewardRiftPractice=enabled&&q.get('premios')==='grieta';
+ const rewardRiftPractice=enabled&&!infinite&&q.get('premios')==='grieta';
  const quick=enabled&&!rewardRiftPractice&&(q.get('rapida')==='1'||rewardBossPractice);
  const chestPractice=enabled&&!rewardBossPractice&&!rewardRiftPractice&&q.get('cofres')==='prueba';
  const RANGE=440,INTERVAL=.65,DAMAGE=9;
@@ -35,20 +37,28 @@ G.MapTrial=(()=>{
  function updateAllies(dt,player){
   if(!enabled||!arrived||!Number.isFinite(dt)||dt<=0)return;
   alertTime=Math.max(0,alertTime-dt);
+  if(infinite&&team.length===2&&!team.some(a=>a.fleeing)){
+   const boss=G.EnemyMgr.all().find(e=>e.boss&&!e.dimensional&&!e.dead);
+   if(boss&&G.Camera?.sees?.(boss.x,boss.y,0)&&team.every(a=>clearLine(a.x,a.y,boss.x,boss.y))){team[1].fleeing=true;team[1].tx=geometry.exit.x;team[1].ty=geometry.exit.y;}
+  }
   for(const ally of team){
+   if(ally.hidden)continue;
    ally.flash=Math.max(0,ally.flash-dt);ally.wait=Math.max(0,ally.wait-dt);
    const dx=ally.tx-ally.x,dy=ally.ty-ally.y,distance=Math.hypot(dx,dy);
    if(distance>1){const step=Math.min(distance,72*dt);ally.x+=dx/distance*step;ally.y+=dy/distance*step;}
+   if(ally.fleeing){if(distance<=1)ally.hidden=true;continue;}
    ally.anim?.update(dt);ally.anim?.loop(distance>1?'Walk':'Idle');
    if(ally.wait>0)continue;
-   const target=G.EnemyMgr.all().filter(e=>!e.dead&&e.hp>0&&Math.hypot(e.x-ally.x,e.y-ally.y)<=RANGE&&clearLine(ally.x,ally.y,e.x,e.y))
+   const target=G.EnemyMgr.all().filter(e=>!e.dead&&e.hp>(infinite&&e.boss?1:0)&&Math.hypot(e.x-ally.x,e.y-ally.y)<=RANGE&&clearLine(ally.x,ally.y,e.x,e.y))
     .sort((a,b)=>Math.hypot(a.x-ally.x,a.y-ally.y)-Math.hypot(b.x-ally.x,b.y-ally.y))[0];
    if(!target||typeof target.hurt!=='function')continue;
    ally.aim=Math.atan2(target.y-ally.y,target.x-ally.x);
    if(ally.anim)ally.anim.dir=G.Sprites.dirFromAngle(ally.aim);
    ally.shot={x:target.x,y:target.y};ally.wait=INTERVAL;ally.flash=.09;
    G.Audio?.sfx('shot');
-   target.hurt(DAMAGE,'#e2f1e8',target.x-ally.x,target.y-ally.y,0);
+   const xp=target.xp;if(infinite)target.xp=0;
+   target.hurt(infinite&&target.boss?Math.min(DAMAGE,target.hp-1):DAMAGE,'#e2f1e8',target.x-ally.x,target.y-ally.y,0);
+   if(infinite)target.xp=xp;
    // EnemyMgr accounts for every death once when removing it, including allied shots.
   }
  }
@@ -74,7 +84,7 @@ G.MapTrial=(()=>{
    ctx.fillStyle='#d9efe3';ctx.font='9px system-ui';ctx.fillText('ALIADO',ally.x,ally.y-35);
    ctx.restore();
  }
- return{enabled,publicDemo,quick,chestPractice,rewardBossPractice,rewardRiftPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
-  drawables:()=>enabled&&arrived?team.map(a=>({x:a.x,y:a.y,draw:ctx=>drawAlly(ctx,a)})):[],
-  get allies(){return team.map(a=>({x:a.x,y:a.y}));},get alertTime(){return alertTime;}};
+ return{enabled,publicDemo,infinite,elitePractice,quick,chestPractice,rewardBossPractice,rewardRiftPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
+  drawables:()=>enabled&&arrived?team.filter(a=>!a.hidden).map(a=>({x:a.x,y:a.y,draw:ctx=>drawAlly(ctx,a)})):[],
+  get allies(){return team.map(a=>({x:a.x,y:a.y,...(infinite?{fleeing:!!a.fleeing,hidden:!!a.hidden}:{})}));},get alertTime(){return alertTime;}};
 })();

@@ -1,5 +1,8 @@
 # Relevo para Codex Local — SCP Survivor
 
+**T1A · 21/10/2026 · Roadmap0.29:** nueva prueba jugable parcial con una arma inicial, segunda por cofre de jefe/élite y dos disparando automáticamente. [Élite de práctica](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2&premios=elite) · [Mapa completo](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2) · [Guía](docs/PRUEBA_V2_INFINITO_01.md) · [Resultados y límites](docs/V2-T1A-REPORT.md). Ramas y cartas usan valores de ensayo; aceptación manual pendiente. La entrada pública sin consulta abreT1A; B3 se conserva explícitamente con `?prueba=mapa-v2`. No activa cuentas, guardado ni facturación.
+
+
 **20/10/2026 · B3 / roadmap 0.26:** cofre del jefe y práctica explícita dimensional implementados; premios temporales y tickets ficticios, sin cuentas. [Prueba manual](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites](docs/V2-B3-REPORT.md). Aceptación de Iván pendiente; B4 y P05 real continúan pendientes.
 
 

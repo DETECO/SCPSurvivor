@@ -17,7 +17,7 @@ G.TechnicalUI = (() => {
     if (readyToPlay() && !editorOpen) G.FieldAbilities.use(G.Game.player, s.phase);
   }
   function switchWeapon(index) {
-    if (readyToPlay() && !editorOpen) G.FieldCombat.switchTo(index);
+    if (!G.MapTrial?.infinite && readyToPlay() && !editorOpen) G.FieldCombat.switchTo(index);
   }
   function closeEditor() { editorOpen = false; el('field-mod-editor').hidden = true; }
   function updateSoldierHud(player = G.Game.player) {
@@ -118,6 +118,14 @@ G.TechnicalUI = (() => {
         el('btn-technical-start').textContent=G.MapTrial.rewardBossPractice?'Probar premio del jefe':'Probar premio dimensional';
       }
     }
+    if (G.MapTrial?.infinite) {
+      el('technical-intro').textContent='T1A · Una arma inicial, segunda por cofre y disparo simultáneo. Ramas por copia y tres cartas al subir de nivel.';
+      el('infinite-test-note').hidden=false;
+      el('infinite-test-note').textContent='Prueba parcial: pistola, subfusil y escopeta; valores provisionales. Cuatro ramas por arma: potencia, ritmo, manejo y especialización, cinco rangos y un extra. A 5:00 se detienen regeneración y recuperación de habilidades. Poderes, ultimate, fusión y otras familias quedan para próximas pruebas. La habilidad del soldado es provisional. Sin cuentas ni guardado.';
+      for (const id of ['map-test-note','chest-test-note','b3-test-note','map-trial-quick','chest-trial-link','boss-reward-trial-link','rift-reward-trial-link']) el(id).hidden=true;
+      el('btn-technical-start').textContent=G.MapTrial.elitePractice?'Probar élite y segunda arma':G.MapTrial.quick?'Probar jefe y segunda arma':'Iniciar T1A · mapa completo';
+      document.querySelector('.footer > p').textContent='T1A · Ambas armas disparan automáticamente · Sin guardado';
+    }
     const rifts=G.DimensionalRifts;
     if(rifts.enabled&&!G.MapTrial?.enabled){
       el('rift-test-note').hidden=false;
@@ -164,7 +172,7 @@ G.TechnicalUI = (() => {
       el('map-locator').hidden=true;el('map-alert').hidden=true;
       el('chest-status').hidden=true;
       el('rift-alert').hidden=true;el('rift-locator').hidden=true;
-      el('field-upgrades').hidden = true; el('field-result').hidden = true;
+      el('field-upgrades').hidden = true; el('field-result').hidden = true; el('armament-choice').hidden = true;
       el('btn-field-weapon-0').disabled = true; el('btn-field-weapon-1').disabled = true; el('btn-ability').disabled = true; el('btn-mods').disabled = true;
       closeEditor();
     }
@@ -178,38 +186,40 @@ G.TechnicalUI = (() => {
     el('scene-position').textContent = `${Math.round(player.x)}, ${Math.round(player.y)}`;
     const dx = s.exit.x - player.x, dy = s.exit.y - player.y;
     const direction = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? '→' : '←') : (dy > 0 ? '↓' : '↑');
-    const captions = { combat: s.objective === 'survive' ? `Resiste ${Math.ceil(s.remaining)} s y elimina los restantes` : `Neutraliza ${Math.min(s.kills,s.quota)}/${s.quota}`, levelup: `Elige la mejora del nivel ${player.level}`, preparation: `Preparación ${Math.ceil(s.prep)} s`, exploration: `Salida ${direction}${s.extractionAvailable ? ' · puedes extraer' : ''}`, boss: `${s.dimensional?'Custodio dimensional':'Custodio'} ${Math.ceil(s.bossHp)}/${Math.ceil(s.bossMaxHp)} · Huida ${direction}`, escaping: `Huida ${Math.ceil(s.extract)} s · no te muevas`, extracting: `Extracción ${Math.ceil(s.extract)} s`, finished: 'Expedición terminada' };
+    const captions = { combat: s.objective === 'survive' ? `Resiste ${Math.ceil(s.remaining)} s y elimina los restantes` : `Neutraliza ${Math.min(s.kills,s.quota)}/${s.quota}`, armament: 'Elige la segunda arma · partida detenida', levelup: `Elige la mejora del nivel ${player.level}`, preparation: `Preparación ${Math.ceil(s.prep)} s`, exploration: `Salida ${direction}${s.extractionAvailable ? ' · puedes extraer' : ''}`, boss: `${s.dimensional?'Custodio dimensional':'Custodio'} ${Math.ceil(s.bossHp)}/${Math.ceil(s.bossMaxHp)} · Huida ${direction}`, escaping: `Huida ${Math.ceil(s.extract)} s · no te muevas`, extracting: `Extracción ${Math.ceil(s.extract)} s`, finished: 'Expedición terminada' };
     const soldier = G.FieldCatalog.soldiers[player.soldierId] || G.FieldCatalog.soldiers.guard;
     updateSoldierHud(player);
     const weaponSummary = w.weapons.map((weapon, i) => `${i + 1} ${weapon.name} ${Math.floor(weapon.ammo)}/${weapon.capacity}${weapon.reload > 0 ? ' recargando' : ''}`).join(' · ');
     el('field-status').textContent = `${G.DimensionalRifts.directTest?'PRUEBA · ':''}S${s.sector}${s.kind === 'normal' && !s.dimensional && !G.DimensionalRifts.directTest ? ` · Oleada ${s.wave}/${s.sectorWaves}` : ''} · ${captions[s.phase]} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level}${s.pending ? ` (${s.pending} por mejorar)` : ''} · XP ${Math.floor(player.xp)}/${player.xpNext} | ${weaponSummary}`;
     if(s.v2){
-      const v=s.v2,active=s.phase!=='finished',canShow=active&&s.phase!=='levelup';
-      const target=v.doorOpen?s.exit:G.EnemyMgr.all().find(e=>e.boss&&!e.dimensional&&!e.dead);
+      const v=s.v2,active=s.phase!=='finished',canShow=active&&s.phase!=='levelup'&&s.phase!=='armament';
+      const eliteTarget=G.MapTrial.infinite&&v.elite&&!v.elite.dead&&v.elite.hp>0?v.elite:null;
+      const target=eliteTarget||(v.doorOpen?s.exit:G.EnemyMgr.all().find(e=>e.boss&&!e.dimensional&&!e.dead));
       const tx=target?target.x-player.x:0,ty=target?target.y-player.y:0;
       const arrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(ty,tx)/(Math.PI/4))+8)%8];
       let goal=v.doorOpen?(v.bossDefeated?'PUERTA ABIERTA · cruza caminando':'PUERTA BLOQUEADA · derrota al jefe'):
         v.bossDefeated?'Jefe derrotado · resiste hasta 5:00':v.bossSpawned?'JEFE DEL MAPA · debes derrotarlo':`Puerta en ${G.U.mmss(Math.max(0,300-v.mapTime))}`;
+      if(eliteTarget) goal='ÉLITE DE PRÁCTICA · derrótalo para obtener un cofre de armamento';
       el('map-locator').hidden=!canShow;
       el('map-locator').textContent=goal+(target?` · ${arrow} ${Math.ceil(Math.hypot(tx,ty))} u`:'');
       el('map-alert').hidden=!canShow||!(G.MapTrial.alertTime>0);
       el('map-alert').textContent='¡Equipo de la Fundación! «¡Por aquí, te cubrimos!» · '+(v.bossDefeated?'Cruza la puerta.':'Termina con el jefe para avanzar.');
-      el('field-status').textContent=`PRUEBA V2 · Mapa ${s.sector} · ${G.U.mmss(v.mapTime)} / 5:00 · ${s.phase==='levelup'?captions.levelup:goal} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level} | ${weaponSummary}`;
+      el('field-status').textContent=`PRUEBA V2 · Mapa ${s.sector} · ${G.U.mmss(v.mapTime)} / 5:00 · ${s.phase==='levelup'?captions.levelup:s.phase==='armament'?captions.armament:goal} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level} | ${weaponSummary}`;
       const chests=G.ExplorationChests?.state;
       el('chest-status').hidden=!canShow||!chests;
       if(chests){
         const known=chests.chests.filter(c=>c.discovered&&!c.opened).sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y));
         const chest=known[0],cx=chest?chest.x-player.x:0,cy=chest?chest.y-player.y:0;
         const chestArrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(cy,cx)/(Math.PI/4))+8)%8];
-        const chestName=c=>c.type==='boss'?'Cofre del jefe':c.type==='rift'?'Cofre dimensional':'Cofre de exploración';
+        const chestName=c=>G.MapTrial.infinite&&['boss','elite'].includes(c.type)?'Cofre de armamento':c.type==='boss'?'Cofre del jefe':c.type==='rift'?'Cofre dimensional':'Cofre de exploración';
         const hint=chest?`${chestName(chest)} ${chestArrow} ${Math.ceil(Math.hypot(cx,cy))} u · ${chest.progress>0?`abriendo ${Math.floor(chest.progress/3.5*100)} %`:'acércate y permanece 3,5 s'}`:
           chests.chests.some(c=>!c.opened)?'Cofre sin descubrir · explora el mapa':chests.chests.length?'Cofres abiertos':'Explora · puede aparecer un cofre';
-        const outcome=chests.chests.some(c=>c.opened)?chests.notice:'';
+        const outcome=G.MapTrial.infinite?G.ArmamentRewards.state.notice:chests.chests.some(c=>c.opened)?chests.notice:'';
         el('chest-status').textContent=`${hint}${outcome?' · '+outcome:''} · ${chests.ticketTotal} tickets ficticios (sin cuenta)`;
       }
     }
     const rift=G.DimensionalRifts.state,open=rift.status==='open';
-    el('rift-locator').hidden=!open||s.phase==='finished'||s.phase==='levelup';
+    el('rift-locator').hidden=!open||s.phase==='finished'||s.phase==='levelup'||s.phase==='armament';
     if(open){
       const rx=rift.x-player.x,ry=rift.y-player.y;
       const arrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(Math.atan2(ry,rx)/(Math.PI/4))+8)%8];
@@ -223,11 +233,12 @@ G.TechnicalUI = (() => {
       ? ['combat', 'boss', 'escaping', 'preparation'].includes(s.phase)
       : ['combat', 'boss', 'escaping', 'preparation', 'exploration'].includes(s.phase);
     el('btn-ability').disabled = !readyToPlay() || editorOpen || !canUseAbilityInPhase || abilityState.cooldown > 0 || (soldier.ability === 'heal' && player.hp >= player.maxHp);
-    const canSwitch = readyToPlay() && !editorOpen;
+    const canSwitch = !G.MapTrial?.infinite && readyToPlay() && !editorOpen;
     for (let i = 0; i < 2; i++) {
       const weapon = w.weapons[i], button = el(`btn-field-weapon-${i}`);
-      button.innerHTML = `<strong>${i + 1}</strong><small>${weapon?.name || 'Arma'}</small><small>${weapon ? `${Math.floor(weapon.ammo)}/${weapon.capacity}` : ''}</small>${weapon?.reload > 0 ? '<small>Recargando</small>' : ''}`;
-      button.classList.toggle('active', i === w.activeIndex);
+      button.innerHTML = `<strong>${i + 1}</strong><small>${weapon?.name || (G.MapTrial?.infinite?'Vacía · premio de jefe/élite':'Arma')}</small><small>${weapon ? `${Math.floor(weapon.ammo)}/${weapon.capacity}` : ''}</small>${weapon?.reload > 0 ? '<small>Recargando</small>' : ''}`;
+      button.classList.toggle('active', G.MapTrial?.infinite ? !!weapon : i === w.activeIndex);
+      if (G.MapTrial?.infinite && weapon) button.title=G.InfiniteProgression.describe(weapon);
       button.disabled = !canSwitch || i === w.activeIndex || w.switchRemaining > 0;
       button.setAttribute('aria-label', `Arma ${i + 1}: ${weapon?.name || 'sin arma'}, ${weapon ? `${Math.floor(weapon.ammo)} de ${weapon.capacity}` : ''}${weapon?.reload > 0 ? ', recargando' : ''}`);
     }
@@ -262,6 +273,19 @@ G.TechnicalUI = (() => {
       el('upgrade-count').textContent = `Elige UNA mejora para el nivel ${earned}.`;
       for (const id of ['btn-field-weapon-0', 'btn-field-weapon-1', 'btn-ability', 'btn-mods']) el(id).disabled = true;
     } else cardSignature = '';
+    const armament=G.MapTrial?.infinite?G.ArmamentRewards.state.pending:null;
+    const showArmament=!!armament&&s.phase==='armament';
+    el('armament-choice').hidden=!showArmament;
+    const armamentHost=el('armament-options');
+    if(showArmament&&armamentHost.dataset.reward!==armament.id){
+      armamentHost.replaceChildren(); armamentHost.dataset.reward=armament.id;
+      for(const model of armament.models){
+        const button=document.createElement('button'); button.className='upgrade-card';
+        button.textContent=G.FieldCatalog.models[model].name+' · segunda copia independiente';
+        button.onclick=()=>{if(G.ArmamentRewards.choose(model)){armamentHost.dataset.reward='';el('armament-choice').hidden=true;}};
+        armamentHost.append(button);
+      }
+    } else if(!showArmament) armamentHost.dataset.reward='';
     el('field-result').hidden = s.phase !== 'finished';
     if (s.phase === 'finished') {
       const r = s.result;

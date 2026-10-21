@@ -23,6 +23,13 @@ assert.equal(G.FieldAbilities.state(guard).remaining, 1.5);
 assert.equal(G.FieldAbilities.state(guard).cooldown, 19.5);
 assert.equal(guard.fieldCombat.shotWait, .4);
 assert.equal(guard.fieldCombat.weapons[0].reload, .5);
+// Infinite exit clock freezes recovery, while an active effect must still expire.
+G.MapTrial={infinite:true};G.Expedition={state:{v2:{spawnClosed:true}}};
+const frozenCooldown=G.FieldAbilities.state(guard).cooldown;
+G.FieldAbilities.tick(.5,guard);
+assert.equal(G.FieldAbilities.state(guard).cooldown,frozenCooldown);
+assert.equal(G.FieldAbilities.state(guard).remaining,1);
+delete G.MapTrial;delete G.Expedition;
 G.FieldAbilities.tick(1.5, guard);
 assert.equal(guard.spdMul, 1);
 assert.equal(G.FieldAbilities.sprint(guard), false);

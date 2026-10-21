@@ -32,11 +32,13 @@ G.FieldAbilities = (() => {
     if (G.FieldStats && G.FieldStats.apply) G.FieldStats.apply(pl, { sprintBonus: 0 });
     return state(pl);
   }
-  function tick(dt, pl) {
+  function tick(dt, pl, options={}) {
     if (!pl) return state(null);
     const a = data(pl), step = Number.isFinite(dt) ? Math.max(0, dt) : 0;
     a.remaining = Math.max(0, a.remaining - step);
-    a.cooldown = Math.max(0, a.cooldown - step);
+    const cooldownStep=Number.isFinite(options.cooldownStep)?Math.max(0,Math.min(step,options.cooldownStep)):
+      G.MapTrial?.infinite&&G.Expedition?.state.v2?.spawnClosed?0:step;
+    a.cooldown = Math.max(0, a.cooldown - cooldownStep);
     if (G.FieldStats && G.FieldStats.apply) G.FieldStats.apply(pl, { sprintBonus: a.kind === 'sprint' && a.remaining > 0 && alive(pl) ? ACTIVE_SPRINT_BONUS : 0 });
     return state(pl);
   }

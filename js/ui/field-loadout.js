@@ -22,6 +22,7 @@ G.FieldLoadout = (() => {
       select.value = models[i];
       select.addEventListener('change', () => { models[i] = select.value; mods[i] = mods[i].filter(id => G.FieldCatalog.models[models[i]].compatibleMods.includes(id)); renderMods(); preview(); });
     }
+    if (G.MapTrial?.infinite) el("loadout-weapon-1").closest("section").hidden = true;
     renderMods(); preview();
   }
   function renderMods() {
@@ -51,7 +52,7 @@ G.FieldLoadout = (() => {
     const stats = G.FieldStats.player({baseMaxHp:100,maxHp:100,training:{},tempStats:{}});
     el('loadout-role-summary').textContent = `${soldier.name} · ${soldier.ability === 'sprint' ? 'Sprint: velocidad extra durante 2 s' : 'Primeros auxilios: recupera vida'}`;
     el('loadout-preview').replaceChildren();
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < (G.MapTrial?.infinite ? 1 : 2); i++) {
       const w = G.FieldStats.weapon({training:{},tempStats:{}}, {model:models[i],mods:G.MapTrial?.enabled?[]:mods[i],level:1});
       const item = document.createElement('li');
       const details = document.createElement('details');
@@ -61,7 +62,7 @@ G.FieldLoadout = (() => {
       advanced.textContent = `Recarga ${w.reloadTime.toFixed(2)} s · alcance ${w.range} · velocidad ${w.speed} · dispersión ${w.spread.toFixed(1)}° · perdigones ${w.pellets} · perforación ${w.pierce}`;
       details.append(summary, advanced); item.append(details); el('loadout-preview').append(item);
     }
-    el('loadout-preview-summary').textContent = `Vida ${stats.maxHp} · velocidad 165 · mejoras permanentes 0/10.`;
+    el('loadout-preview-summary').textContent = G.MapTrial?.infinite ? `Vida ${stats.maxHp} · empiezas con una sola arma. La segunda se obtiene en un cofre de armamento; ambas disparan automáticamente.` : `Vida ${stats.maxHp} · velocidad 165 · mejoras permanentes 0/10.`;
   }
   function options() {
     init();
@@ -71,7 +72,7 @@ G.FieldLoadout = (() => {
       return null;
     }
     error.textContent = '';
-    return { soldierId, loadout: models.map((model, i) => G.FieldCatalog.makeWeapon(model, `local:${i + 1}`, G.MapTrial?.enabled?[]:mods[i])) };
+    return { soldierId, loadout: (G.MapTrial?.infinite ? models.slice(0,1) : models).map((model, i) => G.FieldCatalog.makeWeapon(model, `local:${i + 1}`, G.MapTrial?.enabled?[]:mods[i])) };
   }
   return { init, options };
 })();

@@ -1,0 +1,83 @@
+{
+  "version": "V2-INFINITO-01-T1A",
+  "status": "PASS",
+  "checkedAt": "2026-10-21T11:23:10.030811+00:00",
+  "build": {
+    "source": {
+      "bundleSha256": "173603b75dbf94a8202effcf016d2449380cf1f60a8dc63340407ed852754f1c",
+      "indexSha256": "1d72970924385ef695e82bb3cf228230e0985174e839ea5fd77f118b29c04d81",
+      "scripts": 90,
+      "build": "passed",
+      "check": "passed"
+    },
+    "publication": {
+      "bundleSha256": "9fd595a5ba788cb6b9fc631d89b4ebc512f564a6c5c301d5eea7ff94381dbea1",
+      "indexSha256": "ec9691aaac9e493a46734b1448646afa9d6383e0b3745179ed5c83dc1eb5074a",
+      "scripts": 90,
+      "build": "passed",
+      "check": "passed"
+    }
+  },
+  "node": {
+    "source": {
+      "tests": 186,
+      "pass": 185,
+      "fail": 0,
+      "skipped": 1,
+      "testFiles": 32,
+      "skipReasons": [
+        "real P05 emulators absent"
+      ]
+    },
+    "publication": {
+      "tests": 186,
+      "pass": 184,
+      "fail": 0,
+      "skipped": 2,
+      "testFiles": 32,
+      "skipReasons": [
+        "real P05 emulators absent",
+        "functions dependencies absent in publication clone"
+      ]
+    }
+  },
+  "browser": {
+    "source": {
+      "status": "PASS",
+      "scenarios": 4,
+      "modesPerScenario": 3,
+      "resultSha256": "80fbf4d8270da42c92b4b50e713fb235393949e633aa1ed3a780ff199602e19a"
+    },
+    "publication": {
+      "status": "PASS",
+      "scenarios": 4,
+      "modesPerScenario": 3,
+      "resultSha256": "de73c996c597618a962be60072c5dc204edad3718ac2f7351b608a2f06c960a2"
+    }
+  },
+  "regressionB3": {
+    "source": {
+      "status": "PASS",
+      "scenarios": 4,
+      "modesPerScenario": 3,
+      "resultSha256": "d2f1b678a1110569c5265ca95e9295c68e9e4d1c1942529e19c47735a1c6729b"
+    },
+    "publication": {
+      "status": "PASS",
+      "scenarios": 4,
+      "modesPerScenario": 3,
+      "resultSha256": "df3035acaeb80cb551406a84bca0325b1f287538d5cc8da7194ca697a9d237fb"
+    }
+  },
+  "manualAcceptance": "pending",
+  "physicalPhoneTested": false,
+  "realAccountsEnabled": false,
+  "billingChanges": false,
+  "p05WorkerTests": "excluded: unpublished backend preparation; no runtime/backend changes",
+  "limits": [
+    "Three existing ballistic models only; additional families and balance pending.",
+    "Automated UI and projectile damage with controlled position, lethal encounter damage, invulnerability and seeded XP/time; not a natural run or human acceptance.",
+    "Fusion, terminals, powers, ultimate, radar, exact resume and real economy remain pending.",
+    "Source and publication retain different inactive backend/configuration files."
+  ]
+}

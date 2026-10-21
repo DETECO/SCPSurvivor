@@ -1,6 +1,7 @@
 /* Armas de campo por copia física. Las fórmulas pertenecen a FieldStats. */
 G.FieldCombat = (() => {
   const SWITCH_TIME = 0.2;
+  const infinite=()=>G.MapTrial?.infinite===true;
   let weapons = [], activeIndex = 0, shotWait = 0, switchRemaining = 0, shots = 0, currentPlayer = null;
   let aimTarget = null;
 
@@ -11,13 +12,20 @@ G.FieldCombat = (() => {
   }
   function cloneLoadout(loadout) {
     const C = G.FieldCatalog;
-    const source = loadout || C?.defaultLoadout?.();
-    if (!Array.isArray(source) || source.length !== 2) throw new Error('Field loadout must contain exactly two weapon copies');
+    const source = loadout || (infinite()?C?.defaultLoadout?.().slice(0,1):C?.defaultLoadout?.());
+    if (!Array.isArray(source) || (infinite()?![1,2].includes(source.length):source.length !== 2)) throw new Error('Field loadout must contain exactly two weapon copies');
     const ids = source.map(w => w && w.id);
-    if (ids.some(id => typeof id !== 'string' || !id.trim()) || new Set(ids).size !== 2) throw new Error('Field weapon copy IDs must be unique nonempty strings');
+    if (ids.some(id => typeof id !== 'string' || !id.trim()) || new Set(ids).size !== source.length) throw new Error('Field weapon copy IDs must be unique nonempty strings');
     return source.map(w => {
       if (!w || typeof w.model !== 'string' || !Array.isArray(w.mods || [] ) || !C?.validateMods?.(w.model,w.mods || [])) throw new Error('Invalid field weapon copy');
+      if(infinite()&&(!Object.prototype.hasOwnProperty.call(C.models,w.model)||(w.mods||[]).length))throw new Error('Invalid infinite weapon copy');
       const copy = makeCopy(w.model, w.id, w.mods || []);
+      if(infinite()){
+        if(w.branches!==undefined)copy.branches={...w.branches};
+        if(!G.InfiniteProgression.ensure(copy))throw new Error('Invalid infinite weapon branches');
+        if(w.shotWait!==undefined&&(!Number.isFinite(w.shotWait)||w.shotWait<0))throw new Error('Invalid per-copy timer');
+        copy.shotWait=w.shotWait||0;Object.defineProperty(copy,'_aimTarget',{value:null,writable:true});
+      }
       copy.level = Math.max(1, Math.min(5, w.level || 1));
       copy.ammo = Number.isFinite(w.ammo) ? w.ammo : null;
       copy.reload = Number.isFinite(w.reload) ? Math.max(0,w.reload) : 0;
@@ -54,20 +62,22 @@ G.FieldCombat = (() => {
     return blocksLOS(pl,target.x,target.y)===false;
   }
   function priority(pl,e) { return distance(pl,e)<=80?0:e.boss?1:2; }
-  function targetFor(pl) {
-    const copy=active(); if (!copy) return null;
+  function targetFor(pl, copy=active()) {
+    if (!copy) return null;
+    const oldTarget=infinite()?copy._aimTarget:aimTarget;
+    const remember=target=>{if(infinite())copy._aimTarget=target;else aimTarget=target;return target;};
     const range=effective(pl,copy).range;
     const candidates=(G.EnemyMgr?.all?.()||[]).filter(e=>e&&!e.dead&&distance(pl,e)<=range&&visible(pl,e));
     candidates.sort((a,b)=>priority(pl,a)-priority(pl,b)||distance(pl,a)-distance(pl,b));
     if (candidates.length) {
       const best=candidates[0];
-      if (aimTarget&&!aimTarget.dead&&candidates.includes(aimTarget)) {
-        const oldp=priority(pl,aimTarget),newp=priority(pl,best);
-        if (oldp<newp||(oldp===newp&&distance(pl,best)>distance(pl,aimTarget)*.8)) return aimTarget;
+      if (oldTarget&&!oldTarget.dead&&candidates.includes(oldTarget)) {
+        const oldp=priority(pl,oldTarget),newp=priority(pl,best);
+        if (oldp<newp||(oldp===newp&&distance(pl,best)>distance(pl,oldTarget)*.8)) return oldTarget;
       }
-      aimTarget=best; return best;
+      return remember(best);
     }
-    aimTarget=null;
+    remember(null);
     const props=G.World?.propsInCircle?.(pl.x,pl.y,range)||[];
     const breakables=props.filter(p=>p&&p.destructible&&p.solid&&p.hp>0&&distance(pl,p)<=range&&visible(pl,p));
     if (!G.World?.propsInCircle&&G.World?.nearestBreakable) {
@@ -92,7 +102,7 @@ G.FieldCombat = (() => {
         dmg:e.damage,r:e.pellets>1?2:3,life:e.range/e.speed,pierce:e.pierce||0,hits:new Set(),friendly:true,
         mtype:null,fieldWeapon:true,color:'#e8cf9b',owner:pl});
     }
-    copy.ammo--; shots++; shotWait=e.interval; copy.flash=.09;
+    copy.ammo--; shots++; if(infinite())copy.shotWait=e.interval;else shotWait=e.interval; copy.flash=.09;
     if (G.Audio) G.Audio.sfx('shot',{kind:'projectile',type:'normal'});
     if (copy.ammo<=0) beginReload(pl,copy,e);
   }
@@ -101,7 +111,17 @@ G.FieldCombat = (() => {
     if (!pl) return; currentPlayer=pl; pl.fieldWeapons=weapons;
     for (const w of weapons) {
       const e=sync(pl,w); w.flash=Math.max(0,(w.flash||0)-dt);
+      if(infinite())w.shotWait=Math.max(0,(w.shotWait||0)-dt);
       if (w.reload>0) { w.reload=Math.max(0,w.reload-dt); if (w.reload===0) w.ammo=e.capacity; }
+    }
+    if(infinite()){
+      if(pl.dead||!(pl.hp>0)||!fireAllowed)return;
+      for(const copy of weapons){
+        const e=effective(pl,copy);if(copy.reload>0||copy.shotWait>0)continue;
+        if(copy.ammo<=0){beginReload(pl,copy,e);continue;}
+        const target=targetFor(pl,copy);if(target)fire(pl,copy,e,target);
+      }
+      return;
     }
     const copy=active(); if (!copy||pl.dead||!fireAllowed||switchRemaining>0||shotWait>0) return;
     const e=effective(pl,copy); if (copy.reload>0) return;
@@ -109,11 +129,13 @@ G.FieldCombat = (() => {
     const target=targetFor(pl); if (target) fire(pl,copy,e,target);
   }
   function switchTo(slot) {
+    if(infinite())return false;
     const i=typeof slot==='number'?slot:weapons.findIndex(w=>w.id===slot);
     if(i<0||i>=weapons.length||i===activeIndex||switchRemaining>0)return false;
     activeIndex=i; switchRemaining=SWITCH_TIME; return true;
   }
   function configureMods(slot,ids) {
+    if(infinite())return false;
     const i=typeof slot==='number'?slot:weapons.findIndex(w=>w.id===slot),w=weapons[i];
     if(!w||!Array.isArray(ids)||ids.length>2||new Set(ids).size!==ids.length)return false;
     const C=G.FieldCatalog;
@@ -125,8 +147,13 @@ G.FieldCombat = (() => {
     if(pl){const e=effective(pl,w);if(w.reload>0&&old>0)w.reload=w.reload/old*e.reloadTime;w.reloadTime=e.reloadTime;w.ammo=Math.min(w.ammo,e.capacity);}
     return true;
   }
-  function upgrade(id) { const w=weapons.find(x=>x.id===id); if(!w||w.level>=5)return false; w.level++; return true; }
-  function clearTemporary(pl) { currentPlayer=pl||currentPlayer; for(const w of weapons) w.level=1; if(pl){pl.tempStats={}; if(G.FieldStats?.apply) G.FieldStats.apply(pl);} }
+  function acquire(model,id){
+    if(!infinite()||!currentPlayer||currentPlayer.dead||!(currentPlayer.hp>0)||weapons.length!==1||
+      typeof id!=='string'||!id.trim()||weapons.some(w=>w.id===id)||!Object.prototype.hasOwnProperty.call(G.FieldCatalog.models,model))return false;
+    const next=cloneLoadout([{model,id,mods:[]}])[0];sync(currentPlayer,next);weapons.push(next);currentPlayer.fieldWeapons=weapons;return true;
+  }
+  function upgrade(id,branch) { const w=weapons.find(x=>x.id===id);if(infinite())return !!w&&G.InfiniteProgression.upgrade(w,branch); if(!w||w.level>=5)return false; w.level++; return true; }
+  function clearTemporary(pl) { currentPlayer=pl||currentPlayer; for(const w of weapons){w.level=1;if(infinite())w.branches=Object.fromEntries(G.InfiniteProgression.branches.map(k=>[k,0]));}if(infinite()&&pl)pl.infiniteTactical=null; if(pl){pl.tempStats={}; if(G.FieldStats?.apply) G.FieldStats.apply(pl);} }
   function drawWeapon(ctx,pl,options={}) {
     if(!pl||pl.dead)return;
     const has=Object.prototype.hasOwnProperty.call(options||{},'behind'),behind=has?!!options.behind:null;
@@ -138,20 +165,21 @@ G.FieldCombat = (() => {
     if(w?.flash>0){ctx.save();ctx.globalAlpha=Math.min(1,w.flash/.09);ctx.fillStyle='#ffd889';ctx.beginPath();ctx.arc(x+ca*10,y+sa*10,4,0,Math.PI*2);ctx.fill();ctx.restore();}
   }
   function getstate() {
-    const pl=currentPlayer||G.Game?.player,list=weapons.map(w=>{const e=effective(pl,w);return {...w,name:e.name||w.model,capacity:e.capacity,reloadTime:e.reloadTime,effective:e};}),w=list[activeIndex]||null;
+    const pl=currentPlayer||G.Game?.player,list=weapons.map(w=>{const e=effective(pl,w);return {...w,mods:w.mods.slice(),...(infinite()?{branches:{...w.branches}}:{}),name:e.name||w.model,capacity:e.capacity,reloadTime:e.reloadTime,effective:e};}),w=list[activeIndex]||null;
     const ability=G.FieldAbilities?.state ? G.FieldAbilities.state(pl) : null;
     return {ammo:w?.ammo??0,capacity:w?.capacity??0,reload:w?.reload??0,shotWait,shots,activeIndex,switchRemaining,weapons:list,list2:list,
       sprintRemaining:ability?.remaining||0,sprintCooldown:ability?.cooldown||0,ability,currentability:ability};
   }
   function sprint(pl) { return G.FieldAbilities?.sprint?G.FieldAbilities.sprint(pl):false; }
   function exportData(){
-    return {weapons:weapons.map(w=>({id:w.id,model:w.model,mods:w.mods.slice(),level:w.level,ammo:w.ammo,reload:w.reload,reloadTime:w.reloadTime})),
+    return {weapons:weapons.map(w=>({id:w.id,model:w.model,mods:w.mods.slice(),level:w.level,ammo:w.ammo,reload:w.reload,reloadTime:w.reloadTime,...(infinite()?{branches:{...w.branches},shotWait:w.shotWait}:{})})),
       activeIndex,shotWait,switchRemaining,shots};
   }
   function restoreData(data,pl){
     const next=cloneLoadout(data.weapons);
+    if(infinite()&&(!Number.isInteger(data.activeIndex)||data.activeIndex<0||data.activeIndex>=next.length||![data.shotWait,data.switchRemaining,data.shots].every(n=>Number.isFinite(n)&&n>=0)))throw new Error("Invalid infinite combat state");
     weapons=next;currentPlayer=pl;activeIndex=data.activeIndex;shotWait=data.shotWait;switchRemaining=data.switchRemaining;shots=data.shots;aimTarget=null;
     pl.fieldWeapons=weapons;for(const w of weapons)sync(pl,w);
   }
-  return {reset,tick,switchTo,configureMods,upgrade,clearTemporary,targetFor,drawWeapon,sprint,getstate,exportData,restoreData,getweapons:()=>weapons,get state(){return getstate();}};
+  return {reset,tick,switchTo,configureMods,acquire,upgrade,clearTemporary,targetFor,drawWeapon,sprint,getstate,exportData,restoreData,getweapons:()=>weapons,get state(){return getstate();}};
 })();

@@ -1,6 +1,8 @@
 # Próxima prueba — V2 INFINITO 01
 
-20/10/2026 · Roadmap0.28 · Estado: **PLANIFICADA; no implementada, ejecutada ni publicada**.
+21/10/2026 · Roadmap0.29 · Estado: **T1A implementada y verificada automáticamente como prueba parcial; aceptación manual pendiente**.
+
+[Jugar mapa completo](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2) · [Élite cerca del inicio](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2&premios=elite) · [Jefe desde4:30](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2&premios=jefe). [Resultados y límites](V2-T1A-REPORT.md).
 
 ## Objetivo de la primera entrega
 
@@ -8,7 +10,7 @@ Comprobar el recorrido **una arma inicial → premio de armamento → dos armas 
 
 El diseño está establecido por la [matriz de ESTRUCTURA](DECISIONES_INFINITO_2026-10-20.md). El [plan de desarrollo](PLAN_DESARROLLO_V2_INFINITO.md) separa T1A/T1B de los sistemas posteriores. No se exige repetir las66respuestas aceptadas ni la aceptación P05 para preparar este prototipo.
 
-**No hay una nueva URL de prueba disponible.** Los enlaces actuales siguen ejecutandoB3 y no acreditan este comportamiento. La publicación de esta pauta en GitHub tampoco publica una mecánica nueva.
+**Nueva prueba T1A:** empieza con una arma. Las prácticas rápidas contienen enemigos vivos: vence al élite o jefe y permanece3,5s junto al cofre. Elige la segunda arma con la acción detenida. Puedes elegir el mismo modelo. Las dos atacan automáticamente; no usesQ/E. El inicio de jefe adelanta el reloj a4:30 y no representa una expedición natural. B3 anterior sigue accesible con `?prueba=mapa-v2`.
 
 ## Alcance de T1A y límite con T1B
 
@@ -90,6 +92,6 @@ No se espera a finalizar gacha, backend, score competitivo ni toda la economía 
 
 Para cada caso: versión/commit, semilla, modo de reglas, catálogo y parámetros usados, entorno, resultado, captura cuando aporte y limitación. Métodos automatizados deben declarar daño/posición/invulnerabilidad/tiempo controlados. Registrar aparte la prueba manual de Iván y el móvil físico; una emulación táctil no es un teléfono probado.
 
-Esta pauta no contiene resultados nuevos. Para esta actualización documental se comprueba coherencia del roadmap, referencias y conservación de los hashes del runtime anterior. No corresponde declarar compilación nueva ni suite del juego ejecutada por editar un plan.
+Resultados automáticos registrados en [V2-T1A-REPORT.md](V2-T1A-REPORT.md) y [validación](V2-T1A-VALIDACION.json). La tabla manual sigue NO EJECUTADA: no representa aceptación de Iván. El catálogo actual solo incluye tres balísticas; melee/energía/explosivos/arrojadizas, terminales y sistemas posteriores siguen pendientes.
 
-Al implementar: pruebas pertinentes, build/check, revisión de raíz, publicación autorizada y comprobación de hashes/Pages antes de entregar URL. Hasta entonces el estado es **planificado**.
+Consultar el recibo de publicación para la comprobación online. No declarar completo el diseño infinito por entregar esta prueba acotada.

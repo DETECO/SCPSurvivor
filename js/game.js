@@ -501,7 +501,7 @@ G.Game = (() => {
       if (state === 'error') { G.Input.endFrame(); return; }
       if (state === 'playing' && pl) {
         const e = G.Expedition.state;
-        if (e.phase !== 'finished' && e.phase !== 'levelup') time += dt;
+        if (e.phase !== 'finished' && e.phase !== 'levelup' && e.phase !== 'armament') time += dt;
         G.Expedition.update(dt);
       }
       renderTechnical(); G.TechnicalUI.tick(pl, time); G.Input.endFrame();

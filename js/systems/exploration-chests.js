@@ -44,7 +44,7 @@ G.ExplorationChests = (() => {
     }
   }
   function addReward(plan,point){
-    if(!enabled()||!plan?.id||!['boss','rift'].includes(plan.kind)||!Number.isFinite(point?.x)||!Number.isFinite(point?.y)||allChests().some(c=>c.id===plan.id))return false;
+    if(!enabled()||!plan?.id||!['boss','rift','elite'].includes(plan.kind)||!Number.isFinite(point?.x)||!Number.isFinite(point?.y)||allChests().some(c=>c.id===plan.id))return false;
     eventChests.push({id:plan.id,rewardId:plan.id,type:plan.kind,x:point.x,y:point.y,opened:false,discovered:false,progress:0,tickets:plan.tickets||0,description:plan.description||'',practice:false});
     notice=plan.kind==='rift'?'Premio dimensional disponible · busca el cofre.':'Jefe vencido · cofre de mejora disponible.';
     return true;
@@ -70,6 +70,7 @@ G.ExplorationChests = (() => {
       if(unused.length)spawn(unused[Math.floor(roll()*unused.length)]);
     }
     for(const chest of allChests()){
+      if(G.MapTrial?.infinite&&G.ArmamentRewards?.state.pending)break;
       if(!chest.discovered&&visible(chest)){
         chest.discovered=true;
         notice=chest.practice?'Cofre de práctica descubierto · mantente cerca 3,5 s.':
@@ -81,7 +82,8 @@ G.ExplorationChests = (() => {
       if(chest.progress>=OPEN_TIME-1e-9){
         chest.progress=OPEN_TIME;chest.opened=true;
         if(chest.rewardId){
-          const result=G.EventRewards?.claim(chest.rewardId,player);
+          const service=G.MapTrial?.infinite?G.ArmamentRewards:G.EventRewards;
+          const result=service?.claim(chest.rewardId,player);
           notice=result?.description||'Premio no aplicado · estado incompatible.';
         }else{
           ticketTotal+=chest.tickets;

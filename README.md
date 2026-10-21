@@ -1,5 +1,8 @@
 # SCP Survivor
 
+**T1A · 21/10/2026 · Roadmap0.29:** nueva prueba jugable parcial con una arma inicial, segunda por cofre de jefe/élite y dos disparando automáticamente. [Élite de práctica](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2&premios=elite) · [Mapa completo](https://deteco.github.io/SCPSurvivor/?prueba=infinito-v2) · [Guía](docs/PRUEBA_V2_INFINITO_01.md) · [Resultados y límites](docs/V2-T1A-REPORT.md). Ramas y cartas usan valores de ensayo; aceptación manual pendiente. La entrada pública sin consulta abreT1A; B3 se conserva explícitamente con `?prueba=mapa-v2`. No activa cuentas, guardado ni facturación.
+
+
 **Roadmap actualizado 0.24 (19/10/2026):** [ver roadmap](ROADMAP.md) · [cambios desde ESTRUCTURA](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md). Combate 2 armas simultáneas + 3 poderes + 1 ultimate establecido como diseño; implementación pendiente. La demo actual no cambia.
 
 **Jugar en la web:** [SCP Survivor — demo V2](https://deteco.github.io/SCPSurvivor/) · [Prueba rápida desde 4:30](https://deteco.github.io/SCPSurvivor/?rapida=1). No requiere ejecutar un servidor en tu PC. Demo sin cuenta, guardado ni recompensas persistentes. [Alcance y pruebas](docs/GITHUB_PAGES.md).
