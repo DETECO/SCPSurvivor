@@ -43,4 +43,4 @@ Iván informó que T1BC funciona bien: aceptación general del recorrido anterio
 - Luna max entregó dibujo de armas y prueba, integrados/revisados por root. Otra Luna revisó muestreo/fallback y armas; señaló riesgo condicional de perder animaciones adicionales. Se verificó que los cinco actores existentes solo tienen Idle/Walk, por lo que ninguna animación existente se elimina. Root añadió cobertura de destello y alpha.
 - Originales, configuración, dependencias, física y 53 tareas históricas conservados; sin credenciales privadas nuevas. [Registro y hashes](ARTE_ENSAYO_V1_VALIDACION.json).
 
-Publicación: pendiente de recibo verificable de Pages; no inferir despliegue del resultado local.
+**Publicación comprobada:** runtime `96e2ead`; índice/compilado/galería/roadmap y diez hojas servidas coinciden. Dos escenarios visuales ×160 poses y diez recorridos T1BC públicos aprobados. [Recibo](ARTE_ENSAYO_V1_PUBLICACION.json). Arte nuevo pendiente de aceptación manual.

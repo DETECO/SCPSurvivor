@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-21T23:51:03.574864+00:00",
+  "runtimeCommit": "96e2eada98fe72488ce9ddf3643ea7b0e1fee3ff",
+  "verifiedMainCommit": "4137e77d35ffb2b16f0b6c8baa009df42c730771",
+  "clean": true,
+  "url": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2",
+  "galleryUrl": "https://deteco.github.io/SCPSurvivor/prueba-visual-v1.html",
+  "classicUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=clasicos",
+  "indexHashMatched": true,
+  "bundleHashMatched": true,
+  "galleryHashMatched": true,
+  "roadmapHashMatched": true,
+  "atlasHashesMatched": 10,
+  "roadmapVersion": "0.31",
+  "manualVisualAcceptance": "pending",
+  "realAccountsEnabled": false,
+  "billingChanges": false,
+  "liveVisualScenarios": 2,
+  "walkingPosesPerScenario": 160,
+  "liveCombatScenarios": 2,
+  "combatModesPerScenario": 5,
+  "method": "Controlled QA poses/lineup plus real UI/melee tests; not natural balance, performance or physical phone."
+}
