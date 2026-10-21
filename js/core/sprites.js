@@ -77,10 +77,16 @@ G.Sprites = (() => {
       if (s.failed && performance.now() > s.retryAt) { s.failed = false; s.img.src = s.src + '?r=' + s.tries; }
       return s;
     }
-    s = { ready: false, failed: false, img: new Image(), tries: 0, retryAt: 0,
+    s = { ready: false, failed: false, img: new Image(), tries: 0, retryAt: 0, sample:m.sample===2?2:1,
           src: m.base ? `${m.base}/${name}.${m.ext || 'png'}` : `assets/pokemon/${dex}/${shiny ? 's/' : ''}${name}.png` };
     s.img.onload = () => { s.ready = true; };
-    s.img.onerror = () => { s.failed = true; s.retryAt = performance.now() + 1000 * Math.min(8, 2 ** s.tries++); };
+    s.img.onerror = () => {
+      if(m.fallbackBase&&!s.usedFallback){
+        s.usedFallback=true;s.sample=1;s.layout=m.fallbackAnimations?.[name];
+        s.src=`${m.fallbackBase}/${name}.${m.ext||'png'}`;s.img.src=s.src;return;
+      }
+      s.failed = true; s.retryAt = performance.now() + 1000 * Math.min(8, 2 ** s.tries++);
+    };
     s.img.src = s.src;
     sheets.set(k, s);
     return s;
@@ -224,6 +230,7 @@ G.Sprites = (() => {
         ctx.beginPath(); ctx.arc(x, y - 12 * k, 8 * k, 0, 6.2832); ctx.fill();
         return;
       }
+      m=s.layout||m;
       const row = Math.min(this.dir, m.r - 1);
       const alpha = opts.alpha == null ? 1 : opts.alpha;
       if (alpha <= 0) return;
@@ -232,10 +239,11 @@ G.Sprites = (() => {
       const prev = ctx.globalAlpha;
       if (alpha < 1) ctx.globalAlpha = prev * alpha;
       // Destello: blanco entero (enemigos) o medio blanco encima (tu Pokémon).
-      if (!opts.flash || opts.softFlash) ctx.drawImage(s.img, sx, sy, m.w, m.h, dx, dy, m.w * k, m.h * k);
+      const sample=s.sample||1;
+      if (!opts.flash || opts.softFlash) ctx.drawImage(s.img, sx*sample, sy*sample, m.w*sample, m.h*sample, dx, dy, m.w * k, m.h * k);
       if (opts.flash) {
         if (opts.softFlash) ctx.globalAlpha = prev * alpha * 0.55;
-        ctx.drawImage(white(s.img), sx, sy, m.w, m.h, dx, dy, m.w * k, m.h * k);
+        ctx.drawImage(white(s.img), sx*sample, sy*sample, m.w*sample, m.h*sample, dx, dy, m.w * k, m.h * k);
       }
       ctx.globalAlpha = prev;
     }

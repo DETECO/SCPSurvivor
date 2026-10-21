@@ -14,7 +14,7 @@
       G.TechnicalUI.fail(new Error('La escena requiere configuración local sin servicios')); return;
     }
     try {
-      G.Content.install(); G.Game.init({ technical: true }); G.TechnicalUI.init(); G.InventoryTrial.init(); G.AccountUI.init();
+      G.Content.install(); G.TrialVisuals.install(); G.Game.init({ technical: true }); G.TechnicalUI.init(); G.InventoryTrial.init(); G.AccountUI.init();
     } catch (e) { G.TechnicalUI.fail(e); }
   }
   if (document.readyState === 'loading') addEventListener('DOMContentLoaded', boot);

@@ -1,5 +1,8 @@
 # Diseños y recursos recuperados
 
+**Actualización 0.31 · Arte de ensayo V1, 21/10/2026:** Arte de ensayo V1 aplicado sobre T1BC: cinco actores locales con siluetas y animación más detalladas, cuatro armas distinguibles y comparación clásica. No reemplaza el catálogo final ni cambia colisiones, estadísticas, cámara o recorrido. Fusión, nueva geometría, poderes y ultimate siguen pendientes. [Jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2) · [Ver modelos](https://deteco.github.io/SCPSurvivor/prueba-visual-v1.html) · [Alcance](docs/ARTE_ENSAYO_V1.md). Iván aceptó T1BC en general; no todas las pruebas/dispositivos. El nuevo arte aún no tiene aprobación final.
+
+
 Inventario del proyecto consolidado alfa 0.4. Se conservaron los archivos existentes; no se generó arte nuevo. Las sesiones independientes de pixel art, Roadmap y prompt maestro se omitieron por petición de Iván.
 
 ## Recursos que utiliza la alfa

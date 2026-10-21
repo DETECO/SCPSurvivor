@@ -1,0 +1,11 @@
+# Primera capa visual provisional
+
+Iván solicita aplicar gráficos más avanzados a las pruebas existentes. Autoriza avanzar sin nuevas preguntas; esta pasada ejecuta esa petición y no sustituye aprobaciones del catálogo final.
+
+Dirección: pixel art cenital coherente con GBA de mayor definición, contornos carbón, acero, marfil, visor ámbar y señales rojas. Guardia y médico dejan la silueta de bloques: casco segmentado, visor/mascarilla, placas de chaleco, brazos, rodillas y botas. Perseguidor con postura encorvada y manos reconocibles; biológico con masa asimétrica y ojo central; Custodio pesado con coraza, cables y núcleo rojo. Cuatro modelos de arma visibles y distinguibles, incluida porra sin fogonazo de pistola. Recursos locales SVG editables, coherentes con los originales nativos del repositorio; no se generan imágenes raster ni se incorporan paquetes externos.
+
+Se conserva la geometría lógica de cada fotograma, ancla, radio físico, estadísticas, cámara, mapa y controles. Las hojas nuevas tienen doble resolución de muestreo; el destino de dibujo mantiene las dimensiones anteriores. Solo la demo T1BC usa esta capa, desactivable mediante `graficos=clasicos`; los ensayos anteriores conservan su arte. No sobrescribir los diez SVG originales. Diseños nuevos etiquetados provisionales, sin afirmar 24+24 ni arte final aprobado. Las referencias de iconos son conceptos, no sprites utilizables.
+
+Alcance acotado a actores y armas, aviso discreto de estilo y acceso comparativo. Escenarios finales, todos los VFX, sonido, retratos completos, catálogo final y nuevos sistemas pertenecen a entregas posteriores. Una galería local muestra los cinco actores y animación con ampliación para evaluar detalle, además de capturas de la demo real. Verificar carga de todas las hojas, direcciones y fotogramas, flash/transparencia, fallback, dibujo melee, regresión T1A/B3, builds y diez rutas públicas. No extrapolar emulación a rendimiento o teléfono físico.
+
+Alternativas consideradas: continuar solo mecánicas posterga la legibilidad que pidió Iván; integrar conceptos PNG como sprites causaría cortes/anclas y direcciones incorrectos. La mejora de los SVG nativos preservando geometría es la opción elegida.

@@ -7,7 +7,7 @@ G.ExpandedUI=(()=>{
  const branchLine=w=>G.InfiniteProgression.branches.map((k,i)=>`${['P','R','M','E'][i]}${w.branches?.[k]===6?'5+':w.branches?.[k]||0}`).join(' · ');
  function init(){
   if(!enabled())return;document.body.dataset.expandedTrial='true';
-  el('expanded-test-note').hidden=false;el('expanded-practices').hidden=false;
+  el('expanded-test-note').hidden=false;el('visual-style-note').hidden=!G.TrialVisuals?.enabled;el('expanded-practices').hidden=false;
   const mode=G.MapTrial.practice;
   if(mode==='melee'){const select=el('loadout-weapon-0');select.value='baton';select.dispatchEvent(new Event('change'));select.disabled=true;}
   const descriptions={terminal:'PRÁCTICA TERMINAL · Empiezas con dos armas; la primera tiene Potencia2. Busca T en el radar, acércate y abre el terminal. La partida se detiene al elegir.',maximos:'PRÁCTICA MÁXIMOS · Dos armas: la primera tiene sus cuatro ramas y extras completos; la segunda empieza sin ramas. Comprueba las cartas y el reemplazo.',saturacion:'PRÁCTICA SATURACIÓN · Dos armas y mejoras generales máximas; una esfera de XP preparada abre la elección de apoyo táctico. El apoyo dura15s activos y se sustituye.',melee:'PRÁCTICA MELEE · Empiezas con porra y un objetivo vivo cercano. Golpea automáticamente a corta distancia; sin cargador ni recarga.'};

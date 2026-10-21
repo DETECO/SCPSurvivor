@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-10-21T23:36:44.147416+00:00",
+  "version": "ARTE-ENSAYO-V1",
+  "node": {
+    "source": {
+      "tests": 215,
+      "pass": 214,
+      "fail": 0,
+      "skipped": 1
+    },
+    "publication": {
+      "tests": 215,
+      "pass": 213,
+      "fail": 0,
+      "skipped": 2
+    }
+  },
+  "build": {
+    "source": {
+      "bundleSha256": "571252ff68f2164fe627e53070bc00689adfdff63e5930d1de2541ae5fa4d10f",
+      "indexSha256": "5e8694a6e67ee556e636a4f5a4ffb1b0e4d32fea808bf45b242e69cda5c5c76c",
+      "gallerySha256": "3b9387105c0566445c51782f4565714558a12ff344fec4e1a44e86236b169bc8",
+      "build": "passed",
+      "check": "passed",
+      "scripts": 96
+    },
+    "publication": {
+      "bundleSha256": "5a653b92e880a0a6bcc55368034d67f42a73c32d776730b073530e7e6543b7b3",
+      "indexSha256": "e9cff146a9aad375c1d7a211516a0cc4398bf2562f06a2b529aec4dbd3d7d17b",
+      "gallerySha256": "3b9387105c0566445c51782f4565714558a12ff344fec4e1a44e86236b169bc8",
+      "build": "passed",
+      "check": "passed",
+      "scripts": 96
+    }
+  },
+  "browser": {
+    "source": {
+      "visual-v1": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": null,
+        "resultsSha256": "522c122646b785c1fc553528fb51c65c45af12eb8a4414ce1cdc67fbf45b48bf"
+      },
+      "v2-expanded": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": 5,
+        "resultsSha256": "ddd70b9669301e97b94c6f8ce49dea355c6bdc4fa6d1043b5fa1aa5dc5a17e12"
+      },
+      "v2-infinite": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": 3,
+        "resultsSha256": "b547504db77334f5ab67452ab7c5762631b17a62505fb9aead2bb9abaeea7fa5"
+      },
+      "v2-b3": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": 3,
+        "resultsSha256": "e750f97afbe5962269240faf100a111c60653cd69a2a6880656df61f0cf17761"
+      }
+    },
+    "publication": {
+      "visual-v1": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": null,
+        "resultsSha256": "522c122646b785c1fc553528fb51c65c45af12eb8a4414ce1cdc67fbf45b48bf"
+      },
+      "v2-expanded": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": 5,
+        "resultsSha256": "4de787ca24aab08816d4fc6d5db76f27bd592ee884ede9a537ba9e297511def1"
+      },
+      "v2-infinite": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": 3,
+        "resultsSha256": "36b05b33aa48d34405670ba8e40195a1c8bf7e87ebf94de26ff70da53166a374"
+      },
+      "v2-b3": {
+        "status": "PASS",
+        "scenarios": 4,
+        "modesPerScenario": 3,
+        "resultsSha256": "1b4193ffecfae933915455edbd9b46aa2c0e891709fc214f33fed4fc2aca56b4"
+      }
+    }
+  },
+  "originalAssetsUnchanged": true,
+  "configurationDependenciesUnchanged": true,
+  "manualVisualAcceptance": "pending",
+  "physicalPhoneTested": false,
+  "realAccountsEnabled": false,
+  "billingChanges": false,
+  "review": "Luna weapon implementation reviewed by root; independent Luna review found conditional extra-animation risk. Actual Content.install actor inventories contain only Idle/Walk, so no existing animation is lost. Added root soft-flash/alpha coverage. No blocking issue found in scope.",
+  "method": "Five actors and four weapon drawings. 160 walking crops per visual scenario plus unchanged geometry/classic mode. Frozen QA scene for visual review; natural balance/performance/phone unverified."
+}

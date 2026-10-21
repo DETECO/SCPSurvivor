@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "planVersion": "0.30",
+  "planVersion": "0.31",
   "updatedOn": "2026-10-21",
   "timezone": "America/Santiago",
   "canonicalPath": "RoadmapSCP.json",
@@ -18,15 +18,15 @@
     },
     "lastVerifiedOwnCommit": "00d577042de8467126501456183631aaaaa108e1",
     "lastVerifiedOwnVersion": "T1BC: Pages construido y hashes índice/compilado/CSS/roadmap coincidentes; diez recorridos online aprobados. Aceptación manual nueva pendiente.",
-    "deliveryVersion": "V2-INFINITO-02-T1BC / roadmap0.30: entrega combinada de ensayo, aceptación manual pendiente",
+    "deliveryVersion": "T1BC + ARTE-ENSAYO-V1 / roadmap 0.31",
     "deliveryCommitReference": "git log -1 --format=%H -- RoadmapSCP.json",
     "currentPriority": {
-      "phase": "V2-B4-T1BC",
+      "phase": "V2-ARTE-ENSAYO-V1",
       "requestedOn": "2026-10-21",
       "resumeP06OnlyAfter": "Se permite avanzar prototipo local y preparar diseño visual por D-333; conectar persistencia real requiere sus verificaciones técnicas.",
       "retainExistingP06": true,
-      "resumeP06Execution": "Probar T1B/C y ajustar balance; preparar arte/HUD aprobado en paralelo. Después T2 fusión/procedural, T3 grieta separada/poderes y T4 ultimate. No reintroducir inventario retirado.",
-      "authority": "A-040"
+      "resumeP06Execution": "Probar primera capa visual provisional. Continuar después T2 fusión/variación procedural; no reintroducir mochilas, accesorios o extracción.",
+      "authority": "A-041"
     },
     "infrastructurePolicy": {
       "projectId": "scp-survivor",
@@ -2435,7 +2435,23 @@
         "docs/V2-T1BC-PUBLICACION.json"
       ],
       "automationStatus": "passed_local_and_live",
-      "manualAcceptance": "pending",
+      "manualAcceptance": "positive_general_demo_feedback_not_full_checklist",
+      "productionServicesVerified": false
+    },
+    {
+      "id": "EV-046",
+      "kind": "Arte SVG nativo, muestreo/dibujo y verificación de navegador",
+      "summary": "Arte de ensayo V1 aplicado sobre T1BC: cinco actores locales con siluetas y animación más detalladas, cuatro armas distinguibles y comparación clásica. No reemplaza el catálogo final ni cambia colisiones, estadísticas, cámara o recorrido. Fusión, nueva geometría, poderes y ultimate siguen pendientes.",
+      "runtimeProof": true,
+      "evidenceComplete": false,
+      "references": [
+        "docs/ARTE_ENSAYO_V1.md",
+        "assets/actors-demo-v1/manifest.json",
+        "prueba-visual-v1.html",
+        "docs/ARTE_ENSAYO_V1_VALIDACION.json"
+      ],
+      "automationStatus": "passed_local",
+      "manualAcceptance": "pending_new_visuals",
       "productionServicesVerified": false
     }
   ],
@@ -4762,6 +4778,12 @@
       "topic": "Nueva entrega combinada T1B + T1C y feedback T1A",
       "approvalStatus": "A-040; feedback anterior: funciona bien el demo",
       "resolution": "T1B + T1C implementados como ensayo: terminal voluntario con reemplazo de una copia y pausa completa; ramas/cartas revisadas por familia; cuarta arma, porra de corto alcance sin munición; HUD de ramas/recargas y consulta de equipo; daño compacto y radar circular fijo sin revelar cofres desconocidos. Cuatro prácticas explícitas: terminal, máximos, saturación y melee. Sin cuentas/guardado/economía real. Arte y balance provisionales; fusión, grieta separada, poderes y ultimate pendientes. T1C es el nuevo nombre del tramo de interfaz y radar, no una fase previamente existente. Valores melee/prácticas son parámetros de ensayo; no se aprueban recetas/costes/fusión por inferencia."
+    },
+    {
+      "id": "D-337",
+      "topic": "Aceptación general T1BC y capa visual provisional",
+      "approvalStatus": "Si funciona bien. Que sigue; posterior petición gráfica A-041",
+      "resolution": "Arte de ensayo V1 aplicado sobre T1BC: cinco actores locales con siluetas y animación más detalladas, cuatro armas distinguibles y comparación clásica. No reemplaza el catálogo final ni cambia colisiones, estadísticas, cámara o recorrido. Fusión, nueva geometría, poderes y ultimate siguen pendientes. La aceptación general no acredita BC01–BC12 ni teléfono físico, balance final o aprobación del nuevo arte."
     }
   ],
   "authorizations": [
@@ -4960,6 +4982,11 @@
       "id": "A-040",
       "action": "Implementar y publicar paquete combinado T1B/T1C con ampliación melee y prácticas rápidas",
       "scopeStatus": "Iván aprobó la propuesta precedente: YA AVANCEMOS CON LO SIGUIENTE. Incluye terminal/progresión/HUD/radar/daño/porra y prácticas; agentes Luna máximo bajo integración de raíz. Conserva autorizaciones GitHub/main; sin backend/billing."
+    },
+    {
+      "id": "A-041",
+      "action": "Aplicar primera capa gráfica provisional a la demo existente",
+      "scopeStatus": "Iván: Podemos aplicar algunos modelos y diseños graficos para dejarlos aplicados por mientras. Continúan autorización main/Pages y regla sin preguntas repetidas. Preservar originales y aprobaciones finales; sin servicios/billing."
     }
   ],
   "closureCases": [
@@ -5790,6 +5817,12 @@
       "date": "2026-10-21",
       "description": "Roadmap0.30: terminal, melee, HUD/radar/daño y prácticas T1B+C; preserva53tareas y reglas base. Feedback general de T1A registrado.",
       "approval": "t1b y c para abarcar más avance; YA AVANCEMOS CON LO SIGUIENTE"
+    },
+    {
+      "id": "CHG-038",
+      "date": "2026-10-21",
+      "description": "Roadmap 0.31: primera capa visual provisional y feedback general positivo T1BC; 53 tareas históricas preservadas.",
+      "approval": "A-041"
     }
   ],
   "derivedProgress": {
@@ -6301,7 +6334,7 @@
       "quickUrl": "http://127.0.0.1:8000/?prueba=combate-v2&ensayo=terminal",
       "publicUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2",
       "publicQuickUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=terminal",
-      "manualAcceptance": "pending",
+      "manualAcceptance": "positive_general_demo_feedback_not_full_checklist",
       "persisted": false,
       "supportedModels": [
         "pistol",
@@ -6326,7 +6359,29 @@
         "melee"
       ],
       "liveDeploymentVerified": true,
-      "publicationReceipt": "docs/V2-T1BC-PUBLICACION.json"
+      "publicationReceipt": "docs/V2-T1BC-PUBLICACION.json",
+      "manualFeedback": {
+        "userText": "Si funciona bien. Que sigue",
+        "date": "2026-10-21",
+        "scope": "General T1BC demo acceptance; not full checklist or physical phone evidence"
+      }
+    },
+    "v2VisualTrial": {
+      "version": "ARTE-ENSAYO-V1",
+      "status": "EC",
+      "evidenceComplete": false,
+      "evidenceIds": [
+        "EV-046"
+      ],
+      "publicUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2",
+      "gallery": "https://deteco.github.io/SCPSurvivor/prueba-visual-v1.html",
+      "classicUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=clasicos",
+      "guide": "docs/ARTE_ENSAYO_V1.md",
+      "manualAcceptance": "pending_new_visuals",
+      "automationStatus": "passed_local",
+      "publicationVerification": "pending",
+      "realAccountsEnabled": false,
+      "billingEnabled": false
     }
   },
   "summaryTemplate": "# Roadmap vigente — SCP Survivor\n\n{{ACTIVE_DESIGN}}\n\n---\n\n## Línea base histórica anterior a V2\n\nLas reglas, tareas, porcentajes y prioridades registradas debajo describen el diseño anterior. En conflicto manda la pauta V2 de arriba.\n\n**Prioridad registrada antes de V2 (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).\n\n**Antecedente histórico · crédito de Ivan Vivanco · prototipo P06-T01 (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).\n\n**Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).\n\nVersión **{{VERSION}}**, {{DATE}}. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.\n\n## Avance basado en evidencia\n\n{{SUMMARY_METRICS}}\n\n{{SUMMARY_COUNTS}} Solo CV con evidencia completa suma; no hay crédito parcial. El avance mide criterios cumplidos, no tiempo restante, producto publicado o porcentaje de arte final.\n\n{{SUMMARY_PHASES}}\n\n## P06 local en curso desde v0.14\n\nA-024 autoriza avanzar localmente. P06-T01 queda EC/evidenceComplete=false con modelo físico, panel base/preparación con confirmación, IDs y fixture temporal para mochilas8/16 y almacén60. `?prueba=inventario` inicia directamente en preparación20s; `?inventario=local` activa la opción en loopback. No hay cuentas, persistencia ni inventario real, botín o kit. EV-030 registra los ensayos ejecutados en [docs/P06-REPORT.md](docs/P06-REPORT.md); la aceptación manual sigue pendiente. P06-T02–T05 continúan P; P05 EV0/6 y el global52/100 no cambian.\n\n## Cambio desde v0.11\n\nGAP-001 está resuelto y P03-T02 pasa de EV a CV: suma sus **3 puntos**, elevando global de 49 a 52 y técnico de 39/90 a 42/90. P03 queda 12/12. Criterios, pesos y dependencias originales permanecen intactos.\n\nLos sectores normales ahora declaran 3/4/5 oleadas reproducibles, con objetivos alternos, preparación de 20 s, HUD/contadores/salidas coherentes y secuencia independiente del calendario de jefe/extracción. EV-026: 11 pruebas Node, 900 semillas y calendario histórico de 18 sectores; cuatro escenarios de navegador fuente/compilado y dos extracciones S10/oleada4/35oleadas. Fuente 1.580 bajas y jefe evadido; compilado 1.587 y jefe vencido. Cero errores de página, peticiones remotas o errores HTTP en esos recorridos.\n\n## P05: implementación local, aceptación pendiente\n\nP05-T01/T02/T03 están **EV y conservan 0/6 puntos**. Se añadieron cuentas ficticias, alias, verificación/recuperación/vinculación explícita, autoridad de comandos emulada, recibos/reintentos, checkpoints seguros y una expedición activa por UID. Transferir revoca la sesión anterior; recuperar combate desde su inicio excluye clasificación irreversiblemente. El juego sin cuentas permanece disponible.\n\n{{P05_VALIDATION_SUMMARY}}\n\nResultados y límites: [docs/P05-REPORT.md](docs/P05-REPORT.md), [docs/P05-validation.json](docs/P05-validation.json) y [docs/GAP-001-validation.json](docs/GAP-001-validation.json).\n\n| Tarea | Preparado/probado localmente | Falta para aceptación completa |\n|---|---|---|\n| P05-T01 | Auth SDK, alias, alta/acceso/cierre y flujos ficticios | Google OAuth/correo/verificación/recuperación/vinculación reales, errores y separación de identidades con servicios propios |\n| P05-T02 | UID del token, revisión, sesión, transacciones/recibos, concurrencia y replay | Cumplir P05-T01; aceptar backend/reglas/persistencia/retención propios con alcance autorizado |\n| P05-T03 | Checkpoints, roundtrip, transferencia, desconexión/respuesta perdida y retroceso no clasificable | Cumplir P05-T02; nube propia y cambio real de dispositivo/red |\n\nLa evidencia local no acredita combate validado por servidor, economía/inventario persistente P06/P07, ranking oficial, OAuth/correo real, dispositivos físicos, Safari, FPS/memoria/carga, costes o juego operativo en producción.\n\n## Proyecto Firebase propio\n\nIván creó manualmente **scp-survivor**, app web y plan Spark. Capturas confirman Email/contraseña y Google habilitados, localhost/127.0.0.1 autorizados y política exigida de mínimo 8 sin clases obligatorias. La configuración pública se conserva **inactiva** en config/firebase-public.json. El juego usa exclusivamente demo-scp-survivor emulado, activado de forma optativa en localhost con ?cuentas=local. No se desplegó backend real ni se habilitó facturación desde Codex. Detalle: [docs/FIREBASE_PROPIO.md](docs/FIREBASE_PROPIO.md).\n\n## Orden de continuación\n\n1. **P05:** completar aceptación real conforme a sus dependencias. Preparar configuración, reglas, pruebas y costes antes de solicitar la autorización concreta necesaria para conexión/despliegue. La configuración manual de Auth no acredita por sí sola un backend de guardado funcional.\n2. **P06:** trabajo local autorizado por A-024; P06-T01 está EC con su primer prototipo temporal. La aceptación conserva dependencias P04-T02/P05-T03 y requiere servidor, continuidad y aceptación manual. P06-T02–T05 siguen P aunque el trabajo local está autorizado. El fixture no persiste ni representa inventario real, botín o kit.\n3. **P07:** progresión permanente, gacha y economía consistente, con P05/P06 completos.\n4. **P08:** invitado/ranking; ranking oficial requiere aceptación P10-T01/T02 antes de P08-T02.\n5. **P09/P10:** acabado/recursos y validación en dispositivos físicos, carga, memoria, rendimiento y costes.\n6. **P11:** despliegue/publicación/operación autorizados y aceptación final de producción.\n\nLa web Roadmap sigue como proyecto independiente sin construcción, automatización o publicación en este alcance. Cooperativo, Hardcore, códigos, regalos, ampliación 24+24 y PC posterior quedan fuera del denominador aprobado.\n\n## Continuidad y sincronización\n\nRepositorio: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), rama main. **Código P05, GAP-001 y roadmap v0.12 incluidos en actualización del repositorio autorizada por Iván: A-021.** Main se comprobó en vivo el15/10/2026 antes de esta entrega: baseline **39344e77e15bd82c98bacb3e9773ceaa20c1b918**, sin cambios remotos nuevos. Consultar el commit de la entrega P05-local-01 / roadmap v0.12 mediante git log -1 --format=%H -- RoadmapSCP.json. Publicar el código no activa Firebase real, facturación o despliegue: **el juego con cuentas sigue ejecutándose localmente con emuladores**.\n\nA-018 registra migración/subida anterior; A-019 autoriza avanzar GAP-001→P05 con implementación, dependencias y emuladores locales; A-020 autoriza este roadmap con subagente y A-021 autoriza entregar código P05 y roadmap en GitHub/main. Iván pide continuar autónomamente sin repetir consultas dentro del alcance local ya autorizado. Autorizaciones/decisiones/historial íntegros en JSON/vista. Los registros históricos no bloquean el alcance local ya autorizado.\n\nLeer [AGENTS.md](AGENTS.md), [CONTEXTO_PROYECTO.md](CONTEXTO_PROYECTO.md), [PROMPT_MAESTRO.md](PROMPT_MAESTRO.md) e [INSTALACION_WINDOWS.md](INSTALACION_WINDOWS.md). Conservar fuentes, arte aprobado y backups. La entrega en GitHub está autorizada por A-021; configuración Firebase real, facturación y despliegue del juego no se activan por esa entrega.\n\n~~~powershell\nnode tools/render-roadmap.js --check\n~~~\n\nAntes de cerrar tareas: comprobar criterio/dependencias/alcance, ejecutar pruebas pertinentes, registrar versión/entorno/evidencia y distinguir implementación local de aceptación real.\n",
@@ -6335,8 +6390,8 @@
     "title": "Avance por mapas; sin extracción, accesorios físicos ni mochilas",
     "updatedOn": "2026-10-21",
     "status": "infinite_design_synced_next_trial_planned",
-    "authority": "A-040",
-    "summary": "T1B + T1C implementados como ensayo: terminal voluntario con reemplazo de una copia y pausa completa; ramas/cartas revisadas por familia; cuarta arma, porra de corto alcance sin munición; HUD de ramas/recargas y consulta de equipo; daño compacto y radar circular fijo sin revelar cofres desconocidos. Cuatro prácticas explícitas: terminal, máximos, saturación y melee. Sin cuentas/guardado/economía real. Arte y balance provisionales; fusión, grieta separada, poderes y ultimate pendientes.",
+    "authority": "A-041",
+    "summary": "Arte de ensayo V1 aplicado sobre T1BC: cinco actores locales con siluetas y animación más detalladas, cuatro armas distinguibles y comparación clásica. No reemplaza el catálogo final ni cambia colisiones, estadísticas, cámara o recorrido. Fusión, nueva geometría, poderes y ultimate siguen pendientes.",
     "pautaPath": "PAUTA_DESARROLLO.md",
     "changePlanPath": "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
     "decisionsPath": "docs/ESTRUCTURA_DECISIONES.md",
@@ -6690,7 +6745,7 @@
       "quickUrl": "http://127.0.0.1:8000/?prueba=combate-v2&ensayo=terminal",
       "publicUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2",
       "publicQuickUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=terminal",
-      "manualAcceptance": "pending",
+      "manualAcceptance": "positive_general_demo_feedback_not_full_checklist",
       "persisted": false,
       "supportedModels": [
         "pistol",
@@ -6698,7 +6753,12 @@
         "shotgun",
         "baton"
       ],
-      "parameters": "provisional_trial_not_final_balance"
+      "parameters": "provisional_trial_not_final_balance",
+      "manualFeedback": {
+        "userText": "Si funciona bien. Que sigue",
+        "date": "2026-10-21",
+        "scope": "General T1BC demo acceptance; not full checklist or physical phone evidence"
+      }
     },
     "approvedDesignCutPath": "docs/ESTRUCTURA_REGLAS_APROBADAS.md",
     "playableDesignPlanPath": "docs/PLAN_DESARROLLO_V2_INFINITO.md",
@@ -6708,12 +6768,12 @@
       "authority": "A-040",
       "title": "Progresión, reemplazo, melee, HUD y radar",
       "implemented": true,
-      "status": "prototype_awaiting_manual_acceptance",
+      "status": "prototype_general_demo_accepted_visual_pass_in_progress",
       "guide": "docs/PRUEBA_T1BC.md",
       "report": "docs/V2-T1BC-REPORT.md",
       "publicTrialUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2",
       "accountRewardsEnabled": false,
-      "followUp": "T2 fusión/variación procedural; arte/HUD en paralelo; T3/T4 conservan sus propios tramos"
+      "followUp": "Arte de ensayo V1, luego T2 fusión/procedural, T3 grieta/poderes y T4 ultimate, sin declarar esos tramos implementados."
     },
     "publicDemo": {
       "url": "https://deteco.github.io/SCPSurvivor/",

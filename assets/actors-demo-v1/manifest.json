@@ -1,0 +1,112 @@
+{
+  "status": "provisional_native_vector_art",
+  "notApprovedFinalCatalog": true,
+  "sample": 2,
+  "actors": [
+    {
+      "id": "guard01",
+      "files": [
+        {
+          "file": "assets/actors-demo-v1/guard01/Idle.svg",
+          "sha256": "4475f5533cc43e8ff3a5d3984426db7266e7adc25614a0a2de913dee60fc6e80",
+          "width": 48,
+          "height": 448,
+          "frames": 1,
+          "directions": 8
+        },
+        {
+          "file": "assets/actors-demo-v1/guard01/Walk.svg",
+          "sha256": "dab90c6ce9939a586e3f0c3001971731d704dcef26ca8cc48715924aa1595da6",
+          "width": 192,
+          "height": 448,
+          "frames": 4,
+          "directions": 8
+        }
+      ]
+    },
+    {
+      "id": "medic01",
+      "files": [
+        {
+          "file": "assets/actors-demo-v1/medic01/Idle.svg",
+          "sha256": "169963c93f9c99f23af093d9a17e2d6759980f6a71a5b1b0b1a9e06a496e83d1",
+          "width": 48,
+          "height": 448,
+          "frames": 1,
+          "directions": 8
+        },
+        {
+          "file": "assets/actors-demo-v1/medic01/Walk.svg",
+          "sha256": "1fd5bb727eaa1c63a2973a23db063752ec72dbd6b262e5a004d5b3e20b9e5e45",
+          "width": 192,
+          "height": 448,
+          "frames": 4,
+          "directions": 8
+        }
+      ]
+    },
+    {
+      "id": "pursuer01",
+      "files": [
+        {
+          "file": "assets/actors-demo-v1/pursuer01/Idle.svg",
+          "sha256": "045c59d6ec3459c10bf892654a9e1d4e9371cc756188e0dcd5fc45bf9a1f2635",
+          "width": 48,
+          "height": 448,
+          "frames": 1,
+          "directions": 8
+        },
+        {
+          "file": "assets/actors-demo-v1/pursuer01/Walk.svg",
+          "sha256": "02eb3019ae892d070e4827ba251830cfea0e7063e2eca3a1c3b870c774282d21",
+          "width": 192,
+          "height": 448,
+          "frames": 4,
+          "directions": 8
+        }
+      ]
+    },
+    {
+      "id": "biological01",
+      "files": [
+        {
+          "file": "assets/actors-demo-v1/biological01/Idle.svg",
+          "sha256": "c9c8224c7c9c847eae15b367071ae02387449e918003b24cc9b1dd7023bd6227",
+          "width": 128,
+          "height": 1024,
+          "frames": 1,
+          "directions": 8
+        },
+        {
+          "file": "assets/actors-demo-v1/biological01/Walk.svg",
+          "sha256": "de151d1d12443a1e46b747eedc67516faba73838d12778bf9224ecf97396174b",
+          "width": 512,
+          "height": 1024,
+          "frames": 4,
+          "directions": 8
+        }
+      ]
+    },
+    {
+      "id": "warden01",
+      "files": [
+        {
+          "file": "assets/actors-demo-v1/warden01/Idle.svg",
+          "sha256": "f3de97da7dd7298cb7c42ffcb352b284c29c4bd22a6169538428a6f5f3a25c30",
+          "width": 128,
+          "height": 1024,
+          "frames": 1,
+          "directions": 8
+        },
+        {
+          "file": "assets/actors-demo-v1/warden01/Walk.svg",
+          "sha256": "835682ae82a346bf5e082048717216bd02964819c006f8a470f3c33be72b3e16",
+          "width": 512,
+          "height": 1024,
+          "frames": 4,
+          "directions": 8
+        }
+      ]
+    }
+  ]
+}

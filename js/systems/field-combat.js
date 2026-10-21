@@ -179,6 +179,7 @@ G.FieldCombat = (() => {
   function clearTemporary(pl) { currentPlayer=pl||currentPlayer; for(const w of weapons){w.level=1;if(infinite())w.branches=Object.fromEntries(G.InfiniteProgression.branches.map(k=>[k,0]));}if(infinite()&&pl)pl.infiniteTactical=null; if(pl){pl.tempStats={}; if(G.FieldStats?.apply) G.FieldStats.apply(pl);} }
   function drawWeapon(ctx,pl,options={}) {
     if(!pl||pl.dead)return;
+    if(G.TrialWeaponArt?.draw(ctx,pl,options,weapons))return;
     const has=Object.prototype.hasOwnProperty.call(options||{},'behind'),behind=has?!!options.behind:null;
     const a=Number.isFinite(pl.weaponAim)?pl.weaponAim:Number.isFinite(pl.aim)?pl.aim:0,ca=Math.cos(a),sa=Math.sin(a),side=Math.PI/2;
     const x=pl.x+ca*7-Math.cos(a+side)*5,y=pl.y-9+sa*7-Math.sin(a+side)*5;

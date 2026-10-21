@@ -1,5 +1,8 @@
 # Contexto del proyecto — SCP Survivor
 
+**Actualización 0.31 · Arte de ensayo V1, 21/10/2026:** Arte de ensayo V1 aplicado sobre T1BC: cinco actores locales con siluetas y animación más detalladas, cuatro armas distinguibles y comparación clásica. No reemplaza el catálogo final ni cambia colisiones, estadísticas, cámara o recorrido. Fusión, nueva geometría, poderes y ultimate siguen pendientes. [Jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2) · [Ver modelos](https://deteco.github.io/SCPSurvivor/prueba-visual-v1.html) · [Alcance](docs/ARTE_ENSAYO_V1.md). Iván aceptó T1BC en general; no todas las pruebas/dispositivos. El nuevo arte aún no tiene aprobación final.
+
+
 **Entrega vigente 0.30 · T1B + T1C, 21/10/2026 (A-040/D-336/EV-045):** T1B + T1C implementados como ensayo: terminal voluntario con reemplazo de una copia y pausa completa; ramas/cartas revisadas por familia; cuarta arma, porra de corto alcance sin munición; HUD de ramas/recargas y consulta de equipo; daño compacto y radar circular fijo sin revelar cofres desconocidos. Cuatro prácticas explícitas: terminal, máximos, saturación y melee. Sin cuentas/guardado/economía real. Arte y balance provisionales; fusión, grieta separada, poderes y ultimate pendientes. [Práctica de terminal](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=terminal) · [Mapa completo](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2) · [Guía](docs/PRUEBA_T1BC.md) · [Resultados](docs/V2-T1BC-REPORT.md). Iván informó que T1A funciona bien: aceptación general de esa demo, sin extrapolar a todas las pruebas/dispositivos ni a esta entrega nueva. La entrada pública por defecto abre T1BC; se conservan accesos anteriores. Spark sin facturación; servicios reales desactivados.
 
 
