@@ -1,5 +1,10 @@
 # Reglas aprobadas de ESTRUCTURA — corte de programación
 
+**Plan vigente 0.28 · ESTRUCTURA, 20/10/2026 (A-038/D-334):** ESTRUCTURA sincronizada hasta 01a15a34-93e9-7a11-9597-6a2c37fb2570 (20/10/2026): modo infinito; una arma inicial y segunda por premio/primer jefe; máximo dos simultáneas. Cuatro ramas5+extra por arma, poderes/generales5+extra y ultimate5permanentes. Fusión en sala, mejoras permanentes por soldado con monedas, tres gachas con gris1/dorado5, procedural y radar. Próxima prueba V2-INFINITO-01/T1A planificada, todavía sin implementación ni nueva URL. P05 aceptado por el propietario para avanzar; servicios reales diferidos. Agentes Luna máximo bajo coordinación de raíz. [Plan actual](PLAN_DESARROLLO_V2_INFINITO.md) · [Pauta próxima prueba](PRUEBA_V2_INFINITO_01.md) · [Decisiones aceptadas](DECISIONES_INFINITO_2026-10-20.md). Esta instrucción posterior sustituye inicio con dos armas, nivel simple máximo5, mezcla de cartas sin cerrar y requisitos P05 que bloqueaban el prototipo. Conservar diferencias de la demo B3 como antecedentes; no presentarla como la nueva prueba. Usar **Luna con razonamiento máximo** al delegar; prevalece sobre la preferencia previa Sol medio.
+
+## Antecedentes conservados; el plan0.28 anterior prevalece
+
+
 18/10/2026 · Sincronización documental 0.22. Fuente: hilo **ESTRUCTURA**, ID `01a1457c-c051-73d2-9864-e7deb6435420`. Se releyó el historial accesible, incluida la aprobación de Iván en el turno `01a15142-340f-7400-8660-f8d2502ce2aa`: «Me guata tus recomendaciones. Establecelos». Responde a las recomendaciones de `01a150fe-66ad-7040-b2dd-67d4c73f3244`.
 
 El último turno seguía en curso. Este es un corte explícito de lo confirmado, no una exportación íntegra ni una aprobación de futuras respuestas. La wiki de trabajo del hilo se conserva sin modificar desde PROGRAMACION; este documento deja una referencia estable para el repositorio.

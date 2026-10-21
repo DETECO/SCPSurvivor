@@ -1,5 +1,28 @@
 # Registro de decisiones — chat ESTRUCTURA
 
+## Corte vigente20/10/2026 — 66respuestas y aclaraciones
+
+Se leyó directamente ESTRUCTURA, últimos10turnos completados hasta `01a15a34-93e9-7a11-9597-6a2c37fb2570`, alcanzando el corte previo01a15409. [Fuente](ESTRUCTURA_CORTE_2026-10-20.json). La [matriz vigente](DECISIONES_INFINITO_2026-10-20.md) sustituye decisiones incompatibles y cierra las alternativas ya aceptadas; no repetir el cuestionario. [Plan actual](PLAN_DESARROLLO_V2_INFINITO.md) · [Próxima prueba](PRUEBA_V2_INFINITO_01.md).
+
+ESTRUCTURA sincronizada hasta 01a15a34-93e9-7a11-9597-6a2c37fb2570 (20/10/2026): modo infinito; una arma inicial y segunda por premio/primer jefe; máximo dos simultáneas. Cuatro ramas5+extra por arma, poderes/generales5+extra y ultimate5permanentes. Fusión en sala, mejoras permanentes por soldado con monedas, tres gachas con gris1/dorado5, procedural y radar. Próxima prueba V2-INFINITO-01/T1A planificada, todavía sin implementación ni nueva URL. P05 aceptado por el propietario para avanzar; servicios reales diferidos. Agentes Luna máximo bajo coordinación de raíz.
+
+### Parámetros que todavía requieren ficha o calibración
+
+| ID | Pendiente real | Tramo afectado |
+| --- | --- | --- |
+| I-01 | Fichas de combate: magnitudes, extras, cooldowns y saturación | T1B/T3/T4 según su ficha; T1A usa catálogo pequeño de ensayo |
+| I-02 | Primera receta/herencia de fusión, frecuencia de sala y límite de operaciones | T2; no bloquea T1A |
+| I-03 | Monedas/precios/efectos por soldado y compatibilidad con XP/duplicados | T5 y economía real; no bloquea combate o visual |
+| I-04 | Instante/posición/aviso de la única retirada de cinco segundos | T3; frecuencia única y retorno por victoria ya aceptados |
+| I-05 | Fuentes/compensaciones gris-dorado, lote de cinco y calibración de garantías | Integración gacha; valor1/5 y tres catálogos ya aceptados |
+| I-06 | Pesos y reloj puntuable de la fórmula compuesta | Score competitivo, no demo ni diseño |
+| I-07 | Detalle operativo de saltos respetando jefe obligatorio y sin premios por mapas omitidos | Saltos finales; no bloquea T1A |
+
+Los O-01–O-14 de los antecedentes siguientes ya no son una lista de preguntas vigente: el cuestionario aceptado resuelve gran parte de ellas. El punto abierto debe identificarse medianteI-01–I-07, sin reabrir una regla cerrada. Receta y límite1de fusión, precios o fórmula de score no se aprueban por ser recomendaciones del asistente.
+
+## Antecedentes del corte19/10/2026
+
+
 Consulta actualizada: 19/10/2026. Se leyeron los últimos diez turnos de **ESTRUCTURA**, hasta `01a15409-96d6-72a1-a825-4038ce3a6007`, completado; se alcanzó el corte anterior de cofres. Hay historial más antiguo disponible, ya incorporado como antecedentes; no se afirma una exportación íntegra. La petición actual exige actualizar el roadmap. [Cambios y alcance](ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md).
 
 ## Confirmado por intervenciones del usuario

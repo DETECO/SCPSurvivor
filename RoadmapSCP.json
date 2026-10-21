@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "planVersion": "0.27",
+  "planVersion": "0.28",
   "updatedOn": "2026-10-20",
   "timezone": "America/Santiago",
   "canonicalPath": "RoadmapSCP.json",
@@ -18,15 +18,15 @@
     },
     "lastVerifiedOwnCommit": "8f2a509ca4583cb190f3f426c778aa5bc7008342",
     "lastVerifiedOwnVersion": "V2-trial-03: Pages construido; índice, compilado y roadmap coincidentes; dos escenarios online con jefe/grieta/cierre aprobados.",
-    "deliveryVersion": "Roadmap0.27: aceptación P05 del propietario y ruta a diseño; mismo runtime V2-trial-03",
+    "deliveryVersion": "Roadmap0.28: ESTRUCTURA sincronizada y V2-INFINITO-01 planificada; runtime V2-trial-03 sin cambios",
     "deliveryCommitReference": "git log -1 --format=%H -- RoadmapSCP.json",
     "currentPriority": {
-      "phase": "V2-B4",
+      "phase": "V2-B4-T1A",
       "requestedOn": "2026-10-20",
       "resumeP06OnlyAfter": "Se permite avanzar prototipo local y preparar diseño visual por D-333; conectar persistencia real requiere sus verificaciones técnicas.",
       "retainExistingP06": true,
-      "resumeP06Execution": "B4 por tramos: armas/mejoras, poderes y ultimate; agentes Sol medio bajo revisión de raíz cuando se delegue. No continuar inventario físico retirado.",
-      "authority": "A-037"
+      "resumeP06Execution": "Plan vigente infinito: primera prueba T1A una→dos armas, luego ramas/cartas y tramos posteriores. Agentes Luna máximo bajo revisión de raíz. No continuar inventario físico retirado.",
+      "authority": "A-038"
     },
     "infrastructurePolicy": {
       "projectId": "scp-survivor",
@@ -2387,6 +2387,24 @@
       ],
       "manualAcceptance": "owner_accepts_pending_p05_to_proceed",
       "realServiceVerification": "deferred_not_executed_this_turn"
+    },
+    {
+      "id": "EV-043",
+      "kind": "Lectura directa ESTRUCTURA y planificación documental, sin ejecución de nuevas mecánicas",
+      "summary": "ESTRUCTURA sincronizada hasta 01a15a34-93e9-7a11-9597-6a2c37fb2570 (20/10/2026): modo infinito; una arma inicial y segunda por premio/primer jefe; máximo dos simultáneas. Cuatro ramas5+extra por arma, poderes/generales5+extra y ultimate5permanentes. Fusión en sala, mejoras permanentes por soldado con monedas, tres gachas con gris1/dorado5, procedural y radar. Próxima prueba V2-INFINITO-01/T1A planificada, todavía sin implementación ni nueva URL. P05 aceptado por el propietario para avanzar; servicios reales diferidos. Agentes Luna máximo bajo coordinación de raíz.",
+      "runtimeProof": false,
+      "evidenceComplete": false,
+      "references": [
+        "docs/ESTRUCTURA_CORTE_2026-10-20.json",
+        "docs/DECISIONES_INFINITO_2026-10-20.md",
+        "docs/PLAN_DESARROLLO_V2_INFINITO.md",
+        "docs/PRUEBA_V2_INFINITO_01.md",
+        "docs/PLAN_INFINITO_VALIDACION_2026-10-20.json"
+      ],
+      "readScope": "Diez turnos completados, último 01a15a34-93e9-7a11-9597-6a2c37fb2570; alcanza corte anterior01a15409. No exportación íntegra.",
+      "newRuntimeImplemented": false,
+      "newTrialExecuted": false,
+      "review": "Revisión de coherencia y pauta completada por raíz. Se solicitaron dos agentes gpt-6-luna/max; ambos terminaron con error de límite de uso, sin entregar una revisión ni archivo. No se sustituyeron por otros modelos ni se usó un reset."
     }
   ],
   "decisions": [
@@ -4694,6 +4712,12 @@
       "topic": "P05 aceptado por el propietario para avanzar; validaciones técnicas reales diferidas",
       "approvalStatus": "Petición expresa de Iván, 20/10/2026; A-037",
       "resolution": "Iván da por aceptado lo pendiente de P05 para continuar y prioriza llegar al diseño visual. Aceptación del propietario registrada; las comprobaciones técnicas de servicios reales no ejecutadas se difieren, sin declararlas aprobadas. P05 deja de bloquear el prototipo local B4 y la preparación visual. Cuentas propias, economía persistente y facturación siguen desactivadas. No convierte la aceptación en prueba ejecutada ni cierra por inferencia B1/B2/B3. Avanzar B4 por tramos y preparar diseño; integración persistente conserva sus dependencias."
+    },
+    {
+      "id": "D-334",
+      "topic": "Diseño infinito confirmado: una a dos armas,5+extra, fusión y progresión por soldado; prueba T1A primero",
+      "approvalStatus": "Decisiones humanas de ESTRUCTURA y aclaraciones hasta 01a15a34-93e9-7a11-9597-6a2c37fb2570; sincronización A-038",
+      "resolution": "ESTRUCTURA sincronizada hasta 01a15a34-93e9-7a11-9597-6a2c37fb2570 (20/10/2026): modo infinito; una arma inicial y segunda por premio/primer jefe; máximo dos simultáneas. Cuatro ramas5+extra por arma, poderes/generales5+extra y ultimate5permanentes. Fusión en sala, mejoras permanentes por soldado con monedas, tres gachas con gris1/dorado5, procedural y radar. Próxima prueba V2-INFINITO-01/T1A planificada, todavía sin implementación ni nueva URL. P05 aceptado por el propietario para avanzar; servicios reales diferidos. Agentes Luna máximo bajo coordinación de raíz. Matriz66 aceptada con sus excepciones y propuestas aún identificadas. No reabrir respuestas aceptadas ni inventar receta, límite de fusión, precios, pesos de score o parámetros económicos."
     }
   ],
   "authorizations": [
@@ -4877,6 +4901,11 @@
       "action": "Registrar aceptación de Iván de lo pendiente de P05 y priorizar mecánicas para diseño visual",
       "scopeStatus": "Iván da por aceptado lo pendiente de P05 para continuar y prioriza llegar al diseño visual. Aceptación del propietario registrada; las comprobaciones técnicas de servicios reales no ejecutadas se difieren, sin declararlas aprobadas. P05 deja de bloquear el prototipo local B4 y la preparación visual. Cuentas propias, economía persistente y facturación siguen desactivadas.",
       "userQuote": "si da por aceptado lo pendiente de p05 quiero avanzar rapido para comenzar con el diseño visual. que nos queda sobre las mecanicas ??"
+    },
+    {
+      "id": "A-038",
+      "action": "Sincronizar actualizaciones de ESTRUCTURA y planificar la nueva prueba; agentes Luna máximo si se delega",
+      "scopeStatus": "Petición de Iván del20/10/2026 y continuación expresa. Actualizar plan/roadmap/documentación y preparar prueba por tramos. No implica declarar funciones nuevas implementadas ni activar servicios reales."
     }
   ],
   "closureCases": [
@@ -5689,6 +5718,12 @@
       "date": "2026-10-20",
       "description": "Roadmap0.27: aceptación del propietario P05 registrada, pruebas reales diferidas y ruta B4→diseño priorizada. Sin cambios del ejecutable, tareas, criterios ni pesos históricos.",
       "approval": "si da por aceptado lo pendiente de p05 quiero avanzar rapido para comenzar con el diseño visual. que nos queda sobre las mecanicas ??"
+    },
+    {
+      "id": "CHG-035",
+      "date": "2026-10-20",
+      "description": "Roadmap0.28: sincronización de66decisiones y aclaraciones de ESTRUCTURA; plan infinito y primera pruebaT1A. Dos revisiones Luna máximo intentadas sin completarse por cuota; revisión final por raíz; sin cambios del runtime, dependencias ni53tareas históricas.",
+      "approval": "Considera las actualizaciones de ESTRUCTURA; actualizar plan y comenzar a planificar nueva prueba. Continua."
     }
   ],
   "derivedProgress": {
@@ -6073,7 +6108,7 @@
       "designDisposition": "historical_fixture_replan_do_not_extend_backpacks_or_mods"
     },
     "activeDesignRevision": "V2-ESTRUCTURA",
-    "v2ImplementationStatus": "B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. Verificación local y online B3 aprobada; aceptación humana pendiente.",
+    "v2ImplementationStatus": "RuntimeV2-trial-03 anterior probado; nuevas decisiones infinitas sincronizadas y pruebaT1A planificada. Una arma inicial, simultaneidad, ramas/extra, dimensión separada, fusión y tienda aún sin implementar.",
     "v2Trial": {
       "version": "V2-trial-01",
       "guide": "docs/PRUEBA_MAPA_V2.md",
@@ -6141,6 +6176,18 @@
       "technicalVerification": "deferred_without_new_runtime_evidence",
       "blocksLocalB4AndVisualPreparation": false,
       "realAccountsEnabled": false
+    },
+    "v2InfinitePlanning": {
+      "authority": "A-038",
+      "decisionId": "D-334",
+      "version": "V2-INFINITO-01",
+      "status": "planned_not_implemented",
+      "firstPlayableSlice": "T1A",
+      "plan": "docs/PLAN_DESARROLLO_V2_INFINITO.md",
+      "guide": "docs/PRUEBA_V2_INFINITO_01.md",
+      "newTrialExecuted": false,
+      "publicUrl": null,
+      "runtimeStill": "V2-trial-03"
     }
   },
   "summaryTemplate": "# Roadmap vigente — SCP Survivor\n\n{{ACTIVE_DESIGN}}\n\n---\n\n## Línea base histórica anterior a V2\n\nLas reglas, tareas, porcentajes y prioridades registradas debajo describen el diseño anterior. En conflicto manda la pauta V2 de arriba.\n\n**Prioridad registrada antes de V2 (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).\n\n**Antecedente histórico · crédito de Ivan Vivanco · prototipo P06-T01 (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).\n\n**Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).\n\nVersión **{{VERSION}}**, {{DATE}}. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.\n\n## Avance basado en evidencia\n\n{{SUMMARY_METRICS}}\n\n{{SUMMARY_COUNTS}} Solo CV con evidencia completa suma; no hay crédito parcial. El avance mide criterios cumplidos, no tiempo restante, producto publicado o porcentaje de arte final.\n\n{{SUMMARY_PHASES}}\n\n## P06 local en curso desde v0.14\n\nA-024 autoriza avanzar localmente. P06-T01 queda EC/evidenceComplete=false con modelo físico, panel base/preparación con confirmación, IDs y fixture temporal para mochilas8/16 y almacén60. `?prueba=inventario` inicia directamente en preparación20s; `?inventario=local` activa la opción en loopback. No hay cuentas, persistencia ni inventario real, botín o kit. EV-030 registra los ensayos ejecutados en [docs/P06-REPORT.md](docs/P06-REPORT.md); la aceptación manual sigue pendiente. P06-T02–T05 continúan P; P05 EV0/6 y el global52/100 no cambian.\n\n## Cambio desde v0.11\n\nGAP-001 está resuelto y P03-T02 pasa de EV a CV: suma sus **3 puntos**, elevando global de 49 a 52 y técnico de 39/90 a 42/90. P03 queda 12/12. Criterios, pesos y dependencias originales permanecen intactos.\n\nLos sectores normales ahora declaran 3/4/5 oleadas reproducibles, con objetivos alternos, preparación de 20 s, HUD/contadores/salidas coherentes y secuencia independiente del calendario de jefe/extracción. EV-026: 11 pruebas Node, 900 semillas y calendario histórico de 18 sectores; cuatro escenarios de navegador fuente/compilado y dos extracciones S10/oleada4/35oleadas. Fuente 1.580 bajas y jefe evadido; compilado 1.587 y jefe vencido. Cero errores de página, peticiones remotas o errores HTTP en esos recorridos.\n\n## P05: implementación local, aceptación pendiente\n\nP05-T01/T02/T03 están **EV y conservan 0/6 puntos**. Se añadieron cuentas ficticias, alias, verificación/recuperación/vinculación explícita, autoridad de comandos emulada, recibos/reintentos, checkpoints seguros y una expedición activa por UID. Transferir revoca la sesión anterior; recuperar combate desde su inicio excluye clasificación irreversiblemente. El juego sin cuentas permanece disponible.\n\n{{P05_VALIDATION_SUMMARY}}\n\nResultados y límites: [docs/P05-REPORT.md](docs/P05-REPORT.md), [docs/P05-validation.json](docs/P05-validation.json) y [docs/GAP-001-validation.json](docs/GAP-001-validation.json).\n\n| Tarea | Preparado/probado localmente | Falta para aceptación completa |\n|---|---|---|\n| P05-T01 | Auth SDK, alias, alta/acceso/cierre y flujos ficticios | Google OAuth/correo/verificación/recuperación/vinculación reales, errores y separación de identidades con servicios propios |\n| P05-T02 | UID del token, revisión, sesión, transacciones/recibos, concurrencia y replay | Cumplir P05-T01; aceptar backend/reglas/persistencia/retención propios con alcance autorizado |\n| P05-T03 | Checkpoints, roundtrip, transferencia, desconexión/respuesta perdida y retroceso no clasificable | Cumplir P05-T02; nube propia y cambio real de dispositivo/red |\n\nLa evidencia local no acredita combate validado por servidor, economía/inventario persistente P06/P07, ranking oficial, OAuth/correo real, dispositivos físicos, Safari, FPS/memoria/carga, costes o juego operativo en producción.\n\n## Proyecto Firebase propio\n\nIván creó manualmente **scp-survivor**, app web y plan Spark. Capturas confirman Email/contraseña y Google habilitados, localhost/127.0.0.1 autorizados y política exigida de mínimo 8 sin clases obligatorias. La configuración pública se conserva **inactiva** en config/firebase-public.json. El juego usa exclusivamente demo-scp-survivor emulado, activado de forma optativa en localhost con ?cuentas=local. No se desplegó backend real ni se habilitó facturación desde Codex. Detalle: [docs/FIREBASE_PROPIO.md](docs/FIREBASE_PROPIO.md).\n\n## Orden de continuación\n\n1. **P05:** completar aceptación real conforme a sus dependencias. Preparar configuración, reglas, pruebas y costes antes de solicitar la autorización concreta necesaria para conexión/despliegue. La configuración manual de Auth no acredita por sí sola un backend de guardado funcional.\n2. **P06:** trabajo local autorizado por A-024; P06-T01 está EC con su primer prototipo temporal. La aceptación conserva dependencias P04-T02/P05-T03 y requiere servidor, continuidad y aceptación manual. P06-T02–T05 siguen P aunque el trabajo local está autorizado. El fixture no persiste ni representa inventario real, botín o kit.\n3. **P07:** progresión permanente, gacha y economía consistente, con P05/P06 completos.\n4. **P08:** invitado/ranking; ranking oficial requiere aceptación P10-T01/T02 antes de P08-T02.\n5. **P09/P10:** acabado/recursos y validación en dispositivos físicos, carga, memoria, rendimiento y costes.\n6. **P11:** despliegue/publicación/operación autorizados y aceptación final de producción.\n\nLa web Roadmap sigue como proyecto independiente sin construcción, automatización o publicación en este alcance. Cooperativo, Hardcore, códigos, regalos, ampliación 24+24 y PC posterior quedan fuera del denominador aprobado.\n\n## Continuidad y sincronización\n\nRepositorio: [DETECO/SCPSurvivor](https://github.com/DETECO/SCPSurvivor), rama main. **Código P05, GAP-001 y roadmap v0.12 incluidos en actualización del repositorio autorizada por Iván: A-021.** Main se comprobó en vivo el15/10/2026 antes de esta entrega: baseline **39344e77e15bd82c98bacb3e9773ceaa20c1b918**, sin cambios remotos nuevos. Consultar el commit de la entrega P05-local-01 / roadmap v0.12 mediante git log -1 --format=%H -- RoadmapSCP.json. Publicar el código no activa Firebase real, facturación o despliegue: **el juego con cuentas sigue ejecutándose localmente con emuladores**.\n\nA-018 registra migración/subida anterior; A-019 autoriza avanzar GAP-001→P05 con implementación, dependencias y emuladores locales; A-020 autoriza este roadmap con subagente y A-021 autoriza entregar código P05 y roadmap en GitHub/main. Iván pide continuar autónomamente sin repetir consultas dentro del alcance local ya autorizado. Autorizaciones/decisiones/historial íntegros en JSON/vista. Los registros históricos no bloquean el alcance local ya autorizado.\n\nLeer [AGENTS.md](AGENTS.md), [CONTEXTO_PROYECTO.md](CONTEXTO_PROYECTO.md), [PROMPT_MAESTRO.md](PROMPT_MAESTRO.md) e [INSTALACION_WINDOWS.md](INSTALACION_WINDOWS.md). Conservar fuentes, arte aprobado y backups. La entrega en GitHub está autorizada por A-021; configuración Firebase real, facturación y despliegue del juego no se activan por esa entrega.\n\n~~~powershell\nnode tools/render-roadmap.js --check\n~~~\n\nAntes de cerrar tareas: comprobar criterio/dependencias/alcance, ejecutar pruebas pertinentes, registrar versión/entorno/evidencia y distinguir implementación local de aceptación real.\n",
@@ -6148,26 +6195,33 @@
     "id": "V2-ESTRUCTURA",
     "title": "Avance por mapas; sin extracción, accesorios físicos ni mochilas",
     "updatedOn": "2026-10-20",
-    "status": "local_trial_pending_manual_acceptance",
-    "authority": "A-036",
-    "summary": "Iván da por aceptado lo pendiente de P05 para continuar y prioriza llegar al diseño visual. Aceptación del propietario registrada; las comprobaciones técnicas de servicios reales no ejecutadas se difieren, sin declararlas aprobadas. P05 deja de bloquear el prototipo local B4 y la preparación visual. Cuentas propias, economía persistente y facturación siguen desactivadas. B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. [Guía B3](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites B3](docs/V2-B3-REPORT.md). Build/check y navegador B3 aprobados en ambas copias; demo publicada y verificada online. Aceptación humana pendiente; consultar el informe y recibo.",
+    "status": "infinite_design_synced_next_trial_planned",
+    "authority": "A-038",
+    "summary": "ESTRUCTURA sincronizada hasta 01a15a34-93e9-7a11-9597-6a2c37fb2570 (20/10/2026): modo infinito; una arma inicial y segunda por premio/primer jefe; máximo dos simultáneas. Cuatro ramas5+extra por arma, poderes/generales5+extra y ultimate5permanentes. Fusión en sala, mejoras permanentes por soldado con monedas, tres gachas con gris1/dorado5, procedural y radar. Próxima prueba V2-INFINITO-01/T1A planificada, todavía sin implementación ni nueva URL. P05 aceptado por el propietario para avanzar; servicios reales diferidos. Agentes Luna máximo bajo coordinación de raíz.",
     "pautaPath": "PAUTA_DESARROLLO.md",
     "changePlanPath": "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
     "decisionsPath": "docs/ESTRUCTURA_DECISIONES.md",
     "sourceThread": {
       "id": "01a1457c-c051-73d2-9864-e7deb6435420",
       "title": "ESTRUCTURA",
-      "readOn": "2026-10-19",
+      "readOn": "2026-10-20",
       "lastTurnWasInProgress": false,
-      "lastReadTurnId": "01a15409-96d6-72a1-a825-4038ce3a6007",
-      "approvalResponseTurnId": "01a150fe-66ad-7040-b2dd-67d4c73f3244",
+      "lastReadTurnId": "01a15a34-93e9-7a11-9597-6a2c37fb2570",
+      "approvalResponseTurnId": "01a15a23-5e61-78f1-9dbb-f66899073e5c",
       "approvalCaptured": true,
       "confirmedCombatUserTurnIds": [
         "01a1515b-5135-7273-bb10-dc9122a7e754",
         "01a15404-6977-77c0-b895-56721a1ba418",
-        "01a15409-96d6-72a1-a825-4038ce3a6007"
+        "01a15409-96d6-72a1-a825-4038ce3a6007",
+        "01a15911-4e29-7c53-8ccd-61fbe0cb00fc",
+        "01a15914-dcc4-74d1-91ab-01682b44ff75",
+        "01a15916-f051-7632-a66e-fda01a35b8fe",
+        "01a1593a-fa78-7e83-8d7c-57fdc4c26608",
+        "01a15a23-5e61-78f1-9dbb-f66899073e5c",
+        "01a15a34-93e9-7a11-9597-6a2c37fb2570"
       ],
-      "readScope": "Últimos diez turnos; alcanza el corte anterior de cofres. No es exportación íntegra."
+      "readScope": "Últimos10turnos completados, alcanza01a15409 anterior. No exportación íntegra.",
+      "clarificationTurnId": "01a15a34-93e9-7a11-9597-6a2c37fb2570"
     },
     "progress": {
       "percent": null,
@@ -6178,43 +6232,51 @@
     "scope": [
       {
         "element": "Recorrido",
-        "treatment": "Mapas encadenados de cinco minutos; jefe obligatorio en cada mapa."
+        "treatment": "Infinito, mapas300s y jefe240s de ensayo; muerte sin resurrección, abandono desde pausa sin marca competitiva; conservación permanente confirmada."
       },
       {
         "element": "Puerta y aliados",
-        "treatment": "A5:00 llega puerta blindada y soldados; cesa todo spawn enemigo, permanecen remanentes; cruzar exige jefe derrotado."
-      },
-      {
-        "element": "Extracción de fin de partida",
-        "treatment": "Retirada del diseño V2; la puerta avanza de mapa, no termina la partida."
-      },
-      {
-        "element": "Accesorios de armas y mochilas",
-        "treatment": "Retirados del diseño V2; código y datos anteriores conservados hasta adaptar y validar."
+        "treatment": "Puerta/dos aliados a300s, remanentes y jefe obligatorio; resolver premio/XP antes de cruzar. Aliados sinXP/no remate; uno huye si ambos ven al jefe vivo. Congelar regeneración/cooldowns, no duración de efectos."
       },
       {
         "element": "Armas",
-        "treatment": "Dos armas elegidas antes de salir y activas simultáneamente; identidad/familias propias. Tres ofertas aleatorias, mejoras de arma solo para equipadas. Mezcla, ramas y topes pendientes; simultaneidad aún sin implementar."
+        "treatment": "Una inicial; segunda garantizada por primer jefe si falta o adelantada por élite. Máximo dos simultáneas, modelos iguales independientes; reemplazo solo en terminales. Familias balística/energía/melee/explosivos/arrojadizas."
+      },
+      {
+        "element": "Cartas y niveles",
+        "treatment": "Tres ofertas: arma/general/libre, categorías vacías se rellenan con válidas. Cuatro ramas por arma: Potencia/Ritmo/Manejo/Especialización; cada rama/poder/general5+extra. Saturación táctica temporal, sin moneda real."
+      },
+      {
+        "element": "Fusión",
+        "treatment": "En sala de algún escenario, dos armas completamente mejoradas se combinan y liberan ranura. Receta/herencia/frecuencia/límite aún por cerrar; una fusión por expedición no está aprobada."
       },
       {
         "element": "Poderes anómalos",
-        "treatment": "Hasta tres, con opción de reemplazo al aparecer un cuarto. No sumar otras dos ranuras de apoyo. Catálogo, adquisición/rangos y aplicación de reemplazo pendientes."
+        "treatment": "Jefes de grieta: primer poder garantizado, después azar/garantía tras tres victorias sin poder; hasta tres y reemplazo pausado al cuarto. Intervalos automáticos,5+extra propio."
       },
       {
         "element": "Ultimate",
-        "treatment": "Una habilidad única de defensa, curación, evasión o ataque; cooldown largo propio por definir, máximo nivel 5 y progresión difícil; gacha. Sin duración/costes aprobados ni implementación."
+        "treatment": "Una manual y pasiva del soldado, sin botón adicional de habilidad anterior; lista al inicio, cooldown largo propio conservado entre mapas, cinco niveles permanentes. Gacha y fragmentos/materiales sin costes fijados."
       },
       {
         "element": "Grietas y saltos",
-        "treatment": "Práctica B3 explícita de 45 s, con señales/localizador e ingreso instantáneo; Custodio y cofre en el mismo mapa. No implementa dimensión nueva ni saltos; retorno/reloj/destino y economía final abiertos."
+        "treatment": "Nuevo diseño: recinto separado/origen congelado,45s para entrar instantáneamente; única retirada5s entre1–3min y retorno por victoria. Detalles de instante/aviso/posición y saltos abiertos. B3 actual sigue en el mismo mapa."
       },
       {
-        "element": "Cofres y mapas",
-        "treatment": "B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes."
+        "element": "Cofres y procedural",
+        "treatment": "Conservar sorteos60/120/180/240s y cuotas, seis candidatos; bono10min e hitos de primer jefe/mapas2/3. Ampliar mapas procedurales por semilla con rutas de jefe/puerta/terminales/fusión verificadas."
       },
       {
-        "element": "P06/P07",
-        "treatment": "Revisar colección/gacha de soldados, armas, skins y ultimates sin retirar reclutamiento anterior por inferencia. Costes, duplicados y efectos de skins pendientes; sin mochilas ni accesorios físicos."
+        "element": "Base y colección",
+        "treatment": "Diez compras independientes por soldado con monedas recogidas. Tres gachas: personajes/armas/ultimates, tickets universales gris1/dorado5. Skins cosméticas por dominio/contratos/eventos; no cuarto gacha."
+      },
+      {
+        "element": "Interfaz y visual",
+        "treatment": "Radar pequeño fijo, símbolos/prioridad de urgencia; no revelar cofres sin descubrir. Preparar arte/HUD en paralelo a T1; mantener diseños aprobados y crédito."
+      },
+      {
+        "element": "Funciones retiradas",
+        "treatment": "Sin extracción de fin, accesorios físicos, mochilas ni ranuras extra de apoyo. Conservar datos y código anterior de referencia, sin reactivarlo."
       }
     ],
     "cofreBasis": {
@@ -6235,28 +6297,22 @@
       "adaptationStatus": "exploration_and_event_rewards_prototype_pending_manual_acceptance"
     },
     "openRuleIds": [
-      "O-01",
-      "O-02",
-      "O-03",
-      "O-04",
-      "O-05",
-      "O-06",
-      "O-07",
-      "O-08",
-      "O-09",
-      "O-10",
-      "O-11",
-      "O-12",
-      "O-13",
-      "O-14"
+      "I-01",
+      "I-02",
+      "I-03",
+      "I-04",
+      "I-05",
+      "I-06",
+      "I-07"
     ],
     "implementationPlan": [
       {
         "id": "RC-01",
-        "title": "Cerrar contratos y parámetros abiertos de V2",
+        "title": "Contratos infinitos aceptados; fichas y parámetros concretos pendientes",
         "dependencies": [],
         "status": "P",
-        "evidenceComplete": false
+        "evidenceComplete": false,
+        "scopeAndAcceptance": "66respuestas aceptadas con excepciones; no reabrirlas. Preparar fichas por tramo y mantener propuestas sin aprobar."
       },
       {
         "id": "RC-02",
@@ -6266,7 +6322,8 @@
           "RC-01"
         ],
         "status": "P",
-        "evidenceComplete": false
+        "evidenceComplete": false,
+        "scopeAndAcceptance": "Reanudación exacta de enemigos/efectos/RNG/relojes/premios en esquemaV2; no heredar restauración que limpia remanentes. Producción requiere validación técnica de backend; no bloquea demo sin guardado."
       },
       {
         "id": "RC-03",
@@ -6322,14 +6379,19 @@
       },
       {
         "id": "RC-07",
-        "title": "Dos armas simultáneas, familias y tres ofertas compatibles",
+        "title": "Una a dos armas simultáneas, cuatro ramas5+extra y cartas arma/general/libre",
         "dependencies": [
           "RC-01",
           "RC-02"
         ],
         "status": "P",
         "evidenceComplete": false,
-        "scopeAndAcceptance": "Dos ataques independientes según arma/alcance/tiempos; ofertas de mejora solo para equipadas, sin recarga ficticia en familias ajenas, topes y saturación resueltos. Cupos y filtros aprobados; mezcla/categorías exactas pendientes."
+        "scopeAndAcceptance": "Primera arma antes de salir; segunda por premio/primer jefe; instancias iguales independientes, ranura vacía válida, sustitución en terminal, saturación táctica. No implementado.",
+        "localPrototypeDependencies": [
+          "contrato aceptado",
+          "fichas pequeñas del tramo"
+        ],
+        "productionPersistenceRequires": "RC-02"
       },
       {
         "id": "RC-08",
@@ -6343,36 +6405,37 @@
       },
       {
         "id": "RC-13",
-        "title": "Hasta tres poderes anómalos y reemplazo del cuarto",
+        "title": "Poderes de jefes de grieta: máximo3,5+extra y reemplazo",
         "dependencies": [
           "RC-01",
           "RC-07"
         ],
         "status": "P",
         "evidenceComplete": false,
-        "scopeAndAcceptance": "Cerrar catálogo/adquisición/rangos y decisión de reemplazo; máximo tres poderes, retirar efectos salientes y no añadir dos apoyos gratuitos. Pruebas de acumulación, elegibilidad y recuperación según contrato."
+        "scopeAndAcceptance": "Primera victoria garantiza; luego azar con garantía tras3sin poder. Elección hasta3, automático por intervalos; retirar efectos/rangos salientes al reemplazar."
       },
       {
         "id": "RC-14",
-        "title": "Ultimate única: efecto propio, cooldown largo y máximo nivel 5",
+        "title": "Pasiva de soldado y una ultimate manual, cinco niveles permanentes",
         "dependencies": [
           "RC-01",
           "RC-07"
         ],
         "status": "P",
         "evidenceComplete": false,
-        "scopeAndAcceptance": "Una ultimate, hasta cinco niveles; contrato por habilidad de efecto, límites, cooldown/reloj y controles, relación con habilidad de soldado. Progresión difícil y obtención por gacha se integran transaccionalmente en RC-09; valores/costes aún abiertos."
+        "scopeAndAcceptance": "Lista al inicio y fija en la expedición; cooldown largo propio conservado, sin reducción genérica. Cinco niveles por habilidad, sin extra6 ni botón anterior adicional; valores de ensayo por ficha."
       },
       {
         "id": "RC-09",
-        "title": "Colección/gacha de armas, soldados, skins y ultimates; premios revisados",
+        "title": "Tres gachas, gris1/dorado5 y colección; skins cosméticas",
         "dependencies": [
           "RC-08",
           "RC-01",
           "RC-14"
         ],
         "status": "P",
-        "evidenceComplete": false
+        "evidenceComplete": false,
+        "scopeAndAcceptance": "Personajes/armas/ultimates; garantía propia, valor universal1/5. Monedas separadas para tienda por soldado; economía real sigue desactivada."
       },
       {
         "id": "RC-10",
@@ -6391,16 +6454,22 @@
       },
       {
         "id": "RC-11",
-        "title": "Grietas especiales y saltos dimensionales",
+        "title": "Recinto de grieta separado, origen congelado y escape único; saltos",
         "dependencies": [
           "RC-05",
           "RC-09",
-          "O-06/O-07",
           "RC-13"
         ],
         "status": "P",
         "evidenceComplete": false,
-        "implementationScope": "B3 ensaya un Custodio y su cofre en el mismo mapa mediante opción explícita; no implementa dimensiones, retorno ni saltos. RC-11 completo sigue pendiente."
+        "implementationScope": "B3 ensaya un Custodio y su cofre en el mismo mapa mediante opción explícita; no implementa dimensiones, retorno ni saltos. RC-11 completo sigue pendiente.",
+        "scopeAndAcceptance": "45sentrada; una ventana5s entre60–180s del encuentro, retorno por victoria. T3pendiente; B3actual permanece en el mismo mapa.",
+        "localPrototypeDependencies": [
+          "RC-01",
+          "RC-05",
+          "RC-13",
+          "I-04"
+        ]
       },
       {
         "id": "RC-12",
@@ -6417,12 +6486,54 @@
         ],
         "status": "P",
         "evidenceComplete": false
+      },
+      {
+        "id": "RC-15",
+        "title": "Fusión en sala y adquisición posterior de arma",
+        "dependencies": [
+          "RC-07",
+          "I-02"
+        ],
+        "status": "P",
+        "evidenceComplete": false,
+        "scopeAndAcceptance": "Dos armas con ramas/extras completos; no consumo sin receta, compuesto una ranura y colección intacta."
+      },
+      {
+        "id": "RC-16",
+        "title": "Monedas y diez compras independientes por soldado",
+        "dependencies": [
+          "RC-01",
+          "I-03"
+        ],
+        "status": "P",
+        "evidenceComplete": false,
+        "scopeAndAcceptance": "Compras en base con recogida de monedas; aislamiento entre soldados y sin doble aumento por XP/duplicado."
+      },
+      {
+        "id": "RC-17",
+        "title": "Radar e indicadores funcionales",
+        "dependencies": [
+          "RC-05"
+        ],
+        "status": "P",
+        "evidenceComplete": false,
+        "scopeAndAcceptance": "Circular fijo, descubrimiento correcto y prioridad de urgencia; arte puede avanzar en paralelo."
+      },
+      {
+        "id": "RC-18",
+        "title": "Procedural modular con rutas reproducibles",
+        "dependencies": [
+          "RC-03"
+        ],
+        "status": "P",
+        "evidenceComplete": false,
+        "scopeAndAcceptance": "Semilla/versionado, salas/cofres/jefe/puerta conectados y espacios de horda; no acreditar nuevas topologías antes de medir."
       }
     ],
     "phasePolicy": {
-      "P05": "Completar aceptación real y compatibilidad V2; mantener Spark sin facturación.",
-      "P06": "Replantear antes de implementar. No continuar inventario físico antiguo.",
-      "P07": "Revisar colección/gacha/recompensas de soldados y armas tras P05/P06 revisados."
+      "P05": "Aceptación del propietario A-037: no bloquea prototipo local ni preparación visual. Pruebas reales diferidas, servicios inactivos, Spark sin billing.",
+      "P06": "Adaptar colección y combate infinito sin mochilas/mods/extracción; persistencia real requiere contrato propio.",
+      "P07": "Tres gachas y monedas/tienda por soldado; prototipos ficticios posibles, economía real aún no habilitada."
     },
     "gameCodeChangedByThisRevision": true,
     "firstTrial": {
@@ -6441,9 +6552,695 @@
       "webGuide": "docs/GITHUB_PAGES.md"
     },
     "approvedDesignCutPath": "docs/ESTRUCTURA_REGLAS_APROBADAS.md",
-    "playableDesignPlanPath": "docs/PLAN_DISENO_JUGABLE_V2.md",
-    "latestDocumentationSyncChangedGameCode": true,
+    "playableDesignPlanPath": "docs/PLAN_DESARROLLO_V2_INFINITO.md",
+    "latestDocumentationSyncChangedGameCode": false,
     "approvedNextBlock": {
+      "id": "T1A",
+      "authority": "A-038",
+      "title": "Una arma inicial, adquisición de segunda y combate simultáneo",
+      "implemented": false,
+      "status": "planned_not_implemented",
+      "guide": "docs/PRUEBA_V2_INFINITO_01.md",
+      "plan": "docs/PLAN_DESARROLLO_V2_INFINITO.md",
+      "publicTrialUrl": null,
+      "accountRewardsEnabled": false,
+      "requiresFullGachaOrStore": false,
+      "followUp": "T1B cartas/ramas5+extra; T2–T5 según plan",
+      "priorPublishedTrial": "docs/V2-B3-REPORT.md"
+    },
+    "publicDemo": {
+      "url": "https://deteco.github.io/SCPSurvivor/",
+      "quickUrl": "https://deteco.github.io/SCPSurvivor/?rapida=1",
+      "status": "published_runtime_verified",
+      "defaultOnPages": true,
+      "accountsEnabled": false,
+      "persistentRewards": false,
+      "authority": "A-035",
+      "evidenceIds": [
+        "EV-038",
+        "EV-040"
+      ],
+      "verification": {
+        "verifiedAt": "2026-10-19T13:09:24.004561+00:00",
+        "runtimeCommit": "957bc9b67c33996bf1579bc91dd29c421a5c358a",
+        "bundleSha256": "27373c595c3a6a37c43c83c6e5776794d650cf3159946257675567d03c09542a",
+        "liveScenarios": 4,
+        "scope": "demo_only; manual acceptance and real account services pending"
+      },
+      "currentRevisionPublicationStatus": "B3_pending_verification",
+      "previousVerifiedVersion": "V2-trial-02 / roadmap 0.25"
+    },
+    "combatUpdatePath": "docs/PLAN_DESARROLLO_V2_INFINITO.md",
+    "combatContract": {
+      "authority": "A-038",
+      "reference": "docs/DECISIONES_INFINITO_2026-10-20.md",
+      "implemented": false,
+      "equippedWeapons": 2,
+      "simultaneousWeapons": true,
+      "chosenBeforeRun": false,
+      "levelUpOffers": 3,
+      "weaponOffersOnlyForEquippedWeapons": true,
+      "anomalousPowerSlots": 3,
+      "replacementOnFourthPower": true,
+      "extraSupportSlotsApproved": false,
+      "ultimateSlots": 1,
+      "ultimateMaxLevel": 5,
+      "ultimateUniqueEffects": true,
+      "ultimateLongCooldown": true,
+      "ultimateProgression": "difficult",
+      "ultimateExamples": [
+        "escudo",
+        "curación instantánea",
+        "modo fantasma",
+        "explosión",
+        "lluvia de meteoritos"
+      ],
+      "gachaNewlyMentioned": [
+        "personajes",
+        "armas",
+        "ultimates"
+      ],
+      "priorSoldierRecruitmentRemoved": false,
+      "unapprovedParameters": [
+        "daño/cooldown/efecto de niveles y extras según ficha",
+        "receta/herencia/frecuencia/límite de fusión",
+        "fuentes/precios/efectos de monedas y correspondencia XP/duplicados",
+        "operación de lote dorado y tablas/garantías numéricas",
+        "fórmula y pesos de puntaje",
+        "detalle operativo de saltos"
+      ],
+      "exactCooldownSeconds": null,
+      "ultimateUpgradeCosts": null,
+      "powerRankCap": 5,
+      "ultimateSoldierAbilityRelation": "soldier_passive_plus_single_manual_ultimate",
+      "initialWeaponCount": 1,
+      "initialWeaponChosenBeforeRun": true,
+      "secondWeaponSource": "first_boss_guarantee_or_optional_elite_armament",
+      "sameModelAllowed": true,
+      "weaponReplacement": "optional_terminal_reset_own_temporary_progress",
+      "offerComposition": [
+        "weapon",
+        "general",
+        "free_valid"
+      ],
+      "weaponBranches": [
+        "Potencia",
+        "Ritmo",
+        "Manejo",
+        "Especialización"
+      ],
+      "temporaryBranchLevels": 5,
+      "temporaryBranchExtra": true,
+      "powerExtra": true,
+      "generalLevels": 5,
+      "generalExtra": true,
+      "ultimateExtra": false,
+      "ultimatePermanentLevels": true,
+      "ultimateReadyAtRunStart": true,
+      "ultimateFixedForRun": true,
+      "powerSource": "rift_boss",
+      "firstRiftPowerGuaranteed": true,
+      "powerPityAfterWinsWithoutPower": 3,
+      "gachaTypes": [
+        "personajes",
+        "armas",
+        "ultimates"
+      ],
+      "skins": "cosmetic_mastery_contracts_events_no_extra_gacha",
+      "maxEquippedWeapons": 2
+    },
+    "b1b2Trial": {
+      "version": "V2-trial-02",
+      "status": "EC",
+      "evidenceComplete": false,
+      "guide": "docs/PRUEBA_MAPA_COFRES_V2.md",
+      "report": "docs/V2-B1-B2-REPORT.md",
+      "publicPracticeUrl": "https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba",
+      "manualAcceptance": "pending",
+      "accountsEnabled": false,
+      "persisted": false,
+      "liveDeploymentVerified": false
+    },
+    "b3Trial": {
+      "version": "V2-trial-03",
+      "status": "EC",
+      "authority": "A-036",
+      "decisionId": "D-332",
+      "evidenceIds": [
+        "EV-041"
+      ],
+      "evidenceComplete": false,
+      "guide": "docs/PRUEBA_PREMIOS_B3.md",
+      "report": "docs/V2-B3-REPORT.md",
+      "bossPracticeQuery": "?prueba=mapa-v2&premios=jefe",
+      "riftPracticeQuery": "?prueba=mapa-v2&premios=grieta",
+      "manualAcceptance": "pending",
+      "accountsEnabled": false,
+      "persisted": false,
+      "ticketEconomy": "fictional_run_only_provisional_table",
+      "buildVerification": "passed",
+      "browserVerification": "passed_local_and_live",
+      "publicationVerification": "passed",
+      "liveDeploymentVerified": true,
+      "contract": "Jefe: contenido fijo al aparecer, +1 nivel temporal de una copia equipada válida elegible, identificada por ID/modelo; máximo 5 heredado. Abrir por proximidad durante 3,5 s, sin pared; premio único independiente del cupo de exploración. Si no hay candidata o la elegida llegó al tope, sin mejora ni compensación inventada. Datos incompatibles bloquean entrega y tickets. Grieta: práctica explícita premios=grieta, portal físico de 45 s activos con sonido, alerta y localizador; ingreso instantáneo por contacto, Custodio separado del jefe obligatorio y encuentro en el mismo mapa. Solo victoria y apertura del cofre conceden mejora compatible y 2–3 tickets ficticios equiprobables de tabla provisional; saturación conserva solo esos tickets base. Entrar, expirar, abandonar o morir no concede premio. No define otra dimensión, retorno, reloj dimensional, economía real, radar ni combate 2+3+1.",
+      "publicationReceipt": "docs/V2-B3-PUBLICACION.json"
+    },
+    "priorityUpdate": {
+      "authority": "A-037",
+      "decisionId": "D-333",
+      "path": "docs/PRIORIDAD_MECANICAS_Y_DISENO.md",
+      "nextBlock": "B4",
+      "visualPreparationMayProceed": true,
+      "persistentIntegrationDeferred": true
+    },
+    "previousOpenRuleIds": [
+      "O-01",
+      "O-02",
+      "O-03",
+      "O-04",
+      "O-05",
+      "O-06",
+      "O-07",
+      "O-08",
+      "O-09",
+      "O-10",
+      "O-11",
+      "O-12",
+      "O-13",
+      "O-14"
+    ],
+    "openParameters": [
+      {
+        "id": "I-01",
+        "topic": "Fichas de combate: magnitudes, extras, cooldowns y saturación",
+        "blocks": "T1B/T3/T4 según su ficha; T1A usa catálogo pequeño de ensayo"
+      },
+      {
+        "id": "I-02",
+        "topic": "Primera receta/herencia de fusión, frecuencia de sala y límite de operaciones",
+        "blocks": "T2; no bloquea T1A"
+      },
+      {
+        "id": "I-03",
+        "topic": "Monedas/precios/efectos por soldado y compatibilidad con XP/duplicados",
+        "blocks": "T5 y economía real; no bloquea combate o visual"
+      },
+      {
+        "id": "I-04",
+        "topic": "Instante/posición/aviso de la única retirada de cinco segundos",
+        "blocks": "T3; frecuencia única y retorno por victoria ya aceptados"
+      },
+      {
+        "id": "I-05",
+        "topic": "Fuentes/compensaciones gris-dorado, lote de cinco y calibración de garantías",
+        "blocks": "Integración gacha; valor1/5 y tres catálogos ya aceptados"
+      },
+      {
+        "id": "I-06",
+        "topic": "Pesos y reloj puntuable de la fórmula compuesta",
+        "blocks": "Score competitivo, no demo ni diseño"
+      },
+      {
+        "id": "I-07",
+        "topic": "Detalle operativo de saltos respetando jefe obligatorio y sin premios por mapas omitidos",
+        "blocks": "Saltos finales; no bloquea T1A"
+      }
+    ],
+    "infiniteDesignContract": {
+      "authority": "A-038",
+      "reference": "docs/DECISIONES_INFINITO_2026-10-20.md",
+      "implemented": false,
+      "resolvedQuestionCount": 66,
+      "responseMatrix": [
+        {
+          "question": 1,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Solo el progreso temporal de la expedición; conserva colección y progreso permanente confirmado."
+        },
+        {
+          "question": 2,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Sin resurrección inicial: llegar a cero termina la expedición."
+        },
+        {
+          "question": 3,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Suspender y reanudar el estado exacto, con todos los relojes detenidos."
+        },
+        {
+          "question": 4,
+          "choice": "B",
+          "status": "Aprobada",
+          "resolution": "Abandonar solo desde pausa; conserva lo confirmado y no registra marca competitiva."
+        },
+        {
+          "question": 5,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Se congelan regeneración y cooldowns de habilidades desde 5:00 hasta cruzar; ataques y recargas de arma siguen funcionando."
+        },
+        {
+          "question": 6,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "A 4:00 como parámetro inicial de prueba; queda un minuto de presión antes de la puerta."
+        },
+        {
+          "question": 7,
+          "choice": "B + nota",
+          "status": "Aprobada",
+          "resolution": "Ayuda limitada sin resolver al jefe. Si el jefe de escenario sigue vivo y ambos compañeros lo ven en pantalla, uno huye por la puerta y solo uno permanece ayudando."
+        },
+        {
+          "question": 8,
+          "choice": "B",
+          "status": "Aprobada",
+          "resolution": "Las bajas realizadas por aliados no entregan XP temporal al jugador."
+        },
+        {
+          "question": 9,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Antes de completar el cruce se resuelve ese premio y cualquier elección pendiente."
+        },
+        {
+          "question": 10,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Cada ficha fija su derrota operativa: contener, sellar, forzar retirada o abatir cuando corresponda."
+        },
+        {
+          "question": 11,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "El primer jefe la garantiza si falta; un cofre especial puede adelantarla."
+        },
+        {
+          "question": 12,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Elegir entre tres modelos desbloqueados compatibles; completar con opciones básicas si la colección es pequeña."
+        },
+        {
+          "question": 13,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Sí, como dos instancias temporales con mejoras independientes; no exige conseguir otra copia permanente."
+        },
+        {
+          "question": 14,
+          "choice": "B",
+          "status": "Aprobada",
+          "resolution": "Sustitución de armas solo en terminales opcionales; el reemplazo empieza sin mejoras temporales propias."
+        },
+        {
+          "question": 15,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Cada una elige automáticamente un objetivo válido según su alcance y función."
+        },
+        {
+          "question": 16,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Familia principal exclusiva: balística, energía, melee, explosivos o arrojadizas; etiquetas para láser, misil, alcance y área."
+        },
+        {
+          "question": 17,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Granadas/molotov como armas; orbitales anómalos como poderes. Cada modelo ocupa una sola ranura."
+        },
+        {
+          "question": 18,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Una de arma, una general y una libre entre candidatas válidas; los poderes adquiridos entran en la libre."
+        },
+        {
+          "question": 19,
+          "choice": "A modificada + aclaración",
+          "status": "Aprobada",
+          "resolution": "Se conservan cuatro ramas de arma. Cada rama, poder y mejora general tiene cinco niveles más un extra propio. Las ultimates conservan cinco niveles permanentes."
+        },
+        {
+          "question": 20,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Subidas frecuentes al principio; requisitos crecientes después para construir una identidad de equipo."
+        },
+        {
+          "question": 21,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Tres bonificaciones tácticas breves y universales; solo una activa, sin nuevas ranuras ni moneda permanente."
+        },
+        {
+          "question": 22,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Recogida automática de la XP pendiente del mapa, una sola vez, antes de resolver elecciones."
+        },
+        {
+          "question": 23,
+          "choice": "A",
+          "status": "Elegida; compatibilidad pendiente",
+          "resolution": "XP permanente por neutralizaciones y objetivos confirmados. Su destino debe reconciliarse con las diez compras permanentes fuera de expedición, evitando otorgar dos veces el mismo aumento."
+        },
+        {
+          "question": 24,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Primera victoria de grieta de cada expedición garantiza uno; después azar con garantía tras tres victorias sin poder."
+        },
+        {
+          "question": 25,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Elegir entre hasta tres poderes compatibles con el encuentro; al menos una opción válida."
+        },
+        {
+          "question": 26,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Mejora un rango si puede; al máximo se ofrece otro poder válido del encuentro o el apoyo táctico de saturación."
+        },
+        {
+          "question": 27,
+          "choice": "A sustituida por aclaración de 19",
+          "status": "Aprobada",
+          "resolution": "Cada poder tiene cinco niveles más un extra propio; ya no rige el máximo anterior de tres rangos."
+        },
+        {
+          "question": 28,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Decisión pausada; retirar efectos anteriores y comenzar el nuevo en su rango base."
+        },
+        {
+          "question": 29,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Automáticamente por intervalos definidos; cada poder fija objetivos, duración y límites."
+        },
+        {
+          "question": 30,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Soldado con pasiva propia y ultimate manual; adapta Sprint/primeros auxilios a esa identidad sin sumar otro botón."
+        },
+        {
+          "question": 31,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Lista al comenzar la expedición; después conserva su cooldown entre mapas."
+        },
+        {
+          "question": 32,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Un tiempo largo propio por habilidad, sin reducción genérica de cadencia o entrenamiento."
+        },
+        {
+          "question": 33,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Se elige antes de salir y permanece toda la expedición."
+        },
+        {
+          "question": 34,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Nivel 1 funcional completo; cada nivel posterior mejora un aspecto propio, con límites compartidos."
+        },
+        {
+          "question": 35,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Fragmentos del duplicado más material de desafíos; costes crecientes y mejora garantizada al reunirlos."
+        },
+        {
+          "question": 36,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "No se activa ni consume cooldown; el botón informa que no hay herida."
+        },
+        {
+          "question": 37,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Evitar daño directo y atravesar cuerpos brevemente; paredes, límites y puerta bloqueada se conservan."
+        },
+        {
+          "question": 38,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Rol y pasiva distintiva, con atributos base comparables y ventajas situacionales."
+        },
+        {
+          "question": 39,
+          "choice": "A + aclaración posterior",
+          "status": "Aprobada",
+          "resolution": "Diez categorías permanentes independientes por soldado. Mejorar uno no aumenta las categorías de los demás."
+        },
+        {
+          "question": 40,
+          "choice": "Nota y aclaración posterior",
+          "status": "Aprobada",
+          "resolution": "Comprar niveles desde la base, fuera de la expedición, con monedas recogidas en el escenario. La compra se aplica al soldado elegido para próximas expediciones."
+        },
+        {
+          "question": 41,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Reducir el daño, después absorber con escudo y descontar el remanente de la vida."
+        },
+        {
+          "question": 42,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Tope conjunto de reducción y escudos finitos; ninguna combinación otorga invulnerabilidad permanente."
+        },
+        {
+          "question": 43,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Sube también la vida actual por la misma cantidad; se informa como parte de la carta."
+        },
+        {
+          "question": 44,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Sí: apoyos separados de cofres y poderes; revisar sus tasas heredadas junto con el combate V2."
+        },
+        {
+          "question": 45,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Recinto separado; mapa de origen congelado y retorno al punto de entrada tras reclamar victoria."
+        },
+        {
+          "question": 46,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Una por mapa desde el segundo, entre 1:30 y 3:00 como ensayo; siempre es opcional entrar."
+        },
+        {
+          "question": 47,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "45 segundos activos para entrar como ensayo; el cierre no expulsa y el encuentro no tiene límite forzado de victoria."
+        },
+        {
+          "question": 48,
+          "choice": "Nota y aclaración posterior",
+          "status": "Aprobada",
+          "resolution": "Una ventana de cinco segundos para retirarse, una sola vez entre los minutos 1 y 3 del encuentro. Después solo queda la victoria o la muerte; el retorno tras victoria de 45A se conserva."
+        },
+        {
+          "question": 49,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Adelantar entre uno y tres mapas, con destino y peligro anunciados; no cobrar mapas omitidos."
+        },
+        {
+          "question": 50,
+          "choice": "A + mapas procedurales",
+          "status": "Aprobada como dirección",
+          "resolution": "Recorrido de escenarios variados con generación procedural. Evitar repeticiones próximas, conservar temática y variar distribución y amenazas."
+        },
+        {
+          "question": 51,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Por profundidad y minuto: composición y conductas primero, estadísticas con límites de velocidad y control."
+        },
+        {
+          "question": 52,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Escala útil parecida, con geometrías distintas y objetivos de desplazamiento medidos."
+        },
+        {
+          "question": 53,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Premio de un encuentro opcional de élite, separado de sorteos y cupos de cofres de tickets."
+        },
+        {
+          "question": 54,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Solo los relojes normales de mapa hasta 5:00; el bono se aplica desde el siguiente sorteo."
+        },
+        {
+          "question": 55,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Primer jefe vencido, primera llegada a mapa 2 y primera llegada a mapa 3; un cobro por hito."
+        },
+        {
+          "question": 56,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Una de las bonificaciones tácticas de saturación elegidas en la pregunta de build máxima."
+        },
+        {
+          "question": 57,
+          "choice": "C modificada",
+          "status": "Aprobada",
+          "resolution": "Uso universal en los tres gachas con dos denominaciones: ticket gris equivale a una tirada y dorado a cinco. No son reclutamiento/suministros separados."
+        },
+        {
+          "question": 58,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Modelos desbloqueados reutilizables; los duplicados aportan dominio limitado de ese modelo."
+        },
+        {
+          "question": 59,
+          "choice": "A",
+          "status": "Elegida; compatibilidad pendiente",
+          "resolution": "Duplicados progresan al soldado correspondiente y al máximo dan material de archivo. Debe definirse su relación con las diez compras permanentes para no duplicar el entrenamiento."
+        },
+        {
+          "question": 60,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Disponibilidad y complejidad de juego, sin multiplicador automático de poder por rareza."
+        },
+        {
+          "question": 61,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Contador propio por gacha que garantiza un modelo aún no obtenido tras una racha, mientras queden modelos pendientes."
+        },
+        {
+          "question": 62,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Por dominio del personaje, contratos y eventos; cosméticas, sin gacha adicional."
+        },
+        {
+          "question": 63,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Soldado, arma inicial, segunda opción básica y una tirada guiada que garantiza una ultimate básica."
+        },
+        {
+          "question": 64,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Sensor de proximidad; dentro del alcance revela tipo y dirección. Cofres siguen su descubrimiento al verlos."
+        },
+        {
+          "question": 65,
+          "choice": "A",
+          "status": "Aprobada como regla o parámetro de ensayo",
+          "resolution": "Peligro inmediato, grieta a punto de cerrar y puerta; agrupar el resto con símbolos distintos."
+        },
+        {
+          "question": 66,
+          "choice": "Nota del usuario",
+          "status": "Criterios aprobados; fórmula propuesta",
+          "resolution": "Puntuación compuesta que incluya tiempo, enemigos abatidos, jefes vencidos y grietas superadas. Los pesos y el reloj puntuable siguientes son propuesta de calibración."
+        }
+      ],
+      "runMode": "infinite",
+      "death": "temporary_lost_permanent_confirmed_kept_no_initial_revive",
+      "abandon": "pause_only_no_competitive_score",
+      "suspension": "exact_state_all_clocks_stopped",
+      "normalMapSeconds": 300,
+      "bossAtSecondsTrial": 240,
+      "post300Recovery": "freeze_regeneration_and_ability_cooldowns_keep_effect_expiry_and_weapon_reload",
+      "allies": {
+        "count": 2,
+        "noPlayerXP": true,
+        "cannotFinishBoss": true,
+        "oneFleesOnceWhenBothSeeLivingBoss": true
+      },
+      "fusion": {
+        "location": "room_in_some_scenarios",
+        "requires": "two_weapons_all_four_branches_and_extras_complete",
+        "freesSlot": true,
+        "recipe": null,
+        "operationsLimit": null,
+        "roomFrequency": null,
+        "inheritance": null,
+        "oneFusionLimitApproved": false
+      },
+      "rift": {
+        "separateArena": true,
+        "originFrozen": true,
+        "trialAppearanceFromMap": 2,
+        "trialAppearanceSecondsRange": [
+          90,
+          180
+        ],
+        "trialEntryTTLSeconds": 45,
+        "instantEntry": true,
+        "escapeWindows": 1,
+        "escapeOpenSeconds": 5,
+        "escapeEventSecondsRange": [
+          60,
+          180
+        ],
+        "escapeExactSecond": null,
+        "victoryReturnToEntry": true,
+        "escapeWithoutVictoryReward": false
+      },
+      "store": {
+        "perSoldier": true,
+        "categories": 10,
+        "currency": "collected_coins",
+        "purchasedOutsideRun": true,
+        "prices": null,
+        "permanentXpDuplicateMapping": null
+      },
+      "tickets": {
+        "universal": true,
+        "greyPulls": 1,
+        "goldPulls": 5,
+        "goldBatchOrCredits": null,
+        "threeGachas": true
+      },
+      "score": {
+        "components": [
+          "time",
+          "common_enemies",
+          "scenario_bosses",
+          "rifts"
+        ],
+        "weightsApproved": false,
+        "proposedFormula": "floor(10*T+2*E+500*J+750*G)"
+      },
+      "proceduralMaps": true,
+      "radarApproved": true
+    },
+    "historicalMapAndChestsBlock": {
       "authority": "A-036",
       "decisionIds": [
         "D-325",
@@ -6533,115 +7330,14 @@
         "scope": "demo_only; manual acceptance and real account services pending"
       }
     },
-    "publicDemo": {
-      "url": "https://deteco.github.io/SCPSurvivor/",
-      "quickUrl": "https://deteco.github.io/SCPSurvivor/?rapida=1",
-      "status": "published_runtime_verified",
-      "defaultOnPages": true,
-      "accountsEnabled": false,
-      "persistentRewards": false,
-      "authority": "A-035",
-      "evidenceIds": [
-        "EV-038",
-        "EV-040"
-      ],
-      "verification": {
-        "verifiedAt": "2026-10-19T13:09:24.004561+00:00",
-        "runtimeCommit": "957bc9b67c33996bf1579bc91dd29c421a5c358a",
-        "bundleSha256": "27373c595c3a6a37c43c83c6e5776794d650cf3159946257675567d03c09542a",
-        "liveScenarios": 4,
-        "scope": "demo_only; manual acceptance and real account services pending"
-      },
-      "currentRevisionPublicationStatus": "B3_pending_verification",
-      "previousVerifiedVersion": "V2-trial-02 / roadmap 0.25"
-    },
-    "combatUpdatePath": "docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md",
-    "combatContract": {
-      "authority": "A-034",
-      "reference": "docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md",
-      "implemented": false,
-      "equippedWeapons": 2,
-      "simultaneousWeapons": true,
-      "chosenBeforeRun": true,
-      "levelUpOffers": 3,
-      "weaponOffersOnlyForEquippedWeapons": true,
-      "anomalousPowerSlots": 3,
-      "replacementOnFourthPower": true,
-      "extraSupportSlotsApproved": false,
-      "ultimateSlots": 1,
-      "ultimateMaxLevel": 5,
-      "ultimateUniqueEffects": true,
-      "ultimateLongCooldown": true,
-      "ultimateProgression": "difficult",
-      "ultimateExamples": [
-        "escudo",
-        "curación instantánea",
-        "modo fantasma",
-        "explosión",
-        "lluvia de meteoritos"
-      ],
-      "gachaNewlyMentioned": [
-        "armas",
-        "ultimates",
-        "skins de soldados"
-      ],
-      "priorSoldierRecruitmentRemoved": false,
-      "unapprovedParameters": [
-        "cooldown universal de 120 s",
-        "escala común 100–120 %",
-        "rangos de ramas 5/3",
-        "mezcla exacta de cartas",
-        "fragmentos/materiales/costes",
-        "skins exclusivamente cosméticas"
-      ],
-      "exactCooldownSeconds": null,
-      "ultimateUpgradeCosts": null,
-      "powerRankCap": null,
-      "ultimateSoldierAbilityRelation": null
-    },
-    "b1b2Trial": {
-      "version": "V2-trial-02",
-      "status": "EC",
-      "evidenceComplete": false,
-      "guide": "docs/PRUEBA_MAPA_COFRES_V2.md",
-      "report": "docs/V2-B1-B2-REPORT.md",
-      "publicPracticeUrl": "https://deteco.github.io/SCPSurvivor/?prueba=mapa-v2&cofres=prueba",
-      "manualAcceptance": "pending",
-      "accountsEnabled": false,
-      "persisted": false,
-      "liveDeploymentVerified": false
-    },
-    "b3Trial": {
-      "version": "V2-trial-03",
-      "status": "EC",
-      "authority": "A-036",
-      "decisionId": "D-332",
-      "evidenceIds": [
-        "EV-041"
-      ],
-      "evidenceComplete": false,
-      "guide": "docs/PRUEBA_PREMIOS_B3.md",
-      "report": "docs/V2-B3-REPORT.md",
-      "bossPracticeQuery": "?prueba=mapa-v2&premios=jefe",
-      "riftPracticeQuery": "?prueba=mapa-v2&premios=grieta",
-      "manualAcceptance": "pending",
-      "accountsEnabled": false,
-      "persisted": false,
-      "ticketEconomy": "fictional_run_only_provisional_table",
-      "buildVerification": "passed",
-      "browserVerification": "passed_local_and_live",
-      "publicationVerification": "passed",
-      "liveDeploymentVerified": true,
-      "contract": "Jefe: contenido fijo al aparecer, +1 nivel temporal de una copia equipada válida elegible, identificada por ID/modelo; máximo 5 heredado. Abrir por proximidad durante 3,5 s, sin pared; premio único independiente del cupo de exploración. Si no hay candidata o la elegida llegó al tope, sin mejora ni compensación inventada. Datos incompatibles bloquean entrega y tickets. Grieta: práctica explícita premios=grieta, portal físico de 45 s activos con sonido, alerta y localizador; ingreso instantáneo por contacto, Custodio separado del jefe obligatorio y encuentro en el mismo mapa. Solo victoria y apertura del cofre conceden mejora compatible y 2–3 tickets ficticios equiprobables de tabla provisional; saturación conserva solo esos tickets base. Entrar, expirar, abandonar o morir no concede premio. No define otra dimensión, retorno, reloj dimensional, economía real, radar ni combate 2+3+1.",
-      "publicationReceipt": "docs/V2-B3-PUBLICACION.json"
-    },
-    "priorityUpdate": {
-      "authority": "A-037",
-      "decisionId": "D-333",
-      "path": "docs/PRIORIDAD_MECANICAS_Y_DISENO.md",
-      "nextBlock": "B4",
-      "visualPreparationMayProceed": true,
-      "persistentIntegrationDeferred": true
+    "agentPolicy": {
+      "requestedModel": "gpt-6-luna",
+      "reasoningEffort": "max",
+      "rootCoordinatesAndReviews": true,
+      "attemptedReviews": 2,
+      "completedAgentReviews": 0,
+      "attemptStatus": "usage_limit",
+      "finalReview": "root"
     }
   }
 }

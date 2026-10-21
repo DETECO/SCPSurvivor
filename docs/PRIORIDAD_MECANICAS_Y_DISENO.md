@@ -1,5 +1,10 @@
 # Mecánicas pendientes y ruta al diseño visual
 
+**Plan vigente 0.28 · ESTRUCTURA, 20/10/2026 (A-038/D-334):** ESTRUCTURA sincronizada hasta 01a15a34-93e9-7a11-9597-6a2c37fb2570 (20/10/2026): modo infinito; una arma inicial y segunda por premio/primer jefe; máximo dos simultáneas. Cuatro ramas5+extra por arma, poderes/generales5+extra y ultimate5permanentes. Fusión en sala, mejoras permanentes por soldado con monedas, tres gachas con gris1/dorado5, procedural y radar. Próxima prueba V2-INFINITO-01/T1A planificada, todavía sin implementación ni nueva URL. P05 aceptado por el propietario para avanzar; servicios reales diferidos. Agentes Luna máximo bajo coordinación de raíz. [Plan actual](PLAN_DESARROLLO_V2_INFINITO.md) · [Pauta próxima prueba](PRUEBA_V2_INFINITO_01.md) · [Decisiones aceptadas](DECISIONES_INFINITO_2026-10-20.md). Esta instrucción posterior sustituye inicio con dos armas, nivel simple máximo5, mezcla de cartas sin cerrar y requisitos P05 que bloqueaban el prototipo. Conservar diferencias de la demo B3 como antecedentes; no presentarla como la nueva prueba. Usar **Luna con razonamiento máximo** al delegar; prevalece sobre la preferencia previa Sol medio.
+
+## Antecedentes conservados; el plan0.28 anterior prevalece
+
+
 20/10/2026 · Roadmap 0.27 · A-037 / D-333.
 
 ## Aceptación y prioridad de Iván

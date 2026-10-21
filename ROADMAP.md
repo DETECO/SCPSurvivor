@@ -1,8 +1,8 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-20).** Iván da por aceptado lo pendiente de P05 para continuar y prioriza llegar al diseño visual. Aceptación del propietario registrada; las comprobaciones técnicas de servicios reales no ejecutadas se difieren, sin declararlas aprobadas. P05 deja de bloquear el prototipo local B4 y la preparación visual. Cuentas propias, economía persistente y facturación siguen desactivadas. B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. [Guía B3](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites B3](docs/V2-B3-REPORT.md). Build/check y navegador B3 aprobados en ambas copias; demo publicada y verificada online. Aceptación humana pendiente; consultar el informe y recibo.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-20).** ESTRUCTURA sincronizada hasta 01a15a34-93e9-7a11-9597-6a2c37fb2570 (20/10/2026): modo infinito; una arma inicial y segunda por premio/primer jefe; máximo dos simultáneas. Cuatro ramas5+extra por arma, poderes/generales5+extra y ultimate5permanentes. Fusión en sala, mejoras permanentes por soldado con monedas, tres gachas con gris1/dorado5, procedural y radar. Próxima prueba V2-INFINITO-01/T1A planificada, todavía sin implementación ni nueva URL. P05 aceptado por el propietario para avanzar; servicios reales diferidos. Agentes Luna máximo bajo coordinación de raíz.
 
-[Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/ROADMAP_ACTUALIZACION_ESTRUCTURA_2026-10-19.md)
+[Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
 **Demo disponible:** [guía](docs/PRUEBA_MAPA_V2.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?rapida=1) · [jugar](https://deteco.github.io/SCPSurvivor/). Sin cuentas ni guardado; aceptación de Iván pendiente.
 
@@ -10,33 +10,39 @@
 
 | Elemento | Tratamiento vigente |
 | --- | --- |
-| Recorrido | Mapas encadenados de cinco minutos; jefe obligatorio en cada mapa. |
-| Puerta y aliados | A5:00 llega puerta blindada y soldados; cesa todo spawn enemigo, permanecen remanentes; cruzar exige jefe derrotado. |
-| Extracción de fin de partida | Retirada del diseño V2; la puerta avanza de mapa, no termina la partida. |
-| Accesorios de armas y mochilas | Retirados del diseño V2; código y datos anteriores conservados hasta adaptar y validar. |
-| Armas | Dos armas elegidas antes de salir y activas simultáneamente; identidad/familias propias. Tres ofertas aleatorias, mejoras de arma solo para equipadas. Mezcla, ramas y topes pendientes; simultaneidad aún sin implementar. |
-| Poderes anómalos | Hasta tres, con opción de reemplazo al aparecer un cuarto. No sumar otras dos ranuras de apoyo. Catálogo, adquisición/rangos y aplicación de reemplazo pendientes. |
-| Ultimate | Una habilidad única de defensa, curación, evasión o ataque; cooldown largo propio por definir, máximo nivel 5 y progresión difícil; gacha. Sin duración/costes aprobados ni implementación. |
-| Grietas y saltos | Práctica B3 explícita de 45 s, con señales/localizador e ingreso instantáneo; Custodio y cofre en el mismo mapa. No implementa dimensión nueva ni saltos; retorno/reloj/destino y economía final abiertos. |
-| Cofres y mapas | B1/B2 conservados y revalidados online en dos escenarios; aceptación manual pendiente. B3 implementado como prototipo aislado: cofre de jefe con +1 nivel temporal de una copia equipada elegible (máximo 5 heredado), y práctica explícita de grieta con Custodio separado en el mismo mapa. Solo tras vencer y abrir el cofre durante 3,5 s se entrega el premio; la grieta añade 2–3 tickets ficticios de tabla provisional. Sin premio por entrar, expirar o morir; saturación sin compensación adicional, salvo tickets base de grieta. RC-10 sigue EC/evidenceComplete=false; P05 real, B4, combate 2+3+1, bono de diez minutos/hitos, economía persistente y aceptación completa pendientes. |
-| P06/P07 | Revisar colección/gacha de soldados, armas, skins y ultimates sin retirar reclutamiento anterior por inferencia. Costes, duplicados y efectos de skins pendientes; sin mochilas ni accesorios físicos. |
+| Recorrido | Infinito, mapas300s y jefe240s de ensayo; muerte sin resurrección, abandono desde pausa sin marca competitiva; conservación permanente confirmada. |
+| Puerta y aliados | Puerta/dos aliados a300s, remanentes y jefe obligatorio; resolver premio/XP antes de cruzar. Aliados sinXP/no remate; uno huye si ambos ven al jefe vivo. Congelar regeneración/cooldowns, no duración de efectos. |
+| Armas | Una inicial; segunda garantizada por primer jefe si falta o adelantada por élite. Máximo dos simultáneas, modelos iguales independientes; reemplazo solo en terminales. Familias balística/energía/melee/explosivos/arrojadizas. |
+| Cartas y niveles | Tres ofertas: arma/general/libre, categorías vacías se rellenan con válidas. Cuatro ramas por arma: Potencia/Ritmo/Manejo/Especialización; cada rama/poder/general5+extra. Saturación táctica temporal, sin moneda real. |
+| Fusión | En sala de algún escenario, dos armas completamente mejoradas se combinan y liberan ranura. Receta/herencia/frecuencia/límite aún por cerrar; una fusión por expedición no está aprobada. |
+| Poderes anómalos | Jefes de grieta: primer poder garantizado, después azar/garantía tras tres victorias sin poder; hasta tres y reemplazo pausado al cuarto. Intervalos automáticos,5+extra propio. |
+| Ultimate | Una manual y pasiva del soldado, sin botón adicional de habilidad anterior; lista al inicio, cooldown largo propio conservado entre mapas, cinco niveles permanentes. Gacha y fragmentos/materiales sin costes fijados. |
+| Grietas y saltos | Nuevo diseño: recinto separado/origen congelado,45s para entrar instantáneamente; única retirada5s entre1–3min y retorno por victoria. Detalles de instante/aviso/posición y saltos abiertos. B3 actual sigue en el mismo mapa. |
+| Cofres y procedural | Conservar sorteos60/120/180/240s y cuotas, seis candidatos; bono10min e hitos de primer jefe/mapas2/3. Ampliar mapas procedurales por semilla con rutas de jefe/puerta/terminales/fusión verificadas. |
+| Base y colección | Diez compras independientes por soldado con monedas recogidas. Tres gachas: personajes/armas/ultimates, tickets universales gris1/dorado5. Skins cosméticas por dominio/contratos/eventos; no cuarto gacha. |
+| Interfaz y visual | Radar pequeño fijo, símbolos/prioridad de urgencia; no revelar cofres sin descubrir. Preparar arte/HUD en paralelo a T1; mantener diseños aprobados y crédito. |
+| Funciones retiradas | Sin extracción de fin, accesorios físicos, mochilas ni ranuras extra de apoyo. Conservar datos y código anterior de referencia, sin reactivarlo. |
 
 | Paso | Trabajo y estado | Dependencias |
 | --- | --- | --- |
-| RC-01 | Cerrar contratos y parámetros abiertos de V2 — pendiente de implementar | Reglas V2 |
+| RC-01 | Contratos infinitos aceptados; fichas y parámetros concretos pendientes — pendiente de implementar | Reglas V2 |
 | RC-02 | Versionar guardado, resultados y compatibilidad — pendiente de implementar | P05 verificado, RC-01 |
 | RC-03 | Director300s y escalada temporal — prototipo; aceptación pendiente | RC-02 |
 | RC-04 | Jefe obligatorio por mapa — prototipo; aceptación pendiente | RC-03 |
 | RC-05 | Puerta, soldados y transición sin limpiar remanentes — prototipo; aceptación pendiente | RC-04 |
 | RC-06 | Retirar extracción del recorrido V2 — prototipo; aceptación pendiente | RC-05 |
-| RC-07 | Dos armas simultáneas, familias y tres ofertas compatibles — pendiente de implementar | RC-01, RC-02 |
+| RC-07 | Una a dos armas simultáneas, cuatro ramas5+extra y cartas arma/general/libre — pendiente de implementar | RC-01, RC-02 |
 | RC-08 | Retirar accesorios/mochilas y replantear P06 — pendiente de implementar | RC-07, RC-02 |
-| RC-13 | Hasta tres poderes anómalos y reemplazo del cuarto — pendiente de implementar | RC-01, RC-07 |
-| RC-14 | Ultimate única: efecto propio, cooldown largo y máximo nivel 5 — pendiente de implementar | RC-01, RC-07 |
-| RC-09 | Colección/gacha de armas, soldados, skins y ultimates; premios revisados — pendiente de implementar | RC-08, RC-01, RC-14 |
+| RC-13 | Poderes de jefes de grieta: máximo3,5+extra y reemplazo — pendiente de implementar | RC-01, RC-07 |
+| RC-14 | Pasiva de soldado y una ultimate manual, cinco niveles permanentes — pendiente de implementar | RC-01, RC-07 |
+| RC-09 | Tres gachas, gris1/dorado5 y colección; skins cosméticas — pendiente de implementar | RC-08, RC-01, RC-14 |
 | RC-10 | Cofres y dimensiones de mapas — prototipo; aceptación pendiente | RC-01, RC-03 |
-| RC-11 | Grietas especiales y saltos dimensionales — pendiente de implementar | RC-05, RC-09, O-06/O-07, RC-13 |
+| RC-11 | Recinto de grieta separado, origen congelado y escape único; saltos — pendiente de implementar | RC-05, RC-09, RC-13 |
 | RC-12 | Interfaz/audio, regresión y aceptación V2 — pendiente de implementar | RC-06, RC-07, RC-08, RC-09, RC-10, RC-11, RC-13, RC-14 |
+| RC-15 | Fusión en sala y adquisición posterior de arma — pendiente de implementar | RC-07, I-02 |
+| RC-16 | Monedas y diez compras independientes por soldado — pendiente de implementar | RC-01, I-03 |
+| RC-17 | Radar e indicadores funcionales — pendiente de implementar | RC-05 |
+| RC-18 | Procedural modular con rutas reproducibles — pendiente de implementar | RC-03 |
 
 **P05 continúa pendiente de aceptación real; P06 se replantea.** No continuar la lista anterior de mochila, accesorios, pérdida/recuperación o extracción. Las tablas y porcentajes siguientes conservan la **línea base histórica**, no acreditan aceptación de V2.
 
@@ -52,7 +58,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-Versión **0.27**, 2026-10-20. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+Versión **0.28**, 2026-10-20. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
 
 ## Avance basado en evidencia
 

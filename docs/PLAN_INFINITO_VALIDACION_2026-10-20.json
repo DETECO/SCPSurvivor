@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-21T10:34:22.169901+00:00",
+  "roadmapVersion": "0.28",
+  "scope": "documentary_sync_and_trial_planning_only",
+  "sourceThread": "ESTRUCTURA",
+  "latestReadTurnId": "01a15a34-93e9-7a11-9597-6a2c37fb2570",
+  "readTurns": 10,
+  "wholeThreadExport": false,
+  "acceptedQuestionMatrix": 66,
+  "firstTrial": "V2-INFINITO-01/T1A",
+  "newMechanicsImplemented": false,
+  "newGameTrialExecuted": false,
+  "newPlayableUrl": null,
+  "checks": {
+    "roadmapRenderAndCheckBothCopies": "passed",
+    "historicalTasksPhasesUnchanged": true,
+    "historicalTasks": 53,
+    "historicalPercent": 52,
+    "localReferencesChecked": 729,
+    "newContractsAssertions": "passed",
+    "runtimeHashesUnchanged": true
+  },
+  "review": {
+    "requestedModel": "gpt-6-luna",
+    "reasoningEffort": "max",
+    "agentAttempts": 2,
+    "completedAgentReviews": 0,
+    "reason": "usage_limit",
+    "completedBy": "root",
+    "substituteModelUsed": false
+  },
+  "runtime": {
+    "source": {
+      "bundleSha256": "5e6e3f76d0cb7950566cdc8ec4a030e95283bcc56fd4dfe072e4e366a6960dfe",
+      "indexSha256": "b86efe8f82975155764d45d86cd6ecde9a383dae1b0d4e67dcb6a2bdc577015a"
+    },
+    "publication": {
+      "bundleSha256": "01e751b946a58a8c557d1eca02dbe0d97c8982fba316475837cbf1db5c36c093",
+      "indexSha256": "f49581b12e13702510745d4b0e9b570b688774ea7589d9eebf3e15db7dc01c12"
+    }
+  },
+  "limits": [
+    "No nueva compilación ni suite del juego: no cambió el ejecutable",
+    "No nueva aceptación manual ni balance",
+    "Receta/límite de fusión, costes, instante de escape y pesos de score siguen identificados como parámetros/propuestas"
+  ],
+  "backup": "development-backups/estructura-plan-20261020-antes.zip"
+}

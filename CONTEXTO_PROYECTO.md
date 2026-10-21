@@ -1,5 +1,8 @@
 # Contexto del proyecto — SCP Survivor
 
+**Plan vigente 0.28 · ESTRUCTURA, 20/10/2026 (A-038/D-334):** ESTRUCTURA sincronizada hasta 01a15a34-93e9-7a11-9597-6a2c37fb2570 (20/10/2026): modo infinito; una arma inicial y segunda por premio/primer jefe; máximo dos simultáneas. Cuatro ramas5+extra por arma, poderes/generales5+extra y ultimate5permanentes. Fusión en sala, mejoras permanentes por soldado con monedas, tres gachas con gris1/dorado5, procedural y radar. Próxima prueba V2-INFINITO-01/T1A planificada, todavía sin implementación ni nueva URL. P05 aceptado por el propietario para avanzar; servicios reales diferidos. Agentes Luna máximo bajo coordinación de raíz. [Plan actual](docs/PLAN_DESARROLLO_V2_INFINITO.md) · [Pauta próxima prueba](docs/PRUEBA_V2_INFINITO_01.md) · [Decisiones aceptadas](docs/DECISIONES_INFINITO_2026-10-20.md). Esta instrucción posterior sustituye inicio con dos armas, nivel simple máximo5, mezcla de cartas sin cerrar y requisitos P05 que bloqueaban el prototipo. Conservar diferencias de la demo B3 como antecedentes; no presentarla como la nueva prueba. Usar **Luna con razonamiento máximo** al delegar; prevalece sobre la preferencia previa Sol medio.
+
+
 **20/10/2026 · B3 / roadmap 0.26:** cofre del jefe y práctica explícita dimensional implementados; premios temporales y tickets ficticios, sin cuentas. [Prueba manual](docs/PRUEBA_PREMIOS_B3.md) · [Resultados y límites](docs/V2-B3-REPORT.md). Aceptación de Iván pendiente; B4 y P05 real continúan pendientes.
 
 
