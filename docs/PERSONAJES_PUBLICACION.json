@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-22T15:42:27.110754+00:00",
+  "runtimeCommit": "18b8f73ffff8c1628cd0886ffe8508a18e2c07f3",
+  "verifiedMainCommit": "18b8f73ffff8c1628cd0886ffe8508a18e2c07f3",
+  "clean": true,
+  "url": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=32",
+  "alternativeUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=16",
+  "galleryUrl": "https://deteco.github.io/SCPSurvivor/assets/personajes-20261022/index.html",
+  "indexHashMatched": true,
+  "bundleHashMatched": true,
+  "roadmapHashMatched": true,
+  "nativePngHashesMatched": 68,
+  "matchedFiles": 76,
+  "roadmapVersion": "0.32",
+  "manualVisualAcceptance": "pending_new_character_integration",
+  "realAccountsEnabled": false,
+  "billingChanges": false,
+  "liveNativeScenarios": 4,
+  "animationCropsPerScenario": 624,
+  "liveCombatScenarios": 2,
+  "combatModesPerScenario": 5,
+  "method": "Controlled render targets/support arrival plus real UI/combat regression; not natural balance, performance, final art or physical phone.",
+  "galleryBrowser": {
+    "status": "PASS",
+    "live": true,
+    "galleryActors": 6,
+    "loadedVariants": 12,
+    "errors": []
+  },
+  "networkIncident": "First expanded live traversal reported Chromium ERR_NETWORK_IO_SUSPENDED (no HTTP errors). Diagnostic desktop replay passed 5 modes, followed by a fresh unchanged full desktop/touch run passing 10 modes. No test errors filtered and no runtime fix used."
+}
