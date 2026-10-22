@@ -97,3 +97,5 @@ body[data-expanded-trial] .field-controls .field-weapon{width:124px;height:74px;
 body[data-expanded-trial] .chest-status{bottom:100px}body[data-expanded-trial] #btn-terminal{border-color:#ed6472;font-size:11px;padding:6px;max-width:94px}
 @media(max-width:540px){#radar-wrap{top:168px;right:8px}body[data-expanded-trial] .field-controls .field-weapon{width:94px}body[data-expanded-trial] .field-weapon small{font-size:9px}#terminal-prompt{bottom:172px}#weapon-terminal .panel{padding:18px}}
 @media(max-height:520px){#radar-wrap{top:128px;transform:scale(.75);transform-origin:top right}body[data-expanded-trial] .field-controls .field-weapon{height:62px}body[data-expanded-trial] .chest-status{bottom:80px}#terminal-prompt{bottom:130px}}
+
+#character-graphics{display:grid;gap:8px;margin:18px 0;padding:14px;border:1px solid #687568}#character-graphics[hidden]{display:none}#character-resolution{font:inherit;padding:10px;color:#eee8da;background:#1b262b;border:1px solid #9b9d7a}#character-graphics small{color:#bbc4b7;font-size:12px}

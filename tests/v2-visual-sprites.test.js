@@ -30,7 +30,7 @@ test('failed new atlas falls back to original sheet with its original frame layo
  assert.deepEqual(calls[0].slice(1),[24,84,24,28,76,148,48,56]);
 });
 test('visual install is isolated and preserves logical frame geometry for every actor',()=>{
- for(const [expanded,search,expected]of [[true,'',true],[true,'?graficos=clasicos',false],[false,'',false]]){
+ for(const [expanded,search,expected]of [[true,'?graficos=v1',true],[true,'?graficos=clasicos',false],[false,'',false]]){
   const {G,context}=setup();G.MapTrial={expanded};context.window={location:{search}};
   G.SPRITE_META.guard01.base='assets/actors/guard01';G.SPRITE_META.guard01.sample=1;
   for(const id of ['medic01','pursuer01','biological01','warden01']){
@@ -64,4 +64,14 @@ test('double-sampled soft flash preserves source crop and restores incoming alph
  assert.equal(calls.length,2);assert.equal(calls[0][0],images[0]);assert.notEqual(calls[1][0],images[0]);
  assert.deepEqual(calls[0].slice(1),calls[1].slice(1));assert.deepEqual(calls[0].slice(1,5),[0,112,48,56]);
  assert.equal(alphas[0],.7*.25);assert.equal(alphas[1],.7*.25*.55);assert.equal(ctx.globalAlpha,.7);
+});
+test('native PNG source dimensions do not change logical frame destination',()=>{
+ const {G,images,calls,ctx}=setup(1);G.SPRITE_META.guard01.ext='png';G.SPRITE_META.guard01.a.Walk.sourceW=16;G.SPRITE_META.guard01.a.Walk.sourceH=16;
+ const a=new G.Sprites.Animator('guard01');a.cur='Walk';a.frame=1;a.dir=7;G.Sprites.sheet('guard01','Walk');images[0].onload();a.draw(ctx,100,200);
+ assert.deepEqual(calls[0].slice(1),[16,112,16,16,76,148,48,56]);
+});
+test('Neutralized PNG aliases Faint and fails back to original Idle SVG',()=>{
+ const {G,images,calls,ctx}=setup(1),m=G.SPRITE_META.guard01;m.ext='png';m.fallbackExt='svg';m.fallbackAnimations={Idle:{...m.a.Idle}};m.a.Faint={...m.a.Idle,n:2,d:[10,48],sourceW:32,sourceH:32,file:'Neutralized'};
+ const a=new G.Sprites.Animator('guard01');a.cur='Faint';a.frame=1;a.dir=4;G.Sprites.sheet('guard01','Faint');assert.ok(images[0].src.endsWith('/Neutralized.png'));
+ images[0].onerror();assert.ok(images[0].src.endsWith('/Idle.svg'));images[0].onload();a.draw(ctx,100,200);assert.deepEqual(calls[0].slice(1,5),[0,112,24,28]);
 });

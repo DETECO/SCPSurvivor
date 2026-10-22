@@ -31,7 +31,7 @@ G.MapTrial=(()=>{
     (!G.Game?.player||!G.Path?.reachable||G.Path.reachable(p.x,p.y,G.Game.player)));
   for(let i=0;i<2;i++){
    const target=positions[i]||exit;
-   const anim=G.Sprites?.Animator?new G.Sprites.Animator(G.Content.guard.dex,1,false):null;
+   const anim=G.Sprites?.Animator?new G.Sprites.Animator(G.TrialVisuals?.mode==='16'||G.TrialVisuals?.mode==='32'?'support01':G.Content.guard.dex,1,false):null;
    team.push({x:exit.x,y:exit.y,tx:target.x,ty:target.y,anim,wait:i*.15,flash:0,aim:-Math.PI/2,shot:null});
   }
   G.Audio?.sfx('rift');
@@ -79,14 +79,15 @@ G.MapTrial=(()=>{
  function drawAlly(ctx,ally){
    ctx.save();ctx.textAlign='center';
    G.Sprites?.drawShadow(ctx,G.Content.guard.dex,ally.x,ally.y);
-   ally.anim?.draw(ctx,ally.x,ally.y);
-   ctx.strokeStyle='#d6eee0';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(ally.x,ally.y-11);
-   ctx.lineTo(ally.x+Math.cos(ally.aim)*20,ally.y-11+Math.sin(ally.aim)*20);ctx.stroke();
+   const native=G.PersonajesArt?.drawAlly(ctx,ally);
+   if(!native)ally.anim?.draw(ctx,ally.x,ally.y);
+   if(!native){ctx.strokeStyle='#d6eee0';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(ally.x,ally.y-11);
+   ctx.lineTo(ally.x+Math.cos(ally.aim)*20,ally.y-11+Math.sin(ally.aim)*20);ctx.stroke();}
    if(ally.flash>0&&ally.shot){ctx.strokeStyle='#fff2af';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(ally.x,ally.y-11);ctx.lineTo(ally.shot.x,ally.shot.y-10);ctx.stroke();}
-   ctx.fillStyle='#d9efe3';ctx.font='9px system-ui';ctx.fillText('ALIADO',ally.x,ally.y-35);
+   ctx.fillStyle='#d9efe3';ctx.font='9px system-ui';ctx.fillText('ALIADO',ally.x,ally.y-(native?65:35));
    ctx.restore();
  }
  return{enabled,publicDemo,infinite,expanded,practice,elitePractice,quick,chestPractice,rewardBossPractice,rewardRiftPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
   drawables:()=>enabled&&arrived?team.filter(a=>!a.hidden).map(a=>({x:a.x,y:a.y,draw:ctx=>drawAlly(ctx,a)})):[],
-  get allies(){return team.map(a=>({x:a.x,y:a.y,...(infinite?{fleeing:!!a.fleeing,hidden:!!a.hidden}:{})}));},get alertTime(){return alertTime;}};
+  get allies(){return team.map(a=>({x:a.x,y:a.y,...(['16','32'].includes(G.TrialVisuals?.mode)?{dex:a.anim?.dex}:{}),...(infinite?{fleeing:!!a.fleeing,hidden:!!a.hidden}:{})}));},get alertTime(){return alertTime;}};
 })();

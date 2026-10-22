@@ -78,12 +78,13 @@ G.Sprites = (() => {
       return s;
     }
     s = { ready: false, failed: false, img: new Image(), tries: 0, retryAt: 0, sample:m.sample===2?2:1,
-          src: m.base ? `${m.base}/${name}.${m.ext || 'png'}` : `assets/pokemon/${dex}/${shiny ? 's/' : ''}${name}.png` };
+          src: m.base ? `${m.base}/${m.a[name]?.file||name}.${m.ext || 'png'}` : `assets/pokemon/${dex}/${shiny ? 's/' : ''}${name}.png` };
     s.img.onload = () => { s.ready = true; };
     s.img.onerror = () => {
       if(m.fallbackBase&&!s.usedFallback){
-        s.usedFallback=true;s.sample=1;s.layout=m.fallbackAnimations?.[name];
-        s.src=`${m.fallbackBase}/${name}.${m.ext||'png'}`;s.img.src=s.src;return;
+        const fallback=!m.fallbackAnimations||m.fallbackAnimations[name]?name:'Idle';
+        s.usedFallback=true;s.sample=1;s.layout=m.fallbackAnimations?.[fallback];
+        s.src=`${m.fallbackBase}/${fallback}.${m.fallbackExt||m.ext||'png'}`;s.img.src=s.src;return;
       }
       s.failed = true; s.retryAt = performance.now() + 1000 * Math.min(8, 2 ** s.tries++);
     };
@@ -215,6 +216,7 @@ G.Sprites = (() => {
 
     /** Dibuja con los pies en (x, y). opts: { flash, alpha } */
     draw(ctx, x, y, opts = {}) {
+      if(G.PersonajesArt?.draw(ctx,this,x,y,opts))return;
       let m = animMeta(this.dex, this.cur, this.shiny);
       let s = sheet(this.dex, this.cur, this.shiny);
       const k = PX * this.scale;
@@ -239,11 +241,12 @@ G.Sprites = (() => {
       const prev = ctx.globalAlpha;
       if (alpha < 1) ctx.globalAlpha = prev * alpha;
       // Destello: blanco entero (enemigos) o medio blanco encima (tu Pokémon).
-      const sample=s.sample||1;
-      if (!opts.flash || opts.softFlash) ctx.drawImage(s.img, sx*sample, sy*sample, m.w*sample, m.h*sample, dx, dy, m.w * k, m.h * k);
+      const sample=s.sample||1,sw=m.sourceW||m.w*sample,sh=m.sourceH||m.h*sample;
+      const sourceX=Math.min(frame,m.n-1)*sw,sourceY=row*sh;
+      if (!opts.flash || opts.softFlash) ctx.drawImage(s.img, sourceX, sourceY, sw, sh, dx, dy, m.w * k, m.h * k);
       if (opts.flash) {
         if (opts.softFlash) ctx.globalAlpha = prev * alpha * 0.55;
-        ctx.drawImage(white(s.img), sx*sample, sy*sample, m.w*sample, m.h*sample, dx, dy, m.w * k, m.h * k);
+        ctx.drawImage(white(s.img), sourceX, sourceY, sw, sh, dx, dy, m.w * k, m.h * k);
       }
       ctx.globalAlpha = prev;
     }

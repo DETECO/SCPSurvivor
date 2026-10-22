@@ -1,7 +1,7 @@
 /* Arranque local P01. La aplicación completa sigue pendiente de sus fases. */
 (() => {
   const NEED = ['U', 'Settings', 'Input', 'Touch', 'Sprites', 'Camera', 'Tiles', 'World',
-                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'DimensionalRifts', 'InventoryModel', 'InventoryTrial', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'WeaponTerminal', 'ExpandedPractice', 'ExpandedUI', 'FieldRadar', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI'];
+                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'DimensionalRifts', 'InventoryModel', 'InventoryTrial', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'WeaponTerminal', 'ExpandedPractice', 'ExpandedUI', 'FieldRadar', 'CharacterCatalog', 'PersonajesArt', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI'];
   function boot() {
     const miss = NEED.filter(k => !window.G || !G[k]);
     if (miss.length) {

@@ -32,7 +32,7 @@ def main():
        else:remote.append(r.request.url);r.abort()
       page.route('**/*',route)
       try:
-       page.goto(base+entry+'?prueba=combate-v2&ensayo=melee');page.wait_for_selector('#btn-technical-start:visible')
+       page.goto(base+entry+'?prueba=combate-v2&ensayo=melee&graficos=v1');page.wait_for_selector('#btn-technical-start:visible')
        assert page.locator('#visual-style-note').is_visible()
        page.locator('#btn-technical-start').click();page.wait_for_function("G.Game.state==='playing'")
        page.evaluate("G.Game.togglePause()")

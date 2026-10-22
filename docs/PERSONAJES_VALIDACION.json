@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-10-22T15:33:45.765997+00:00",
+  "version": "PERSONAJES-16-32",
+  "node": {
+    "source": {
+      "tests": 222,
+      "pass": 221,
+      "fail": 0,
+      "skipped": 1
+    },
+    "publication": {
+      "tests": 222,
+      "pass": 220,
+      "fail": 0,
+      "skipped": 2
+    }
+  },
+  "build": {
+    "source": {
+      "bundleSha256": "e604790cf2e4e512aedb26f9f868e1bb2a90196949d49feded2b640785b29771",
+      "indexSha256": "19d5406a60a145d1c7b43621e2f72c67acdc24b53e1c34460448bf07bd55e5a6",
+      "scripts": 98,
+      "build": "passed",
+      "check": "passed"
+    },
+    "publication": {
+      "bundleSha256": "ffa452ba61657b924a9f31731b0736b9ca8cf81974cdf7ec73b5977fd57c466e",
+      "indexSha256": "b63a1bebd05136d95f6b593dcb7e2ef8c78968621c5d5349ae74dd6482a9b747",
+      "scripts": 98,
+      "build": "passed",
+      "check": "passed"
+    }
+  },
+  "browser": {
+    "source": {
+      "personajes": {
+        "status": "PASS",
+        "scenarios": 8,
+        "resultsSha256": "7e059a92a42747e3d2025eb426a75f4d53ccca4a840de2389189a77553243d27"
+      },
+      "v2-expanded": {
+        "status": "PASS",
+        "scenarios": 4,
+        "resultsSha256": "71b66f4c9e04a1452f3dce430a65c326b1cc8e5856322f7cd57a1aab1586cc50"
+      },
+      "visual-v1": {
+        "status": "PASS",
+        "scenarios": 4,
+        "resultsSha256": "522c122646b785c1fc553528fb51c65c45af12eb8a4414ce1cdc67fbf45b48bf"
+      },
+      "v2-infinite": {
+        "status": "PASS",
+        "scenarios": 4,
+        "resultsSha256": "a4daf7bc34847d6c06e5de4b8b32c38c34247d6779cb856e366a64e3d2662ee5"
+      },
+      "v2-b3": {
+        "status": "PASS",
+        "scenarios": 4,
+        "resultsSha256": "ab78d4f876c7cbfd5642f7ae9637feb0a4aa24544083cb6dbe7d13753327bf48"
+      }
+    },
+    "publication": {
+      "personajes": {
+        "status": "PASS",
+        "scenarios": 8,
+        "resultsSha256": "7e059a92a42747e3d2025eb426a75f4d53ccca4a840de2389189a77553243d27"
+      },
+      "v2-expanded": {
+        "status": "PASS",
+        "scenarios": 4,
+        "resultsSha256": "2369f1de13e515ebe6c6d241b4a397caaa0454ce5b8264dd630586f41ed6132a"
+      },
+      "visual-v1": {
+        "status": "PASS",
+        "scenarios": 4,
+        "resultsSha256": "522c122646b785c1fc553528fb51c65c45af12eb8a4414ce1cdc67fbf45b48bf"
+      },
+      "v2-infinite": {
+        "status": "PASS",
+        "scenarios": 4,
+        "resultsSha256": "92a1a73806dc62e37e932a6cab75572e4341b3b148cb04b1d91e0c021bc08f2e"
+      },
+      "v2-b3": {
+        "status": "PASS",
+        "scenarios": 4,
+        "resultsSha256": "bd5db36c453e2cf0b151cd8c765b94cbfcbf56582d64b66d7f706a2ebf9f5b43"
+      }
+    }
+  },
+  "pngCopiedWithoutEdits": 68,
+  "originalAssetsUnchanged": true,
+  "manualAcceptance": "pending_new_character_integration",
+  "physicalPhoneTested": false,
+  "realAccountsEnabled": false,
+  "billingChanges": false,
+  "readScope": "PERSONAJES read_thread exceeded single-turn size; local human message records and source packages consulted. ESTRUCTURA three turns and local rules, not a full export.",
+  "method": "624 animation crops per native scenario; controlled render targets, support arrival and positions. Existing allied combat regression; not natural balance/performance/phone/final art."
+}
