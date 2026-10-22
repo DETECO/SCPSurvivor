@@ -1,6 +1,6 @@
 # Roadmap SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-22).** Personajes del hilo PERSONAJES incorporados al ensayo T1BC: seis actores en 32/16, selección gráfica, montaje humano modular y dos apoyos amarillos. PNG copiados sin edición; geometría, estadísticas, armas jugables y comportamiento aliado conservados. Arte provisional; no catálogo final 24+24 ni armas nuevas.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-22).** Personajes del hilo PERSONAJES incorporados al ensayo T1BC: seis actores en 32/16, selección gráfica, montaje humano modular y dos apoyos amarillos. PNG copiados sin edición; geometría, estadísticas, armas jugables y comportamiento aliado conservados. Diseños aprobados por Iván para implementación el 22/10/2026 (A-043); no catálogo final 24+24 ni armas nuevas.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
@@ -348,6 +348,7 @@ A-018–021 registran las peticiones posteriores de Iván. A-001–020 conservan
 | A-040 | Implementar y publicar paquete combinado T1B/T1C con ampliación melee y prácticas rápidas | Iván aprobó la propuesta precedente: YA AVANCEMOS CON LO SIGUIENTE. Incluye terminal/progresión/HUD/radar/daño/porra y prácticas; agentes Luna máximo bajo integración de raíz. Conserva autorizaciones GitHub/main; sin backend/billing. |
 | A-041 | Aplicar primera capa gráfica provisional a la demo existente | Iván: Podemos aplicar algunos modelos y diseños graficos para dejarlos aplicados por mientras. Continúan autorización main/Pages y regla sin preguntas repetidas. Preservar originales y aprobaciones finales; sin servicios/billing. |
 | A-042 | Implementar los personajes del hilo PERSONAJES | Petición directa de Iván22/10; mantener autorización main/Pages para la demo y reglas sin servicios reales/billing. Integrar recursos existentes; no inventar diseños sustitutos. |
+| A-043 | Aprobar los personajes entregados en PERSONAJES para implementación | Mensaje directo de Iván el 22/10/2026: «ME GUSTAN LOS PERSONAJES QUE HICISTE, LOS APRUEBO. PARA IMPLEMENTAR.». Seis diseños con variantes 16/32 y animaciones, incluidos apoyos amarillos. Integración existente conservada; no cierra catálogo 24+24, nuevas armas ni aceptación de jugabilidad o dispositivos. |
 
 ## 6. Registro íntegro de decisiones
 

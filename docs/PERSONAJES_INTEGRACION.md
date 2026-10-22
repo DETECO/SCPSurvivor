@@ -25,6 +25,8 @@ Se conserva geometría física y se separa tamaño fuente PNG de marcos lógicos
 
 ## Alcance de la lectura y aprobaciones
 
+**Aprobación posterior de Iván, 22/10/2026:** «ME GUSTAN LOS PERSONAJES QUE HICISTE, LOS APRUEBO. PARA IMPLEMENTAR.». Los seis diseños y sus variantes 16/32 quedan aprobados para implementación. [Registro y alcance](PERSONAJES_APROBACION_2026-10-22.md). Esta decisión sustituye la aceptación visual pendiente de estos recursos; la revisión de la partida integrada y las comprobaciones técnicas conservan su propio alcance. Los párrafos y recibos siguientes documentan la situación anterior a esta aprobación.
+
 Se localizaron el hilo PERSONAJES y sus archivos. `read_thread` rechazó incluso un turno por tamaño; se consultaron los mensajes humanos accesibles en su registro local y la documentación/metadatos de ambas entregas del22/10. ESTRUCTURA se contrastó con tres turnos recientes y sus reglas locales. Es una lectura verificable parcial, no una exportación completa de conversaciones.
 
 La petición «implementa los personajes» autoriza incorporar estos recursos al ensayo; no equivale a aprobación artística final de todos los recortes o de un catálogo24+24. La propuesta detallada de `personajes-v2-20261022` permanece como referencia: no se anuncia un tercer modo raster completo cuando sus animaciones no tienen el mismo contrato. Se conserva toda la capa visual previa y los originales Cloud/ZIP/`sources/`.

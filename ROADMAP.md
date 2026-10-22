@@ -1,6 +1,6 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-22).** Personajes del hilo PERSONAJES incorporados al ensayo T1BC: seis actores en 32/16, selección gráfica, montaje humano modular y dos apoyos amarillos. PNG copiados sin edición; geometría, estadísticas, armas jugables y comportamiento aliado conservados. Arte provisional; no catálogo final 24+24 ni armas nuevas.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-22).** Personajes del hilo PERSONAJES incorporados al ensayo T1BC: seis actores en 32/16, selección gráfica, montaje humano modular y dos apoyos amarillos. PNG copiados sin edición; geometría, estadísticas, armas jugables y comportamiento aliado conservados. Diseños aprobados por Iván para implementación el 22/10/2026 (A-043); no catálogo final 24+24 ni armas nuevas.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
