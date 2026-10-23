@@ -33,3 +33,7 @@ Motor heredado de PokeSurvivor conservado: World/Path, actores, proyectiles, efe
 ## Verificación de esta entrega
 
 Compilación y coherencia del roadmap comprobadas en ambas copias. Node:235 pruebas; fuente234 aprobadas/1 omitida y publicación233 aprobadas/2 omitidas, cero fallos. Las omisiones corresponden a emuladores/dependencias de servidor no activos. En navegador:40 escenarios por copia, incluyendo12 combinaciones de menú/gráficos,4 flujos de grieta/transición y regresiones de combate, infinito, B3 y sprites. Las transiciones y vencimientos usan relojes/daño controlados para QA; no certifican balance, rendimiento ni teléfonos físicos. Los diseños originales y configuraciones de servidor se verifican por hashes.
+
+Publicación comprobada: seis escenarios de menú públicos (tres formatos ×16/32), dos flujos de grieta/transición y77 archivos públicos coincidentes por SHA256, incluidos los68 PNG originales de personajes. Recibo: [PRESENTACION_PUBLICACION.json](PRESENTACION_PUBLICACION.json). La aceptación manual de esta integración sigue pendiente; las aprobaciones previas corresponden a los diseños.
+
+Durante la comprobación pública hubo descargas gráficas lentas y dos esperas de carga completa agotadas. El menú ya estaba disponible; se ajustó el arnés para esperar los controles reales y luego ambos flujos públicos pasaron. La primera carga necesita conexión y no tiene una garantía de tiempo. No se modificó la lógica del juego por ese ajuste.

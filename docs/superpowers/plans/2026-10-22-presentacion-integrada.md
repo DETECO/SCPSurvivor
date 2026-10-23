@@ -11,6 +11,6 @@
 - [x] Luna: seis estilos visuales de grieta, icono original/manifest, prueba de estado visual sin alterar mecánica.
 - [x] Root: integrar scripts y CSS, preferencias gráficas, documentación actualizada ESTRUCTURA y autoridad futura NIVELES/MENUS/PERSONAJES/ICONO APP.
 - [x] Pruebas Node/build y navegador: escritorio, móvil vertical/horizontal, mapa y transición, menús y gráficos, grietas.
-- [ ] Revisar diff y originales, roadmap0.33 con avance histórico intacto, publicar y verificar Pages.
+- [x] Revisar diff y originales, roadmap0.33 con avance histórico intacto, publicar y verificar Pages.
 
 Archivos root: js/world/scene-r7.js, js/data/scene-r7-data.js, world.js, expedition.js, pathing.js (solo si medición lo justifica), trial-visuals.js, main.js, dev.html, tests de mapa/browser, docs/roadmap. Luna menú: SOLO operations-menu.js/css y su test. Luna grietas: SOLO rift-visuals.js/test, assets/brand y manifest.webmanifest; root hace hook de dimensional-rifts.draw y head.

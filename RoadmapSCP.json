@@ -2473,18 +2473,20 @@
     },
     {
       "id": "EV-048",
-      "kind": "Integración R7/UI/icono/estilos; verificación local aprobada",
+      "kind": "Integración R7/UI/icono/estilos; verificación local y pública aprobada",
       "summary": "Presentación integrada: escenario inicial R7 Backrooms480×320 con profundidad visual2.5D, menús aprobados responsivos, icono3 con SCP, personajes16/32 y dos prácticas visibles. Seis apariencias de grieta en B3; nuevas mecánicas de azar/NPC/recinto separado documentadas y pendientes.",
       "runtimeProof": true,
       "evidenceComplete": false,
       "references": [
         "docs/PRESENTACION_INTEGRADA.md",
         "docs/ESTRUCTURA_SYNC_2026-10-23.md",
-        "docs/PRESENTACION_VALIDACION.json"
+        "docs/PRESENTACION_VALIDACION.json",
+        "docs/PRESENTACION_PUBLICACION.json"
       ],
-      "automationStatus": "passed_local",
+      "automationStatus": "passed_local_and_live",
       "manualAcceptance": "pending_integrated_presentation",
-      "productionServicesVerified": false
+      "productionServicesVerified": false,
+      "publicationVerification": "passed"
     }
   ],
   "decisions": [
@@ -6511,8 +6513,8 @@
       ],
       "publicUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2",
       "guide": "docs/PRESENTACION_INTEGRADA.md",
-      "automationStatus": "passed_local",
-      "publicationVerification": "pending",
+      "automationStatus": "passed_local_and_live",
+      "publicationVerification": "passed",
       "manualAcceptance": "pending_integrated_presentation",
       "realAccountsEnabled": false,
       "billingEnabled": false,
