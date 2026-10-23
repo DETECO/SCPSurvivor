@@ -1,0 +1,162 @@
+{
+  "checkedAt": "2026-10-23T11:20:11.576998+00:00",
+  "status": "PASS",
+  "baselineCommit": "33e0e3c153dd2b741ceaa5e6c9522e935d953a40",
+  "roots": {
+    "source": {
+      "baselineFilesRetained": 545,
+      "protectedFilesUnchanged": 119,
+      "changedBaselineFiles": [
+        "AGENTS.md",
+        "CONTEXTO_PROYECTO.md",
+        "dev.html",
+        "DISENOS_Y_RECURSOS.md",
+        "index.html",
+        "manifest.webmanifest",
+        "PAUTA_DESARROLLO.md",
+        "README.md",
+        "ROADMAP.md",
+        "RoadmapSCP.json",
+        "RoadmapSCP.md",
+        "docs/COMPANERO_CONTENCION_GRIETAS.md",
+        "docs/PAUTA_ARMAS.md",
+        "docs/WIKI_REDISENO_ROGUELITE.md",
+        "js/app.min.js",
+        "js/main.js",
+        "tests/v2-b3-browser.py",
+        "tests/v2-expanded-browser.py",
+        "tests/v2-infinite-browser.py",
+        "tests/v2-personajes-browser.py",
+        "tests/v2-visual-browser.py",
+        "js/data/trial-visuals.js",
+        "js/systems/dimensional-rifts.js",
+        "js/systems/expedition.js",
+        "js/systems/pathing.js",
+        "js/world/world.js"
+      ],
+      "concurrentSourceDocumentationExcluded": [
+        "docs/WIKI_REDISENO_ROGUELITE.md"
+      ],
+      "node": {
+        "tests": 235,
+        "pass": 234,
+        "skipped": 1,
+        "fail": 0
+      },
+      "browser": {
+        "presentation/results.json": {
+          "scenarios": 12,
+          "status": "PASS"
+        },
+        "presentation/flows.json": {
+          "scenarios": 4,
+          "status": "PASS"
+        },
+        "v2-expanded/results.json": {
+          "scenarios": 4,
+          "status": "PASS"
+        },
+        "v2-infinite/results.json": {
+          "scenarios": 4,
+          "status": "PASS"
+        },
+        "v2-b3/results.json": {
+          "scenarios": 4,
+          "status": "PASS"
+        },
+        "personajes/results.json": {
+          "scenarios": 8,
+          "status": "PASS"
+        },
+        "visual-v1/results.json": {
+          "scenarios": 4,
+          "status": "PASS"
+        }
+      },
+      "bundleSha256": "840fa05aa9684a5db2dca40b5249aeb66d091ccdfa537e3e3478fa4bdf3b4645",
+      "indexSha256": "85381567f3e3cf620f395c9cd44c192e1fcce6ea33bd07453eb4853aa288ea90",
+      "historicalTasksPreserved": 53,
+      "historicalPhasesPreserved": 12
+    },
+    "publication": {
+      "baselineFilesRetained": 520,
+      "protectedFilesUnchanged": 113,
+      "changedBaselineFiles": [
+        "AGENTS.md",
+        "CONTEXTO_PROYECTO.md",
+        "dev.html",
+        "DISENOS_Y_RECURSOS.md",
+        "index.html",
+        "manifest.webmanifest",
+        "PAUTA_DESARROLLO.md",
+        "README.md",
+        "ROADMAP.md",
+        "RoadmapSCP.json",
+        "RoadmapSCP.md",
+        "js/app.min.js",
+        "js/main.js",
+        "tests/v2-b3-browser.py",
+        "tests/v2-expanded-browser.py",
+        "tests/v2-infinite-browser.py",
+        "tests/v2-personajes-browser.py",
+        "tests/v2-visual-browser.py",
+        "js/data/trial-visuals.js",
+        "js/systems/dimensional-rifts.js",
+        "js/systems/expedition.js",
+        "js/systems/pathing.js",
+        "js/world/world.js"
+      ],
+      "concurrentSourceDocumentationExcluded": [],
+      "node": {
+        "tests": 235,
+        "pass": 233,
+        "skipped": 2,
+        "fail": 0
+      },
+      "browser": {
+        "presentation/results.json": {
+          "scenarios": 12,
+          "status": "PASS"
+        },
+        "presentation/flows.json": {
+          "scenarios": 4,
+          "status": "PASS"
+        },
+        "v2-expanded/results.json": {
+          "scenarios": 4,
+          "status": "PASS"
+        },
+        "v2-infinite/results.json": {
+          "scenarios": 4,
+          "status": "PASS"
+        },
+        "v2-b3/results.json": {
+          "scenarios": 4,
+          "status": "PASS"
+        },
+        "personajes/results.json": {
+          "scenarios": 8,
+          "status": "PASS"
+        },
+        "visual-v1/results.json": {
+          "scenarios": 4,
+          "status": "PASS"
+        }
+      },
+      "bundleSha256": "9227ecc9f1ad298c6e4b8d6a3e26908da92a292f211a2f5269a6a09f8ade16e6",
+      "indexSha256": "db7d9f3ba3b133a9d2d100f2731f5110fa12143dab7958c46c28d078ff546f9b",
+      "historicalTasksPreserved": 53,
+      "historicalPhasesPreserved": 12
+    }
+  },
+  "manualAcceptance": "pending_integrated_presentation",
+  "physicalPhoneVerified": false,
+  "productionServicesVerified": false,
+  "limits": [
+    "R7 fixed initial template; next sector retains legacy template",
+    "2.5D Canvas depth, not 3D physics",
+    "Rift styles adapt concepts; B3 encounter remains in same map",
+    "New minute dice, danger system and companion are documented, not implemented",
+    "Browser flows include controlled clocks and boss death; not balance or performance certification"
+  ]
+}

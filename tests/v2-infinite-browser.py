@@ -45,7 +45,7 @@ def run(browser,base,entry,touch,mode,out):
     try:
         suffix='' if mode=='normal' else '&premios='+mode
         query='' if mode=='normal' and base.startswith('https:') else '?prueba=infinito-v2'+suffix
-        page.goto(base+entry+query)
+        page.goto(base+entry+query+("&"if "?"in query else"?")+"interfaz=clasica")
         page.wait_for_selector('#btn-technical-start:visible')
         assert page.locator('#infinite-test-note').is_visible()
         assert page.locator('#loadout-weapon-1').is_hidden()

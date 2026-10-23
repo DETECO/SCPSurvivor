@@ -1,0 +1,15 @@
+{
+  "tool": "image_gen",
+  "date": "2026-10-23",
+  "purpose": "Atlas de cuatro materiales para adaptar el R7 aprobado a tiles jugables; no reemplaza su plano ni sus originales",
+  "reference": "01-mapa-general-r7-25d.png",
+  "quadrants": [
+    "alfombra ocre",
+    "papel mural amarillo",
+    "baldosa servicio gris verde",
+    "baldosa marfil"
+  ],
+  "file": "materiales-r7-v1.png",
+  "sha256": "9e1d9fb12a6900137ac1df67eaa071e6e638cc194f69aad8be2356708fd6f2a4",
+  "newAssetNotOriginalConcept": true
+}

@@ -32,7 +32,7 @@ def main():
        else:remote.append(r.request.url);r.abort()
       page.route('**/*',route)
       try:
-       page.goto(base+entry+'?prueba=combate-v2&ensayo=melee&graficos=v1');page.wait_for_selector('#btn-technical-start:visible')
+       page.goto(base+entry+'?prueba=combate-v2&ensayo=melee&graficos=v1&interfaz=clasica');page.wait_for_selector('#btn-technical-start:visible')
        assert page.locator('#visual-style-note').is_visible()
        page.locator('#btn-technical-start').click();page.wait_for_function("G.Game.state==='playing'")
        page.evaluate("G.Game.togglePause()")
@@ -58,7 +58,7 @@ def main():
         p.invuln=0;G.TechnicalUI.tick(p,0);document.getElementById('technical-pause').hidden=true;return result;
        }''')
        page.screenshot(path=str(out/f'{entry[:-5]}-{"touch"if touch else"desktop"}-scene.png'))
-       page.goto(base+entry+'?prueba=combate-v2&graficos=clasicos');page.wait_for_selector('#btn-technical-start:visible')
+       page.goto(base+entry+'?prueba=combate-v2&graficos=clasicos&interfaz=clasica');page.wait_for_selector('#btn-technical-start:visible')
        assert not page.locator('#visual-style-note').is_visible()
        classic=page.evaluate("({enabled:G.TrialVisuals.enabled,path:G.SPRITE_META.guard01.base,height:G.Sprites.bodyHeight('guard01'),radius:G.Sprites.bodyRadius('guard01')})")
        assert not classic['enabled']and classic['path']=='assets/actors/guard01'

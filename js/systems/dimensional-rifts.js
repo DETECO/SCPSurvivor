@@ -70,6 +70,7 @@ G.DimensionalRifts = (() => {
   }
   function draw(ctx) {
     if (!['open','active'].includes(state.status)) return;
+    if(G.RiftVisuals?.draw(ctx,state))return;
     ctx.save(); ctx.fillStyle='#1c080de6'; ctx.strokeStyle='#ff5e66'; ctx.lineWidth=3;
     ctx.beginPath(); ctx.ellipse(state.x,state.y,22,38,0,0,Math.PI*2);ctx.fill();ctx.stroke();
     ctx.strokeStyle='#ffe5e6';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(state.x+5,state.y-27);

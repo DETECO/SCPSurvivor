@@ -1,0 +1,63 @@
+{
+  "fecha": "2026-10-22",
+  "hilo": "ARMAS",
+  "threadId": "01a164ea-cca2-74b2-a034-5f6a7c949cbd",
+  "ultimoTurnoLeido": "01a165d1-7960-7f11-b81e-57fe593b0f0d",
+  "alcance": "Cinco turnos accesibles; catálogo propuesto y referencias visuales. Sin integración jugable ni aprobación de todos los modelos.",
+  "archivos": [
+    {
+      "archivo": "armas-v1\\CAMBIOS_VISUALES_V1.1.diff",
+      "origen": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\este-hilo-sera-para-el-dise-2\\outputs\\armas-v1\\CAMBIOS_VISUALES_V1.1.diff",
+      "sha256": "FF4637E72FE87D69DE6CF06B39C8873BBC55095E7759027C7C858948B1F356CE",
+      "coincide": true
+    },
+    {
+      "archivo": "armas-v1\\CATALOGO_ARMAS_Y_FUSIONES_V1.md",
+      "origen": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\este-hilo-sera-para-el-dise-2\\outputs\\armas-v1\\CATALOGO_ARMAS_Y_FUSIONES_V1.md",
+      "sha256": "5B92EEA68A4E695D15B80DEC109AF206F746ADB62472083E6689A8AD548DE00A",
+      "coincide": true
+    },
+    {
+      "archivo": "armas-v1\\DATOS_DISENO_ARMAS_V1.json",
+      "origen": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\este-hilo-sera-para-el-dise-2\\outputs\\armas-v1\\DATOS_DISENO_ARMAS_V1.json",
+      "sha256": "884B2A2BD07EF8DC5B4D19EEF93E88D2241D2F2715E58C0A48B1752BC3244A10",
+      "coincide": true
+    },
+    {
+      "archivo": "armas-v1\\GUIA_VISUAL_ATAQUES_V1.1.md",
+      "origen": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\este-hilo-sera-para-el-dise-2\\outputs\\armas-v1\\GUIA_VISUAL_ATAQUES_V1.1.md",
+      "sha256": "13AEBBDA6E0D392BDA62F8E2DB02BC8D9E66C8E2CCB2086655F804E6F5C4F5FE",
+      "coincide": true
+    },
+    {
+      "archivo": "armas-v1\\LISTA_RAPIDA_90_ARMAS_63_FUSIONES.md",
+      "origen": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\este-hilo-sera-para-el-dise-2\\outputs\\armas-v1\\LISTA_RAPIDA_90_ARMAS_63_FUSIONES.md",
+      "sha256": "3FCC26F5E2A4F8C49D54920A2AA5FB3116EECD54A0BFBF8085570F6102A113F6",
+      "coincide": true
+    },
+    {
+      "archivo": "armas-v1\\VERIFICACION_CATALOGO.json",
+      "origen": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\este-hilo-sera-para-el-dise-2\\outputs\\armas-v1\\VERIFICACION_CATALOGO.json",
+      "sha256": "90990AC1226C6999B8DAF79C4F39D00C397D91F52D21B964AAD15E39DA959468",
+      "coincide": true
+    },
+    {
+      "archivo": "armas-16-32-muestra\\ARMAS_9_CATEGORIAS_16_32_CONCEPTO.png",
+      "origen": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\este-hilo-sera-para-el-dise-2\\outputs\\armas-16-32-muestra\\ARMAS_9_CATEGORIAS_16_32_CONCEPTO.png",
+      "sha256": "C80BCDB6CEF44858182C9741C13FB0B763AF5BC82956D1CE7CDAED23FE064F43",
+      "coincide": true
+    },
+    {
+      "archivo": "armas-16-32-muestra\\LEEME.md",
+      "origen": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\este-hilo-sera-para-el-dise-2\\outputs\\armas-16-32-muestra\\LEEME.md",
+      "sha256": "9C3118650E29D7F2B07C1B0801B26F8DF5BD5742203B45AE519505D32BA064FE",
+      "coincide": true
+    },
+    {
+      "archivo": "armas-16-32-muestra\\PROMPT.txt",
+      "origen": "C:\\Users\\DELL\\Documents\\Codex\\2026-10-22\\este-hilo-sera-para-el-dise-2\\outputs\\armas-16-32-muestra\\PROMPT.txt",
+      "sha256": "16FE419096BFFCC25621F61DE7A6369C80C80855D8100A5C41EB349C94907ED0",
+      "coincide": true
+    }
+  ]
+}

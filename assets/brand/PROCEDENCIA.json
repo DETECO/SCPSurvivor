@@ -1,0 +1,11 @@
+{
+  "asset": "scp-survivor.png",
+  "source": "design-proposals/backrooms-glass-20261022/03-reflejo-laberinto-SCP.png",
+  "sourcePackage": "design-proposals/backrooms-glass-20261022",
+  "sha256": "908606b590be6fbc234c20aef46838b6301d7cfd968e116799f8bbddef0a70e7",
+  "copiedWithoutEdits": true,
+  "dimensions": {
+    "width": 1254,
+    "height": 1254
+  }
+}

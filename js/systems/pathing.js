@@ -34,7 +34,12 @@ G.Path = (() => {
     dist.fill(UNSEEN);
     // Casillas transitables del área (se consultan una vez).
     const open = f.open, queue = f.queue;
-    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) open[j * w + i] = G.World.walkable(ox + i, oy + j) ? 1 : 0;
+    if(bounds?.staticNavigation&&f.staticFixture===bounds){open.set(f.staticOpen);}
+    else{
+      for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) open[j * w + i] = G.World.walkable(ox + i, oy + j) ? 1 : 0;
+      if(bounds?.staticNavigation){f.staticFixture=bounds;f.staticOpen=open.slice();}
+      else{f.staticFixture=null;f.staticOpen=null;}
+    }
 
     const start = (py - oy) * w + px - ox;
     if (px < ox || py < oy || px >= ox + w || py >= oy + h) return;

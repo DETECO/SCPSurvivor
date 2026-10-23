@@ -91,7 +91,7 @@ def run_mode(browser, base, origin, entry, touch, mode, out):
 
     page.route('**/*', route)
     try:
-        page.goto(base+entry+'?prueba=mapa-v2&premios='+('grieta' if mode == 'expiry' else mode))
+        page.goto(base+entry+'?prueba=mapa-v2&premios='+('grieta' if mode == 'expiry' else mode)+'&interfaz=clasica')
         page.wait_for_selector('#btn-technical-start:visible')
         assert page.locator('#b3-test-note').is_visible()
         assert page.locator('#btn-field-rift').count() == 0

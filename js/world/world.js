@@ -445,7 +445,7 @@ G.World = (() => {
     // interpola por píxel para que las manchas tengan bordes orgánicos.
     const S = 6 * G.Tiles.T;
     const dirtField = (gx, gy) => fbm(gx / S, gy / S, seed + 303);
-    img = G.Tiles.paintChunk(cx, cy, N, at, dirtField, bi, seed);
+    img = G.SceneR7 && fixture?.layout===G.SceneR7.id ? G.SceneR7.paintChunk(cx,cy,N,fixture,seed) : G.Tiles.paintChunk(cx, cy, N, at, dirtField, bi, seed);
     if (cache.size > MAX_IMAGES) cache.delete(cache.keys().next().value);
     cache.set(k, img);
     return img;
@@ -502,6 +502,7 @@ G.World = (() => {
 
   /** Props visibles, para mezclarlos en el orden por Y con las entidades. */
   function visibleProps(cam) {
+    if(G.SceneR7 && fixture?.layout===G.SceneR7.id)return G.SceneR7.visibleProps(fixture,cam);
     const out = [];
     for (const [cx, cy] of visibleChunks(cam, 60)) {
       for (const p of chunkData(cx, cy).props) if (cam.sees(p.x, p.y, 70)) out.push(p);
@@ -510,6 +511,7 @@ G.World = (() => {
   }
 
   function drawProp(ctx, p, t) {
+    if(p.r7)return G.SceneR7.drawProp(ctx,p,G.Game?.player);
     const P = G.Sprites.PX;
     const variant = p.type === 'grass' ? (Math.sin(t * 2.4 + p.wiggle) > 0.55 ? 1 : 0)
                   : p.type === 'rock' ? (p.hp < p.maxHp * 0.5 ? 1 : 0)
@@ -624,6 +626,7 @@ G.World = (() => {
 
   return {
     TS, CW, reset, setBiome, biomeName, liquidKind, liquidEffect, walkable,exportData,restoreData,
+    invalidateGround(){images.clear();},
     setFixture(map) {
       fixture = map ? { ...map, walls: Array.isArray(map.walls) ? map.walls : [...(map.walls || [])].map(k => String(k).split(',').map(Number)) } : null;
       fixtureWallSet = fixture ? new Set(fixture.walls.map(([x, y]) => x + ',' + y)) : null;

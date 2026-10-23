@@ -1,0 +1,11 @@
+# Presentación integrada aprobada
+
+Autoridad: petición de PROGRAMACION del22/10 y diseños aceptados en NIVELES, MENUS, ICONO APP y PERSONAJES. ESTRUCTURA se consultó hasta01a16642 (diálogos en elaboración): sus decisiones humanas gobiernan mecánicas; recomendaciones abiertas no son implementación autorizada por inferencia.
+
+Entrega: escenario inicial M01 R7 Backrooms modular480×320,32u/casilla, profundidad visual2.5D (paredes bajas con caras/sombras, luces ambientales; física/cámara y escala de actores conservadas); menú responsivo sala oscura/verde/ámbar con selección de soldado y arma, ajustes16/32 persistidos y solo dos accesos de práctica; icono3 con SCP; seis apariencias de grieta independientes de peligrosidad; personajes aprobados16/32 intactos. R5 queda histórico. La ilustración R7 no es atlas ni autoridad métrica: construir plantilla jugable respetando seis familias, anclajes, aberturas12–16 y rutas20–28, circuito exterior y conexiones alternativas. No afirmar reproducción píxel por píxel ni procedural completo.
+
+Arquitectura: datos R7 y módulo de geometría/render propios dentro del motor World/Path existente; integración al primer escenario expandido, anteriores ensayos conservados por URL. Menú desacoplado reutiliza FieldLoadout/TechnicalUI y el botón existente; no cambios a estadísticas/economía. Grietas conservan contacto/TTL/alerta/sonido; nuevos estilos renderizados localmente, con hojas de concepto conservadas como referencia. No asignar los seis estilos a los cinco peligros. Icono original sin regeneración.
+
+Decisiones recientes a documentar: dado por minuto y máximo2, peligros50/32/8/7/3, compañero33% D1–4/10% D5 y reparto D4 Raro/Épico50/50; diálogos variados y alias futuro. No afirmar implementados recinto separado, persistencia o perfiles/poderes pendientes. Probabilidad sí/no y horarios exactos no aprobados, así que no inventarlos al aplicar apariencia.
+
+Verificación: conectividad con radios reales, salida alternativa de recintos, colisión y profundidad coherentes, aparición cercana de enemigos, jefe/puerta/transición, selector y menús tres formatos, estilos de grieta y expiración/contacto, icono/manifest, source/publicación, hashes y pruebas públicas. Sin servicios reales/billing. Respaldar antes; originales y sources intactos. Publicar main/Pages por petición directa.

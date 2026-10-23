@@ -1,5 +1,11 @@
 # SCP Survivor — instrucciones para Codex Local
 
+**Entrega 0.33 · 23/10/2026:** Presentación integrada: escenario inicial R7 Backrooms480×320 con profundidad visual2.5D, menús aprobados responsivos, icono3 con SCP, personajes16/32 y dos prácticas visibles. Seis apariencias de grieta en B3; nuevas mecánicas de azar/NPC/recinto separado documentadas y pendientes. [Jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2) · [Alcance y límites](docs/PRESENTACION_INTEGRADA.md) · [ESTRUCTURA consultada](docs/ESTRUCTURA_SYNC_2026-10-23.md).
+
+
+**Referencias obligatorias para implementar:** mapas → hilo NIVELES `01a1457a-3dba-75b3-badf-018086fb9bda` (R7 vigente); personajes → PERSONAJES `01a160be-4bf0-7883-b313-604e7ce76652`; menús → MENUS `01a16600-8b86-7a31-839f-1e84ba543bb3`; icono → ICONO APP `01a1468c-b1ec-7371-a2c0-70ef7b30af7b`. Consultar los hilos antes de aplicar futuros recursos, como pidió Iván; ESTRUCTURA gobierna las reglas. Conservar propuestas separadas de aceptaciones e implementación. No volver al R5 ni reintroducir extracción, mochilas o accesorios físicos.
+
+
 **Actualización 0.32 · PERSONAJES, 22/10/2026:** Personajes del hilo PERSONAJES incorporados al ensayo T1BC: seis actores en 32/16, selección gráfica, montaje humano modular y dos apoyos amarillos. PNG copiados sin edición; geometría, estadísticas, armas jugables y comportamiento aliado conservados. Diseños aprobados por Iván para implementación el 22/10/2026; no catálogo final 24+24 ni armas nuevas. [Aprobación](docs/PERSONAJES_APROBACION_2026-10-22.md). [Jugar 32](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=32) · [Jugar 16](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=16) · [Alcance](docs/PERSONAJES_INTEGRACION.md).
 
 

@@ -1,7 +1,8 @@
 /* Provisional visual layer. Logical geometry and gameplay stay unchanged. */
 G.TrialVisuals=(()=>{
  const query=new URLSearchParams(window.location.search),requested=query.get('graficos');
- const mode=G.MapTrial?.expanded!==true?'clasicos':['16','32','v1','clasicos'].includes(requested)?requested:'32';
+ let saved='32';try{const v=window.localStorage?.getItem('scp.graphics');if(['16','32'].includes(v))saved=v;}catch{}
+ const mode=G.MapTrial?.expanded!==true&&G.MapTrial?.rewardRiftPractice!==true?'clasicos':['16','32','v1','clasicos'].includes(requested)?requested:saved;
  const enabled=mode!=='clasicos';
  const actors=['guard01','medic01','pursuer01','biological01','warden01'];
  let installed=false;
@@ -29,8 +30,8 @@ G.TrialVisuals=(()=>{
  }
  function initUI(){
   const selector=document.getElementById('character-resolution'),host=document.getElementById('character-graphics');if(!selector||!host)return;
-  host.hidden=!G.MapTrial?.expanded;selector.value=mode;
-  selector.onchange=()=>{const url=new URL(window.location.href);url.searchParams.set('graficos',selector.value);window.location.assign(url.href);};
+  host.hidden=!(G.MapTrial?.expanded||G.MapTrial?.rewardRiftPractice);selector.value=['16','32'].includes(mode)?mode:'32';
+  selector.onchange=()=>{try{window.localStorage?.setItem('scp.graphics',selector.value);}catch{}const url=new URL(window.location.href);url.searchParams.set('graficos',selector.value);window.location.assign(url.href);};
   const note=document.getElementById('visual-style-note');
   if(note){note.hidden=!enabled;if(mode==='16'||mode==='32'){
    note.replaceChildren(document.createTextNode(`PERSONAJES · ${mode}×${mode} · `));

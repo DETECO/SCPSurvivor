@@ -32,7 +32,7 @@ def run(browser,base,entry,touch,mode,out):
  page.route('**/*',route)
  try:
   query='' if base.startswith('https:') and mode=='normal' else '?prueba=combate-v2'+('' if mode=='normal' else '&ensayo='+mode)
-  page.goto(base+entry+query)
+  page.goto(base+entry+query+("&"if "?"in query else"?")+"interfaz=clasica")
   page.wait_for_selector('#btn-technical-start:visible')
   assert page.locator('#expanded-test-note').is_visible()
   assert page.locator('.developer-credit').inner_text()=='Desarrollado por Ivan Vivanco'

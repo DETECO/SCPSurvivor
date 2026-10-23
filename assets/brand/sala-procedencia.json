@@ -1,0 +1,9 @@
+{
+  "tool": "image_gen",
+  "date": "2026-10-23",
+  "reference": "MENUS/menu-inicial-3-formatos-20261022/03-menu-pc.png",
+  "purpose": "Fondo derivado sin controles ni texto; el menu funcional se dibuja con DOM y actores existentes",
+  "file": "sala-preparacion-v1.png",
+  "sha256": "625ea9bf13ca3b00b1c9d6edf4b604f3a5bc010ad78197a06c7c140ba7823055",
+  "newAssetNotOriginalConcept": true
+}

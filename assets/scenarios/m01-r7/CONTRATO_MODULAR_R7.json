@@ -1,0 +1,467 @@
+{
+  "schema": "scp-scenario-concept/2",
+  "id": "M01-R7-BACKROOMS-MODULAR-25D",
+  "date": "2026-10-22",
+  "status": "diseño validado por Iván como escenario inicial; construcción e implementación y pruebas jugables pendientes",
+  "authority": {
+    "humanRequests": [
+      "Backrooms para un escenario que se llena de monstruos",
+      "Profundidad 2.5D y un poco de difuminado",
+      "Areas abiertas y cerradas, grupos de modulos y laberinto amplio; ampliar y preparar para procedural"
+    ],
+    "structureThreadId": "01a1457c-c051-73d2-9864-e7deb6435420",
+    "structureLatestReadTurn": "01a15a34-93e9-7a11-9597-6a2c37fb2570",
+    "structureReadDate": "2026-10-22",
+    "approvedHistoricalReference": "R5 se conserva como antecedente; R7 pasa a ser la referencia de diseño vigente tras validación directa de Iván el 22/10/2026"
+  },
+  "dimensions": {
+    "widthTiles": 480,
+    "heightTiles": 320,
+    "worldUnitsPerTile": 32,
+    "areaTiles": 153600,
+    "areaFactorVsR5": 2.4,
+    "actorScaleFactor": 1,
+    "propScaleFactor": 1
+  },
+  "render": {
+    "style": "pixel art 2.5D, proyeccion ortografica levemente inclinada",
+    "depth": "caras verticales en paredes bajas, grosor, volumen de objetos y sombras suaves",
+    "blur": "difusion ambiental leve en luces, sombras y decoracion lejana; actores, suelo cercano y entradas legibles",
+    "theme": "Backrooms amarillo, alfombra humeda, papel mural repetitivo y fluorescentes",
+    "renderedArtIsNotMetricAuthority": true
+  },
+  "anchors": {
+    "entry": {
+      "id": "E0",
+      "tx": 20,
+      "ty": 30
+    },
+    "terminal": {
+      "id": "T",
+      "tx": 26,
+      "ty": 36
+    },
+    "hub": {
+      "id": "H",
+      "tx": 245,
+      "ty": 160
+    },
+    "boss": {
+      "id": "B0",
+      "tx": 390,
+      "ty": 250
+    },
+    "door": {
+      "id": "P",
+      "tx": 455,
+      "ty": 292
+    }
+  },
+  "zoneEnvelopes": [
+    {
+      "id": "A",
+      "type": "plaza abierta",
+      "x": 20,
+      "y": 85,
+      "w": 145,
+      "h": 125
+    },
+    {
+      "id": "B",
+      "type": "recintos con varias salidas",
+      "x": 135,
+      "y": 20,
+      "w": 190,
+      "h": 70
+    },
+    {
+      "id": "C",
+      "type": "grupo modular irregular",
+      "x": 175,
+      "y": 100,
+      "w": 135,
+      "h": 125
+    },
+    {
+      "id": "D",
+      "type": "laberinto amplio",
+      "x": 325,
+      "y": 25,
+      "w": 135,
+      "h": 165
+    },
+    {
+      "id": "E",
+      "type": "servicios y talleres",
+      "x": 20,
+      "y": 220,
+      "w": 285,
+      "h": 80
+    },
+    {
+      "id": "F",
+      "type": "arena abierta",
+      "x": 320,
+      "y": 205,
+      "w": 140,
+      "h": 95
+    }
+  ],
+  "zoneEnvelopeStatus": "reservas orientativas de planificacion; no son muros ni mascaras de colision",
+  "chestCandidates": [
+    {
+      "id": "C1",
+      "tx": 90,
+      "ty": 170
+    },
+    {
+      "id": "C2",
+      "tx": 220,
+      "ty": 55
+    },
+    {
+      "id": "C3",
+      "tx": 235,
+      "ty": 170
+    },
+    {
+      "id": "C4",
+      "tx": 410,
+      "ty": 95
+    },
+    {
+      "id": "C5",
+      "tx": 175,
+      "ty": 270
+    },
+    {
+      "id": "C6",
+      "tx": 425,
+      "ty": 260
+    }
+  ],
+  "families": [
+    {
+      "id": "plaza",
+      "minimumExternalConnections": 4,
+      "footprint": "variable; gran superficie abierta",
+      "obstacles": "pilares espaciados y pantallas en bordes"
+    },
+    {
+      "id": "recinto",
+      "minimumExternalConnections": 3,
+      "footprint": "32-65 por 26-42 tiles, variantes en L o rectangulares",
+      "obstacles": "paredes continuas con umbrales anchos; mobiliario agrupado"
+    },
+    {
+      "id": "grupo-modular",
+      "minimumExternalConnections": 3,
+      "footprint": "varios submodulos de medidas y giros distintos",
+      "obstacles": "L/T, observacion y bahias abiertas"
+    },
+    {
+      "id": "laberinto-amplio",
+      "minimumExternalConnections": 3,
+      "footprint": "variable; circuitos con cortes transversales",
+      "obstacles": "tabiques escalonados; sin fondos de saco"
+    },
+    {
+      "id": "servicios",
+      "minimumExternalConnections": 3,
+      "minimumDoorsPerWorkshop": 2,
+      "footprint": "talleres desiguales y galeria con recorrido exterior",
+      "obstacles": "equipos dentro de bahias"
+    },
+    {
+      "id": "arena",
+      "minimumExternalConnections": 3,
+      "footprint": "aproximadamente 110 por 80 tiles en referencia",
+      "obstacles": "pilares perifericos; centro y llegada libres"
+    }
+  ],
+  "circulationContract": {
+    "mainConnectionTiles": [
+      20,
+      28
+    ],
+    "roomOpeningTiles": [
+      12,
+      16
+    ],
+    "mazePassageTiles": [
+      20,
+      28
+    ],
+    "minimumSeparateDoorsPerTraversableRoom": 2,
+    "preferredDoorsPerEnclosedSuite": 3,
+    "closedMeans": "espacio delimitado por paredes con varias salidas, no bloqueo temporal obligatorio",
+    "outerCircuitRequired": true,
+    "deadEndCorridorsAllowed": false,
+    "interactivePointsMayNotBlockRoutes": true
+  },
+  "logicalGraph": {
+    "nodes": [
+      {
+        "id": "I",
+        "name": "vestibulo de llegada",
+        "x": 40,
+        "y": 50
+      },
+      {
+        "id": "A",
+        "name": "salon abierto occidental",
+        "x": 95,
+        "y": 150
+      },
+      {
+        "id": "B",
+        "name": "recintos del norte",
+        "x": 225,
+        "y": 60
+      },
+      {
+        "id": "C",
+        "name": "nucleo modular",
+        "x": 245,
+        "y": 160
+      },
+      {
+        "id": "D",
+        "name": "laberinto amplio",
+        "x": 395,
+        "y": 100
+      },
+      {
+        "id": "E",
+        "name": "servicios y talleres",
+        "x": 170,
+        "y": 260
+      },
+      {
+        "id": "F",
+        "name": "arena abierta",
+        "x": 390,
+        "y": 250
+      },
+      {
+        "id": "U",
+        "name": "llegada a puerta",
+        "x": 450,
+        "y": 280
+      }
+    ],
+    "edges": [
+      {
+        "id": "L01",
+        "from": "I",
+        "to": "A",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "circuito exterior"
+      },
+      {
+        "id": "L02",
+        "from": "A",
+        "to": "E",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "circuito exterior"
+      },
+      {
+        "id": "L03",
+        "from": "E",
+        "to": "F",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "circuito exterior"
+      },
+      {
+        "id": "L04",
+        "from": "F",
+        "to": "U",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "circuito exterior"
+      },
+      {
+        "id": "L05",
+        "from": "U",
+        "to": "D",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "circuito exterior"
+      },
+      {
+        "id": "L06",
+        "from": "D",
+        "to": "B",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "circuito exterior"
+      },
+      {
+        "id": "L07",
+        "from": "B",
+        "to": "I",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "circuito exterior"
+      },
+      {
+        "id": "L08",
+        "from": "C",
+        "to": "A",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "conexion alternativa por nucleo"
+      },
+      {
+        "id": "L09",
+        "from": "C",
+        "to": "B",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "conexion alternativa por nucleo"
+      },
+      {
+        "id": "L10",
+        "from": "C",
+        "to": "D",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "conexion alternativa por nucleo"
+      },
+      {
+        "id": "L11",
+        "from": "C",
+        "to": "E",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "conexion alternativa por nucleo"
+      },
+      {
+        "id": "L12",
+        "from": "C",
+        "to": "F",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "conexion alternativa por nucleo"
+      },
+      {
+        "id": "L13",
+        "from": "C",
+        "to": "U",
+        "minWidthTiles": 20,
+        "maxWidthTiles": 28,
+        "role": "conexion alternativa por nucleo"
+      }
+    ],
+    "validation": {
+      "connected": true,
+      "nodeCount": 8,
+      "edgeCount": 13,
+      "degrees": [
+        {
+          "id": "I",
+          "connections": 2
+        },
+        {
+          "id": "A",
+          "connections": 3
+        },
+        {
+          "id": "B",
+          "connections": 3
+        },
+        {
+          "id": "C",
+          "connections": 6
+        },
+        {
+          "id": "D",
+          "connections": 3
+        },
+        {
+          "id": "E",
+          "connections": 3
+        },
+        {
+          "id": "F",
+          "connections": 3
+        },
+        {
+          "id": "U",
+          "connections": 3
+        }
+      ],
+      "bridges": [],
+      "articulationNodes": [],
+      "scope": "solo grafo entre zonas; no comprueba puertas, muros, anchuras fisicas ni ocupacion enemiga"
+    }
+  },
+  "proceduralContract": {
+    "implemented": false,
+    "referenceLayoutId": "R7-REF-01",
+    "referenceIsProcedurallyGenerated": false,
+    "suggestedAreaCount": [
+      6,
+      9
+    ],
+    "mustInclude": [
+      "dos areas abiertas, una para jefe",
+      "recintos delimitados con varias salidas",
+      "grupo modular",
+      "laberinto amplio",
+      "servicios"
+    ],
+    "pipeline": [
+      "crear grafo con circuitos alternativos",
+      "asignar familias y reservar enlaces anchos",
+      "elegir variantes compatibles, rotar y ajustar",
+      "colocar paredes y comprobar accesos",
+      "colocar objetos fuera de reservas",
+      "asignar anclajes y candidatos accesibles",
+      "comprobar navegacion con radios reales y rutas alternativas",
+      "probar ocupacion enemiga, distancias y rendimiento",
+      "guardar semilla, version y plantilla de respaldo validada"
+    ]
+  },
+  "gameRules": {
+    "activeSecondsPerMap": 300,
+    "bossSecondsTrial": 240,
+    "doorSeconds": 300,
+    "bossRequiredForAdvance": true,
+    "alliesAtDoor": 2,
+    "newSpawnsStopAtDoor": true,
+    "existingEnemiesRemain": true,
+    "mapOneExplorationMax": 1,
+    "mapOneChancePerAttempt": 0.1,
+    "attemptSeconds": [
+      60,
+      120,
+      180,
+      240
+    ],
+    "mapOneActiveRift": false
+  },
+  "scope": {
+    "runtimeModified": false,
+    "generatorImplemented": false,
+    "collisionGridBuilt": false,
+    "gameTestExecuted": false,
+    "enemyCapacityMeasured": false,
+    "illustratedMonsterCountIsNotALimit": true,
+    "newImagesAreConcepts": true
+  },
+  "approval": {
+    "status": "VALIDADO_COMO_ESCENARIO_INICIAL",
+    "approvedBy": "Iván",
+    "date": "2026-10-22",
+    "source": "mensaje directo del propietario en este chat",
+    "exactStatement": "ME GUSTO ESTE ESCENARIO. LO VALIDO.",
+    "scope": "concepto visual y distribución M01 R7, escala 480x320, Backrooms 2.5D, diversidad de zonas y dirección modular",
+    "runtimeIntegration": "PENDIENTE",
+    "proceduralGeneratorImplementation": "PENDIENTE",
+    "gameTests": "PENDIENTE"
+  }
+}

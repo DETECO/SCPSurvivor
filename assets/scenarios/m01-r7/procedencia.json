@@ -1,0 +1,32 @@
+{
+  "sourceThread": "NIVELES",
+  "threadId": "01a1457a-3dba-75b3-badf-018086fb9bda",
+  "sourcePackage": "design-proposals/escenarios/mapa01-r7-modular-backrooms-25d-20261022",
+  "copiedWithoutEdits": true,
+  "files": [
+    {
+      "file": "CONTRATO_MODULAR_R7.json",
+      "sha256": "6bf3536557c8a724bf117a9b000c9c3fae0b167d7bf2c52b0b092ecee144593b"
+    },
+    {
+      "file": "01-mapa-general-r7-25d.png",
+      "sha256": "63a22068a12bb894488dc72e9a12d5c189de584433be30625450c19ef029f087"
+    },
+    {
+      "file": "02-acumulacion-de-monstruos-r7.png",
+      "sha256": "7f49bdd761dd93b472aa3cd5186b3c49e86fc7611537acbd8b604af81971ba15"
+    },
+    {
+      "file": "03-familias-de-modulos-r7.png",
+      "sha256": "1df2bce74a149d0ae93078e1d6244d53c7b668ac5a0f53a1c5b7542e2af9ea83"
+    },
+    {
+      "file": "PALETA.csv",
+      "sha256": "085af733e76b579c04a104175f4bb00531067c464fe63c49aca0c8d1456370f4"
+    },
+    {
+      "file": "VALIDACION_ESCENARIO_R7.md",
+      "sha256": "bfa87751acc775a8061fd16ea42c8841913c505bbc2166aec47a746ea6db6162"
+    }
+  ]
+}

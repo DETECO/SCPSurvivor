@@ -1,8 +1,18 @@
 {
-  "name": "SCP Survivor — preparación",
-  "short_name": "SCP Survivor",
-  "lang": "es",
-  "start_url": "./",
+  "name": "SCP Survivor",
+  "short_name": "SCP",
+  "description": "Juego local SCP Survivor",
+  "start_url": "./?prueba=combate-v2",
   "scope": "./",
-  "display": "browser"
+  "display": "standalone",
+  "background_color": "#081311",
+  "theme_color": "#081311",
+  "icons": [
+    {
+      "src": "assets/brand/scp-survivor.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }

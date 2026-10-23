@@ -18,7 +18,7 @@ def run(browser,base,entry,touch,mode,out):
   else:remote.append(r.request.url);r.abort()
  page.route('**/*',route)
  try:
-  page.goto(base+entry+'?prueba=combate-v2&ensayo=terminal&graficos='+mode);page.wait_for_selector('#btn-technical-start:visible')
+  page.goto(base+entry+'?prueba=combate-v2&ensayo=terminal&interfaz=clasica&graficos='+mode);page.wait_for_selector('#btn-technical-start:visible')
   assert page.locator('#character-resolution').input_value()==mode
   assert mode+'×'+mode in page.locator('#visual-style-note').inner_text()
   # Real selector navigation must retain the chosen practice.
