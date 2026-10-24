@@ -40,13 +40,13 @@ G.World = (() => {
   // lookups use this normalized set instead of scanning the array each time.
   let fixtureWallSet = null;
   let arena = null;                        // { tx, ty, r } en tiles
-  const data = new Map();                  // "cx,cy" -> datos del chunk
+  let data = new Map();                  // "cx,cy" -> datos del chunk
   let images = new Map();                  // "cx,cy" -> canvas horneado
   // Cambio de bioma: durante FADE segundos se funde la paleta vieja con la nueva.
   const FADE = 2.6;
   let fade = null;                         // { from, images, t }
   const MAX_IMAGES = 48, MAX_DATA = 400;
-  const broken = new Set();                // props destruidos: "tx,ty"
+  let broken = new Set();                // props destruidos: "tx,ty"
   let nextPropId = 1;
 
   // ---------------- ruido ----------------
@@ -625,6 +625,8 @@ G.World = (() => {
   }
 
   return {
+    suspend(){const token={seed,biome,fixture,fixtureWallSet,arena,data,images,fade,broken,nextPropId};data=new Map();images=new Map();broken=new Set();fixture=null;fixtureWallSet=null;arena=null;fade=null;return token;},
+    resume(token){({seed,biome,fixture,fixtureWallSet,arena,data,images,fade,broken,nextPropId}=token);},
     TS, CW, reset, setBiome, biomeName, liquidKind, liquidEffect, walkable,exportData,restoreData,
     invalidateGround(){images.clear();},
     setFixture(map) {

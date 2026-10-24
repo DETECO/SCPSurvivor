@@ -178,6 +178,6 @@ G.Spawner = (() => {
   /** Invitado en cooperativo: sólo corre el reloj del aviso. */
   function tickBanner(dt) { if (announceT > 0) announceT -= dt; }
 
-  return { reset, update, ahead, burst, tickBanner, banner, say, rate, SHINY_RATE, CAP,
+  return { suspend(){const token={announce,announceT};announce=null;announceT=0;return token;},resume(token){({announce,announceT}=token);}, reset, update, ahead, burst, tickBanner, banner, say, rate, SHINY_RATE, CAP,
            debugForceShiny(n = 1) { G.Guard.flag('debug'); forceShiny = n; } };
 })();

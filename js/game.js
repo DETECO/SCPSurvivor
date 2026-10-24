@@ -501,7 +501,7 @@ G.Game = (() => {
       if (state === 'error') { G.Input.endFrame(); return; }
       if (state === 'playing' && pl) {
         const e = G.Expedition.state;
-        if (!['finished','levelup','armament','terminal'].includes(e.phase)) time += dt;
+        if (!e.dimension && !['finished','levelup','armament','terminal','riftReward','riftTransition'].includes(e.phase)) time += dt;
         G.Expedition.update(dt);
       }
       renderTechnical(); G.TechnicalUI.tick(pl, time); G.Input.endFrame();
@@ -542,17 +542,17 @@ G.Game = (() => {
     if (pl && state !== 'ui') {
       G.Pickups.draw(ctx); G.Expedition.draw(ctx, {riftLayer:'ground'});
       const props = G.World.visibleProps(G.Camera);
-      const rift = G.DimensionalRifts?.drawable?.();
-      const entities = [...G.EnemyMgr.drawables(G.Camera), ...(G.MapTrial?.drawables?.()||[]), ...props, ...(rift ? [rift] : []), pl].sort((a,b) => a.y - b.y);
+      const rift = G.RiftExpedition?.state.active?null:G.DimensionalRifts?.drawable?.();
+      const entities = [...G.EnemyMgr.drawables(G.Camera), ...(G.RiftExpedition?.state.active?[]:(G.MapTrial?.drawables?.()||[])),...(G.RiftExpedition?.drawables()||[]), ...props, ...(rift ? [rift] : []), pl].sort((a,b) => a.y - b.y);
       const propSet = new Set(props);
       for (const entity of entities) {
         if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:true});
         if(propSet.has(entity)) G.World.drawProp(ctx,entity,time); else entity.draw(ctx);
         if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:false});
       }
-      G.Projectiles.draw(ctx); G.FX.draw(ctx);
+      G.Projectiles.draw(ctx); G.FX.draw(ctx);G.RiftExpedition?.drawOverlay(ctx);
     }
-    ctx.restore(); G.World.drawVignette(ctx, w, h);
+    ctx.restore(); G.World.drawVignette(ctx, w, h);G.RiftExpedition?.drawScreen(ctx,w,h);
     G.Touch.clearButtons(); G.Touch.draw(ctx);
   }
 

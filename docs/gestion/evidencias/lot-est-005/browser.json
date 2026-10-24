@@ -1,0 +1,364 @@
+{
+  "status": "PASS",
+  "live": false,
+  "records": [
+    {
+      "tier": 1,
+      "mode": "16",
+      "viewport": [
+        1280,
+        900
+      ],
+      "npcForced": "si",
+      "patterns": [
+        0,
+        1,
+        2
+      ],
+      "images": [
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/esporario/Walk.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/esporario/Attack1.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/esporario/Attack1-FX.png"
+      ],
+      "restored": {
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "hp": true,
+        "ammo": true,
+        "powers": 1,
+        "npc": null
+      }
+    },
+    {
+      "tier": 1,
+      "mode": "32",
+      "viewport": [
+        390,
+        844
+      ],
+      "npcForced": "no",
+      "patterns": [
+        0,
+        1,
+        2
+      ],
+      "images": [
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/esporario/Idle.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/esporario/Walk.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/esporario/Attack1.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/esporario/Attack1-FX.png"
+      ],
+      "restored": {
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "hp": true,
+        "ammo": true,
+        "powers": 1,
+        "npc": null
+      }
+    },
+    {
+      "tier": 2,
+      "mode": "16",
+      "viewport": [
+        844,
+        390
+      ],
+      "npcForced": "si",
+      "patterns": [
+        0,
+        1,
+        2
+      ],
+      "images": [
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/larva/Attack2.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/larva/Attack2-FX.png"
+      ],
+      "restored": {
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "hp": true,
+        "ammo": true,
+        "powers": 1,
+        "npc": null
+      }
+    },
+    {
+      "tier": 2,
+      "mode": "32",
+      "viewport": [
+        1280,
+        900
+      ],
+      "npcForced": "no",
+      "patterns": [
+        0,
+        1,
+        2
+      ],
+      "images": [
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/larva/Walk.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/larva/Attack2.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/larva/Attack2-FX.png"
+      ],
+      "restored": {
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "hp": true,
+        "ammo": true,
+        "powers": 1,
+        "npc": null
+      }
+    },
+    {
+      "tier": 3,
+      "mode": "16",
+      "viewport": [
+        390,
+        844
+      ],
+      "npcForced": "si",
+      "patterns": [
+        0,
+        1,
+        2
+      ],
+      "images": [
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/malla/Idle.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/malla/Walk.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/malla/Attack1.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/malla/Attack1-FX.png"
+      ],
+      "restored": {
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "hp": true,
+        "ammo": true,
+        "powers": 1,
+        "npc": null
+      }
+    },
+    {
+      "tier": 3,
+      "mode": "32",
+      "viewport": [
+        844,
+        390
+      ],
+      "npcForced": "no",
+      "patterns": [
+        0,
+        1,
+        2
+      ],
+      "images": [
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/malla/Attack1.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/malla/Attack1-FX.png"
+      ],
+      "restored": {
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "hp": true,
+        "ammo": true,
+        "powers": 1,
+        "npc": null
+      }
+    },
+    {
+      "tier": 4,
+      "mode": "16",
+      "viewport": [
+        1280,
+        900
+      ],
+      "npcForced": "si",
+      "patterns": [
+        0,
+        1,
+        2
+      ],
+      "images": [
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/portador/Walk.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/portador/Idle.png"
+      ],
+      "restored": {
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "hp": true,
+        "ammo": true,
+        "powers": 1,
+        "npc": null
+      }
+    },
+    {
+      "tier": 4,
+      "mode": "32",
+      "viewport": [
+        390,
+        844
+      ],
+      "npcForced": "no",
+      "patterns": [
+        0,
+        1,
+        2
+      ],
+      "images": [
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/portador/Idle.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/portador/Walk.png"
+      ],
+      "restored": {
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "hp": true,
+        "ammo": true,
+        "powers": 1,
+        "npc": null
+      }
+    },
+    {
+      "tier": 5,
+      "mode": "16",
+      "viewport": [
+        844,
+        390
+      ],
+      "npcForced": "si",
+      "patterns": [
+        0,
+        1,
+        2
+      ],
+      "images": [
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/huesped/Attack3.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/huesped/Attack3-FX.png"
+      ],
+      "restored": {
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "hp": true,
+        "ammo": true,
+        "powers": 1,
+        "npc": null
+      }
+    },
+    {
+      "tier": 5,
+      "mode": "32",
+      "viewport": [
+        1280,
+        900
+      ],
+      "npcForced": "no",
+      "patterns": [
+        0,
+        1,
+        2
+      ],
+      "images": [
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/huesped/Walk.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/huesped/Attack3.png",
+        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/huesped/Attack3-FX.png"
+      ],
+      "restored": {
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "hp": true,
+        "ammo": true,
+        "powers": 1,
+        "npc": null
+      }
+    }
+  ],
+  "method": "Forced tier/NPC and position/HP/time for QA; actual room AI, UI and managers; not natural balance or physical phone acceptance."
+}

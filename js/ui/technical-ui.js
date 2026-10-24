@@ -177,7 +177,7 @@ G.TechnicalUI = (() => {
       if(value==='ui')G.Audio?.music('village');
       else if(value==='playing'&&G.Audio?.track==='village')G.Audio.music(null);
     }
-    document.body.dataset.technicalState = value;
+    document.body.dataset.technicalState = value;G.RiftUI?.hide();
     if(el('art-resource-status'))el('art-resource-status').hidden=true;
     G.ExpandedUI.state(value);
     el('technical-ready').hidden = value !== 'ui';
@@ -309,7 +309,7 @@ G.TechnicalUI = (() => {
         armamentHost.append(button);
       }
     } else if(!showArmament) armamentHost.dataset.reward='';
-    G.ExpandedUI.tick(player,s,w);
+    G.ExpandedUI.tick(player,s,w);G.RiftUI?.tick(player,s);
     el('field-result').hidden = s.phase !== 'finished';
     if (s.phase === 'finished') {
       const r = s.result;

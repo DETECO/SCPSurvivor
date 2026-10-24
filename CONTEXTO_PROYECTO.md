@@ -1,5 +1,7 @@
 # Contexto del proyecto — SCP Survivor
 
+LOT-EST-005 r1 / REV-EST-0007 / CONTROL0.8 + EST-GRI-002 r1: cinco BIO16/32 en recintos separados, director desde mapa2, origen congelado, retirada única, poderes automáticos y NPC/burbujas integrados para ensayo. Parámetros ENSAYO-GRI-001r1; aceptación humana, balance, arte/sonidos definitivos pendientes. Ver guía y recibos de PROGRAMACION; servicios reales desactivados. Guía: docs/PRUEBA_GRIETAS_INTEGRALES.md. La entrada habitual conserva azar; la práctica explícita comienza en mapa2/minuto1 con apertura garantizada. La composición es de ensayo, no cierre artístico/aceptación global.
+
 **Entrega 0.33 · 23/10/2026:** Presentación integrada: escenario inicial R7 Backrooms480×320 con profundidad visual2.5D, menús aprobados responsivos, icono3 con SCP, personajes16/32 y dos prácticas visibles. Seis apariencias de grieta en B3; nuevas mecánicas de azar/NPC/recinto separado documentadas y pendientes. [Jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2) · [Alcance y límites](docs/PRESENTACION_INTEGRADA.md) · [ESTRUCTURA consultada](docs/ESTRUCTURA_SYNC_2026-10-23.md).
 
 
@@ -36,6 +38,8 @@
 Iván incorporó ESTRUCTURA a este hilo y pidió preparar los cambios: mapas5min, jefe obligatorio, puerta blindada/soldados a5:00, cese de apariciones y remanentes vivos; avance por mapas. Se retiran extracción de fin de partida, accesorios físicos y mochilas. La pauta distingue decisiones confirmadas de cofres, economía y reglas todavía abiertas.
 
 Leer [pauta vigente](PAUTA_DESARROLLO.md) y [plan de adaptación](docs/PLAN_CAMBIOS_ESTRUCTURA.md). El código anterior se conserva como antecedente; el ensayo actual incorpora recorrido V2 y prototipo B1/B2, sin completar V2. P05 real sigue pendiente; P06 debe replantearse.52/100 pertenece a la línea base anterior, avanceV2 sin calcular. Los antecedentes de implementación que siguen no prevalecen sobre esta revisión.
+
+**Actualización18/10/2026 (A-029/D-317):** se prepara la alternativa Worker/SQLite conservando Firebase Auth y Spark. El cliente sigue desactivado y no hay despliegue verificado. Confirmar Workers Free y ejecutar la aceptación real antes de cerrar P05 o continuar P06. Agentes Sol con razonamiento medio, bajo revisión de raíz. Consultar [docs/P05-WORKER-SPARK.md](docs/P05-WORKER-SPARK.md); lo anterior sobre Functions queda como antecedente del camino original.
 
 **Prioridad vigente17/10/2026 (A-026/D-314): terminar P05 antes de continuarP06.** Se conserva el prototipoP06 y el crédito, sin avanzar funcionesP06. Integración del proyecto propio preparada pero desactivada por defecto; no equivale a conexión o pruebas reales. Leer docs/CIERRE_P05.md y docs/ACTIVACION_FIREBASE_PROPIO.md. P05 continúa EV0/6, global52/100. Actualización posterior EV-033: CLI del propietario autorizado; acceso y configuración Auth consultados en vivo. Facturación deshabilitada, sin cuenta vinculada; Iván eligió mantener Spark sin facturación (A-028/D-315). Firestore/Functions devuelven403SERVICE_DISABLED y no pudieron listarse; no se afirma ausencia de datos. El backend actual requiere Functions/Blaze y no se despliega. [Estado Spark](docs/P05-ESTADO-SPARK.md). A-027/D-316 registra GitHub y P06 inmediato con multiagentes después del cierre real P05; roadmapv0.18.
 

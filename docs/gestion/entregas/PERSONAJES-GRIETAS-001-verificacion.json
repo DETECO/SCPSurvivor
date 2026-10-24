@@ -1,0 +1,190 @@
+{
+  "date": "2026-10-24",
+  "scope": "Lectura y comprobación de recursos; sin cambios del runtime o originales",
+  "bioIdentities": [
+    {
+      "id": "esporario",
+      "tier": "D1",
+      "weight": 50,
+      "attacks": [
+        "Abanico de esporas",
+        "Brinco de raíz",
+        "Latigazo rasante"
+      ]
+    },
+    {
+      "id": "larva",
+      "tier": "D2",
+      "weight": 32,
+      "attacks": [
+        "Cápsula de fluido",
+        "Salto de resorte",
+        "Carrera de cuchillas"
+      ]
+    },
+    {
+      "id": "malla",
+      "tier": "D3",
+      "weight": 8,
+      "attacks": [
+        "Líneas de tensión",
+        "Salto de anclaje",
+        "Tijera orgánica"
+      ]
+    },
+    {
+      "id": "portador",
+      "tier": "D4",
+      "weight": 7,
+      "attacks": [
+        "Salva en abanico",
+        "Embestida de hombro",
+        "Salto de estaca"
+      ]
+    },
+    {
+      "id": "huesped",
+      "tier": "D5",
+      "weight": 3,
+      "attacks": [
+        "Brote de cuarentena",
+        "Salto de masa",
+        "Barrido de membrana"
+      ]
+    }
+  ],
+  "bioVariants": 10,
+  "bioBodySheets": 90,
+  "bioFxSheets": 40,
+  "bioDimensionsAndHashesMatch": true,
+  "bioAcceptedZipSha256": "7654794a6fed9cdc0b358a04795555f9ae81c49a7353e4d37f11a6124816e6bd",
+  "femaleSheets": 30,
+  "femaleDimensionsMatch": true,
+  "femaleMultiFramePackingIssue": {
+    "affectedSheets": 24,
+    "models": [
+      "delgada",
+      "fitness",
+      "curvy"
+    ],
+    "sizes": [
+      16,
+      32
+    ],
+    "actions": [
+      "Walk",
+      "Attack",
+      "Hurt",
+      "Neutralized"
+    ],
+    "cause": "tile.copy coloca el buffer completo de una celda contiguo dentro de un atlas más ancho sin intercalar filas",
+    "source": "design-proposals/companeras-contencion-modelos-finales-20261023/exportar-modelos.cjs:26",
+    "idleUnaffected": 6,
+    "corrected": false
+  },
+  "legacy": [
+    {
+      "id": "apoyo",
+      "anchor": {
+        "x": 16,
+        "y": 31
+      },
+      "frames": {
+        "Idle": 1,
+        "Walk": 4,
+        "Attack": 4,
+        "Hurt": 2,
+        "Neutralized": 2
+      }
+    },
+    {
+      "id": "perseguidor",
+      "anchor": {
+        "x": 16,
+        "y": 31
+      },
+      "frames": {
+        "Idle": 1,
+        "Walk": 4,
+        "Attack": 4,
+        "Hurt": 2,
+        "Neutralized": 2
+      }
+    },
+    {
+      "id": "biologico",
+      "anchor": {
+        "x": 16,
+        "y": 31
+      },
+      "frames": {
+        "Idle": 1,
+        "Walk": 4,
+        "Attack": 4,
+        "Hurt": 2,
+        "Neutralized": 2
+      }
+    },
+    {
+      "id": "custodio",
+      "anchor": {
+        "x": 16,
+        "y": 31
+      },
+      "frames": {
+        "Idle": 1,
+        "Walk": 4,
+        "Attack": 4,
+        "Hurt": 2,
+        "Neutralized": 2
+      }
+    }
+  ],
+  "texts": {
+    "DIALOGOS_COMPANEROS_GRIETA_V1.md": {
+      "ids": 102,
+      "uniqueIds": 102,
+      "sha256": "34818b75adcbb0cc297db6169db38fbb67f0c252893d98293efdf4ec1cbf2cd2",
+      "sha256BeforeResourceStateNote": "cde183664354dd52b9adffe8b9c5a11cef0832a439e2e69a1d480349d03dbb31",
+      "dialogueIdsPreserved": true
+    },
+    "DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md": {
+      "ids": 292,
+      "uniqueIds": 292,
+      "sha256": "48852c387c3256f63e74cc52b7fa651655a6efe4fed6576bd2f8e69fcc12207f",
+      "sha256BeforeResourceStateNote": "b4a57666fcb2fdad9e4ec7ce20df46e9892a2f7dc59c80a603969ab3973414b6",
+      "dialogueIdsPreserved": true
+    }
+  },
+  "resourceCatalogs": [
+    {
+      "path": "design-proposals/anomalias/sprites-v1-20261023/catalogo.json",
+      "sha256": "ee070f836135c390c37025539c360ddf1a61d8603ce6b141d9426a79cce2ab5e"
+    },
+    {
+      "path": "design-proposals/companeras-contencion-modelos-finales-20261023/catalogo.json",
+      "sha256": "3153db0f567ea7f6c557d6646df1a41724995426434d659a3474314cfbcba391"
+    },
+    {
+      "path": "design-proposals/personajes-pixel-16-32-20261022/catalogo.json",
+      "sha256": "a73014b17a3f9b1044c824774b7f6f17b2ac096b532f0f1d043b9e7912e84259"
+    }
+  ],
+  "errors": [],
+  "femaleConceptApproval": {
+    "thread": "01a160be-4bf0-7883-b313-604e7ce76652",
+    "messageId": "msg_01a1697b-bb4c-7cc0-b2a8-a72056e8cde0",
+    "timestampUTC": "2026-10-23T15:57:58.988Z",
+    "quote": "acepto estos diseños, tener las 3 alternativas disponibles, puedes desarrollar el diseño final de cada modelo.",
+    "scope": "Aceptación de las tres alternativas y encargo de producción final; no se atribuye una aceptación posterior específica del ZIP final ni se declara técnicamente integrable"
+  },
+  "quantityClarification": {
+    "decision": "EST-GRI-002 r1",
+    "quote": "Mantener las cinco aprobadas; las diez eran sus variantes gráficas.",
+    "verifiedIn": [
+      "docs/gestion/CONTROL_CAMBIOS.md",
+      "docs/gestion/lotes/LOT-EST-005-r1.md"
+    ],
+    "status": "cerrada: cinco BIO en dos resoluciones"
+  }
+}

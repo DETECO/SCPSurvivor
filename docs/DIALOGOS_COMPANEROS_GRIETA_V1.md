@@ -1,5 +1,7 @@
 # Diálogos de compañeros de grieta — banco V1
 
+**Actualización de recursos · PERSONAJES, 24/10/2026:** se recuperó la aceptación directa de Iván de las tres alternativas femeninas (delgada, fitness y curvy) y el encargo de desarrollar sus modelos finales, mensaje `msg_01a1697b-bb4c-7cc0-b2a8-a72056e8cde0`, 23/10. Las fuentes y atlas ya existen; las menciones posteriores a «Iván diseñará los sprites» son antecedentes de esta producción. La revisión actual detecta 24 atlas multiframe con filas mezcladas que requieren reexportación, además de completar anclas y montaje del arma. No equivale a aceptación técnica de esos archivos ni a integración. [Manifiesto, contratos y evidencia](gestion/entregas/PERSONAJES-GRIETAS-001.md). Los textos aprobados se conservan sin cambios.
+
 **Ampliación 23/10/2026:** [personalidades y variantes femeninas V2](DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md), ahora con catorce tonos, incluidos tóxica, amorosa, coqueta, fría, agresiva y enojona. Iván diseñará los sprites femeninos. La personalidad no queda ligada al género; se conservan las biografías y condiciones de este V1.
 
 22/10/2026 · Actualización 23/10/2026 · ESTRUCTURA. **Textos V1 y V2 aprobados por Iván el 23/10/2026; no integrados al juego.** El banco reconoce armas propias y del jugador, escenario, casa y recuerdos. Las biografías y reglas de activación conservan su estado documental y los parámetros mecánicos siguen sujetos a ESTRUCTURA.

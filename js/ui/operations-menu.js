@@ -131,7 +131,7 @@ G.OperationsMenu = (() => {
       <div class="operations-subhead"><button type="button" class="operations-back" data-open-screen="home" aria-label="Volver al menú">‹</button><div><h2 id="operations-practices-title">Prácticas</h2><p>Abre una prueba local sin cuentas ni progreso guardado.</p></div></div>
       <div class="operations-practice-grid">
         <a class="operations-practice-card" data-practice="boss"><span class="operations-icon" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="4"><circle cx="24" cy="24" r="15"/><path d="M24 1v14M24 33v14M1 24h14M33 24h14"/></g></svg></span><strong>Jefe rápido</strong><small>Entrena el combate final del mapa.</small><span class="operations-practice-go">Iniciar práctica →</span></a>
-        <a class="operations-practice-card" data-practice="rift"><span class="operations-icon" aria-hidden="true">◇</span><strong>Grieta dimensional</strong><small>Explora una grieta de práctica.</small><span class="operations-practice-go">Iniciar práctica →</span></a>
+        <a class="operations-practice-card" data-practice="rift"><span class="operations-icon" aria-hidden="true">◇</span><strong>Grieta dimensional</strong><small>Sala biológica separada · poder y regreso. Apertura garantizada solo en esta práctica.</small><span class="operations-practice-go">Iniciar práctica →</span></a>
       </div>
       <div class="operations-footer-actions"><button type="button" data-open-screen="home">Volver</button></div>
     </section>
@@ -245,7 +245,7 @@ G.OperationsMenu = (() => {
     const boss = root.querySelector('[data-practice="boss"]');
     const rift = root.querySelector('[data-practice="rift"]');
     boss.href = `?prueba=combate-v2&rapida=1&graficos=${mode}`;
-    rift.href = `?prueba=mapa-v2&premios=grieta&graficos=${mode}`;
+    rift.href = `?prueba=combate-v2&ensayo=grietas&graficos=${mode}`;
   }
 
   function init() {
@@ -272,7 +272,7 @@ G.OperationsMenu = (() => {
       if (node && !root.contains(node)) brand.append(node);
     }
     const startSlot = root.querySelector('.operations-start-slot');
-    startButton.textContent = G.MapTrial.quick ? 'Iniciar práctica rápida' : G.MapTrial.rewardRiftPractice ? 'Iniciar prueba de grieta' : G.MapTrial.chestPractice ? 'Iniciar prueba de cofres' : 'Iniciar expedición';
+    startButton.textContent = G.RiftExpedition?.practice ? 'Iniciar práctica de grietas' : G.MapTrial.quick ? 'Iniciar práctica rápida' : G.MapTrial.rewardRiftPractice ? 'Iniciar prueba de grieta' : G.MapTrial.chestPractice ? 'Iniciar prueba de cofres' : 'Iniciar expedición';
     startButton.classList.add('operations-expedition-start');
     startSlot.append(startButton);
 

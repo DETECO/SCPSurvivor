@@ -16,7 +16,7 @@
 G.Path = (() => {
   const R = 28, N = R * 2 + 1, EVERY = 0.35;
   const UNSEEN = 0x7fff;
-  const fields = new Map();          // jugador -> { ox, oy, dist: Int16Array, t }
+  let fields = new Map();          // jugador -> { ox, oy, dist: Int16Array, t }
   // La expedición usa los límites finitos del sector; el mundo original conserva R28.
   const D8 = [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]];
   let timer = 0;
@@ -133,5 +133,5 @@ G.Path = (() => {
     const tx = Math.floor(x / G.World.TS) - f.ox, ty = Math.floor(y / G.World.TS) - f.oy;
     return tx >= 0 && ty >= 0 && tx < w && ty < h && f.dist[ty * w + tx] !== UNSEEN;
   }
-  return { update, dirFor, reachable, clear };
+  return { suspend(){const token={fields,timer};fields=new Map();timer=0;return token;}, resume(token){({fields,timer}=token);}, update, dirFor, reachable, clear };
 })();

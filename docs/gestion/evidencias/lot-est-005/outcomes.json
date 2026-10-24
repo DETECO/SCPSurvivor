@@ -1,0 +1,144 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "retreat": {
+        "warning": "warning",
+        "open": "open",
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "powers": 0,
+        "hp": true,
+        "ammo": true,
+        "npc": null
+      }
+    },
+    {
+      "second": {
+        "count": 2,
+        "id": "map:2:string:3585071513:2:QA:rift:120:encounter:2",
+        "active": true,
+        "time": 0
+      }
+    },
+    {
+      "expiredThenVictory": {
+        "escape": "expired",
+        "active": true,
+        "reward": true
+      }
+    },
+    {
+      "death": {
+        "phase": "finished",
+        "reason": "death",
+        "active": false,
+        "powers": 0,
+        "npc": null
+      }
+    },
+    {
+      "actualPowerDamage": [
+        {
+          "id": "esporario",
+          "damage": 12
+        },
+        {
+          "id": "larva",
+          "damage": 18
+        },
+        {
+          "id": "malla",
+          "damage": 14
+        },
+        {
+          "id": "portador",
+          "damage": 9
+        },
+        {
+          "id": "huesped",
+          "damage": 20
+        }
+      ]
+    },
+    {
+      "npcFiniteNoFinish": {
+        "arrival": "Soy Gabriel. Tengo miedo y quiero salir, pero voy a ayudarte.",
+        "personality": "SARC",
+        "ammo": 0,
+        "rarity": "Legendaria",
+        "hp": 1,
+        "xpUnchanged": true,
+        "incapacitated": true
+      }
+    },
+    {
+      "contextDialogs": {
+        "arrival": "Soy Tomás. Un gusto conocerte en este lugar tan encantador.",
+        "own": "Me dieron Pistola AF01 de apoyo Normal. La charla motivacional venía por separado.",
+        "player": "Mira, Pistola. Algo aquí tiene un nombre que reconozco.",
+        "personalities": 14
+      }
+    },
+    {
+      "actualReplacementAndFreeCards": {
+        "request": {
+          "accepted": false,
+          "requiresReplacement": true
+        },
+        "before": [
+          "esporario",
+          "larva",
+          "malla"
+        ],
+        "result": {
+          "accepted": true
+        },
+        "owned": [
+          {
+            "id": "esporario",
+            "rank": 1,
+            "remaining": 4,
+            "name": "Pulso de esporas"
+          },
+          {
+            "id": "malla",
+            "rank": 1,
+            "remaining": 5,
+            "name": "Tensión orgánica"
+          },
+          {
+            "id": "portador",
+            "rank": 1,
+            "remaining": 5,
+            "name": "Salva espinosa"
+          }
+        ],
+        "oldProjectiles": 0,
+        "freeCards": 3
+      }
+    },
+    {
+      "failedLocationNoReroll": {
+        "count": 1,
+        "requests": [
+          "confirmed",
+          "failed"
+        ],
+        "same": true
+      }
+    }
+  ],
+  "live": false,
+  "physicalPhone": false,
+  "method": "Injected time, positions, invulnerability, HP and deterministic NPC draws; actual AI/combat/projectile/reward/return modules."
+}

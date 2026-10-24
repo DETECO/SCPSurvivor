@@ -1,0 +1,71 @@
+{
+  "revision": "REV-EST-0007",
+  "authorization": "Mensaje directo de Ivan en ESTRUCTURA: ir hilo por hilo y completar grietas; no una instruccion de otro agente",
+  "entries": [
+    {
+      "area": "PERSONAJES",
+      "prompt": "Iván me autoriza expresamente, como Juanillo de ESTRUCTURA, a coordinar todas las áreas para terminar las grietas en la demo. Petición actual: al entrar no va a una sala propia; aparece un monstruo desconocido, faltan anomalías y compañeros con diálogos. Estoy preparando el lote integral para PROGRAMACION, que conserva la escritura del runtime.\nNecesito tu entrega acotada: verifica el roster aprobado y aclara con citas/archivos si hay DIEZ anomalías distintas o cinco BIO01–BIO05 en dos resoluciones (no contar resoluciones como identidades). Recupera cualquier otro conjunto anterior aprobado sin reemplazar las cinco biológicas aceptadas. Deja un manifiesto pequeño con identidades, peligrosidad, sprites/atlas/animaciones/anclas y bancos de diálogos/NPC aprobados. Identifica recursos faltantes y qué datos de ensayo están sin cerrar. No inventes cinco anomalías ni afirmes integración. No edites código, maestro o CONTROL_CAMBIOS. Si la fuente solo contiene cinco, registra la discrepancia para que la resolvamos con Iván, mientras PROGRAMACION conecta las cinco aprobadas. Guarda tu respuesta en docs/gestion/entregas/PERSONAJES-GRIETAS-001.md y enlázala en tu pauta. No envíes mensajes a otros hilos: yo recojo la entrega.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"threadId\":\"01a160be-4bf0-7883-b313-604e7ce76652\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "area": "NIVELES",
+      "prompt": "Iván me autoriza expresamente como Juanillo, coordinador general, a cerrar las grietas. He leído tu intento fallido de atender el mismo error: no había un recinto conectado, solo Custodio en el mismo mapa. PROGRAMACION será el único integrador del runtime; evita editar js o duplicar su corrección.\nNecesito una entrega concreta para programar: revisa salas/arenas aprobadas existentes y NIV-GRI-009 r1; recupera transición de entrada según la apariencia de grieta, cinco peligrosidades y correspondencia real con BIO01–BIO05 u otro roster aprobado. Si no existen salas producidas, prepara UNA ficha de implementación de prueba usando los recursos aprobados del juego, con recinto propio diferenciable por anomalía, espacio transitable para esquivar sus tres ataques, entrada/retorno y portal de escape alcanzable. No presentes una nueva composición como arte final aprobado; separa parámetros ajustables de ensayo de decisiones ya aprobadas. El origen debe congelarse dentro, sin dañar la escala M01 aprobada240x160/cámara512. Conserva independencia de las seis apariencias y D1–D5. Guarda en docs/gestion/entregas/NIVELES-GRIETAS-001.md, enlaza en tu pauta; no maestro/control ni runtime. Si faltan decisiones, concreta recomendación mínima sin detener partes aprobadas. Yo recojo el archivo y coordino con PROGRAMACION.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"threadId\":\"01a1457a-3dba-75b3-badf-018086fb9bda\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "area": "PROGRAMACION",
+      "prompt": "Nueva autorización directa de Iván: continuar la corrección visual y hacer que suceda la implementación completa de grietas, visitando/ordenando los hilos bajo Juanillo. He leído tu cierre público INC-VIS-001/0.35 y haré comprobación independiente; no hace falta repetir sus pruebas sin nuevo motivo.\nEl siguiente trabajo es conectar las grietas reales de expedición, no otra práctica Custodio en el mismo mapa. Estoy reuniendo en un lote integral las fuentes aprobadas y entregas NIVELES/PERSONAJES; ellos NO editarán runtime para evitar pisadas. Puedes iniciar ahora diagnóstico y preparación independientes: reutilizar dado aprobado50/50min1–4 desde mapa2 máximo2apariciones; transición/cruceinstantáneo; estado/recinto separado con origen congelado; retorno y escapeúnico5s entremin1–3; catálogo real de spritesBIO aprobado; poderes tope3/reemplazo del4; NPCporD1–3 33%,D4 33%raro/épico50/50,D5 10%legendario conburbujas sinvoz. Debe verse en la entrada habitual de la demo autorizada, con prácticas reproducibles adicionales.\nNo inventes roster10: usuario lo recuerda pero las fuentes recientes nombran5modelos x2resoluciones. PERSONAJES recupera evidencia y yo resuelvo discrepancia. Conecta lo aprobado sin esperar cincoinventados.\nAntes de tocar módulos compartidos revisa estado vigente y coordina tus agentesLuna max. Prepara pruebas de estado/clocks/entrada-victoria-escape-muerte/premios sin duplicados y burbujas condicionadas; no reabrircuentas/economíareal. Si faltan valores numéricos usa una tabla marcada ENSAYO, sin alterar mecánicas aceptadas, e identifica ajustes para validar. Enseguida enviaré ruta del lote con dependencias y criterios; continúa este encargo hasta comprobar/publicar en GitHubPages como las entregas anteriores. Registra informe/evidencia y alcance real; no declarar terminado por cargar imágenes.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"threadId\":\"01a13aeb-020a-7d62-8256-3d42a6e61877\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "area": "MENUS",
+      "prompt": "Iván autoriza a Juanillo de ESTRUCTURA a coordinar todos los hilos para completar las grietas en la demo. He revisado tu última entrega MEN-005-A/B/C: sigue como propuesta sin elección, no la aplicaré por inferencia. PROGRAMACION integra salas/anomalías/NPC/poderes sobre el HUD vigente corregido en INC-VIS-001/0.35. Revisa únicamente requisitos de lectura/entrada de las grietas con controles actuales: identificar D1–D5/anomalía, reloj propio/escapeúnico5s, burbujas sin tapar telegráficos y elección/reemplazo de4ºpoder con pausa. Deja ficha corta de requisitos y referencias a UI ya aprobada en docs/gestion/entregas/MENUS-GRIETAS-001.md. No código, no nueva propuesta visual necesaria, no elegir MEN-005 ni cambiar pauta maestra. No envíes mensajes a otros hilos: yo recojo y remito. Continúa guardando tus propuestas visuales bajo tu área.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"threadId\":\"01a16600-8b86-7a31-839f-1e84ba543bb3\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "area": "SONIDO",
+      "prompt": "Iván me autoriza como Juanillo/ESTRUCTURA a coordinar todos los hilos para terminar las grietas. Revisión acotada: localiza recursos/eventos de audio YA aprobados para aparición/entrada/salida/escape/anomalía y aclara estado del sonido característico de burbuja del compañero (sin voz, Iván indicó que lo diseñaría en SONIDO). No generes ni apruebes nuevos sonidos, no alteres encargos de armas en marcha, no runtime ni maestro/control. Entrega inventario corto recurso/estado/hook posible y carencias en docs/gestion/entregas/SONIDO-GRIETAS-001.md. Lo faltante de audio no impedirá que salas, combate y textos aprobados funcionen; conservar silencio del compañero hasta tener sonido aceptado. Yo recojo informe, sin mensajes a otros hilos.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"threadId\":\"01a16600-1ef2-7871-aeec-86430d1a2e41\"}"
+          }
+        ],
+        "isError": false
+      }
+    }
+  ]
+}

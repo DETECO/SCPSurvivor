@@ -302,6 +302,6 @@ G.FX = (() => {
     }
   }
 
-  return { clear, px, burst, spark, sp, twinkle, trail, dmgText, ring, slash, beam, update, draw,
+  return { suspend(){const token={parts,sprites,texts,rings,slashes,beams};parts=[];sprites=[];texts=[];rings=[];slashes=[];beams=[];return token;},resume(token){({parts,sprites,texts,rings,slashes,beams}=token);}, clear, px, burst, spark, sp, twinkle, trail, dmgText, ring, slash, beam, update, draw,
            get count() { return parts.length + sprites.length + texts.length; } };
 })();

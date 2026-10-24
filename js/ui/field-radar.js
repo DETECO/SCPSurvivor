@@ -14,6 +14,13 @@ G.FieldRadar=(()=>{
   for(const e of enemies.filter(e=>!e.boss&&!e.elite&&Math.hypot(e.x-player.x,e.y-player.y)<=RANGE)
    .sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y)).slice(0,8))add('enemy',e,Math.hypot(e.x-player.x,e.y-player.y)<=100?0:5);
   const boss=enemies.find(e=>e.boss&&!e.dimensional);if(boss)add('boss',boss,2);
+  const dimension=G.RiftExpedition?.state;
+  if(dimension?.active){
+   const anomaly=enemies.find(e=>e.dimensional);if(anomaly)add('boss',anomaly,2);
+   if(dimension.status==='victory'||['warning','open'].includes(dimension.escape))add('rift',dimension.exit,1);
+   return list.sort((a,b)=>a.priority-b.priority||a.distance-b.distance).slice(0,16);
+  }
+  const current=dimension?.portal;if(current?.status==='open')add('rift',current,current.remaining<=10?1:3);
   const elite=state?.v2?.elite;if(elite&&!elite.dead&&elite.hp>0)add('elite',elite,2);
   if(state?.v2?.doorOpen)add('door',state.exit,3);
   const terminal=G.WeaponTerminal?.state;if(terminal?.available)add('terminal',terminal.point,3);

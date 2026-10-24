@@ -12,6 +12,8 @@ G.Projectiles = (() => {
   let list = [];
   let nextId = 1;
 
+  function suspend() { const token={list,nextId}; list=[]; return token; }
+  function resume(token) { list=token.list; nextId=token.nextId; }
   function clear() { list = []; }
   function all() { return list; }
 
@@ -134,6 +136,6 @@ G.Projectiles = (() => {
     }
   }
 
-  return { clear, all, spawn, spawnOrb, clearOrbs, update, remove, draw, nearest,
+  return { suspend, resume, clear, all, spawn, spawnOrb, clearOrbs, update, remove, draw, nearest,
            get count() { return list.length; } };
 })();

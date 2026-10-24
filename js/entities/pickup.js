@@ -27,6 +27,8 @@ G.Pickups = (() => {
   const BOSS_T10 = 1 / 3;               // ticket ×10 de un jefe normal (el legendario, siempre)
   const TICKET_RATE = 1 / 400;          // (antes 1/260; más raros desde 2026-10-10)
 
+  function suspend() { const token={list,nextId}; list=[]; return token; }
+  function resume(token) { list=token.list; nextId=token.nextId; }
   function clear() { list = []; }
   function all() { return list; }
 
@@ -198,5 +200,5 @@ G.Pickups = (() => {
 
   function exportData(){return JSON.parse(JSON.stringify(list));}
   function restoreData(items){list=JSON.parse(JSON.stringify(items));nextId=Math.max(1,...list.map(p=>p.id+1));}
-  return { clear, all, dropXp, drop, update, draw, addRemote, removeId, pullAll, exportData,restoreData,KIND, get count() { return list.length; } };
+  return { suspend, resume, clear, all, dropXp, drop, update, draw, addRemote, removeId, pullAll, exportData,restoreData,KIND, get count() { return list.length; } };
 })();

@@ -1,0 +1,579 @@
+{
+  "approval": "ANOMALIAS_SPRITES_V1_APROBACION / LOT-EST-005 r1",
+  "source": "design-proposals\\anomalias\\sprites-v1-20261023",
+  "unchanged": true,
+  "files": [
+    {
+      "path": "16/esporario/Attack1-FX.png",
+      "sha256": "72fb23fa32205acf5d565e4b39cfa95fce61c03437847308ad0e86f9a563489d"
+    },
+    {
+      "path": "16/esporario/Attack1.png",
+      "sha256": "f65c5d69d6c08cbc76cf45d1bbe270fc9459df378af1d9f2e46ed119d8b09855"
+    },
+    {
+      "path": "16/esporario/Attack2-FX.png",
+      "sha256": "1b81dd509ffc63b4ca1c5566d2d22b0f0df770edfdf070917acf1e577728332a"
+    },
+    {
+      "path": "16/esporario/Attack2.png",
+      "sha256": "37fbf70c1f09881a2cfe12098eaa4192095a7a86e882049348afec54d33b1350"
+    },
+    {
+      "path": "16/esporario/Attack3-FX.png",
+      "sha256": "a6e12da7bc321e0b6041f7d8f03a53632019f61ec488dde727124067fecf6156"
+    },
+    {
+      "path": "16/esporario/Attack3.png",
+      "sha256": "cdb141a3d794eec9e713134387aa10b02eb08b6aa6f60639325bf7d8dccb9c96"
+    },
+    {
+      "path": "16/esporario/Death.png",
+      "sha256": "0e1b7bec095351685cebe33a1ee487caf3fde65bc346ec5c6e8fcacb25ea4e99"
+    },
+    {
+      "path": "16/esporario/Hurt.png",
+      "sha256": "91156cd2162eb03e571545da0af31783dd51050d0db13b4538c01245e23f7c1b"
+    },
+    {
+      "path": "16/esporario/Idle.png",
+      "sha256": "191b76faac263c243bafc48d95ffa75dc389f8ec768201903cbcd243e30b9684"
+    },
+    {
+      "path": "16/esporario/Jump-FX.png",
+      "sha256": "1b81dd509ffc63b4ca1c5566d2d22b0f0df770edfdf070917acf1e577728332a"
+    },
+    {
+      "path": "16/esporario/Jump.png",
+      "sha256": "37fbf70c1f09881a2cfe12098eaa4192095a7a86e882049348afec54d33b1350"
+    },
+    {
+      "path": "16/esporario/Keyposes.png",
+      "sha256": "867a20f41fdd7471b59da7f129089b190fe277b37e4951761aad50bad8185ff3"
+    },
+    {
+      "path": "16/esporario/Run.png",
+      "sha256": "aab6d17a354fbd50f1b420606fe02f1e784183b0203480f897b48cd10b090493"
+    },
+    {
+      "path": "16/esporario/Walk.png",
+      "sha256": "5031060d60853a474291208c849bd5838c1d506844392f26b49fa373d396e506"
+    },
+    {
+      "path": "16/huesped/Attack1-FX.png",
+      "sha256": "c32fcd843b172ab29da44ddbc311b54e4c224b63648e801822d74f872d77f704"
+    },
+    {
+      "path": "16/huesped/Attack1.png",
+      "sha256": "012d7e060facb5d0305aa105902ed5ecf1f9e96ea17ff7a2e25ed879a61a9b45"
+    },
+    {
+      "path": "16/huesped/Attack2-FX.png",
+      "sha256": "ef2be75e6c67c0c0b4c38f72034bfd950be0778bbfda3a6626451683ba5ae1aa"
+    },
+    {
+      "path": "16/huesped/Attack2.png",
+      "sha256": "4605f1ee77a9bfa36c66ba79c6ce61dbf222c7428d25a8a19476086cbe1e8d48"
+    },
+    {
+      "path": "16/huesped/Attack3-FX.png",
+      "sha256": "ce8b9d405722f000173570dcec4d1a900b885e6538945c4c1d2389e2ac86def6"
+    },
+    {
+      "path": "16/huesped/Attack3.png",
+      "sha256": "3942060f7dd616a7c85c150aec765d6bdf430f460a1e9deae060eb2531dcfa80"
+    },
+    {
+      "path": "16/huesped/Death.png",
+      "sha256": "93405ba23d0efacf880b441e37b9e5c9ef8365d9a9ce4ade21e59a8c529d89ca"
+    },
+    {
+      "path": "16/huesped/Hurt.png",
+      "sha256": "da761ed3fcbe69fe740e2b6658591db8d41ff4fe173ff7674c04da400b9b1e57"
+    },
+    {
+      "path": "16/huesped/Idle.png",
+      "sha256": "1737bad97bad68ee6a4980292f53c6875d7f607b0dbb9d598bf0ce91bdaf8783"
+    },
+    {
+      "path": "16/huesped/Jump-FX.png",
+      "sha256": "ef2be75e6c67c0c0b4c38f72034bfd950be0778bbfda3a6626451683ba5ae1aa"
+    },
+    {
+      "path": "16/huesped/Jump.png",
+      "sha256": "4605f1ee77a9bfa36c66ba79c6ce61dbf222c7428d25a8a19476086cbe1e8d48"
+    },
+    {
+      "path": "16/huesped/Keyposes.png",
+      "sha256": "d200397274943e8c958a7466bb09176d552c5e0356cca8e19fb45e54eaaba1e6"
+    },
+    {
+      "path": "16/huesped/Run.png",
+      "sha256": "db23cf086bd1a91f28e63cef60f9b941f0682ef3b3a3a610ef4c2fc22a65ddfb"
+    },
+    {
+      "path": "16/huesped/Walk.png",
+      "sha256": "527bcbe6b9b1456f94011618c073f0057b76aa946178b6437c5eee20a0088255"
+    },
+    {
+      "path": "16/larva/Attack1-FX.png",
+      "sha256": "cf06b4dd91620ac3a9f2d7d371510839cc66c449951ff1d45a58193d09741d54"
+    },
+    {
+      "path": "16/larva/Attack1.png",
+      "sha256": "36413a53da840f613b819a17aaf49f22a002d3346c1d3778e6ca82898dba7519"
+    },
+    {
+      "path": "16/larva/Attack2-FX.png",
+      "sha256": "87525439495bffb06eadca3945052c1bcb41c120adc2c3edf7c504d46fd8a347"
+    },
+    {
+      "path": "16/larva/Attack2.png",
+      "sha256": "683703a9ad680edbb181e4f0517ba6903390a9e22acce8c03ac0447722f26807"
+    },
+    {
+      "path": "16/larva/Attack3-FX.png",
+      "sha256": "c256a65c7df66532e142107080e45a0a5a28821c922404f3c606fafa1cfa11fd"
+    },
+    {
+      "path": "16/larva/Attack3.png",
+      "sha256": "994eb93dc4a08072edbc8af3de520625e0ef6ce2b39ea3b501ffb48b01472427"
+    },
+    {
+      "path": "16/larva/Death.png",
+      "sha256": "2b1a5a59d87744c9a3cbcf0697c69306c40ddd88b07ea37eca50292e746cf8e9"
+    },
+    {
+      "path": "16/larva/Hurt.png",
+      "sha256": "b5bc4465807f8cac93cdd6df30f37fb8e8d84abf892c89dbdf785845a90697fd"
+    },
+    {
+      "path": "16/larva/Idle.png",
+      "sha256": "d1b0427cb4d8e6cd7e067df7c11f86bf2de33b43ba99ba7e0f643432585aa443"
+    },
+    {
+      "path": "16/larva/Jump-FX.png",
+      "sha256": "87525439495bffb06eadca3945052c1bcb41c120adc2c3edf7c504d46fd8a347"
+    },
+    {
+      "path": "16/larva/Jump.png",
+      "sha256": "683703a9ad680edbb181e4f0517ba6903390a9e22acce8c03ac0447722f26807"
+    },
+    {
+      "path": "16/larva/Keyposes.png",
+      "sha256": "d093e1f9f20cc4cdf5eab51ddac68d9c469ef7b4dd9cc41282947a076b627fe3"
+    },
+    {
+      "path": "16/larva/Run.png",
+      "sha256": "1744f06f12f8b127f714d014af1ad071eabae128d417bba73f0ef727abba200e"
+    },
+    {
+      "path": "16/larva/Walk.png",
+      "sha256": "4efd32d185530ed3e6bd556b5bcd88f873e12f845ea862241b1244d52001dbe1"
+    },
+    {
+      "path": "16/malla/Attack1-FX.png",
+      "sha256": "bc6884ba6061f2f1777e177e3d9cdc6bf3c1d43f211ad97593d31c02bf2ac9b8"
+    },
+    {
+      "path": "16/malla/Attack1.png",
+      "sha256": "19fbc62444a4debb6781b4a3c36f9dc5ec921481eea4a0aba2199cd113da1877"
+    },
+    {
+      "path": "16/malla/Attack2-FX.png",
+      "sha256": "eb139aa61b9d9a33b37e8593c61d8391786c3017a38769c6e451182f8a770f37"
+    },
+    {
+      "path": "16/malla/Attack2.png",
+      "sha256": "4fdf5dd146d4622694ddae97a509704e3e3e7e55e8d14a59e3d2f5e1fcfea983"
+    },
+    {
+      "path": "16/malla/Attack3-FX.png",
+      "sha256": "e3e9fca1e5ee903917a2e9e3f6f63b356974a45a2cc3a6b0bf2a0f735775af44"
+    },
+    {
+      "path": "16/malla/Attack3.png",
+      "sha256": "7b7ccda08abe7f8fd3f5aa00319f71aa4336128747050067bf8fd4f5b08f1569"
+    },
+    {
+      "path": "16/malla/Death.png",
+      "sha256": "1f297c4662b2c0da6404a5d913bdb9951b1e3c01940b5f8b768db60ee8ce5d28"
+    },
+    {
+      "path": "16/malla/Hurt.png",
+      "sha256": "24e460c6821c1f39352c56145163d026c729e5161918698bd7e888826df87c59"
+    },
+    {
+      "path": "16/malla/Idle.png",
+      "sha256": "de0469ed3ed7cb3ea005f2b9e93b4889acc99b4209386c1909b9aabb01dd58bd"
+    },
+    {
+      "path": "16/malla/Jump-FX.png",
+      "sha256": "eb139aa61b9d9a33b37e8593c61d8391786c3017a38769c6e451182f8a770f37"
+    },
+    {
+      "path": "16/malla/Jump.png",
+      "sha256": "4fdf5dd146d4622694ddae97a509704e3e3e7e55e8d14a59e3d2f5e1fcfea983"
+    },
+    {
+      "path": "16/malla/Keyposes.png",
+      "sha256": "27d9b7fa08663510111d70ce0e5ceb9dd79dc399f4c2b572ddf8cbed54ea20fd"
+    },
+    {
+      "path": "16/malla/Run.png",
+      "sha256": "42dcf279367e5c2af58f5b3fff1d90ad3ea3f172262ea54a65805dcb8dbce851"
+    },
+    {
+      "path": "16/malla/Walk.png",
+      "sha256": "4a25d73635528effa7269dabf3908c666cc02a9f4d06b35d4c4d77a2a2a7e6d2"
+    },
+    {
+      "path": "16/portador/Attack1-FX.png",
+      "sha256": "9541645d41aa5ef5a975e6db82fc91d301d9f087ffced8c5b05d551472b1c7d3"
+    },
+    {
+      "path": "16/portador/Attack1.png",
+      "sha256": "2cef7dd655dca7b18e91bd2a0de7e8431e4110c379efa294cbe8cb4e4786f483"
+    },
+    {
+      "path": "16/portador/Attack2-FX.png",
+      "sha256": "63fe97c9e730fa369a5803448d84432863516eda1811d6dca53c03f159a23789"
+    },
+    {
+      "path": "16/portador/Attack2.png",
+      "sha256": "726622222abc2be19d742fee25680e6eec62cd5d9db8f8fed2098af02604ba31"
+    },
+    {
+      "path": "16/portador/Attack3-FX.png",
+      "sha256": "b1df82229c786e393f9074eb3981c3e5a4579245e298dc48ecec7bff9e25ba0b"
+    },
+    {
+      "path": "16/portador/Attack3.png",
+      "sha256": "82b9f87ea322a4e2378f1a6b3d28414bbdafcf6c8667cc2305782ede1fa09883"
+    },
+    {
+      "path": "16/portador/Death.png",
+      "sha256": "d0b5c3c23713e3ca0c80523b2e8034383c8530cc327d9bc887479dc25ad99ec9"
+    },
+    {
+      "path": "16/portador/Hurt.png",
+      "sha256": "3b98b3fa1c7b350cf3253f8e7a1d65ed54cced4aa08ac068c34c168030d50b39"
+    },
+    {
+      "path": "16/portador/Idle.png",
+      "sha256": "0445a478ddd4825803742584206ceeda7255d779256fe35c2ea7675e2c497633"
+    },
+    {
+      "path": "16/portador/Jump-FX.png",
+      "sha256": "b1df82229c786e393f9074eb3981c3e5a4579245e298dc48ecec7bff9e25ba0b"
+    },
+    {
+      "path": "16/portador/Jump.png",
+      "sha256": "82b9f87ea322a4e2378f1a6b3d28414bbdafcf6c8667cc2305782ede1fa09883"
+    },
+    {
+      "path": "16/portador/Keyposes.png",
+      "sha256": "0ab59f41c2dc8c9e63aa1506028298b9c53b4927d60c2d7746104b0577be07e1"
+    },
+    {
+      "path": "16/portador/Run.png",
+      "sha256": "d4877daf67b3836ba1681f140c39a7c25685565c7dccd7b8052920c542be4987"
+    },
+    {
+      "path": "16/portador/Walk.png",
+      "sha256": "44204bff4dc7aea52a0f59723323f55d4c25bf87580c8d7691a8206b072914a5"
+    },
+    {
+      "path": "32/esporario/Attack1-FX.png",
+      "sha256": "00f0dafb19192b1699e7a41e9f11599327d7daecea80668886a61aa09d47ef4d"
+    },
+    {
+      "path": "32/esporario/Attack1.png",
+      "sha256": "cc78bfe5e614ad8bf5103d9724c739f14b7039c0905efdb3073781c572b96a51"
+    },
+    {
+      "path": "32/esporario/Attack2-FX.png",
+      "sha256": "35195e5b21e26407743f7f5f2ef7741538df991467517c4268891f0848ad7cac"
+    },
+    {
+      "path": "32/esporario/Attack2.png",
+      "sha256": "72218d36040a3288af82684e5d128535f7e420775fab158d6ecdc8efc0ab7583"
+    },
+    {
+      "path": "32/esporario/Attack3-FX.png",
+      "sha256": "9c9bb3731478b9c12edbf3f6cfd5227339138c7f3cdc9f98f5f771ebce078f39"
+    },
+    {
+      "path": "32/esporario/Attack3.png",
+      "sha256": "54ad839710f9981940a710cd7196f76512a9d7e94e9f27552edfcf9201240c44"
+    },
+    {
+      "path": "32/esporario/Death.png",
+      "sha256": "efea5aaf69022877a5fbc5e0a18053f1b3bf92d8b5ee11e99308be33cd997e32"
+    },
+    {
+      "path": "32/esporario/Hurt.png",
+      "sha256": "ec850777b826aa4c5613ba0b8ec3ce55ceaca64162727b39cb998d5aa3c12ab4"
+    },
+    {
+      "path": "32/esporario/Idle.png",
+      "sha256": "b661713ff12721c09b800798621f3a0b8789845c02045993c7c524b7edfd13dd"
+    },
+    {
+      "path": "32/esporario/Jump-FX.png",
+      "sha256": "35195e5b21e26407743f7f5f2ef7741538df991467517c4268891f0848ad7cac"
+    },
+    {
+      "path": "32/esporario/Jump.png",
+      "sha256": "72218d36040a3288af82684e5d128535f7e420775fab158d6ecdc8efc0ab7583"
+    },
+    {
+      "path": "32/esporario/Keyposes.png",
+      "sha256": "45b34894cbf36fed845f0fc9e08aa48ce5e2f0e9c59e7d6a5fdb4181c7ff5ae9"
+    },
+    {
+      "path": "32/esporario/Run.png",
+      "sha256": "9173bb0b9cb280374b0a82b8a59b17d79994591b6400e50b3a736d48b34f7c50"
+    },
+    {
+      "path": "32/esporario/Walk.png",
+      "sha256": "b836d33c69aa94b49ecabb7f2b3e3fce17073102b00a7d9b8760a8f2a96b8035"
+    },
+    {
+      "path": "32/huesped/Attack1-FX.png",
+      "sha256": "51c3f8f69d5372ce82eb567d67bcc12837a0ffe873414e67493ab0ce373d20ed"
+    },
+    {
+      "path": "32/huesped/Attack1.png",
+      "sha256": "f39f2107032f16b8fa0b862737d3ee5bd596c055fdef9f6a8d53dd279a786470"
+    },
+    {
+      "path": "32/huesped/Attack2-FX.png",
+      "sha256": "a80024559276b2cbddd63473eff859b6e55b69c365c6977ded7c24913aef7a5c"
+    },
+    {
+      "path": "32/huesped/Attack2.png",
+      "sha256": "697bf4ff56c251991c5c2d00c95f06335deb4715fa64d49262a07c8e622dc4d0"
+    },
+    {
+      "path": "32/huesped/Attack3-FX.png",
+      "sha256": "51fc398ec02e6ac133cedd8441ba23cbe6a92d7d7f18a8136b40866350e39016"
+    },
+    {
+      "path": "32/huesped/Attack3.png",
+      "sha256": "78d1b7bf6060b797a77d4e668adffaca41eab100420a07524071f6f10492398b"
+    },
+    {
+      "path": "32/huesped/Death.png",
+      "sha256": "3a02f2c7595c02eaf1687e7b029ff572b3b4d924c93b03579a15b68d353ccfa2"
+    },
+    {
+      "path": "32/huesped/Hurt.png",
+      "sha256": "e58b713f61a6270a7df988eb7fc966dbbc9a8e4c2cfa883284fbc665f8d0d60f"
+    },
+    {
+      "path": "32/huesped/Idle.png",
+      "sha256": "ad4806abc12fae1badb24956d4a58fb7ce5f9184ae9629b1f1f90335b436bfa8"
+    },
+    {
+      "path": "32/huesped/Jump-FX.png",
+      "sha256": "a80024559276b2cbddd63473eff859b6e55b69c365c6977ded7c24913aef7a5c"
+    },
+    {
+      "path": "32/huesped/Jump.png",
+      "sha256": "697bf4ff56c251991c5c2d00c95f06335deb4715fa64d49262a07c8e622dc4d0"
+    },
+    {
+      "path": "32/huesped/Keyposes.png",
+      "sha256": "aff42fd5b360e129aa64adc008c2560974db723a79cf8b0b36840493f3511671"
+    },
+    {
+      "path": "32/huesped/Run.png",
+      "sha256": "ee959394931c83ecd8eadbae2a4793b6f423813dc7a248f3db6eb6dbf2efa7ba"
+    },
+    {
+      "path": "32/huesped/Walk.png",
+      "sha256": "c51102aab3c179b228e36fa1264ae3c20363db7122d58b38a456d6fe8b0cdc3e"
+    },
+    {
+      "path": "32/larva/Attack1-FX.png",
+      "sha256": "8fc2897d74111d3f8e5096d255eaa9205d9e5ecc369bda00d4af7999967721d2"
+    },
+    {
+      "path": "32/larva/Attack1.png",
+      "sha256": "eca0600121aa985c9735848fb6b5459ab103ef94b36e1c29c64bc820b4f278ff"
+    },
+    {
+      "path": "32/larva/Attack2-FX.png",
+      "sha256": "651646e22624d13edb75a82d58568c4653db5de924c330f1734e52eea87eb8d0"
+    },
+    {
+      "path": "32/larva/Attack2.png",
+      "sha256": "ee85e2df06ca9f00c2e7a02aea1d7716af5597395b030ef3c0ee61691dba91e9"
+    },
+    {
+      "path": "32/larva/Attack3-FX.png",
+      "sha256": "0989a266d41568868347d1bb77b0f05abbd8c80f0b9339f84c55736d6c48cfdd"
+    },
+    {
+      "path": "32/larva/Attack3.png",
+      "sha256": "2eea9cf1c5aa6451fa41379754d0cc0c876fc68b20d5ae5b4f720a84573e9b45"
+    },
+    {
+      "path": "32/larva/Death.png",
+      "sha256": "c77ccafba4f6753900642fffcfa0fbf21fe50f89c3caa2602dba434b89210bfb"
+    },
+    {
+      "path": "32/larva/Hurt.png",
+      "sha256": "b0ac509648de98da2dbe5ea9555b8d58e51870566bc2a3e892161003d92831b3"
+    },
+    {
+      "path": "32/larva/Idle.png",
+      "sha256": "35bd13f17641cb128e8dbac1424734b9348914874dae8eca910d47ef21e817f6"
+    },
+    {
+      "path": "32/larva/Jump-FX.png",
+      "sha256": "651646e22624d13edb75a82d58568c4653db5de924c330f1734e52eea87eb8d0"
+    },
+    {
+      "path": "32/larva/Jump.png",
+      "sha256": "ee85e2df06ca9f00c2e7a02aea1d7716af5597395b030ef3c0ee61691dba91e9"
+    },
+    {
+      "path": "32/larva/Keyposes.png",
+      "sha256": "5455efeca1d2fc59e476be69bf8aa346addbe8429c55f37e835040f72060e39a"
+    },
+    {
+      "path": "32/larva/Run.png",
+      "sha256": "a2239673c31a9016b42861e9d82b349baf96e0c88533f94933239a3dd23758eb"
+    },
+    {
+      "path": "32/larva/Walk.png",
+      "sha256": "8d453777b6bb439b5bfc9165adbf48fff1f86d697ecff841255813ca1e48da51"
+    },
+    {
+      "path": "32/malla/Attack1-FX.png",
+      "sha256": "934cd51790c64fc62b67e693b146d2c4164b6d5b1baf4a8c89f8f8321b48d646"
+    },
+    {
+      "path": "32/malla/Attack1.png",
+      "sha256": "42eb8a2f5d9544d4a3e497a79b03f6755918550257d6df905dd6e21f526735db"
+    },
+    {
+      "path": "32/malla/Attack2-FX.png",
+      "sha256": "9980d9cc9335008d2c31b5d6a6a23d25ccaa13d80784ac9c0ab74d3a1f525537"
+    },
+    {
+      "path": "32/malla/Attack2.png",
+      "sha256": "bd7d4d954af7dc647f75c6e0c7fdf303b22f057036f053cbd99d5b242183f4eb"
+    },
+    {
+      "path": "32/malla/Attack3-FX.png",
+      "sha256": "dc0591e500e31281a8efbe247d2b6c0ffca68ef7e5760d867e169587ebd229a6"
+    },
+    {
+      "path": "32/malla/Attack3.png",
+      "sha256": "eb2e4486b1ff4ea2e717f19543d7c7b4674c7cb6a6a6da8c731853dbad7d127f"
+    },
+    {
+      "path": "32/malla/Death.png",
+      "sha256": "6dbdea767b293a9bafa54bb57e34aa003a9c2c855838f32ec5e944b7b2174771"
+    },
+    {
+      "path": "32/malla/Hurt.png",
+      "sha256": "b18f670ae962556ed526646a43fcf58064f2c09e6df263ae4e37852a9e13ac70"
+    },
+    {
+      "path": "32/malla/Idle.png",
+      "sha256": "90704087f27b5f6f001ec1f8f77452d99f32d44fb7d285bf1e2e93a1637cb0ae"
+    },
+    {
+      "path": "32/malla/Jump-FX.png",
+      "sha256": "9980d9cc9335008d2c31b5d6a6a23d25ccaa13d80784ac9c0ab74d3a1f525537"
+    },
+    {
+      "path": "32/malla/Jump.png",
+      "sha256": "bd7d4d954af7dc647f75c6e0c7fdf303b22f057036f053cbd99d5b242183f4eb"
+    },
+    {
+      "path": "32/malla/Keyposes.png",
+      "sha256": "a8e807deceba8dd27c7de155142723e01e281afc63baaa99629a7e63722ce625"
+    },
+    {
+      "path": "32/malla/Run.png",
+      "sha256": "5d29fc39473bf5ee7d5c932cabf4deb8ad0b49288acff129ddb83699a143726c"
+    },
+    {
+      "path": "32/malla/Walk.png",
+      "sha256": "dab51709dcae47c91f942d7af426a744b07215dfff7ccb5e677d7c3d0d34bd58"
+    },
+    {
+      "path": "32/portador/Attack1-FX.png",
+      "sha256": "2a728563b56c56b3921258c3f20173f80aabb29cad230d1fe0495c488cf336b7"
+    },
+    {
+      "path": "32/portador/Attack1.png",
+      "sha256": "424ed8b1f9e279b027a4c912193f7808b67a32fd467e82b9530411d15116f222"
+    },
+    {
+      "path": "32/portador/Attack2-FX.png",
+      "sha256": "aed73aef91c7feb6c80a978afc4bc53bea058a0e3398774488aa587b7c7cb312"
+    },
+    {
+      "path": "32/portador/Attack2.png",
+      "sha256": "b45b6348282c44cdca77ceab615a495c0fe959b13bd4ac69093455f4b11ebc5d"
+    },
+    {
+      "path": "32/portador/Attack3-FX.png",
+      "sha256": "beef3db7ea636657265326000f50d7e4465143d90d5bcac28bb89885945ed986"
+    },
+    {
+      "path": "32/portador/Attack3.png",
+      "sha256": "76d4faddadadb8f32ea7691bc8e1f6fdd06cece2028e1dfe16e3930be73bb5b6"
+    },
+    {
+      "path": "32/portador/Death.png",
+      "sha256": "88c3cc9dabc680afd79f13c89e8796c184be7c3adee54a81029f78bd39029db8"
+    },
+    {
+      "path": "32/portador/Hurt.png",
+      "sha256": "d8354b50d941c5d3315e703ef5b02dd643b5282d25002aaf3bca64c255dc1cbf"
+    },
+    {
+      "path": "32/portador/Idle.png",
+      "sha256": "e58ae5e6b2080e975598d814f25518d25608c2911a4c45f8cd298fc38648b94e"
+    },
+    {
+      "path": "32/portador/Jump-FX.png",
+      "sha256": "beef3db7ea636657265326000f50d7e4465143d90d5bcac28bb89885945ed986"
+    },
+    {
+      "path": "32/portador/Jump.png",
+      "sha256": "76d4faddadadb8f32ea7691bc8e1f6fdd06cece2028e1dfe16e3930be73bb5b6"
+    },
+    {
+      "path": "32/portador/Keyposes.png",
+      "sha256": "61eb4caf907b867c881ccf8cb2f7ecde4e06d796a9353d12ef44e0b41ba9d6cf"
+    },
+    {
+      "path": "32/portador/Run.png",
+      "sha256": "ec3e81d2821e0dedeeb0caa0f64a707302aed5070292833658b89078cf872504"
+    },
+    {
+      "path": "32/portador/Walk.png",
+      "sha256": "eb122ec7a613ef476060fdaefb36fa8a4bb4dd54b4f0a58f466195141350a03e"
+    },
+    {
+      "path": "catalogo.js",
+      "sha256": "92ba5b0ff2fed008cc5ae02c1d6d97af4b733d84ce5e21917726954b7c57718f"
+    },
+    {
+      "path": "catalogo.json",
+      "sha256": "ee070f836135c390c37025539c360ddf1a61d8603ce6b141d9426a79cce2ab5e"
+    },
+    {
+      "path": "SOURCES.json",
+      "sha256": "32ab044d9ead158ea74e2923c18bb2c20d1a5b4e7d216193045abb27cef0dfc6"
+    }
+  ]
+}

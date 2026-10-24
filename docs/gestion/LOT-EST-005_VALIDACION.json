@@ -1,0 +1,84 @@
+{
+  "lot": "LOT-EST-005 r1",
+  "revision": "REV-EST-0007",
+  "control": "0.8 + EST-GRI-002 r1",
+  "status": "trial_implemented_local_verified_publication_pending",
+  "date": "2026-10-24T22:42:20.171992+00:00",
+  "build": {
+    "scripts": 116,
+    "bundle": "e2ff58b6d3",
+    "fullBuild": "passed",
+    "check": "passed",
+    "publicationBundle": "82669ddb1d",
+    "publicationBuildAndCheck": "passed"
+  },
+  "node": {
+    "files": 59,
+    "tests": 313,
+    "suites": 0,
+    "pass": 307,
+    "fail": 5,
+    "cancelled": 0,
+    "skipped": 1,
+    "todo": 0,
+    "failures": [
+      "not ok 96 - P05 real SQLite RPC: 20 concurrent identical commands have one effect and replay their receipt",
+      "not ok 97 - P05 real SQLite RPC: distinct commands at the same revision have exactly one winner",
+      "not ok 98 - P05 real SQLite RPC isolates account state and receipt IDs by UID",
+      "not ok 99 - P05 real SQLite RPC transfers a run and rejects writes from its former session",
+      "not ok 100 - P05 real SQLite state and original command receipts survive Miniflare restart"
+    ],
+    "limitation": "First sandbox run had ancestor-read denial. Elevated final rerun confirms 5 prior ERR_RUNTIME_FAILURE cases: required2026-10-17 vs workerd max2026-08-06. Emulator test skipped. No backend/configuration change."
+  },
+  "browser": {
+    "integralScenarios": 10,
+    "outcomeGroups": 9,
+    "incVisRegressionScenarios": 9,
+    "viewports": [
+      [
+        1280,
+        900
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ]
+    ],
+    "resolutions": [
+      16,
+      32
+    ],
+    "errors": 0,
+    "method": "Forced tier/NPC and position/HP/time for QA; actual room AI, UI and managers; not natural balance or physical phone acceptance. Injected time, positions, invulnerability, HP and deterministic NPC draws; actual AI/combat/projectile/reward/return modules.",
+    "qaForced": true,
+    "physicalPhone": false
+  },
+  "assets": {
+    "priorUnchanged": 134,
+    "priorChanged": 0,
+    "biologicalProvenance": "assets/anomalias-biologicas/PROCEDENCIA.json"
+  },
+  "evidence": "docs/gestion/evidencias/lot-est-005/",
+  "manualAcceptance": "pending",
+  "productionServices": false,
+  "pending": [
+    "Balance/pressure/dodging acceptance",
+    "Physical phone/Safari/FPS/memory",
+    "Final scenario art and MEN-005 selection",
+    "Final rift/NPC sound",
+    "Female multi-frame exports/anchors; pending weapon art approval",
+    "Fusion/ultimate/economy outside this lot"
+  ],
+  "publicationCopy": {
+    "integralScenarios": 2,
+    "outcomeGroups": 9,
+    "incVisScenarios": 9,
+    "defaultStartPauseScenarios": 2,
+    "csp": "original_publication_CSP_retained",
+    "eol": "Existing file conventions retained for review; immutable asset/source snapshots byte-preserved."
+  }
+}

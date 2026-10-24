@@ -110,3 +110,18 @@ Se detectaron y revisaron dos actualizaciones concurrentes: INC-VIS-001 r1 incor
 ### INC-VIS-001 r1 — publicación comprobada
 
 Código `3f533c36648e74b76b2f155f90e90c6b0d8a4e0f` subido mediante avance normal a main, Pages built; bundle público `e9bedd0dc6`. **16/16** escenarios visuales públicos y **2/2** inicio/pausa; **39/39** archivos coincidentes. Fallos AF01/piezas simulados y carga lenta identificados, sin errores JavaScript ni HTTP inesperados. [Recibo](INC-VIS-001_PUBLICACION.json). Sin cambios de servicios/economía/facturación. Roadmap0.35 registra estado parcial por ARM-SMG-REC-001 r1; no cierra fusión, P05 técnico o aceptación física. El commit de cierre sólo documenta este resultado.
+
+## REV-EST-0007 / LOT-EST-005 r1 — inicio 24/10/2026
+
+Estado: **en implementación, sin nueva publicación ni cierre**. Fuentes fijadas CONTROL_CAMBIOS0.8, REV-EST-0007 y manifiesto de su corte, LOT-EST-005r1, EST-ORG-002r1. Base pública previa c279a091aee31a1774e53259fb851fede8f73c14; corrección INC-VIS-001 conservada. Backup y hashes previos: migration-audit/grietas-integrales/codigo-antes.zip y baseline.json.
+
+Se aplica el plan docs/superpowers/plans/2026-10-24-grietas-integrales.md. Tres agentes Luna máximo implementan áreas aisladas; raíz revisa e integra. Los parámetros que el lote autoriza concretar para prueba se identifican ENSAYO-GRI-001r1, sin convertirlos en balance/diseño aceptado. Cinco identidades BIO verificadas; búsqueda de otras cinco abierta. Servicios reales y economía desactivados. Las entregas de áreas posteriores al corte se registrarán por versión/hash, sin cambiar silenciosamente la revisión implementada.
+
+### Suplemento de fuente durante ejecución — EST-GRI-002 r1
+Iván aclara en ESTRUCTURA que las diez eran variantes16/32 de las cinco identidades. Se revisó la modificación de LOT-EST-005r1 y control0.8; se preserva copia en revisiones/REV-EST-0007/suplemento-EST-GRI-002-r1. Impacto: cerrar búsqueda de otras cinco, conservar exactamente las cinco BIO; no cambia probabilidades ni runtime. Los tres agentes se detuvieron por límite de uso antes de entregar código; raíz asume implementación y pruebas, sin acreditar código de agentes.
+
+### LOT-EST-005r1 — resultado local y preparación de publicación
+
+Prueba integral implementada por raíz: director conectado, cinco BIO16/32/tres ataques, recintos separados, origen por referencia, retirada90–95s, poderes automáticos/elección/reemplazo y NPC temporal con texto/equipo real. Tabla ENSAYO-GRI-001r1 en docs/PRUEBA_GRIETAS_INTEGRALES.md; informe en informes/LOT-EST-005-programacion.md. Diez escenarios de navegador y nueve grupos de desenlace/combate; nueve regresiones INC-VIS. Compilación116scripts y check aprobados. Prácticas forzadas documentadas; sin aceptación humana/final de balance ni servicios reales. Resultado completo de Node y límites en LOT-EST-005_VALIDACION.json. El recibo de publicación posterior identificará el corte efectivamente servido.
+
+Se consultaron NIVELES/MENUS recientes en progreso. PERSONAJES-GRIETAS-001r1 y SONIDO-GRIETAS-001 incorporados por hash; conserva apoyo amarillo y cues provisionales, sin locución. ARMASR2.2 leído como propuesta pendiente, no integrado. No se modifican fuentes originales, PNG aceptados o ZIP de migración. Tres agentes Luna agotaron cuota sin código; implementación y revisión hechas por raíz.

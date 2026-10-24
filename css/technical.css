@@ -114,3 +114,9 @@ body[data-v2-hud] #map-alert,body[data-v2-hud] #rift-alert{padding:6px 8px;font-
 @media(max-width:540px){body[data-v2-hud] #radar-wrap{top:118px;width:84px}body[data-v2-hud] #field-radar{width:84px;height:84px}body[data-v2-hud] #radar-wrap small{font-size:8px}}
 @media(max-width:540px)and(min-height:521px){body[data-v2-hud][data-art-fallback] #radar-wrap{top:160px}}
 @media(max-height:520px){body[data-v2-hud] #hud-summary{right:102px;max-width:500px}body[data-v2-hud] #scene-hud{min-height:36px}body[data-v2-hud] #scene-hud button{min-height:36px}body[data-v2-hud] #radar-wrap{top:8px;right:8px;transform:scale(.7);transform-origin:top right}}
+
+/* LOT-EST-005: existing compact HUD and paused choice panel. */
+#rift-boss-health{display:block;width:100%;height:7px;accent-color:#d64257;margin-top:4px;}
+#rift-power-options{display:grid;gap:10px;}
+#rift-power-choice .panel{max-height:85dvh;overflow:auto;}
+#rift-power-choice button{min-height:64px;text-align:left;}

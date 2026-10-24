@@ -1,0 +1,125 @@
+{
+  "revision": "REV-EST-0007",
+  "capturedAt": "2026-10-24T14:41:51.7358854-03:00",
+  "meaning": "Fuentes preservadas antes del nuevo encargo integral; copiar no significa lectura integral ni aprobacion de propuestas",
+  "files": [
+    {
+      "source": "PAUTA_DESARROLLO.md",
+      "snapshot": "fuentes/PAUTA_DESARROLLO.md",
+      "sha256": "41787F98DD01F23B8281A68E5B230447D6758DCFFC3425809FEFCC2208EEAECC",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/CONTROL_CAMBIOS.md",
+      "snapshot": "fuentes/docs/gestion/CONTROL_CAMBIOS.md",
+      "sha256": "0E15785BB0D95A5F56CAB9B405A02C75CD56E842639663FBB8D764E723B4377B",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/GRIETAS_DADO_POR_MINUTO_V2.md",
+      "snapshot": "fuentes/docs/GRIETAS_DADO_POR_MINUTO_V2.md",
+      "sha256": "BBB0919CE300060C0BEE5F0C30EF4DDA2B60DCFA3F8EB51B0B72E1D00DC2DE90",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/COMPANERO_CONTENCION_GRIETAS.md",
+      "snapshot": "fuentes/docs/COMPANERO_CONTENCION_GRIETAS.md",
+      "sha256": "1C303E34E6F90753201473D08FC9184EC94A3531192838F6C796CDD3255155C6",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/DIALOGOS_COMPANEROS_GRIETA_V1.md",
+      "snapshot": "fuentes/docs/DIALOGOS_COMPANEROS_GRIETA_V1.md",
+      "sha256": "CDE183664354DD52B9ADFFE8B9C5A11CEF0832A439E2E69A1D480349D03DBB31",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md",
+      "snapshot": "fuentes/docs/DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md",
+      "sha256": "B4A57666FCB2FDAD9E4EC7CE20DF46E9892A2F7DC59C80A603969AB3973414B6",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/ANOMALIAS_GRIETAS_VERSION_2_BIOLOGICA.md",
+      "snapshot": "fuentes/docs/ANOMALIAS_GRIETAS_VERSION_2_BIOLOGICA.md",
+      "sha256": "2B3F38BC3F976763DDF946DB8ACD802330B6942D9EF9E6C6BE63793D9E71C454",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/ANOMALIAS_BIOLOGICAS_ATAQUES_ANIMACION_V1.md",
+      "snapshot": "fuentes/docs/ANOMALIAS_BIOLOGICAS_ATAQUES_ANIMACION_V1.md",
+      "sha256": "1F7B483F81D8A10767823BCB997F4DAD7C759ACE2EF51B3892C9419097AE0ECC",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/ANOMALIAS_SPRITES_V1_APROBACION.md",
+      "snapshot": "fuentes/docs/ANOMALIAS_SPRITES_V1_APROBACION.md",
+      "sha256": "EF9B4B87A06167CDF4FD28058705872EA95DC101C419A3BDAC9A4107B286787A",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/ANOMALIAS_SPRITES_V1_ENTREGA.md",
+      "snapshot": "fuentes/docs/ANOMALIAS_SPRITES_V1_ENTREGA.md",
+      "sha256": "542D4A0EB3DE6D6CFE0A9D6817A9C4DFFFB7230EDD6CCAA201B5B8DCD2A64FC0",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/DECISIONES_INFINITO_2026-10-20.md",
+      "snapshot": "fuentes/docs/DECISIONES_INFINITO_2026-10-20.md",
+      "sha256": "B3CDD694FC8198909093F7BCFDC8E3202C514FD7825750741F5467F22A26213C",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/NIVELES_APROBACION_GRIETAS_ANIMACION_009.md",
+      "snapshot": "fuentes/docs/NIVELES_APROBACION_GRIETAS_ANIMACION_009.md",
+      "sha256": "3B4F4C47A82227AD4AAA9129694AE8BDCCFE0B564F90F7707642F7353FD36144",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/PAUTA_CREACION_ESCENARIOS.md",
+      "snapshot": "fuentes/docs/PAUTA_CREACION_ESCENARIOS.md",
+      "sha256": "5C77DF5EE40B30D49AC5C425F438228F3473B3F7866C641781DD79764E1F8A8B",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/PAUTA_PERSONAJES.md",
+      "missing": true
+    },
+    {
+      "source": "docs/PAUTA_MENUS.md",
+      "snapshot": "fuentes/docs/PAUTA_MENUS.md",
+      "sha256": "936409D5E18D5DC66414AD5077D0246D0A8C2523DFAF2E5F36C29F8FFFB949D6",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/PAUTA_SONIDO.md",
+      "snapshot": "fuentes/docs/PAUTA_SONIDO.md",
+      "sha256": "E7827EEB43712D243A15E22C33CC29F6360799D5D15D03C8EFC739A46BE3250E",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/areas/ICONO_APP.md",
+      "snapshot": "fuentes/docs/areas/ICONO_APP.md",
+      "sha256": "B74310E074C5C31899CDC9C61B770EFF0E6966FD5C383036C174A55B026476C3",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/PAUTA_ARMAS.md",
+      "snapshot": "fuentes/docs/PAUTA_ARMAS.md",
+      "sha256": "F86E055D6540883C63229D070583B4DE30ADBF17CB9D24F73D83559002E8A632",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/informes/INC-VIS-001-programacion.md",
+      "snapshot": "fuentes/docs/gestion/informes/INC-VIS-001-programacion.md",
+      "sha256": "9D7A0D6364C25EA4F4DE692F62D267F0C19DAB36941CEB5C56F5FD390D4FE213",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/INC-VIS-001_PUBLICACION.json",
+      "snapshot": "fuentes/docs/gestion/INC-VIS-001_PUBLICACION.json",
+      "sha256": "07879980131FCA2B2560C997821B554EAD6B747E7FD80C8A99E515278F2D549A",
+      "readback": "matched"
+    }
+  ]
+}

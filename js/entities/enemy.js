@@ -741,9 +741,11 @@
     let list = [];            // vivos
     let corpses = [];         // cayendo / desvaneciéndose
     const CELL = 52;
-    const grid = new Map();
+    let grid = new Map();
 
-    const byId = new Map();
+    let byId = new Map();
+    function suspend(){const token={list,corpses,grid,byId,nextId,stashed};list=[];corpses=[];grid=new Map();byId=new Map();stashed=null;return token;}
+    function resume(token){({list,corpses,grid,byId,nextId,stashed}=token);}
     function clear() { list = []; corpses = []; grid.clear(); byId.clear(); }
     function all() { return list; }
     function add(e) {
@@ -960,7 +962,7 @@
     function bossAlive() { return list.some(e => e.boss && !e.dead); }
     function shinies() { return list.filter(e => e.shiny && !e.dead); }
 
-    return { clear, all, add, get, addRemote, removeRemote, stash, restore, clearRemote, update, drawables, queryCircle, rebuildGrid, bossAlive, shinies, nearestPlayer,
+    return { suspend, resume, clear, all, add, get, addRemote, removeRemote, stash, restore, clearRemote, update, drawables, queryCircle, rebuildGrid, bossAlive, shinies, nearestPlayer,
              get count() { return list.length; } };
   })();
 })();

@@ -1,0 +1,6240 @@
+{
+  "version": 1,
+  "date": "2026-10-23",
+  "directions": [
+    "S",
+    "SE",
+    "E",
+    "NE",
+    "N",
+    "NW",
+    "W",
+    "SW"
+  ],
+  "angles": [
+    1.5707963267948966,
+    0.7853981633974483,
+    0,
+    -0.7853981633974483,
+    -1.5707963267948966,
+    -2.356194490192345,
+    3.141592653589793,
+    2.356194490192345
+  ],
+  "sourceRows": [
+    "idle",
+    "walk-left",
+    "walk-right",
+    "anticipation",
+    "attack-primary",
+    "attack-third",
+    "airborne",
+    "defeated"
+  ],
+  "layout": "columns=frames; rows=directions; upper-left origin",
+  "modes": {
+    "16": {
+      "esporario": {
+        "id": "esporario",
+        "name": "Esporario Blanco",
+        "tier": "D1",
+        "weight": 50,
+        "attacks": [
+          "Abanico de esporas",
+          "Brinco de raíz",
+          "Latigazo rasante"
+        ],
+        "colors": [
+          "191719",
+          "342325",
+          "593334",
+          "805047",
+          "aa7460",
+          "5b563b",
+          "a28c51",
+          "c7ad62",
+          "d7c99d",
+          "e9ddbc",
+          "faf0d5",
+          "938875"
+        ],
+        "size": 16,
+        "palette": [
+          [
+            25,
+            23,
+            25
+          ],
+          [
+            52,
+            35,
+            37
+          ],
+          [
+            89,
+            51,
+            52
+          ],
+          [
+            128,
+            80,
+            71
+          ],
+          [
+            170,
+            116,
+            96
+          ],
+          [
+            91,
+            86,
+            59
+          ],
+          [
+            162,
+            140,
+            81
+          ],
+          [
+            199,
+            173,
+            98
+          ],
+          [
+            215,
+            201,
+            157
+          ],
+          [
+            233,
+            221,
+            188
+          ],
+          [
+            250,
+            240,
+            213
+          ],
+          [
+            147,
+            136,
+            117
+          ]
+        ],
+        "anchor": {
+          "x": 8,
+          "y": 14
+        },
+        "actions": {
+          "Idle": {
+            "path": "16/esporario/Idle.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 6,
+            "rows": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": true,
+            "totalMs": 1080,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Reposo"
+          },
+          "Walk": {
+            "path": "16/esporario/Walk.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true,
+            "totalMs": 880,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Caminar"
+          },
+          "Run": {
+            "path": "16/esporario/Run.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70
+            ],
+            "loop": true,
+            "totalMs": 560,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "label": "Correr"
+          },
+          "Jump": {
+            "path": "16/esporario/Jump.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/esporario/Jump-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Saltar"
+          },
+          "Attack1": {
+            "path": "16/esporario/Attack1.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/esporario/Attack1-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Abanico de esporas"
+          },
+          "Attack2": {
+            "path": "16/esporario/Attack2.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/esporario/Attack2-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Brinco de raíz"
+          },
+          "Attack3": {
+            "path": "16/esporario/Attack3.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/esporario/Attack3-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              5,
+              5,
+              5,
+              5,
+              5,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Latigazo rasante"
+          },
+          "Hurt": {
+            "path": "16/esporario/Hurt.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 3,
+            "rows": 8,
+            "durations": [
+              90,
+              100,
+              160
+            ],
+            "loop": false,
+            "totalMs": 350,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0
+            ],
+            "label": "Recibir daño"
+          },
+          "Death": {
+            "path": "16/esporario/Death.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              100,
+              100,
+              120,
+              120,
+              140,
+              160,
+              200,
+              800
+            ],
+            "loop": false,
+            "totalMs": 1740,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              3,
+              5,
+              5,
+              7,
+              7,
+              7,
+              7
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Derrota"
+          }
+        },
+        "source": "fuentes/esporario.png"
+      },
+      "larva": {
+        "id": "larva",
+        "name": "Larva de Vidrio",
+        "tier": "D2",
+        "weight": 32,
+        "attacks": [
+          "Cápsula de fluido",
+          "Salto de resorte",
+          "Carrera de cuchillas"
+        ],
+        "colors": [
+          "111e2d",
+          "203546",
+          "365365",
+          "568093",
+          "7ca9ba",
+          "a6d6dc",
+          "d0eeea",
+          "32233f",
+          "593b74",
+          "9461b5",
+          "d59be0",
+          "655963"
+        ],
+        "size": 16,
+        "palette": [
+          [
+            17,
+            30,
+            45
+          ],
+          [
+            32,
+            53,
+            70
+          ],
+          [
+            54,
+            83,
+            101
+          ],
+          [
+            86,
+            128,
+            147
+          ],
+          [
+            124,
+            169,
+            186
+          ],
+          [
+            166,
+            214,
+            220
+          ],
+          [
+            208,
+            238,
+            234
+          ],
+          [
+            50,
+            35,
+            63
+          ],
+          [
+            89,
+            59,
+            116
+          ],
+          [
+            148,
+            97,
+            181
+          ],
+          [
+            213,
+            155,
+            224
+          ],
+          [
+            101,
+            89,
+            99
+          ]
+        ],
+        "anchor": {
+          "x": 8,
+          "y": 14
+        },
+        "actions": {
+          "Idle": {
+            "path": "16/larva/Idle.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 6,
+            "rows": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": true,
+            "totalMs": 1080,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Reposo"
+          },
+          "Walk": {
+            "path": "16/larva/Walk.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true,
+            "totalMs": 880,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Caminar"
+          },
+          "Run": {
+            "path": "16/larva/Run.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70
+            ],
+            "loop": true,
+            "totalMs": 560,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "label": "Correr"
+          },
+          "Jump": {
+            "path": "16/larva/Jump.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/larva/Jump-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Saltar"
+          },
+          "Attack1": {
+            "path": "16/larva/Attack1.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/larva/Attack1-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Cápsula de fluido"
+          },
+          "Attack2": {
+            "path": "16/larva/Attack2.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/larva/Attack2-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Salto de resorte"
+          },
+          "Attack3": {
+            "path": "16/larva/Attack3.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/larva/Attack3-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              3,
+              3,
+              3,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              5,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "label": "Carrera de cuchillas"
+          },
+          "Hurt": {
+            "path": "16/larva/Hurt.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 3,
+            "rows": 8,
+            "durations": [
+              90,
+              100,
+              160
+            ],
+            "loop": false,
+            "totalMs": 350,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0
+            ],
+            "label": "Recibir daño"
+          },
+          "Death": {
+            "path": "16/larva/Death.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              100,
+              100,
+              120,
+              120,
+              140,
+              160,
+              200,
+              800
+            ],
+            "loop": false,
+            "totalMs": 1740,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              3,
+              5,
+              5,
+              7,
+              7,
+              7,
+              7
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Derrota"
+          }
+        },
+        "source": "fuentes/larva.png"
+      },
+      "malla": {
+        "id": "malla",
+        "name": "Malla Tendinosa",
+        "tier": "D3",
+        "weight": 8,
+        "attacks": [
+          "Líneas de tensión",
+          "Salto de anclaje",
+          "Tijera orgánica"
+        ],
+        "colors": [
+          "1b171b",
+          "352329",
+          "542c35",
+          "773b44",
+          "a55358",
+          "ce7475",
+          "e09b88",
+          "554a49",
+          "8b7060",
+          "b49d7c",
+          "e0cfab",
+          "f5e5c6"
+        ],
+        "size": 16,
+        "palette": [
+          [
+            27,
+            23,
+            27
+          ],
+          [
+            53,
+            35,
+            41
+          ],
+          [
+            84,
+            44,
+            53
+          ],
+          [
+            119,
+            59,
+            68
+          ],
+          [
+            165,
+            83,
+            88
+          ],
+          [
+            206,
+            116,
+            117
+          ],
+          [
+            224,
+            155,
+            136
+          ],
+          [
+            85,
+            74,
+            73
+          ],
+          [
+            139,
+            112,
+            96
+          ],
+          [
+            180,
+            157,
+            124
+          ],
+          [
+            224,
+            207,
+            171
+          ],
+          [
+            245,
+            229,
+            198
+          ]
+        ],
+        "anchor": {
+          "x": 8,
+          "y": 14
+        },
+        "actions": {
+          "Idle": {
+            "path": "16/malla/Idle.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 6,
+            "rows": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": true,
+            "totalMs": 1080,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Reposo"
+          },
+          "Walk": {
+            "path": "16/malla/Walk.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true,
+            "totalMs": 880,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Caminar"
+          },
+          "Run": {
+            "path": "16/malla/Run.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70
+            ],
+            "loop": true,
+            "totalMs": 560,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "label": "Correr"
+          },
+          "Jump": {
+            "path": "16/malla/Jump.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/malla/Jump-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Saltar"
+          },
+          "Attack1": {
+            "path": "16/malla/Attack1.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/malla/Attack1-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Líneas de tensión"
+          },
+          "Attack2": {
+            "path": "16/malla/Attack2.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/malla/Attack2-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Salto de anclaje"
+          },
+          "Attack3": {
+            "path": "16/malla/Attack3.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/malla/Attack3-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              5,
+              5,
+              5,
+              5,
+              5,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Tijera orgánica"
+          },
+          "Hurt": {
+            "path": "16/malla/Hurt.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 3,
+            "rows": 8,
+            "durations": [
+              90,
+              100,
+              160
+            ],
+            "loop": false,
+            "totalMs": 350,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0
+            ],
+            "label": "Recibir daño"
+          },
+          "Death": {
+            "path": "16/malla/Death.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              100,
+              100,
+              120,
+              120,
+              140,
+              160,
+              200,
+              800
+            ],
+            "loop": false,
+            "totalMs": 1740,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              3,
+              5,
+              5,
+              7,
+              7,
+              7,
+              7
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Derrota"
+          }
+        },
+        "source": "fuentes/malla.png"
+      },
+      "portador": {
+        "id": "portador",
+        "name": "Portador de Espinas",
+        "tier": "D4",
+        "weight": 7,
+        "attacks": [
+          "Salva en abanico",
+          "Embestida de hombro",
+          "Salto de estaca"
+        ],
+        "colors": [
+          "171c1b",
+          "30362c",
+          "4e5540",
+          "73795a",
+          "a0a27c",
+          "c9c6a1",
+          "ece3bd",
+          "372329",
+          "62313a",
+          "914651",
+          "c36c6c",
+          "81705a"
+        ],
+        "size": 16,
+        "palette": [
+          [
+            23,
+            28,
+            27
+          ],
+          [
+            48,
+            54,
+            44
+          ],
+          [
+            78,
+            85,
+            64
+          ],
+          [
+            115,
+            121,
+            90
+          ],
+          [
+            160,
+            162,
+            124
+          ],
+          [
+            201,
+            198,
+            161
+          ],
+          [
+            236,
+            227,
+            189
+          ],
+          [
+            55,
+            35,
+            41
+          ],
+          [
+            98,
+            49,
+            58
+          ],
+          [
+            145,
+            70,
+            81
+          ],
+          [
+            195,
+            108,
+            108
+          ],
+          [
+            129,
+            112,
+            90
+          ]
+        ],
+        "anchor": {
+          "x": 8,
+          "y": 14
+        },
+        "actions": {
+          "Idle": {
+            "path": "16/portador/Idle.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 6,
+            "rows": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": true,
+            "totalMs": 1080,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Reposo"
+          },
+          "Walk": {
+            "path": "16/portador/Walk.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true,
+            "totalMs": 880,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Caminar"
+          },
+          "Run": {
+            "path": "16/portador/Run.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70
+            ],
+            "loop": true,
+            "totalMs": 560,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "label": "Correr"
+          },
+          "Jump": {
+            "path": "16/portador/Jump.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/portador/Jump-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Saltar"
+          },
+          "Attack1": {
+            "path": "16/portador/Attack1.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/portador/Attack1-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Salva en abanico"
+          },
+          "Attack2": {
+            "path": "16/portador/Attack2.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/portador/Attack2-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              3,
+              3,
+              3,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              5,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Embestida de hombro"
+          },
+          "Attack3": {
+            "path": "16/portador/Attack3.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/portador/Attack3-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Salto de estaca"
+          },
+          "Hurt": {
+            "path": "16/portador/Hurt.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 3,
+            "rows": 8,
+            "durations": [
+              90,
+              100,
+              160
+            ],
+            "loop": false,
+            "totalMs": 350,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0
+            ],
+            "label": "Recibir daño"
+          },
+          "Death": {
+            "path": "16/portador/Death.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              100,
+              100,
+              120,
+              120,
+              140,
+              160,
+              200,
+              800
+            ],
+            "loop": false,
+            "totalMs": 1740,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              3,
+              5,
+              5,
+              7,
+              7,
+              7,
+              7
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Derrota"
+          }
+        },
+        "source": "fuentes/portador.png"
+      },
+      "huesped": {
+        "id": "huesped",
+        "name": "Huésped de Cuarentena",
+        "tier": "D5",
+        "weight": 3,
+        "attacks": [
+          "Brote de cuarentena",
+          "Salto de masa",
+          "Barrido de membrana"
+        ],
+        "colors": [
+          "211a27",
+          "3d293c",
+          "61415b",
+          "855d74",
+          "ab7b8b",
+          "5b4a4b",
+          "948578",
+          "c5b6a0",
+          "e9dec3",
+          "797637",
+          "bdb647",
+          "f2dc75"
+        ],
+        "size": 16,
+        "palette": [
+          [
+            33,
+            26,
+            39
+          ],
+          [
+            61,
+            41,
+            60
+          ],
+          [
+            97,
+            65,
+            91
+          ],
+          [
+            133,
+            93,
+            116
+          ],
+          [
+            171,
+            123,
+            139
+          ],
+          [
+            91,
+            74,
+            75
+          ],
+          [
+            148,
+            133,
+            120
+          ],
+          [
+            197,
+            182,
+            160
+          ],
+          [
+            233,
+            222,
+            195
+          ],
+          [
+            121,
+            118,
+            55
+          ],
+          [
+            189,
+            182,
+            71
+          ],
+          [
+            242,
+            220,
+            117
+          ]
+        ],
+        "anchor": {
+          "x": 8,
+          "y": 14
+        },
+        "actions": {
+          "Idle": {
+            "path": "16/huesped/Idle.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 6,
+            "rows": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": true,
+            "totalMs": 1080,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Reposo"
+          },
+          "Walk": {
+            "path": "16/huesped/Walk.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true,
+            "totalMs": 880,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Caminar"
+          },
+          "Run": {
+            "path": "16/huesped/Run.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70
+            ],
+            "loop": true,
+            "totalMs": 560,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "label": "Correr"
+          },
+          "Jump": {
+            "path": "16/huesped/Jump.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/huesped/Jump-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Saltar"
+          },
+          "Attack1": {
+            "path": "16/huesped/Attack1.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/huesped/Attack1-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Brote de cuarentena"
+          },
+          "Attack2": {
+            "path": "16/huesped/Attack2.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/huesped/Attack2-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Salto de masa"
+          },
+          "Attack3": {
+            "path": "16/huesped/Attack3.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "16/huesped/Attack3-FX.png",
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              5,
+              5,
+              5,
+              5,
+              5,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Barrido de membrana"
+          },
+          "Hurt": {
+            "path": "16/huesped/Hurt.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 3,
+            "rows": 8,
+            "durations": [
+              90,
+              100,
+              160
+            ],
+            "loop": false,
+            "totalMs": 350,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0
+            ],
+            "label": "Recibir daño"
+          },
+          "Death": {
+            "path": "16/huesped/Death.png",
+            "frameWidth": 16,
+            "frameHeight": 16,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              100,
+              100,
+              120,
+              120,
+              140,
+              160,
+              200,
+              800
+            ],
+            "loop": false,
+            "totalMs": 1740,
+            "fx": null,
+            "fxFrameWidth": 48,
+            "fxAnchor": {
+              "x": 24,
+              "y": 24
+            },
+            "bodyAnchor": {
+              "x": 8,
+              "y": 14
+            },
+            "poseTimeline": [
+              3,
+              3,
+              5,
+              5,
+              7,
+              7,
+              7,
+              7
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Derrota"
+          }
+        },
+        "source": "fuentes/huesped.png"
+      }
+    },
+    "32": {
+      "esporario": {
+        "id": "esporario",
+        "name": "Esporario Blanco",
+        "tier": "D1",
+        "weight": 50,
+        "attacks": [
+          "Abanico de esporas",
+          "Brinco de raíz",
+          "Latigazo rasante"
+        ],
+        "colors": [
+          "191719",
+          "342325",
+          "593334",
+          "805047",
+          "aa7460",
+          "5b563b",
+          "a28c51",
+          "c7ad62",
+          "d7c99d",
+          "e9ddbc",
+          "faf0d5",
+          "938875"
+        ],
+        "size": 32,
+        "palette": [
+          [
+            25,
+            23,
+            25
+          ],
+          [
+            52,
+            35,
+            37
+          ],
+          [
+            89,
+            51,
+            52
+          ],
+          [
+            128,
+            80,
+            71
+          ],
+          [
+            170,
+            116,
+            96
+          ],
+          [
+            91,
+            86,
+            59
+          ],
+          [
+            162,
+            140,
+            81
+          ],
+          [
+            199,
+            173,
+            98
+          ],
+          [
+            215,
+            201,
+            157
+          ],
+          [
+            233,
+            221,
+            188
+          ],
+          [
+            250,
+            240,
+            213
+          ],
+          [
+            147,
+            136,
+            117
+          ],
+          [
+            39,
+            29,
+            31
+          ],
+          [
+            71,
+            43,
+            45
+          ],
+          [
+            109,
+            66,
+            62
+          ],
+          [
+            149,
+            98,
+            84
+          ],
+          [
+            131,
+            101,
+            78
+          ],
+          [
+            127,
+            113,
+            70
+          ],
+          [
+            181,
+            157,
+            90
+          ],
+          [
+            207,
+            187,
+            128
+          ]
+        ],
+        "anchor": {
+          "x": 16,
+          "y": 30
+        },
+        "actions": {
+          "Idle": {
+            "path": "32/esporario/Idle.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 6,
+            "rows": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": true,
+            "totalMs": 1080,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Reposo"
+          },
+          "Walk": {
+            "path": "32/esporario/Walk.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true,
+            "totalMs": 880,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "label": "Caminar"
+          },
+          "Run": {
+            "path": "32/esporario/Run.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70
+            ],
+            "loop": true,
+            "totalMs": 560,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "label": "Correr"
+          },
+          "Jump": {
+            "path": "32/esporario/Jump.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/esporario/Jump-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              6,
+              6,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Saltar"
+          },
+          "Attack1": {
+            "path": "32/esporario/Attack1.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/esporario/Attack1-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Abanico de esporas"
+          },
+          "Attack2": {
+            "path": "32/esporario/Attack2.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/esporario/Attack2-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              6,
+              6,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Brinco de raíz"
+          },
+          "Attack3": {
+            "path": "32/esporario/Attack3.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/esporario/Attack3-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              5,
+              5,
+              5,
+              5,
+              5,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Latigazo rasante"
+          },
+          "Hurt": {
+            "path": "32/esporario/Hurt.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 3,
+            "rows": 8,
+            "durations": [
+              90,
+              100,
+              160
+            ],
+            "loop": false,
+            "totalMs": 350,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0
+            ],
+            "label": "Recibir daño"
+          },
+          "Death": {
+            "path": "32/esporario/Death.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              100,
+              100,
+              120,
+              120,
+              140,
+              160,
+              200,
+              800
+            ],
+            "loop": false,
+            "totalMs": 1740,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              3,
+              5,
+              5,
+              7,
+              7,
+              7,
+              7
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Derrota"
+          }
+        },
+        "source": "fuentes/esporario.png"
+      },
+      "larva": {
+        "id": "larva",
+        "name": "Larva de Vidrio",
+        "tier": "D2",
+        "weight": 32,
+        "attacks": [
+          "Cápsula de fluido",
+          "Salto de resorte",
+          "Carrera de cuchillas"
+        ],
+        "colors": [
+          "111e2d",
+          "203546",
+          "365365",
+          "568093",
+          "7ca9ba",
+          "a6d6dc",
+          "d0eeea",
+          "32233f",
+          "593b74",
+          "9461b5",
+          "d59be0",
+          "655963"
+        ],
+        "size": 32,
+        "palette": [
+          [
+            17,
+            30,
+            45
+          ],
+          [
+            32,
+            53,
+            70
+          ],
+          [
+            54,
+            83,
+            101
+          ],
+          [
+            86,
+            128,
+            147
+          ],
+          [
+            124,
+            169,
+            186
+          ],
+          [
+            166,
+            214,
+            220
+          ],
+          [
+            208,
+            238,
+            234
+          ],
+          [
+            50,
+            35,
+            63
+          ],
+          [
+            89,
+            59,
+            116
+          ],
+          [
+            148,
+            97,
+            181
+          ],
+          [
+            213,
+            155,
+            224
+          ],
+          [
+            101,
+            89,
+            99
+          ],
+          [
+            25,
+            42,
+            58
+          ],
+          [
+            43,
+            68,
+            86
+          ],
+          [
+            70,
+            106,
+            124
+          ],
+          [
+            105,
+            149,
+            167
+          ],
+          [
+            145,
+            192,
+            203
+          ],
+          [
+            187,
+            226,
+            227
+          ],
+          [
+            129,
+            137,
+            149
+          ],
+          [
+            70,
+            47,
+            90
+          ]
+        ],
+        "anchor": {
+          "x": 16,
+          "y": 30
+        },
+        "actions": {
+          "Idle": {
+            "path": "32/larva/Idle.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 6,
+            "rows": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": true,
+            "totalMs": 1080,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Reposo"
+          },
+          "Walk": {
+            "path": "32/larva/Walk.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true,
+            "totalMs": 880,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "label": "Caminar"
+          },
+          "Run": {
+            "path": "32/larva/Run.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70
+            ],
+            "loop": true,
+            "totalMs": 560,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "label": "Correr"
+          },
+          "Jump": {
+            "path": "32/larva/Jump.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/larva/Jump-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              6,
+              6,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Saltar"
+          },
+          "Attack1": {
+            "path": "32/larva/Attack1.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/larva/Attack1-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Cápsula de fluido"
+          },
+          "Attack2": {
+            "path": "32/larva/Attack2.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/larva/Attack2-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              6,
+              6,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Salto de resorte"
+          },
+          "Attack3": {
+            "path": "32/larva/Attack3.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/larva/Attack3-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              3,
+              3,
+              3,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              5,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              2,
+              0,
+              2,
+              0,
+              0
+            ],
+            "label": "Carrera de cuchillas"
+          },
+          "Hurt": {
+            "path": "32/larva/Hurt.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 3,
+            "rows": 8,
+            "durations": [
+              90,
+              100,
+              160
+            ],
+            "loop": false,
+            "totalMs": 350,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0
+            ],
+            "label": "Recibir daño"
+          },
+          "Death": {
+            "path": "32/larva/Death.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              100,
+              100,
+              120,
+              120,
+              140,
+              160,
+              200,
+              800
+            ],
+            "loop": false,
+            "totalMs": 1740,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              3,
+              5,
+              5,
+              7,
+              7,
+              7,
+              7
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Derrota"
+          }
+        },
+        "source": "fuentes/larva.png"
+      },
+      "malla": {
+        "id": "malla",
+        "name": "Malla Tendinosa",
+        "tier": "D3",
+        "weight": 8,
+        "attacks": [
+          "Líneas de tensión",
+          "Salto de anclaje",
+          "Tijera orgánica"
+        ],
+        "colors": [
+          "1b171b",
+          "352329",
+          "542c35",
+          "773b44",
+          "a55358",
+          "ce7475",
+          "e09b88",
+          "554a49",
+          "8b7060",
+          "b49d7c",
+          "e0cfab",
+          "f5e5c6"
+        ],
+        "size": 32,
+        "palette": [
+          [
+            27,
+            23,
+            27
+          ],
+          [
+            53,
+            35,
+            41
+          ],
+          [
+            84,
+            44,
+            53
+          ],
+          [
+            119,
+            59,
+            68
+          ],
+          [
+            165,
+            83,
+            88
+          ],
+          [
+            206,
+            116,
+            117
+          ],
+          [
+            224,
+            155,
+            136
+          ],
+          [
+            85,
+            74,
+            73
+          ],
+          [
+            139,
+            112,
+            96
+          ],
+          [
+            180,
+            157,
+            124
+          ],
+          [
+            224,
+            207,
+            171
+          ],
+          [
+            245,
+            229,
+            198
+          ],
+          [
+            40,
+            29,
+            34
+          ],
+          [
+            69,
+            40,
+            47
+          ],
+          [
+            102,
+            52,
+            61
+          ],
+          [
+            142,
+            71,
+            78
+          ],
+          [
+            186,
+            100,
+            103
+          ],
+          [
+            215,
+            136,
+            127
+          ],
+          [
+            155,
+            115,
+            105
+          ],
+          [
+            112,
+            93,
+            85
+          ]
+        ],
+        "anchor": {
+          "x": 16,
+          "y": 30
+        },
+        "actions": {
+          "Idle": {
+            "path": "32/malla/Idle.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 6,
+            "rows": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": true,
+            "totalMs": 1080,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Reposo"
+          },
+          "Walk": {
+            "path": "32/malla/Walk.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true,
+            "totalMs": 880,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "label": "Caminar"
+          },
+          "Run": {
+            "path": "32/malla/Run.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70
+            ],
+            "loop": true,
+            "totalMs": 560,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "label": "Correr"
+          },
+          "Jump": {
+            "path": "32/malla/Jump.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/malla/Jump-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              6,
+              6,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Saltar"
+          },
+          "Attack1": {
+            "path": "32/malla/Attack1.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/malla/Attack1-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Líneas de tensión"
+          },
+          "Attack2": {
+            "path": "32/malla/Attack2.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/malla/Attack2-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              6,
+              6,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Salto de anclaje"
+          },
+          "Attack3": {
+            "path": "32/malla/Attack3.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/malla/Attack3-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              5,
+              5,
+              5,
+              5,
+              5,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Tijera orgánica"
+          },
+          "Hurt": {
+            "path": "32/malla/Hurt.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 3,
+            "rows": 8,
+            "durations": [
+              90,
+              100,
+              160
+            ],
+            "loop": false,
+            "totalMs": 350,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0
+            ],
+            "label": "Recibir daño"
+          },
+          "Death": {
+            "path": "32/malla/Death.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              100,
+              100,
+              120,
+              120,
+              140,
+              160,
+              200,
+              800
+            ],
+            "loop": false,
+            "totalMs": 1740,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              3,
+              5,
+              5,
+              7,
+              7,
+              7,
+              7
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Derrota"
+          }
+        },
+        "source": "fuentes/malla.png"
+      },
+      "portador": {
+        "id": "portador",
+        "name": "Portador de Espinas",
+        "tier": "D4",
+        "weight": 7,
+        "attacks": [
+          "Salva en abanico",
+          "Embestida de hombro",
+          "Salto de estaca"
+        ],
+        "colors": [
+          "171c1b",
+          "30362c",
+          "4e5540",
+          "73795a",
+          "a0a27c",
+          "c9c6a1",
+          "ece3bd",
+          "372329",
+          "62313a",
+          "914651",
+          "c36c6c",
+          "81705a"
+        ],
+        "size": 32,
+        "palette": [
+          [
+            23,
+            28,
+            27
+          ],
+          [
+            48,
+            54,
+            44
+          ],
+          [
+            78,
+            85,
+            64
+          ],
+          [
+            115,
+            121,
+            90
+          ],
+          [
+            160,
+            162,
+            124
+          ],
+          [
+            201,
+            198,
+            161
+          ],
+          [
+            236,
+            227,
+            189
+          ],
+          [
+            55,
+            35,
+            41
+          ],
+          [
+            98,
+            49,
+            58
+          ],
+          [
+            145,
+            70,
+            81
+          ],
+          [
+            195,
+            108,
+            108
+          ],
+          [
+            129,
+            112,
+            90
+          ],
+          [
+            36,
+            41,
+            36
+          ],
+          [
+            63,
+            70,
+            54
+          ],
+          [
+            97,
+            103,
+            77
+          ],
+          [
+            138,
+            142,
+            107
+          ],
+          [
+            181,
+            180,
+            143
+          ],
+          [
+            219,
+            213,
+            175
+          ],
+          [
+            146,
+            131,
+            115
+          ],
+          [
+            77,
+            42,
+            50
+          ]
+        ],
+        "anchor": {
+          "x": 16,
+          "y": 30
+        },
+        "actions": {
+          "Idle": {
+            "path": "32/portador/Idle.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 6,
+            "rows": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": true,
+            "totalMs": 1080,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Reposo"
+          },
+          "Walk": {
+            "path": "32/portador/Walk.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true,
+            "totalMs": 880,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "label": "Caminar"
+          },
+          "Run": {
+            "path": "32/portador/Run.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70
+            ],
+            "loop": true,
+            "totalMs": 560,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "label": "Correr"
+          },
+          "Jump": {
+            "path": "32/portador/Jump.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/portador/Jump-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              6,
+              6,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Saltar"
+          },
+          "Attack1": {
+            "path": "32/portador/Attack1.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/portador/Attack1-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Salva en abanico"
+          },
+          "Attack2": {
+            "path": "32/portador/Attack2.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/portador/Attack2-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              3,
+              3,
+              3,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              5,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              2,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Embestida de hombro"
+          },
+          "Attack3": {
+            "path": "32/portador/Attack3.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/portador/Attack3-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              6,
+              6,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Salto de estaca"
+          },
+          "Hurt": {
+            "path": "32/portador/Hurt.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 3,
+            "rows": 8,
+            "durations": [
+              90,
+              100,
+              160
+            ],
+            "loop": false,
+            "totalMs": 350,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0
+            ],
+            "label": "Recibir daño"
+          },
+          "Death": {
+            "path": "32/portador/Death.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              100,
+              100,
+              120,
+              120,
+              140,
+              160,
+              200,
+              800
+            ],
+            "loop": false,
+            "totalMs": 1740,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              3,
+              5,
+              5,
+              7,
+              7,
+              7,
+              7
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Derrota"
+          }
+        },
+        "source": "fuentes/portador.png"
+      },
+      "huesped": {
+        "id": "huesped",
+        "name": "Huésped de Cuarentena",
+        "tier": "D5",
+        "weight": 3,
+        "attacks": [
+          "Brote de cuarentena",
+          "Salto de masa",
+          "Barrido de membrana"
+        ],
+        "colors": [
+          "211a27",
+          "3d293c",
+          "61415b",
+          "855d74",
+          "ab7b8b",
+          "5b4a4b",
+          "948578",
+          "c5b6a0",
+          "e9dec3",
+          "797637",
+          "bdb647",
+          "f2dc75"
+        ],
+        "size": 32,
+        "palette": [
+          [
+            33,
+            26,
+            39
+          ],
+          [
+            61,
+            41,
+            60
+          ],
+          [
+            97,
+            65,
+            91
+          ],
+          [
+            133,
+            93,
+            116
+          ],
+          [
+            171,
+            123,
+            139
+          ],
+          [
+            91,
+            74,
+            75
+          ],
+          [
+            148,
+            133,
+            120
+          ],
+          [
+            197,
+            182,
+            160
+          ],
+          [
+            233,
+            222,
+            195
+          ],
+          [
+            121,
+            118,
+            55
+          ],
+          [
+            189,
+            182,
+            71
+          ],
+          [
+            242,
+            220,
+            117
+          ],
+          [
+            47,
+            34,
+            50
+          ],
+          [
+            79,
+            53,
+            76
+          ],
+          [
+            115,
+            79,
+            104
+          ],
+          [
+            152,
+            108,
+            128
+          ],
+          [
+            131,
+            99,
+            107
+          ],
+          [
+            120,
+            104,
+            98
+          ],
+          [
+            173,
+            158,
+            140
+          ],
+          [
+            215,
+            202,
+            178
+          ]
+        ],
+        "anchor": {
+          "x": 16,
+          "y": 30
+        },
+        "actions": {
+          "Idle": {
+            "path": "32/huesped/Idle.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 6,
+            "rows": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": true,
+            "totalMs": 1080,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Reposo"
+          },
+          "Walk": {
+            "path": "32/huesped/Walk.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true,
+            "totalMs": 880,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "label": "Caminar"
+          },
+          "Run": {
+            "path": "32/huesped/Run.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70,
+              70
+            ],
+            "loop": true,
+            "totalMs": 560,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              1,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "heightTimeline": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "label": "Correr"
+          },
+          "Jump": {
+            "path": "32/huesped/Jump.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/huesped/Jump-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              6,
+              6,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Saltar"
+          },
+          "Attack1": {
+            "path": "32/huesped/Attack1.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/huesped/Attack1-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4,
+              4,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Brote de cuarentena"
+          },
+          "Attack2": {
+            "path": "32/huesped/Attack2.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 14,
+            "rows": 8,
+            "durations": [
+              100,
+              140,
+              180,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              100,
+              160,
+              120,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/huesped/Attack2-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              3,
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              5,
+              6,
+              6,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Salto de masa"
+          },
+          "Attack3": {
+            "path": "32/huesped/Attack3.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 12,
+            "rows": 8,
+            "durations": [
+              140,
+              140,
+              160,
+              160,
+              90,
+              90,
+              90,
+              90,
+              100,
+              140,
+              160,
+              180
+            ],
+            "loop": false,
+            "totalMs": 1540,
+            "fx": "32/huesped/Attack3-FX.png",
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              0,
+              3,
+              3,
+              3,
+              5,
+              5,
+              5,
+              5,
+              5,
+              3,
+              3,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Barrido de membrana"
+          },
+          "Hurt": {
+            "path": "32/huesped/Hurt.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 3,
+            "rows": 8,
+            "durations": [
+              90,
+              100,
+              160
+            ],
+            "loop": false,
+            "totalMs": 350,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              0,
+              0
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0
+            ],
+            "label": "Recibir daño"
+          },
+          "Death": {
+            "path": "32/huesped/Death.png",
+            "frameWidth": 32,
+            "frameHeight": 32,
+            "frames": 8,
+            "rows": 8,
+            "durations": [
+              100,
+              100,
+              120,
+              120,
+              140,
+              160,
+              200,
+              800
+            ],
+            "loop": false,
+            "totalMs": 1740,
+            "fx": null,
+            "fxFrameWidth": 96,
+            "fxAnchor": {
+              "x": 48,
+              "y": 48
+            },
+            "bodyAnchor": {
+              "x": 16,
+              "y": 30
+            },
+            "poseTimeline": [
+              3,
+              3,
+              5,
+              5,
+              7,
+              7,
+              7,
+              7
+            ],
+            "heightTimeline": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "label": "Derrota"
+          }
+        },
+        "source": "fuentes/huesped.png"
+      }
+    }
+  },
+  "sources": [
+    {
+      "id": "esporario",
+      "path": "fuentes/esporario.png",
+      "sha256": "01b105b15d3afe53e76bee32edb6dc9bb237efbd0f1b910f715e91cc04907aab",
+      "width": 1267,
+      "height": 1241,
+      "rowCuts": [
+        0,
+        155,
+        310,
+        461,
+        589,
+        734,
+        892,
+        1066,
+        1241
+      ],
+      "columnMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "larva",
+      "path": "fuentes/larva.png",
+      "sha256": "1dfe0672ea186f270b432c636d75a60e67c75faddacaf1f8581a766bf353de5d",
+      "width": 1281,
+      "height": 1228,
+      "rowCuts": [
+        0,
+        153,
+        307,
+        460,
+        604,
+        759,
+        886,
+        1074,
+        1228
+      ],
+      "columnMap": [
+        0,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "id": "malla",
+      "path": "fuentes/malla.png",
+      "sha256": "e379b9a2e166416c92547ff326fc3537d998eebfd94ee0ac268c6f7db9cf1800",
+      "width": 1261,
+      "height": 1247,
+      "rowCuts": [
+        0,
+        156,
+        295,
+        458,
+        584,
+        743,
+        905,
+        1091,
+        1247
+      ],
+      "columnMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "portador",
+      "path": "fuentes/portador.png",
+      "sha256": "c20da8ea036d068dda60d249f5010b2a4ad83a3047921433348120e4cd841622",
+      "width": 1280,
+      "height": 1229,
+      "rowCuts": [
+        0,
+        163,
+        318,
+        469,
+        614,
+        768,
+        920,
+        1075,
+        1229
+      ],
+      "columnMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "huesped",
+      "path": "fuentes/huesped.png",
+      "sha256": "313585053a8d1efd03ab38342ad9a6660299f77d00d3cdcf843ecbae2d341a28",
+      "width": 1278,
+      "height": 1230,
+      "rowCuts": [
+        0,
+        153,
+        292,
+        446,
+        579,
+        743,
+        891,
+        1065,
+        1230
+      ],
+      "columnMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "limits": [
+    "Recursos de arte sin integración ni hitboxes jugables",
+    "Interpolación por poses, squash y desplazamiento; sin rig esquelético exportado",
+    "Tiempos de previsualización, balance pendiente"
+  ]
+}

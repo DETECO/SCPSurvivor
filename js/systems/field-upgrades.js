@@ -58,7 +58,7 @@ G.FieldUpgrades = (() => {
           G.FieldStats.apply(p);
         } });
     }
-    return out;
+    return out.concat(G.MapTrial?.infinite?(G.RiftPowers?.levelCards(pl)||[]):[]);
   }
   function offer(pl, n = 3) {
     if(G.WeaponRevisionTrial?.active())return revisionOffer(pl,n);
@@ -88,7 +88,7 @@ G.FieldUpgrades = (() => {
         desc:generalEffects[key]+' · Bonos generales se aplican una vez.',
         apply(p){const current=statsFor(p);if(current[key]!==rank)return false;current[key]++;G.FieldStats.apply(p);return true;}});
     }
-    return out;
+    return out.concat(G.MapTrial?.infinite?(G.RiftPowers?.levelCards(pl)||[]):[]);
   }
   function revisionOffer(pl,n){
     const pool=revisionCandidates(pl),picked=[];
@@ -124,7 +124,7 @@ G.FieldUpgrades = (() => {
         desc:generalEffects[key]+' · Valores de ensayo; topes globales conservados.',
         apply(p){const current=statsFor(p);if(current[key]!==rank)return false;current[key]++;G.FieldStats.apply(p);return true;}});
     }
-    return out;
+    return out.concat(G.MapTrial?.infinite?(G.RiftPowers?.levelCards(pl)||[]):[]);
   }
   function tacticalCards(){
     return [['power','Potencia','+25% daño'],['mobility','Movilidad','+15% velocidad, tope +50%'],['protection','Protección','+15 puntos protección, tope70%']].map(([type,name,effect])=>({

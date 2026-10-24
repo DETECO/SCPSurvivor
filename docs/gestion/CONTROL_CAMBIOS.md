@@ -1,10 +1,12 @@
 # Control de cambios — ESTRUCTURA
 
-Revisión de control **0.7** · 24/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+Revisión de control **0.8** · 24/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
 
 Entrada maestra: [PAUTA_DESARROLLO.md](../../PAUTA_DESARROLLO.md).
 
-**Corrección técnica activa:** [INC-VIS-001 r1](INC-VIS-001.md), autorizada por Iván el 24/10: arma provisional, proporciones y lectura de la escena móvil. Responsable PROGRAMACION, con ARMAS/PERSONAJES/MENUS según la dependencia. Diagnóstico basado en captura y fuentes; pendiente de reproducción, implementación y comprobación. No altera lotes ni exige nueva consolidación para corregir el fallo ya encargado. La versión 0.6 del encargo anterior permanece conservada en su corte.
+**Ejecución prioritaria — REV-EST-0007:** [grietas completas y coordinación general](REV-EST-0007_GRIETAS.md), por autorización directa de Iván. [LOT-EST-005 r1](lotes/LOT-EST-005-r1.md) amplía la conexión pendiente del director con recintos, anomalías, poderes, NPC y retorno. PROGRAMACION es el único integrador de runtime; NIVELES/PERSONAJES/áreas entregan contratos y recursos. **EST-GRI-002 r1:** Iván aclara que son cinco identidades, cada una en16/32; cantidad resuelta. Sin afirmar implementación final por este registro.
+
+**Corrección técnica:** [INC-VIS-001 r1](INC-VIS-001.md) publicada y comprobada en0.35, parcial por recursos pendientes de ARMAS. [Informe](informes/INC-VIS-001-programacion.md) · [recibo](INC-VIS-001_PUBLICACION.json). ESTRUCTURA repitió tres arranques públicos; cobertura en REV-EST-0007. La versión0.7 de control queda preservada en su corte y no se reescribe el origen del encargo técnico.
 
 **Último corte consolidado:** [REV-EST-0006 — informe incremental de las áreas](CONSOLIDACION_2026-10-23_R1.md). Se conservan las revisiones y coberturas anteriores como historial. La consolidación usa fuentes locales y dependencias nuevas, no declara releídos los ocho historiales.
 
@@ -15,6 +17,14 @@ Entrada maestra: [PAUTA_DESARROLLO.md](../../PAUTA_DESARROLLO.md).
 La activación inicial no preparó un lote. Posteriormente, REV-EST-0003 registra la aprobación del dado y prepara LOT-EST-001 r1 para su núcleo de sorteos aislado; REV-EST-0005 registra la aceptación de armas y prepara LOT-EST-002 r1 por fases. La integración completa de grietas sigue fuera del primero. Las entregas y autorizaciones anteriores mantienen su alcance; este registro no las revoca ni las da por revalidadas.
 
 ## Decisiones de coordinación
+
+### EST-ORG-002 · Revisión 1 · Activa — Coordinación general de ejecución
+
+- **Fecha/fuente:**24/10/2026, mensaje directo actual de Iván en ESTRUCTURA; ID individual no expuesto.
+- **Cita:** «Haz que suceda todo esto. Te autorizo a ir hilo por hilo viendo que paso y ordename esto, tu seras el jefe del proyecto completo.»
+- **Alcance:** continuar INC-VIS-001 y coordinar entre áreas la implementación completa de grietas aprobadas en la demo. Leer los hilos necesarios y encargar directamente trabajos concretos; PROGRAMACION conserva integración, pruebas y publicación autorizada. Cada especialidad mantiene sus fuentes/recursos y límites de aprobación.
+- **Salida:** [REV-EST-0007](REV-EST-0007_GRIETAS.md) y [LOT-EST-005 r1](lotes/LOT-EST-005-r1.md), con cobertura, fuentes preservadas, discrepancias y evidencia pendiente. Cinco anomalías confirmadas no se presentan como diez; recuperar antes de inventar nuevas aprobaciones.
+- **No modifica:** decisiones mecánicas aprobadas, arte aceptado, alcance de cuentas/economía real o aceptación humana. Los parámetros nuevos de prueba deben identificarse y versionarse como ensayo.
 
 ### EST-ORG-001 · Revisión 1 · Activa — Rol de ESTRUCTURA
 
@@ -29,6 +39,12 @@ La activación inicial no preparó un lote. Posteriormente, REV-EST-0003 registr
 - **Reemplazo:** activa para este hilo las instrucciones de coordinación antes propuestas; no aprueba por inferencia todos los apartados del protocolo V2 ni cambia el nivel/modelo de los agentes.
 
 ## Decisiones generales
+
+### EST-GRI-002 · Revisión 1 · Aprobada — Cantidad de anomalías
+
+- **Fecha/fuente:**24/10/2026, respuesta directa de Iván a la aclaración de catálogo en ESTRUCTURA; ID de mensaje no expuesto.
+- **Cita exacta:** «Mantener las cinco aprobadas; las diez eran sus variantes gráficas.»
+- **Decisión:**5identidades BIO-01–BIO-05, cada una con16×16 y32×32. Resuelve la discrepancia registrada en REV-EST-0007 y LOT-EST-005 r1. No se encargan ni inventan cinco anomalías adicionales.
 
 ### EST-ESC-001 · Revisión 1 · Aprobada — NIV-ESC-008-A r1
 
@@ -140,6 +156,10 @@ Las fuentes leídas parcialmente no reciben un estado de «aprobación verificad
 - **Activación de otros roles:** no realizada por ESTRUCTURA. No se enviaron mensajes a otros hilos ni se modificaron sus instrucciones.
 
 ## Lotes de implementación
+
+### LOT-EST-005 r1 — Grietas jugables de expedición
+
+**Autorizado y encargado a PROGRAMACION**, con entregas acotadas a NIVELES/PERSONAJES/MENUS/SONIDO y seguimiento de ARMAS. [Contrato y criterios](lotes/LOT-EST-005-r1.md). Conectar director, recintos propios, cinco BIO confirmadas, patrones, retorno/escape, poderes y compañeros con burbujas; buscar el catálogo de diez recordado. Los perfiles nuevos de ensayo, recursos faltantes y pruebas integradas tienen sus propios estados. No reescribe el alcance aislado de LOT-EST-001 ni lo presenta retroactivamente como terminado.
 
 ### LOT-EST-003 r1 — Escala y encuadre M01
 

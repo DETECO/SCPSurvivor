@@ -1,0 +1,425 @@
+--- a/css/technical.css
++++ b/css/technical.css
+@@ -114,3 +114,9 @@
+ @media(max-width:540px){body[data-v2-hud] #radar-wrap{top:118px;width:84px}body[data-v2-hud] #field-radar{width:84px;height:84px}body[data-v2-hud] #radar-wrap small{font-size:8px}}
+ @media(max-width:540px)and(min-height:521px){body[data-v2-hud][data-art-fallback] #radar-wrap{top:160px}}
+ @media(max-height:520px){body[data-v2-hud] #hud-summary{right:102px;max-width:500px}body[data-v2-hud] #scene-hud{min-height:36px}body[data-v2-hud] #scene-hud button{min-height:36px}body[data-v2-hud] #radar-wrap{top:8px;right:8px;transform:scale(.7);transform-origin:top right}}
++
++/* LOT-EST-005: existing compact HUD and paused choice panel. */
++#rift-boss-health{display:block;width:100%;height:7px;accent-color:#d64257;margin-top:4px;}
++#rift-power-options{display:grid;gap:10px;}
++#rift-power-choice .panel{max-height:85dvh;overflow:auto;}
++#rift-power-choice button{min-height:64px;text-align:left;}
+--- a/js/entities/enemy.js
++++ b/js/entities/enemy.js
+@@ -741,9 +741,11 @@
+     let list = [];            // vivos
+     let corpses = [];         // cayendo / desvaneciéndose
+     const CELL = 52;
+-    const grid = new Map();
+-
+-    const byId = new Map();
++    let grid = new Map();
++
++    let byId = new Map();
++    function suspend(){const token={list,corpses,grid,byId,nextId,stashed};list=[];corpses=[];grid=new Map();byId=new Map();stashed=null;return token;}
++    function resume(token){({list,corpses,grid,byId,nextId,stashed}=token);}
+     function clear() { list = []; corpses = []; grid.clear(); byId.clear(); }
+     function all() { return list; }
+     function add(e) {
+@@ -960,7 +962,7 @@
+     function bossAlive() { return list.some(e => e.boss && !e.dead); }
+     function shinies() { return list.filter(e => e.shiny && !e.dead); }
+ 
+-    return { clear, all, add, get, addRemote, removeRemote, stash, restore, clearRemote, update, drawables, queryCircle, rebuildGrid, bossAlive, shinies, nearestPlayer,
++    return { suspend, resume, clear, all, add, get, addRemote, removeRemote, stash, restore, clearRemote, update, drawables, queryCircle, rebuildGrid, bossAlive, shinies, nearestPlayer,
+              get count() { return list.length; } };
+   })();
+ })();
+--- a/js/entities/fx.js
++++ b/js/entities/fx.js
+@@ -302,6 +302,6 @@
+     }
+   }
+ 
+-  return { clear, px, burst, spark, sp, twinkle, trail, dmgText, ring, slash, beam, update, draw,
++  return { suspend(){const token={parts,sprites,texts,rings,slashes,beams};parts=[];sprites=[];texts=[];rings=[];slashes=[];beams=[];return token;},resume(token){({parts,sprites,texts,rings,slashes,beams}=token);}, clear, px, burst, spark, sp, twinkle, trail, dmgText, ring, slash, beam, update, draw,
+            get count() { return parts.length + sprites.length + texts.length; } };
+ })();
+--- a/js/entities/pickup.js
++++ b/js/entities/pickup.js
+@@ -27,6 +27,8 @@
+   const BOSS_T10 = 1 / 3;               // ticket ×10 de un jefe normal (el legendario, siempre)
+   const TICKET_RATE = 1 / 400;          // (antes 1/260; más raros desde 2026-10-10)
+ 
++  function suspend() { const token={list,nextId}; list=[]; return token; }
++  function resume(token) { list=token.list; nextId=token.nextId; }
+   function clear() { list = []; }
+   function all() { return list; }
+ 
+@@ -198,5 +200,5 @@
+ 
+   function exportData(){return JSON.parse(JSON.stringify(list));}
+   function restoreData(items){list=JSON.parse(JSON.stringify(items));nextId=Math.max(1,...list.map(p=>p.id+1));}
+-  return { clear, all, dropXp, drop, update, draw, addRemote, removeId, pullAll, exportData,restoreData,KIND, get count() { return list.length; } };
++  return { suspend, resume, clear, all, dropXp, drop, update, draw, addRemote, removeId, pullAll, exportData,restoreData,KIND, get count() { return list.length; } };
+ })();
+--- a/js/entities/projectile.js
++++ b/js/entities/projectile.js
+@@ -12,6 +12,8 @@
+   let list = [];
+   let nextId = 1;
+ 
++  function suspend() { const token={list,nextId}; list=[]; return token; }
++  function resume(token) { list=token.list; nextId=token.nextId; }
+   function clear() { list = []; }
+   function all() { return list; }
+ 
+@@ -134,6 +136,6 @@
+     }
+   }
+ 
+-  return { clear, all, spawn, spawnOrb, clearOrbs, update, remove, draw, nearest,
++  return { suspend, resume, clear, all, spawn, spawnOrb, clearOrbs, update, remove, draw, nearest,
+            get count() { return list.length; } };
+ })();
+--- a/js/game.js
++++ b/js/game.js
+@@ -501,7 +501,7 @@
+       if (state === 'error') { G.Input.endFrame(); return; }
+       if (state === 'playing' && pl) {
+         const e = G.Expedition.state;
+-        if (!['finished','levelup','armament','terminal'].includes(e.phase)) time += dt;
++        if (!e.dimension && !['finished','levelup','armament','terminal','riftReward','riftTransition'].includes(e.phase)) time += dt;
+         G.Expedition.update(dt);
+       }
+       renderTechnical(); G.TechnicalUI.tick(pl, time); G.Input.endFrame();
+@@ -542,17 +542,17 @@
+     if (pl && state !== 'ui') {
+       G.Pickups.draw(ctx); G.Expedition.draw(ctx, {riftLayer:'ground'});
+       const props = G.World.visibleProps(G.Camera);
+-      const rift = G.DimensionalRifts?.drawable?.();
+-      const entities = [...G.EnemyMgr.drawables(G.Camera), ...(G.MapTrial?.drawables?.()||[]), ...props, ...(rift ? [rift] : []), pl].sort((a,b) => a.y - b.y);
++      const rift = G.RiftExpedition?.state.active?null:G.DimensionalRifts?.drawable?.();
++      const entities = [...G.EnemyMgr.drawables(G.Camera), ...(G.RiftExpedition?.state.active?[]:(G.MapTrial?.drawables?.()||[])),...(G.RiftExpedition?.drawables()||[]), ...props, ...(rift ? [rift] : []), pl].sort((a,b) => a.y - b.y);
+       const propSet = new Set(props);
+       for (const entity of entities) {
+         if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:true});
+         if(propSet.has(entity)) G.World.drawProp(ctx,entity,time); else entity.draw(ctx);
+         if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:false});
+       }
+-      G.Projectiles.draw(ctx); G.FX.draw(ctx);
+-    }
+-    ctx.restore(); G.World.drawVignette(ctx, w, h);
++      G.Projectiles.draw(ctx); G.FX.draw(ctx);G.RiftExpedition?.drawOverlay(ctx);
++    }
++    ctx.restore(); G.World.drawVignette(ctx, w, h);G.RiftExpedition?.drawScreen(ctx,w,h);
+     G.Touch.clearButtons(); G.Touch.draw(ctx);
+   }
+ 
+--- a/js/systems/combat.js
++++ b/js/systems/combat.js
+@@ -768,6 +768,6 @@
+     }
+   }
+ 
+-  return { tick, resolve, ghostCast, ghostOrbit, updateFields, drawGroundFields, drawAirFields, clearFields,
++  return { suspend(){const token={fields,ghost};fields=[];ghost=false;return token;},resume(token){({fields,ghost}=token);}, tick, resolve, ghostCast, ghostOrbit, updateFields, drawGroundFields, drawAirFields, clearFields,
+            get fieldCount() { return fields.length; } };
+ })();
+--- a/js/systems/expedition.js
++++ b/js/systems/expedition.js
+@@ -21,7 +21,7 @@
+     n=Math.imul(n^(n>>>16),0x85ebca6b);n=Math.imul(n^(n>>>13),0xc2b2ae35);
+     return 3+Math.floor(random((n^(n>>>16))>>>0)()*3);
+   }
+-  function snapshot(){return{phase,sector,wave,sectorWaves,kind,objective,spawned,quota,kills:pl?pl.kills-waveKills:0,
++  function snapshot(){const dimension=G.RiftExpedition?.state;return{phase:dimension?.active?(dimension.reward?'riftReward':dimension.status==='entering'?'riftTransition':phase==='levelup'?phase:'boss'):phase,...(dimension?.active?{dimension}:{}),sector,wave,sectorWaves,kind,objective,spawned,quota,kills:pl?pl.kills-waveKills:0,
+     prep,pending,cards,pendingXp,resumePhase,upgradesApplied,nextUpgradeLevel:pending&&pl?pl.level:null,elapsed,remaining:Math.max(0,60-waveTime),extract:interaction,result,exit,
+     nearExit:!!pl&&G.U.dist(pl.x,pl.y,exit.x,exit.y)<=exit.r,runSeed,mapSeed,nextBossSector,extractionAvailable,
+     totals:{...totals},dimensional,bossHp:boss?Math.max(0,boss.hp):0,bossMaxHp:boss?boss.maxHp:0,
+@@ -39,7 +39,7 @@
+     pl.x=geometry.entry.x;pl.y=geometry.entry.y;exit.x=geometry.exit.x;exit.y=geometry.exit.y;
+     G.Camera.x=pl.x;G.Camera.y=pl.y;G.Path.update(1,[pl]);G.Touch.reset();G.Input.reset();objectives=[];boss=null;
+     if(v2()){
+-      mapTime=sector===1&&G.MapTrial.quick?(G.MapTrial.startTime??270):0;
++      mapTime=G.RiftExpedition?.practice&&sector===2?60:sector===1&&G.MapTrial.quick?(G.MapTrial.startTime??270):0;
+       doorOpen=false;bossSpawned=false;bossDefeated=false;spawnClosed=false;spawnClock=0;sectorWaves=0;
+       G.MapTrial.reset?.(geometry);
+       if(G.MapTrial.expanded)G.WeaponTerminal?.reset(geometry,{sector,seed:mapSeed,player:pl});
+@@ -61,13 +61,15 @@
+         }
+       }
+     }
++    if(v2())G.RiftExpedition?.startMap(geometry,sector,mapSeed,pl);
+     if(extractionAvailable)G.Spawner.say('Este sector tiene extracción · disponible al despejarlo',5,true);
+   }
+   function start(player,options={}){
+     pl=player;pl.fieldMode=true;pl.r=12;pl.soldierId=options.soldierId||pl.soldierId||'guard';pl.tempStats={};
+-    sector=1;wave=1;elapsed=0;result=null;pending=0;cards=[];interaction=0;drought=0;upgradesApplied=0;pendingXp=0;resumePhase='combat';
++    sector=G.RiftExpedition?.practice?2:1;wave=1;elapsed=0;result=null;pending=0;cards=[];interaction=0;drought=0;upgradesApplied=0;pendingXp=0;resumePhase='combat';
+     totals={wavesCompleted:0,sectorsCompleted:0,bossesDefeated:0,bossesEvaded:0};
+     runSeed=Number.isFinite(options.seed)?options.seed>>>0:(Math.random()*0xffffffff)>>>0;
++    G.RiftExpedition?.startRun(runSeed);
+     rng=random(runSeed);nextBossSector=4+Math.floor(rng()*3);
+     G.DimensionalRifts?.reset();
+     if(v2()){G.ExplorationChests?.startRun();G.EventRewards?.startRun();}
+@@ -149,6 +151,7 @@
+     if(!p)return;const sc=scale(1);const e=G.EnemyMgr.add(new G.Enemy(G.Content.pursuer,p.x,p.y,{...sc,hp:sc.hp*8}));e.practiceTarget=true;
+   }
+   function awaitTerminal(){
++    if(G.RiftExpedition?.state.active)return false;
+     if(!G.MapTrial?.expanded||!pl||pl.dead||!(pl.hp>0)||!['combat','boss'].includes(phase)||pending||G.ArmamentRewards?.state.pending)return false;
+     terminalResume=phase;phase='terminal';G.Touch.reset();G.Input.reset();return true;
+   }
+@@ -156,6 +159,7 @@
+     if(phase!=='terminal')return false;phase=terminalResume;G.Touch.reset();G.Input.reset();processXp();return true;
+   }
+   function awaitArmament(){
++    if(G.RiftExpedition?.state.active)return false;
+     if(!G.MapTrial?.infinite||!['combat','boss'].includes(phase))return false;
+     armamentResume=phase;phase='armament';G.Touch.reset();G.Input.reset();return true;
+   }
+@@ -167,6 +171,7 @@
+     riftBossDefeated=true;G.DimensionalRifts?.complete('defeated');offerTrialReward('rift',riftBoss);
+   }
+   function trialCross(){
++    if(G.RiftExpedition?.state.active)return false;
+     if(!doorOpen||!bossDefeated||!['combat','boss'].includes(phase)||G.U.dist(pl.x,pl.y,exit.x,exit.y)>24+pl.r)return false;
+     if(G.MapTrial.infinite){
+       gather();processXp();if(pending||pendingXp>0||phase==='levelup')return false;
+@@ -285,7 +290,7 @@
+     if(phase==='finished'||phase==='idle')return;
+     phase='finished';cards=[];pending=0;pendingXp=0;G.Input.reset();G.Touch.reset();G.Projectiles.clear();
+     result={reason,sector,wave,kills:pl.kills,level:pl.level,elapsed,hp:pl.hp,runSeed,...totals};
+-    G.DimensionalRifts?.clear();
++    G.DimensionalRifts?.clear();G.RiftExpedition?.clear();
+     G.FieldCombat.clearTemporary(pl);G.FieldAbilities.reset(pl);
+     G.RunContinuity?.finish(result);
+   }
+@@ -316,7 +321,7 @@
+     if(!spawnClosed&&mapTime>=(G.MapTrial.duration??300)){
+       spawnClosed=true;spawnClock=0;doorOpen=true;G.MapTrial.arrive?.();
+     }
+-    G.InfiniteProgression?.tick(dt,pl);
++    G.InfiniteProgression?.tick(dt,pl);G.RiftPowers?.tick(dt,pl);
+     G.FieldAbilities.tick(dt,pl,G.MapTrial.infinite?{cooldownStep:recoveryStep}:{});G.FieldCombat.tick(dt,pl,true);
+     const regen=pl.regenFlat,regenBuff=pl.buffs?.regen?.n;
+     if(G.MapTrial.infinite&&spawnClosed){const fraction=dt>0?recoveryStep/dt:0;pl.regenFlat=regen*fraction;if(pl.buffs?.regen)pl.buffs.regen.n=regenBuff*fraction;}
+@@ -332,13 +337,14 @@
+     if(pl.dead||pl.hp<=0){finish('death');return;}
+     trialVictory();trialRiftVictory();eliteVictory();promptUpgrade();if(phase==='levelup')return;
+     G.ExplorationChests?.tick(dt,mapTime,pl);
+-    if(!spawnClosed)recover();trialCross();
++    if(!spawnClosed)recover();
++    if(!trialCross())G.RiftExpedition?.updateOrigin(dt,mapTime,pl);
+   }
+   function update(dt){
+     if(G.RunContinuity?.canAdvance()===false)return;
+     if(!pl||phase==='idle'||phase==='finished')return;
+     if(pl.dead||pl.hp<=0){finish('death');return;}
+-    if(v2()){updateMapTrial(dt);return;}
++    if(v2()){if(G.RiftExpedition?.state.active){if(phase!=='levelup')G.RiftExpedition.updateRoom(dt,pl);return;}updateMapTrial(dt);return;}
+     if(phase==='levelup')return;
+     promptUpgrade();if(phase==='levelup')return;
+     G.DimensionalRifts?.tick(dt);
+@@ -371,6 +377,8 @@
+     }
+   }
+   function draw(ctx, {riftLayer = 'all'} = {}){
++    if(G.RiftExpedition?.state.active){G.RiftExpedition.drawGround(ctx);return;}
++    G.RiftExpedition?.drawGround(ctx);
+     if(v2()){G.ExplorationChests?.draw(ctx);if(G.MapTrial.expanded)G.WeaponTerminal?.draw(ctx);if(G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.draw(ctx,riftLayer);G.MapTrial.draw?.(ctx,snapshot());return;}
+     G.DimensionalRifts?.draw(ctx,riftLayer);
+     if(!['exploration','extracting','boss','escaping'].includes(phase))return;
+--- a/js/systems/field-upgrades.js
++++ b/js/systems/field-upgrades.js
+@@ -58,7 +58,7 @@
+           G.FieldStats.apply(p);
+         } });
+     }
+-    return out;
++    return out.concat(G.MapTrial?.infinite?(G.RiftPowers?.levelCards(pl)||[]):[]);
+   }
+   function offer(pl, n = 3) {
+     if(G.WeaponRevisionTrial?.active())return revisionOffer(pl,n);
+@@ -88,7 +88,7 @@
+         desc:generalEffects[key]+' · Bonos generales se aplican una vez.',
+         apply(p){const current=statsFor(p);if(current[key]!==rank)return false;current[key]++;G.FieldStats.apply(p);return true;}});
+     }
+-    return out;
++    return out.concat(G.MapTrial?.infinite?(G.RiftPowers?.levelCards(pl)||[]):[]);
+   }
+   function revisionOffer(pl,n){
+     const pool=revisionCandidates(pl),picked=[];
+@@ -124,7 +124,7 @@
+         desc:generalEffects[key]+' · Valores de ensayo; topes globales conservados.',
+         apply(p){const current=statsFor(p);if(current[key]!==rank)return false;current[key]++;G.FieldStats.apply(p);return true;}});
+     }
+-    return out;
++    return out.concat(G.MapTrial?.infinite?(G.RiftPowers?.levelCards(pl)||[]):[]);
+   }
+   function tacticalCards(){
+     return [['power','Potencia','+25% daño'],['mobility','Movilidad','+15% velocidad, tope +50%'],['protection','Protección','+15 puntos protección, tope70%']].map(([type,name,effect])=>({
+--- a/js/systems/pathing.js
++++ b/js/systems/pathing.js
+@@ -16,7 +16,7 @@
+ G.Path = (() => {
+   const R = 28, N = R * 2 + 1, EVERY = 0.35;
+   const UNSEEN = 0x7fff;
+-  const fields = new Map();          // jugador -> { ox, oy, dist: Int16Array, t }
++  let fields = new Map();          // jugador -> { ox, oy, dist: Int16Array, t }
+   // La expedición usa los límites finitos del sector; el mundo original conserva R28.
+   const D8 = [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]];
+   let timer = 0;
+@@ -133,5 +133,5 @@
+     const tx = Math.floor(x / G.World.TS) - f.ox, ty = Math.floor(y / G.World.TS) - f.oy;
+     return tx >= 0 && ty >= 0 && tx < w && ty < h && f.dist[ty * w + tx] !== UNSEEN;
+   }
+-  return { update, dirFor, reachable, clear };
++  return { suspend(){const token={fields,timer};fields=new Map();timer=0;return token;}, resume(token){({fields,timer}=token);}, update, dirFor, reachable, clear };
+ })();
+--- a/js/systems/spawner.js
++++ b/js/systems/spawner.js
+@@ -178,6 +178,6 @@
+   /** Invitado en cooperativo: sólo corre el reloj del aviso. */
+   function tickBanner(dt) { if (announceT > 0) announceT -= dt; }
+ 
+-  return { reset, update, ahead, burst, tickBanner, banner, say, rate, SHINY_RATE, CAP,
++  return { suspend(){const token={announce,announceT};announce=null;announceT=0;return token;},resume(token){({announce,announceT}=token);}, reset, update, ahead, burst, tickBanner, banner, say, rate, SHINY_RATE, CAP,
+            debugForceShiny(n = 1) { G.Guard.flag('debug'); forceShiny = n; } };
+ })();
+--- a/js/systems/weapon-terminal.js
++++ b/js/systems/weapon-terminal.js
+@@ -22,6 +22,7 @@
+  }
+  function tick(dt,p){if(p===owner)near=enabled()&&inRange();}
+  function open(){
++  if(G.RiftExpedition?.state.active)return false;
+   if(!enabled()||opened||G.Game?.state!=='playing'||!inRange()||!['combat','boss'].includes(G.Expedition.state.phase)||
+    G.Expedition.state.pending||G.ArmamentRewards?.state.pending||!owner.fieldWeapons?.length)return false;
+   slots=owner.fieldWeapons.map(w=>({id:w.id,model:w.model}));
+--- a/js/ui/expanded-ui.js
++++ b/js/ui/expanded-ui.js
+@@ -16,7 +16,7 @@
+   const descriptions={terminal:'PRÁCTICA TERMINAL · Empiezas con dos armas; la primera tiene Potencia2. Busca T en el radar, acércate y abre el terminal. La partida se detiene al elegir.',maximos:'PRÁCTICA MÁXIMOS · Dos armas: la primera tiene sus cuatro ramas y extras completos; la segunda empieza sin ramas. Comprueba las cartas y el reemplazo.',saturacion:'PRÁCTICA SATURACIÓN · Dos armas y mejoras generales máximas; una esfera de XP preparada abre la elección de apoyo táctico. El apoyo dura15s activos y se sustituye.',melee:'PRÁCTICA MELEE · Empiezas con porra y un objetivo vivo cercano. Golpea automáticamente a corta distancia; sin cargador ni recarga.'};
+   el('expanded-test-note').textContent=r1?G.WeaponRevisionTrial.message:(descriptions[mode]||'T1B + T1C · Una arma inicial, dos simultáneas, terminal voluntario, radar y ramas visibles. Prueba cuatro modelos, incluida una porra de ensayo. Sin cuentas ni guardado; valores y arte provisionales.');
+   G.TrialVisuals.initUI();
+-  el('infinite-test-note').textContent=r1?'AF01: nivel 1–5 y MAX por copia. Toca una tarjeta para consultar el nivel. CC04, TE01 y fusión siguen pendientes.':'Cuatro ramas por copia, cinco rangos y un extra. Toca una tarjeta de arma para pausar y consultar tu equipo. Poderes y ultimate siguen pendientes.';
++  el('infinite-test-note').textContent=r1?'AF01: nivel 1–5 y MAX por copia. Toca una tarjeta para consultar el nivel. CC04, TE01 y fusión siguen pendientes.':'Cuatro ramas por copia, cinco rangos y un extra. Toca una tarjeta de arma para pausar y consultar tu equipo. Poderes de grieta en ensayo; ultimate pendiente.';
+   el('technical-intro').textContent=r1?'Prueba AF01 r1 parcial · progresión y combate de pistola.':'T1B + T1C · Combate, reemplazo de armas y orientación.';
+   el('btn-technical-start').textContent=r1?'Iniciar prueba AF01 r1':mode?'Iniciar práctica · '+({terminal:'terminal',maximos:'ramas máximas',saturacion:'saturación',melee:'cuerpo a cuerpo'})[mode]:'Iniciar T1B + T1C';
+   el('btn-terminal').onclick=()=>{if(G.WeaponTerminal.open())tick(G.Game.player,G.Expedition.state,G.FieldCombat.state);};
+@@ -39,7 +39,8 @@
+    host.append(title,branches,stats);
+   }
+   const general=document.createElement('p');general.textContent='Generales: '+G.FieldStats.temporaryKeys.map(k=>`${k} ${player.tempStats[k]===6?'5+extra':player.tempStats[k]||0}`).join(' · ');host.append(general);
+-  const future=document.createElement('p');future.textContent=revision()?'Prueba parcial AF01 · fusión pendiente; no habilita CC04 ni TE01.':'Distribución futura: hasta3 poderes automáticos y1 ultimate manual. Todavía no habilitados.';host.append(future);
++  const powers=document.createElement('p');powers.textContent='Poderes '+(G.RiftPowers?.state.owned.length||0)+'/3: '+((G.RiftPowers?.state.owned||[]).map(p=>p.name+' '+(p.rank===6?'MAX':p.rank+'/5')).join(' · ')||'ninguno');host.append(powers);
++  const future=document.createElement('p');future.textContent=revision()?'Prueba parcial AF01 · fusión pendiente; no habilita CC04 ni TE01.':'Poderes temporales automáticos de ensayo. Ultimate manual pendiente.';host.append(future);
+  }
+  function openBuild(){
+   if(!enabled()||G.Game.state!=='playing'||!['combat','boss'].includes(G.Expedition.state.phase))return;
+--- a/js/ui/field-radar.js
++++ b/js/ui/field-radar.js
+@@ -14,6 +14,13 @@
+   for(const e of enemies.filter(e=>!e.boss&&!e.elite&&Math.hypot(e.x-player.x,e.y-player.y)<=RANGE)
+    .sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y)).slice(0,8))add('enemy',e,Math.hypot(e.x-player.x,e.y-player.y)<=100?0:5);
+   const boss=enemies.find(e=>e.boss&&!e.dimensional);if(boss)add('boss',boss,2);
++  const dimension=G.RiftExpedition?.state;
++  if(dimension?.active){
++   const anomaly=enemies.find(e=>e.dimensional);if(anomaly)add('boss',anomaly,2);
++   if(dimension.status==='victory'||['warning','open'].includes(dimension.escape))add('rift',dimension.exit,1);
++   return list.sort((a,b)=>a.priority-b.priority||a.distance-b.distance).slice(0,16);
++  }
++  const current=dimension?.portal;if(current?.status==='open')add('rift',current,current.remaining<=10?1:3);
+   const elite=state?.v2?.elite;if(elite&&!elite.dead&&elite.hp>0)add('elite',elite,2);
+   if(state?.v2?.doorOpen)add('door',state.exit,3);
+   const terminal=G.WeaponTerminal?.state;if(terminal?.available)add('terminal',terminal.point,3);
+--- a/js/ui/operations-menu.js
++++ b/js/ui/operations-menu.js
+@@ -131,7 +131,7 @@
+       <div class="operations-subhead"><button type="button" class="operations-back" data-open-screen="home" aria-label="Volver al menú">‹</button><div><h2 id="operations-practices-title">Prácticas</h2><p>Abre una prueba local sin cuentas ni progreso guardado.</p></div></div>
+       <div class="operations-practice-grid">
+         <a class="operations-practice-card" data-practice="boss"><span class="operations-icon" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="4"><circle cx="24" cy="24" r="15"/><path d="M24 1v14M24 33v14M1 24h14M33 24h14"/></g></svg></span><strong>Jefe rápido</strong><small>Entrena el combate final del mapa.</small><span class="operations-practice-go">Iniciar práctica →</span></a>
+-        <a class="operations-practice-card" data-practice="rift"><span class="operations-icon" aria-hidden="true">◇</span><strong>Grieta dimensional</strong><small>Explora una grieta de práctica.</small><span class="operations-practice-go">Iniciar práctica →</span></a>
++        <a class="operations-practice-card" data-practice="rift"><span class="operations-icon" aria-hidden="true">◇</span><strong>Grieta dimensional</strong><small>Sala biológica separada · poder y regreso. Apertura garantizada solo en esta práctica.</small><span class="operations-practice-go">Iniciar práctica →</span></a>
+       </div>
+       <div class="operations-footer-actions"><button type="button" data-open-screen="home">Volver</button></div>
+     </section>
+@@ -245,7 +245,7 @@
+     const boss = root.querySelector('[data-practice="boss"]');
+     const rift = root.querySelector('[data-practice="rift"]');
+     boss.href = `?prueba=combate-v2&rapida=1&graficos=${mode}`;
+-    rift.href = `?prueba=mapa-v2&premios=grieta&graficos=${mode}`;
++    rift.href = `?prueba=combate-v2&ensayo=grietas&graficos=${mode}`;
+   }
+ 
+   function init() {
+@@ -272,7 +272,7 @@
+       if (node && !root.contains(node)) brand.append(node);
+     }
+     const startSlot = root.querySelector('.operations-start-slot');
+-    startButton.textContent = G.MapTrial.quick ? 'Iniciar práctica rápida' : G.MapTrial.rewardRiftPractice ? 'Iniciar prueba de grieta' : G.MapTrial.chestPractice ? 'Iniciar prueba de cofres' : 'Iniciar expedición';
++    startButton.textContent = G.RiftExpedition?.practice ? 'Iniciar práctica de grietas' : G.MapTrial.quick ? 'Iniciar práctica rápida' : G.MapTrial.rewardRiftPractice ? 'Iniciar prueba de grieta' : G.MapTrial.chestPractice ? 'Iniciar prueba de cofres' : 'Iniciar expedición';
+     startButton.classList.add('operations-expedition-start');
+     startSlot.append(startButton);
+ 
+--- a/js/ui/rift-visuals.js
++++ b/js/ui/rift-visuals.js
+@@ -233,7 +233,7 @@
+   }
+ 
+   function drawLabel(ctx, state) {
+-    const text = state.status === OPEN ? `GRIETA · ${Math.ceil(Math.max(0, Number(state.remaining) || 0))} s` : 'GRIETA ACTIVADA';
++    const text = state.label || (state.status === OPEN ? `GRIETA · ${Math.ceil(Math.max(0, Number(state.remaining) || 0))} s` : 'GRIETA ACTIVADA');
+     ctx.font = 'bold 12px monospace';
+     ctx.textAlign = 'center';
+     ctx.textBaseline = 'bottom';
+--- a/js/ui/technical-ui.js
++++ b/js/ui/technical-ui.js
+@@ -177,7 +177,7 @@
+       if(value==='ui')G.Audio?.music('village');
+       else if(value==='playing'&&G.Audio?.track==='village')G.Audio.music(null);
+     }
+-    document.body.dataset.technicalState = value;
++    document.body.dataset.technicalState = value;G.RiftUI?.hide();
+     if(el('art-resource-status'))el('art-resource-status').hidden=true;
+     G.ExpandedUI.state(value);
+     el('technical-ready').hidden = value !== 'ui';
+@@ -309,7 +309,7 @@
+         armamentHost.append(button);
+       }
+     } else if(!showArmament) armamentHost.dataset.reward='';
+-    G.ExpandedUI.tick(player,s,w);
++    G.ExpandedUI.tick(player,s,w);G.RiftUI?.tick(player,s);
+     el('field-result').hidden = s.phase !== 'finished';
+     if (s.phase === 'finished') {
+       const r = s.result;
+--- a/js/world/world.js
++++ b/js/world/world.js
+@@ -40,13 +40,13 @@
+   // lookups use this normalized set instead of scanning the array each time.
+   let fixtureWallSet = null;
+   let arena = null;                        // { tx, ty, r } en tiles
+-  const data = new Map();                  // "cx,cy" -> datos del chunk
++  let data = new Map();                  // "cx,cy" -> datos del chunk
+   let images = new Map();                  // "cx,cy" -> canvas horneado
+   // Cambio de bioma: durante FADE segundos se funde la paleta vieja con la nueva.
+   const FADE = 2.6;
+   let fade = null;                         // { from, images, t }
+   const MAX_IMAGES = 48, MAX_DATA = 400;
+-  const broken = new Set();                // props destruidos: "tx,ty"
++  let broken = new Set();                // props destruidos: "tx,ty"
+   let nextPropId = 1;
+ 
+   // ---------------- ruido ----------------
+@@ -625,6 +625,8 @@
+   }
+ 
+   return {
++    suspend(){const token={seed,biome,fixture,fixtureWallSet,arena,data,images,fade,broken,nextPropId};data=new Map();images=new Map();broken=new Set();fixture=null;fixtureWallSet=null;arena=null;fade=null;return token;},
++    resume(token){({seed,biome,fixture,fixtureWallSet,arena,data,images,fade,broken,nextPropId}=token);},
+     TS, CW, reset, setBiome, biomeName, liquidKind, liquidEffect, walkable,exportData,restoreData,
+     invalidateGround(){images.clear();},
+     setFixture(map) {

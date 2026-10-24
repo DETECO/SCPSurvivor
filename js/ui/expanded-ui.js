@@ -16,7 +16,7 @@ G.ExpandedUI=(()=>{
   const descriptions={terminal:'PRÁCTICA TERMINAL · Empiezas con dos armas; la primera tiene Potencia2. Busca T en el radar, acércate y abre el terminal. La partida se detiene al elegir.',maximos:'PRÁCTICA MÁXIMOS · Dos armas: la primera tiene sus cuatro ramas y extras completos; la segunda empieza sin ramas. Comprueba las cartas y el reemplazo.',saturacion:'PRÁCTICA SATURACIÓN · Dos armas y mejoras generales máximas; una esfera de XP preparada abre la elección de apoyo táctico. El apoyo dura15s activos y se sustituye.',melee:'PRÁCTICA MELEE · Empiezas con porra y un objetivo vivo cercano. Golpea automáticamente a corta distancia; sin cargador ni recarga.'};
   el('expanded-test-note').textContent=r1?G.WeaponRevisionTrial.message:(descriptions[mode]||'T1B + T1C · Una arma inicial, dos simultáneas, terminal voluntario, radar y ramas visibles. Prueba cuatro modelos, incluida una porra de ensayo. Sin cuentas ni guardado; valores y arte provisionales.');
   G.TrialVisuals.initUI();
-  el('infinite-test-note').textContent=r1?'AF01: nivel 1–5 y MAX por copia. Toca una tarjeta para consultar el nivel. CC04, TE01 y fusión siguen pendientes.':'Cuatro ramas por copia, cinco rangos y un extra. Toca una tarjeta de arma para pausar y consultar tu equipo. Poderes y ultimate siguen pendientes.';
+  el('infinite-test-note').textContent=r1?'AF01: nivel 1–5 y MAX por copia. Toca una tarjeta para consultar el nivel. CC04, TE01 y fusión siguen pendientes.':'Cuatro ramas por copia, cinco rangos y un extra. Toca una tarjeta de arma para pausar y consultar tu equipo. Poderes de grieta en ensayo; ultimate pendiente.';
   el('technical-intro').textContent=r1?'Prueba AF01 r1 parcial · progresión y combate de pistola.':'T1B + T1C · Combate, reemplazo de armas y orientación.';
   el('btn-technical-start').textContent=r1?'Iniciar prueba AF01 r1':mode?'Iniciar práctica · '+({terminal:'terminal',maximos:'ramas máximas',saturacion:'saturación',melee:'cuerpo a cuerpo'})[mode]:'Iniciar T1B + T1C';
   el('btn-terminal').onclick=()=>{if(G.WeaponTerminal.open())tick(G.Game.player,G.Expedition.state,G.FieldCombat.state);};
@@ -39,7 +39,8 @@ G.ExpandedUI=(()=>{
    host.append(title,branches,stats);
   }
   const general=document.createElement('p');general.textContent='Generales: '+G.FieldStats.temporaryKeys.map(k=>`${k} ${player.tempStats[k]===6?'5+extra':player.tempStats[k]||0}`).join(' · ');host.append(general);
-  const future=document.createElement('p');future.textContent=revision()?'Prueba parcial AF01 · fusión pendiente; no habilita CC04 ni TE01.':'Distribución futura: hasta3 poderes automáticos y1 ultimate manual. Todavía no habilitados.';host.append(future);
+  const powers=document.createElement('p');powers.textContent='Poderes '+(G.RiftPowers?.state.owned.length||0)+'/3: '+((G.RiftPowers?.state.owned||[]).map(p=>p.name+' '+(p.rank===6?'MAX':p.rank+'/5')).join(' · ')||'ninguno');host.append(powers);
+  const future=document.createElement('p');future.textContent=revision()?'Prueba parcial AF01 · fusión pendiente; no habilita CC04 ni TE01.':'Poderes temporales automáticos de ensayo. Ultimate manual pendiente.';host.append(future);
  }
  function openBuild(){
   if(!enabled()||G.Game.state!=='playing'||!['combat','boss'].includes(G.Expedition.state.phase))return;

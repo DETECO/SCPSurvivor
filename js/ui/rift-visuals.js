@@ -233,7 +233,7 @@
   }
 
   function drawLabel(ctx, state) {
-    const text = state.status === OPEN ? `GRIETA · ${Math.ceil(Math.max(0, Number(state.remaining) || 0))} s` : 'GRIETA ACTIVADA';
+    const text = state.label || (state.status === OPEN ? `GRIETA · ${Math.ceil(Math.max(0, Number(state.remaining) || 0))} s` : 'GRIETA ACTIVADA');
     ctx.font = 'bold 12px monospace';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';

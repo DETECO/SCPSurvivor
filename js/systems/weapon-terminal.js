@@ -22,6 +22,7 @@ G.WeaponTerminal=(()=>{
  }
  function tick(dt,p){if(p===owner)near=enabled()&&inRange();}
  function open(){
+  if(G.RiftExpedition?.state.active)return false;
   if(!enabled()||opened||G.Game?.state!=='playing'||!inRange()||!['combat','boss'].includes(G.Expedition.state.phase)||
    G.Expedition.state.pending||G.ArmamentRewards?.state.pending||!owner.fieldWeapons?.length)return false;
   slots=owner.fieldWeapons.map(w=>({id:w.id,model:w.model}));

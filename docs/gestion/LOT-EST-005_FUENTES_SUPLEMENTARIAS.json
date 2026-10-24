@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-24",
+  "originalCut": "REV-EST-0007",
+  "supplement": "EST-GRI-002 r1",
+  "deliveries": [
+    {
+      "path": "docs/gestion/entregas/PERSONAJES-GRIETAS-001.md",
+      "sha256": "453c5e95498b2ec8ad88cdcf824221e6e5434db53ce4de0b1e5f41de335af297",
+      "treatment": "Read; contracts/provenance incorporated, no change to approved probabilities."
+    },
+    {
+      "path": "docs/gestion/entregas/PERSONAJES-GRIETAS-001-verificacion.json",
+      "sha256": "42b0ba30f055527459755ff4b92dd1b95a0fc475481f17705535315a79b23ed1",
+      "treatment": "Read; contracts/provenance incorporated, no change to approved probabilities."
+    },
+    {
+      "path": "docs/gestion/entregas/SONIDO-GRIETAS-001.md",
+      "sha256": "3dcfac062f40ed250a4c3a1ac188d9ee7b94f3d5e01a0afe91f59a8724488022",
+      "treatment": "Read; contracts/provenance incorporated, no change to approved probabilities."
+    },
+    {
+      "path": "docs/PAUTA_ARMAS.md",
+      "sha256": "55078797daf88ac78f05a05154e00578d18dc584427e64841a6b046c71a6144e",
+      "treatment": "Read; yellow support rig and approved BIO only. New ARMAS R2.2 proposals are not integrated/published in this payload."
+    }
+  ]
+}

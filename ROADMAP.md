@@ -1,6 +1,6 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-24).** REV-EST-0006 / CONTROL_CAMBIOS0.6: M01 240×160 y cámara vertical 512, audio SON-001 y ensayo AF01 1–5–MAX con arte16/32 publicados y probados en GitHub Pages. Director de grietas probado aislado, sin nuevos encuentros. Visor/dominio de fusión disponibles; Katana, láser y F24 jugables pendientes de poses/sala. Publicación verificada: AF01 6/6, inicio/pausa2/2, 99 hashes y visor164/164. Sin aceptación humana de esta composición ni servicios reales; [recibo](docs/gestion/REV-EST-0006_PUBLICACION.json). INC-VIS-001 r1: pistola aprobada también en entrada habitual, escala de regulares separada de física, daño compacto en V2 antiguo y HUD resumido. Recurso Subfusil pendiente; corrección publicada y verificada:16 escenarios visuales,2 de inicio/pausa y39 hashes; recibo INC-VIS-001.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-24).** LOT-EST-005 r1 / REV-EST-0007 / CONTROL0.8 + EST-GRI-002 r1: cinco BIO16/32 en recintos separados, director desde mapa2, origen congelado, retirada única, poderes automáticos y NPC/burbujas integrados para ensayo. Parámetros ENSAYO-GRI-001r1; aceptación humana, balance, arte/sonidos definitivos pendientes. Ver guía y recibos de PROGRAMACION; servicios reales desactivados.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
@@ -15,9 +15,9 @@
 | Armas | Una inicial; segunda garantizada por primer jefe si falta o adelantada por élite. Máximo dos simultáneas, modelos iguales independientes; reemplazo solo en terminales. Familias balística/energía/melee/explosivos/arrojadizas. |
 | Cartas y niveles | EST-ARM-001 r1: por copia 1→2→3→4→5→MAX sustituye ramas de arma; generales/poderes conservan5+extra. AF01 conectado; saturación reutiliza apoyo táctico existente. Las otras armas no se dan por implementadas. |
 | Fusión | EST-ARM-001 r1 aprobado: una por expedición, CC04 MAX + TE01 MAX → F24 FINAL, desde estación de mapa2. Dominio/visor probados; gate cerrado hasta validar poses, sala, interfaz y combate. F24 no es inicial. |
-| Poderes anómalos | Jefes de grieta: primer poder garantizado, después azar/garantía tras tres victorias sin poder; hasta tres y reemplazo pausado al cuarto. Intervalos automáticos,5+extra propio. |
+| Poderes anómalos | Cinco perfiles de ensayo automáticos, máximo3,5+extra, reemplazo pausado; primer poder garantizado y garantía tras3victorias vacías, azar intermedio25%ENSAYO. Daño real y duplicados/MAX probados; balance final pendiente. |
 | Ultimate | Una manual y pasiva del soldado, sin botón adicional de habilidad anterior; lista al inicio, cooldown largo propio conservado entre mapas, cinco niveles permanentes. Gacha y fragmentos/materiales sin costes fijados. |
-| Grietas y saltos | Nuevo diseño: recinto separado/origen congelado,45s para entrar instantáneamente; única retirada5s entre1–3min y retorno por victoria. Detalles de instante/aviso/posición y saltos abiertos. B3 actual sigue en el mismo mapa. |
+| Grietas y saltos | Grietas integradas para ensayo: cinco BIO en recintos propios,45s entrada por contacto, origen congelado, retirada90–95s y retorno por victoria. Director50/50 desde mapa2/minutos1–4/cap2; tiers50/32/8/7/3. Saltos de mapas y arte final pendientes. |
 | Cofres y procedural | Conservar sorteos60/120/180/240s y cuotas, seis candidatos; bono10min e hitos de primer jefe/mapas2/3. Ampliar mapas procedurales por semilla con rutas de jefe/puerta/terminales/fusión verificadas. |
 | Base y colección | Diez compras independientes por soldado con monedas recogidas. Tres gachas: personajes/armas/ultimates, tickets universales gris1/dorado5. Skins cosméticas por dominio/contratos/eventos; no cuarto gacha. |
 | Interfaz y visual | Radar pequeño fijo, símbolos/prioridad de urgencia; no revelar cofres sin descubrir. Preparar arte/HUD en paralelo a T1; mantener diseños aprobados y crédito. |
@@ -58,7 +58,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-Versión **0.35**, 2026-10-24. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+Versión **0.36**, 2026-10-24. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
 
 ## Avance basado en evidencia
 
