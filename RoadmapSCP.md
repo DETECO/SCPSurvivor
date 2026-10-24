@@ -1,6 +1,6 @@
 # Roadmap SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-24).** REV-EST-0006 / CONTROL_CAMBIOS0.6: M01 240×160 y cámara vertical 512, audio SON-001 y ensayo AF01 1–5–MAX con arte16/32 publicados y probados en GitHub Pages. Director de grietas probado aislado, sin nuevos encuentros. Visor/dominio de fusión disponibles; Katana, láser y F24 jugables pendientes de poses/sala. Publicación verificada: AF01 6/6, inicio/pausa2/2, 99 hashes y visor164/164. Sin aceptación humana de esta composición ni servicios reales; [recibo](docs/gestion/REV-EST-0006_PUBLICACION.json).
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-24).** REV-EST-0006 / CONTROL_CAMBIOS0.6: M01 240×160 y cámara vertical 512, audio SON-001 y ensayo AF01 1–5–MAX con arte16/32 publicados y probados en GitHub Pages. Director de grietas probado aislado, sin nuevos encuentros. Visor/dominio de fusión disponibles; Katana, láser y F24 jugables pendientes de poses/sala. Publicación verificada: AF01 6/6, inicio/pausa2/2, 99 hashes y visor164/164. Sin aceptación humana de esta composición ni servicios reales; [recibo](docs/gestion/REV-EST-0006_PUBLICACION.json). INC-VIS-001 r1: pistola aprobada también en entrada habitual, escala de regulares separada de física, daño compacto en V2 antiguo y HUD resumido. Recurso Subfusil pendiente; publicación se registra en su recibo.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
@@ -58,7 +58,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-**Versión 0.34 — 2026-10-24 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
+**Versión 0.35 — 2026-10-24 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
 
 ## 1. Estado vigente
 
@@ -916,6 +916,7 @@ Los registros anteriores permanecen intactos. V0.11 y su documentación están e
 | CHG-039 | 2026-10-22 | Roadmap0.32: integración del hilo PERSONAJES y modos16/32; mantiene53tareas históricas. | A-042 |
 | CHG-040 | 2026-10-23 | Roadmap0.33: R7 y presentación aprobada integrados; decisiones ESTRUCTURA sincronizadas,53tareas históricas intactas. | A-044 |
 | CHG-041 | 2026-10-24 | Roadmap0.34 registra REV-EST-0006: mapa/audio/director aislado y AF01, pendientes materiales de fusión,298 pruebas con292 aprobadas/5 fallos de entorno P05/1 omitida. Conserva53 tareas, pesos y52/100 históricos; V2 sin porcentaje. Publicado y verificado en Pages: AF01 6/6, inicio/pausa2/2, 99 hashes y visor164/164; recibo público con SHA del código. | Petición directa de Iván: Subelo a github; decisiones REV-EST-0006 ya aprobadas. |
+| CHG-042 | 2026-10-24 | INC-VIS-001 r1 corrige ruta de arte AF01, proporciones de dibujo nativas, formato numérico de B3 y HUD móvil. Sin cambios de combate, cámara/mapa o originales. Subfusil sin recurso aprobado: corrección parcial. Mantiene tareas/pesos/52 de la línea histórica. | Corrección explícita autorizada por Iván y derivada por ESTRUCTURA; publicación de la misma demo previamente autorizada. |
 
 ## 13. Continuar en Windows/Codex Local
 

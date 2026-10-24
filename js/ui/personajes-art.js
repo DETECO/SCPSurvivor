@@ -49,7 +49,7 @@ G.PersonajesArt=(()=>{
   const n=a.n,wa=angle+(w.model==='baton'&&w.flash>0?-.7+(1-Math.min(1,w.flash/.12))*1.4:0),ca=Math.cos(wa),sa=Math.sin(wa),side=count===2?(index===0?1:-1):0;
   const pivot={x:p.origin.x+ca*n*.18-sa*side*n*.09,y:p.origin.y+sa*n*.18+ca*side*n*.09};
   const hand=(x,y)=>({x:pivot.x+ca*x-sa*y,y:pivot.y+sa*x+ca*y}),hands=[hand(0,n*.07),hand((w.model==='shotgun'?13:w.model==='smg'?7:1)*n/32,n*.08)];
-  const approved=w.model==='pistol'&&G.WeaponRevisionTrial?.active()?G.AF01ApprovedArt?.mount(String(n),angle,hands[0]):null;
+  const approved=w.model==='pistol'?G.AF01ApprovedArt?.mount(String(n),angle,hands[0]):null;
   if(approved)hands[1]=approved.support;
   const nx=-Math.sin(p.aim),ny=Math.cos(p.aim),shoulders=[{x:n/2+nx*n*.18,y:p.shoulderY+ny*n*.08},{x:n/2-nx*n*.18,y:p.shoulderY-ny*n*.08}];
   const limbs=count===2?[index]:[1,0];for(const i of limbs)limb(ctx,a,img,shoulders[i],hands[count===2?0:i],i?-1:1,wa);
@@ -73,5 +73,15 @@ G.PersonajesArt=(()=>{
   const actor={aim:ally.aim,walking:ally.anim.cur==='Walk',moveAngle:Math.atan2(ally.ty-ally.y,ally.tx-ally.x)},p=pose(a,actor,ally.anim),w={model:'pistol',flash:ally.flash};
   at(ctx,a,ally.anim,ally.x,ally.y,{},img=>{if(Math.sin(p.aim)<0)armed(ctx,a,p,img,w,p.aim,0,1);body(ctx,a,p,img);if(Math.sin(p.aim)>=0)armed(ctx,a,p,img,w,p.aim,0,1);});return true;
  }
- return{preload,draw,drawWeapons,drawAlly};
+ function status(){
+  const player=G.Game?.player,copies=player?.fieldWeapons||[],names={smg:'Subfusil',shotgun:'Escopeta',baton:'Porra'};
+  const missingModels=enabled()?[...new Set(copies.map(w=>w.model).filter(id=>names[id]))]:[];
+  const approvedPistolReady=G.AF01ApprovedArt?.inspect().loaded===16;
+  const messages=[];
+  if(missingModels.length)messages.push('Arte provisional: '+missingModels.map(id=>names[id]).join(', ')+'.');
+  if(enabled()&&copies.some(w=>w.model==='pistol')&&!approvedPistolReady)messages.push('Recurso AF01 no disponible; dibujo provisional.');
+  if(enabled()&&player&&!asset(G.SPRITE_META[player.anim?.dex]?.characterId)?.ready)messages.push('Piezas del personaje no disponibles; dibujo de respaldo.');
+  return{message:messages.join(' '),missingModels,approvedPistolReady};
+ }
+ return{preload,draw,drawWeapons,drawAlly,status};
 })();

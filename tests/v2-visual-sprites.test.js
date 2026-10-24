@@ -75,3 +75,30 @@ test('Neutralized PNG aliases Faint and fails back to original Idle SVG',()=>{
  const a=new G.Sprites.Animator('guard01');a.cur='Faint';a.frame=1;a.dir=4;G.Sprites.sheet('guard01','Faint');assert.ok(images[0].src.endsWith('/Neutralized.png'));
  images[0].onerror();assert.ok(images[0].src.endsWith('/Idle.svg'));images[0].onload();a.draw(ctx,100,200);assert.deepEqual(calls[0].slice(1,5),[0,112,24,28]);
 });
+
+function nativeSetup(mode){
+ const s=setup(1),G=s.G;
+ G.MapTrial={expanded:true};s.context.window={location:{search:'?graficos='+mode}};
+ G.CharacterCatalog=JSON.parse(fs.readFileSync(require.resolve('../assets/personajes-20261022/catalogo.json'),'utf8'));
+ G.FieldCatalog={soldiers:{guard:{name:'Guardia',maxHp:100,speed:165},medic:{name:'Medico',maxHp:100,speed:165}}};G.Tiles={BIOMES:{1:{}}};
+ vm.runInContext(fs.readFileSync(require.resolve('../js/data/content.js'),'utf8'),s.context);G.Content.install();
+ const physical=Object.fromEntries(Object.keys(G.SPRITE_META).map(id=>[id,[G.Sprites.bodyHeight(id),G.Sprites.bodyRadius(id)]]));
+ vm.runInContext(fs.readFileSync(require.resolve('../js/data/trial-visuals.js'),'utf8'),s.context);G.TrialVisuals.install();
+ return{...s,physical};
+}
+test('INC-VIS-001 native regulars use the human cell and retain distinct boss size without changing physical geometry',()=>{
+ for(const mode of ['16','32']){
+  const s=nativeSetup(mode),G=s.G;
+  for(const[id,expected]of [['pursuer01',56],['biological01',56],['warden01',128]]){
+   const a=new G.Sprites.Animator(id);const sheet=G.Sprites.sheet(id,'Idle');sheet.img.onload();s.calls.length=0;a.draw(s.ctx,100,200);
+   assert.deepEqual(s.calls[0].slice(-2),[expected,expected]);
+   assert.deepEqual([G.Sprites.bodyHeight(id),G.Sprites.bodyRadius(id)],s.physical[id]);
+   assert.equal(G.Sprites.visualBodyHeight(id),expected*(Number(mode)-1)/Number(mode));
+  }
+ }
+});
+test('INC-VIS-001 failed native atlas retains original fallback dimensions and visual labels',()=>{
+ const s=nativeSetup('32'),G=s.G,a=new G.Sprites.Animator('biological01'),sheet=G.Sprites.sheet('biological01','Idle');
+ sheet.img.onerror();sheet.img.onload();a.draw(s.ctx,100,200);
+ assert.deepEqual(s.calls[0].slice(-2),[128,128]);assert.equal(G.Sprites.visualBodyHeight('biological01'),120);
+});

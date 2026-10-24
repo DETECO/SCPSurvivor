@@ -126,6 +126,12 @@ G.Sprites = (() => {
     return (m ? m.ay : 24) * PX * scale;
   }
 
+  /** Display-only labels/effects. Keep bodyHeight/bodyRadius stable for combat. */
+  function visualBodyHeight(dex, scale = 1) {
+    const v=meta(dex)?.visual,loaded=sheets.get(dex+'/Idle');
+    return v&&!loaded?.usedFallback?v.ay*PX*scale:bodyHeight(dex,scale);
+  }
+
   /** Sombra elíptica bajo los pies, tamaño según el ShadowSize de PMD. */
   function drawShadow(ctx, dex, x, y, scale = 1) {
     const m = meta(dex);
@@ -237,21 +243,22 @@ G.Sprites = (() => {
       const alpha = opts.alpha == null ? 1 : opts.alpha;
       if (alpha <= 0) return;
       const sx = Math.min(frame, m.n - 1) * m.w, sy = row * m.h;
-      const dx = Math.round(x - m.ax * k), dy = Math.round(y - m.ay * k);
+      const visual=!s.usedFallback&&meta(this.dex)?.visual||m;
+      const dx = Math.round(x - visual.ax * k), dy = Math.round(y - visual.ay * k);
       const prev = ctx.globalAlpha;
       if (alpha < 1) ctx.globalAlpha = prev * alpha;
       // Destello: blanco entero (enemigos) o medio blanco encima (tu Pokémon).
       const sample=s.sample||1,sw=m.sourceW||m.w*sample,sh=m.sourceH||m.h*sample;
       const sourceX=Math.min(frame,m.n-1)*sw,sourceY=row*sh;
-      if (!opts.flash || opts.softFlash) ctx.drawImage(s.img, sourceX, sourceY, sw, sh, dx, dy, m.w * k, m.h * k);
+      if (!opts.flash || opts.softFlash) ctx.drawImage(s.img, sourceX, sourceY, sw, sh, dx, dy, visual.w * k, visual.h * k);
       if (opts.flash) {
         if (opts.softFlash) ctx.globalAlpha = prev * alpha * 0.55;
-        ctx.drawImage(white(s.img), sourceX, sourceY, sw, sh, dx, dy, m.w * k, m.h * k);
+        ctx.drawImage(white(s.img), sourceX, sourceY, sw, sh, dx, dy, visual.w * k, visual.h * k);
       }
       ctx.globalAlpha = prev;
     }
   }
 
-  return { PX, meta, hasShiny, hovers, white, animMeta, sheet, preload, dirFromAngle, bodyRadius, bodyHeight,
+  return { PX, meta, hasShiny, hovers, white, animMeta, sheet, preload, dirFromAngle, bodyRadius, bodyHeight,visualBodyHeight,
            drawShadow, Animator, ANIMS };
 })();

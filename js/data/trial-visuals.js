@@ -16,6 +16,10 @@ G.TrialVisuals=(()=>{
     const meta=G.SPRITE_META[dex],catalog=G.CharacterCatalog.modes[mode][id],logical=meta.a.Idle;
     meta.fallbackBase=meta.base;meta.fallbackExt=meta.ext;meta.fallbackAnimations=meta.a;
     meta.base=`assets/personajes-20261022/${mode}/${id}`;meta.ext='png';meta.sample=1;meta.characterId=id;meta.characterSize=Number(mode);
+    // Native actors share the existing 56-unit human cell; the boss retains its
+    // original 128-unit cell. This is display geometry, never collision metadata.
+    const cell=dex==='warden01'?logical.h:28,anchor=catalog.actions.Idle.anchor;
+    meta.visual={w:cell,h:cell,ax:anchor.x/Number(mode)*cell,ay:anchor.y/Number(mode)*cell};
     meta.a=Object.fromEntries(Object.entries(catalog.actions).filter(([key])=>key!=='Neutralized').map(([name,a])=>[name,{...logical,n:a.frames,r:a.rows,d:a.durations.map(ms=>ms*.06),sourceW:Number(mode),sourceH:Number(mode)}]));
     const dead=catalog.actions.Neutralized;meta.a.Faint={...logical,n:dead.frames,r:dead.rows,d:dead.durations.map(ms=>ms*.06),sourceW:Number(mode),sourceH:Number(mode),file:'Neutralized'};
    }

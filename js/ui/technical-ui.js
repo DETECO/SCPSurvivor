@@ -22,7 +22,16 @@ G.TechnicalUI = (() => {
   function closeEditor() { editorOpen = false; el('field-mod-editor').hidden = true; }
   function updateSoldierHud(player = G.Game.player) {
     const soldier = G.FieldCatalog.soldiers[player?.soldierId] || G.FieldCatalog.soldiers.guard;
-    el('scene-soldier').textContent = `${soldier.name.toUpperCase()} · ${soldier.ability === 'heal' ? 'PRIMEROS AUXILIOS' : 'SPRINT'}`;
+    el('scene-soldier').textContent = G.MapTrial?.enabled?soldier.name.toUpperCase():`${soldier.name.toUpperCase()} · ${soldier.ability === 'heal' ? 'PRIMEROS AUXILIOS' : 'SPRINT'}`;
+  }
+  function compactHud(){
+    if(!G.MapTrial?.enabled||el('hud-summary'))return;
+    document.body.dataset.v2Hud='true';
+    const host=document.createElement('div');host.id='hud-summary';
+    el('viewport').append(host);
+    for(const id of ['scene-hud','field-status','map-locator','rift-locator','map-alert','rift-alert'])host.append(el(id));
+    const note=document.createElement('p');note.id='art-resource-status';note.hidden=true;note.setAttribute('role','status');
+    host.insertBefore(note,el('map-locator'));
   }
   function formatWeaponStats(stats) {
     return `Daño ${stats.damage.toFixed(1)} · intervalo ${stats.interval.toFixed(2)} s · cargador ${stats.capacity} · recarga ${stats.reloadTime.toFixed(2)} s · alcance ${stats.range} · velocidad ${stats.speed} · dispersión ${stats.spread.toFixed(1)}° · perdigones ${stats.pellets} · perforación ${stats.pierce}`;
@@ -160,7 +169,7 @@ G.TechnicalUI = (() => {
       if (key === 'q') { event.preventDefault(); switchWeapon(0); }
       else if (key === 'e') { event.preventDefault(); switchWeapon(1); }
     });
-    G.ExpandedUI.init();
+    compactHud();G.ExpandedUI.init();
     el('boot').hidden = true; state('ui');
   }
   function state(value) {
@@ -169,6 +178,7 @@ G.TechnicalUI = (() => {
       else if(value==='playing'&&G.Audio?.track==='village')G.Audio.music(null);
     }
     document.body.dataset.technicalState = value;
+    if(el('art-resource-status'))el('art-resource-status').hidden=true;
     G.ExpandedUI.state(value);
     el('technical-ready').hidden = value !== 'ui';
     el('technical-pause').hidden = value !== 'paused';
@@ -210,7 +220,7 @@ G.TechnicalUI = (() => {
       el('map-locator').textContent=goal+(target?` · ${arrow} ${Math.ceil(Math.hypot(tx,ty))} u`:'');
       el('map-alert').hidden=!canShow||!(G.MapTrial.alertTime>0);
       el('map-alert').textContent='¡Equipo de la Fundación! «¡Por aquí, te cubrimos!» · '+(v.bossDefeated?'Cruza la puerta.':'Termina con el jefe para avanzar.');
-      el('field-status').textContent=`PRUEBA V2 · Mapa ${s.sector} · ${G.U.mmss(v.mapTime)} / 5:00 · ${s.phase==='levelup'?captions.levelup:s.phase==='armament'?captions.armament:goal} | Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level} | ${weaponSummary}`;
+      el('field-status').textContent=`Mapa ${s.sector} · Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)} · Nivel ${player.level} · XP ${Math.floor(player.xp)}/${player.xpNext}${s.pending?` · ${s.pending} por mejorar`:''}${s.phase==='levelup'?' · '+captions.levelup:s.phase==='armament'?' · '+captions.armament:''}`;
       const chests=G.ExplorationChests?.state;
       el('chest-status').hidden=!canShow||!chests;
       if(chests){
@@ -221,8 +231,15 @@ G.TechnicalUI = (() => {
         const hint=chest?`${chestName(chest)} ${chestArrow} ${Math.ceil(Math.hypot(cx,cy))} u · ${chest.progress>0?`abriendo ${Math.floor(chest.progress/3.5*100)} %`:'acércate y permanece 3,5 s'}`:
           chests.chests.some(c=>!c.opened)?'Cofre sin descubrir · explora el mapa':chests.chests.length?'Cofres abiertos':'Explora · puede aparecer un cofre';
         const outcome=G.MapTrial.infinite?G.ArmamentRewards.state.notice:chests.chests.some(c=>c.opened)?chests.notice:'';
-        el('chest-status').textContent=`${hint}${outcome?' · '+outcome:''} · ${chests.ticketTotal} tickets ficticios (sin cuenta)`;
+        el('chest-status').hidden=!canShow||!(chest||outcome||chests.ticketTotal>0);
+        el('chest-status').textContent=`${chest?hint:outcome}${chest&&outcome?' · '+outcome:''}${chests.ticketTotal>0?' · '+chests.ticketTotal+' tickets ficticios':''}`;
       }
+    }
+    const resourceNote=el('art-resource-status');
+    if(resourceNote){
+      const message=G.TrialVisuals?.mode==='clasicos'?'Gráficos clásicos · prueba anterior.':G.PersonajesArt?.status().message||'';
+      document.body.toggleAttribute('data-art-fallback',!!message);
+      resourceNote.hidden=!message;if(resourceNote.textContent!==message)resourceNote.textContent=message;
     }
     const rift=G.DimensionalRifts.state,open=rift.status==='open';
     el('rift-locator').hidden=!open||s.phase==='finished'||s.phase==='levelup'||s.phase==='armament';

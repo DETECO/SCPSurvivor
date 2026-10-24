@@ -1,0 +1,23 @@
+{
+  "incident": "INC-VIS-001 r1",
+  "date": "2026-10-24",
+  "authorization": "Mensaje directo de Ivan en ESTRUCTURA autorizando dar guia al area responsable y coordinar hasta solucionarlo.",
+  "destination": {
+    "title": "PROGRAMACION",
+    "threadId": "01a13aeb-020a-7d62-8256-3d42a6e61877",
+    "hostId": "local"
+  },
+  "status": "encargo_enviado",
+  "prompt": "Iván ha reportado una captura defectuosa y autoriza explícitamente en ESTRUCTURA que identifique el área responsable, te dé la solución/guía y coordine hasta resolverlo. Responsable principal: PROGRAMACION. Es una corrección del comportamiento visual ya encargado, sin requerir una nueva aprobación equivalente.\n\nPrioriza INC-VIS-001 r1, recién registrada:\nC:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/gestion/INC-VIS-001.md\n\nMira primero la imagen original:\nC:/Users/DELL/.codex/codex-remote-attachments/01a1457c-c051-73d2-9864-e7deb6435420/3C694C4A-F022-446C-A4DF-1D0E49DBCAF9/1-Imagen-pegada-1.jpg\n\nHallazgos comprobados:\n- La captura muestra Médico + Pistola/Subfusil, arma en bloques grande, regulares muy grandes, números6.6000000000000005 y HUD ocupando mucho terreno.\n- personajes-art.js/weapon() sigue dibujando rectángulos; AF01ApprovedArt solo se usa para pistol con WeaponRevisionTrial.active(). El puente r1 admite AF01, no Subfusil. No atribuyas la captura a caché ni supongas su URL exacta: reproduce entrada habitual y enlaceAF01.\n- content.js conserva humanos24×28 y biológico/custodio64×64; trial-visuals cambia recorte16/32 pero hereda tamaño lógico. sprites.js/PX=2 genera rectángulo128×128 frente al rig humano56; comprueba tamaño visible, normales y jefe por separado.\n- fx.js ya contiene formato compacto local: verificar su ejecución y el bundle servido, no declarar corregidos los decimales por encontrar el helper.\n\nResuelve aplicación del recurso aprobado, montaje/escala, proporciones visuales heredadas, cifras compactas y superposición técnica móvil. Conserva originales, hitboxes, daño, velocidad, cámara512, mapa240×160 y reglas aprobadas. No cambiar identidad de armas ni activar modelos/F24 sin sus dependencias. Si necesitas un recurso real de ARMAS/PERSONAJES, identifica exactamente cuál; yo tengo autorización de Iván para coordinar con el área correspondiente.\n\nComprueba Médico/Guardia,16/32,una/dos armas,8direcciones, móvil vertical/horizontal y PC, fuente/compilado y carga normal/fallida. Hace falta evidencia en partida y comparación antes/después; drawImage o el visor solos no aceptan el resultado. Actualiza REGISTRO_IMPLEMENTACION con informe de esta incidencia y resultados/límites. Para la misma demo de GitHub Pages previamente autorizada, conserva el alcance y verifica qué se publica: un cambio local no arregla lo que Iván ve en el teléfono. No activar servicios ni economía.\n\nComienza ahora y continúa con lo independiente. Mantendré el seguimiento desde ESTRUCTURA; no hace falta que me envíes mensajes de vuelta, leeré el registro y tu estado.",
+  "confirmation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"threadId\":\"01a13aeb-020a-7d62-8256-3d42a6e61877\"}"
+      }
+    ],
+    "isError": false
+  },
+  "implementationVerified": false
+}
+

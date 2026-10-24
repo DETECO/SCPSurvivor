@@ -4,7 +4,9 @@ G.AF01ApprovedArt=(()=>{
  const base='docs/referencias/armas/armas-prueba-direccionales-v1/';
  const directions=['E','SE','S','SW','W','NW','N','NE'],cache=new Map();
  let loading=null,error=null;
- const active=()=>G.WeaponRevisionTrial?.active()===true;
+ // Rendering follows native graphics, independently of the opt-in progression bridge.
+ const active=()=>G.WeaponRevisionTrial?.active()===true||
+  (G.TrialVisuals?.enabled===true&&['16','32'].includes(G.TrialVisuals.mode));
  function image(url,n){
   return new Promise(resolve=>{
    const img=new Image();let done=false;
@@ -33,7 +35,7 @@ G.AF01ApprovedArt=(()=>{
       }));
      });
     }
-    await Promise.all(jobs);return cache.size===16;
+    await Promise.all(jobs);if(cache.size!==16)error='AF01 images unavailable';return cache.size===16;
    }catch(e){error=e.message;return false;}
   })();
   return loading;

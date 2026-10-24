@@ -5,12 +5,12 @@ const vm = require('node:vm');
 
 const code = fs.readFileSync(require.resolve('../js/entities/fx.js'), 'utf8');
 
-function setup({ expanded = true, dmgNumbers = true, quality = 2 } = {}) {
+function setup({ expanded = true, mapEnabled = false, dmgNumbers = true, quality = 2 } = {}) {
   const drawn = [];
   const G = {
     Sprites: { PX: 2 },
     Settings: { fx: quality, get: key => key === 'dmgNumbers' ? dmgNumbers : undefined },
-    MapTrial: { expanded },
+    MapTrial: { expanded, enabled: mapEnabled },
     U: { rand: () => 0, randInt: () => 0, hash: () => 0, lerp: (a, b, t) => a + (b - a) * t },
     VFX: { PAL: { normal: [] }, draw() {} },
     Icons: { twinkle() {} }
@@ -90,4 +90,11 @@ test('expanded numeric text respects the existing quality cap', () => {
 test('expanded ignores non-finite numeric damage instead of painting invalid values',()=>{
  const{G,draw}=setup();for(const v of [Infinity,-Infinity,NaN,'1e999'])G.FX.dmgText(0,0,v);
  assert.equal(draw().filter(c=>c.type==='fill').length,0);
+});
+
+test('INC-VIS-001 older V2 entry compacts actual numbers and respects the damage setting too',()=>{
+ const s=setup({expanded:false,mapEnabled:true});s.G.FX.dmgText(0,0,6.6000000000000005);
+ assert.deepEqual(s.draw().filter(c=>c.type==='fill').map(c=>c.text),['6.6']);
+ const hidden=setup({expanded:false,mapEnabled:true,dmgNumbers:false});hidden.G.FX.dmgText(0,0,'+6.6');hidden.G.FX.dmgText(0,0,'Cofre');
+ assert.deepEqual(hidden.draw().filter(c=>c.type==='fill').map(c=>c.text),['Cofre']);
 });

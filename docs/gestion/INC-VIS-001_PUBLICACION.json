@@ -1,0 +1,175 @@
+{
+  "incidence": "INC-VIS-001 r1",
+  "status": "PREPARED_PENDING_PUBLIC_VERIFICATION",
+  "roadmap": "0.35",
+  "previousCommit": "b06d70b51fecb1099b01c2b845822552aad0bfb2",
+  "runtimeCommit": null,
+  "publicUrl": "https://deteco.github.io/SCPSurvivor/?graficos=32&revision=inc-vis-001-r1",
+  "servicesDeployed": false,
+  "limitations": [
+    "Approved Subfusil resource missing; prior shotgun/baton drawings remain explicitly provisional",
+    "No physical phone or manual art acceptance",
+    "Fusion and CC04/TE01/F24 combat unchanged and pending",
+    "No backend, economy or billing deployment"
+  ],
+  "criticalFiles": [
+    {
+      "path": "index.html",
+      "sha256": "7e60db5f9892bb5ac6920bdc56f61d1018705db69ede0b951f12dfb7871e3465"
+    },
+    {
+      "path": "js/app.min.js",
+      "sha256": "56d6a1317d9e55f1f4d8d5d9a02db61b2b462bede91e9a4695d244a253314589"
+    },
+    {
+      "path": "css/technical.css",
+      "sha256": "856bf73ccaf0501e19bfa4ca3740e5d6da3e3c12fe1293c2ab79228226f2a06c"
+    },
+    {
+      "path": "js/ui/af01-approved-art.js",
+      "sha256": "34095e023d8dc94883e22dd078b696b7ed466964b6696d385e17deb1cc9882b4"
+    },
+    {
+      "path": "js/ui/personajes-art.js",
+      "sha256": "a302cbf84a75723e929a3af4c2f458770f8f68c6f93bef16b926a83b971fce48"
+    },
+    {
+      "path": "js/data/trial-visuals.js",
+      "sha256": "88ea3c302cffaf8b6a4704c4314b6d778fd84d2781b03f591b254c3a7d38e9ac"
+    },
+    {
+      "path": "js/core/sprites.js",
+      "sha256": "91480d431a342b2cf6aa939907699428b6b1505f5f91f352e6d6925bec81fe25"
+    },
+    {
+      "path": "js/entities/enemy.js",
+      "sha256": "6640ce624dcd0b1ad257ca4d3c6eddde91187a1343b178a99928a33a21e2a40c"
+    },
+    {
+      "path": "js/entities/fx.js",
+      "sha256": "7bd21b9a61c7733d60e4cebdd05bab9c500c5580e6d2b071f640f6f249eb337a"
+    },
+    {
+      "path": "js/ui/technical-ui.js",
+      "sha256": "036295b65616be2c6e6c84f4fd38c6c327931abb79f589ce4283ecff560eb441"
+    },
+    {
+      "path": "RoadmapSCP.json",
+      "sha256": "83384ce3f58662ff0aa6496de47fdf194de6c66d4121a3a0ce2439a3189d494e"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/direcciones.png",
+      "sha256": "505336621832a6cd31581eaf59bd363a4b0006a63912007809c3b17f99d45de4"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/E.png",
+      "sha256": "d8661854bef3c376c6b5a375247a16a8db5c7a06998a8717a613cbc531a7da7c"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/N.png",
+      "sha256": "d39a7a51ec9efc0b27ed0bd2c6ac9085325ecf81c1518f025bee6ba5af9ee1fe"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/NE.png",
+      "sha256": "5d9ea559fedec4ad87c58a0ef72be0c82c31e747bb6fcb57d45820bebfa19eb3"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/NW.png",
+      "sha256": "45cdd1d485e48c7383ecd93b6a9aa64e5bdd90a4888995a2c325fca47d395eb0"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/S.png",
+      "sha256": "39bb5b268cb795c0a283b9462123fb1ec2eed4ae0d5370e0ac7540119edeb072"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/SE.png",
+      "sha256": "57c522f149bd0aa37b68ee1b5bfa6260f649a75dc7c19a80193f6bc03e347b9a"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/SW.png",
+      "sha256": "cca42bd228fec67adea498ce90078512c067c99ccccf668c151828db980611c9"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/W.png",
+      "sha256": "d1e5f33c79a4e6af26107700e9f6813bac27d334e70bafa8d9aaef6240d20d2e"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/direcciones.png",
+      "sha256": "6c774468031c522e618e97ebdca9d7abe9ede428ae072effa6899142dd0ff975"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/E.png",
+      "sha256": "86fd9187a72d2cddae5b33062dc69c8f5cafd257c7ade64295418fbd37b382fb"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/N.png",
+      "sha256": "e44be23c6c94b799c13e0b47e2ecfb0646fb86c0d10de13e384233125b3cf5ee"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/NE.png",
+      "sha256": "067f0cdb92904359a2d6a53e27a7dc6175734675414332d5c9f19c950ba2f2ad"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/NW.png",
+      "sha256": "2baff41a46b244722ab76400978751427a0ab264888f8fe228730c1b0342a385"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/S.png",
+      "sha256": "585cdd7a1ee2c4828bb1dd622e63ed6364059a230009b443f7ef1514f5fca34c"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/SE.png",
+      "sha256": "032fd3acf7b8a4c8fdd78fa5ac0b1af0d995ab6224ad94d38658d426b21a254c"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/SW.png",
+      "sha256": "1093a5677250623b810ca84b567632ae80372fe79858c14d3e9f95872e439e40"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/W.png",
+      "sha256": "575575c79adcc04d4c33bea5ae41bc548d906b8d095ea58c7165311074b31cd8"
+    },
+    {
+      "path": "assets/personajes-20261022/16/guardia/Idle.png",
+      "sha256": "94b7653add61b726d63eb31e95d5c2d7ee909c0b419d37142b905e58473c94ab"
+    },
+    {
+      "path": "assets/personajes-20261022/16/medico/Idle.png",
+      "sha256": "177fd9253d41d5b47cbdc08c9cdbdd7714344f459febd77aa021da6e406eba20"
+    },
+    {
+      "path": "assets/personajes-20261022/16/perseguidor/Idle.png",
+      "sha256": "75e4fe537c383a2fa8be63040093385b4a6197c4647a02dfcda2ab8f6b62e6ec"
+    },
+    {
+      "path": "assets/personajes-20261022/16/biologico/Idle.png",
+      "sha256": "a7617467f9b34bde90976f77d22641fb574415bfabac935b2bef949aaf737fe9"
+    },
+    {
+      "path": "assets/personajes-20261022/16/custodio/Idle.png",
+      "sha256": "83e6d98ee33be1cfedbf7c65897efd962bdc4fd521eab845856393b256150319"
+    },
+    {
+      "path": "assets/personajes-20261022/32/guardia/Idle.png",
+      "sha256": "b04aa6298a4687608d1ca0f94ba99a9dbb92ee34fbfd2c541d48fa1b0f0cc97c"
+    },
+    {
+      "path": "assets/personajes-20261022/32/medico/Idle.png",
+      "sha256": "ff2b29c34bf0b81bd8a5a32d48b15517869f72576db0178d3df22fd8d00aee8a"
+    },
+    {
+      "path": "assets/personajes-20261022/32/perseguidor/Idle.png",
+      "sha256": "6590914752bd49f7c5f812fc1963115a98e56b93425ef304ae93df3e23c793fa"
+    },
+    {
+      "path": "assets/personajes-20261022/32/biologico/Idle.png",
+      "sha256": "3ed5a3ccdb52d6fdfd714df76e53a4c58c2a1630b2263e235b81ebd2e1c9ab8a"
+    },
+    {
+      "path": "assets/personajes-20261022/32/custodio/Idle.png",
+      "sha256": "407903b5dfc36e047a94c2044e467c44ae83b3f2ea41d4580a74955ca3e56ec8"
+    }
+  ],
+  "publicationBundle": "e9bedd0dc6",
+  "resourceDependency": "docs/referencias/armas/inc-vis-001/ARM-SMG-REC-001-r1.md"
+}

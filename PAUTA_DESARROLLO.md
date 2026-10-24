@@ -2,6 +2,8 @@
 
 ## Coordinación vigente — Juanillo / ESTRUCTURA · 23/10/2026
 
+**Corrección visual prioritaria · 24/10/2026:** [INC-VIS-001 r1](docs/gestion/INC-VIS-001.md), captura de Iván con arma provisional, proporciones y lectura móvil defectuosas. PROGRAMACION recibió el encargo autorizado y la guía de diagnóstico; ESTRUCTURA sigue su cierre. No cambia el diseño aprobado ni requiere otra consolidación para corregir el fallo. Estado y evidencia se mantendrán en la incidencia y REGISTRO_IMPLEMENTACION.
+
 Iván activa las instrucciones de coordinación de este hilo: **EST-ORG-001 r1**. Esta pauta es la entrada maestra; [CONTROL_CAMBIOS.md](docs/gestion/CONTROL_CAMBIOS.md) registra revisiones examinadas, conflictos y lotes. Se registran las reglas generales aprobadas aquí y se respetan las decisiones/recursos de las especialidades. Al pedir consolidación se comparan revisiones y se leen cambios/dependencias; las conversaciones se consultan cuando falte evidencia, declarando cobertura real.
 
 La consolidación conserva la intención aprobada, prepara lotes verificables y enlaza los informes de PROGRAMACION. No implementa ni publica. Las correcciones técnicas ya encargadas que restablecen un diseño aprobado no necesitan otra consolidación. No configura otros hilos ni migra sus historiales; la cobertura inicial parcial de REV-EST-0001 queda conservada y el corte actual es REV-EST-0006.

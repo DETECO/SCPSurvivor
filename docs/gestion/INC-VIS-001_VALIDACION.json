@@ -1,0 +1,51 @@
+{
+  "incidence": "INC-VIS-001 r1",
+  "control": "0.7",
+  "status": "PARTIAL_RESOURCE_DEPENDENCY",
+  "createdAtUtc": "2026-10-24T16:55:47.275779+00:00",
+  "node": {
+    "tests": 303,
+    "suites": 0,
+    "pass": 297,
+    "fail": 5,
+    "cancelled": 0,
+    "skipped": 1,
+    "todo": 0
+  },
+  "nodeFailureScope": "Same five P05 SQLite runtime compatibility failures; emulator skip. Not accepted as PASS.",
+  "build": {
+    "scripts": 107,
+    "sourceBundle": "34ffeb8c16",
+    "check": "PASS"
+  },
+  "localBrowser": {
+    "status": "PASS",
+    "incidenceScenarios": 29,
+    "af01RegressionScenarios": 8,
+    "startPauseScenarios": 2,
+    "poseCasesPerNativeScenario": 32,
+    "physicalPhone": false,
+    "details": "Actual game canvas/loop and HUD, QA enemy placements/slow time/render-only actor and weapon poses. Combat tick disabled only during visual poses; no natural wins, art approval or balance claim."
+  },
+  "limitations": [
+    "Approved Subfusil resource missing; prior shotgun/baton drawings remain explicitly provisional",
+    "No physical phone or manual art acceptance",
+    "Fusion and CC04/TE01/F24 combat unchanged and pending",
+    "No backend, economy or billing deployment"
+  ],
+  "agents": "Three Luna max agents stopped on usage limit without delivering changes. Root implemented and verified the correction.",
+  "sourcesChangedDuringImplementation": [
+    {
+      "path": "docs/gestion/INC-VIS-001.md",
+      "baselineSha256": "d90b017bc4bf4990120e088e700a035a42406b01e3a7eb41e090bf73c6c99587",
+      "receivedSha256": "f61cf30f41fa8bda8ba0ac1633a09d2e01e5535672390f8f10b3430b93a6be56"
+    },
+    {
+      "path": "docs/PAUTA_ARMAS.md",
+      "baselineSha256": "fef09bfde4bee6dfab8fc2bed9362ab99bd989db58f31ac81292bfe43fa6f5b2",
+      "receivedSha256": "f86e055d6540883c63229d070583b4de30adbf17cb9d24f73d83559002e8a632"
+    }
+  ],
+  "resourcesUnchanged": 284,
+  "sourceChangeDisposition": "Se detectaron y revisaron dos actualizaciones concurrentes: INC-VIS-001 r1 incorpora la reproduccion publica independiente y la consulta a ARMAS; PAUTA_ARMAS R2.1 agrega ARM-SMG-REC-001 r1, carencia de sprite aprobado para smg y su minimo de recurso por producir/aceptar. No cambian combate, reglas o recursos implementados. Se integra esa evidencia documental sin sustituir silenciosamente las revisiones r1 de origen; diff y hashes conservados en migration-audit/inc-vis-001."
+}

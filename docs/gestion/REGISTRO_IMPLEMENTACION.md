@@ -90,3 +90,19 @@ Comprobación pública: **6/6** escenarios AF01 (escritorio/vertical/horizontal 
 La copia pública compiló **107 scripts**, bundle `65ce03ab66`; `build:check` aprobado. La suite completa repitió **298 pruebas: 292 aprobadas, 5 fallidas SQLite/P05 por la fecha de workerd instalada y 1 omitida por emuladores**. Se incorporó el código existente de Worker/functions y sus dependencias declaradas para coherencia del repositorio; no se activó ese backend. Se preservaron CSP pública previa y 88 recursos originales. El recibo local anterior conserva su corte; el nuevo [recibo público](REV-EST-0006_PUBLICACION.json) acredita esta publicación.
 
 **Estado del alcance: parcial publicado y probado.** CC04/TE01/F24 jugables, pose/animaciones compatibles y sala/interfaz de fusión siguen pendientes; el gate permanece cerrado. Director aislado sin nuevos encuentros, cuentas/guardado real desactivados, sin teléfono físico ni aceptación manual de esta revisión. La subida no cierra esas dependencias, P05 ni el porcentaje V2. Las 53 tareas, pesos y 52/100 históricos se conservan.
+
+## INC-VIS-001 r1 — inicio 24/10/2026
+
+Correccion visual autorizada por Ivan y coordinada por ESTRUCTURA. Fuentes fijadas al inicio: PAUTA_DESARROLLO y CONTROL_CAMBIOS **0.7**, INC-VIS-001 **r1**; REV-EST-0006 y LOT-EST-001/002/003/004 **r1**, EST-ESC-001 **r1**, ARM-VIS-001/R1, PERSONAJES 16/32 y MEN-003 **r1**. La revision0.7 agrega la incidencia sin sustituir la0.6 implementada. No se atribuye URL/cache a la captura.
+
+Plan: reproducir entrada habitual y AF01; corregir montaje del recurso implementado, escala visual heredada sin cambiar fisica ni camara, cifras compactas y lectura del HUD; comparar fuente/compilado y publicar la misma demo autorizada tras comprobarla. Raiz coordina armas/integracion y agentes Luna maximo revisan HUD/FX y escala en archivos separados. Baseline por SHA y respaldo de codigo en migration-audit/inc-vis-001 del directorio padre. Estado: investigacion, sin afirmar correccion.
+
+Seguimiento de PROGRAMACION: [INC-VIS-001-programacion](informes/INC-VIS-001-programacion.md). El diagnostico ya distingue acceso habitual, AF01 y regresion B3; no equipara esos estados con la URL desconocida del telefono. ARMAS verifica la carencia de Subfusil mediante ESTRUCTURA.
+
+### INC-VIS-001 r1 — resultado local de PROGRAMACION
+
+Correccion aplicada, estado **parcial por recurso Subfusil y correspondencias antiguas**. Informe: [INC-VIS-001-programacion](informes/INC-VIS-001-programacion.md), con capturas antes/despues y limites. Control0.7 fijado; no se modificaron pautas de areas ni fuentes de diseño. Se preservan284 recursos y todos los archivos del baseline. Director/fusion/servicios sin cambios.
+
+Build/check107scripts; suite303:297aprobadas,5fallos conocidos SQLite/P05 y1omitida. Navegador29/29 en fuente/compilado y tres formatos,16/32;32poses por caso nativo, golpe real6.6 con HP sin redondeo, fallos de recursos/carga lenta visibles. Regresiones AF01 8/8 e inicio/pausa2/2. No acredita telefono fisico o aceptacion manual. Tres agentes Luna maximo se detuvieron por limite de uso; raiz completo implementacion y pruebas. [Recibo local](INC-VIS-001_VALIDACION.json); el [recibo publico](INC-VIS-001_PUBLICACION.json) registra por separado lo efectivamente publicado.
+
+Se detectaron y revisaron dos actualizaciones concurrentes: INC-VIS-001 r1 incorpora la reproduccion publica independiente y la consulta a ARMAS; PAUTA_ARMAS R2.1 agrega ARM-SMG-REC-001 r1, carencia de sprite aprobado para smg y su minimo de recurso por producir/aceptar. No cambian combate, reglas o recursos implementados. Se integra esa evidencia documental sin sustituir silenciosamente las revisiones r1 de origen; diff y hashes conservados en migration-audit/inc-vis-001.

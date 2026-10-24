@@ -1,0 +1,160 @@
+{
+  "id": "ARM-SMG-REC-001",
+  "revision": "r1",
+  "date": "2026-10-24",
+  "scope": "Auditoría local acotada de recurso para Subfusil/smg legado, INC-VIS-001.",
+  "finding": "no_approved_recoverable_sprite_in_audited_sources",
+  "runtimeModel": "smg",
+  "runtimeName": "Subfusil",
+  "approvedSprite": null,
+  "approvedAnchors": null,
+  "recoverableProvisionalDrawing": [
+    "js/ui/personajes-art.js: weapon() rama smg",
+    "js/ui/trial-weapon-art.js: drawSmg()"
+  ],
+  "approvedBatchIds": [
+    "AF01",
+    "AR01",
+    "CC04",
+    "IN03",
+    "FR07",
+    "PE04",
+    "RU04",
+    "TE01",
+    "AN09",
+    "F24"
+  ],
+  "personajesWeaponSheets": [
+    {
+      "path": "assets/personajes-20261022/16/Armas.png",
+      "width": 96,
+      "height": 16
+    },
+    {
+      "path": "assets/personajes-20261022/32/Armas.png",
+      "width": 192,
+      "height": 32
+    }
+  ],
+  "personajesWeaponIdentities": [
+    "pistola",
+    "porra",
+    "katana",
+    "pistola láser",
+    "escopeta",
+    "lanzamisiles"
+  ],
+  "catalogAF02": "Propuesta de nombre y comportamiento; sin sprite elegido ni equivalencia automática con smg.",
+  "minimumReplacement": {
+    "targetRuntimeModel": "smg",
+    "newWeapon": false,
+    "newStats": false,
+    "newRecipe": false,
+    "resolutions": [
+      16,
+      32
+    ],
+    "directions": [
+      "E",
+      "SE",
+      "S",
+      "SW",
+      "W",
+      "NW",
+      "N",
+      "NE"
+    ],
+    "individualPoses": 16,
+    "anchorsPerPose": [
+      "grip",
+      "support",
+      "muzzle"
+    ],
+    "worldSize": "Explicitar montaje relativo al rig humano, igual entre 16 y 32; pendiente de calibración.",
+    "status": "resource_requirement_only_no_art_created_no_approval"
+  },
+  "coverageLimits": "Recursos, metadatos y documentación locales citados; no auditoría exhaustiva de archivos externos ni de todos los hilos históricos.",
+  "implementationAuthority": "docs/gestion/REGISTRO_IMPLEMENTACION.md",
+  "sources": [
+    {
+      "path": "PAUTA_DESARROLLO.md",
+      "sha256": "41787f98dd01f23b8281a68e5b230447d6758dcffc3425809fefcc2208eeaecc"
+    },
+    {
+      "path": "docs/PAUTA_ARMAS.md",
+      "sha256": "fef09bfde4bee6dfab8fc2bed9362ab99bd989db58f31ac81292bfe43fa6f5b2"
+    },
+    {
+      "path": "docs/gestion/INC-VIS-001.md",
+      "sha256": "f61cf30f41fa8bda8ba0ac1633a09d2e01e5535672390f8f10b3430b93a6be56"
+    },
+    {
+      "path": "docs/gestion/informes/INC-VIS-001-programacion.md",
+      "sha256": "3a57dc95bfad625f562fa3d6085172e1a4ee285343500c6e2ae2bced38fdccd5"
+    },
+    {
+      "path": "docs/gestion/REGISTRO_IMPLEMENTACION.md",
+      "sha256": "70230961347f9ce850f1a8079409c0883f59fc2c7049d25b182d2adc8dddf7a5"
+    },
+    {
+      "path": "docs/ARTE_ENSAYO_V1.md",
+      "sha256": "30516aaf35fa9e748b44ba6e10b6f6cb4af976caf8a46ab3facfe262ecbe7989"
+    },
+    {
+      "path": "docs/CIERRE_ARMAS_PROGRESION_FUSION_V1.md",
+      "sha256": "3ab619be7e3c3ceab468f4862efd65bd8e1b61ae00abc8e0408b95a8c1567016"
+    },
+    {
+      "path": "docs/PERSONAJES_APROBACION_2026-10-22.md",
+      "sha256": "765cff8a70f598fd8c8612f9953e56a3c2f2445e41425ebd5b766d46d7a5fa2e"
+    },
+    {
+      "path": "assets/personajes-20261022/LEEME.md",
+      "sha256": "34201fd288e2ef803e681906674ebe8f6cc190f52866932d1f14409a7521b9ae"
+    },
+    {
+      "path": "assets/personajes-20261022/catalogo.json",
+      "sha256": "a73014b17a3f9b1044c824774b7f6f17b2ac096b532f0f1d043b9e7912e84259"
+    },
+    {
+      "path": "assets/personajes-20261022/16/Armas.png",
+      "sha256": "bad0142b9580bf99a4c476eb7f813416d90e40cd53d44f4f400507e6f441e893"
+    },
+    {
+      "path": "assets/personajes-20261022/32/Armas.png",
+      "sha256": "b050a9e099603c2a7264190806a13ca9b9115d6cfc640551826980d710eca873"
+    },
+    {
+      "path": "assets/menus/approved-weapons-arm-vis-r1/catalog.json",
+      "sha256": "5bb8c4799ea809d71283c94ad3687101d0b4f0942e59464618b122e2f310be00"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/catalogo.json",
+      "sha256": "a53c49b946f72d8d05226fc24a655433df1a8b5af13e3dd136603278f031f401"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/APROBACION.md",
+      "sha256": "6b792b76814e76cd6ae5d826909789535e6faf7c88e8e9ce56b2a074576f75a3"
+    },
+    {
+      "path": "docs/referencias/armas/armas-v1/DATOS_DISENO_ARMAS_V1.json",
+      "sha256": "884b2a2bd07ef8dc5b4d19eef93e88d2241d2f2715e58c0a48b1752bc3244a10"
+    },
+    {
+      "path": "docs/referencias/armas/armas-v1/CATALOGO_ARMAS_Y_FUSIONES_V1.md",
+      "sha256": "5b92eea68a4e695d15b80dec109af206f746adb62472083e6689a8ad548de00a"
+    },
+    {
+      "path": "js/ui/personajes-art.js",
+      "sha256": "a302cbf84a75723e929a3af4c2f458770f8f68c6f93bef16b926a83b971fce48"
+    },
+    {
+      "path": "js/ui/trial-weapon-art.js",
+      "sha256": "0f153fb69acc2495dc6f15de093fa50817cd38eb47d45ea9e4169f8e947b6a1c"
+    },
+    {
+      "path": "js/data/field-catalog.js",
+      "sha256": "b8b719b0e12d0a42b8fd2110c2f9e08d0d93c82c7af8038f5cee3ad64d9d7454"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # SCP Survivor
 
+**Corrección 0.35 · INC-VIS-001 r1 · 24/10/2026:** pistola AF01 aprobada también en la entrada habitual, proporción visual de regulares corregida sin cambiar su física, cifras de daño compactas y HUD resumido. El Subfusil mantiene arte provisional por falta de recurso aprobado; fusión pendiente. [Informe](docs/gestion/informes/INC-VIS-001-programacion.md) · [Publicación](docs/gestion/INC-VIS-001_PUBLICACION.json).
+
 **Entrega 0.34 · REV-EST-0006 · 24/10/2026:** M01 240×160, cámara vertical 512, WAV SON-001 y ensayo AF01 con escala por copia 1–5–MAX y PNG 16/32. Director de grietas aislado; CC04/TE01/F24 y sala de fusión siguen pendientes. Sin cuentas ni guardado real. [Jugar AF01](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=32) · [Guía](docs/PRUEBA_REV_EST_0006.md) · [Estado y pruebas](docs/gestion/REGISTRO_IMPLEMENTACION.md). Publicada y verificada en GitHub Pages: seis escenarios AF01, dos de inicio/pausa, 99 archivos coincidentes y visor 164/164 PNG. [Recibo](docs/gestion/REV-EST-0006_PUBLICACION.json).
 
 **Entrega 0.33 · 23/10/2026:** Presentación integrada: escenario inicial R7 Backrooms480×320 con profundidad visual2.5D, menús aprobados responsivos, icono3 con SCP, personajes16/32 y dos prácticas visibles. Seis apariencias de grieta en B3; nuevas mecánicas de azar/NPC/recinto separado documentadas y pendientes. [Jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2) · [Alcance y límites](docs/PRESENTACION_INTEGRADA.md) · [ESTRUCTURA consultada](docs/ESTRUCTURA_SYNC_2026-10-23.md).

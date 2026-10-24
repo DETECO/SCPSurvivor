@@ -1,5 +1,17 @@
 # Pauta de armas — sincronización del hilo ARMAS
 
+## Actualización acotada de recurso — 24/10/2026 · R2.1
+
+**ARM-SMG-REC-001 r1:** no se encontró sprite aprobado recuperable del Subfusil legado (`smg`) en las fuentes auditadas. Se conserva su identidad; FR07 y AF02 no son sustitutos autorizados. [Ficha y mínimo recurso pendiente](referencias/armas/inc-vis-001/ARM-SMG-REC-001-r1.md) · [Evidencia del corte](referencias/armas/inc-vis-001/ARM-SMG-REC-001-r1.json). ARM-SMG-VIS-001 r1 identifica el recurso de reemplazo por producir y presentar, sin arte nuevo aprobado.
+
+Dependencia acotada de [INC-VIS-001](gestion/INC-VIS-001.md); implementación y cierre global en [PROGRAMACION](gestion/REGISTRO_IMPLEMENTACION.md) y [su informe de la incidencia](gestion/informes/INC-VIS-001-programacion.md). No se modifica otra pauta ni el ejecutable.
+
+**Precedencia vigente:** [EST-ARM-001 r1](CIERRE_ARMAS_PROGRESION_FUSION_V1.md), aceptada en ESTRUCTURA el 23/10/2026, gobierna la escala única y la primera fusión F24 dentro de su alcance. Las etiquetas «pendiente» y la referencia a cuatro ramas del corte R2 conservado debajo son antecedentes anteriores a esa aceptación; no reabren sus reglas. Las otras 62 recetas y el catálogo completo no reciben aceptación por extensión. El encargo actual solo resuelve el recurso de smg.
+
+Historial: [pauta R2 anterior a esta nota](referencias/armas/historial/PAUTA_ARMAS_R2_2026-10-23.md). Esta revisión R2.1 incorpora el hallazgo de recurso, sin cambiar las revisiones originales de diseño ni conceder nuevas aprobaciones.
+
+
+
 Actualizado: 23/10/2026 · revisión documental R2. Diseño y registro de aceptación visual del área ARMAS.
 
 Fuente inicial: hilo **ARMAS**, `01a164ea-cca2-74b2-a034-5f6a7c949cbd`, corte histórico hasta `01a165d1-7960-7f11-b81e-57fe593b0f0d`. Esta revisión incorpora la entrega y aceptación visual posteriores visibles en el mismo hilo y la instrucción de gestión del área del 23/10/2026. Se preservan las reglas de ESTRUCTURA en las materias no sustituidas expresamente.

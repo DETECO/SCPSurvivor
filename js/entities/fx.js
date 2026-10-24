@@ -106,7 +106,7 @@ G.FX = (() => {
     // Con cientos de golpes por segundo no se leen igual: tope de 70 (los
     // grandes, como "¡Muy eficaz!" o los de jefe, siempre entran).
     // Ajustes → "Números de daño": los números se ocultan; los avisos de texto no.
-    const expanded = G.MapTrial?.expanded === true;
+    const expanded = G.MapTrial?.expanded === true || G.MapTrial?.enabled === true;
     if(expanded&&((typeof value==='number'&&!Number.isFinite(value))||
       (typeof value==='string'&&/^[+-]?(?:(?:\d+(?:\.\d*)?)|(?:\.\d+))(?:e[+-]?\d+)?$/i.test(value.trim())&&!Number.isFinite(Number(value)))))return;
     const formatted = expanded ? formatExpandedDamage(value) : null;

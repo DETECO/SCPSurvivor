@@ -22,6 +22,7 @@
   }
 
   class Enemy {
+    get visualBodyH() { return G.Sprites.visualBodyHeight?.(this.dex,this.scale) ?? this.bodyH; }
     constructor(def, x, y, sc, boss = false) {
       this.id = nextId++;
       this.def = def;
@@ -112,7 +113,7 @@
       if (this.shield > 0) {
         const a = Math.min(this.shield, d);
         this.shield -= a;
-        if (a >= d) { G.FX.dmgText(this.x, this.y - this.bodyH - 4, d, '#9fd8ff'); this.flash = 0.05; return; }
+        if (a >= d) { G.FX.dmgText(this.x, this.y - this.visualBodyH - 4, d, '#9fd8ff'); this.flash = 0.05; return; }
         amount = d - a;
       }
       this.hp -= this.def.containment ? amount : Math.max(1, Math.round(amount));
@@ -130,9 +131,9 @@
     showHurt(d, color, dirX = 0, dirY = 0, eff = null) {
       this.flash = 0.09;
       // Muy eficaz: número amarillo y grande. Poco eficaz: gris.
-      G.FX.dmgText(this.x, this.y - this.bodyH - 4, d, eff === 'super' ? '#ffe14d' : eff === 'weak' ? '#a3abb8' : color,
+      G.FX.dmgText(this.x, this.y - this.visualBodyH - 4, d, eff === 'super' ? '#ffe14d' : eff === 'weak' ? '#a3abb8' : color,
                    this.boss || eff === 'super');
-      G.FX.spark(this.x, this.y - this.bodyH * 0.5, color, dirX, dirY, 3);
+      G.FX.spark(this.x, this.y - this.visualBodyH * 0.5, color, dirX, dirY, 3);
       if (!this.anim.busy() && this.phase !== 'dash') this.anim.play('Hurt');
       G.Audio.sfx('hit');
     }
@@ -157,7 +158,7 @@
       this.fade = 0.9;
       this.anim.play('Faint', { hold: true });
       const col = this.boss ? '#ffd95e' : '#ffffff';
-      const cy = this.y - this.bodyH * 0.5;
+      const cy = this.y - this.visualBodyH * 0.5;
       G.FX.burst(this.x, cy, col, this.boss ? 34 : 9, this.boss ? 260 : 120);
       G.FX.ring(this.x, this.y, this.r, this.r * (this.boss ? 6 : 2.6), col, this.boss ? 0.6 : 0.3, this.boss ? 6 : 3);
       if (this.def.containment) {
@@ -214,7 +215,7 @@
       this.bob += dt * 6;
       if (this.shiny) {
         this.sparkT -= dt;
-        if (this.sparkT <= 0) { this.sparkT = 0.22; G.FX.twinkle(this.x + G.U.rand(-this.r, this.r) * 1.2, this.y - G.U.rand(4, this.bodyH * 1.1)); }
+        if (this.sparkT <= 0) { this.sparkT = 0.22; G.FX.twinkle(this.x + G.U.rand(-this.r, this.r) * 1.2, this.y - G.U.rand(4, this.visualBodyH * 1.1)); }
       }
       const n = this.net;
       if (!n) return;
@@ -247,7 +248,7 @@
         this.sparkT -= dt;
         if (this.sparkT <= 0) {
           this.sparkT = 0.22;
-          G.FX.twinkle(this.x + G.U.rand(-this.r, this.r) * 1.2, this.y - G.U.rand(4, this.bodyH * 1.1));
+          G.FX.twinkle(this.x + G.U.rand(-this.r, this.r) * 1.2, this.y - G.U.rand(4, this.visualBodyH * 1.1));
         }
       }
       if (this.touchCd > 0) this.touchCd -= dt;
@@ -292,7 +293,7 @@
         this.x += (vx0 + this.kx) * dt; this.y += (vy0 + this.ky) * dt;
         this.kx *= Math.pow(0.0015, dt); this.ky *= Math.pow(0.0015, dt);
         if (G.World.collide(this) && Math.hypot(this.x - ox, this.y - oy) < spd * k * dt * 0.3) this.zig += 1.4;
-        if (Math.random() < dt * 6 && G.Camera.sees(this.x, this.y, 0)) G.FX.twinkle(this.x + G.U.rand(-this.r, this.r), this.y - G.U.rand(4, this.bodyH));
+        if (Math.random() < dt * 6 && G.Camera.sees(this.x, this.y, 0)) G.FX.twinkle(this.x + G.U.rand(-this.r, this.r), this.y - G.U.rand(4, this.visualBodyH));
         this.anim.dir = G.Sprites.dirFromAngle(a);
         this.anim.loop('Walk', 1.4);
         return;
@@ -597,7 +598,7 @@
         if (e.dead || e.hp >= e.maxHp) continue;
         // 7 % (era 15 %: con varios curanderos curaban más de lo que pegabas).
         e.hp = Math.min(e.maxHp, e.hp + e.maxHp * 0.07);
-        G.FX.burst(e.x, e.y - e.bodyH * 0.6, '#7dffb0', 5, 60);
+        G.FX.burst(e.x, e.y - e.visualBodyH * 0.6, '#7dffb0', 5, 60);
         n++;
       }
       this.anim.play('Charge');
@@ -704,7 +705,7 @@
         ctx.globalAlpha = 0.35 + Math.sin(this.bob) * 0.08;
         ctx.strokeStyle = '#9fd8ff'; ctx.lineWidth = 2;
         ctx.fillStyle = 'rgba(127,200,255,.14)';
-        ctx.beginPath(); ctx.ellipse(this.x, this.y - this.bodyH * 0.45, this.r * 1.5, this.bodyH * 0.65, 0, 0, 6.2832);
+        ctx.beginPath(); ctx.ellipse(this.x, this.y - this.visualBodyH * 0.45, this.r * 1.5, this.visualBodyH * 0.65, 0, 0, 6.2832);
         ctx.fill(); ctx.stroke();
         ctx.restore();
       }
@@ -719,11 +720,11 @@
 
       // Apoyos: icono encima, para saber a quién ir primero.
       const SUP = { healer: 'heart', shielder: 'shield', summoner: 'friends' };
-      if (SUP[this.behavior]) G.Icons.draw(ctx, SUP[this.behavior], Math.round(this.x - 6), Math.round(this.y - this.bodyH - (this.hp < this.maxHp ? 26 : 18)), 12);
+      if (SUP[this.behavior]) G.Icons.draw(ctx, SUP[this.behavior], Math.round(this.x - 6), Math.round(this.y - this.visualBodyH - (this.hp < this.maxHp ? 26 : 18)), 12);
 
       if (this.boss || this.hp < this.maxHp) {
         const w = this.boss ? 90 : Math.max(22, this.r * 2);
-        const y = this.y - this.bodyH - 10;
+        const y = this.y - this.visualBodyH - 10;
         ctx.fillStyle = 'rgba(0,0,0,.6)';
         ctx.fillRect(this.x - w / 2, y, w, 3.4);
         ctx.fillStyle = this.boss ? '#ffcb3d' : '#ff5f6d';

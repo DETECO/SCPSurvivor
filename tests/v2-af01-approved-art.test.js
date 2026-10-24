@@ -3,18 +3,25 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const root=path.join(__dirname,'..');
 const catalog=JSON.parse(fs.readFileSync(path.join(root,'docs/referencias/armas/armas-prueba-direccionales-v1/catalogo.json'),'utf8'));
-function setup({active=true,failFetch=false,failImage=false}={}){
+function setup({active=true,native=false,failFetch=false,failImage=false}={}){
  const requests=[],images=[];
  class Image{
   set src(value){this._src=value;const n=Number(value.match(/\/(16|32)\/AF01\//)[1]);this.naturalWidth=this.naturalHeight=n;images.push(value);queueMicrotask(()=>failImage?this.onerror():this.onload());}
   get src(){return this._src;}
  }
- const G={WeaponRevisionTrial:{active:()=>active}};
+ const G={WeaponRevisionTrial:{active:()=>active},TrialVisuals:{enabled:native,mode:'32'}};
  vm.runInNewContext(fs.readFileSync(path.join(root,'js/ui/af01-approved-art.js'),'utf8'),{G,Image,fetch:async url=>{requests.push(url);if(failFetch)throw Error('network');return{ok:true,json:async()=>structuredClone(catalog)};},setTimeout,clearTimeout});
  return{G,requests,images};
 }
-test('AF01 art does not load or mount outside the explicit revision trial',async()=>{
+test('AF01 art stays disabled outside native graphics and the revision trial',async()=>{
  const s=setup({active:false});assert.equal(await s.G.AF01ApprovedArt.preload(),false);assert.equal(s.requests.length,0);assert.equal(s.G.AF01ApprovedArt.mount('32',0,{x:2,y:3}),null);
+});
+
+test('INC-VIS-001: the approved pistol also mounts in ordinary native graphics without enabling r1 mechanics',async()=>{
+ const s=setup({active:false,native:true});
+ assert.equal(await s.G.AF01ApprovedArt.preload(),true);
+ assert.equal(s.G.WeaponRevisionTrial.active(),false);
+ for(const mode of ['16','32'])for(let i=0;i<8;i++)assert.ok(s.G.AF01ApprovedArt.mount(mode,i*Math.PI/4,{x:8,y:9}));
 });
 test('AF01 preloads exactly the original sixteen directional PNGs once, including both graphics modes',async()=>{
  const s=setup(),art=s.G.AF01ApprovedArt;const first=art.preload();assert.equal(first,art.preload());assert.equal(await first,true);

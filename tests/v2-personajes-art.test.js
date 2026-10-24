@@ -28,3 +28,15 @@ test('supports use their own parts and legacy/dead/nonhuman paths remain availab
  for(const mode of['v1','clasicos']){const s=setup(mode);assert.equal(s.G.PersonajesArt.draw(s.ctx,s.anim,0,0,{}),false);assert.equal(s.G.PersonajesArt.drawWeapons(s.ctx,s.pl,{},[]),false);assert.equal(s.images.length,0)}
  const s=setup();s.pl.dead=true;assert.equal(s.G.PersonajesArt.draw(s.ctx,s.anim,0,0,{}),false);
 });
+
+test('INC-VIS-001 ordinary pistol uses the approved mount; missing art and unsupported models are disclosed',async()=>{
+ const{G,pl,ctx}=setup();await G.PersonajesArt.preload();let mounts=0,draws=0;
+ G.WeaponRevisionTrial={active:()=>false};
+ G.AF01ApprovedArt={mount(mode,angle,grip){mounts++;return{support:{...grip}}},draw(){draws++},inspect:()=>({loaded:16})};
+ pl.fieldWeapons=[{model:'pistol',flash:0}];const before=JSON.stringify(pl);
+ G.PersonajesArt.drawWeapons(ctx,pl,{},pl.fieldWeapons);
+ assert.equal(mounts,1);assert.equal(draws,1);assert.equal(G.PersonajesArt.status().message,'');
+ assert.equal(JSON.stringify(pl),before);
+ pl.fieldWeapons.push({model:'smg'});assert.deepEqual(Array.from(G.PersonajesArt.status().missingModels),['smg']);assert.match(G.PersonajesArt.status().message,/Subfusil/);
+ pl.fieldWeapons.pop();G.AF01ApprovedArt.inspect=()=>({loaded:0});assert.match(G.PersonajesArt.status().message,/AF01/);
+});

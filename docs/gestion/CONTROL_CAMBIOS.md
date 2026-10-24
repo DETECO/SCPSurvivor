@@ -1,8 +1,10 @@
 # Control de cambios — ESTRUCTURA
 
-Revisión de control **0.6** · 23/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+Revisión de control **0.7** · 24/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
 
 Entrada maestra: [PAUTA_DESARROLLO.md](../../PAUTA_DESARROLLO.md).
+
+**Corrección técnica activa:** [INC-VIS-001 r1](INC-VIS-001.md), autorizada por Iván el 24/10: arma provisional, proporciones y lectura de la escena móvil. Responsable PROGRAMACION, con ARMAS/PERSONAJES/MENUS según la dependencia. Diagnóstico basado en captura y fuentes; pendiente de reproducción, implementación y comprobación. No altera lotes ni exige nueva consolidación para corregir el fallo ya encargado. La versión 0.6 del encargo anterior permanece conservada en su corte.
 
 **Último corte consolidado:** [REV-EST-0006 — informe incremental de las áreas](CONSOLIDACION_2026-10-23_R1.md). Se conservan las revisiones y coberturas anteriores como historial. La consolidación usa fuentes locales y dependencias nuevas, no declara releídos los ocho historiales.
 
