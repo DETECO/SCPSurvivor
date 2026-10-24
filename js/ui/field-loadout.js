@@ -1,9 +1,10 @@
 /* Local test loadout editor. Selections are prototypes for this run only. */
 G.FieldLoadout = (() => {
   const el = id => document.getElementById(id);
-  const weapons = ['pistol', 'smg', 'shotgun', ...(G.MapTrial?.expanded?['baton']:[])];
+  const revision = () => G.WeaponRevisionTrial?.active() === true;
+  const weapons = revision() ? ['pistol'] : ['pistol', 'smg', 'shotgun', ...(G.MapTrial?.expanded?['baton']:[])];
   let soldierId = 'guard';
-  let models = ['pistol', 'smg'];
+  let models = revision() ? ['pistol', 'pistol'] : ['pistol', 'smg'];
   let mods = [[], []];
   let ready = false;
 
@@ -53,7 +54,8 @@ G.FieldLoadout = (() => {
     el('loadout-role-summary').textContent = `${soldier.name} · ${soldier.ability === 'sprint' ? 'Sprint: velocidad extra durante 2 s' : 'Primeros auxilios: recupera vida'}`;
     el('loadout-preview').replaceChildren();
     for (let i = 0; i < (G.MapTrial?.infinite ? 1 : 2); i++) {
-      const w = G.FieldStats.weapon({training:{},tempStats:{}}, {model:models[i],mods:G.MapTrial?.enabled?[]:mods[i],level:1});
+      const copy = {model:models[i],mods:G.MapTrial?.enabled?[]:mods[i],level:1,...(revision()?{preview:true}:{})};
+      const w = G.FieldStats.weapon({training:{},tempStats:{}}, copy);
       const item = document.createElement('li');
       const details = document.createElement('details');
       const summary = document.createElement('summary');
@@ -72,6 +74,7 @@ G.FieldLoadout = (() => {
       return null;
     }
     error.textContent = '';
+    if (revision()) return { soldierId, loadout: [G.FieldCatalog.makeWeapon('pistol', 'local:1', [])] };
     return { soldierId, loadout: (G.MapTrial?.infinite ? models.slice(0,1) : models).map((model, i) => G.FieldCatalog.makeWeapon(model, `local:${i + 1}`, G.MapTrial?.enabled?[]:mods[i])) };
   }
   return { init, options };

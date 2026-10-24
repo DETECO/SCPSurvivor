@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Armas de prueba · 16 / 32 · SCP Survivor</title>
+<style>
+:root{color-scheme:dark;font:15px/1.5 system-ui,sans-serif;background:#10191e;color:#e3e8df}
+*{box-sizing:border-box}body{margin:0 auto;max-width:1180px;padding:24px}
+h1{font-size:26px;line-height:1.2;margin:0 0 8px}p{margin:8px 0;color:#b1c2b9}
+header{margin-bottom:20px}.controls{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+label{display:flex;flex-direction:column;gap:5px;min-width:140px;flex:1}
+label.wide{flex:3;min-width:240px}select,button{font:inherit;background:#233137;color:#edf0e4;border:1px solid #536960;border-radius:6px;padding:9px 12px}
+select{width:100%;min-width:0}button{cursor:pointer}button:hover{background:#31463f}button:focus-visible,select:focus-visible{outline:2px solid #7dcfd4;outline-offset:2px}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}.tag{padding:4px 9px;border:1px solid #52685e;border-radius:4px}
+.scene{background:#152329;border:1px solid #354d45}canvas{display:block;width:100%;height:auto;touch-action:none;image-rendering:pixelated}
+.grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-top:18px}
+.dir{min-width:0;text-align:center;padding:8px;background:#1a2b2d;border:1px solid #374f46}
+.dir[aria-pressed=true]{border-color:#98c5b0;background:#29413b}.dir img{display:block;width:64px;height:64px;margin:4px auto;image-rendering:pixelated}
+.meta{margin-top:14px;background:#17262b;padding:12px}.meta strong{color:#edf0df}.note{font-size:13px}
+.check{flex-direction:row;align-items:center;min-width:0;flex:0 1 auto}.check input{margin-right:7px}
+footer{margin-top:22px;border-top:1px solid #354c44;padding-top:12px}a{color:#93d0e0}
+@media(max-width:650px){body{padding:14px}h1{font-size:22px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.controls label{min-width:135px}.controls .wide{min-width:100%}}
+</style>
+</head>
+<body>
+<header><h1>Armas de prueba · 16 / 32</h1><p>Nueve categorías y una fusión · Ocho vistas por modelo · Diseños aprobados · 22-10-2026</p></header>
+<div class="controls">
+ <label class="wide">Arma<select id="arma"></select></label>
+ <label>Resolución<select id="modo"><option value="16">16×16</option><option value="32" selected>32×32</option></select></label>
+ <label>Nivel visual<select id="nivel"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>MAX</option></select></label>
+ <label>Orientación<select id="ajuste"><option value="libre">Apuntado a 360°</option><option value="ocho">Solo ocho direcciones</option></select></label>
+</div>
+<div class="bar"><span class="tag" id="tier"></span><span id="direccion"></span><button id="atacar" type="button">Probar ataque</button><button id="centrar" type="button">Centrar</button><label class="check"><input id="anclas" type="checkbox">Ver agarre y salida</label></div>
+<div class="scene"><canvas id="escena" width="1000" height="430" tabindex="0" aria-label="Prueba de orientación y salida del ataque con el Guardia">Prueba de orientación de las armas.</canvas></div>
+<p class="note">Mueve el puntero para apuntar; clic para ver el ataque. WASD o flechas para mover al Guardia. En pantalla táctil, toca para apuntar y disparar.</p>
+<div class="grid" id="direcciones" aria-label="Las ocho vistas nativas"></div>
+<div class="meta"><strong id="nombre"></strong><p id="ataque"></p><p id="extra" class="note"></p><p class="note" id="carga" aria-live="polite">Cargando recursos…</p></div>
+<footer><p class="note">Banco visual de recursos: no concede daño, premios ni progreso real. Los niveles y las recetas siguen siendo la propuesta del catálogo. No está integrado en el juego publicado.</p>
+<p class="note"><a href="APROBACION_16.png">Hoja de aprobación16</a> · <a href="APROBACION_32.png">Hoja de aprobación32</a> · <a href="LEEME.md">Contenido y límites</a></p></footer>
+<script src="catalogo.js"></script><script src="guardia.js"></script>
+<script>
+(function(){
+const c=window.ARMAS_CATALOGO,g=window.GUARDIA_REF,canvas=document.getElementById('escena'),ctx=canvas.getContext('2d');
+const $=id=>document.getElementById(id),sel=$('arma'),mode=$('modo'),level=$('nivel'),adjust=$('ajuste');
+const images=new Map(),keys=new Set(),fx=[];let pointer={x:750,y:220},pl={x:460,y:270},angle=0,manual=null,last=0,walk=0,count=0,lastShot=-10,ready=true;
+const tc={Normal:'#b8c0cc',Raro:'#60a5fa','Épico':'#c084fc',Legendario:'#f4c76b'},mapDir=[2,1,0,7,6,5,4,3];
+function image(src){if(!images.has(src)){const im=new Image();im.src=src;im.onerror=()=>{$('carga').textContent='No se pudo cargar '+src;ready=false;};images.set(src,im);}return images.get(src);}
+for(const id of c.selected){const w=c.modes[32][id],o=document.createElement('option');o.value=id;o.textContent=w.category+' · '+w.name;sel.appendChild(o);}
+for(const n of [16,32]){for(const id of c.selected)image(c.modes[n][id].sheet);image(g[n].image);}
+function chosen(){return c.modes[mode.value][sel.value];}
+function frameFor(a){return((Math.round(a/(Math.PI/4))%8)+8)%8;}
+function circular(a){return Math.atan2(Math.sin(a),Math.cos(a));}
+function view(){
+ const w=chosen(),isFusion=w.id==='F24';level.disabled=isFusion;if(isFusion)level.value='MAX';
+ $('tier').textContent=w.tier+(isFusion?' · FUSIÓN FINAL':'');$('tier').style.color=tc[w.tier];
+ $('nombre').textContent=w.id+' · '+w.name;$('ataque').textContent=w.attack;
+ $('extra').textContent='MAX: '+w.max;$('direcciones').replaceChildren();
+ for(let i=0;i<8;i++){
+  const b=document.createElement('button');b.className='dir';b.type='button';b.setAttribute('aria-pressed','false');b.dataset.index=i;
+  const label=document.createElement('span');label.textContent=c.directions[i];const im=document.createElement('img');im.src=w.individuals[i];im.alt=w.name+' mirando '+c.directions[i];
+  b.append(label,im);b.onclick=()=>{manual=i*Math.PI/4;};$('direcciones').appendChild(b);
+ }
+}
+sel.onchange=()=>{if(sel.value!=='F24'&&level.disabled)level.value='1';fx.length=0;view();};mode.onchange=()=>view();
+function center(){pl={x:460,y:270};manual=null;} $('centrar').onclick=center;
+canvas.onpointermove=e=>{const r=canvas.getBoundingClientRect();pointer={x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height};manual=null;};
+canvas.onpointerdown=e=>{canvas.focus();canvas.onpointermove(e);angle=Math.atan2(pointer.y-pl.y+30,pointer.x-pl.x);attack(performance.now()/1000);};
+$('atacar').onclick=()=>attack(performance.now()/1000);
+window.addEventListener('keydown',e=>{if(['SELECT','INPUT','BUTTON'].includes(document.activeElement.tagName))return;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(e.key))e.preventDefault();keys.add(e.key.toLowerCase());if(e.key===' ')attack(performance.now()/1000);});
+window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));window.addEventListener('blur',()=>keys.clear());
+function spritePart(im,b,x,y,w,h,rotation=0){ctx.save();ctx.translate(x,y);ctx.rotate(rotation);ctx.drawImage(im,b.x,b.y,b.w,b.h,-w/2,-h/2,w,h);ctx.restore();}
+function body(leg,torso,top,n,im){spritePart(im,leg,n/2,n-1-leg.h/2,leg.w,leg.h);spritePart(im,torso,n/2,top+torso.h/2,torso.w,torso.h);}
+function pose(){
+ const n=Number(mode.value),w=chosen(),di=frameFor(angle),f=w.frames[di],base=di*Math.PI/4,res=adjust.value==='libre'?circular(angle-base):0,aim=base+res;
+ const chars=g[n],parts=chars.parts,dir=mapDir[di];
+ let mx=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0),my=(keys.has('s')||keys.has('arrowdown')?1:0)-(keys.has('w')||keys.has('arrowup')?1:0);
+ const walking=!!(mx||my),md=mx||my?mapDir[frameFor(Math.atan2(my,mx))]:dir;
+ const leg=parts[((walking?2+Math.floor(walk)%4:1)*8)+md],torso=parts[dir],top=n-1-leg.h-torso.h+1;
+ const origin={x:n/2,y:top+torso.h*.7},pivot={x:origin.x+Math.cos(aim)*n*.21,y:origin.y+Math.sin(aim)*n*.21};
+ const ca=Math.cos(res),sa=Math.sin(res),s=64/n,px=(f.muzzle.x-f.grip.x)*ca-(f.muzzle.y-f.grip.y)*sa,py=(f.muzzle.x-f.grip.x)*sa+(f.muzzle.y-f.grip.y)*ca;
+ return{n,w,di,f,im:image(chars.image),leg,torso,top,pivot,aim,res,s,muzzle:{x:pl.x-n/2*s+(pivot.x+px)*s,y:pl.y-(n-1)*s+(pivot.y+py)*s}};
+}
+function weapon(p){
+ const im=image(p.w.sheet);if(!im.complete||!im.naturalWidth)return;
+ const f=p.f,n=p.n;ctx.save();ctx.translate(p.pivot.x,p.pivot.y);ctx.rotate(p.res);
+ ctx.drawImage(im,f.rect.x,0,n,n,-f.grip.x,-f.grip.y,n,n);
+ if($('anclas').checked){ctx.fillStyle='#f6d36a';ctx.fillRect(f.muzzle.x-f.grip.x-1,f.muzzle.y-f.grip.y-1,2,2);ctx.fillStyle='#e2ece5';ctx.fillRect(-1,-1,2,2);}
+ ctx.restore();
+ // Brazos esquemáticos: enlazan hombros y pivote, sin cambiar recursos del personaje.
+ ctx.strokeStyle='#68745f';ctx.lineWidth=Math.max(1,p.n*.09);ctx.beginPath();ctx.moveTo(p.n/2-p.n*.13,p.top+p.torso.h*.65);ctx.lineTo(p.pivot.x,p.pivot.y);ctx.stroke();
+ ctx.fillStyle='#aab6a2';ctx.fillRect(p.pivot.x-1,p.pivot.y-1,2,2);
+}
+function player(){
+ const p=pose();if(!p.im.complete||!p.im.naturalWidth)return p;
+ ctx.save();ctx.translate(pl.x-p.n/2*p.s,pl.y-(p.n-1)*p.s);ctx.scale(p.s,p.s);
+ if(Math.sin(p.aim)<0)weapon(p);body(p.leg,p.torso,p.top,p.n,p.im);if(Math.sin(p.aim)>=0)weapon(p);ctx.restore();
+ return p;
+}
+function attack(now){
+ if(now-lastShot<.25)return;lastShot=now;const p=pose();count++;
+ const range=(level.value==='4'||level.value==='5'||level.value==='MAX')?1.2:1;
+ fx.push({id:p.w.id,at:now,x:p.muzzle.x,y:p.muzzle.y,a:p.aim,range,max:level.value==='MAX',count,color:p.w.visual.color_principal||'#dce7f0'});
+}
+function effect(e,now){
+ const t=now-e.at,dx=Math.cos(e.a),dy=Math.sin(e.a),L=210*e.range;
+ ctx.save();ctx.translate(e.x,e.y);ctx.rotate(e.a);ctx.strokeStyle=e.color;ctx.fillStyle=e.color;ctx.lineWidth=3;
+ if(['CC04','F24'].includes(e.id)){
+  if(t>.18){ctx.restore();return false;}ctx.globalAlpha=1-t/.18;ctx.beginPath();ctx.arc(-18,0,75*e.range,-1.1,1.1);ctx.stroke();
+  if(e.id==='F24'){ctx.strokeStyle='#6ad3df';ctx.beginPath();ctx.moveTo(12,0);ctx.lineTo(115,0);ctx.stroke();}
+ }else if(e.id==='IN03'){
+  if(t>.40){ctx.restore();return false;}ctx.globalAlpha=.45*(1-t/.4);ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(125*e.range,-32);ctx.lineTo(145*e.range,0);ctx.lineTo(125*e.range,32);ctx.closePath();ctx.fill();
+ }else if(['TE01','FR07','AN09'].includes(e.id)){
+  const life=e.id==='AN09'?.32:.16;if(t>life){ctx.restore();return false;}ctx.globalAlpha=1-t/life;const len=e.id==='AN09'?(e.count%2?100:160)*e.range:L;
+  ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(len,0);ctx.stroke();
+  if(e.id==='AN09')for(let i=15;i<len;i+=25)ctx.fillRect(i,-7,3,14);
+ }else if(e.id==='AR01'){
+  if(t>.65){ctx.restore();return false;}if(t<.45){const x=t/.45*L;ctx.fillStyle='#7c8c50';ctx.fillRect(x-4,-10*Math.sin(t/.45*Math.PI)-4,8,8);}else{ctx.globalAlpha=1-(t-.45)/.2;ctx.strokeStyle='#ebc67a';ctx.beginPath();ctx.arc(L,0,12+(t-.45)*120,0,Math.PI*2);ctx.stroke();}
+ }else{
+  if(t>.45){ctx.restore();return false;}const x=t/.45*L;
+  if(e.id==='RU04'){ctx.strokeStyle='#c3aa7b';ctx.beginPath();ctx.moveTo(x-16,0);ctx.lineTo(x,0);ctx.stroke();ctx.fillStyle='#dce7f0';ctx.beginPath();ctx.moveTo(x+5,0);ctx.lineTo(x-2,-4);ctx.lineTo(x-2,4);ctx.fill();}
+  else if(e.id==='PE04'){ctx.fillStyle='#667263';ctx.fillRect(x-14,-4,18,8);ctx.fillStyle='#f4a52e';ctx.fillRect(x-23,-2,8,4);}
+  else ctx.fillRect(x-5,-2,10,4);
+ }
+ ctx.restore();return true;
+}
+function tick(ms){
+ const now=ms/1000,dt=Math.min(.05,now-last||.016);last=now;
+ const mx=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0),my=(keys.has('s')||keys.has('arrowdown')?1:0)-(keys.has('w')||keys.has('arrowup')?1:0),norm=Math.hypot(mx,my)||1;
+ pl.x=Math.max(80,Math.min(920,pl.x+mx/norm*dt*140));pl.y=Math.max(110,Math.min(390,pl.y+my/norm*dt*140));if(mx||my)walk+=dt*7;
+ angle=manual===null?Math.atan2(pointer.y-pl.y+30,pointer.x-pl.x):manual;
+ ctx.imageSmoothingEnabled=false;ctx.fillStyle='#152329';ctx.fillRect(0,0,1000,430);
+ ctx.strokeStyle='#223630';ctx.lineWidth=1;for(let x=0;x<1000;x+=32){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,430);ctx.stroke();}for(let y=0;y<430;y+=32){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(1000,y);ctx.stroke();}
+ ctx.strokeStyle='#7c9388';ctx.beginPath();ctx.moveTo(pointer.x-8,pointer.y);ctx.lineTo(pointer.x+8,pointer.y);ctx.moveTo(pointer.x,pointer.y-8);ctx.lineTo(pointer.x,pointer.y+8);ctx.stroke();
+ const p=player();for(let i=fx.length-1;i>=0;i--)if(!effect(fx[i],now))fx.splice(i,1);
+ $('direccion').textContent=c.directions[p.di]+' · '+Math.round((p.aim*180/Math.PI+360)%360)+'°';
+ for(const b of $('direcciones').children)b.setAttribute('aria-pressed',Number(b.dataset.index)===p.di?'true':'false');
+ if(ready&&[...images.values()].every(im=>im.complete&&im.naturalWidth))$('carga').textContent='20 hojas direccionales y dos referencias del Guardia cargadas. Diseños aprobados. Calibración técnica de agarres pendiente de integración.';
+ requestAnimationFrame(tick);
+}
+view();requestAnimationFrame(tick);
+})();
+</script>
+</body></html>

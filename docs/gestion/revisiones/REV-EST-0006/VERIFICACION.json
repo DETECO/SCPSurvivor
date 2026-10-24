@@ -1,0 +1,45 @@
+{
+  "revision": "REV-EST-0006",
+  "date": "2026-10-23",
+  "archived_documents": 21,
+  "snapshot_hashes_match": true,
+  "selected_resources": [
+    {
+      "path": "js/ui/rift-visuals.js",
+      "sha256": "e6734bf655467595a8e6433069b4e19e7d2d8aaf9ef1475429ada28ac9bce02e",
+      "matches_record": true
+    },
+    {
+      "path": "tests/artifacts/rift-animation-009/grietas-animadas-009.gif",
+      "sha256": "8d6a2983d95237af400f20d23bf1676b9e6f3bf4983432ebcfc42007ac53eafc",
+      "matches_record": true
+    },
+    {
+      "path": "assets/brand/scp-survivor.png",
+      "sha256": "908606b590be6fbc234c20aef46838b6301d7cfd968e116799f8bbddef0a70e7",
+      "matches_record": true
+    },
+    {
+      "path": "../design-proposals/anomalias/sprites-v1-20261023.zip",
+      "sha256": "7654794a6fed9cdc0b358a04795555f9ae81c49a7353e4d37f11a6124816e6bd",
+      "matches_record": true
+    },
+    {
+      "path": "../design-proposals/backrooms-glass-20261022/03-reflejo-laberinto-SCP.png",
+      "sha256": "908606b590be6fbc234c20aef46838b6301d7cfd968e116799f8bbddef0a70e7",
+      "matches_record": true
+    }
+  ],
+  "local_bundle_sha256": "6f9fb809d0d64d07f35835f80aa266a6d06ce06fd777f5fd018bc79d043ebe0b",
+  "published_bundle_sha256_record": "9227ecc9f1ad298c6e4b8d6a3e26908da92a292f211a2f5269a6a09f8ade16e6",
+  "local_bundle_matches_historical_publication": false,
+  "live_site_rechecked": false,
+  "game_tests_rerun": false,
+  "physical_phone_tested": false,
+  "auxiliary_review_reports_incorporated": false,
+  "primary_review_source": "Coordinador; documentos locales y consultas acotadas de PERSONAJES/PROGRAMACION",
+  "central_documents_verified": 6,
+  "valid_local_links": 125,
+  "missing_local_links": 0,
+  "area_sources_unchanged_since_snapshot": true
+}

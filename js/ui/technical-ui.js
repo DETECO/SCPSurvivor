@@ -164,6 +164,10 @@ G.TechnicalUI = (() => {
     el('boot').hidden = true; state('ui');
   }
   function state(value) {
+    if(G.OperationsMenu?.isEnabled?.()){
+      if(value==='ui')G.Audio?.music('village');
+      else if(value==='playing'&&G.Audio?.track==='village')G.Audio.music(null);
+    }
     document.body.dataset.technicalState = value;
     G.ExpandedUI.state(value);
     el('technical-ready').hidden = value !== 'ui';

@@ -1,14 +1,88 @@
 # Pauta de creación de escenarios — SCP Survivor
-Versión R7 · 22/10/2026 · Backrooms 2.5D, variedad espacial y futura generación procedural.
+Revisión documental R7.4 · 23/10/2026 · Área responsable: NIVELES.
+Diseños conservados: M01-R7 y GRIETAS-V1. Animación NIV-GRI-009 r1 aprobada visualmente por Iván el 23/10/2026.
 
 ## Autoridad y estado
 Iván pidió un escenario Backrooms que se llene de monstruos, con profundidad 2.5D, un poco de difuminado, espacios abiertos y delimitados, módulos y laberinto amplio. Solicitó ampliar y rediseñar la distribución, evitando que todo parezca copiado. Estas instrucciones posteriores sustituyen el plano repetitivo de 24 recintos como objetivo de esta nueva propuesta.
 
-Iván validó R7 como escenario inicial el 22/10/2026: «ME GUSTO ESTE ESCENARIO. LO VALIDO.». El diseño mide **480 × 320 casillas** y pasa a ser la referencia vigente. R5 se conserva como antecedente en su registro. La geometría de colisión, el generador, la integración y las pruebas jugables siguen pendientes.
+Iván validó R7 como escenario inicial el 22/10/2026: «ME GUSTO ESTE ESCENARIO. LO VALIDO.». El diseño mide **480 × 320 casillas** y pasa a ser la referencia vigente. R5 se conserva como antecedente en su registro. El alcance de implementación se consulta en la evidencia de PROGRAMACION enlazada más abajo; no se duplica su lista de estados.
 
-Se consultó ESTRUCTURA el 22/10/2026 hasta el turno 01a15a34-93e9-7a11-9597-6a2c37fb2570 del hilo 01a1457c-c051-73d2-9864-e7deb6435420. Las reglas aceptadas se conservan según DECISIONES_INFINITO_2026-10-20.md, ESTRUCTURA_REGLAS_APROBADAS.md y PRUEBA_T1BC.md. La revisión local 0.32 de personajes no acredita una nueva geometría de escenarios.
+Índice de entrada: [PAUTA_DESARROLLO.md](../PAUTA_DESARROLLO.md). Para las dependencias de grietas se consultaron los documentos locales [dado, revisión 2.1](GRIETAS_DADO_POR_MINUTO_V2.md) y [corte de ESTRUCTURA del 23/10](ESTRUCTURA_SYNC_2026-10-23.md). Esto no declara una nueva lectura del hilo completo. Las reglas de otras áreas se referencian; NIVELES no las modifica.
 
 Las láminas son conceptos de composición, ambiente y ocupación. No son atlas de tiles, planos métricos ni evidencia de un generador ya implementado.
+
+## Resumen vigente y registro de decisiones
+
+- **M01-R7:** concepto visual aprobado. Tras la prueba en móvil, Iván solicita corregir sus proporciones; la escala 480 × 320 queda bajo revisión. [NIV-ESC-008 r1](NIVELES_AJUSTE_ESCALA_008.md) presenta A: 240 × 160 + encuadre cercano (recomendada), y B: conservar perímetro + encuadre cercano. Ninguna opción nueva está aceptada todavía.
+- **GRIETAS-V1, 01–06:** seis diseños visuales aprobados como catálogo. No hay una elección única ni correspondencia aprobada con los cinco niveles de peligro.
+- **NIV-GRI-009 r1:** seis animaciones de portal aprobadas visualmente por Iván el 23/10/2026: «apruebo.». [Registro, recursos y dependencias](NIVELES_APROBACION_GRIETAS_ANIMACION_009.md); implementación y verificaciones en [evidencia de PROGRAMACION](PROGRAMACION_GRIETAS_ANIMACION_009.md). Publicación y teléfono físico se consultan allí; esta aprobación no elige la escala NIV-ESC-008.
+- **M01-R5:** aprobación histórica sustituida por M01-R7 como referencia inicial. No se aplica a R6 ni a revisiones futuras.
+- Los diseños estáticos conservan su aprobación del 22/10. El 23/10 se aprueba la animación NIV-GRI-009 r1 y se conserva la solicitud de corrección de escala sin aceptar A ni B.
+
+| ID / revisión | Decisión exacta y alcance | Fecha de aprobación | Cita literal de Iván | Recurso elegido | Dependencias |
+|---|---|---|---|---|---|
+| M01-R7 | Validar el concepto visual y la distribución como escenario inicial vigente. Sustituye M01-R5 como referencia. | 22/10/2026 | «ME GUSTO ESTE ESCENARIO. LO VALIDO.» | [Plano R7](../../design-proposals/escenarios/mapa01-r7-modular-backrooms-25d-20261022/01-mapa-general-r7-25d.png), [familias](../../design-proposals/escenarios/mapa01-r7-modular-backrooms-25d-20261022/03-familias-de-modulos-r7.png), [contrato](../../design-proposals/escenarios/mapa01-r7-modular-backrooms-25d-20261022/CONTRATO_MODULAR_R7.json) y [aprobación original](../../design-proposals/escenarios/mapa01-r7-modular-backrooms-25d-20261022/VALIDACION_ESCENARIO_R7.md). | ESTRUCTURA: escala y recorrido; PROGRAMACION: construcción, navegación y pruebas; PERSONAJES: escala y legibilidad. |
+| GRIETAS-V1 / 01 | Aprobar Cicatriz carmesí como variante visual de entrada a la anomalía peligrosa. | 22/10/2026 | «apruebo estas grietas.» | [01 — Cicatriz carmesí](../../design-proposals/grietas/6-estilos-25d-20261022/01-cicatriz-carmesi.png). | ESTRUCTURA: peligro y aparición; PROGRAMACION: adaptación; SONIDO: aviso. |
+| GRIETAS-V1 / 02 | Aprobar Pliegue amarillo como variante visual del mismo catálogo. | 22/10/2026 | «apruebo estas grietas.» | [02 — Pliegue amarillo](../../design-proposals/grietas/6-estilos-25d-20261022/02-pliegue-amarillo.png). | Las mismas dependencias de GRIETAS-V1. |
+| GRIETAS-V1 / 03 | Aprobar Fractura prismática como variante visual del mismo catálogo. | 22/10/2026 | «apruebo estas grietas.» | [03 — Fractura prismática](../../design-proposals/grietas/6-estilos-25d-20261022/03-fractura-prismatica.png). | Las mismas dependencias de GRIETAS-V1. |
+| GRIETAS-V1 / 04 | Aprobar Fisura orgánica como variante visual del mismo catálogo. | 22/10/2026 | «apruebo estas grietas.» | [04 — Fisura orgánica](../../design-proposals/grietas/6-estilos-25d-20261022/04-fisura-organica.png). | Las mismas dependencias de GRIETAS-V1. |
+| GRIETAS-V1 / 05 | Aprobar Horizonte negro como variante visual del mismo catálogo. | 22/10/2026 | «apruebo estas grietas.» | [05 — Horizonte negro](../../design-proposals/grietas/6-estilos-25d-20261022/05-horizonte-negro.png). | Las mismas dependencias de GRIETAS-V1. |
+| GRIETAS-V1 / 06 | Aprobar Interferencia espectral como variante visual del mismo catálogo. | 22/10/2026 | «apruebo estas grietas.» | [06 — Interferencia espectral](../../design-proposals/grietas/6-estilos-25d-20261022/06-interferencia-espectral.png). | Las mismas dependencias de GRIETAS-V1. |
+
+La cita común aprueba las seis grietas mostradas, sin aprobar su mecánica de aparición ni convertir sus números en tiers. Evidencia: [registro visual original](../../design-proposals/grietas/6-estilos-25d-20261022/APROBACION_GRIETAS_VISUALES.md) y [comparativa aprobada](../../design-proposals/grietas/6-estilos-25d-20261022/00-comparativa-6-estilos.png).
+
+## Solicitud de corrección — NIV-ESC-008 r1
+
+**23/10/2026 · Cita literal:** «siento que el personaje es pequeño en el mapa, ajusta mejor la dimencion del mapa. se que te pedi que fuera mas grande pero aqui en la prueba se ve mal.»
+
+Se solicita revisar las proporciones de la prueba. [Diagnóstico y opciones A/B](NIVELES_AJUSTE_ESCALA_008.md). A recomienda 240 × 160 casillas y ancho visible de 512 unidades en móvil vertical. B mantiene 480 × 320 con el mismo encuadre cercano. La cámara actual usa ancho visible fijo: reducir solo el mapa no agranda al personaje.
+
+Estado: propuesta nueva pendiente de aceptación; no se extiende a ella la validación de R7. Dependencias: PROGRAMACION (geometría/cámara/pruebas), MENUS (ocupación de pantalla), PERSONAJES (proporciones conservadas) y ESTRUCTURA (consolidación de escala). Recursos actuales conservados. La pauta previa queda en [historial](historial-niveles/PAUTA_antes_ajuste_escala_2026-10-23_152337.md).
+
+## Dependencias y cambios que requieren consolidación en ESTRUCTURA
+
+- **CON-NIV-06 — Animación:** consolidar la aprobación visual de NIV-GRI-009 r1, del 23/10/2026, cita «apruebo.», según su registro. No cambia azar, tiers, contacto, ventana de entrada, premios ni la revisión de escala pendiente.
+
+- **CON-NIV-01 — Escala histórica:** M01-R7 de 480 × 320 conserva su aprobación original; la solicitud posterior NIV-ESC-008 abre su revisión para la siguiente prueba. No consolidar 160 × 100 ni R5 como referencia vigente por retroceso automático.
+- **CON-NIV-05 — Corrección de proporciones:** ESTRUCTURA debe consolidar la opción de NIV-ESC-008 que Iván acepte. Por ahora A y B son propuestas; no se da por aceptado el nuevo tamaño ni el encuadre.
+- **CON-NIV-02 — Grietas:** registrar que los seis aspectos están aprobados. Las referencias de ESTRUCTURA que aún los llamen propuestas artísticas requieren consolidación; la peligrosidad sigue siendo un eje separado.
+- **CON-NIV-03 — Señalización de peligro:** falta proponer y aceptar cómo mostrar D1–D5 sobre cualquiera de los seis aspectos, sin depender solo del color. NIVELES diseña la señal visual; ESTRUCTURA confirma su significado y compatibilidad con la entrada por contacto.
+- **CON-NIV-04 — Procedural y hordas:** el contrato espacial R7 conserva rutas alternativas y variedad. ESTRUCTURA coordina su relación con el ritmo de cinco minutos; la implementación y su evidencia pertenecen a PROGRAMACION.
+- El azar y la frecuencia dependen de [la ficha de ESTRUCTURA](GRIETAS_DADO_POR_MINUTO_V2.md). La aprobación visual no los acepta ni los revoca. Los pendientes de otras áreas se consultan en sus fuentes, sin copiarlos como decisiones de NIVELES.
+
+No se han modificado pautas de otras áreas ni enviado mensajes a otros hilos.
+
+## Evidencia de implementación — PROGRAMACION
+
+Para la animación NIV-GRI-009 r1, consultar [PROGRAMACION_GRIETAS_ANIMACION_009.md](PROGRAMACION_GRIETAS_ANIMACION_009.md). La pauta conserva el encargo; no copia su lista de estados ni resultados de pruebas.
+
+Consultar [PRESENTACION_INTEGRADA.md](PRESENTACION_INTEGRADA.md), su [validación](PRESENTACION_VALIDACION.json) y su [recibo de publicación](PRESENTACION_PUBLICACION.json). Es la referencia de implementación para R7 y las apariencias de grieta; sus resultados, límites y aceptación de la integración se mantienen allí. Esta pauta registra diseño y decisiones, no otra lista de funcionalidades implementadas.
+
+## Historial y reglas de aceptación
+
+### Aprobación posterior del resultado: NIV-GRI-009 r1
+
+| ID/revisión | Decisión exacta | Fecha | Cita de aprobación | Recurso elegido | Dependencias |
+|---|---|---|---|---|---|
+| NIV-GRI-009 r1 | Aprobar visualmente las seis animaciones de grieta presentadas, con movimiento, partículas y profundidad 2.5D. | 23/10/2026 | «apruebo.» | [Comparativa animada](../tests/artifacts/rift-animation-009/grietas-animadas-009.gif), [renderer](../js/ui/rift-visuals.js) y [registro con huellas de versión](NIVELES_APROBACION_GRIETAS_ANIMACION_009.md). | ESTRUCTURA: consolidar aprobación; PROGRAMACION: evidencia, teléfono físico y publicación; PERSONAJES: conservar proporciones y recursos. |
+
+El encargo original se conserva a continuación como historial. La aprobación actual se aplica solo al resultado NIV-GRI-009 r1 mostrado, no a revisiones futuras ni a NIV-ESC-008.
+
+### Encargo posterior: NIV-GRI-009 r1
+
+| ID/revisión | Decisión exacta | Fecha | Cita literal | Recurso/alcance | Dependencias |
+|---|---|---|---|---|---|
+| NIV-GRI-009 r1 | Animar en el juego los portales de las seis grietas, con movimiento, partículas cuando corresponda y profundidad 2.5D. Es autorización de trabajo, no aceptación visual del resultado. | 23/10/2026 | «anima los partales de las grietas, quiero que tengan animaciones en el juego, con particulas movimiento, si corresponde. recordar que todo esto debe tener un profundidad, estilo 2.5D» | GRIETAS-V1 / 01–06; [ficha de animación](NIVELES_GRIETAS_ANIMACION_009.md) y [evidencia](PROGRAMACION_GRIETAS_ANIMACION_009.md). | PROGRAMACION: renderer/reloj/pruebas; PERSONAJES: profundidad respecto a actores; ESTRUCTURA: consolidación visual. |
+
+Pauta anterior y fuentes previas conservadas en [respaldo del encargo](historial-niveles/grietas-animacion-20261023-162610/docs/PAUTA_CREACION_ESCENARIOS.md). La aprobación del 22/10 conserva su alcance: diseños estáticos; no se extiende automáticamente a esta animación.
+
+| ID / revisión histórica | Decisión exacta | Fecha | Cita de aprobación | Recurso conservado | Dependencias y sustitución |
+|---|---|---|---|---|---|
+| M01-R5 | Aprobar el concepto visual y la distribución como escenario inicial de 320 × 200, con 24 conjuntos de paredes y 18 grupos de mobiliario. | 22/10/2026 | «APRUEBO ESTE ESCENARIO. COMO INICIAL.» | [Plano R5](../../design-proposals/escenarios/mapa01-r5-paredes-y-rutas-20261022/01-mapa-general-r5.png) y [registro original](../../design-proposals/escenarios/mapa01-r5-paredes-y-rutas-20261022/APROBACION_ESCENARIO_INICIAL.md). | Construcción y pruebas dependían de PROGRAMACION. Sustituido por M01-R7 como referencia inicial, sin borrar su aprobación histórica. |
+
+La pauta anterior se conserva íntegra en [respaldo R7 previo al registro](historial-niveles/PAUTA_R7_antes_registro_2026-10-23_104620.md). Sus afirmaciones de implementación describen aquel corte; para el estado actual se consulta PROGRAMACION.
+
+Las siguientes propuestas de NIVELES tendrán ID y revisión identificables. Al aceptar Iván una opción inequívoca —incluido «me gusta», «acepto» o «elijo»— se guardarán decisión exacta, fecha, cita, recurso y dependencias; se actualizará el resumen y se archivará lo sustituido. Si el referente no es inequívoco, se preguntará únicamente cuál opción acepta. Una aceptación no se extiende a otras opciones ni a revisiones posteriores.
 
 ## 1. Contrato jugable que debe acompañar a cada escenario
 - Recorrido infinito: base → escenario → jefe superado y puerta disponible → siguiente escenario.
@@ -23,7 +97,7 @@ Las láminas son conceptos de composición, ambiente y ocupación. No son atlas 
 - Mochilas y accesorios físicos de arma quedan fuera del recorrido nuevo.
 
 ## 2. Escala, diversidad y movimiento
-Propuesta R7: **480 × 320 casillas**, 32 unidades por casilla. Superficie de 153.600 casillas, 2,4 veces R5. Actores y objetos conservan su escala de mundo. La nueva inclinación visual y el difuminado no cambian colisiones, radios o velocidad por sí mismos.
+Diseño aprobado M01-R7: **480 × 320 casillas**, 32 unidades por casilla. Superficie de 153.600 casillas, 2,4 veces R5. Actores y objetos conservan su escala de mundo. La nueva inclinación visual y el difuminado no cambian colisiones, radios o velocidad por sí mismos.
 
 Combinar seis familias en una distribución irregular:
 - Plaza abierta con pilares espaciados y varias conexiones.
@@ -46,7 +120,7 @@ Medidas nominales propuestas:
 
 La puerta y el jefe deben quedar alcanzables dentro del ritmo de cinco minutos. Al crecer la superficie, se deben medir las distancias reales y los tiempos de aproximación; no se heredan las cifras de R5.
 
-El grafo conceptual R7 tiene ocho nodos y trece enlaces, un componente conectado y ninguna zona o enlace individual indispensable para conectar el resto. Este resultado corresponde solo al grafo entre zonas. Las anchuras, puertas y colisiones físicas todavía requieren construir y comprobar la geometría.
+El grafo conceptual R7 tiene ocho nodos y trece enlaces, un componente conectado y ninguna zona o enlace individual indispensable para conectar el resto. Este resultado corresponde solo al grafo entre zonas. Este análisis conceptual no acredita por sí solo anchuras, puertas ni colisiones físicas; consultar la evidencia de PROGRAMACION.
 
 ## 3. Cofres y puntos de interés
 Reservar seis candidatos de exploración, todos accesibles. Son ubicaciones alternativas, no seis cofres garantizados.
@@ -64,8 +138,8 @@ Conservar apertura de exploración durante 3,5 segundos en proximidad, distancia
 El terminal de sustitución de armas es opcional y está próximo al inicio en T1BC; su posición real la selecciona el algoritmo entre puntos válidos. Abrirlo pausa el ensayo. No implica tienda, gacha o fusión permanente.
 
 ## 4. Grietas, fusión y ampliaciones
-- Grieta especial: desde el mapa 2, entre 1:30 y 3:00 como parámetro de ensayo, entrada opcional y ventana de 45 segundos activos. Entrada por contacto.
-- Recinto separado, origen congelado y retorno tras reclamar victoria: decisiones aceptadas, todavía pendientes de su implementación completa según el corte actual.
+- Grieta especial: desde el mapa 2, entrada opcional por contacto y ventana de 45 segundos activos. La frecuencia, los sorteos y sus aprobaciones se consultan en [GRIETAS_DADO_POR_MINUTO_V2.md](GRIETAS_DADO_POR_MINUTO_V2.md); la franja histórica 1:30–3:00 no gobierna el nuevo contrato por minuto.
+- Recinto separado, origen congelado y retorno tras reclamar victoria: dependencias de ESTRUCTURA. Para conocer su implementación se consulta PROGRAMACION.
 - Escape anticipado: una única ventana de cinco segundos entre 1:00 y 3:00 del recinto. Su instante, ubicación y aviso requieren concretar la ficha.
 - En el mapa 1 de esta propuesta no se dibuja una grieta activa ni se exige jugar ese bloque para validar el escenario.
 - La sala de fusión dentro de algunos escenarios está aceptada. Su frecuencia, recetas, herencia y límite de operaciones siguen abiertos; esta pauta no la añade obligatoriamente al mapa 1.
@@ -82,7 +156,7 @@ El terminal de sustitución de armas es opcional y está próximo al inicio en T
 - Mantener separadas colisión de suelo, altura visual, decoración y elementos interactivos. La ilustración no define la física.
 
 ## 6. Contrato de futura generación procedural
-La dirección procedural está aceptada; la composición R7 y su catálogo todavía son una propuesta, sin implementación nueva del generador.
+La dirección procedural y el concepto visual/distribución M01-R7 están aceptados. El siguiente orden es una guía para construir el generador, no una aprobación adicional de cada algoritmo o parámetro. Su implementación se consulta en PROGRAMACION.
 
 Orden de construcción:
 1. Crear un grafo de sectores con circuito exterior y conexiones alternativas. La referencia R7 usa seis familias; la propuesta futura permite seis a nueve áreas, conservando las familias necesarias.
@@ -110,4 +184,4 @@ La cantidad de figuras dibujadas no determina capacidad, balance ni límite de e
 ## 8. Aplicación actual
 M01 R7 — Backrooms modular 2.5D. Entrega en design-proposals/escenarios/mapa01-r7-modular-backrooms-25d-20261022. El plano mezcla plazas, recintos, grupos modulares, laberinto amplio y servicios, con una arena abierta.
 
-Estado: diseño visual y distribución validados por Iván como escenario inicial. El juego y su generador no se han modificado en esta tarea. R5 y su aprobación se conservan; los estudios intermedios R6 no gobiernan el nuevo trazado.
+Vigencia: M01-R7 y GRIETAS-V1 / 01–06, según el registro de esta pauta, más el encargo visual NIV-GRI-009 r1. R5 y su aprobación se conservan como historial; los estudios intermedios R6 no gobiernan el trazado. La implementación se consulta en la evidencia de PROGRAMACION. NIV-ESC-008 sigue pendiente de elección.

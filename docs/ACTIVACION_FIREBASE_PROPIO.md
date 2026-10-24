@@ -1,5 +1,7 @@
 # Activación de Firebase propio para cerrar P05
 
+**Actualización18/10/2026 (A-029/D-317):** se prepara la alternativa Worker/SQLite conservando Firebase Auth y Spark. El cliente sigue desactivado y no hay despliegue verificado. Confirmar Workers Free y ejecutar la aceptación real antes de cerrar P05 o continuar P06. Agentes Sol con razonamiento medio, bajo revisión de raíz. Consultar [P05-WORKER-SPARK.md](P05-WORKER-SPARK.md); lo anterior sobre Functions queda como antecedente del camino original.
+
 Estado vigente17/10/2026: acceso CLI y configuración Auth comprobados en vivo (EV-033). Iván eligió **mantener Spark sin facturación** (A-028/D-315). El backend actual Functions no se despliega en Spark; `ownAccountsEnabled=false`. Las secciones de despliegue de abajo son una referencia condicionada y **NO DEBEN EJECUTARSE bajo la decisión vigente**. Leer [estado Spark](P05-ESTADO-SPARK.md). No cambiar los estados del roadmap por seguir estos comandos sin ejecutar y revisar las pruebas de CIERRE_P05.md.
 
 ## Acceso del propietario y coste

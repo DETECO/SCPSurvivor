@@ -1,0 +1,27 @@
+{
+  "revision": "REV-EST-0006",
+  "date": "2026-10-23",
+  "destination": {
+    "threadId": "01a13aeb-020a-7d62-8256-3d42a6e61877",
+    "title": "PROGRAMACION",
+    "hostId": "local"
+  },
+  "authorization": {
+    "source": "Mensaje directo de Ivan en ESTRUCTURA durante esta consolidacion",
+    "quote": "a lo que termines de consolidar los cambios, ve al hilo \"PROGRAMACION\" y dile que lo implemente, yo te autorizo. :D"
+  },
+  "status": "message_sent_and_implementation_turn_active",
+  "prompt": "Iván me ha autorizado expresamente en ESTRUCTURA: «a lo que termines de consolidar los cambios, ve al hilo \"PROGRAMACION\" y dile que lo implemente, yo te autorizo. :D».\n\nSoy Juanillo. La consolidación está cerrada como REV-EST-0006 / CONTROL_CAMBIOS 0.6. Implementa ahora el alcance aprobado y comprobable, revisando primero el código existente y conservando los originales.\n\nProyecto: C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR\n\nLee primero PAUTA_DESARROLLO.md y el encargo completo:\nC:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/gestion/ENCARGO_PROGRAMACION_REV-EST-0006.md\nAllí se enlazan CONTROL_CAMBIOS.md, el informe de consolidación, fuentes conservadas, recursos y criterios.\n\nOrden recomendado:\n1. Revisar la composición local de MEN-003 (corrección móvil) y NIV-GRI-009 r1 (seis animaciones de grieta aprobadas, ya implementadas localmente), incorporando su evidencia. El recibo público 0.33 corresponde a otra huella y no acredita estas novedades.\n2. LOT-EST-003 r1: Iván aceptó ahora NIV-ESC-008-A r1, registrado en EST-ESC-001 r1: M01 240×160, ancho visible objetivo512 unidades en móvil vertical y redistribución de R7, sin cambiar proporciones/colisiones del personaje. No sigue pendiente elegir A/B.\n3. LOT-EST-002 r1: EST-ARM-001 r1 está aprobado por «acepto todo.»; escala única por copia1–5+MAX sustituye cuatro ramas. AF01/CC04/TE01 y primera fusiónCC04+TE01→F24FINAL; una fusión por expedición. Validar poses/agarres y continuar las partes independientes si falta arte.\n4. En paralelo cuando proceda, LOT-EST-001 r1 (director aislado del dado50/50, minutos1–4 desde mapa2, máximo2, pesos50/32/8/7/3) y LOT-EST-004 r1 (ambiente aprobado SON-001).\n\nLas anomalías biológicas V1, sus15 ataques y recursos raster, y los textos de compañeros están aprobados en su alcance. El encargo permite preparar carga/compatibilidad visual y catálogo de textos; no inventes vida/daño/velocidad, recintos, reglas de nombres/cadencias o NPC para anunciar encuentros completos. MEN-004 sigue como galería visual local en revisión, sin equipamiento; no la conviertas en selector funcional ni permitas empezar con F24 por inferencia.\n\nRegistra al comenzar los IDs/revisiones y cambios concurrentes. Crea o mantén docs/gestion/REGISTRO_IMPLEMENTACION.md con resultados reales por lote, pruebas, informe completo/parcial y pendientes materiales. Corrige fallos técnicos ya encargados sin exigir otra consolidación equivalente. Usa agentes Luna con razonamiento máximo si delegas, conforme a la instrucción vigente.\n\nEsta autorización encarga implementación: respeta las autorizaciones existentes de publicación/servicios sin ampliarlas automáticamente. Continúa con lo aprobado sin solicitar otra confirmación equivalente.",
+  "toolResult": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"threadId\":\"01a13aeb-020a-7d62-8256-3d42a6e61877\"}"
+      }
+    ],
+    "isError": false
+  },
+  "implementationCompleted": false,
+  "implementationTurnId": "01a16a63-7874-7e01-b1a9-0e45df24c2b3",
+  "initialAcknowledgement": "Voy a revisar el encargo REV-EST-0006 y el código actual, registrar las revisiones de partida y avanzar por lotes. Usaré agentes Luna con razonamiento máximo para las partes independientes y revisaré su integración y sus pruebas."
+}

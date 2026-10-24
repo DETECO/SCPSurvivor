@@ -1,8 +1,8 @@
 # Diálogos de compañeros de grieta — banco V1
 
-**Ampliación 23/10/2026:** [personalidades y variantes femeninas V2](DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md), con tonos sarcástico, enojado, entusiasta, cariñoso, simpático, sereno, nervioso y analítico. Iván diseñará los sprites femeninos. La personalidad no queda ligada al género; se conservan las biografías y condiciones de este V1.
+**Ampliación 23/10/2026:** [personalidades y variantes femeninas V2](DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md), ahora con catorce tonos, incluidos tóxica, amorosa, coqueta, fría, agresiva y enojona. Iván diseñará los sprites femeninos. La personalidad no queda ligada al género; se conservan las biografías y condiciones de este V1.
 
-22/10/2026 · Actualización 23/10/2026 · ESTRUCTURA. **Diseño y texto propuestos; no integrados.** Iván aceptó la mecánica del compañero y pidió variedad: reconocer armas propias y del jugador, escenario, casa y recuerdos. Añadió reconocimiento futuro del nombre del jugador.
+22/10/2026 · Actualización 23/10/2026 · ESTRUCTURA. **Textos V1 y V2 aprobados por Iván el 23/10/2026; no integrados al juego.** El banco reconoce armas propias y del jugador, escenario, casa y recuerdos. Las biografías y reglas de activación conservan su estado documental y los parámetros mecánicos siguen sujetos a ESTRUCTURA.
 
 **Formato elegido por Iván el 23/10:** diálogo mediante **burbujas de texto del NPC**, sin locuciones de las frases. Un sonido característico acompañará sus intervenciones; Iván lo diseñará posteriormente en el hilo **«sonido»**. Esta entrega no crea ni elige ese sonido. «Voces» significa personalidad y manera de escribir, no actores de voz.
 
@@ -218,4 +218,4 @@ Validar modelos y familias frente al equipamiento real, comentarios de ambas ran
 
 Probar alias ausente, largo o con signos, sustitución sin marcadores visibles y lectura completa en burbujas con sonido silenciado. Revisar longitud, ubicación y legibilidad en pantalla pequeña tras sustituir nombres. El sonido identificativo y las pruebas de integración siguen pendientes; no se requieren grabaciones de las frases.
 
-El banco contiene **102 variantes con ID único**, incluidas ocho con nombre y alternativa sin nombre; no hay obligación de decirlas todas. La redacción, nombres de NPC, frecuencia y vínculo final con modelos visuales son propuestas para revisión. La aceptación de la mecánica anterior no aprueba automáticamente cada frase nueva.
+El banco contiene **102 variantes con ID único**, incluidas ocho con nombre y alternativa sin nombre; no hay obligación de decirlas todas. Iván aprobó el texto de los bancos V1 y V2 el 23/10/2026. Los nombres de NPC, frecuencia y vínculo final con modelos visuales conservan su estado propuesto; aprobar los textos no modifica las reglas de ESTRUCTURA.

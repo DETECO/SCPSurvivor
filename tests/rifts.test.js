@@ -12,6 +12,16 @@ function setup(search='?prueba=grieta', hostname='127.0.0.1', protocol='http:', 
   G.DimensionalRifts.reset();return{G,player,geometry,sounds,offer,r:G.DimensionalRifts};
 }
 
+test('rift drawable separates its floor from its upright body without changing contact or expiry',()=>{
+  const a=setup();a.offer();const before=JSON.stringify(a.r.state),calls=[];
+  a.G.RiftVisuals={draw:(ctx,state,time,style,layer)=>{calls.push(layer);return true;}};
+  a.r.draw({},'ground');
+  const sprite=a.r.drawable();assert.equal(sprite.y,a.r.state.y+35);
+  sprite.draw({});assert.deepEqual(calls,['ground','body']);
+  assert.equal(JSON.stringify(a.r.state),before);
+  a.r.tick(45);assert.equal(a.r.drawable(),null);
+});
+
 test('solo opción local y sin cuentas; modo normal y servidores públicos intactos',()=>{
   for(const [search,host] of [['','127.0.0.1'],['?prueba=grieta','example.com'],['?prueba=grieta&cuentas=local','127.0.0.1'],['?grietas=local&cuentas=local','localhost'],['?prueba=grieta&cuentas=propias','127.0.0.1']]){
     const a=setup(search,host);assert.equal(a.r.enabled,false);assert.equal(a.offer(),false);

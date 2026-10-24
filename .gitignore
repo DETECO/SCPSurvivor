@@ -16,3 +16,5 @@ Thumbs.db
 local-data/
 .firebase/
 dist-own/
+.wrangler/
+dist-worker/

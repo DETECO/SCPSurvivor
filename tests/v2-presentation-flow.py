@@ -8,6 +8,9 @@ import os,json,argparse,importlib.util
 ROOT=Path(os.environ.get('SCP_TEST_ROOT',Path(__file__).resolve().parents[1])).resolve();ThreadingHTTPServer.request_queue_size=128
 class Quiet(SimpleHTTPRequestHandler):
  def log_message(self,*a):pass
+ def copyfile(self,*a):
+  try:super().copyfile(*a)
+  except(ConnectionResetError,BrokenPipeError):pass
 def run(browser,base,entry,kind,out):
  ctx=browser.new_context(viewport={'width':1280,'height':900});p=ctx.new_page();errors=[];http=[];p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text)if m.type=='error'else None);p.on('response',lambda r:http.append([r.status,r.url])if r.status>=400 else None)
  try:

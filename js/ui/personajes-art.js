@@ -49,11 +49,17 @@ G.PersonajesArt=(()=>{
   const n=a.n,wa=angle+(w.model==='baton'&&w.flash>0?-.7+(1-Math.min(1,w.flash/.12))*1.4:0),ca=Math.cos(wa),sa=Math.sin(wa),side=count===2?(index===0?1:-1):0;
   const pivot={x:p.origin.x+ca*n*.18-sa*side*n*.09,y:p.origin.y+sa*n*.18+ca*side*n*.09};
   const hand=(x,y)=>({x:pivot.x+ca*x-sa*y,y:pivot.y+sa*x+ca*y}),hands=[hand(0,n*.07),hand((w.model==='shotgun'?13:w.model==='smg'?7:1)*n/32,n*.08)];
+  const approved=w.model==='pistol'&&G.WeaponRevisionTrial?.active()?G.AF01ApprovedArt?.mount(String(n),angle,hands[0]):null;
+  if(approved)hands[1]=approved.support;
   const nx=-Math.sin(p.aim),ny=Math.cos(p.aim),shoulders=[{x:n/2+nx*n*.18,y:p.shoulderY+ny*n*.08},{x:n/2-nx*n*.18,y:p.shoulderY-ny*n*.08}];
   const limbs=count===2?[index]:[1,0];for(const i of limbs)limb(ctx,a,img,shoulders[i],hands[count===2?0:i],i?-1:1,wa);
-  ctx.save();ctx.translate(pivot.x,pivot.y);ctx.rotate(wa);weapon(ctx,w.model,n);
-  if(w.model!=='baton'&&w.flash>0){ctx.fillStyle='#fff0b1';const muzzle=({pistol:13,smg:18,shotgun:27}[w.model])*n/32;ctx.fillRect(muzzle,-n*.04,n*.13,n*.08);}
-  ctx.restore();source(ctx,img,a.cat.parts[53],hands[0].x,hands[0].y,Math.max(2,Math.round(n*.1)),Math.max(2,Math.round(n*.1)),wa);
+  if(approved)G.AF01ApprovedArt.draw(ctx,approved,w.flash);
+  else{
+   ctx.save();ctx.translate(pivot.x,pivot.y);ctx.rotate(wa);weapon(ctx,w.model,n);
+   if(w.model!=='baton'&&w.flash>0){ctx.fillStyle='#fff0b1';const muzzle=({pistol:13,smg:18,shotgun:27}[w.model])*n/32;ctx.fillRect(muzzle,-n*.04,n*.13,n*.08);}
+   ctx.restore();
+  }
+  source(ctx,img,a.cat.parts[53],hands[0].x,hands[0].y,Math.max(2,Math.round(n*.1)),Math.max(2,Math.round(n*.1)),wa);
  }
  function drawWeapons(ctx,pl,options={},weapons=[]){
   if(!enabled()||!pl||pl.dead)return false;const a=asset(G.SPRITE_META[pl.anim?.dex]?.characterId);if(!a?.ready)return false;

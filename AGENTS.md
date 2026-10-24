@@ -1,5 +1,7 @@
 # SCP Survivor — instrucciones para Codex Local
 
+**Entrega 0.34 · REV-EST-0006 · 24/10/2026:** M01 240×160, cámara vertical 512, WAV SON-001 y ensayo AF01 con escala por copia 1–5–MAX y PNG 16/32. Director de grietas aislado; CC04/TE01/F24 y sala de fusión siguen pendientes. Sin cuentas ni guardado real. [Jugar AF01](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=32) · [Guía](docs/PRUEBA_REV_EST_0006.md) · [Estado y pruebas](docs/gestion/REGISTRO_IMPLEMENTACION.md). Publicación solicitada por Iván; la verificación pública se registra por separado.
+
 **Entrega 0.33 · 23/10/2026:** Presentación integrada: escenario inicial R7 Backrooms480×320 con profundidad visual2.5D, menús aprobados responsivos, icono3 con SCP, personajes16/32 y dos prácticas visibles. Seis apariencias de grieta en B3; nuevas mecánicas de azar/NPC/recinto separado documentadas y pendientes. [Jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2) · [Alcance y límites](docs/PRESENTACION_INTEGRADA.md) · [ESTRUCTURA consultada](docs/ESTRUCTURA_SYNC_2026-10-23.md).
 
 
@@ -41,6 +43,8 @@ Leer primero [PAUTA_DESARROLLO.md](PAUTA_DESARROLLO.md), [plan de cambios](docs/
 La revisión inicial V2 fue documental; ahora existe el primer ensayo local descrito arriba. El código anterior se conserva para regresión. No continuar el prototipo de mochilas/mods ni la lista física anterior de P06. Terminar aceptación real P05 y compatibilidad de guardado antes de implementar P06 replanteada. Mantener Spark sin facturación. Agentes Sol con razonamiento medio; raíz guía, revisa e integra.
 
 RoadmapSCPv0.20 añade `activeDesignRevision`; sus53tareas/estados/pesos y52/100 describen la línea base histórica. AvanceV2 sin calcular; no conceder puntos por retirar funciones. Las reglas incompatibles que aparecen debajo son antecedentes, no instrucciones vigentes para V2.
+
+**Actualización18/10/2026 (A-029/D-317):** se prepara la alternativa Worker/SQLite conservando Firebase Auth y Spark. El cliente sigue desactivado y no hay despliegue verificado. Confirmar Workers Free y ejecutar la aceptación real antes de cerrar P05 o continuar P06. Agentes Sol con razonamiento medio, bajo revisión de raíz. Consultar [docs/P05-WORKER-SPARK.md](docs/P05-WORKER-SPARK.md); lo anterior sobre Functions queda como antecedente del camino original.
 
 Responder en español, directo y práctico. Continuar el juego existente; no reconstruirlo ni sustituir sus diseños.
 

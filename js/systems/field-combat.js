@@ -48,8 +48,11 @@ G.FieldCombat = (() => {
     return e;
   }
   function reset(pl,loadout) {
+    const revision=G.WeaponRevisionTrial;
+    if(revision?.active())loadout=revision.prepareLoadout(loadout);
     weapons=cloneLoadout(loadout); currentPlayer=pl||null; activeIndex=0; shotWait=0; switchRemaining=0; shots=0; aimTarget=null;
     if (pl) { pl.fieldWeapons=weapons; for (const w of weapons) sync(pl,w); }
+    if(revision?.active())revision.bindPlayer(pl,weapons);
   }
   function distance(pl,e) { return Math.hypot(e.x-pl.x,e.y-pl.y); }
   function blocksLOS(pl,x,y) {
@@ -99,7 +102,8 @@ G.FieldCombat = (() => {
   function beginReload(pl,copy,e) { if (copy.reload<=0&&copy.ammo<e.capacity) { copy.reload=e.reloadTime; copy.reloadTime=e.reloadTime; } }
   function fire(pl,copy,e,target) {
     const aim=Math.atan2(target.y-pl.y,target.x-pl.x); pl.weaponAim=aim; pl.attackFace=.25;
-    for (const a of angles(aim,e,copy)) {
+    const trajectories=angles(aim,e,copy);
+    for (const a of trajectories) {
       let x=pl.x+Math.cos(a)*3,y=pl.y+Math.sin(a)*3;
       if (G.World?.projectileBlock?.(x,y,2)) { x=pl.x; y=pl.y; }
       G.Projectiles.spawn({x,y,vx:Math.cos(a)*e.speed,vy:Math.sin(a)*e.speed,
@@ -107,8 +111,23 @@ G.FieldCombat = (() => {
         mtype:null,fieldWeapon:true,color:'#e8cf9b',owner:pl});
     }
     copy.ammo--; shots++; if(infinite())copy.shotWait=e.interval;else shotWait=e.interval; copy.flash=.09;
+    if(G.WeaponRevisionTrial?.active())G.WeaponRevisionTrial.onMainShot(copy,target,trajectories[0]??aim);
     if (G.Audio) G.Audio.sfx('shot',{kind:'projectile',type:'normal'});
     if (copy.ammo<=0) beginReload(pl,copy,e);
+  }
+  function fireExtra(pl,copy,e,extra) {
+    const aim=extra.aim,x=pl.x+Math.cos(aim)*3,y=pl.y+Math.sin(aim)*3;
+    const sx=G.World?.projectileBlock?.(x,y,2)?pl.x:x,sy=G.World?.projectileBlock?.(x,y,2)?pl.y:y;
+    G.Projectiles.spawn({x:sx,y:sy,vx:Math.cos(aim)*e.speed,vy:Math.sin(aim)*e.speed,
+      dmg:extra.damage,r:e.pellets>1?2:3,life:e.range/e.speed,pierce:e.pierce||0,hits:new Set(),friendly:true,
+      mtype:null,fieldWeapon:true,color:'#e8cf9b',owner:pl});
+    shots++;copy.flash=.09;
+    G.Audio?.sfx('shot',{kind:'projectile',type:'normal'});
+  }
+  function canFireRevisionExtra(pl,fireAllowed) {
+    const phase=G.Expedition?.state?.phase;
+    return !!pl&&!pl.dead&&pl.hp>0&&fireAllowed&&G.Game?.state==='playing'&&
+      !['levelup','armament','terminal','paused','finished','idle'].includes(phase);
   }
   function strike(pl,copy,e,target){
     const aim=Math.atan2(target.y-pl.y,target.x-pl.x);pl.weaponAim=aim;pl.attackFace=.25;
@@ -122,12 +141,23 @@ G.FieldCombat = (() => {
     G.Audio?.sfx('shot',{kind:'melee',type:'normal'});
   }
   function tick(dt,pl,fireAllowed) {
-    dt=Math.max(0,dt||0); shotWait=Math.max(0,shotWait-dt); switchRemaining=Math.max(0,switchRemaining-dt);
+    dt=Math.max(0,dt||0);
+    const timerDt=G.WeaponRevisionTrial?.active()?G.WeaponRevisionTrial.timerStep(dt):dt;
+    shotWait=Math.max(0,shotWait-timerDt); switchRemaining=Math.max(0,switchRemaining-timerDt);
     if (!pl) return; currentPlayer=pl; pl.fieldWeapons=weapons;
     for (const w of weapons) {
-      const e=sync(pl,w); w.flash=Math.max(0,(w.flash||0)-dt);
-      if(infinite())w.shotWait=Math.max(0,(w.shotWait||0)-dt);
-      if (w.reload>0) { w.reload=Math.max(0,w.reload-dt); if (w.reload===0) w.ammo=e.capacity; }
+      const e=sync(pl,w); w.flash=Math.max(0,(w.flash||0)-timerDt);
+      if(infinite())w.shotWait=Math.max(0,(w.shotWait||0)-timerDt);
+      if (w.reload>0) {
+        w.reload=Math.max(0,w.reload-timerDt);
+        if (w.reload===0) {
+          w.ammo=e.capacity;
+          if(G.WeaponRevisionTrial?.active())G.WeaponRevisionTrial.completeReload(w.id);
+        }
+      }
+      const extra=G.WeaponRevisionTrial?.active()&&canFireRevisionExtra(pl,fireAllowed)
+        ?G.WeaponRevisionTrial.advanceExtra(w,timerDt):null;
+      if(extra)fireExtra(pl,w,e,extra);
     }
     if(infinite()){
       if(pl.dead||!(pl.hp>0)||!fireAllowed)return;
@@ -166,6 +196,7 @@ G.FieldCombat = (() => {
   function acquire(model,id){
     if(!infinite()||!currentPlayer||currentPlayer.dead||!(currentPlayer.hp>0)||weapons.length!==1||
       typeof id!=='string'||!id.trim()||weapons.some(w=>w.id===id)||!Object.prototype.hasOwnProperty.call(G.FieldCatalog.models,model)||!G.FieldCatalog.validateMods(model,[]))return false;
+    if(G.WeaponRevisionTrial?.active()&&!G.WeaponRevisionTrial.allowRuntimeAcquire(model,id))return false;
     const next=cloneLoadout([{model,id,mods:[]}])[0];sync(currentPlayer,next);weapons.push(next);currentPlayer.fieldWeapons=weapons;return true;
   }
   function replace(id,model,newId){
@@ -173,10 +204,26 @@ G.FieldCombat = (() => {
     if(G.MapTrial?.expanded!==true||G.Expedition?.state?.phase!=='terminal'||!currentPlayer||currentPlayer.dead||!(currentPlayer.hp>0)||
       currentPlayer.fieldWeapons!==weapons||index<0||typeof newId!=='string'||!newId.trim()||weapons.some(w=>w.id===newId)||
       !G.FieldCatalog.validateMods(model,[]))return false;
-    const fresh=cloneLoadout([{id:newId,model,mods:[]}])[0];sync(currentPlayer,fresh);weapons[index]=fresh;return true;
+    const revision=G.WeaponRevisionTrial?.active()?G.WeaponRevisionTrial.replaceCopy(id,model,newId):null;
+    if(G.WeaponRevisionTrial?.active()&&!revision?.ok)return false;
+    const freshId=revision?.copy?.id||newId;
+    const fresh=cloneLoadout([{id:freshId,model,mods:[]}])[0];sync(currentPlayer,fresh);weapons[index]=fresh;
+    if(G.WeaponRevisionTrial?.active())G.WeaponRevisionTrial.syncCopy(fresh.id);
+    return true;
   }
-  function upgrade(id,branch) { const w=weapons.find(x=>x.id===id);if(infinite())return !!w&&G.InfiniteProgression.upgrade(w,branch); if(!w||w.level>=5)return false; w.level++; return true; }
-  function clearTemporary(pl) { currentPlayer=pl||currentPlayer; for(const w of weapons){w.level=1;if(infinite())w.branches=Object.fromEntries(G.InfiniteProgression.branches.map(k=>[k,0]));}if(infinite()&&pl)pl.infiniteTactical=null; if(pl){pl.tempStats={}; if(G.FieldStats?.apply) G.FieldStats.apply(pl);} }
+  function upgrade(id,branch) {
+    const w=weapons.find(x=>x.id===id);
+    if(G.WeaponRevisionTrial?.active())return !!w&&!branch&&G.WeaponRevisionTrial.advanceCopy(id).ok;
+    if(infinite())return !!w&&G.InfiniteProgression.upgrade(w,branch);
+    if(!w||w.level>=5)return false; w.level++; return true;
+  }
+  function clearTemporary(pl) {
+    currentPlayer=pl||currentPlayer;
+    if(G.WeaponRevisionTrial?.active())G.WeaponRevisionTrial.resetProgress();
+    else for(const w of weapons){w.level=1;if(infinite())w.branches=Object.fromEntries(G.InfiniteProgression.branches.map(k=>[k,0]));}
+    if(infinite()&&pl)pl.infiniteTactical=null;
+    if(pl){pl.tempStats={};if(G.FieldStats?.apply)G.FieldStats.apply(pl);}
+  }
   function drawWeapon(ctx,pl,options={}) {
     if(!pl||pl.dead)return;
     if(G.PersonajesArt?.drawWeapons(ctx,pl,options,weapons))return;

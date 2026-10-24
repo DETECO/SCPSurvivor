@@ -17,10 +17,17 @@ G.Camera = {
   MIN_VIEW_H: 420,
 
   resize(cssW, cssH, dpr = 1) {
+    this.cssW=cssW;this.cssH=cssH;
     this.dpr = dpr;
-    this.scale = Math.min(cssW / this.VIEW_W, cssH / this.MIN_VIEW_H);
+    const viewW=this.sceneView==='NIV-ESC-008-A-r1'&&cssH>cssW?512:this.VIEW_W;
+    this.scale = Math.min(cssW / viewW, cssH / this.MIN_VIEW_H);
     this.w = cssW / this.scale;
     this.h = cssH / this.scale;
+  },
+
+  setSceneView(revision) {
+    this.sceneView=revision;
+    if(this.cssW>0&&this.cssH>0)this.resize(this.cssW,this.cssH,this.dpr);
   },
 
   follow(tx, ty, dt) {

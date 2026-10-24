@@ -1,7 +1,7 @@
-/* ============ audio.js — sintetizador, secuenciador y efectos de sonido ============
- * Todo el sonido se genera en el momento con Web Audio: no hay ficheros.
+/* ============ audio.js — música, sintetizador y efectos de sonido ============
+ * La música de menú usa su WAV aprobado; el resto se genera con Web Audio.
  *
- *   G.Audio.music('village')   cambia de tema con fundido (ver data/music.js)
+ *   G.Audio.music('village')   usa el ambiente WAV del menú; otros temas usan data/music.js
  *   G.Audio.sfx('coin')        efecto de sonido (con límite de repetición)
  *   G.Audio.setVolume('music' | 'sfx', 0..1) · toggleMute()
  *
@@ -11,10 +11,12 @@
  */
 G.Audio = (() => {
   const KEY = 'scp-survivor.audio';
+  const MENU_TRACK = 'village';
+  const MENU_TRACK_URL = 'assets/audio/menu/presencia-en-la-oscuridad-loop-60s-v1.wav';
   let ctx = null, master, outNode, musicBus, sfxBus, reverb, wet;
   let settings = { music: 0.55, sfx: 0.7, muted: false };
   try { Object.assign(settings, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { /* nada */ }
-  let noiseBuf = null;
+  let noiseBuf = null, menuAudio = null, menuSource = null, menuGain = null, menuPlayToken = 0;
 
   function save() { try { localStorage.setItem(KEY, JSON.stringify(settings)); } catch (e) { /* nada */ } }
 
@@ -61,7 +63,8 @@ G.Audio = (() => {
     if (!init()) return;
     // 'suspended' o 'interrupted' (iPhone al volver de otra app): se reanuda.
     if (ctx.state !== 'running') ctx.resume().catch(() => {});
-    if (wanted && !current) startSong(wanted);
+    if (wanted === MENU_TRACK) startMenuTrack();
+    else if (wanted && !current) startSong(wanted);
   }
   // En móvil, tocar la pantalla (pointerdown) no cuenta como gesto para el
   // sonido: sí levantar el dedo (pointerup / touchend). Se escuchan todos.
@@ -299,6 +302,83 @@ G.Audio = (() => {
 
   let wanted = null, current = null;
   const compiled = {};
+  const fadingSongs = new Set();
+
+  function ensureMenuTrack() {
+    if (menuAudio) return true;
+    if (!window.Audio || !ctx || typeof ctx.createMediaElementSource !== 'function') return false;
+    try {
+      menuAudio = new window.Audio(MENU_TRACK_URL);
+      menuAudio.loop = true;
+      menuAudio.preload = 'auto';
+      menuAudio.volume = 1;
+      menuGain = ctx.createGain();
+      menuGain.gain.setValueAtTime(0.0001, ctx.currentTime);
+      menuSource = ctx.createMediaElementSource(menuAudio);
+      menuSource.connect(menuGain).connect(musicBus);
+      return true;
+    } catch (e) {
+      menuAudio = menuSource = menuGain = null;
+      return false;
+    }
+  }
+
+  function stopFadingSongs() {
+    if (!ctx) return;
+    for (const bus of fadingSongs) {
+      bus.gain.cancelScheduledValues(ctx.currentTime);
+      bus.gain.setValueAtTime(0.0001, ctx.currentTime);
+      bus.disconnect();
+    }
+    fadingSongs.clear();
+  }
+
+  function stopMenuTrack() {
+    menuPlayToken++;
+    if (menuAudio) {
+      try { menuAudio.pause(); menuAudio.currentTime = 0; } catch (e) { /* recurso aún no listo */ }
+    }
+    if (menuGain && ctx) {
+      const t = ctx.currentTime;
+      menuGain.gain.cancelScheduledValues(t);
+      menuGain.gain.setValueAtTime(0.0001, t);
+    }
+    if (current && current.kind === 'media') current = null;
+  }
+
+  function startMenuTrack() {
+    if (!ctx || !ensureMenuTrack()) return;
+    if (current && current.kind === 'media' && !menuAudio.paused) return;
+    if (current && current.kind !== 'media') stopCurrent(true);
+
+    const token = ++menuPlayToken;
+    current = { name: MENU_TRACK, kind: 'media' };
+    const t = ctx.currentTime;
+    menuGain.gain.cancelScheduledValues(t);
+    menuGain.gain.setValueAtTime(0.0001, t);
+    menuGain.gain.linearRampToValueAtTime(1, t + 0.8);
+
+    try {
+      const play = menuAudio.play();
+      if (play && typeof play.then === 'function') {
+        play.then(() => {
+          if (token !== menuPlayToken || wanted !== MENU_TRACK) {
+            menuAudio.pause();
+            menuAudio.currentTime = 0;
+          }
+        }).catch(() => {
+          if (token !== menuPlayToken) return;
+          if (current && current.kind === 'media') current = null;
+          const now = ctx.currentTime;
+          menuGain.gain.cancelScheduledValues(now);
+          menuGain.gain.setValueAtTime(0.0001, now);
+        });
+      }
+    } catch (e) {
+      if (token === menuPlayToken && current && current.kind === 'media') current = null;
+      menuGain.gain.setValueAtTime(0.0001, ctx.currentTime);
+    }
+  }
 
   function startSong(name) {
     if (!ctx || !G.MUSIC[name]) return;
@@ -307,31 +387,49 @@ G.Audio = (() => {
     bus.gain.setValueAtTime(0.0001, ctx.currentTime);
     bus.gain.linearRampToValueAtTime(1, ctx.currentTime + 0.8);
     bus.connect(musicBus);
-    current = { name, song, bus, step: 0, next: ctx.currentTime + 0.1 };
+    current = { name, kind: 'synth', song, bus, step: 0, next: ctx.currentTime + 0.1 };
   }
 
-  function stopCurrent() {
-    if (!current) return;
-    const b = current.bus;
+  function stopCurrent(immediate = false) {
+    if (!current || current.kind === 'media') return;
+    const stopped = current;
+    current = null;
+    if (immediate) {
+      stopped.bus.gain.cancelScheduledValues(ctx.currentTime);
+      stopped.bus.gain.setValueAtTime(0.0001, ctx.currentTime);
+      stopped.bus.disconnect();
+      return;
+    }
+    const b = stopped.bus;
     b.gain.cancelScheduledValues(ctx.currentTime);
     b.gain.setValueAtTime(b.gain.value, ctx.currentTime);
     b.gain.linearRampToValueAtTime(0.0001, ctx.currentTime + 0.7);
-    setTimeout(() => b.disconnect(), 900);
-    current = null;
+    fadingSongs.add(b);
+    setTimeout(() => { b.disconnect(); fadingSongs.delete(b); }, 900);
   }
 
   /** Cambia de tema (con fundido). null = silencio. */
   function music(name) {
-    if (wanted === name) return;
+    if (wanted === name) {
+      if (name === MENU_TRACK && ctx && (!current || current.kind !== 'media' || menuAudio?.paused)) startMenuTrack();
+      return;
+    }
     wanted = name;
     if (!ctx) return;                    // arrancará al primer clic
+    if (name === MENU_TRACK) {
+      stopFadingSongs();
+      stopCurrent(true);
+      startMenuTrack();
+      return;
+    }
+    stopMenuTrack();
     stopCurrent();
     if (name) startSong(name);
   }
 
   // Planificador: programa con 150 ms de antelación.
   setInterval(() => {
-    if (!ctx || !current || ctx.state !== 'running') return;
+    if (!ctx || !current || current.kind !== 'synth' || ctx.state !== 'running') return;
     const c = current, sd = 60 / c.song.bpm / 4;
     while (c.next < ctx.currentTime + 0.15) {
       const i = c.step % c.song.steps;

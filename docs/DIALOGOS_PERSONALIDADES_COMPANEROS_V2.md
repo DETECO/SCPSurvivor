@@ -1,14 +1,14 @@
 # Compañeros — personalidades y variantes femeninas V2
 
-23/10/2026 · ESTRUCTURA · **Banco narrativo propuesto. No integrado.** Iván pide variedad de tonos y NPC femeninos; diseñará sus sprites de acompañantes. Añade nombre asignado al azar y una presentación del compañero. Esta entrega aporta texto y condiciones, sin crear sprites, locuciones ni sonidos.
+23/10/2026 · **ESTADO: DIÁLOGOS APROBADOS POR IVÁN; NO INTEGRADOS AL JUEGO.** El texto del banco V1/V2 y las seis personalidades añadidas quedan aprobados el 23/10/2026. Esta aprobación cubre la redacción; no cambia las reglas de ESTRUCTURA ni integra burbujas, nombres aleatorios, sonidos o mecánicas.
 
 Complementa los [102 diálogos V1](DIALOGOS_COMPANEROS_GRIETA_V1.md); no los reemplaza. Los nombres y recuerdos ALERCE/TORNO/FARO/BRUMA se conservan como biografías propuestas, sin mezclar parentescos o mascotas entre personajes.
 
 ## 1. Identidad, personalidad y emoción
 
-**Presentación del NPC**, **biografía** y **personalidad** son campos separados. Cualquier tono puede pertenecer a una acompañante femenina o masculina: una soldado puede ser sarcástica, seria, cariñosa, enojada, entusiasta o analítica. El género no cambia armas, probabilidades, daño ni capacidades.
+**Presentación del NPC**, **biografía** y **personalidad** son campos separados. Cualquier tono puede asignarse a NPC femeninos o masculinos: una soldado puede ser sarcástica, amorosa, coqueta, fría, agresiva, enojona, entusiasta, analítica o tener cualquiera de las demás personalidades del banco. El género no cambia armas, probabilidades, daño ni capacidades.
 
-| Código | Personalidad propuesta | Distintivo al escribir |
+| Código | Personalidad | Distintivo al escribir |
 |---|---|---|
 | SARC | Sarcástica | Ironía seca sobre el lugar y las circunstancias; ayuda de verdad |
 | ENOJ | Enojada | Frases cortas, fastidio y decisión; no maltrata al jugador |
@@ -18,14 +18,20 @@ Complementa los [102 diálogos V1](DIALOGOS_COMPANEROS_GRIETA_V1.md); no los ree
 | SERE | Serena | Habla poco, observa y mantiene el orden |
 | NERV | Nerviosa | Dudas y pequeñas vacilaciones; sigue siendo competente |
 | ANAL | Analítica | Describe hechos y equipo sin inventar datos ni exponer código |
+| TOXI | Tóxica | Controladora y punzante; presiona con comentarios y busca tener la última palabra, sin convertirse en una mecánica de sabotaje |
+| AMOR | Amorosa | Expresa cariño, cuidado y cercanía; no presupone romance |
+| COQ | Coqueta | Juguetona y segura al halagar; no presupone reciprocidad ni relación |
+| FRIA | Fría | Frases breves, medidas y poco expresivas; el miedo de D5 sigue presente |
+| AGRE | Agresiva | Directa, desafiante y de carácter intenso; no amenaza ni maltrata al jugador |
+| GRUN | Enojona | Se queja por costumbre y se irrita con molestias pequeñas; se diferencia de ENOJ, cuya rabia es más firme y situacional |
 
-Cada NPC conserva un tono base durante su aparición. Su emoción responde al peligro: en D5 todos sienten miedo y deseo de salir, expresados a su manera. No cambiar de personalidad con cada línea. Las frases enojadas, nerviosas o cariñosas no alteran puntería, obediencia, velocidad, curación o aggro.
+Cada NPC conserva un tono base durante su aparición. Su emoción responde al peligro: en D5 todos sienten miedo y deseo de salir, expresados a su manera. No cambiar de personalidad con cada línea. Las frases enojadas, tóxicas, agresivas, coquetas o cariñosas no alteran puntería, obediencia, velocidad, curación o aggro.
 
 Los perfiles previos pueden mantener sus tonos originales por defecto (ALERCE sereno, TORNO analítico, FARO cercano/nervioso, BRUMA reservada/cálida). Otras combinaciones son opciones de diseño, sin cambiar sus recuerdos. Vincularlos con los sprites femeninos cuando Iván los entregue; no declarar un catálogo visual terminado.
 
 ## 2. Disparadores comunes
 
-Cada personalidad dispone de los mismos quince contextos para comparar sus reacciones. No son una conversación que deba recitarse en orden.
+Cada personalidad dispone de veinte variantes distribuidas en quince contextos compartidos; algunas son alternativas para eventos comunes. No son una conversación que deba recitarse en orden. Las seis personalidades añadidas mantienen estos mismos contextos y límites.
 
 | Sufijo del ID | Condición obligatoria |
 |---|---|
@@ -43,10 +49,17 @@ Cada personalidad dispone de los mismos quince contextos para comparar sus reacc
 | 13 | Llegada D5, miedo y deseo de irse |
 | 14 | D5, miedo y apoyo; nunca huida automática |
 | 15 | Victoria confirmada |
+| 16 | Apoyo durante D1–D4, compañero operativo |
+| 17 | Papel amarillo visible en el escenario actual, D1–D4 |
+| 18 | Vida baja real del jugador, sin repetir por cada golpe |
+| 19 | D5, miedo y apoyo; nunca huida automática |
+| 20 | Victoria confirmada |
 
-Las líneas 03–09 y 12 son comentarios ambientales para D1–D4 y contexto tranquilo cuando corresponda. En D5 seleccionar 10/11/13/14/15 si cumplen su evento; suprimir bromas y charla doméstica. Las líneas tácticas jamás sustituyen el aviso oficial de retirada o de ataques del jefe.
+Las líneas 03–09, 12 y 16–18 son comentarios ambientales para D1–D4 y contexto tranquilo cuando corresponda. En D5 seleccionar 10/11/13–15/19–20 solo si cumplen su evento; suprimir bromas y charla doméstica. Las líneas tácticas jamás sustituyen el aviso oficial de retirada o de ataques del jefe.
 
 Se heredan burbujas de texto, control de repetición, prioridad de peligro, alias futuro y guardado del V1. Si un marcador no puede resolverse, elegir otra línea; no mostrar llaves ni inferir armas de la colección. Para el refuerzo exterior, filtrar por el escenario actual y contexto permitido; su mecánica sigue propuesta, no aprobada por este banco.
+
+Los sufijos 16–20 son alternativas dentro de condiciones ya existentes. Comparten sus disparadores, prioridad y control de frecuencia; no crean eventos, intervenciones adicionales garantizadas ni cambios de comportamiento.
 
 ## 3. Banco por personalidad
 
@@ -230,7 +243,7 @@ Alternativa ANAL-12 sin alias: «Sigo pendiente del entorno».
 
 Los textos anteriores evitan en general adjudicar género al jugador o al NPC. Para presentaciones que sí lo expresan, las variantes se eligen según la identidad configurada del acompañante, no por el género del alias ni por su personalidad.
 
-| Personalidad | Variante femenina propuesta | Variante masculina propuesta |
+| Personalidad | Variante femenina aprobada | Variante masculina aprobada |
 |---|---|---|
 | Sarcástica | «Preparada. Entusiasmada con este lugar, bastante menos.» | «Preparado. Entusiasmado con este lugar, bastante menos.» |
 | Enojada | «Estoy harta de este sitio. Vamos a concentrarnos.» | «Estoy harto de este sitio. Vamos a concentrarnos.» |
@@ -260,7 +273,7 @@ Son nombres narrativos propuestos, no personas reales ni soldados canónicos. El
 
 Si el perfil es FARO, excluir **Bruno** como nombre del soldado: es el nombre de su perro en los recuerdos ya diseñados. Evitar también que el nuevo NPC tenga el mismo nombre visible del jugador, si se conoce y quedan alternativas; no modificar el alias del jugador. No inventar apellidos, rangos ni parentescos al asignar el nombre.
 
-### Presentaciones por tono — propuestas nuevas
+### Presentaciones por tono — textos aprobados
 
 | ID | Personalidad / condición | Burbuja |
 |---|---|---|
@@ -283,12 +296,260 @@ La burbuja se identifica con el nombre del hablante para que se entienda quién 
 
 Guardar nombre y estado `presentación realizada` al mostrarla, con identidad del encuentro; si se suspende antes, la presentación sigue pendiente y el nombre no cambia. Si ya se mostró, no repetirla al cargar. Una frase ya visible puede restaurarse con su tiempo restante sin presentarse como evento nuevo.
 
-## 6. Revisión previa a integración
+## 6. Ampliación de voz — variantes adicionales
 
-El V2 reúne **120 frases por personalidad**, quince por cada uno de los ocho tonos, más **12 variantes de presentación** y ocho pares de concordancia femenina/masculina. Se suma al banco V1 de 102 variantes; las alternativas sin alias no se cuentan como nuevos IDs.
+23/10/2026 · **Textos aprobados por Iván.** Estas variantes hacen más reconocible el tono de cada perfil en momentos ya contemplados. Se pueden combinar con cualquier género y biografía, porque no añaden recuerdos personales ni cambian la identidad del NPC.
+
+### Sarcástica — SARC
+
+| ID | Condición | Texto |
+|---|---|---|
+| SARC-16 | Apoyo operativo D1–D4 | «Si algo sale mal, prometo quejarme después. Ahora sigamos juntos.» |
+| SARC-17 | Papel amarillo visible D1–D4 | «Otra pared amarilla. Empiezo a sospechar que aquí nadie conocía otro color.» |
+| SARC-18 | Vida baja real del jugador | «Oye, en serio: estás muy mal. Mira bien el siguiente paso.» |
+| SARC-19 | Miedo y apoyo D5 | «No tengo una broma para esto. Tengo miedo, pero sigo aquí contigo.» |
+| SARC-20 | Victoria confirmada | «Ganamos. Qué fastidio tener que admitir que trabajar en equipo sirve.» |
+
+### Enojada — ENOJ
+
+| ID | Condición | Texto |
+|---|---|---|
+| ENOJ-16 | Apoyo operativo D1–D4 | «Sigo aquí, haciendo mi parte. Concéntrate en la tuya.» |
+| ENOJ-17 | Papel amarillo visible D1–D4 | «Otra pared amarilla. Cuando salgamos, no pienso volver a mirar pintura.» |
+| ENOJ-18 | Vida baja real del jugador | «Estás al límite. Basta de arriesgar por orgullo.» |
+| ENOJ-19 | Miedo y apoyo D5 | «Tengo miedo. No me gusta, pero sigo contigo. Vamos.» |
+| ENOJ-20 | Victoria confirmada | «Se acabó. Todavía me queda enfado para rato.» |
+
+### Entusiasta — ENTU
+
+| ID | Condición | Texto |
+|---|---|---|
+| ENTU-16 | Apoyo operativo D1–D4 | «¡Seguimos juntos! Un paso atento cada vez.» |
+| ENTU-17 | Papel amarillo visible D1–D4 | «Ya vi el amarillo. Voy a fijarme en algún detalle distinto.» |
+| ENTU-18 | Vida baja real del jugador | «Te queda poca vida; cuidemos el siguiente paso.» |
+| ENTU-19 | Miedo y apoyo D5 | «Tengo miedo. Voy a concentrarme en seguir contigo.» |
+| ENTU-20 | Victoria confirmada | «¡Terminó! Esta sí es una noticia que voy a celebrar cuando salgamos.» |
+
+### Cariñosa — CARI
+
+| ID | Condición | Texto |
+|---|---|---|
+| CARI-16 | Apoyo operativo D1–D4 | «No tienes que decir nada; sigo aquí contigo.» |
+| CARI-17 | Papel amarillo visible D1–D4 | «Ese amarillo cansa. Voy a buscar con la vista algo que cambie.» |
+| CARI-18 | Vida baja real del jugador | «Te veo muy mal. Cuida el próximo movimiento, por favor.» |
+| CARI-19 | Miedo y apoyo D5 | «Tengo miedo y quiero salir. Me ayuda saber que seguimos juntos.» |
+| CARI-20 | Victoria confirmada | «Terminó. Respiremos un momento; yo también lo necesito.» |
+
+### Simpática — SIMP
+
+| ID | Condición | Texto |
+|---|---|---|
+| SIMP-16 | Apoyo operativo D1–D4 | «Me quedo contigo. Ya tendremos tiempo de hacer bromas malas cuando salgamos.» |
+| SIMP-17 | Papel amarillo visible D1–D4 | «Este amarillo ya casi merece que le pongamos nombre. Casi.» |
+| SIMP-18 | Vida baja real del jugador | «Oye, se te nota el desgaste. Cuida el siguiente paso.» |
+| SIMP-19 | Miedo y apoyo D5 | «No encuentro un chiste para esto. Tengo miedo y quiero salir.» |
+| SIMP-20 | Victoria confirmada | «¡Terminó! Ahora sí puedo tener una conversación aburridísima.» |
+
+### Serena — SERE
+
+| ID | Condición | Texto |
+|---|---|---|
+| SERE-16 | Apoyo operativo D1–D4 | «Sigo a tu lado. Mantengamos la atención.» |
+| SERE-17 | Papel amarillo visible D1–D4 | «El amarillo no basta para orientarse. Seguiré observando.» |
+| SERE-18 | Vida baja real del jugador | «Tu vida está baja. Decide con cuidado el próximo movimiento.» |
+| SERE-19 | Miedo y apoyo D5 | «Tengo miedo. Quiero volver. Sigo aquí.» |
+| SERE-20 | Victoria confirmada | «Terminó. Dejemos pasar un segundo antes de hablar.» |
+
+### Nerviosa — NERV
+
+| ID | Condición | Texto |
+|---|---|---|
+| NERV-16 | Apoyo operativo D1–D4 | «¿Sigues ahí? Perdona, te veo. Necesitaba comprobarlo en voz alta.» |
+| NERV-17 | Papel amarillo visible D1–D4 | «Otra pared amarilla. O quizá solo me lo parece… no, sí, es amarilla.» |
+| NERV-18 | Vida baja real del jugador | «Estás muy mal. Perdona, tenía que decírtelo.» |
+| NERV-19 | Miedo y apoyo D5 | «Tengo miedo. Quiero salir. Voy a seguir ayudando, aunque me cueste.» |
+| NERV-20 | Victoria confirmada | «¿Ya terminó? Creo que ahora sí puedo respirar un poco.» |
+
+### Analítica — ANAL
+
+| ID | Condición | Texto |
+|---|---|---|
+| ANAL-16 | Apoyo operativo D1–D4 | «La cooperación sigue siendo nuestra mejor opción disponible.» |
+| ANAL-17 | Papel amarillo visible D1–D4 | «El papel amarillo persiste. Necesitamos otra referencia observable.» |
+| ANAL-18 | Vida baja real del jugador | «Tu vida está baja. Cada siguiente movimiento cuenta.» |
+| ANAL-19 | Miedo y apoyo D5 | «Tengo miedo y quiero volver. Sigo ayudando mientras pueda.» |
+| ANAL-20 | Victoria confirmada | «La victoria está confirmada. Por fin hay un momento para bajar la tensión.» |
+
+Estas frases no autorizan a narrar una acción no observada. En D5, las líneas 19 comunican miedo y deseo de volver, pero el personaje continúa con su conducta normal hasta el momento reglado. Si coincide un aviso de peligro o retirada, prevalece el aviso oficial; se aplica el mismo enfriamiento y selección que al resto del banco.
+
+### Tóxica — TOXI
+
+El tono tóxico es una opción de caracterización deliberadamente áspera. Puede culpar, manipular o intentar controlar la conversación con palabras, pero no amenaza al jugador, no sabotea el combate ni bloquea ayuda. No se presenta como un trato deseable o romántico.
+
+| ID | Condición | Texto |
+|---|---|---|
+| TOXI-01 | Llegada D1–D4 | «Soy {nombre_npc}. Procura no hacerme arrepentirme de compartir este sitio contigo.» |
+| TOXI-02 | Apoyo operativo D1–D4 | «No te acostumbres a que tenga paciencia. Sigue haciendo tu parte.» |
+| TOXI-03 | Arma propia conocida | «Me asignaron {arma_npc}. Al menos una de las dos cosas aquí está bajo mi control.» |
+| TOXI-04 | Arma del jugador equipada | «Llevas {arma_jugador}. Espero que la elección haya sido tuya y no un impulso.» |
+| TOXI-05 | Ataque balístico del jugador observado | «Vi ese disparo. No te voy a felicitar por hacer lo que se esperaba.» |
+| TOXI-06 | Papel amarillo visible D1–D4 | «Otra pared amarilla. Hasta este lugar repite sus ideas.» |
+| TOXI-07 | Pasillos repetidos observables | «Si volvemos a pasar por aquí, espero que al menos lo hayas notado.» |
+| TOXI-08 | Calma D1–D4, recuerdo personal | «En casa nadie me pide explicaciones por cada minuto de silencio. Lo extraño.» |
+| TOXI-09 | Calma D1–D4, recuerdo personal | «Quiero volver a mi espacio. Aquí todo el mundo exige algo.» |
+| TOXI-10 | Vida baja real del jugador | «Estás en problemas. No me obligues a cargar también con tus errores.» |
+| TOXI-11 | Reserva de apoyo agotada | «Se acabó mi munición de apoyo. No esperes que lo arregle con palabras.» |
+| TOXI-12 | Ánimo D1–D4 con alias | «{nombre_jugador}, todavía podemos salir bien de esta. No lo arruines.» |
+| TOXI-13 | Llegada D5, miedo y deseo de irse | «Soy {nombre_npc}. Tengo miedo y quiero irme. No confundas eso con confiar en ti.» |
+| TOXI-14 | D5, miedo y apoyo | «Tengo miedo. Sigo ayudando porque dejarte aquí sería peor.» |
+| TOXI-15 | Victoria confirmada | «Ganamos. No conviertas eso en una excusa para presumir.» |
+| TOXI-16 | Apoyo operativo D1–D4 | «Haz lo que te toca y yo haré lo mío. No necesito que me lo agradezcas.» |
+| TOXI-17 | Papel amarillo visible D1–D4 | «Ese amarillo ya cansa. No, no es una invitación a opinar.» |
+| TOXI-18 | Vida baja real del jugador | «Mírame cuando te hablo: cuida el siguiente movimiento.» |
+| TOXI-19 | D5, miedo y apoyo | «No me gusta necesitar compañía. Igual, no voy a dejar de ayudarte ahora.» |
+| TOXI-20 | Victoria confirmada | «Terminó. Por una vez, no voy a discutir quién hizo más.» |
+
+### Amorosa — AMOR
+
+El cariño puede ser de compañera y amistad; las frases no dan por hecho una pareja ni una historia compartida.
+
+| ID | Condición | Texto |
+|---|---|---|
+| AMOR-01 | Llegada D1–D4 | «Soy {nombre_npc}. Me alegra encontrarte; no tienes que pasar esto sin compañía.» |
+| AMOR-02 | Apoyo operativo D1–D4 | «Estoy aquí contigo. Vamos con calma, paso a paso.» |
+| AMOR-03 | Arma propia conocida | «Me asignaron {arma_npc}. Voy a cuidarla y a hacer mi parte.» |
+| AMOR-04 | Arma del jugador equipada | «Veo que llevas {arma_jugador}. Me alegra que hayas encontrado algo que te acomode.» |
+| AMOR-05 | Ataque balístico del jugador observado | «Escuché tu disparo. Me tranquiliza saber que seguimos en equipo.» |
+| AMOR-06 | Papel amarillo visible D1–D4 | «Tanto amarillo… ojalá pudiera ofrecerte una vista más amable.» |
+| AMOR-07 | Pasillos repetidos observables | «Se parecen mucho. Me fijaré en lo que sí cambie.» |
+| AMOR-08 | Calma D1–D4, recuerdo personal | «Echo de menos llegar a casa y poder preguntar cómo estuvo el día.» |
+| AMOR-09 | Calma D1–D4, recuerdo personal | «Quiero volver a compartir una comida tranquila con la gente que quiero.» |
+| AMOR-10 | Vida baja real del jugador | «Te veo con poca vida. Cuídate; me importa que sigas aquí.» |
+| AMOR-11 | Reserva de apoyo agotada | «Mi munición de apoyo se agotó. Quería decírtelo con tiempo.» |
+| AMOR-12 | Ánimo D1–D4 con alias | «{nombre_jugador}, me alegra que estemos haciendo esto en equipo.» |
+| AMOR-13 | Llegada D5, miedo y deseo de irse | «Soy {nombre_npc}. Tengo mucho miedo y quiero volver. Me quedaré contigo.» |
+| AMOR-14 | D5, miedo y apoyo | «Tengo miedo. No puedo quitarlo, pero sí acompañarte mientras sigamos aquí.» |
+| AMOR-15 | Victoria confirmada | «Terminó. Me alegra que podamos pensar en volver.» |
+| AMOR-16 | Apoyo operativo D1–D4 | «Si necesitas silencio, está bien. Sigo aquí contigo.» |
+| AMOR-17 | Papel amarillo visible D1–D4 | «Ese papel no hace más amable el lugar. Al menos puedo observarlo contigo.» |
+| AMOR-18 | Vida baja real del jugador | «Por favor, ve con cuidado. No tienes que demostrarme nada.» |
+| AMOR-19 | D5, miedo y apoyo | «Quiero salir de aquí. Mientras tanto, no estás pasando el miedo a solas.» |
+| AMOR-20 | Victoria confirmada | «Lo logramos. Me gustaría que pudiéramos descansar un momento.» |
+
+### Coqueta — COQ
+
+El coqueteo es ligero y opcional en el tono, nunca una señal de relación, consentimiento o respuesta recíproca del jugador.
+
+| ID | Condición | Texto |
+|---|---|---|
+| COQ-01 | Llegada D1–D4 | «Soy {nombre_npc}. Qué manera tan peculiar de conocernos, ¿no?» |
+| COQ-02 | Apoyo operativo D1–D4 | «No te distraigas por mí. Bueno… no demasiado.» |
+| COQ-03 | Arma propia conocida | «Me tocó {arma_npc}. Tiene su encanto; yo también, dicen.» |
+| COQ-04 | Arma del jugador equipada | «Esa {arma_jugador} te queda bien. Casi tanto como la seguridad con que la llevas.» |
+| COQ-05 | Ataque balístico del jugador observado | «Buen disparo. Iba a decir que me impresionaste, pero no quiero que te acostumbres.» |
+| COQ-06 | Papel amarillo visible D1–D4 | «Este amarillo no le favorece a nadie. Menos mal que no vinimos a un desfile.» |
+| COQ-07 | Pasillos repetidos observables | «Otro pasillo igual. Si me pierdo, al menos tendré compañía interesante.» |
+| COQ-08 | Calma D1–D4, recuerdo personal | «En casa extraño las conversaciones largas. Aquí cuesta encontrar el momento.» |
+| COQ-09 | Calma D1–D4, recuerdo personal | «Quiero volver a arreglarme sin pensar si combina con una emergencia.» |
+| COQ-10 | Vida baja real del jugador | «Oye, quédate conmigo. Todavía me debes una conversación tranquila.» |
+| COQ-11 | Reserva de apoyo agotada | «Se acabó mi munición de apoyo. Mi encanto tampoco es infinito.» |
+| COQ-12 | Ánimo D1–D4 con alias | «{nombre_jugador}, procura seguir así. Me gusta tenerte cerca en el equipo.» |
+| COQ-13 | Llegada D5, miedo y deseo de irse | «Soy {nombre_npc}. Tengo miedo y quiero salir. Ya habrá tiempo para conocernos mejor.» |
+| COQ-14 | D5, miedo y apoyo | «Tengo miedo. Ahora necesito que nos concentremos en salir de esta.» |
+| COQ-15 | Victoria confirmada | «Ganamos. Admito que haces buena compañía bajo presión.» |
+| COQ-16 | Apoyo operativo D1–D4 | «Una buena compañía mejora cualquier pasillo. Este sigue siendo espantoso.» |
+| COQ-17 | Papel amarillo visible D1–D4 | «Si el lugar intenta impresionarme con ese color, tendrá que esforzarse más.» |
+| COQ-18 | Vida baja real del jugador | «No te me adelantes con riesgos; todavía te debo una conversación.» |
+| COQ-19 | D5, miedo y apoyo | «Tengo miedo. El coqueteo puede esperar; ahora sigamos juntos.» |
+| COQ-20 | Victoria confirmada | «Terminó. Tal vez la próxima vez podamos conocernos en un sitio menos horrible.» |
+
+### Fría — FRIA
+
+| ID | Condición | Texto |
+|---|---|---|
+| FRIA-01 | Llegada D1–D4 | «{nombre_npc}. Estoy contigo. Observemos antes de movernos.» |
+| FRIA-02 | Apoyo operativo D1–D4 | «Sigo aquí. Mantén la atención.» |
+| FRIA-03 | Arma propia conocida | «Mi arma es {arma_npc}. Conozco su funcionamiento.» |
+| FRIA-04 | Arma del jugador equipada | «Veo {arma_jugador}. Tomo nota.» |
+| FRIA-05 | Ataque balístico del jugador observado | «Disparo observado. No asumiré que el área está despejada.» |
+| FRIA-06 | Papel amarillo visible D1–D4 | «Papel amarillo. Sin otra referencia, no aporta orientación.» |
+| FRIA-07 | Pasillos repetidos observables | «Diseño repetido. No confirma que sea el mismo pasillo.» |
+| FRIA-08 | Calma D1–D4, recuerdo personal | «En casa, el silencio no requería vigilancia. Lo echo de menos.» |
+| FRIA-09 | Calma D1–D4, recuerdo personal | «Quiero volver a una rutina que no dependa de esta misión.» |
+| FRIA-10 | Vida baja real del jugador | «Tu vida está baja. Ajusta el siguiente movimiento.» |
+| FRIA-11 | Reserva de apoyo agotada | «Munición de apoyo agotada. No cuentes con más disparos míos.» |
+| FRIA-12 | Ánimo D1–D4 con alias | «{nombre_jugador}, sigo contigo. Mantén el foco.» |
+| FRIA-13 | Llegada D5, miedo y deseo de irse | «{nombre_npc}. Tengo miedo. Quiero salir.» |
+| FRIA-14 | D5, miedo y apoyo | «Siento miedo. Continúo ayudando hasta que podamos irnos.» |
+| FRIA-15 | Victoria confirmada | «Victoria confirmada. El peligro de este encuentro terminó.» |
+| FRIA-16 | Apoyo operativo D1–D4 | «No hace falta hablar. Mantén la atención.» |
+| FRIA-17 | Papel amarillo visible D1–D4 | «El color se repite. Buscaré una diferencia verificable.» |
+| FRIA-18 | Vida baja real del jugador | «Estás en una condición crítica. Evita un riesgo innecesario.» |
+| FRIA-19 | D5, miedo y apoyo | «Quiero salir. Tengo miedo. Sigo aquí.» |
+| FRIA-20 | Victoria confirmada | «Terminó. Podemos bajar la tensión.» |
+
+### Agresiva — AGRE
+
+La agresividad se expresa como intensidad y desafío; las frases no autorizan daño entre aliados ni modifican el comportamiento del NPC.
+
+| ID | Condición | Texto |
+|---|---|---|
+| AGRE-01 | Llegada D1–D4 | «Soy {nombre_npc}. No pienso dejar que este lugar nos intimide.» |
+| AGRE-02 | Apoyo operativo D1–D4 | «¡Seguimos en equipo! No aflojes ahora.» |
+| AGRE-03 | Arma propia conocida | «Traigo {arma_npc}. Ya sé cómo manejarla.» |
+| AGRE-04 | Arma del jugador equipada | «Veo tu {arma_jugador}. Úsala con decisión.» |
+| AGRE-05 | Ataque balístico del jugador observado | «¡Ese disparo sí se hizo notar!» |
+| AGRE-06 | Papel amarillo visible D1–D4 | «Otra pared amarilla. Ya me cansé de que este lugar intente imponerse.» |
+| AGRE-07 | Pasillos repetidos observables | «Otra vez un pasillo igual. No voy a dejar que me haga dudar.» |
+| AGRE-08 | Calma D1–D4, recuerdo personal | «En casa también discutía por tonterías. Al menos allí podía cerrar la puerta.» |
+| AGRE-09 | Calma D1–D4, recuerdo personal | «Extraño tener una tarde libre y decidir yo qué hacer con ella.» |
+| AGRE-10 | Vida baja real del jugador | «¡Estás mal! Deja de regalarle oportunidades al próximo golpe.» |
+| AGRE-11 | Reserva de apoyo agotada | «Sin munición de apoyo. Tendré que medir mejor lo que queda.» |
+| AGRE-12 | Ánimo D1–D4 con alias | «{nombre_jugador}, sigamos firmes. Este sitio no va a decidir por nosotros.» |
+| AGRE-13 | Llegada D5, miedo y deseo de irse | «Soy {nombre_npc}. Tengo miedo y quiero irme. No voy a fingir lo contrario.» |
+| AGRE-14 | D5, miedo y apoyo | «Tengo miedo. Aun así, sigo aquí y voy a hacer mi parte.» |
+| AGRE-15 | Victoria confirmada | «¡Eso es! Terminó este encuentro.» |
+| AGRE-16 | Apoyo operativo D1–D4 | «No te quedes mirando. Seguimos juntos; haz tu parte.» |
+| AGRE-17 | Papel amarillo visible D1–D4 | «El amarillo no me impresiona. Sigamos atentos.» |
+| AGRE-18 | Vida baja real del jugador | «¡Cuida el siguiente paso! No quiero verte caer por apurarte.» |
+| AGRE-19 | D5, miedo y apoyo | «Quiero salir tanto como tú. Mientras sigamos aquí, no aflojo.» |
+| AGRE-20 | Victoria confirmada | «Se acabó. Que quede claro: el miedo no nos detuvo.» |
+
+### Enojona — GRUN
+
+GRUN se irrita a menudo por inconvenientes pequeños y lo comenta con fastidio. ENOJ mantiene un enojo más firme y enfocado; no son la misma voz.
+
+| ID | Condición | Texto |
+|---|---|---|
+| GRUN-01 | Llegada D1–D4 | «Soy {nombre_npc}. Y sí, también me molesta que nos conozcamos aquí.» |
+| GRUN-02 | Apoyo operativo D1–D4 | «Aquí sigo. No me hagas repetirlo, por favor.» |
+| GRUN-03 | Arma propia conocida | «Me dieron {arma_npc}. Podrían haberme avisado antes, pero bueno.» |
+| GRUN-04 | Arma del jugador equipada | «Llevas {arma_jugador}. Espero que no tenga otro problema escondido.» |
+| GRUN-05 | Ataque balístico del jugador observado | «Ese disparo retumbó muchísimo. Sí, ya sé que era necesario.» |
+| GRUN-06 | Papel amarillo visible D1–D4 | «Amarillo otra vez. Como si el lugar no tuviera ya suficientes problemas.» |
+| GRUN-07 | Pasillos repetidos observables | «Otro pasillo igual. Qué sorpresa tan poco sorprendente.» |
+| GRUN-08 | Calma D1–D4, recuerdo personal | «Extraño quejarme en casa por cosas que sí tenían arreglo.» |
+| GRUN-09 | Calma D1–D4, recuerdo personal | «Quiero volver a mi cama. Esta pausa de pie no cuenta como descanso.» |
+| GRUN-10 | Vida baja real del jugador | «Estás mal. No me gusta tener que repetir que vayas con cuidado.» |
+| GRUN-11 | Reserva de apoyo agotada | «Se acabó mi munición de apoyo. Sí, ya sé, qué momento.» |
+| GRUN-12 | Ánimo D1–D4 con alias | «{nombre_jugador}, sigamos. Quejarme no va a sacarnos de aquí.» |
+| GRUN-13 | Llegada D5, miedo y deseo de irse | «Soy {nombre_npc}. Tengo miedo y quiero irme. Encima, tenía que ser aquí.» |
+| GRUN-14 | D5, miedo y apoyo | «Tengo miedo. No me pidas que me guste; sigo ayudando igual.» |
+| GRUN-15 | Victoria confirmada | «Terminó. Bien. Ya puedo quejarme con menos urgencia.» |
+| GRUN-16 | Apoyo operativo D1–D4 | «No estoy de mal humor contigo. Bueno, no especialmente. Sigamos.» |
+| GRUN-17 | Papel amarillo visible D1–D4 | «Si veo otra pared amarilla, voy a poner los ojos en blanco. Otra vez.» |
+| GRUN-18 | Vida baja real del jugador | «No me hagas preocuparme más. Cuida ese siguiente movimiento.» |
+| GRUN-19 | D5, miedo y apoyo | «Quiero salir. Tengo miedo. Y sí, sigo contigo aunque refunfuñe.» |
+| GRUN-20 | Victoria confirmada | «Sobrevivimos. Ahora solo quiero una silla y cinco minutos sin ruido.» |
+
+Estas seis voces se pueden asignar a modelos femeninos sin vincular sus rasgos a la silueta o al cuerpo. AMOR no exige romance; COQ no presupone reciprocidad; TOXI caracteriza una conducta áspera sin otorgarle poder sobre el jugador; AGRE transmite intensidad sin agresión entre aliados; FRIA siente miedo en D5 aunque lo exprese con pocas palabras; GRUN es una voz gruñona cotidiana, distinta de ENOJ.
+
+## 7. Revisión previa a integración
+
+El V2 reúne **280 frases en total**, veinte por cada una de las catorce personalidades, más **12 variantes de presentación** y ocho pares de concordancia femenina/masculina. Se suma al banco V1 de 102 variantes; las alternativas sin alias no se cuentan como nuevos IDs.
 
 Comprobar coherencia entre tono y biografía, ausencia de promesas de acciones no disponibles, condiciones de arma/entorno, versión sin alias y miedo D5 sin huida automática. Las expresiones «prestar atención» o «me cuesta concentrarme» son narrativas, no bonificaciones o penalizaciones.
 
-Comprobar además nombres fijos, lista compatible, ausencia de duplicados mientras haya alternativas, caso FARO/Bruno, alias ausente, una presentación por aparición y preservación al suspender. El nombre aleatorio y la presentación son requisitos expresos; listas y redacciones concretas son propuestas.
+Comprobar además nombres fijos, lista compatible, ausencia de duplicados mientras haya alternativas, caso FARO/Bruno, alias ausente, una presentación por aparición y preservación al suspender. El requisito de asignar nombre y mostrar una presentación se conserva; la lista de nombres y las reglas para sortearlo siguen como propuestas. El texto de diálogos y presentaciones está aprobado, pero su integración continúa pendiente.
 
 Los sprites femeninos los diseñará Iván. El sonido identificativo se resolverá en «sonido»; puede acompañar la burbuja sin pronunciar texto. Este banco no asigna timbres por género ni crea locuciones.

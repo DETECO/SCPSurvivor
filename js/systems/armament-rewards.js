@@ -19,6 +19,18 @@ G.ArmamentRewards=(()=>{
  function draw(plan){let n=plan.seed>>>0;for(const c of plan.id)n=Math.imul(n^c.charCodeAt(0),16777619)>>>0;return n/4294967296;}
  function finish(plan,result){receipts.set(plan.id,{id:plan.id,kind:plan.kind,...result});notice=result.description;return{...result};}
  function improve(plan){
+  if(G.WeaponRevisionTrial?.active()){
+   const result=G.WeaponRevisionTrial.claimReward(plan.id,plan.player,{draw:()=>draw(plan)});
+   if(!result.ok)return{ok:false,outcome:'blocked',description:'La mejora AF01 ya no es compatible.'};
+   if(result.outcome==='no_eligible_upgrade'){
+    if(!G.InfiniteProgression.grantTactical(plan.player,'power'))return{ok:false,outcome:'blocked',description:'No se pudo aplicar el apoyo táctico.'};
+    return finish(plan,{ok:true,outcome:'tactical',description:'Armamento al máximo · apoyo táctico de potencia durante 15 s activos (ensayo).'});
+   }
+   const description=result.outcome==='upgraded'
+    ?`Premio de armamento · Pistola AF01: ${G.WeaponRevisionTrial.levelLabel(plan.player.fieldWeapons.find(c=>c.id===result.copy.id))}.`
+    :'Armamento AF01 al MAX · no se desperdició el ascenso.';
+   return finish(plan,{ok:true,outcome:result.outcome,weaponId:result.copy?.id||null,description});
+  }
   const options=plan.player.fieldWeapons.flatMap(c=>branches.filter(b=>c.branches[b]<6).map(branch=>({id:c.id,branch,model:c.model})));
   if(!options.length){
    if(!G.InfiniteProgression.grantTactical(plan.player,'power'))return{ok:false,outcome:'blocked',description:'No se pudo aplicar el apoyo táctico.'};
@@ -34,7 +46,7 @@ G.ArmamentRewards=(()=>{
   if(receipts.has(id))return{ok:false,outcome:'already-claimed',description:'Este premio ya fue entregado.'};
   if(pending)return pending.id===id?{ok:true,outcome:'choice',description:notice}:{ok:false,outcome:'busy',description:'Resuelve primero la elección de armamento.'};
   if(player.fieldWeapons.length===2)return improve(plan);
-  const wanted=G.MapTrial?.expanded?['pistol',draw(plan)<.5?'smg':'shotgun','baton']:['pistol','smg','shotgun'];
+  const wanted=G.WeaponRevisionTrial?.active()?['pistol']:(G.MapTrial?.expanded?['pistol',draw(plan)<.5?'smg':'shotgun','baton']:['pistol','smg','shotgun']);
   const models=wanted.filter(m=>own(G.FieldCatalog.models,m));
   if(!models.length)return{ok:false,outcome:'blocked',description:'No hay modelos compatibles.'};
   pending={id,models,description:'Elige la segunda arma · la acción está detenida.',plan};notice=pending.description;
@@ -45,6 +57,12 @@ G.ArmamentRewards=(()=>{
   if(!pending||!valid(pending.plan.player)||!pending.models.includes(model))return false;
   const plan=pending.plan,p=plan.player;
   if(p.fieldWeapons.length===2){const result=improve(plan);if(!result.ok)return false;}
+  else if(G.WeaponRevisionTrial?.active()){
+   const result=G.WeaponRevisionTrial.claimReward(plan.id,p,{model:'AF01'});
+   if(!result.ok)return false;
+   finish(plan,{ok:true,outcome:'acquired',model:'AF01',weaponId:result.copy.id,
+    description:'Segunda Pistola AF01 equipada en nivel 1 · ambas copias atacan por separado.'});
+  }
   else{
    if(!G.FieldCombat.acquire(model,`armament:${plan.id}`))return false;
    finish(plan,{ok:true,outcome:'acquired',model,description:`Segunda arma equipada: ${G.FieldCatalog.models[model].name} · ambas atacan automáticamente.`});

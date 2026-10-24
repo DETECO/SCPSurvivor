@@ -1,7 +1,48 @@
 # Pauta vigente de SCP Survivor — revisión ESTRUCTURA
 
+## Coordinación vigente — Juanillo / ESTRUCTURA · 23/10/2026
+
+Iván activa las instrucciones de coordinación de este hilo: **EST-ORG-001 r1**. Esta pauta es la entrada maestra; [CONTROL_CAMBIOS.md](docs/gestion/CONTROL_CAMBIOS.md) registra revisiones examinadas, conflictos y lotes. Se registran las reglas generales aprobadas aquí y se respetan las decisiones/recursos de las especialidades. Al pedir consolidación se comparan revisiones y se leen cambios/dependencias; las conversaciones se consultan cuando falte evidencia, declarando cobertura real.
+
+La consolidación conserva la intención aprobada, prepara lotes verificables y enlaza los informes de PROGRAMACION. No implementa ni publica. Las correcciones técnicas ya encargadas que restablecen un diseño aprobado no necesitan otra consolidación. No configura otros hilos ni migra sus historiales; la cobertura inicial parcial de REV-EST-0001 queda conservada y el corte actual es REV-EST-0006.
+
+**Consolidación vigente · 23/10/2026 — REV-EST-0006:** [cambios, revisiones y dependencias](docs/gestion/CONSOLIDACION_2026-10-23_R1.md), con copias documentales preservadas. Iván acepta **NIV-ESC-008-A r1 / EST-ESC-001 r1**: M01 **240×160** y cámara más cercana en móvil vertical, conservando proporciones del personaje. [LOT-EST-003 r1](docs/gestion/lotes/LOT-EST-003-r1.md) listo; sustituye las dimensiones anteriores para la siguiente prueba de M01, no afirma código ya adaptado. Se consolidan animación **NIV-GRI-009 r1**, recursos biológicos V1 y textos de compañeros con sus límites, MENUS e ICONO desde sus registros propios. [LOT-EST-004 r1](docs/gestion/lotes/LOT-EST-004-r1.md) prepara SON-001. LOT-001/002 conservan revisión y alcance. La galería MEN-004 sigue en revisión; pruebas integradas, publicación y teléfono físico mantienen sus estados en PROGRAMACION.
+
+### Índice de fuentes existentes
+
+**Encargo enviado a PROGRAMACION:** Iván autoriza derivar esta consolidación e implementar sus alcances aprobados. [Instrucción concreta](docs/gestion/ENCARGO_PROGRAMACION_REV-EST-0006.md) · [confirmación de envío](docs/gestion/revisiones/REV-EST-0006/DERIVACION_PROGRAMACION.json). El envío no equivale a implementación o publicación; los resultados se enlazarán desde el registro técnico de PROGRAMACION.
+
+| Tema / responsable | Entrada documental |
+|---|---|
+| ESTRUCTURA — coordinación, revisiones y lotes | [Control de cambios](docs/gestion/CONTROL_CAMBIOS.md) |
+| ESTRUCTURA — reglas aceptadas y antecedentes | [Decisiones V2 infinito](docs/DECISIONES_INFINITO_2026-10-20.md) |
+| PERSONAJES — diseños y recursos | [Registro 22/10](docs/PERSONAJES_APROBACION_2026-10-22.md) · [recursos biológicos V1 aceptados](docs/ANOMALIAS_SPRITES_V1_APROBACION.md) · [ataques V1](docs/ANOMALIAS_BIOLOGICAS_ATAQUES_ANIMACION_V1.md) |
+| PERSONAJES — diálogos | [Banco V1](docs/DIALOGOS_COMPANEROS_GRIETA_V1.md) · [personalidades y presentaciones V2](docs/DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md); redacción aprobada, selección de nombres/cadencias e integración con su estado propio |
+| ARMAS | [Pauta de armas](docs/PAUTA_ARMAS.md) |
+| NIVELES | [Pauta R7.4](docs/PAUTA_CREACION_ESCENARIOS.md) · [opción A elegida](docs/NIVELES_AJUSTE_ESCALA_008.md), aceptación posterior EST-ESC-001 en el control · [animación aprobada](docs/NIVELES_APROBACION_GRIETAS_ANIMACION_009.md) |
+| SONIDO | [Pauta SON-001](docs/PAUTA_SONIDO.md) |
+| PROGRAMACION — evidencia | [Presentación publicada 0.33](docs/PRESENTACION_INTEGRADA.md) · [animación local NIV-GRI-009](docs/PROGRAMACION_GRIETAS_ANIMACION_009.md); consultar cada informe y sus límites |
+| MENUS — decisiones visuales aprobadas | [Pauta MENUS](docs/PAUTA_MENUS.md) · [recursos aprobados](design-proposals/menus/aprobados-20261022/) |
+| ICONO APP | [Pauta ICON-APP-001/R1](docs/areas/ICONO_APP.md) · [procedencia del recurso](assets/brand/PROCEDENCIA.json); aplicación informada por PROGRAMACION |
+
+Las notas fechadas que siguen son antecedentes de decisiones/entregas. Su fecha o posición no sustituye la fuente de aprobación ni amplía el alcance revisado en el control.
+
 **Entrega 0.33 · 23/10/2026:** Presentación integrada: escenario inicial R7 Backrooms480×320 con profundidad visual2.5D, menús aprobados responsivos, icono3 con SCP, personajes16/32 y dos prácticas visibles. Seis apariencias de grieta en B3; nuevas mecánicas de azar/NPC/recinto separado documentadas y pendientes. [Jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2) · [Alcance y límites](docs/PRESENTACION_INTEGRADA.md) · [ESTRUCTURA consultada](docs/ESTRUCTURA_SYNC_2026-10-23.md).
 
+
+**Diálogos y recursos de PERSONAJES · 23/10/2026:** [bancos V1/V2](docs/DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md) registran redacción aprobada, catorce personalidades y presentaciones; nombres/listas y reglas de selección conservan su estado de propuesta, sin NPC/burbujas integrados. Los sprites femeninos los diseñará Iván. Aparte, las cinco anomalías biológicas, su repertorio de 15 ataques y [paquete raster V1](docs/ANOMALIAS_SPRITES_V1_APROBACION.md) quedan aceptados para futura integración: arte/animaciones no acreditan hitboxes, valores de combate, recintos, premios ni balance jugable. Originales preservados y evidencia de producción en PERSONAJES.
+
+**Burbujas y refuerzo exterior · 23/10/2026:** Iván fija diálogos en burbujas de texto, sin locución; diseñará un sonido característico en «sonido». Plantea además que de una brecha salga un compañero para ayudar en el mapa. [Propuesta de refuerzo exterior](docs/PROPUESTA_BRECHA_REFUERZOS.md): evento separado recomendado, frecuencia/cupo pendientes; no modifica todavía las tasas de grietas ni del apoyo interior. Sin implementación.
+
+**SONIDO · 22/10/2026:** Iván elige **SON-001 rev. 1.0**, ambiente «Presencia en la oscuridad» para el menú inicial. Recurso y decisión aprobada en la [pauta de SONIDO](docs/PAUTA_SONIDO.md). La integración debe coordinarse con PROGRAMACION y su sistema de audio vigente; todavía no está integrada ni probada en el juego.
+
+**Aceptación y diálogos del compañero · 22/10/2026:** Iván acepta las recomendaciones de su mecánica, incluido D4 Raro/Épico 50/50, ayuda limitada y arma no transferible. Pide reconocer armas propias/equipadas, recinto, recuerdos y casa, y más adelante el nombre del jugador. [Banco V1](docs/DIALOGOS_COMPANEROS_GRIETA_V1.md) con cuatro voces propuestas y condiciones de uso. Textos nuevos y parámetros de conversación pendientes de revisión; sin implementación ni audio.
+
+**Compañero de grieta · 22/10/2026:** Iván fija aparición del 33% en D1–D3 con arma básica aleatoria, 33% en D4 con arma Rara o Épica y 10% en D5 con Legendaria. Habla y anima; en D5 expresa miedo y ganas de irse, sin huida mecánica aprobada. [Ficha de diseño](docs/COMPANERO_CONTENCION_GRIETAS.md). Sorteo separado del de peligrosidad. Recomendaciones de ayuda limitada y reparto Raro/Épico aceptadas posteriormente; cifras de combate y textos definitivos pendientes. Sin implementación.
+
+**Grietas, revisión 2.2 · 23/10/2026:** Iván aprueba **EST-GRI-001 r1**: dado **50% sí / 50% no**, oportunidades a **1:00/2:00/3:00/4:00 activos desde el segundo mapa** y máximo **dos apariciones acumuladas por mapa**. Se conservan los pesos previos **50/32/8/7/3%** para el segundo sorteo de peligrosidad. [Ficha vigente](docs/GRIETAS_DADO_POR_MINUTO_V2.md) · [LOT-EST-001 r1](docs/gestion/lotes/LOT-EST-001-r1.md), director de sorteos listo documentalmente como núcleo aislado, sin ejecución ni publicación. Ubicación, catálogo de encuentros, recintos y NPC mantienen sus dependencias; esta aprobación no altera los seis estilos visuales ya integrados.
+
+**Cierre de ARMAS aprobado · 23/10/2026:** Iván responde «acepto todo.» a [EST-ARM-001 r1](docs/CIERRE_ARMAS_PROGRESION_FUSION_V1.md): **una escala 1–5 + MAX por copia sustituye las cuatro ramas**, una fusión por expedición, estación desde mapa 2 y **CC04 + TE01 → F24 FINAL** como primera receta; perfiles de ensayo y contrato de animación aceptados. [LOT-EST-002 r1](docs/gestion/lotes/LOT-EST-002-r1.md) queda listo documentalmente para PROGRAMACION, con validación pendiente de agarres/poses, sala, confirmación y balance. ARM-VIS-001/R1 conserva su aprobación visual: nueve armas y F24, ocho vistas en 16/32 y 160 sprites. El ensayo anterior aún requiere adaptación de código; esta consolidación no implementa ni publica. Las otras 62 recetas y el resto del catálogo90 no se aprueban por extensión. [Evidencia y alcance REV-EST-0005](docs/gestion/CONTROL_CAMBIOS.md).
 
 **Actualización 0.32 · PERSONAJES, 22/10/2026:** Personajes del hilo PERSONAJES incorporados al ensayo T1BC: seis actores en 32/16, selección gráfica, montaje humano modular y dos apoyos amarillos. PNG copiados sin edición; geometría, estadísticas, armas jugables y comportamiento aliado conservados. Diseños aprobados por Iván para implementación el 22/10/2026; no catálogo final 24+24 ni armas nuevas. [Aprobación](docs/PERSONAJES_APROBACION_2026-10-22.md). [Jugar 32](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=32) · [Jugar 16](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=16) · [Alcance](docs/PERSONAJES_INTEGRACION.md).
 

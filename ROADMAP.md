@@ -1,10 +1,10 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-23).** Presentación integrada: escenario inicial R7 Backrooms480×320 con profundidad visual2.5D, menús aprobados responsivos, icono3 con SCP, personajes16/32 y dos prácticas visibles. Seis apariencias de grieta en B3; nuevas mecánicas de azar/NPC/recinto separado documentadas y pendientes.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-24).** REV-EST-0006 / CONTROL_CAMBIOS0.6: M01 240×160 y cámara vertical 512, audio SON-001 y ensayo AF01 1–5–MAX con arte16/32 implementados localmente. Director de grietas probado aislado, sin nuevos encuentros. Visor/dominio de fusión disponibles; Katana, láser y F24 jugables pendientes de poses/sala. Publicación autorizada; sin aceptación humana de esta composición ni servicios reales.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
-**Demo disponible:** [guía](docs/PRUEBA_T1BC.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=terminal) · [jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2). Sin cuentas ni guardado; aceptación de Iván pendiente.
+**Demo disponible:** [guía](docs/PRUEBA_REV_EST_0006.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=16) · [jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=32). Sin cuentas ni guardado; aceptación de Iván pendiente.
 
 **Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
 
@@ -13,8 +13,8 @@
 | Recorrido | Infinito, mapas300s y jefe240s de ensayo; muerte sin resurrección, abandono desde pausa sin marca competitiva; conservación permanente confirmada. |
 | Puerta y aliados | Puerta/dos aliados a300s, remanentes y jefe obligatorio; resolver premio/XP antes de cruzar. Aliados sinXP/no remate; uno huye si ambos ven al jefe vivo. Congelar regeneración/cooldowns, no duración de efectos. |
 | Armas | Una inicial; segunda garantizada por primer jefe si falta o adelantada por élite. Máximo dos simultáneas, modelos iguales independientes; reemplazo solo en terminales. Familias balística/energía/melee/explosivos/arrojadizas. |
-| Cartas y niveles | Tres ofertas: arma/general/libre, categorías vacías se rellenan con válidas. Cuatro ramas por arma: Potencia/Ritmo/Manejo/Especialización; cada rama/poder/general5+extra. Saturación táctica temporal, sin moneda real. |
-| Fusión | En sala de algún escenario, dos armas completamente mejoradas se combinan y liberan ranura. Receta/herencia/frecuencia/límite aún por cerrar; una fusión por expedición no está aprobada. |
+| Cartas y niveles | EST-ARM-001 r1: por copia 1→2→3→4→5→MAX sustituye ramas de arma; generales/poderes conservan5+extra. AF01 conectado; saturación reutiliza apoyo táctico existente. Las otras armas no se dan por implementadas. |
+| Fusión | EST-ARM-001 r1 aprobado: una por expedición, CC04 MAX + TE01 MAX → F24 FINAL, desde estación de mapa2. Dominio/visor probados; gate cerrado hasta validar poses, sala, interfaz y combate. F24 no es inicial. |
 | Poderes anómalos | Jefes de grieta: primer poder garantizado, después azar/garantía tras tres victorias sin poder; hasta tres y reemplazo pausado al cuarto. Intervalos automáticos,5+extra propio. |
 | Ultimate | Una manual y pasiva del soldado, sin botón adicional de habilidad anterior; lista al inicio, cooldown largo propio conservado entre mapas, cinco niveles permanentes. Gacha y fragmentos/materiales sin costes fijados. |
 | Grietas y saltos | Nuevo diseño: recinto separado/origen congelado,45s para entrar instantáneamente; única retirada5s entre1–3min y retorno por victoria. Detalles de instante/aviso/posición y saltos abiertos. B3 actual sigue en el mismo mapa. |
@@ -52,13 +52,13 @@
 
 Las reglas, tareas, porcentajes y prioridades registradas debajo describen el diseño anterior. En conflicto manda la pauta V2 de arriba.
 
-**Prioridad registrada antes de V2 (17/10/2026): P05 antes de P06; Spark sin facturación por decisión expresa.** CLI y configuración Auth verificados en vivo. El backend actual usa Cloud Functions y no se puede desplegar en Spark; la integración propia sigue desactivada. P05 EV0/6, global52/100. Se conserva P06 y se retoma inmediatamente con multiagentes después del cierre real P05. [Estado y limitación](docs/P05-ESTADO-SPARK.md) · [Pauta de cierre](docs/CIERRE_P05.md).
+**Prioridad registrada antes de V2 (18/10/2026): cerrar P05 antes de P06, manteniendo Spark sin facturación.** Alternativa Worker/SQLite preparada; falta confirmar el plan Free de la cuenta, desplegar y validar los flujos reales. El cliente propio sigue desactivado. P05 EV0/6; global52/100. [Adaptación y activación](docs/P05-WORKER-SPARK.md) · [Pruebas y límites](docs/P05-WORKER-REPORT.md).
 
 **Antecedente histórico · crédito de Ivan Vivanco · prototipo P06-T01 (16/10/2026).** Modelo físico y panel base/preparación con confirmación; IDs, mochilas8/16 y almacén60 usan fixture temporal. `?inventario=local` o prueba directa `?prueba=inventario` (inicia preparación20s), solo loopback; sin cuentas, persistencia, inventario real, botín ni kit. **P06-T01 EC, evidencia incompleta; servidor, continuidad y aceptación manual pendientes. P06 T02–T05 siguen P. Global52/100; P05 EV0/6.** EV-030 registra95 pruebas aprobadas,0 fallos,1 omitida y4 escenarios de navegador aprobados. Aceptación manual pendiente: [guía manual](docs/PRUEBA_INVENTARIO_P06.md) y [informe P06](docs/P06-REPORT.md).
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-Versión **0.33**, 2026-10-23. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+Versión **0.34**, 2026-10-24. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
 
 ## Avance basado en evidencia
 

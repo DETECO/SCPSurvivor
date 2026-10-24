@@ -11,6 +11,8 @@
 ## Antecedentes conservados; el plan0.28 anterior prevalece
 
 
+**Actualización de wiki, 20/10/2026:** Iván aceptó el cuestionario con excepciones y cerró después sala de fusión dentro de escenarios, una sola ventana de escape de cinco segundos y diez categorías permanentes por soldado compradas con monedas recogidas. Consultar la [matriz vigente y sus cinco cierres pendientes](DECISIONES_INFINITO_2026-10-20.md) antes de volver a preguntar por esas reglas. La lista de implementación siguiente conserva su alcance/evidencia; esta anotación no declara B4, economía o guardado implementados ni cambia estados del roadmap.
+
 20/10/2026 · Roadmap 0.27 · A-037 / D-333.
 
 ## Aceptación y prioridad de Iván

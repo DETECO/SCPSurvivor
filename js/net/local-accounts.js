@@ -9,6 +9,8 @@ G.LocalAccounts = (() => {
     params.get('cuentas') === 'propias' && ownOriginAllowed ? 'own' : 'disabled';
   const enabled = mode !== 'disabled';
   const isLocal = mode === 'local';
+  const workerEndpoint = 'https://scp-survivor-accounts.ivan-vivanco-t.workers.dev/accountCommand';
+  const workerBackend = mode === 'own' && window.SCPFirebase?.accountsRuntime?.backend === 'worker';
   const ownProjectId = window.SCPFirebase?.accountsRuntime?.projectId || 'scp-survivor';
   const cacheNamespace = mode === 'own' ? `scp:p05:${ownProjectId}` : 'scp:p05';
   const sessionKey = `${cacheNamespace}:session`;
@@ -21,6 +23,73 @@ G.LocalAccounts = (() => {
     ready,user:auth?.currentUser || null,data,error,busy:inFlight,sessionId});
   const notify = () => { for (const fn of listeners) fn(state()); };
   const user = () => auth?.currentUser || null;
+  const transportError = (code,message) => Object.assign(new Error(message),{code:`functions/${code}`});
+  function validateWorkerState(next) {
+    const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+    const text = value => typeof value === 'string' && value.length > 0;
+    const count = value => Number.isSafeInteger(value) && value >= 0;
+    const version = value => object(value) && value.schemaVersion === 1 && value.buildVersion === '0.5-local-01';
+    let valid = version(next) && count(next.revision) &&
+      (next.profile === null || (object(next.profile) && text(next.profile.alias) && next.profile.alias.length >= 3 && next.profile.alias.length <= 24)) &&
+      (next.activeRun === null || (object(next.activeRun) && text(next.activeRun.id) && text(next.activeRun.sessionId) &&
+        count(next.activeRun.sessionVersion) && next.activeRun.sessionVersion >= 1 && version(next.activeRun.checkpoint) &&
+        object(next.activeRun.checkpoint.expedition) && object(next.activeRun.checkpoint.player) &&
+        object(next.activeRun.checkpoint.combat) && typeof next.activeRun.rankEligible === 'boolean' &&
+        typeof next.activeRun.combatPending === 'boolean' && count(next.activeRun.createdAt) && count(next.activeRun.updatedAt))) &&
+      (next.lastResult === null || (object(next.lastResult) && text(next.lastResult.runId) &&
+        ['death','extracted'].includes(next.lastResult.cause) && object(next.lastResult.totals) &&
+        typeof next.lastResult.rankEligible === 'boolean' && count(next.lastResult.confirmedAt)));
+    if (valid && next.lastResult) {
+      const totals = next.lastResult.totals;
+      valid = ['sector','wave','kills','level','runSeed','wavesCompleted','sectorsCompleted','bossesDefeated','bossesEvaded'].every(key => count(totals[key])) &&
+        ['elapsed','hp'].every(key => Number.isFinite(totals[key]) && totals[key] >= 0);
+    }
+    if (!valid) throw transportError('data-loss','La respuesta del servidor tiene un formato o una versión incompatible. Se conserva la confirmación pendiente.');
+    return next;
+  }
+  async function workerCall(request) {
+    const account = user(), uid = account?.uid;
+    if (!uid) throw transportError('unauthenticated','Inicia sesión para guardar.');
+    const body = JSON.stringify(request), controller = new AbortController();
+    let timer;
+    const sameAccount = () => {
+      if (user()?.uid !== uid) throw transportError('cancelled','La cuenta cambió durante la confirmación.');
+    };
+    const send = async () => {
+      for (let attempt = 0; attempt < 2; attempt++) {
+        sameAccount();
+        const token = await account.getIdToken(attempt === 1);
+        sameAccount();
+        if (controller.signal.aborted) throw transportError('deadline-exceeded','La confirmación agotó el tiempo de espera. Puedes reintentar.');
+        const response = await window.fetch(workerEndpoint,{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`},
+          body,signal:controller.signal,credentials:'omit',redirect:'error'});
+        sameAccount();
+        if (response.status === 401 && attempt === 0) continue;
+        let result;
+        try { result = await response.json(); }
+        catch (_) { throw transportError('data-loss','El servidor devolvió una respuesta incompleta. Puedes reintentar.'); }
+        sameAccount();
+        if (!response.ok || result?.error) {
+          const statusCodes = {400:'invalid-argument',401:'unauthenticated',403:'permission-denied',404:'not-found',409:'failed-precondition',429:'resource-exhausted'};
+          // Transient HTTP failures never discard a persisted command, regardless of the response error code.
+          const transient = response.status === 429 || response.status >= 500;
+          const rawCode = result?.error?.code;
+          const code = transient ? (response.status === 429 ? 'resource-exhausted' : 'unavailable') :
+            (typeof rawCode === 'string' ? rawCode.replace(/^functions\//,'') : statusCodes[response.status] || 'unknown');
+          throw transportError(code,typeof result?.error?.message === 'string' ? result.error.message : 'No se pudo confirmar. Puedes reintentar.');
+        }
+        return {data:validateWorkerState(result?.data)};
+      }
+    };
+    const timeout = new Promise((_,reject) => {
+      timer = setTimeout(() => { controller.abort(); reject(transportError('deadline-exceeded','La confirmación agotó el tiempo de espera. Puedes reintentar.')); },12000);
+    });
+    try { return await Promise.race([send(),timeout]); }
+    catch (e) {
+      if (e.code?.startsWith('functions/')) throw e;
+      throw transportError('unavailable',e.message || 'No se pudo conectar. Puedes reintentar.');
+    } finally { clearTimeout(timer); }
+  }
   function cacheKey(uid = user()?.uid,sid=sessionId) { return `${pendingPrefix(uid)}${sid}`; }
   function pending() {
     if (!user() || !sessionId) return null;
@@ -74,6 +143,11 @@ G.LocalAccounts = (() => {
         error = 'La configuración de la cuenta propia no coincide con el proyecto esperado.';
         notify(); throw new Error(error);
       }
+      if ((runtime.backend && !['functions','worker'].includes(runtime.backend)) ||
+          (workerBackend && runtime.accountEndpoint !== workerEndpoint)) {
+        error = 'La configuración del servidor de cuentas no es válida.';
+        notify(); throw new Error(error);
+      }
     }
     if (initialization) return initialization;
     initialization = (async () => {
@@ -89,9 +163,12 @@ G.LocalAccounts = (() => {
       auth = sdk.initializeAuth(app,authDependencies);
       if (isLocal) sdk.connectAuthEmulator(auth,'http://127.0.0.1:9099',{disableWarnings:true});
       await sdk.setPersistence(auth,sdk.browserLocalPersistence);
-      const functions = sdk.getFunctions(app,mode === 'own' ? window.SCPFirebase.accountsRuntime.region : 'us-central1');
-      if (isLocal) sdk.connectFunctionsEmulator(functions,'127.0.0.1',5001);
-      call = sdk.httpsCallable(functions,'accountCommand',{timeout:12000});
+      if (workerBackend) call = workerCall;
+      else {
+        const functions = sdk.getFunctions(app,mode === 'own' ? window.SCPFirebase.accountsRuntime.region : 'us-central1');
+        if (isLocal) sdk.connectFunctionsEmulator(functions,'127.0.0.1',5001);
+        call = sdk.httpsCallable(functions,'accountCommand',{timeout:12000});
+      }
       ready = true; sdk.onAuthStateChanged(auth,acceptUser); notify();
     })();
     try { await initialization; } catch (e) { error=e.message; initialization=null; notify(); throw e; }

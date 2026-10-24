@@ -68,9 +68,10 @@ G.DimensionalRifts = (() => {
       (result === 'defeated' ? 'Custodio dimensional vencido · sector despejado' : 'Retirada dimensional · sector despejado'));
     return true;
   }
-  function draw(ctx) {
+  function draw(ctx, layer = 'all') {
     if (!['open','active'].includes(state.status)) return;
-    if(G.RiftVisuals?.draw(ctx,state))return;
+    if(G.RiftVisuals?.draw(ctx,state,undefined,null,layer))return;
+    if(layer === 'ground')return;
     ctx.save(); ctx.fillStyle='#1c080de6'; ctx.strokeStyle='#ff5e66'; ctx.lineWidth=3;
     ctx.beginPath(); ctx.ellipse(state.x,state.y,22,38,0,0,Math.PI*2);ctx.fill();ctx.stroke();
     ctx.strokeStyle='#ffe5e6';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(state.x+5,state.y-27);
@@ -78,6 +79,10 @@ G.DimensionalRifts = (() => {
     ctx.fillStyle='#ffe5e6';ctx.font='bold 13px system-ui';ctx.textAlign='center';
     ctx.fillText(state.status==='open' ? `GRIETA · ${Math.ceil(state.remaining)} s` : 'GRIETA ACTIVADA',state.x,state.y-48);ctx.restore();
   }
+  function drawable() {
+    if (!enabled || !['open','active'].includes(state.status)) return null;
+    return { y: state.y + 35, draw(ctx) { draw(ctx, 'body'); } };
+  }
   reset();
-  return {enabled,directTest,reset,clear,offer,tick,near,enter,complete,draw,get state(){return {...state};}};
+  return {enabled,directTest,reset,clear,offer,tick,near,enter,complete,draw,drawable,get state(){return {...state};}};
 })();

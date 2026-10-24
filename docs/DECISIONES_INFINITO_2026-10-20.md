@@ -8,6 +8,8 @@ Iván respondió: «acepto todas tus recomendaciones exceptuando las siguientes 
 
 Aclaración posterior recibida: «Cada rama, poder y mejora general tiene 5 niveles más un extra propio; las ultimates mantienen sus 5 niveles permanentes».
 
+**Aprobación posterior, 23/10/2026:** Iván responde «acepto todo.» a [EST-ARM-001 r1](CIERRE_ARMAS_PROGRESION_FUSION_V1.md). Para armas sustituye las cuatro ramas por **una escala 1–5 + MAX por copia**, con cinco ascensos desde nivel 1; poderes/generales y ultimates conservan sus reglas. Quedan aceptados perfiles de ensayo, una fusión por expedición, estación desde mapa 2, F24 como primera receta y contrato de animación/integración. [LOT-EST-002 r1](gestion/lotes/LOT-EST-002-r1.md) preparado; código y balance pendientes. La aclaración anterior se conserva como antecedente, no como instrucción para reimplantar cuatro ramas.
+
 **Respuesta posterior incorporada, 20/10/2026:** Iván sitúa la fusión de dos armas al máximo en una sala de alguno de los escenarios; confirma «se abre una sola vez» como respuesta contextual a la ventana de escape pendiente; y establece compras permanentes individuales por soldado, pagadas con monedas recogidas en el escenario. Esas tres respuestas cierran ubicación de fusión, cantidad de ventanas de retirada y alcance/medio de compra de las diez categorías. No aprueban por sí solas recetas, frecuencia de salas, precios o límite de fusiones.
 
 Este registro establece decisiones de diseño. No modifica el ejecutable, no habilita cuentas o premios reales y no acredita implementación o balance. Las cifras elegidas como parámetros de ensayo conservan ese carácter. Se conserva el cuestionario original como contexto; esta resolución posterior prevalece donde lo modifica.
@@ -34,7 +36,7 @@ Este registro establece decisiones de diseño. No modifica el ejecutable, no hab
 | 16 | A | Aprobada como regla o parámetro de ensayo | Familia principal exclusiva: balística, energía, melee, explosivos o arrojadizas; etiquetas para láser, misil, alcance y área. |
 | 17 | A | Aprobada como regla o parámetro de ensayo | Granadas/molotov como armas; orbitales anómalos como poderes. Cada modelo ocupa una sola ranura. |
 | 18 | A | Aprobada como regla o parámetro de ensayo | Una de arma, una general y una libre entre candidatas válidas; los poderes adquiridos entran en la libre. |
-| 19 | A modificada + aclaración | Aprobada | Se conservan cuatro ramas de arma. Cada rama, poder y mejora general tiene cinco niveles más un extra propio. Las ultimates conservan cinco niveles permanentes. |
+| 19 | A modificada + EST-ARM-001 r1, 23/10 | Aprobada; sustituida la progresión de armas | Una escala 1–5 + MAX por copia de arma, cinco ascensos desde nivel 1, sustituye las cuatro ramas. Poderes y generales conservan cinco niveles más extra propio; ultimates cinco permanentes. [Cierre aprobado](CIERRE_ARMAS_PROGRESION_FUSION_V1.md). |
 | 20 | A | Aprobada como regla o parámetro de ensayo | Subidas frecuentes al principio; requisitos crecientes después para construir una identidad de equipo. |
 | 21 | A | Aprobada como regla o parámetro de ensayo | Tres bonificaciones tácticas breves y universales; solo una activa, sin nuevas ranuras ni moneda permanente. |
 | 22 | A | Aprobada como regla o parámetro de ensayo | Recogida automática de la XP pendiente del mapa, una sola vez, antes de resolver elecciones. |
@@ -61,7 +63,7 @@ Este registro establece decisiones de diseño. No modifica el ejecutable, no hab
 | 43 | A | Aprobada como regla o parámetro de ensayo | Sube también la vida actual por la misma cantidad; se informa como parte de la carta. |
 | 44 | A | Aprobada como regla o parámetro de ensayo | Sí: apoyos separados de cofres y poderes; revisar sus tasas heredadas junto con el combate V2. |
 | 45 | A | Aprobada como regla o parámetro de ensayo | Recinto separado; mapa de origen congelado y retorno al punto de entrada tras reclamar victoria. |
-| 46 | A | Aprobada como regla o parámetro de ensayo | Una por mapa desde el segundo, entre 1:30 y 3:00 como ensayo; siempre es opcional entrar. |
+| 46 | A + cambios 22/10 y aprobación 23/10 | Frecuencia, horarios y probabilidades aprobados | EST-GRI-001 r1: desde el segundo mapa, tiradas a 1:00/2:00/3:00/4:00 activos; sí/no 50/50; máximo dos apariciones acumuladas. Segundo sorteo de peligro 50/32/8/7/3% conservado. Sustituye una por mapa y franja 1:30–3:00. Ver [ficha 2.2](GRIETAS_DADO_POR_MINUTO_V2.md) y [lote de núcleo aislado](gestion/lotes/LOT-EST-001-r1.md). Diseño aprobado, implementación pendiente. |
 | 47 | A | Aprobada como regla o parámetro de ensayo | 45 segundos activos para entrar como ensayo; el cierre no expulsa y el encuentro no tiene límite forzado de victoria. |
 | 48 | Nota y aclaración posterior | Aprobada | Una ventana de cinco segundos para retirarse, una sola vez entre los minutos 1 y 3 del encuentro. Después solo queda la victoria o la muerte; el retorno tras victoria de 45A se conserva. |
 | 49 | A | Aprobada como regla o parámetro de ensayo | Adelantar entre uno y tres mapas, con destino y peligro anunciados; no cobrar mapas omitidos. |
@@ -95,11 +97,11 @@ Este registro establece decisiones de diseño. No modifica el ejecutable, no hab
 
 ### Cinco niveles y un extra propio
 
-- Cada una de las cuatro ramas de un arma tiene niveles 1–5 y su propio extra final. El estado base sin mejora no se considera una compra adicional.
+- **Armas, revisión 23/10:** una escala por copia 1–5 + MAX. Se adquiere en 1 y necesita cinco mejoras; reemplazarla comienza la nueva copia en 1. Los ascensos y extras de ensayo están fijados en EST-ARM-001 r1.
 - Cada poder y mejora general sigue la regla 5 + extra propio. Esta decisión reemplaza el máximo de tres rangos de poder y de Especialización propuestos antes.
 - Las ultimates mantienen sus cinco niveles permanentes. No reciben un sexto nivel por esta regla.
-- Los extras necesitan efectos propios y deben respetar los topes conjuntos de defensa, velocidad, objetivos y activación. No conceden una bonificación adicional oculta por completar todas las ramas.
-- Con base sin mejoras, cuatro ramas de seis pasos equivalen a 24 inversiones por arma y 48 para completar dos, antes de premios que avancen ramas. Es un presupuesto de progresión, no una medición de cuánto tarda una partida. Debe contrastarse con XP y frecuencia de cofres antes de fijar cuándo aparece la fusión.
+- Los extras necesitan efectos propios y deben respetar los topes conjuntos de defensa, velocidad, objetivos y activación. MAX no concede otro multiplicador genérico oculto.
+- El presupuesto vigente es cinco ascensos por arma y diez entre las dos, antes de medir XP y cofres. El cálculo anterior de 24 inversiones por arma/48 entre dos pertenecía a las cuatro ramas y queda sustituido como diseño, sin afirmar que el código ya se haya adaptado.
 - No se extiende automáticamente la regla a categorías permanentes de la tienda sin reconciliar su ficha de progresión y el alcance de la aclaración. Las compras permanentes y los extras temporales deben mostrarse por separado.
 
 ### Tienda permanente y diez categorías
@@ -136,26 +138,26 @@ Propuesta operativa: un dorado ejecuta cinco resultados en un mismo gacha y cada
 
 Las cantidades históricas de tickets en cofres no determinan la nueva mezcla de colores. No convertir automáticamente cada premio previo en dorados ni alterar silenciosamente su valor en tiradas; establecer la correspondencia antes de activar la economía.
 
-## Fusión de armas — sala confirmada y reglas pendientes
+## Fusión de armas — reglas aprobadas en EST-ARM-001 r1
 
-**Confirmado por Iván:** en una sala de alguno de los escenarios se podrán fusionar dos armas al nivel máximo, obteniendo una compuesta que libera una ranura. La operación ocurre dentro del recorrido, no en el menú permanente de la base. Con la regla de niveles ya elegida, ambas deben tener completas sus ramas y sus extras propios.
+**Confirmado por Iván el 23/10 mediante «acepto todo.»:** dos modelos distintos compatibles MAX se fusionan voluntariamente en una sala del recorrido para producir un compuesto FINAL y liberar una ranura. [Reglas y perfiles completos](CIERRE_ARMAS_PROGRESION_FUSION_V1.md), apartados 4–6; [lote de implementación](gestion/lotes/LOT-EST-002-r1.md).
 
-No se ha fijado en qué escenarios aparece esa sala, su frecuencia, recetas, herencia de efectos o límite de fusiones por expedición. La respuesta sobre «se abre una sola vez» resuelve la ventana de escape en su contexto; no convierte automáticamente en aprobada la recomendación de una sola fusión.
+La apertura única de escape de grieta mantiene su significado independiente. El límite de **una fusión por expedición** procede ahora de la aprobación explícita de EST-ARM-001 r1.
 
-Recomendación:
+Resumen vigente:
 
-1. Dentro de esa sala, un terminal experimental de la Fundación permite la fusión voluntaria y temporal de la expedición. Es la propuesta de realización de la ubicación ya aprobada.
-2. Ambas armas deben tener completas sus cuatro ramas, incluidos los extras propios.
-3. Elegir un arma núcleo y una donante según una receta válida. Se consume la instancia temporal donante; no se elimina ningún modelo de la colección.
-4. El resultado es un modelo compuesto que ocupa una ranura. Conserva progreso del núcleo e integra un rasgo compatible recalibrado; no suma sin límite todos los multiplicadores, ciclos y efectos de ambas armas.
-5. Una sola fusión por expedición. Un compuesto no puede volver a fusionarse, evitando acumular un arsenal dentro de una ranura.
-6. La ranura queda vacía; no aparece otra arma gratis. El siguiente premio de armamento puede completarla según las reglas aceptadas. La nueva empieza en progreso temporal base y recibe bonos generales aplicables, sin copiar ramas de la fusionada.
-7. La fusión no usa ni amplía las tres ranuras de poderes o la ultimate. Tampoco es un premio permanente de gacha.
-8. Una combinación sin receta no debe consumir armas ni fingir una mejora. Si la intención es fusionar cualquier pareja, hay que añadir recetas o una regla genérica con presupuesto de potencia controlado.
+1. Desde mapa 2 se reserva una estación/sala accesible por mapa mientras quede el uso. NIVELES concreta su posición transitable, sin alterar automáticamente planos aprobados.
+2. Ambas copias están MAX en su escala única. No se fusionan modelos iguales ni parejas sin receta habilitada.
+3. Se consumen las dos copias temporales, sin coste adicional ni azar; la colección permanente se conserva.
+4. El compuesto FINAL sustituye los extras originales por su propio comportamiento. No hereda cuatro ramas ni suma sin límite sus pasivas; bonos generales aplicados una sola vez. Rareza mayor entre Raro y las de los componentes, sin multiplicador de daño automático.
+5. Un único uso de expedición; FINAL no sube otra escala ni se refusiona. Reemplazarlo no devuelve componentes ni uso.
+6. La ranura se rellena mediante la siguiente recompensa elegible de armamento, con garantía del siguiente jefe si sigue vacía y premio único. El arma nueva comienza en 1.
+7. La operación no amplía poderes/ultimate ni concede un modelo permanente de gacha. Confirmación pausada y cancelación sin consumo, cura, recarga ni cambio de azar.
+8. Primera receta aprobada para ensayo: CC04 Katana + TE01 Emisor láser → F24 Hoja fotónica FINAL Rara. Las otras 62 recetas permanecen propuestas; las cifras de ensayo de F24 aún requieren medir balance.
 
-Ejemplo de ficción propia: katana + emisor láser → hoja fotónica de contención, con un corte transformado y rasgo de penetración. No se atribuye esa receta a un SCP real.
+F24 es ficción propia del juego, con corte y proyección frontal limitados por su ficha aprobada; no se atribuye esta receta a un SCP real.
 
-Compatibilidad: después de fusionar, las cartas de arma solo reconocen el compuesto y, cuando se obtenga, la nueva segunda arma. Las ofertas generadas antes de fusionar o reemplazar se vuelven a validar. Mientras haya una ranura vacía, no se ofrece mejorar esa ranura. El premio de saturación de 56A sigue disponible cuando no exista una mejora elegible.
+Compatibilidad: después de fusionar, F24 FINAL no es elegible para más ascensos. Las cartas podrán mejorar la nueva segunda copia cuando se obtenga. Revalidar ofertas tras fusión/reemplazo; nunca mejorar huecos vacíos o componentes consumidos. La salida táctica de saturación sigue disponible cuando no exista una mejora elegible. Montaje/poses, sala, interfaz y comprobaciones siguen pendientes de implementación.
 
 ## Mapas procedurales — dirección aceptada y viabilidad verificada
 
@@ -208,14 +210,14 @@ Ejemplo: T = 10 minutos, E = 150, J = 2 y G = 1 da 100 + 300 + 1.000 + 750 = **2
 
 ## Qué quedó resuelto y qué falta para avanzar
 
-Las preguntas anteriores están respondidas: 5 + extra por rama/poder/mejora general, ultimate con cinco permanentes; una ventana de escape anticipado de cinco segundos; y diez compras permanentes individuales por soldado, pagadas con monedas recogidas del escenario. La sala de fusión dentro de algunos escenarios también está confirmada. No volver a preguntar por esas decisiones.
+Las preguntas anteriores están respondidas: armas con escala única 1–5 + MAX por EST-ARM-001 r1; poderes/generales 5 + extra y ultimate cinco permanentes; una ventana de escape anticipado de cinco segundos; diez compras permanentes individuales por soldado con monedas del escenario. Las condiciones generales de fusión y F24 están aprobadas para ensayo. No volver a preguntar por esas decisiones.
 
 | Prioridad | Cierre pendiente | Recomendación para avanzar; todavía propuesta |
 | --- | --- | --- |
-| 1. Fusión jugable | Parejas compatibles, resultado, efectos heredados, frecuencia de la sala y cantidad de fusiones permitidas | Primera receta de prueba, sala opcional de laboratorio, una fusión por expedición y sin volver a fusionar el compuesto |
+| 1. Fusión jugable | Diseño inicial cerrado por EST-ARM-001 r1; faltan implementación, poses, ubicación concreta, interfaz y medición | Ejecutar por fases LOT-EST-002 r1 con F24; las otras 62 recetas requieren su revisión posterior |
 | 2. Monedas y tienda por soldado | Fuentes y recogida de monedas, ingresos, precios, efecto por compra y correspondencia con XP permanente/duplicados | Una sola progresión de diez categorías por soldado; no sumar gratis una segunda capa de las mismas estadísticas |
 | 3. Escape alcanzable | Momento de la única ventana, señal previa y posición del portal | Advertencia visible/sonora antes de la apertura y ruta que pueda recorrerse durante los cinco segundos; retorno por victoria ya conservado |
-| 4. Fichas de combate | Daño/ritmo, efectos de cinco niveles y extra de cada rama/poder/general, cinco niveles de cada ultimate y cooldowns | Catálogo inicial pequeño con valores identificados como ensayo; probar primera fusión y dos armas con poderes/ultimate antes de ampliarlo |
+| 4. Fichas de combate | AF01/CC04/TE01 y F24 fijadas para ensayo; faltan fichas jugables de otras armas, poderes/generales y ultimates con sus límites | Medir el lote inicial antes de ampliar familias, poderes y ultimate; mantener escala única de armas y reglas propias de las otras categorías |
 | 5. Economía gacha y score | Fuentes de gris/dorado, compensaciones, garantías, lote de cinco y pesos de puntuación | Conservar el valor 1/5 y los cuatro componentes del score; validar los pesos y la economía después de medir la prueba |
 
 Para una demo local se puede continuar B4 con el diseño ya cerrado y parámetros explícitos de ensayo. No es necesario esperar a toda la economía o a servicios reales. La ruta sugerida es armas/cartas → primera sala de fusión → grieta con escape → poderes/ultimate integrados → monedas/tienda local con datos ficticios. Los mapas procedurales y su dirección visual pueden prepararse en paralelo, manteniendo rutas y posiciones de salas válidas.

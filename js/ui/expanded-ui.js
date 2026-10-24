@@ -3,19 +3,22 @@ G.ExpandedUI=(()=>{
  const el=id=>document.getElementById(id);
  let terminalSignature='';
  const enabled=()=>G.MapTrial?.expanded===true;
+ const revision=()=>G.WeaponRevisionTrial?.active()===true;
  const isMelee=w=>(w.effective?.family||G.FieldCatalog.models[w.model]?.family)==='melee';
  const branchLine=w=>G.InfiniteProgression.branches.map((k,i)=>`${['P','R','M','E'][i]}${w.branches?.[k]===6?'5+':w.branches?.[k]||0}`).join(' · ');
+ const progressionLine=w=>revision()?G.WeaponRevisionTrial.levelLabel(w):branchLine(w);
  function init(){
   if(!enabled())return;document.body.dataset.expandedTrial='true';
-  el('expanded-test-note').hidden=false;el('visual-style-note').hidden=!G.TrialVisuals?.enabled;el('expanded-practices').hidden=false;
-  const mode=G.MapTrial.practice;
+  const r1=revision();
+  el('expanded-test-note').hidden=false;el('visual-style-note').hidden=!G.TrialVisuals?.enabled;el('expanded-practices').hidden=r1;
+  const mode=r1?null:G.MapTrial.practice;
   if(mode==='melee'){const select=el('loadout-weapon-0');select.value='baton';select.dispatchEvent(new Event('change'));select.disabled=true;}
   const descriptions={terminal:'PRÁCTICA TERMINAL · Empiezas con dos armas; la primera tiene Potencia2. Busca T en el radar, acércate y abre el terminal. La partida se detiene al elegir.',maximos:'PRÁCTICA MÁXIMOS · Dos armas: la primera tiene sus cuatro ramas y extras completos; la segunda empieza sin ramas. Comprueba las cartas y el reemplazo.',saturacion:'PRÁCTICA SATURACIÓN · Dos armas y mejoras generales máximas; una esfera de XP preparada abre la elección de apoyo táctico. El apoyo dura15s activos y se sustituye.',melee:'PRÁCTICA MELEE · Empiezas con porra y un objetivo vivo cercano. Golpea automáticamente a corta distancia; sin cargador ni recarga.'};
-  el('expanded-test-note').textContent=descriptions[mode]||'T1B + T1C · Una arma inicial, dos simultáneas, terminal voluntario, radar y ramas visibles. Prueba cuatro modelos, incluida una porra de ensayo. Sin cuentas ni guardado; valores y arte provisionales.';
+  el('expanded-test-note').textContent=r1?G.WeaponRevisionTrial.message:(descriptions[mode]||'T1B + T1C · Una arma inicial, dos simultáneas, terminal voluntario, radar y ramas visibles. Prueba cuatro modelos, incluida una porra de ensayo. Sin cuentas ni guardado; valores y arte provisionales.');
   G.TrialVisuals.initUI();
-  el('infinite-test-note').textContent='Cuatro ramas por copia, cinco rangos y un extra. Toca una tarjeta de arma para pausar y consultar tu equipo. Poderes y ultimate siguen pendientes.';
-  el('technical-intro').textContent='T1B + T1C · Combate, reemplazo de armas y orientación.';
-  el('btn-technical-start').textContent=mode?'Iniciar práctica · '+({terminal:'terminal',maximos:'ramas máximas',saturacion:'saturación',melee:'cuerpo a cuerpo'})[mode]:'Iniciar T1B + T1C';
+  el('infinite-test-note').textContent=r1?'AF01: nivel 1–5 y MAX por copia. Toca una tarjeta para consultar el nivel. CC04, TE01 y fusión siguen pendientes.':'Cuatro ramas por copia, cinco rangos y un extra. Toca una tarjeta de arma para pausar y consultar tu equipo. Poderes y ultimate siguen pendientes.';
+  el('technical-intro').textContent=r1?'Prueba AF01 r1 parcial · progresión y combate de pistola.':'T1B + T1C · Combate, reemplazo de armas y orientación.';
+  el('btn-technical-start').textContent=r1?'Iniciar prueba AF01 r1':mode?'Iniciar práctica · '+({terminal:'terminal',maximos:'ramas máximas',saturacion:'saturación',melee:'cuerpo a cuerpo'})[mode]:'Iniciar T1B + T1C';
   el('btn-terminal').onclick=()=>{if(G.WeaponTerminal.open())tick(G.Game.player,G.Expedition.state,G.FieldCombat.state);};
   el('btn-terminal-close').onclick=()=>G.WeaponTerminal.close();
   el('btn-terminal-confirm').onclick=()=>{
@@ -31,12 +34,12 @@ G.ExpandedUI=(()=>{
   const host=el('expanded-build-content');host.replaceChildren();
   for(const [i,copy]of w.weapons.entries()){
    const title=document.createElement('strong');title.textContent=`Arma ${i+1} · ${copy.name}`;
-   const branches=document.createElement('p');branches.textContent=G.InfiniteProgression.describe(copy);
+   const branches=document.createElement('p');branches.textContent=progressionLine(copy);
    const stats=document.createElement('p');stats.textContent=`Daño ${Number(copy.effective.damage.toFixed(1))} · intervalo ${copy.effective.interval.toFixed(2)}s · alcance ${Math.round(copy.effective.range)}${isMelee(copy)?' · cuerpo a cuerpo, sin munición':` · cargador ${copy.capacity} · recarga ${copy.reloadTime.toFixed(2)}s`}`;
    host.append(title,branches,stats);
   }
   const general=document.createElement('p');general.textContent='Generales: '+G.FieldStats.temporaryKeys.map(k=>`${k} ${player.tempStats[k]===6?'5+extra':player.tempStats[k]||0}`).join(' · ');host.append(general);
-  const future=document.createElement('p');future.textContent='Distribución futura: hasta3 poderes automáticos y1 ultimate manual. Todavía no habilitados.';host.append(future);
+  const future=document.createElement('p');future.textContent=revision()?'Prueba parcial AF01 · fusión pendiente; no habilita CC04 ni TE01.':'Distribución futura: hasta3 poderes automáticos y1 ultimate manual. Todavía no habilitados.';host.append(future);
  }
  function openBuild(){
   if(!enabled()||G.Game.state!=='playing'||!['combat','boss'].includes(G.Expedition.state.phase))return;
@@ -67,7 +70,7 @@ G.ExpandedUI=(()=>{
   }else terminalSignature='';
   for(let i=0;i<2;i++){
    const copy=w.weapons[i],button=el(`btn-field-weapon-${i}`);button.replaceChildren();
-   for(const text of [copy?`${i+1} · ${copy.name}`:`${i+1} · Ranura vacía`,copy?(isMelee(copy)?'Cuerpo a cuerpo':copy.reload>0?`Recarga ${copy.reload.toFixed(1)}s`:`${Math.floor(copy.ammo)} / ${copy.capacity}`):'Premio de jefe/élite',copy?branchLine(copy):'']){
+    for(const text of [copy?`${i+1} · ${copy.name}`:`${i+1} · Ranura vacía`,copy?(isMelee(copy)?'Cuerpo a cuerpo':copy.reload>0?`Recarga ${copy.reload.toFixed(1)}s`:`${Math.floor(copy.ammo)} / ${copy.capacity}`):'Premio de jefe/élite',copy?progressionLine(copy):'']){
     const line=document.createElement('small');line.textContent=text;button.append(line);
    }
    button.disabled=!active;button.setAttribute('aria-label',copy?`Ver mejoras de arma ${i+1}: ${copy.name}`:'Ver equipo, segunda ranura vacía');

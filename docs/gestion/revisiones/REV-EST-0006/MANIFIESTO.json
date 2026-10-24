@@ -1,0 +1,133 @@
+{
+  "revision": "REV-EST-0006",
+  "date": "2026-10-23",
+  "purpose": "Corte local antes de consolidar. Las rutas relativas dentro de las copias archivadas conservan su base original; consultar source para resolverlas. Los recursos binarios se referencian por sus manifiestos, no se duplican.",
+  "sources": [
+    {
+      "source": "PAUTA_DESARROLLO.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/PAUTA_DESARROLLO.md",
+      "sha256": "229b685261d3ce29c929403b03b8c7314a65f5724627b0d525d88c1200e33ddb",
+      "bytes": 24790
+    },
+    {
+      "source": "docs/gestion/CONTROL_CAMBIOS.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/gestion/CONTROL_CAMBIOS.md",
+      "sha256": "73467600e5e86eb78b0fcdde93a43aa9f63dcfd2a107a39cb2316e001ad7db28",
+      "bytes": 17958
+    },
+    {
+      "source": "docs/PAUTA_CREACION_ESCENARIOS.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/PAUTA_CREACION_ESCENARIOS.md",
+      "sha256": "5c77df5ee40b30d49ac5c425f438228f3473b3f7866c641781dd79764e1f8a8b",
+      "bytes": 22809
+    },
+    {
+      "source": "docs/PAUTA_ARMAS.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/PAUTA_ARMAS.md",
+      "sha256": "fef09bfde4bee6dfab8fc2bed9362ab99bd989db58f31ac81292bfe43fa6f5b2",
+      "bytes": 16004
+    },
+    {
+      "source": "docs/PAUTA_MENUS.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/PAUTA_MENUS.md",
+      "sha256": "936409d5e18d5dc66414ad5077d0246d0a8c2523dfaf2e5f36c29f8fffb949d6",
+      "bytes": 10034
+    },
+    {
+      "source": "docs/PAUTA_SONIDO.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/PAUTA_SONIDO.md",
+      "sha256": "e7827eeb43712d243a15e22c33cc29f6360799d5d15d03c8efc739a46be3250e",
+      "bytes": 2076
+    },
+    {
+      "source": "docs/areas/ICONO_APP.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/areas/ICONO_APP.md",
+      "sha256": "b74310e074c5c31899cdc9c61b770eff0e6966fd5c383036c174a55b026476c3",
+      "bytes": 2400
+    },
+    {
+      "source": "docs/DIALOGOS_COMPANEROS_GRIETA_V1.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/DIALOGOS_COMPANEROS_GRIETA_V1.md",
+      "sha256": "cde183664354dd52b9adffe8b9c5a11cef0832a439e2e69a1d480349d03dbb31",
+      "bytes": 20284
+    },
+    {
+      "source": "docs/DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md",
+      "sha256": "b4a57666fcb2fdad9e4ec7ce20df46e9892a2f7dc59c80a603969ab3973414b6",
+      "bytes": 43905
+    },
+    {
+      "source": "docs/ANOMALIAS_SPRITES_V1_APROBACION.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/ANOMALIAS_SPRITES_V1_APROBACION.md",
+      "sha256": "ef9b4b87a06167cdf4fd28058705872ea95dc101c419a3bdac9a4107b286787a",
+      "bytes": 1767
+    },
+    {
+      "source": "docs/ANOMALIAS_SPRITES_V1_ENTREGA.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/ANOMALIAS_SPRITES_V1_ENTREGA.md",
+      "sha256": "542d4a0eb3de6d6cfe0a9d6817a9c4dfffb7230edd6ccaa201b5b8dcd2a64fc0",
+      "bytes": 4159
+    },
+    {
+      "source": "docs/ANOMALIAS_GRIETAS_VERSION_2_BIOLOGICA.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/ANOMALIAS_GRIETAS_VERSION_2_BIOLOGICA.md",
+      "sha256": "2b3f38bc3f976763ddf946db8acd802330b6942d9ef9e6c6be63793d9e71c454",
+      "bytes": 7594
+    },
+    {
+      "source": "docs/ANOMALIAS_BIOLOGICAS_ATAQUES_ANIMACION_V1.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/ANOMALIAS_BIOLOGICAS_ATAQUES_ANIMACION_V1.md",
+      "sha256": "1f7b483f81d8a10767823bcb997f4dad7c759ace2ef51b3892c9419097ae0ecc",
+      "bytes": 16228
+    },
+    {
+      "source": "docs/NIVELES_AJUSTE_ESCALA_008.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/NIVELES_AJUSTE_ESCALA_008.md",
+      "sha256": "ebd19ec1be39b4ad8cd9fc8301390c38ccaf3cd7e0f2ccb55a446c5e5c5e450b",
+      "bytes": 6918
+    },
+    {
+      "source": "docs/NIVELES_APROBACION_GRIETAS_ANIMACION_009.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/NIVELES_APROBACION_GRIETAS_ANIMACION_009.md",
+      "sha256": "3b4f4c47a82227ad4aaa9129694ae8bdccfe0b564f90f7707642f7353fd36144",
+      "bytes": 1990
+    },
+    {
+      "source": "docs/PROGRAMACION_GRIETAS_ANIMACION_009.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/PROGRAMACION_GRIETAS_ANIMACION_009.md",
+      "sha256": "d899afb526e50248a9704999e41a41386ec249959adf4ecd8fb62d33afdf85a9",
+      "bytes": 4039
+    },
+    {
+      "source": "docs/PRESENTACION_INTEGRADA.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/PRESENTACION_INTEGRADA.md",
+      "sha256": "c3c5458dfa09cecf5ccd579fa80bca28e498424471ae178f9fd03eba13a362dc",
+      "bytes": 5948
+    },
+    {
+      "source": "docs/PRESENTACION_VALIDACION.json",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/PRESENTACION_VALIDACION.json",
+      "sha256": "03933d7a3ca0c063b5b91659095aeb16c310110be6af88eca05f5e0223c41691",
+      "bytes": 4984
+    },
+    {
+      "source": "docs/PRESENTACION_PUBLICACION.json",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/PRESENTACION_PUBLICACION.json",
+      "sha256": "e0ca9d1cfcc92fc893f804b18a2841a45aa263a9d1418411a52dfe3d51088733",
+      "bytes": 5207
+    },
+    {
+      "source": "docs/CIERRE_ARMAS_PROGRESION_FUSION_V1.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/CIERRE_ARMAS_PROGRESION_FUSION_V1.md",
+      "sha256": "3ab619be7e3c3ceab468f4862efd65bd8e1b61ae00abc8e0408b95a8c1567016",
+      "bytes": 15316
+    },
+    {
+      "source": "docs/GRIETAS_DADO_POR_MINUTO_V2.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0006/docs/GRIETAS_DADO_POR_MINUTO_V2.md",
+      "sha256": "bbb0919ce300060c0bee5f0c30ef4dda2b60dcfa3f8eb51b0b72e1d00dc2de90",
+      "bytes": 12132
+    }
+  ]
+}

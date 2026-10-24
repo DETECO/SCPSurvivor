@@ -1,6 +1,8 @@
 # Grietas — dado interno por minuto
 
-Revisión 2.1 · 22/10/2026 · ESTRUCTURA. **Mecanismo y reparto de peligrosidad elegidos por Iván; horarios y probabilidad del sí/no siguen recomendados, pendientes de aprobación. Sin implementación.**
+Revisión **2.2** · 23/10/2026 · ESTRUCTURA. **Mecanismo, peligrosidades, dado 50/50 y horarios 1:00–4:00 desde el segundo mapa aprobados por Iván; máximo dos apariciones por mapa. Pendiente de implementación.**
+
+**EST-GRI-001 r1 — aprobación del 23/10:** «Apruebo el dado 50/50, con tiradas del minuto 1 al 4 desde el segundo mapa y máximo dos grietas.» Fuente: mensaje directo de Iván en ESTRUCTURA, hilo `01a1457c-c051-73d2-9864-e7deb6435420`; el identificador individual del mensaje no está expuesto. Sustituye el estado pendiente de estos parámetros en la revisión 2.1. [Control y lote documental](gestion/CONTROL_CAMBIOS.md).
 
 ## Decisión nueva de Iván
 
@@ -8,7 +10,7 @@ Revisión 2.1 · 22/10/2026 · ESTRUCTURA. **Mecanismo y reparto de peligrosidad
 - Si sale sí, un segundo sorteo ponderado elige entre cinco niveles de peligrosidad. A mayor peligro, menor probabilidad; el último debe ser muy infrecuente.
 - **Máximo dos grietas por mapa**, no dos garantizadas.
 
-Esta instrucción reemplaza la frecuencia anterior de una por mapa (46A). La propuesta previa de 60% por mapa con garantía tras dos ausencias nunca fue aprobada y deja de ser la recomendación. Iván elige posteriormente los porcentajes del segundo dado: **50%, 32%, 8%, 7% y 3%**, de menor a mayor peligrosidad. La probabilidad exacta del sí/no sigue sin confirmación expresa.
+Esta instrucción reemplaza la frecuencia anterior de una por mapa (46A). La propuesta previa de 60% por mapa con garantía tras dos ausencias nunca fue aprobada y queda como antecedente. Los porcentajes del segundo dado elegidos por Iván son **50%, 32%, 8%, 7% y 3%**, de menor a mayor peligrosidad. El 23/10 confirma expresamente el primer dado **50% sí / 50% no** y los horarios de cuatro oportunidades.
 
 Las cinco peligrosidades son niveles de encuentro. Las seis alternativas visuales de escenarios son propuestas artísticas independientes; no se modifican aquí.
 
@@ -22,12 +24,12 @@ Recinto separado y origen congelado. Una retirada anticipada de cinco segundos, 
 
 Primera victoria de grieta de cada expedición garantiza un poder; siguientes victorias conservan azar y garantía de 24A. El nuevo dado no cambia esa garantía de premio ni el máximo de tres poderes. Ignorar, entrar, retirarse sin victoria o morir no concede premio de victoria. Estas grietas no entregan ultimates del gacha.
 
-## Horarios y funcionamiento recomendados
+## Horarios aprobados y funcionamiento
 
-**Propuesta:** tirar en **1:00, 2:00, 3:00 y 4:00 del mapa**, sin tirada en 0:00 ni a partir de 5:00. Es un cambio respecto de la franja de ensayo anterior 1:30–3:00; estos horarios concretos requieren aprobación.
+**Aprobado:** tirar en **1:00, 2:00, 3:00 y 4:00 del reloj activo del mapa**, desde el segundo mapa y mientras no hayan aparecido dos grietas. No hay tirada en 0:00 ni a partir de 5:00. Sustituye la franja de ensayo anterior 1:30–3:00.
 
 1. Al alcanzar un minuto elegible, comprobar si ya aparecieron dos grietas. Si es así, no seguir sorteando.
-2. Con cupo disponible, lanzar una sola vez el sí/no. Recomiendo **50% sí / 50% no**, la lectura natural de un dado de dos caras iguales.
+2. Con cupo disponible, lanzar una sola vez el sí/no: **50% sí / 50% no**, reparto aprobado.
 3. Si sale no, esperar al siguiente minuto elegible. Si sale sí, sortear peligrosidad, encuentro y una ubicación válida; abrir y sumar una aparición.
 4. La entrada permanece 45 segundos activos. Ignorarla, dejarla expirar, superarla o retirarse sigue consumiendo una de las dos apariciones.
 5. Cada grieta admite una entrada. Regresar no la reactiva ni devuelve cupo. Tras la primera puede aparecer otra en un minuto posterior si todavía queda cupo.
@@ -51,7 +53,7 @@ Recomiendo empezar con una **tabla fija**, sin añadir aún escalado de probabil
 
 Son cifras elegidas por Iván, sin validación de balance todavía. Sustituyen la recomendación anterior 50/28/15/6,5/0,5. Las 1.000 caras representan pesos internos, sin exigir un dado visible. Las categorías clasifican el encuentro completo (anomalía, recinto, amenazas y reglas), no rarezas de armas ni clases canónicas de SCP. Mayor peligro necesita patrones más exigentes y señales legibles; no solo más vida o velocidad.
 
-La tabla expresa **P(tier | apareció grieta)**. Con sí/no al 50% como supuesto de ensayo, una oportunidad elegible tiene **1,5%** de probabilidad de abrir D5: 50% × 3%, siempre que quede cupo y existan encuentro y lugar válidos.
+La tabla expresa **P(tier | apareció grieta)**. Con el sí/no al 50% aprobado, una oportunidad elegible tiene **1,5%** de probabilidad de abrir D5: 50% × 3%, siempre que quede cupo y existan encuentro y lugar válidos.
 
 Con cuatro tiradas independientes al 50%, máximo dos apariciones y sin fallos técnicos:
 
@@ -71,8 +73,8 @@ Los dos dados separan bien cantidad y peligrosidad. El límite contiene la frecu
 
 | Alternativa para el primer dado | Media con cuatro tiradas y máximo dos | Probabilidad de dos |
 |---|---:|---:|
-| **50% sí / 50% no — recomendada inicialmente** | 1,625 | 68,75% |
-| 35% sí / 65% no, solo si el ensayo muestra exceso | 1,259 | 43,702% |
+| **50% sí / 50% no — aprobado el 23/10** | 1,625 | 68,75% |
+| 35% sí / 65% no — alternativa histórica no elegida | 1,259 | 43,702% |
 
 No añadir por ahora garantía de aparición ni de D5: modificaría el azar solicitado y sus tasas. La garantía ya aceptada de poder tras victorias es otro sistema y se conserva.
 
@@ -110,4 +112,4 @@ El ensayo actual sin persistencia no acredita esto. Guardar resultados evita nue
 5. Suspender antes/después de tirar, con portal abierto, dentro y tras victoria: mismos resultados, contador y premios, sin duplicados.
 6. Medir entradas, victorias, abandonos, ritmo de poderes, tiempo añadido y rendimiento por tier. Dos apariciones no limitan por sí solas la duración de los recintos.
 
-**Estado:** mecanismo de dos dados, máximo dos por mapa y reparto de peligrosidad **50/32/8/7/3 elegidos por Iván**. Horarios 1:00–4:00 y sí/no 50/50 siguen como recomendaciones pendientes de aprobación. No se ha cambiado código, publicado juego ni editado el catálogo visual.
+**Estado:** mecanismo de dos dados, máximo dos apariciones por mapa y peligrosidades **50/32/8/7/3 elegidos por Iván**. Desde el 23/10, **horarios 1:00–4:00 desde el segundo mapa y sí/no 50/50 también aprobados** mediante EST-GRI-001 r1. Los detalles que este documento identifica como propuestas de ubicación, fallos o persistencia no reciben aprobación adicional por inferencia. No se ha cambiado código, publicado juego ni editado el catálogo visual por registrar esta decisión.

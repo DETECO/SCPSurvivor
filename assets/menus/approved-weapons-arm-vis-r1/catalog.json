@@ -1,0 +1,106 @@
+{
+  "source": "ARM-VIS-001/R1",
+  "status": "visually_approved_not_integrated",
+  "entries": [
+    {
+      "id": "AF01",
+      "name": "Pistola de servicio",
+      "tier": "Normal",
+      "category": "Armas de fuego",
+      "approvalScope": "visual_design",
+      "approved": true,
+      "image16": "assets/menus/approved-weapons-arm-vis-r1/AF01-16.png",
+      "image32": "assets/menus/approved-weapons-arm-vis-r1/AF01-32.png"
+    },
+    {
+      "id": "AR01",
+      "name": "Granada de fragmentación",
+      "tier": "Normal",
+      "category": "Armas arrojadizas",
+      "approvalScope": "visual_design",
+      "approved": true,
+      "image16": "assets/menus/approved-weapons-arm-vis-r1/AR01-16.png",
+      "image32": "assets/menus/approved-weapons-arm-vis-r1/AR01-32.png"
+    },
+    {
+      "id": "CC04",
+      "name": "Katana de contención",
+      "tier": "Raro",
+      "category": "Armas cuerpo a cuerpo",
+      "approvalScope": "visual_design",
+      "approved": true,
+      "image16": "assets/menus/approved-weapons-arm-vis-r1/CC04-16.png",
+      "image32": "assets/menus/approved-weapons-arm-vis-r1/CC04-32.png"
+    },
+    {
+      "id": "IN03",
+      "name": "Lanzallamas de contención",
+      "tier": "Normal",
+      "category": "Armas incendiarias",
+      "approvalScope": "visual_design",
+      "approved": true,
+      "image16": "assets/menus/approved-weapons-arm-vis-r1/IN03-16.png",
+      "image32": "assets/menus/approved-weapons-arm-vis-r1/IN03-32.png"
+    },
+    {
+      "id": "FR07",
+      "name": "Rifle Tres Eslabones",
+      "tier": "Épico",
+      "category": "Francotiradores",
+      "approvalScope": "visual_design",
+      "approved": true,
+      "image16": "assets/menus/approved-weapons-arm-vis-r1/FR07-16.png",
+      "image32": "assets/menus/approved-weapons-arm-vis-r1/FR07-32.png"
+    },
+    {
+      "id": "PE04",
+      "name": "Lanzamisiles de contención",
+      "tier": "Raro",
+      "category": "Armas pesadas",
+      "approvalScope": "visual_design",
+      "approved": true,
+      "image16": "assets/menus/approved-weapons-arm-vis-r1/PE04-16.png",
+      "image32": "assets/menus/approved-weapons-arm-vis-r1/PE04-32.png"
+    },
+    {
+      "id": "RU04",
+      "name": "Ballesta de recuperación",
+      "tier": "Raro",
+      "category": "Armas rústicas",
+      "approvalScope": "visual_design",
+      "approved": true,
+      "image16": "assets/menus/approved-weapons-arm-vis-r1/RU04-16.png",
+      "image32": "assets/menus/approved-weapons-arm-vis-r1/RU04-32.png"
+    },
+    {
+      "id": "TE01",
+      "name": "Emisor láser",
+      "tier": "Normal",
+      "category": "Armas tecnológicas",
+      "approvalScope": "visual_design",
+      "approved": true,
+      "image16": "assets/menus/approved-weapons-arm-vis-r1/TE01-16.png",
+      "image32": "assets/menus/approved-weapons-arm-vis-r1/TE01-32.png"
+    },
+    {
+      "id": "AN09",
+      "name": "Reloj prestado",
+      "tier": "Legendario",
+      "category": "Armas anómalas",
+      "approvalScope": "visual_design",
+      "approved": true,
+      "image16": "assets/menus/approved-weapons-arm-vis-r1/AN09-16.png",
+      "image32": "assets/menus/approved-weapons-arm-vis-r1/AN09-32.png"
+    },
+    {
+      "id": "F24",
+      "name": "Hoja fotónica de contención",
+      "tier": "Raro",
+      "category": "Fusión",
+      "approvalScope": "visual_design",
+      "approved": true,
+      "image16": "assets/menus/approved-weapons-arm-vis-r1/F24-16.png",
+      "image32": "assets/menus/approved-weapons-arm-vis-r1/F24-32.png"
+    }
+  ]
+}

@@ -8,6 +8,9 @@ import os,json,argparse
 ROOT=Path(os.environ.get('SCP_TEST_ROOT',Path(__file__).resolve().parents[1])).resolve();ThreadingHTTPServer.request_queue_size=128
 class Quiet(SimpleHTTPRequestHandler):
  def log_message(self,*a):pass
+ def copyfile(self,*a):
+  try:super().copyfile(*a)
+  except(ConnectionResetError,BrokenPipeError):pass
 def scenario(browser,base,entry,view,mode,out):
  ctx=browser.new_context(viewport={'width':view[0],'height':view[1]},has_touch=view[2],is_mobile=view[2]);page=ctx.new_page();errors=[];http=[]
  page.on('pageerror',lambda e:errors.append(str(e)));page.on('console',lambda m:errors.append(m.text)if m.type=='error'else None);page.on('response',lambda r:http.append([r.status,r.url])if r.status>=400 else None)
@@ -25,18 +28,25 @@ def scenario(browser,base,entry,view,mode,out):
   page.locator('[data-screen="home"] [data-open-screen="settings"]').click();page.select_option('#character-resolution',mode);page.wait_for_url('**graficos='+mode);page.wait_for_selector('#operations-menu:visible')
   page.locator('[data-screen="home"] [data-open-screen="soldiers"]').click();page.locator('[data-screen="soldiers"] button[data-role="medic"]').click();assert page.locator('#field-role').input_value()=='medic'
   page.screenshot(path=str(out/(tag+'-soldier.png')));page.locator('[data-confirm-soldier]').click()
-  page.locator('.operations-weapon-summary').click();page.locator('[data-equip-weapon="shotgun"]').click();assert page.locator('#loadout-weapon-0').input_value()=='shotgun'
+  page.locator('.operations-weapon-summary').click();page.wait_for_selector('[data-approved-weapon="AF01"]')
+  expected=json.loads((ROOT/'assets/menus/approved-weapons-arm-vis-r1/catalog.json').read_text(encoding='utf-8'))
+  shown=page.locator('[data-approved-weapon]').evaluate_all('(nodes)=>nodes.map(node=>node.dataset.approvedWeapon)')
+  assert shown==[item['id']for item in expected['entries']]and len(shown)==10,shown
+  assert page.locator('[data-equip-weapon], [data-weapon]').count()==0
+  page.wait_for_function("Array.from(document.querySelectorAll('.operations-approved-weapon-card img')).every(image=>image.complete&&image.naturalWidth>0)")
+  page.screenshot(path=str(out/(tag+'-weapons.png')))
+  page.locator('[data-screen="weapons"] [data-open-screen="home"]').first.click()
   page.locator('#btn-technical-start').click();page.wait_for_function("G.Game.state==='playing'",timeout=45000)
   data=page.evaluate('''()=>{
    const p=G.Game.player,f=G.World.fixture;p.invuln=1e6;
    const ticks=[];for(let i=0;i<3;i++){const t=performance.now();G.Path.update(1,[p]);ticks.push(performance.now()-t);}
    return{layout:f.layout,width:f.maxX+1,height:f.maxY+1,role:p.soldierId,weapon:p.fieldWeapons[0].model,body:p.r,mode:G.TrialVisuals.mode,props:G.World.visibleProps(G.Camera).length,pathBuildMs:ticks,accounts:G.LocalAccounts.enabled};
   }''')
-  assert data['layout']=='M01-R7-BACKROOMS-MODULAR-25D'and data['width']==480 and data['height']==320 and data['role']=='medic'and data['weapon']=='shotgun'and data['mode']==mode and not data['accounts'],data
+  assert data['layout']=='M01-R7-BACKROOMS-MODULAR-25D'and data['width']==240 and data['height']==160 and data['role']=='medic'and data['weapon']=='pistol'and data['mode']==mode and not data['accounts'],data
   # Real input must move the avatar. No teleport is used for this assertion.
   before=page.evaluate('G.Game.player.x');page.keyboard.down('ArrowRight');page.wait_for_timeout(350);page.keyboard.up('ArrowRight');assert page.evaluate('G.Game.player.x')>before+10
   # Render controlled close views from approved regions; not a natural-play acceptance.
-  page.evaluate('''()=>{const p=G.Game.player;p.x=189*32;p.y=117*32;G.Camera.x=p.x;G.Camera.y=p.y;G.Path.update(1,[p]);}''');page.wait_for_timeout(100);page.screenshot(path=str(out/(tag+'-scene.png')))
+  page.evaluate('''()=>{const p=G.Game.player;p.x=97*32;p.y=66*32;G.Camera.x=p.x;G.Camera.y=p.y;G.Path.update(1,[p]);}''');page.wait_for_timeout(100);page.screenshot(path=str(out/(tag+'-scene.png')))
   # Six style previews execute the actual renderer, without granting encounters or rewards.
   styles=page.evaluate('''()=>{const c=document.createElement('canvas');c.width=720;c.height=180;const x=c.getContext('2d');for(let i=1;i<=6;i++)if(!G.RiftVisuals.draw(x,{status:'open',remaining:45,x:i*100-30,y:110,sector:2},1,i))throw Error('rift style unavailable');return c.toDataURL();}''')
   import base64

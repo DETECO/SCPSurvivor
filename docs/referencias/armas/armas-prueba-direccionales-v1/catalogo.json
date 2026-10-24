@@ -1,0 +1,7319 @@
+{
+  "version": "1.0",
+  "date": "2026-10-22",
+  "status": "visually_approved_not_integrated",
+  "directions": [
+    "E",
+    "SE",
+    "S",
+    "SW",
+    "W",
+    "NW",
+    "N",
+    "NE"
+  ],
+  "anglesDegrees": [
+    0,
+    45,
+    90,
+    135,
+    180,
+    225,
+    270,
+    315
+  ],
+  "angleConvention": "x derecha,y abajo;0=E",
+  "selected": [
+    "AF01",
+    "AR01",
+    "CC04",
+    "IN03",
+    "FR07",
+    "PE04",
+    "RU04",
+    "TE01",
+    "AN09",
+    "F24"
+  ],
+  "modes": {
+    "16": {
+      "AF01": {
+        "id": "AF01",
+        "name": "Pistola de servicio",
+        "tier": "Normal",
+        "category": "Armas de fuego",
+        "size": 16,
+        "sheet": "16/AF01/direcciones.png",
+        "individuals": [
+          "16/AF01/E.png",
+          "16/AF01/SE.png",
+          "16/AF01/S.png",
+          "16/AF01/SW.png",
+          "16/AF01/W.png",
+          "16/AF01/NW.png",
+          "16/AF01/N.png",
+          "16/AF01/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            41,
+            51,
+            56
+          ],
+          [
+            78,
+            93,
+            89
+          ],
+          [
+            127,
+            140,
+            128
+          ],
+          [
+            186,
+            195,
+            176
+          ],
+          [
+            237,
+            233,
+            205
+          ],
+          [
+            52,
+            67,
+            46
+          ],
+          [
+            104,
+            121,
+            79
+          ],
+          [
+            170,
+            181,
+            139
+          ],
+          [
+            176,
+            130,
+            53
+          ],
+          [
+            236,
+            191,
+            99
+          ],
+          [
+            247,
+            230,
+            170
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 6,
+              "y": 9
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 11,
+              "y": 6
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 16,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 7,
+              "y": 8
+            },
+            "support": {
+              "x": 9,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 10,
+              "y": 10
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 8
+            },
+            "support": {
+              "x": 8,
+              "y": 11
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 11
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 48,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 9,
+              "y": 8
+            },
+            "support": {
+              "x": 8,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 5,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 10,
+              "y": 9
+            },
+            "support": {
+              "x": 7,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 4,
+              "y": 7
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 80,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 9,
+              "y": 10
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 5,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 11
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 3
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 112,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 7,
+              "y": 10
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 10,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "bala corta",
+          "matiz_principal": "champán",
+          "color_principal": "#EBC67A",
+          "acento_tier": "#B8C0CC",
+          "marca_tier": "círculo",
+          "descripcion": "bala corta; matiz principal champán; brillo marfil breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "El primer disparo después de recargar añade un segundo tiro al mismo blanco, separado 0,12 s y con el 40 % del daño base; ocurre una vez por cargador.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Disparo semiautomático directo al objetivo cercano válido, con cargador y recarga propios; cada bala alcanza un solo blanco.",
+        "max": "El primer disparo después de recargar añade un segundo tiro al mismo blanco, separado 0,12 s y con el 40 % del daño base; ocurre una vez por cargador.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "AR01": {
+        "id": "AR01",
+        "name": "Granada de fragmentación",
+        "tier": "Normal",
+        "category": "Armas arrojadizas",
+        "size": 16,
+        "sheet": "16/AR01/direcciones.png",
+        "individuals": [
+          "16/AR01/E.png",
+          "16/AR01/SE.png",
+          "16/AR01/S.png",
+          "16/AR01/SW.png",
+          "16/AR01/W.png",
+          "16/AR01/NW.png",
+          "16/AR01/N.png",
+          "16/AR01/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            37,
+            48,
+            36
+          ],
+          [
+            61,
+            76,
+            43
+          ],
+          [
+            92,
+            112,
+            55
+          ],
+          [
+            135,
+            155,
+            81
+          ],
+          [
+            172,
+            180,
+            112
+          ],
+          [
+            81,
+            91,
+            86
+          ],
+          [
+            129,
+            141,
+            133
+          ],
+          [
+            189,
+            195,
+            174
+          ],
+          [
+            236,
+            229,
+            199
+          ],
+          [
+            160,
+            125,
+            59
+          ],
+          [
+            243,
+            207,
+            112
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 16,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 48,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 80,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 112,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "cápsula en arco y explosión radial",
+          "matiz_principal": "champán",
+          "color_principal": "#EBC67A",
+          "acento_tier": "#B8C0CC",
+          "marca_tier": "círculo",
+          "descripcion": "cápsula en arco y explosión radial; matiz principal champán; brillo marfil breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "La explosión libera cuatro fragmentos radiales de corto recorrido; cada enemigo recibe como máximo uno y los fragmentos no producen otras explosiones.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Se arroja hacia una concentración cercana y explota después de 0,8 s, con radio de 1,6 cuerpos y hasta cinco blancos; puede haber dos granadas en vuelo.",
+        "max": "La explosión libera cuatro fragmentos radiales de corto recorrido; cada enemigo recibe como máximo uno y los fragmentos no producen otras explosiones.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "CC04": {
+        "id": "CC04",
+        "name": "Katana de contención",
+        "tier": "Raro",
+        "category": "Armas cuerpo a cuerpo",
+        "size": 16,
+        "sheet": "16/CC04/direcciones.png",
+        "individuals": [
+          "16/CC04/E.png",
+          "16/CC04/SE.png",
+          "16/CC04/S.png",
+          "16/CC04/SW.png",
+          "16/CC04/W.png",
+          "16/CC04/NW.png",
+          "16/CC04/N.png",
+          "16/CC04/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            40,
+            49,
+            55
+          ],
+          [
+            75,
+            87,
+            91
+          ],
+          [
+            126,
+            138,
+            137
+          ],
+          [
+            174,
+            187,
+            179
+          ],
+          [
+            217,
+            225,
+            208
+          ],
+          [
+            250,
+            240,
+            207
+          ],
+          [
+            61,
+            64,
+            50
+          ],
+          [
+            108,
+            100,
+            80
+          ],
+          [
+            200,
+            156,
+            73
+          ],
+          [
+            96,
+            165,
+            250
+          ],
+          [
+            180,
+            217,
+            248
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 3,
+              "y": 8
+            },
+            "support": {
+              "x": 6,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 14,
+              "y": 7
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 16,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 5,
+              "y": 6
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 12,
+              "y": 10
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 5
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 12
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 48,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 11,
+              "y": 6
+            },
+            "support": {
+              "x": 9,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 4,
+              "y": 10
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 13,
+              "y": 8
+            },
+            "support": {
+              "x": 10,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 1,
+              "y": 7
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 80,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 10,
+              "y": 11
+            },
+            "support": {
+              "x": 8,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 4,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 13
+            },
+            "support": {
+              "x": 8,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 3
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 112,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 6,
+              "y": 10
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 11,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "corte fino de katana",
+          "matiz_principal": "marfil",
+          "color_principal": "#DCE7F0",
+          "acento_tier": "#60A5FA",
+          "marca_tier": "rombo",
+          "descripcion": "corte fino de katana; matiz principal marfil; muesca azul breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "Cada cuarto corte se convierte en un barrido frontal de 180 grados que alcanza hasta cinco blancos; no dispara ondas ni mueve al soldado.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Alterna cortes diagonales de 140 grados contra hasta cuatro enemigos; el alcance largo sigue siendo cuerpo a cuerpo y respeta obstáculos.",
+        "max": "Cada cuarto corte se convierte en un barrido frontal de 180 grados que alcanza hasta cinco blancos; no dispara ondas ni mueve al soldado.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "IN03": {
+        "id": "IN03",
+        "name": "Lanzallamas de contención",
+        "tier": "Normal",
+        "category": "Armas incendiarias",
+        "size": 16,
+        "sheet": "16/IN03/direcciones.png",
+        "individuals": [
+          "16/IN03/E.png",
+          "16/IN03/SE.png",
+          "16/IN03/S.png",
+          "16/IN03/SW.png",
+          "16/IN03/W.png",
+          "16/IN03/NW.png",
+          "16/IN03/N.png",
+          "16/IN03/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            39,
+            49,
+            57
+          ],
+          [
+            76,
+            91,
+            84
+          ],
+          [
+            139,
+            152,
+            129
+          ],
+          [
+            52,
+            67,
+            47
+          ],
+          [
+            102,
+            118,
+            80
+          ],
+          [
+            158,
+            98,
+            49
+          ],
+          [
+            207,
+            121,
+            39
+          ],
+          [
+            239,
+            161,
+            42
+          ],
+          [
+            255,
+            208,
+            97
+          ],
+          [
+            244,
+            223,
+            174
+          ],
+          [
+            174,
+            183,
+            166
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 6,
+              "y": 9
+            },
+            "support": {
+              "x": 8,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 13,
+              "y": 7
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 16,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 6,
+              "y": 7
+            },
+            "support": {
+              "x": 8,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 12,
+              "y": 11
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 7
+            },
+            "support": {
+              "x": 8,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 12
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 48,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 9,
+              "y": 8
+            },
+            "support": {
+              "x": 7,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 4,
+              "y": 11
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 10,
+              "y": 9
+            },
+            "support": {
+              "x": 7,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 2,
+              "y": 7
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 80,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 9,
+              "y": 10
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 5,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 11
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 3
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 112,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 7,
+              "y": 10
+            },
+            "support": {
+              "x": 9,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 11,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "cono térmico de pulsos agrupados",
+          "matiz_principal": "naranja",
+          "color_principal": "#F28C45",
+          "acento_tier": "#B8C0CC",
+          "marca_tier": "círculo",
+          "descripcion": "cono térmico de pulsos agrupados; matiz principal naranja; brillo marfil breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "La primera emisión tras enfriar ensancha el cono 15 grados durante 0,5 s; no añade blancos al cupo ni elimina la pausa térmica.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Emite un cono de fuego durante 1 s y después enfría; alcanza hasta cuatro blancos y un enemigo recibe como máximo un pulso cada 0,25 s.",
+        "max": "La primera emisión tras enfriar ensancha el cono 15 grados durante 0,5 s; no añade blancos al cupo ni elimina la pausa térmica.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "FR07": {
+        "id": "FR07",
+        "name": "Rifle Tres Eslabones",
+        "tier": "Épico",
+        "category": "Francotiradores",
+        "size": 16,
+        "sheet": "16/FR07/direcciones.png",
+        "individuals": [
+          "16/FR07/E.png",
+          "16/FR07/SE.png",
+          "16/FR07/S.png",
+          "16/FR07/SW.png",
+          "16/FR07/W.png",
+          "16/FR07/NW.png",
+          "16/FR07/N.png",
+          "16/FR07/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            48,
+            58,
+            60
+          ],
+          [
+            101,
+            114,
+            109
+          ],
+          [
+            165,
+            175,
+            160
+          ],
+          [
+            216,
+            222,
+            198
+          ],
+          [
+            84,
+            55,
+            35
+          ],
+          [
+            134,
+            84,
+            49
+          ],
+          [
+            180,
+            125,
+            70
+          ],
+          [
+            213,
+            171,
+            118
+          ],
+          [
+            192,
+            132,
+            252
+          ],
+          [
+            129,
+            80,
+            169
+          ],
+          [
+            232,
+            206,
+            250
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 5,
+              "y": 9
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 14,
+              "y": 7
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 16,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 7,
+              "y": 8
+            },
+            "support": {
+              "x": 9,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 12,
+              "y": 11
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 6
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 7,
+              "y": 12
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 48,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 9,
+              "y": 7
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 4,
+              "y": 10
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 10,
+              "y": 9
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 1,
+              "y": 7
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 80,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 9,
+              "y": 10
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 5,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 7,
+              "y": 11
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 7,
+              "y": 2
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 112,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 6,
+              "y": 10
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 11,
+              "y": 4
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "trazador lineal de tres contactos",
+          "matiz_principal": "azul acero",
+          "color_principal": "#90B7D4",
+          "acento_tier": "#C084FC",
+          "marca_tier": "doble rombo",
+          "descripcion": "trazador lineal de tres contactos; matiz principal azul acero; dos muescas violetas breves en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "Si alcanza a tres enemigos, el tercero sufre un 25 % de ralentización durante 1,2 s; el efecto termina en ese blanco y no genera un cuarto impacto.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Un tiro trazador atraviesa hasta tres blancos en línea; cada impacto pierde un 20 % respecto al anterior y no busca blancos fuera de su trayectoria.",
+        "max": "Si alcanza a tres enemigos, el tercero sufre un 25 % de ralentización durante 1,2 s; el efecto termina en ese blanco y no genera un cuarto impacto.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "PE04": {
+        "id": "PE04",
+        "name": "Lanzamisiles de contención",
+        "tier": "Raro",
+        "category": "Armas pesadas",
+        "size": 16,
+        "sheet": "16/PE04/direcciones.png",
+        "individuals": [
+          "16/PE04/E.png",
+          "16/PE04/SE.png",
+          "16/PE04/S.png",
+          "16/PE04/SW.png",
+          "16/PE04/W.png",
+          "16/PE04/NW.png",
+          "16/PE04/N.png",
+          "16/PE04/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            41,
+            51,
+            53
+          ],
+          [
+            81,
+            93,
+            84
+          ],
+          [
+            146,
+            160,
+            131
+          ],
+          [
+            51,
+            69,
+            44
+          ],
+          [
+            100,
+            117,
+            68
+          ],
+          [
+            175,
+            186,
+            131
+          ],
+          [
+            178,
+            118,
+            44
+          ],
+          [
+            240,
+            174,
+            57
+          ],
+          [
+            229,
+            213,
+            166
+          ],
+          [
+            96,
+            165,
+            250
+          ],
+          [
+            177,
+            217,
+            245
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 6,
+              "y": 9
+            },
+            "support": {
+              "x": 8,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 14,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 16,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 6,
+              "y": 7
+            },
+            "support": {
+              "x": 8,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 13,
+              "y": 10
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 7
+            },
+            "support": {
+              "x": 8,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 12
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 48,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 10,
+              "y": 7
+            },
+            "support": {
+              "x": 8,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 5,
+              "y": 12
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 11,
+              "y": 8
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 2,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 80,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 10,
+              "y": 10
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 4,
+              "y": 4
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 11
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 2
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 112,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 6,
+              "y": 10
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 12,
+              "y": 4
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "misil opaco con escape corto",
+          "matiz_principal": "naranja",
+          "color_principal": "#F28C45",
+          "acento_tier": "#60A5FA",
+          "marca_tier": "rombo",
+          "descripcion": "misil opaco con escape corto; matiz principal naranja; muesca azul breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "Al impactar libera dos fragmentos laterales de recorrido corto; cada fragmento termina en su primer impacto y no explota.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Un misil de recorrido recto explota al contacto; necesita una recarga larga después de cada lanzamiento.",
+        "max": "Al impactar libera dos fragmentos laterales de recorrido corto; cada fragmento termina en su primer impacto y no explota.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "RU04": {
+        "id": "RU04",
+        "name": "Ballesta de recuperación",
+        "tier": "Raro",
+        "category": "Armas rústicas",
+        "size": 16,
+        "sheet": "16/RU04/direcciones.png",
+        "individuals": [
+          "16/RU04/E.png",
+          "16/RU04/SE.png",
+          "16/RU04/S.png",
+          "16/RU04/SW.png",
+          "16/RU04/W.png",
+          "16/RU04/NW.png",
+          "16/RU04/N.png",
+          "16/RU04/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            52,
+            61,
+            61
+          ],
+          [
+            106,
+            118,
+            113
+          ],
+          [
+            194,
+            200,
+            175
+          ],
+          [
+            87,
+            56,
+            33
+          ],
+          [
+            136,
+            96,
+            57
+          ],
+          [
+            186,
+            141,
+            85
+          ],
+          [
+            224,
+            186,
+            124
+          ],
+          [
+            234,
+            229,
+            197
+          ],
+          [
+            96,
+            165,
+            250
+          ],
+          [
+            165,
+            204,
+            239
+          ],
+          [
+            156,
+            170,
+            140
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 6,
+              "y": 9
+            },
+            "support": {
+              "x": 9,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 13,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 16,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 7,
+              "y": 8
+            },
+            "support": {
+              "x": 9,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 11,
+              "y": 11
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 7
+            },
+            "support": {
+              "x": 8,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 12
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 48,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 9,
+              "y": 8
+            },
+            "support": {
+              "x": 7,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 5,
+              "y": 11
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 10,
+              "y": 9
+            },
+            "support": {
+              "x": 7,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 2,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 80,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 9,
+              "y": 10
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 5,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 11
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 3
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 112,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 7,
+              "y": 9
+            },
+            "support": {
+              "x": 9,
+              "y": 7
+            },
+            "muzzle": {
+              "x": 11,
+              "y": 4
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "virote con asta y punta",
+          "matiz_principal": "arena",
+          "color_principal": "#C3AA7B",
+          "acento_tier": "#60A5FA",
+          "marca_tier": "rombo",
+          "descripcion": "virote con asta y punta; matiz principal arena; muesca azul breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "El virote atraviesa un primer cuerpo y alcanza a un segundo; se detiene después y no vuelve al usuario.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Virote recto y lento con daño concentrado; la recarga de cuerda tiene una preparación legible.",
+        "max": "El virote atraviesa un primer cuerpo y alcanza a un segundo; se detiene después y no vuelve al usuario.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "TE01": {
+        "id": "TE01",
+        "name": "Emisor láser",
+        "tier": "Normal",
+        "category": "Armas tecnológicas",
+        "size": 16,
+        "sheet": "16/TE01/direcciones.png",
+        "individuals": [
+          "16/TE01/E.png",
+          "16/TE01/SE.png",
+          "16/TE01/S.png",
+          "16/TE01/SW.png",
+          "16/TE01/W.png",
+          "16/TE01/NW.png",
+          "16/TE01/N.png",
+          "16/TE01/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            41,
+            51,
+            57
+          ],
+          [
+            77,
+            94,
+            90
+          ],
+          [
+            129,
+            144,
+            131
+          ],
+          [
+            187,
+            198,
+            177
+          ],
+          [
+            236,
+            237,
+            206
+          ],
+          [
+            52,
+            67,
+            47
+          ],
+          [
+            102,
+            119,
+            78
+          ],
+          [
+            36,
+            127,
+            152
+          ],
+          [
+            66,
+            190,
+            210
+          ],
+          [
+            156,
+            233,
+            229
+          ],
+          [
+            214,
+            255,
+            242
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 6,
+              "y": 9
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 12,
+              "y": 6
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 16,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 7,
+              "y": 8
+            },
+            "support": {
+              "x": 9,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 11,
+              "y": 10
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 8
+            },
+            "support": {
+              "x": 8,
+              "y": 11
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 11
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 48,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 9,
+              "y": 8
+            },
+            "support": {
+              "x": 7,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 5,
+              "y": 10
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 10,
+              "y": 9
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 3,
+              "y": 6
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 80,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 9,
+              "y": 10
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 5,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 11
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 3
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 112,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 7,
+              "y": 10
+            },
+            "support": {
+              "x": 9,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 11,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "pulso láser fino",
+          "matiz_principal": "cian",
+          "color_principal": "#6AD3DF",
+          "acento_tier": "#B8C0CC",
+          "marca_tier": "círculo",
+          "descripcion": "pulso láser fino; matiz principal cian; brillo marfil breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "Cada cuarta emisión atraviesa al primer enemigo y puede golpear a un segundo; termina en ese segundo contacto.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Haz breve y recto que golpea al primer enemigo alineado; una pausa visible separa las emisiones.",
+        "max": "Cada cuarta emisión atraviesa al primer enemigo y puede golpear a un segundo; termina en ese segundo contacto.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "AN09": {
+        "id": "AN09",
+        "name": "Reloj prestado",
+        "tier": "Legendario",
+        "category": "Armas anómalas",
+        "size": 16,
+        "sheet": "16/AN09/direcciones.png",
+        "individuals": [
+          "16/AN09/E.png",
+          "16/AN09/SE.png",
+          "16/AN09/S.png",
+          "16/AN09/SW.png",
+          "16/AN09/W.png",
+          "16/AN09/NW.png",
+          "16/AN09/N.png",
+          "16/AN09/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            45,
+            53,
+            58
+          ],
+          [
+            102,
+            114,
+            104
+          ],
+          [
+            172,
+            181,
+            162
+          ],
+          [
+            83,
+            54,
+            34
+          ],
+          [
+            135,
+            91,
+            52
+          ],
+          [
+            189,
+            139,
+            75
+          ],
+          [
+            215,
+            193,
+            155
+          ],
+          [
+            244,
+            231,
+            199
+          ],
+          [
+            177,
+            132,
+            60
+          ],
+          [
+            239,
+            200,
+            106
+          ],
+          [
+            255,
+            240,
+            184
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 16,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 48,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 80,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 112,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 9
+            },
+            "support": null,
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "pulso corto y largo alternados",
+          "matiz_principal": "lila",
+          "color_principal": "#B79AE8",
+          "acento_tier": "#F4C76B",
+          "marca_tier": "estrella",
+          "descripcion": "pulso corto y largo alternados; matiz principal lila; remate dorado breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "Cada cuatro pulsos aparece un eco a los 0,5 s en la última posición alcanzada; un impacto por enemigo dentro de radio pequeño, sin rebobinar ni detener el tiempo.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Alterna un pulso corto y uno largo en una línea frontal; cada pulso alcanza hasta dos enemigos y conserva sus tiempos normales de combate.",
+        "max": "Cada cuatro pulsos aparece un eco a los 0,5 s en la última posición alcanzada; un impacto por enemigo dentro de radio pequeño, sin rebobinar ni detener el tiempo.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "F24": {
+        "id": "F24",
+        "name": "Hoja fotónica de contención",
+        "tier": "Raro",
+        "category": "Fusión",
+        "size": 16,
+        "sheet": "16/F24/direcciones.png",
+        "individuals": [
+          "16/F24/E.png",
+          "16/F24/SE.png",
+          "16/F24/S.png",
+          "16/F24/SW.png",
+          "16/F24/W.png",
+          "16/F24/NW.png",
+          "16/F24/N.png",
+          "16/F24/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            44,
+            56,
+            61
+          ],
+          [
+            104,
+            123,
+            124
+          ],
+          [
+            180,
+            197,
+            191
+          ],
+          [
+            224,
+            232,
+            211
+          ],
+          [
+            249,
+            241,
+            205
+          ],
+          [
+            35,
+            117,
+            137
+          ],
+          [
+            55,
+            181,
+            203
+          ],
+          [
+            161,
+            239,
+            237
+          ],
+          [
+            96,
+            165,
+            250
+          ],
+          [
+            208,
+            161,
+            83
+          ],
+          [
+            242,
+            210,
+            133
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 3,
+              "y": 8
+            },
+            "support": {
+              "x": 6,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 14,
+              "y": 7
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 16,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 5,
+              "y": 6
+            },
+            "support": {
+              "x": 7,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 12,
+              "y": 11
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 5
+            },
+            "support": {
+              "x": 8,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 13
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 48,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 11,
+              "y": 6
+            },
+            "support": {
+              "x": 9,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 4,
+              "y": 11
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 13,
+              "y": 8
+            },
+            "support": {
+              "x": 10,
+              "y": 8
+            },
+            "muzzle": {
+              "x": 2,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 80,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 11,
+              "y": 12
+            },
+            "support": {
+              "x": 9,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 4,
+              "y": 4
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 8,
+              "y": 13
+            },
+            "support": {
+              "x": 8,
+              "y": 10
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 2
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 112,
+              "y": 0,
+              "w": 16,
+              "h": 16
+            },
+            "grip": {
+              "x": 4,
+              "y": 11
+            },
+            "support": {
+              "x": 6,
+              "y": 9
+            },
+            "muzzle": {
+              "x": 11,
+              "y": 4
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "color_principal": "#dce7f0",
+          "color_secundario": "#6ad3df",
+          "acento_tier": "#60a5fa"
+        },
+        "attack": "La katana proyecta una hoja luminosa corta tras su corte físico",
+        "max": "Resultado final; no vuelve a subir de nivel.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      }
+    },
+    "32": {
+      "AF01": {
+        "id": "AF01",
+        "name": "Pistola de servicio",
+        "tier": "Normal",
+        "category": "Armas de fuego",
+        "size": 32,
+        "sheet": "32/AF01/direcciones.png",
+        "individuals": [
+          "32/AF01/E.png",
+          "32/AF01/SE.png",
+          "32/AF01/S.png",
+          "32/AF01/SW.png",
+          "32/AF01/W.png",
+          "32/AF01/NW.png",
+          "32/AF01/N.png",
+          "32/AF01/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            41,
+            51,
+            56
+          ],
+          [
+            78,
+            93,
+            89
+          ],
+          [
+            127,
+            140,
+            128
+          ],
+          [
+            186,
+            195,
+            176
+          ],
+          [
+            237,
+            233,
+            205
+          ],
+          [
+            52,
+            67,
+            46
+          ],
+          [
+            104,
+            121,
+            79
+          ],
+          [
+            170,
+            181,
+            139
+          ],
+          [
+            176,
+            130,
+            53
+          ],
+          [
+            236,
+            191,
+            99
+          ],
+          [
+            247,
+            230,
+            170
+          ],
+          [
+            29,
+            38,
+            43
+          ],
+          [
+            60,
+            72,
+            73
+          ],
+          [
+            103,
+            117,
+            109
+          ],
+          [
+            157,
+            168,
+            152
+          ],
+          [
+            212,
+            214,
+            191
+          ],
+          [
+            78,
+            94,
+            63
+          ],
+          [
+            137,
+            151,
+            109
+          ],
+          [
+            206,
+            161,
+            76
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 12,
+              "y": 18
+            },
+            "support": {
+              "x": 17,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 24,
+              "y": 13
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 14,
+              "y": 16
+            },
+            "support": {
+              "x": 18,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 22,
+              "y": 21
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 14
+            },
+            "support": {
+              "x": 16,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 24
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 18,
+              "y": 16
+            },
+            "support": {
+              "x": 14,
+              "y": 20
+            },
+            "muzzle": {
+              "x": 10,
+              "y": 21
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 128,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 20,
+              "y": 18
+            },
+            "support": {
+              "x": 15,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 7,
+              "y": 14
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 160,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 18,
+              "y": 20
+            },
+            "support": {
+              "x": 14,
+              "y": 16
+            },
+            "muzzle": {
+              "x": 10,
+              "y": 10
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 192,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 22
+            },
+            "support": {
+              "x": 16,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 6
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 224,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 13,
+              "y": 21
+            },
+            "support": {
+              "x": 17,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 23,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "bala corta",
+          "matiz_principal": "champán",
+          "color_principal": "#EBC67A",
+          "acento_tier": "#B8C0CC",
+          "marca_tier": "círculo",
+          "descripcion": "bala corta; matiz principal champán; brillo marfil breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "El primer disparo después de recargar añade un segundo tiro al mismo blanco, separado 0,12 s y con el 40 % del daño base; ocurre una vez por cargador.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Disparo semiautomático directo al objetivo cercano válido, con cargador y recarga propios; cada bala alcanza un solo blanco.",
+        "max": "El primer disparo después de recargar añade un segundo tiro al mismo blanco, separado 0,12 s y con el 40 % del daño base; ocurre una vez por cargador.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "AR01": {
+        "id": "AR01",
+        "name": "Granada de fragmentación",
+        "tier": "Normal",
+        "category": "Armas arrojadizas",
+        "size": 32,
+        "sheet": "32/AR01/direcciones.png",
+        "individuals": [
+          "32/AR01/E.png",
+          "32/AR01/SE.png",
+          "32/AR01/S.png",
+          "32/AR01/SW.png",
+          "32/AR01/W.png",
+          "32/AR01/NW.png",
+          "32/AR01/N.png",
+          "32/AR01/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            37,
+            48,
+            36
+          ],
+          [
+            61,
+            76,
+            43
+          ],
+          [
+            92,
+            112,
+            55
+          ],
+          [
+            135,
+            155,
+            81
+          ],
+          [
+            172,
+            180,
+            112
+          ],
+          [
+            81,
+            91,
+            86
+          ],
+          [
+            129,
+            141,
+            133
+          ],
+          [
+            189,
+            195,
+            174
+          ],
+          [
+            236,
+            229,
+            199
+          ],
+          [
+            160,
+            125,
+            59
+          ],
+          [
+            243,
+            207,
+            112
+          ],
+          [
+            27,
+            36,
+            33
+          ],
+          [
+            49,
+            62,
+            40
+          ],
+          [
+            77,
+            94,
+            49
+          ],
+          [
+            114,
+            134,
+            68
+          ],
+          [
+            154,
+            168,
+            97
+          ],
+          [
+            105,
+            116,
+            110
+          ],
+          [
+            159,
+            168,
+            154
+          ],
+          [
+            198,
+            177,
+            129
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 128,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 160,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 192,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 224,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "cápsula en arco y explosión radial",
+          "matiz_principal": "champán",
+          "color_principal": "#EBC67A",
+          "acento_tier": "#B8C0CC",
+          "marca_tier": "círculo",
+          "descripcion": "cápsula en arco y explosión radial; matiz principal champán; brillo marfil breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "La explosión libera cuatro fragmentos radiales de corto recorrido; cada enemigo recibe como máximo uno y los fragmentos no producen otras explosiones.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Se arroja hacia una concentración cercana y explota después de 0,8 s, con radio de 1,6 cuerpos y hasta cinco blancos; puede haber dos granadas en vuelo.",
+        "max": "La explosión libera cuatro fragmentos radiales de corto recorrido; cada enemigo recibe como máximo uno y los fragmentos no producen otras explosiones.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "CC04": {
+        "id": "CC04",
+        "name": "Katana de contención",
+        "tier": "Raro",
+        "category": "Armas cuerpo a cuerpo",
+        "size": 32,
+        "sheet": "32/CC04/direcciones.png",
+        "individuals": [
+          "32/CC04/E.png",
+          "32/CC04/SE.png",
+          "32/CC04/S.png",
+          "32/CC04/SW.png",
+          "32/CC04/W.png",
+          "32/CC04/NW.png",
+          "32/CC04/N.png",
+          "32/CC04/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            40,
+            49,
+            55
+          ],
+          [
+            75,
+            87,
+            91
+          ],
+          [
+            126,
+            138,
+            137
+          ],
+          [
+            174,
+            187,
+            179
+          ],
+          [
+            217,
+            225,
+            208
+          ],
+          [
+            250,
+            240,
+            207
+          ],
+          [
+            61,
+            64,
+            50
+          ],
+          [
+            108,
+            100,
+            80
+          ],
+          [
+            200,
+            156,
+            73
+          ],
+          [
+            96,
+            165,
+            250
+          ],
+          [
+            180,
+            217,
+            248
+          ],
+          [
+            28,
+            37,
+            42
+          ],
+          [
+            58,
+            68,
+            73
+          ],
+          [
+            101,
+            113,
+            114
+          ],
+          [
+            150,
+            163,
+            158
+          ],
+          [
+            196,
+            206,
+            194
+          ],
+          [
+            156,
+            152,
+            129
+          ],
+          [
+            85,
+            82,
+            65
+          ],
+          [
+            148,
+            161,
+            162
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 6,
+              "y": 18
+            },
+            "support": {
+              "x": 11,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 28,
+              "y": 14
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 10,
+              "y": 11
+            },
+            "support": {
+              "x": 14,
+              "y": 15
+            },
+            "muzzle": {
+              "x": 25,
+              "y": 23
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 10
+            },
+            "support": {
+              "x": 16,
+              "y": 15
+            },
+            "muzzle": {
+              "x": 17,
+              "y": 26
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 22,
+              "y": 11
+            },
+            "support": {
+              "x": 18,
+              "y": 15
+            },
+            "muzzle": {
+              "x": 7,
+              "y": 24
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 128,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 26,
+              "y": 18
+            },
+            "support": {
+              "x": 21,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 2,
+              "y": 14
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 160,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 21,
+              "y": 23
+            },
+            "support": {
+              "x": 17,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 192,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 27
+            },
+            "support": {
+              "x": 16,
+              "y": 22
+            },
+            "muzzle": {
+              "x": 15,
+              "y": 4
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 224,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 11,
+              "y": 23
+            },
+            "support": {
+              "x": 15,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 23,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "corte fino de katana",
+          "matiz_principal": "marfil",
+          "color_principal": "#DCE7F0",
+          "acento_tier": "#60A5FA",
+          "marca_tier": "rombo",
+          "descripcion": "corte fino de katana; matiz principal marfil; muesca azul breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "Cada cuarto corte se convierte en un barrido frontal de 180 grados que alcanza hasta cinco blancos; no dispara ondas ni mueve al soldado.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Alterna cortes diagonales de 140 grados contra hasta cuatro enemigos; el alcance largo sigue siendo cuerpo a cuerpo y respeta obstáculos.",
+        "max": "Cada cuarto corte se convierte en un barrido frontal de 180 grados que alcanza hasta cinco blancos; no dispara ondas ni mueve al soldado.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "IN03": {
+        "id": "IN03",
+        "name": "Lanzallamas de contención",
+        "tier": "Normal",
+        "category": "Armas incendiarias",
+        "size": 32,
+        "sheet": "32/IN03/direcciones.png",
+        "individuals": [
+          "32/IN03/E.png",
+          "32/IN03/SE.png",
+          "32/IN03/S.png",
+          "32/IN03/SW.png",
+          "32/IN03/W.png",
+          "32/IN03/NW.png",
+          "32/IN03/N.png",
+          "32/IN03/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            39,
+            49,
+            57
+          ],
+          [
+            76,
+            91,
+            84
+          ],
+          [
+            139,
+            152,
+            129
+          ],
+          [
+            52,
+            67,
+            47
+          ],
+          [
+            102,
+            118,
+            80
+          ],
+          [
+            158,
+            98,
+            49
+          ],
+          [
+            207,
+            121,
+            39
+          ],
+          [
+            239,
+            161,
+            42
+          ],
+          [
+            255,
+            208,
+            97
+          ],
+          [
+            244,
+            223,
+            174
+          ],
+          [
+            174,
+            183,
+            166
+          ],
+          [
+            28,
+            37,
+            43
+          ],
+          [
+            58,
+            70,
+            71
+          ],
+          [
+            108,
+            122,
+            107
+          ],
+          [
+            96,
+            110,
+            88
+          ],
+          [
+            77,
+            93,
+            64
+          ],
+          [
+            183,
+            110,
+            44
+          ],
+          [
+            223,
+            141,
+            41
+          ],
+          [
+            250,
+            216,
+            136
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 11,
+              "y": 18
+            },
+            "support": {
+              "x": 16,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 27,
+              "y": 14
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 13,
+              "y": 15
+            },
+            "support": {
+              "x": 17,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 24,
+              "y": 22
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 14
+            },
+            "support": {
+              "x": 16,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 26
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 19,
+              "y": 15
+            },
+            "support": {
+              "x": 15,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 23
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 128,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 21,
+              "y": 18
+            },
+            "support": {
+              "x": 16,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 3,
+              "y": 14
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 160,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 18,
+              "y": 20
+            },
+            "support": {
+              "x": 14,
+              "y": 16
+            },
+            "muzzle": {
+              "x": 10,
+              "y": 10
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 192,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 22
+            },
+            "support": {
+              "x": 16,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 6
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 224,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 14,
+              "y": 20
+            },
+            "support": {
+              "x": 18,
+              "y": 16
+            },
+            "muzzle": {
+              "x": 22,
+              "y": 10
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "cono térmico de pulsos agrupados",
+          "matiz_principal": "naranja",
+          "color_principal": "#F28C45",
+          "acento_tier": "#B8C0CC",
+          "marca_tier": "círculo",
+          "descripcion": "cono térmico de pulsos agrupados; matiz principal naranja; brillo marfil breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "La primera emisión tras enfriar ensancha el cono 15 grados durante 0,5 s; no añade blancos al cupo ni elimina la pausa térmica.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Emite un cono de fuego durante 1 s y después enfría; alcanza hasta cuatro blancos y un enemigo recibe como máximo un pulso cada 0,25 s.",
+        "max": "La primera emisión tras enfriar ensancha el cono 15 grados durante 0,5 s; no añade blancos al cupo ni elimina la pausa térmica.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "FR07": {
+        "id": "FR07",
+        "name": "Rifle Tres Eslabones",
+        "tier": "Épico",
+        "category": "Francotiradores",
+        "size": 32,
+        "sheet": "32/FR07/direcciones.png",
+        "individuals": [
+          "32/FR07/E.png",
+          "32/FR07/SE.png",
+          "32/FR07/S.png",
+          "32/FR07/SW.png",
+          "32/FR07/W.png",
+          "32/FR07/NW.png",
+          "32/FR07/N.png",
+          "32/FR07/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            48,
+            58,
+            60
+          ],
+          [
+            101,
+            114,
+            109
+          ],
+          [
+            165,
+            175,
+            160
+          ],
+          [
+            216,
+            222,
+            198
+          ],
+          [
+            84,
+            55,
+            35
+          ],
+          [
+            134,
+            84,
+            49
+          ],
+          [
+            180,
+            125,
+            70
+          ],
+          [
+            213,
+            171,
+            118
+          ],
+          [
+            192,
+            132,
+            252
+          ],
+          [
+            129,
+            80,
+            169
+          ],
+          [
+            232,
+            206,
+            250
+          ],
+          [
+            32,
+            41,
+            45
+          ],
+          [
+            75,
+            86,
+            85
+          ],
+          [
+            133,
+            145,
+            135
+          ],
+          [
+            191,
+            199,
+            179
+          ],
+          [
+            150,
+            139,
+            117
+          ],
+          [
+            157,
+            105,
+            60
+          ],
+          [
+            197,
+            148,
+            94
+          ],
+          [
+            161,
+            106,
+            211
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 11,
+              "y": 18
+            },
+            "support": {
+              "x": 14,
+              "y": 16
+            },
+            "muzzle": {
+              "x": 29,
+              "y": 14
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 13,
+              "y": 15
+            },
+            "support": {
+              "x": 17,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 25,
+              "y": 23
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 15,
+              "y": 14
+            },
+            "support": {
+              "x": 15,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 15,
+              "y": 26
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 19,
+              "y": 15
+            },
+            "support": {
+              "x": 14,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 7,
+              "y": 22
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 128,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 21,
+              "y": 18
+            },
+            "support": {
+              "x": 16,
+              "y": 16
+            },
+            "muzzle": {
+              "x": 2,
+              "y": 14
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 160,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 19,
+              "y": 20
+            },
+            "support": {
+              "x": 15,
+              "y": 16
+            },
+            "muzzle": {
+              "x": 9,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 192,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 22
+            },
+            "support": {
+              "x": 16,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 15,
+              "y": 4
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 224,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 13,
+              "y": 19
+            },
+            "support": {
+              "x": 17,
+              "y": 15
+            },
+            "muzzle": {
+              "x": 24,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "trazador lineal de tres contactos",
+          "matiz_principal": "azul acero",
+          "color_principal": "#90B7D4",
+          "acento_tier": "#C084FC",
+          "marca_tier": "doble rombo",
+          "descripcion": "trazador lineal de tres contactos; matiz principal azul acero; dos muescas violetas breves en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "Si alcanza a tres enemigos, el tercero sufre un 25 % de ralentización durante 1,2 s; el efecto termina en ese blanco y no genera un cuarto impacto.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Un tiro trazador atraviesa hasta tres blancos en línea; cada impacto pierde un 20 % respecto al anterior y no busca blancos fuera de su trayectoria.",
+        "max": "Si alcanza a tres enemigos, el tercero sufre un 25 % de ralentización durante 1,2 s; el efecto termina en ese blanco y no genera un cuarto impacto.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "PE04": {
+        "id": "PE04",
+        "name": "Lanzamisiles de contención",
+        "tier": "Raro",
+        "category": "Armas pesadas",
+        "size": 32,
+        "sheet": "32/PE04/direcciones.png",
+        "individuals": [
+          "32/PE04/E.png",
+          "32/PE04/SE.png",
+          "32/PE04/S.png",
+          "32/PE04/SW.png",
+          "32/PE04/W.png",
+          "32/PE04/NW.png",
+          "32/PE04/N.png",
+          "32/PE04/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            41,
+            51,
+            53
+          ],
+          [
+            81,
+            93,
+            84
+          ],
+          [
+            146,
+            160,
+            131
+          ],
+          [
+            51,
+            69,
+            44
+          ],
+          [
+            100,
+            117,
+            68
+          ],
+          [
+            175,
+            186,
+            131
+          ],
+          [
+            178,
+            118,
+            44
+          ],
+          [
+            240,
+            174,
+            57
+          ],
+          [
+            229,
+            213,
+            166
+          ],
+          [
+            96,
+            165,
+            250
+          ],
+          [
+            177,
+            217,
+            245
+          ],
+          [
+            29,
+            38,
+            41
+          ],
+          [
+            61,
+            72,
+            69
+          ],
+          [
+            114,
+            127,
+            108
+          ],
+          [
+            99,
+            115,
+            88
+          ],
+          [
+            76,
+            93,
+            56
+          ],
+          [
+            177,
+            152,
+            88
+          ],
+          [
+            209,
+            146,
+            51
+          ],
+          [
+            163,
+            189,
+            208
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 11,
+              "y": 18
+            },
+            "support": {
+              "x": 16,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 29,
+              "y": 15
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 13,
+              "y": 14
+            },
+            "support": {
+              "x": 17,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 25,
+              "y": 22
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 14
+            },
+            "support": {
+              "x": 16,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 25
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 19,
+              "y": 14
+            },
+            "support": {
+              "x": 15,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 7,
+              "y": 23
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 128,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 21,
+              "y": 17
+            },
+            "support": {
+              "x": 16,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 2,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 160,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 19,
+              "y": 21
+            },
+            "support": {
+              "x": 15,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 8,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 192,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 22
+            },
+            "support": {
+              "x": 16,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 6
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 224,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 13,
+              "y": 21
+            },
+            "support": {
+              "x": 17,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 24,
+              "y": 8
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "misil opaco con escape corto",
+          "matiz_principal": "naranja",
+          "color_principal": "#F28C45",
+          "acento_tier": "#60A5FA",
+          "marca_tier": "rombo",
+          "descripcion": "misil opaco con escape corto; matiz principal naranja; muesca azul breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "Al impactar libera dos fragmentos laterales de recorrido corto; cada fragmento termina en su primer impacto y no explota.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Un misil de recorrido recto explota al contacto; necesita una recarga larga después de cada lanzamiento.",
+        "max": "Al impactar libera dos fragmentos laterales de recorrido corto; cada fragmento termina en su primer impacto y no explota.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "RU04": {
+        "id": "RU04",
+        "name": "Ballesta de recuperación",
+        "tier": "Raro",
+        "category": "Armas rústicas",
+        "size": 32,
+        "sheet": "32/RU04/direcciones.png",
+        "individuals": [
+          "32/RU04/E.png",
+          "32/RU04/SE.png",
+          "32/RU04/S.png",
+          "32/RU04/SW.png",
+          "32/RU04/W.png",
+          "32/RU04/NW.png",
+          "32/RU04/N.png",
+          "32/RU04/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            52,
+            61,
+            61
+          ],
+          [
+            106,
+            118,
+            113
+          ],
+          [
+            194,
+            200,
+            175
+          ],
+          [
+            87,
+            56,
+            33
+          ],
+          [
+            136,
+            96,
+            57
+          ],
+          [
+            186,
+            141,
+            85
+          ],
+          [
+            224,
+            186,
+            124
+          ],
+          [
+            234,
+            229,
+            197
+          ],
+          [
+            96,
+            165,
+            250
+          ],
+          [
+            165,
+            204,
+            239
+          ],
+          [
+            156,
+            170,
+            140
+          ],
+          [
+            34,
+            43,
+            45
+          ],
+          [
+            79,
+            90,
+            87
+          ],
+          [
+            150,
+            159,
+            144
+          ],
+          [
+            141,
+            128,
+            104
+          ],
+          [
+            112,
+            76,
+            45
+          ],
+          [
+            205,
+            164,
+            105
+          ],
+          [
+            229,
+            208,
+            161
+          ],
+          [
+            131,
+            185,
+            245
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 11,
+              "y": 18
+            },
+            "support": {
+              "x": 16,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 27,
+              "y": 15
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 13,
+              "y": 15
+            },
+            "support": {
+              "x": 17,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 23,
+              "y": 23
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 14
+            },
+            "support": {
+              "x": 16,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 26
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 19,
+              "y": 15
+            },
+            "support": {
+              "x": 15,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 9,
+              "y": 23
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 128,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 21,
+              "y": 18
+            },
+            "support": {
+              "x": 16,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 4,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 160,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 19,
+              "y": 21
+            },
+            "support": {
+              "x": 15,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 9,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 192,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 22
+            },
+            "support": {
+              "x": 16,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 4
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 224,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 12,
+              "y": 20
+            },
+            "support": {
+              "x": 16,
+              "y": 16
+            },
+            "muzzle": {
+              "x": 23,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "virote con asta y punta",
+          "matiz_principal": "arena",
+          "color_principal": "#C3AA7B",
+          "acento_tier": "#60A5FA",
+          "marca_tier": "rombo",
+          "descripcion": "virote con asta y punta; matiz principal arena; muesca azul breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "El virote atraviesa un primer cuerpo y alcanza a un segundo; se detiene después y no vuelve al usuario.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Virote recto y lento con daño concentrado; la recarga de cuerda tiene una preparación legible.",
+        "max": "El virote atraviesa un primer cuerpo y alcanza a un segundo; se detiene después y no vuelve al usuario.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "TE01": {
+        "id": "TE01",
+        "name": "Emisor láser",
+        "tier": "Normal",
+        "category": "Armas tecnológicas",
+        "size": 32,
+        "sheet": "32/TE01/direcciones.png",
+        "individuals": [
+          "32/TE01/E.png",
+          "32/TE01/SE.png",
+          "32/TE01/S.png",
+          "32/TE01/SW.png",
+          "32/TE01/W.png",
+          "32/TE01/NW.png",
+          "32/TE01/N.png",
+          "32/TE01/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            41,
+            51,
+            57
+          ],
+          [
+            77,
+            94,
+            90
+          ],
+          [
+            129,
+            144,
+            131
+          ],
+          [
+            187,
+            198,
+            177
+          ],
+          [
+            236,
+            237,
+            206
+          ],
+          [
+            52,
+            67,
+            47
+          ],
+          [
+            102,
+            119,
+            78
+          ],
+          [
+            36,
+            127,
+            152
+          ],
+          [
+            66,
+            190,
+            210
+          ],
+          [
+            156,
+            233,
+            229
+          ],
+          [
+            214,
+            255,
+            242
+          ],
+          [
+            29,
+            38,
+            43
+          ],
+          [
+            59,
+            73,
+            74
+          ],
+          [
+            103,
+            119,
+            111
+          ],
+          [
+            158,
+            171,
+            154
+          ],
+          [
+            212,
+            218,
+            192
+          ],
+          [
+            77,
+            93,
+            63
+          ],
+          [
+            69,
+            123,
+            115
+          ],
+          [
+            111,
+            212,
+            220
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 12,
+              "y": 18
+            },
+            "support": {
+              "x": 17,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 25,
+              "y": 14
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 13,
+              "y": 15
+            },
+            "support": {
+              "x": 17,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 23,
+              "y": 23
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 15
+            },
+            "support": {
+              "x": 16,
+              "y": 20
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 24
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 18,
+              "y": 16
+            },
+            "support": {
+              "x": 14,
+              "y": 20
+            },
+            "muzzle": {
+              "x": 10,
+              "y": 22
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 128,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 20,
+              "y": 18
+            },
+            "support": {
+              "x": 15,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 6,
+              "y": 14
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 160,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 19,
+              "y": 21
+            },
+            "support": {
+              "x": 15,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 9,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 192,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 22
+            },
+            "support": {
+              "x": 16,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 5
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 224,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 13,
+              "y": 21
+            },
+            "support": {
+              "x": 17,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 23,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "pulso láser fino",
+          "matiz_principal": "cian",
+          "color_principal": "#6AD3DF",
+          "acento_tier": "#B8C0CC",
+          "marca_tier": "círculo",
+          "descripcion": "pulso láser fino; matiz principal cian; brillo marfil breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "Cada cuarta emisión atraviesa al primer enemigo y puede golpear a un segundo; termina en ese segundo contacto.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Haz breve y recto que golpea al primer enemigo alineado; una pausa visible separa las emisiones.",
+        "max": "Cada cuarta emisión atraviesa al primer enemigo y puede golpear a un segundo; termina en ese segundo contacto.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "AN09": {
+        "id": "AN09",
+        "name": "Reloj prestado",
+        "tier": "Legendario",
+        "category": "Armas anómalas",
+        "size": 32,
+        "sheet": "32/AN09/direcciones.png",
+        "individuals": [
+          "32/AN09/E.png",
+          "32/AN09/SE.png",
+          "32/AN09/S.png",
+          "32/AN09/SW.png",
+          "32/AN09/W.png",
+          "32/AN09/NW.png",
+          "32/AN09/N.png",
+          "32/AN09/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            45,
+            53,
+            58
+          ],
+          [
+            102,
+            114,
+            104
+          ],
+          [
+            172,
+            181,
+            162
+          ],
+          [
+            83,
+            54,
+            34
+          ],
+          [
+            135,
+            91,
+            52
+          ],
+          [
+            189,
+            139,
+            75
+          ],
+          [
+            215,
+            193,
+            155
+          ],
+          [
+            244,
+            231,
+            199
+          ],
+          [
+            177,
+            132,
+            60
+          ],
+          [
+            239,
+            200,
+            106
+          ],
+          [
+            255,
+            240,
+            184
+          ],
+          [
+            31,
+            39,
+            44
+          ],
+          [
+            74,
+            84,
+            81
+          ],
+          [
+            137,
+            148,
+            133
+          ],
+          [
+            128,
+            118,
+            98
+          ],
+          [
+            109,
+            73,
+            43
+          ],
+          [
+            202,
+            166,
+            115
+          ],
+          [
+            230,
+            212,
+            177
+          ],
+          [
+            208,
+            166,
+            83
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 128,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 160,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 192,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 224,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 18
+            },
+            "support": null,
+            "muzzle": {
+              "x": 16,
+              "y": 16
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "forma": "pulso corto y largo alternados",
+          "matiz_principal": "lila",
+          "color_principal": "#B79AE8",
+          "acento_tier": "#F4C76B",
+          "marca_tier": "estrella",
+          "descripcion": "pulso corto y largo alternados; matiz principal lila; remate dorado breve en salida o impacto",
+          "niveles": {
+            "1": "Forma y matiz base, sin aura ni partículas extra.",
+            "2": "Borde central más definido; conserva exactamente el número de impactos.",
+            "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+            "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+            "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+            "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+          },
+          "extra_condicional": "Cada cuatro pulsos aparece un eco a los 0,5 s en la última posición alcanzada; un impacto por enemigo dentro de radio pequeño, sin rebobinar ni detener el tiempo.",
+          "luz_continua": false,
+          "colores_maximos_simultaneos": 3
+        },
+        "attack": "Alterna un pulso corto y uno largo en una línea frontal; cada pulso alcanza hasta dos enemigos y conserva sus tiempos normales de combate.",
+        "max": "Cada cuatro pulsos aparece un eco a los 0,5 s en la última posición alcanzada; un impacto por enemigo dentro de radio pequeño, sin rebobinar ni detener el tiempo.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      },
+      "F24": {
+        "id": "F24",
+        "name": "Hoja fotónica de contención",
+        "tier": "Raro",
+        "category": "Fusión",
+        "size": 32,
+        "sheet": "32/F24/direcciones.png",
+        "individuals": [
+          "32/F24/E.png",
+          "32/F24/SE.png",
+          "32/F24/S.png",
+          "32/F24/SW.png",
+          "32/F24/W.png",
+          "32/F24/NW.png",
+          "32/F24/N.png",
+          "32/F24/NE.png"
+        ],
+        "palette": [
+          [
+            16,
+            24,
+            29
+          ],
+          [
+            44,
+            56,
+            61
+          ],
+          [
+            104,
+            123,
+            124
+          ],
+          [
+            180,
+            197,
+            191
+          ],
+          [
+            224,
+            232,
+            211
+          ],
+          [
+            249,
+            241,
+            205
+          ],
+          [
+            35,
+            117,
+            137
+          ],
+          [
+            55,
+            181,
+            203
+          ],
+          [
+            161,
+            239,
+            237
+          ],
+          [
+            96,
+            165,
+            250
+          ],
+          [
+            208,
+            161,
+            83
+          ],
+          [
+            242,
+            210,
+            133
+          ],
+          [
+            30,
+            40,
+            45
+          ],
+          [
+            74,
+            90,
+            93
+          ],
+          [
+            142,
+            160,
+            158
+          ],
+          [
+            202,
+            215,
+            201
+          ],
+          [
+            237,
+            237,
+            208
+          ],
+          [
+            45,
+            149,
+            170
+          ],
+          [
+            108,
+            210,
+            220
+          ],
+          [
+            152,
+            163,
+            167
+          ]
+        ],
+        "frames": [
+          {
+            "direction": "E",
+            "angleDegrees": 0,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 6,
+              "y": 17
+            },
+            "support": {
+              "x": 11,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 28,
+              "y": 15
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SE",
+            "angleDegrees": 45,
+            "rect": {
+              "x": 32,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 10,
+              "y": 12
+            },
+            "support": {
+              "x": 14,
+              "y": 16
+            },
+            "muzzle": {
+              "x": 24,
+              "y": 24
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "S",
+            "angleDegrees": 90,
+            "rect": {
+              "x": 64,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 9
+            },
+            "support": {
+              "x": 16,
+              "y": 14
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 27
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "SW",
+            "angleDegrees": 135,
+            "rect": {
+              "x": 96,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 22,
+              "y": 12
+            },
+            "support": {
+              "x": 18,
+              "y": 16
+            },
+            "muzzle": {
+              "x": 7,
+              "y": 24
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "W",
+            "angleDegrees": 180,
+            "rect": {
+              "x": 128,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 27,
+              "y": 18
+            },
+            "support": {
+              "x": 22,
+              "y": 17
+            },
+            "muzzle": {
+              "x": 2,
+              "y": 15
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NW",
+            "angleDegrees": 225,
+            "rect": {
+              "x": 160,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 21,
+              "y": 23
+            },
+            "support": {
+              "x": 17,
+              "y": 19
+            },
+            "muzzle": {
+              "x": 9,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "N",
+            "angleDegrees": 270,
+            "rect": {
+              "x": 192,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 16,
+              "y": 27
+            },
+            "support": {
+              "x": 16,
+              "y": 22
+            },
+            "muzzle": {
+              "x": 16,
+              "y": 4
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          },
+          {
+            "direction": "NE",
+            "angleDegrees": 315,
+            "rect": {
+              "x": 224,
+              "y": 0,
+              "w": 32,
+              "h": 32
+            },
+            "grip": {
+              "x": 11,
+              "y": 22
+            },
+            "support": {
+              "x": 15,
+              "y": 18
+            },
+            "muzzle": {
+              "x": 23,
+              "y": 9
+            },
+            "anchorStatus": "estimación sobre píxel sólido; revisar agarre en visor"
+          }
+        ],
+        "visual": {
+          "color_principal": "#dce7f0",
+          "color_secundario": "#6ad3df",
+          "acento_tier": "#60a5fa"
+        },
+        "attack": "La katana proyecta una hoja luminosa corta tras su corte físico",
+        "max": "Resultado final; no vuelve a subir de nivel.",
+        "approved": true,
+        "approvalScope": "visual_design"
+      }
+    }
+  },
+  "progression": {
+    "status": "propuesta previa,no implementada",
+    "levels": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "MAX"
+    ],
+    "bodyReuse": true
+  },
+  "fusion": {
+    "recipe": "F24",
+    "a": "CC04",
+    "b": "TE01",
+    "oneSlot": true,
+    "status": "recurso gráfico,no transacción de juego"
+  },
+  "sourceAudit": [
+    {
+      "atlas": "A",
+      "width": 1536,
+      "height": 1024,
+      "rows": 6,
+      "columns": 8,
+      "sha256": "6095b7eec6ee76f46bfe2f0627106a5934d223f9c52562a815bf3d6182cbfbec",
+      "boxes": [
+        [
+          {
+            "x": 79,
+            "y": 85,
+            "w": 85,
+            "h": 72,
+            "segmentation": "projection"
+          },
+          {
+            "x": 271,
+            "y": 79,
+            "w": 71,
+            "h": 78,
+            "segmentation": "projection"
+          },
+          {
+            "x": 468,
+            "y": 78,
+            "w": 37,
+            "h": 79,
+            "segmentation": "projection"
+          },
+          {
+            "x": 634,
+            "y": 78,
+            "w": 71,
+            "h": 79,
+            "segmentation": "projection"
+          },
+          {
+            "x": 813,
+            "y": 85,
+            "w": 84,
+            "h": 72,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1018,
+            "y": 78,
+            "w": 71,
+            "h": 79,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1215,
+            "y": 75,
+            "w": 41,
+            "h": 95,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1386,
+            "y": 80,
+            "w": 69,
+            "h": 86,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 54,
+            "y": 211,
+            "w": 136,
+            "h": 110,
+            "segmentation": "projection"
+          },
+          {
+            "x": 257,
+            "y": 206,
+            "w": 113,
+            "h": 115,
+            "segmentation": "projection"
+          },
+          {
+            "x": 456,
+            "y": 202,
+            "w": 58,
+            "h": 123,
+            "segmentation": "projection"
+          },
+          {
+            "x": 608,
+            "y": 202,
+            "w": 110,
+            "h": 118,
+            "segmentation": "projection"
+          },
+          {
+            "x": 785,
+            "y": 211,
+            "w": 138,
+            "h": 110,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1001,
+            "y": 199,
+            "w": 104,
+            "h": 117,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1208,
+            "y": 201,
+            "w": 57,
+            "h": 135,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1368,
+            "y": 202,
+            "w": 111,
+            "h": 134,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 80,
+            "y": 384,
+            "w": 78,
+            "h": 93,
+            "segmentation": "projection"
+          },
+          {
+            "x": 266,
+            "y": 383,
+            "w": 80,
+            "h": 100,
+            "segmentation": "projection"
+          },
+          {
+            "x": 456,
+            "y": 383,
+            "w": 65,
+            "h": 100,
+            "segmentation": "projection"
+          },
+          {
+            "x": 630,
+            "y": 383,
+            "w": 81,
+            "h": 99,
+            "segmentation": "projection"
+          },
+          {
+            "x": 817,
+            "y": 384,
+            "w": 77,
+            "h": 91,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1004,
+            "y": 382,
+            "w": 76,
+            "h": 100,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1203,
+            "y": 383,
+            "w": 74,
+            "h": 108,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1386,
+            "y": 382,
+            "w": 76,
+            "h": 100,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 59,
+            "y": 523,
+            "w": 116,
+            "h": 130,
+            "segmentation": "projection"
+          },
+          {
+            "x": 246,
+            "y": 523,
+            "w": 120,
+            "h": 138,
+            "segmentation": "projection"
+          },
+          {
+            "x": 442,
+            "y": 523,
+            "w": 91,
+            "h": 138,
+            "segmentation": "projection"
+          },
+          {
+            "x": 611,
+            "y": 523,
+            "w": 120,
+            "h": 138,
+            "segmentation": "projection"
+          },
+          {
+            "x": 805,
+            "y": 523,
+            "w": 115,
+            "h": 131,
+            "segmentation": "projection"
+          },
+          {
+            "x": 988,
+            "y": 523,
+            "w": 109,
+            "h": 137,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1189,
+            "y": 523,
+            "w": 97,
+            "h": 137,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1366,
+            "y": 523,
+            "w": 108,
+            "h": 137,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 50,
+            "y": 743,
+            "w": 148,
+            "h": 42,
+            "segmentation": "projection"
+          },
+          {
+            "x": 259,
+            "y": 725,
+            "w": 116,
+            "h": 76,
+            "segmentation": "projection"
+          },
+          {
+            "x": 465,
+            "y": 706,
+            "w": 42,
+            "h": 117,
+            "segmentation": "projection"
+          },
+          {
+            "x": 601,
+            "y": 725,
+            "w": 115,
+            "h": 76,
+            "segmentation": "projection"
+          },
+          {
+            "x": 785,
+            "y": 743,
+            "w": 144,
+            "h": 42,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1007,
+            "y": 720,
+            "w": 100,
+            "h": 87,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1221,
+            "y": 693,
+            "w": 39,
+            "h": 124,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1366,
+            "y": 718,
+            "w": 105,
+            "h": 87,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 32,
+            "y": 888,
+            "w": 192,
+            "h": 59,
+            "segmentation": "projection"
+          },
+          {
+            "x": 246,
+            "y": 856,
+            "w": 171,
+            "h": 116,
+            "segmentation": "projection"
+          },
+          {
+            "x": 465,
+            "y": 840,
+            "w": 53,
+            "h": 155,
+            "segmentation": "projection"
+          },
+          {
+            "x": 560,
+            "y": 852,
+            "w": 173,
+            "h": 122,
+            "segmentation": "projection"
+          },
+          {
+            "x": 754,
+            "y": 888,
+            "w": 194,
+            "h": 59,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1000,
+            "y": 852,
+            "w": 140,
+            "h": 130,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1220,
+            "y": 833,
+            "w": 47,
+            "h": 165,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1341,
+            "y": 848,
+            "w": 142,
+            "h": 133,
+            "segmentation": "projection"
+          }
+        ]
+      ]
+    },
+    {
+      "atlas": "B",
+      "width": 1536,
+      "height": 1024,
+      "rows": 6,
+      "columns": 8,
+      "sha256": "533f0c97a5c58049e75f9c92b90410d8af36ea56d35cabccb3b71c7c7e9980f9",
+      "boxes": [
+        [
+          {
+            "x": 35,
+            "y": 75,
+            "w": 160,
+            "h": 75,
+            "segmentation": "projection"
+          },
+          {
+            "x": 237,
+            "y": 70,
+            "w": 145,
+            "h": 95,
+            "segmentation": "projection"
+          },
+          {
+            "x": 452,
+            "y": 47,
+            "w": 75,
+            "h": 124,
+            "segmentation": "projection"
+          },
+          {
+            "x": 593,
+            "y": 65,
+            "w": 126,
+            "h": 100,
+            "segmentation": "projection"
+          },
+          {
+            "x": 775,
+            "y": 76,
+            "w": 164,
+            "h": 75,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1012,
+            "y": 60,
+            "w": 113,
+            "h": 121,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1210,
+            "y": 41,
+            "w": 75,
+            "h": 134,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1370,
+            "y": 51,
+            "w": 122,
+            "h": 119,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 20,
+            "y": 222,
+            "w": 176,
+            "h": 89,
+            "segmentation": "projection"
+          },
+          {
+            "x": 228,
+            "y": 219,
+            "w": 162,
+            "h": 109,
+            "segmentation": "projection"
+          },
+          {
+            "x": 447,
+            "y": 197,
+            "w": 83,
+            "h": 140,
+            "segmentation": "projection"
+          },
+          {
+            "x": 583,
+            "y": 213,
+            "w": 146,
+            "h": 119,
+            "segmentation": "projection"
+          },
+          {
+            "x": 773,
+            "y": 229,
+            "w": 176,
+            "h": 83,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1004,
+            "y": 206,
+            "w": 120,
+            "h": 122,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1211,
+            "y": 198,
+            "w": 74,
+            "h": 136,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1371,
+            "y": 206,
+            "w": 123,
+            "h": 122,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 29,
+            "y": 429,
+            "w": 184,
+            "h": 52,
+            "segmentation": "projection"
+          },
+          {
+            "x": 246,
+            "y": 400,
+            "w": 147,
+            "h": 116,
+            "segmentation": "projection"
+          },
+          {
+            "x": 477,
+            "y": 372,
+            "w": 32,
+            "h": 144,
+            "segmentation": "projection"
+          },
+          {
+            "x": 583,
+            "y": 399,
+            "w": 135,
+            "h": 109,
+            "segmentation": "projection"
+          },
+          {
+            "x": 757,
+            "y": 425,
+            "w": 179,
+            "h": 56,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1004,
+            "y": 394,
+            "w": 115,
+            "h": 129,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1234,
+            "y": 358,
+            "w": 34,
+            "h": 170,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1370,
+            "y": 388,
+            "w": 127,
+            "h": 131,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 16,
+            "y": 589,
+            "w": 207,
+            "h": 68,
+            "segmentation": "projection"
+          },
+          {
+            "x": 239,
+            "y": 570,
+            "w": 166,
+            "h": 122,
+            "segmentation": "projection"
+          },
+          {
+            "x": 476,
+            "y": 539,
+            "w": 35,
+            "h": 154,
+            "segmentation": "projection"
+          },
+          {
+            "x": 570,
+            "y": 570,
+            "w": 155,
+            "h": 117,
+            "segmentation": "projection"
+          },
+          {
+            "x": 742,
+            "y": 589,
+            "w": 212,
+            "h": 74,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1000,
+            "y": 556,
+            "w": 129,
+            "h": 141,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1234,
+            "y": 536,
+            "w": 34,
+            "h": 168,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1357,
+            "y": 545,
+            "w": 161,
+            "h": 150,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 42,
+            "y": 747,
+            "w": 152,
+            "h": 87,
+            "segmentation": "projection"
+          },
+          {
+            "x": 238,
+            "y": 740,
+            "w": 149,
+            "h": 103,
+            "segmentation": "projection"
+          },
+          {
+            "x": 456,
+            "y": 730,
+            "w": 66,
+            "h": 106,
+            "segmentation": "projection"
+          },
+          {
+            "x": 590,
+            "y": 740,
+            "w": 147,
+            "h": 104,
+            "segmentation": "projection"
+          },
+          {
+            "x": 777,
+            "y": 752,
+            "w": 153,
+            "h": 83,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1006,
+            "y": 730,
+            "w": 128,
+            "h": 115,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1214,
+            "y": 722,
+            "w": 68,
+            "h": 127,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1361,
+            "y": 728,
+            "w": 130,
+            "h": 116,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 28,
+            "y": 877,
+            "w": 176,
+            "h": 100,
+            "segmentation": "projection"
+          },
+          {
+            "x": 228,
+            "y": 875,
+            "w": 168,
+            "h": 117,
+            "segmentation": "projection"
+          },
+          {
+            "x": 453,
+            "y": 859,
+            "w": 73,
+            "h": 129,
+            "segmentation": "projection"
+          },
+          {
+            "x": 582,
+            "y": 873,
+            "w": 165,
+            "h": 121,
+            "segmentation": "projection"
+          },
+          {
+            "x": 768,
+            "y": 884,
+            "w": 180,
+            "h": 99,
+            "segmentation": "projection"
+          },
+          {
+            "x": 992,
+            "y": 874,
+            "w": 141,
+            "h": 117,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1208,
+            "y": 866,
+            "w": 80,
+            "h": 129,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1360,
+            "y": 868,
+            "w": 142,
+            "h": 117,
+            "segmentation": "projection"
+          }
+        ]
+      ]
+    },
+    {
+      "atlas": "C",
+      "width": 1254,
+      "height": 1254,
+      "rows": 8,
+      "columns": 8,
+      "sha256": "afe6ee1ca0d7a7aec8b5e9851da8eef66b56636b16e608e3bd8854c12114e357",
+      "boxes": [
+        [
+          {
+            "x": 27,
+            "y": 67,
+            "w": 122,
+            "h": 60,
+            "segmentation": "projection"
+          },
+          {
+            "x": 198,
+            "y": 60,
+            "w": 100,
+            "h": 79,
+            "segmentation": "projection"
+          },
+          {
+            "x": 339,
+            "y": 51,
+            "w": 111,
+            "h": 96,
+            "segmentation": "projection"
+          },
+          {
+            "x": 481,
+            "y": 61,
+            "w": 96,
+            "h": 79,
+            "segmentation": "projection"
+          },
+          {
+            "x": 627,
+            "y": 64,
+            "w": 128,
+            "h": 62,
+            "segmentation": "projection"
+          },
+          {
+            "x": 825,
+            "y": 58,
+            "w": 86,
+            "h": 88,
+            "segmentation": "projection"
+          },
+          {
+            "x": 964,
+            "y": 47,
+            "w": 102,
+            "h": 108,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1129,
+            "y": 58,
+            "w": 84,
+            "h": 88,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 22,
+            "y": 201,
+            "w": 134,
+            "h": 71,
+            "segmentation": "projection"
+          },
+          {
+            "x": 188,
+            "y": 192,
+            "w": 116,
+            "h": 97,
+            "segmentation": "projection"
+          },
+          {
+            "x": 333,
+            "y": 183,
+            "w": 120,
+            "h": 117,
+            "segmentation": "projection"
+          },
+          {
+            "x": 474,
+            "y": 192,
+            "w": 115,
+            "h": 97,
+            "segmentation": "projection"
+          },
+          {
+            "x": 623,
+            "y": 201,
+            "w": 141,
+            "h": 71,
+            "segmentation": "projection"
+          },
+          {
+            "x": 815,
+            "y": 193,
+            "w": 105,
+            "h": 110,
+            "segmentation": "projection"
+          },
+          {
+            "x": 956,
+            "y": 180,
+            "w": 121,
+            "h": 128,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1117,
+            "y": 193,
+            "w": 110,
+            "h": 110,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 39,
+            "y": 365,
+            "w": 104,
+            "h": 70,
+            "segmentation": "projection"
+          },
+          {
+            "x": 208,
+            "y": 356,
+            "w": 89,
+            "h": 75,
+            "segmentation": "projection"
+          },
+          {
+            "x": 369,
+            "y": 351,
+            "w": 47,
+            "h": 87,
+            "segmentation": "projection"
+          },
+          {
+            "x": 493,
+            "y": 355,
+            "w": 86,
+            "h": 76,
+            "segmentation": "projection"
+          },
+          {
+            "x": 655,
+            "y": 365,
+            "w": 102,
+            "h": 70,
+            "segmentation": "projection"
+          },
+          {
+            "x": 842,
+            "y": 356,
+            "w": 75,
+            "h": 93,
+            "segmentation": "projection"
+          },
+          {
+            "x": 994,
+            "y": 341,
+            "w": 43,
+            "h": 108,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1121,
+            "y": 354,
+            "w": 79,
+            "h": 93,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 42,
+            "y": 508,
+            "w": 120,
+            "h": 80,
+            "segmentation": "projection"
+          },
+          {
+            "x": 203,
+            "y": 495,
+            "w": 108,
+            "h": 85,
+            "segmentation": "projection"
+          },
+          {
+            "x": 365,
+            "y": 491,
+            "w": 57,
+            "h": 97,
+            "segmentation": "projection"
+          },
+          {
+            "x": 483,
+            "y": 493,
+            "w": 105,
+            "h": 86,
+            "segmentation": "projection"
+          },
+          {
+            "x": 633,
+            "y": 503,
+            "w": 120,
+            "h": 83,
+            "segmentation": "projection"
+          },
+          {
+            "x": 813,
+            "y": 491,
+            "w": 99,
+            "h": 112,
+            "segmentation": "projection"
+          },
+          {
+            "x": 990,
+            "y": 479,
+            "w": 50,
+            "h": 119,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1119,
+            "y": 491,
+            "w": 101,
+            "h": 112,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 49,
+            "y": 653,
+            "w": 81,
+            "h": 82,
+            "segmentation": "projection"
+          },
+          {
+            "x": 203,
+            "y": 652,
+            "w": 80,
+            "h": 89,
+            "segmentation": "projection"
+          },
+          {
+            "x": 353,
+            "y": 652,
+            "w": 77,
+            "h": 104,
+            "segmentation": "projection"
+          },
+          {
+            "x": 496,
+            "y": 651,
+            "w": 81,
+            "h": 90,
+            "segmentation": "projection"
+          },
+          {
+            "x": 666,
+            "y": 652,
+            "w": 85,
+            "h": 83,
+            "segmentation": "projection"
+          },
+          {
+            "x": 823,
+            "y": 654,
+            "w": 80,
+            "h": 91,
+            "segmentation": "projection"
+          },
+          {
+            "x": 977,
+            "y": 643,
+            "w": 76,
+            "h": 104,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1127,
+            "y": 653,
+            "w": 82,
+            "h": 92,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 42,
+            "y": 797,
+            "w": 100,
+            "h": 107,
+            "segmentation": "projection"
+          },
+          {
+            "x": 193,
+            "y": 794,
+            "w": 104,
+            "h": 113,
+            "segmentation": "projection"
+          },
+          {
+            "x": 348,
+            "y": 797,
+            "w": 88,
+            "h": 121,
+            "segmentation": "projection"
+          },
+          {
+            "x": 492,
+            "y": 794,
+            "w": 105,
+            "h": 114,
+            "segmentation": "projection"
+          },
+          {
+            "x": 659,
+            "y": 794,
+            "w": 104,
+            "h": 109,
+            "segmentation": "projection"
+          },
+          {
+            "x": 814,
+            "y": 797,
+            "w": 101,
+            "h": 121,
+            "segmentation": "projection"
+          },
+          {
+            "x": 968,
+            "y": 788,
+            "w": 94,
+            "h": 130,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1117,
+            "y": 796,
+            "w": 104,
+            "h": 122,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 26,
+            "y": 985,
+            "w": 129,
+            "h": 41,
+            "segmentation": "projection"
+          },
+          {
+            "x": 198,
+            "y": 975,
+            "w": 113,
+            "h": 76,
+            "segmentation": "projection"
+          },
+          {
+            "x": 373,
+            "y": 958,
+            "w": 37,
+            "h": 109,
+            "segmentation": "projection"
+          },
+          {
+            "x": 472,
+            "y": 974,
+            "w": 111,
+            "h": 77,
+            "segmentation": "projection"
+          },
+          {
+            "x": 627,
+            "y": 985,
+            "w": 130,
+            "h": 41,
+            "segmentation": "projection"
+          },
+          {
+            "x": 817,
+            "y": 964,
+            "w": 95,
+            "h": 96,
+            "segmentation": "projection"
+          },
+          {
+            "x": 997,
+            "y": 938,
+            "w": 39,
+            "h": 122,
+            "segmentation": "projection"
+          },
+          {
+            "x": 1120,
+            "y": 964,
+            "w": 97,
+            "h": 96,
+            "segmentation": "projection"
+          }
+        ],
+        [
+          {
+            "x": 11,
+            "y": 1129,
+            "w": 170,
+            "h": 50,
+            "segmentation": "component2D"
+          },
+          {
+            "x": 185,
+            "y": 1102,
+            "w": 144,
+            "h": 106,
+            "segmentation": "component2D"
+          },
+          {
+            "x": 373,
+            "y": 1090,
+            "w": 43,
+            "h": 147,
+            "segmentation": "component2D"
+          },
+          {
+            "x": 459,
+            "y": 1100,
+            "w": 144,
+            "h": 105,
+            "segmentation": "component2D"
+          },
+          {
+            "x": 603,
+            "y": 1129,
+            "w": 177,
+            "h": 50,
+            "segmentation": "component2D"
+          },
+          {
+            "x": 809,
+            "y": 1097,
+            "w": 123,
+            "h": 119,
+            "segmentation": "component2D"
+          },
+          {
+            "x": 997,
+            "y": 1077,
+            "w": 44,
+            "h": 156,
+            "segmentation": "component2D"
+          },
+          {
+            "x": 1109,
+            "y": 1097,
+            "w": 121,
+            "h": 119,
+            "segmentation": "component2D"
+          }
+        ]
+      ]
+    }
+  ],
+  "animationStatus": "ocho poses de apuntado; animaciones finales de preparación/retroceso/recuperación pendientes",
+  "approval": {
+    "status": "approved_by_user",
+    "date": "2026-10-22",
+    "evidence": "aprobado.",
+    "scope": "Diseños presentados: nueve armas y F24, ocho direcciones, 16 y 32 píxeles. No implica integración ni validación técnica de animaciones y agarres."
+  },
+  "anchorTechnicalValidation": "pending"
+}

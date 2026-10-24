@@ -1,0 +1,33 @@
+--- antes/LEEME.md
++++ aprobado/LEEME.md
+@@ -64,7 +64,9 @@
+ 
+ **Entregado y verificable:**dimensiones,160 celdas no vacías,20 hojas, ocho direcciones por modelo, alfa binario, topes de paleta, fuentes preservadas, montaje local y representación inicial de salida de ataques.
+ 
+-**Pendiente de aprobación:**siluetas, consistencia de volumen frontal/trasera, limpieza manual final del pixel art y exactitud de cada agarre/salida. La generación asistida no equivale a retoque artístico manual terminado.
++**Aprobación visual registrada (22-10-2026):** nueve armas y la fusión F24, con ocho direcciones en 16×16 y 32×32. Confirmación del usuario: «aprobado.». Ver APROBACION.md.
++
++**Pendiente técnico:** calibración de agarres y salidas durante la integración, y retoques manuales que resulten necesarios. La aprobación visual no acredita estos trabajos como realizados.
+ 
+ **No incluido como terminado:**animaciones finales de preparación, retroceso, recarga y recuperación de cada arma; combate con enemigos, hitboxes, balance, rendimiento de teléfono físico ni integración con la partida publicada. El banco muestra efectos ilustrativos sin daño real.
+ 
+--- antes/index.html
++++ aprobado/index.html
+@@ -23,7 +23,7 @@
+ </style>
+ </head>
+ <body>
+-<header><h1>Armas de prueba · 16 / 32</h1><p>Nueve categorías y una fusión · Ocho vistas por modelo · Propuesta para aprobación</p></header>
++<header><h1>Armas de prueba · 16 / 32</h1><p>Nueve categorías y una fusión · Ocho vistas por modelo · Diseños aprobados · 22-10-2026</p></header>
+ <div class="controls">
+  <label class="wide">Arma<select id="arma"></select></label>
+  <label>Resolución<select id="modo"><option value="16">16×16</option><option value="32" selected>32×32</option></select></label>
+@@ -134,7 +134,7 @@
+  const p=player();for(let i=fx.length-1;i>=0;i--)if(!effect(fx[i],now))fx.splice(i,1);
+  $('direccion').textContent=c.directions[p.di]+' · '+Math.round((p.aim*180/Math.PI+360)%360)+'°';
+  for(const b of $('direcciones').children)b.setAttribute('aria-pressed',Number(b.dataset.index)===p.di?'true':'false');
+- if(ready&&[...images.values()].every(im=>im.complete&&im.naturalWidth))$('carga').textContent='20 hojas direccionales y dos referencias del Guardia cargadas. Agarres automáticos pendientes de revisión artística.';
++ if(ready&&[...images.values()].every(im=>im.complete&&im.naturalWidth))$('carga').textContent='20 hojas direccionales y dos referencias del Guardia cargadas. Diseños aprobados. Calibración técnica de agarres pendiente de integración.';
+  requestAnimationFrame(tick);
+ }
+ view();requestAnimationFrame(tick);

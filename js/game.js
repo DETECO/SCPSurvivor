@@ -540,9 +540,10 @@ G.Game = (() => {
     ctx.save(); ctx.scale(G.Camera.scale, G.Camera.scale); G.Camera.apply(ctx);
     G.World.drawGround(ctx, G.Camera);
     if (pl && state !== 'ui') {
-      G.Pickups.draw(ctx); G.Expedition.draw(ctx);
+      G.Pickups.draw(ctx); G.Expedition.draw(ctx, {riftLayer:'ground'});
       const props = G.World.visibleProps(G.Camera);
-      const entities = [...G.EnemyMgr.drawables(G.Camera), ...(G.MapTrial?.drawables?.()||[]), ...props, pl].sort((a,b) => a.y - b.y);
+      const rift = G.DimensionalRifts?.drawable?.();
+      const entities = [...G.EnemyMgr.drawables(G.Camera), ...(G.MapTrial?.drawables?.()||[]), ...props, ...(rift ? [rift] : []), pl].sort((a,b) => a.y - b.y);
       const propSet = new Set(props);
       for (const entity of entities) {
         if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:true});

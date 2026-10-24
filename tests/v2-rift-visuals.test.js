@@ -11,6 +11,8 @@ function setup({ mode = '32', enabled = true, calm = true } = {}) {
     restore() { this.globalAlpha = this.stack.pop(); ops.push(['restore']); },
     stack: [],
     translate(...args) { ops.push(['translate', ...args]); },
+    scale(...args) { ops.push(['scale', ...args]); },
+    rotate(...args) { ops.push(['rotate', ...args]); },
     beginPath() { ops.push(['begin']); },
     moveTo(...args) { ops.push(['move', ...args]); },
     lineTo(...args) { ops.push(['line', ...args]); },
@@ -107,4 +109,57 @@ test('QA style override changes only the rendered appearance and calm settings s
   assert.equal(ctx.globalAlpha, 0.72);
   assert.equal(JSON.stringify(state), before);
   assert(ops.some(op => op[0] === 'text' && op[2] === 'GRIETA · 45 s'));
+});
+
+test('each portal changes geometry with active time, deterministically and without changing mechanics', () => {
+  const { G, ctx, ops } = setup({ calm: false });
+  const state = openState();
+  const original = JSON.stringify(state);
+  const frame = (time, style) => {
+    ops.length = 0;
+    G.RiftVisuals.draw(ctx, state, time, style);
+    return JSON.stringify(ops);
+  };
+  for (let style = 1; style <= 6; style++) {
+    const first = frame(1, style);
+    assert.notEqual(frame(1.7, style), first, `style ${style} must move`);
+    assert.equal(frame(1, style), first, `style ${style} must be reproducible`);
+  }
+  assert.equal(JSON.stringify(state), original);
+});
+
+test('default animation clock follows the frozen game clock rather than wall time', () => {
+  const { G, ctx, ops } = setup({ calm: false });
+  G.Game = { st: { time: 2 } };
+  const frame = () => {
+    ops.length = 0;
+    G.RiftVisuals.draw(ctx, openState());
+    return JSON.stringify(ops);
+  };
+  const paused = frame();
+  assert.equal(frame(), paused);
+  G.Game.st.time = 2.7;
+  assert.notEqual(frame(), paused);
+});
+
+test('ground and body layers compose the full image with balanced canvas state', () => {
+  for (const calm of [false, true]) {
+    const { G, ctx, ops } = setup({ calm });
+    for (let style = 1; style <= 6; style++) {
+      ops.length = 0;
+      G.RiftVisuals.draw(ctx, openState(), 4, style, 'ground');
+      const ground = JSON.stringify(ops);
+      assert(!ops.some(op => op[0] === 'text'));
+      ops.length = 0;
+      G.RiftVisuals.draw(ctx, openState(), 4, style, 'body');
+      assert.notEqual(JSON.stringify(ops), ground);
+      assert(ops.some(op => op[0] === 'text'));
+      assert.equal(ctx.stack.length, 0);
+      assert.equal(ctx.globalAlpha, 0.72);
+      assert(ops.length < 900, 'render work must remain bounded per portal');
+      for (const op of ops) for (const arg of op) {
+        if (typeof arg === 'number') assert(Number.isFinite(arg));
+      }
+    }
+  }
 });

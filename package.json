@@ -11,12 +11,20 @@
     "emulators:save": "node tools/save-emulators.js",
     "serve": "node tools/serve-local.js",
     "correo:local": "node tools/local-auth-mail.js",
-    "test:p05": "node --test tests/p05-*.test.js"
+    "test:p05": "node --test tests/p05-*.test.js",
+    "worker:check": "wrangler deploy --dry-run --outdir dist-worker",
+    "worker:types": "wrangler types worker/worker-configuration.d.ts --include-runtime false"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "5.20261018.1",
     "esbuild": "0.28.2",
     "firebase": "13.0.0",
     "firebase-tools": "15.34.0",
-    "terser": "5.51.2"
+    "miniflare": "4.20260730.0",
+    "terser": "5.51.2",
+    "wrangler": "4.151.1"
+  },
+  "dependencies": {
+    "jose": "6.2.12"
   }
 }

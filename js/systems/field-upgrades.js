@@ -23,6 +23,7 @@ G.FieldUpgrades = (() => {
   }
   function statsFor(pl) { return G.FieldStats.tempStats(pl); }
   function candidates(pl) {
+    if(G.WeaponRevisionTrial?.active())return revisionCandidates(pl);
     if(G.MapTrial?.infinite)return infiniteCandidates(pl);
     const s = statsFor(pl), out = [];
     for (const key of G.FieldStats.temporaryKeys) {
@@ -60,6 +61,7 @@ G.FieldUpgrades = (() => {
     return out;
   }
   function offer(pl, n = 3) {
+    if(G.WeaponRevisionTrial?.active())return revisionOffer(pl,n);
     if(G.MapTrial?.infinite)return infiniteOffer(pl,n);
     const pool = candidates(pl), picked = [];
     while (picked.length < n && pool.length) {
@@ -73,6 +75,31 @@ G.FieldUpgrades = (() => {
   const branchNames={power:'Potencia',rhythm:'Ritmo',handling:'Manejo',specialization:'Especialización'};
   const branchEffects={power:'+8% daño; extra +20%',rhythm:'−4% intervalo; extra −8%',handling:'−5% recarga/−3% dispersión; extra −10%/−5%',specialization:'+3% alcance; extra +10% alcance y +1 perforación'};
   const generalEffects={health:'+20 vida; extra +40',protection:'+6 puntos protección; extra +12',power:'+10% daño; extra +20%',cadence:'−8% intervalo; extra −12%',mobility:'+7% velocidad; extra +10%',collection:'+20% radio; extra +50%',learning:'+12% XP; extra +30%',recovery:'+0,6 vida/s; extra +1,5'};
+  function revisionCandidates(pl){
+    const out=[],s=statsFor(pl),trial=G.WeaponRevisionTrial;
+    if(trial.canUpgrade())out.push({key:'weapon:AF01',category:'weapon',w:8,
+      title:'Arma · Pistola AF01',
+      desc:'+1 nivel a una copia AF01 equipada elegible, elegida al azar. Escala nivel 1–5 y MAX.',
+      apply(p){return trial.advanceRandomCopy(p,Math.random);}});
+    for(const key of G.FieldStats.temporaryKeys){
+      const rank=s[key];if(!Number.isInteger(rank)||rank<0||rank>=6)continue;
+      out.push({key:`general:${key}`,category:'general',w:7,
+        title:`${ATTRS[key][0]} ${rank===5?'extra':rank+1+'/5'}`,
+        desc:generalEffects[key]+' · Bonos generales se aplican una vez.',
+        apply(p){const current=statsFor(p);if(current[key]!==rank)return false;current[key]++;G.FieldStats.apply(p);return true;}});
+    }
+    return out;
+  }
+  function revisionOffer(pl,n){
+    const pool=revisionCandidates(pl),picked=[];
+    const take=category=>{const valid=pool.filter(c=>!category||c.category===category);if(!valid.length)return;
+      const item=valid[Math.floor(Math.random()*valid.length)];picked.push(item);pool.splice(pool.indexOf(item),1);};
+    const count=Math.max(0,Math.min(3,Number.isFinite(n)?Math.floor(n):3));
+    if(picked.length<count)take('weapon');if(picked.length<count)take('general');
+    while(picked.length<count&&pool.length)take();
+    for(const card of tacticalCards())if(picked.length<count)picked.push(card);
+    return picked;
+  }
   function infiniteCandidates(pl){
     const out=[],seen=new Set(),s=statsFor(pl),P=G.InfiniteProgression;
     for(const copy of pl.fieldWeapons||[]){

@@ -2,8 +2,8 @@
 G.OperationsMenu = (() => {
   const byId = id => document.getElementById(id);
   const roles = ['guard', 'medic'];
-  const weapons = ['pistol', 'smg', 'shotgun', 'baton'];
-  let root = null, ready = null, screen = 'home', initialized = false;
+  const approvedArmasPath = 'assets/menus/approved-weapons-arm-vis-r1/';
+  let root = null, ready = null, screen = 'home', initialized = false, approvedCatalogPromise = null;
   let observer = null, frame = 0, previousFrame = 0, previewReady = false;
   const animators = {};
 
@@ -11,10 +11,6 @@ G.OperationsMenu = (() => {
     const query = new URLSearchParams(window.location.search || '');
     return G.MapTrial?.enabled === true && (G.MapTrial.expanded===true||G.MapTrial.rewardRiftPractice===true) && G.LocalAccounts?.enabled !== true && !G.LocalAccounts?.user &&
       !query.has('cuentas') && query.get('interfaz') !== 'clasica';
-  }
-
-  function availableWeapons() {
-    return weapons.filter(id => !!G.FieldCatalog?.models?.[id]);
   }
 
   function setSelect(id, value, allowed) {
@@ -30,16 +26,10 @@ G.OperationsMenu = (() => {
     return setSelect('field-role', id, roles);
   }
 
-  function selectWeapon(id) {
-    return setSelect('loadout-weapon-0', id, availableWeapons());
-  }
-
   function currentRole() { return roles.includes(byId('field-role')?.value) ? byId('field-role').value : 'guard'; }
-  function currentWeapon() { return availableWeapons().includes(byId('loadout-weapon-0')?.value) ? byId('loadout-weapon-0').value : 'pistol'; }
   function roleData(id = currentRole()) { return G.FieldCatalog.soldiers[id] || G.FieldCatalog.soldiers.guard; }
   function roleName(id = currentRole()) { return roleData(id).name; }
   function abilityName(id = currentRole()) { return roleData(id).ability === 'heal' ? 'Primeros auxilios' : 'Sprint'; }
-  function weaponData(id = currentWeapon()) { return G.FieldCatalog.models[id]; }
   function statText(id) {
     const soldier = roleData(id);
     const stats = G.FieldStats.player({ baseMaxHp: soldier.maxHp, maxHp: soldier.maxHp, training: {}, tempStats: {} });
@@ -52,10 +42,38 @@ G.OperationsMenu = (() => {
     return G.TrialVisuals?.mode === '16' ? '16' : '32';
   }
 
-  function makeWeaponStats(id) {
-    const stats = G.FieldStats.weapon({ training: {}, tempStats: {} }, { model: id, mods: [], level: 1 });
-    if (stats.family === 'melee') return `Daño ${stats.damage.toFixed(1)} · intervalo ${stats.interval.toFixed(2)} s · alcance ${stats.range} · cuerpo a cuerpo`;
-    return `Daño ${stats.damage.toFixed(1)} · intervalo ${stats.interval.toFixed(2)} s · cargador ${stats.capacity} · recarga ${stats.reloadTime.toFixed(2)} s`;
+  function approvedWeaponModels(catalog = window.MENU_APPROVED_WEAPONS) {
+    if (catalog?.source !== 'ARM-VIS-001/R1' || catalog.status !== 'visually_approved_not_integrated' || !Array.isArray(catalog.entries)) return [];
+    return catalog.entries.map(asset => {
+      const image = graphicsMode() === '16' ? asset.image16 : asset.image32;
+      if (!asset.approved || asset.approvalScope !== 'visual_design' || !image) return null;
+      return {
+        id: asset.id,
+        name: asset.name,
+        tier: asset.tier,
+        category: asset.category,
+        image,
+        approved: true,
+      };
+    }).filter(Boolean);
+  }
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+  }
+
+  function approvedWeaponCardsMarkup(catalog = window.ARMAS_CATALOGO) {
+    const entries = approvedWeaponModels(catalog);
+    if (!entries.length) return '<p class="operations-catalog-status" role="status">No se pudo cargar el catálogo visual aprobado.</p>';
+    return entries.map(entry => `<article class="operations-approved-weapon-card" data-approved-weapon="${escapeHtml(entry.id)}"><img src="${escapeHtml(entry.image)}" width="16" height="16" alt="" aria-hidden="true"><div><h3>${escapeHtml(entry.name)}</h3><p>${escapeHtml(entry.tier)} · ${escapeHtml(entry.category)}</p></div></article>`).join('');
+  }
+
+  function loadApprovedWeaponCatalog() {
+    if (window.MENU_APPROVED_WEAPONS) return Promise.resolve(window.MENU_APPROVED_WEAPONS);
+    if (!approvedCatalogPromise) approvedCatalogPromise = fetch(`${approvedArmasPath}catalog.json`, { cache: 'no-store' })
+      .then(response => { if (!response.ok) throw new Error('Catálogo ARMAS no disponible'); return response.json(); })
+      .catch(() => null);
+    return approvedCatalogPromise;
   }
 
   function template() {
@@ -84,7 +102,7 @@ G.OperationsMenu = (() => {
             <button type="button" data-open-screen="practices"><span class="operations-icon" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="4"><circle cx="24" cy="24" r="15"/><path d="M24 1v14M24 33v14M1 24h14M33 24h14"/></g></svg></span><span>Prácticas</span></button>
             <button type="button" data-open-screen="settings"><span class="operations-icon" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7"><circle cx="24" cy="24" r="13"/><path d="M24 2v8M24 38v8M2 24h8M38 24h8M8 8l6 6M34 34l6 6M8 40l6-6M34 14l6-6"/></g><circle cx="24" cy="24" r="5" fill="currentColor"/></svg></span><span>Ajustes</span></button>
           </nav>
-          <button class="operations-weapon-summary" type="button" data-open-screen="weapons"><span class="operations-weapon-icon" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M5 12h37v12H26l-4 17H12l4-17H5zM33 8h6v5h-6z"/></svg></span><span>Arma inicial · <b class="operations-weapon-name"></b></span></button>
+          <button class="operations-weapon-summary" type="button" data-open-screen="weapons"><span class="operations-weapon-icon" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M5 12h37v12H26l-4 17H12l4-17H5zM33 8h6v5h-6z"/></svg></span><span>Armas aprobadas · <b class="operations-weapon-name"></b></span></button>
         </section>
       </div>
     </div>
@@ -99,13 +117,13 @@ G.OperationsMenu = (() => {
           <div class="operations-detail-stage"><canvas class="operations-preview-canvas operations-soldier-preview" data-role="selected" width="180" height="190" aria-label="Vista del soldado elegido"></canvas><p class="operations-selected-name"></p><p class="operations-selected-ability"></p></div>
           <div class="operations-detail-card"><h3>Habilidad</h3><p class="operations-detail-ability"></p></div>
           <div class="operations-detail-card"><span>Vida base</span><strong class="operations-health"></strong></div>
-          <div class="operations-detail-card"><button class="operations-detail-weapon" type="button" data-open-screen="weapons"><span>Arma inicial</span><strong class="operations-weapon-name"></strong><small>Ver selección y estadísticas</small></button></div>
+          <div class="operations-detail-card"><button class="operations-detail-weapon" type="button" data-open-screen="weapons"><span>Arsenal visual aprobado</span><strong class="operations-weapon-name"></strong><small>Ver 9 armas y F24</small></button></div>
         </div>
       </div>
       <div class="operations-footer-actions"><button type="button" data-open-screen="home">Volver</button><button type="button" class="operations-confirm" data-confirm-soldier>Confirmar Guardia</button></div>
     </section>
     <section class="operations-screen" data-screen="weapons" hidden aria-labelledby="operations-weapons-title">
-      <div class="operations-subhead"><button type="button" class="operations-back" data-open-screen="home" aria-label="Volver al menú">‹</button><div><h2 id="operations-weapons-title">Arma inicial</h2><p>El equipo elegido se aplica a la primera ranura de la expedición.</p></div></div>
+      <div class="operations-subhead"><button type="button" class="operations-back" data-open-screen="home" aria-label="Volver al menú">‹</button><div><h2 id="operations-weapons-title">Armas aprobadas</h2><p>Vista previa de los nueve diseños y la fusión F24.</p></div></div>
       <div class="operations-weapon-grid"></div>
       <div class="operations-footer-actions"><button type="button" data-open-screen="home">Volver</button></div>
     </section>
@@ -128,20 +146,12 @@ G.OperationsMenu = (() => {
     for (const node of panel.querySelectorAll('#technical-intro, #technical-account-hint, #account-panel, .loadout-editor, #rift-test-note, #map-test-note, #chest-test-note, #b3-test-note, #infinite-test-note, #expanded-test-note, #visual-style-note, #expanded-practices, .map-trial-link')) node.hidden = true;
   }
 
-  function buildWeaponCards() {
+  function buildApprovedWeaponCards() {
     const host = root.querySelector('.operations-weapon-grid');
-    host.replaceChildren();
-    for (const id of availableWeapons()) {
-      const model = weaponData(id);
-      const card = document.createElement('article');
-      card.className = 'operations-weapon-card';
-      card.dataset.weapon = id;
-      const icon = document.createElement('canvas'); icon.width=180;icon.height=70;icon.setAttribute('aria-label',model.name);const ctx=icon.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.scale(3,3);G.TrialWeaponArt?.draw(ctx,{x:22,y:33,weaponAim:0,dead:false},{behind:false},[{model:id,flash:0}]);
-      const title = document.createElement('h3'); title.textContent = model.name;
-      const stats = document.createElement('p'); stats.className = 'operations-weapon-stats'; stats.textContent = makeWeaponStats(id);
-      const action = document.createElement('button'); action.type = 'button'; action.dataset.equipWeapon = id; action.textContent = 'Equipar';
-      card.append(icon, title, stats, action); host.append(card);
-    }
+    host.innerHTML = '<p class="operations-catalog-status" role="status">Cargando diseños aprobados…</p>';
+    loadApprovedWeaponCatalog().then(catalog => {
+      if (host.isConnected) host.innerHTML = approvedWeaponCardsMarkup(catalog);
+    });
   }
 
   function setScreen(next) {
@@ -156,7 +166,7 @@ G.OperationsMenu = (() => {
 
   function update() {
     if (!root) return;
-    const role = currentRole(), weapon = currentWeapon(), soldier = roleData(role);
+    const role = currentRole(), soldier = roleData(role);
     const name = soldier.name, ability = abilityName(role);
     for (const node of root.querySelectorAll('.operations-selected-name')) node.textContent = name.toUpperCase();
     for (const node of root.querySelectorAll('.operations-selected-ability')) node.textContent = ability;
@@ -164,14 +174,8 @@ G.OperationsMenu = (() => {
       ? 'Aumenta tu velocidad durante 2 s.' : 'Recupera vida durante la expedición.';
     root.querySelector('.operations-health').textContent = statText(role).replace(/^Vida base /, '').split(' · ')[0];
     root.querySelector('.operations-confirm').textContent = `Confirmar ${name}`;
-    for (const node of root.querySelectorAll('.operations-weapon-name')) node.textContent = weaponData(weapon)?.name || 'Pistola';
+    for (const node of root.querySelectorAll('.operations-weapon-name')) node.textContent = '9 armas + F24';
     for (const button of root.querySelectorAll('.operations-role-card')) button.setAttribute('aria-pressed', String(button.dataset.role === role));
-    for (const card of root.querySelectorAll('.operations-weapon-card')) {
-      const selected = card.dataset.weapon === weapon;
-      card.dataset.selected = String(selected);
-      const button = card.querySelector('[data-equip-weapon]');
-      button.textContent = selected ? 'Equipado' : 'Equipar'; button.disabled = selected;
-    }
   }
 
   function canvasVisible(canvas) {
@@ -275,20 +279,17 @@ G.OperationsMenu = (() => {
     const graphics = byId('character-graphics');
     if (graphics) { graphics.hidden = false; root.querySelector('.operations-settings-display').append(graphics); }
     configurePracticeLinks();
-    buildWeaponCards();
+    buildApprovedWeaponCards();
 
     root.addEventListener('click', event => {
       const role = event.target.closest('[data-role]');
       if (role && root.contains(role)) { selectSoldier(role.dataset.role); return; }
-      const equip = event.target.closest('[data-equip-weapon]');
-      if (equip && root.contains(equip)) { if (selectWeapon(equip.dataset.equipWeapon)) setScreen('home'); return; }
       const confirm = event.target.closest('[data-confirm-soldier]');
       if (confirm) { setScreen('home'); return; }
       const open = event.target.closest('[data-open-screen]');
       if (open && root.contains(open)) setScreen(open.dataset.openScreen);
     });
     byId('field-role')?.addEventListener('change', update);
-    byId('loadout-weapon-0')?.addEventListener('change', update);
     update();
     setScreen('home');
     if (typeof window.MutationObserver === 'function') {
@@ -305,5 +306,5 @@ G.OperationsMenu = (() => {
     return true;
   }
 
-  return { init, isEnabled, availableWeapons, selectSoldier, selectWeapon, showScreen: setScreen, render: update };
+  return { init, isEnabled, approvedWeaponModels, approvedWeaponCardsMarkup, selectSoldier, showScreen: setScreen, render: update };
 })();

@@ -1,10 +1,22 @@
 # Wiki de diseño — mapas, armas y cofres
 
-**Decisiones vigentes del 20/10/2026:** Iván aceptó las recomendaciones A del cuestionario con excepciones y notas. Se fija cinco niveles más un extra propio por rama, poder y mejora general; ultimates conservan cinco permanentes. Dos compañeros a 5:00, retirada de uno al ver al jefe vivo, ayuda limitada del otro y sin XP por bajas aliadas. Mapas procedurales y tickets universales gris ×1 / dorado ×5. La tienda permanente, escape de grieta, fusión y puntaje tienen los estados detallados en la [matriz de decisiones](DECISIONES_INFINITO_2026-10-20.md), que prevalece sobre las propuestas anteriores.
+**Personalidades y acompañantes femeninos · 23/10/2026:** [banco narrativo V2 aprobado por Iván](DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md), ahora con catorce tonos, recuerdos compatibles y miedo D5. Las frases están aprobadas, pero siguen sin integración; nombre aleatorio y reglas del sorteo continúan como propuestas. Las burbujas y el sonido se resolverán en «sonido», sin locución.
 
-**Aclaraciones incorporadas:** sala de fusión dentro de alguno de los escenarios para combinar dos armas al máximo; una sola apertura de escape de grieta de cinco segundos entre 1:00 y 3:00 del encuentro; diez categorías permanentes individuales por soldado, compradas en la base con monedas recogidas en el escenario. Recetas/límite de fusión, ingresos/precios y efectos concretos siguen en la [lista de cierres pendientes](DECISIONES_INFINITO_2026-10-20.md).
+**Presentación y nueva propuesta · 23/10/2026:** diálogo mediante burbujas de texto y sonido identificativo que Iván diseñará en «sonido», sin frases locutadas. [Brecha de refuerzos exterior](PROPUESTA_BRECHA_REFUERZOS.md) propuesta: sale un NPC y ayuda en el mapa; frecuencia, cupo y relación con el dado de anomalías aún por elegir. No modifica las decisiones previas por inferencia.
 
-Fecha base: 18/10/2026. Decisiones actualizadas: 20/10/2026.
+**Compañeros, aceptación y variedad narrativa · 22/10/2026:** aceptadas las recomendaciones de su mecánica. Nuevo [banco de diálogos V1](DIALOGOS_COMPANEROS_GRIETA_V1.md): reconocimiento de armas/recinto, casa y cuatro voces propuestas. Iván solicita reconocer en una fase posterior el nombre del jugador; se definen alias de perfil y alternativa sin nombre. El texto nuevo no está integrado ni grabado.
+
+**Compañero de contención en grietas · 22/10/2026:** [ficha y análisis](COMPANERO_CONTENCION_GRIETAS.md). Decisión de Iván: 33% de aparición con arma básica aleatoria en D1–D3; 33% con Rara o Épica en D4; 10% con Legendaria en D5. Diálogos de apoyo; D5 expresa miedo y deseo de irse, sin asumir abandono. Balance y realización pendientes; no cambia los dos aliados de la puerta a 5:00.
+
+**Grietas, aprobación posterior · 23/10/2026:** **EST-GRI-001 r1** aprueba sí/no **50/50**, tiradas a **1:00/2:00/3:00/4:00 activos desde el segundo mapa** y máximo **dos apariciones por mapa**. Se mantiene el segundo sorteo **50/32/8/7/3%**. Sustituye la frecuencia antigua de 46A y la franja 1:30–3:00. [Ficha 2.2](GRIETAS_DADO_POR_MINUTO_V2.md) · [Lote del director aislado](gestion/lotes/LOT-EST-001-r1.md), listo documentalmente; todavía sin código nuevo. Los cinco tiers siguen siendo independientes de los seis estilos visuales integrados.
+
+**ARMAS, aprobación posterior · 23/10/2026:** Iván acepta [EST-ARM-001 r1](CIERRE_ARMAS_PROGRESION_FUSION_V1.md): escala única **1–5 + MAX por copia**, sustituyendo cuatro ramas; una fusión por expedición con estación desde mapa 2; AF01/CC04/TE01 y **F24** como primer recorrido jugable, con cifras de ensayo y contrato de animación. [LOT-EST-002 r1](gestion/lotes/LOT-EST-002-r1.md) listo documentalmente para PROGRAMACION; código, agarres/poses y balance pendientes. La [pauta de ARMAS](PAUTA_ARMAS.md) conserva el catálogo90/63 y ARM-VIS-001/R1: nueve modelos y F24 aprobados visualmente. Las otras 62 recetas y el resto de modelos no reciben aprobación jugable por extensión.
+
+**Decisiones del 20/10/2026 con actualización de armas 23/10:** Iván aceptó las recomendaciones A del cuestionario con excepciones y notas. Poderes y mejoras generales conservan cinco niveles más extra propio; ultimates cinco permanentes. Para armas prevalece ahora la escala única descrita arriba. Dos compañeros a 5:00, retirada de uno al ver al jefe vivo, ayuda limitada del otro y sin XP por bajas aliadas. Mapas procedurales y tickets universales gris ×1 / dorado ×5. Los estados y aprobaciones posteriores figuran en la [matriz de decisiones](DECISIONES_INFINITO_2026-10-20.md).
+
+**Aclaraciones incorporadas:** sala de fusión para dos armas MAX, con condiciones y primera F24 ya aprobadas en EST-ARM-001 r1; una apertura de escape de grieta de cinco segundos entre 1:00 y 3:00 del encuentro; diez categorías permanentes individuales por soldado, compradas en la base con monedas del escenario. Ingresos/precios, resto de fichas y otras recetas siguen en la [lista de cierres pendientes](DECISIONES_INFINITO_2026-10-20.md).
+
+Fecha base: 18/10/2026. Decisiones de armas actualizadas: 23/10/2026.
 
 Documento de trabajo del hilo de diseño de Iván. Distingue decisiones expresas del usuario, reglas anteriores del roadmap y propuestas para el rediseño. No acredita implementación, pruebas de balance ni cambios de estado en P05/P06/P07. No modifica RoadmapSCP.json ni su vista generada.
 
@@ -30,7 +42,7 @@ Documento de trabajo del hilo de diseño de Iván. Distingue decisiones expresas
 - Al subir nivel se elige una de tres ofertas: una de arma, una general y una libre entre candidatas válidas; los poderes adquiridos entran en la libre. Las ofertas reconocen exclusivamente armas/poderes equipados, compatibilidad y topes. Categorías sin candidatas se sustituyen por opciones válidas.
 - Las mochilas quedan fuera del nuevo diseño. Este documento no elimina el prototipo anterior ni presume que la colección de armas también se elimina.
 - Las diez categorías permanentes se compran desde la base con monedas recogidas en los escenarios y se guardan por soldado. Una compra para uno no mejora a los demás. La XP temporal, los tickets de gacha y las monedas son conceptos distintos; el destino de XP permanente y duplicados debe encajar en una sola progresión para evitar aumentos duplicados.
-- La fusión se realiza en una sala de alguno de los escenarios, con dos armas completamente mejoradas, para obtener un compuesto que ocupa una ranura. No ocurre en la tienda de mejoras permanentes. Aparición de sala, recetas, herencia y límite de fusiones siguen pendientes de fijar.
+- La fusión se realiza en sala del recorrido: dos modelos distintos compatibles MAX producen un compuesto FINAL y liberan una ranura. EST-ARM-001 r1 fija una por expedición, estación desde mapa 2 y F24 como primera receta; no ocurre en la tienda permanente. Implementación y resto de recetas pendientes, con reglas completas en el cierre aprobado.
 - El escape anticipado de grieta abre una sola vez durante cinco segundos activos, entre 1:00 y 3:00 del encuentro. Si no se usa, hay que vencer o morir; la victoria conserva el retorno ya aprobado. La ubicación, momento exacto y aviso previo requieren ficha.
 - El 19/10/2026 Iván aprobó implementar un radar táctico compacto según las recomendaciones del hilo: jugador centrado, orientación fija, puntos importantes y marcas de dirección en el borde; cofres y anomalías respetan sus reglas de descubrimiento. Ver el apartado de radar para el alcance establecido.
 
@@ -129,18 +141,18 @@ Para aceptar la implementación habrá que comprobar descubrimiento de cofres, a
 
 **Dirección actual del usuario, 20/10/2026:** un arma inicial y una segunda durante el recorrido, hasta dos. Tres ofertas aleatorias que reconocen solo equipo válido; ninguna mejora la ranura vacía. Mezcla y topes aceptados con modificaciones se recogen a continuación y en la matriz vigente.
 
-Las dos armas actúan simultáneamente. 13A permite dos del mismo modelo con mejoras independientes; 14B permite sustitución solo en terminales opcionales, con el reemplazo en progreso temporal base. La segunda se adquiere mediante premio, no carta de nivel. La fusión solicitada por Iván y sus límites propuestos figuran en la [matriz vigente](DECISIONES_INFINITO_2026-10-20.md).
+Las dos armas actúan simultáneamente. 13A permite dos del mismo modelo con mejoras independientes; 14B permite sustitución solo en terminales opcionales, con el reemplazo en nivel 1. La segunda se adquiere mediante premio, no carta de nivel. Las condiciones de fusión aprobadas el 23/10 figuran en [EST-ARM-001 r1](CIERRE_ARMAS_PROGRESION_FUSION_V1.md).
 
-La ubicación de fusión ya está confirmada: una sala dentro de alguno de los escenarios. El compuesto libera una ranura; las condiciones adicionales propuestas no se consideran aprobadas por el solo hecho de elegir esa ubicación.
+La sala se reserva desde mapa 2 mientras quede el único uso de expedición. Dos modelos distintos compatibles MAX producen un compuesto FINAL y liberan una ranura; CC04 + TE01 → F24 es la primera receta aprobada para ensayo. Las otras 62 recetas siguen propuestas.
 
-## Categorías aceptadas y topes modificados el 20/10/2026
+## Categorías aceptadas y progresión de armas actualizada el 23/10/2026
 
 ### Composición de las tres opciones
 
-18A aceptada: una oferta de arma, una general y una tercera libre entre las mejoras elegibles restantes, incluidos poderes adquiridos. El azar decide arma y efecto; el jugador elige una. Garantizar grupos solo mientras existan candidatas válidas.
+18A y EST-ARM-001 r1 aceptadas: una oferta de arma, una general y una tercera libre entre las mejoras elegibles restantes, incluidos poderes adquiridos. El azar selecciona candidatas válidas; en una carta de arma se aplica el próximo ascenso de su escala, y el jugador elige una oferta. Garantizar grupos solo mientras existan candidatas válidas.
 
 - La oferta de arma apunta a una de las dos armas equipadas y muestra su nombre y el rango antes/después.
-- Cada modelo dispone de una lista explícita de mejoras compatibles, apoyada en su familia. La pistola puede mejorar recarga; la katana no puede recibir esa mejora.
+- Cada ficha define ascensos compatibles y extra MAX. AF01/CC04/TE01 usan los perfiles del cierre aprobado; un modelo futuro necesita ficha antes de habilitarse, sin ascensos que no hagan nada.
 - La tercera opción puede dar una segunda alternativa de arma o una segunda general. No repetir la misma mejora para el mismo objetivo dentro de la selección.
 - Una familia organiza compatibilidades; no concede por sí sola una bonificación a toda la colección ni a todas las armas de esa familia.
 
@@ -148,16 +160,9 @@ La alternativa considerada es sortear las tres cartas sin garantizar grupos: ofr
 
 ### Mejoras de cada arma
 
-| Rama | Función | Rangos vigentes |
-| --- | --- | --- |
-| Potencia | Daño base del arma seleccionada | 0–5 + extra propio |
-| Ritmo | Frecuencia de ataque, compatible con el funcionamiento concreto del arma | 0–5 + extra propio |
-| Manejo | Un efecto definido por modelo: recarga, precisión, alcance de corte o control del disparo | 0–5 + extra propio |
-| Especialización | Rasgo propio del arma: por ejemplo penetración, radio de explosión, sangrado o rebote si el modelo lo admite | 0–5 + extra propio |
+**Una sola escala por copia: 1 → 2 → 3 → 4 → 5 → MAX.** Se adquiere en 1 y necesita cinco ascensos. El nivel 2 mejora daño, 3 intervalo, 4 alcance, 5 reemplaza el aumento de daño anterior y MAX entrega su extra propio, conforme a los [valores de ensayo aprobados](CIERRE_ARMAS_PROGRESION_FUSION_V1.md). Las cuatro ramas Potencia/Ritmo/Manejo/Especialización quedan como antecedente del diseño y del código anterior; no son compras adicionales de esta escala.
 
-Los topes son por rama y por arma. El rango 0 es la base sin mejoras: se adquieren cinco niveles y un extra final propio para cada rama, según la aclaración de Iván. Cada modelo debe definir Manejo, Especialización y sus extras; no conceden a la vez todos los ejemplos. Las ultimates mantienen cinco niveles permanentes.
-
-Si se muestra un nivel global del arma, solo resume el progreso: no añade otro multiplicador de estadísticas. Rareza, duplicados y desarrollo permanente por gacha se definirán por separado.
+Dos copias progresan independientemente. El compuesto F24 FINAL no admite nuevos ascensos ni refusión; los bonos generales se aplican una sola vez. Rareza, duplicados y desarrollo permanente conservan su alcance propio. Poderes/generales mantienen cinco niveles más extra y las ultimates cinco permanentes.
 
 ### Mejoras generales del soldado durante la expedición
 
@@ -176,8 +181,8 @@ Las diez categorías permanentes usan otra ficha de compra: cada soldado tiene s
 
 ### Saturación y validación necesarias
 
-Una rama al máximo sale del sorteo. Si solo un arma sigue siendo elegible, las ofertas de arma apuntan a ella. Si ambas se completan, se usan los candidatos generales restantes, sin prometer una oferta de arma imposible.
+Una copia MAX o FINAL sale del sorteo de ascensos. Si solo un arma sigue siendo elegible, las ofertas de arma apuntan a ella. Si ambas se completan, se usan los candidatos generales restantes, sin prometer una oferta de arma imposible.
 
-21A y 56A aceptadas: al agotar ramas, ofrecer tres bonificaciones tácticas breves y universales, con solo una activa, sin nuevas ranuras ni tickets permanentes; el premio de armamento sin candidata usa ese catálogo. Efectos concretos, duración y valores requieren ficha. No presentar cartas vacías ni superar topes silenciosamente.
+21A y 56A aceptadas: al agotar mejoras elegibles, ofrecer tres bonificaciones tácticas breves y universales, con solo una activa, sin nuevas ranuras ni tickets permanentes; el premio de armamento sin candidata usa ese catálogo. Efectos concretos, duración y valores requieren ficha. No presentar cartas vacías ni superar topes silenciosamente.
 
-La referencia anterior 5/3 queda reemplazada por cinco niveles más un extra propio por rama, poder y mejora general. La frecuencia de XP determinará en cuántos mapas se alcanzan. 21A permite tres apoyos tácticos breves al saturar, con solo uno activo, sin nuevas ranuras o moneda permanente. La fusión solicitada se evalúa por separado en la matriz vigente; este documento no modifica el ejecutable.
+Las reglas vigentes son escala única de armas 1–5 + MAX y cinco niveles más extra por poder/mejora general; ultimates cinco permanentes. La frecuencia de XP determinará en cuántos mapas se alcanzan. La fusión inicial está aprobada por EST-ARM-001 r1 y pendiente de implementar/probar; este documento no modifica el ejecutable.

@@ -2,7 +2,7 @@
 G.WeaponTerminal=(()=>{
  let point=null,owner=null,near=false,opened=false,slots=[],notice='',serial=0,key='';
  const enabled=()=>G.MapTrial?.expanded===true;
- const models=()=>Object.keys(G.FieldCatalog.models).filter(k=>['pistol','smg','shotgun','baton'].includes(k));
+ const models=()=>G.WeaponRevisionTrial?.active()?['pistol']:Object.keys(G.FieldCatalog.models).filter(k=>['pistol','smg','shotgun','baton'].includes(k));
  const alive=p=>!!p&&!p.dead&&p.hp>0;
  function clearLine(p,q){
   const d=Math.hypot(q.x-p.x,q.y-p.y),n=Math.max(1,Math.ceil(d/8));
@@ -26,7 +26,9 @@ G.WeaponTerminal=(()=>{
    G.Expedition.state.pending||G.ArmamentRewards?.state.pending||!owner.fieldWeapons?.length)return false;
   slots=owner.fieldWeapons.map(w=>({id:w.id,model:w.model}));
   if(G.Expedition.awaitTerminal()!==true){slots=[];return false;}
-  opened=true;near=true;notice='Elige la ranura y el modelo. La nueva arma empieza sin sus ramas propias.';return true;
+  opened=true;near=true;notice=G.WeaponRevisionTrial?.active()
+   ?'Elige la copia que reemplazarás. La nueva Pistola AF01 empieza en nivel 1.'
+   :'Elige la ranura y el modelo. La nueva arma empieza sin sus ramas propias.';return true;
  }
  function close(){
   if(!opened)return false;opened=false;slots=[];G.Expedition.resolveTerminal();return true;

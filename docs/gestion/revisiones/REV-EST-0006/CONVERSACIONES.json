@@ -1,0 +1,80 @@
+{
+  "revision": "REV-EST-0006",
+  "date": "2026-10-23",
+  "coverage": {
+    "personajesRecentTurnsRead": 12,
+    "programacionRecentTurnsRead": 2,
+    "fullHistoriesRead": false
+  },
+  "evidence": [
+    {
+      "threadId": "01a160be-4bf0-7883-b313-604e7ce76652",
+      "title": "PERSONAJES",
+      "turnId": "01a16a47-50cf-7a92-ba3b-3e5a3ef15669",
+      "messages": [
+        {
+          "id": "01a16a47-524f-7ca1-af62-fc505513defc",
+          "type": "userMessage",
+          "text": "aceptado.\n"
+        },
+        {
+          "id": "msg_06c3a3395101dc2b016adbb8e450e88191adb53e631e03610f",
+          "type": "agentMessage",
+          "text": "**Aceptación registrada:** los sprites 16×16 y 32×32, sus ocho direcciones, animaciones y efectos quedan aprobados para integrar.\n\nEl paquete aceptado está identificado en el [registro de aprobación](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/ANOMALIAS_SPRITES_V1_APROBACION.md). La integración al juego corresponde a PROGRAMACION y sigue pendiente."
+        }
+      ]
+    },
+    {
+      "threadId": "01a160be-4bf0-7883-b313-604e7ce76652",
+      "title": "PERSONAJES",
+      "turnId": "01a16a1e-bc1e-78a0-98f7-3406a0d941d4",
+      "messages": [
+        {
+          "id": "01a16a1e-bd24-7832-abde-d67751aeea74",
+          "type": "userMessage",
+          "text": "ya aprobados.\n"
+        },
+        {
+          "id": "msg_06c3a3395101dc2b016adbae1903cc8191a3477b824cad480d",
+          "type": "agentMessage",
+          "text": "**Aprobación registrada:** las cinco anomalías, sus 15 ataques y las secuencias de movimiento quedan aceptados.\n\nPendiente de producción: sprites exactos **16×16 y 32×32**, animaciones reproducibles y vistas en ocho direcciones. Después corresponde integrarlos y probarlos en PROGRAMACION.\n\n[Ver cambios registrados](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/design-proposals/anomalias/biologicas-v2-20261023/APROBACION-ATAQUES.patch)."
+        }
+      ]
+    },
+    {
+      "threadId": "01a160be-4bf0-7883-b313-604e7ce76652",
+      "title": "PERSONAJES",
+      "turnId": "01a169f4-597a-7a51-88cd-34f070d200fd",
+      "messages": [
+        {
+          "id": "01a169f4-5a2e-7791-9a44-f4771c613b87",
+          "type": "userMessage",
+          "text": "apruebo los dialogos.\n"
+        },
+        {
+          "id": "msg_06c3a3395101dc2b016adba3a6808c819183a6c99b08d0bb45",
+          "type": "agentMessage",
+          "text": "Registré la aprobación de los diálogos V1 y V2. El banco queda marcado como **aprobado, pendiente de integración al juego**; las reglas y condiciones siguen sujetas a ESTRUCTURA.\n\nVerifiqué los **280 diálogos**, sus IDs únicos y los enlaces entre documentos.\n\n- [Banco V2 y estado de aprobación](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/DIALOGOS_PERSONALIDADES_COMPANEROS_V2.md:3)\n- [Banco V1](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/DIALOGOS_COMPANEROS_GRIETA_V1.md:5)\n- [Referencia del diseño](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/WIKI_REDISENO_ROGUELITE.md:3)\n\n"
+        }
+      ]
+    },
+    {
+      "threadId": "01a13aeb-020a-7d62-8256-3d42a6e61877",
+      "title": "PROGRAMACION",
+      "turnId": "01a16974-e85c-74a2-b10d-c654144da1cc",
+      "messages": [
+        {
+          "id": "01a16974-ea74-7f51-9710-647330e1dd08",
+          "type": "userMessage",
+          "text": "Eres responsable técnico de PROGRAMACION de SCP Survivor.\nImplementa el alcance que Iván encargue, revisando primero el código existente. Para cambios de diseño, consulta PAUTA_DESARROLLO.md, el lote de CONTROL_CAMBIOS.md y sus decisiones y recursos vinculados.\nRegistra al comenzar los IDs y revisiones utilizados. Una petición explícita de implementar o corregir autoriza ese alcance: no solicites otra confirmación equivalente.\nCorrige errores que incumplan el comportamiento aprobado sin exigir un nuevo lote de diseño. Elige soluciones técnicas simples y mantenibles.\nSi aparece una regla de jugabilidad sin resolver, informa ese punto y continúa con las partes independientes. No inventes probabilidades, progresión, economía, daño o capacidades para completar el encargo.\nSi las fuentes cambian durante el trabajo, evalúa el impacto y registra cómo lo trataste. No cambies silenciosamente la revisión que estás implementando.\nEjecuta comprobaciones proporcionadas al cambio. Registra decisiones/revisiones integradas, resultados reales, estado parcial o completo y limitaciones en docs/gestion/REGISTRO_IMPLEMENTACION.md.\nSi todavía faltan archivos del protocolo, una corrección puntual claramente autorizada puede avanzar con las fuentes disponibles; no inventes el diseño que falte.\nRespeta las autorizaciones existentes de publicación o servicios. Implementar un cambio no amplía por sí solo esas autorizaciones.\nTermina con resultado, comprobaciones y pendientes materiales.\n"
+        },
+        {
+          "id": "msg_0fb9a85f53d6e544016adb8271979c819189baa2f4b8cfabbc",
+          "type": "agentMessage",
+          "text": "Asumo la responsabilidad técnica de **PROGRAMACIÓN de SCP Survivor**.\n\nEn cada encargo revisaré el código y las fuentes aplicables, registraré los IDs y revisiones utilizados y documentaré resultados, comprobaciones y limitaciones en `docs/gestion/REGISTRO_IMPLEMENTACION.md`.\n\nAvanzaré con lo autorizado sin pedir confirmaciones repetidas. Las reglas de jugabilidad sin resolver quedarán señaladas, mientras continúo las partes independientes. Mantendré las autorizaciones de publicación y servicios dentro de su alcance existente."
+        }
+      ]
+    }
+  ]
+}
+

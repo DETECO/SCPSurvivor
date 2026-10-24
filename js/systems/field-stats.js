@@ -62,6 +62,11 @@ G.FieldStats = (() => {
     return next;
   }
   function weapon(pl, copy) {
+    if (G.WeaponRevisionTrial?.active()) {
+      return copy?.preview === true
+        ? G.WeaponRevisionTrial.previewEffective(pl, copy)
+        : G.WeaponRevisionTrial.effective(pl, copy);
+    }
     const catalog = G.FieldCatalog, model = typeof copy === 'string' ? copy : (copy && copy.model);
     const d = catalog && catalog.models[model];
     if (!d) throw new Error(`Unknown field weapon model: ${model}`);

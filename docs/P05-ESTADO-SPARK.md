@@ -1,5 +1,7 @@
 # P05 con Spark sin facturación
 
+**Actualización18/10/2026 (A-029/D-317):** se prepara la alternativa Worker/SQLite conservando Firebase Auth y Spark. El cliente sigue desactivado y no hay despliegue verificado. Confirmar Workers Free y ejecutar la aceptación real antes de cerrar P05 o continuar P06. Agentes Sol con razonamiento medio, bajo revisión de raíz. Consultar [P05-WORKER-SPARK.md](P05-WORKER-SPARK.md); lo anterior sobre Functions queda como antecedente del camino original.
+
 Estado del17/10/2026, America/Santiago. Decisión expresa de Iván: **«Mantener Spark sin facturación»** (A-028/D-315). No vincular facturación ni desplegar recursos que la requieran. Esta elección conserva el trabajo existente y no reduce los criterios de aceptación.
 
 ## Resultado de la auditoría real

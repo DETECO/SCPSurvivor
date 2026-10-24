@@ -1,5 +1,9 @@
 # ESTRUCTURA — corte consultado el23/10/2026
 
+> **Aprobación posterior de armas, 23/10/2026:** Iván responde «acepto todo.» al cierre **EST-ARM-001 r1**. Quedan aprobadas escala única 1–5 + MAX por copia, una fusión por expedición, F24 inicial y contrato/perfiles de ensayo. [Reglas vigentes](CIERRE_ARMAS_PROGRESION_FUSION_V1.md) y [LOT-EST-002 r1](gestion/lotes/LOT-EST-002-r1.md). La mención inferior a esas reglas como pendientes de aprobación describe el corte histórico. No se modifica su evidencia de implementación ni se afirma haber adaptado el código.
+
+> **Nota posterior de ESTRUCTURA, 23/10/2026:** Iván aprueba después de este corte **EST-GRI-001 r1**, dado sí/no 50/50 y horarios 1:00/2:00/3:00/4:00 desde el segundo mapa con máximo dos apariciones. [Ficha vigente 2.2](GRIETAS_DADO_POR_MINUTO_V2.md) y [control de revisión](gestion/CONTROL_CAMBIOS.md). La mención a esos parámetros como recomendados que sigue debajo describe el corte anterior, no un pendiente actual. El informe histórico conserva su alcance de implementación; esta nota no ejecuta el sistema nuevo.
+
 Hilo01a1457c-c051-73d2-9864-e7deb6435420. Lectura reciente hasta01a1685b-4787-7433-bc02-5a7896eb76f3; también se consultaron los documentos locales posteriores disponibles al preparar esta entrega. No se declara una exportación completa de la conversación. Los mensajes directos del propietario prevalecen sobre recomendaciones y cortes anteriores.
 
 ## Aceptado, pendiente de programación específica

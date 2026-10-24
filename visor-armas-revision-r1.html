@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inspección ARM-VIS-001/R1 · revisión r1</title>
+  <link rel="stylesheet" href="css/weapon-revision-r1-viewer.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">SCP Survivor · REV-EST-0006</p>
+      <h1>Inspección de anclajes ARM-VIS-001/R1</h1>
+      <p class="intro">Montaje técnico de los diez modelos aprobados con los PNG reales y los rigs Guardia/Médico existentes. Permite inspeccionar G, A y S en 16/32 px y ocho direcciones; no equipa armas en la partida ni valida por sí solo agarres o animaciones.</p>
+    </header>
+
+    <section class="controls" aria-label="Opciones del visor">
+      <fieldset>
+        <legend>Resolución de recurso</legend>
+        <label><input type="radio" name="size" value="16" checked> 16 × 16</label>
+        <label><input type="radio" name="size" value="32"> 32 × 32</label>
+      </fieldset>
+      <fieldset>
+        <legend>Vista técnica</legend>
+        <label><input type="radio" name="layout" value="catalog" checked> Modelo individual · ocho direcciones</label>
+        <label><input type="radio" name="layout" value="individual"> CC04 + TE01 por separado · dos actores</label>
+        <label><input type="radio" name="layout" value="pair"> Pareja simultánea · dos brazos, uno por copia</label>
+      </fieldset>
+      <label class="actor-picker" id="modelPicker">Modelo para inspección técnica (no es selector de partida)
+        <select id="weaponModel"></select>
+      </label>
+      <label class="actor-picker" id="catalogActorPicker">Actor para el modelo individual
+        <select id="catalogActor"><option value="guardia">Guardia</option><option value="medico">Médico</option></select>
+      </label>
+      <label class="actor-picker" id="pairActorPicker" hidden>Actor para la pareja simultánea
+        <select id="pairActor"><option value="guardia">Guardia</option><option value="medico">Médico</option></select>
+      </label>
+    </section>
+
+    <section class="status-card" aria-live="polite">
+      <strong id="statusTitle">Cargando referencias…</strong>
+      <span id="statusDetail">Las marcas muestran los anclajes estimados declarados por el catálogo.</span>
+    </section>
+
+    <section class="legend" aria-label="Leyenda de anclajes">
+      <span><i class="mark grip"></i> G · agarre principal</span>
+      <span><i class="mark support"></i> A · apoyo</span>
+      <span><i class="mark muzzle"></i> S · salida del ataque</span>
+      <span><i class="mark wrist"></i> mano/puño del rig</span>
+    </section>
+
+    <div id="mountGrid" class="mount-grid" aria-label="Inspección de ocho direcciones"></div>
+
+    <section class="limits">
+      <h2>Alcance y límites</h2>
+      <p>La vista individual inspecciona cada PNG del catálogo en un rig existente. Cuando hay anclaje A, el montaje conecta ambos brazos a G/A; si A no está declarado, sólo conecta el brazo de G. El selector de modelo sólo controla este visor técnico.</p>
+      <p>La vista CC04 + TE01 simultánea asigna un brazo existente a cada agarre G y deja visibles los apoyos A sin asignar. Esto permite revisar la colocación estática con dos brazos, pero no acredita que ambos apoyos sean prescindibles ni valida una pose de pareja. El gate de fusión permanece cerrado hasta contar con validación de agarre y animaciones compatibles.</p>
+    </section>
+    <footer id="loadStatus">Preparando imágenes locales…</footer>
+  </main>
+  <script>window.G = window.G || {};</script>
+  <script src="js/data/character-catalog.js"></script>
+  <script src="docs/referencias/armas/armas-prueba-direccionales-v1/catalogo.js"></script>
+  <script src="js/ui/weapon-revision-r1-viewer.js"></script>
+</body>
+</html>

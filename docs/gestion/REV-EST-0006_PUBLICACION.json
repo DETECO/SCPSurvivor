@@ -1,0 +1,439 @@
+{
+  "revision": "REV-EST-0006",
+  "roadmap": "0.34",
+  "status": "PREPUBLISH_CHECKED_PENDING_LIVE_VERIFICATION",
+  "preparedAtUtc": "2026-10-24T10:35:28.198024+00:00",
+  "authorizedBy": "Ivan: Subelo a github",
+  "previousCommit": "dd0078bbb7f8898eb972bbd1dbfebd0586505c33",
+  "runtimeCommit": null,
+  "publicUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=32",
+  "build": "107 scripts; npm build and build:check passed in publication copy",
+  "node": {
+    "tests": 298,
+    "suites": 0,
+    "pass": 292,
+    "fail": 5,
+    "cancelled": 0,
+    "skipped": 1,
+    "todo": 0
+  },
+  "nodeFailures": [
+    "not ok 96 - P05 real SQLite RPC: 20 concurrent identical commands have one effect and replay their receipt",
+    "not ok 97 - P05 real SQLite RPC: distinct commands at the same revision have exactly one winner",
+    "not ok 98 - P05 real SQLite RPC isolates account state and receipt IDs by UID",
+    "not ok 99 - P05 real SQLite RPC transfers a run and rejects writes from its former session",
+    "not ok 100 - P05 real SQLite state and original command receipts survive Miniflare restart"
+  ],
+  "localBrowser": {
+    "af01": 8,
+    "presentation": 1,
+    "pagesVirtualHttps": 2
+  },
+  "cspPreserved": true,
+  "servicesDeployed": false,
+  "resourceHashesPreserved": 88,
+  "criticalFiles": [
+    {
+      "path": "RoadmapSCP.json",
+      "sha256": "c21666fef84f091e27c12a401e023a632a7c648d3aeb570bb6a88a04bc35f89b"
+    },
+    {
+      "path": "assets/audio/menu/presencia-en-la-oscuridad-loop-60s-v1.wav",
+      "sha256": "9ce7902dd22fede902fac5f9b7ea78139076b1d9f50303588431ede5cbe86d24"
+    },
+    {
+      "path": "assets/personajes-20261022/16/Armas.png",
+      "sha256": "bad0142b9580bf99a4c476eb7f813416d90e40cd53d44f4f400507e6f441e893"
+    },
+    {
+      "path": "assets/personajes-20261022/16/apoyo/Attack.png",
+      "sha256": "e7bc2c7444fa5cbe5371edcf36e57260089937a6ac618ad0b915c7329131206b"
+    },
+    {
+      "path": "assets/personajes-20261022/16/apoyo/Hurt.png",
+      "sha256": "6d0e9619404533416eb8bf7145e7d1d0a86c5c1195d8961a386e28eed26258b5"
+    },
+    {
+      "path": "assets/personajes-20261022/16/apoyo/Idle.png",
+      "sha256": "0da1fd22357d2719f06329d4b20caf73af3b0f5151d44b67e934575ece33d630"
+    },
+    {
+      "path": "assets/personajes-20261022/16/apoyo/Neutralized.png",
+      "sha256": "7eeb15f12b0776b73fe9c3c56483ac4b515e743fc6789d1d1cb1a4e36b211c53"
+    },
+    {
+      "path": "assets/personajes-20261022/16/apoyo/Partes.png",
+      "sha256": "ca8902966520dae4b8bc84857c52262552478251594860b0dc92482d61e2a8fc"
+    },
+    {
+      "path": "assets/personajes-20261022/16/apoyo/Walk.png",
+      "sha256": "9a595b5c934496617b4f7f41a10654e396403bd2316c1e1da5ffe0038d5da052"
+    },
+    {
+      "path": "assets/personajes-20261022/16/biologico/Attack.png",
+      "sha256": "f28c3104c30f9623f96803999f2367f0bfda110fc96d92caabeb05ebfc3a0fcc"
+    },
+    {
+      "path": "assets/personajes-20261022/16/biologico/Hurt.png",
+      "sha256": "9517ee32f3a001832d3dc20f5475a40f29b745900979f49ad77f5c5240f2d6b9"
+    },
+    {
+      "path": "assets/personajes-20261022/16/biologico/Idle.png",
+      "sha256": "a7617467f9b34bde90976f77d22641fb574415bfabac935b2bef949aaf737fe9"
+    },
+    {
+      "path": "assets/personajes-20261022/16/biologico/Neutralized.png",
+      "sha256": "e0cacb0bf469587ae3839efd1abaecb973249182230d324b5c281ffb7cb159b1"
+    },
+    {
+      "path": "assets/personajes-20261022/16/biologico/Walk.png",
+      "sha256": "81c64b18dbaea14ebdac608eaa7acc5fcdfd28e7a61d09bb2b7262ddd958abf2"
+    },
+    {
+      "path": "assets/personajes-20261022/16/custodio/Attack.png",
+      "sha256": "b74f88921c55b1ef916da46f72de34eca44b2183207e8cad74942b7f09082892"
+    },
+    {
+      "path": "assets/personajes-20261022/16/custodio/Hurt.png",
+      "sha256": "928405255b107eedb6bb4b927d18ab5ad1fed23f8c26ca320858c8d748dbe6f4"
+    },
+    {
+      "path": "assets/personajes-20261022/16/custodio/Idle.png",
+      "sha256": "83e6d98ee33be1cfedbf7c65897efd962bdc4fd521eab845856393b256150319"
+    },
+    {
+      "path": "assets/personajes-20261022/16/custodio/Neutralized.png",
+      "sha256": "a3600b20646f0c6997bb96e148148ff1331a90ff535871a80b25eadda116294c"
+    },
+    {
+      "path": "assets/personajes-20261022/16/custodio/Walk.png",
+      "sha256": "ea3ec36a37c184906509d9601512fc77ec508fb6b1a1ccd7ba7ead3ce7c07a64"
+    },
+    {
+      "path": "assets/personajes-20261022/16/guardia/Attack.png",
+      "sha256": "1744ec6e263bcc01e43998be7839f3cf26baf8e4db35b68568e07bda51fa5348"
+    },
+    {
+      "path": "assets/personajes-20261022/16/guardia/Hurt.png",
+      "sha256": "db8caa7653f0564c1ff3a7118f4fef27f1aed25e3033c4e592060f0fceaf98fc"
+    },
+    {
+      "path": "assets/personajes-20261022/16/guardia/Idle.png",
+      "sha256": "94b7653add61b726d63eb31e95d5c2d7ee909c0b419d37142b905e58473c94ab"
+    },
+    {
+      "path": "assets/personajes-20261022/16/guardia/Neutralized.png",
+      "sha256": "f3664d8ccc4d32717fa7a3c2b5627c6e262c5437f6e4263b046cebdf4a5567ae"
+    },
+    {
+      "path": "assets/personajes-20261022/16/guardia/Partes.png",
+      "sha256": "01c0a06fb8fc698b611d24f56a86d4df2675422fd338a824298bb631a9b85ef2"
+    },
+    {
+      "path": "assets/personajes-20261022/16/guardia/Walk.png",
+      "sha256": "09aa7e3b8a136959d94cf43c0edd93975c59a57ad3b90a80819b4d66d5319bfa"
+    },
+    {
+      "path": "assets/personajes-20261022/16/medico/Attack.png",
+      "sha256": "321c8d339593365efb5eb256c802e5d84156026713c2ce31fd9aafa288515908"
+    },
+    {
+      "path": "assets/personajes-20261022/16/medico/Hurt.png",
+      "sha256": "2999c7115fd275f7446222a70d64ff00b60af934224f9fbb9e32d8b0dab87095"
+    },
+    {
+      "path": "assets/personajes-20261022/16/medico/Idle.png",
+      "sha256": "177fd9253d41d5b47cbdc08c9cdbdd7714344f459febd77aa021da6e406eba20"
+    },
+    {
+      "path": "assets/personajes-20261022/16/medico/Neutralized.png",
+      "sha256": "ba52109183b67c42a1d91ed470f2b1313ac8c7527b14d9658d29eda0f9f5b5f2"
+    },
+    {
+      "path": "assets/personajes-20261022/16/medico/Partes.png",
+      "sha256": "3b6bdf851a57fed59b1940be1cec398439a4143771e50cd77a76b366bc5de8ad"
+    },
+    {
+      "path": "assets/personajes-20261022/16/medico/Walk.png",
+      "sha256": "1e8c8c4c21e71d4f60c972c997ec526131fbbf7d006511a546c0e7948e02ef4e"
+    },
+    {
+      "path": "assets/personajes-20261022/16/perseguidor/Attack.png",
+      "sha256": "5f54dab3caac9cca8bef26b511348b608168770ae3f4c63d2db62df13d5f9aeb"
+    },
+    {
+      "path": "assets/personajes-20261022/16/perseguidor/Hurt.png",
+      "sha256": "210a067be620baf05f8cc913c3638d9a540880be413f0d7a55d9dbf87fbc1139"
+    },
+    {
+      "path": "assets/personajes-20261022/16/perseguidor/Idle.png",
+      "sha256": "75e4fe537c383a2fa8be63040093385b4a6197c4647a02dfcda2ab8f6b62e6ec"
+    },
+    {
+      "path": "assets/personajes-20261022/16/perseguidor/Neutralized.png",
+      "sha256": "3af896fb42ea23645e517b3ffe779993cc98142dfc26f63523b6b14230b4254b"
+    },
+    {
+      "path": "assets/personajes-20261022/16/perseguidor/Walk.png",
+      "sha256": "a6a81a98a4b11937631ac0fb192553414b5a483ee6bba8bf99aa5b849e646631"
+    },
+    {
+      "path": "assets/personajes-20261022/32/Armas.png",
+      "sha256": "b050a9e099603c2a7264190806a13ca9b9115d6cfc640551826980d710eca873"
+    },
+    {
+      "path": "assets/personajes-20261022/32/apoyo/Attack.png",
+      "sha256": "ee201aa206677b0e815ecec2481005c8fbef313a6386575b13136ffafe618c7e"
+    },
+    {
+      "path": "assets/personajes-20261022/32/apoyo/Hurt.png",
+      "sha256": "69a2082487a76b781b7c1e63b54563f88128bd7c982270c311f22cd383a384d5"
+    },
+    {
+      "path": "assets/personajes-20261022/32/apoyo/Idle.png",
+      "sha256": "20dc748b462eeb3f971b928f97b19c5c80ada1630d2f5bdfd6431b3c0a85d857"
+    },
+    {
+      "path": "assets/personajes-20261022/32/apoyo/Neutralized.png",
+      "sha256": "094c4747be1e519872566a8d330772e574c27094cad1f51da93aa8ddcef8e06c"
+    },
+    {
+      "path": "assets/personajes-20261022/32/apoyo/Partes.png",
+      "sha256": "ff37b3b6967a623697cb2072c8267d5ada771c7ed0654c3ac14d6889942e77c7"
+    },
+    {
+      "path": "assets/personajes-20261022/32/apoyo/Walk.png",
+      "sha256": "56dd241d75199073db5f2ddfb5db95b4df41e7f2c7abcf1835aa80cdf3fe6632"
+    },
+    {
+      "path": "assets/personajes-20261022/32/biologico/Attack.png",
+      "sha256": "b250913d7f74cf3b43d149a2c95b164b8f1e5c4b16ad9ee65ff3d37ecc384f89"
+    },
+    {
+      "path": "assets/personajes-20261022/32/biologico/Hurt.png",
+      "sha256": "a516053cd5dc81e9348d0931c41096febdb77b17c645a2c6b3ed3d716f0a378b"
+    },
+    {
+      "path": "assets/personajes-20261022/32/biologico/Idle.png",
+      "sha256": "3ed5a3ccdb52d6fdfd714df76e53a4c58c2a1630b2263e235b81ebd2e1c9ab8a"
+    },
+    {
+      "path": "assets/personajes-20261022/32/biologico/Neutralized.png",
+      "sha256": "afff38f343f2f1812446c8ac2e6ef27a8b88753d04069572cddb42e8a92e7ec1"
+    },
+    {
+      "path": "assets/personajes-20261022/32/biologico/Walk.png",
+      "sha256": "f272708cf9dd167a3d14d857c4489134ff7bc03a84b579c478b59b4e009d4f29"
+    },
+    {
+      "path": "assets/personajes-20261022/32/custodio/Attack.png",
+      "sha256": "b1b57cf6c91e412d83cb05c0f96bc48070f1c52edc5b810f0bd01f224e86e048"
+    },
+    {
+      "path": "assets/personajes-20261022/32/custodio/Hurt.png",
+      "sha256": "9fe4d01a8a2f315eab92f7064302c02af037c391ae7e1385be8c079b379dec50"
+    },
+    {
+      "path": "assets/personajes-20261022/32/custodio/Idle.png",
+      "sha256": "407903b5dfc36e047a94c2044e467c44ae83b3f2ea41d4580a74955ca3e56ec8"
+    },
+    {
+      "path": "assets/personajes-20261022/32/custodio/Neutralized.png",
+      "sha256": "f988a242c6b55feae011d08674278e4a1a119728efae761ad92bec3a286c01ca"
+    },
+    {
+      "path": "assets/personajes-20261022/32/custodio/Walk.png",
+      "sha256": "a3ad85b8c03ecb0c159ecd7258ccd19f34114dcf0cb49b3cbecb037e7c78b302"
+    },
+    {
+      "path": "assets/personajes-20261022/32/guardia/Attack.png",
+      "sha256": "165baad79bf0a1d1724b660b3e0d5d7b8b145eafb35d9d8d4e14e4aedda20bcb"
+    },
+    {
+      "path": "assets/personajes-20261022/32/guardia/Hurt.png",
+      "sha256": "8015cf0d2d6f8f05bfa254008b74b3c2152c7dae2c732123af471d697a99777e"
+    },
+    {
+      "path": "assets/personajes-20261022/32/guardia/Idle.png",
+      "sha256": "b04aa6298a4687608d1ca0f94ba99a9dbb92ee34fbfd2c541d48fa1b0f0cc97c"
+    },
+    {
+      "path": "assets/personajes-20261022/32/guardia/Neutralized.png",
+      "sha256": "3af7f0f5d5413cf17a94894ecde498c09a95ee02d9d87864d4a65d74a30a26ff"
+    },
+    {
+      "path": "assets/personajes-20261022/32/guardia/Partes.png",
+      "sha256": "ea09bda14926d83e9f60fbf52014a47e57ddd4a9b570aa1f03755a97f999865c"
+    },
+    {
+      "path": "assets/personajes-20261022/32/guardia/Walk.png",
+      "sha256": "8a4d66f457c10b5288ac390109b5ab4a1b73e901c6ff9751d10d1c32332b1b3f"
+    },
+    {
+      "path": "assets/personajes-20261022/32/medico/Attack.png",
+      "sha256": "82afb8c90c7a9d271d75674aed02af173c887ddfca91027fe52cbc8e2909d1ec"
+    },
+    {
+      "path": "assets/personajes-20261022/32/medico/Hurt.png",
+      "sha256": "10445e43f2ac268e1d9a6908297813baa402fa621c7f3fcc2690e2b1508d1bae"
+    },
+    {
+      "path": "assets/personajes-20261022/32/medico/Idle.png",
+      "sha256": "ff2b29c34bf0b81bd8a5a32d48b15517869f72576db0178d3df22fd8d00aee8a"
+    },
+    {
+      "path": "assets/personajes-20261022/32/medico/Neutralized.png",
+      "sha256": "70eb0d5d79fdad256a4758b8bf872eaf6c48ae7e10c4144523502c4f3e74ddfd"
+    },
+    {
+      "path": "assets/personajes-20261022/32/medico/Partes.png",
+      "sha256": "58ee9287ce481269b2466288e2c73e80936ae63384991cdf58162b6f4a2efd82"
+    },
+    {
+      "path": "assets/personajes-20261022/32/medico/Walk.png",
+      "sha256": "001e214d0b01172ea6ba4415d53159e7c4b1f2f4cdcc8d1236d3b276089da9d9"
+    },
+    {
+      "path": "assets/personajes-20261022/32/perseguidor/Attack.png",
+      "sha256": "5f812ce557a2bde5292d7ffefe41e267a386142a4efa0971b10cfc831333ae0a"
+    },
+    {
+      "path": "assets/personajes-20261022/32/perseguidor/Hurt.png",
+      "sha256": "cdeace28d469df67976b407dfa9c42d192a9c3047712a7eb7f312c1d5c2f1c71"
+    },
+    {
+      "path": "assets/personajes-20261022/32/perseguidor/Idle.png",
+      "sha256": "6590914752bd49f7c5f812fc1963115a98e56b93425ef304ae93df3e23c793fa"
+    },
+    {
+      "path": "assets/personajes-20261022/32/perseguidor/Neutralized.png",
+      "sha256": "baec4ab6857fbb76acfecccc263b1521b72e260479580dc336c6f2f6e9407c65"
+    },
+    {
+      "path": "assets/personajes-20261022/32/perseguidor/Walk.png",
+      "sha256": "c293cb301e1ebf7c35af0e02b27fe4a6572c773a53af26a4ab017c9905eb1367"
+    },
+    {
+      "path": "assets/personajes-20261022/COMPARACION.png",
+      "sha256": "ed533e18e70ea9e7456abc76554546af2aa0b747fce02353bf4a555d712217ac"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/E.png",
+      "sha256": "d8661854bef3c376c6b5a375247a16a8db5c7a06998a8717a613cbc531a7da7c"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/N.png",
+      "sha256": "d39a7a51ec9efc0b27ed0bd2c6ac9085325ecf81c1518f025bee6ba5af9ee1fe"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/NE.png",
+      "sha256": "5d9ea559fedec4ad87c58a0ef72be0c82c31e747bb6fcb57d45820bebfa19eb3"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/NW.png",
+      "sha256": "45cdd1d485e48c7383ecd93b6a9aa64e5bdd90a4888995a2c325fca47d395eb0"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/S.png",
+      "sha256": "39bb5b268cb795c0a283b9462123fb1ec2eed4ae0d5370e0ac7540119edeb072"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/SE.png",
+      "sha256": "57c522f149bd0aa37b68ee1b5bfa6260f649a75dc7c19a80193f6bc03e347b9a"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/SW.png",
+      "sha256": "cca42bd228fec67adea498ce90078512c067c99ccccf668c151828db980611c9"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/W.png",
+      "sha256": "d1e5f33c79a4e6af26107700e9f6813bac27d334e70bafa8d9aaef6240d20d2e"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/16/AF01/direcciones.png",
+      "sha256": "505336621832a6cd31581eaf59bd363a4b0006a63912007809c3b17f99d45de4"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/E.png",
+      "sha256": "86fd9187a72d2cddae5b33062dc69c8f5cafd257c7ade64295418fbd37b382fb"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/N.png",
+      "sha256": "e44be23c6c94b799c13e0b47e2ecfb0646fb86c0d10de13e384233125b3cf5ee"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/NE.png",
+      "sha256": "067f0cdb92904359a2d6a53e27a7dc6175734675414332d5c9f19c950ba2f2ad"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/NW.png",
+      "sha256": "2baff41a46b244722ab76400978751427a0ab264888f8fe228730c1b0342a385"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/S.png",
+      "sha256": "585cdd7a1ee2c4828bb1dd622e63ed6364059a230009b443f7ef1514f5fca34c"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/SE.png",
+      "sha256": "032fd3acf7b8a4c8fdd78fa5ac0b1af0d995ab6224ad94d38658d426b21a254c"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/SW.png",
+      "sha256": "1093a5677250623b810ca84b567632ae80372fe79858c14d3e9f95872e439e40"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/W.png",
+      "sha256": "575575c79adcc04d4c33bea5ae41bc548d906b8d095ea58c7165311074b31cd8"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/32/AF01/direcciones.png",
+      "sha256": "6c774468031c522e618e97ebdca9d7abe9ede428ae072effa6899142dd0ff975"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/catalogo.js",
+      "sha256": "ba8e941b71e872f65a8a13feb2f23c5a4aacc0c7da71ff431328f44ad20400cf"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/catalogo.json",
+      "sha256": "a53c49b946f72d8d05226fc24a655433df1a8b5af13e3dd136603278f031f401"
+    },
+    {
+      "path": "index.html",
+      "sha256": "28375b5ead19410895cca9c87329c02b7341122001263e8a0b6b7c115f17fd2d"
+    },
+    {
+      "path": "js/app.min.js",
+      "sha256": "7bf176a2fec04ea9e5c28676c40f6109ad51d24be1808f7b154c952334311358"
+    },
+    {
+      "path": "js/core/audio.js",
+      "sha256": "8b84c8b6760a8dc18b2c6a325e2cd956552d182f4cba886ab317abafe0bfe7ca"
+    },
+    {
+      "path": "js/ui/af01-approved-art.js",
+      "sha256": "fe0a79264083e10394102553a457236e00305f5f3f393cc239f5490801590b6b"
+    },
+    {
+      "path": "js/ui/personajes-art.js",
+      "sha256": "0c3869a5a4901de88d05da7b12048bc45992c3d3155c1c6ceab7c71e130a2051"
+    },
+    {
+      "path": "js/ui/rift-visuals.js",
+      "sha256": "e6734bf655467595a8e6433069b4e19e7d2d8aaf9ef1475429ada28ac9bce02e"
+    },
+    {
+      "path": "js/world/scene-m01-a.js",
+      "sha256": "0656c04b05f5380369e7a735f900b315d70316feb2e6f095f7320d8fc005c5d1"
+    },
+    {
+      "path": "visor-armas-revision-r1.html",
+      "sha256": "7c154041cdd4c02fd48c31fef169f74a1d7dc9f33c90e2d609571bffa14fef1f"
+    }
+  ],
+  "limitations": [
+    "CC04/TE01/F24 runtime, compatible paired poses and fusion room/interface pending",
+    "Manual/physical-device acceptance pending",
+    "Five P05 SQLite runtime failures: installed workerd date limit; one emulator test skipped"
+  ],
+  "backendSourceOnly": "Existing worker/functions code and declared dependencies included for repository coherence; no deploy or billing action."
+}

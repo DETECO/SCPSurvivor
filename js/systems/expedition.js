@@ -34,8 +34,8 @@ G.Expedition = (() => {
     extractionAvailable=false;
     if(!v2()&&kind==='normal'&&sector>=3){extractionAvailable=rng()<.25||drought>=3;drought=extractionAvailable?0:drought+1;}
     mapSeed=Math.imul(runSeed^sector,0x45d9f3b)>>>0;spawnRng=random(mapSeed);
-    geometry=v2()&&sector===1&&(G.MapTrial.expanded||G.MapTrial.rewardRiftPractice)&&G.SceneR7 ? G.SceneR7.generate(mapSeed) : v2()&&G.SectorMaps.generateV2?G.SectorMaps.generateV2(mapSeed):G.SectorMaps.generate(mapSeed,{boss:kind==='boss'});
-    G.World.reset(mapSeed);G.World.setFixture(geometry.fixture);G.World.setBiome(1,true);G.Path.clear();G.Pickups.clear();G.EnemyMgr.clear();G.Projectiles.clear();
+    geometry=v2()&&sector===1&&(G.MapTrial.expanded||G.MapTrial.rewardRiftPractice)&&G.SceneR7 ? (G.SceneM01A?G.SceneM01A.generate(mapSeed):G.SceneR7.generate(mapSeed)) : v2()&&G.SectorMaps.generateV2?G.SectorMaps.generateV2(mapSeed):G.SectorMaps.generate(mapSeed,{boss:kind==='boss'});
+    G.World.reset(mapSeed);G.World.setFixture(geometry.fixture);G.Camera.setSceneView?.(geometry.fixture.sceneRevision||null);G.World.setBiome(1,true);G.Path.clear();G.Pickups.clear();G.EnemyMgr.clear();G.Projectiles.clear();
     pl.x=geometry.entry.x;pl.y=geometry.entry.y;exit.x=geometry.exit.x;exit.y=geometry.exit.y;
     G.Camera.x=pl.x;G.Camera.y=pl.y;G.Path.update(1,[pl]);G.Touch.reset();G.Input.reset();objectives=[];boss=null;
     if(v2()){
@@ -370,9 +370,9 @@ G.Expedition = (() => {
       else if((interaction-=dt)<=0){if(phase==='extracting')finish('extracted');else if(dimensional)closeDimensional('evaded');else{totals.bossesEvaded++;totals.sectorsCompleted++;nextBossSector=sector+4+Math.floor(rng()*3);advance();}}
     }
   }
-  function draw(ctx){
-    if(v2()){G.ExplorationChests?.draw(ctx);if(G.MapTrial.expanded)G.WeaponTerminal?.draw(ctx);if(G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.draw(ctx);G.MapTrial.draw?.(ctx,snapshot());return;}
-    G.DimensionalRifts?.draw(ctx);
+  function draw(ctx, {riftLayer = 'all'} = {}){
+    if(v2()){G.ExplorationChests?.draw(ctx);if(G.MapTrial.expanded)G.WeaponTerminal?.draw(ctx);if(G.MapTrial.rewardRiftPractice)G.DimensionalRifts?.draw(ctx,riftLayer);G.MapTrial.draw?.(ctx,snapshot());return;}
+    G.DimensionalRifts?.draw(ctx,riftLayer);
     if(!['exploration','extracting','boss','escaping'].includes(phase))return;
     ctx.save();ctx.fillStyle='#5ac6a233';ctx.strokeStyle='#99ffd6';ctx.lineWidth=3;ctx.beginPath();ctx.arc(exit.x,exit.y,42,0,Math.PI*2);ctx.fill();ctx.stroke();
     ctx.fillStyle='#bdffe0';ctx.font='bold 14px system-ui';ctx.textAlign='center';ctx.fillText(kind==='boss'||dimensional?'HUIR':'SALIDA',exit.x,exit.y-52);ctx.restore();

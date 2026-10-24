@@ -1,0 +1,366 @@
+{
+  "status": "referencia de diseño; no mecánicas ejecutadas por este paquete",
+  "tiers": {
+    "Normal": {
+      "color": "#B8C0CC",
+      "nombre": "gris plata",
+      "simbolo": "círculo",
+      "acento": "brillo marfil breve"
+    },
+    "Raro": {
+      "color": "#60A5FA",
+      "nombre": "azul",
+      "simbolo": "rombo",
+      "acento": "muesca azul breve"
+    },
+    "Épico": {
+      "color": "#C084FC",
+      "nombre": "violeta",
+      "simbolo": "doble rombo",
+      "acento": "dos muescas violetas breves"
+    },
+    "Legendario": {
+      "color": "#F4C76B",
+      "nombre": "dorado",
+      "simbolo": "estrella",
+      "acento": "remate dorado breve"
+    }
+  },
+  "progression": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "MAX"
+  ],
+  "levelsVisual": {
+    "1": "Forma y matiz base, sin aura ni partículas extra.",
+    "2": "Borde central más definido; conserva exactamente el número de impactos.",
+    "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+    "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+    "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+    "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+  },
+  "models": [
+    {
+      "id": "AF01",
+      "nombre": "Pistola de servicio",
+      "tier": "Normal",
+      "familia": "Balística",
+      "silueta": "Corredera rectangular corta, empuñadura oscura y punto claro en la boca; se reconoce por su perfil compacto.",
+      "ataque": "Disparo semiautomático directo al objetivo cercano válido, con cargador y recarga propios; cada bala alcanza un solo blanco.",
+      "extra_max": "El primer disparo después de recargar añade un segundo tiro al mismo blanco, separado 0,12 s y con el 40 % del daño base; ocurre una vez por cargador.",
+      "categoria": "Armas de fuego",
+      "recetas": [
+        "F01",
+        "F46"
+      ],
+      "visual_ataque": {
+        "forma": "bala corta",
+        "matiz_principal": "champán",
+        "color_principal": "#EBC67A",
+        "acento_tier": "#B8C0CC",
+        "marca_tier": "círculo",
+        "descripcion": "bala corta; matiz principal champán; brillo marfil breve en salida o impacto",
+        "niveles": {
+          "1": "Forma y matiz base, sin aura ni partículas extra.",
+          "2": "Borde central más definido; conserva exactamente el número de impactos.",
+          "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+          "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+          "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+          "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+        },
+        "extra_condicional": "El primer disparo después de recargar añade un segundo tiro al mismo blanco, separado 0,12 s y con el 40 % del daño base; ocurre una vez por cargador.",
+        "luz_continua": false,
+        "colores_maximos_simultaneos": 3
+      }
+    },
+    {
+      "id": "AR01",
+      "nombre": "Granada de fragmentación",
+      "tier": "Normal",
+      "familia": "Explosivos",
+      "silueta": "Óvalo verde segmentado, palanca plateada y banda blanca en la parte superior.",
+      "ataque": "Se arroja hacia una concentración cercana y explota después de 0,8 s, con radio de 1,6 cuerpos y hasta cinco blancos; puede haber dos granadas en vuelo.",
+      "extra_max": "La explosión libera cuatro fragmentos radiales de corto recorrido; cada enemigo recibe como máximo uno y los fragmentos no producen otras explosiones.",
+      "categoria": "Armas arrojadizas",
+      "recetas": [
+        "F32",
+        "F47"
+      ],
+      "visual_ataque": {
+        "forma": "cápsula en arco y explosión radial",
+        "matiz_principal": "champán",
+        "color_principal": "#EBC67A",
+        "acento_tier": "#B8C0CC",
+        "marca_tier": "círculo",
+        "descripcion": "cápsula en arco y explosión radial; matiz principal champán; brillo marfil breve en salida o impacto",
+        "niveles": {
+          "1": "Forma y matiz base, sin aura ni partículas extra.",
+          "2": "Borde central más definido; conserva exactamente el número de impactos.",
+          "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+          "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+          "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+          "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+        },
+        "extra_condicional": "La explosión libera cuatro fragmentos radiales de corto recorrido; cada enemigo recibe como máximo uno y los fragmentos no producen otras explosiones.",
+        "luz_continua": false,
+        "colores_maximos_simultaneos": 3
+      }
+    },
+    {
+      "id": "CC04",
+      "nombre": "Katana de contención",
+      "tier": "Raro",
+      "familia": "Melee",
+      "silueta": "Hoja larga de curvatura suave, guarda rectangular blanca y mango de dos tramos oscuros.",
+      "ataque": "Alterna cortes diagonales de 140 grados contra hasta cuatro enemigos; el alcance largo sigue siendo cuerpo a cuerpo y respeta obstáculos.",
+      "extra_max": "Cada cuarto corte se convierte en un barrido frontal de 180 grados que alcanza hasta cinco blancos; no dispara ondas ni mueve al soldado.",
+      "categoria": "Armas cuerpo a cuerpo",
+      "recetas": [
+        "F24",
+        "F52"
+      ],
+      "visual_ataque": {
+        "forma": "corte fino de katana",
+        "matiz_principal": "marfil",
+        "color_principal": "#DCE7F0",
+        "acento_tier": "#60A5FA",
+        "marca_tier": "rombo",
+        "descripcion": "corte fino de katana; matiz principal marfil; muesca azul breve en salida o impacto",
+        "niveles": {
+          "1": "Forma y matiz base, sin aura ni partículas extra.",
+          "2": "Borde central más definido; conserva exactamente el número de impactos.",
+          "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+          "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+          "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+          "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+        },
+        "extra_condicional": "Cada cuarto corte se convierte en un barrido frontal de 180 grados que alcanza hasta cinco blancos; no dispara ondas ni mueve al soldado.",
+        "luz_continua": false,
+        "colores_maximos_simultaneos": 3
+      }
+    },
+    {
+      "id": "IN03",
+      "nombre": "Lanzallamas de contención",
+      "tier": "Normal",
+      "familia": "Energía",
+      "silueta": "Proyector de dos mangos, boquilla ancha y depósito lateral naranja; una manguera corta queda recogida contra el cuerpo.",
+      "ataque": "Emite un cono de fuego durante 1 s y después enfría; alcanza hasta cuatro blancos y un enemigo recibe como máximo un pulso cada 0,25 s.",
+      "extra_max": "La primera emisión tras enfriar ensancha el cono 15 grados durante 0,5 s; no añade blancos al cupo ni elimina la pausa térmica.",
+      "categoria": "Armas incendiarias",
+      "recetas": [
+        "F31",
+        "F55"
+      ],
+      "visual_ataque": {
+        "forma": "cono térmico de pulsos agrupados",
+        "matiz_principal": "naranja",
+        "color_principal": "#F28C45",
+        "acento_tier": "#B8C0CC",
+        "marca_tier": "círculo",
+        "descripcion": "cono térmico de pulsos agrupados; matiz principal naranja; brillo marfil breve en salida o impacto",
+        "niveles": {
+          "1": "Forma y matiz base, sin aura ni partículas extra.",
+          "2": "Borde central más definido; conserva exactamente el número de impactos.",
+          "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+          "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+          "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+          "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+        },
+        "extra_condicional": "La primera emisión tras enfriar ensancha el cono 15 grados durante 0,5 s; no añade blancos al cupo ni elimina la pausa térmica.",
+        "luz_continua": false,
+        "colores_maximos_simultaneos": 3
+      }
+    },
+    {
+      "id": "FR07",
+      "nombre": "Rifle Tres Eslabones",
+      "tier": "Épico",
+      "familia": "Balística",
+      "silueta": "Tres bandas claras espaciadas sobre un cañón fino y una culata con tres huecos circulares.",
+      "ataque": "Un tiro trazador atraviesa hasta tres blancos en línea; cada impacto pierde un 20 % respecto al anterior y no busca blancos fuera de su trayectoria.",
+      "extra_max": "Si alcanza a tres enemigos, el tercero sufre un 25 % de ralentización durante 1,2 s; el efecto termina en ese blanco y no genera un cuarto impacto.",
+      "categoria": "Francotiradores",
+      "recetas": [
+        "F17"
+      ],
+      "visual_ataque": {
+        "forma": "trazador lineal de tres contactos",
+        "matiz_principal": "azul acero",
+        "color_principal": "#90B7D4",
+        "acento_tier": "#C084FC",
+        "marca_tier": "doble rombo",
+        "descripcion": "trazador lineal de tres contactos; matiz principal azul acero; dos muescas violetas breves en salida o impacto",
+        "niveles": {
+          "1": "Forma y matiz base, sin aura ni partículas extra.",
+          "2": "Borde central más definido; conserva exactamente el número de impactos.",
+          "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+          "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+          "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+          "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+        },
+        "extra_condicional": "Si alcanza a tres enemigos, el tercero sufre un 25 % de ralentización durante 1,2 s; el efecto termina en ese blanco y no genera un cuarto impacto.",
+        "luz_continua": false,
+        "colores_maximos_simultaneos": 3
+      }
+    },
+    {
+      "id": "PE04",
+      "nombre": "Lanzamisiles de contención",
+      "tier": "Raro",
+      "familia": "Explosivos",
+      "silueta": "Tubo verde grisáceo con boca hexagonal, apoyo de hombro y pequeña abrazadera ámbar.",
+      "ataque": "Un misil de recorrido recto explota al contacto; necesita una recarga larga después de cada lanzamiento.",
+      "extra_max": "Al impactar libera dos fragmentos laterales de recorrido corto; cada fragmento termina en su primer impacto y no explota.",
+      "categoria": "Armas pesadas",
+      "recetas": [
+        "F33",
+        "F60"
+      ],
+      "visual_ataque": {
+        "forma": "misil opaco con escape corto",
+        "matiz_principal": "naranja",
+        "color_principal": "#F28C45",
+        "acento_tier": "#60A5FA",
+        "marca_tier": "rombo",
+        "descripcion": "misil opaco con escape corto; matiz principal naranja; muesca azul breve en salida o impacto",
+        "niveles": {
+          "1": "Forma y matiz base, sin aura ni partículas extra.",
+          "2": "Borde central más definido; conserva exactamente el número de impactos.",
+          "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+          "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+          "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+          "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+        },
+        "extra_condicional": "Al impactar libera dos fragmentos laterales de recorrido corto; cada fragmento termina en su primer impacto y no explota.",
+        "luz_continua": false,
+        "colores_maximos_simultaneos": 3
+      }
+    },
+    {
+      "id": "RU04",
+      "nombre": "Ballesta de recuperación",
+      "tier": "Raro",
+      "familia": "Arrojadizas",
+      "silueta": "Arco corto de acero sobre una guía recta, cuerda clara y culata de material recuperado.",
+      "ataque": "Virote recto y lento con daño concentrado; la recarga de cuerda tiene una preparación legible.",
+      "extra_max": "El virote atraviesa un primer cuerpo y alcanza a un segundo; se detiene después y no vuelve al usuario.",
+      "categoria": "Armas rústicas",
+      "recetas": [
+        "F12"
+      ],
+      "visual_ataque": {
+        "forma": "virote con asta y punta",
+        "matiz_principal": "arena",
+        "color_principal": "#C3AA7B",
+        "acento_tier": "#60A5FA",
+        "marca_tier": "rombo",
+        "descripcion": "virote con asta y punta; matiz principal arena; muesca azul breve en salida o impacto",
+        "niveles": {
+          "1": "Forma y matiz base, sin aura ni partículas extra.",
+          "2": "Borde central más definido; conserva exactamente el número de impactos.",
+          "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+          "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+          "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+          "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+        },
+        "extra_condicional": "El virote atraviesa un primer cuerpo y alcanza a un segundo; se detiene después y no vuelve al usuario.",
+        "luz_continua": false,
+        "colores_maximos_simultaneos": 3
+      }
+    },
+    {
+      "id": "TE01",
+      "nombre": "Emisor láser",
+      "tier": "Normal",
+      "familia": "Energía",
+      "silueta": "Pistola técnica rectangular, celda inferior y lente cian pequeña; boca definida para el origen del haz.",
+      "ataque": "Haz breve y recto que golpea al primer enemigo alineado; una pausa visible separa las emisiones.",
+      "extra_max": "Cada cuarta emisión atraviesa al primer enemigo y puede golpear a un segundo; termina en ese segundo contacto.",
+      "categoria": "Armas tecnológicas",
+      "recetas": [
+        "F24"
+      ],
+      "visual_ataque": {
+        "forma": "pulso láser fino",
+        "matiz_principal": "cian",
+        "color_principal": "#6AD3DF",
+        "acento_tier": "#B8C0CC",
+        "marca_tier": "círculo",
+        "descripcion": "pulso láser fino; matiz principal cian; brillo marfil breve en salida o impacto",
+        "niveles": {
+          "1": "Forma y matiz base, sin aura ni partículas extra.",
+          "2": "Borde central más definido; conserva exactamente el número de impactos.",
+          "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+          "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+          "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+          "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+        },
+        "extra_condicional": "Cada cuarta emisión atraviesa al primer enemigo y puede golpear a un segundo; termina en ese segundo contacto.",
+        "luz_continua": false,
+        "colores_maximos_simultaneos": 3
+      }
+    },
+    {
+      "id": "AN09",
+      "nombre": "Reloj prestado",
+      "tier": "Legendario",
+      "familia": "Energía",
+      "silueta": "Reloj de esfera blanca sin números dentro de una jaula cuadrada, con correa usada como agarre; objeto original del juego.",
+      "ataque": "Alterna un pulso corto y uno largo en una línea frontal; cada pulso alcanza hasta dos enemigos y conserva sus tiempos normales de combate.",
+      "extra_max": "Cada cuatro pulsos aparece un eco a los 0,5 s en la última posición alcanzada; un impacto por enemigo dentro de radio pequeño, sin rebobinar ni detener el tiempo.",
+      "categoria": "Armas anómalas",
+      "recetas": [
+        "F20"
+      ],
+      "visual_ataque": {
+        "forma": "pulso corto y largo alternados",
+        "matiz_principal": "lila",
+        "color_principal": "#B79AE8",
+        "acento_tier": "#F4C76B",
+        "marca_tier": "estrella",
+        "descripcion": "pulso corto y largo alternados; matiz principal lila; remate dorado breve en salida o impacto",
+        "niveles": {
+          "1": "Forma y matiz base, sin aura ni partículas extra.",
+          "2": "Borde central más definido; conserva exactamente el número de impactos.",
+          "3": "Una muesca breve en la salida; el ritmo visible sigue la cadencia real.",
+          "4": "Estela legible hasta el alcance real mejorado, sin dibujar daño fuera de él.",
+          "5": "Remate de impacto más definido, sin agrandar la zona de colisión.",
+          "MAX": "Marca geométrica breve; el efecto final especial solo aparece cuando su condición mecánica se cumple."
+        },
+        "extra_condicional": "Cada cuatro pulsos aparece un eco a los 0,5 s en la última posición alcanzada; un impacto por enemigo dentro de radio pequeño, sin rebobinar ni detener el tiempo.",
+        "luz_continua": false,
+        "colores_maximos_simultaneos": 3
+      }
+    }
+  ],
+  "fusion": [
+    {
+      "id": "F24",
+      "a": "CC04",
+      "b": "TE01",
+      "nombre": "Hoja fotónica de contención",
+      "tier": "Raro",
+      "efecto": "La katana proyecta una hoja luminosa corta tras su corte físico",
+      "limite": "Una proyección al 40% del presupuesto y máximo dos objetivos; no acumula los dos extras originales",
+      "visual_fusion": {
+        "nucleo": "CC04",
+        "donante": "TE01",
+        "forma_compuesta": "La katana proyecta una hoja luminosa corta tras su corte físico",
+        "color_principal": "#DCE7F0",
+        "matiz_principal": "marfil",
+        "color_secundario": "#6AD3DF",
+        "matiz_secundario": "cian",
+        "acento_tier": "#60A5FA",
+        "predominio_visual": "70% núcleo / 30% detalle donante; no es reparto de daño",
+        "marca": "dos segmentos enlazados, solo al cerrar el ciclo",
+        "colores_maximos_simultaneos": 3,
+        "mismo_color": "distinguir fases con forma o muescas; no inventar un cuarto tono",
+        "nivel": "FINAL; sin nueva escalera de niveles"
+      }
+    }
+  ]
+}
