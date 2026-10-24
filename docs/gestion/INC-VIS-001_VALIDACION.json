@@ -47,5 +47,18 @@
     }
   ],
   "resourcesUnchanged": 284,
-  "sourceChangeDisposition": "Se detectaron y revisaron dos actualizaciones concurrentes: INC-VIS-001 r1 incorpora la reproduccion publica independiente y la consulta a ARMAS; PAUTA_ARMAS R2.1 agrega ARM-SMG-REC-001 r1, carencia de sprite aprobado para smg y su minimo de recurso por producir/aceptar. No cambian combate, reglas o recursos implementados. Se integra esa evidencia documental sin sustituir silenciosamente las revisiones r1 de origen; diff y hashes conservados en migration-audit/inc-vis-001."
+  "sourceChangeDisposition": "Se detectaron y revisaron dos actualizaciones concurrentes: INC-VIS-001 r1 incorpora la reproduccion publica independiente y la consulta a ARMAS; PAUTA_ARMAS R2.1 agrega ARM-SMG-REC-001 r1, carencia de sprite aprobado para smg y su minimo de recurso por producir/aceptar. No cambian combate, reglas o recursos implementados. Se integra esa evidencia documental sin sustituir silenciosamente las revisiones r1 de origen; diff y hashes conservados en migration-audit/inc-vis-001.",
+  "publicVerification": {
+    "incidenceScenarios": 16,
+    "startPauseScenarios": 2,
+    "criticalFilesMatched": 39,
+    "javascriptErrors": 0,
+    "unexpectedHttpFailures": 0,
+    "intentionalMissingAssetCases": 2,
+    "slowAssetCase": 1,
+    "physicalPhone": false,
+    "method": "Actual game canvas/loop and HUD, QA enemy placements/slow time/render-only actor and weapon poses. Combat tick disabled only during visual poses; no natural wins, art approval or balance claim."
+  },
+  "runtimeCommit": "3f533c36648e74b76b2f155f90e90c6b0d8a4e0f",
+  "publicationBundle": "e9bedd0dc6"
 }

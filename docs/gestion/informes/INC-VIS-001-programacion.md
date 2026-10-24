@@ -1,6 +1,6 @@
 # INC-VIS-001 r1 — informe de PROGRAMACION
 
-24/10/2026 · CONTROL_CAMBIOS 0.7 · estado: **corrección aplicada y verificada localmente; parcial por dependencia de recursos, publicación en comprobación**.
+24/10/2026 · CONTROL_CAMBIOS 0.7 · estado: **publicada y verificada; parcial por dependencia de recursos**.
 
 La revisión de origen REV-EST-0006 y los lotes r1 se conservan. La incidencia autoriza restablecer la presentación encargada; no amplía armas funcionales, progresión, servicios o economía. El recibo público b06d70b corresponde al estado anterior.
 
@@ -40,3 +40,11 @@ CC04/TE01/F24 jugables, pose/animaciones compatibles y sala de fusión siguen fu
 ### Fuentes concurrentes evaluadas
 
 Se detectaron y revisaron dos actualizaciones concurrentes: INC-VIS-001 r1 incorpora la reproduccion publica independiente y la consulta a ARMAS; PAUTA_ARMAS R2.1 agrega ARM-SMG-REC-001 r1, carencia de sprite aprobado para smg y su minimo de recurso por producir/aceptar. No cambian combate, reglas o recursos implementados. Se integra esa evidencia documental sin sustituir silenciosamente las revisiones r1 de origen; diff y hashes conservados en migration-audit/inc-vis-001. [Ficha ARMAS](../../referencias/armas/inc-vis-001/ARM-SMG-REC-001-r1.md).
+
+## Publicación verificada — 24/10/2026
+
+Commit de código `3f533c36648e74b76b2f155f90e90c6b0d8a4e0f` en main; Pages confirma built. Bundle público `e9bedd0dc6`. **16/16** escenarios públicos: entrada habitual y AF01, tres formatos,16/32, ambos actores/una-dos copias/ocho direcciones; B3; PNG/piezas fallidos deliberadamente y carga demorada. **2/2** inicio/pausa con cuentas desactivadas y sin ajustes de poses. **39/39** archivos coinciden con SHA256 del payload publicado; cero errores JavaScript o fallos HTTP inesperados. Los404 deliberados se conservan identificados en los resultados.
+
+[Demo habitual](https://deteco.github.io/SCPSurvivor/?graficos=32&revision=inc-vis-001-r1) · [AF01 r1](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=32&revision=inc-vis-001-r1) · [Captura pública](../evidencias/inc-vis-001/publica-normal.png). El commit posterior del recibo/roadmap modifica documentos, sin nuevo cambio de juego. No se desplegaron servicios ni facturación.
+
+**INC-VIS-001 sigue parcial:** ARM-SMG-REC-001 r1 confirma la carencia del recurso aprobado smg; ese dibujo no se declara terminado. La corrección técnica y su publicación no sustituyen aprobación de recursos/poses ni validación en un iPhone físico.

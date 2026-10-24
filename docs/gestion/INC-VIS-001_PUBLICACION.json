@@ -1,9 +1,9 @@
 {
   "incidence": "INC-VIS-001 r1",
-  "status": "PREPARED_PENDING_PUBLIC_VERIFICATION",
+  "status": "PUBLISHED_VERIFIED_PARTIAL_RESOURCE_DEPENDENCY",
   "roadmap": "0.35",
   "previousCommit": "b06d70b51fecb1099b01c2b845822552aad0bfb2",
-  "runtimeCommit": null,
+  "runtimeCommit": "3f533c36648e74b76b2f155f90e90c6b0d8a4e0f",
   "publicUrl": "https://deteco.github.io/SCPSurvivor/?graficos=32&revision=inc-vis-001-r1",
   "servicesDeployed": false,
   "limitations": [
@@ -171,5 +171,24 @@
     }
   ],
   "publicationBundle": "e9bedd0dc6",
-  "resourceDependency": "docs/referencias/armas/inc-vis-001/ARM-SMG-REC-001-r1.md"
+  "resourceDependency": "docs/referencias/armas/inc-vis-001/ARM-SMG-REC-001-r1.md",
+  "verifiedAtUtc": "2026-10-24T17:06:56.049050+00:00",
+  "pages": {
+    "status": "built",
+    "commit": "3f533c36648e74b76b2f155f90e90c6b0d8a4e0f",
+    "updatedAtUtc": "2026-10-24T17:02:47Z"
+  },
+  "liveVerification": {
+    "incidenceScenarios": 16,
+    "startPauseScenarios": 2,
+    "criticalFilesMatched": 39,
+    "javascriptErrors": 0,
+    "unexpectedHttpFailures": 0,
+    "intentionalMissingAssetCases": 2,
+    "slowAssetCase": 1,
+    "physicalPhone": false,
+    "method": "Actual game canvas/loop and HUD, QA enemy placements/slow time/render-only actor and weapon poses. Combat tick disabled only during visual poses; no natural wins, art approval or balance claim."
+  },
+  "hashScope": "Critical hashes refer to runtimeCommit payload. Subsequent documentation receipt/roadmap commit changes metadata only, verified separately.",
+  "receiptCommitReference": "git log -1 --format=%H -- docs/gestion/INC-VIS-001_PUBLICACION.json"
 }
