@@ -50,6 +50,10 @@ G.RiftExpedition=(()=>{
   if(portal?.status==='open'&&Math.hypot(player.x-portal.x,player.y-portal.y)<=22+player.r)return enter(player);
   return false;
  }
+ function checkContact(dt,mapTime,player){
+  if(!enabled()||room||portal?.status!=='open'||portal.remaining<=dt||Math.hypot(player.x-portal.x,player.y-portal.y)>22+player.r)return false;
+  return updateOrigin(dt,mapTime,player);
+ }
  function chooseReward(id,replaceId){if(!room||room.session.state.status!=='victory')return{accepted:false};const result=G.RiftPowers.choose(id,G.Game.player,{replaceId});if(result.accepted){room.session.claim();room.reward=null;}return result;}
  function rejectReward(){if(!room||!G.RiftPowers.reject())return false;room.session.claim();room.reward=null;return true;}
  function leave(player,outcome){
@@ -79,7 +83,7 @@ G.RiftExpedition=(()=>{
   G.RiftCompanion.update(dt,player,{boss:room.boss,roomTime:rs.time,escapeSoon:['warning','open'].includes(rs.escape)});
   const ally=G.RiftCompanion.state;if(ally&&!ally.incapacitated){
    const bio=room.boss,body={...ally,r:12};
-   if(bio.pattern==='jump'){if(bio.landedThisFrame&&G.RiftAnomalies.contains(bio.lastLanding,body))G.RiftCompanion.hurt(bio.dmg);}
+   if(bio.pattern==='jump'){if(bio.landedThisFrame&&bio.lastLanding.some(z=>G.RiftAnomalies.contains(z,body)))G.RiftCompanion.hurt(bio.dmg);}
    else if(bio.pattern==='dash'){if(bio.phase==='attack'&&Math.hypot(bio.x-ally.x,bio.y-ally.y)<=bio.r+12)G.RiftCompanion.hurt(bio.dmg);}
    else for(const z of bio.zones)if(bio.phase==='attack'&&bio.attackElapsed>=z.delay&&bio.attackElapsed<=z.delay+z.life&&G.RiftAnomalies.contains(z,body))G.RiftCompanion.hurt(bio.dmg);
    const projectiles=G.Projectiles.all();for(let i=projectiles.length-1;i>=0;i--){const p=projectiles[i];if(!p.friendly&&Math.hypot(p.x-ally.x,p.y-ally.y)<p.r+12){G.RiftCompanion.hurt(p.dmg);projectiles.splice(i,1);}}
@@ -119,5 +123,5 @@ G.RiftExpedition=(()=>{
  }
  function clear(){if(room){G.EnemyMgr.clear();G.Projectiles.clear();G.Pickups.clear();G.Combat.clearFields();G.FX.clear();G.Path.clear();}room=null;origin=null;portal=null;map=null;notice='';noticeTime=0;G.RiftCompanion?.clear();G.RiftPowers?.clear();}
  function state(){return{enabled:enabled(),practice,portal:portal?{...portal}:null,director:director?.getState(),notice:noticeTime>0?notice:'',active:!!room,...(room?{...room.session.state,tier:room.boss.profile.tier,anomalyId:room.boss.bioId,name:room.boss.name,roomName:room.geometry.name,bossHp:Math.max(0,room.boss.hp),bossMaxHp:room.boss.maxHp,exit:{...room.geometry.escape},reward:G.RiftPowers.state.pending,originFrozen:true}: {})};}
- return{startRun,startMap,updateOrigin,updateRoom,drawGround,drawables,drawOverlay,drawScreen,chooseReward,rejectReward,leave,clear,practice,get state(){return state();}};
+ return{startRun,startMap,updateOrigin,checkContact,updateRoom,drawGround,drawables,drawOverlay,drawScreen,chooseReward,rejectReward,leave,clear,practice,get state(){return state();}};
 })();

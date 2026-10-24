@@ -6,17 +6,17 @@
   "date": "2026-10-24T22:42:20.171992+00:00",
   "build": {
     "scripts": 116,
-    "bundle": "e2ff58b6d3",
+    "bundle": "1b96f52dc7",
     "fullBuild": "passed",
     "check": "passed",
-    "publicationBundle": "82669ddb1d",
+    "publicationBundle": "34c8ebe18d",
     "publicationBuildAndCheck": "passed"
   },
   "node": {
     "files": 59,
-    "tests": 313,
+    "tests": 314,
     "suites": 0,
-    "pass": 307,
+    "pass": 308,
     "fail": 5,
     "cancelled": 0,
     "skipped": 1,
@@ -74,11 +74,17 @@
     "Fusion/ultimate/economy outside this lot"
   ],
   "publicationCopy": {
-    "integralScenarios": 2,
+    "integralScenarios": 10,
     "outcomeGroups": 9,
     "incVisScenarios": 9,
     "defaultStartPauseScenarios": 2,
     "csp": "original_publication_CSP_retained",
     "eol": "Existing file conventions retained for review; immutable asset/source snapshots byte-preserved."
-  }
+  },
+  "targetedDomainCases": 19,
+  "finalCorrections": [
+    "Portador P3 circle plus announced frontal sector",
+    "Contact freezes origin AI/projectiles/pickups before their tick",
+    "Pause QA timestamp captured after confirmed user click"
+  ]
 }

@@ -31,7 +31,10 @@ G.RiftAnomalies=(()=>{
    this.start={x:this.x,y:this.y};this.zones=[];
    const circle=(x,y,r,delay=0,life=.25)=>({type:'circle',x,y,r,delay,life,t:0});
    const line=(a,b,r=20,delay=0)=>({type:'line',a,b,r,delay,life:.25,t:0});
-   if(this.pattern==='jump')this.zones=[circle(this.target.x,this.target.y,this.bioId==='huesped'?88:64)];
+   if(this.pattern==='jump'){
+    this.zones=[circle(this.target.x,this.target.y,this.bioId==='huesped'?88:64)];
+    if(this.bioId==='portador')this.zones.push({type:'cone',x:this.target.x,y:this.target.y,r:90,angle:this.angle,half:.7,delay:0,life:.25,t:0});
+   }
    else if(this.pattern==='pool')this.zones=[circle(this.target.x,this.target.y,58,.65,3)];
    else if(this.pattern==='dash')this.zones=[line(this.start,this.target,24,0)];
    else if(this.pattern==='lines'||this.pattern==='scissors'){
@@ -70,7 +73,7 @@ G.RiftAnomalies=(()=>{
      if(this.pattern==='dash'&&!G.World.isFree(nx,ny,this.r)){this.pt=0;this.target={x:this.x,y:this.y};}
      else{this.x=nx;this.y=ny;G.World.collide(this);}this.height=this.pattern==='jump'?Math.sin(Math.PI*k)*52:0;
      if(this.pattern==='dash'&&contains(this.zones[0],player)&&Math.hypot(player.x-this.x,player.y-this.y)<=this.r+player.r)player.hurt(this.dmg);
-     if(this.pattern==='jump'&&this.pt<=0){this.landedThisFrame=true;this.lastLanding=this.zones[0];if(contains(this.zones[0],player))player.hurt(this.dmg);}
+     if(this.pattern==='jump'&&this.pt<=0){this.landedThisFrame=true;this.lastLanding=this.zones.slice();if(this.zones.some(z=>contains(z,player)))player.hurt(this.dmg);}
     }else for(const z of this.zones){z.t=this.attackElapsed;if(z.t>=z.delay&&z.t<=z.delay+z.life&&contains(z,player))player.hurt(this.dmg);}
     if(this.pt<=0){this.height=0;this.zones=[];this.phase='recovery';this.pt=this.profile.recovery;}
    }else if(this.phase==='recovery'&&this.pt<=0){this.phase='rest';this.pt=.7;this.action='Idle';this.actionTime=0;}

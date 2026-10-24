@@ -22,6 +22,11 @@
       "path": "docs/PAUTA_ARMAS.md",
       "sha256": "55078797daf88ac78f05a05154e00578d18dc584427e64841a6b046c71a6144e",
       "treatment": "Read; yellow support rig and approved BIO only. New ARMAS R2.2 proposals are not integrated/published in this payload."
+    },
+    {
+      "path": "docs/gestion/entregas/NIVELES-GRIETAS-001.md",
+      "sha256": "21b61aa71f7b9bae6bb1f31e6ea7cd1928bd29345a78b32311757c46e7c9226a",
+      "treatment": "Arrived after first implementation cut. Adopted identity/anchors, origin freeze before AI, resource/escape and six independent styles contracts. Numeric48x36/.70s/120s/near-player escape are explicit recommendations; retain previously versioned/programmatically verified28x20/.50s/90s/central escape for this ENSAYO-GRI-001r1 cut, not silently replace them. Detailed absorption/return art and60style matrix remain visual validation work."
     }
   ]
 }

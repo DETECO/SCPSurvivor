@@ -197,7 +197,7 @@
      G.FieldCombat.clearTemporary(pl);G.FieldAbilities.reset(pl);
      G.RunContinuity?.finish(result);
    }
-@@ -316,7 +321,7 @@
+@@ -316,11 +321,12 @@
      if(!spawnClosed&&mapTime>=(G.MapTrial.duration??300)){
        spawnClosed=true;spawnClock=0;doorOpen=true;G.MapTrial.arrive?.();
      }
@@ -206,7 +206,12 @@
      G.FieldAbilities.tick(dt,pl,G.MapTrial.infinite?{cooldownStep:recoveryStep}:{});G.FieldCombat.tick(dt,pl,true);
      const regen=pl.regenFlat,regenBuff=pl.buffs?.regen?.n;
      if(G.MapTrial.infinite&&spawnClosed){const fraction=dt>0?recoveryStep/dt:0;pl.regenFlat=regen*fraction;if(pl.buffs?.regen)pl.buffs.regen.n=regenBuff*fraction;}
-@@ -332,13 +337,14 @@
+     pl.update(dt);pl.regenFlat=regen;if(regenBuff!==undefined)pl.buffs.regen.n=regenBuff;
++    if(G.RiftExpedition?.checkContact(dt,mapTime,pl))return; // Freeze before origin AI/projectiles/pickups advance.
+     if(G.MapTrial.rewardRiftPractice)useRift(); // Contacto instantáneo, sin botón y sin limpiar el escenario.
+     G.Camera.follow(pl.x,pl.y,dt);G.World.update(dt,G.Camera);G.FX.update(dt);G.Spawner.tickBanner(dt);
+     if(!spawnClosed){
+@@ -332,13 +338,14 @@
      if(pl.dead||pl.hp<=0){finish('death');return;}
      trialVictory();trialRiftVictory();eliteVictory();promptUpgrade();if(phase==='levelup')return;
      G.ExplorationChests?.tick(dt,mapTime,pl);
@@ -223,7 +228,7 @@
      if(phase==='levelup')return;
      promptUpgrade();if(phase==='levelup')return;
      G.DimensionalRifts?.tick(dt);
-@@ -371,6 +377,8 @@
+@@ -371,6 +378,8 @@
      }
    }
    function draw(ctx, {riftLayer = 'all'} = {}){

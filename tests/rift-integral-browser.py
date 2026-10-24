@@ -18,8 +18,9 @@ SETUP='''()=>{
  // Keep real live origin entities/projectiles/pickups to compare after returning.
  const enemy=G.EnemyMgr.all()[0];if(!enemy)throw Error('origin enemies missing');
  G.Projectiles.spawn({x:p.x+250,y:p.y+100,vx:0,vy:0,t:2,life:30});G.Pickups.drop('xp',p.x+260,p.y+100,10);
+ const originalEnemyUpdate=enemy.update;window.qaOriginEnemyTicks=0;enemy.update=function(...args){qaOriginEnemyTicks++;return originalEnemyUpdate.apply(this,args);};
  window.qaOrigin={enemies:G.EnemyMgr.all(),shots:G.Projectiles.all(),pickups:G.Pickups.all(),fixture:G.World.fixture};
- G.Expedition.update(1/60);
+ G.Expedition.update(1/60);enemy.update=originalEnemyUpdate;if(qaOriginEnemyTicks!==0)throw Error('origin AI advanced after portal contact');
  qaOrigin.expected={time:G.Expedition.state.v2.mapTime,elapsed:G.Expedition.state.elapsed,enemy:JSON.stringify(qaOrigin.enemies.map(e=>({id:e.id,x:e.x,y:e.y,hp:e.hp,pt:e.pt}))),shots:JSON.stringify(qaOrigin.shots),pickups:JSON.stringify(qaOrigin.pickups),director:JSON.stringify(G.RiftExpedition.state.director),terminal:JSON.stringify(G.WeaponTerminal.state),chests:JSON.stringify(G.ExplorationChests.state)};
  if(!G.RiftExpedition.state.active)throw Error('instant contact failed');
  window.qaStep=(seconds)=>{for(let i=0;i<Math.ceil(seconds*30);i++)G.Expedition.update(1/30);};
@@ -47,7 +48,7 @@ def main():
      patterns=p.evaluate('''()=>{const seen=new Set();const p=G.Game.player;for(let n=0;n<1200;n++){const e=G.EnemyMgr.all().find(e=>e.dimensional);if(e)seen.add(e.attackIndex);G.Expedition.update(1/30);}return[...seen].filter(x=>x>=0);}''');assert sorted(patterns)==[0,1,2],patterns
      p.evaluate('()=>{G.Camera.x=16;G.Camera.y=16;}');p.screenshot(path=str(out/f'D{tier}-{mode}-{w}x{h}.png'))
      images=p.evaluate('()=>[...qaBioImages]');assert any(f'/{mode}/'in x for x in images),images
-     frozen=p.evaluate('()=>({map:G.Expedition.state.v2.mapTime,room:G.RiftExpedition.state.time,director:G.RiftExpedition.state.director})');p.click('#btn-technical-pause');p.wait_for_timeout(180);paused=p.evaluate('()=>({map:G.Expedition.state.v2.mapTime,room:G.RiftExpedition.state.time})');assert paused['map']==frozen['map'];assert abs(paused['room']-frozen['room'])<.15;(p.evaluate('()=>G.Game.togglePause()'))
+     p.click('#btn-technical-pause');p.wait_for_function("()=>G.Game.state==='paused'");paused_at=p.evaluate('()=>({map:G.Expedition.state.v2.mapTime,room:G.RiftExpedition.state.time})');p.wait_for_timeout(180);paused=p.evaluate('()=>({map:G.Expedition.state.v2.mapTime,room:G.RiftExpedition.state.time})');assert paused==paused_at;(p.evaluate('()=>G.Game.togglePause()'))
      # Damage injection only to exercise real victory, UI choice and contact return.
      p.evaluate('()=>{G.EnemyMgr.all().find(e=>e.dimensional).hurt(1e6);G.Expedition.update(1/30);}')
      p.wait_for_selector('#rift-power-choice button:visible');before=p.evaluate('()=>({time:G.RiftExpedition.state.time,hp:G.Game.player.hp,ammo:G.FieldCombat.state.ammo})');p.wait_for_timeout(180);assert p.evaluate('()=>G.RiftExpedition.state.time')==before['time']

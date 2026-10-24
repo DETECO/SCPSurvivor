@@ -16,9 +16,9 @@
         2
       ],
       "images": [
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/esporario/Walk.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/esporario/Attack1.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/esporario/Attack1-FX.png"
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/esporario/Walk.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/esporario/Attack1.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/esporario/Attack1-FX.png"
       ],
       "restored": {
         "active": false,
@@ -52,10 +52,10 @@
         2
       ],
       "images": [
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/esporario/Idle.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/esporario/Walk.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/esporario/Attack1.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/esporario/Attack1-FX.png"
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/esporario/Idle.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/esporario/Walk.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/esporario/Attack1.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/esporario/Attack1-FX.png"
       ],
       "restored": {
         "active": false,
@@ -89,8 +89,8 @@
         2
       ],
       "images": [
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/larva/Attack2.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/larva/Attack2-FX.png"
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/larva/Attack2.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/larva/Attack2-FX.png"
       ],
       "restored": {
         "active": false,
@@ -124,9 +124,9 @@
         2
       ],
       "images": [
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/larva/Walk.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/larva/Attack2.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/larva/Attack2-FX.png"
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/larva/Walk.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/larva/Attack2.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/larva/Attack2-FX.png"
       ],
       "restored": {
         "active": false,
@@ -160,10 +160,10 @@
         2
       ],
       "images": [
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/malla/Idle.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/malla/Walk.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/malla/Attack1.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/malla/Attack1-FX.png"
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/malla/Idle.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/malla/Walk.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/malla/Attack1.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/malla/Attack1-FX.png"
       ],
       "restored": {
         "active": false,
@@ -197,8 +197,8 @@
         2
       ],
       "images": [
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/malla/Attack1.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/malla/Attack1-FX.png"
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/malla/Attack1.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/malla/Attack1-FX.png"
       ],
       "restored": {
         "active": false,
@@ -232,8 +232,8 @@
         2
       ],
       "images": [
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/portador/Walk.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/portador/Idle.png"
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/portador/Walk.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/portador/Idle.png"
       ],
       "restored": {
         "active": false,
@@ -267,8 +267,8 @@
         2
       ],
       "images": [
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/portador/Idle.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/portador/Walk.png"
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/portador/Idle.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/portador/Walk.png"
       ],
       "restored": {
         "active": false,
@@ -302,8 +302,8 @@
         2
       ],
       "images": [
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/huesped/Attack3.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/16/huesped/Attack3-FX.png"
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/huesped/Attack3.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/16/huesped/Attack3-FX.png"
       ],
       "restored": {
         "active": false,
@@ -337,9 +337,9 @@
         2
       ],
       "images": [
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/huesped/Walk.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/huesped/Attack3.png",
-        "http://127.0.0.1:61751/assets/anomalias-biologicas/32/huesped/Attack3-FX.png"
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/huesped/Walk.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/huesped/Attack3.png",
+        "http://127.0.0.1:54836/assets/anomalias-biologicas/32/huesped/Attack3-FX.png"
       ],
       "restored": {
         "active": false,

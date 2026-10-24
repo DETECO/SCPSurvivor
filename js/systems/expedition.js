@@ -326,6 +326,7 @@ G.Expedition = (() => {
     const regen=pl.regenFlat,regenBuff=pl.buffs?.regen?.n;
     if(G.MapTrial.infinite&&spawnClosed){const fraction=dt>0?recoveryStep/dt:0;pl.regenFlat=regen*fraction;if(pl.buffs?.regen)pl.buffs.regen.n=regenBuff*fraction;}
     pl.update(dt);pl.regenFlat=regen;if(regenBuff!==undefined)pl.buffs.regen.n=regenBuff;
+    if(G.RiftExpedition?.checkContact(dt,mapTime,pl))return; // Freeze before origin AI/projectiles/pickups advance.
     if(G.MapTrial.rewardRiftPractice)useRift(); // Contacto instantáneo, sin botón y sin limpiar el escenario.
     G.Camera.follow(pl.x,pl.y,dt);G.World.update(dt,G.Camera);G.FX.update(dt);G.Spawner.tickBanner(dt);
     if(!spawnClosed){

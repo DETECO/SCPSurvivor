@@ -31,7 +31,7 @@ Estos valores se concretan por la autorización de LOT-EST-005, sin convertirlos
 | Preparación BIO | 1,25 /1,3 /1,4 /1,4 /1,6s; objetivo fijado al empezar, sin perseguirlo durante ejecución |
 | Recuperación BIO | 1,4 /1,3 /1,2 /1,2 /1,4s; descanso adicional0,7s; avance de reposo48u/s |
 | Daño BIO | 9 /11 /13 /15 /18 por impacto efectivo. Invulnerabilidad breve existente del jugador conservada |
-| Zonas | Salto64u(D5:88), vuelo0,65s; cápsula58u/retardo0,65s/charco3s; líneas ancho28u y alcance230; carreras corredor48u, destino máximo240u y0,65s, se detienen ante pared; conos185–210u; tres brotes65u/orden0,65s; abanico7proyectiles190u/s |
+| Zonas | Salto64u(D5:88), vuelo0,65s; P3 suma el sector frontal anunciado90u/semiángulo0,7rad; cápsula58u/retardo0,65s/charco3s; líneas ancho28u y alcance230; carreras corredor48u, destino máximo240u y0,65s, se detienen ante pared; conos185–210u; tres brotes65u/orden0,65s; abanico7proyectiles190u/s |
 | Premio posterior a primera victoria | 25% de ensayo; primera garantizada y garantía después de3victorias vacías conservadas. Identidad única por encuentro. Sin tickets/moneda persistentes |
 | Poderes | Pulso de esporas12daño/4s/r160; cápsula vítrea18/3,5s/r420; tensión orgánica14/5s/r240/hasta3blancos; salva espinosa9×5/5s/r400; brote20/6s/r210/hasta8blancos. Rangos2–5:+18%base por rango; extraMAX×1,3. Bonos del jugador una vez |
 | Límites de poderes | Máximo3,5rangos+extra, sin activación manual; oferta hasta3válidos, duplicado mejora, MAX alternativo; cuarto rechazar/reemplazar rango1 y retirar efectos anteriores |
