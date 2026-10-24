@@ -6,7 +6,7 @@ Esta composición conserva el proyecto existente. El alcance de armas es **parci
 
 ## Abrir
 
-Publicación solicitada: [AF01 en GitHub Pages](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=32). La disponibilidad se confirma en el [recibo de publicación](gestion/REV-EST-0006_PUBLICACION.json). Los enlaces siguientes permiten seguir trabajando localmente.
+Publicación verificada el 24/10/2026: [AF01 en GitHub Pages](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=32). Resultados y límites en el [recibo de publicación](gestion/REV-EST-0006_PUBLICACION.json). Los enlaces siguientes permiten seguir trabajando localmente.
 
 Con el servidor local iniciado en el puerto 8026:
 

@@ -1,6 +1,6 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-24).** REV-EST-0006 / CONTROL_CAMBIOS0.6: M01 240×160 y cámara vertical 512, audio SON-001 y ensayo AF01 1–5–MAX con arte16/32 implementados localmente. Director de grietas probado aislado, sin nuevos encuentros. Visor/dominio de fusión disponibles; Katana, láser y F24 jugables pendientes de poses/sala. Publicación autorizada; sin aceptación humana de esta composición ni servicios reales.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-24).** REV-EST-0006 / CONTROL_CAMBIOS0.6: M01 240×160 y cámara vertical 512, audio SON-001 y ensayo AF01 1–5–MAX con arte16/32 publicados y probados en GitHub Pages. Director de grietas probado aislado, sin nuevos encuentros. Visor/dominio de fusión disponibles; Katana, láser y F24 jugables pendientes de poses/sala. Publicación verificada: AF01 6/6, inicio/pausa2/2, 99 hashes y visor164/164. Sin aceptación humana de esta composición ni servicios reales; [recibo](docs/gestion/REV-EST-0006_PUBLICACION.json).
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 

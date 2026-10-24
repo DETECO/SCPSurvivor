@@ -1,11 +1,11 @@
 {
   "revision": "REV-EST-0006",
   "roadmap": "0.34",
-  "status": "PREPUBLISH_CHECKED_PENDING_LIVE_VERIFICATION",
+  "status": "PUBLISHED_VERIFIED_PARTIAL_WEAPON_SCOPE",
   "preparedAtUtc": "2026-10-24T10:35:28.198024+00:00",
   "authorizedBy": "Ivan: Subelo a github",
   "previousCommit": "dd0078bbb7f8898eb972bbd1dbfebd0586505c33",
-  "runtimeCommit": null,
+  "runtimeCommit": "afb905f4fbbcbdd005d3723cf6b1fbf8f6dce558",
   "publicUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=32",
   "build": "107 scripts; npm build and build:check passed in publication copy",
   "node": {
@@ -435,5 +435,30 @@
     "Manual/physical-device acceptance pending",
     "Five P05 SQLite runtime failures: installed workerd date limit; one emulator test skipped"
   ],
-  "backendSourceOnly": "Existing worker/functions code and declared dependencies included for repository coherence; no deploy or billing action."
+  "backendSourceOnly": "Existing worker/functions code and declared dependencies included for repository coherence; no deploy or billing action.",
+  "verifiedAtUtc": "2026-10-24T10:46:04.515252+00:00",
+  "pages": {
+    "status": "built",
+    "runtimeCommit": "afb905f4fbbcbdd005d3723cf6b1fbf8f6dce558",
+    "updatedAtUtc": "2026-10-24T10:38:29Z",
+    "source": "main /"
+  },
+  "liveVerification": {
+    "af01Scenarios": 6,
+    "menuStartPauseScenarios": 2,
+    "criticalHashMatches": 99,
+    "visorLoadedPng": 164,
+    "visorModels": 10,
+    "visorSizes": [
+      16,
+      32
+    ],
+    "visorLayouts": 3,
+    "javascriptErrors": 0,
+    "httpFailures": 0,
+    "physicalPhone": false,
+    "qaMethod": "Actual UI card/reward buttons and actual FieldCombat/projectiles; disclosed injected XP, ascents, target HP and reload timer for deterministic QA."
+  },
+  "criticalFilesScope": "Hash list verifies runtime payload at runtimeCommit. Subsequent receipt/roadmap documentation commit does not modify game code; its metadata is verified separately.",
+  "receiptCommitReference": "git log -1 --format=%H -- docs/gestion/REV-EST-0006_PUBLICACION.json"
 }

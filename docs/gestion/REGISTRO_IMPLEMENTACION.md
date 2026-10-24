@@ -80,3 +80,13 @@ Esta ejecución no hizo commit/push, no sobrescribió ramas y no emitió un reci
 ## Publicación solicitada — 24/10/2026
 
 Iván autoriza directamente «Subelo a github» después del corte local anterior. Se prepara la misma composición en DETECO/SCPSurvivor main y su GitHub Pages existente, con documentación/roadmap0.34. No se activa ningún servicio ni se cambia el diseño. Se conserva la CSP previa del clon público al generar su índice. El estado real y commit se registran en [REV-EST-0006_PUBLICACION.json](REV-EST-0006_PUBLICACION.json); publicar esta demo parcial no acepta la fusión ni convierte los cinco fallos P05 en aprobados.
+
+### Resultado de publicación verificado — 24/10/2026
+
+Commit de código `afb905f4fbbcbdd005d3723cf6b1fbf8f6dce558` subido a `main` mediante avance normal; GitHub Pages confirma `built` para ese SHA. [Abrir AF01](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=32). Roadmap **0.34** y registro de pruebas incluidos. No se sobrescribieron ramas ni se desplegaron servicios.
+
+Comprobación pública: **6/6** escenarios AF01 (escritorio/vertical/horizontal y 16/32), **2/2** recorridos de inicio/pausa, **99/99** archivos críticos con SHA256 coincidente y visor **164/164 PNG**, diez modelos y tres disposiciones en ambos tamaños; cero errores JavaScript/HTTP en los recorridos comprobados. El caso AF01 de escritorio conserva ambas copias al pasar al mapa siguiente con la build saturada. La QA inyecta XP/ascensos/HP/recarga para probar la regla, sin acreditar una victoria natural o balance. Una primera consulta de integridad agotó el tiempo de red; el reintento acotado comprobó los 99 archivos.
+
+La copia pública compiló **107 scripts**, bundle `65ce03ab66`; `build:check` aprobado. La suite completa repitió **298 pruebas: 292 aprobadas, 5 fallidas SQLite/P05 por la fecha de workerd instalada y 1 omitida por emuladores**. Se incorporó el código existente de Worker/functions y sus dependencias declaradas para coherencia del repositorio; no se activó ese backend. Se preservaron CSP pública previa y 88 recursos originales. El recibo local anterior conserva su corte; el nuevo [recibo público](REV-EST-0006_PUBLICACION.json) acredita esta publicación.
+
+**Estado del alcance: parcial publicado y probado.** CC04/TE01/F24 jugables, pose/animaciones compatibles y sala/interfaz de fusión siguen pendientes; el gate permanece cerrado. Director aislado sin nuevos encuentros, cuentas/guardado real desactivados, sin teléfono físico ni aceptación manual de esta revisión. La subida no cierra esas dependencias, P05 ni el porcentaje V2. Las 53 tareas, pesos y 52/100 históricos se conservan.

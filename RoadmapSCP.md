@@ -1,6 +1,6 @@
 # Roadmap SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-24).** REV-EST-0006 / CONTROL_CAMBIOS0.6: M01 240×160 y cámara vertical 512, audio SON-001 y ensayo AF01 1–5–MAX con arte16/32 implementados localmente. Director de grietas probado aislado, sin nuevos encuentros. Visor/dominio de fusión disponibles; Katana, láser y F24 jugables pendientes de poses/sala. Publicación autorizada; sin aceptación humana de esta composición ni servicios reales.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-24).** REV-EST-0006 / CONTROL_CAMBIOS0.6: M01 240×160 y cámara vertical 512, audio SON-001 y ensayo AF01 1–5–MAX con arte16/32 publicados y probados en GitHub Pages. Director de grietas probado aislado, sin nuevos encuentros. Visor/dominio de fusión disponibles; Katana, láser y F24 jugables pendientes de poses/sala. Publicación verificada: AF01 6/6, inicio/pausa2/2, 99 hashes y visor164/164. Sin aceptación humana de esta composición ni servicios reales; [recibo](docs/gestion/REV-EST-0006_PUBLICACION.json).
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
@@ -915,7 +915,7 @@ Los registros anteriores permanecen intactos. V0.11 y su documentación están e
 | CHG-038 | 2026-10-21 | Roadmap 0.31: primera capa visual provisional y feedback general positivo T1BC; 53 tareas históricas preservadas. | A-041 |
 | CHG-039 | 2026-10-22 | Roadmap0.32: integración del hilo PERSONAJES y modos16/32; mantiene53tareas históricas. | A-042 |
 | CHG-040 | 2026-10-23 | Roadmap0.33: R7 y presentación aprobada integrados; decisiones ESTRUCTURA sincronizadas,53tareas históricas intactas. | A-044 |
-| CHG-041 | 2026-10-24 | Roadmap0.34 registra REV-EST-0006: mapa/audio/director aislado y AF01, pendientes materiales de fusión,298 pruebas con292 aprobadas/5 fallos de entorno P05/1 omitida. Conserva53 tareas, pesos y52/100 históricos; V2 sin porcentaje. | Petición directa de Iván: Subelo a github; decisiones REV-EST-0006 ya aprobadas. |
+| CHG-041 | 2026-10-24 | Roadmap0.34 registra REV-EST-0006: mapa/audio/director aislado y AF01, pendientes materiales de fusión,298 pruebas con292 aprobadas/5 fallos de entorno P05/1 omitida. Conserva53 tareas, pesos y52/100 históricos; V2 sin porcentaje. Publicado y verificado en Pages: AF01 6/6, inicio/pausa2/2, 99 hashes y visor164/164; recibo público con SHA del código. | Petición directa de Iván: Subelo a github; decisiones REV-EST-0006 ya aprobadas. |
 
 ## 13. Continuar en Windows/Codex Local
 
