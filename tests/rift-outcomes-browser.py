@@ -38,6 +38,22 @@ def main():
    start()
    p.evaluate('''()=>{qaStep(90);const p=G.Game.player,r=G.RiftExpedition.state;p.x=r.exit.x;p.y=r.exit.y;G.Expedition.update(1/30);}''')
    location=p.evaluate('''()=>{const free=G.World.isFree;G.World.isFree=()=>false;G.RiftExpedition.updateOrigin(1,120,G.Game.player);G.World.isFree=free;const first=G.RiftExpedition.state.director;G.RiftExpedition.updateOrigin(1,120,G.Game.player);const second=G.RiftExpedition.state.director;return{count:first.appearanceCount,requests:first.requests.map(r=>r.status),same:JSON.stringify(first)===JSON.stringify(second)};}''');assert location['count']==1 and location['requests']==['confirmed','failed']and location['same'],location;records.append({'failedLocationNoReroll':location})
+   extras=p.evaluate('''()=>{const player=G.Game.player;G.World.reset(1);G.World.setFixture({minX:-20,maxX:20,minY:-20,maxY:20,walls:[],props:[]});player.x=player.y=16;const rows=[];
+    for(const profile of G.RiftPowers.catalog){
+     G.RiftPowers.clear();G.EnemyMgr.clear();G.Projectiles.clear();const enemies=[];
+     for(let i=0;i<4;i++)enemies.push(G.EnemyMgr.add(new G.Enemy({...G.Content.pursuer,hp:10000},profile.id==='esporario'?206:116+i*24,16,{hp:1,dmg:1,spd:1})));
+     G.EnemyMgr.rebuildGrid();G.RiftPowers.victory('extra:'+profile.id,player,{rng:()=>0,anomalyId:profile.id});G.RiftPowers.choose(profile.id,player);for(let n=0;n<4;n++)G.RiftPowers.applyCard({id:profile.id},player);
+     const spawn=G.Projectiles.spawn,shots=[];G.Projectiles.spawn=o=>{shots.push({dmg:o.dmg,pierce:o.pierce});return spawn(o);};G.RiftPowers.tick(10,player);const base={shots:shots.slice(),damaged:enemies.filter(e=>e.hp<10000).length};G.Projectiles.clear();shots.length=0;for(const e of enemies)e.hp=10000;
+     G.RiftPowers.applyCard({id:profile.id},player);G.RiftPowers.tick(10,player);const max={shots:shots.slice(),damaged:enemies.filter(e=>e.hp<10000).length};
+     if(profile.id==='huesped'){const first=10000-enemies[0].hp,token=G.RiftPowers.suspend();G.RiftPowers.tick(1,player);const suspended=10000-enemies[0].hp;G.RiftPowers.resume(token);G.RiftPowers.tick(.5,player);const twice=10000-enemies[0].hp;G.RiftPowers.tick(.5,player);max.echo={first,suspended,twice,after:10000-enemies[0].hp};}
+     G.Projectiles.spawn=spawn;rows.push({id:profile.id,base,max});
+    }return rows;}''')
+   by={r['id']:r for r in extras};assert by['esporario']['base']['damaged']==0 and by['esporario']['max']['damaged']==4,extras
+   assert by['larva']['base']['shots'][0]['pierce']==0 and by['larva']['max']['shots'][0]['pierce']==1 and by['larva']['base']['shots'][0]['dmg']==by['larva']['max']['shots'][0]['dmg'],extras
+   assert by['malla']['base']['damaged']==3 and by['malla']['max']['damaged']==4,extras
+   assert len(by['portador']['base']['shots'])==5 and len(by['portador']['max']['shots'])==7,extras
+   echo=by['huesped']['max']['echo'];assert echo['first']==echo['suspended']and abs(echo['twice']-2*echo['first'])<1e-8 and echo['twice']==echo['after'],extras;records.append({'fiveOwnMaxExtras':extras})
+   home=p.evaluate('''()=>{const p=G.Game.player;G.RiftCompanion.create({tier:'D1',rng:()=>0,geometry:{entry:{x:16,y:16}},player:p});G.RiftCompanion.update(13,p,{});G.RiftCompanion.update(16,p,{});G.RiftCompanion.update(40,p,{roomContext:{yellowPaper:false,repeatedCorridors:false}});const state=G.RiftCompanion.state;return{bubble:state.bubble,homeUsed:state.homeUsed,biography:state.biography,used:state.used};}''');assert home['homeUsed']and home['biography']=='generic-home'and '08'in home['used']and '06'not in home['used']and '07'not in home['used'],home;records.append({'compatibleHomeAndAbsentScenarioTags':home})
    assert not errors,errors;b.close()
  finally:
   if server:server.shutdown();server.server_close()

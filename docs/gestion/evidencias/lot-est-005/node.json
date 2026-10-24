@@ -1,5 +1,5 @@
 {
-  "startedAtUtc": "2026-10-24T22:59:11.932687+00:00",
+  "startedAtUtc": "2026-10-24T23:09:48.502610+00:00",
   "commandGroups": [
     {
       "group": "main",
@@ -70,9 +70,9 @@
       ],
       "exitCode": 1,
       "counts": {
-        "tests": 313,
+        "tests": 315,
         "suites": 0,
-        "pass": 307,
+        "pass": 309,
         "fail": 5,
         "cancelled": 0,
         "skipped": 1,
@@ -102,9 +102,9 @@
   "exitCode": 1,
   "testFiles": 59,
   "counts": {
-    "tests": 314,
+    "tests": 316,
     "suites": 0,
-    "pass": 308,
+    "pass": 310,
     "fail": 5,
     "cancelled": 0,
     "skipped": 1,

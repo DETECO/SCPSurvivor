@@ -30,7 +30,8 @@ G.RiftUI=(()=>{
   const offer=r.reward;panel.hidden=!offer;
   if(offer){
    const key=offer.id+':'+(replacement||'');if(key!==signature){signature=key;const host=el('rift-power-options');host.replaceChildren();
-    el('rift-power-hint').textContent=replacement?'Ya llevas tres. Elige cuál reemplazar; el nuevo empieza en rango1.':'Elige una opción compatible. La partida está detenida.';
+    el('rift-power-title').textContent=replacement?'Nuevo: '+(G.RiftPowers.catalog.find(p=>p.id===replacement)?.name||'poder'):'Poder anómalo';
+    el('rift-power-hint').textContent=replacement?'Ya llevas tres. Elige cuál reemplazar; el nuevo empieza en rango1.':'Elige una opción compatible con la anomalía derrotada. La partida está detenida.';
     if(replacement){for(const p of G.RiftPowers.state.owned)host.append(button('Reemplazar '+p.name,`Rango ${p.rank===6?'MAX':p.rank+'/5'} · se retiran todos sus efectos.`,()=>choose(replacement,p.id)));}
     else for(const c of offer.cards)host.append(button(c.title,c.desc,()=>choose(c.id)));
     if(G.RiftPowers.state.owned.length===3)host.append(button('Conservar mis poderes','Rechaza la oferta y habilita el regreso.',()=>{G.RiftExpedition.rejectReward();replacement=null;signature='';}));

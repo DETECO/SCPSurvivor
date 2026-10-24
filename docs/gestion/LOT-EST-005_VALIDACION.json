@@ -6,17 +6,17 @@
   "date": "2026-10-24T22:42:20.171992+00:00",
   "build": {
     "scripts": 116,
-    "bundle": "1b96f52dc7",
+    "bundle": "22be408cc0",
     "fullBuild": "passed",
     "check": "passed",
-    "publicationBundle": "34c8ebe18d",
+    "publicationBundle": "6b2f55868a",
     "publicationBuildAndCheck": "passed"
   },
   "node": {
     "files": 59,
-    "tests": 314,
+    "tests": 316,
     "suites": 0,
-    "pass": 308,
+    "pass": 310,
     "fail": 5,
     "cancelled": 0,
     "skipped": 1,
@@ -32,7 +32,7 @@
   },
   "browser": {
     "integralScenarios": 10,
-    "outcomeGroups": 9,
+    "outcomeGroups": 11,
     "incVisRegressionScenarios": 9,
     "viewports": [
       [
@@ -75,16 +75,28 @@
   ],
   "publicationCopy": {
     "integralScenarios": 10,
-    "outcomeGroups": 9,
+    "outcomeGroups": 11,
     "incVisScenarios": 9,
     "defaultStartPauseScenarios": 2,
     "csp": "original_publication_CSP_retained",
-    "eol": "Existing file conventions retained for review; immutable asset/source snapshots byte-preserved."
+    "eol": "Existing file conventions retained for review; immutable asset/source snapshots byte-preserved.",
+    "stylesCovered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
   },
-  "targetedDomainCases": 19,
+  "targetedDomainCases": 21,
   "finalCorrections": [
     "Portador P3 circle plus announced frontal sector",
     "Contact freezes origin AI/projectiles/pickups before their tick",
-    "Pause QA timestamp captured after confirmed user click"
-  ]
+    "Pause QA timestamp captured after confirmed user click",
+    "Own distinct MAX extras, explicit BIO compatibility and saturation",
+    "One compatible home memory and truthful scenario tags",
+    "World suspension of delayed echo"
+  ],
+  "powerProfile": "ENSAYO-POD-001 r2"
 }

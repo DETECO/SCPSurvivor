@@ -27,6 +27,12 @@
       "path": "docs/gestion/entregas/NIVELES-GRIETAS-001.md",
       "sha256": "21b61aa71f7b9bae6bb1f31e6ea7cd1928bd29345a78b32311757c46e7c9226a",
       "treatment": "Arrived after first implementation cut. Adopted identity/anchors, origin freeze before AI, resource/escape and six independent styles contracts. Numeric48x36/.70s/120s/near-player escape are explicit recommendations; retain previously versioned/programmatically verified28x20/.50s/90s/central escape for this ENSAYO-GRI-001r1 cut, not silently replace them. Detailed absorption/return art and60style matrix remain visual validation work."
+    },
+    {
+      "path": "docs/gestion/entregas/MENUS-GRIETAS-001.md",
+      "sha256": "460fb983c5f58bb021a8fa2a5a9701115023f2e59b8bafb4e8cc75e4cd0c1192",
+      "treatment": "Read. Existing compact HUD/paused fourth-power panel and priority/clamping of bubbles retained. No MEN-005 design selected."
     }
-  ]
+  ],
+  "powerProfileRevision": "ENSAYO-POD-001 r2 supersedes generic MAX and cross-anomaly pool; original lot unchanged."
 }

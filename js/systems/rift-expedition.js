@@ -4,7 +4,7 @@ G.RiftExpedition=(()=>{
  const practice=enabled()&&q.get('ensayo')==='grietas';
  const practiceTier=practice&&/^D[1-5]$/.test(q.get('grado')||'')?q.get('grado'):'D1';
  let director=null,rng=Math.random,portal=null,room=null,origin=null,map=null,mapNumber=1,serial=0,notice='',noticeTime=0;
- const services=['World','Path','EnemyMgr','Projectiles','Pickups','Combat','FX','Spawner'];
+ const services=['World','Path','EnemyMgr','Projectiles','Pickups','Combat','FX','Spawner','RiftPowers'];
  function seeded(seed){let n=seed>>>0;return()=>((n=(Math.imul(n,1664525)+1013904223)>>>0)/4294967296);}
  function startRun(seed){clear();rng=practice?seeded(seed^0x5fac194b):Math.random;director=G.RiftDirector.create({rng});G.RiftPowers.startRun();G.RiftCompanion.startRun();serial=0;}
  function announce(text){notice=text;noticeTime=6;G.Audio?.sfx('riftOpen');}
@@ -17,7 +17,8 @@ G.RiftExpedition=(()=>{
   const point=locate(player);if(!point){director.failAppearance(request.id,{reason:'no_reachable_location'});return false;}
   if(!director.confirmAppearance(request.id).ok)return false;
   const tier=practice?practiceTier:request.tier;
-  portal={id:request.id,status:'open',tier,x:point.x,y:point.y,remaining:Math.max(0,45-(mapTime-request.atSeconds)),style:1+Math.floor(rng()*6),sector:mapNumber,label:`${tier} · GRIETA · 45 s`};
+  const rolledStyle=1+Math.floor(rng()*6),style=practice&&/^[1-6]$/.test(q.get('estilo')||'')?Number(q.get('estilo')):rolledStyle;
+  portal={id:request.id,status:'open',tier,x:point.x,y:point.y,remaining:Math.max(0,45-(mapTime-request.atSeconds)),style,sector:mapNumber,label:`${tier} · GRIETA · 45 s`};
   announce(`${practice?'PRÁCTICA · ':''}${tier} · Grieta dimensional abierta. Entra caminando · 45s.`);return true;
  }
  function startMap(geometry,number,seed,player){
@@ -80,7 +81,7 @@ G.RiftExpedition=(()=>{
   G.InfiniteProgression.tick(dt,player);G.FieldAbilities.tick(dt,player);G.FieldCombat.tick(dt,player,rs.status==='combat');G.RiftPowers.tick(dt,player);
   player.update(dt);G.Camera.follow(player.x,player.y,dt);G.World.update(dt,G.Camera);G.Path.update(dt,[player]);
   G.EnemyMgr.update(dt,[player]);G.Projectiles.update(dt,player,G.EnemyMgr.all());G.Combat.resolve(dt,player,rs.time);
-  G.RiftCompanion.update(dt,player,{boss:room.boss,roomTime:rs.time,escapeSoon:['warning','open'].includes(rs.escape)});
+  G.RiftCompanion.update(dt,player,{boss:room.boss,roomTime:rs.time,escapeSoon:['warning','open'].includes(rs.escape),roomContext:room.geometry.tags});
   const ally=G.RiftCompanion.state;if(ally&&!ally.incapacitated){
    const bio=room.boss,body={...ally,r:12};
    if(bio.pattern==='jump'){if(bio.landedThisFrame&&bio.lastLanding.some(z=>G.RiftAnomalies.contains(z,body)))G.RiftCompanion.hurt(bio.dmg);}

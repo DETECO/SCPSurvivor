@@ -25,7 +25,7 @@ SETUP='''()=>{
  if(!G.RiftExpedition.state.active)throw Error('instant contact failed');
  window.qaStep=(seconds)=>{for(let i=0;i<Math.ceil(seconds*30);i++)G.Expedition.update(1/30);};
  window.qaCheckOrigin=()=>{const s=qaOrigin.expected;return{clock:s.time===G.Expedition.state.v2.mapTime&&s.elapsed===G.Expedition.state.elapsed,enemy:G.EnemyMgr.all()===qaOrigin.enemies&&s.enemy===JSON.stringify(qaOrigin.enemies.map(e=>({id:e.id,x:e.x,y:e.y,hp:e.hp,pt:e.pt}))),shots:G.Projectiles.all()===qaOrigin.shots&&s.shots===JSON.stringify(qaOrigin.shots),pickups:G.Pickups.all()===qaOrigin.pickups&&s.pickups===JSON.stringify(qaOrigin.pickups),fixture:G.World.fixture===qaOrigin.fixture,director:s.director===JSON.stringify(G.RiftExpedition.state.director),terminal:s.terminal===JSON.stringify(G.WeaponTerminal.state),chests:s.chests===JSON.stringify(G.ExplorationChests.state)};};
- return{tier:G.RiftExpedition.state.tier,origin:G.Expedition.state.v2.mapTime,npc:G.RiftCompanion.state};
+ return{tier:G.RiftExpedition.state.tier,style:G.RiftExpedition.state.portal.style,origin:G.Expedition.state.v2.mapTime,npc:G.RiftCompanion.state};
 }'''
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--live',action='store_true');ap.add_argument('--smoke',action='store_true');a=ap.parse_args();server=None
@@ -42,7 +42,7 @@ def main():
     for i,(tier,mode)in enumerate(cases):
      w,h=[(1280,900),(390,844),(844,390)][i%3];c=b.new_context(viewport={'width':w,'height':h});p=c.new_page();errors=[];p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text)if m.type=='error'else None)
      entry='index.html'if a.live or i%2 else'dev.html';npc='si'if i%2==0 else'no'
-     p.goto(f'{base}{entry}?prueba=combate-v2&ensayo=grietas&grado=D{tier}&apoyo={npc}&graficos={mode}');p.wait_for_selector('#btn-technical-start:visible',timeout=30000);p.click('#btn-technical-start');p.wait_for_function("()=>G.Game.state==='playing'");start=p.evaluate(SETUP);assert start['tier']==f'D{tier}',start;assert bool(start['npc'])==(npc=='si'),start
+     p.goto(f'{base}{entry}?prueba=combate-v2&ensayo=grietas&grado=D{tier}&apoyo={npc}&estilo={i%6+1}&graficos={mode}');p.wait_for_selector('#btn-technical-start:visible',timeout=30000);p.click('#btn-technical-start');p.wait_for_function("()=>G.Game.state==='playing'");start=p.evaluate(SETUP);assert start['tier']==f'D{tier}'and start['style']==i%6+1,start;assert bool(start['npc'])==(npc=='si'),start
      p.wait_for_function("()=>G.RiftExpedition.state.status==='combat'");p.wait_for_timeout(600)
      # Three actual pattern cycles, fixed target during commitment and pause control.
      patterns=p.evaluate('''()=>{const seen=new Set();const p=G.Game.player;for(let n=0;n<1200;n++){const e=G.EnemyMgr.all().find(e=>e.dimensional);if(e)seen.add(e.attackIndex);G.Expedition.update(1/30);}return[...seen].filter(x=>x>=0);}''');assert sorted(patterns)==[0,1,2],patterns
@@ -54,7 +54,7 @@ def main():
      p.wait_for_selector('#rift-power-choice button:visible');before=p.evaluate('()=>({time:G.RiftExpedition.state.time,hp:G.Game.player.hp,ammo:G.FieldCombat.state.ammo})');p.wait_for_timeout(180);assert p.evaluate('()=>G.RiftExpedition.state.time')==before['time']
      p.locator('#rift-power-choice button').first.click()
      restored=p.evaluate('''()=>{const p=G.Game.player,r=G.RiftExpedition.state;const hp=p.hp,ammo=G.FieldCombat.state.ammo;p.x=r.exit.x;p.y=r.exit.y;G.Expedition.update(1/30);return{active:G.RiftExpedition.state.active,origin:qaCheckOrigin(),hp:p.hp===hp,ammo:G.FieldCombat.state.ammo===ammo,powers:G.RiftPowers.state.owned.length,npc:G.RiftCompanion.state};}''');assert not restored['active']and all(restored['origin'].values())and restored['powers']==1 and restored['hp']and restored['ammo']and restored['npc']is None,restored
-     assert not errors,errors;records.append({'tier':tier,'mode':mode,'viewport':[w,h],'npcForced':npc,'patterns':patterns,'images':images,'restored':restored});print(json.dumps({'case':i+1,'tier':tier,'mode':mode,'status':'PASS'}),flush=True);c.close()
+     assert not errors,errors;records.append({'tier':tier,'mode':mode,'viewport':[w,h],'npcForced':npc,'styleForced':i%6+1,'patterns':patterns,'images':images,'restored':restored});print(json.dumps({'case':i+1,'tier':tier,'mode':mode,'status':'PASS'}),flush=True);c.close()
    finally:b.close()
  finally:
   if server:server.shutdown();server.server_close()

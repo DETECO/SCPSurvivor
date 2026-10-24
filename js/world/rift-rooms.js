@@ -4,7 +4,7 @@
  function generate(id){
   const theme=themes[id];if(!theme)throw Error('Unknown rift room');const walls=[];
   for(const[x,y]of theme.blocks)for(let dx=0;dx<2;dx++)for(let dy=0;dy<2;dy++)walls.push([x+dx,y+dy]);
-  return{id:'ENSAYO-GRI-001-r1:'+id,name:theme.name,color:theme.color,fixture:{minX:-14,maxX:14,minY:-10,maxY:10,walls,props:[],staticNavigation:true,sceneRevision:'NIV-ESC-008-A-r1'},entry:{x:16,y:208},bossSpawn:{x:16,y:-144},escape:{x:16,y:16},bounds:{left:-416,right:416,top:-288,bottom:288}};
+  return{id:'ENSAYO-GRI-001-r1:'+id,name:theme.name,color:theme.color,tags:{yellowPaper:false,repeatedCorridors:false,biologicalRoom:true},fixture:{minX:-14,maxX:14,minY:-10,maxY:10,walls,props:[],staticNavigation:true,sceneRevision:'NIV-ESC-008-A-r1'},entry:{x:16,y:208},bossSpawn:{x:16,y:-144},escape:{x:16,y:16},bounds:{left:-416,right:416,top:-288,bottom:288}};
  }
  return{generate,themes};
 });

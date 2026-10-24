@@ -136,6 +136,144 @@
         ],
         "same": true
       }
+    },
+    {
+      "fiveOwnMaxExtras": [
+        {
+          "id": "esporario",
+          "base": {
+            "shots": [],
+            "damaged": 0
+          },
+          "max": {
+            "shots": [],
+            "damaged": 4
+          }
+        },
+        {
+          "id": "larva",
+          "base": {
+            "shots": [
+              {
+                "dmg": 30.96,
+                "pierce": 0
+              }
+            ],
+            "damaged": 0
+          },
+          "max": {
+            "shots": [
+              {
+                "dmg": 30.96,
+                "pierce": 1
+              }
+            ],
+            "damaged": 0
+          }
+        },
+        {
+          "id": "malla",
+          "base": {
+            "shots": [],
+            "damaged": 3
+          },
+          "max": {
+            "shots": [],
+            "damaged": 4
+          }
+        },
+        {
+          "id": "portador",
+          "base": {
+            "shots": [
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              }
+            ],
+            "damaged": 0
+          },
+          "max": {
+            "shots": [
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              }
+            ],
+            "damaged": 0
+          }
+        },
+        {
+          "id": "huesped",
+          "base": {
+            "shots": [],
+            "damaged": 4
+          },
+          "max": {
+            "shots": [],
+            "damaged": 4,
+            "echo": {
+              "first": 34.399999999999636,
+              "suspended": 34.399999999999636,
+              "twice": 68.79999999999927,
+              "after": 68.79999999999927
+            }
+          }
+        }
+      ]
+    },
+    {
+      "compatibleHomeAndAbsentScenarioTags": {
+        "bubble": "En casa me quejaba de que las paredes eran aburridas. Retiro la queja.",
+        "homeUsed": true,
+        "biography": "generic-home",
+        "used": [
+          "presentation",
+          "03",
+          "04",
+          "08"
+        ]
+      }
     }
   ],
   "live": false,
