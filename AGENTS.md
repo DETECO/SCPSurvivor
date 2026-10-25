@@ -1,5 +1,8 @@
 # SCP Survivor — instrucciones para Codex Local
 
+**Entrega0.37 — LOT-EST-005 r2 / REV-EST-0008 / CONTROL0.9:** EST-NPC-001r1 sustituye AF01 fija/reserva finita por sorteo uniforme pistol/smg/shotgun y reserva ilimitada con cargador/recarga finitos. Conservar compañerasR3 delgada/fitness/curvy y rig masculino; dibujo y texto usan el arma real. No emitir frase de reserva agotada ni recrear un cupo oculto. Fallo de atlasBIO o10s activos de carga restaura origen sin premio/reroll; enlaces antiguos de grietas llevan al recinto nuevo salvo legado=b3. Guía, resultados y recibo LOT005 gobiernan evidencia efectiva; no cierran balance, arte final, teléfono o servicios.
+
+
 **Entrega0.36 — LOT-EST-005 r1 / REV-EST-0007:** grietas de expedición integradas para ensayo. Leer docs/PRUEBA_GRIETAS_INTEGRALES.md y docs/gestion/REGISTRO_IMPLEMENTACION.md. Cinco BIO16/32, origen suspendido por referencia, poderes/NPC y retirada única; números ENSAYO-GRI-001r1. No regenerar origen ni activar servicios reales. Cantidad resuelta por EST-GRI-002r1. Recibo LOT-EST-005 identifica publicación/aceptación reales.
 
 **Corrección 0.35 · INC-VIS-001 r1 · 24/10/2026:** pistola AF01 aprobada también en la entrada habitual, proporción visual de regulares corregida sin cambiar su física, cifras de daño compactas y HUD resumido. El Subfusil mantiene arte provisional por falta de recurso aprobado; fusión pendiente. [Informe](docs/gestion/informes/INC-VIS-001-programacion.md) · [Publicación verificada](docs/gestion/INC-VIS-001_PUBLICACION.json):16 escenarios visuales y2 de inicio/pausa;39 archivos coincidentes.

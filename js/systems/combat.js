@@ -631,7 +631,8 @@ G.Combat = (() => {
         if (p.ghost) {
           G.FX.sp('impact', p.vis ? p.vis.pal : 'normal', e.x, e.y - e.bodyH * 0.5, { life: 0.12, scale: 1 });
         } else {
-          e.hurt(p.dmg, p.color, ux, uy, p.knock || 0);
+          const dealt=p.allySupport&&e.boss?Math.min(p.dmg,Math.max(0,e.hp-1)):p.dmg;
+          if(dealt>0){const xp=e.xp;if(p.allySupport)e.xp=0;e.hurt(dealt, p.color, ux, uy, p.knock || 0);if(p.allySupport){e.xp=xp;if(e.dead)e._alliedKill=true;}}
           if (p.owner) { p.owner.onDealt(p.dmg); p.owner.dmgDealt += p.dmg; }
         }
         if (p.pierce > 0) p.pierce--;

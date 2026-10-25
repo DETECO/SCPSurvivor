@@ -17,3 +17,6 @@ Los rangos2–5 mantienen +18%de daño base por rango, identificado como cifra d
 Pruebas dirigidas: compatibilidadexacta y saturaciónMAX; alcance200 frente a160, perforación0→1sin aumento de daño,3→4blancos,5→7espinas y eco único suspendido/restaurado sin tercer pulso. La prueba usa enemigos reales del juego con vida/control de tiempo de QA; no certifica balance.
 
 La ampliación de NPC conserva14personalidades y usa un recuerdo general de casaV2 en calmaD1–D4, una vez por recinto. No asigna el perro/familia de otro perfil. Papel amarillo/pasillos requieren tags verdaderos de la sala: las composiciones actuales no los tienen y no disparan esas frases. Las burbujas se limitan al área visible, priorizando HUD/controles/telegráficos. El NPC agotado puede seguir hablando una vez avisada su munición; no vuelve a disparar ni se recarga. Sin voz ni sonido nuevo.
+
+
+Actualización25/10/2026: las observaciones históricas sobre reserva finita/frase11 del NPC quedan sustituidas por EST-NPC-001r1 / LOT-EST-005r2. Esa frase permanece en el banco aprobado, filtrada del apoyo con reserva ilimitada. Los poderes de este documento no cambian.

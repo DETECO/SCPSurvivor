@@ -7,10 +7,17 @@ G.RiftAnomalies=(()=>{
   {id:'portador',name:'Portador de Espinas',tier:'D4',hp:1200,r:28,windup:1.4,recovery:1.2,damage:15,color:'#caad79',attacks:['Salva en abanico','Embestida de hombro','Salto de estaca'],patterns:['fan','dash','jump']},
   {id:'huesped',name:'Huésped de Cuarentena',tier:'D5',hp:1600,r:32,windup:1.6,recovery:1.4,damage:18,color:'#cda99d',attacks:['Brote de cuarentena','Salto de masa','Barrido de membrana'],patterns:['zones','jump','sweep']}
  ];
- const cache=new Map();
- function image(path){if(!cache.has(path)){const im=new Image();im.src='assets/anomalias-biologicas/'+path;cache.set(path,im);}return cache.get(path);}
+ const cache=new Map(),failed=new Set();
+ function image(path){if(!cache.has(path)){const im=new Image();im.onerror=()=>failed.add(path);im.onload=()=>failed.delete(path);im.src='assets/anomalias-biologicas/'+path;cache.set(path,im);}return cache.get(path);}
  function preload(){const cat=window.BIO_CATALOGO;for(const modes of Object.values(cat?.modes||{}))for(const m of Object.values(modes))for(const a of Object.values(m.actions)){image(a.path);if(a.fx)image(a.fx);}}
- function ready(id){const mode=G.TrialVisuals?.mode==='16'?16:32,model=window.BIO_CATALOGO?.modes[mode]?.[id];return !!model&&Object.values(model.actions).every(a=>[a.path,a.fx].filter(Boolean).every(p=>{const im=image(p);return im.complete&&im.naturalWidth>0;}));}
+ function loading(id){
+  const mode=G.TrialVisuals?.mode==='16'?16:32,model=window.BIO_CATALOGO?.modes[mode]?.[id];if(!model)return{ready:false,failed:['catalogue:'+id],pending:[]};
+  const paths=[...new Set(Object.values(model.actions).flatMap(a=>[a.path,a.fx].filter(Boolean)))],pending=[];
+  for(const p of paths){const im=image(p);if(!im.complete||!im.naturalWidth)pending.push(p);}
+  return{ready:pending.length===0,failed:paths.filter(p=>failed.has(p)),pending};
+ }
+ function ready(id){return loading(id).ready;}
+ function retryFailed(id){const state=loading(id);for(const p of state.failed){failed.delete(p);cache.delete(p);image(p);}}
  function segmentDistance(x,y,a,b){const dx=b.x-a.x,dy=b.y-a.y,k=Math.max(0,Math.min(1,((x-a.x)*dx+(y-a.y)*dy)/(dx*dx+dy*dy||1)));return Math.hypot(x-a.x-dx*k,y-a.y-dy*k);}
  function contains(z,p){
   if(z.type==='line')return segmentDistance(p.x,p.y,z.a,z.b)<=z.r+p.r;
@@ -107,5 +114,5 @@ G.RiftAnomalies=(()=>{
   }
  }
  function create({tier,geometry,anomalyId}){const profile=catalog.find(p=>p.id===anomalyId)||catalog.find(p=>p.tier===tier);if(!profile)throw Error('Unknown biological anomaly');return new Biological(profile,geometry);}
- return{catalog,create,preload,ready,contains};
+ return{catalog,create,preload,ready,loading,retryFailed,contains};
 })();

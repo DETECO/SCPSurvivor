@@ -31,6 +31,25 @@ En NIVELES se recuperó el intento fallido `01a16da4-d936-7782-b898-79e650f0e723
 
 Esta consulta cubre los turnos y fuentes citados, no todos los historiales completos. Se pidieron entregas documentales específicas a las áreas; se registrarán al llegar con sus revisiones. Los agentes auxiliares realizan auditorías de lectura; sus resultados no sustituyen pruebas de PROGRAMACION.
 
+### Entregas recibidas y examinadas
+
+[Corte posterior de seis archivos con hashes](revisiones/REV-EST-0007/ENTREGAS.json), separado del manifiesto previo. Fuentes examinadas: cuatro fichas de área completas, manifiesto BIO/NPC y comprobación de recursos; código de integración y capturas locales indicados debajo. No se releen los historiales completos.
+
+| Entrega | Tratamiento y dependencia |
+|---|---|
+| [PERSONAJES r1](entregas/PERSONAJES-GRIETAS-001.md) | Cinco BIO/130atlas y394IDs de texto aprobados; apoyo amarillo disponible. Diseños femeninos aceptados con fuente humana recuperada, pero24atlas multiframe mal montados: reparación técnica encargada en carpeta nueva, sin afirmar aceptación del ZIP final |
+| [NIVELES r1](entregas/NIVELES-GRIETAS-001.md) | Contratos de identidad, entrada/retorno, origen congelado, señales y rutas. Sus48×36/0,70s/120s/escape cercano son recomendaciones nuevas de ensayo; PROGRAMACION conserva la composición28×20/0,5s/90s/centro ya versionada y probada. No es un conflicto entre decisiones aceptadas ni obliga a otra elección de Iván |
+| [MENUS](entregas/MENUS-GRIETAS-001.md) | Lectura de BIO/tier/relojes, burbujas subordinadas a peligro y selección pausada del cuarto poder sobre HUD vigente. MEN-005 continúa sin elegir |
+| [SONIDO](entregas/SONIDO-GRIETAS-001.md) | Alerta/cues existentes provisionales; no hay sonido característico NPC aceptado. Burbujas silenciosas, sin locución; no bloquea el encuentro |
+
+La matriz visual exhaustiva propuesta por NIVELES y el balance de evasión bajo presión son comprobaciones pendientes específicas; no se declaran ejecutadas por haber recorrido las cinco identidades y ambas resoluciones. El nuevo encargo incluye revisar el acceso antiguo de práctica para que un enlace guardado no siga presentando al Custodio como resultado actual.
+
+### Revisión técnica de ESTRUCTURA
+
+Dos recorridos locales independientes pasaron con D1/32vertical y D5/16horizontal: fixture separado, congelación del origen desde el contacto, pausa, elecciónUI de victoria y retorno con mismo fixture/listas/enemigos/cofres/terminal, vida/munición conservadas y NPC retirado. Datos del padre `migration-audit/grietas-integrales/coordinacion/local/resultado.json`; capturas D1/D5 inspeccionadas. Se inyectan posición, invulnerabilidad y daño de victoria para recorrer estados; no partida natural, balance ni móvil físico.
+
+La lectura del código detectó MAX genérico×1,3, oferta de poderes ajenos sin compatibilidad y falta de recuerdos/entorno en el selector NPC. PROGRAMACION recibió corrección y concretó ENSAYO-POD-001 r2: cinco extras propios, premio de la BIO vencida y textos con contexto real. También se derivó la transición que podía bloquearse ante un atlas404 y el acceso de práctica antiguo. El cierre público debe incluir esas correcciones; su derivación no acredita por sí sola la prueba final.
+
 ## Conflictos concretos
 
 1. **Cantidad resuelta — EST-GRI-002 r1:** tras la consulta, Iván responde «Mantener las cinco aprobadas; las diez eran sus variantes gráficas.» Se integran cinco BIO, cada una en16/32. No quedan cinco nuevas identidades pendientes ni se amplía el catálogo por inferencia. La auditoría de catálogo y PERSONAJES coinciden con la aclaración.

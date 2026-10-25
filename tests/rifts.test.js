@@ -29,10 +29,10 @@ test('solo opción local y sin cuentas; modo normal y servidores públicos intac
   assert.equal(setup('?grietas=local').r.enabled,true);assert.equal(setup().r.directTest,true);
 });
 
-test('V2 rift practice is explicit on loopback and authorized Pages only',()=>{
+test('historical V2 rift practice requires explicit legado=b3 on loopback and authorized Pages',()=>{
  for(const [search,host,protocol,pathname]of [
-  ['?prueba=mapa-v2&premios=grieta','127.0.0.1','http:','/'],
-  ['?premios=grieta','deteco.github.io','https:','/SCPSurvivor/']
+  ['?prueba=mapa-v2&premios=grieta&legado=b3','127.0.0.1','http:','/'],
+  ['?premios=grieta&legado=b3','deteco.github.io','https:','/SCPSurvivor/']
  ]){
   const a=setup(search,host,protocol,pathname);assert.equal(a.G.MapTrial.enabled,true);assert.equal(a.r.enabled,true);assert.equal(a.r.directTest,false);assert.equal(a.offer(),true);assert.equal(a.r.state.remaining,45);
  }
@@ -50,7 +50,7 @@ test('V2 rift practice is explicit on loopback and authorized Pages only',()=>{
 });
 
 test('V2 encounter texts never imply escape, cleared remnants or an available exit',()=>{
- const a=setup('?prueba=mapa-v2&premios=grieta');a.offer();a.r.tick(45);
+ const a=setup('?prueba=mapa-v2&premios=grieta&legado=b3');a.offer();a.r.tick(45);
  assert.equal(a.r.state.status,'closed');assert.match(a.r.state.alert,/continúa resistiendo/i);assert.doesNotMatch(a.r.state.alert,/salida/i);
  a.r.reset();a.offer();a.player.x=a.r.state.x;a.player.y=a.r.state.y;assert.equal(a.r.enter(a.player),true);assert.doesNotMatch(a.r.state.alert,/puedes huir|salida/i);
  assert.equal(a.r.complete('defeated'),true);assert.doesNotMatch(a.r.state.alert,/sector despejado/i);

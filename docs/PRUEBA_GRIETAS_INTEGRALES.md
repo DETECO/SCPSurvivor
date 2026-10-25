@@ -1,6 +1,6 @@
-# Prueba jugable de grietas — LOT-EST-005 r1
+# Prueba jugable de grietas — LOT-EST-005 r2
 
-24/10/2026 · ENSAYO-GRI-001 r1 · PROGRAMACION. Implementación en verificación; el recibo de publicación identifica el corte público comprobado. No equivale a aceptación humana o balance final.
+25/10/2026 · REV-EST-0008 / EST-NPC-001r1 · ENSAYO-GRI-001 r1 + ENSAYO-NPC-RESERVA-r3 · PROGRAMACION. Implementación en verificación; el recibo de publicación identifica el corte público comprobado. No equivale a aceptación humana o balance final.
 
 ## Cómo probar
 
@@ -13,7 +13,11 @@
 
 **Variantes explícitas de QA:** añade `&grado=D2`, D3, D4 o D5 para practicar otra anomalía; `&apoyo=si` o `&apoyo=no` fuerza presencia/ausencia de compañero solo en esta práctica. `&estilo=1`…`6` fuerza una apariencia independiente del grado. No son frecuencias naturales. [D5 con compañero forzado](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas&grado=D5&apoyo=si&graficos=32). El modo habitual conserva sus sorteos aprobados desde mapa2, sin garantía de apertura.
 
-La URL anterior `?prueba=mapa-v2&premios=grieta` conserva el B3 histórico del Custodio en el mismo mapa. El menú actualizado dirige a la nueva prueba separada; el prototipo histórico no acredita este lote.
+Los enlaces antiguos con `premios=grieta` se redirigen a esta práctica separada. Solo `&legado=b3` solicita deliberadamente la regresión histórica del Custodio; no acredita este lote.
+
+Si un atlas falla o tarda10s de juego activo en cargar, se restaura el origen congelado con un aviso, sin premio ni nuevo sorteo. Pausar también detiene esa espera. No se pierde vida/equipo ni se rellena el cargador durante la recuperación.
+
+Para comprobar las compañeras: añade `&apoyo=si&companera=delgada`, `fitness` o `curvy`, en16/32. El arma se elige al azar una vez; su reserva es ilimitada, pero sí tiene cargador y recarga. La presencia normal sigue33%D1–D4/10%D5; forzarla en práctica no representa esa frecuencia.
 
 ## Parámetros concretados para ensayo
 
@@ -35,9 +39,9 @@ Estos valores se concretan por la autorización de LOT-EST-005, sin convertirlos
 | Premio posterior a primera victoria | 25% de ensayo; primera garantizada y garantía después de3victorias vacías conservadas. Identidad única por encuentro. Sin tickets/moneda persistentes |
 | Poderes | Pulso de esporas12daño/4s/r160; cápsula vítrea18/3,5s/r420; tensión orgánica14/5s/r240/hasta3blancos; salva espinosa9×5/5s/r400; brote20/6s/r210/hasta8blancos. Rangos2–5:+18%base por rango; extras propios según [ENSAYO-POD-001r2](ENSAYO_PODERES_R2.md), sin multiplicadorMAX genérico. Bonos del jugador una vez |
 | Límites de poderes | Máximo3,5rangos+extra, sin activación manual; oferta hasta3válidos (una compatible propia por BIO en r2), duplicado mejora, MAX usa apoyo táctico existente; cuarto rechazar/reemplazar rango1 y retirar efectos anteriores |
-| Equipo NPC | AF01 de apoyo real con PNG aprobados; único modelo compatible del ensayo, sin prometer variedad inexistente. Normal20disparos/5daño/0,8s; Rara24/6/0,75; Épica28/7/0,7; Legendaria32/8/0,65. Perfiles temporales distintos, no solo etiquetas |
+| Equipo NPC | Selección uniforme pistol/smg/shotgun por encuentro, reserva ilimitada explícita y cargadores12/24/6, recargas1,5/1,8/2,2s. Patrones individual/ráfaga/6perdigones y alcances320/280/180. ENSAYO-NPC-RESERVA-r3 registra daño/cadencia por rareza; sin límite oculto de tiros o daño. AF01 aprobado; smg/shotgun dibujo legado provisional |
 | Vida/movimiento NPC | 45vida,95u/s de seguimiento; incapacitable, sin rescate/reroll/reaparición; sin remate/XP/transferencia de equipo |
-| Nombres y texto NPC | Nombres masculinos de la lista propuesta, sin repetir en expedición mientras queden opciones. Rig Apoyo amarillo.14personalidades estables; presentación y comentarios de arma propia/equipo observado. Cadencia de ensayo12/28/44s para equipo,52s para entorno verdadero,60s un recuerdo general y80s ánimo; descartada ante ataques/retirada. Sin recuerdos o entorno no observados |
+| Nombres y texto NPC | Rig masculino amarillo y compañeras delgada/fitness/curvy R3; cuatro apariencias de ensayo uniformes tras presencia. Nombres acordes sin repetir mientras haya opciones;14personalidades independientes. Texto identifica arma real; sin frase de munición agotada. Recarga solo durante recarga. Presentación, contexto observado, miedoD5 y recuerdo compatible se conservan |
 | Audio | Cues existentes provisionales `riftOpen`/`rift`/`bossDown`, no aprobación sonora final. Compañero sin voz ni sonido nuevo |
 
 ## Conservación de estado y límites
@@ -48,4 +52,4 @@ Vida, equipo, mejoras, temporizadores de recarga/habilidad y efectos del jugador
 
 El reloj `elapsed` anterior sigue midiendo tiempo del mapa de origen; la sala tiene su propio reloj. Ranking/bonos/economía no forman parte de esta entrega. No hay guardado real del encuentro ni garantía antitrampas.
 
-Pendientes: aceptación de Iván, balance/evasión bajo presión y teléfono físico; arte final de sala/MEN-005, sonido característico del NPC y cues definitivos; exportación femenina y armas pendientes de sus áreas. Cinco BIO en dos resoluciones, cantidad resuelta por EST-GRI-002r1. No quedan otras cinco identidades por inventar.
+Pendientes: aceptación de Iván, balance/evasión bajo presión y teléfono físico; arte final de sala/MEN-005, sonido característico del NPC y cues definitivos; revisión visual final de la composición femenina R3 y sprites nuevos smg/shotgun pendientes de sus áreas. Cinco BIO en dos resoluciones, cantidad resuelta por EST-GRI-002r1. No quedan otras cinco identidades por inventar.

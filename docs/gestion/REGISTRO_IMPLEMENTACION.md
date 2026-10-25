@@ -134,3 +134,15 @@ Se leyó completa al aparecer durante QA final y se registra hash/tratamiento en
 
 ### Revisión ESTRUCTURA — poderes y contextos NPC
 Se contrastó la revisión con el código y decisiones24–29: MAX×1,3genérico y mezcla arbitraria de poderes incumplían el extra propio/compatibilidad. Dos regresiones dirigidas fallaron antes de corregirlo. Se aplica ENSAYO-POD-001r2 (documento explícito, sin alterar el lote): cinco extras distintos y acotados, tabla BIO→poder propio, MAXsaturación. El eco del Huésped se suspende con el mundo y se elimina al reemplazar/morir. Se conecta un recuerdoV2general compatible y tags del recinto reales; no se inventa papel/pasillos en estas salas. Se corrigió el bloqueo de charla después de avisar que se agotó munición y se limitan burbujas al viewport/HUD. Once grupos de navegador posteriores, incluidos cinco extras efectivos y recuerdo/contextos ausentes, aprobados en fuente; se repite en copia de publicación. MENUS-GRIETAS-001 leído: panel del cuarto poder identifica el nuevo y las tres ranuras, sin elegir MEN-005.
+
+
+## REV-EST-0008 / LOT-EST-005 r2 — inicio25/10/2026
+
+Fuentes fijadas: CONTROL_CAMBIOS0.9, EST-NPC-001r1 y LOT-EST-005r2, con el corte0.8/r1 conservado en revisiones/REV-EST-0008/MANIFIESTO.json. Se recibe la autorización directa de Iván delegada por ESTRUCTURA; sustituye exclusivamente AF01 fija y reserva finita del compañero por sorteo uniforme pistol/smg/shotgun y reserva ilimitada, con cargadores, recarga y cadencia reales. Los demás contratos de LOT005r1 siguen vigentes. Hashes al comenzar en migration-audit/grietas-integrales/revision-0008-inicio.json.
+
+Se retoman los cambios parciales de carga/alias sin descartarlos. PERSONAJES-COMPANERAS-003 documenta autorización directa e implementación local de las tres compañeras; se revisan sus dependencias y se repiten sus comprobaciones bajo la nueva regla de armas. Sus27PASS previos incluían munición finita y no se reutilizan como evidencia del requisito nuevo. Tres agentes trabajan en NPC, cargas/alias y auditoría de publicación; raíz integra, comprueba y publica en el destino ya autorizado. Servicios, facturación, gates de fusión y economía conservan su estado. Esta anotación inicia trabajo; todavía no acredita la publicación final.
+
+
+### LOT-EST-005r2 — relevo técnico de Juanillo25/10/2026
+
+PROGRAMACION y su agente NPC terminaron con systemError antes de aplicar reserva infinita. Juanillo asumió el encargo de implementación/publicación autorizado por Iván, sin reiniciar un escritor concurrente ni abrir publicación general de áreas. Conservó código de salas/carga/alias y R3. [Informe de cierre técnico](informes/LOT-EST-005-r2-juanillo.md):270/270pruebas del juego;10salas,18combinaciones femeninas/armas,14grupos de desenlace y6casos de carga/alias locales aprobados. Suite con backend detenida por espera, sin resultado completo atribuible. [Validación nueva](LOT-EST-005_VALIDACION.json), conservando el recibo r1 en revisiones/REV-EST-0008. Publicación final en comprobación.

@@ -1,102 +1,43 @@
 {
-  "lot": "LOT-EST-005 r1",
-  "revision": "REV-EST-0007",
-  "control": "0.8 + EST-GRI-002 r1",
-  "status": "trial_implemented_local_verified_publication_pending",
-  "date": "2026-10-24T22:42:20.171992+00:00",
+  "lot": "LOT-EST-005 r2",
+  "revision": "REV-EST-0008",
+  "control": "0.10 / EST-NPC-001 r1",
+  "status": "local_verified_publication_pending",
+  "verifiedAt": "2026-10-25T17:49:34.493892+00:00",
+  "implementer": "Juanillo / ESTRUCTURA, relevo técnico autorizado tras systemError de PROGRAMACION y su agente NPC",
   "build": {
-    "scripts": 116,
-    "bundle": "22be408cc0",
-    "fullBuild": "passed",
-    "check": "passed",
-    "publicationBundle": "6b2f55868a",
-    "publicationBuildAndCheck": "passed"
+    "scripts": 117,
+    "bundle": "c5f789805d",
+    "fullBuild": "PASS",
+    "check": "PASS"
   },
-  "node": {
-    "files": 59,
-    "tests": 316,
-    "suites": 0,
-    "pass": 310,
-    "fail": 5,
-    "cancelled": 0,
-    "skipped": 1,
-    "todo": 0,
-    "failures": [
-      "not ok 96 - P05 real SQLite RPC: 20 concurrent identical commands have one effect and replay their receipt",
-      "not ok 97 - P05 real SQLite RPC: distinct commands at the same revision have exactly one winner",
-      "not ok 98 - P05 real SQLite RPC isolates account state and receipt IDs by UID",
-      "not ok 99 - P05 real SQLite RPC transfers a run and rejects writes from its former session",
-      "not ok 100 - P05 real SQLite state and original command receipts survive Miniflare restart"
-    ],
-    "limitation": "First sandbox run had ancestor-read denial. Elevated final rerun confirms 5 prior ERR_RUNTIME_FAILURE cases: required2026-10-17 vs workerd max2026-08-06. Emulator test skipped. No backend/configuration change."
+  "nodeGame": {
+    "files": 50,
+    "tests": 270,
+    "pass": 270,
+    "fail": 0,
+    "skipped": 0,
+    "evidence": "evidencias/lot-est-005/r2/node-game-tests.txt"
   },
-  "browser": {
-    "integralScenarios": 10,
-    "outcomeGroups": 11,
-    "incVisRegressionScenarios": 9,
-    "viewports": [
-      [
-        1280,
-        900
-      ],
-      [
-        390,
-        844
-      ],
-      [
-        844,
-        390
-      ]
-    ],
-    "resolutions": [
-      16,
-      32
-    ],
-    "errors": 0,
-    "method": "Forced tier/NPC and position/HP/time for QA; actual room AI, UI and managers; not natural balance or physical phone acceptance. Injected time, positions, invulnerability, HP and deterministic NPC draws; actual AI/combat/projectile/reward/return modules.",
-    "qaForced": true,
-    "physicalPhone": false
+  "allNodeAttempt": {
+    "status": "stopped_incomplete",
+    "reason": "La suite con backend P05 quedó esperando después de Worker auth/HTTP; proceso de esta prueba detenido. No se atribuye resultado final ni se reusa el resultado histórico como actual."
   },
-  "assets": {
-    "priorUnchanged": 134,
-    "priorChanged": 0,
-    "biologicalProvenance": "assets/anomalias-biologicas/PROCEDENCIA.json"
+  "browserLocal": {
+    "rooms": 10,
+    "femaleResolutionWeaponCombinations": 18,
+    "outcomeGroups": 14,
+    "assetFailureSlowTimeoutAndAliases": 6,
+    "status": "PASS",
+    "evidence": "evidencias/lot-est-005/r2/local/"
   },
-  "evidence": "docs/gestion/evidencias/lot-est-005/",
-  "manualAcceptance": "pending",
-  "productionServices": false,
-  "pending": [
-    "Balance/pressure/dodging acceptance",
-    "Physical phone/Safari/FPS/memory",
-    "Final scenario art and MEN-005 selection",
-    "Final rift/NPC sound",
-    "Female multi-frame exports/anchors; pending weapon art approval",
-    "Fusion/ultimate/economy outside this lot"
-  ],
-  "publicationCopy": {
-    "integralScenarios": 10,
-    "outcomeGroups": 11,
-    "incVisScenarios": 9,
-    "defaultStartPauseScenarios": 2,
-    "csp": "original_publication_CSP_retained",
-    "eol": "Existing file conventions retained for review; immutable asset/source snapshots byte-preserved.",
-    "stylesCovered": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ]
-  },
-  "targetedDomainCases": 21,
-  "finalCorrections": [
-    "Portador P3 circle plus announced frontal sector",
-    "Contact freezes origin AI/projectiles/pickups before their tick",
-    "Pause QA timestamp captured after confirmed user click",
-    "Own distinct MAX extras, explicit BIO compatibility and saturation",
-    "One compatible home memory and truthful scenario tags",
-    "World suspension of delayed echo"
-  ],
-  "powerProfile": "ENSAYO-POD-001 r2"
+  "method": "QA determinista declara tiempo, posiciones, invulnerabilidad, HP y sorteo/apariencia forzados. Usa salas, renderer, proyectiles, colisiones, poderes y retorno reales. Tres armas disparan 40 veces cada una con varias recargas. No acredita una victoria natural o balance.",
+  "preservedHistoricalReceipt": "revisiones/REV-EST-0008/LOT-EST-005_VALIDACION-r1.json",
+  "limits": [
+    "Aceptación humana y teléfono físico pendientes",
+    "Arte smg/shotgun legado provisional; propuestas ARMAS R2.2 no aceptadas por extensión",
+    "R3 integrado por autorización directa, revisión artística final pendiente",
+    "Sin sonido de diálogo aprobado; burbujas silenciosas",
+    "Balance y salas de ensayo; fusión, ultimate y servicios reales fuera del lote"
+  ]
 }

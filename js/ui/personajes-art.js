@@ -8,14 +8,16 @@ G.PersonajesArt=(()=>{
   const key=mode+'/'+id;if(cache.has(key))return cache.get(key);
   const entry={cat,n:Number(mode),img:new Image(),ready:false};cache.set(key,entry);
   entry.loaded=new Promise(resolve=>{entry.img.onload=()=>{entry.ready=true;resolve()};entry.img.onerror=()=>resolve();});
-  entry.img.src=`assets/personajes-20261022/${mode}/${id}/Partes.png`;return entry;
+  entry.img.src=cat.partsPathRuntime||`assets/personajes-20261022/${mode}/${id}/Partes.png`;
+  if(cat.fallbackPathRuntime){entry.fallback=new Image();entry.fallback.onload=()=>entry.fallbackReady=true;entry.fallback.src=cat.fallbackPathRuntime;entry.down=new Image();entry.down.onload=()=>entry.downReady=true;entry.down.src=cat.neutralizedPathRuntime;}
+  return entry;
  }
- function preload(){return enabled()?Promise.all(['guardia','medico','apoyo'].map(id=>asset(id)?.loaded)):Promise.resolve();}
+ function preload(){return enabled()?Promise.all(['guardia','medico','apoyo',...(G.CompanionCharacters?.ids||[])].map(id=>asset(id)?.loaded)):Promise.resolve();}
  function source(ctx,img,b,x,y,w=b.w,h=b.h,a=0){ctx.save();ctx.translate(x,y);ctx.rotate(a);ctx.drawImage(img,b.x,b.y,b.w,b.h,-w/2,-h/2,w,h);ctx.restore();}
  function pose(a,actor,anim){
   const n=a.n,aim=Number.isFinite(actor.weaponAim)?actor.weaponAim:Number.isFinite(actor.aim)?actor.aim:0,dir=G.Sprites.dirFromAngle(aim),walking=actor.walking??anim.cur==='Walk',phase=(anim.frame||0)%4,move=Number.isFinite(actor.moveAngle)?G.Sprites.dirFromAngle(actor.moveAngle):anim.dir||dir;
   const torso=a.cat.parts[dir],leg=a.cat.parts[(walking?2+phase:1)*8+move],bob=walking&&(phase===1||phase===3)?-Math.max(1,n/32):0,top=n-1-leg.h-torso.h+1+bob;
-  return{n,aim,torso,leg,top,origin:{x:n/2,y:top+torso.h*.7},shoulderY:top+torso.h*.62};
+  return{n,aim,torso,leg,top,origin:{x:n/2,y:top+torso.h*.7},shoulderY:top+torso.h*(a.cat.rig?.shoulderRatio??.62)};
  }
  function at(ctx,a,anim,x,y,opts,paint){
   const alpha=opts.alpha??1;if(alpha<=0)return;
@@ -42,7 +44,7 @@ G.PersonajesArt=(()=>{
  function bone(ctx,img,b,a,c,width){source(ctx,img,b,(a.x+c.x)/2,(a.y+c.y)/2,Math.hypot(c.x-a.x,c.y-a.y),width,Math.atan2(c.y-a.y,c.x-a.x));}
  function limb(ctx,a,img,shoulder,hand,side,angle){
   const dx=hand.x-shoulder.x,dy=hand.y-shoulder.y,d=Math.hypot(dx,dy)||1,k=Math.min(a.n*.1,d*.3),e={x:(shoulder.x+hand.x)/2-dy/d*k*side,y:(shoulder.y+hand.y)/2+dx/d*k*side};
-  bone(ctx,img,a.cat.parts[48],shoulder,e,Math.max(2,Math.round(a.n*.1)));bone(ctx,img,a.cat.parts[49],e,hand,Math.max(2,Math.round(a.n*.08)));source(ctx,img,a.cat.parts[53],hand.x,hand.y,Math.max(2,Math.round(a.n*.1)),Math.max(2,Math.round(a.n*.1)),angle);
+  bone(ctx,img,a.cat.parts[48],shoulder,e,Math.max(2,Math.round(a.n*(a.cat.rig?.armWidth??.1))));bone(ctx,img,a.cat.parts[49],e,hand,Math.max(2,Math.round(a.n*(a.cat.rig?.armWidth??.08))));source(ctx,img,a.cat.parts[53],hand.x,hand.y,Math.max(2,Math.round(a.n*.1)),Math.max(2,Math.round(a.n*.1)),angle);
  }
  function aimFor(pl,w){const t=w._aimTarget;return t&&!t.dead&&t.hp>0&&Number.isFinite(t.x)&&Number.isFinite(t.y)?Math.atan2(t.y-pl.y,t.x-pl.x):Number.isFinite(pl.weaponAim)?pl.weaponAim:Number.isFinite(pl.aim)?pl.aim:0;}
  function armed(ctx,a,p,img,w,angle,index,count){
@@ -51,7 +53,7 @@ G.PersonajesArt=(()=>{
   const hand=(x,y)=>({x:pivot.x+ca*x-sa*y,y:pivot.y+sa*x+ca*y}),hands=[hand(0,n*.07),hand((w.model==='shotgun'?13:w.model==='smg'?7:1)*n/32,n*.08)];
   const approved=w.model==='pistol'?G.AF01ApprovedArt?.mount(String(n),angle,hands[0]):null;
   if(approved)hands[1]=approved.support;
-  const nx=-Math.sin(p.aim),ny=Math.cos(p.aim),shoulders=[{x:n/2+nx*n*.18,y:p.shoulderY+ny*n*.08},{x:n/2-nx*n*.18,y:p.shoulderY-ny*n*.08}];
+  const nx=-Math.sin(p.aim),ny=Math.cos(p.aim),half=a.cat.rig?.shoulderHalf??.18,shoulders=[{x:n/2+nx*n*half,y:p.shoulderY+ny*n*.08},{x:n/2-nx*n*half,y:p.shoulderY-ny*n*.08}];
   const limbs=count===2?[index]:[1,0];for(const i of limbs)limb(ctx,a,img,shoulders[i],hands[count===2?0:i],i?-1:1,wa);
   if(approved)G.AF01ApprovedArt.draw(ctx,approved,w.flash);
   else{
@@ -69,13 +71,16 @@ G.PersonajesArt=(()=>{
   }return true;
  }
  function drawAlly(ctx,ally){
-  if(!enabled()||!ally?.anim)return false;const a=asset('apoyo');if(!a?.ready)return false;
-  const actor={aim:ally.aim,walking:ally.anim.cur==='Walk',moveAngle:Math.atan2(ally.ty-ally.y,ally.tx-ally.x)},p=pose(a,actor,ally.anim),w={model:'pistol',flash:ally.flash};
+  if(!enabled()||!ally?.anim)return false;const a=asset(ally.characterId||'apoyo');if(!a)return false;
+  if(!a.ready){const img=ally.incapacitated?a.down:a.fallback,ready=ally.incapacitated?a.downReady:a.fallbackReady;if(!ready)return false;const dir=G.Sprites.dirFromAngle(ally.aim||0),n=a.n;at(ctx,a,ally.anim,ally.x,ally.y,{},()=>ctx.drawImage(img,ally.incapacitated?n:0,dir*n,n,n,0,0,n,n));return true;}
+  if(ally.incapacitated&&a.cat.rig){const b=a.cat.parts[56+G.Sprites.dirFromAngle(ally.aim||0)];at(ctx,a,ally.anim,ally.x,ally.y,{},img=>source(ctx,img,b,a.n/2,a.n-1-b.h/2));return true;}
+  const actor={aim:ally.aim,walking:ally.anim.cur==='Walk',moveAngle:Math.atan2(ally.ty-ally.y,ally.tx-ally.x)},p=pose(a,actor,ally.anim),w={model:ally.weapon?.model||'pistol',flash:ally.flash};
   at(ctx,a,ally.anim,ally.x,ally.y,{},img=>{if(Math.sin(p.aim)<0)armed(ctx,a,p,img,w,p.aim,0,1);body(ctx,a,p,img);if(Math.sin(p.aim)>=0)armed(ctx,a,p,img,w,p.aim,0,1);});return true;
  }
  function status(){
   const player=G.Game?.player,copies=player?.fieldWeapons||[],names={smg:'Subfusil',shotgun:'Escopeta',baton:'Porra'};
-  const missingModels=enabled()?[...new Set(copies.map(w=>w.model).filter(id=>names[id]))]:[];
+  const npc=G.RiftCompanion?.state;
+  const missingModels=enabled()?[...new Set([...copies.map(w=>w.model),...(npc&&!npc.incapacitated?[npc.weapon.model]:[])].filter(id=>names[id]))]:[];
   const approvedPistolReady=G.AF01ApprovedArt?.inspect().loaded===16;
   const messages=[];
   if(missingModels.length)messages.push('Arte provisional: '+missingModels.map(id=>names[id]).join(', ')+'.');

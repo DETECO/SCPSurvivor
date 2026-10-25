@@ -7,6 +7,11 @@ function setup(search='?prueba=mapa-v2',hostname='127.0.0.1',protocol='http:',pa
  if(fs.existsSync(file))vm.runInNewContext(fs.readFileSync(file,'utf8'),{G,window:{location:{search,hostname,protocol,pathname}},URLSearchParams,Math});
  return{G,enemies,sounds};
 }
+test('saved rift links normalize to the separate biological practice without enabling legacy and new systems together',()=>{
+ for(const query of ['?prueba=mapa-v2&premios=grieta','?prueba=combate-v2&premios=grieta']){const t=setup(query).G.MapTrial;assert.equal(t.legacyRiftAlias,true);assert.equal(t.expanded,true);assert.equal(t.infinite,true);assert.equal(t.rewardRiftPractice,false);}
+ assert.equal(setup('?prueba=mapa-v2&premios=grieta&legado=b3').G.MapTrial.rewardRiftPractice,true);
+ assert.equal(setup('?prueba=mapa-v2&premios=grieta&cuentas=local').G.MapTrial.enabled,false);
+});
 test('local V2 remains explicit and never combines with account modes',()=>{
  for(const [query,host,expected]of[['?prueba=mapa-v2','127.0.0.1',true],['?prueba=mapa-v2','localhost',true],['?prueba=mapa-v2','[::1]',true],['','127.0.0.1',false],['?prueba=mapa-v2','example.com',false],['?prueba=mapa-v2&cuentas=local','127.0.0.1',false],['?prueba=mapa-v2&cuentas=propias','127.0.0.1',false],['?prueba=mapa-v2&cuentas=invalid','127.0.0.1',false]]){
   const {G}=setup(query,host);assert.equal(G.MapTrial?.enabled,expected,query+' / '+host);
@@ -99,9 +104,9 @@ test('boss and rift reward practices require V2 and exclude the exploration prev
   const t=setup(search,host,protocol,pathname).G.MapTrial;
   assert.equal(t.rewardBossPractice,true);assert.equal(t.rewardRiftPractice,false);assert.equal(t.quick,true);assert.equal(t.startTime,270);assert.equal(t.chestPractice,false);
  }
- const r=setup('?prueba=mapa-v2&premios=grieta&cofres=prueba').G.MapTrial;
+ const r=setup('?prueba=mapa-v2&premios=grieta&cofres=prueba&legado=b3').G.MapTrial;
  assert.equal(r.rewardBossPractice,false);assert.equal(r.rewardRiftPractice,true);assert.equal(r.quick,false);assert.equal(r.startTime,0);assert.equal(r.chestPractice,false);
- const mixed=setup('?prueba=mapa-v2&premios=grieta&rapida=1').G.MapTrial;
+ const mixed=setup('?prueba=mapa-v2&premios=grieta&rapida=1&legado=b3').G.MapTrial;
  assert.equal(mixed.quick,false);assert.equal(mixed.startTime,0);
 });
 

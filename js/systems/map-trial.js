@@ -4,6 +4,8 @@ G.MapTrial=(()=>{
  const location=window.location;
  const loopback=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
  const publicDemo=location.protocol==='https:'&&location.hostname==='deteco.github.io'&&location.pathname.startsWith('/SCPSurvivor/');
+ const legacyRiftAlias=(loopback||publicDemo)&&!q.has('cuentas')&&q.get('premios')==='grieta'&&q.get('legado')!=='b3'&&(['mapa-v2','combate-v2','infinito-v2'].includes(q.get('prueba'))||(publicDemo&&!q.has('prueba')));
+ if(legacyRiftAlias){q.set('prueba','combate-v2');q.set('ensayo','grietas');q.delete('premios');window.history?.replaceState(null,'',location.pathname+'?'+q.toString()+(location.hash||''));}
  const requested=['mapa-v2','infinito-v2','combate-v2'].includes(q.get('prueba'))||(publicDemo&&!q.has('prueba'));
  const enabled=(loopback||publicDemo)&&requested&&!q.has('cuentas');
  const expanded=enabled&&(q.get('prueba')==='combate-v2'||(publicDemo&&!q.has('prueba')&&q.get('premios')!=='grieta'));
@@ -87,7 +89,7 @@ G.MapTrial=(()=>{
    ctx.fillStyle='#d9efe3';ctx.font='9px system-ui';ctx.fillText('ALIADO',ally.x,ally.y-(native?65:35));
    ctx.restore();
  }
- return{enabled,publicDemo,infinite,expanded,practice,elitePractice,quick,chestPractice,rewardBossPractice,rewardRiftPractice,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
+ return{enabled,publicDemo,infinite,expanded,practice,elitePractice,quick,chestPractice,rewardBossPractice,rewardRiftPractice,legacyRiftAlias,duration:300,bossAt:240,startTime:quick?270:0,reset,arrive,updateAllies,draw,
   drawables:()=>enabled&&arrived?team.filter(a=>!a.hidden).map(a=>({x:a.x,y:a.y,draw:ctx=>drawAlly(ctx,a)})):[],
   get allies(){return team.map(a=>({x:a.x,y:a.y,...(['16','32'].includes(G.TrialVisuals?.mode)?{dex:a.anim?.dex}:{}),...(infinite?{fleeing:!!a.fleeing,hidden:!!a.hidden}:{})}));},get alertTime(){return alertTime;}};
 })();

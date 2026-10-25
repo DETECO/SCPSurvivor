@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "originalCut": "REV-EST-0007",
   "supplement": "EST-GRI-002 r1",
   "deliveries": [
@@ -32,7 +32,24 @@
       "path": "docs/gestion/entregas/MENUS-GRIETAS-001.md",
       "sha256": "460fb983c5f58bb021a8fa2a5a9701115023f2e59b8bafb4e8cc75e4cd0c1192",
       "treatment": "Read. Existing compact HUD/paused fourth-power panel and priority/clamping of bubbles retained. No MEN-005 design selected."
+    },
+    {
+      "path": "docs/gestion/lotes/LOT-EST-005-r2.md",
+      "sha256": "2131bc4feecb59667b22d89f8b6b9b773690e499c8c7045f80462ca76bff6f3e",
+      "treatment": "Direct authorized EST-NPC-001r1: supersedes fixed AF01/finite reserve only; preserve prior rift contracts."
+    },
+    {
+      "path": "docs/gestion/entregas/PERSONAJES-COMPANERAS-003.md",
+      "sha256": "2c8aeec8e2fded7f27b9ed53ead0e6264b880c61228c7c1a289c2113db0bb2ac",
+      "treatment": "Direct implementation request: preserve three R3 female modular rigs and two resolutions; retest with new unlimited/random weapons. Prior finite-ammo test counts are historical."
+    },
+    {
+      "path": "docs/gestion/entregas/PERSONAJES-GRIETAS-002.md",
+      "sha256": "871eda72ade80c0700a1ae20b34495d3a5bae16def093ec65440294cdb6367a7",
+      "treatment": "Read raster repair delivery; R3 supersedes prior female rig blocker, not all final art acceptance."
     }
   ],
-  "powerProfileRevision": "ENSAYO-POD-001 r2 supersedes generic MAX and cross-anomaly pool; original lot unchanged."
+  "powerProfileRevision": "ENSAYO-POD-001 r2 supersedes generic MAX and cross-anomaly pool; original lot unchanged.",
+  "currentRevision": "REV-EST-0008",
+  "control": "0.9"
 }

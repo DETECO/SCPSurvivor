@@ -1,0 +1,43 @@
+{
+  "revision": "REV-EST-0008",
+  "date": "2026-10-25T10:06:32.7756992-03:00",
+  "scope": "Corte anterior a la decision NPC de25/10; no prueba de publicacion",
+  "files": [
+    {
+      "source": "PAUTA_DESARROLLO.md",
+      "snapshot": "fuentes/PAUTA_DESARROLLO.md",
+      "sha256": "2C73D30F2254C3E0131028170308F9816802B3024B08911C9A6E84A7408A1CD6",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/CONTROL_CAMBIOS.md",
+      "snapshot": "fuentes/docs/gestion/CONTROL_CAMBIOS.md",
+      "sha256": "434C10E0E7CEB5C001C7AA9F78B233E273701DB93334F5654F7D53DF81CB8E9F",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/lotes/LOT-EST-005-r1.md",
+      "snapshot": "fuentes/docs/gestion/lotes/LOT-EST-005-r1.md",
+      "sha256": "B98FF68045A9FD6E7CF68F8268030330A818F6F3382CE6347CD27946B890DE6A",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/COMPANERO_CONTENCION_GRIETAS.md",
+      "snapshot": "fuentes/docs/COMPANERO_CONTENCION_GRIETAS.md",
+      "sha256": "65E88CA67AC9F4DA1B314560B1A038AA709EE35A9B6FF1AFA3FD302DBB6132D7",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/PRUEBA_GRIETAS_INTEGRALES.md",
+      "snapshot": "fuentes/docs/PRUEBA_GRIETAS_INTEGRALES.md",
+      "sha256": "FEA54EF1F52CC3E706A358A6DB28E3CB3B2D1D218238D5325913CD4F7E9E176B",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/LOT-EST-005_VALIDACION.json",
+      "snapshot": "fuentes/docs/gestion/LOT-EST-005_VALIDACION.json",
+      "sha256": "80C24BEF9FF0028226C4C5380488DA3330EAC819640B5F175D9033C1BDA2DED4",
+      "readback": "matched"
+    }
+  ]
+}

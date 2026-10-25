@@ -1,5 +1,7 @@
 # Compañeros — personalidades y variantes femeninas V2
 
+**25/10/2026 · Integración local de compañeras R3:** delgada/fitness/curvy disponibles en16/32, con nombre femenino y personalidad independiente. [Entrega y pruebas](gestion/entregas/PERSONAJES-COMPANERAS-003.md). Los textos aprobados se conservan; las referencias inferiores a sprites pendientes son históricas.
+
 **Actualización de recursos · PERSONAJES, 24/10/2026:** se recuperó la aceptación directa de Iván de las tres alternativas femeninas (delgada, fitness y curvy) y el encargo de desarrollar sus modelos finales, mensaje `msg_01a1697b-bb4c-7cc0-b2a8-a72056e8cde0`, 23/10. Las fuentes y atlas ya existen; las menciones posteriores a «Iván diseñará los sprites» son antecedentes de esta producción. La revisión actual detecta 24 atlas multiframe con filas mezcladas que requieren reexportación, además de completar anclas y montaje del arma. No equivale a aceptación técnica de esos archivos ni a integración. [Manifiesto, contratos y evidencia](gestion/entregas/PERSONAJES-GRIETAS-001.md). Los textos aprobados se conservan sin cambios.
 
 23/10/2026 · **ESTADO: DIÁLOGOS APROBADOS POR IVÁN; NO INTEGRADOS AL JUEGO.** El texto del banco V1/V2 y las seis personalidades añadidas quedan aprobados el 23/10/2026. Esta aprobación cubre la redacción; no cambia las reglas de ESTRUCTURA ni integra burbujas, nombres aleatorios, sonidos o mecánicas.

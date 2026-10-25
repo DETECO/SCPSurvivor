@@ -1,5 +1,8 @@
 # Contexto del proyecto — SCP Survivor
 
+Actualización25/10/2026 — REV-EST-0008 / LOT-EST-005r2 / EST-NPC-001r1: compañero con arma balística aleatoria entre tres modelos, reserva ilimitada/cargadores y recarga reales; compañeras modularesR3 conservadas. Recuperación de atlas fallido/lento, alias de enlaces y poderesMAX propios incluidos en la verificación final. Roadmap0.37 y recibo público LOT005 identifican lo probado; no extrapolar los27casos antiguos de R3 con reserva finita.
+
+
 LOT-EST-005 r1 / REV-EST-0007 / CONTROL0.8 + EST-GRI-002 r1: cinco BIO16/32 en recintos separados, director desde mapa2, origen congelado, retirada única, poderes automáticos y NPC/burbujas integrados para ensayo. Parámetros ENSAYO-GRI-001r1; aceptación humana, balance, arte/sonidos definitivos pendientes. Ver guía y recibos de PROGRAMACION; servicios reales desactivados. Guía: docs/PRUEBA_GRIETAS_INTEGRALES.md. La entrada habitual conserva azar; la práctica explícita comienza en mapa2/minuto1 con apertura garantizada. La composición es de ensayo, no cierre artístico/aceptación global.
 
 **Entrega 0.33 · 23/10/2026:** Presentación integrada: escenario inicial R7 Backrooms480×320 con profundidad visual2.5D, menús aprobados responsivos, icono3 con SCP, personajes16/32 y dos prácticas visibles. Seis apariencias de grieta en B3; nuevas mecánicas de azar/NPC/recinto separado documentadas y pendientes. [Jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2) · [Alcance y límites](docs/PRESENTACION_INTEGRADA.md) · [ESTRUCTURA consultada](docs/ESTRUCTURA_SYNC_2026-10-23.md).

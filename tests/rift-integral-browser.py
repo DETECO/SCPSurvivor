@@ -32,7 +32,7 @@ def main():
  if a.live:base='https://deteco.github.io/SCPSurvivor/'
  else:
   server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT)));Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/'
- out=ROOT/'tests/artifacts/grietas-integrales'/('live'if a.live else'local');out.mkdir(parents=True,exist_ok=True);records=[]
+ out=Path(os.environ.get('SCP_TEST_OUTPUT',str(ROOT/'tests/artifacts/grietas-integrales'/('live'if a.live else'local'))));out.mkdir(parents=True,exist_ok=True);records=[]
  try:
   with sync_playwright()as pw:
    b=pw.chromium.launch(headless=True)

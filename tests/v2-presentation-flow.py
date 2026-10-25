@@ -14,7 +14,7 @@ class Quiet(SimpleHTTPRequestHandler):
 def run(browser,base,entry,kind,out):
  ctx=browser.new_context(viewport={'width':1280,'height':900});p=ctx.new_page();errors=[];http=[];p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text)if m.type=='error'else None);p.on('response',lambda r:http.append([r.status,r.url])if r.status>=400 else None)
  try:
-  query='?prueba=mapa-v2&premios=grieta&graficos=32'if kind=='rift'else'?prueba=combate-v2&rapida=1&graficos=32'
+  query='?prueba=mapa-v2&premios=grieta&legado=b3&graficos=32'if kind=='rift'else'?prueba=combate-v2&rapida=1&graficos=32'
   p.goto(base+entry+query,wait_until='domcontentloaded',timeout=60000);p.wait_for_selector('#operations-menu:visible');p.click('#btn-technical-start');p.wait_for_function("G.Game.state==='playing'")
   if kind=='rift':
    p.wait_for_function("G.DimensionalRifts.state.status==='open'");p.evaluate('G.Game.player.invuln=1e6;G.Game.togglePause()');before=p.evaluate('G.DimensionalRifts.state.remaining');p.wait_for_timeout(200);assert p.evaluate('G.DimensionalRifts.state.remaining')==before

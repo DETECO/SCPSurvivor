@@ -17,7 +17,7 @@ G.RiftUI=(()=>{
   if(r.active){
    el('scene-time').textContent='RECINTO · '+G.U.mmss(r.time);el('field-status').textContent=`${r.practice?'PRÁCTICA · ':''}${r.tier} · ${r.name} · Vida ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)}`;
    health.hidden=false;health.max=r.bossMaxHp;health.value=r.bossHp;
-   el('map-locator').hidden=false;el('map-locator').textContent=r.status==='entering'?'Cruzando la grieta…':r.status==='victory'?(r.reward?'Victoria · elige un poder · partida detenida':'Victoria · vuelve por el portal central'):`${r.roomName} · ${Math.ceil(r.bossHp)}/${r.bossMaxHp}`;
+   el('map-locator').hidden=false;el('map-locator').textContent=r.status==='entering'?`Cargando recinto · tiempo detenido${r.loadingWait>0?' · '+Math.ceil(r.loadingWait)+'s':''}`:r.status==='victory'?(r.reward?'Victoria · elige un poder · partida detenida':'Victoria · vuelve por el portal central'):`${r.roomName} · ${Math.ceil(r.bossHp)}/${r.bossMaxHp}`;
    for(const id of ['map-alert','chest-status','btn-terminal','terminal-prompt'])el(id).hidden=true;
    const escape=['warning','open'].includes(r.escape)||r.status==='victory';el('rift-locator').hidden=!escape;
    if(escape)el('rift-locator').textContent=`${r.status==='victory'?'REGRESO':r.escape==='open'?`RETIRADA · ${Math.ceil(r.escapeRemaining)}s`:`RETIRADA EN ${Math.ceil(r.escapeAt-r.time)}s`} · ${arrow(player,r.exit)} · entra caminando`;

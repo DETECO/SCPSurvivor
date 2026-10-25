@@ -1,6 +1,7 @@
-/* One temporary companion. Service AF01 tier profiles/names/cadence: ENSAYO-GRI-001 r1. */
+/* Temporary support. EST-NPC-001: random ballistic model, unlimited reserve; finite magazines. */
 G.RiftCompanion=(()=>{
- const equipment={Normal:{ammo:20,damage:5,interval:.8},Rara:{ammo:24,damage:6,interval:.75},'Épica':{ammo:28,damage:7,interval:.7},Legendaria:{ammo:32,damage:8,interval:.65}};
+ const equipment={Normal:{damageScale:.5,intervalScale:1},Rara:{damageScale:.575,intervalScale:.95},'Épica':{damageScale:.65,intervalScale:.9},Legendaria:{damageScale:.75,intervalScale:.85}};
+ const models=['pistol','smg','shotgun'];
  const names=['Gabriel','Tomás','Mateo','Nicolás','Diego','Martín','Andrés','Sebastián','Daniel','Lucas','Samuel','Joaquín','Rafael','Benjamín','Felipe','Manuel','Vicente','Rodrigo','Esteban'];let npc=null,usedNames=new Set();
  function line(code,player){
   if(!npc)return'';const bank=G.RiftDialogueData.bank[npc.personality];let text=code==='presentation'?G.RiftDialogueData.presentations?.[npc.presentationId]:bank?.[code];if(!text)return'';
@@ -10,13 +11,18 @@ G.RiftCompanion=(()=>{
   text=text.replaceAll('{nombre_npc}',npc.name).replaceAll('{arma_npc}',npc.weapon.name).replaceAll('{arma_jugador}',name||'').replaceAll('{nombre_jugador}',player?.alias||'');return text.includes('{')?'':text;
  }
  function speak(code,player){if(!npc||npc.used.has(code))return false;const text=line(code,player);if(!text)return false;npc.used.add(code);npc.bubble=text;npc.bubbleTime=5;npc.lastCode=code;return true;}
- function create({tier,rng=Math.random,geometry,player}){
+ const femaleNames=['Valeria','Camila','Elena','Paula','Antonia','Daniela','Sofía','Lucía','Martina','Renata','Natalia','Emilia','Julia','Inés','Laura','Andrea','Beatriz','Clara','Isabel','Teresa'];
+ function create({tier,rng=Math.random,geometry,player,appearance}){
   npc=null;if(rng()>=(tier==='D5'?.1:.33))return null;
   const rarity=tier==='D5'?'Legendaria':tier==='D4'?(rng()<.5?'Rara':'Épica'):'Normal',gear=equipment[rarity];
+  const model=models[Math.min(models.length-1,Math.floor(rng()*models.length))],base=G.FieldCatalog.models[model];
+  const weapon={model,name:base.name+' de apoyo '+rarity,resource:model==='pistol'?'AF01':null,damage:base.damage*gear.damageScale,interval:base.interval*gear.intervalScale,
+   capacity:base.capacity,reloadTime:base.reloadTime,range:base.range,speed:base.speed,spread:base.spread,pellets:base.pellets};
   const personalities=Object.keys(G.RiftDialogueData.bank),personality=personalities[Math.min(personalities.length-1,Math.floor(rng()*personalities.length))];
-  const available=names.filter(n=>!usedNames.has(n)&&n!==player?.alias),pool=available.length?available:names;const name=pool[Math.min(pool.length-1,Math.floor(rng()*pool.length))],entry=geometry.entry;usedNames.add(name);
+  const appearances=G.CompanionCharacters?.appearances||[{id:'masculino',characterId:'apoyo',gender:'M'}],look=appearances.find(a=>a.id===appearance)||appearances[Math.min(appearances.length-1,Math.floor(rng()*appearances.length))],nameList=look.gender==='F'?femaleNames:names;
+  const available=nameList.filter(n=>!usedNames.has(n)&&n!==player?.alias),pool=available.length?available:nameList.filter(n=>n!==player?.alias);const name=pool[Math.min(pool.length-1,Math.floor(rng()*pool.length))],entry=geometry.entry;usedNames.add(name);
   const presIndex=['SARC','ENOJ','ENTU','CARI','SIMP','SERE','NERV','ANAL'].indexOf(personality);
-  npc={name,personality,tier,rarity,r:12,biography:'generic-home',homeUsed:false,presentationId:tier==='D5'?'PRES-09':presIndex>=0?'PRES-0'+(presIndex+1):'PRES-12',weapon:{model:'pistol',name:'Pistola AF01 de apoyo '+rarity,resource:'AF01',...gear},ammo:gear.ammo,hp:45,maxHp:45,incapacitated:false,x:entry.x+40,y:entry.y,tx:entry.x+40,ty:entry.y,aim:0,wait:1,flash:0,invuln:0,age:0,bubble:'',bubbleTime:0,used:new Set(),observedShots:G.FieldCombat?.state?.shots||0,anim:new G.Sprites.Animator('support01',1,false)};
+  npc={name,personality,tier,rarity,appearance:look.id,characterId:look.characterId,gender:look.gender,r:12,biography:'generic-home',homeUsed:false,presentationId:tier==='D5'?'PRES-09':presIndex>=0?'PRES-0'+(presIndex+1):'PRES-12',weapon,ammo:weapon.capacity,capacity:weapon.capacity,reserveInfinite:true,reload:0,reloads:0,shots:0,hp:45,maxHp:45,incapacitated:false,x:entry.x+40,y:entry.y,tx:entry.x+40,ty:entry.y,aim:0,wait:1,flash:0,invuln:0,age:0,bubble:'',bubbleTime:0,used:new Set(),observedShots:G.FieldCombat?.state?.shots||0,anim:new G.Sprites.Animator('support01',1,false)};
   if(!speak('presentation',player))speak(tier==='D5'?'13':'01',player);return npc;
  }
  function clearLine(ax,ay,bx,by){const distance=Math.hypot(bx-ax,by-ay);for(let d=8;d<distance;d+=8)if(G.World.projectileBlock(ax+(bx-ax)*d/distance,ay+(by-ay)*d/distance,2))return false;return true;}
@@ -25,18 +31,24 @@ G.RiftCompanion=(()=>{
   if(!npc||!Number.isFinite(dt)||dt<=0)return;
   npc.age+=dt;npc.bubbleTime=Math.max(0,npc.bubbleTime-dt);npc.wait=Math.max(0,npc.wait-dt);npc.invuln=Math.max(0,npc.invuln-dt);npc.flash=Math.max(0,npc.flash-dt);
   if(npc.incapacitated)return;
+  if(npc.reload>0){npc.reload=Math.max(0,npc.reload-dt);if(npc.reload===0){npc.ammo=npc.capacity;npc.reloads++;}}
   const dx=player.x-48-npc.x,dy=player.y-npc.y,d=Math.hypot(dx,dy);npc.tx=player.x-48;npc.ty=player.y;
   if(d>60){npc.x+=dx/d*95*dt;npc.y+=dy/d*95*dt;G.World.collide(npc);}
   npc.anim?.update?.(dt);npc.anim?.loop?.(d>60?'Walk':'Idle');
-  if(boss&&!boss.dead&&npc.ammo>0&&npc.wait<=0&&Math.hypot(boss.x-npc.x,boss.y-npc.y)<=320&&clearLine(npc.x,npc.y,boss.x,boss.y)){
-   npc.aim=Math.atan2(boss.y-npc.y,boss.x-npc.x);npc.shot={x:boss.x,y:boss.y};npc.wait=npc.weapon.interval;npc.flash=.09;npc.ammo--;
-   const damage=Math.min(npc.weapon.damage,Math.max(0,boss.hp-1));if(damage>0)boss.hurt(damage,'#f0df8e');
+  if(boss&&!boss.dead&&npc.reload===0&&npc.ammo>0&&npc.wait<=0&&Math.hypot(boss.x-npc.x,boss.y-npc.y)<=npc.weapon.range&&clearLine(npc.x,npc.y,boss.x,boss.y)){
+   npc.aim=Math.atan2(boss.y-npc.y,boss.x-npc.x);npc.shot={x:boss.x,y:boss.y};npc.wait=npc.weapon.interval;npc.flash=.09;npc.ammo--;npc.shots++;
+   const w=npc.weapon,fan=w.spread*Math.PI/180;
+   for(let i=0;i<w.pellets;i++){
+    const angle=npc.aim+(w.pellets>1?(i/(w.pellets-1)-.5)*fan:(Math.random()-.5)*fan);
+    G.Projectiles.spawn({x:npc.x,y:npc.y,vx:Math.cos(angle)*w.speed,vy:Math.sin(angle)*w.speed,dmg:w.damage,r:w.pellets>1?2:3,life:w.range/w.speed,
+     hits:new Set(),friendly:true,fieldWeapon:true,allySupport:true,color:'#f0df8e'});
+   }
+   if(npc.ammo===0)npc.reload=w.reloadTime;
   }
   const priority=escapeSoon||['windup','attack'].includes(boss?.phase);
   if(priority)return;
   if(boss?.dead)speak('15',player);
   else if(player.hp/player.maxHp<.3)speak('10',player);
-  else if(npc.ammo===0&&!npc.used.has('11'))speak('11',player);
   else if(npc.bubbleTime<=0){
    if(npc.tier==='D5'){if(npc.age>15)speak('14',player);}
    else if(npc.age>12&&!npc.used.has('03'))speak('03',player);
@@ -51,7 +63,7 @@ G.RiftCompanion=(()=>{
  function draw(ctx){
   if(!npc)return;ctx.save();if(npc.incapacitated)ctx.globalAlpha=.5;
   if(!G.PersonajesArt?.drawAlly(ctx,npc))npc.anim?.draw?.(ctx,npc.x,npc.y);
-  ctx.font='bold 10px monospace';ctx.textAlign='center';ctx.fillStyle='#f6e8b8';ctx.fillText(npc.name+(npc.incapacitated?' · INCAPACITADO':` · ${npc.ammo}`),npc.x,npc.y-70);ctx.restore();
+  ctx.font='bold 10px monospace';ctx.textAlign='center';ctx.fillStyle='#f6e8b8';ctx.fillText(npc.name+(npc.incapacitated?(npc.gender==='F'?' · INCAPACITADA':' · INCAPACITADO'):` · ${npc.reload>0?'Recarga':npc.ammo+'/'+npc.capacity} · ∞`),npc.x,npc.y-70);ctx.restore();
  }
  function drawBubble(ctx,{priority=false}={}){
   if(!npc||npc.incapacitated||npc.bubbleTime<=0||!npc.bubble||priority)return;

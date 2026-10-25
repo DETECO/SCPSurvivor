@@ -1,3 +1,13 @@
+# LOT-EST-005 r2 — PROGRAMACION
+
+25/10/2026 · REV-EST-0008 / CONTROL0.9 / EST-NPC-001r1. **Integración final y comprobaciones en curso.** Se conserva abajo el informe r1 como antecedente; sus resultados de munición finita no acreditan el NPC actual. El recibo LOT-EST-005_PUBLICACION.json identificará el código y el flujo público efectivamente comprobados.
+
+El encargo actual sustituye AF01fija/reserva finita por selección uniforme de tres armas balísticas con reserva ilimitada, cargadores, recarga y cadencia reales, sin cupo oculto de daño/tiros. Se conservan presencia/rareza, ayuda temporal, vida, incapacitación, no remate/XP/transferencia y textos coherentes. Se integran las tres compañerasR3 autorizadas, con sus recursos originales y dos brazos, sin confundirlas con el bloqueo técnico de R2. Dibujo AF01aprobado; smg/shotgun legados provisionales, sin aceptar ARMASR2.2 por extensión.
+
+También se concluyen la recuperación404/10s activos de carga y los alias antiguos a la sala nueva. Se conservan el director, cincoBIO, reloj activo, retorno exacto y poderesMAXr2 del corte anterior. Las pruebas nuevas fuerzan modelos/apariencia/tiempo/posiciones/HP expresamente para QA; no certifican balance natural, teléfono físico ni aceptación artística final.
+
+## Antecedente: corte r1 de24/10/2026
+
 # LOT-EST-005 r1 — PROGRAMACION
 
 24/10/2026 · REV-EST-0007 / CONTROL0.8 + suplemento EST-GRI-002r1. **Implementado para ensayo y verificado localmente; publicación en preparación.** El recibo `LOT-EST-005_PUBLICACION.json` gobierna el estado público final.

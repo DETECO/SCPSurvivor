@@ -1,10 +1,12 @@
 # Control de cambios — ESTRUCTURA
 
-Revisión de control **0.8** · 24/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+Revisión de control **0.10** · 25/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
 
 Entrada maestra: [PAUTA_DESARROLLO.md](../../PAUTA_DESARROLLO.md).
 
-**Ejecución prioritaria — REV-EST-0007:** [grietas completas y coordinación general](REV-EST-0007_GRIETAS.md), por autorización directa de Iván. [LOT-EST-005 r1](lotes/LOT-EST-005-r1.md) amplía la conexión pendiente del director con recintos, anomalías, poderes, NPC y retorno. PROGRAMACION es el único integrador de runtime; NIVELES/PERSONAJES/áreas entregan contratos y recursos. **EST-GRI-002 r1:** Iván aclara que son cinco identidades, cada una en16/32; cantidad resuelta. Sin afirmar implementación final por este registro.
+**Decisión posterior — REV-EST-0008 / EST-NPC-001 r1:** Iván exige compañero de grieta con **arma al azar y munición ilimitada**. [Cambio y cobertura](REV-EST-0008_COMPANERO.md) · [LOT-EST-005 r2](lotes/LOT-EST-005-r2.md). Sustituye reserva finita y AF01fija; conservar tasas, cargadores/recargas y límites de apoyo restantes. PROGRAMACION y su agente NPC fallaron; Juanillo asume el relevo técnico del encargo autorizado. [Informe](informes/LOT-EST-005-r2-juanillo.md):270pruebas del juego y48casos/grupos locales aprobados. Publicación en comprobación; no confundir commits intermedios con recibo final.
+
+**Ejecución prioritaria — REV-EST-0007:** [grietas completas y coordinación general](REV-EST-0007_GRIETAS.md), por autorización directa de Iván. [LOT-EST-005 r1](lotes/LOT-EST-005-r1.md) amplía la conexión pendiente del director con recintos, anomalías, poderes, NPC y retorno. PROGRAMACION es el integrador habitual; este lote tiene relevo técnico de Juanillo tras fallo de sesión. Se conserva además la integración R3 encargada directamente por Iván a PERSONAJES. No hay permiso general de publicación para las áreas. **EST-GRI-002 r1:** Iván aclara que son cinco identidades, cada una en16/32; cantidad resuelta. Sin afirmar implementación final por este registro.
 
 **Corrección técnica:** [INC-VIS-001 r1](INC-VIS-001.md) publicada y comprobada en0.35, parcial por recursos pendientes de ARMAS. [Informe](informes/INC-VIS-001-programacion.md) · [recibo](INC-VIS-001_PUBLICACION.json). ESTRUCTURA repitió tres arranques públicos; cobertura en REV-EST-0007. La versión0.7 de control queda preservada en su corte y no se reescribe el origen del encargo técnico.
 
@@ -39,6 +41,14 @@ La activación inicial no preparó un lote. Posteriormente, REV-EST-0003 registr
 - **Reemplazo:** activa para este hilo las instrucciones de coordinación antes propuestas; no aprueba por inferencia todos los apartados del protocolo V2 ni cambia el nivel/modelo de los agentes.
 
 ## Decisiones generales
+
+### EST-NPC-001 · Revisión 1 · Aprobada — Compañero, arma aleatoria y reserva infinita
+
+- **Fecha/fuente:**25/10/2026, mensaje directo de Iván en ESTRUCTURA, seguido de «Continua»; ID individual no expuesto.
+- **Cita:** «el compañero de contencion cuando me ayuda a luchar en la grieta sale con un arma al azar. Y tiene que tener munición ilimitada al igual que yo. Haz que esto funcione».
+- **Precedencia:** sustituye la reserva finita antes aceptada y el modelo AF01fijo del primer ensayo. No limitar por otra vía oculta el número de tiros para mantener la regla retirada.
+- **Conserva:** tasas33/10 por peligrosidad, rarezas, apoyo temporal, incapacitación, sin remate/XP ni transferencia, burbujas sin voz. Reserva ilimitada no elimina cargador/recarga/cadencia. Reparto/modelos y cifras nuevos quedan identificados como ensayo en lote005r2.
+- **Ejecución:** PROGRAMACION; Juanillo autorizado a elegir modelo/esfuerzo y hablar con los hilos necesarios. Se eligió gpt-6.1-sol/alto para esta integración y su cierre, sin fijar un modelo obligatorio para todo trabajo futuro.
 
 ### EST-GRI-002 · Revisión 1 · Aprobada — Cantidad de anomalías
 
@@ -156,6 +166,10 @@ Las fuentes leídas parcialmente no reciben un estado de «aprobación verificad
 - **Activación de otros roles:** no realizada por ESTRUCTURA. No se enviaron mensajes a otros hilos ni se modificaron sus instrucciones.
 
 ## Lotes de implementación
+
+### LOT-EST-005 r2 — Compañero con arma aleatoria y reserva infinita
+
+**Implementado y verificado localmente por relevo técnico de Juanillo**, tras el fallo de PROGRAMACION y su agente; publicación en comprobación. [Contrato y pruebas](lotes/LOT-EST-005-r2.md), EST-NPC-001r1 y corte REV-EST-0008. Conservar todas las partes de r1 que no sustituye; añadir patrones reales pistol/smg/shotgun, reserva infinita con recarga y textos veraces, pruebas de varios cargadores y cierre público pendiente. La validación anterior no acredita estos cambios nuevos.
 
 ### LOT-EST-005 r1 — Grietas jugables de expedición
 
