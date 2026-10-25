@@ -4,7 +4,7 @@ Revisión de control **0.10** · 25/10/2026 · Responsable: **Juanillo / ESTRUCT
 
 Entrada maestra: [PAUTA_DESARROLLO.md](../../PAUTA_DESARROLLO.md).
 
-**Decisión posterior — REV-EST-0008 / EST-NPC-001 r1:** Iván exige compañero de grieta con **arma al azar y munición ilimitada**. [Cambio y cobertura](REV-EST-0008_COMPANERO.md) · [LOT-EST-005 r2](lotes/LOT-EST-005-r2.md). Sustituye reserva finita y AF01fija; conservar tasas, cargadores/recargas y límites de apoyo restantes. PROGRAMACION y su agente NPC fallaron; Juanillo asume el relevo técnico del encargo autorizado. [Informe](informes/LOT-EST-005-r2-juanillo.md):270pruebas del juego y48casos/grupos locales aprobados. Publicación en comprobación; no confundir commits intermedios con recibo final.
+**Decisión posterior — REV-EST-0008 / EST-NPC-001 r1:** Iván exige compañero de grieta con **arma al azar y munición ilimitada**. [Cambio y cobertura](REV-EST-0008_COMPANERO.md) · [LOT-EST-005 r2](lotes/LOT-EST-005-r2.md). Sustituye reserva finita y AF01fija; conservar tasas, cargadores/recargas y límites de apoyo restantes. PROGRAMACION y su agente NPC fallaron; Juanillo asume el relevo técnico del encargo autorizado. [Informe](informes/LOT-EST-005-r2-juanillo.md):270pruebas del juego,55casos/grupos públicos y217/217hashes aprobados. [Recibo público final](LOT-EST-005_PUBLICACION.json), runtime92fc1fd/bundleadec3ec93c. Balance y aceptación humana pendientes.
 
 **Ejecución prioritaria — REV-EST-0007:** [grietas completas y coordinación general](REV-EST-0007_GRIETAS.md), por autorización directa de Iván. [LOT-EST-005 r1](lotes/LOT-EST-005-r1.md) amplía la conexión pendiente del director con recintos, anomalías, poderes, NPC y retorno. PROGRAMACION es el integrador habitual; este lote tiene relevo técnico de Juanillo tras fallo de sesión. Se conserva además la integración R3 encargada directamente por Iván a PERSONAJES. No hay permiso general de publicación para las áreas. **EST-GRI-002 r1:** Iván aclara que son cinco identidades, cada una en16/32; cantidad resuelta. Sin afirmar implementación final por este registro.
 
@@ -167,9 +167,13 @@ Las fuentes leídas parcialmente no reciben un estado de «aprobación verificad
 
 ## Lotes de implementación
 
+### LOT-EST-006 r1 — Armas faltantes aceptadas en ARMASR3
+
+**Encargado para montaje técnico local a PROGRAMACION**, gpt-6.1-sol/alto. Se leyeron el resumen ARMASR3, aprobación y catálogo, más los tres turnos recientes para comprobar el referente de «Aprobado», mensaje `01a1730a-66c3-70f2-815b-b958e20083d4`. Apariencia de48sprites smg/shotgun/baton aceptada; calibración/renderer/poses y publicación pendientes. [Lote y pruebas](lotes/LOT-EST-006-r1.md). No incorpora las diez propuestas de poderesA/B ni modifica estadísticas. El runtime LOT005r2 todavía usa dibujos legados para smg/shotgun.
+
 ### LOT-EST-005 r2 — Compañero con arma aleatoria y reserva infinita
 
-**Implementado y verificado localmente por relevo técnico de Juanillo**, tras el fallo de PROGRAMACION y su agente; publicación en comprobación. [Contrato y pruebas](lotes/LOT-EST-005-r2.md), EST-NPC-001r1 y corte REV-EST-0008. Conservar todas las partes de r1 que no sustituye; añadir patrones reales pistol/smg/shotgun, reserva infinita con recarga y textos veraces, pruebas de varios cargadores y cierre público pendiente. La validación anterior no acredita estos cambios nuevos.
+**Publicado y verificado para ensayo**, runtime92fc1fd/bundleadec3ec93c, por relevo técnico de Juanillo. Informe y recibo enlazados arriba; aceptación humana/balance pendientes. [Contrato y pruebas](lotes/LOT-EST-005-r2.md), EST-NPC-001r1 y corte REV-EST-0008. Conservar todas las partes de r1 que no sustituye; añadir patrones reales pistol/smg/shotgun, reserva infinita con recarga y textos veraces, pruebas de varios cargadores y cierre público pendiente. La validación anterior no acredita estos cambios nuevos.
 
 ### LOT-EST-005 r1 — Grietas jugables de expedición
 

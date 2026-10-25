@@ -1,6 +1,6 @@
 # Prueba jugable de grietas — LOT-EST-005 r2
 
-25/10/2026 · REV-EST-0008 / EST-NPC-001r1 · ENSAYO-GRI-001 r1 + ENSAYO-NPC-RESERVA-r3 · PROGRAMACION. Implementación en verificación; el recibo de publicación identifica el corte público comprobado. No equivale a aceptación humana o balance final.
+25/10/2026 · REV-EST-0008 / EST-NPC-001r1 · ENSAYO-GRI-001 r1 + ENSAYO-NPC-RESERVA-r3 · PROGRAMACION. **Publicado y comprobado**, runtime92fc1fd/bundleadec3ec93c. [Recibo público](gestion/LOT-EST-005_PUBLICACION.json). No equivale a aceptación humana o balance final.
 
 ## Cómo probar
 
@@ -52,4 +52,4 @@ Vida, equipo, mejoras, temporizadores de recarga/habilidad y efectos del jugador
 
 El reloj `elapsed` anterior sigue midiendo tiempo del mapa de origen; la sala tiene su propio reloj. Ranking/bonos/economía no forman parte de esta entrega. No hay guardado real del encuentro ni garantía antitrampas.
 
-Pendientes: aceptación de Iván, balance/evasión bajo presión y teléfono físico; arte final de sala/MEN-005, sonido característico del NPC y cues definitivos; revisión visual final de la composición femenina R3 y sprites nuevos smg/shotgun pendientes de sus áreas. Cinco BIO en dos resoluciones, cantidad resuelta por EST-GRI-002r1. No quedan otras cinco identidades por inventar.
+Pendientes: aceptación de Iván, balance/evasión bajo presión y teléfono físico; arte final de sala/MEN-005, sonido característico del NPC y cues definitivos; revisión visual final de la composición femenina R3 y montaje técnico de sprites smg/shotgun/baton ya aceptados en ARMASR3, encargado en LOT006. Cinco BIO en dos resoluciones, cantidad resuelta por EST-GRI-002r1. No quedan otras cinco identidades por inventar.

@@ -32,3 +32,5 @@ Sustituye **la reserva finita de apoyo** del NPC y el modelo AF01 fijo del prime
 ## Seguimiento técnico25/10/2026
 
 Tras systemError de PROGRAMACION y su agente NPC, Juanillo asume este encargo ya autorizado. No cambia el contrato del lote. [Resultado y cobertura](../informes/LOT-EST-005-r2-juanillo.md);270pruebas de juego y48casos/grupos locales aprobados. Publicación final en comprobación, sin aceptación humana o balance final.
+
+**Cierre publicado25/10:**[recibo](../LOT-EST-005_PUBLICACION.json),55casos/grupos públicos y217/217hashes. Novedad posterior: ARMASR3 ya acepta las imágenes smg/shotgun/baton; su montaje se encarga en LOT006, sin modificar retroactivamente el código de este recibo.

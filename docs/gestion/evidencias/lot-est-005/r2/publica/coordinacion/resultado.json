@@ -1,0 +1,349 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "tier": "D1",
+      "mode": "32",
+      "url": "https://deteco.github.io/SCPSurvivor/index.html?prueba=combate-v2&ensayo=grietas&grado=D1&apoyo=si&graficos=32",
+      "inside": {
+        "room": {
+          "enabled": true,
+          "practice": true,
+          "portal": {
+            "id": "map:2:string:3585071513:2:QA:rift:60",
+            "status": "consumed",
+            "tier": "D1",
+            "x": 752,
+            "y": 496,
+            "remaining": 44.75020000000002,
+            "style": 5,
+            "sector": 2,
+            "label": "D1 · GRIETA · 45 s"
+          },
+          "director": {
+            "mapId": "3585071513:2:QA",
+            "mapNumber": 2,
+            "activeSeconds": 60.24979999999998,
+            "opportunities": [
+              {
+                "id": "map:2:string:3585071513:2:QA:rift:60",
+                "mapId": "3585071513:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "outcome": "request",
+                "request": {
+                  "id": "map:2:string:3585071513:2:QA:rift:60",
+                  "mapId": "3585071513:2:QA",
+                  "mapNumber": 2,
+                  "atSeconds": 60,
+                  "tier": "D1",
+                  "status": "pending"
+                }
+              }
+            ],
+            "requests": [
+              {
+                "id": "map:2:string:3585071513:2:QA:rift:60",
+                "mapId": "3585071513:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1",
+                "status": "confirmed"
+              }
+            ],
+            "appearances": [
+              {
+                "requestId": "map:2:string:3585071513:2:QA:rift:60",
+                "mapId": "3585071513:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1"
+              }
+            ],
+            "appearanceCount": 1
+          },
+          "notice": "",
+          "technicalFailures": [],
+          "active": true,
+          "id": "map:2:string:3585071513:2:QA:rift:60:encounter:1",
+          "time": 1.6,
+          "transition": 0,
+          "status": "combat",
+          "claimed": false,
+          "escape": "waiting",
+          "escapeAt": 90,
+          "escapeRemaining": 93.4,
+          "loadingWait": 0,
+          "tier": "D1",
+          "anomalyId": "esporario",
+          "name": "Esporario Blanco",
+          "roomName": "Vivero de esporas",
+          "bossHp": 500,
+          "bossMaxHp": 500,
+          "exit": {
+            "x": 16,
+            "y": 16
+          },
+          "reward": null,
+          "originFrozen": true
+        },
+        "npc": {
+          "name": "Emilia",
+          "personality": "TOXI",
+          "tier": "D1",
+          "rarity": "Normal",
+          "appearance": "fitness",
+          "characterId": "apoyo_fitness",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-12",
+          "weapon": {
+            "model": "pistol",
+            "name": "Pistola de apoyo Normal",
+            "resource": "AF01",
+            "damage": 5,
+            "interval": 0.5,
+            "capacity": 12,
+            "reloadTime": 1.5,
+            "range": 320,
+            "speed": 400,
+            "spread": 4,
+            "pellets": 1
+          },
+          "ammo": 10,
+          "capacity": 12,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 2,
+          "hp": 45,
+          "maxHp": 45,
+          "incapacitated": false,
+          "x": 27.5,
+          "y": 208,
+          "tx": -32,
+          "ty": 208,
+          "aim": -1.6087071142488942,
+          "wait": 0.4331999999999998,
+          "flash": 0.023199999999999818,
+          "invuln": 0,
+          "age": 1.6,
+          "bubble": "Soy Emilia. Estoy contigo.",
+          "bubbleTime": 3.400000000000005,
+          "used": [
+            "presentation"
+          ],
+          "observedShots": 0,
+          "anim": null,
+          "lastCode": "presentation",
+          "shot": {
+            "x": 16,
+            "y": -95.19840000000019
+          }
+        },
+        "differentFixture": true,
+        "frozen": true
+      },
+      "after": {
+        "active": false,
+        "fixture": true,
+        "enemies": true,
+        "frozen": true,
+        "enemyState": true,
+        "chests": true,
+        "terminal": true,
+        "hp": true,
+        "ammo": true,
+        "powers": [
+          {
+            "id": "esporario",
+            "rank": 1,
+            "remaining": 3.966666666666667,
+            "name": "Pulso de esporas"
+          }
+        ],
+        "npc": null
+      },
+      "pageErrors": [],
+      "method": "Forced practice tier/NPC, player position/invulnerability and lethal boss damage for QA; actual room, modal, return and managers. Not natural balance or physical phone acceptance."
+    },
+    {
+      "tier": "D5",
+      "mode": "16",
+      "url": "https://deteco.github.io/SCPSurvivor/index.html?prueba=combate-v2&ensayo=grietas&grado=D5&apoyo=si&graficos=16",
+      "inside": {
+        "room": {
+          "enabled": true,
+          "practice": true,
+          "portal": {
+            "id": "map:2:string:3585071513:2:QA:rift:60",
+            "status": "consumed",
+            "tier": "D5",
+            "x": 752,
+            "y": 496,
+            "remaining": 44.849966666666674,
+            "style": 5,
+            "sector": 2,
+            "label": "D5 · GRIETA · 45 s"
+          },
+          "director": {
+            "mapId": "3585071513:2:QA",
+            "mapNumber": 2,
+            "activeSeconds": 60.150033333333326,
+            "opportunities": [
+              {
+                "id": "map:2:string:3585071513:2:QA:rift:60",
+                "mapId": "3585071513:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "outcome": "request",
+                "request": {
+                  "id": "map:2:string:3585071513:2:QA:rift:60",
+                  "mapId": "3585071513:2:QA",
+                  "mapNumber": 2,
+                  "atSeconds": 60,
+                  "tier": "D1",
+                  "status": "pending"
+                }
+              }
+            ],
+            "requests": [
+              {
+                "id": "map:2:string:3585071513:2:QA:rift:60",
+                "mapId": "3585071513:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1",
+                "status": "confirmed"
+              }
+            ],
+            "appearances": [
+              {
+                "requestId": "map:2:string:3585071513:2:QA:rift:60",
+                "mapId": "3585071513:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1"
+              }
+            ],
+            "appearanceCount": 1
+          },
+          "notice": "",
+          "technicalFailures": [],
+          "active": true,
+          "id": "map:2:string:3585071513:2:QA:rift:60:encounter:1",
+          "time": 1.6166000000000003,
+          "transition": 0,
+          "status": "combat",
+          "claimed": false,
+          "escape": "waiting",
+          "escapeAt": 90,
+          "escapeRemaining": 93.3834,
+          "loadingWait": 0.4666333333333331,
+          "tier": "D5",
+          "anomalyId": "huesped",
+          "name": "Huésped de Cuarentena",
+          "roomName": "Cámara de cuarentena",
+          "bossHp": 1600,
+          "bossMaxHp": 1600,
+          "exit": {
+            "x": 16,
+            "y": 16
+          },
+          "reward": null,
+          "originFrozen": true
+        },
+        "npc": {
+          "name": "Emilia",
+          "personality": "TOXI",
+          "tier": "D5",
+          "rarity": "Legendaria",
+          "appearance": "fitness",
+          "characterId": "apoyo_fitness",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-09",
+          "weapon": {
+            "model": "pistol",
+            "name": "Pistola de apoyo Legendaria",
+            "resource": "AF01",
+            "damage": 7.5,
+            "interval": 0.425,
+            "capacity": 12,
+            "reloadTime": 1.5,
+            "range": 320,
+            "speed": 400,
+            "spread": 4,
+            "pellets": 1
+          },
+          "ammo": 10,
+          "capacity": 12,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 2,
+          "hp": 45,
+          "maxHp": 45,
+          "incapacitated": false,
+          "x": 27.5,
+          "y": 208,
+          "tx": -32,
+          "ty": 208,
+          "aim": -1.60860724486422,
+          "wait": 0.24160000000000037,
+          "flash": 0,
+          "invuln": 0,
+          "age": 1.6166000000000003,
+          "bubble": "Soy Emilia. Tengo miedo y quiero salir, pero voy a ayudarte.",
+          "bubbleTime": 3.3834000000000066,
+          "used": [
+            "presentation"
+          ],
+          "observedShots": 0,
+          "anim": null,
+          "lastCode": "presentation",
+          "shot": {
+            "x": 16,
+            "y": -96.00000000000027
+          }
+        },
+        "differentFixture": true,
+        "frozen": true
+      },
+      "after": {
+        "active": false,
+        "fixture": true,
+        "enemies": true,
+        "frozen": true,
+        "enemyState": true,
+        "chests": true,
+        "terminal": true,
+        "hp": true,
+        "ammo": true,
+        "powers": [
+          {
+            "id": "huesped",
+            "rank": 1,
+            "remaining": 5.966666666666667,
+            "name": "Brote de cuarentena"
+          }
+        ],
+        "npc": null
+      },
+      "pageErrors": [],
+      "method": "Forced practice tier/NPC, player position/invulnerability and lethal boss damage for QA; actual room, modal, return and managers. Not natural balance or physical phone acceptance."
+    },
+    {
+      "entry": "old-rift-link",
+      "result": {
+        "practice": true,
+        "portal": true,
+        "legacy": false
+      }
+    }
+  ]
+}

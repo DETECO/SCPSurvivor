@@ -16,8 +16,8 @@
       "branch": "main",
       "commit": "a1006e6e3d0cea9162238a90b0ffdd7fd38397b6"
     },
-    "lastVerifiedOwnCommit": "3f533c36648e74b76b2f155f90e90c6b0d8a4e0f",
-    "lastVerifiedOwnVersion": "INC-VIS-001 r1 parcial:16 escenarios visuales públicos,2inicio/pausa y39hashes. ARM-SMG-REC-001 r1 pendiente de recurso aprobado.",
+    "lastVerifiedOwnCommit": "92fc1fd7c2347aed7b585946328670944008b39c",
+    "lastVerifiedOwnVersion": "LOT-EST-005r2 publicado:55casos/grupos públicos,217hashes;compañeros con arma aleatoria/reserva infinita. Balance/aceptación pendientes.",
     "deliveryVersion": "LOT-EST-005 r2 / REV-EST-0008 / ENSAYO-NPC-RESERVA-r3 / roadmap0.37",
     "deliveryCommitReference": "git log -1 --format=%H -- RoadmapSCP.json",
     "currentPriority": {
@@ -6112,12 +6112,12 @@
   },
   "sync": {
     "githubUpload": "uploaded_verified",
-    "webSync": "lot_est_005_pending_public_verification",
-    "lastSuccessfulWebSync": "2026-10-24T17:06:56.049050+00:00",
+    "webSync": "lot_est_005_r2_published_verified_trial",
+    "lastSuccessfulWebSync": "2026-10-25T18:12:06.226797+00:00",
     "lastVerifiedUpstreamCommit": "a1006e6e3d0cea9162238a90b0ffdd7fd38397b6",
-    "lastVerifiedProjectCommit": "3f533c36648e74b76b2f155f90e90c6b0d8a4e0f",
-    "projectCommitVerificationScope": "Corrección visual INC-VIS-001 demo sin servicios; no aceptación física ni cierre de recurso SMG.",
-    "localChanges": "Roadmap0.37: LOT-EST-005r2 verificado localmente por relevo técnico Juanillo; cierre público pendiente.",
+    "lastVerifiedProjectCommit": "92fc1fd7c2347aed7b585946328670944008b39c",
+    "projectCommitVerificationScope": "Demo sin servicios: salas, compañeros, poderes, retorno, carga y alias. No aceptación física o balance.",
+    "localChanges": "Recibo público LOT005r2 y encargo técnico LOT006; metadata sin cambio runtime.",
     "deliveryCommitReference": "git log -1 --format=%H -- RoadmapSCP.json",
     "deliveryAuthorization": "Petición directa de Iván: Subelo a github"
   },
@@ -6290,18 +6290,18 @@
     ],
     "historicalDocumentation": "docs/historial-local/alfa-0.4/ e informes P01–P04 conservados como antecedentes",
     "validationReference": "docs/gestion/LOT-EST-005_VALIDACION.json",
-    "bundle": "c5f789805d",
+    "bundle": "adec3ec93c",
     "scriptCount": 117,
     "runtimeScope": "Demo aislada local o GitHub Pages autorizado, sin cuentas ni recompensas persistentes; P05 real pendiente.",
     "repositoryDelivery": {
       "repository": "DETECO/SCPSurvivor",
       "branch": "main",
-      "state": "Preparado para publicación autorizada; ver recibo LOT-EST-005 para estado final.",
+      "state": "LOT005r2 publicado y comprobado; recibo identifica runtime y metadata posterior.",
       "authorization": "Petición directa de Iván: Subelo a github",
       "baselineVerifiedCommit": "39344e77e15bd82c98bacb3e9773ceaa20c1b918",
       "baselineVerifiedOn": "2026-10-15",
       "commitReference": "git log -1 --format=%H -- RoadmapSCP.json",
-      "runtimeCommit": "afb905f4fbbcbdd005d3723cf6b1fbf8f6dce558"
+      "runtimeCommit": "92fc1fd7c2347aed7b585946328670944008b39c"
     },
     "riftPrototype": {
       "status": "EV",
@@ -6357,7 +6357,7 @@
       "designDisposition": "historical_fixture_replan_do_not_extend_backpacks_or_mods"
     },
     "activeDesignRevision": "V2-ESTRUCTURA",
-    "v2ImplementationStatus": "Grietas integrales y compañeros con arma aleatoria/reserva infinita verificados localmente; publicación r2 en comprobación. M01, SON-001 y AF01 conservados. Fusión, ultimate, balance y servicios reales mantienen dependencias.",
+    "v2ImplementationStatus": "LOT005r2 publicado y comprobado:director conectado,cincoBIO,salas,poderes ycompañeros con arma aleatoria/reserva infinita. LOT006 encarga montaje de sprites aceptados ARMASR3;fusión/ultimate/servicios mantienen dependencias.",
     "v2Trial": {
       "version": "V2-trial-01",
       "guide": "docs/PRUEBA_MAPA_V2.md",
@@ -6701,9 +6701,9 @@
     "id": "V2-ESTRUCTURA",
     "title": "Avance por mapas; sin extracción, accesorios físicos ni mochilas",
     "updatedOn": "2026-10-25",
-    "status": "rift_trial_implemented_pending_public_verification_and_acceptance",
+    "status": "rift_trial_published_verified_pending_human_balance",
     "authority": "EST-ORG-002 r1 / EST-GRI-002 r1 / EST-NPC-001 r1 / LOT-EST-005 r2",
-    "summary": "LOT-EST-005r2: cinco BIO16/32 con salas, director, poderes propiosMAX y retorno; compañeros/compañerasR3, arma aleatoria y reserva infinita con recarga. Juanillo completa el encargo tras fallo de PROGRAMACION.270pruebas de juego y48casos/grupos locales aprobados; publicación en comprobación, sin aceptación humana/balance final.",
+    "summary": "LOT005r2 publicado y comprobado:cincoBIO16/32 en salas,origen congelado,retirada,poderesMAX propios ycompañeros/compañerasR3 con arma aleatoria/reserva infinita.55casos/grupos públicos y217hashes. Balance/aceptación pendientes. ARMASR3 acepta48sprites;LOT006 encarga montaje técnico, sin elegir poderesA/B.",
     "pautaPath": "PAUTA_DESARROLLO.md",
     "changePlanPath": "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
     "decisionsPath": "docs/ESTRUCTURA_DECISIONES.md",
@@ -7913,7 +7913,7 @@
       "revision": "REV-EST-0008",
       "lot": "LOT-EST-005 r2",
       "control": "0.10 / EST-NPC-001 r1",
-      "status": "local_verified_publication_pending",
+      "status": "published_verified_trial",
       "report": "docs/gestion/informes/LOT-EST-005-r2-juanillo.md",
       "validation": "docs/gestion/LOT-EST-005_VALIDACION.json",
       "publication": "docs/gestion/LOT-EST-005_PUBLICACION.json",
@@ -7927,6 +7927,41 @@
         "fail": 0,
         "skipped": 0,
         "evidence": "evidencias/lot-est-005/r2/node-game-tests.txt"
+      },
+      "runtimeCommit": "92fc1fd7c2347aed7b585946328670944008b39c",
+      "liveVerification": {
+        "rooms": 10,
+        "femaleResolutionWeaponCombinations": 18,
+        "femalePartsFailureFallbackCases": 1,
+        "outcomeGroups": 14,
+        "loadingAndAliasCases": 7,
+        "coordinatorCases": 3,
+        "startPauseCases": 2,
+        "totalCasesOrGroups": 55,
+        "criticalFileMatches": 217,
+        "javascriptErrors": 0,
+        "unexpectedHttpFailures": 0,
+        "intentional404Cases": 1,
+        "slowAtlasCases": 1,
+        "timeoutAtlasCases": 1,
+        "physicalPhone": false
+      },
+      "allNode": {
+        "tests": 328,
+        "pass": 322,
+        "fail": 5,
+        "skipped": 1,
+        "files": 62,
+        "runner": "PROGRAMACION; entrega reanudada solo de auditoría, leída y contrastada por Juanillo",
+        "status": "FAIL_BACKEND_TOOLCHAIN_ONLY",
+        "failures": [
+          "not ok 104 - P05 real SQLite RPC: 20 concurrent identical commands have one effect and replay their receipt",
+          "not ok 105 - P05 real SQLite RPC: distinct commands at the same revision have exactly one winner",
+          "not ok 106 - P05 real SQLite RPC isolates account state and receipt IDs by UID",
+          "not ok 107 - P05 real SQLite RPC transfers a run and rejects writes from its former session",
+          "not ok 108 - P05 real SQLite state and original command receipts survive Miniflare restart"
+        ],
+        "cause": "P05 SQLite RPC: workerd instalado soporta hasta2026-08-06, proyecto requiere2026-10-17. Backend real sigue desactivado. La ejecución acotada concluyó; CORS se ejecutó aparte y pasó."
       }
     },
     "incidentCorrection": {
@@ -8020,6 +8055,13 @@
       "femaleDelivery": "PERSONAJES-COMPANERAS-003",
       "legacyUrl": "normalizes_to_integral_trial_unless_legado_b3",
       "loadingRecovery": "failed_asset_or_10_active_seconds_returns_frozen_origin_no_reward_no_reroll"
+    },
+    "nextTechnicalLot": {
+      "id": "LOT-EST-006 r1",
+      "path": "docs/gestion/lotes/LOT-EST-006-r1.md",
+      "status": "assigned_local_implementation",
+      "authority": "INC-VIS-001 + ARM-FALTANTES-VIS-001/r1 accepted25/10",
+      "implementationDoesNotChoosePowersAB": true
     }
   }
 }

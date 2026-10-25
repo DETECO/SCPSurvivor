@@ -21,3 +21,7 @@ Se recuperó una orden humana posterior en PERSONAJES: «Soluciona como implemen
 [PERSONAJES-COMPANERAS-003](entregas/PERSONAJES-COMPANERAS-003.md) entrega fuentes modulares nuevas R3 derivadas de los diseños,36PNG, ocho vistas en16/32, dos brazos propios, rig y nombres femeninos, conservando R1/R2. Declara27pruebas y6casos de navegador, sin publicación ni aceptación artística final nueva. Se leyeron el informe y LEEME R3, pautaPERSONAJESr3, registro de apariencias y montaje del renderer; no se repitieron sus seis ensayos en esta lectura.
 
 PROGRAMACION recibió la conciliación: conservar la integración R3 al actualizar arma/munición del NPC y comprobar los tres modelos balísticos con esos rigs; no usar el bloqueo técnico de R2 como estado de R3. **Los resultados R3 con AF01fija/munición finita son antecedentes anteriores a EST-NPC-001**, no prueba de variedad de armas o reserva infinita. El cierre público del conjunto sigue siendo único en PROGRAMACION.
+
+## Cierre comprobado25/10/2026
+
+Juanillo asumió el relevo técnico tras fallo de PROGRAMACION/NPC y completó implementación y publicación. [Recibo](LOT-EST-005_PUBLICACION.json):55casos/grupos públicos y217/217hashes. [Informe con cobertura y límites](informes/LOT-EST-005-r2-juanillo.md). PROGRAMACION entregó luego auditoría, con escrituras coordinadas; no es un segundo publicador. ARMASR3 acepta las imágenes faltantes y LOT006 encarga su montaje; no se integran poderesA/B sin elección.

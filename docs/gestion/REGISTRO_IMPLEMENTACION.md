@@ -146,3 +146,7 @@ Se retoman los cambios parciales de carga/alias sin descartarlos. PERSONAJES-COM
 ### LOT-EST-005r2 — relevo técnico de Juanillo25/10/2026
 
 PROGRAMACION y su agente NPC terminaron con systemError antes de aplicar reserva infinita. Juanillo asumió el encargo de implementación/publicación autorizado por Iván, sin reiniciar un escritor concurrente ni abrir publicación general de áreas. Conservó código de salas/carga/alias y R3. [Informe de cierre técnico](informes/LOT-EST-005-r2-juanillo.md):270/270pruebas del juego;10salas,18combinaciones femeninas/armas,14grupos de desenlace y6casos de carga/alias locales aprobados. Suite con backend detenida por espera, sin resultado completo atribuible. [Validación nueva](LOT-EST-005_VALIDACION.json), conservando el recibo r1 en revisiones/REV-EST-0008. Publicación final en comprobación.
+
+### LOT-EST-005r2 — publicación comprobada por Juanillo
+
+Runtime92fc1fd7c2347aed7b585946328670944008b39c, Pages built, bundleadec3ec93c.55casos/grupos públicos y217/217hashes aprobados;270pruebas del juego sin fallos. PROGRAMACION entregó después auditoría completa328/322PASS/5P05workerd/1omitida; se leyó el log y se incorpora sin declarar verde el backend. [Recibo](LOT-EST-005_PUBLICACION.json) e [informe](informes/LOT-EST-005-r2-juanillo.md). El siguiente encargo LOT006 monta las imágenes aceptadas ARMASR3; no cambia este runtime.

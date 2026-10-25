@@ -1,0 +1,1528 @@
+{
+  "at": "2026-10-25T18:00:19.426189+00:00",
+  "base": "https://deteco.github.io/SCPSurvivor/",
+  "matched": 217,
+  "total": 217,
+  "status": "PASS",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "status": 200,
+      "expected": "c2deec8c5366d79ce15d2044b4d05bcc1470b5ae4eace6a1abe0285bc8d9e666",
+      "actual": "c2deec8c5366d79ce15d2044b4d05bcc1470b5ae4eace6a1abe0285bc8d9e666",
+      "matched": true
+    },
+    {
+      "path": "ROADMAP.md",
+      "status": 200,
+      "expected": "b549b7e200c0a9ee161c7f9b606a5e01c04126744be4fd22c3745d34b60d1bd9",
+      "actual": "b549b7e200c0a9ee161c7f9b606a5e01c04126744be4fd22c3745d34b60d1bd9",
+      "matched": true
+    },
+    {
+      "path": "RoadmapSCP.json",
+      "status": 200,
+      "expected": "5190203e05eaef1000913b96cf2503cc9e95427ae0e691368eea2ee950d86d82",
+      "actual": "5190203e05eaef1000913b96cf2503cc9e95427ae0e691368eea2ee950d86d82",
+      "matched": true
+    },
+    {
+      "path": "RoadmapSCP.md",
+      "status": 200,
+      "expected": "a985980890024f86e8ecf51bd5669e9c470a5ba82dfa87b3dbe764c6da1d37dc",
+      "actual": "a985980890024f86e8ecf51bd5669e9c470a5ba82dfa87b3dbe764c6da1d37dc",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack1-FX.png",
+      "status": 200,
+      "expected": "72fb23fa32205acf5d565e4b39cfa95fce61c03437847308ad0e86f9a563489d",
+      "actual": "72fb23fa32205acf5d565e4b39cfa95fce61c03437847308ad0e86f9a563489d",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack1.png",
+      "status": 200,
+      "expected": "f65c5d69d6c08cbc76cf45d1bbe270fc9459df378af1d9f2e46ed119d8b09855",
+      "actual": "f65c5d69d6c08cbc76cf45d1bbe270fc9459df378af1d9f2e46ed119d8b09855",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack2-FX.png",
+      "status": 200,
+      "expected": "1b81dd509ffc63b4ca1c5566d2d22b0f0df770edfdf070917acf1e577728332a",
+      "actual": "1b81dd509ffc63b4ca1c5566d2d22b0f0df770edfdf070917acf1e577728332a",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack2.png",
+      "status": 200,
+      "expected": "37fbf70c1f09881a2cfe12098eaa4192095a7a86e882049348afec54d33b1350",
+      "actual": "37fbf70c1f09881a2cfe12098eaa4192095a7a86e882049348afec54d33b1350",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack3-FX.png",
+      "status": 200,
+      "expected": "a6e12da7bc321e0b6041f7d8f03a53632019f61ec488dde727124067fecf6156",
+      "actual": "a6e12da7bc321e0b6041f7d8f03a53632019f61ec488dde727124067fecf6156",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack3.png",
+      "status": 200,
+      "expected": "cdb141a3d794eec9e713134387aa10b02eb08b6aa6f60639325bf7d8dccb9c96",
+      "actual": "cdb141a3d794eec9e713134387aa10b02eb08b6aa6f60639325bf7d8dccb9c96",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Death.png",
+      "status": 200,
+      "expected": "0e1b7bec095351685cebe33a1ee487caf3fde65bc346ec5c6e8fcacb25ea4e99",
+      "actual": "0e1b7bec095351685cebe33a1ee487caf3fde65bc346ec5c6e8fcacb25ea4e99",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Hurt.png",
+      "status": 200,
+      "expected": "91156cd2162eb03e571545da0af31783dd51050d0db13b4538c01245e23f7c1b",
+      "actual": "91156cd2162eb03e571545da0af31783dd51050d0db13b4538c01245e23f7c1b",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Idle.png",
+      "status": 200,
+      "expected": "191b76faac263c243bafc48d95ffa75dc389f8ec768201903cbcd243e30b9684",
+      "actual": "191b76faac263c243bafc48d95ffa75dc389f8ec768201903cbcd243e30b9684",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Jump-FX.png",
+      "status": 200,
+      "expected": "1b81dd509ffc63b4ca1c5566d2d22b0f0df770edfdf070917acf1e577728332a",
+      "actual": "1b81dd509ffc63b4ca1c5566d2d22b0f0df770edfdf070917acf1e577728332a",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Jump.png",
+      "status": 200,
+      "expected": "37fbf70c1f09881a2cfe12098eaa4192095a7a86e882049348afec54d33b1350",
+      "actual": "37fbf70c1f09881a2cfe12098eaa4192095a7a86e882049348afec54d33b1350",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Keyposes.png",
+      "status": 200,
+      "expected": "867a20f41fdd7471b59da7f129089b190fe277b37e4951761aad50bad8185ff3",
+      "actual": "867a20f41fdd7471b59da7f129089b190fe277b37e4951761aad50bad8185ff3",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Run.png",
+      "status": 200,
+      "expected": "aab6d17a354fbd50f1b420606fe02f1e784183b0203480f897b48cd10b090493",
+      "actual": "aab6d17a354fbd50f1b420606fe02f1e784183b0203480f897b48cd10b090493",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Walk.png",
+      "status": 200,
+      "expected": "5031060d60853a474291208c849bd5838c1d506844392f26b49fa373d396e506",
+      "actual": "5031060d60853a474291208c849bd5838c1d506844392f26b49fa373d396e506",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack1-FX.png",
+      "status": 200,
+      "expected": "c32fcd843b172ab29da44ddbc311b54e4c224b63648e801822d74f872d77f704",
+      "actual": "c32fcd843b172ab29da44ddbc311b54e4c224b63648e801822d74f872d77f704",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack1.png",
+      "status": 200,
+      "expected": "012d7e060facb5d0305aa105902ed5ecf1f9e96ea17ff7a2e25ed879a61a9b45",
+      "actual": "012d7e060facb5d0305aa105902ed5ecf1f9e96ea17ff7a2e25ed879a61a9b45",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack2-FX.png",
+      "status": 200,
+      "expected": "ef2be75e6c67c0c0b4c38f72034bfd950be0778bbfda3a6626451683ba5ae1aa",
+      "actual": "ef2be75e6c67c0c0b4c38f72034bfd950be0778bbfda3a6626451683ba5ae1aa",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack2.png",
+      "status": 200,
+      "expected": "4605f1ee77a9bfa36c66ba79c6ce61dbf222c7428d25a8a19476086cbe1e8d48",
+      "actual": "4605f1ee77a9bfa36c66ba79c6ce61dbf222c7428d25a8a19476086cbe1e8d48",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack3-FX.png",
+      "status": 200,
+      "expected": "ce8b9d405722f000173570dcec4d1a900b885e6538945c4c1d2389e2ac86def6",
+      "actual": "ce8b9d405722f000173570dcec4d1a900b885e6538945c4c1d2389e2ac86def6",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack3.png",
+      "status": 200,
+      "expected": "3942060f7dd616a7c85c150aec765d6bdf430f460a1e9deae060eb2531dcfa80",
+      "actual": "3942060f7dd616a7c85c150aec765d6bdf430f460a1e9deae060eb2531dcfa80",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Death.png",
+      "status": 200,
+      "expected": "93405ba23d0efacf880b441e37b9e5c9ef8365d9a9ce4ade21e59a8c529d89ca",
+      "actual": "93405ba23d0efacf880b441e37b9e5c9ef8365d9a9ce4ade21e59a8c529d89ca",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Hurt.png",
+      "status": 200,
+      "expected": "da761ed3fcbe69fe740e2b6658591db8d41ff4fe173ff7674c04da400b9b1e57",
+      "actual": "da761ed3fcbe69fe740e2b6658591db8d41ff4fe173ff7674c04da400b9b1e57",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Idle.png",
+      "status": 200,
+      "expected": "1737bad97bad68ee6a4980292f53c6875d7f607b0dbb9d598bf0ce91bdaf8783",
+      "actual": "1737bad97bad68ee6a4980292f53c6875d7f607b0dbb9d598bf0ce91bdaf8783",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Jump-FX.png",
+      "status": 200,
+      "expected": "ef2be75e6c67c0c0b4c38f72034bfd950be0778bbfda3a6626451683ba5ae1aa",
+      "actual": "ef2be75e6c67c0c0b4c38f72034bfd950be0778bbfda3a6626451683ba5ae1aa",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Jump.png",
+      "status": 200,
+      "expected": "4605f1ee77a9bfa36c66ba79c6ce61dbf222c7428d25a8a19476086cbe1e8d48",
+      "actual": "4605f1ee77a9bfa36c66ba79c6ce61dbf222c7428d25a8a19476086cbe1e8d48",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Keyposes.png",
+      "status": 200,
+      "expected": "d200397274943e8c958a7466bb09176d552c5e0356cca8e19fb45e54eaaba1e6",
+      "actual": "d200397274943e8c958a7466bb09176d552c5e0356cca8e19fb45e54eaaba1e6",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Run.png",
+      "status": 200,
+      "expected": "db23cf086bd1a91f28e63cef60f9b941f0682ef3b3a3a610ef4c2fc22a65ddfb",
+      "actual": "db23cf086bd1a91f28e63cef60f9b941f0682ef3b3a3a610ef4c2fc22a65ddfb",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Walk.png",
+      "status": 200,
+      "expected": "527bcbe6b9b1456f94011618c073f0057b76aa946178b6437c5eee20a0088255",
+      "actual": "527bcbe6b9b1456f94011618c073f0057b76aa946178b6437c5eee20a0088255",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack1-FX.png",
+      "status": 200,
+      "expected": "cf06b4dd91620ac3a9f2d7d371510839cc66c449951ff1d45a58193d09741d54",
+      "actual": "cf06b4dd91620ac3a9f2d7d371510839cc66c449951ff1d45a58193d09741d54",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack1.png",
+      "status": 200,
+      "expected": "36413a53da840f613b819a17aaf49f22a002d3346c1d3778e6ca82898dba7519",
+      "actual": "36413a53da840f613b819a17aaf49f22a002d3346c1d3778e6ca82898dba7519",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack2-FX.png",
+      "status": 200,
+      "expected": "87525439495bffb06eadca3945052c1bcb41c120adc2c3edf7c504d46fd8a347",
+      "actual": "87525439495bffb06eadca3945052c1bcb41c120adc2c3edf7c504d46fd8a347",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack2.png",
+      "status": 200,
+      "expected": "683703a9ad680edbb181e4f0517ba6903390a9e22acce8c03ac0447722f26807",
+      "actual": "683703a9ad680edbb181e4f0517ba6903390a9e22acce8c03ac0447722f26807",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack3-FX.png",
+      "status": 200,
+      "expected": "c256a65c7df66532e142107080e45a0a5a28821c922404f3c606fafa1cfa11fd",
+      "actual": "c256a65c7df66532e142107080e45a0a5a28821c922404f3c606fafa1cfa11fd",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack3.png",
+      "status": 200,
+      "expected": "994eb93dc4a08072edbc8af3de520625e0ef6ce2b39ea3b501ffb48b01472427",
+      "actual": "994eb93dc4a08072edbc8af3de520625e0ef6ce2b39ea3b501ffb48b01472427",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Death.png",
+      "status": 200,
+      "expected": "2b1a5a59d87744c9a3cbcf0697c69306c40ddd88b07ea37eca50292e746cf8e9",
+      "actual": "2b1a5a59d87744c9a3cbcf0697c69306c40ddd88b07ea37eca50292e746cf8e9",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Hurt.png",
+      "status": 200,
+      "expected": "b5bc4465807f8cac93cdd6df30f37fb8e8d84abf892c89dbdf785845a90697fd",
+      "actual": "b5bc4465807f8cac93cdd6df30f37fb8e8d84abf892c89dbdf785845a90697fd",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Idle.png",
+      "status": 200,
+      "expected": "d1b0427cb4d8e6cd7e067df7c11f86bf2de33b43ba99ba7e0f643432585aa443",
+      "actual": "d1b0427cb4d8e6cd7e067df7c11f86bf2de33b43ba99ba7e0f643432585aa443",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Jump-FX.png",
+      "status": 200,
+      "expected": "87525439495bffb06eadca3945052c1bcb41c120adc2c3edf7c504d46fd8a347",
+      "actual": "87525439495bffb06eadca3945052c1bcb41c120adc2c3edf7c504d46fd8a347",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Jump.png",
+      "status": 200,
+      "expected": "683703a9ad680edbb181e4f0517ba6903390a9e22acce8c03ac0447722f26807",
+      "actual": "683703a9ad680edbb181e4f0517ba6903390a9e22acce8c03ac0447722f26807",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Keyposes.png",
+      "status": 200,
+      "expected": "d093e1f9f20cc4cdf5eab51ddac68d9c469ef7b4dd9cc41282947a076b627fe3",
+      "actual": "d093e1f9f20cc4cdf5eab51ddac68d9c469ef7b4dd9cc41282947a076b627fe3",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Run.png",
+      "status": 200,
+      "expected": "1744f06f12f8b127f714d014af1ad071eabae128d417bba73f0ef727abba200e",
+      "actual": "1744f06f12f8b127f714d014af1ad071eabae128d417bba73f0ef727abba200e",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Walk.png",
+      "status": 200,
+      "expected": "4efd32d185530ed3e6bd556b5bcd88f873e12f845ea862241b1244d52001dbe1",
+      "actual": "4efd32d185530ed3e6bd556b5bcd88f873e12f845ea862241b1244d52001dbe1",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack1-FX.png",
+      "status": 200,
+      "expected": "bc6884ba6061f2f1777e177e3d9cdc6bf3c1d43f211ad97593d31c02bf2ac9b8",
+      "actual": "bc6884ba6061f2f1777e177e3d9cdc6bf3c1d43f211ad97593d31c02bf2ac9b8",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack1.png",
+      "status": 200,
+      "expected": "19fbc62444a4debb6781b4a3c36f9dc5ec921481eea4a0aba2199cd113da1877",
+      "actual": "19fbc62444a4debb6781b4a3c36f9dc5ec921481eea4a0aba2199cd113da1877",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack2-FX.png",
+      "status": 200,
+      "expected": "eb139aa61b9d9a33b37e8593c61d8391786c3017a38769c6e451182f8a770f37",
+      "actual": "eb139aa61b9d9a33b37e8593c61d8391786c3017a38769c6e451182f8a770f37",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack2.png",
+      "status": 200,
+      "expected": "4fdf5dd146d4622694ddae97a509704e3e3e7e55e8d14a59e3d2f5e1fcfea983",
+      "actual": "4fdf5dd146d4622694ddae97a509704e3e3e7e55e8d14a59e3d2f5e1fcfea983",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack3-FX.png",
+      "status": 200,
+      "expected": "e3e9fca1e5ee903917a2e9e3f6f63b356974a45a2cc3a6b0bf2a0f735775af44",
+      "actual": "e3e9fca1e5ee903917a2e9e3f6f63b356974a45a2cc3a6b0bf2a0f735775af44",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack3.png",
+      "status": 200,
+      "expected": "7b7ccda08abe7f8fd3f5aa00319f71aa4336128747050067bf8fd4f5b08f1569",
+      "actual": "7b7ccda08abe7f8fd3f5aa00319f71aa4336128747050067bf8fd4f5b08f1569",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Death.png",
+      "status": 200,
+      "expected": "1f297c4662b2c0da6404a5d913bdb9951b1e3c01940b5f8b768db60ee8ce5d28",
+      "actual": "1f297c4662b2c0da6404a5d913bdb9951b1e3c01940b5f8b768db60ee8ce5d28",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Hurt.png",
+      "status": 200,
+      "expected": "24e460c6821c1f39352c56145163d026c729e5161918698bd7e888826df87c59",
+      "actual": "24e460c6821c1f39352c56145163d026c729e5161918698bd7e888826df87c59",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Idle.png",
+      "status": 200,
+      "expected": "de0469ed3ed7cb3ea005f2b9e93b4889acc99b4209386c1909b9aabb01dd58bd",
+      "actual": "de0469ed3ed7cb3ea005f2b9e93b4889acc99b4209386c1909b9aabb01dd58bd",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Jump-FX.png",
+      "status": 200,
+      "expected": "eb139aa61b9d9a33b37e8593c61d8391786c3017a38769c6e451182f8a770f37",
+      "actual": "eb139aa61b9d9a33b37e8593c61d8391786c3017a38769c6e451182f8a770f37",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Jump.png",
+      "status": 200,
+      "expected": "4fdf5dd146d4622694ddae97a509704e3e3e7e55e8d14a59e3d2f5e1fcfea983",
+      "actual": "4fdf5dd146d4622694ddae97a509704e3e3e7e55e8d14a59e3d2f5e1fcfea983",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Keyposes.png",
+      "status": 200,
+      "expected": "27d9b7fa08663510111d70ce0e5ceb9dd79dc399f4c2b572ddf8cbed54ea20fd",
+      "actual": "27d9b7fa08663510111d70ce0e5ceb9dd79dc399f4c2b572ddf8cbed54ea20fd",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Run.png",
+      "status": 200,
+      "expected": "42dcf279367e5c2af58f5b3fff1d90ad3ea3f172262ea54a65805dcb8dbce851",
+      "actual": "42dcf279367e5c2af58f5b3fff1d90ad3ea3f172262ea54a65805dcb8dbce851",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Walk.png",
+      "status": 200,
+      "expected": "4a25d73635528effa7269dabf3908c666cc02a9f4d06b35d4c4d77a2a2a7e6d2",
+      "actual": "4a25d73635528effa7269dabf3908c666cc02a9f4d06b35d4c4d77a2a2a7e6d2",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack1-FX.png",
+      "status": 200,
+      "expected": "9541645d41aa5ef5a975e6db82fc91d301d9f087ffced8c5b05d551472b1c7d3",
+      "actual": "9541645d41aa5ef5a975e6db82fc91d301d9f087ffced8c5b05d551472b1c7d3",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack1.png",
+      "status": 200,
+      "expected": "2cef7dd655dca7b18e91bd2a0de7e8431e4110c379efa294cbe8cb4e4786f483",
+      "actual": "2cef7dd655dca7b18e91bd2a0de7e8431e4110c379efa294cbe8cb4e4786f483",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack2-FX.png",
+      "status": 200,
+      "expected": "63fe97c9e730fa369a5803448d84432863516eda1811d6dca53c03f159a23789",
+      "actual": "63fe97c9e730fa369a5803448d84432863516eda1811d6dca53c03f159a23789",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack2.png",
+      "status": 200,
+      "expected": "726622222abc2be19d742fee25680e6eec62cd5d9db8f8fed2098af02604ba31",
+      "actual": "726622222abc2be19d742fee25680e6eec62cd5d9db8f8fed2098af02604ba31",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack3-FX.png",
+      "status": 200,
+      "expected": "b1df82229c786e393f9074eb3981c3e5a4579245e298dc48ecec7bff9e25ba0b",
+      "actual": "b1df82229c786e393f9074eb3981c3e5a4579245e298dc48ecec7bff9e25ba0b",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack3.png",
+      "status": 200,
+      "expected": "82b9f87ea322a4e2378f1a6b3d28414bbdafcf6c8667cc2305782ede1fa09883",
+      "actual": "82b9f87ea322a4e2378f1a6b3d28414bbdafcf6c8667cc2305782ede1fa09883",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Death.png",
+      "status": 200,
+      "expected": "d0b5c3c23713e3ca0c80523b2e8034383c8530cc327d9bc887479dc25ad99ec9",
+      "actual": "d0b5c3c23713e3ca0c80523b2e8034383c8530cc327d9bc887479dc25ad99ec9",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Hurt.png",
+      "status": 200,
+      "expected": "3b98b3fa1c7b350cf3253f8e7a1d65ed54cced4aa08ac068c34c168030d50b39",
+      "actual": "3b98b3fa1c7b350cf3253f8e7a1d65ed54cced4aa08ac068c34c168030d50b39",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Idle.png",
+      "status": 200,
+      "expected": "0445a478ddd4825803742584206ceeda7255d779256fe35c2ea7675e2c497633",
+      "actual": "0445a478ddd4825803742584206ceeda7255d779256fe35c2ea7675e2c497633",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Jump-FX.png",
+      "status": 200,
+      "expected": "b1df82229c786e393f9074eb3981c3e5a4579245e298dc48ecec7bff9e25ba0b",
+      "actual": "b1df82229c786e393f9074eb3981c3e5a4579245e298dc48ecec7bff9e25ba0b",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Jump.png",
+      "status": 200,
+      "expected": "82b9f87ea322a4e2378f1a6b3d28414bbdafcf6c8667cc2305782ede1fa09883",
+      "actual": "82b9f87ea322a4e2378f1a6b3d28414bbdafcf6c8667cc2305782ede1fa09883",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Keyposes.png",
+      "status": 200,
+      "expected": "0ab59f41c2dc8c9e63aa1506028298b9c53b4927d60c2d7746104b0577be07e1",
+      "actual": "0ab59f41c2dc8c9e63aa1506028298b9c53b4927d60c2d7746104b0577be07e1",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Run.png",
+      "status": 200,
+      "expected": "d4877daf67b3836ba1681f140c39a7c25685565c7dccd7b8052920c542be4987",
+      "actual": "d4877daf67b3836ba1681f140c39a7c25685565c7dccd7b8052920c542be4987",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Walk.png",
+      "status": 200,
+      "expected": "44204bff4dc7aea52a0f59723323f55d4c25bf87580c8d7691a8206b072914a5",
+      "actual": "44204bff4dc7aea52a0f59723323f55d4c25bf87580c8d7691a8206b072914a5",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack1-FX.png",
+      "status": 200,
+      "expected": "00f0dafb19192b1699e7a41e9f11599327d7daecea80668886a61aa09d47ef4d",
+      "actual": "00f0dafb19192b1699e7a41e9f11599327d7daecea80668886a61aa09d47ef4d",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack1.png",
+      "status": 200,
+      "expected": "cc78bfe5e614ad8bf5103d9724c739f14b7039c0905efdb3073781c572b96a51",
+      "actual": "cc78bfe5e614ad8bf5103d9724c739f14b7039c0905efdb3073781c572b96a51",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack2-FX.png",
+      "status": 200,
+      "expected": "35195e5b21e26407743f7f5f2ef7741538df991467517c4268891f0848ad7cac",
+      "actual": "35195e5b21e26407743f7f5f2ef7741538df991467517c4268891f0848ad7cac",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack2.png",
+      "status": 200,
+      "expected": "72218d36040a3288af82684e5d128535f7e420775fab158d6ecdc8efc0ab7583",
+      "actual": "72218d36040a3288af82684e5d128535f7e420775fab158d6ecdc8efc0ab7583",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack3-FX.png",
+      "status": 200,
+      "expected": "9c9bb3731478b9c12edbf3f6cfd5227339138c7f3cdc9f98f5f771ebce078f39",
+      "actual": "9c9bb3731478b9c12edbf3f6cfd5227339138c7f3cdc9f98f5f771ebce078f39",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack3.png",
+      "status": 200,
+      "expected": "54ad839710f9981940a710cd7196f76512a9d7e94e9f27552edfcf9201240c44",
+      "actual": "54ad839710f9981940a710cd7196f76512a9d7e94e9f27552edfcf9201240c44",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Death.png",
+      "status": 200,
+      "expected": "efea5aaf69022877a5fbc5e0a18053f1b3bf92d8b5ee11e99308be33cd997e32",
+      "actual": "efea5aaf69022877a5fbc5e0a18053f1b3bf92d8b5ee11e99308be33cd997e32",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Hurt.png",
+      "status": 200,
+      "expected": "ec850777b826aa4c5613ba0b8ec3ce55ceaca64162727b39cb998d5aa3c12ab4",
+      "actual": "ec850777b826aa4c5613ba0b8ec3ce55ceaca64162727b39cb998d5aa3c12ab4",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Idle.png",
+      "status": 200,
+      "expected": "b661713ff12721c09b800798621f3a0b8789845c02045993c7c524b7edfd13dd",
+      "actual": "b661713ff12721c09b800798621f3a0b8789845c02045993c7c524b7edfd13dd",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Jump-FX.png",
+      "status": 200,
+      "expected": "35195e5b21e26407743f7f5f2ef7741538df991467517c4268891f0848ad7cac",
+      "actual": "35195e5b21e26407743f7f5f2ef7741538df991467517c4268891f0848ad7cac",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Jump.png",
+      "status": 200,
+      "expected": "72218d36040a3288af82684e5d128535f7e420775fab158d6ecdc8efc0ab7583",
+      "actual": "72218d36040a3288af82684e5d128535f7e420775fab158d6ecdc8efc0ab7583",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Keyposes.png",
+      "status": 200,
+      "expected": "45b34894cbf36fed845f0fc9e08aa48ce5e2f0e9c59e7d6a5fdb4181c7ff5ae9",
+      "actual": "45b34894cbf36fed845f0fc9e08aa48ce5e2f0e9c59e7d6a5fdb4181c7ff5ae9",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Run.png",
+      "status": 200,
+      "expected": "9173bb0b9cb280374b0a82b8a59b17d79994591b6400e50b3a736d48b34f7c50",
+      "actual": "9173bb0b9cb280374b0a82b8a59b17d79994591b6400e50b3a736d48b34f7c50",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Walk.png",
+      "status": 200,
+      "expected": "b836d33c69aa94b49ecabb7f2b3e3fce17073102b00a7d9b8760a8f2a96b8035",
+      "actual": "b836d33c69aa94b49ecabb7f2b3e3fce17073102b00a7d9b8760a8f2a96b8035",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack1-FX.png",
+      "status": 200,
+      "expected": "51c3f8f69d5372ce82eb567d67bcc12837a0ffe873414e67493ab0ce373d20ed",
+      "actual": "51c3f8f69d5372ce82eb567d67bcc12837a0ffe873414e67493ab0ce373d20ed",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack1.png",
+      "status": 200,
+      "expected": "f39f2107032f16b8fa0b862737d3ee5bd596c055fdef9f6a8d53dd279a786470",
+      "actual": "f39f2107032f16b8fa0b862737d3ee5bd596c055fdef9f6a8d53dd279a786470",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack2-FX.png",
+      "status": 200,
+      "expected": "a80024559276b2cbddd63473eff859b6e55b69c365c6977ded7c24913aef7a5c",
+      "actual": "a80024559276b2cbddd63473eff859b6e55b69c365c6977ded7c24913aef7a5c",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack2.png",
+      "status": 200,
+      "expected": "697bf4ff56c251991c5c2d00c95f06335deb4715fa64d49262a07c8e622dc4d0",
+      "actual": "697bf4ff56c251991c5c2d00c95f06335deb4715fa64d49262a07c8e622dc4d0",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack3-FX.png",
+      "status": 200,
+      "expected": "51fc398ec02e6ac133cedd8441ba23cbe6a92d7d7f18a8136b40866350e39016",
+      "actual": "51fc398ec02e6ac133cedd8441ba23cbe6a92d7d7f18a8136b40866350e39016",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack3.png",
+      "status": 200,
+      "expected": "78d1b7bf6060b797a77d4e668adffaca41eab100420a07524071f6f10492398b",
+      "actual": "78d1b7bf6060b797a77d4e668adffaca41eab100420a07524071f6f10492398b",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Death.png",
+      "status": 200,
+      "expected": "3a02f2c7595c02eaf1687e7b029ff572b3b4d924c93b03579a15b68d353ccfa2",
+      "actual": "3a02f2c7595c02eaf1687e7b029ff572b3b4d924c93b03579a15b68d353ccfa2",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Hurt.png",
+      "status": 200,
+      "expected": "e58b713f61a6270a7df988eb7fc966dbbc9a8e4c2cfa883284fbc665f8d0d60f",
+      "actual": "e58b713f61a6270a7df988eb7fc966dbbc9a8e4c2cfa883284fbc665f8d0d60f",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Idle.png",
+      "status": 200,
+      "expected": "ad4806abc12fae1badb24956d4a58fb7ce5f9184ae9629b1f1f90335b436bfa8",
+      "actual": "ad4806abc12fae1badb24956d4a58fb7ce5f9184ae9629b1f1f90335b436bfa8",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Jump-FX.png",
+      "status": 200,
+      "expected": "a80024559276b2cbddd63473eff859b6e55b69c365c6977ded7c24913aef7a5c",
+      "actual": "a80024559276b2cbddd63473eff859b6e55b69c365c6977ded7c24913aef7a5c",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Jump.png",
+      "status": 200,
+      "expected": "697bf4ff56c251991c5c2d00c95f06335deb4715fa64d49262a07c8e622dc4d0",
+      "actual": "697bf4ff56c251991c5c2d00c95f06335deb4715fa64d49262a07c8e622dc4d0",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Keyposes.png",
+      "status": 200,
+      "expected": "aff42fd5b360e129aa64adc008c2560974db723a79cf8b0b36840493f3511671",
+      "actual": "aff42fd5b360e129aa64adc008c2560974db723a79cf8b0b36840493f3511671",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Run.png",
+      "status": 200,
+      "expected": "ee959394931c83ecd8eadbae2a4793b6f423813dc7a248f3db6eb6dbf2efa7ba",
+      "actual": "ee959394931c83ecd8eadbae2a4793b6f423813dc7a248f3db6eb6dbf2efa7ba",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Walk.png",
+      "status": 200,
+      "expected": "c51102aab3c179b228e36fa1264ae3c20363db7122d58b38a456d6fe8b0cdc3e",
+      "actual": "c51102aab3c179b228e36fa1264ae3c20363db7122d58b38a456d6fe8b0cdc3e",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack1-FX.png",
+      "status": 200,
+      "expected": "8fc2897d74111d3f8e5096d255eaa9205d9e5ecc369bda00d4af7999967721d2",
+      "actual": "8fc2897d74111d3f8e5096d255eaa9205d9e5ecc369bda00d4af7999967721d2",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack1.png",
+      "status": 200,
+      "expected": "eca0600121aa985c9735848fb6b5459ab103ef94b36e1c29c64bc820b4f278ff",
+      "actual": "eca0600121aa985c9735848fb6b5459ab103ef94b36e1c29c64bc820b4f278ff",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack2-FX.png",
+      "status": 200,
+      "expected": "651646e22624d13edb75a82d58568c4653db5de924c330f1734e52eea87eb8d0",
+      "actual": "651646e22624d13edb75a82d58568c4653db5de924c330f1734e52eea87eb8d0",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack2.png",
+      "status": 200,
+      "expected": "ee85e2df06ca9f00c2e7a02aea1d7716af5597395b030ef3c0ee61691dba91e9",
+      "actual": "ee85e2df06ca9f00c2e7a02aea1d7716af5597395b030ef3c0ee61691dba91e9",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack3-FX.png",
+      "status": 200,
+      "expected": "0989a266d41568868347d1bb77b0f05abbd8c80f0b9339f84c55736d6c48cfdd",
+      "actual": "0989a266d41568868347d1bb77b0f05abbd8c80f0b9339f84c55736d6c48cfdd",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack3.png",
+      "status": 200,
+      "expected": "2eea9cf1c5aa6451fa41379754d0cc0c876fc68b20d5ae5b4f720a84573e9b45",
+      "actual": "2eea9cf1c5aa6451fa41379754d0cc0c876fc68b20d5ae5b4f720a84573e9b45",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Death.png",
+      "status": 200,
+      "expected": "c77ccafba4f6753900642fffcfa0fbf21fe50f89c3caa2602dba434b89210bfb",
+      "actual": "c77ccafba4f6753900642fffcfa0fbf21fe50f89c3caa2602dba434b89210bfb",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Hurt.png",
+      "status": 200,
+      "expected": "b0ac509648de98da2dbe5ea9555b8d58e51870566bc2a3e892161003d92831b3",
+      "actual": "b0ac509648de98da2dbe5ea9555b8d58e51870566bc2a3e892161003d92831b3",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Idle.png",
+      "status": 200,
+      "expected": "35bd13f17641cb128e8dbac1424734b9348914874dae8eca910d47ef21e817f6",
+      "actual": "35bd13f17641cb128e8dbac1424734b9348914874dae8eca910d47ef21e817f6",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Jump-FX.png",
+      "status": 200,
+      "expected": "651646e22624d13edb75a82d58568c4653db5de924c330f1734e52eea87eb8d0",
+      "actual": "651646e22624d13edb75a82d58568c4653db5de924c330f1734e52eea87eb8d0",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Jump.png",
+      "status": 200,
+      "expected": "ee85e2df06ca9f00c2e7a02aea1d7716af5597395b030ef3c0ee61691dba91e9",
+      "actual": "ee85e2df06ca9f00c2e7a02aea1d7716af5597395b030ef3c0ee61691dba91e9",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Keyposes.png",
+      "status": 200,
+      "expected": "5455efeca1d2fc59e476be69bf8aa346addbe8429c55f37e835040f72060e39a",
+      "actual": "5455efeca1d2fc59e476be69bf8aa346addbe8429c55f37e835040f72060e39a",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Run.png",
+      "status": 200,
+      "expected": "a2239673c31a9016b42861e9d82b349baf96e0c88533f94933239a3dd23758eb",
+      "actual": "a2239673c31a9016b42861e9d82b349baf96e0c88533f94933239a3dd23758eb",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Walk.png",
+      "status": 200,
+      "expected": "8d453777b6bb439b5bfc9165adbf48fff1f86d697ecff841255813ca1e48da51",
+      "actual": "8d453777b6bb439b5bfc9165adbf48fff1f86d697ecff841255813ca1e48da51",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack1-FX.png",
+      "status": 200,
+      "expected": "934cd51790c64fc62b67e693b146d2c4164b6d5b1baf4a8c89f8f8321b48d646",
+      "actual": "934cd51790c64fc62b67e693b146d2c4164b6d5b1baf4a8c89f8f8321b48d646",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack1.png",
+      "status": 200,
+      "expected": "42eb8a2f5d9544d4a3e497a79b03f6755918550257d6df905dd6e21f526735db",
+      "actual": "42eb8a2f5d9544d4a3e497a79b03f6755918550257d6df905dd6e21f526735db",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack2-FX.png",
+      "status": 200,
+      "expected": "9980d9cc9335008d2c31b5d6a6a23d25ccaa13d80784ac9c0ab74d3a1f525537",
+      "actual": "9980d9cc9335008d2c31b5d6a6a23d25ccaa13d80784ac9c0ab74d3a1f525537",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack2.png",
+      "status": 200,
+      "expected": "bd7d4d954af7dc647f75c6e0c7fdf303b22f057036f053cbd99d5b242183f4eb",
+      "actual": "bd7d4d954af7dc647f75c6e0c7fdf303b22f057036f053cbd99d5b242183f4eb",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack3-FX.png",
+      "status": 200,
+      "expected": "dc0591e500e31281a8efbe247d2b6c0ffca68ef7e5760d867e169587ebd229a6",
+      "actual": "dc0591e500e31281a8efbe247d2b6c0ffca68ef7e5760d867e169587ebd229a6",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack3.png",
+      "status": 200,
+      "expected": "eb2e4486b1ff4ea2e717f19543d7c7b4674c7cb6a6a6da8c731853dbad7d127f",
+      "actual": "eb2e4486b1ff4ea2e717f19543d7c7b4674c7cb6a6a6da8c731853dbad7d127f",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Death.png",
+      "status": 200,
+      "expected": "6dbdea767b293a9bafa54bb57e34aa003a9c2c855838f32ec5e944b7b2174771",
+      "actual": "6dbdea767b293a9bafa54bb57e34aa003a9c2c855838f32ec5e944b7b2174771",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Hurt.png",
+      "status": 200,
+      "expected": "b18f670ae962556ed526646a43fcf58064f2c09e6df263ae4e37852a9e13ac70",
+      "actual": "b18f670ae962556ed526646a43fcf58064f2c09e6df263ae4e37852a9e13ac70",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Idle.png",
+      "status": 200,
+      "expected": "90704087f27b5f6f001ec1f8f77452d99f32d44fb7d285bf1e2e93a1637cb0ae",
+      "actual": "90704087f27b5f6f001ec1f8f77452d99f32d44fb7d285bf1e2e93a1637cb0ae",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Jump-FX.png",
+      "status": 200,
+      "expected": "9980d9cc9335008d2c31b5d6a6a23d25ccaa13d80784ac9c0ab74d3a1f525537",
+      "actual": "9980d9cc9335008d2c31b5d6a6a23d25ccaa13d80784ac9c0ab74d3a1f525537",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Jump.png",
+      "status": 200,
+      "expected": "bd7d4d954af7dc647f75c6e0c7fdf303b22f057036f053cbd99d5b242183f4eb",
+      "actual": "bd7d4d954af7dc647f75c6e0c7fdf303b22f057036f053cbd99d5b242183f4eb",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Keyposes.png",
+      "status": 200,
+      "expected": "a8e807deceba8dd27c7de155142723e01e281afc63baaa99629a7e63722ce625",
+      "actual": "a8e807deceba8dd27c7de155142723e01e281afc63baaa99629a7e63722ce625",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Run.png",
+      "status": 200,
+      "expected": "5d29fc39473bf5ee7d5c932cabf4deb8ad0b49288acff129ddb83699a143726c",
+      "actual": "5d29fc39473bf5ee7d5c932cabf4deb8ad0b49288acff129ddb83699a143726c",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Walk.png",
+      "status": 200,
+      "expected": "dab51709dcae47c91f942d7af426a744b07215dfff7ccb5e677d7c3d0d34bd58",
+      "actual": "dab51709dcae47c91f942d7af426a744b07215dfff7ccb5e677d7c3d0d34bd58",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack1-FX.png",
+      "status": 200,
+      "expected": "2a728563b56c56b3921258c3f20173f80aabb29cad230d1fe0495c488cf336b7",
+      "actual": "2a728563b56c56b3921258c3f20173f80aabb29cad230d1fe0495c488cf336b7",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack1.png",
+      "status": 200,
+      "expected": "424ed8b1f9e279b027a4c912193f7808b67a32fd467e82b9530411d15116f222",
+      "actual": "424ed8b1f9e279b027a4c912193f7808b67a32fd467e82b9530411d15116f222",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack2-FX.png",
+      "status": 200,
+      "expected": "aed73aef91c7feb6c80a978afc4bc53bea058a0e3398774488aa587b7c7cb312",
+      "actual": "aed73aef91c7feb6c80a978afc4bc53bea058a0e3398774488aa587b7c7cb312",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack2.png",
+      "status": 200,
+      "expected": "b45b6348282c44cdca77ceab615a495c0fe959b13bd4ac69093455f4b11ebc5d",
+      "actual": "b45b6348282c44cdca77ceab615a495c0fe959b13bd4ac69093455f4b11ebc5d",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack3-FX.png",
+      "status": 200,
+      "expected": "beef3db7ea636657265326000f50d7e4465143d90d5bcac28bb89885945ed986",
+      "actual": "beef3db7ea636657265326000f50d7e4465143d90d5bcac28bb89885945ed986",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack3.png",
+      "status": 200,
+      "expected": "76d4faddadadb8f32ea7691bc8e1f6fdd06cece2028e1dfe16e3930be73bb5b6",
+      "actual": "76d4faddadadb8f32ea7691bc8e1f6fdd06cece2028e1dfe16e3930be73bb5b6",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Death.png",
+      "status": 200,
+      "expected": "88c3cc9dabc680afd79f13c89e8796c184be7c3adee54a81029f78bd39029db8",
+      "actual": "88c3cc9dabc680afd79f13c89e8796c184be7c3adee54a81029f78bd39029db8",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Hurt.png",
+      "status": 200,
+      "expected": "d8354b50d941c5d3315e703ef5b02dd643b5282d25002aaf3bca64c255dc1cbf",
+      "actual": "d8354b50d941c5d3315e703ef5b02dd643b5282d25002aaf3bca64c255dc1cbf",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Idle.png",
+      "status": 200,
+      "expected": "e58ae5e6b2080e975598d814f25518d25608c2911a4c45f8cd298fc38648b94e",
+      "actual": "e58ae5e6b2080e975598d814f25518d25608c2911a4c45f8cd298fc38648b94e",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Jump-FX.png",
+      "status": 200,
+      "expected": "beef3db7ea636657265326000f50d7e4465143d90d5bcac28bb89885945ed986",
+      "actual": "beef3db7ea636657265326000f50d7e4465143d90d5bcac28bb89885945ed986",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Jump.png",
+      "status": 200,
+      "expected": "76d4faddadadb8f32ea7691bc8e1f6fdd06cece2028e1dfe16e3930be73bb5b6",
+      "actual": "76d4faddadadb8f32ea7691bc8e1f6fdd06cece2028e1dfe16e3930be73bb5b6",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Keyposes.png",
+      "status": 200,
+      "expected": "61eb4caf907b867c881ccf8cb2f7ecde4e06d796a9353d12ef44e0b41ba9d6cf",
+      "actual": "61eb4caf907b867c881ccf8cb2f7ecde4e06d796a9353d12ef44e0b41ba9d6cf",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Run.png",
+      "status": 200,
+      "expected": "ec3e81d2821e0dedeeb0caa0f64a707302aed5070292833658b89078cf872504",
+      "actual": "ec3e81d2821e0dedeeb0caa0f64a707302aed5070292833658b89078cf872504",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Walk.png",
+      "status": 200,
+      "expected": "eb122ec7a613ef476060fdaefb36fa8a4bb4dd54b4f0a58f466195141350a03e",
+      "actual": "eb122ec7a613ef476060fdaefb36fa8a4bb4dd54b4f0a58f466195141350a03e",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/SOURCES.json",
+      "status": 200,
+      "expected": "32ab044d9ead158ea74e2923c18bb2c20d1a5b4e7d216193045abb27cef0dfc6",
+      "actual": "32ab044d9ead158ea74e2923c18bb2c20d1a5b4e7d216193045abb27cef0dfc6",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/catalogo.js",
+      "status": 200,
+      "expected": "92ba5b0ff2fed008cc5ae02c1d6d97af4b733d84ce5e21917726954b7c57718f",
+      "actual": "92ba5b0ff2fed008cc5ae02c1d6d97af4b733d84ce5e21917726954b7c57718f",
+      "matched": true
+    },
+    {
+      "path": "assets/anomalias-biologicas/catalogo.json",
+      "status": 200,
+      "expected": "ee070f836135c390c37025539c360ddf1a61d8603ce6b141d9426a79cce2ab5e",
+      "actual": "ee070f836135c390c37025539c360ddf1a61d8603ce6b141d9426a79cce2ab5e",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Attack.png",
+      "status": 200,
+      "expected": "9ec53cd28a3a0f97aa9b531e13489b8f1e5955f5167682977a171abb73196d5e",
+      "actual": "9ec53cd28a3a0f97aa9b531e13489b8f1e5955f5167682977a171abb73196d5e",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Hurt.png",
+      "status": 200,
+      "expected": "dc8a1f9774494aae303d241cd5ade3f8cf9914cc0420c3b8b571f3acb32df1b4",
+      "actual": "dc8a1f9774494aae303d241cd5ade3f8cf9914cc0420c3b8b571f3acb32df1b4",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Idle.png",
+      "status": 200,
+      "expected": "65ebb3ccfb20e5c4d83609a6f3a03e97c4bc6d51e7b5fbe6ebe06e9a16482904",
+      "actual": "65ebb3ccfb20e5c4d83609a6f3a03e97c4bc6d51e7b5fbe6ebe06e9a16482904",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Neutralized.png",
+      "status": 200,
+      "expected": "7ec52ebf38458e4c5b6e0b34e3ef04b4a5ae69ca0cb466e16d807782f3d1e10a",
+      "actual": "7ec52ebf38458e4c5b6e0b34e3ef04b4a5ae69ca0cb466e16d807782f3d1e10a",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Partes.png",
+      "status": 200,
+      "expected": "a226484a2588fa9c6f59cd4d19802dbba0add7d8811e7a1326460e10f6338fe5",
+      "actual": "a226484a2588fa9c6f59cd4d19802dbba0add7d8811e7a1326460e10f6338fe5",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Walk.png",
+      "status": 200,
+      "expected": "d5a4515e739c2e1b1952c2a87728eb695a33620d5972599e7223969fa9c9ae13",
+      "actual": "d5a4515e739c2e1b1952c2a87728eb695a33620d5972599e7223969fa9c9ae13",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Attack.png",
+      "status": 200,
+      "expected": "dbcb48988a3c21144eafe8dcc3fac046306602fd30d96abd1dde611fc8697eed",
+      "actual": "dbcb48988a3c21144eafe8dcc3fac046306602fd30d96abd1dde611fc8697eed",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Hurt.png",
+      "status": 200,
+      "expected": "18876230655bbb0a68ab35f8583f340dc96ebd0b05bd0073de9d60a7b65a0c56",
+      "actual": "18876230655bbb0a68ab35f8583f340dc96ebd0b05bd0073de9d60a7b65a0c56",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Idle.png",
+      "status": 200,
+      "expected": "8313c6b9d9da0b1b613f3353ba0726a13c7d7f7b56a15dc08844ad56c8b40fe2",
+      "actual": "8313c6b9d9da0b1b613f3353ba0726a13c7d7f7b56a15dc08844ad56c8b40fe2",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Neutralized.png",
+      "status": 200,
+      "expected": "0d9b6282ee465df358eb51d64857ec06cdf19fc3354acee0da7244e834513e5d",
+      "actual": "0d9b6282ee465df358eb51d64857ec06cdf19fc3354acee0da7244e834513e5d",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Partes.png",
+      "status": 200,
+      "expected": "fcd0f1aac2e1389538a3538fca7e579a697e3aa17b8a35bf7cd804486a9d0bb3",
+      "actual": "fcd0f1aac2e1389538a3538fca7e579a697e3aa17b8a35bf7cd804486a9d0bb3",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Walk.png",
+      "status": 200,
+      "expected": "1a267833618b865106e362829dcd745a1725d10427a74746b504d5283cfaca34",
+      "actual": "1a267833618b865106e362829dcd745a1725d10427a74746b504d5283cfaca34",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Attack.png",
+      "status": 200,
+      "expected": "77313194275bc59d2ceb7625e86122d990ae4360f035de334787c69814396c67",
+      "actual": "77313194275bc59d2ceb7625e86122d990ae4360f035de334787c69814396c67",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Hurt.png",
+      "status": 200,
+      "expected": "51fb2b8a8ec5533a90d0b10fcc2e644699f0e00d72fa0538449d0ff587693dd4",
+      "actual": "51fb2b8a8ec5533a90d0b10fcc2e644699f0e00d72fa0538449d0ff587693dd4",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Idle.png",
+      "status": 200,
+      "expected": "256064525c82b812e34ba05694a29340d7650b609623e2492fdc09b24871d05a",
+      "actual": "256064525c82b812e34ba05694a29340d7650b609623e2492fdc09b24871d05a",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Neutralized.png",
+      "status": 200,
+      "expected": "0665bf3cd0a2dc35b03911407300bddd3a37ad293b0468875b445e2bfcc35c5d",
+      "actual": "0665bf3cd0a2dc35b03911407300bddd3a37ad293b0468875b445e2bfcc35c5d",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Partes.png",
+      "status": 200,
+      "expected": "d5754f48cca0fd728c495b3ef5a5661dbb872e82c80f2e8494f15b953fdb2885",
+      "actual": "d5754f48cca0fd728c495b3ef5a5661dbb872e82c80f2e8494f15b953fdb2885",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Walk.png",
+      "status": 200,
+      "expected": "aa8da1522896332875bb6ed2c01b44a26b72c2cb3bd5d0f2c1a9e1ce45fb13b6",
+      "actual": "aa8da1522896332875bb6ed2c01b44a26b72c2cb3bd5d0f2c1a9e1ce45fb13b6",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Attack.png",
+      "status": 200,
+      "expected": "a0decf949ca0f24a27de99662edb9227ad514dd23cb15693166511fb5171fc63",
+      "actual": "a0decf949ca0f24a27de99662edb9227ad514dd23cb15693166511fb5171fc63",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Hurt.png",
+      "status": 200,
+      "expected": "f6f7112fea8ea0024b83b4190740a67c57aa81d9ba424392f49778f676205807",
+      "actual": "f6f7112fea8ea0024b83b4190740a67c57aa81d9ba424392f49778f676205807",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Idle.png",
+      "status": 200,
+      "expected": "f64152a9b910d79129b2417a9651037b1bff5905d9919df2ebcba1aeb4a0ebb3",
+      "actual": "f64152a9b910d79129b2417a9651037b1bff5905d9919df2ebcba1aeb4a0ebb3",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Neutralized.png",
+      "status": 200,
+      "expected": "7ac91040e99be45f62700cdefdb18b7b79a71eb928f6e054c5cf2d967b0180bc",
+      "actual": "7ac91040e99be45f62700cdefdb18b7b79a71eb928f6e054c5cf2d967b0180bc",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Partes.png",
+      "status": 200,
+      "expected": "a6612358b9f82465901aec7e0cd4e7f6430182cc36eb30f722ffcc65592e49db",
+      "actual": "a6612358b9f82465901aec7e0cd4e7f6430182cc36eb30f722ffcc65592e49db",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Walk.png",
+      "status": 200,
+      "expected": "353ca3611cfef8dfd87e18caed6495356004eb727c99322cac650d5fe97b1440",
+      "actual": "353ca3611cfef8dfd87e18caed6495356004eb727c99322cac650d5fe97b1440",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Attack.png",
+      "status": 200,
+      "expected": "fba73897470dee03a553dbe471702d0f6bd33a557c98d4fa045c09519623360a",
+      "actual": "fba73897470dee03a553dbe471702d0f6bd33a557c98d4fa045c09519623360a",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Hurt.png",
+      "status": 200,
+      "expected": "16e6fa8e60e35d038c28da4d8cf7885b81d2349d055c20fb14e28e306366de8e",
+      "actual": "16e6fa8e60e35d038c28da4d8cf7885b81d2349d055c20fb14e28e306366de8e",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Idle.png",
+      "status": 200,
+      "expected": "64d89012c2733d12758da72cc4abface8b34406fa21a4a8779ba227368506005",
+      "actual": "64d89012c2733d12758da72cc4abface8b34406fa21a4a8779ba227368506005",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Neutralized.png",
+      "status": 200,
+      "expected": "ca3702c07c843c3b97670be3ae5324add53fc75c3ca3a7a466214ce1749102be",
+      "actual": "ca3702c07c843c3b97670be3ae5324add53fc75c3ca3a7a466214ce1749102be",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Partes.png",
+      "status": 200,
+      "expected": "d7cf30cd2af896bf314c0d6e5cee63864382876185bc0f1dcdfb16a6a9d1b584",
+      "actual": "d7cf30cd2af896bf314c0d6e5cee63864382876185bc0f1dcdfb16a6a9d1b584",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Walk.png",
+      "status": 200,
+      "expected": "746e81f9ee4a2c9ec30a133604659c40535f939b82bc91ca3a679ffcc2e6ea4a",
+      "actual": "746e81f9ee4a2c9ec30a133604659c40535f939b82bc91ca3a679ffcc2e6ea4a",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Attack.png",
+      "status": 200,
+      "expected": "acb93a15ad2d8279d7b80c2c20aca64e6c55f111ea543666cc828c162f02eebd",
+      "actual": "acb93a15ad2d8279d7b80c2c20aca64e6c55f111ea543666cc828c162f02eebd",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Hurt.png",
+      "status": 200,
+      "expected": "2faec54c99b4e34df1929ac3704126e9ba626bdd49a14b1d84217164d1b90f57",
+      "actual": "2faec54c99b4e34df1929ac3704126e9ba626bdd49a14b1d84217164d1b90f57",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Idle.png",
+      "status": 200,
+      "expected": "5e417133ad15d9a5a0feea683accf2304998eb67e90f7fff79dd33e36787a7f2",
+      "actual": "5e417133ad15d9a5a0feea683accf2304998eb67e90f7fff79dd33e36787a7f2",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Neutralized.png",
+      "status": 200,
+      "expected": "2666b7eaec6d4aa937a182a9eb72a0102fda6e30d55e851f6037bce8822e1f4b",
+      "actual": "2666b7eaec6d4aa937a182a9eb72a0102fda6e30d55e851f6037bce8822e1f4b",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Partes.png",
+      "status": 200,
+      "expected": "e10e2d7b04b59f437ffc5b5d37d95fe713ff2f91670add36f9f930238f88fa72",
+      "actual": "e10e2d7b04b59f437ffc5b5d37d95fe713ff2f91670add36f9f930238f88fa72",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Walk.png",
+      "status": 200,
+      "expected": "0cd1b501c8cca947d6a1976d75089fa7120953ed413fcfc429eeb245f99c0052",
+      "actual": "0cd1b501c8cca947d6a1976d75089fa7120953ed413fcfc429eeb245f99c0052",
+      "matched": true
+    },
+    {
+      "path": "assets/companeras-contencion-r3/catalogo.json",
+      "status": 200,
+      "expected": "77d955b50379d528a3cb06bbb0c609cf0fe83a96eb0332180eaa6865a2a4c737",
+      "actual": "77d955b50379d528a3cb06bbb0c609cf0fe83a96eb0332180eaa6865a2a4c737",
+      "matched": true
+    },
+    {
+      "path": "css/technical.css",
+      "status": 200,
+      "expected": "41b967080fc265f6e6a1dfb11f7a51ee935a7d58d03ac3c8b453381be7d15346",
+      "actual": "41b967080fc265f6e6a1dfb11f7a51ee935a7d58d03ac3c8b453381be7d15346",
+      "matched": true
+    },
+    {
+      "path": "dev.html",
+      "status": 200,
+      "expected": "621035400581b08d94b98f108fef56e26c9f2fdae89364dcee89d4679f1bf9c2",
+      "actual": "621035400581b08d94b98f108fef56e26c9f2fdae89364dcee89d4679f1bf9c2",
+      "matched": true
+    },
+    {
+      "path": "docs/PRUEBA_GRIETAS_INTEGRALES.md",
+      "status": 200,
+      "expected": "879d22c494b5cbcd12e40bf1ea355e0aa4106223b8a2ec41e1011ba5b33ce4a1",
+      "actual": "879d22c494b5cbcd12e40bf1ea355e0aa4106223b8a2ec41e1011ba5b33ce4a1",
+      "matched": true
+    },
+    {
+      "path": "docs/gestion/CONTROL_CAMBIOS.md",
+      "status": 200,
+      "expected": "da05bbde814eed9062ee4512d632e0a0f451c479e3d3b6eb66542e561e1448d8",
+      "actual": "da05bbde814eed9062ee4512d632e0a0f451c479e3d3b6eb66542e561e1448d8",
+      "matched": true
+    },
+    {
+      "path": "docs/gestion/LOT-EST-005_VALIDACION.json",
+      "status": 200,
+      "expected": "5ec60294e4f366ff407a5460cd50af2c3a70cdfdbefbdd71d619f92dbbe538e2",
+      "actual": "5ec60294e4f366ff407a5460cd50af2c3a70cdfdbefbdd71d619f92dbbe538e2",
+      "matched": true
+    },
+    {
+      "path": "docs/gestion/lotes/LOT-EST-005-r2.md",
+      "status": 200,
+      "expected": "240440834684a95b5204814232bd09a0af2daed18a1e3889b655bcb3071c55eb",
+      "actual": "240440834684a95b5204814232bd09a0af2daed18a1e3889b655bcb3071c55eb",
+      "matched": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "expected": "d8f5251e8a14a160e30c24e8046d600fe4bf2049b3846384803ce7cb56500fb2",
+      "actual": "d8f5251e8a14a160e30c24e8046d600fe4bf2049b3846384803ce7cb56500fb2",
+      "matched": true
+    },
+    {
+      "path": "js/app.min.js",
+      "status": 200,
+      "expected": "904e7e77e75dbfa529022d459e4334d9fed99bf44eeb31bf0943794d381a63cd",
+      "actual": "904e7e77e75dbfa529022d459e4334d9fed99bf44eeb31bf0943794d381a63cd",
+      "matched": true
+    },
+    {
+      "path": "js/data/bio-catalogue.js",
+      "status": 200,
+      "expected": "92ba5b0ff2fed008cc5ae02c1d6d97af4b733d84ce5e21917726954b7c57718f",
+      "actual": "92ba5b0ff2fed008cc5ae02c1d6d97af4b733d84ce5e21917726954b7c57718f",
+      "matched": true
+    },
+    {
+      "path": "js/data/companion-characters.js",
+      "status": 200,
+      "expected": "01e3f6ef60299b70e355c8464ef978a3a5928a37c89594d6240ada814cf76fe1",
+      "actual": "01e3f6ef60299b70e355c8464ef978a3a5928a37c89594d6240ada814cf76fe1",
+      "matched": true
+    },
+    {
+      "path": "js/data/rift-dialogues.js",
+      "status": 200,
+      "expected": "55ebfa8713a46c26c95459715d1d0bf72eb25b2074ff3d60a1912b271bd3c172",
+      "actual": "55ebfa8713a46c26c95459715d1d0bf72eb25b2074ff3d60a1912b271bd3c172",
+      "matched": true
+    },
+    {
+      "path": "js/entities/enemy.js",
+      "status": 200,
+      "expected": "736d739710dc105a5fed844b376c707e06f56a32b20753f4889f9b83ed704926",
+      "actual": "736d739710dc105a5fed844b376c707e06f56a32b20753f4889f9b83ed704926",
+      "matched": true
+    },
+    {
+      "path": "js/entities/fx.js",
+      "status": 200,
+      "expected": "ab9bdee73cf5932fd9b5c7114ccbcc72880de8ffe02634004eb4bae4dbf97eaa",
+      "actual": "ab9bdee73cf5932fd9b5c7114ccbcc72880de8ffe02634004eb4bae4dbf97eaa",
+      "matched": true
+    },
+    {
+      "path": "js/entities/pickup.js",
+      "status": 200,
+      "expected": "7f07425f648cb4b3f5fd84ec4841b51b8c60aa8f693a34c86f1726614da3b36e",
+      "actual": "7f07425f648cb4b3f5fd84ec4841b51b8c60aa8f693a34c86f1726614da3b36e",
+      "matched": true
+    },
+    {
+      "path": "js/entities/projectile.js",
+      "status": 200,
+      "expected": "3180e81266527d73042d043e673d4184b454a268385a16258d3f70e961afe34f",
+      "actual": "3180e81266527d73042d043e673d4184b454a268385a16258d3f70e961afe34f",
+      "matched": true
+    },
+    {
+      "path": "js/game.js",
+      "status": 200,
+      "expected": "306bdcb89cbadc7b5e6b73a18ff0650999ef38bab6c4cd847c4118dd5d2f3131",
+      "actual": "306bdcb89cbadc7b5e6b73a18ff0650999ef38bab6c4cd847c4118dd5d2f3131",
+      "matched": true
+    },
+    {
+      "path": "js/systems/combat.js",
+      "status": 200,
+      "expected": "8a1403ea7ca5d23e7cb0d6378cb00bf60c8b286fa8cfc8dfef1c05825711d350",
+      "actual": "8a1403ea7ca5d23e7cb0d6378cb00bf60c8b286fa8cfc8dfef1c05825711d350",
+      "matched": true
+    },
+    {
+      "path": "js/systems/expedition.js",
+      "status": 200,
+      "expected": "69670fa13f609c976e6c0f801c9b4e9d0b4062fe93d883b453dd8d7cd45f5c85",
+      "actual": "69670fa13f609c976e6c0f801c9b4e9d0b4062fe93d883b453dd8d7cd45f5c85",
+      "matched": true
+    },
+    {
+      "path": "js/systems/pathing.js",
+      "status": 200,
+      "expected": "8b2d0e0f03ba36c0b94550835a8196944f9ace6dfaeb42bcf5b7939d4c91edfb",
+      "actual": "8b2d0e0f03ba36c0b94550835a8196944f9ace6dfaeb42bcf5b7939d4c91edfb",
+      "matched": true
+    },
+    {
+      "path": "js/systems/rift-anomalies.js",
+      "status": 200,
+      "expected": "a3f54c354d46f8edc7febf4474bcd060849f08eff44570b22104e893701712d6",
+      "actual": "a3f54c354d46f8edc7febf4474bcd060849f08eff44570b22104e893701712d6",
+      "matched": true
+    },
+    {
+      "path": "js/systems/rift-companion.js",
+      "status": 200,
+      "expected": "f040dfd091a75a7acf3f10c428161070d36ba340321b15f2cc7a2f5340f6cd6e",
+      "actual": "f040dfd091a75a7acf3f10c428161070d36ba340321b15f2cc7a2f5340f6cd6e",
+      "matched": true
+    },
+    {
+      "path": "js/systems/rift-expedition.js",
+      "status": 200,
+      "expected": "ab14eca90d34d3a0e8610483d9afe48f270d69e97e3f4bed3ee29f1b7cbc7df2",
+      "actual": "ab14eca90d34d3a0e8610483d9afe48f270d69e97e3f4bed3ee29f1b7cbc7df2",
+      "matched": true
+    },
+    {
+      "path": "js/systems/rift-powers.js",
+      "status": 200,
+      "expected": "23d3700d91156e1fec59568dce23da68e6e69dd08b2800a5911062a1c31c6018",
+      "actual": "23d3700d91156e1fec59568dce23da68e6e69dd08b2800a5911062a1c31c6018",
+      "matched": true
+    },
+    {
+      "path": "js/systems/rift-session.js",
+      "status": 200,
+      "expected": "5a191d42974e1f53405b752aa76004f126921e31555a84d2303cddd1fe505bc1",
+      "actual": "5a191d42974e1f53405b752aa76004f126921e31555a84d2303cddd1fe505bc1",
+      "matched": true
+    },
+    {
+      "path": "js/systems/spawner.js",
+      "status": 200,
+      "expected": "fd794d8fec277d0fb651fa1b21a841c2c93b5acac9dbf39a31addf08959b4e0b",
+      "actual": "fd794d8fec277d0fb651fa1b21a841c2c93b5acac9dbf39a31addf08959b4e0b",
+      "matched": true
+    },
+    {
+      "path": "js/ui/expanded-ui.js",
+      "status": 200,
+      "expected": "37de3c42ab59530afe853e70b06263e22edc6f4aa5b6bcbcd29308806210de28",
+      "actual": "37de3c42ab59530afe853e70b06263e22edc6f4aa5b6bcbcd29308806210de28",
+      "matched": true
+    },
+    {
+      "path": "js/ui/field-radar.js",
+      "status": 200,
+      "expected": "3192c36d8043335093d401cb47a2d2cef21705fd94997a5827db2f73bfde6879",
+      "actual": "3192c36d8043335093d401cb47a2d2cef21705fd94997a5827db2f73bfde6879",
+      "matched": true
+    },
+    {
+      "path": "js/ui/operations-menu.js",
+      "status": 200,
+      "expected": "9d8ea89cf36f38d88b2c3227f7eb79a61fda70ad4ab2f4d63a325b728729b6da",
+      "actual": "9d8ea89cf36f38d88b2c3227f7eb79a61fda70ad4ab2f4d63a325b728729b6da",
+      "matched": true
+    },
+    {
+      "path": "js/ui/personajes-art.js",
+      "status": 200,
+      "expected": "ab3831341e4d205054637a177b2ccaeaf018b93325b308c7a5893459d22266a7",
+      "actual": "ab3831341e4d205054637a177b2ccaeaf018b93325b308c7a5893459d22266a7",
+      "matched": true
+    },
+    {
+      "path": "js/ui/rift-ui.js",
+      "status": 200,
+      "expected": "6c97f0e241ff18f2569e73bc7849556c53967d21f9454100b000902e9ee480a4",
+      "actual": "6c97f0e241ff18f2569e73bc7849556c53967d21f9454100b000902e9ee480a4",
+      "matched": true
+    },
+    {
+      "path": "js/ui/technical-ui.js",
+      "status": 200,
+      "expected": "9b43332034cf6eba32691fe97e2bcf2aa5f92f9e4458010da2a91d66971b2e16",
+      "actual": "9b43332034cf6eba32691fe97e2bcf2aa5f92f9e4458010da2a91d66971b2e16",
+      "matched": true
+    },
+    {
+      "path": "js/world/rift-rooms.js",
+      "status": 200,
+      "expected": "10c88b9699609400eef3f4ca163f0e8b9472360eb09ba8525ae921f4d359e80a",
+      "actual": "10c88b9699609400eef3f4ca163f0e8b9472360eb09ba8525ae921f4d359e80a",
+      "matched": true
+    },
+    {
+      "path": "js/world/world.js",
+      "status": 200,
+      "expected": "1edfbf7122a81905c6f461c27885c560e60570537ba4d4fcde55838dcdc65f5d",
+      "actual": "1edfbf7122a81905c6f461c27885c560e60570537ba4d4fcde55838dcdc65f5d",
+      "matched": true
+    }
+  ]
+}

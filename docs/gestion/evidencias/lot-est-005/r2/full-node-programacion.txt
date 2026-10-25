@@ -1,0 +1,2009 @@
+TAP version 13
+# Subtest: el aviso de alcance detiene y fija dirección sin daño durante 0.6 s
+ok 1 - el aviso de alcance detiene y fija dirección sin daño durante 0.6 s
+  ---
+  duration_ms: 7.3018
+  type: 'test'
+  ...
+# Subtest: golpea solo al cierre del aviso dentro del alcance y respeta cooldown
+ok 2 - golpea solo al cierre del aviso dentro del alcance y respeta cooldown
+  ---
+  duration_ms: 2.2873
+  type: 'test'
+  ...
+# Subtest: un golpe esquivado conserva cooldown y comprueba el cono frontal
+ok 3 - un golpe esquivado conserva cooldown y comprueba el cono frontal
+  ---
+  duration_ms: 2.0326
+  type: 'test'
+  ...
+# Subtest: bloqueo de mundo cancela golpe
+ok 4 - bloqueo de mundo cancela golpe
+  ---
+  duration_ms: 3.6673
+  type: 'test'
+  ...
+# Subtest: Enemy conserva HP y daño fraccionarios de containment y escala spd/dmg
+ok 5 - Enemy conserva HP y daño fraccionarios de containment y escala spd/dmg
+  ---
+  duration_ms: 4.9193
+  type: 'test'
+  ...
+# p02 upgrades: migrated to field API ok
+# Subtest: tests\\p02-upgrades.test.js
+ok 2 - tests\\p02-upgrades.test.js
+  ---
+  duration_ms: 140.3904
+  type: 'test'
+  ...
+# p04 weapons: ok
+# Subtest: tests\\p02-weapon.test.js
+ok 3 - tests\\p02-weapon.test.js
+  ---
+  duration_ms: 157.319
+  type: 'test'
+  ...
+# Subtest: biological shot has a visible fixed-aim warning before firing
+ok 8 - biological shot has a visible fixed-aim warning before firing
+  ---
+  duration_ms: 5.8495
+  type: 'test'
+  ...
+# Subtest: cooldown starts on firing even when the aimed shot misses
+ok 9 - cooldown starts on firing even when the aimed shot misses
+  ---
+  duration_ms: 2.5603
+  type: 'test'
+  ...
+# Subtest: offscreen enemies do not acquire or fire
+ok 10 - offscreen enemies do not acquire or fire
+  ---
+  duration_ms: 2.4002
+  type: 'test'
+  ...
+# Subtest: wall blocks both warning acquisition and a shot during the warning
+ok 11 - wall blocks both warning acquisition and a shot during the warning
+  ---
+  duration_ms: 3.3763
+  type: 'test'
+  ...
+# Subtest: boss telegraph snapshots its center, stops to strike, and damages only at warning end
+ok 12 - boss telegraph snapshots its center, stops to strike, and damages only at warning end
+  ---
+  duration_ms: 4.804
+  type: 'test'
+  ...
+# Subtest: the strike does not damage through a wall and respects cooldown
+ok 13 - the strike does not damage through a wall and respects cooldown
+  ---
+  duration_ms: 1.7959
+  type: 'test'
+  ...
+# Subtest: low health movement enrage is 15 percent and does not compound
+ok 14 - low health movement enrage is 15 percent and does not compound
+  ---
+  duration_ms: 1.4509
+  type: 'test'
+  ...
+# Subtest: boss keeps approaching outside its AoE reach and enrage starts strictly below half health
+ok 15 - boss keeps approaching outside its AoE reach and enrage starts strictly below half health
+  ---
+  duration_ms: 2.5179
+  type: 'test'
+  ...
+# Subtest: summons use an eight second timer and one second cue, bounded by living minions and global cap
+ok 16 - summons use an eight second timer and one second cue, bounded by living minions and global cap
+  ---
+  duration_ms: 1.6551
+  type: 'test'
+  ...
+# Subtest: dead boss frames do not advance or issue pending summons
+ok 17 - dead boss frames do not advance or issue pending summons
+  ---
+  duration_ms: 1.3192
+  type: 'test'
+  ...
+# Subtest: grieta: contacto activa al instante una sola vez; cercanía no activa
+ok 18 - grieta: contacto activa al instante una sola vez; cercanía no activa
+  ---
+  duration_ms: 23.4805
+  type: 'test'
+  ...
+# Subtest: grieta cerrada no activa por contacto
+ok 19 - grieta cerrada no activa por contacto
+  ---
+  duration_ms: 11.4597
+  type: 'test'
+  ...
+# Subtest: P06 prueba directa prepara20s y comienza primera oleada sin saltarla
+ok 20 - P06 prueba directa prepara20s y comienza primera oleada sin saltarla
+  ---
+  duration_ms: 8.7372
+  type: 'test'
+  ...
+# Subtest: neutralización, resistencia60s y segunda neutralización; salida continúa infinitamente
+ok 21 - neutralización, resistencia60s y segunda neutralización; salida continúa infinitamente
+  ---
+  duration_ms: 42.5272
+  type: 'test'
+  ...
+# Subtest: GAP-001: tamaños3/4/5 reproducibles y estables; distribución sobre900 semillas
+ok 22 - GAP-001: tamaños3/4/5 reproducibles y estables; distribución sobre900 semillas
+  ---
+  duration_ms: 16292.7863
+  type: 'test'
+  ...
+# Subtest: GAP-001: alternancia y cierre exacto para3/4/5, preparación y salida
+ok 23 - GAP-001: alternancia y cierre exacto para3/4/5, preparación y salida
+  ---
+  duration_ms: 129.2909
+  type: 'test'
+  ...
+# Subtest: GAP-001: calendario previo de jefe/extracción intacto; jefe sin oleadas normales
+ok 24 - GAP-001: calendario previo de jefe/extracción intacto; jefe sin oleadas normales
+  ---
+  duration_ms: 231.8496
+  type: 'test'
+  ...
+# Subtest: GAP-001: morir en oleada4/5 conserva tamaño y no completa sector
+ok 25 - GAP-001: morir en oleada4/5 conserva tamaño y no completa sector
+  ---
+  duration_ms: 106.0441
+  type: 'test'
+  ...
+# Subtest: D214: at all caps one pending choice never blocks preparation, then injury offers healing
+ok 26 - D214: at all caps one pending choice never blocks preparation, then injury offers healing
+  ---
+  duration_ms: 32.3519
+  type: 'test'
+  ...
+# Subtest: calendario reproducible, primer jefe4..6 y huida sin victoria con avance
+ok 27 - calendario reproducible, primer jefe4..6 y huida sin victoria con avance
+  ---
+  duration_ms: 103.4257
+  type: 'test'
+  ...
+# Subtest: huida cancelada por daño o movimiento no concede avance
+ok 28 - huida cancelada por daño o movimiento no concede avance
+  ---
+  duration_ms: 94.1849
+  type: 'test'
+  ...
+# Subtest: derrota del jefe:220XP, retirada sin bajas extra y premio único
+ok 29 - derrota del jefe:220XP, retirada sin bajas extra y premio único
+  ---
+  duration_ms: 87.5792
+  type: 'test'
+  ...
+# Subtest: extraer requiere punto elegible y limpio; cancela con movimiento; resultado único
+ok 30 - extraer requiere punto elegible y limpio; cancela con movimiento; resultado único
+  ---
+  duration_ms: 105.9648
+  type: 'test'
+  ...
+# Subtest: extracción garantizada antes de cuatro normales elegibles sin salida y velocidad acotada
+ok 31 - extracción garantizada antes de cuatro normales elegibles sin salida y velocidad acotada
+  ---
+  duration_ms: 1450.6487
+  type: 'test'
+  ...
+# Subtest: sector generation is stable for a seed and varies between seeds
+ok 32 - sector generation is stable for a seed and varies between seeds
+  ---
+  duration_ms: 50.4743
+  type: 'test'
+  ...
+# Subtest: seeds 0..127 produce six roles, connected floors and reachable exit clearance
+ok 33 - seeds 0..127 produce six roles, connected floors and reachable exit clearance
+  ---
+  duration_ms: 957.2521
+  type: 'test'
+  ...
+# Subtest: every seed offers offscreen first-wave spawn candidates within Path R28
+ok 34 - every seed offers offscreen first-wave spawn candidates within Path R28
+  ---
+  duration_ms: 917.4671
+  type: 'test'
+  ...
+# Subtest: fixture replacement invalidates cached tile data and preserves array walls API
+ok 35 - fixture replacement invalidates cached tile data and preserves array walls API
+  ---
+  duration_ms: 5.6373
+  type: 'test'
+  ...
+# Subtest: generated entry and exit have real World collision clearance for a 22px body
+ok 36 - generated entry and exit have real World collision clearance for a 22px body
+  ---
+  duration_ms: 32.5852
+  type: 'test'
+  ...
+# Subtest: boss layout keeps arena spawn and escape reachable with real collision
+ok 37 - boss layout keeps arena spawn and escape reachable with real collision
+  ---
+  duration_ms: 48.3507
+  type: 'test'
+  ...
+# Subtest: BFS de un sector finito conserva caminos cuyo rodeo sale del antiguo radio28
+ok 38 - BFS de un sector finito conserva caminos cuyo rodeo sale del antiguo radio28
+  ---
+  duration_ms: 40.4777
+  type: 'test'
+  ...
+# Subtest: todos los puntos de aparición reales son alcanzables en semillas0..127
+ok 39 - todos los puntos de aparición reales son alcanzables en semillas0..127
+  ---
+  duration_ms: 1978.6032
+  type: 'test'
+  ...
+# P04 abilities: ok
+# Subtest: tests\\p04-abilities.test.js
+ok 9 - tests\\p04-abilities.test.js
+  ---
+  duration_ms: 103.7609
+  type: 'test'
+  ...
+# p04 collisions: ok
+# Subtest: tests\\p04-collisions.test.js
+ok 10 - tests\\p04-collisions.test.js
+  ---
+  duration_ms: 90.6215
+  type: 'test'
+  ...
+# Subtest: sector fixtures place deterministic field crates on safe room corners
+ok 42 - sector fixtures place deterministic field crates on safe room corners
+  ---
+  duration_ms: 2729.6209
+  type: 'test'
+  ...
+# Subtest: World crates use normal prop collision and damage, then persist broken for that map without loot
+ok 43 - World crates use normal prop collision and damage, then persist broken for that map without loot
+  ---
+  duration_ms: 46.8461
+  type: 'test'
+  ...
+# Subtest: field crate uses its own plain box drawing
+ok 44 - field crate uses its own plain box drawing
+  ---
+  duration_ms: 18.7515
+  type: 'test'
+  ...
+# p04 stats: ok
+# Subtest: tests\\p04-stats.test.js
+ok 12 - tests\\p04-stats.test.js
+  ---
+  duration_ms: 94.4534
+  type: 'test'
+  ...
+# p04 weapons: ok
+# Subtest: tests\\p04-weapons.test.js
+ok 13 - tests\\p04-weapons.test.js
+  ---
+  duration_ms: 97.4706
+  type: 'test'
+  ...
+# Subtest: checkpoint roundtrip preserves copy identity, timers, props and pending XP
+ok 47 - checkpoint roundtrip preserves copy identity, timers, props and pending XP
+  ---
+  duration_ms: 5.0115
+  type: 'test'
+  ...
+# Subtest: prototipo de grietas no produce guardados P05 incompatibles
+ok 48 - prototipo de grietas no produce guardados P05 incompatibles
+  ---
+  duration_ms: 2.8053
+  type: 'test'
+  ...
+# Subtest: prueba V2 no captura ni restaura checkpoint schema1 y conserva datos previos
+ok 49 - prueba V2 no captura ni restaura checkpoint schema1 y conserva datos previos
+  ---
+  duration_ms: 2.814
+  type: 'test'
+  ...
+# Subtest: incompatible version and duplicate copies reject before game mutation
+ok 50 - incompatible version and duplicate copies reject before game mutation
+  ---
+  duration_ms: 2.3821
+  type: 'test'
+  ...
+# Subtest: advanced combat cannot produce a new checkpoint
+ok 51 - advanced combat cannot produce a new checkpoint
+  ---
+  duration_ms: 1.9115
+  type: 'test'
+  ...
+# Subtest: preparation levelup preserves exact offered card keys without reroll
+ok 52 - preparation levelup preserves exact offered card keys without reroll
+  ---
+  duration_ms: 2.0788
+  type: 'test'
+  ...
+# Subtest: every captured expedition field is required before game mutation
+ok 53 - every captured expedition field is required before game mutation
+  ---
+  duration_ms: 45.0419
+  type: 'test'
+  ...
+# Subtest: invalid expedition numbers, calendar and totals reject before game mutation
+ok 54 - invalid expedition numbers, calendar and totals reject before game mutation
+  ---
+  duration_ms: 15.5699
+  type: 'test'
+  ...
+# Subtest: inconsistent combat, boss and levelup phases reject before game mutation
+ok 55 - inconsistent combat, boss and levelup phases reject before game mutation
+  ---
+  duration_ms: 12.9566
+  type: 'test'
+  ...
+# Subtest: valid boss start, boss victory preparation and exploration remain recoverable
+ok 56 - valid boss start, boss victory preparation and exploration remain recoverable
+  ---
+  duration_ms: 6.2695
+  type: 'test'
+  ...
+# Subtest: accounts stay disabled on public hosts despite query
+ok 57 - accounts stay disabled on public hosts despite query
+  ---
+  duration_ms: 9.0463
+  type: 'test'
+  ...
+# Subtest: retry reuses persisted request ID and revision after lost response
+ok 58 - retry reuses persisted request ID and revision after lost response
+  ---
+  duration_ms: 3.2123
+  type: 'test'
+  ...
+# Subtest: an unresolved command cannot be replaced by another action
+ok 59 - an unresolved command cannot be replaced by another action
+  ---
+  duration_ms: 2.0255
+  type: 'test'
+  ...
+# Subtest: confirmed cache is scoped to UID and contains no credentials
+ok 60 - confirmed cache is scoped to UID and contains no credentials
+  ---
+  duration_ms: 2.6595
+  type: 'test'
+  ...
+# Subtest: Google test uses an emulator-only mock credential without external popups
+ok 61 - Google test uses an emulator-only mock credential without external popups
+  ---
+  duration_ms: 1.8937
+  type: 'test'
+  ...
+# Subtest: Google linking confirms refreshed provider data before reporting success
+ok 62 - Google linking confirms refreshed provider data before reporting success
+  ---
+  duration_ms: 1.9358
+  type: 'test'
+  ...
+# Subtest: adding a password in the emulator preserves the authenticated Google UID
+ok 63 - adding a password in the emulator preserves the authenticated Google UID
+  ---
+  duration_ms: 4.0682
+  type: 'test'
+  ...
+# Subtest: pending confirmation survives closing a tab and opening a new session
+ok 64 - pending confirmation survives closing a tab and opening a new session
+  ---
+  duration_ms: 3.425
+  type: 'test'
+  ...
+# Subtest: a server refresh replaces a stale cache even when its revision was higher
+ok 65 - a server refresh replaces a stale cache even when its revision was higher
+  ---
+  duration_ms: 1.5331
+  type: 'test'
+  ...
+# Subtest: malformed pending cache cannot throw during rendering
+ok 66 - malformed pending cache cannot throw during rendering
+  ---
+  duration_ms: 3.534
+  type: 'test'
+  ...
+# Subtest: confirmed boundary resumes only the session that owns the run
+ok 67 - confirmed boundary resumes only the session that owns the run
+  ---
+  duration_ms: 5.8275
+  type: 'test'
+  ...
+# Subtest: a failed checkpoint leaves the game paused until confirmation
+ok 68 - a failed checkpoint leaves the game paused until confirmation
+  ---
+  duration_ms: 2.385
+  type: 'test'
+  ...
+# Subtest: a server lease owned by another tab cannot be resumed implicitly
+ok 69 - a server lease owned by another tab cannot be resumed implicitly
+  ---
+  duration_ms: 3.0075
+  type: 'test'
+  ...
+# Subtest: retry does not unblock an old playable state after another tab claims it
+ok 70 - retry does not unblock an old playable state after another tab claims it
+  ---
+  duration_ms: 1.6347
+  type: 'test'
+  ...
+# Subtest: retry cannot release a stale player when checkpoint restoration failed
+ok 71 - retry cannot release a stale player when checkpoint restoration failed
+  ---
+  duration_ms: 1.8669
+  type: 'test'
+  ...
+# Subtest: real local emulators enforce UID, revisions, receipts, concurrency and session ownership
+ok 72 - real local emulators enforce UID, revisions, receipts, concurrency and session ownership # SKIP
+  ---
+  duration_ms: 1.0832
+  type: 'test'
+  ...
+# Subtest: own mode shows its panel while disabled and rejects before any Firebase side effect
+ok 73 - own mode shows its panel while disabled and rejects before any Firebase side effect
+  ---
+  duration_ms: 7.1282
+  type: 'test'
+  ...
+# Subtest: own mode is limited to loopback or the project HTTPS hosting domains
+ok 74 - own mode is limited to loopback or the project HTTPS hosting domains
+  ---
+  duration_ms: 10.0961
+  type: 'test'
+  ...
+# Subtest: own initialization uses the bundled project config and never connects emulators
+ok 75 - own initialization uses the bundled project config and never connects emulators
+  ---
+  duration_ms: 2.0189
+  type: 'test'
+  ...
+# Subtest: own Google sign-in uses the official popup and ignores the typed email as identity
+ok 76 - own Google sign-in uses the official popup and ignores the typed email as identity
+  ---
+  duration_ms: 4.1146
+  type: 'test'
+  ...
+# Subtest: own Google linking keeps the current UID and refreshes the user token
+ok 77 - own Google linking keeps the current UID and refreshes the user token
+  ---
+  duration_ms: 2.644
+  type: 'test'
+  ...
+# Subtest: own password linking uses EmailAuthProvider credentials on the authenticated UID
+ok 78 - own password linking uses EmailAuthProvider credentials on the authenticated UID
+  ---
+  duration_ms: 3.0577
+  type: 'test'
+  ...
+# Subtest: own session and cached data use a project namespace distinct from local demo keys
+ok 79 - own session and cached data use a project namespace distinct from local demo keys
+  ---
+  duration_ms: 2.5396
+  type: 'test'
+  ...
+# Subtest: own pending confirmations stay within the project namespace
+ok 80 - own pending confirmations stay within the project namespace
+  ---
+  duration_ms: 2.9872
+  type: 'test'
+  ...
+# Subtest: P05 acepta emulador local válido y un runtime propio solo con habilitación exacta
+ok 81 - P05 acepta emulador local válido y un runtime propio solo con habilitación exacta
+  ---
+  duration_ms: 3.3522
+  type: 'test'
+  ...
+# Subtest: P05 runtime propio falla cerrado ante proyecto ausente, distinto o habilitación incompleta
+ok 82 - P05 runtime propio falla cerrado ante proyecto ausente, distinto o habilitación incompleta
+  ---
+  duration_ms: 1.8084
+  type: 'test'
+  ...
+# Subtest: P05 servicio propio exige Auth y nunca acepta UID indicado por el cliente
+ok 83 - P05 servicio propio exige Auth y nunca acepta UID indicado por el cliente
+  ---
+  duration_ms: 1.7306
+  type: 'test'
+  ...
+# Subtest: P05 servicio propio escribe bajo UID autenticado y conserva reintento idempotente
+ok 84 - P05 servicio propio escribe bajo UID autenticado y conserva reintento idempotente
+  ---
+  duration_ms: 4.0926
+  type: 'test'
+  ...
+# Subtest: P05 servicio propio rechaza reusar requestId con otro contenido
+ok 85 - P05 servicio propio rechaza reusar requestId con otro contenido
+  ---
+  duration_ms: 1.4044
+  type: 'test'
+  ...
+# Subtest: P05 servicio propio rechaza sesión ajena antes de mutar estado o recibos
+ok 86 - P05 servicio propio rechaza sesión ajena antes de mutar estado o recibos
+  ---
+  duration_ms: 0.5392
+  type: 'test'
+  ...
+# Subtest: P05 exports a local-only account command service
+ok 87 - P05 exports a local-only account command service
+  ---
+  duration_ms: 1.6599
+  type: 'test'
+  ...
+# Subtest: P05 fails closed outside demo emulators
+ok 88 - P05 fails closed outside demo emulators
+  ---
+  duration_ms: 1.1442
+  type: 'test'
+  ...
+# Subtest: P05 stable command hashes ignore object key order but preserve content
+ok 89 - P05 stable command hashes ignore object key order but preserve content
+  ---
+  duration_ms: 1.3441
+  type: 'test'
+  ...
+# Subtest: P05 rejects every missing expedition field before transaction writes
+ok 90 - P05 rejects every missing expedition field before transaction writes
+  ---
+  duration_ms: 31.5388
+  type: 'test'
+  ...
+# Subtest: P05 rejects inconsistent checkpoint phase, totals and calendar before writes
+ok 91 - P05 rejects inconsistent checkpoint phase, totals and calendar before writes
+  ---
+  duration_ms: 6.6746
+  type: 'test'
+  ...
+# Subtest: P05 complete checkpoint writes state and receipt once
+ok 92 - P05 complete checkpoint writes state and receipt once
+  ---
+  duration_ms: 2.4162
+  type: 'test'
+  ...
+# Subtest: P05 rejects incomplete restore blocks and incompatible equipment before writes
+ok 93 - P05 rejects incomplete restore blocks and incompatible equipment before writes
+  ---
+  duration_ms: 10.9964
+  type: 'test'
+  ...
+# Subtest: Worker verifies signature, issuer, audience, time and UID instead of trusting JSON
+ok 94 - Worker verifies signature, issuer, audience, time and UID instead of trusting JSON
+  ---
+  duration_ms: 419.1547
+  type: 'test'
+  ...
+# Subtest: HTTP authenticates before RPC and never accepts a UID supplied by the client
+ok 95 - HTTP authenticates before RPC and never accepts a UID supplied by the client
+  ---
+  duration_ms: 208.0869
+  type: 'test'
+  ...
+# service core:user:: This Worker requires compatibility date "2026-10-17", but the newest date supported by this server binary is "2026-08-06".
+# Subtest: P05 real SQLite RPC: 20 concurrent identical commands have one effect and replay their receipt
+not ok 96 - P05 real SQLite RPC: 20 concurrent identical commands have one effect and replay their receipt
+  ---
+  duration_ms: 1500.5521
+  type: 'test'
+  location: 'C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p05-worker-runtime.test.js:53:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The Workers runtime failed to start. There was likely a problem with the workerd binary or your configuration.
+    Runtime stderr:
+    service core:user:: This Worker requires compatibility date "2026-10-17", but the newest date supported by this server binary is "2026-08-06".
+  code: 'ERR_RUNTIME_FAILURE'
+  name: 'MiniflareCoreError [ERR_RUNTIME_FAILURE]'
+  stack: |-
+    StartupLogBuffer.handleStartupFailure (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:83638:13)
+    Runtime.updateConfig (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:83728:24)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async #assembleAndUpdateConfig (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:104322:30)
+    async Mutex.runWith (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:72013:48)
+    async #waitForReady (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:104442:5)
+    async runtime (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:26:2)
+    async withRuntime (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:49:9)
+    async TestContext.<anonymous> (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:54:2)
+    async Test.run (node:internal/test_runner/test:1113:7)
+  ...
+# service core:user:: This Worker requires compatibility date "2026-10-17", but the newest date supported by this server binary is "2026-08-06".
+# Subtest: P05 real SQLite RPC: distinct commands at the same revision have exactly one winner
+not ok 97 - P05 real SQLite RPC: distinct commands at the same revision have exactly one winner
+  ---
+  duration_ms: 108.2307
+  type: 'test'
+  location: 'C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p05-worker-runtime.test.js:65:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The Workers runtime failed to start. There was likely a problem with the workerd binary or your configuration.
+    Runtime stderr:
+    service core:user:: This Worker requires compatibility date "2026-10-17", but the newest date supported by this server binary is "2026-08-06".
+  code: 'ERR_RUNTIME_FAILURE'
+  name: 'MiniflareCoreError [ERR_RUNTIME_FAILURE]'
+  stack: |-
+    StartupLogBuffer.handleStartupFailure (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:83638:13)
+    Runtime.updateConfig (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:83728:24)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async #assembleAndUpdateConfig (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:104322:30)
+    async Mutex.runWith (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:72013:48)
+    async #waitForReady (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:104442:5)
+    async runtime (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:26:2)
+    async withRuntime (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:49:9)
+    async TestContext.<anonymous> (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:66:2)
+    async Test.run (node:internal/test_runner/test:1113:7)
+  ...
+# service core:user:: This Worker requires compatibility date "2026-10-17", but the newest date supported by this server binary is "2026-08-06".
+# Subtest: P05 real SQLite RPC isolates account state and receipt IDs by UID
+not ok 98 - P05 real SQLite RPC isolates account state and receipt IDs by UID
+  ---
+  duration_ms: 96.2484
+  type: 'test'
+  location: 'C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p05-worker-runtime.test.js:78:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The Workers runtime failed to start. There was likely a problem with the workerd binary or your configuration.
+    Runtime stderr:
+    service core:user:: This Worker requires compatibility date "2026-10-17", but the newest date supported by this server binary is "2026-08-06".
+  code: 'ERR_RUNTIME_FAILURE'
+  name: 'MiniflareCoreError [ERR_RUNTIME_FAILURE]'
+  stack: |-
+    StartupLogBuffer.handleStartupFailure (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:83638:13)
+    Runtime.updateConfig (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:83728:24)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async #assembleAndUpdateConfig (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:104322:30)
+    async Mutex.runWith (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:72013:48)
+    async #waitForReady (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:104442:5)
+    async runtime (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:26:2)
+    async withRuntime (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:49:9)
+    async TestContext.<anonymous> (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:79:2)
+    async Test.run (node:internal/test_runner/test:1113:7)
+  ...
+# service core:user:: This Worker requires compatibility date "2026-10-17", but the newest date supported by this server binary is "2026-08-06".
+# Subtest: P05 real SQLite RPC transfers a run and rejects writes from its former session
+not ok 99 - P05 real SQLite RPC transfers a run and rejects writes from its former session
+  ---
+  duration_ms: 90.7231
+  type: 'test'
+  location: 'C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p05-worker-runtime.test.js:89:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The Workers runtime failed to start. There was likely a problem with the workerd binary or your configuration.
+    Runtime stderr:
+    service core:user:: This Worker requires compatibility date "2026-10-17", but the newest date supported by this server binary is "2026-08-06".
+  code: 'ERR_RUNTIME_FAILURE'
+  name: 'MiniflareCoreError [ERR_RUNTIME_FAILURE]'
+  stack: |-
+    StartupLogBuffer.handleStartupFailure (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:83638:13)
+    Runtime.updateConfig (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:83728:24)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async #assembleAndUpdateConfig (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:104322:30)
+    async Mutex.runWith (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:72013:48)
+    async #waitForReady (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:104442:5)
+    async runtime (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:26:2)
+    async withRuntime (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:49:9)
+    async TestContext.<anonymous> (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:90:2)
+    async Test.run (node:internal/test_runner/test:1113:7)
+  ...
+# service core:user:: This Worker requires compatibility date "2026-10-17", but the newest date supported by this server binary is "2026-08-06".
+# Subtest: P05 real SQLite state and original command receipts survive Miniflare restart
+not ok 100 - P05 real SQLite state and original command receipts survive Miniflare restart
+  ---
+  duration_ms: 88.265
+  type: 'test'
+  location: 'C:\\Users\\DELL\\.codex\\.chatgpt-projects\\g-p-6acf92395ad481919aad7153c0ca0e1f\\SCP-SURVIVOR\\tests\\p05-worker-runtime.test.js:111:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The Workers runtime failed to start. There was likely a problem with the workerd binary or your configuration.
+    Runtime stderr:
+    service core:user:: This Worker requires compatibility date "2026-10-17", but the newest date supported by this server binary is "2026-08-06".
+  code: 'ERR_RUNTIME_FAILURE'
+  name: 'MiniflareCoreError [ERR_RUNTIME_FAILURE]'
+  stack: |-
+    StartupLogBuffer.handleStartupFailure (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:83638:13)
+    Runtime.updateConfig (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:83728:24)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async #assembleAndUpdateConfig (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:104322:30)
+    async Mutex.runWith (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:72013:48)
+    async #waitForReady (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\node_modules\miniflare\dist\src\index.js:104442:5)
+    async runtime (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:26:2)
+    async TestContext.<anonymous> (C:\Users\DELL\.codex\.chatgpt-projects\g-p-6acf92395ad481919aad7153c0ca0e1f\SCP-SURVIVOR\tests\p05-worker-runtime.test.js:115:6)
+    async Test.run (node:internal/test_runner/test:1113:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:788:7)
+  ...
+# Subtest: P06 copias únicas,8/16, equipadas fuera del interior y mods instalados sin espacio extra
+ok 101 - P06 copias únicas,8/16, equipadas fuera del interior y mods instalados sin espacio extra
+  ---
+  duration_ms: 7.4095
+  type: 'test'
+  ...
+# Subtest: P06 intercambio de copia conserva identidad, cargador, nivel y recarga
+ok 102 - P06 intercambio de copia conserva identidad, cargador, nivel y recarga
+  ---
+  duration_ms: 3.6732
+  type: 'test'
+  ...
+# Subtest: P06 dos copias del mismo modelo con mods y munición independientes
+ok 103 - P06 dos copias del mismo modelo con mods y munición independientes
+  ---
+  duration_ms: 3.0308
+  type: 'test'
+  ...
+# Subtest: P06 bajar16→8 rechaza si no cabe, sin descartar ni mutar
+ok 104 - P06 bajar16→8 rechaza si no cabe, sin descartar ni mutar
+  ---
+  duration_ms: 5.5892
+  type: 'test'
+  ...
+# Subtest: P06 almacén60, transferencias solo en base, copia una sola vez
+ok 105 - P06 almacén60, transferencias solo en base, copia una sola vez
+  ---
+  duration_ms: 5.5148
+  type: 'test'
+  ...
+# Subtest: P06 mod con mochila llena intercambia usando el mismo hueco y devuelve la copia exacta
+ok 106 - P06 mod con mochila llena intercambia usando el mismo hueco y devuelve la copia exacta
+  ---
+  duration_ms: 3.4444
+  type: 'test'
+  ...
+# Subtest: P06 valida duplicados, referencias, tipos y bloqueo en combate/pausa/subida
+ok 107 - P06 valida duplicados, referencias, tipos y bloqueo en combate/pausa/subida
+  ---
+  duration_ms: 3.5349
+  type: 'test'
+  ...
+# Subtest: P06 prototipo solo loopback optativo, deshabilitado con cuentas
+ok 108 - P06 prototipo solo loopback optativo, deshabilitado con cuentas
+  ---
+  duration_ms: 7.868
+  type: 'test'
+  ...
+# Subtest: P06 modelos heredados del prototipo JS no son mods válidos
+ok 109 - P06 modelos heredados del prototipo JS no son mods válidos
+  ---
+  duration_ms: 2.9992
+  type: 'test'
+  ...
+# Subtest: five distinct biological identities have three approved attack names and finite trial tuning
+ok 110 - five distinct biological identities have three approved attack names and finite trial tuning
+  ---
+  duration_ms: 4.3833
+  type: 'test'
+  ...
+# Subtest: commit fixes target, death cancels zones, 16 and32 share physical radius
+ok 111 - commit fixes target, death cancels zones, 16 and32 share physical radius
+  ---
+  duration_ms: 2.5842
+  type: 'test'
+  ...
+# Subtest: llegada1.5s sin daño, movimiento ni invocaciones; luego actúa
+ok 112 - llegada1.5s sin daño, movimiento ni invocaciones; luego actúa
+  ---
+  duration_ms: 4.8244
+  type: 'test'
+  ...
+# Subtest: pulso6s fija centro, pausa movimiento y avisa1.2s antes de dañar
+ok 113 - pulso6s fija centro, pausa movimiento y avisa1.2s antes de dañar
+  ---
+  duration_ms: 2.1815
+  type: 'test'
+  ...
+# Subtest: se esquiva al salir de la zona fijada y no atraviesa paredes
+ok 114 - se esquiva al salir de la zona fijada y no atraviesa paredes
+  ---
+  duration_ms: 4.4792
+  type: 'test'
+  ...
+# Subtest: pulso pendiente no detiene un aviso previo ni golpea después de morir
+ok 115 - pulso pendiente no detiene un aviso previo ni golpea después de morir
+  ---
+  duration_ms: 1.6576
+  type: 'test'
+  ...
+# Subtest: pared entre centro del pulso y jugador protege aunque la línea desde jefe esté libre
+ok 116 - pared entre centro del pulso y jugador protege aunque la línea desde jefe esté libre
+  ---
+  duration_ms: 1.4155
+  type: 'test'
+  ...
+# Subtest: NPC exact33/10 boundaries and D4 conditional50/50; one compatible real weapon
+ok 117 - NPC exact33/10 boundaries and D4 conditional50/50; one compatible real weapon
+  ---
+  duration_ms: 11.0546
+  type: 'test'
+  ...
+# Subtest: first guarantee, later trial chance and guarantee after three empty victories; receipt once
+ok 118 - first guarantee, later trial chance and guarantee after three empty victories; receipt once
+  ---
+  duration_ms: 3.8374
+  type: 'test'
+  ...
+# Subtest: three slots, duplicate ascents to5+extra, reject or replace fourth; no inherited rank
+ok 119 - three slots, duplicate ascents to5+extra, reject or replace fourth; no inherited rank
+  ---
+  duration_ms: 1.9937
+  type: 'test'
+  ...
+# Subtest: five distinct room compositions have reachable entry/boss/escape; escape reachable at base speed within5sec
+ok 120 - five distinct room compositions have reachable entry/boss/escape; escape reachable at base speed within5sec
+  ---
+  duration_ms: 12.6378
+  type: 'test'
+  ...
+# Subtest: transition, pause and invalid deltas cannot consume the room clock
+ok 121 - transition, pause and invalid deltas cannot consume the room clock
+  ---
+  duration_ms: 1.8664
+  type: 'test'
+  ...
+# Subtest: one reachable escape window and warning; expiration never reopens it
+ok 122 - one reachable escape window and warning; expiration never reopens it
+  ---
+  duration_ms: 0.4927
+  type: 'test'
+  ...
+# Subtest: escape and death have no reward; victory is idempotent and independent from escape
+ok 123 - escape and death have no reward; victory is idempotent and independent from escape
+  ---
+  duration_ms: 0.2659
+  type: 'test'
+  ...
+# Subtest: live projectiles and pickups retain objects, Sets, IDs and timers across a separate room
+ok 124 - live projectiles and pickups retain objects, Sets, IDs and timers across a separate room
+  ---
+  duration_ms: 5.6934
+  type: 'test'
+  ...
+# Subtest: rift drawable separates its floor from its upright body without changing contact or expiry
+ok 125 - rift drawable separates its floor from its upright body without changing contact or expiry
+  ---
+  duration_ms: 7.037
+  type: 'test'
+  ...
+# Subtest: solo opción local y sin cuentas; modo normal y servidores públicos intactos
+ok 126 - solo opción local y sin cuentas; modo normal y servidores públicos intactos
+  ---
+  duration_ms: 11.8638
+  type: 'test'
+  ...
+# Subtest: V2 rift practice is explicit on loopback and authorized Pages only
+ok 127 - V2 rift practice is explicit on loopback and authorized Pages only
+  ---
+  duration_ms: 29.1115
+  type: 'test'
+  ...
+# Subtest: V2 encounter texts never imply escape, cleared remnants or an available exit
+ok 128 - V2 encounter texts never imply escape, cleared remnants or an available exit
+  ---
+  duration_ms: 5.3678
+  type: 'test'
+  ...
+# Subtest: ubicación libre alcanzable y separada; aviso y sonido una sola vez por sector
+ok 129 - ubicación libre alcanzable y separada; aviso y sonido una sola vez por sector
+  ---
+  duration_ms: 5.84
+  type: 'test'
+  ...
+# Subtest: caduca a45 segundos activos y no acepta entrada ni reabre al expirar
+ok 130 - caduca a45 segundos activos y no acepta entrada ni reabre al expirar
+  ---
+  duration_ms: 2.3929
+  type: 'test'
+  ...
+# Subtest: entrada por contacto sin atravesar pared; consume cuenta regresiva y resultado único
+ok 131 - entrada por contacto sin atravesar pared; consume cuenta regresiva y resultado único
+  ---
+  duration_ms: 1.8346
+  type: 'test'
+  ...
+# Subtest: azar raro reproducible separado del calendario y solo en sectores normales desdeS2
+ok 132 - azar raro reproducible separado del calendario y solo en sectores normales desdeS2
+  ---
+  duration_ms: 3245.8801
+  type: 'test'
+  ...
+# Subtest: AF01 art stays disabled outside native graphics and the revision trial
+ok 133 - AF01 art stays disabled outside native graphics and the revision trial
+  ---
+  duration_ms: 5.7933
+  type: 'test'
+  ...
+# Subtest: INC-VIS-001: the approved pistol also mounts in ordinary native graphics without enabling r1 mechanics
+ok 134 - INC-VIS-001: the approved pistol also mounts in ordinary native graphics without enabling r1 mechanics
+  ---
+  duration_ms: 9.1897
+  type: 'test'
+  ...
+# Subtest: AF01 preloads exactly the original sixteen directional PNGs once, including both graphics modes
+ok 135 - AF01 preloads exactly the original sixteen directional PNGs once, including both graphics modes
+  ---
+  duration_ms: 5.1412
+  type: 'test'
+  ...
+# Subtest: AF01 selects the closest of eight views without snapping the physical aim
+ok 136 - AF01 selects the closest of eight views without snapping the physical aim
+  ---
+  duration_ms: 5.3777
+  type: 'test'
+  ...
+# Subtest: AF01 mounts G exactly at the existing hand and derives A/S from original anchors without mutating them
+ok 137 - AF01 mounts G exactly at the existing hand and derives A/S from original anchors without mutating them
+  ---
+  duration_ms: 7.0927
+  type: 'test'
+  ...
+# Subtest: AF01 draws the approved directional image without a second rotation and restores canvas state
+ok 138 - AF01 draws the approved directional image without a second rotation and restores canvas state
+  ---
+  duration_ms: 6.6721
+  type: 'test'
+  ...
+# Subtest: AF01 unavailable metadata or images permit the existing renderer fallback
+ok 139 - AF01 unavailable metadata or images permit the existing renderer fallback
+  ---
+  duration_ms: 6.537
+  type: 'test'
+  ...
+# Subtest: AF01 revision requires the explicit URL and ignores legacy ensayo only in this mode
+ok 140 - AF01 revision requires the explicit URL and ignores legacy ensayo only in this mode
+  ---
+  duration_ms: 30.847
+  type: 'test'
+  ...
+# Subtest: AF01 saturated categories reuse the approved tactical fallback without offering MAX or absent copies
+ok 141 - AF01 saturated categories reuse the approved tactical fallback without offering MAX or absent copies
+  ---
+  duration_ms: 8.1799
+  type: 'test'
+  ...
+# Subtest: AF01 reward at full MAX reuses the existing tactical outcome exactly once
+ok 142 - AF01 reward at full MAX reuses the existing tactical outcome exactly once
+  ---
+  duration_ms: 7.76
+  type: 'test'
+  ...
+# Subtest: AF01 mode starts with one level-1 pistol and rejects legacy/non-AF01 starting equipment
+ok 143 - AF01 mode starts with one level-1 pistol and rejects legacy/non-AF01 starting equipment
+  ---
+  duration_ms: 5.427
+  type: 'test'
+  ...
+# Subtest: copies progress independently through cards and reward never wastes an ascension on MAX
+ok 144 - copies progress independently through cards and reward never wastes an ascension on MAX
+  ---
+  duration_ms: 7.8816
+  type: 'test'
+  ...
+# Subtest: MAX AF01 fires one real delayed extra projectile after reload with no extra ammo or recursion
+ok 145 - MAX AF01 fires one real delayed extra projectile after reload with no extra ammo or recursion
+  ---
+  duration_ms: 7.8624
+  type: 'test'
+  ...
+# Subtest: a scheduled MAX extra waits through blocked, paused, terminal and dead ticks without being consumed
+ok 146 - a scheduled MAX extra waits through blocked, paused, terminal and dead ticks without being consumed
+  ---
+  duration_ms: 7.5434
+  type: 'test'
+  ...
+# Subtest: AF01 revision freezes its combat clocks during cards, armament, terminal and pause
+ok 147 - AF01 revision freezes its combat clocks during cards, armament, terminal and pause
+  ---
+  duration_ms: 6.733
+  type: 'test'
+  ...
+# Subtest: AF01 continues firing and reloading after 5:00 without changing ability or regeneration state
+ok 148 - AF01 continues firing and reloading after 5:00 without changing ability or regeneration state
+  ---
+  duration_ms: 5.6436
+  type: 'test'
+  ...
+# Subtest: AF01 reward materialization failure keeps the second slot and reward available for retry
+ok 149 - AF01 reward materialization failure keeps the second slot and reward available for retry
+  ---
+  duration_ms: 7.051
+  type: 'test'
+  ...
+# Subtest: AF01 rewards reject dead players and inactive expedition phases without consuming a receipt
+ok 150 - AF01 rewards reject dead players and inactive expedition phases without consuming a receipt
+  ---
+  duration_ms: 4.9373
+  type: 'test'
+  ...
+# Subtest: prestart AF01 loadout preview works before reset and does not create a run or unlock other models
+ok 151 - prestart AF01 loadout preview works before reset and does not create a run or unlock other models
+  ---
+  duration_ms: 5.7424
+  type: 'test'
+  ...
+# Subtest: terminal offers only AF01 and replaces one copy at level 1 while preserving its partner
+ok 152 - terminal offers only AF01 and replaces one copy at level 1 while preserving its partner
+  ---
+  duration_ms: 6.0513
+  type: 'test'
+  ...
+# Subtest: AF01 inspection and HUD show level/MAX and omit legacy branches
+ok 153 - AF01 inspection and HUD show level/MAX and omit legacy branches
+  ---
+  duration_ms: 5.7185
+  type: 'test'
+  ...
+# Subtest: fixed offer selects an equipped copy, upgrades once and never changes permanent data
+ok 154 - fixed offer selects an equipped copy, upgrades once and never changes permanent data
+  ---
+  duration_ms: 8.9726
+  type: 'test'
+  ...
+# Subtest: same model copies are distinct and inactive eligible weapon receives the upgrade
+ok 155 - same model copies are distinct and inactive eligible weapon receives the upgrade
+  ---
+  duration_ms: 3.5245
+  type: 'test'
+  ...
+# Subtest: saturation grants no healing or substitution, including saturation after offer
+ok 156 - saturation grants no healing or substitution, including saturation after offer
+  ---
+  duration_ms: 4.4543
+  type: 'test'
+  ...
+# Subtest: rift seeded table is fixed and independent from candidate count, credits fictional tickets once
+ok 157 - rift seeded table is fixed and independent from candidate count, credits fictional tickets once
+  ---
+  duration_ms: 808.52
+  type: 'test'
+  ...
+# Subtest: invalid and desynchronized loadouts reject before upgrade or fictional tickets
+ok 158 - invalid and desynchronized loadouts reject before upgrade or fictional tickets
+  ---
+  duration_ms: 17.3059
+  type: 'test'
+  ...
+# Subtest: model changes under the same copy ID are incompatible and never rerolled
+ok 159 - model changes under the same copy ID are incompatible and never rerolled
+  ---
+  duration_ms: 3.0333
+  type: 'test'
+  ...
+# Subtest: upgrade rejection cannot credit tickets or create a receipt
+ok 160 - upgrade rejection cannot credit tickets or create a receipt
+  ---
+  duration_ms: 3.2195
+  type: 'test'
+  ...
+# Subtest: safe state copies and startRun reset event identities and fictional totals
+ok 161 - safe state copies and startRun reset event identities and fictional totals
+  ---
+  duration_ms: 4.1576
+  type: 'test'
+  ...
+# Subtest: disabled trial cannot plan, claim or alter a pending event
+ok 162 - disabled trial cannot plan, claim or alter a pending event
+  ---
+  duration_ms: 4.7936
+  type: 'test'
+  ...
+# Subtest: invalid event input and offer-time incompatibility cannot become a valid award
+ok 163 - invalid event input and offer-time incompatibility cannot become a valid award
+  ---
+  duration_ms: 3.4924
+  type: 'test'
+  ...
+# Subtest: prototype property names cannot impersonate valid weapon catalog models
+ok 164 - prototype property names cannot impersonate valid weapon catalog models
+  ---
+  duration_ms: 2.6193
+  type: 'test'
+  ...
+# Subtest: melee deals real arc-limited close damage without projectiles/ammo/reload and keeps other cadence independent
+ok 165 - melee deals real arc-limited close damage without projectiles/ammo/reload and keeps other cadence independent
+  ---
+  duration_ms: 12.5344
+  type: 'test'
+  ...
+# Subtest: walls, distance, death and legacy gates prevent melee damage
+ok 166 - walls, distance, death and legacy gates prevent melee damage
+  ---
+  duration_ms: 4.8803
+  type: 'test'
+  ...
+# Subtest: melee branch effects improve arc/range/target count and preserve interval floor
+ok 167 - melee branch effects improve arc/range/target count and preserve interval floor
+  ---
+  duration_ms: 2.5469
+  type: 'test'
+  ...
+# Subtest: terminal replacement is atomic and fresh, preserves other copy/generals, rejects duplicate IDs and wrong phase
+ok 168 - terminal replacement is atomic and fresh, preserves other copy/generals, rejects duplicate IDs and wrong phase
+  ---
+  duration_ms: 3.3972
+  type: 'test'
+  ...
+# Subtest: melee cannot bypass destructible solid cover that ballistic projectiles would hit first
+ok 169 - melee cannot bypass destructible solid cover that ballistic projectiles would hit first
+  ---
+  duration_ms: 3.087
+  type: 'test'
+  ...
+# Subtest: expanded damage values and numeric strings are rounded, normalized and compacted
+ok 170 - expanded damage values and numeric strings are rounded, normalized and compacted
+  ---
+  duration_ms: 6.5807
+  type: 'test'
+  ...
+# Subtest: expanded rendering uses a compact, readable outlined damage font and short finite lifetime
+ok 171 - expanded rendering uses a compact, readable outlined damage font and short finite lifetime
+  ---
+  duration_ms: 1.9821
+  type: 'test'
+  ...
+# Subtest: dmgNumbers suprime todo daño numérico expanded pero conserva avisos de texto
+ok 172 - dmgNumbers suprime todo daño numérico expanded pero conserva avisos de texto
+  ---
+  duration_ms: 2.7735
+  type: 'test'
+  ...
+# Subtest: legacy damage formatting, settings and lifetime remain unchanged
+ok 173 - legacy damage formatting, settings and lifetime remain unchanged
+  ---
+  duration_ms: 3.3872
+  type: 'test'
+  ...
+# Subtest: expanded numeric text respects the existing quality cap
+ok 174 - expanded numeric text respects the existing quality cap
+  ---
+  duration_ms: 2.2612
+  type: 'test'
+  ...
+# Subtest: expanded ignores non-finite numeric damage instead of painting invalid values
+ok 175 - expanded ignores non-finite numeric damage instead of painting invalid values
+  ---
+  duration_ms: 1.632
+  type: 'test'
+  ...
+# Subtest: INC-VIS-001 older V2 entry compacts actual numbers and respects the damage setting too
+ok 176 - INC-VIS-001 older V2 entry compacts actual numbers and respects the damage setting too
+  ---
+  duration_ms: 3.4463
+  type: 'test'
+  ...
+# Subtest: radar is gated and never reveals undiscovered or opened chests
+ok 177 - radar is gated and never reveals undiscovered or opened chests
+  ---
+  duration_ms: 4.0498
+  type: 'test'
+  ...
+# Subtest: fixed north and clamped edge markers ignore camera angle and reject invalid/dead data
+ok 178 - fixed north and clamped edge markers ignore camera angle and reject invalid/dead data
+  ---
+  duration_ms: 2.159
+  type: 'test'
+  ...
+# Subtest: urgency/objectives precede bounded ordinary marks; door appears only when available
+ok 179 - urgency/objectives precede bounded ordinary marks; door appears only when available
+  ---
+  duration_ms: 2.9531
+  type: 'test'
+  ...
+# Subtest: terminal requires reach, clear line, voluntary open and live expanded play
+ok 180 - terminal requires reach, clear line, voluntary open and live expanded play
+  ---
+  duration_ms: 3.7285
+  type: 'test'
+  ...
+# Subtest: replacement resets selected copy only, cancel is lossless, stale selection and double submit fail
+ok 181 - replacement resets selected copy only, cancel is lossless, stale selection and double submit fail
+  ---
+  duration_ms: 2.6161
+  type: 'test'
+  ...
+# Subtest: terminal snapshots/reset isolate state; pending cards or armament block open
+ok 182 - terminal snapshots/reset isolate state; pending cards or armament block open
+  ---
+  duration_ms: 1.9914
+  type: 'test'
+  ...
+# Subtest: expanded mode gates preserve explicit T1A/B3 and reject foreign origins or accounts
+ok 183 - expanded mode gates preserve explicit T1A/B3 and reject foreign origins or accounts
+  ---
+  duration_ms: 9.919
+  type: 'test'
+  ...
+# Subtest: practice fixtures are explicit, fresh and never seed normal or legacy play
+ok 184 - practice fixtures are explicit, fresh and never seed normal or legacy play
+  ---
+  duration_ms: 2.61
+  type: 'test'
+  ...
+# Subtest: all four time boundaries process once, including jumps and rewinds
+ok 185 - all four time boundaries process once, including jumps and rewinds
+  ---
+  duration_ms: 6.9714
+  type: 'test'
+  ...
+# Subtest: sector chance, caps and fixed ticket limits match the contract
+ok 186 - sector chance, caps and fixed ticket limits match the contract
+  ---
+  duration_ms: 19.2245
+  type: 'test'
+  ...
+# Subtest: quickstart skips historical attempts without RNG or retroactive chests
+ok 187 - quickstart skips historical attempts without RNG or retroactive chests
+  ---
+  duration_ms: 3.8014
+  type: 'test'
+  ...
+# Subtest: practice uses nearest entry candidate, consumes cap and says it is practice
+ok 188 - practice uses nearest entry candidate, consumes cap and says it is practice
+  ---
+  duration_ms: 2.5479
+  type: 'test'
+  ...
+# Subtest: only Camera.sees discovers; discovery persists after leaving the view
+ok 189 - only Camera.sees discovers; discovery persists after leaving the view
+  ---
+  duration_ms: 2.1296
+  type: 'test'
+  ...
+# Subtest: opening needs 3.5 seconds within inclusive 50 radius and awards once
+ok 190 - opening needs 3.5 seconds within inclusive 50 radius and awards once
+  ---
+  duration_ms: 2.3928
+  type: 'test'
+  ...
+# Subtest: out of range or occlusion decays progress by 1.5 seconds per second
+ok 191 - out of range or occlusion decays progress by 1.5 seconds per second
+  ---
+  duration_ms: 2.6615
+  type: 'test'
+  ...
+# Subtest: LOS samples endpoints even with zero distance and missing terrain fails closed
+ok 192 - LOS samples endpoints even with zero distance and missing terrain fails closed
+  ---
+  duration_ms: 2.3458
+  type: 'test'
+  ...
+# Subtest: damage does not cancel progress and module never changes firing or account fields
+ok 193 - damage does not cancel progress and module never changes firing or account fields
+  ---
+  duration_ms: 2.2378
+  type: 'test'
+  ...
+# Subtest: pause, no player, death and disabled trial freeze attempts and opening
+ok 194 - pause, no player, death and disabled trial freeze attempts and opening
+  ---
+  duration_ms: 2.2666
+  type: 'test'
+  ...
+# Subtest: reset preserves fictional run total, startRun clears it and snapshots are safe
+ok 195 - reset preserves fictional run total, startRun clears it and snapshots are safe
+  ---
+  duration_ms: 2.0959
+  type: 'test'
+  ...
+# Subtest: equal seeds generate equal spawn and ticket results independently of global RNG
+ok 196 - equal seeds generate equal spawn and ticket results independently of global RNG
+  ---
+  duration_ms: 3.5563
+  type: 'test'
+  ...
+# Subtest: chest ids distinguish sector and map seed
+ok 197 - chest ids distinguish sector and map seed
+  ---
+  duration_ms: 2.8189
+  type: 'test'
+  ...
+# Subtest: disabled mode and empty geometry do not create even practice rewards
+ok 198 - disabled mode and empty geometry do not create even practice rewards
+  ---
+  duration_ms: 2.0698
+  type: 'test'
+  ...
+# Subtest: invalid dt and times cannot corrupt progress or repeat lottery attempts
+ok 199 - invalid dt and times cannot corrupt progress or repeat lottery attempts
+  ---
+  duration_ms: 2.1731
+  type: 'test'
+  ...
+# Subtest: draw uses temporary canvas artwork and respects visibility and disabled mode
+ok 200 - draw uses temporary canvas artwork and respects visibility and disabled mode
+  ---
+  duration_ms: 2.5217
+  type: 'test'
+  ...
+# Subtest: event chests have their own quota, fixed reward and one claim after proximity opening
+ok 201 - event chests have their own quota, fixed reward and one claim after proximity opening
+  ---
+  duration_ms: 2.7441
+  type: 'test'
+  ...
+# Subtest: invalid or blocked event reward cannot fabricate tickets or repeatedly call a failed grant
+ok 202 - invalid or blocked event reward cannot fabricate tickets or repeatedly call a failed grant
+  ---
+  duration_ms: 2.1883
+  type: 'test'
+  ...
+# Subtest: default one copy; valid acquisition maximum two, per-copy cadences and reload do not block each other
+ok 203 - default one copy; valid acquisition maximum two, per-copy cadences and reload do not block each other
+  ---
+  duration_ms: 12.1412
+  type: 'test'
+  ...
+# Subtest: copy-local target range, wall/no-target/dead guards and independent aim
+ok 204 - copy-local target range, wall/no-target/dead guards and independent aim
+  ---
+  duration_ms: 3.345
+  type: 'test'
+  ...
+# Subtest: invalid data rejected; branch state cloned through snapshots/export and restore preserves each timer
+ok 205 - invalid data rejected; branch state cloned through snapshots/export and restore preserves each timer
+  ---
+  duration_ms: 5.166
+  type: 'test'
+  ...
+# Subtest: armament first opens a frozen choice; exactly one second weapon, never a permanent grant
+ok 206 - armament first opens a frozen choice; exactly one second weapon, never a permanent grant
+  ---
+  duration_ms: 3.9902
+  type: 'test'
+  ...
+# Subtest: two weapons yield one branch upgrade; saturation is tactical, not currency
+ok 207 - two weapons yield one branch upgrade; saturation is tactical, not currency
+  ---
+  duration_ms: 1.8642
+  type: 'test'
+  ...
+# Subtest: claim revalidates filled slot and incompatible copy; no lost or duplicated choice
+ok 208 - claim revalidates filled slot and incompatible copy; no lost or duplicated choice
+  ---
+  duration_ms: 1.689
+  type: 'test'
+  ...
+# Subtest: disabled and dead players cannot obtain rewards; snapshots do not mutate pending options
+ok 209 - disabled and dead players cannot obtain rewards; snapshots do not mutate pending options
+  ---
+  duration_ms: 2.7089
+  type: 'test'
+  ...
+# Subtest: expanded armament offers three stable choices including melee, legacy keeps ballistics
+ok 210 - expanded armament offers three stable choices including melee, legacy keeps ballistics
+  ---
+  duration_ms: 2.8156
+  type: 'test'
+  ...
+# Subtest: branches validate, reach five then a single extra; copies and snapshots stay independent
+ok 211 - branches validate, reach five then a single extra; copies and snapshots stay independent
+  ---
+  duration_ms: 9.1817
+  type: 'test'
+  ...
+# Subtest: offers weapon/general/free; reject stale copy identity and saturated choice remains finite
+ok 212 - offers weapon/general/free; reject stale copy identity and saturated choice remains finite
+  ---
+  duration_ms: 7.8806
+  type: 'test'
+  ...
+# Subtest: general fifth/extra keep caps; tactical replacement expires once and legacy stays unchanged
+ok 213 - general fifth/extra keep caps; tactical replacement expires once and legacy stays unchanged
+  ---
+  duration_ms: 5.6632
+  type: 'test'
+  ...
+# Subtest: expanded melee cards describe arc and targets rather than magazine effects
+ok 214 - expanded melee cards describe arc and targets rather than magazine effects
+  ---
+  duration_ms: 3.093
+  type: 'test'
+  ...
+# Subtest: option A is an explicit redistributed 240x160 initial map; historical R7 unchanged
+ok 215 - option A is an explicit redistributed 240x160 initial map; historical R7 unchanged
+  ---
+  duration_ms: 139.3823
+  type: 'test'
+  ...
+# Subtest: all floors and actual-radius anchors/rooms are reachable; route fits active five minutes
+ok 216 - all floors and actual-radius anchors/rooms are reachable; route fits active five minutes
+  ---
+  duration_ms: 815.5944
+  type: 'test'
+  ...
+# Subtest: portrait camera narrows only for option A, without changing PC/landscape or legacy maps
+ok 217 - portrait camera narrows only for option A, without changing PC/landscape or legacy maps
+  ---
+  duration_ms: 6.1212
+  type: 'test'
+  ...
+# Subtest: V2 reloj exacto y corte previo al update: no normales ni refuerzos desde300
+ok 218 - V2 reloj exacto y corte previo al update: no normales ni refuerzos desde300
+  ---
+  duration_ms: 23.2276
+  type: 'test'
+  ...
+# Subtest: infinite armament choice freezes time and crossing resolves reward and XP before preserving build
+ok 219 - infinite armament choice freezes time and crossing resolves reward and XP before preserving build
+  ---
+  duration_ms: 8.3933
+  type: 'test'
+  ...
+# Subtest: expanded terminal phase freezes director and restores combat without changing build
+ok 220 - expanded terminal phase freezes director and restores combat without changing build
+  ---
+  duration_ms: 6.2239
+  type: 'test'
+  ...
+# Subtest: infinite recovery counts only the part before300s, while active durations expire
+ok 221 - infinite recovery counts only the part before300s, while active durations expire
+  ---
+  duration_ms: 6.068
+  type: 'test'
+  ...
+# Subtest: B3 jefe obligatorio ofrece cofre una vez; premio no se aplica por matar
+ok 222 - B3 jefe obligatorio ofrece cofre una vez; premio no se aplica por matar
+  ---
+  duration_ms: 8.7213
+  type: 'test'
+  ...
+# Subtest: B3 contacto dimensional no limpia remanentes ni sustituye jefe obligatorio; victoria entrega otro cofre
+ok 223 - B3 contacto dimensional no limpia remanentes ni sustituye jefe obligatorio; victoria entrega otro cofre
+  ---
+  duration_ms: 9.9822
+  type: 'test'
+  ...
+# Subtest: B3 grieta expirada o muerte no concede premio
+ok 224 - B3 grieta expirada o muerte no concede premio
+  ---
+  duration_ms: 8.1989
+  type: 'test'
+  ...
+# Subtest: B3 refuerzos dimensionales reservan al jefe obligatorio y respetan24 enemigos
+ok 225 - B3 refuerzos dimensionales reservan al jefe obligatorio y respetan24 enemigos
+  ---
+  duration_ms: 7.2356
+  type: 'test'
+  ...
+# Subtest: V2 jefe temprano espera puerta; remanentes permanecen y transición conserva build/vida
+ok 226 - V2 jefe temprano espera puerta; remanentes permanecen y transición conserva build/vida
+  ---
+  duration_ms: 8.1765
+  type: 'test'
+  ...
+# Subtest: V2 puerta con jefe vivo bloqueada y rechaza escape/extract; contacto exige radio de puerta
+ok 227 - V2 puerta con jefe vivo bloqueada y rechaza escape/extract; contacto exige radio de puerta
+  ---
+  duration_ms: 6.5453
+  type: 'test'
+  ...
+# Subtest: V2 quick solo primer mapa, jefe garantizado con cap y respeta nivel/pausa
+ok 228 - V2 quick solo primer mapa, jefe garantizado con cap y respeta nivel/pausa
+  ---
+  duration_ms: 6.5282
+  type: 'test'
+  ...
+# Subtest: V2 mezcla enemigos y escala con tiempo sin cerrar oleadas ni exceder cap normal
+ok 229 - V2 mezcla enemigos y escala con tiempo sin cerrar oleadas ni exceder cap normal
+  ---
+  duration_ms: 17.2354
+  type: 'test'
+  ...
+# Subtest: V2 no checkpoint/restauración heredada; muerte normal y legacy sin campo V2
+ok 230 - V2 no checkpoint/restauración heredada; muerte normal y legacy sin campo V2
+  ---
+  duration_ms: 17.2829
+  type: 'test'
+  ...
+# Subtest: V2 integra geometría y cofres, reloj rápido sin regalos retroactivos y reinicio por mapa
+ok 231 - V2 integra geometría y cofres, reloj rápido sin regalos retroactivos y reinicio por mapa
+  ---
+  duration_ms: 16.1764
+  type: 'test'
+  ...
+# Subtest: V2 mapa grande genera la horda cerca del jugador, sin llenar el cupo con enemigos remotos
+ok 232 - V2 mapa grande genera la horda cerca del jugador, sin llenar el cupo con enemigos remotos
+  ---
+  duration_ms: 5.021
+  type: 'test'
+  ...
+# Subtest: V2 geometry is stable, varied, bounded and preserves the legacy API
+ok 233 - V2 geometry is stable, varied, bounded and preserves the legacy API
+  ---
+  duration_ms: 79.709
+  type: 'test'
+  ...
+# Subtest: V2 seeds keep full connectivity, clearance, broad alternative routes and measured travel targets
+ok 234 - V2 seeds keep full connectivity, clearance, broad alternative routes and measured travel targets
+  ---
+  duration_ms: 3483.0025
+  type: 'test'
+  ...
+# 165u/s, radius22, 8-neighbor collision paths: main 36.05–36.05s; anchor to optional 11.64–14.05s
+# Subtest: local V2 remains explicit and never combines with account modes
+ok 235 - local V2 remains explicit and never combines with account modes
+  ---
+  duration_ms: 16.3199
+  type: 'test'
+  ...
+# Subtest: infinite T1A is explicit locally, defaults only on authorized Pages and blocks all account flags
+ok 236 - infinite T1A is explicit locally, defaults only on authorized Pages and blocks all account flags
+  ---
+  duration_ms: 12.2227
+  type: 'test'
+  ...
+# Subtest: infinite allies withdraw once, cannot finish the boss and drop no XP for their kills
+ok 237 - infinite allies withdraw once, cannot finish the boss and drop no XP for their kills
+  ---
+  duration_ms: 3.1243
+  type: 'test'
+  ...
+# Subtest: the exact HTTPS Pages project enables the public V2 demo by default or explicitly
+ok 238 - the exact HTTPS Pages project enables the public V2 demo by default or explicitly
+  ---
+  duration_ms: 5.6677
+  type: 'test'
+  ...
+# Subtest: the public demo preserves the explicit quick five-minute trial
+ok 239 - the public demo preserves the explicit quick five-minute trial
+  ---
+  duration_ms: 3.3617
+  type: 'test'
+  ...
+# Subtest: publicDemo requires the exact allowed HTTPS host and project path prefix
+ok 240 - publicDemo requires the exact allowed HTTPS host and project path prefix
+  ---
+  duration_ms: 11.4543
+  type: 'test'
+  ...
+# Subtest: the Pages demo never enables V2 alongside any account query parameter
+ok 241 - the Pages demo never enables V2 alongside any account query parameter
+  ---
+  duration_ms: 16.7739
+  type: 'test'
+  ...
+# Subtest: quick trial is explicit and keeps the five-minute contract
+ok 242 - quick trial is explicit and keeps the five-minute contract
+  ---
+  duration_ms: 2.2858
+  type: 'test'
+  ...
+# Subtest: chest practice requires the isolated V2 gate and is explicit
+ok 243 - chest practice requires the isolated V2 gate and is explicit
+  ---
+  duration_ms: 6.5031
+  type: 'test'
+  ...
+# Subtest: boss and rift reward practices require V2 and exclude the exploration preview
+ok 244 - boss and rift reward practices require V2 and exclude the exploration preview
+  ---
+  duration_ms: 4.1579
+  type: 'test'
+  ...
+# Subtest: reward flags never bypass local, public or account gates
+ok 245 - reward flags never bypass local, public or account gates
+  ---
+  duration_ms: 24.8903
+  type: 'test'
+  ...
+# Subtest: V2 cannot be mixed with the old rift or backpack trial switches
+ok 246 - V2 cannot be mixed with the old rift or backpack trial switches
+  ---
+  duration_ms: 3.8468
+  type: 'test'
+  ...
+# Subtest: allies arrive once, reset between maps and use reachable positions
+ok 247 - allies arrive once, reset between maps and use reachable positions
+  ---
+  duration_ms: 2.4889
+  type: 'test'
+  ...
+# Subtest: allied fire respects walls and range and deals actual enemy damage
+ok 248 - allied fire respects walls and range and deals actual enemy damage
+  ---
+  duration_ms: 2.2129
+  type: 'test'
+  ...
+# Subtest: allies use the actual player path field and spread out from the doorway
+ok 249 - allies use the actual player path field and spread out from the doorway
+  ---
+  duration_ms: 1.9994
+  type: 'test'
+  ...
+# Subtest: an allied kill resolves once and allies are not hostile enemies
+ok 250 - an allied kill resolves once and allies are not hostile enemies
+  ---
+  duration_ms: 4.0525
+  type: 'test'
+  ...
+# Subtest: la pista aprobada espera el desbloqueo del usuario y entra por el bus musical
+ok 251 - la pista aprobada espera el desbloqueo del usuario y entra por el bus musical
+  ---
+  duration_ms: 22.4608
+  type: 'test'
+  ...
+# Subtest: mute y volumen siguen actuando sobre el WAV y el bus compartido
+ok 252 - mute y volumen siguen actuando sobre el WAV y el bus compartido
+  ---
+  duration_ms: 18.2299
+  type: 'test'
+  ...
+# Subtest: partida, pausa/reanudación y regreso al menú mantienen una sola instancia de cada música
+ok 253 - partida, pausa/reanudación y regreso al menú mantienen una sola instancia de cada música
+  ---
+  duration_ms: 18.8644
+  type: 'test'
+  ...
+# Subtest: si el navegador rechaza la primera reproducción, el gesto siguiente puede reintentarla
+ok 254 - si el navegador rechaza la primera reproducción, el gesto siguiente puede reintentarla
+  ---
+  duration_ms: 10.7584
+  type: 'test'
+  ...
+# Subtest: el menú móvil ocupa una vista fija y bloquea el desplazamiento y el zoom de página
+ok 255 - el menú móvil ocupa una vista fija y bloquea el desplazamiento y el zoom de página
+  ---
+  duration_ms: 2.3284
+  type: 'test'
+  ...
+# Subtest: las pantallas de selección tienen un modo compacto que cabe en móvil vertical
+ok 256 - las pantallas de selección tienen un modo compacto que cabe en móvil vertical
+  ---
+  duration_ms: 0.5381
+  type: 'test'
+  ...
+# Subtest: el menú moderno solo se habilita en pruebas locales sin cuentas y sin interfaz clásica
+ok 257 - el menú moderno solo se habilita en pruebas locales sin cuentas y sin interfaz clásica
+  ---
+  duration_ms: 8.8898
+  type: 'test'
+  ...
+# Subtest: la selección del soldado actualiza el selector que consume FieldLoadout
+ok 258 - la selección del soldado actualiza el selector que consume FieldLoadout
+  ---
+  duration_ms: 2.2748
+  type: 'test'
+  ...
+# Subtest: el menú de armas muestra solo los nueve diseños aprobados y F24, sin armas de ensayo
+ok 259 - el menú de armas muestra solo los nueve diseños aprobados y F24, sin armas de ensayo
+  ---
+  duration_ms: 17.2386
+  type: 'test'
+  ...
+# Subtest: el menú oculta la galería si la fuente no conserva el estado visual aprobado
+ok 260 - el menú oculta la galería si la fuente no conserva el estado visual aprobado
+  ---
+  duration_ms: 1.2437
+  type: 'test'
+  ...
+# Subtest: native body uses original parts with equal world scale, alpha/flash and no gameplay changes
+ok 261 - native body uses original parts with equal world scale, alpha/flash and no gameplay changes
+  ---
+  duration_ms: 6.4902
+  type: 'test'
+  ...
+# Subtest: two weapons follow independent living targets and render once across front/back passes
+ok 262 - two weapons follow independent living targets and render once across front/back passes
+  ---
+  duration_ms: 3.5877
+  type: 'test'
+  ...
+# Subtest: supports use their own parts and legacy/dead/nonhuman paths remain available
+ok 263 - supports use their own parts and legacy/dead/nonhuman paths remain available
+  ---
+  duration_ms: 7.4978
+  type: 'test'
+  ...
+# Subtest: INC-VIS-001 ordinary pistol uses the approved mount; missing art and unsupported models are disclosed
+ok 264 - INC-VIS-001 ordinary pistol uses the approved mount; missing art and unsupported models are disclosed
+  ---
+  duration_ms: 5.9433
+  type: 'test'
+  ...
+# Subtest: default32 and optional16 use exact catalog sources while preserving physical metadata
+ok 265 - default32 and optional16 use exact catalog sources while preserving physical metadata
+  ---
+  duration_ms: 7.7262
+  type: 'test'
+  ...
+# Subtest: v1/classic/old modes retain their previous visual contracts
+ok 266 - v1/classic/old modes retain their previous visual contracts
+  ---
+  duration_ms: 4.8718
+  type: 'test'
+  ...
+# Subtest: excluye el mapa 1 y resuelve una sola vez los cuatro cruces de 60 a 240 s
+ok 267 - excluye el mapa 1 y resuelve una sola vez los cuatro cruces de 60 a 240 s
+  ---
+  duration_ms: 3.6186
+  type: 'test'
+  ...
+# Subtest: el cruce de 50% produce sí debajo de 0.5 y no desde 0.5
+ok 268 - el cruce de 50% produce sí debajo de 0.5 y no desde 0.5
+  ---
+  duration_ms: 0.4144
+  type: 'test'
+  ...
+# Subtest: los límites enteros de peligrosidad son D1 1–50, D2 51–82, D3 83–90, D4 91–97 y D5 98–100
+ok 269 - los límites enteros de peligrosidad son D1 1–50, D2 51–82, D3 83–90, D4 91–97 y D5 98–100
+  ---
+  duration_ms: 1.6589
+  type: 'test'
+  ...
+# Subtest: solo las confirmaciones consumen el cupo y la confirmación repetida es idempotente
+ok 270 - solo las confirmaciones consumen el cupo y la confirmación repetida es idempotente
+  ---
+  duration_ms: 0.5763
+  type: 'test'
+  ...
+# Subtest: una solicitud fallida se identifica sin contar aparición ni sustituir su tier
+ok 271 - una solicitud fallida se identifica sin contar aparición ni sustituir su tier
+  ---
+  duration_ms: 0.4052
+  type: 'test'
+  ...
+# Subtest: la restauración de ensayo conserva el cruce, pausa el reloj de origen y solo otro mapa reinicia el estado
+ok 272 - la restauración de ensayo conserva el cruce, pausa el reloj de origen y solo otro mapa reinicia el estado
+  ---
+  duration_ms: 0.4091
+  type: 'test'
+  ...
+# Subtest: rechaza un reloj regresivo y no consume la oportunidad cuando el RNG falla
+ok 273 - rechaza un reloj regresivo y no consume la oportunidad cuando el RNG falla
+  ---
+  duration_ms: 1.0507
+  type: 'test'
+  ...
+# Subtest: una confirmación tardía del mapa anterior no confirma una solicitud del nuevo ordinal
+ok 274 - una confirmación tardía del mapa anterior no confirma una solicitud del nuevo ordinal
+  ---
+  duration_ms: 0.4219
+  type: 'test'
+  ...
+# Subtest: all six approved styles render distinct Canvas primitives without mutating rift state
+ok 275 - all six approved styles render distinct Canvas primitives without mutating rift state
+  ---
+  duration_ms: 7.3524
+  type: 'test'
+  ...
+# Subtest: style selection is repeatable and ignores danger or hazard metadata
+ok 276 - style selection is repeatable and ignores danger or hazard metadata
+  ---
+  duration_ms: 1.8581
+  type: 'test'
+  ...
+# Subtest: native 16/32 modes draw open and active states; legacy modes and disabled visuals fall back
+ok 277 - native 16/32 modes draw open and active states; legacy modes and disabled visuals fall back
+  ---
+  duration_ms: 8.0343
+  type: 'test'
+  ...
+# Subtest: closed, resolved, and idle rifts remain on the legacy renderer and stay unchanged
+ok 278 - closed, resolved, and idle rifts remain on the legacy renderer and stay unchanged
+  ---
+  duration_ms: 1.2135
+  type: 'test'
+  ...
+# Subtest: QA style override changes only the rendered appearance and calm settings suppress the pulse
+ok 279 - QA style override changes only the rendered appearance and calm settings suppress the pulse
+  ---
+  duration_ms: 1.4948
+  type: 'test'
+  ...
+# Subtest: each portal changes geometry with active time, deterministically and without changing mechanics
+ok 280 - each portal changes geometry with active time, deterministically and without changing mechanics
+  ---
+  duration_ms: 5.8867
+  type: 'test'
+  ...
+# Subtest: default animation clock follows the frozen game clock rather than wall time
+ok 281 - default animation clock follows the frozen game clock rather than wall time
+  ---
+  duration_ms: 2.5083
+  type: 'test'
+  ...
+# Subtest: ground and body layers compose the full image with balanced canvas state
+ok 282 - ground and body layers compose the full image with balanced canvas state
+  ---
+  duration_ms: 5.6566
+  type: 'test'
+  ...
+# Subtest: World retains its legacy drawing path when SceneR7 is absent
+ok 283 - World retains its legacy drawing path when SceneR7 is absent
+  ---
+  duration_ms: 15.5951
+  type: 'test'
+  ...
+# Subtest: static R7 navigation reuses its collision mask and invalidates it for a new fixture
+ok 284 - static R7 navigation reuses its collision mask and invalidates it for a new fixture
+  ---
+  duration_ms: 466.9253
+  type: 'test'
+  ...
+# Subtest: R7 reference layout preserves exact approved dimensions, anchors and legacy generator
+ok 285 - R7 reference layout preserves exact approved dimensions, anchors and legacy generator
+  ---
+  duration_ms: 128.259
+  type: 'test'
+  ...
+# Subtest: R7 collision grid connects all floors, real-radius anchors, interiors and exits
+ok 286 - R7 collision grid connects all floors, real-radius anchors, interiors and exits
+  ---
+  duration_ms: 2294.8505
+  type: 'test'
+  ...
+# Subtest: blocking one declared doorway leaves every enclosed room a second escape
+ok 287 - blocking one declared doorway leaves every enclosed room a second escape
+  ---
+  duration_ms: 2084.2419
+  type: 'test'
+  ...
+# Subtest: double-resolution atlas changes source sampling, never feet, destination or collision measurements
+ok 288 - double-resolution atlas changes source sampling, never feet, destination or collision measurements
+  ---
+  duration_ms: 4.6888
+  type: 'test'
+  ...
+# Subtest: classic atlas keeps legacy source and destination rectangles
+ok 289 - classic atlas keeps legacy source and destination rectangles
+  ---
+  duration_ms: 2.2111
+  type: 'test'
+  ...
+# Subtest: failed new atlas falls back to original sheet with its original frame layout
+ok 290 - failed new atlas falls back to original sheet with its original frame layout
+  ---
+  duration_ms: 1.5903
+  type: 'test'
+  ...
+# Subtest: visual install is isolated and preserves logical frame geometry for every actor
+ok 291 - visual install is isolated and preserves logical frame geometry for every actor
+  ---
+  duration_ms: 7.3199
+  type: 'test'
+  ...
+# Subtest: original one-row sheet is safe fallback for an eight-direction four-frame monster
+ok 292 - original one-row sheet is safe fallback for an eight-direction four-frame monster
+  ---
+  duration_ms: 1.5179
+  type: 'test'
+  ...
+# Subtest: double-sampled soft flash preserves source crop and restores incoming alpha
+ok 293 - double-sampled soft flash preserves source crop and restores incoming alpha
+  ---
+  duration_ms: 1.611
+  type: 'test'
+  ...
+# Subtest: native PNG source dimensions do not change logical frame destination
+ok 294 - native PNG source dimensions do not change logical frame destination
+  ---
+  duration_ms: 2.5667
+  type: 'test'
+  ...
+# Subtest: Neutralized PNG aliases Faint and fails back to original Idle SVG
+ok 295 - Neutralized PNG aliases Faint and fails back to original Idle SVG
+  ---
+  duration_ms: 1.5664
+  type: 'test'
+  ...
+# Subtest: INC-VIS-001 native regulars use the human cell and retain distinct boss size without changing physical geometry
+ok 296 - INC-VIS-001 native regulars use the human cell and retain distinct boss size without changing physical geometry
+  ---
+  duration_ms: 8.1325
+  type: 'test'
+  ...
+# Subtest: INC-VIS-001 failed native atlas retains original fallback dimensions and visual labels
+ok 297 - INC-VIS-001 failed native atlas retains original fallback dimensions and visual labels
+  ---
+  duration_ms: 2.8962
+  type: 'test'
+  ...
+# v2 visual weapons: ok
+# Subtest: tests\\v2-visual-weapons.test.js
+ok 57 - tests\\v2-visual-weapons.test.js
+  ---
+  duration_ms: 79.7717
+  type: 'test'
+  ...
+# Subtest: AF01, CC04 and TE01 expose only the approved trial profiles; F24 is fusion-only
+ok 299 - AF01, CC04 and TE01 expose only the approved trial profiles; F24 is fusion-only
+  ---
+  duration_ms: 6.9459
+  type: 'test'
+  ...
+# Subtest: one copy reaches MAX in exactly five ascents with the approved replacement multipliers
+ok 300 - one copy reaches MAX in exactly five ascents with the approved replacement multipliers
+  ---
+  duration_ms: 2.6963
+  type: 'test'
+  ...
+# Subtest: copies of the same model progress independently and offers contain only equipped non-MAX copies once
+ok 301 - copies of the same model progress independently and offers contain only equipped non-MAX copies once
+  ---
+  duration_ms: 1.957
+  type: 'test'
+  ...
+# Subtest: secondary and refill rewards start at level 1, replay once, and cannot create a third copy
+ok 302 - secondary and refill rewards start at level 1, replay once, and cannot create a third copy
+  ---
+  duration_ms: 1.8053
+  type: 'test'
+  ...
+# Subtest: runtime materialization failure rolls back a reward copy and leaves the ID retryable
+ok 303 - runtime materialization failure rolls back a reward copy and leaves the ID retryable
+  ---
+  duration_ms: 1.8092
+  type: 'test'
+  ...
+# Subtest: AF01 MAX extra shot, CC04 fourth cut, and TE01 fourth emission follow their own copy counters
+ok 304 - AF01 MAX extra shot, CC04 fourth cut, and TE01 fourth emission follow their own copy counters
+  ---
+  duration_ms: 3.2882
+  type: 'test'
+  ...
+# Subtest: the map-two station is stable per map; pending pose evidence blocks only fusion, not progression
+ok 305 - the map-two station is stable per map; pending pose evidence blocks only fusion, not progression
+  ---
+  duration_ms: 1.6111
+  type: 'test'
+  ...
+# Subtest: fusion preview and cancellation are read-only and report the substituted MAX effects
+ok 306 - fusion preview and cancellation are read-only and report the substituted MAX effects
+  ---
+  duration_ms: 2.0373
+  type: 'test'
+  ...
+# Subtest: fusion confirmation consumes two distinct MAX copies once and remains idempotent across retries/maps
+ok 307 - fusion confirmation consumes two distinct MAX copies once and remains idempotent across retries/maps
+  ---
+  duration_ms: 3.0749
+  type: 'test'
+  ...
+# Subtest: fusion stays unavailable for same-model, under-MAX, absent, or duplicate copy inputs
+ok 308 - fusion stays unavailable for same-model, under-MAX, absent, or duplicate copy inputs
+  ---
+  duration_ms: 2.3576
+  type: 'test'
+  ...
+# Subtest: refill and replacement never restore fusion components, MAX levels, or the expedition use
+ok 309 - refill and replacement never restore fusion components, MAX levels, or the expedition use
+  ---
+  duration_ms: 1.9332
+  type: 'test'
+  ...
+# Subtest: F24 caps already-filtered targets and applies the global damage modifier once
+ok 310 - F24 caps already-filtered targets and applies the global damage modifier once
+  ---
+  duration_ms: 1.3883
+  type: 'test'
+  ...
+# Subtest: F24 applies supplied global damage, cadence and range modifiers once while preserving base limits
+ok 311 - F24 applies supplied global damage, cadence and range modifiers once while preserving base limits
+  ---
+  duration_ms: 1.3351
+  type: 'test'
+  ...
+# Subtest: ARM-VIS-001/R1 visor inputs cover 10 models, 8 views, 16/32 px and the real anchor PNGs
+ok 312 - ARM-VIS-001/R1 visor inputs cover 10 models, 8 views, 16/32 px and the real anchor PNGs
+  ---
+  duration_ms: 52.115
+  type: 'test'
+  ...
+1..312
+# tests 312
+# suites 0
+# pass 306
+# fail 5
+# cancelled 0
+# skipped 1
+# todo 0
+# duration_ms 19253.1702
+
+
+TAP version 13
+# Subtest: callable real handler CORS allows owned origins and both loopback formats
+ok 1 - callable real handler CORS allows owned origins and both loopback formats
+  ---
+  duration_ms: 69.738
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1529.1658
+

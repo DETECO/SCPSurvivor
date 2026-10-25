@@ -1,0 +1,75 @@
+{
+  "lot": "LOT-EST-005 r2",
+  "revision": "REV-EST-0008",
+  "control": "0.10 / EST-NPC-001 r1",
+  "status": "PUBLISHED_VERIFIED_TRIAL",
+  "verifiedAtUtc": "2026-10-25T18:12:06.226797+00:00",
+  "repository": "DETECO/SCPSurvivor",
+  "branch": "main",
+  "runtimeCommit": "92fc1fd7c2347aed7b585946328670944008b39c",
+  "publicationBundle": "adec3ec93c",
+  "scripts": 117,
+  "pages": {
+    "status": "built",
+    "commit": "92fc1fd7c2347aed7b585946328670944008b39c",
+    "updated_at": "2026-10-25T17:56:05Z",
+    "servedBundle": "adec3ec93c"
+  },
+  "publicUrl": "https://deteco.github.io/SCPSurvivor/",
+  "practiceUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas&apoyo=si&graficos=32",
+  "practiceOverrides": "La práctica inicia mapa2/minuto1 con portal garantizado; apoyo=si fuerza presencia solo en práctica. La entrada habitual conserva 50/50 y33/10, sin garantía de apertura o compañero.",
+  "implementer": "Juanillo / ESTRUCTURA por relevo técnico autorizado tras systemError; se conserva integración R3 encargada directamente a PERSONAJES.",
+  "liveVerification": {
+    "rooms": 10,
+    "femaleResolutionWeaponCombinations": 18,
+    "femalePartsFailureFallbackCases": 1,
+    "outcomeGroups": 14,
+    "loadingAndAliasCases": 7,
+    "coordinatorCases": 3,
+    "startPauseCases": 2,
+    "totalCasesOrGroups": 55,
+    "criticalFileMatches": 217,
+    "javascriptErrors": 0,
+    "unexpectedHttpFailures": 0,
+    "intentional404Cases": 1,
+    "slowAtlasCases": 1,
+    "timeoutAtlasCases": 1,
+    "physicalPhone": false
+  },
+  "evidenceDirectory": "docs/gestion/evidencias/lot-est-005/r2/publica/",
+  "nodeGame": {
+    "tests": 270,
+    "pass": 270,
+    "fail": 0,
+    "files": 50,
+    "runner": "Juanillo"
+  },
+  "allNode": {
+    "tests": 328,
+    "pass": 322,
+    "fail": 5,
+    "skipped": 1,
+    "files": 62,
+    "runner": "PROGRAMACION; entrega reanudada solo de auditoría, leída y contrastada por Juanillo",
+    "status": "FAIL_BACKEND_TOOLCHAIN_ONLY",
+    "failures": [
+      "not ok 104 - P05 real SQLite RPC: 20 concurrent identical commands have one effect and replay their receipt",
+      "not ok 105 - P05 real SQLite RPC: distinct commands at the same revision have exactly one winner",
+      "not ok 106 - P05 real SQLite RPC isolates account state and receipt IDs by UID",
+      "not ok 107 - P05 real SQLite RPC transfers a run and rejects writes from its former session",
+      "not ok 108 - P05 real SQLite state and original command receipts survive Miniflare restart"
+    ],
+    "cause": "P05 SQLite RPC: workerd instalado soporta hasta2026-08-06, proyecto requiere2026-10-17. Backend real sigue desactivado. La ejecución acotada concluyó; CORS se ejecutó aparte y pasó."
+  },
+  "method": "QA determinista con tiempo/posición/HP/invulnerabilidad y sorteos/apariencia forzados, sobre módulos reales de sala, renderer, proyectiles, combate, poderes, UI y retorno. Compañero dispara40veces por cada modelo y recarga varios cargadores. No acredita victoria natural, balance o dispositivo físico.",
+  "hashScope": "Los217SHA256 se comparan contra el payload del runtimeCommit. El commit posterior del recibo/roadmap agrega evidencia, documentos y una prueba; no cambia runtime. El readback final de metadatos se registra por separado.",
+  "metadataCommitReference": "git log -1 --format=%H -- docs/gestion/LOT-EST-005_PUBLICACION.json",
+  "limits": [
+    "Aceptación humana y balance de ensayo pendientes",
+    "iPhone físico/Safari y rendimiento real pendientes",
+    "Este runtime conserva smg/shotgun legados provisionales; su nueva apariencia ya fue aceptada en ARMASR3 y el montaje se encargó en LOT-EST-006r1",
+    "Compañeras R3 integradas y comprobadas; aceptación artística final del nuevo montaje pendiente",
+    "Sonido característico NPC sin elegir; burbujas sin voz",
+    "Fusión, ultimate, economía y servicios reales conservan sus dependencias"
+  ]
+}

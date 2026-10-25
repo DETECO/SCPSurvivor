@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "live": true,
+  "records": [
+    {
+      "case": "missing",
+      "result": {
+        "active": false,
+        "status": null,
+        "failures": [
+          {
+            "encounterId": "map:2:string:3585071513:2:QA:rift:60:encounter:1",
+            "anomalyId": "esporario",
+            "reason": "asset_failed",
+            "assets": [
+              "32/esporario/Attack1.png"
+            ]
+          }
+        ],
+        "notice": "No se pudo cargar la anomalía. Regreso al mapa · sin premio.",
+        "clock": true,
+        "hp": true,
+        "ammo": true,
+        "fixture": true,
+        "enemies": true,
+        "powers": 0,
+        "count": 1
+      }
+    },
+    {
+      "case": "slow",
+      "result": {
+        "active": true,
+        "status": "combat",
+        "failures": [],
+        "notice": "",
+        "clock": true,
+        "hp": true,
+        "ammo": true,
+        "fixture": false,
+        "enemies": false,
+        "powers": 0,
+        "count": 1
+      }
+    },
+    {
+      "case": "timeout",
+      "result": {
+        "active": false,
+        "status": null,
+        "failures": [
+          {
+            "encounterId": "map:2:string:3585071513:2:QA:rift:60:encounter:1",
+            "anomalyId": "esporario",
+            "reason": "asset_timeout",
+            "assets": [
+              "32/esporario/Idle.png",
+              "32/esporario/Walk.png",
+              "32/esporario/Run.png",
+              "32/esporario/Jump.png",
+              "32/esporario/Jump-FX.png",
+              "32/esporario/Attack1.png",
+              "32/esporario/Attack1-FX.png",
+              "32/esporario/Attack2.png",
+              "32/esporario/Attack2-FX.png",
+              "32/esporario/Attack3.png",
+              "32/esporario/Attack3-FX.png",
+              "32/esporario/Hurt.png",
+              "32/esporario/Death.png"
+            ]
+          }
+        ],
+        "notice": "No se pudo cargar la anomalía. Regreso al mapa · sin premio.",
+        "clock": true,
+        "hp": true,
+        "ammo": true,
+        "fixture": true,
+        "enemies": true,
+        "powers": 0,
+        "count": 1
+      }
+    },
+    {
+      "alias": "?prueba=mapa-v2&premios=grieta",
+      "result": {
+        "url": "https://deteco.github.io/SCPSurvivor/index.html?prueba=combate-v2&ensayo=grietas",
+        "practice": true,
+        "portal": true,
+        "legacy": false
+      }
+    },
+    {
+      "alias": "?prueba=combate-v2&premios=grieta",
+      "result": {
+        "url": "https://deteco.github.io/SCPSurvivor/index.html?prueba=combate-v2&ensayo=grietas",
+        "practice": true,
+        "portal": true,
+        "legacy": false
+      }
+    },
+    {
+      "alias": "?prueba=infinito-v2&premios=grieta",
+      "result": {
+        "url": "https://deteco.github.io/SCPSurvivor/index.html?prueba=combate-v2&ensayo=grietas",
+        "practice": true,
+        "portal": true,
+        "legacy": false
+      }
+    },
+    {
+      "alias": "?premios=grieta",
+      "result": {
+        "url": "https://deteco.github.io/SCPSurvivor/index.html?prueba=combate-v2&ensayo=grietas",
+        "practice": true,
+        "portal": true,
+        "legacy": false
+      }
+    }
+  ],
+  "method": "Intercept one BIO atlas404/delayed; pause controller and step engine for exact recovery comparison. Alias tests use normal start. No natural balance claim."
+}

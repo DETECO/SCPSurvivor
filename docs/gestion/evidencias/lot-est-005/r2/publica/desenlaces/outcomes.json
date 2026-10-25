@@ -1,0 +1,360 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "roomUnlimitedWeapon": {
+        "model": "pistol",
+        "shots": 40,
+        "reloads": 3,
+        "reserveInfinite": true,
+        "capacity": 12,
+        "ammo": 8,
+        "sawReload": true,
+        "damage": 195,
+        "playerAmmoUnchanged": true,
+        "used": [
+          "presentation",
+          "03"
+        ],
+        "pellets": 1,
+        "range": 320,
+        "characterId": "apoyo_fitness"
+      },
+      "pauseFrozen": {
+        "shots": 40,
+        "reload": 0,
+        "time": 0.03333333333333333
+      }
+    },
+    {
+      "roomUnlimitedWeapon": {
+        "model": "smg",
+        "shots": 40,
+        "reloads": 1,
+        "reserveInfinite": true,
+        "capacity": 24,
+        "ammo": 8,
+        "sawReload": true,
+        "damage": 117,
+        "playerAmmoUnchanged": true,
+        "used": [
+          "presentation"
+        ],
+        "pellets": 1,
+        "range": 280,
+        "characterId": "apoyo_fitness"
+      },
+      "pauseFrozen": {
+        "shots": 40,
+        "reload": 0,
+        "time": 0.03333333333333333
+      }
+    },
+    {
+      "roomUnlimitedWeapon": {
+        "model": "shotgun",
+        "shots": 40,
+        "reloads": 6,
+        "reserveInfinite": true,
+        "capacity": 6,
+        "ammo": 2,
+        "sawReload": true,
+        "damage": 468,
+        "playerAmmoUnchanged": true,
+        "used": [
+          "presentation",
+          "03",
+          "04"
+        ],
+        "pellets": 6,
+        "range": 180,
+        "characterId": "apoyo_fitness"
+      },
+      "pauseFrozen": {
+        "shots": 40,
+        "reload": 0,
+        "time": 0.016600000000000135
+      }
+    },
+    {
+      "retreat": {
+        "warning": "warning",
+        "open": "open",
+        "active": false,
+        "origin": {
+          "clock": true,
+          "enemy": true,
+          "shots": true,
+          "pickups": true,
+          "fixture": true,
+          "director": true,
+          "terminal": true,
+          "chests": true
+        },
+        "powers": 0,
+        "hp": true,
+        "ammo": true,
+        "npc": null
+      }
+    },
+    {
+      "second": {
+        "count": 2,
+        "id": "map:2:string:3585071513:2:QA:rift:120:encounter:2",
+        "active": true,
+        "time": 0
+      }
+    },
+    {
+      "expiredThenVictory": {
+        "escape": "expired",
+        "active": true,
+        "reward": true
+      }
+    },
+    {
+      "death": {
+        "phase": "finished",
+        "reason": "death",
+        "active": false,
+        "powers": 0,
+        "npc": null
+      }
+    },
+    {
+      "actualPowerDamage": [
+        {
+          "id": "esporario",
+          "damage": 12
+        },
+        {
+          "id": "larva",
+          "damage": 18
+        },
+        {
+          "id": "malla",
+          "damage": 14
+        },
+        {
+          "id": "portador",
+          "damage": 9
+        },
+        {
+          "id": "huesped",
+          "damage": 20
+        }
+      ]
+    },
+    {
+      "npcInfiniteNoFinish": {
+        "arrival": "Soy Gabriel. Tengo miedo y quiero salir, pero voy a ayudarte.",
+        "personality": "SARC",
+        "ammo": 8,
+        "reserveInfinite": true,
+        "shots": 148,
+        "reloads": 12,
+        "rarity": "Legendaria",
+        "hp": 1,
+        "xpUnchanged": true,
+        "incapacitated": true
+      }
+    },
+    {
+      "contextDialogs": {
+        "arrival": "Soy Tom\u00e1s. Un gusto conocerte en este lugar tan encantador.",
+        "own": "Me dieron Pistola de apoyo Normal. La charla motivacional ven\u00eda por separado.",
+        "player": "Mira, Pistola. Algo aqu\u00ed tiene un nombre que reconozco.",
+        "personalities": 14
+      }
+    },
+    {
+      "actualReplacementAndFreeCards": {
+        "request": {
+          "accepted": false,
+          "requiresReplacement": true
+        },
+        "before": [
+          "esporario",
+          "larva",
+          "malla"
+        ],
+        "result": {
+          "accepted": true
+        },
+        "owned": [
+          {
+            "id": "esporario",
+            "rank": 1,
+            "remaining": 4,
+            "name": "Pulso de esporas"
+          },
+          {
+            "id": "malla",
+            "rank": 1,
+            "remaining": 5,
+            "name": "Tensi\u00f3n org\u00e1nica"
+          },
+          {
+            "id": "portador",
+            "rank": 1,
+            "remaining": 5,
+            "name": "Salva espinosa"
+          }
+        ],
+        "oldProjectiles": 0,
+        "freeCards": 3
+      }
+    },
+    {
+      "failedLocationNoReroll": {
+        "count": 1,
+        "requests": [
+          "confirmed",
+          "failed"
+        ],
+        "same": true
+      }
+    },
+    {
+      "fiveOwnMaxExtras": [
+        {
+          "id": "esporario",
+          "base": {
+            "shots": [],
+            "damaged": 0
+          },
+          "max": {
+            "shots": [],
+            "damaged": 4
+          }
+        },
+        {
+          "id": "larva",
+          "base": {
+            "shots": [
+              {
+                "dmg": 30.96,
+                "pierce": 0
+              }
+            ],
+            "damaged": 0
+          },
+          "max": {
+            "shots": [
+              {
+                "dmg": 30.96,
+                "pierce": 1
+              }
+            ],
+            "damaged": 0
+          }
+        },
+        {
+          "id": "malla",
+          "base": {
+            "shots": [],
+            "damaged": 3
+          },
+          "max": {
+            "shots": [],
+            "damaged": 4
+          }
+        },
+        {
+          "id": "portador",
+          "base": {
+            "shots": [
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              }
+            ],
+            "damaged": 0
+          },
+          "max": {
+            "shots": [
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              },
+              {
+                "dmg": 15.48,
+                "pierce": 0
+              }
+            ],
+            "damaged": 0
+          }
+        },
+        {
+          "id": "huesped",
+          "base": {
+            "shots": [],
+            "damaged": 4
+          },
+          "max": {
+            "shots": [],
+            "damaged": 4,
+            "echo": {
+              "first": 34.399999999999636,
+              "suspended": 34.399999999999636,
+              "twice": 68.79999999999927,
+              "after": 68.79999999999927
+            }
+          }
+        }
+      ]
+    },
+    {
+      "compatibleHomeAndAbsentScenarioTags": {
+        "bubble": "En casa me quejaba de que las paredes eran aburridas. Retiro la queja.",
+        "homeUsed": true,
+        "biography": "generic-home",
+        "used": [
+          "presentation",
+          "03",
+          "04",
+          "08"
+        ]
+      }
+    }
+  ],
+  "live": true,
+  "physicalPhone": false,
+  "method": "Injected time, positions, invulnerability, HP and deterministic NPC draws; actual AI/combat/projectile/reward/return modules."
+}

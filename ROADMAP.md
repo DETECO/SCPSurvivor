@@ -1,6 +1,6 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-25).** LOT-EST-005r2: cinco BIO16/32 con salas, director, poderes propiosMAX y retorno; compañeros/compañerasR3, arma aleatoria y reserva infinita con recarga. Juanillo completa el encargo tras fallo de PROGRAMACION.270pruebas de juego y48casos/grupos locales aprobados; publicación en comprobación, sin aceptación humana/balance final.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-25).** LOT005r2 publicado y comprobado:cincoBIO16/32 en salas,origen congelado,retirada,poderesMAX propios ycompañeros/compañerasR3 con arma aleatoria/reserva infinita.55casos/grupos públicos y217hashes. Balance/aceptación pendientes. ARMASR3 acepta48sprites;LOT006 encarga montaje técnico, sin elegir poderesA/B.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 

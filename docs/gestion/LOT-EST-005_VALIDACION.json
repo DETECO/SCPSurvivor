@@ -2,7 +2,7 @@
   "lot": "LOT-EST-005 r2",
   "revision": "REV-EST-0008",
   "control": "0.10 / EST-NPC-001 r1",
-  "status": "local_verified_publication_pending",
+  "status": "published_verified_trial",
   "verifiedAt": "2026-10-25T17:49:34.493892+00:00",
   "implementer": "Juanillo / ESTRUCTURA, relevo técnico autorizado tras systemError de PROGRAMACION y su agente NPC",
   "build": {
@@ -34,10 +34,47 @@
   "method": "QA determinista declara tiempo, posiciones, invulnerabilidad, HP y sorteo/apariencia forzados. Usa salas, renderer, proyectiles, colisiones, poderes y retorno reales. Tres armas disparan 40 veces cada una con varias recargas. No acredita una victoria natural o balance.",
   "preservedHistoricalReceipt": "revisiones/REV-EST-0008/LOT-EST-005_VALIDACION-r1.json",
   "limits": [
-    "Aceptación humana y teléfono físico pendientes",
-    "Arte smg/shotgun legado provisional; propuestas ARMAS R2.2 no aceptadas por extensión",
-    "R3 integrado por autorización directa, revisión artística final pendiente",
-    "Sin sonido de diálogo aprobado; burbujas silenciosas",
-    "Balance y salas de ensayo; fusión, ultimate y servicios reales fuera del lote"
-  ]
+    "Aceptación humana y balance de ensayo pendientes",
+    "iPhone físico/Safari y rendimiento real pendientes",
+    "Este runtime conserva smg/shotgun legados provisionales; su nueva apariencia ya fue aceptada en ARMASR3 y el montaje se encargó en LOT-EST-006r1",
+    "Compañeras R3 integradas y comprobadas; aceptación artística final del nuevo montaje pendiente",
+    "Sonido característico NPC sin elegir; burbujas sin voz",
+    "Fusión, ultimate, economía y servicios reales conservan sus dependencias"
+  ],
+  "runtimeCommit": "92fc1fd7c2347aed7b585946328670944008b39c",
+  "publicationBundle": "adec3ec93c",
+  "publicVerification": {
+    "rooms": 10,
+    "femaleResolutionWeaponCombinations": 18,
+    "femalePartsFailureFallbackCases": 1,
+    "outcomeGroups": 14,
+    "loadingAndAliasCases": 7,
+    "coordinatorCases": 3,
+    "startPauseCases": 2,
+    "totalCasesOrGroups": 55,
+    "criticalFileMatches": 217,
+    "javascriptErrors": 0,
+    "unexpectedHttpFailures": 0,
+    "intentional404Cases": 1,
+    "slowAtlasCases": 1,
+    "timeoutAtlasCases": 1,
+    "physicalPhone": false
+  },
+  "allNodeVerified": {
+    "tests": 328,
+    "pass": 322,
+    "fail": 5,
+    "skipped": 1,
+    "files": 62,
+    "runner": "PROGRAMACION; entrega reanudada solo de auditoría, leída y contrastada por Juanillo",
+    "status": "FAIL_BACKEND_TOOLCHAIN_ONLY",
+    "failures": [
+      "not ok 104 - P05 real SQLite RPC: 20 concurrent identical commands have one effect and replay their receipt",
+      "not ok 105 - P05 real SQLite RPC: distinct commands at the same revision have exactly one winner",
+      "not ok 106 - P05 real SQLite RPC isolates account state and receipt IDs by UID",
+      "not ok 107 - P05 real SQLite RPC transfers a run and rejects writes from its former session",
+      "not ok 108 - P05 real SQLite state and original command receipts survive Miniflare restart"
+    ],
+    "cause": "P05 SQLite RPC: workerd instalado soporta hasta2026-08-06, proyecto requiere2026-10-17. Backend real sigue desactivado. La ejecución acotada concluyó; CORS se ejecutó aparte y pasó."
+  }
 }

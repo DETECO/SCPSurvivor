@@ -1,0 +1,30 @@
+{
+  "mode": "live",
+  "records": [
+    {
+      "url": "https://deteco.github.io/SCPSurvivor/",
+      "touchEmulated": false,
+      "clockAtPause": 0.4999333333333338,
+      "started": true,
+      "accountsEnabled": false,
+      "checkpoint": null,
+      "javascriptErrors": [],
+      "unexpectedNetwork": [],
+      "httpFailures": [],
+      "status": "PASS"
+    },
+    {
+      "url": "https://deteco.github.io/SCPSurvivor/?rapida=1",
+      "touchEmulated": true,
+      "clockAtPause": 270.35003333333344,
+      "started": true,
+      "accountsEnabled": false,
+      "checkpoint": null,
+      "javascriptErrors": [],
+      "unexpectedNetwork": [],
+      "httpFailures": [],
+      "status": "PASS"
+    }
+  ],
+  "limits": "Smoke test of menu, start, pause and account isolation; not balance, five-minute human play or physical mobile acceptance."
+}

@@ -1,5 +1,28 @@
 # Pauta de armas — sincronización del hilo ARMAS
 
+## Resumen vigente — 25/10/2026 · R3
+
+- **ARM-FALTANTES-VIS-001/r1: aceptada visualmente.** Incluye ARM-SMG-VIS-001/r1 (Subfusil/smg), ARM-SHOTGUN-VIS-001/r1 (Escopeta/shotgun) y ARM-BATON-VIS-001/r1 (Porra/baton), ocho direcciones en16/32:48 sprites. Fecha25/10/2026. Cita de Iván: «Aprobado. Ahora diseñas los poderes anomalos al matar una anomalia.» El referente es el lote entregado inmediatamente antes. [Registro exacto, recursos y dependencias](referencias/armas/armas-faltantes-v1/APROBACION_2026-10-25.md). Sustituye el estado de propuesta del corte R2.2; no aprueba anclas técnicas, animaciones completas ni integración.
+- **ARM-POD-BIO-001/r1: diez propuestas pendientes de elección.** Nuevo encargo directo: dos versiones por cada una de las cinco anomalías, animación y colores propios del monstruo, visor para iOS. [Diseño](referencias/armas/poderes-anomalos-v1/DISENO_PODERES.md) y [comparativa local](referencias/armas/poderes-anomalos-v1/dist/index.html). IDs POD-01-A/B a POD-05-A/B, cada uno r1. Ninguna elección se infiere del «Aprobado» anterior.
+
+Los poderes conservan adquisición por victoria y reclamación, máximo tres, activación automática y5+extra; A/B son alternativas de diseño y no dos premios por baja. Tiempos y parámetros nuevos son propuestas de ensayo. Las aprobaciones de PERSONAJES aportan apariencia/origen; no aprueban estos nuevos poderes.
+
+Dependencias visibles: ESTRUCTURA consolida las armas aceptadas y las futuras elecciones de poderes; PERSONAJES valida montaje y correspondencia; SONIDO aporta eventos; MENUS coordina recompensa y selección; PROGRAMACION integra y mantiene su evidencia en [REGISTRO_IMPLEMENTACION](gestion/REGISTRO_IMPLEMENTACION.md). No se modifican otras pautas ni código del juego. La publicación del visor se registra únicamente cuando exista confirmación del alojamiento.
+
+Historial íntegro previo: [pauta R2.2](referencias/armas/historial/PAUTA_ARMAS_R2.2_2026-10-24.md). Los estados antiguos bajo esta nota quedan conservados como antecedentes.
+
+## Propuesta de recursos faltantes — 24/10/2026 · R2.2
+
+Por petición directa de Iván, «Haz los sprite y modelos, de las armas faltantes», se produce **ARM-FALTANTES-VIS-001/r1**, con tres propuestas identificables: **ARM-SMG-VIS-001/r1** (Subfusil/smg), **ARM-SHOTGUN-VIS-001/r1** (Escopeta/shotgun) y **ARM-BATON-VIS-001/r1** (Porra/baton). [Lote para revisión](referencias/armas/armas-faltantes-v1/index.html) · [alcance](referencias/armas/armas-faltantes-v1/LEEME.md) · [recursos y anclas](referencias/armas/armas-faltantes-v1/catalogo.json).
+
+Entregadas 48 poses nativas: tres modelos, ocho direcciones y16/32. **Son propuestas nuevas pendientes de aceptación; la petición de producirlas no aprueba sus resultados.** No hay cita de aprobación de este lote. Cada modelo mantiene su identidad legada; no se reasigna AF02, no se añade otra arma ni se crean estadísticas/tiers/recetas.
+
+Dependencias: Iván revisa y elige la revisión visual; PERSONAJES valida compatibilidad del rig; PROGRAMACION calibra agarres/salidas y completa animaciones/montaje, manteniendo su evidencia en [REGISTRO_IMPLEMENTACION](gestion/REGISTRO_IMPLEMENTACION.md). Las anclas son estimadas y el lote no acredita combate. ESTRUCTURA debe conocer la nueva propuesta como dependencia de INC-VIS-001, sin declarar resuelta la incidencia ni ampliar EST-ARM-001 r1.
+
+**Resumen de recurso vigente:** ya existe una propuesta de sprite del Subfusil; sigue sin existir una aceptación específica de ese arte. ARM-SMG-REC-001 r1 se conserva como auditoría del corte anterior a esta generación. No se modifican sus hallazgos originales ni se presentan como ausencia actual de toda propuesta.
+
+Historial: [pauta R2.1 previa a esta entrega](referencias/armas/historial/PAUTA_ARMAS_R2.1_2026-10-24.md). Originales aprobados y reglas consolidadas conservados. No se modificó código del juego ni se enviaron mensajes a otros hilos.
+
 ## Actualización acotada de recurso — 24/10/2026 · R2.1
 
 **ARM-SMG-REC-001 r1:** no se encontró sprite aprobado recuperable del Subfusil legado (`smg`) en las fuentes auditadas. Se conserva su identidad; FR07 y AF02 no son sustitutos autorizados. [Ficha y mínimo recurso pendiente](referencias/armas/inc-vis-001/ARM-SMG-REC-001-r1.md) · [Evidencia del corte](referencias/armas/inc-vis-001/ARM-SMG-REC-001-r1.json). ARM-SMG-VIS-001 r1 identifica el recurso de reemplazo por producir y presentar, sin arte nuevo aprobado.

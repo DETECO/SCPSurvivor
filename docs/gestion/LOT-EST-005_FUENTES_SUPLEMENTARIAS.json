@@ -6,50 +6,77 @@
     {
       "path": "docs/gestion/entregas/PERSONAJES-GRIETAS-001.md",
       "sha256": "453c5e95498b2ec8ad88cdcf824221e6e5434db53ce4de0b1e5f41de335af297",
-      "treatment": "Read; contracts/provenance incorporated, no change to approved probabilities."
+      "treatment": "Read; contracts/provenance incorporated, no change to approved probabilities.",
+      "receivedSnapshot": "docs/gestion/revisiones/REV-EST-0008/recibidas/docs/gestion/entregas/PERSONAJES-GRIETAS-001.md",
+      "receivedReadback": "matched"
     },
     {
       "path": "docs/gestion/entregas/PERSONAJES-GRIETAS-001-verificacion.json",
       "sha256": "42b0ba30f055527459755ff4b92dd1b95a0fc475481f17705535315a79b23ed1",
-      "treatment": "Read; contracts/provenance incorporated, no change to approved probabilities."
+      "treatment": "Read; contracts/provenance incorporated, no change to approved probabilities.",
+      "receivedSnapshot": "docs/gestion/revisiones/REV-EST-0008/recibidas/docs/gestion/entregas/PERSONAJES-GRIETAS-001-verificacion.json",
+      "receivedReadback": "matched"
     },
     {
       "path": "docs/gestion/entregas/SONIDO-GRIETAS-001.md",
       "sha256": "3dcfac062f40ed250a4c3a1ac188d9ee7b94f3d5e01a0afe91f59a8724488022",
-      "treatment": "Read; contracts/provenance incorporated, no change to approved probabilities."
+      "treatment": "Read; contracts/provenance incorporated, no change to approved probabilities.",
+      "receivedSnapshot": "docs/gestion/revisiones/REV-EST-0008/recibidas/docs/gestion/entregas/SONIDO-GRIETAS-001.md",
+      "receivedReadback": "matched"
     },
     {
       "path": "docs/PAUTA_ARMAS.md",
       "sha256": "55078797daf88ac78f05a05154e00578d18dc584427e64841a6b046c71a6144e",
-      "treatment": "Read; yellow support rig and approved BIO only. New ARMAS R2.2 proposals are not integrated/published in this payload."
+      "treatment": "Read; yellow support rig and approved BIO only. New ARMAS R2.2 proposals are not integrated/published in this payload.",
+      "receivedSnapshot": "docs/gestion/revisiones/REV-EST-0008/recibidas/docs/PAUTA_ARMAS.md",
+      "receivedReadback": "matched"
     },
     {
       "path": "docs/gestion/entregas/NIVELES-GRIETAS-001.md",
       "sha256": "21b61aa71f7b9bae6bb1f31e6ea7cd1928bd29345a78b32311757c46e7c9226a",
-      "treatment": "Arrived after first implementation cut. Adopted identity/anchors, origin freeze before AI, resource/escape and six independent styles contracts. Numeric48x36/.70s/120s/near-player escape are explicit recommendations; retain previously versioned/programmatically verified28x20/.50s/90s/central escape for this ENSAYO-GRI-001r1 cut, not silently replace them. Detailed absorption/return art and60style matrix remain visual validation work."
+      "treatment": "Arrived after first implementation cut. Adopted identity/anchors, origin freeze before AI, resource/escape and six independent styles contracts. Numeric48x36/.70s/120s/near-player escape are explicit recommendations; retain previously versioned/programmatically verified28x20/.50s/90s/central escape for this ENSAYO-GRI-001r1 cut, not silently replace them. Detailed absorption/return art and60style matrix remain visual validation work.",
+      "receivedSnapshot": "docs/gestion/revisiones/REV-EST-0008/recibidas/docs/gestion/entregas/NIVELES-GRIETAS-001.md",
+      "receivedReadback": "matched"
     },
     {
       "path": "docs/gestion/entregas/MENUS-GRIETAS-001.md",
       "sha256": "460fb983c5f58bb021a8fa2a5a9701115023f2e59b8bafb4e8cc75e4cd0c1192",
-      "treatment": "Read. Existing compact HUD/paused fourth-power panel and priority/clamping of bubbles retained. No MEN-005 design selected."
+      "treatment": "Read. Existing compact HUD/paused fourth-power panel and priority/clamping of bubbles retained. No MEN-005 design selected.",
+      "receivedSnapshot": "docs/gestion/revisiones/REV-EST-0008/recibidas/docs/gestion/entregas/MENUS-GRIETAS-001.md",
+      "receivedReadback": "matched"
     },
     {
       "path": "docs/gestion/lotes/LOT-EST-005-r2.md",
       "sha256": "2131bc4feecb59667b22d89f8b6b9b773690e499c8c7045f80462ca76bff6f3e",
-      "treatment": "Direct authorized EST-NPC-001r1: supersedes fixed AF01/finite reserve only; preserve prior rift contracts."
+      "treatment": "Direct authorized EST-NPC-001r1: supersedes fixed AF01/finite reserve only; preserve prior rift contracts.",
+      "receivedSnapshot": "docs/gestion/revisiones/REV-EST-0008/recibidas/docs/gestion/lotes/LOT-EST-005-r2.md",
+      "receivedReadback": "matched"
     },
     {
       "path": "docs/gestion/entregas/PERSONAJES-COMPANERAS-003.md",
       "sha256": "2c8aeec8e2fded7f27b9ed53ead0e6264b880c61228c7c1a289c2113db0bb2ac",
-      "treatment": "Direct implementation request: preserve three R3 female modular rigs and two resolutions; retest with new unlimited/random weapons. Prior finite-ammo test counts are historical."
+      "treatment": "Direct implementation request: preserve three R3 female modular rigs and two resolutions; retest with new unlimited/random weapons. Prior finite-ammo test counts are historical.",
+      "receivedReadback": "earlier_hash_not_recovered_current_file_rechecked",
+      "currentObservedSha256": "cca5d3f285cf687d9ed29f1dbfd6a3eaf55faf469c431a0bbfc0624405ad4ad1",
+      "coverageNote": "Se conserva el hash declarado anterior, sin fingir una copia exacta. Se releyó la entrega actual; R3 y sus recursos se comprobaron de nuevo en navegador."
     },
     {
       "path": "docs/gestion/entregas/PERSONAJES-GRIETAS-002.md",
       "sha256": "871eda72ade80c0700a1ae20b34495d3a5bae16def093ec65440294cdb6367a7",
-      "treatment": "Read raster repair delivery; R3 supersedes prior female rig blocker, not all final art acceptance."
+      "treatment": "Read raster repair delivery; R3 supersedes prior female rig blocker, not all final art acceptance.",
+      "receivedSnapshot": "docs/gestion/revisiones/REV-EST-0008/recibidas/docs/gestion/entregas/PERSONAJES-GRIETAS-002.md",
+      "receivedReadback": "matched"
     }
   ],
   "powerProfileRevision": "ENSAYO-POD-001 r2 supersedes generic MAX and cross-anomaly pool; original lot unchanged.",
   "currentRevision": "REV-EST-0008",
-  "control": "0.9"
+  "control": "0.10",
+  "latestApproval": {
+    "area": "ARMAS",
+    "revision": "R3",
+    "decision": "ARM-FALTANTES-VIS-001/r1",
+    "userMessageId": "01a1730a-66c3-70f2-815b-b958e20083d4",
+    "approvalPath": "docs/referencias/armas/armas-faltantes-v1/APROBACION_2026-10-25.md",
+    "treatment": "Apariencia aceptada, montaje técnico encargado en LOT-EST-006r1; no aplicado al runtime92fc1fd. PoderesA/B siguen como propuestas."
+  }
 }
