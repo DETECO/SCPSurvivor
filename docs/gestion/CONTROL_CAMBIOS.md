@@ -1,6 +1,8 @@
 # Control de cambios — ESTRUCTURA
 
-Revisión de control **0.10** · 25/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+Revisión de control **0.11** · 25/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+
+**REV-EST-0009 / LOT006r1:**montaje de48sprites aceptados ARMASR3 conciliado localmente;279pruebas de juego y352montajesPASS. [Cobertura real](REV-EST-0009_ARMAS.md) · [informe](informes/LOT-EST-006-juanillo.md). Comprobación pública en curso; poderesA/B sin elección.
 
 Entrada maestra: [PAUTA_DESARROLLO.md](../../PAUTA_DESARROLLO.md).
 
@@ -169,7 +171,7 @@ Las fuentes leídas parcialmente no reciben un estado de «aprobación verificad
 
 ### LOT-EST-006 r1 — Armas faltantes aceptadas en ARMASR3
 
-**Encargado para montaje técnico local a PROGRAMACION**, gpt-6.1-sol/alto. Se leyeron el resumen ARMASR3, aprobación y catálogo, más los tres turnos recientes para comprobar el referente de «Aprobado», mensaje `01a1730a-66c3-70f2-815b-b958e20083d4`. Apariencia de48sprites smg/shotgun/baton aceptada; calibración/renderer/poses y publicación pendientes. [Lote y pruebas](lotes/LOT-EST-006-r1.md). No incorpora las diez propuestas de poderesA/B ni modifica estadísticas. El runtime LOT005r2 todavía usa dibujos legados para smg/shotgun.
+**Implementado y conciliado localmente; publicación en comprobación**, por PROGRAMACION gpt-6.1-sol/alto y Juanillo. Se leyeron el resumen ARMASR3, aprobación y catálogo, más los tres turnos recientes para comprobar el referente de «Aprobado», mensaje `01a1730a-66c3-70f2-815b-b958e20083d4`. Apariencia de48sprites smg/shotgun/baton aceptada; calibración/renderer/poses y publicación pendientes. [Lote y pruebas](lotes/LOT-EST-006-r1.md). No incorpora las diez propuestas de poderesA/B ni modifica estadísticas. El runtime LOT005r2 todavía usa dibujos legados para smg/shotgun.
 
 ### LOT-EST-005 r2 — Compañero con arma aleatoria y reserva infinita
 

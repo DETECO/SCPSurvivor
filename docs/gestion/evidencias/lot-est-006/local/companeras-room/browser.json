@@ -1,0 +1,555 @@
+{
+  "status": "PASS",
+  "publicDeployment": false,
+  "records": [
+    {
+      "model": "delgada",
+      "mode": "16",
+      "gun": "pistol",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "characterId": "apoyo_delgada",
+      "behavior": {
+        "model": "pistol",
+        "moved": true,
+        "ammo": 11,
+        "reserveInfinite": true,
+        "capacity": 12,
+        "shots": 8,
+        "damage": 999040,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          113,
+          115,
+          14,
+          11
+        ]
+      ]
+    },
+    {
+      "model": "delgada",
+      "mode": "16",
+      "gun": "smg",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "characterId": "apoyo_delgada",
+      "behavior": {
+        "model": "smg",
+        "moved": true,
+        "ammo": 23,
+        "reserveInfinite": true,
+        "capacity": 24,
+        "shots": 8,
+        "damage": 999024,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          113,
+          115,
+          14,
+          11
+        ]
+      ]
+    },
+    {
+      "model": "delgada",
+      "mode": "16",
+      "gun": "shotgun",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "characterId": "apoyo_delgada",
+      "behavior": {
+        "model": "shotgun",
+        "moved": true,
+        "ammo": 5,
+        "reserveInfinite": true,
+        "capacity": 6,
+        "shots": 8,
+        "damage": 999144,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          113,
+          115,
+          14,
+          11
+        ]
+      ]
+    },
+    {
+      "model": "fitness",
+      "mode": "16",
+      "gun": "pistol",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "characterId": "apoyo_fitness",
+      "behavior": {
+        "model": "pistol",
+        "moved": true,
+        "ammo": 11,
+        "reserveInfinite": true,
+        "capacity": 12,
+        "shots": 8,
+        "damage": 999040,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          113,
+          115,
+          14,
+          11
+        ]
+      ]
+    },
+    {
+      "model": "fitness",
+      "mode": "16",
+      "gun": "smg",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "characterId": "apoyo_fitness",
+      "behavior": {
+        "model": "smg",
+        "moved": true,
+        "ammo": 23,
+        "reserveInfinite": true,
+        "capacity": 24,
+        "shots": 8,
+        "damage": 999024,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          113,
+          115,
+          14,
+          11
+        ]
+      ]
+    },
+    {
+      "model": "fitness",
+      "mode": "16",
+      "gun": "shotgun",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "characterId": "apoyo_fitness",
+      "behavior": {
+        "model": "shotgun",
+        "moved": true,
+        "ammo": 5,
+        "reserveInfinite": true,
+        "capacity": 6,
+        "shots": 8,
+        "damage": 999144,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          113,
+          115,
+          14,
+          11
+        ]
+      ]
+    },
+    {
+      "model": "curvy",
+      "mode": "16",
+      "gun": "pistol",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "characterId": "apoyo_curvy",
+      "behavior": {
+        "model": "pistol",
+        "moved": true,
+        "ammo": 11,
+        "reserveInfinite": true,
+        "capacity": 12,
+        "shots": 8,
+        "damage": 999040,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          113,
+          114,
+          14,
+          12
+        ]
+      ]
+    },
+    {
+      "model": "curvy",
+      "mode": "16",
+      "gun": "smg",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "characterId": "apoyo_curvy",
+      "behavior": {
+        "model": "smg",
+        "moved": true,
+        "ammo": 23,
+        "reserveInfinite": true,
+        "capacity": 24,
+        "shots": 8,
+        "damage": 999024,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          113,
+          114,
+          14,
+          12
+        ]
+      ]
+    },
+    {
+      "model": "curvy",
+      "mode": "16",
+      "gun": "shotgun",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "characterId": "apoyo_curvy",
+      "behavior": {
+        "model": "shotgun",
+        "moved": true,
+        "ammo": 5,
+        "reserveInfinite": true,
+        "capacity": 6,
+        "shots": 8,
+        "damage": 999144,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          113,
+          114,
+          14,
+          12
+        ]
+      ]
+    },
+    {
+      "model": "delgada",
+      "mode": "32",
+      "gun": "pistol",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "characterId": "apoyo_delgada",
+      "behavior": {
+        "model": "pistol",
+        "moved": true,
+        "ammo": 11,
+        "reserveInfinite": true,
+        "capacity": 12,
+        "shots": 8,
+        "damage": 999040,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          225,
+          229,
+          30,
+          23
+        ]
+      ]
+    },
+    {
+      "model": "delgada",
+      "mode": "32",
+      "gun": "smg",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "characterId": "apoyo_delgada",
+      "behavior": {
+        "model": "smg",
+        "moved": true,
+        "ammo": 23,
+        "reserveInfinite": true,
+        "capacity": 24,
+        "shots": 8,
+        "damage": 999024,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          225,
+          229,
+          30,
+          23
+        ]
+      ]
+    },
+    {
+      "model": "delgada",
+      "mode": "32",
+      "gun": "shotgun",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "characterId": "apoyo_delgada",
+      "behavior": {
+        "model": "shotgun",
+        "moved": true,
+        "ammo": 5,
+        "reserveInfinite": true,
+        "capacity": 6,
+        "shots": 8,
+        "damage": 999144,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          225,
+          229,
+          30,
+          23
+        ]
+      ]
+    },
+    {
+      "model": "fitness",
+      "mode": "32",
+      "gun": "pistol",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "characterId": "apoyo_fitness",
+      "behavior": {
+        "model": "pistol",
+        "moved": true,
+        "ammo": 11,
+        "reserveInfinite": true,
+        "capacity": 12,
+        "shots": 8,
+        "damage": 999040,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          225,
+          228,
+          30,
+          24
+        ]
+      ]
+    },
+    {
+      "model": "fitness",
+      "mode": "32",
+      "gun": "smg",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "characterId": "apoyo_fitness",
+      "behavior": {
+        "model": "smg",
+        "moved": true,
+        "ammo": 23,
+        "reserveInfinite": true,
+        "capacity": 24,
+        "shots": 8,
+        "damage": 999024,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          225,
+          228,
+          30,
+          24
+        ]
+      ]
+    },
+    {
+      "model": "fitness",
+      "mode": "32",
+      "gun": "shotgun",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "characterId": "apoyo_fitness",
+      "behavior": {
+        "model": "shotgun",
+        "moved": true,
+        "ammo": 5,
+        "reserveInfinite": true,
+        "capacity": 6,
+        "shots": 8,
+        "damage": 999144,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          225,
+          228,
+          30,
+          24
+        ]
+      ]
+    },
+    {
+      "model": "curvy",
+      "mode": "32",
+      "gun": "pistol",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "characterId": "apoyo_curvy",
+      "behavior": {
+        "model": "pistol",
+        "moved": true,
+        "ammo": 11,
+        "reserveInfinite": true,
+        "capacity": 12,
+        "shots": 8,
+        "damage": 999040,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          225,
+          227,
+          30,
+          26
+        ]
+      ]
+    },
+    {
+      "model": "curvy",
+      "mode": "32",
+      "gun": "smg",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "characterId": "apoyo_curvy",
+      "behavior": {
+        "model": "smg",
+        "moved": true,
+        "ammo": 23,
+        "reserveInfinite": true,
+        "capacity": 24,
+        "shots": 8,
+        "damage": 999024,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          225,
+          227,
+          30,
+          26
+        ]
+      ]
+    },
+    {
+      "model": "curvy",
+      "mode": "32",
+      "gun": "shotgun",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "characterId": "apoyo_curvy",
+      "behavior": {
+        "model": "shotgun",
+        "moved": true,
+        "ammo": 5,
+        "reserveInfinite": true,
+        "capacity": 6,
+        "shots": 8,
+        "damage": 999144,
+        "name": "Valeria",
+        "personality": "SARC"
+      },
+      "incapacitated": true,
+      "nativeDownParts": [
+        [
+          225,
+          227,
+          30,
+          26
+        ]
+      ]
+    },
+    {
+      "partsFailureFallback": {
+        "drawn": true,
+        "sources": [
+          "http://127.0.0.1:58353/assets/companeras-contencion-r3/32/apoyo_curvy/Idle.png"
+        ]
+      }
+    }
+  ],
+  "scope": "Actual game index, eighteen appearance/resolution/weapon room cases; forced QA appearance, model draw, positions, magazine reset for eight aim captures, damage; not natural spawn statistics or physical mobile hardware."
+}

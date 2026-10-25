@@ -1,0 +1,236 @@
+--- antes/dev.html
++++ despues/dev.html
+@@ -145,6 +145,7 @@
+ <script defer src="js/data/trial-visuals.js"></script>
+ <script defer src="js/ui/personajes-art.js"></script>
+ <script defer src="js/ui/af01-approved-art.js"></script>
++<script defer src="js/ui/approved-field-weapon-art.js"></script>
+ <script defer src="js/ui/trial-weapon-art.js"></script>
+ <script defer src="js/ui/field-loadout.js"></script>
+ <script defer src="js/systems/dimensional-rifts.js"></script>
+--- antes/js/main.js
++++ despues/js/main.js
+@@ -1,7 +1,7 @@
+ /* Arranque local P01. La aplicación completa sigue pendiente de sus fases. */
+ (() => {
+   const NEED = ['U', 'Settings', 'Input', 'Touch', 'Sprites', 'Camera', 'Tiles', 'World',
+-                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'DimensionalRifts', 'InventoryModel', 'InventoryTrial', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'WeaponTerminal', 'ExpandedPractice', 'ExpandedUI', 'FieldRadar', 'CharacterCatalog', 'PersonajesArt', 'AF01ApprovedArt', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI','SceneR7','SceneM01A','RiftDirector','WeaponRevisionR1','WeaponRevisionTrial','OperationsMenu','RiftVisuals'];
++                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'DimensionalRifts', 'InventoryModel', 'InventoryTrial', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'WeaponTerminal', 'ExpandedPractice', 'ExpandedUI', 'FieldRadar', 'CharacterCatalog', 'PersonajesArt', 'AF01ApprovedArt', 'ApprovedFieldWeaponArt', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI','SceneR7','SceneM01A','RiftDirector','WeaponRevisionR1','WeaponRevisionTrial','OperationsMenu','RiftVisuals'];
+   async function boot() {
+     const miss = NEED.filter(k => !window.G || !G[k]);
+     if (miss.length) {
+@@ -17,6 +17,7 @@
+       G.Content.install(); G.TrialVisuals.install();
+       if(G.MapTrial?.expanded||G.MapTrial?.rewardRiftPractice)await G.SceneR7.preload();
+       await G.AF01ApprovedArt.preload();
++      G.ApprovedFieldWeaponArt.preload();
+       G.Game.init({ technical: true }); G.TechnicalUI.init(); G.InventoryTrial.init(); G.AccountUI.init(); G.TrialVisuals.initUI(); G.OperationsMenu.init();
+     } catch (e) { G.TechnicalUI.fail(e); }
+   }
+--- antes/js/ui/personajes-art.js
++++ despues/js/ui/personajes-art.js
+@@ -44,24 +44,27 @@
+  function bone(ctx,img,b,a,c,width){source(ctx,img,b,(a.x+c.x)/2,(a.y+c.y)/2,Math.hypot(c.x-a.x,c.y-a.y),width,Math.atan2(c.y-a.y,c.x-a.x));}
+  function limb(ctx,a,img,shoulder,hand,side,angle){
+   const dx=hand.x-shoulder.x,dy=hand.y-shoulder.y,d=Math.hypot(dx,dy)||1,k=Math.min(a.n*.1,d*.3),e={x:(shoulder.x+hand.x)/2-dy/d*k*side,y:(shoulder.y+hand.y)/2+dx/d*k*side};
+-  bone(ctx,img,a.cat.parts[48],shoulder,e,Math.max(2,Math.round(a.n*(a.cat.rig?.armWidth??.1))));bone(ctx,img,a.cat.parts[49],e,hand,Math.max(2,Math.round(a.n*(a.cat.rig?.armWidth??.08))));source(ctx,img,a.cat.parts[53],hand.x,hand.y,Math.max(2,Math.round(a.n*.1)),Math.max(2,Math.round(a.n*.1)),angle);
++  bone(ctx,img,a.cat.parts[48],shoulder,e,Math.max(2,Math.round(a.n*(a.cat.rig?.armWidth??.1))));bone(ctx,img,a.cat.parts[49],e,hand,Math.max(2,Math.round(a.n*(a.cat.rig?.armWidth??.08))));
+  }
+  function aimFor(pl,w){const t=w._aimTarget;return t&&!t.dead&&t.hp>0&&Number.isFinite(t.x)&&Number.isFinite(t.y)?Math.atan2(t.y-pl.y,t.x-pl.x):Number.isFinite(pl.weaponAim)?pl.weaponAim:Number.isFinite(pl.aim)?pl.aim:0;}
+  function armed(ctx,a,p,img,w,angle,index,count){
+   const n=a.n,wa=angle+(w.model==='baton'&&w.flash>0?-.7+(1-Math.min(1,w.flash/.12))*1.4:0),ca=Math.cos(wa),sa=Math.sin(wa),side=count===2?(index===0?1:-1):0;
+-  const pivot={x:p.origin.x+ca*n*.18-sa*side*n*.09,y:p.origin.y+sa*n*.18+ca*side*n*.09};
+-  const hand=(x,y)=>({x:pivot.x+ca*x-sa*y,y:pivot.y+sa*x+ca*y}),hands=[hand(0,n*.07),hand((w.model==='shotgun'?13:w.model==='smg'?7:1)*n/32,n*.08)];
+-  const approved=w.model==='pistol'?G.AF01ApprovedArt?.mount(String(n),angle,hands[0]):null;
+-  if(approved)hands[1]=approved.support;
++  const native=w.model!=='pistol',recoil=native&&w.model!=='baton'?n*.035*Math.min(1,(w.flash||0)/.09):0,lower=native&&w.reload>0?n*.025:0;
++  const pivot={x:p.origin.x+ca*(n*.18-recoil)-sa*side*n*.09,y:p.origin.y+sa*(n*.18-recoil)+ca*side*n*.09+lower};
++  const legacyScale=native?.75:1,hand=(x,y)=>({x:pivot.x+ca*x-sa*y,y:pivot.y+sa*x+ca*y}),hands=[hand(0,n*.07),hand((w.model==='shotgun'?13:w.model==='smg'?7:1)*n/32*legacyScale,n*.08)];
++  const approved=w.model==='pistol'?G.AF01ApprovedArt?.mount(String(n),angle,hands[0]):G.ApprovedFieldWeaponArt?.mount(w.model,String(n),wa,hands[0]);
++  if(approved?.support)hands[1]=approved.support;
+   const nx=-Math.sin(p.aim),ny=Math.cos(p.aim),half=a.cat.rig?.shoulderHalf??.18,shoulders=[{x:n/2+nx*n*half,y:p.shoulderY+ny*n*.08},{x:n/2-nx*n*half,y:p.shoulderY-ny*n*.08}];
+-  const limbs=count===2?[index]:[1,0];for(const i of limbs)limb(ctx,a,img,shoulders[i],hands[count===2?0:i],i?-1:1,wa);
+-  if(approved)G.AF01ApprovedArt.draw(ctx,approved,w.flash);
++  if(w.model==='baton'&&count===1)hands[1]={x:shoulders[1].x,y:p.top+p.torso.h+n*.12};
++  const paintHand=h=>source(ctx,img,a.cat.parts[53],h.x,h.y,Math.max(2,Math.round(n*.1)),Math.max(2,Math.round(n*.1)),wa);
++  const limbs=count===2?[index]:[1,0];for(const i of limbs){limb(ctx,a,img,shoulders[i],hands[count===2?0:i],i?-1:1,wa);if(i===1&&count===1)paintHand(hands[1]);}
++  if(approved)(w.model==='pistol'?G.AF01ApprovedArt:G.ApprovedFieldWeaponArt).draw(ctx,approved,w.flash);
+   else{
+-   ctx.save();ctx.translate(pivot.x,pivot.y);ctx.rotate(wa);weapon(ctx,w.model,n);
+-   if(w.model!=='baton'&&w.flash>0){ctx.fillStyle='#fff0b1';const muzzle=({pistol:13,smg:18,shotgun:27}[w.model])*n/32;ctx.fillRect(muzzle,-n*.04,n*.13,n*.08);}
++   ctx.save();ctx.translate(pivot.x,pivot.y);ctx.rotate(wa);weapon(ctx,w.model,n*legacyScale);
++   if(w.model!=='baton'&&w.flash>0){ctx.fillStyle='#fff0b1';const muzzle=({pistol:13,smg:18,shotgun:27}[w.model])*n/32*legacyScale;ctx.fillRect(muzzle,-n*.04,n*.13,n*.08);}
+    ctx.restore();
+   }
+-  source(ctx,img,a.cat.parts[53],hands[0].x,hands[0].y,Math.max(2,Math.round(n*.1)),Math.max(2,Math.round(n*.1)),wa);
++  paintHand(hands[0]);
+  }
+  function drawWeapons(ctx,pl,options={},weapons=[]){
+   if(!enabled()||!pl||pl.dead)return false;const a=asset(G.SPRITE_META[pl.anim?.dex]?.characterId);if(!a?.ready)return false;
+@@ -73,17 +76,17 @@
+  function drawAlly(ctx,ally){
+   if(!enabled()||!ally?.anim)return false;const a=asset(ally.characterId||'apoyo');if(!a)return false;
+   if(!a.ready){const img=ally.incapacitated?a.down:a.fallback,ready=ally.incapacitated?a.downReady:a.fallbackReady;if(!ready)return false;const dir=G.Sprites.dirFromAngle(ally.aim||0),n=a.n;at(ctx,a,ally.anim,ally.x,ally.y,{},()=>ctx.drawImage(img,ally.incapacitated?n:0,dir*n,n,n,0,0,n,n));return true;}
+-  if(ally.incapacitated&&a.cat.rig){const b=a.cat.parts[56+G.Sprites.dirFromAngle(ally.aim||0)];at(ctx,a,ally.anim,ally.x,ally.y,{},img=>source(ctx,img,b,a.n/2,a.n-1-b.h/2));return true;}
+-  const actor={aim:ally.aim,walking:ally.anim.cur==='Walk',moveAngle:Math.atan2(ally.ty-ally.y,ally.tx-ally.x)},p=pose(a,actor,ally.anim),w={model:ally.weapon?.model||'pistol',flash:ally.flash};
++  if(ally.incapacitated){const b=a.cat.parts[56+G.Sprites.dirFromAngle(ally.aim||0)];at(ctx,a,ally.anim,ally.x,ally.y,{},img=>source(ctx,img,b,a.n/2,a.n-1-b.h/2));return true;}
++  const actor={aim:ally.aim,walking:ally.anim.cur==='Walk',moveAngle:Math.atan2(ally.ty-ally.y,ally.tx-ally.x)},p=pose(a,actor,ally.anim),w={model:ally.weapon?.model||'pistol',flash:ally.flash,reload:ally.reload};
+   at(ctx,a,ally.anim,ally.x,ally.y,{},img=>{if(Math.sin(p.aim)<0)armed(ctx,a,p,img,w,p.aim,0,1);body(ctx,a,p,img);if(Math.sin(p.aim)>=0)armed(ctx,a,p,img,w,p.aim,0,1);});return true;
+  }
+  function status(){
+   const player=G.Game?.player,copies=player?.fieldWeapons||[],names={smg:'Subfusil',shotgun:'Escopeta',baton:'Porra'};
+   const npc=G.RiftCompanion?.state;
+-  const missingModels=enabled()?[...new Set([...copies.map(w=>w.model),...(npc&&!npc.incapacitated?[npc.weapon.model]:[])].filter(id=>names[id]))]:[];
++  const missingModels=enabled()?[...new Set([...copies.map(w=>w.model),...(npc&&!npc.incapacitated?[npc.weapon.model]:[])].filter(id=>names[id]&&G.ApprovedFieldWeaponArt?.inspect(id,G.TrialVisuals.mode).loaded!==8))]:[];
+   const approvedPistolReady=G.AF01ApprovedArt?.inspect().loaded===16;
+   const messages=[];
+-  if(missingModels.length)messages.push('Arte provisional: '+missingModels.map(id=>names[id]).join(', ')+'.');
++  if(missingModels.length)messages.push('Recurso en carga o no disponible: '+missingModels.map(id=>names[id]).join(', ')+'. Respaldo temporal.');
+   if(enabled()&&copies.some(w=>w.model==='pistol')&&!approvedPistolReady)messages.push('Recurso AF01 no disponible; dibujo provisional.');
+   if(enabled()&&player&&!asset(G.SPRITE_META[player.anim?.dex]?.characterId)?.ready)messages.push('Piezas del personaje no disponibles; dibujo de respaldo.');
+   return{message:messages.join(' '),missingModels,approvedPistolReady};
+--- /dev/null
++++ despues/js/ui/approved-field-weapon-art.js
+@@ -0,0 +1,59 @@
++/* ARM-FALTANTES-VIS-001/r1 accepted25/10. Render-only mount calibration LOT-EST-006r1. */
++G.ApprovedFieldWeaponArt=(()=>{
++ 'use strict';
++ const base='docs/referencias/armas/armas-faltantes-v1/',directions=['E','SE','S','SW','W','NW','N','NE'];
++ const models=['smg','shotgun','baton'],cache=new Map(),scale=.75;let loading=null,catalogFailed=false,retryAt=0,error=null;
++ const active=()=>G.TrialVisuals?.enabled===true&&['16','32'].includes(G.TrialVisuals.mode);
++ const finite=p=>p&&Number.isFinite(p.x)&&Number.isFinite(p.y),point=(p,n)=>finite(p)&&p.x>=0&&p.y>=0&&p.x<n&&p.y<n;
++ function requestImage(entry){
++  const attempt=++entry.attempt;entry.failed=false;const img=new Image();
++  return new Promise(resolve=>{
++   let settled=false;const finish=ok=>{if(!settled){settled=true;clearTimeout(timer);resolve(ok);}};
++   const fail=()=>{if(entry.attempt===attempt){entry.failed=true;entry.retryAt=Date.now()+10000;}finish(false);};
++   const timer=setTimeout(fail,6000);
++   img.onload=()=>{if(img.naturalWidth!==entry.n||img.naturalHeight!==entry.n){fail();return;}if(entry.attempt===attempt){entry.image=img;entry.ready=true;entry.failed=false;}finish(true);};
++   img.onerror=fail;img.src=entry.url;
++  });
++ }
++ function preload(){
++  if(!active())return Promise.resolve(false);
++  if(loading&&(!catalogFailed||Date.now()<retryAt))return loading;
++  catalogFailed=false;
++  loading=new Promise(resolve=>{
++   // This promise is never awaited by boot. Late successful requests can still recover the cache.
++   const timer=setTimeout(()=>resolve(false),6000);
++   (async()=>{
++    try{
++     const response=await fetch(base+'catalogo.json');if(!response.ok)throw Error('Weapon catalog unavailable');const catalog=await response.json(),entries=[];
++     for(const mode of ['16','32'])for(const model of models){
++      const cat=catalog.modes?.[mode]?.[model],n=Number(mode);if(cat?.approved!==true||cat.frames?.length!==8||cat.individuals?.length!==8)throw Error('Weapon catalog incomplete');
++      cat.frames.forEach((frame,i)=>{const path=`${mode}/${model}/${directions[i]}.png`;
++       if(frame.direction!==directions[i]||cat.individuals[i]!==path||!point(frame.grip,n)||(model==='baton'?!point(frame.strikeTip,n):!point(frame.support,n)||!point(frame.muzzle,n)))throw Error('Weapon anchors incomplete');
++       entries.push({model,mode,n,direction:frame.direction,grip:{...frame.grip},support:frame.support?{...frame.support}:null,muzzle:frame.muzzle?{...frame.muzzle}:null,tip:frame.strikeTip?{...frame.strikeTip}:null,url:base+path,ready:false,failed:false,attempt:0,retryAt:0});
++      });
++     }
++     const jobs=entries.map(entry=>{cache.set(entry.mode+'/'+entry.model+'/'+entry.direction,entry);return requestImage(entry);});await Promise.all(jobs);error=[...cache.values()].every(e=>e.ready)?null:'Weapon images unavailable';resolve(!error);
++    }catch(e){catalogFailed=true;retryAt=Date.now()+10000;error=e.message;resolve(false);}finally{clearTimeout(timer);}
++   })();
++  });return loading;
++ }
++ function mount(model,mode,angle,grip){
++  if(!active()||!models.includes(model)||!['16','32'].includes(String(mode))||!finite(grip))return null;
++  if(!loading||(catalogFailed&&Date.now()>=retryAt))preload();
++  const aim=Number.isFinite(angle)?angle:0,index=((Math.round(aim/(Math.PI/4))%8)+8)%8,entry=cache.get(String(mode)+'/'+model+'/'+directions[index]);
++  if(!entry)return null;if(!entry.ready){if(entry.failed&&Date.now()>=entry.retryAt)requestImage(entry);return null;}
++  const x=grip.x-entry.grip.x*scale,y=grip.y-entry.grip.y*scale;
++  // Preserve the existing smooth melee swing with only the residual angle of its nearest PNG view.
++  const rotation=model==='baton'?Math.atan2(Math.sin(aim-index*Math.PI/4),Math.cos(aim-index*Math.PI/4)):0,ca=Math.cos(rotation),sa=Math.sin(rotation);
++  const transform=p=>p?{x:grip.x+((p.x-entry.grip.x)*ca-(p.y-entry.grip.y)*sa)*scale,y:grip.y+((p.x-entry.grip.x)*sa+(p.y-entry.grip.y)*ca)*scale}:null;
++  return{image:entry.image,x,y,width:entry.n*scale,height:entry.n*scale,scale,rotation,grip:{...grip},support:transform(entry.support),muzzle:transform(entry.muzzle),tip:transform(entry.tip),direction:entry.direction,model,aim};
++ }
++ function draw(ctx,mount,flash=0){
++  if(!mount)return false;ctx.save();ctx.imageSmoothingEnabled=false;
++  if(mount.rotation){ctx.translate(mount.grip.x,mount.grip.y);ctx.rotate(mount.rotation);ctx.translate(-mount.grip.x,-mount.grip.y);}
++  ctx.drawImage(mount.image,mount.x,mount.y,mount.width,mount.height);
++  if(flash>0&&mount.muzzle){ctx.fillStyle='#fff0b1';ctx.fillRect(mount.muzzle.x,mount.muzzle.y,Math.max(1,mount.width*.1),Math.max(1,mount.height*.07));}ctx.restore();return true;
++ }
++ function inspect(model,mode){const entries=[...cache.values()].filter(e=>(!model||e.model===model)&&(!mode||e.mode===String(mode)));return{loaded:entries.filter(e=>e.ready).length,expected:model?(mode?8:16):48,failed:entries.filter(e=>e.failed&&!e.ready).map(e=>e.url),error:cache.size===48&&[...cache.values()].every(e=>e.ready)?null:error,profile:'LOT-EST-006r1',scale};}
++ return Object.freeze({preload,mount,draw,inspect});
++})();
+--- /dev/null
++++ despues/tests/approved-field-weapon-art.test.js
+@@ -0,0 +1,12 @@
++const{test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
++const root=path.resolve(__dirname,'..'),catalog=JSON.parse(fs.readFileSync(path.join(root,'docs/referencias/armas/armas-faltantes-v1/catalogo.json'),'utf8'));
++function setup({fail=false,hold=false}={}){const images=[],timers=[],G={TrialVisuals:{enabled:true,mode:'32'}},clock={now:0};class Image{set src(s){this.srcValue=s;this.naturalWidth=this.naturalHeight=Number(s.match(/\/(16|32)\//)[1]);images.push(this);if(!hold)queueMicrotask(()=>fail?this.onerror():this.onload());}get src(){return this.srcValue;}}
++vm.runInNewContext(fs.readFileSync(path.join(root,'js/ui/approved-field-weapon-art.js'),'utf8'),{G,Image,fetch:async()=>({ok:true,json:async()=>structuredClone(catalog)}),Map,Math,Number,Promise,Date:{now:()=>clock.now},setTimeout:fn=>(timers.push(fn),timers.length),clearTimeout(){}});return{G,images,timers,clock};}
++test('approved48 sprites preload once and original grip/support/tip map at proportional native scale',async()=>{const s=setup(),A=s.G.ApprovedFieldWeaponArt;await A.preload();assert.equal(s.images.length,48);assert.equal(A.inspect().loaded,48);const before=JSON.stringify(catalog);for(const mode of ['16','32'])for(const model of ['smg','shotgun','baton'])for(let d=0;d<8;d++){const grip=Object.freeze({x:16,y:12}),m=A.mount(model,mode,d*Math.PI/4,grip),f=catalog.modes[mode][model].frames[d];assert.equal(m.direction,catalog.directions[d]);assert.equal(m.x+f.grip.x*m.scale,grip.x);assert.equal(m.y+f.grip.y*m.scale,grip.y);assert.equal(m.width*56/Number(mode),42);assert.equal(m.support===null,model==='baton');if(m.support)assert.equal(m.support.x,m.x+f.support.x*m.scale);assert(m.image.src.endsWith('/'+catalog.modes[mode][model].individuals[d]));}assert.equal(JSON.stringify(catalog),before);await A.preload();assert.equal(s.images.length,48);assert.equal(A.mount('pistol','32',0,{x:0,y:0}),null);});
++test('loading never blocks mount; delayed images recover after timeout without reloading game',async()=>{const s=setup({hold:true}),A=s.G.ApprovedFieldWeaponArt,p=A.preload();for(let i=0;i<6;i++)await Promise.resolve();assert.equal(A.mount('smg','32',0,{x:4,y:6}),null);for(const timer of [...s.timers])timer();await p;assert.equal(A.inspect().loaded,0);for(const im of s.images)im.onload();assert.equal(A.inspect().loaded,48);assert(A.mount('smg','32',0,{x:4,y:6}));});
++test('failed image uses fallback then bounded retry recovers; incapacitation needs no weapon draw',async()=>{const s=setup({fail:true}),A=s.G.ApprovedFieldWeaponArt;await A.preload();assert.equal(A.mount('shotgun','16',0,{x:0,y:0}),null);const count=s.images.length;for(let i=0;i<20;i++)A.mount('shotgun','16',0,{x:0,y:0});assert.equal(s.images.length,count);s.clock.now=11000;A.mount('shotgun','16',0,{x:0,y:0});assert.equal(s.images.length,count+1);s.images.at(-1).onload();assert(A.mount('shotgun','16',0,{x:0,y:0}));});
++
++test('original view draws once without rotating again; only firearm mouths emit flash',async()=>{const s=setup(),A=s.G.ApprovedFieldWeaponArt;await A.preload();for(const model of ['smg','shotgun','baton']){const calls=[],ctx={save(){},restore(){},drawImage(...a){calls.push(['image',...a])},fillRect(...a){calls.push(['flash',...a])},rotate(){throw Error('double rotation')}};const m=A.mount(model,'32',Math.PI/4,{x:6,y:7});A.draw(ctx,m,.09);assert.equal(calls.filter(c=>c[0]==='image').length,1);assert.equal(calls.filter(c=>c[0]==='flash').length,model==='baton'?0:1);if(m.muzzle)assert.equal(calls.find(c=>c[0]==='flash')[1],m.muzzle.x);}});
++test('legacy graphic modes do not request or mount this native artwork',async()=>{const s=setup();s.G.TrialVisuals.mode='clasicos';assert.equal(await s.G.ApprovedFieldWeaponArt.preload(),false);assert.equal(s.G.ApprovedFieldWeaponArt.mount('smg','32',0,{x:0,y:0}),null);assert.equal(s.images.length,0);});
++
++test('baton preserves continuous swing using a residual rotation of at most22.5degrees, not another full directional rotation',async()=>{const s=setup(),A=s.G.ApprovedFieldWeaponArt;await A.preload();for(let i=-30;i<30;i++){const angle=i*.13,m=A.mount('baton','32',angle,{x:10,y:11}),calls=[],ctx={save(){},restore(){},translate(){},rotate(a){calls.push(a)},drawImage(){}};A.draw(ctx,m,.09);assert(Math.abs(m.rotation)<=Math.PI/8+1e-9);if(Math.abs(m.rotation)>1e-10)assert.equal(calls[0],m.rotation);assert.equal(m.support,null);assert.equal(m.muzzle,null);assert(Number.isFinite(m.tip.x)&&Number.isFinite(m.tip.y));}});
+--- /dev/null
++++ despues/tests/armas-006-browser.py
+@@ -0,0 +1,65 @@
++"""LOT006 local renderer/combat QA. Pose/loadout/HP/position injections are explicit, not natural balance."""
++from pathlib import Path
++from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
++from functools import partial
++from threading import Thread
++from playwright.sync_api import sync_playwright
++import json,base64
++ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'tests/artifacts/lot-est-006';OUT.mkdir(parents=True,exist_ok=True)
++class Quiet(SimpleHTTPRequestHandler):
++ def log_message(self,*a):pass
++ def copyfile(self,*a):
++  try:super().copyfile(*a)
++  except(ConnectionResetError,BrokenPipeError,ConnectionAbortedError):pass
++MATRIX='''({actor,mode})=>{
++ const p=G.Game.player,saved={anim:p.anim,x:p.x,y:p.y,aim:p.aim,weaponAim:p.weaponAim,walking:p.walking,moveAngle:p.moveAngle,flash:p.flash,invuln:p.invuln};const before=JSON.stringify(p.fieldWeapons);
++ const human=actor==='guardia'||actor==='medico',dex=actor==='medico'?'medic01':human?'guard01':'support01',anim=new G.Sprites.Animator(dex,1,false);anim.cur='Walk';anim.frame=1;
++ p.anim=anim;p.flash=p.invuln=0;p.walking=true;
++ const layouts=human?[['smg'],['shotgun'],['baton'],['smg','shotgun'],['pistol','baton']]:[['pistol'],['smg'],['shotgun']];
++ const c=document.createElement('canvas');c.width=960;c.height=(layouts.length+1)*95+45;const ctx=c.getContext('2d');ctx.fillStyle='#142026';ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle='#f3e8bd';ctx.font='13px monospace';ctx.fillText(actor+' · '+mode+'×'+mode+' · LOT006 · renderer real',12,20);
++ const cat=G.CharacterCatalog.modes[mode][actor],upper=cat.parts[48],palm=cat.parts[53],records=[];let calls=[];const draw=ctx.drawImage.bind(ctx);ctx.drawImage=(im,...a)=>{calls.push({src:im.src||'',args:a});return draw(im,...a);};
++ for(let row=0;row<layouts.length;row++)for(let d=0;d<8;d++){
++  const angle=d*Math.PI/4,x=60+d*120,y=95+row*95,weapons=layouts[row].map(model=>({model,flash:0,reload:0}));p.x=x;p.y=y;p.aim=p.weaponAim=angle;p.moveAngle=angle+Math.PI/2;calls=[];
++  if(human){G.PersonajesArt.drawWeapons(ctx,p,{behind:true},weapons);G.PersonajesArt.draw(ctx,anim,x,y,{});G.PersonajesArt.drawWeapons(ctx,p,{behind:false},weapons);}
++  else G.PersonajesArt.drawAlly(ctx,{characterId:actor,x,y,tx:x+50,ty:y,aim:angle,flash:0,anim,weapon:weapons[0]});
++  const originals=calls.filter(k=>k.src.includes('/armas-faltantes-v1/')||k.src.includes('/AF01/'));
++  if(originals.length!==weapons.length)throw Error('weapon count '+actor+' '+d+' '+layouts[row]+' '+originals.length);
++  const arms=calls.filter(k=>k.src.endsWith('/Partes.png')&&k.args.length===8&&k.args[0]===upper.x&&k.args[1]===upper.y).length;
++  const hands=calls.filter(k=>k.src.endsWith('/Partes.png')&&k.args.length===8&&k.args[0]===palm.x&&k.args[1]===palm.y).length;
++  if(arms!==2||hands!==2)throw Error('arm/hand count '+actor+' '+d+' '+arms+'/'+hands);
++  for(const w of weapons){const path=w.model==='pistol'?'/AF01/':'/'+w.model+'/',dir=['E','SE','S','SW','W','NW','N','NE'][d];if(!originals.some(k=>k.src.includes('/'+mode+path)&&k.src.endsWith('/'+dir+'.png')))throw Error('wrong direction '+w.model+' '+d);}
++  records.push({actor,mode,direction:d,models:layouts[row],arms,hands,originals:originals.map(k=>k.src.split('/').slice(-3).join('/'))});ctx.fillStyle='#f3e8bd';ctx.fillText(layouts[row].join('+'),x-50,y+25);
++ }
++ if(!human)for(let d=0;d<8;d++){calls=[];G.PersonajesArt.drawAlly(ctx,{characterId:actor,x:60+d*120,y:95+layouts.length*95,aim:d*Math.PI/4,anim,weapon:{model:'smg'},incapacitated:true});if(calls.length!==1||calls.some(k=>k.src.includes('/armas-')))throw Error('weapon/duplicate down '+actor);}
++ Object.assign(p,saved);if(JSON.stringify(p.fieldWeapons)!==before)throw Error('render mutated loadout');return{records,data:c.toDataURL()};
++}'''
++COMBAT='''()=>{const p=G.Game.player;G.World.reset(1);G.World.setFixture({minX:-20,maxX:20,minY:-20,maxY:20,walls:[],props:[]});p.x=p.y=16;G.Camera.x=G.Camera.y=16;const rows=[];for(const model of ['pistol','smg','shotgun','baton']){G.EnemyMgr.clear();G.Projectiles.clear();G.FieldCombat.reset(p,[G.FieldCatalog.makeWeapon(model,'qa:'+model,[])]);const e=G.EnemyMgr.add(new G.Enemy({...G.Content.pursuer,hp:10000},model==='baton'?48:116,16,{hp:1,dmg:1,spd:1}));G.EnemyMgr.rebuildGrid();const w=p.fieldWeapons[0],stats=G.FieldStats.weapon(p,w),hp=e.hp;G.FieldCombat.tick(.01,p,true);const shots=G.Projectiles.all().length;for(let i=0;i<50;i++){G.Projectiles.update(1/60,p,G.EnemyMgr.all());G.Combat.resolve(1/60,p,i/60);}const damage=hp-e.hp;if(!(damage>0))throw Error('no damage '+JSON.stringify({model,hp:p.hp,dead:p.dead,shots,stats,target:[e.x,e.y,e.dead],block:G.World.projectileBlock(66,16,2),copy:w,r:e.r,q:G.EnemyMgr.queryCircle(116,16,50).length,path:Array.from({length:15},(_,i)=>G.World.projectileBlock(16+i*8,16,3)),remaining:G.Projectiles.all().map(s=>[s.x,s.y,s.t])}));if(model!=='baton'&&shots!==(model==='shotgun'?6:1))throw Error('pattern '+model);if(model!=='baton'){w.ammo=1;w.shotWait=0;G.FieldCombat.tick(.01,p,true);if(!(w.reload>0))throw Error('no reload '+model);}rows.push({model,shots,damage,interval:stats.interval,range:stats.range,capacity:stats.capacity,reloadTime:stats.reloadTime});}return rows;}'''
++ANIM='''()=>{const p=G.Game.player,saved={x:p.x,y:p.y,flash:p.flash,invuln:p.invuln,aim:p.aim,weaponAim:p.weaponAim};p.flash=p.invuln=0;p.aim=p.weaponAim=0;const c=document.createElement('canvas');c.width=600;c.height=310;const ctx=c.getContext('2d');ctx.fillStyle='#142026';ctx.fillRect(0,0,600,310);ctx.fillStyle='#f3e8bd';ctx.font='13px monospace';let calls=[],rects=0;const draw=ctx.drawImage.bind(ctx),rect=ctx.fillRect.bind(ctx);ctx.drawImage=(im,...a)=>{if(im.src?.includes('/armas-faltantes-v1/'))calls.push({src:im.src,args:a});return draw(im,...a)};ctx.fillRect=(...a)=>{rects++;return rect(...a)};const rows=[];for(const [i,model]of ['pistol','smg','shotgun','baton'].entries()){const states=[];for(const [row,state]of ['reposo','disparo/golpe','recarga'].entries()){const w={model,flash:row===1?.09:model==='baton'&&row===2?.001:0,reload:row===2&&model!=='baton'?1:0},before=JSON.stringify(w);p.x=70+i*150;p.y=70+row*95;calls=[];rects=0;G.PersonajesArt.draw(ctx,p.anim,p.x,p.y,{});G.PersonajesArt.drawWeapons(ctx,p,{},[w]);if(model!=='pistol'&&calls.length!==1)throw Error('animation count '+model);if(rects!==(row===1&&model!=='baton'?1:0))throw Error('duplicate/missing FX '+model);if(JSON.stringify(w)!==before)throw Error('animation mutated copy');states.push({state,image:calls[0]?.args||null});ctx.fillStyle='#f3e8bd';ctx.fillText(model+' '+(model==='baton'&&row===2?'fin golpe':state),p.x-65,p.y+22);}if(model==='smg'||model==='shotgun'){if(states[0].image[0]===states[1].image[0]||states[0].image[1]===states[2].image[1])throw Error('missing recoil/lower '+model);}rows.push({model,states});}Object.assign(p,saved);return{records:rows,data:c.toDataURL()};}'''
++def main():
++ server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT)));Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/';rows=[];combat=[];failures=[];animations=[]
++ try:
++  with sync_playwright()as pw:
++   browser=pw.chromium.launch(headless=True)
++   for mode in ['16','32']:
++    page=browser.new_page(viewport={'width':1280,'height':900});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
++    page.goto(base+'index.html?prueba=combate-v2&graficos='+mode);page.wait_for_selector('#btn-technical-start:visible');page.click('#btn-technical-start');page.wait_for_function("()=>G.Game.state==='playing'");page.wait_for_function('()=>G.ApprovedFieldWeaponArt.inspect().loaded===48');page.evaluate('()=>G.Game.togglePause()');page.wait_for_function("()=>G.Game.state==='paused'");page.evaluate('()=>G.PersonajesArt.preload()')
++    for actor in ['guardia','medico','apoyo','apoyo_delgada','apoyo_fitness','apoyo_curvy']:
++     result=page.evaluate(MATRIX,{'actor':actor,'mode':mode});rows+=result['records'];(OUT/f'{actor}-{mode}.png').write_bytes(base64.b64decode(result['data'].split(',')[1]));print('PASS poses '+actor+' '+mode,flush=True)
++    animated=page.evaluate(ANIM);animations.append({'mode':mode,'records':animated['records']});(OUT/f'animaciones-{mode}.png').write_bytes(base64.b64decode(animated['data'].split(',')[1]))
++    combat.append({'mode':mode,'weapons':page.evaluate(COMBAT)})
++    frozen=page.evaluate('()=>({clock:G.Expedition.state.v2.mapTime,ammo:G.Game.player.fieldWeapons.map(w=>[w.ammo,w.reload,w.shotWait])})');page.wait_for_timeout(180);assert page.evaluate('()=>({clock:G.Expedition.state.v2.mapTime,ammo:G.Game.player.fieldWeapons.map(w=>[w.ammo,w.reload,w.shotWait])})')==frozen
++    page.screenshot(path=str(OUT/f'paused-{mode}.png'));assert not errors,errors;page.close()
++   for kind in ['missing','slow']:
++    page=browser.new_page();held=[];errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
++    def route(r):
++     if kind=='missing':r.fulfill(status=404,body='intentional QA')
++     else:held.append(r)
++    page.route('**/armas-faltantes-v1/32/smg/E.png',route);page.goto(base+'index.html?prueba=combate-v2&graficos=32',wait_until='domcontentloaded');page.wait_for_selector('#btn-technical-start:visible');page.click('#btn-technical-start');page.wait_for_function("()=>G.Game.state==='playing'");page.evaluate("()=>{G.FieldCombat.reset(G.Game.player,[G.FieldCatalog.makeWeapon('smg','qa:missing',[])]);G.Game.player.weaponAim=0;}")
++    page.wait_for_timeout(150);status=page.evaluate('()=>G.PersonajesArt.status()');assert 'Subfusil'in status['message'],status
++    if kind=='slow':
++     assert held;page.wait_for_timeout(6100);held[0].fulfill(status=200,content_type='image/png',body=(ROOT/'docs/referencias/armas/armas-faltantes-v1/32/smg/E.png').read_bytes());page.wait_for_function("()=>!!G.ApprovedFieldWeaponArt.mount('smg','32',0,{x:0,y:0})");assert 'Subfusil'not in page.evaluate('()=>G.PersonajesArt.status().message')
++    page.screenshot(path=str(OUT/f'{kind}.png'));assert not errors,errors;failures.append({'case':kind,'startedWithoutResource':True,'statusBefore':status,'lateRecovered':kind=='slow'});page.close()
++   browser.close()
++ finally:server.shutdown();server.server_close()
++ (OUT/'browser.json').write_text(json.dumps({'status':'PASS','poses':len(rows),'records':rows,'combat':combat,'animations':animations,'incapacitatedPoses':64,'resourceCases':failures,'physicalPhone':False,'scope':'Actual native renderer and combat; forced poses/loadout/time/HP/world for deterministic QA. No natural balance or final art acceptance.'},indent=2),encoding='utf-8');print(json.dumps({'status':'PASS','poses':len(rows),'combatModes':len(combat),'resourceCases':len(failures)}))
++if __name__=='__main__':main()

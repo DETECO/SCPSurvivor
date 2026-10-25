@@ -1,0 +1,125 @@
+{
+  "lot": "LOT-EST-006 r1",
+  "date": "2026-10-25",
+  "status": "implemented_verified_local_only",
+  "authority": "ARMAS R3 / ARM-FALTANTES-VIS-001/r1 approval25/10 / LOT-EST-006r1",
+  "build": {
+    "scripts": 118,
+    "bundle": "e67db870df",
+    "build": "PASS",
+    "check": "PASS"
+  },
+  "node": {
+    "files": 52,
+    "counts": {
+      "tests": 279,
+      "pass": 279,
+      "fail": 0,
+      "skipped": 0
+    },
+    "exitCode": 0,
+    "P05": "Excluded by LOT006 scope; not rerun"
+  },
+  "browser": {
+    "armedPoses": 352,
+    "incapacitatedPoses": 64,
+    "animationStates": 24,
+    "combatCases": 8,
+    "resourceCases": 2,
+    "femaleRoomCases": 18,
+    "femaleFallbackCases": 1,
+    "physicalPhone": false
+  },
+  "sourceFiles": [
+    {
+      "path": "dev.html",
+      "sha256": "ddbe26cabe0d16b862e1818528432ba25dc4c173c6d9f5d18507c6a23f73869c"
+    },
+    {
+      "path": "js/main.js",
+      "sha256": "fdbdc374a275642d73720a5cb959f80989a45b09857c9dddda47469133e305c6"
+    },
+    {
+      "path": "js/ui/personajes-art.js",
+      "sha256": "fc5af7db1e3b9bbf776666619d911338065c52b651febba8947ab61e738effd5"
+    },
+    {
+      "path": "js/ui/approved-field-weapon-art.js",
+      "sha256": "ebb73ff585952185a1b0b6e6e5737e22d6edd4990137f5e74c70bfbf51e287c2"
+    },
+    {
+      "path": "index.html",
+      "sha256": "b089c4b277dd0cc0bdb94f540193b84e058787dd06163e3750b9a1b97a88b319"
+    },
+    {
+      "path": "js/app.min.js",
+      "sha256": "e208130d0fba1122bc7608e578e522a4bf5e9ee3c543315b4e835899c1434fa2"
+    },
+    {
+      "path": "tests/approved-field-weapon-art.test.js",
+      "sha256": "b503975591a1fcdc070fbf329e21765dbac4749a3223fb1dd7b93bc0e4cc2c7b"
+    },
+    {
+      "path": "tests/armas-006-browser.py",
+      "sha256": "40b3b364dc56899a91edaae6c39590e9a686fb09e28fe110336d7aa22a2deea2"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "anchor-raster.json",
+      "sha256": "f7b41e8e7fe42e56919fba4fc743f63ac90008c7dca5326166cc577b1823d874"
+    },
+    {
+      "path": "animaciones-32.png",
+      "sha256": "1075cf55c35bf56f632c4bbbf7b114a333cb6e0e40be1b8a9608916617b7fca3"
+    },
+    {
+      "path": "apoyo-16.png",
+      "sha256": "7973b0b26ce0d77e414735014ee3bfae83b1b959d12877062ff9f1496a2b4b45"
+    },
+    {
+      "path": "apoyo_curvy-32.png",
+      "sha256": "adce0a79d2efd4f1b108cd167026b5b8732c9973f2fbfbd6dc05ea340b132c28"
+    },
+    {
+      "path": "browser.json",
+      "sha256": "fcbffb791c23992e9053d36d798be533ff867db70c9e8c84cc6d6f62363fc0ec"
+    },
+    {
+      "path": "CAMBIOS.diff",
+      "sha256": "f04150a2335cd35f88ca1645e100c7ef1445d11fae9a3077dfacf4102aaa906c"
+    },
+    {
+      "path": "companeras-sala.json",
+      "sha256": "c0a3d46edb1fd840615ef3f02ab849d4113e503e1d060d2559f73ec43d269af1"
+    },
+    {
+      "path": "guardia-32.png",
+      "sha256": "5ab85202ab11df718c179160a3ea0eb9e1e6434ef1ff8e93ac606e26eb9f02ba"
+    },
+    {
+      "path": "integrity.json",
+      "sha256": "3710db95acb64212de488d7477dfd05b62f48700b1816a31c6a92cee6efc40fe"
+    },
+    {
+      "path": "missing.png",
+      "sha256": "8ae782584b80c8880fd9d7d8d03ed301e36eaba254ea959a1bf8c09a91663bf6"
+    },
+    {
+      "path": "node-game.json",
+      "sha256": "e56b056ea30e5bd6a6a17993c7dc43f35b46781752dea5ac02491bfdd6649db8"
+    },
+    {
+      "path": "node-game.txt",
+      "sha256": "20dc585d3d66fad967c138065fdc20dba628704cf494d5367fa9c870c1f61652"
+    },
+    {
+      "path": "slow.png",
+      "sha256": "bdd28ad1c6412fe380ccbfef0fda0f0c89865cef981fb037863899d14b055227"
+    }
+  ],
+  "published": false,
+  "frozenTargets": "No writes/copy/build/commit in migration-audit/github-publicacion; no edits to PAUTA/CONTROL/ROADMAP/REGISTRO or LOT005 receipts.",
+  "report": "../PROGRAMACION-ARMAS-006.md",
+  "plan": "docs/superpowers/plans/2026-10-25-montaje-armas-006.md"
+}

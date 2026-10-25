@@ -1,0 +1,76 @@
+{
+  "originalPngMatched": 57,
+  "originalPngChanged": 0,
+  "mechanicalFiles": [
+    {
+      "path": "js/systems/rift-companion.js",
+      "sha256": "37171c3601d5bcba180f3c73698ad749c4f36b64165a5f82d1fd0b4abdfde34a",
+      "actual": "37171c3601d5bcba180f3c73698ad749c4f36b64165a5f82d1fd0b4abdfde34a",
+      "matched": true
+    },
+    {
+      "path": "js/systems/field-combat.js",
+      "sha256": "c920d2baa1a318062a8bbccc46c0338916357391b53fb3cccbf1ce0454e6cd0c",
+      "actual": "c920d2baa1a318062a8bbccc46c0338916357391b53fb3cccbf1ce0454e6cd0c",
+      "matched": true
+    },
+    {
+      "path": "js/data/field-catalog.js",
+      "sha256": "b8b719b0e12d0a42b8fd2110c2f9e08d0d93c82c7af8038f5cee3ad64d9d7454",
+      "actual": "b8b719b0e12d0a42b8fd2110c2f9e08d0d93c82c7af8038f5cee3ad64d9d7454",
+      "matched": true
+    }
+  ],
+  "otherLOT005Runtime": [
+    {
+      "path": "js/ui/af01-approved-art.js",
+      "normalizedTextMatchesPublishedLOT005": true
+    },
+    {
+      "path": "js/systems/field-stats.js",
+      "normalizedTextMatchesPublishedLOT005": true
+    },
+    {
+      "path": "js/systems/combat.js",
+      "normalizedTextMatchesPublishedLOT005": true
+    },
+    {
+      "path": "js/entities/projectile.js",
+      "normalizedTextMatchesPublishedLOT005": true
+    },
+    {
+      "path": "js/world/world.js",
+      "normalizedTextMatchesPublishedLOT005": true
+    },
+    {
+      "path": "js/core/camera.js",
+      "normalizedTextMatchesPublishedLOT005": true
+    }
+  ],
+  "sourceAuthority": [
+    {
+      "path": "docs/gestion/lotes/LOT-EST-006-r1.md",
+      "sha256": "50008fbc66ce9016a557280ce7869071982bae6c49d7cca19339d24682623638",
+      "actual": "50008fbc66ce9016a557280ce7869071982bae6c49d7cca19339d24682623638",
+      "matched": true
+    },
+    {
+      "path": "docs/PAUTA_ARMAS.md",
+      "sha256": "f97725379b3f80bc31bf89fee1bb8f728c4bad20cb0a109cf244af358df6b2f4",
+      "actual": "f97725379b3f80bc31bf89fee1bb8f728c4bad20cb0a109cf244af358df6b2f4",
+      "matched": true
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/catalogo.json",
+      "sha256": "0fa9f5fbfaecbd33f57a30cfa8bae9bf06e5bed26f7d158a7cf0f85fabffd3cb",
+      "actual": "0fa9f5fbfaecbd33f57a30cfa8bae9bf06e5bed26f7d158a7cf0f85fabffd3cb",
+      "matched": true
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/APROBACION_2026-10-25.md",
+      "sha256": "fc3c44167953ef7cb714bacc9e081d387184edecebeb1cc614070d416b6ac557",
+      "actual": "fc3c44167953ef7cb714bacc9e081d387184edecebeb1cc614070d416b6ac557",
+      "matched": true
+    }
+  ]
+}

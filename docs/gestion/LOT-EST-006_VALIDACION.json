@@ -1,0 +1,55 @@
+{
+  "lot": "LOT-EST-006 r1",
+  "revision": "REV-EST-0009",
+  "control": "0.11",
+  "status": "local_verified_publication_pending",
+  "date": "2026-10-25T18:32:51.692872+00:00",
+  "authority": "INC-VIS-001 + ARM-FALTANTES-VIS-001/r1 accepted25/10",
+  "implementer": "PROGRAMACION gpt-6.1-sol/high, encargo autorizado de Juanillo; publicación a cargo de Juanillo",
+  "report": "entregas/PROGRAMACION-ARMAS-006.md",
+  "nodeGame": {
+    "files": 52,
+    "tests": 279,
+    "pass": 279,
+    "fail": 0,
+    "skipped": 0,
+    "P05": "No se repitió; fallo workerd de LOT005 conserva su estado."
+  },
+  "localBrowser": {
+    "poses": 352,
+    "incapacitatedPoses": 64,
+    "animationStates": 24,
+    "combatCases": 8,
+    "missingAndSlowCases": 2,
+    "femaleRoomCombinations": 18,
+    "femalePartsFailureFallback": 1,
+    "status": "PASS"
+  },
+  "publicationBuild": {
+    "scripts": 118,
+    "bundle": "be687713b2",
+    "build": "PASS",
+    "check": "PASS"
+  },
+  "rootReview": {
+    "targetedCloneTests": 22,
+    "pass": 22,
+    "newRuntimePaths": [
+      "js/main.js",
+      "js/ui/approved-field-weapon-art.js",
+      "js/ui/personajes-art.js"
+    ],
+    "otherGameplayModules": "Source vs publication baseline textually identical",
+    "screenshotsInspected": [
+      "guardia-32",
+      "apoyo_curvy-16"
+    ],
+    "resourceCopies": "57original PNG SHA256 preserved;48directional assets mounted"
+  },
+  "limits": [
+    "Aceptación visual del montaje y teléfono físico pendientes",
+    "Sin nueva animación rasterizada; movimiento y golpe procedurales existentes",
+    "Sin cambios de estadísticas, probabilidades, munición, poderes o servicios reales",
+    "No elige poderesA/B ni abre fusión/catálogo90"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "planVersion": "0.37",
+  "planVersion": "0.38",
   "updatedOn": "2026-10-25",
   "timezone": "America/Santiago",
   "canonicalPath": "RoadmapSCP.json",
@@ -18,7 +18,7 @@
     },
     "lastVerifiedOwnCommit": "92fc1fd7c2347aed7b585946328670944008b39c",
     "lastVerifiedOwnVersion": "LOT-EST-005r2 publicado:55casos/grupos públicos,217hashes;compañeros con arma aleatoria/reserva infinita. Balance/aceptación pendientes.",
-    "deliveryVersion": "LOT-EST-005 r2 / REV-EST-0008 / ENSAYO-NPC-RESERVA-r3 / roadmap0.37",
+    "deliveryVersion": "LOT-EST-006r1 / REV-EST-0009 / roadmap0.38",
     "deliveryCommitReference": "git log -1 --format=%H -- RoadmapSCP.json",
     "currentPriority": {
       "phase": "V2-GRIETAS-INTEGRALES",
@@ -5972,6 +5972,11 @@
       "id": "CH-044",
       "date": "2026-10-25",
       "summary": "Roadmap0.37: EST-NPC-001r1/REV-EST-0008, reserva ilimitada y tres armas del compañero; integraciónR3, recuperación de carga y alias. Cierre público por recibo, sin aumentar52/100 histórico."
+    },
+    {
+      "id": "CHG-045",
+      "date": "2026-10-25",
+      "description": "ARMASR3 aceptado:LOT006 implementa montaje proporcional de48sprites,sin cambios de reglas o servicios. Publicación por recibo propio, sin aumentar52/100histórico."
     }
   ],
   "derivedProgress": {
@@ -6117,7 +6122,7 @@
     "lastVerifiedUpstreamCommit": "a1006e6e3d0cea9162238a90b0ffdd7fd38397b6",
     "lastVerifiedProjectCommit": "92fc1fd7c2347aed7b585946328670944008b39c",
     "projectCommitVerificationScope": "Demo sin servicios: salas, compañeros, poderes, retorno, carga y alias. No aceptación física o balance.",
-    "localChanges": "Recibo público LOT005r2 y encargo técnico LOT006; metadata sin cambio runtime.",
+    "localChanges": "Roadmap0.38 y LOT006 local verificado; publicación de renderer en comprobación.",
     "deliveryCommitReference": "git log -1 --format=%H -- RoadmapSCP.json",
     "deliveryAuthorization": "Petición directa de Iván: Subelo a github"
   },
@@ -6703,7 +6708,7 @@
     "updatedOn": "2026-10-25",
     "status": "rift_trial_published_verified_pending_human_balance",
     "authority": "EST-ORG-002 r1 / EST-GRI-002 r1 / EST-NPC-001 r1 / LOT-EST-005 r2",
-    "summary": "LOT005r2 publicado y comprobado:cincoBIO16/32 en salas,origen congelado,retirada,poderesMAX propios ycompañeros/compañerasR3 con arma aleatoria/reserva infinita.55casos/grupos públicos y217hashes. Balance/aceptación pendientes. ARMASR3 acepta48sprites;LOT006 encarga montaje técnico, sin elegir poderesA/B.",
+    "summary": "LOT005r2 publicado:salas,BIO,poderes ycompañeros con arma aleatoria/reserva infinita. LOT006monta48sprites aceptados ARMASR3;279pruebas de juego y352poses localesPASS,publicación en comprobación. No cambia estadísticas ni elige poderesA/B. Aceptación visual/balance y teléfono físico pendientes.",
     "pautaPath": "PAUTA_DESARROLLO.md",
     "changePlanPath": "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
     "decisionsPath": "docs/ESTRUCTURA_DECISIONES.md",
@@ -8059,9 +8064,11 @@
     "nextTechnicalLot": {
       "id": "LOT-EST-006 r1",
       "path": "docs/gestion/lotes/LOT-EST-006-r1.md",
-      "status": "assigned_local_implementation",
+      "status": "local_verified_publication_pending",
       "authority": "INC-VIS-001 + ARM-FALTANTES-VIS-001/r1 accepted25/10",
-      "implementationDoesNotChoosePowersAB": true
+      "implementationDoesNotChoosePowersAB": true,
+      "report": "docs/gestion/informes/LOT-EST-006-juanillo.md",
+      "validation": "docs/gestion/LOT-EST-006_VALIDACION.json"
     }
   }
 }

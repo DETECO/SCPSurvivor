@@ -1,6 +1,6 @@
 # Roadmap SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-25).** LOT005r2 publicado y comprobado:cincoBIO16/32 en salas,origen congelado,retirada,poderesMAX propios ycompañeros/compañerasR3 con arma aleatoria/reserva infinita.55casos/grupos públicos y217hashes. Balance/aceptación pendientes. ARMASR3 acepta48sprites;LOT006 encarga montaje técnico, sin elegir poderesA/B.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-25).** LOT005r2 publicado:salas,BIO,poderes ycompañeros con arma aleatoria/reserva infinita. LOT006monta48sprites aceptados ARMASR3;279pruebas de juego y352poses localesPASS,publicación en comprobación. No cambia estadísticas ni elige poderesA/B. Aceptación visual/balance y teléfono físico pendientes.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
@@ -58,7 +58,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-**Versión 0.37 — 2026-10-25 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
+**Versión 0.38 — 2026-10-25 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
 
 ## 1. Estado vigente
 
@@ -920,6 +920,7 @@ Los registros anteriores permanecen intactos. V0.11 y su documentación están e
 | CHG-042 | 2026-10-24 | INC-VIS-001 r1 corrige ruta de arte AF01, proporciones de dibujo nativas, formato numérico de B3 y HUD móvil. Sin cambios de combate, cámara/mapa o originales. Subfusil sin recurso aprobado: corrección parcial. Mantiene tareas/pesos/52 de la línea histórica. | Corrección explícita autorizada por Iván y derivada por ESTRUCTURA; publicación de la misma demo previamente autorizada. |
 | CHG-043 | 2026-10-24 | LOT-EST-005 r1 / REV-EST-0007 / CONTROL0.8 + EST-GRI-002 r1: cinco BIO16/32 en recintos separados, director desde mapa2, origen congelado, retirada única, poderes automáticos y NPC/burbujas integrados para ensayo. Parámetros ENSAYO-GRI-001r1; aceptación humana, balance, arte/sonidos definitivos pendientes. Ver guía y recibos de PROGRAMACION; servicios reales desactivados. | EST-ORG-002 r1 / LOT-EST-005 r1; las cifras abiertas se concretan explícitamente para ensayo. Sin cambiar pesos/criterios históricos. |
 | CH-044 | 2026-10-25 |  |  |
+| CHG-045 | 2026-10-25 | ARMASR3 aceptado:LOT006 implementa montaje proporcional de48sprites,sin cambios de reglas o servicios. Publicación por recibo propio, sin aumentar52/100histórico. |  |
 
 ## 13. Continuar en Windows/Codex Local
 

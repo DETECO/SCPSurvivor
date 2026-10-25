@@ -1,0 +1,1528 @@
+{
+  "sourceAnchors": "unaltered original catalog",
+  "renderScale": 0.75,
+  "humanCellWorldUnits": 56,
+  "weaponCellWorldUnits": 42,
+  "frames": [
+    {
+      "mode": "16",
+      "model": "smg",
+      "direction": "E",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 6,
+            "y": 9
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 10,
+            "y": 9
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 13,
+            "y": 6
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        2,
+        4,
+        14,
+        11
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "smg",
+      "direction": "SE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 7,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 9,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 12,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        3,
+        13,
+        12
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "smg",
+      "direction": "S",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 8,
+            "y": 7
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 8,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 8,
+            "y": 12
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        6,
+        3,
+        10,
+        13
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "smg",
+      "direction": "SW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 9,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 7,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 6,
+            "y": 11
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        3,
+        13,
+        12
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "smg",
+      "direction": "W",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 10,
+            "y": 9
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 7,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 4,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        2,
+        4,
+        14,
+        11
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "smg",
+      "direction": "NW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 10,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 8,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 5,
+            "y": 5
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        3,
+        12,
+        12
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "smg",
+      "direction": "N",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 8,
+            "y": 11
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 8,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 7,
+            "y": 3
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        5,
+        2,
+        10,
+        13
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "smg",
+      "direction": "NE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 7,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 9,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 11,
+            "y": 5
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        3,
+        13,
+        12
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "shotgun",
+      "direction": "E",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 6,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 9,
+            "y": 7
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 14,
+            "y": 6
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        1,
+        5,
+        15,
+        10
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "shotgun",
+      "direction": "SE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 7,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 9,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 12,
+            "y": 11
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        2,
+        3,
+        13,
+        12
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "shotgun",
+      "direction": "S",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 8,
+            "y": 7
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 8,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 7,
+            "y": 13
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        6,
+        2,
+        9,
+        14
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "shotgun",
+      "direction": "SW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 9,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 6,
+            "y": 9
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 3,
+            "y": 11
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        2,
+        3,
+        13,
+        12
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "shotgun",
+      "direction": "W",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 10,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 6,
+            "y": 7
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 1,
+            "y": 6
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        1,
+        5,
+        15,
+        10
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "shotgun",
+      "direction": "NW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 9,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 7,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 4,
+            "y": 4
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        2,
+        2,
+        13,
+        13
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "shotgun",
+      "direction": "N",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 8,
+            "y": 11
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 8,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 7,
+            "y": 3
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        6,
+        2,
+        9,
+        13
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "shotgun",
+      "direction": "NE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 6,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 8,
+            "y": 7
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 11,
+            "y": 4
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        2,
+        2,
+        13,
+        13
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "baton",
+      "direction": "E",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 4,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 13,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        2,
+        6,
+        14,
+        9
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "baton",
+      "direction": "SE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 6,
+            "y": 6
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 11,
+            "y": 11
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        4,
+        13,
+        12
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "baton",
+      "direction": "S",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 8,
+            "y": 5
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 7,
+            "y": 12
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        6,
+        3,
+        9,
+        13
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "baton",
+      "direction": "SW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 10,
+            "y": 6
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 4,
+            "y": 11
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        4,
+        12,
+        12
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "baton",
+      "direction": "W",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 12,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 2,
+            "y": 8
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        1,
+        6,
+        14,
+        9
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "baton",
+      "direction": "NW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 10,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 5,
+            "y": 5
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        4,
+        12,
+        12
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "baton",
+      "direction": "N",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 8,
+            "y": 11
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 8,
+            "y": 3
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        6,
+        3,
+        9,
+        13
+      ]
+    },
+    {
+      "mode": "16",
+      "model": "baton",
+      "direction": "NE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 5,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 11,
+            "y": 5
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        4,
+        12,
+        12
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "smg",
+      "direction": "E",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 12,
+            "y": 18
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 18,
+            "y": 18
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 27,
+            "y": 14
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        9,
+        28,
+        23
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "smg",
+      "direction": "SE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 14,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 19,
+            "y": 21
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 24,
+            "y": 20
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        6,
+        7,
+        26,
+        24
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "smg",
+      "direction": "S",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 16,
+            "y": 15
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 16,
+            "y": 21
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 16,
+            "y": 25
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        11,
+        6,
+        21,
+        26
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "smg",
+      "direction": "SW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 19,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 14,
+            "y": 21
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 11,
+            "y": 23
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        5,
+        7,
+        26,
+        24
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "smg",
+      "direction": "W",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 20,
+            "y": 19
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 14,
+            "y": 19
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 4,
+            "y": 15
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        9,
+        29,
+        23
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "smg",
+      "direction": "NW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 18,
+            "y": 21
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 13,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 9,
+            "y": 9
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        6,
+        7,
+        26,
+        25
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "smg",
+      "direction": "N",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 16,
+            "y": 22
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 16,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 16,
+            "y": 6
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        12,
+        5,
+        20,
+        26
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "smg",
+      "direction": "NE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 13,
+            "y": 21
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 18,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 23,
+            "y": 9
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        5,
+        7,
+        26,
+        25
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "shotgun",
+      "direction": "E",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 10,
+            "y": 18
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 17,
+            "y": 15
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 29,
+            "y": 13
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        1,
+        11,
+        30,
+        21
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "shotgun",
+      "direction": "SE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 13,
+            "y": 15
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 18,
+            "y": 20
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 24,
+            "y": 22
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        4,
+        8,
+        28,
+        24
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "shotgun",
+      "direction": "S",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 16,
+            "y": 15
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 16,
+            "y": 21
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 15,
+            "y": 25
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        13,
+        5,
+        18,
+        26
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "shotgun",
+      "direction": "SW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 19,
+            "y": 15
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 14,
+            "y": 19
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 8,
+            "y": 22
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        4,
+        7,
+        28,
+        24
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "shotgun",
+      "direction": "W",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 21,
+            "y": 18
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 13,
+            "y": 15
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 4,
+            "y": 14
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        1,
+        11,
+        30,
+        21
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "shotgun",
+      "direction": "NW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 19,
+            "y": 21
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 15,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 9,
+            "y": 9
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        5,
+        5,
+        27,
+        26
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "shotgun",
+      "direction": "N",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 16,
+            "y": 22
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 16,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 16,
+            "y": 7
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        13,
+        6,
+        18,
+        26
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "shotgun",
+      "direction": "NE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 13,
+            "y": 21
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "support": {
+          "source": {
+            "x": 18,
+            "y": 15
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "muzzle": {
+          "source": {
+            "x": 23,
+            "y": 9
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        5,
+        5,
+        27,
+        26
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "baton",
+      "direction": "E",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 8,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 27,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        3,
+        13,
+        28,
+        18
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "baton",
+      "direction": "SE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 11,
+            "y": 11
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 23,
+            "y": 22
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        5,
+        9,
+        26,
+        23
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "baton",
+      "direction": "S",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 16,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 16,
+            "y": 24
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        13,
+        7,
+        18,
+        25
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "baton",
+      "direction": "SW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 21,
+            "y": 11
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 8,
+            "y": 22
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        6,
+        9,
+        26,
+        23
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "baton",
+      "direction": "W",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 25,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 3,
+            "y": 16
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        2,
+        13,
+        29,
+        18
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "baton",
+      "direction": "NW",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 20,
+            "y": 20
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 10,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        7,
+        8,
+        25,
+        24
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "baton",
+      "direction": "N",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 16,
+            "y": 22
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 16,
+            "y": 7
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        13,
+        7,
+        18,
+        25
+      ]
+    },
+    {
+      "mode": "32",
+      "model": "baton",
+      "direction": "NE",
+      "anchors": {
+        "grip": {
+          "source": {
+            "x": 12,
+            "y": 20
+          },
+          "distanceToOpaquePixels": 0.0
+        },
+        "strikeTip": {
+          "source": {
+            "x": 22,
+            "y": 10
+          },
+          "distanceToOpaquePixels": 0.0
+        }
+      },
+      "opaqueBounds": [
+        7,
+        8,
+        25,
+        24
+      ]
+    }
+  ]
+}

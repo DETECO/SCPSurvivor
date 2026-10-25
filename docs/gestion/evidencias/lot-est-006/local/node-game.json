@@ -1,0 +1,11 @@
+{
+  "files": 52,
+  "counts": {
+    "tests": 279,
+    "pass": 279,
+    "fail": 0,
+    "skipped": 0
+  },
+  "exitCode": 0,
+  "P05": "Excluded by LOT006 scope; not rerun"
+}

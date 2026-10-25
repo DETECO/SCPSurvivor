@@ -150,3 +150,7 @@ PROGRAMACION y su agente NPC terminaron con systemError antes de aplicar reserva
 ### LOT-EST-005r2 — publicación comprobada por Juanillo
 
 Runtime92fc1fd7c2347aed7b585946328670944008b39c, Pages built, bundleadec3ec93c.55casos/grupos públicos y217/217hashes aprobados;270pruebas del juego sin fallos. PROGRAMACION entregó después auditoría completa328/322PASS/5P05workerd/1omitida; se leyó el log y se incorpora sin declarar verde el backend. [Recibo](LOT-EST-005_PUBLICACION.json) e [informe](informes/LOT-EST-005-r2-juanillo.md). El siguiente encargo LOT006 monta las imágenes aceptadas ARMASR3; no cambia este runtime.
+
+## LOT-EST-006r1 — conciliación local por Juanillo25/10/2026
+
+ARMASR3 acepta48sprites smg/shotgun/baton. PROGRAMACION entrega montaje,279pruebas del juegoPASS,352poses/64incapacitaciones/24estados/8combates/2fallos de recurso y18salasR3más respaldo. Juanillo leyó la entrega completa, revisó código/capturas y repitió22pruebas del clon; build/check118scripts,bundlebe687713b2. [Informe](informes/LOT-EST-006-juanillo.md) y [validación](LOT-EST-006_VALIDACION.json). Publicación en comprobación; no cambia las reglas de LOT005 ni servicios.
