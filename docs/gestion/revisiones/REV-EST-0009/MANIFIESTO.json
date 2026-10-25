@@ -1,0 +1,39 @@
+{
+  "revision": "REV-EST-0009",
+  "capturedAtUtc": "2026-10-25T18:42:07.000040+00:00",
+  "runtimeCommit": "4adf3bed24e9a2f3ecd69ce54db286f794e3cd94",
+  "files": [
+    {
+      "source": "docs/PAUTA_ARMAS.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0009/fuentes/docs/PAUTA_ARMAS.md",
+      "sha256": "f97725379b3f80bc31bf89fee1bb8f728c4bad20cb0a109cf244af358df6b2f4",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/referencias/armas/armas-faltantes-v1/APROBACION_2026-10-25.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0009/fuentes/docs/referencias/armas/armas-faltantes-v1/APROBACION_2026-10-25.md",
+      "sha256": "fc3c44167953ef7cb714bacc9e081d387184edecebeb1cc614070d416b6ac557",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/referencias/armas/armas-faltantes-v1/catalogo.json",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0009/fuentes/docs/referencias/armas/armas-faltantes-v1/catalogo.json",
+      "sha256": "0fa9f5fbfaecbd33f57a30cfa8bae9bf06e5bed26f7d158a7cf0f85fabffd3cb",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/lotes/LOT-EST-006-r1.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0009/fuentes/docs/gestion/lotes/LOT-EST-006-r1.md",
+      "sha256": "50008fbc66ce9016a557280ce7869071982bae6c49d7cca19339d24682623638",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/entregas/PROGRAMACION-ARMAS-006.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0009/fuentes/docs/gestion/entregas/PROGRAMACION-ARMAS-006.md",
+      "sha256": "3772fd6c0c4ddd7846621a8b70f7920e33775d2b5bb55bcd8dfd475034ef4175",
+      "readback": "matched"
+    }
+  ],
+  "resources": "57PNGoriginals preserved by hash in local integrity and public278file receipt",
+  "scope": "Exact local delivery/canonical area source cut; no claim of all historical conversations read."
+}

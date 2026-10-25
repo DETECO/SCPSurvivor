@@ -53,3 +53,5 @@ Vida, equipo, mejoras, temporizadores de recarga/habilidad y efectos del jugador
 El reloj `elapsed` anterior sigue midiendo tiempo del mapa de origen; la sala tiene su propio reloj. Ranking/bonos/economía no forman parte de esta entrega. No hay guardado real del encuentro ni garantía antitrampas.
 
 Pendientes: aceptación de Iván, balance/evasión bajo presión y teléfono físico; arte final de sala/MEN-005, sonido característico del NPC y cues definitivos; revisión visual final de la composición femenina R3 y montaje técnico de sprites smg/shotgun/baton ya aceptados en ARMASR3, encargado en LOT006. Cinco BIO en dos resoluciones, cantidad resuelta por EST-GRI-002r1. No quedan otras cinco identidades por inventar.
+
+**Montaje de armas actualizado — LOT006/roadmap0.38:** Subfusil/Escopeta y Porra del jugador ya usan sus sprites aceptados en16/32. Compañeros balísticos conservan sus tres modelos y reglas de LOT005. [Recibo de la corrección visual](gestion/LOT-EST-006_PUBLICACION.json), sin aprobación física/manual por inferencia.

@@ -1,0 +1,1955 @@
+{
+  "status": "PASS",
+  "runtimeCommit": "4adf3bed24e9a2f3ecd69ce54db286f794e3cd94",
+  "verifiedAtUtc": "2026-10-25T18:39:13.127537+00:00",
+  "matched": 278,
+  "total": 278,
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "expected": "c2deec8c5366d79ce15d2044b4d05bcc1470b5ae4eace6a1abe0285bc8d9e666",
+      "actual": "c2deec8c5366d79ce15d2044b4d05bcc1470b5ae4eace6a1abe0285bc8d9e666",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "ROADMAP.md",
+      "expected": "adccd0eb5c0da6a376bdbc70012705056dada751d45e70a8ffa7a6b4f80a31df",
+      "actual": "adccd0eb5c0da6a376bdbc70012705056dada751d45e70a8ffa7a6b4f80a31df",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "RoadmapSCP.json",
+      "expected": "a9205527c82b1c5f7f1a7be42a8397f9a7fd1570f19ef1fdf54cae6ef5a77092",
+      "actual": "a9205527c82b1c5f7f1a7be42a8397f9a7fd1570f19ef1fdf54cae6ef5a77092",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "RoadmapSCP.md",
+      "expected": "8db36d6063f9dbd8dfb496266be13657ec6aaf7e429ad136f5e16200a5b49abe",
+      "actual": "8db36d6063f9dbd8dfb496266be13657ec6aaf7e429ad136f5e16200a5b49abe",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack1-FX.png",
+      "expected": "72fb23fa32205acf5d565e4b39cfa95fce61c03437847308ad0e86f9a563489d",
+      "actual": "72fb23fa32205acf5d565e4b39cfa95fce61c03437847308ad0e86f9a563489d",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack1.png",
+      "expected": "f65c5d69d6c08cbc76cf45d1bbe270fc9459df378af1d9f2e46ed119d8b09855",
+      "actual": "f65c5d69d6c08cbc76cf45d1bbe270fc9459df378af1d9f2e46ed119d8b09855",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack2-FX.png",
+      "expected": "1b81dd509ffc63b4ca1c5566d2d22b0f0df770edfdf070917acf1e577728332a",
+      "actual": "1b81dd509ffc63b4ca1c5566d2d22b0f0df770edfdf070917acf1e577728332a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack2.png",
+      "expected": "37fbf70c1f09881a2cfe12098eaa4192095a7a86e882049348afec54d33b1350",
+      "actual": "37fbf70c1f09881a2cfe12098eaa4192095a7a86e882049348afec54d33b1350",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack3-FX.png",
+      "expected": "a6e12da7bc321e0b6041f7d8f03a53632019f61ec488dde727124067fecf6156",
+      "actual": "a6e12da7bc321e0b6041f7d8f03a53632019f61ec488dde727124067fecf6156",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Attack3.png",
+      "expected": "cdb141a3d794eec9e713134387aa10b02eb08b6aa6f60639325bf7d8dccb9c96",
+      "actual": "cdb141a3d794eec9e713134387aa10b02eb08b6aa6f60639325bf7d8dccb9c96",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Death.png",
+      "expected": "0e1b7bec095351685cebe33a1ee487caf3fde65bc346ec5c6e8fcacb25ea4e99",
+      "actual": "0e1b7bec095351685cebe33a1ee487caf3fde65bc346ec5c6e8fcacb25ea4e99",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Hurt.png",
+      "expected": "91156cd2162eb03e571545da0af31783dd51050d0db13b4538c01245e23f7c1b",
+      "actual": "91156cd2162eb03e571545da0af31783dd51050d0db13b4538c01245e23f7c1b",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Idle.png",
+      "expected": "191b76faac263c243bafc48d95ffa75dc389f8ec768201903cbcd243e30b9684",
+      "actual": "191b76faac263c243bafc48d95ffa75dc389f8ec768201903cbcd243e30b9684",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Jump-FX.png",
+      "expected": "1b81dd509ffc63b4ca1c5566d2d22b0f0df770edfdf070917acf1e577728332a",
+      "actual": "1b81dd509ffc63b4ca1c5566d2d22b0f0df770edfdf070917acf1e577728332a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Jump.png",
+      "expected": "37fbf70c1f09881a2cfe12098eaa4192095a7a86e882049348afec54d33b1350",
+      "actual": "37fbf70c1f09881a2cfe12098eaa4192095a7a86e882049348afec54d33b1350",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Keyposes.png",
+      "expected": "867a20f41fdd7471b59da7f129089b190fe277b37e4951761aad50bad8185ff3",
+      "actual": "867a20f41fdd7471b59da7f129089b190fe277b37e4951761aad50bad8185ff3",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Run.png",
+      "expected": "aab6d17a354fbd50f1b420606fe02f1e784183b0203480f897b48cd10b090493",
+      "actual": "aab6d17a354fbd50f1b420606fe02f1e784183b0203480f897b48cd10b090493",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/esporario/Walk.png",
+      "expected": "5031060d60853a474291208c849bd5838c1d506844392f26b49fa373d396e506",
+      "actual": "5031060d60853a474291208c849bd5838c1d506844392f26b49fa373d396e506",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack1-FX.png",
+      "expected": "c32fcd843b172ab29da44ddbc311b54e4c224b63648e801822d74f872d77f704",
+      "actual": "c32fcd843b172ab29da44ddbc311b54e4c224b63648e801822d74f872d77f704",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack1.png",
+      "expected": "012d7e060facb5d0305aa105902ed5ecf1f9e96ea17ff7a2e25ed879a61a9b45",
+      "actual": "012d7e060facb5d0305aa105902ed5ecf1f9e96ea17ff7a2e25ed879a61a9b45",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack2-FX.png",
+      "expected": "ef2be75e6c67c0c0b4c38f72034bfd950be0778bbfda3a6626451683ba5ae1aa",
+      "actual": "ef2be75e6c67c0c0b4c38f72034bfd950be0778bbfda3a6626451683ba5ae1aa",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack2.png",
+      "expected": "4605f1ee77a9bfa36c66ba79c6ce61dbf222c7428d25a8a19476086cbe1e8d48",
+      "actual": "4605f1ee77a9bfa36c66ba79c6ce61dbf222c7428d25a8a19476086cbe1e8d48",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack3-FX.png",
+      "expected": "ce8b9d405722f000173570dcec4d1a900b885e6538945c4c1d2389e2ac86def6",
+      "actual": "ce8b9d405722f000173570dcec4d1a900b885e6538945c4c1d2389e2ac86def6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Attack3.png",
+      "expected": "3942060f7dd616a7c85c150aec765d6bdf430f460a1e9deae060eb2531dcfa80",
+      "actual": "3942060f7dd616a7c85c150aec765d6bdf430f460a1e9deae060eb2531dcfa80",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Death.png",
+      "expected": "93405ba23d0efacf880b441e37b9e5c9ef8365d9a9ce4ade21e59a8c529d89ca",
+      "actual": "93405ba23d0efacf880b441e37b9e5c9ef8365d9a9ce4ade21e59a8c529d89ca",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Hurt.png",
+      "expected": "da761ed3fcbe69fe740e2b6658591db8d41ff4fe173ff7674c04da400b9b1e57",
+      "actual": "da761ed3fcbe69fe740e2b6658591db8d41ff4fe173ff7674c04da400b9b1e57",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Idle.png",
+      "expected": "1737bad97bad68ee6a4980292f53c6875d7f607b0dbb9d598bf0ce91bdaf8783",
+      "actual": "1737bad97bad68ee6a4980292f53c6875d7f607b0dbb9d598bf0ce91bdaf8783",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Jump-FX.png",
+      "expected": "ef2be75e6c67c0c0b4c38f72034bfd950be0778bbfda3a6626451683ba5ae1aa",
+      "actual": "ef2be75e6c67c0c0b4c38f72034bfd950be0778bbfda3a6626451683ba5ae1aa",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Jump.png",
+      "expected": "4605f1ee77a9bfa36c66ba79c6ce61dbf222c7428d25a8a19476086cbe1e8d48",
+      "actual": "4605f1ee77a9bfa36c66ba79c6ce61dbf222c7428d25a8a19476086cbe1e8d48",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Keyposes.png",
+      "expected": "d200397274943e8c958a7466bb09176d552c5e0356cca8e19fb45e54eaaba1e6",
+      "actual": "d200397274943e8c958a7466bb09176d552c5e0356cca8e19fb45e54eaaba1e6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Run.png",
+      "expected": "db23cf086bd1a91f28e63cef60f9b941f0682ef3b3a3a610ef4c2fc22a65ddfb",
+      "actual": "db23cf086bd1a91f28e63cef60f9b941f0682ef3b3a3a610ef4c2fc22a65ddfb",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/huesped/Walk.png",
+      "expected": "527bcbe6b9b1456f94011618c073f0057b76aa946178b6437c5eee20a0088255",
+      "actual": "527bcbe6b9b1456f94011618c073f0057b76aa946178b6437c5eee20a0088255",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack1-FX.png",
+      "expected": "cf06b4dd91620ac3a9f2d7d371510839cc66c449951ff1d45a58193d09741d54",
+      "actual": "cf06b4dd91620ac3a9f2d7d371510839cc66c449951ff1d45a58193d09741d54",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack1.png",
+      "expected": "36413a53da840f613b819a17aaf49f22a002d3346c1d3778e6ca82898dba7519",
+      "actual": "36413a53da840f613b819a17aaf49f22a002d3346c1d3778e6ca82898dba7519",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack2-FX.png",
+      "expected": "87525439495bffb06eadca3945052c1bcb41c120adc2c3edf7c504d46fd8a347",
+      "actual": "87525439495bffb06eadca3945052c1bcb41c120adc2c3edf7c504d46fd8a347",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack2.png",
+      "expected": "683703a9ad680edbb181e4f0517ba6903390a9e22acce8c03ac0447722f26807",
+      "actual": "683703a9ad680edbb181e4f0517ba6903390a9e22acce8c03ac0447722f26807",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack3-FX.png",
+      "expected": "c256a65c7df66532e142107080e45a0a5a28821c922404f3c606fafa1cfa11fd",
+      "actual": "c256a65c7df66532e142107080e45a0a5a28821c922404f3c606fafa1cfa11fd",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Attack3.png",
+      "expected": "994eb93dc4a08072edbc8af3de520625e0ef6ce2b39ea3b501ffb48b01472427",
+      "actual": "994eb93dc4a08072edbc8af3de520625e0ef6ce2b39ea3b501ffb48b01472427",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Death.png",
+      "expected": "2b1a5a59d87744c9a3cbcf0697c69306c40ddd88b07ea37eca50292e746cf8e9",
+      "actual": "2b1a5a59d87744c9a3cbcf0697c69306c40ddd88b07ea37eca50292e746cf8e9",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Hurt.png",
+      "expected": "b5bc4465807f8cac93cdd6df30f37fb8e8d84abf892c89dbdf785845a90697fd",
+      "actual": "b5bc4465807f8cac93cdd6df30f37fb8e8d84abf892c89dbdf785845a90697fd",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Idle.png",
+      "expected": "d1b0427cb4d8e6cd7e067df7c11f86bf2de33b43ba99ba7e0f643432585aa443",
+      "actual": "d1b0427cb4d8e6cd7e067df7c11f86bf2de33b43ba99ba7e0f643432585aa443",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Jump-FX.png",
+      "expected": "87525439495bffb06eadca3945052c1bcb41c120adc2c3edf7c504d46fd8a347",
+      "actual": "87525439495bffb06eadca3945052c1bcb41c120adc2c3edf7c504d46fd8a347",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Jump.png",
+      "expected": "683703a9ad680edbb181e4f0517ba6903390a9e22acce8c03ac0447722f26807",
+      "actual": "683703a9ad680edbb181e4f0517ba6903390a9e22acce8c03ac0447722f26807",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Keyposes.png",
+      "expected": "d093e1f9f20cc4cdf5eab51ddac68d9c469ef7b4dd9cc41282947a076b627fe3",
+      "actual": "d093e1f9f20cc4cdf5eab51ddac68d9c469ef7b4dd9cc41282947a076b627fe3",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Run.png",
+      "expected": "1744f06f12f8b127f714d014af1ad071eabae128d417bba73f0ef727abba200e",
+      "actual": "1744f06f12f8b127f714d014af1ad071eabae128d417bba73f0ef727abba200e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/larva/Walk.png",
+      "expected": "4efd32d185530ed3e6bd556b5bcd88f873e12f845ea862241b1244d52001dbe1",
+      "actual": "4efd32d185530ed3e6bd556b5bcd88f873e12f845ea862241b1244d52001dbe1",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack1-FX.png",
+      "expected": "bc6884ba6061f2f1777e177e3d9cdc6bf3c1d43f211ad97593d31c02bf2ac9b8",
+      "actual": "bc6884ba6061f2f1777e177e3d9cdc6bf3c1d43f211ad97593d31c02bf2ac9b8",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack1.png",
+      "expected": "19fbc62444a4debb6781b4a3c36f9dc5ec921481eea4a0aba2199cd113da1877",
+      "actual": "19fbc62444a4debb6781b4a3c36f9dc5ec921481eea4a0aba2199cd113da1877",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack2-FX.png",
+      "expected": "eb139aa61b9d9a33b37e8593c61d8391786c3017a38769c6e451182f8a770f37",
+      "actual": "eb139aa61b9d9a33b37e8593c61d8391786c3017a38769c6e451182f8a770f37",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack2.png",
+      "expected": "4fdf5dd146d4622694ddae97a509704e3e3e7e55e8d14a59e3d2f5e1fcfea983",
+      "actual": "4fdf5dd146d4622694ddae97a509704e3e3e7e55e8d14a59e3d2f5e1fcfea983",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack3-FX.png",
+      "expected": "e3e9fca1e5ee903917a2e9e3f6f63b356974a45a2cc3a6b0bf2a0f735775af44",
+      "actual": "e3e9fca1e5ee903917a2e9e3f6f63b356974a45a2cc3a6b0bf2a0f735775af44",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Attack3.png",
+      "expected": "7b7ccda08abe7f8fd3f5aa00319f71aa4336128747050067bf8fd4f5b08f1569",
+      "actual": "7b7ccda08abe7f8fd3f5aa00319f71aa4336128747050067bf8fd4f5b08f1569",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Death.png",
+      "expected": "1f297c4662b2c0da6404a5d913bdb9951b1e3c01940b5f8b768db60ee8ce5d28",
+      "actual": "1f297c4662b2c0da6404a5d913bdb9951b1e3c01940b5f8b768db60ee8ce5d28",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Hurt.png",
+      "expected": "24e460c6821c1f39352c56145163d026c729e5161918698bd7e888826df87c59",
+      "actual": "24e460c6821c1f39352c56145163d026c729e5161918698bd7e888826df87c59",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Idle.png",
+      "expected": "de0469ed3ed7cb3ea005f2b9e93b4889acc99b4209386c1909b9aabb01dd58bd",
+      "actual": "de0469ed3ed7cb3ea005f2b9e93b4889acc99b4209386c1909b9aabb01dd58bd",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Jump-FX.png",
+      "expected": "eb139aa61b9d9a33b37e8593c61d8391786c3017a38769c6e451182f8a770f37",
+      "actual": "eb139aa61b9d9a33b37e8593c61d8391786c3017a38769c6e451182f8a770f37",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Jump.png",
+      "expected": "4fdf5dd146d4622694ddae97a509704e3e3e7e55e8d14a59e3d2f5e1fcfea983",
+      "actual": "4fdf5dd146d4622694ddae97a509704e3e3e7e55e8d14a59e3d2f5e1fcfea983",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Keyposes.png",
+      "expected": "27d9b7fa08663510111d70ce0e5ceb9dd79dc399f4c2b572ddf8cbed54ea20fd",
+      "actual": "27d9b7fa08663510111d70ce0e5ceb9dd79dc399f4c2b572ddf8cbed54ea20fd",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Run.png",
+      "expected": "42dcf279367e5c2af58f5b3fff1d90ad3ea3f172262ea54a65805dcb8dbce851",
+      "actual": "42dcf279367e5c2af58f5b3fff1d90ad3ea3f172262ea54a65805dcb8dbce851",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/malla/Walk.png",
+      "expected": "4a25d73635528effa7269dabf3908c666cc02a9f4d06b35d4c4d77a2a2a7e6d2",
+      "actual": "4a25d73635528effa7269dabf3908c666cc02a9f4d06b35d4c4d77a2a2a7e6d2",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack1-FX.png",
+      "expected": "9541645d41aa5ef5a975e6db82fc91d301d9f087ffced8c5b05d551472b1c7d3",
+      "actual": "9541645d41aa5ef5a975e6db82fc91d301d9f087ffced8c5b05d551472b1c7d3",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack1.png",
+      "expected": "2cef7dd655dca7b18e91bd2a0de7e8431e4110c379efa294cbe8cb4e4786f483",
+      "actual": "2cef7dd655dca7b18e91bd2a0de7e8431e4110c379efa294cbe8cb4e4786f483",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack2-FX.png",
+      "expected": "63fe97c9e730fa369a5803448d84432863516eda1811d6dca53c03f159a23789",
+      "actual": "63fe97c9e730fa369a5803448d84432863516eda1811d6dca53c03f159a23789",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack2.png",
+      "expected": "726622222abc2be19d742fee25680e6eec62cd5d9db8f8fed2098af02604ba31",
+      "actual": "726622222abc2be19d742fee25680e6eec62cd5d9db8f8fed2098af02604ba31",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack3-FX.png",
+      "expected": "b1df82229c786e393f9074eb3981c3e5a4579245e298dc48ecec7bff9e25ba0b",
+      "actual": "b1df82229c786e393f9074eb3981c3e5a4579245e298dc48ecec7bff9e25ba0b",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Attack3.png",
+      "expected": "82b9f87ea322a4e2378f1a6b3d28414bbdafcf6c8667cc2305782ede1fa09883",
+      "actual": "82b9f87ea322a4e2378f1a6b3d28414bbdafcf6c8667cc2305782ede1fa09883",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Death.png",
+      "expected": "d0b5c3c23713e3ca0c80523b2e8034383c8530cc327d9bc887479dc25ad99ec9",
+      "actual": "d0b5c3c23713e3ca0c80523b2e8034383c8530cc327d9bc887479dc25ad99ec9",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Hurt.png",
+      "expected": "3b98b3fa1c7b350cf3253f8e7a1d65ed54cced4aa08ac068c34c168030d50b39",
+      "actual": "3b98b3fa1c7b350cf3253f8e7a1d65ed54cced4aa08ac068c34c168030d50b39",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Idle.png",
+      "expected": "0445a478ddd4825803742584206ceeda7255d779256fe35c2ea7675e2c497633",
+      "actual": "0445a478ddd4825803742584206ceeda7255d779256fe35c2ea7675e2c497633",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Jump-FX.png",
+      "expected": "b1df82229c786e393f9074eb3981c3e5a4579245e298dc48ecec7bff9e25ba0b",
+      "actual": "b1df82229c786e393f9074eb3981c3e5a4579245e298dc48ecec7bff9e25ba0b",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Jump.png",
+      "expected": "82b9f87ea322a4e2378f1a6b3d28414bbdafcf6c8667cc2305782ede1fa09883",
+      "actual": "82b9f87ea322a4e2378f1a6b3d28414bbdafcf6c8667cc2305782ede1fa09883",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Keyposes.png",
+      "expected": "0ab59f41c2dc8c9e63aa1506028298b9c53b4927d60c2d7746104b0577be07e1",
+      "actual": "0ab59f41c2dc8c9e63aa1506028298b9c53b4927d60c2d7746104b0577be07e1",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Run.png",
+      "expected": "d4877daf67b3836ba1681f140c39a7c25685565c7dccd7b8052920c542be4987",
+      "actual": "d4877daf67b3836ba1681f140c39a7c25685565c7dccd7b8052920c542be4987",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/16/portador/Walk.png",
+      "expected": "44204bff4dc7aea52a0f59723323f55d4c25bf87580c8d7691a8206b072914a5",
+      "actual": "44204bff4dc7aea52a0f59723323f55d4c25bf87580c8d7691a8206b072914a5",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack1-FX.png",
+      "expected": "00f0dafb19192b1699e7a41e9f11599327d7daecea80668886a61aa09d47ef4d",
+      "actual": "00f0dafb19192b1699e7a41e9f11599327d7daecea80668886a61aa09d47ef4d",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack1.png",
+      "expected": "cc78bfe5e614ad8bf5103d9724c739f14b7039c0905efdb3073781c572b96a51",
+      "actual": "cc78bfe5e614ad8bf5103d9724c739f14b7039c0905efdb3073781c572b96a51",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack2-FX.png",
+      "expected": "35195e5b21e26407743f7f5f2ef7741538df991467517c4268891f0848ad7cac",
+      "actual": "35195e5b21e26407743f7f5f2ef7741538df991467517c4268891f0848ad7cac",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack2.png",
+      "expected": "72218d36040a3288af82684e5d128535f7e420775fab158d6ecdc8efc0ab7583",
+      "actual": "72218d36040a3288af82684e5d128535f7e420775fab158d6ecdc8efc0ab7583",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack3-FX.png",
+      "expected": "9c9bb3731478b9c12edbf3f6cfd5227339138c7f3cdc9f98f5f771ebce078f39",
+      "actual": "9c9bb3731478b9c12edbf3f6cfd5227339138c7f3cdc9f98f5f771ebce078f39",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Attack3.png",
+      "expected": "54ad839710f9981940a710cd7196f76512a9d7e94e9f27552edfcf9201240c44",
+      "actual": "54ad839710f9981940a710cd7196f76512a9d7e94e9f27552edfcf9201240c44",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Death.png",
+      "expected": "efea5aaf69022877a5fbc5e0a18053f1b3bf92d8b5ee11e99308be33cd997e32",
+      "actual": "efea5aaf69022877a5fbc5e0a18053f1b3bf92d8b5ee11e99308be33cd997e32",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Hurt.png",
+      "expected": "ec850777b826aa4c5613ba0b8ec3ce55ceaca64162727b39cb998d5aa3c12ab4",
+      "actual": "ec850777b826aa4c5613ba0b8ec3ce55ceaca64162727b39cb998d5aa3c12ab4",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Idle.png",
+      "expected": "b661713ff12721c09b800798621f3a0b8789845c02045993c7c524b7edfd13dd",
+      "actual": "b661713ff12721c09b800798621f3a0b8789845c02045993c7c524b7edfd13dd",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Jump-FX.png",
+      "expected": "35195e5b21e26407743f7f5f2ef7741538df991467517c4268891f0848ad7cac",
+      "actual": "35195e5b21e26407743f7f5f2ef7741538df991467517c4268891f0848ad7cac",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Jump.png",
+      "expected": "72218d36040a3288af82684e5d128535f7e420775fab158d6ecdc8efc0ab7583",
+      "actual": "72218d36040a3288af82684e5d128535f7e420775fab158d6ecdc8efc0ab7583",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Keyposes.png",
+      "expected": "45b34894cbf36fed845f0fc9e08aa48ce5e2f0e9c59e7d6a5fdb4181c7ff5ae9",
+      "actual": "45b34894cbf36fed845f0fc9e08aa48ce5e2f0e9c59e7d6a5fdb4181c7ff5ae9",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Run.png",
+      "expected": "9173bb0b9cb280374b0a82b8a59b17d79994591b6400e50b3a736d48b34f7c50",
+      "actual": "9173bb0b9cb280374b0a82b8a59b17d79994591b6400e50b3a736d48b34f7c50",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/esporario/Walk.png",
+      "expected": "b836d33c69aa94b49ecabb7f2b3e3fce17073102b00a7d9b8760a8f2a96b8035",
+      "actual": "b836d33c69aa94b49ecabb7f2b3e3fce17073102b00a7d9b8760a8f2a96b8035",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack1-FX.png",
+      "expected": "51c3f8f69d5372ce82eb567d67bcc12837a0ffe873414e67493ab0ce373d20ed",
+      "actual": "51c3f8f69d5372ce82eb567d67bcc12837a0ffe873414e67493ab0ce373d20ed",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack1.png",
+      "expected": "f39f2107032f16b8fa0b862737d3ee5bd596c055fdef9f6a8d53dd279a786470",
+      "actual": "f39f2107032f16b8fa0b862737d3ee5bd596c055fdef9f6a8d53dd279a786470",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack2-FX.png",
+      "expected": "a80024559276b2cbddd63473eff859b6e55b69c365c6977ded7c24913aef7a5c",
+      "actual": "a80024559276b2cbddd63473eff859b6e55b69c365c6977ded7c24913aef7a5c",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack2.png",
+      "expected": "697bf4ff56c251991c5c2d00c95f06335deb4715fa64d49262a07c8e622dc4d0",
+      "actual": "697bf4ff56c251991c5c2d00c95f06335deb4715fa64d49262a07c8e622dc4d0",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack3-FX.png",
+      "expected": "51fc398ec02e6ac133cedd8441ba23cbe6a92d7d7f18a8136b40866350e39016",
+      "actual": "51fc398ec02e6ac133cedd8441ba23cbe6a92d7d7f18a8136b40866350e39016",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Attack3.png",
+      "expected": "78d1b7bf6060b797a77d4e668adffaca41eab100420a07524071f6f10492398b",
+      "actual": "78d1b7bf6060b797a77d4e668adffaca41eab100420a07524071f6f10492398b",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Death.png",
+      "expected": "3a02f2c7595c02eaf1687e7b029ff572b3b4d924c93b03579a15b68d353ccfa2",
+      "actual": "3a02f2c7595c02eaf1687e7b029ff572b3b4d924c93b03579a15b68d353ccfa2",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Hurt.png",
+      "expected": "e58b713f61a6270a7df988eb7fc966dbbc9a8e4c2cfa883284fbc665f8d0d60f",
+      "actual": "e58b713f61a6270a7df988eb7fc966dbbc9a8e4c2cfa883284fbc665f8d0d60f",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Idle.png",
+      "expected": "ad4806abc12fae1badb24956d4a58fb7ce5f9184ae9629b1f1f90335b436bfa8",
+      "actual": "ad4806abc12fae1badb24956d4a58fb7ce5f9184ae9629b1f1f90335b436bfa8",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Jump-FX.png",
+      "expected": "a80024559276b2cbddd63473eff859b6e55b69c365c6977ded7c24913aef7a5c",
+      "actual": "a80024559276b2cbddd63473eff859b6e55b69c365c6977ded7c24913aef7a5c",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Jump.png",
+      "expected": "697bf4ff56c251991c5c2d00c95f06335deb4715fa64d49262a07c8e622dc4d0",
+      "actual": "697bf4ff56c251991c5c2d00c95f06335deb4715fa64d49262a07c8e622dc4d0",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Keyposes.png",
+      "expected": "aff42fd5b360e129aa64adc008c2560974db723a79cf8b0b36840493f3511671",
+      "actual": "aff42fd5b360e129aa64adc008c2560974db723a79cf8b0b36840493f3511671",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Run.png",
+      "expected": "ee959394931c83ecd8eadbae2a4793b6f423813dc7a248f3db6eb6dbf2efa7ba",
+      "actual": "ee959394931c83ecd8eadbae2a4793b6f423813dc7a248f3db6eb6dbf2efa7ba",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/huesped/Walk.png",
+      "expected": "c51102aab3c179b228e36fa1264ae3c20363db7122d58b38a456d6fe8b0cdc3e",
+      "actual": "c51102aab3c179b228e36fa1264ae3c20363db7122d58b38a456d6fe8b0cdc3e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack1-FX.png",
+      "expected": "8fc2897d74111d3f8e5096d255eaa9205d9e5ecc369bda00d4af7999967721d2",
+      "actual": "8fc2897d74111d3f8e5096d255eaa9205d9e5ecc369bda00d4af7999967721d2",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack1.png",
+      "expected": "eca0600121aa985c9735848fb6b5459ab103ef94b36e1c29c64bc820b4f278ff",
+      "actual": "eca0600121aa985c9735848fb6b5459ab103ef94b36e1c29c64bc820b4f278ff",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack2-FX.png",
+      "expected": "651646e22624d13edb75a82d58568c4653db5de924c330f1734e52eea87eb8d0",
+      "actual": "651646e22624d13edb75a82d58568c4653db5de924c330f1734e52eea87eb8d0",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack2.png",
+      "expected": "ee85e2df06ca9f00c2e7a02aea1d7716af5597395b030ef3c0ee61691dba91e9",
+      "actual": "ee85e2df06ca9f00c2e7a02aea1d7716af5597395b030ef3c0ee61691dba91e9",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack3-FX.png",
+      "expected": "0989a266d41568868347d1bb77b0f05abbd8c80f0b9339f84c55736d6c48cfdd",
+      "actual": "0989a266d41568868347d1bb77b0f05abbd8c80f0b9339f84c55736d6c48cfdd",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Attack3.png",
+      "expected": "2eea9cf1c5aa6451fa41379754d0cc0c876fc68b20d5ae5b4f720a84573e9b45",
+      "actual": "2eea9cf1c5aa6451fa41379754d0cc0c876fc68b20d5ae5b4f720a84573e9b45",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Death.png",
+      "expected": "c77ccafba4f6753900642fffcfa0fbf21fe50f89c3caa2602dba434b89210bfb",
+      "actual": "c77ccafba4f6753900642fffcfa0fbf21fe50f89c3caa2602dba434b89210bfb",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Hurt.png",
+      "expected": "b0ac509648de98da2dbe5ea9555b8d58e51870566bc2a3e892161003d92831b3",
+      "actual": "b0ac509648de98da2dbe5ea9555b8d58e51870566bc2a3e892161003d92831b3",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Idle.png",
+      "expected": "35bd13f17641cb128e8dbac1424734b9348914874dae8eca910d47ef21e817f6",
+      "actual": "35bd13f17641cb128e8dbac1424734b9348914874dae8eca910d47ef21e817f6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Jump-FX.png",
+      "expected": "651646e22624d13edb75a82d58568c4653db5de924c330f1734e52eea87eb8d0",
+      "actual": "651646e22624d13edb75a82d58568c4653db5de924c330f1734e52eea87eb8d0",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Jump.png",
+      "expected": "ee85e2df06ca9f00c2e7a02aea1d7716af5597395b030ef3c0ee61691dba91e9",
+      "actual": "ee85e2df06ca9f00c2e7a02aea1d7716af5597395b030ef3c0ee61691dba91e9",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Keyposes.png",
+      "expected": "5455efeca1d2fc59e476be69bf8aa346addbe8429c55f37e835040f72060e39a",
+      "actual": "5455efeca1d2fc59e476be69bf8aa346addbe8429c55f37e835040f72060e39a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Run.png",
+      "expected": "a2239673c31a9016b42861e9d82b349baf96e0c88533f94933239a3dd23758eb",
+      "actual": "a2239673c31a9016b42861e9d82b349baf96e0c88533f94933239a3dd23758eb",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/larva/Walk.png",
+      "expected": "8d453777b6bb439b5bfc9165adbf48fff1f86d697ecff841255813ca1e48da51",
+      "actual": "8d453777b6bb439b5bfc9165adbf48fff1f86d697ecff841255813ca1e48da51",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack1-FX.png",
+      "expected": "934cd51790c64fc62b67e693b146d2c4164b6d5b1baf4a8c89f8f8321b48d646",
+      "actual": "934cd51790c64fc62b67e693b146d2c4164b6d5b1baf4a8c89f8f8321b48d646",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack1.png",
+      "expected": "42eb8a2f5d9544d4a3e497a79b03f6755918550257d6df905dd6e21f526735db",
+      "actual": "42eb8a2f5d9544d4a3e497a79b03f6755918550257d6df905dd6e21f526735db",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack2-FX.png",
+      "expected": "9980d9cc9335008d2c31b5d6a6a23d25ccaa13d80784ac9c0ab74d3a1f525537",
+      "actual": "9980d9cc9335008d2c31b5d6a6a23d25ccaa13d80784ac9c0ab74d3a1f525537",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack2.png",
+      "expected": "bd7d4d954af7dc647f75c6e0c7fdf303b22f057036f053cbd99d5b242183f4eb",
+      "actual": "bd7d4d954af7dc647f75c6e0c7fdf303b22f057036f053cbd99d5b242183f4eb",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack3-FX.png",
+      "expected": "dc0591e500e31281a8efbe247d2b6c0ffca68ef7e5760d867e169587ebd229a6",
+      "actual": "dc0591e500e31281a8efbe247d2b6c0ffca68ef7e5760d867e169587ebd229a6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Attack3.png",
+      "expected": "eb2e4486b1ff4ea2e717f19543d7c7b4674c7cb6a6a6da8c731853dbad7d127f",
+      "actual": "eb2e4486b1ff4ea2e717f19543d7c7b4674c7cb6a6a6da8c731853dbad7d127f",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Death.png",
+      "expected": "6dbdea767b293a9bafa54bb57e34aa003a9c2c855838f32ec5e944b7b2174771",
+      "actual": "6dbdea767b293a9bafa54bb57e34aa003a9c2c855838f32ec5e944b7b2174771",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Hurt.png",
+      "expected": "b18f670ae962556ed526646a43fcf58064f2c09e6df263ae4e37852a9e13ac70",
+      "actual": "b18f670ae962556ed526646a43fcf58064f2c09e6df263ae4e37852a9e13ac70",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Idle.png",
+      "expected": "90704087f27b5f6f001ec1f8f77452d99f32d44fb7d285bf1e2e93a1637cb0ae",
+      "actual": "90704087f27b5f6f001ec1f8f77452d99f32d44fb7d285bf1e2e93a1637cb0ae",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Jump-FX.png",
+      "expected": "9980d9cc9335008d2c31b5d6a6a23d25ccaa13d80784ac9c0ab74d3a1f525537",
+      "actual": "9980d9cc9335008d2c31b5d6a6a23d25ccaa13d80784ac9c0ab74d3a1f525537",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Jump.png",
+      "expected": "bd7d4d954af7dc647f75c6e0c7fdf303b22f057036f053cbd99d5b242183f4eb",
+      "actual": "bd7d4d954af7dc647f75c6e0c7fdf303b22f057036f053cbd99d5b242183f4eb",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Keyposes.png",
+      "expected": "a8e807deceba8dd27c7de155142723e01e281afc63baaa99629a7e63722ce625",
+      "actual": "a8e807deceba8dd27c7de155142723e01e281afc63baaa99629a7e63722ce625",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Run.png",
+      "expected": "5d29fc39473bf5ee7d5c932cabf4deb8ad0b49288acff129ddb83699a143726c",
+      "actual": "5d29fc39473bf5ee7d5c932cabf4deb8ad0b49288acff129ddb83699a143726c",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/malla/Walk.png",
+      "expected": "dab51709dcae47c91f942d7af426a744b07215dfff7ccb5e677d7c3d0d34bd58",
+      "actual": "dab51709dcae47c91f942d7af426a744b07215dfff7ccb5e677d7c3d0d34bd58",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack1-FX.png",
+      "expected": "2a728563b56c56b3921258c3f20173f80aabb29cad230d1fe0495c488cf336b7",
+      "actual": "2a728563b56c56b3921258c3f20173f80aabb29cad230d1fe0495c488cf336b7",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack1.png",
+      "expected": "424ed8b1f9e279b027a4c912193f7808b67a32fd467e82b9530411d15116f222",
+      "actual": "424ed8b1f9e279b027a4c912193f7808b67a32fd467e82b9530411d15116f222",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack2-FX.png",
+      "expected": "aed73aef91c7feb6c80a978afc4bc53bea058a0e3398774488aa587b7c7cb312",
+      "actual": "aed73aef91c7feb6c80a978afc4bc53bea058a0e3398774488aa587b7c7cb312",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack2.png",
+      "expected": "b45b6348282c44cdca77ceab615a495c0fe959b13bd4ac69093455f4b11ebc5d",
+      "actual": "b45b6348282c44cdca77ceab615a495c0fe959b13bd4ac69093455f4b11ebc5d",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack3-FX.png",
+      "expected": "beef3db7ea636657265326000f50d7e4465143d90d5bcac28bb89885945ed986",
+      "actual": "beef3db7ea636657265326000f50d7e4465143d90d5bcac28bb89885945ed986",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Attack3.png",
+      "expected": "76d4faddadadb8f32ea7691bc8e1f6fdd06cece2028e1dfe16e3930be73bb5b6",
+      "actual": "76d4faddadadb8f32ea7691bc8e1f6fdd06cece2028e1dfe16e3930be73bb5b6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Death.png",
+      "expected": "88c3cc9dabc680afd79f13c89e8796c184be7c3adee54a81029f78bd39029db8",
+      "actual": "88c3cc9dabc680afd79f13c89e8796c184be7c3adee54a81029f78bd39029db8",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Hurt.png",
+      "expected": "d8354b50d941c5d3315e703ef5b02dd643b5282d25002aaf3bca64c255dc1cbf",
+      "actual": "d8354b50d941c5d3315e703ef5b02dd643b5282d25002aaf3bca64c255dc1cbf",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Idle.png",
+      "expected": "e58ae5e6b2080e975598d814f25518d25608c2911a4c45f8cd298fc38648b94e",
+      "actual": "e58ae5e6b2080e975598d814f25518d25608c2911a4c45f8cd298fc38648b94e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Jump-FX.png",
+      "expected": "beef3db7ea636657265326000f50d7e4465143d90d5bcac28bb89885945ed986",
+      "actual": "beef3db7ea636657265326000f50d7e4465143d90d5bcac28bb89885945ed986",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Jump.png",
+      "expected": "76d4faddadadb8f32ea7691bc8e1f6fdd06cece2028e1dfe16e3930be73bb5b6",
+      "actual": "76d4faddadadb8f32ea7691bc8e1f6fdd06cece2028e1dfe16e3930be73bb5b6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Keyposes.png",
+      "expected": "61eb4caf907b867c881ccf8cb2f7ecde4e06d796a9353d12ef44e0b41ba9d6cf",
+      "actual": "61eb4caf907b867c881ccf8cb2f7ecde4e06d796a9353d12ef44e0b41ba9d6cf",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Run.png",
+      "expected": "ec3e81d2821e0dedeeb0caa0f64a707302aed5070292833658b89078cf872504",
+      "actual": "ec3e81d2821e0dedeeb0caa0f64a707302aed5070292833658b89078cf872504",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/32/portador/Walk.png",
+      "expected": "eb122ec7a613ef476060fdaefb36fa8a4bb4dd54b4f0a58f466195141350a03e",
+      "actual": "eb122ec7a613ef476060fdaefb36fa8a4bb4dd54b4f0a58f466195141350a03e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/SOURCES.json",
+      "expected": "32ab044d9ead158ea74e2923c18bb2c20d1a5b4e7d216193045abb27cef0dfc6",
+      "actual": "32ab044d9ead158ea74e2923c18bb2c20d1a5b4e7d216193045abb27cef0dfc6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/catalogo.js",
+      "expected": "92ba5b0ff2fed008cc5ae02c1d6d97af4b733d84ce5e21917726954b7c57718f",
+      "actual": "92ba5b0ff2fed008cc5ae02c1d6d97af4b733d84ce5e21917726954b7c57718f",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/anomalias-biologicas/catalogo.json",
+      "expected": "ee070f836135c390c37025539c360ddf1a61d8603ce6b141d9426a79cce2ab5e",
+      "actual": "ee070f836135c390c37025539c360ddf1a61d8603ce6b141d9426a79cce2ab5e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Attack.png",
+      "expected": "9ec53cd28a3a0f97aa9b531e13489b8f1e5955f5167682977a171abb73196d5e",
+      "actual": "9ec53cd28a3a0f97aa9b531e13489b8f1e5955f5167682977a171abb73196d5e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Hurt.png",
+      "expected": "dc8a1f9774494aae303d241cd5ade3f8cf9914cc0420c3b8b571f3acb32df1b4",
+      "actual": "dc8a1f9774494aae303d241cd5ade3f8cf9914cc0420c3b8b571f3acb32df1b4",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Idle.png",
+      "expected": "65ebb3ccfb20e5c4d83609a6f3a03e97c4bc6d51e7b5fbe6ebe06e9a16482904",
+      "actual": "65ebb3ccfb20e5c4d83609a6f3a03e97c4bc6d51e7b5fbe6ebe06e9a16482904",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Neutralized.png",
+      "expected": "7ec52ebf38458e4c5b6e0b34e3ef04b4a5ae69ca0cb466e16d807782f3d1e10a",
+      "actual": "7ec52ebf38458e4c5b6e0b34e3ef04b4a5ae69ca0cb466e16d807782f3d1e10a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Partes.png",
+      "expected": "a226484a2588fa9c6f59cd4d19802dbba0add7d8811e7a1326460e10f6338fe5",
+      "actual": "a226484a2588fa9c6f59cd4d19802dbba0add7d8811e7a1326460e10f6338fe5",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_curvy/Walk.png",
+      "expected": "d5a4515e739c2e1b1952c2a87728eb695a33620d5972599e7223969fa9c9ae13",
+      "actual": "d5a4515e739c2e1b1952c2a87728eb695a33620d5972599e7223969fa9c9ae13",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Attack.png",
+      "expected": "dbcb48988a3c21144eafe8dcc3fac046306602fd30d96abd1dde611fc8697eed",
+      "actual": "dbcb48988a3c21144eafe8dcc3fac046306602fd30d96abd1dde611fc8697eed",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Hurt.png",
+      "expected": "18876230655bbb0a68ab35f8583f340dc96ebd0b05bd0073de9d60a7b65a0c56",
+      "actual": "18876230655bbb0a68ab35f8583f340dc96ebd0b05bd0073de9d60a7b65a0c56",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Idle.png",
+      "expected": "8313c6b9d9da0b1b613f3353ba0726a13c7d7f7b56a15dc08844ad56c8b40fe2",
+      "actual": "8313c6b9d9da0b1b613f3353ba0726a13c7d7f7b56a15dc08844ad56c8b40fe2",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Neutralized.png",
+      "expected": "0d9b6282ee465df358eb51d64857ec06cdf19fc3354acee0da7244e834513e5d",
+      "actual": "0d9b6282ee465df358eb51d64857ec06cdf19fc3354acee0da7244e834513e5d",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Partes.png",
+      "expected": "fcd0f1aac2e1389538a3538fca7e579a697e3aa17b8a35bf7cd804486a9d0bb3",
+      "actual": "fcd0f1aac2e1389538a3538fca7e579a697e3aa17b8a35bf7cd804486a9d0bb3",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_delgada/Walk.png",
+      "expected": "1a267833618b865106e362829dcd745a1725d10427a74746b504d5283cfaca34",
+      "actual": "1a267833618b865106e362829dcd745a1725d10427a74746b504d5283cfaca34",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Attack.png",
+      "expected": "77313194275bc59d2ceb7625e86122d990ae4360f035de334787c69814396c67",
+      "actual": "77313194275bc59d2ceb7625e86122d990ae4360f035de334787c69814396c67",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Hurt.png",
+      "expected": "51fb2b8a8ec5533a90d0b10fcc2e644699f0e00d72fa0538449d0ff587693dd4",
+      "actual": "51fb2b8a8ec5533a90d0b10fcc2e644699f0e00d72fa0538449d0ff587693dd4",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Idle.png",
+      "expected": "256064525c82b812e34ba05694a29340d7650b609623e2492fdc09b24871d05a",
+      "actual": "256064525c82b812e34ba05694a29340d7650b609623e2492fdc09b24871d05a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Neutralized.png",
+      "expected": "0665bf3cd0a2dc35b03911407300bddd3a37ad293b0468875b445e2bfcc35c5d",
+      "actual": "0665bf3cd0a2dc35b03911407300bddd3a37ad293b0468875b445e2bfcc35c5d",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Partes.png",
+      "expected": "d5754f48cca0fd728c495b3ef5a5661dbb872e82c80f2e8494f15b953fdb2885",
+      "actual": "d5754f48cca0fd728c495b3ef5a5661dbb872e82c80f2e8494f15b953fdb2885",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/16/apoyo_fitness/Walk.png",
+      "expected": "aa8da1522896332875bb6ed2c01b44a26b72c2cb3bd5d0f2c1a9e1ce45fb13b6",
+      "actual": "aa8da1522896332875bb6ed2c01b44a26b72c2cb3bd5d0f2c1a9e1ce45fb13b6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Attack.png",
+      "expected": "a0decf949ca0f24a27de99662edb9227ad514dd23cb15693166511fb5171fc63",
+      "actual": "a0decf949ca0f24a27de99662edb9227ad514dd23cb15693166511fb5171fc63",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Hurt.png",
+      "expected": "f6f7112fea8ea0024b83b4190740a67c57aa81d9ba424392f49778f676205807",
+      "actual": "f6f7112fea8ea0024b83b4190740a67c57aa81d9ba424392f49778f676205807",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Idle.png",
+      "expected": "f64152a9b910d79129b2417a9651037b1bff5905d9919df2ebcba1aeb4a0ebb3",
+      "actual": "f64152a9b910d79129b2417a9651037b1bff5905d9919df2ebcba1aeb4a0ebb3",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Neutralized.png",
+      "expected": "7ac91040e99be45f62700cdefdb18b7b79a71eb928f6e054c5cf2d967b0180bc",
+      "actual": "7ac91040e99be45f62700cdefdb18b7b79a71eb928f6e054c5cf2d967b0180bc",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Partes.png",
+      "expected": "a6612358b9f82465901aec7e0cd4e7f6430182cc36eb30f722ffcc65592e49db",
+      "actual": "a6612358b9f82465901aec7e0cd4e7f6430182cc36eb30f722ffcc65592e49db",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_curvy/Walk.png",
+      "expected": "353ca3611cfef8dfd87e18caed6495356004eb727c99322cac650d5fe97b1440",
+      "actual": "353ca3611cfef8dfd87e18caed6495356004eb727c99322cac650d5fe97b1440",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Attack.png",
+      "expected": "fba73897470dee03a553dbe471702d0f6bd33a557c98d4fa045c09519623360a",
+      "actual": "fba73897470dee03a553dbe471702d0f6bd33a557c98d4fa045c09519623360a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Hurt.png",
+      "expected": "16e6fa8e60e35d038c28da4d8cf7885b81d2349d055c20fb14e28e306366de8e",
+      "actual": "16e6fa8e60e35d038c28da4d8cf7885b81d2349d055c20fb14e28e306366de8e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Idle.png",
+      "expected": "64d89012c2733d12758da72cc4abface8b34406fa21a4a8779ba227368506005",
+      "actual": "64d89012c2733d12758da72cc4abface8b34406fa21a4a8779ba227368506005",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Neutralized.png",
+      "expected": "ca3702c07c843c3b97670be3ae5324add53fc75c3ca3a7a466214ce1749102be",
+      "actual": "ca3702c07c843c3b97670be3ae5324add53fc75c3ca3a7a466214ce1749102be",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Partes.png",
+      "expected": "d7cf30cd2af896bf314c0d6e5cee63864382876185bc0f1dcdfb16a6a9d1b584",
+      "actual": "d7cf30cd2af896bf314c0d6e5cee63864382876185bc0f1dcdfb16a6a9d1b584",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_delgada/Walk.png",
+      "expected": "746e81f9ee4a2c9ec30a133604659c40535f939b82bc91ca3a679ffcc2e6ea4a",
+      "actual": "746e81f9ee4a2c9ec30a133604659c40535f939b82bc91ca3a679ffcc2e6ea4a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Attack.png",
+      "expected": "acb93a15ad2d8279d7b80c2c20aca64e6c55f111ea543666cc828c162f02eebd",
+      "actual": "acb93a15ad2d8279d7b80c2c20aca64e6c55f111ea543666cc828c162f02eebd",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Hurt.png",
+      "expected": "2faec54c99b4e34df1929ac3704126e9ba626bdd49a14b1d84217164d1b90f57",
+      "actual": "2faec54c99b4e34df1929ac3704126e9ba626bdd49a14b1d84217164d1b90f57",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Idle.png",
+      "expected": "5e417133ad15d9a5a0feea683accf2304998eb67e90f7fff79dd33e36787a7f2",
+      "actual": "5e417133ad15d9a5a0feea683accf2304998eb67e90f7fff79dd33e36787a7f2",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Neutralized.png",
+      "expected": "2666b7eaec6d4aa937a182a9eb72a0102fda6e30d55e851f6037bce8822e1f4b",
+      "actual": "2666b7eaec6d4aa937a182a9eb72a0102fda6e30d55e851f6037bce8822e1f4b",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Partes.png",
+      "expected": "e10e2d7b04b59f437ffc5b5d37d95fe713ff2f91670add36f9f930238f88fa72",
+      "actual": "e10e2d7b04b59f437ffc5b5d37d95fe713ff2f91670add36f9f930238f88fa72",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/32/apoyo_fitness/Walk.png",
+      "expected": "0cd1b501c8cca947d6a1976d75089fa7120953ed413fcfc429eeb245f99c0052",
+      "actual": "0cd1b501c8cca947d6a1976d75089fa7120953ed413fcfc429eeb245f99c0052",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "assets/companeras-contencion-r3/catalogo.json",
+      "expected": "77d955b50379d528a3cb06bbb0c609cf0fe83a96eb0332180eaa6865a2a4c737",
+      "actual": "77d955b50379d528a3cb06bbb0c609cf0fe83a96eb0332180eaa6865a2a4c737",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "css/technical.css",
+      "expected": "41b967080fc265f6e6a1dfb11f7a51ee935a7d58d03ac3c8b453381be7d15346",
+      "actual": "41b967080fc265f6e6a1dfb11f7a51ee935a7d58d03ac3c8b453381be7d15346",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "dev.html",
+      "expected": "682ae758e09bf46eb0aef9b1567b3daf2a66657cf5c55955dd383c50e5039f0a",
+      "actual": "682ae758e09bf46eb0aef9b1567b3daf2a66657cf5c55955dd383c50e5039f0a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/PRUEBA_GRIETAS_INTEGRALES.md",
+      "expected": "96d39eaa7971be44c5a25ab90bcecb90e2db4f7c1bea4a8a292c4109deba3355",
+      "actual": "96d39eaa7971be44c5a25ab90bcecb90e2db4f7c1bea4a8a292c4109deba3355",
+      "matched": true,
+      "attempt": 2
+    },
+    {
+      "path": "docs/gestion/CONTROL_CAMBIOS.md",
+      "expected": "42ae8b720b8b89a4d47f46eda3b3cba8071e2f675835107ade841ae0387e42e9",
+      "actual": "42ae8b720b8b89a4d47f46eda3b3cba8071e2f675835107ade841ae0387e42e9",
+      "matched": true,
+      "attempt": 2
+    },
+    {
+      "path": "docs/gestion/LOT-EST-005_VALIDACION.json",
+      "expected": "2f0574c05fba993385359fc45dd3fad367f15d75512df859af6e6bc64f05f6c9",
+      "actual": "2f0574c05fba993385359fc45dd3fad367f15d75512df859af6e6bc64f05f6c9",
+      "matched": true,
+      "attempt": 2
+    },
+    {
+      "path": "docs/gestion/LOT-EST-006_VALIDACION.json",
+      "expected": "d278a1f22e5e5ea9e6ec4c06fdf26476878992f942a9b27d602c0c3e2d8cbf1f",
+      "actual": "d278a1f22e5e5ea9e6ec4c06fdf26476878992f942a9b27d602c0c3e2d8cbf1f",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/gestion/lotes/LOT-EST-005-r2.md",
+      "expected": "304c589355a100574134b15dde48f606a37eba8b2721c24e014aefd909395561",
+      "actual": "304c589355a100574134b15dde48f606a37eba8b2721c24e014aefd909395561",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/baton/E.png",
+      "expected": "a74bfd7f801d235a0267945f604c4a104fdd435a34b554335c43d2e2ccb386f6",
+      "actual": "a74bfd7f801d235a0267945f604c4a104fdd435a34b554335c43d2e2ccb386f6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/baton/N.png",
+      "expected": "2215073c61da94c76e0dc37819908b96cff482c602cd3f4184563eefafd78fc5",
+      "actual": "2215073c61da94c76e0dc37819908b96cff482c602cd3f4184563eefafd78fc5",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/baton/NE.png",
+      "expected": "9f93c5d2b178ccd4283ce82ea51cc9b2b826c458cadab9848655465f85f7c946",
+      "actual": "9f93c5d2b178ccd4283ce82ea51cc9b2b826c458cadab9848655465f85f7c946",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/baton/NW.png",
+      "expected": "c605712d875eff7842c6d5b9549a2c5d3653ed4c69ed42db3a785027772fdc70",
+      "actual": "c605712d875eff7842c6d5b9549a2c5d3653ed4c69ed42db3a785027772fdc70",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/baton/S.png",
+      "expected": "cf4106751987eca0aa8057a19329446bdd0690ea983ff13779418b5d63788a91",
+      "actual": "cf4106751987eca0aa8057a19329446bdd0690ea983ff13779418b5d63788a91",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/baton/SE.png",
+      "expected": "1dac68fb28ca15f9338ea875483503ea372b2c079959f99f5fe6f8ffdc2467bd",
+      "actual": "1dac68fb28ca15f9338ea875483503ea372b2c079959f99f5fe6f8ffdc2467bd",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/baton/SW.png",
+      "expected": "43ab46d926232492cd58a131a8f78de09b6a28046ccbe015867db4c888544742",
+      "actual": "43ab46d926232492cd58a131a8f78de09b6a28046ccbe015867db4c888544742",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/baton/W.png",
+      "expected": "632c5c2ab0fc5f3b9812e63bfabae61ea75cf2bd5c67594d2701c8e50895a971",
+      "actual": "632c5c2ab0fc5f3b9812e63bfabae61ea75cf2bd5c67594d2701c8e50895a971",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/baton/direcciones.png",
+      "expected": "061dee2e026f21fe5994417094e870e616de59365fdc9a3b2ad67932dbce132b",
+      "actual": "061dee2e026f21fe5994417094e870e616de59365fdc9a3b2ad67932dbce132b",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/shotgun/E.png",
+      "expected": "115093137898520ec1f6447f3352282d8cc0495621da364f040ed665990f2ada",
+      "actual": "115093137898520ec1f6447f3352282d8cc0495621da364f040ed665990f2ada",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/shotgun/N.png",
+      "expected": "3c43331966e6dfee962f4fa2141bbb9cd9bf3c1d2279c0a88543ebe23a5f05fc",
+      "actual": "3c43331966e6dfee962f4fa2141bbb9cd9bf3c1d2279c0a88543ebe23a5f05fc",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/shotgun/NE.png",
+      "expected": "e6d4e506c348bdd22b36e73307e75a00261a1d52337f07e0bbb2aeebba37e611",
+      "actual": "e6d4e506c348bdd22b36e73307e75a00261a1d52337f07e0bbb2aeebba37e611",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/shotgun/NW.png",
+      "expected": "7e40fc3c72c2c0f0e8ce0c65f307995b66c6cbd5b0257c11e1728c19394b853f",
+      "actual": "7e40fc3c72c2c0f0e8ce0c65f307995b66c6cbd5b0257c11e1728c19394b853f",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/shotgun/S.png",
+      "expected": "d030cd03cf9d18e21707a9ca497a9c1b9fbfb0bac943e749f24bf8d9b55146a7",
+      "actual": "d030cd03cf9d18e21707a9ca497a9c1b9fbfb0bac943e749f24bf8d9b55146a7",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/shotgun/SE.png",
+      "expected": "562c96aaf4c391b0d201b09e8d39008cff94edfea0df4b70acbcec9cd8f1b9be",
+      "actual": "562c96aaf4c391b0d201b09e8d39008cff94edfea0df4b70acbcec9cd8f1b9be",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/shotgun/SW.png",
+      "expected": "47b8f0278e7a786c62d139b88b385acef8cc63d5a7cf1f879ff818b7a25443eb",
+      "actual": "47b8f0278e7a786c62d139b88b385acef8cc63d5a7cf1f879ff818b7a25443eb",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/shotgun/W.png",
+      "expected": "ecf888dce077f45d1a6d68afe3dad5290a4a1f9631d56c67c0be07ee7e9081bf",
+      "actual": "ecf888dce077f45d1a6d68afe3dad5290a4a1f9631d56c67c0be07ee7e9081bf",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/shotgun/direcciones.png",
+      "expected": "9d07c1cbfe3d8188e53cd34e505d18f2e070675baf5ba7c9a8b2bc54148a4aab",
+      "actual": "9d07c1cbfe3d8188e53cd34e505d18f2e070675baf5ba7c9a8b2bc54148a4aab",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/smg/E.png",
+      "expected": "4f23312863faf4ee3d758e3725461ff5430877aa1eda21e84eb1c5a52e4b5787",
+      "actual": "4f23312863faf4ee3d758e3725461ff5430877aa1eda21e84eb1c5a52e4b5787",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/smg/N.png",
+      "expected": "f9f0ad0364db00f6af73730ec80b13197e6060c53f66f0b543ddd2c9a886ae25",
+      "actual": "f9f0ad0364db00f6af73730ec80b13197e6060c53f66f0b543ddd2c9a886ae25",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/smg/NE.png",
+      "expected": "de0180edceb28f12d4593356934d54e836a1aad69d46b5d11968b9141af6a667",
+      "actual": "de0180edceb28f12d4593356934d54e836a1aad69d46b5d11968b9141af6a667",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/smg/NW.png",
+      "expected": "6e46acf9414605a0a4c961c9f490ca6b33f2a5b5623a895f1adb4161a692debd",
+      "actual": "6e46acf9414605a0a4c961c9f490ca6b33f2a5b5623a895f1adb4161a692debd",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/smg/S.png",
+      "expected": "0db13b15b4a499a64c21e51878caa80f2e844b02c223cdc5648bdd56b0e1bfb7",
+      "actual": "0db13b15b4a499a64c21e51878caa80f2e844b02c223cdc5648bdd56b0e1bfb7",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/smg/SE.png",
+      "expected": "bc966cffd949a86e12bdac081e0ac44fc8fdbf903b949f9f631fa78b547dc228",
+      "actual": "bc966cffd949a86e12bdac081e0ac44fc8fdbf903b949f9f631fa78b547dc228",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/smg/SW.png",
+      "expected": "2660159435078c486202b6e8cdfe52a42c212e993a39e353c57b871ffc2cfc26",
+      "actual": "2660159435078c486202b6e8cdfe52a42c212e993a39e353c57b871ffc2cfc26",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/smg/W.png",
+      "expected": "669353d31234217280c3d71d4db5f5af6ac785494c15049e62bdaabe08a89a4a",
+      "actual": "669353d31234217280c3d71d4db5f5af6ac785494c15049e62bdaabe08a89a4a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/16/smg/direcciones.png",
+      "expected": "a64e08f4b99ba6e042d283d297f9f1932b87d66e46cc129a1ab7479bdee3725b",
+      "actual": "a64e08f4b99ba6e042d283d297f9f1932b87d66e46cc129a1ab7479bdee3725b",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/baton/E.png",
+      "expected": "78818d2e192e9a5359dc1fb6e49390a74cdf70f0a3ae116b0aa87b958c5f398d",
+      "actual": "78818d2e192e9a5359dc1fb6e49390a74cdf70f0a3ae116b0aa87b958c5f398d",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/baton/N.png",
+      "expected": "90d556003b12d5ab4811df728351bc7d2dae1b0217ee95ce9082a25cfc96d701",
+      "actual": "90d556003b12d5ab4811df728351bc7d2dae1b0217ee95ce9082a25cfc96d701",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/baton/NE.png",
+      "expected": "9c7dd9ed79bf77e892699d88b5b960141ef18ca771cb05ba6c074ec0a7e5b934",
+      "actual": "9c7dd9ed79bf77e892699d88b5b960141ef18ca771cb05ba6c074ec0a7e5b934",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/baton/NW.png",
+      "expected": "d2ef66e43012aa49a0c7426d385f653be94f4a6087687c5ff4cfee4a6f913f05",
+      "actual": "d2ef66e43012aa49a0c7426d385f653be94f4a6087687c5ff4cfee4a6f913f05",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/baton/S.png",
+      "expected": "4f6f65a657be210abbd61ea10fe3d91ddabefb227fd5eab104dd1c4e2f4bfdf2",
+      "actual": "4f6f65a657be210abbd61ea10fe3d91ddabefb227fd5eab104dd1c4e2f4bfdf2",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/baton/SE.png",
+      "expected": "74e7fef342fc18fb4a478882a251f687263c5a270155d5d66db9b2344784dfc5",
+      "actual": "74e7fef342fc18fb4a478882a251f687263c5a270155d5d66db9b2344784dfc5",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/baton/SW.png",
+      "expected": "fcf9ca775ef923d8a3e4c52ac075fa2f859edb574c86ba896e548dc5a803031e",
+      "actual": "fcf9ca775ef923d8a3e4c52ac075fa2f859edb574c86ba896e548dc5a803031e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/baton/W.png",
+      "expected": "fe7d2ab294f7f6fbe4443f1035e61f88f5d9994648c51910ad79380f3649a98a",
+      "actual": "fe7d2ab294f7f6fbe4443f1035e61f88f5d9994648c51910ad79380f3649a98a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/baton/direcciones.png",
+      "expected": "9eb770e7e5f10166b358f633efe6239e2f79c4b6c40cfbb928b2c1d4dac57c6a",
+      "actual": "9eb770e7e5f10166b358f633efe6239e2f79c4b6c40cfbb928b2c1d4dac57c6a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/shotgun/E.png",
+      "expected": "65dd6e9534040e37152ac2d56f1eddf1b20284646c8880a5bff4a9b8e934e7e9",
+      "actual": "65dd6e9534040e37152ac2d56f1eddf1b20284646c8880a5bff4a9b8e934e7e9",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/shotgun/N.png",
+      "expected": "c7a08f342162e7342671132741c422e7c3ecdcf0b4b9029760e80b0c8ac4540a",
+      "actual": "c7a08f342162e7342671132741c422e7c3ecdcf0b4b9029760e80b0c8ac4540a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/shotgun/NE.png",
+      "expected": "5ccfa05810b3fb440a5b0070985193514ef6ebb35a594c507173bff005aa0d19",
+      "actual": "5ccfa05810b3fb440a5b0070985193514ef6ebb35a594c507173bff005aa0d19",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/shotgun/NW.png",
+      "expected": "9c7bb00f70f624097fab271ff4e58e8adf1f00428bec3096bd62696d887af753",
+      "actual": "9c7bb00f70f624097fab271ff4e58e8adf1f00428bec3096bd62696d887af753",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/shotgun/S.png",
+      "expected": "8628dcd3b976a145f934d7339ccce58a88c861f92515c97c782b36c8dc1001b2",
+      "actual": "8628dcd3b976a145f934d7339ccce58a88c861f92515c97c782b36c8dc1001b2",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/shotgun/SE.png",
+      "expected": "333f9d0234278e43afb931fab5d36b5f4de54b0ed4c241bd2a3b8e12ee4cf1b1",
+      "actual": "333f9d0234278e43afb931fab5d36b5f4de54b0ed4c241bd2a3b8e12ee4cf1b1",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/shotgun/SW.png",
+      "expected": "1741f59be9b87688cb824e8de1ce79fa03229fc88697b4b631eb5a72afc195d9",
+      "actual": "1741f59be9b87688cb824e8de1ce79fa03229fc88697b4b631eb5a72afc195d9",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/shotgun/W.png",
+      "expected": "5e478388f00206f177015ac8b95039b1c08ee13c23952ab85ea128e290a4977a",
+      "actual": "5e478388f00206f177015ac8b95039b1c08ee13c23952ab85ea128e290a4977a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/shotgun/direcciones.png",
+      "expected": "4715430a3415e7f38c5f975635a9b8b46a2b4277d44cd19b2e8ca20566ff3b30",
+      "actual": "4715430a3415e7f38c5f975635a9b8b46a2b4277d44cd19b2e8ca20566ff3b30",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/smg/E.png",
+      "expected": "dd95d10ef7f02de587b04b9795bdd5d3e7b044f7b9b184f5433e073d01f5792a",
+      "actual": "dd95d10ef7f02de587b04b9795bdd5d3e7b044f7b9b184f5433e073d01f5792a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/smg/N.png",
+      "expected": "4a949b374cd8d6843708dbb33303fbc82f86431f8360216cabc9f87b68438399",
+      "actual": "4a949b374cd8d6843708dbb33303fbc82f86431f8360216cabc9f87b68438399",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/smg/NE.png",
+      "expected": "24b0b718088947eb874d9ed8d2b49f393f98945ad16b57b8993597532cf6c64d",
+      "actual": "24b0b718088947eb874d9ed8d2b49f393f98945ad16b57b8993597532cf6c64d",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/smg/NW.png",
+      "expected": "e63fa1855351eff3661b356e422327aa4d000a5396f65e910fa53cd8b433b25c",
+      "actual": "e63fa1855351eff3661b356e422327aa4d000a5396f65e910fa53cd8b433b25c",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/smg/S.png",
+      "expected": "a69268a8d20a28b2d7b8f20ea92d4e58267722d2ddaff76b1192fe10af115f44",
+      "actual": "a69268a8d20a28b2d7b8f20ea92d4e58267722d2ddaff76b1192fe10af115f44",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/smg/SE.png",
+      "expected": "b84c59fd227d1deb2d3352e58b35ff5ed0c21c475009f6964c9c620a60700ef5",
+      "actual": "b84c59fd227d1deb2d3352e58b35ff5ed0c21c475009f6964c9c620a60700ef5",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/smg/SW.png",
+      "expected": "d71269a8f59a4ac4491969a8f340a2f438f41c57db66e050649641584726d8e3",
+      "actual": "d71269a8f59a4ac4491969a8f340a2f438f41c57db66e050649641584726d8e3",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/smg/W.png",
+      "expected": "7a56c3ed70b18b07a18db8ceb5d2523decb6537fc797ce68def6dce2fb77b8c5",
+      "actual": "7a56c3ed70b18b07a18db8ceb5d2523decb6537fc797ce68def6dce2fb77b8c5",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/32/smg/direcciones.png",
+      "expected": "5b987443c08719b95711d05600b9716e26a5bf3575616a0a8a1b6f737ddd678e",
+      "actual": "5b987443c08719b95711d05600b9716e26a5bf3575616a0a8a1b6f737ddd678e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/REVISION_16.png",
+      "expected": "25a717820cfed484b7eb30aa477e86a5b53f1a4e1b5a0e328dbc0e87feadb044",
+      "actual": "25a717820cfed484b7eb30aa477e86a5b53f1a4e1b5a0e328dbc0e87feadb044",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/REVISION_32.png",
+      "expected": "6eb31efe9d688d1c9588d214d1e1fffe8c5592d83ce34a727fd474542639a728",
+      "actual": "6eb31efe9d688d1c9588d214d1e1fffe8c5592d83ce34a727fd474542639a728",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/catalogo.json",
+      "expected": "0fa9f5fbfaecbd33f57a30cfa8bae9bf06e5bed26f7d158a7cf0f85fabffd3cb",
+      "actual": "0fa9f5fbfaecbd33f57a30cfa8bae9bf06e5bed26f7d158a7cf0f85fabffd3cb",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "docs/referencias/armas/armas-faltantes-v1/fuentes/atlas-faltantes-v1.png",
+      "expected": "4a2f1be059089830053487eb8ff301f650c7ee0440603ca79537fd9a6ef714c1",
+      "actual": "4a2f1be059089830053487eb8ff301f650c7ee0440603ca79537fd9a6ef714c1",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "index.html",
+      "expected": "05c9acf360b4bc1bdb2fe5258f0a8e339797cfbb0acb612c21db0ba4104ed7de",
+      "actual": "05c9acf360b4bc1bdb2fe5258f0a8e339797cfbb0acb612c21db0ba4104ed7de",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/app.min.js",
+      "expected": "62e73ca6fb8af0835dc1f1e7b96597bb546bd1e18873a584e88014d976fff90e",
+      "actual": "62e73ca6fb8af0835dc1f1e7b96597bb546bd1e18873a584e88014d976fff90e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/data/bio-catalogue.js",
+      "expected": "92ba5b0ff2fed008cc5ae02c1d6d97af4b733d84ce5e21917726954b7c57718f",
+      "actual": "92ba5b0ff2fed008cc5ae02c1d6d97af4b733d84ce5e21917726954b7c57718f",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/data/companion-characters.js",
+      "expected": "01e3f6ef60299b70e355c8464ef978a3a5928a37c89594d6240ada814cf76fe1",
+      "actual": "01e3f6ef60299b70e355c8464ef978a3a5928a37c89594d6240ada814cf76fe1",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/data/rift-dialogues.js",
+      "expected": "55ebfa8713a46c26c95459715d1d0bf72eb25b2074ff3d60a1912b271bd3c172",
+      "actual": "55ebfa8713a46c26c95459715d1d0bf72eb25b2074ff3d60a1912b271bd3c172",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/entities/enemy.js",
+      "expected": "736d739710dc105a5fed844b376c707e06f56a32b20753f4889f9b83ed704926",
+      "actual": "736d739710dc105a5fed844b376c707e06f56a32b20753f4889f9b83ed704926",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/entities/fx.js",
+      "expected": "ab9bdee73cf5932fd9b5c7114ccbcc72880de8ffe02634004eb4bae4dbf97eaa",
+      "actual": "ab9bdee73cf5932fd9b5c7114ccbcc72880de8ffe02634004eb4bae4dbf97eaa",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/entities/pickup.js",
+      "expected": "7f07425f648cb4b3f5fd84ec4841b51b8c60aa8f693a34c86f1726614da3b36e",
+      "actual": "7f07425f648cb4b3f5fd84ec4841b51b8c60aa8f693a34c86f1726614da3b36e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/entities/projectile.js",
+      "expected": "3180e81266527d73042d043e673d4184b454a268385a16258d3f70e961afe34f",
+      "actual": "3180e81266527d73042d043e673d4184b454a268385a16258d3f70e961afe34f",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/game.js",
+      "expected": "306bdcb89cbadc7b5e6b73a18ff0650999ef38bab6c4cd847c4118dd5d2f3131",
+      "actual": "306bdcb89cbadc7b5e6b73a18ff0650999ef38bab6c4cd847c4118dd5d2f3131",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/main.js",
+      "expected": "fdbdc374a275642d73720a5cb959f80989a45b09857c9dddda47469133e305c6",
+      "actual": "fdbdc374a275642d73720a5cb959f80989a45b09857c9dddda47469133e305c6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/systems/combat.js",
+      "expected": "8a1403ea7ca5d23e7cb0d6378cb00bf60c8b286fa8cfc8dfef1c05825711d350",
+      "actual": "8a1403ea7ca5d23e7cb0d6378cb00bf60c8b286fa8cfc8dfef1c05825711d350",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/systems/expedition.js",
+      "expected": "69670fa13f609c976e6c0f801c9b4e9d0b4062fe93d883b453dd8d7cd45f5c85",
+      "actual": "69670fa13f609c976e6c0f801c9b4e9d0b4062fe93d883b453dd8d7cd45f5c85",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/systems/pathing.js",
+      "expected": "8b2d0e0f03ba36c0b94550835a8196944f9ace6dfaeb42bcf5b7939d4c91edfb",
+      "actual": "8b2d0e0f03ba36c0b94550835a8196944f9ace6dfaeb42bcf5b7939d4c91edfb",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/systems/rift-anomalies.js",
+      "expected": "a3f54c354d46f8edc7febf4474bcd060849f08eff44570b22104e893701712d6",
+      "actual": "a3f54c354d46f8edc7febf4474bcd060849f08eff44570b22104e893701712d6",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/systems/rift-companion.js",
+      "expected": "f040dfd091a75a7acf3f10c428161070d36ba340321b15f2cc7a2f5340f6cd6e",
+      "actual": "f040dfd091a75a7acf3f10c428161070d36ba340321b15f2cc7a2f5340f6cd6e",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/systems/rift-expedition.js",
+      "expected": "ab14eca90d34d3a0e8610483d9afe48f270d69e97e3f4bed3ee29f1b7cbc7df2",
+      "actual": "ab14eca90d34d3a0e8610483d9afe48f270d69e97e3f4bed3ee29f1b7cbc7df2",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/systems/rift-powers.js",
+      "expected": "23d3700d91156e1fec59568dce23da68e6e69dd08b2800a5911062a1c31c6018",
+      "actual": "23d3700d91156e1fec59568dce23da68e6e69dd08b2800a5911062a1c31c6018",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/systems/rift-session.js",
+      "expected": "5a191d42974e1f53405b752aa76004f126921e31555a84d2303cddd1fe505bc1",
+      "actual": "5a191d42974e1f53405b752aa76004f126921e31555a84d2303cddd1fe505bc1",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/systems/spawner.js",
+      "expected": "fd794d8fec277d0fb651fa1b21a841c2c93b5acac9dbf39a31addf08959b4e0b",
+      "actual": "fd794d8fec277d0fb651fa1b21a841c2c93b5acac9dbf39a31addf08959b4e0b",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/ui/approved-field-weapon-art.js",
+      "expected": "ebb73ff585952185a1b0b6e6e5737e22d6edd4990137f5e74c70bfbf51e287c2",
+      "actual": "ebb73ff585952185a1b0b6e6e5737e22d6edd4990137f5e74c70bfbf51e287c2",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/ui/expanded-ui.js",
+      "expected": "37de3c42ab59530afe853e70b06263e22edc6f4aa5b6bcbcd29308806210de28",
+      "actual": "37de3c42ab59530afe853e70b06263e22edc6f4aa5b6bcbcd29308806210de28",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/ui/field-radar.js",
+      "expected": "3192c36d8043335093d401cb47a2d2cef21705fd94997a5827db2f73bfde6879",
+      "actual": "3192c36d8043335093d401cb47a2d2cef21705fd94997a5827db2f73bfde6879",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/ui/operations-menu.js",
+      "expected": "9d8ea89cf36f38d88b2c3227f7eb79a61fda70ad4ab2f4d63a325b728729b6da",
+      "actual": "9d8ea89cf36f38d88b2c3227f7eb79a61fda70ad4ab2f4d63a325b728729b6da",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/ui/personajes-art.js",
+      "expected": "fc5af7db1e3b9bbf776666619d911338065c52b651febba8947ab61e738effd5",
+      "actual": "fc5af7db1e3b9bbf776666619d911338065c52b651febba8947ab61e738effd5",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/ui/rift-ui.js",
+      "expected": "6c97f0e241ff18f2569e73bc7849556c53967d21f9454100b000902e9ee480a4",
+      "actual": "6c97f0e241ff18f2569e73bc7849556c53967d21f9454100b000902e9ee480a4",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/ui/technical-ui.js",
+      "expected": "9b43332034cf6eba32691fe97e2bcf2aa5f92f9e4458010da2a91d66971b2e16",
+      "actual": "9b43332034cf6eba32691fe97e2bcf2aa5f92f9e4458010da2a91d66971b2e16",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/world/rift-rooms.js",
+      "expected": "10c88b9699609400eef3f4ca163f0e8b9472360eb09ba8525ae921f4d359e80a",
+      "actual": "10c88b9699609400eef3f4ca163f0e8b9472360eb09ba8525ae921f4d359e80a",
+      "matched": true,
+      "attempt": 1
+    },
+    {
+      "path": "js/world/world.js",
+      "expected": "1edfbf7122a81905c6f461c27885c560e60570537ba4d4fcde55838dcdc65f5d",
+      "actual": "1edfbf7122a81905c6f461c27885c560e60570537ba4d4fcde55838dcdc65f5d",
+      "matched": true,
+      "attempt": 1
+    }
+  ]
+}

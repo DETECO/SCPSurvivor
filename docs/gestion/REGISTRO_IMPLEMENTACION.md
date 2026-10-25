@@ -154,3 +154,11 @@ Runtime92fc1fd7c2347aed7b585946328670944008b39c, Pages built, bundleadec3ec93c.5
 ## LOT-EST-006r1 — conciliación local por Juanillo25/10/2026
 
 ARMASR3 acepta48sprites smg/shotgun/baton. PROGRAMACION entrega montaje,279pruebas del juegoPASS,352poses/64incapacitaciones/24estados/8combates/2fallos de recurso y18salasR3más respaldo. Juanillo leyó la entrega completa, revisó código/capturas y repitió22pruebas del clon; build/check118scripts,bundlebe687713b2. [Informe](informes/LOT-EST-006-juanillo.md) y [validación](LOT-EST-006_VALIDACION.json). Publicación en comprobación; no cambia las reglas de LOT005 ni servicios.
+
+### LOT006r1 — publicación comprobada por Juanillo
+
+Runtime4adf3bed24e9a2f3ecd69ce54db286f794e3cd94, Pages built, bundlebe687713b2.278/278hashes,352montajes,64incapacitaciones,24estados animados,8combates,2fallos/lentitud y18combinacionesR3más respaldo públicosPASS. [Recibo](LOT-EST-006_PUBLICACION.json). INC-VIS-001 corregida técnicamente para ensayo; aceptación visual/teléfono físico pendientes. No cambia mecánicas, poderesA/B, fusión o servicios.
+
+### Aceptación recuperada — LOT006
+
+Iván autoriza «Aprueba. Y continua» tras la entrega de montaje enPROGRAMACION, mensaje01a17533-e1b4-7003-af6e-17ef3c353c4e. [Registro de alcance](ACEPTACION_LOT006_2026-10-25.md). Montaje aceptado, sin convertir la autorización en prueba física o elección de poderesA/B.

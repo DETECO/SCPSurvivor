@@ -17,3 +17,9 @@ Aplicar Subfusil/smg, Escopeta/shotgun y Porra/baton aprobados en16/32 y ocho vi
 5. Entregar informe local con recursos/hash, módulos, pruebas y límites. Juanillo concilia y publica tras cerrar el recibo actual; no se permiten escritores simultáneos en clon público, pauta/control/roadmap/recibos.
 
 Implementador: PROGRAMACION, gpt-6.1-sol/alto bajo la autorización de Iván para coordinar hilos y elegir modelo/esfuerzo. No modifica pautas de otras áreas ni decide un poderA/B. Esta entrega no declara aceptación manual de montaje, teléfono físico o balance.
+
+## Cierre de ejecución25/10/2026
+
+**Publicado y comprobado para ensayo.** [Recibo](../LOT-EST-006_PUBLICACION.json), runtime4adf3be/bundlebe687713b2.279pruebas del juegoPASS;278hashes,352montajes y18combinacionesR3públicas con comprobaciones de incapacitación/animación/combate/recuperación. [Revisión de ESTRUCTURA](../REV-EST-0009_ARMAS.md). La revisión inicial de este contrato queda preservada en REV-EST-0009/fuentes. Aceptación visual del montaje y teléfono físico pendientes, sin una nueva elección de apariencia requerida para implementar.
+
+**Aceptación posterior de Iván:**«Aprueba. Y continua», después de la entrega enPROGRAMACION. [Mensaje recuperado y alcance](../ACEPTACION_LOT006_2026-10-25.md). Se acepta el montaje entregado; no acredita teléfono físico o balance, ni elección de poderesA/B.

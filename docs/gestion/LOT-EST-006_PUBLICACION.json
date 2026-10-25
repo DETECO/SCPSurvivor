@@ -1,0 +1,59 @@
+{
+  "lot": "LOT-EST-006 r1",
+  "revision": "REV-EST-0009",
+  "control": "0.11",
+  "status": "PUBLISHED_VERIFIED_TRIAL",
+  "runtimeCommit": "4adf3bed24e9a2f3ecd69ce54db286f794e3cd94",
+  "publicationBundle": "be687713b2",
+  "scripts": 118,
+  "verifiedAtUtc": "2026-10-25T18:42:07.000040+00:00",
+  "pages": {
+    "status": "built",
+    "commit": "4adf3bed24e9a2f3ecd69ce54db286f794e3cd94",
+    "updated_at": "2026-10-25T18:35:16Z",
+    "servedBundle": "be687713b2"
+  },
+  "publicUrl": "https://deteco.github.io/SCPSurvivor/",
+  "practiceUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas&apoyo=si&graficos=32&revision=0.38",
+  "nodeGame": {
+    "tests": 279,
+    "pass": 279,
+    "fail": 0,
+    "files": 52,
+    "P05": "Excluded from this visual lot. LOT005 retains its322PASS/5toolchain failures/1skip result."
+  },
+  "liveVerification": {
+    "mountedPoses": 352,
+    "incapacitatedPoses": 64,
+    "animationStates": 24,
+    "combatCases": 8,
+    "missingAndSlowCases": 2,
+    "femaleRoomCombinations": 18,
+    "femalePartsFailureFallback": 1,
+    "criticalFileMatches": 278,
+    "javascriptErrors": 0,
+    "unexpectedHttpFailures": 0,
+    "intentional404Cases": 1,
+    "slowResourceRecoverySeconds": 6,
+    "physicalPhone": false
+  },
+  "evidenceDirectory": "docs/gestion/evidencias/lot-est-006/publica/",
+  "mechanics": "Unchanged vs LOT005r2; weapon rendering, native loading and hand/down pose corrections only. NPC random pistol/smg/shotgun, unlimited reserve with finite magazines/reloads preserved. No new powersAB, stats or account service activation.",
+  "hashScope": "278SHA256 refer to runtimeCommit. Subsequent receipt/roadmap commit changes metadata/evidence only; final metadata readback stored separately.",
+  "receiptCommitReference": "git log -1 --format=%H -- docs/gestion/LOT-EST-006_PUBLICACION.json",
+  "method": "Delivered pose/combat fixtures executed on actual public bundle; deterministic QA positions/loadout/damage. Root inspected native mounting screenshots. Not natural balance or physical iPhone acceptance.",
+  "limits": [
+    "Sin iPhone físico, Safari o rendimiento de hardware verificados",
+    "Animaciones procedurales existentes; no se declaran nuevos atlas de animación",
+    "Sin balance natural, poderesA/B elegidos, fusión o servicios reales"
+  ],
+  "manualAcceptance": {
+    "status": "accepted_montage_delivery",
+    "date": "2026-10-25",
+    "quote": "Aprueba. Y continua",
+    "threadId": "01a13aeb-020a-7d62-8256-3d42a6e61877",
+    "turnId": "01a17533-e0e9-7e61-aa48-badbaf42207d",
+    "messageId": "01a17533-e1b4-7003-af6e-17ef3c353c4e",
+    "scope": "Montaje entregado en PROGRAMACION-ARMAS-006; autorización de cierre y continuidad, sin probar cada caso, teléfono físico, balance o poderesAB."
+  }
+}

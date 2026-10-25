@@ -2,7 +2,7 @@
   "lot": "LOT-EST-006 r1",
   "revision": "REV-EST-0009",
   "control": "0.11",
-  "status": "local_verified_publication_pending",
+  "status": "published_verified_trial",
   "date": "2026-10-25T18:32:51.692872+00:00",
   "authority": "INC-VIS-001 + ARM-FALTANTES-VIS-001/r1 accepted25/10",
   "implementer": "PROGRAMACION gpt-6.1-sol/high, encargo autorizado de Juanillo; publicación a cargo de Juanillo",
@@ -51,5 +51,30 @@
     "Sin nueva animación rasterizada; movimiento y golpe procedurales existentes",
     "Sin cambios de estadísticas, probabilidades, munición, poderes o servicios reales",
     "No elige poderesA/B ni abre fusión/catálogo90"
-  ]
+  ],
+  "runtimeCommit": "4adf3bed24e9a2f3ecd69ce54db286f794e3cd94",
+  "publicVerification": {
+    "mountedPoses": 352,
+    "incapacitatedPoses": 64,
+    "animationStates": 24,
+    "combatCases": 8,
+    "missingAndSlowCases": 2,
+    "femaleRoomCombinations": 18,
+    "femalePartsFailureFallback": 1,
+    "criticalFileMatches": 278,
+    "javascriptErrors": 0,
+    "unexpectedHttpFailures": 0,
+    "intentional404Cases": 1,
+    "slowResourceRecoverySeconds": 6,
+    "physicalPhone": false
+  },
+  "manualAcceptance": {
+    "status": "accepted_montage_delivery",
+    "date": "2026-10-25",
+    "quote": "Aprueba. Y continua",
+    "threadId": "01a13aeb-020a-7d62-8256-3d42a6e61877",
+    "turnId": "01a17533-e0e9-7e61-aa48-badbaf42207d",
+    "messageId": "01a17533-e1b4-7003-af6e-17ef3c353c4e",
+    "scope": "Montaje entregado en PROGRAMACION-ARMAS-006; autorización de cierre y continuidad, sin probar cada caso, teléfono físico, balance o poderesAB."
+  }
 }
