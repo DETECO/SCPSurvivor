@@ -1,10 +1,10 @@
 # Roadmap SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-25).** LOT005r2:grietas,salas,BIO,poderes ycompañeros con arma aleatoria/reserva infinita activos. LOT006monta48sprites aceptados ARMASR3 y corrige manos/incapacitación:279pruebas de juegoPASS,352montajes públicos y278hashes. Montaje aceptado25/10;balance/teléfono físico pendientes; poderesA/B sin elegir.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-26).** Demo0.39 publicada/comprobada: HUD MEN-005-A y proporciones de seis humanos16/32 corregidas; grietas/BIO/poderes/NPC con arma aleatoria y reserva infinita conservados.285pruebas de juego, cuatro formatos publicos,352montajes y92hashesPASS. Aceptacion visual nueva y telefono fisico pendientes. REV0011/Control0.13; siguienteLOT002 con gate de fusion cerrado.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
-**Demo disponible:** [guía](docs/PRUEBA_REV_EST_0006.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=16) · [jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&armas=r1&graficos=32). Sin cuentas ni guardado; aceptación de Iván pendiente.
+**Demo disponible:** [guía](docs/gestion/informes/LOT-EST-007-juanillo.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas&apoyo=si&graficos=16&revision=0.39) · [jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=32&revision=0.39). Sin cuentas ni guardado; aceptación de Iván pendiente.
 
 **Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
 
@@ -58,7 +58,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-**Versión 0.38 — 2026-10-25 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
+**Versión 0.39 — 2026-10-26 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
 
 ## 1. Estado vigente
 
@@ -921,6 +921,7 @@ Los registros anteriores permanecen intactos. V0.11 y su documentación están e
 | CHG-043 | 2026-10-24 | LOT-EST-005 r1 / REV-EST-0007 / CONTROL0.8 + EST-GRI-002 r1: cinco BIO16/32 en recintos separados, director desde mapa2, origen congelado, retirada única, poderes automáticos y NPC/burbujas integrados para ensayo. Parámetros ENSAYO-GRI-001r1; aceptación humana, balance, arte/sonidos definitivos pendientes. Ver guía y recibos de PROGRAMACION; servicios reales desactivados. | EST-ORG-002 r1 / LOT-EST-005 r1; las cifras abiertas se concretan explícitamente para ensayo. Sin cambiar pesos/criterios históricos. |
 | CH-044 | 2026-10-25 |  |  |
 | CHG-045 | 2026-10-25 | ARMASR3 aceptado:LOT006 implementa montaje proporcional de48sprites,sin cambios de reglas o servicios. Publicación por recibo propio, sin aumentar52/100histórico. |  |
+| CHG-046 | 2026-10-26 | LOT007: HUD aceptado y reparacion tecnica de proporciones publicados/verificados. Control0.13/REV0011;285tests juego,92hashes publicos. Tareas/pesos historicos intactos; avanceV2 sin calcular. |  |
 
 ## 13. Continuar en Windows/Codex Local
 

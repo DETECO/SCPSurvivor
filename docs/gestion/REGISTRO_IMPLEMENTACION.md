@@ -162,3 +162,19 @@ Runtime4adf3bed24e9a2f3ecd69ce54db286f794e3cd94, Pages built, bundlebe687713b2.2
 ### Aceptación recuperada — LOT006
 
 Iván autoriza «Aprueba. Y continua» tras la entrega de montaje enPROGRAMACION, mensaje01a17533-e1b4-7003-af6e-17ef3c353c4e. [Registro de alcance](ACEPTACION_LOT006_2026-10-25.md). Montaje aceptado, sin convertir la autorización en prueba física o elección de poderesA/B.
+
+
+## LOT-EST-007r1 — HUD MEN-005-A, cierre local26/10/2026
+
+PROGRAMACION aplica MEN-005-A r1 con REV-EST-0010 / CONTROL0.12 y aceptación deMENUS01a1730f-9ef3-7d11-abf2-81923ddf65f4. Fuentes y respaldo fijados al iniciar25/10. HUD de esquinas con estados reales: vida/XP/tiempo, radar, objetivo/alertas/nombreBIO, dos ranuras/recarga y habilidad; joystick flotante conservado. Acciones de pausa visibles antes del inspector, cartas/poderes horizontales y burbujas medidas contraHUD/controles. Sin cambios de mecánicas/servicios ni apertura del gate de fusión.
+
+[Entrega y diff](entregas/PROGRAMACION-HUD-007.md):54archivos/285pruebas del juegoPASS; cuatroviewports,Guardia/Médico16/32, touch real emulado, relojes congelados, recarga, cartas, recinto/retirada/regreso y reemplazo del cuarto poder. Build/check120scriptsPASS con escalación de lectura esbuild. Se preservó la inserción concurrente decharacter-proportions.js dePERSONAJES y se repitió el corte final deHUD sin deriva de scripts/CSS/HTML durante la prueba. No se atribuye a esta entrega la reparación de piernas. Publicación nueva en coordinación conESTRUCTURA; no modifica por sí sola el recibo0.38. Teléfono físico/aceptaciónHUD y fusión funcional siguen pendientes.
+
+
+### LOT007r1 — publicación0.39 verificada por Juanillo26/10/2026
+
+Integración posterior bajoREV-EST-0011; se conserva la revisión de inicioREV-EST-0010/CONTROL0.12 dePROGRAMACION. [Informe de integración](informes/LOT-EST-007-juanillo.md) y [recibo público](LOT-EST-007_PUBLICACION.json): runtime `8cdac5846ec7cf7c0b9fa95c226120b723644e2e`, bundle `92026cde30`,120scripts, Pagesbuilt. Juanillo comprobó cuatro formatos públicos,352montajes de seis humanos16/32,64posturas incapacitadas,24estados visuales y8combates;92/92hashes coincidentes y cero erroresJavaScript. La fuente pasa285/285pruebas y el clon22/22pertinentes; no se atribuye aquí una repetición nueva de esas suites. [Jugar0.39](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&revision=0.39).
+
+El corte publicado incluye HUD007 y reparación técnica de proporciones revisada independientemente porESTRUCTURA. La entrega formal dePERSONAJES seguía activa en ese corte y se registra aparte; su mera inclusión anterior no fue prueba del rig corregido. PruebasQA con inyecciones declaradas no equivalen a balance natural, aceptación visual ni teléfono físico. P05 conserva sus cinco fallos conocidos de compatibilidadworkerd; servicios reales desactivados. FusiónLOT002 mantiene el gate cerrado: repetir384poses con el rig publicado y validar ataques/estación/confirmación antes de integrarla. Ultimates/gacha/persistencia y eleccionesA/B conservan sus pendientes.
+
+El cierre documentalREV0011/CONTROL0.13 lo coordinaESTRUCTURA y se verifica aparte del runtime. Durante esta lectura cambió la estructura de metadataClosure del recibo: se volvió a leer y se verificaron los mismos identificadores de runtime/bundle y resultados. No se infiere un commit documental ni una verificación adicional a partir de ese cambio de esquema.

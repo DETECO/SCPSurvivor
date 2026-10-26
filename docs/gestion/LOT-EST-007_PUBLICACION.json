@@ -1,12 +1,43 @@
 {
   "lot": "LOT-EST-007r1",
+  "revision": "REV-EST-0011",
   "version": "0.39",
-  "status": "prepared_not_published",
   "dateClient": "2026-10-26",
+  "status": "published_verified_trial",
+  "runtimeCommit": "8cdac5846ec7cf7c0b9fa95c226120b723644e2e",
   "bundle": "92026cde30",
   "scripts": 120,
   "url": "https://deteco.github.io/SCPSurvivor/",
-  "runtimeCommit": null,
-  "manualAcceptance": "pending",
-  "physicalPhone": false
+  "practiceUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas&apoyo=si&graficos=32&revision=0.39",
+  "pages": {
+    "status": "built",
+    "commit": "8cdac5846ec7cf7c0b9fa95c226120b723644e2e",
+    "updated_at": "2026-10-26T04:23:48Z",
+    "servedBundle": "92026cde30"
+  },
+  "criticalFiles": {
+    "total": 92,
+    "matched": 92,
+    "evidence": "evidencias/lot-est-007/publica/hashes-publicos.json"
+  },
+  "liveVerification": {
+    "hudViewports": 4,
+    "mountedPoses": 352,
+    "incapacitatedPoses": 64,
+    "animationStates": 24,
+    "combatCases": 8,
+    "javascriptErrors": 0,
+    "physicalPhone": false,
+    "hudEvidence": "evidencias/lot-est-007/publica/hud/browser.json",
+    "mountEvidence": "evidencias/lot-est-007/publica/armas/browser.json"
+  },
+  "authority": "Prior direct implementation/publication instructions and explicit approval: Si, publicar el cierre documental. Includes only game docs/resources/captures; excludes private power viewer.",
+  "manualAcceptance": "pending_new_hud_and_proportions",
+  "physicalPhone": false,
+  "fusionGate": "closed",
+  "metadataClosure": {
+    "scope": "Follow-up master/control/roadmap/receipts/game-captures commit; no runtime changes.",
+    "verification": "Coordinator checks Pages and selected-file SHA256 readback separately from this runtime receipt."
+  },
+  "scope": "Approved HUD and technical proportions repair; no new mechanics, services, power A/B choice or completed fusion."
 }

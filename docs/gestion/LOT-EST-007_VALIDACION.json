@@ -2,7 +2,7 @@
   "lot": "LOT-EST-007r1",
   "revision": "REV-EST-0011",
   "dateClient": "2026-10-26",
-  "status": "local_and_publication_clone_PASS_public_pending",
+  "status": "PASS_game_scope_local_clone_and_public",
   "sourceBundle": "460eecf37e",
   "publicBundle": "92026cde30",
   "scriptCount": 120,
@@ -50,5 +50,21 @@
   },
   "method": "Deterministic QA fixtures explicitly inject loadout, HP, XP, position, time and reward RNG; actual UI, renderer, attack/return logic. No natural balance, physical phone or human acceptance claim.",
   "knownExcludedFailures": "P05 prior full run: 322/328 pass, five workerd compatibility failures and one skip. Not rerun or changed by this visual lot.",
-  "scope": "Accepted MEN-005-A plus common-scale technical repair of guard, medic and four supports in16/32; preserves accepted originals and gameplay."
+  "scope": "Accepted MEN-005-A plus common-scale technical repair of guard, medic and four supports in16/32; preserves accepted originals and gameplay.",
+  "public": {
+    "hudViewports": 4,
+    "mountedPoses": 352,
+    "incapacitatedPoses": 64,
+    "animationStates": 24,
+    "combatCases": 8,
+    "javascriptErrors": 0,
+    "physicalPhone": false,
+    "hudEvidence": "evidencias/lot-est-007/publica/hud/browser.json",
+    "mountEvidence": "evidencias/lot-est-007/publica/armas/browser.json"
+  },
+  "publicCriticalFiles": {
+    "total": 92,
+    "matched": 92,
+    "evidence": "evidencias/lot-est-007/publica/hashes-publicos.json"
+  }
 }

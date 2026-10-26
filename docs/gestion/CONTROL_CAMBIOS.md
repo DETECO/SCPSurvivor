@@ -1,8 +1,12 @@
 # Control de cambios — ESTRUCTURA
 
-Revisión de control **0.11** · 25/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+Revisión de control **0.13** · 26/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+
+**REV-EST-0011 / LOT007 r1:**[HUD y proporciones publicados/comprobados en0.39](REV-EST-0011_CONSOLIDADO.md). Se preservan MEN-005-A y el encargo técnico de PERSONAJES.285 pruebas de juego, cuatro formatos,352 montajes,92/92hashes públicos. [Informe](informes/LOT-EST-007-juanillo.md) · [recibo](LOT-EST-007_PUBLICACION.json). Aceptación visual/física y entrega formal de PERSONAJES separadas de la validación propia. PróximoLOT002;fusión siguecerrada.
 
 **REV-EST-0009 / LOT006r1:**montaje de48sprites aceptados ARMASR3 publicado y comprobado;279pruebas de juego,352montajes públicos y278hashesPASS. [Cobertura real](REV-EST-0009_ARMAS.md) · [informe](informes/LOT-EST-006-juanillo.md). [Recibo público](LOT-EST-006_PUBLICACION.json); [montaje aceptado25/10](ACEPTACION_LOT006_2026-10-25.md); teléfono físico pendiente, poderesA/B sin elección.
+
+**REV-EST-0010:**[consolidación incremental de siete áreas](REV-EST-0010_CONSOLIDADO.md), con cortes conservados y dos turnos recientes por área. Cierre documental0.38publicado/verificado17/17. MEN-005-Aaceptado yLOT007listo; nueva reparación de piernas en curso; fusión solo overlay384poses/gatecerrado; poderesA/Bsin elección. No se ejecuta/publica código por este corte.
 
 Entrada maestra: [PAUTA_DESARROLLO.md](../../PAUTA_DESARROLLO.md).
 
@@ -12,7 +16,7 @@ Entrada maestra: [PAUTA_DESARROLLO.md](../../PAUTA_DESARROLLO.md).
 
 **Corrección técnica:** [INC-VIS-001 r1](INC-VIS-001.md) publicada y comprobada en0.35, parcial por recursos pendientes de ARMAS. [Informe](informes/INC-VIS-001-programacion.md) · [recibo](INC-VIS-001_PUBLICACION.json). ESTRUCTURA repitió tres arranques públicos; cobertura en REV-EST-0007. La versión0.7 de control queda preservada en su corte y no se reescribe el origen del encargo técnico.
 
-**Último corte consolidado:** [REV-EST-0006 — informe incremental de las áreas](CONSOLIDACION_2026-10-23_R1.md). Se conservan las revisiones y coberturas anteriores como historial. La consolidación usa fuentes locales y dependencias nuevas, no declara releídos los ocho historiales.
+**Corte de referencia anterior:** [REV-EST-0006 — informe incremental de las áreas](CONSOLIDACION_2026-10-23_R1.md). Se conservan las revisiones y coberturas anteriores como historial. La consolidación usa fuentes locales y dependencias nuevas, no declara releídos los ocho historiales.
 
 ## Estado operativo
 
@@ -88,6 +92,12 @@ La activación inicial no preparó un lote. Posteriormente, REV-EST-0003 registr
 - **Lote:** [LOT-EST-001 r1](lotes/LOT-EST-001-r1.md), núcleo aislado listo documentalmente; pendiente de encargo de implementación y sin código nuevo por esta entrega.
 
 ## Registro de revisiones examinadas
+
+### REV-EST-0010 — Consolidación del25/10/2026
+
+[Informe y cobertura real](REV-EST-0010_CONSOLIDADO.md) · [fuentes preservadas](revisiones/REV-EST-0010/MANIFIESTO.json). ARMASR3sin cambio frente aREV0009;PERSONAJESR3con incidencia nueva aún en trabajo; NIVELESR7.5recupera escalaA y entrega de grietas; MENUSincorpora aceptaciónMEN005A; SONIDO/ICONO conhashes sin cambios desdeREV0007. PROGRAMACIONañade aceptaciónLOT006 y preparación aislada de fusión. Siete consultas de dos turnos recientes; seguimiento de turnos activos ARMAS/PERSONAJES, sin releer íntegros los historiales.
+
+Nueva aceptación recuperada: **MEN-005-A r1**, cita«Apruebo la opción 1 por ahora .», mensaje01a1730f-9ef3-7d11-abf2-81923ddf65f4. Lote007listo, no implementado. La autorización de publicar el visor privadoA/Bno elige poderes. Nueva incidencia de piernas enPERSONAJES, mensaje01a17536-7433-74d0-82e1-9becae60da4b: no se declara corregida por esta lectura. Actualizar/revalidar rig antes de desbloquearLOT002. Cierre documental1143a4fcomprobado; rechazo anterior resuelto por autorización humana expresa.
 
 ### REV-EST-0006 — Consolidación incremental de áreas · 23/10/2026
 
@@ -168,6 +178,10 @@ Las fuentes leídas parcialmente no reciben un estado de «aprobación verificad
 - **Activación de otros roles:** no realizada por ESTRUCTURA. No se enviaron mensajes a otros hilos ni se modificaron sus instrucciones.
 
 ## Lotes de implementación
+
+### LOT-EST-007 r1 — HUD MEN-005-A
+
+**Listo documentalmente**, con aprobación visual provisional para pruebas recuperada y preservada. [Contrato/recursos/pruebas](lotes/LOT-EST-007-r1.md). Alcance horizontal, regresión de otros formatos y reglas vigentes. No ejecutado ni publicado por esta consolidación.
 
 ### LOT-EST-006 r1 — Armas faltantes aceptadas en ARMASR3
 
