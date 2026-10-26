@@ -70,10 +70,10 @@ G.ExpandedUI=(()=>{
    el('terminal-notice').textContent=terminal.notice;
   }else terminalSignature='';
   for(let i=0;i<2;i++){
-   const copy=w.weapons[i],button=el(`btn-field-weapon-${i}`);button.replaceChildren();
-    for(const text of [copy?`${i+1} · ${copy.name}`:`${i+1} · Ranura vacía`,copy?(isMelee(copy)?'Cuerpo a cuerpo':copy.reload>0?`Recarga ${copy.reload.toFixed(1)}s`:`${Math.floor(copy.ammo)} / ${copy.capacity}`):'Premio de jefe/élite',copy?progressionLine(copy):'']){
-    const line=document.createElement('small');line.textContent=text;button.append(line);
-   }
+   const copy=w.weapons[i],button=el(`btn-field-weapon-${i}`);button.replaceChildren();button.classList.toggle('corner-empty',!copy);
+   const labels=[copy?`${i+1} · ${copy.name}`:`${i+1} · Ranura vacía`,copy?(isMelee(copy)?'Cuerpo a cuerpo':copy.reload>0?`Recarga ${copy.reload.toFixed(1)}s`:`${Math.floor(copy.ammo)} / ${copy.capacity}`):'Premio de jefe/élite',copy?progressionLine(copy):''];
+   labels.forEach((text,index)=>{const line=document.createElement(index===0?'strong':'small');line.className=['corner-weapon-name','corner-ammo','corner-progression'][index];line.textContent=text;button.append(line);});
+   if(copy&&!isMelee(copy)){const bar=document.createElement('progress');bar.className='corner-reload';bar.setAttribute('aria-label',`Recarga de arma ${i+1}`);bar.max=copy.reloadTime;bar.value=copy.reload>0?Math.max(0,copy.reloadTime-copy.reload):copy.reloadTime;button.append(bar);}
    button.disabled=!active;button.setAttribute('aria-label',copy?`Ver mejoras de arma ${i+1}: ${copy.name}`:'Ver equipo, segunda ranura vacía');
   }
   el('tactical-status').hidden=!active||!player.infiniteTactical;

@@ -1,0 +1,20 @@
+{
+  "revision": "REV-EST-0010",
+  "dateClient": "2026-10-25",
+  "authority": "Autorización directa de Iván a Juanillo para coordinar y hablar con los hilos del proyecto",
+  "messages": [
+    {
+      "thread": "PROGRAMACION",
+      "threadId": "01a13aeb-020a-7d62-8256-3d42a6e61877",
+      "accepted": true,
+      "scope": "Informar cierre público verificado, entregar consolidado/LOT007 a cola documental y conservar fusión aislada con dependencia del rig."
+    },
+    {
+      "thread": "PERSONAJES",
+      "threadId": "01a160be-4bf0-7883-b313-604e7ce76652",
+      "accepted": true,
+      "scope": "Coordinar reparación ya encargada de proporciones, evidencia exigible y conservación de montaje/estadísticas."
+    }
+  ],
+  "runtimeImplementationOrderedByThisConsolidation": false
+}

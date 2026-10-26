@@ -8,6 +8,8 @@ Estilo aprobado para las pruebas: sala de contención industrial pixel art; pane
 
 La selección de personaje muestra Guardia y Médico. La pantalla «Armas aprobadas» muestra únicamente los nueve diseños aprobados y F24 de ARM-VIS-001/R1 como vistas previas. No ofrece acciones de equipamiento, estadísticas ni efectos de combate; reemplaza las cuatro tarjetas antiguas de ensayo en esta pantalla sin convertirlas en parte del catálogo visual aprobado. MEN-004 r1 está preparado localmente para revisión; su ficha no ha sido aprobada.
 
+Para el HUD horizontal, Iván aprobó **MEN-005-A r1 — HUD anclado a las esquinas** como dirección visual provisional para pruebas el 25/10/2026. MEN-005-B y MEN-005-C siguen sin aprobación. La decisión no confirma implementación ni cambia reglas de juego.
+
 **Comportamiento móvil requerido (23/10/2026):** el menú debe sentirse como una pantalla del juego, ocupar una sola vista, adaptar el contenido al alto y ancho del teléfono y evitar zoom, desplazamiento de página y recortes. Este requisito corrige la interacción de las pantallas aprobadas y no reemplaza sus propuestas visuales.
 
 ## Decisiones y requisitos registrados
@@ -39,6 +41,15 @@ La selección de personaje muestra Guardia y Médico. La pantalla «Armas aproba
 - **Dependencias:** PROGRAMACION debe actualizar la evidencia de integración al consolidar este ajuste; se enlaza [Presentación integrada 0.33](PRESENTACION_INTEGRADA.md) sin duplicar aquí su estado ni resultados. No requiere consolidación en ESTRUCTURA porque no cambia reglas de juego.
 - **Registro local para revisión (23/10/2026):** cambio conservado en `dev.html` (viewport móvil), `css/operations-menu.css` (menú ajustado a una vista y bloqueo de gestos de zoom/desplazamiento), `index.html` (salida generada), `tests/v2-mobile-menu-shell.test.js` (regresión) y esta pauta. Verificaciones: `node --test tests/v2-mobile-menu-shell.test.js tests/v2-operations-menu.test.js` — 5 pruebas aprobadas; `node tools/build.js --local --check` — 102 scripts válidos; `npm run build:check` — compilación local aprobada (Firebase SDK 227131 bytes; bundle de 102 scripts, 1933 KB). El cambio queda local para revisión; integración, evidencia consolidada y publicación corresponden a PROGRAMACION. No se realizó prueba manual en teléfono físico.
 
+### MEN-005-A r1 — HUD anclado a las esquinas
+
+- **Estado y alcance:** aprobada como dirección visual provisional para pruebas; no acredita implementación, integración ni publicación.
+- **Fecha de aprobación:** 25/10/2026.
+- **Cita de Iván:** «Apruebo la opción 1 por ahora .»
+- **Decisión exacta:** elegir la opción 1 del paquete MEN-005 r1, identificada como MEN-005-A r1 — HUD anclado a las esquinas. La selección se limita a esa revisión; MEN-005-B r1 y MEN-005-C r1 permanecen propuestas no aprobadas.
+- **Recurso elegido:** [MEN-005-A r1 — lámina HUD anclado a las esquinas](../design-proposals/menus/propuestas-20261024/01-hud-esquinas.png), descrita en [la ficha MEN-005 r1](superpowers/specs/2026-10-24-men-005-hud-in-game-design.md).
+- **Dependencias:** PROGRAMACION debe evaluar la adaptación al HUD vigente y conservar allí la evidencia de implementación y pruebas; consultar [INC-VIS-001](gestion/INC-VIS-001.md), [su informe de PROGRAMACION](gestion/informes/INC-VIS-001-programacion.md) y el [registro de implementación](gestion/REGISTRO_IMPLEMENTACION.md). ESTRUCTURA define reglas de mejoras si se les asigna contenido real; la lámina mantiene sus categorías como rótulos visuales. ARMAS conserva el catálogo y las mecánicas aprobadas; esta decisión no los modifica.
+
 ## Cambio local en revisión
 
 ### MEN-004 r1 — Galería de ARM-VIS-001/R1
@@ -61,5 +72,6 @@ La selección de personaje muestra Guardia y Médico. La pantalla «Armas aproba
 
 - **MEN-001 r0 — concepto único de PC:** propuesta previa a la solicitud de tres formatos; no aprobada. Se conserva en [historial](../design-proposals/menus/aprobados-20261022/historial/MEN-001-r0-menu-inicial-pc-no-aprobado.png). MEN-001 r1 la reemplaza como propuesta vigente.
 - **MEN-002 — exploración horizontal descartada antes de r1:** una generación confundió el selector de soldado con el de armas. No fue presentada ni aprobada como selector de soldado; se conserva identificada en [historial](../design-proposals/menus/aprobados-20261022/historial/MEN-002-exploracion-personaje-horizontal-descartada.png). La imagen aprobada es el archivo `02-personaje-movil-horizontal.png`.
+- **MEN-005 r1 — estado antes de la decisión:** las opciones A/B/C quedaron pendientes de elección tras su presentación el 24/10/2026. El 25/10/2026 se aprobó únicamente MEN-005-A r1; las láminas B y C se conservan en la [ficha completa](superpowers/specs/2026-10-24-men-005-hud-in-game-design.md) como propuestas no aprobadas.
 
 Las aprobaciones cubren únicamente las revisiones y archivos citados arriba. Todo rediseño posterior requiere su propia decisión. Los PNG aprobados se copiaron al área SCP-SURVIVOR y se cotejaron con SHA-256; dimensiones y huellas constan en [VERIFICACION.json](../design-proposals/menus/aprobados-20261022/VERIFICACION.json).

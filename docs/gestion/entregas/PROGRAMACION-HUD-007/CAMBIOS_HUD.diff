@@ -1,0 +1,442 @@
+--- /dev/null
++++ b/js/ui/corner-hud.js
+@@ -0,0 +1,94 @@
++/* MEN-005-A r1 / LOT007: presentation only; all clocks and actions remain owned by the game. */
++G.CornerHUD = (() => {
++  const el = id => document.getElementById(id);
++  let initialized = false;
++  function node(tag, id, text) {
++    const value = document.createElement(tag); value.id = id;
++    if (text) value.textContent = text;
++    return value;
++  }
++  function meter(id, label) {
++    const group = node('span', id + '-group'), text = node('span', id + '-text');
++    const bar = node('progress', id); bar.setAttribute('aria-label', label);
++    group.className = 'corner-meter'; group.append(text, bar); return group;
++  }
++  function init() {
++    if (initialized || !G.MapTrial?.enabled || !el('hud-summary')) return;
++    initialized = true; document.body.dataset.cornerHud = 'men-005-a-r1';
++    el('scene-hud').append(meter('corner-hp', 'Vida del soldado'), meter('corner-xp', 'Experiencia del nivel'));
++    const objective = node('div', 'corner-objectives'); objective.append(node('strong', 'corner-context'));
++    for (const id of ['map-locator', 'rift-locator', 'map-alert', 'rift-alert', 'art-resource-status']) objective.append(el(id));
++    el('hud-summary').append(objective);
++    const hints = node('div', 'corner-hints');
++    for (const id of ['tactical-status', 'terminal-prompt', 'chest-status']) hints.append(el(id));
++    el('viewport').append(hints);
++    const hint = node('div', 'corner-stick'); hint.setAttribute('aria-hidden', 'true');
++    hint.append(node('span', 'corner-stick-knob'), node('small', 'corner-stick-label', 'MOVER'));
++    el('viewport').append(hint);
++    const ability = el('btn-ability');
++    const ring = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
++    ring.setAttribute('viewBox', '0 0 100 100'); ring.setAttribute('aria-hidden', 'true');
++    for (const id of ['corner-ability-track', 'corner-ability-ring']) {
++      const circle = document.createElementNS(ring.namespaceURI, 'circle');
++      circle.id = id; circle.setAttribute('cx', '50'); circle.setAttribute('cy', '50'); circle.setAttribute('r', '46'); ring.append(circle);
++    }
++    ability.replaceChildren(ring, node('span', 'corner-ability-label', 'Sprint'));
++    ability.setAttribute('aria-label', 'Habilidad del soldado');
++    el('field-status').classList.add('corner-accessible-status');
++  }
++  function tick(player, state, weapons) {
++    if (!initialized) return;
++    const hp = el('corner-hp'), xp = el('corner-xp');
++    hp.max = Math.max(1, player.maxHp); hp.value = Math.max(0, player.hp);
++    el('corner-hp-text').textContent = `VIDA ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)}`;
++    xp.max = Math.max(1, player.xpNext); xp.value = Math.max(0, player.xp);
++    el('corner-xp-text').textContent = `NV ${player.level} · XP ${Math.floor(player.xp)}/${player.xpNext}${state.pending ? ' · +' + state.pending : ''}`;
++    const a = weapons.currentability || G.FieldAbilities.state(player);
++    const name = a.kind === 'heal' ? 'Primeros auxilios' : 'Sprint';
++    el('corner-ability-label').textContent = a.cooldown > 0 ? `${name} ${Math.ceil(a.cooldown)} s` : name;
++    el('btn-ability').setAttribute('aria-label', el('corner-ability-label').textContent);
++    const fraction = a.maxCooldown > 0 ? Math.max(0, Math.min(1, 1 - a.cooldown / a.maxCooldown)) : 1;
++    el('corner-ability-ring').setAttribute('stroke-dasharray', String(2 * Math.PI * 46));
++    el('corner-ability-ring').setAttribute('stroke-dashoffset', String(2 * Math.PI * 46 * (1 - fraction)));
++    el('corner-stick').hidden = !G.Touch.active || !!G.Touch.stick || state.phase === 'finished';
++    // The body may contain a modal outside #viewport. Its existing game state owns input/pausing.
++    document.body.toggleAttribute('data-corner-choice', ['levelup', 'armament', 'terminal'].includes(state.phase) || !!G.RiftExpedition?.state.reward);
++    el('corner-objectives').setAttribute('aria-label', G.RiftExpedition?.state.active ? 'Recinto dimensional y avisos' : `Mapa ${state.sector} y avisos`);
++    const room = G.RiftExpedition?.state;
++    el('corner-context').textContent = room?.active ? `${room.tier} · ${room.name}` : `MAPA ${state.sector}`;
++  }
++  function state(value) {
++    if (!initialized) return;
++    el('corner-objectives').hidden = value !== 'playing';
++    el('corner-hints').hidden = value !== 'playing';
++    el('corner-stick').hidden = value !== 'playing' || !G.Touch.active;
++    if (value !== 'playing') document.body.removeAttribute('data-corner-choice');
++  }
++  const overlaps = (a, b) => a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y;
++  // Screen-space fit, shared by native NPC text; never move the actor or resize the camera.
++  function fitBubble(preferred, occupied, viewport) {
++    const gap = 8, w = preferred.width, h = preferred.height;
++    if (w + gap * 2 > viewport.width || h + gap * 2 > viewport.height) return null;
++    const clamp = p => ({x: Math.max(viewport.x + gap, Math.min(p.x, viewport.x + viewport.width - w - gap)), y: Math.max(viewport.y + gap, Math.min(p.y, viewport.y + viewport.height - h - gap)), width: w, height: h});
++    const candidates = [preferred];
++    for (const b of occupied) candidates.push({x: preferred.x, y: b.y + b.height + gap}, {x: preferred.x, y: b.y - h - gap}, {x: b.x - w - gap, y: preferred.y}, {x: b.x + b.width + gap, y: preferred.y});
++    for (const candidate of candidates) {
++      const p = clamp(candidate);
++      if (!occupied.some(b => overlaps(p, {x: b.x - gap, y: b.y - gap, width: b.width + 2 * gap, height: b.height + 2 * gap}))) return p;
++    }
++    return null;
++  }
++  function placeBubble(x, y, width, height, camera) {
++    if (!initialized) return {x, y};
++    const visible = id => {
++      const n = el(id); if (!n || n.hidden || !n.getClientRects().length) return null;
++      const b = n.getBoundingClientRect(); return b.width && b.height ? {x: b.left, y: b.top, width: b.width, height: b.height} : null;
++    };
++    if (visible('rift-alert') || visible('map-alert')) return null;
++    const bounds = el('game').getBoundingClientRect(), scale = camera.scale;
++    const occupied = ['scene-hud', 'corner-objectives', 'rift-boss-health', 'radar-wrap', 'field-weapons', 'btn-ability', 'btn-terminal', 'chest-status', 'terminal-prompt', 'tactical-status', 'corner-stick'].map(visible).filter(Boolean);
++    const p = fitBubble({x: bounds.left + (x - camera.left()) * scale, y: bounds.top + (y - camera.top()) * scale, width: width * scale, height: height * scale}, occupied, {x: bounds.left, y: bounds.top, width: bounds.width, height: bounds.height});
++    return p ? {x: camera.left() + (p.x - bounds.left) / scale, y: camera.top() + (p.y - bounds.top) / scale} : null;
++  }
++  return {init, tick, state, fitBubble, placeBubble};
++})();
+--- /dev/null
++++ b/css/corner-hud.css
+@@ -0,0 +1,95 @@
++/* MEN-005-A r1: corner anchors over the existing full-screen viewport. */
++body[data-corner-hud]{--corner-gap:12px;--corner-radar:112px;--corner-ability:96px;--corner-bottom:104px}
++body[data-corner-hud] #hud-summary{left:var(--corner-gap);right:calc(var(--corner-radar) + var(--corner-gap) * 2);top:var(--corner-gap);max-width:none;gap:6px;z-index:2}
++body[data-corner-hud] #scene-hud{display:grid;grid-template-columns:minmax(170px,1fr) minmax(120px,1fr) minmax(150px,1fr) 52px;gap:10px;min-height:48px;border:1px solid #779084;background:#0c211deb;padding:4px 6px}
++body[data-corner-hud] #scene-hud>span:first-child{display:flex;flex-wrap:wrap;gap:3px 8px;padding:0;font-size:0}
++body[data-corner-hud] #scene-soldier{font-weight:800;letter-spacing:.07em;font-size:12px}
++body[data-corner-hud] #scene-time{font-size:12px;font-variant-numeric:tabular-nums}
++body[data-corner-hud] #btn-technical-pause{grid-column:4;grid-row:1;min-height:44px;height:44px;width:52px;padding:2px;font-size:11px;background:#152f29;border-color:#69867a}
++body[data-corner-hud] .corner-meter{display:flex!important;flex-direction:column;justify-content:center;gap:5px;padding:0!important;min-width:0}
++body[data-corner-hud] .corner-meter>span{font-size:11px!important;white-space:nowrap;font-variant-numeric:tabular-nums}
++body[data-corner-hud] progress{display:block;width:100%;height:7px;border:1px solid #759083;background:#101d1a;accent-color:#8cc56b;overflow:hidden}
++body[data-corner-hud] progress::-webkit-progress-bar{background:#101d1a}
++body[data-corner-hud] progress::-webkit-progress-value{background:#8cc56b}
++body[data-corner-hud] #corner-xp{accent-color:#e5bc62}
++body[data-corner-hud] #corner-xp::-webkit-progress-value{background:#e5bc62}
++body[data-corner-hud] .corner-accessible-status{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
++body[data-corner-hud] #corner-objectives{display:flex;flex-direction:column;align-items:flex-end;gap:4px;background:none;pointer-events:none}
++body[data-corner-hud] #corner-objectives>*{position:static;max-width:min(100%,460px);width:auto;margin:0;padding:6px 10px;background:#10251eee;color:#eee8ce;border:1px solid #9c8d53;font-size:11px;line-height:1.3}
++body[data-corner-hud] #corner-objectives :is(#rift-locator,#rift-alert){border-color:#d77588;background:#241721ee}
++body[data-corner-hud] #corner-objectives :is(#map-alert,#rift-alert){border-left-width:4px}
++body[data-corner-hud] #rift-boss-health{position:static;margin:0 0 0 auto;width:100%;max-width:460px;height:8px;accent-color:#d64257}
++body[data-corner-hud] #rift-boss-health::-webkit-progress-value{background:#d64257}
++body[data-corner-hud] #radar-wrap{top:var(--corner-gap);right:var(--corner-gap);width:var(--corner-radar);border:0;border-radius:50%;background:#0c1619c9;transform:none;overflow:hidden}
++body[data-corner-hud] #field-radar{width:var(--corner-radar);height:var(--corner-radar)}
++body[data-corner-hud] #radar-wrap small{position:absolute;bottom:3px;left:0;right:0;font-size:7px;padding:0}
++body[data-corner-hud] #field-controls{inset:auto var(--corner-gap) var(--corner-gap);height:var(--corner-bottom);pointer-events:none;display:block}
++body[data-corner-hud] #field-controls button{pointer-events:auto}
++body[data-corner-hud] #field-weapons{position:absolute;bottom:0;left:50%;transform:translateX(-50%);gap:6px;max-width:calc(100% - var(--corner-ability) * 2 - 24px)}
++body[data-corner-hud] #field-controls .field-weapon{width:180px;height:78px;flex-shrink:1;min-width:0;min-height:44px;background:#10251eeb;border:1px solid #82998a;padding:7px 10px;align-items:stretch;justify-content:center;text-align:left;gap:4px;opacity:1;line-height:1.1}
++body[data-corner-hud] .field-weapon strong{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
++body[data-corner-hud] .field-weapon .corner-ammo{font-size:18px;font-weight:800;letter-spacing:.03em;font-variant-numeric:tabular-nums}
++body[data-corner-hud] .field-weapon .corner-progression{font-size:9px;line-height:1.2;color:#bdccb9}
++body[data-corner-hud] .field-weapon progress{height:5px;accent-color:#e9c676}
++body[data-corner-hud] .field-weapon progress::-webkit-progress-value{background:#dfca8b}
++body[data-corner-hud] .field-weapon.corner-empty .corner-ammo{font-size:10px;font-weight:400;white-space:normal;line-height:1.3}
++body[data-corner-hud] #btn-ability{position:absolute;bottom:0;right:0;width:var(--corner-ability);height:var(--corner-ability);min-width:44px;min-height:44px;padding:12px;border:1px solid #839387;border-radius:50%;background:#10221eea;opacity:1;display:grid;place-items:center}
++body[data-corner-hud] #btn-ability svg{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke-width:4;pointer-events:none;transform:rotate(-90deg)}
++body[data-corner-hud] #corner-ability-track{stroke:#587167}
++body[data-corner-hud] #corner-ability-ring{stroke:#ecc363}
++body[data-corner-hud] #corner-ability-label{font-size:12px;line-height:1.2;max-width:100%;overflow-wrap:normal;text-transform:uppercase}
++body[data-corner-hud] #btn-ability:disabled{color:#c4c8b2}
++body[data-corner-hud] #btn-terminal{position:absolute;bottom:calc(var(--corner-ability) + 8px);right:0;max-width:120px;min-height:44px;background:#172a23ed}
++body[data-corner-hud] #corner-stick{position:absolute;left:var(--corner-gap);bottom:var(--corner-gap);width:var(--corner-ability);height:var(--corner-ability);border:2px solid #d5d1a294;border-radius:50%;background:#13271c75;pointer-events:none;color:#e0ddbb;display:grid;place-items:center}
++body[data-corner-hud] #corner-stick-knob{width:40%;height:40%;border:1px solid #d5d1a2a6;background:#d5d1a22b;border-radius:50%}
++body[data-corner-hud] #corner-stick-label{position:absolute;bottom:7px;font-size:8px;letter-spacing:.1em}
++body[data-corner-hud] :is(#chest-status,#terminal-prompt,#tactical-status){bottom:calc(var(--corner-bottom) + var(--corner-gap) + 8px);left:calc(var(--corner-ability) + var(--corner-gap) * 2);right:calc(var(--corner-ability) + var(--corner-gap) * 2);max-width:500px;margin:0 auto;font-size:11px;line-height:1.25;padding:6px 8px}
++body[data-corner-hud] #tactical-status{bottom:calc(var(--corner-bottom) + var(--corner-gap) + 68px)}
++body[data-corner-hud] #terminal-prompt{bottom:calc(var(--corner-bottom) + var(--corner-gap) + 38px)}
++body[data-corner-hud] #corner-hints{position:absolute;bottom:calc(var(--corner-bottom) + var(--corner-gap) + 8px);left:calc(var(--corner-ability) + var(--corner-gap) * 2);right:calc(var(--corner-ability) + var(--corner-gap) * 2);max-width:500px;margin:auto;display:grid;gap:4px;pointer-events:none;z-index:2}
++body[data-corner-hud] #corner-hints>*{position:static;width:100%;margin:0;max-width:none}
++body[data-corner-hud] :is(#field-upgrades,#technical-pause,#weapon-terminal,#armament-choice){z-index:10;background:#081511b8}
++body[data-corner-hud] :is(#technical-pause,#field-upgrades,#armament-choice) .panel{background:#10231ff5;border-color:#7b9b80}
++body[data-corner-hud] #technical-pause .panel{display:flex;flex-direction:column;overflow:hidden;width:min(620px,100%);padding:18px}
++body[data-corner-hud] #technical-pause .panel>.eyebrow{order:0;margin-bottom:6px}
++body[data-corner-hud] #technical-pause h2{order:1;margin-bottom:6px}
++body[data-corner-hud] #technical-pause .panel>p:not(.eyebrow){order:2;margin:4px 0}
++body[data-corner-hud] #btn-technical-resume{order:3;flex-shrink:0;min-height:44px;margin-top:8px}
++body[data-corner-hud] #btn-technical-menu{order:4;flex-shrink:0;min-height:44px;margin-top:6px}
++body[data-corner-hud] #expanded-build{order:5;min-height:34px;overflow:auto;max-height:35dvh;margin:10px 0 0;overscroll-behavior:contain}
++body[data-corner-hud] #rift-power-choice{z-index:12;background:#081511c9}
++body[data-corner-hud][data-corner-choice] #corner-stick{visibility:hidden}
++@media(max-width:600px){
++ body[data-corner-hud]{--corner-gap:8px;--corner-radar:76px;--corner-ability:70px;--corner-bottom:80px}
++ body[data-corner-hud] #hud-summary{right:calc(var(--corner-radar) + 16px)}
++ body[data-corner-hud] #scene-hud{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 44px;gap:4px 6px;padding:3px 5px;min-height:78px}
++ body[data-corner-hud] #scene-hud>span:first-child{grid-column:1/3;flex-wrap:nowrap;justify-content:space-between}
++ body[data-corner-hud] #btn-technical-pause{grid-column:3;grid-row:1/3;width:44px}
++ body[data-corner-hud] #scene-soldier,body[data-corner-hud] #scene-time{font-size:10px}
++ body[data-corner-hud] .corner-meter>span{font-size:9px!important}
++ body[data-corner-hud] #field-weapons{max-width:calc(100% - 154px);gap:4px}
++ body[data-corner-hud] #field-controls .field-weapon{width:102px;height:76px;padding:5px;gap:3px}
++ body[data-corner-hud] .field-weapon strong{font-size:9px}
++ body[data-corner-hud] .field-weapon .corner-ammo{font-size:14px}
++ body[data-corner-hud] .field-weapon .corner-progression{font-size:8px;white-space:normal}
++ body[data-corner-hud] #corner-ability-label{font-size:9px}
++ body[data-corner-hud] #corner-objectives>*{font-size:10px;padding:5px 7px}
++}
++@media(orientation:landscape) and (max-height:520px){
++ body[data-corner-hud]{--corner-gap:8px;--corner-radar:84px;--corner-ability:84px;--corner-bottom:84px}
++ body[data-corner-hud] #scene-hud{grid-template-columns:minmax(155px,1fr) minmax(105px,1fr) minmax(130px,1fr) 48px;gap:8px;min-height:44px;padding:0 4px}
++ body[data-corner-hud] #btn-technical-pause{width:48px;min-height:44px}
++ body[data-corner-hud] #scene-soldier,body[data-corner-hud] #scene-time{font-size:10px}
++ body[data-corner-hud] .corner-meter>span{font-size:10px!important}
++ body[data-corner-hud] #corner-objectives>*{max-width:370px;padding:4px 8px;font-size:10px}
++ body[data-corner-hud] #field-controls .field-weapon{width:160px;height:68px;padding:5px 9px;gap:3px}
++ body[data-corner-hud] .field-weapon .corner-ammo{font-size:16px}
++ body[data-corner-hud] #btn-ability{font-size:11px}
++ body[data-corner-hud] #technical-pause .panel{padding:12px}
++ body[data-corner-hud] :is(#technical-pause,#field-upgrades,#armament-choice,#weapon-terminal,#rift-power-choice){padding:10px}
++ body[data-corner-hud] :is(#field-upgrades,#armament-choice,#rift-power-choice) .panel{width:min(800px,100%);padding:12px;max-height:100%}
++ body[data-corner-hud] :is(#upgrade-cards,#armament-options,#rift-power-options){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
++ body[data-corner-hud] :is(#upgrade-cards,#armament-options,#rift-power-options) button{margin:0;min-height:72px;padding:10px!important}
++ body[data-corner-hud] .upgrade-card small{font-size:11px}
++ body[data-corner-hud] #rift-power-options>button:last-child:nth-child(4){grid-column:1/-1;min-height:44px}
++}
+--- a/js/ui/technical-ui.js
++++ b/js/ui/technical-ui.js
+@@ -169,7 +169,7 @@
+       if (key === 'q') { event.preventDefault(); switchWeapon(0); }
+       else if (key === 'e') { event.preventDefault(); switchWeapon(1); }
+     });
+-    compactHud();G.ExpandedUI.init();
++    compactHud();G.ExpandedUI.init();G.CornerHUD?.init();
+     el('boot').hidden = true; state('ui');
+   }
+   function state(value) {
+@@ -179,7 +179,7 @@
+     }
+     document.body.dataset.technicalState = value;G.RiftUI?.hide();
+     if(el('art-resource-status'))el('art-resource-status').hidden=true;
+-    G.ExpandedUI.state(value);
++    G.ExpandedUI.state(value);G.CornerHUD?.state(value);
+     el('technical-ready').hidden = value !== 'ui';
+     el('technical-pause').hidden = value !== 'paused';
+     for (const id of ['scene-hud', 'scene-footer', 'field-controls', 'field-status']) el(id).hidden = value !== 'playing';
+@@ -251,7 +251,7 @@
+     el('rift-alert').hidden=!rift.alert||s.phase==='finished'||s.phase==='levelup';
+     if(el('rift-alert').textContent!==rift.alert)el('rift-alert').textContent=rift.alert;
+     const abilityState = w.currentability || {};
+-    el('btn-ability').textContent = abilityState.cooldown > 0 ? `${soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint'} ${Math.ceil(abilityState.cooldown)} s` : (soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint');
++    if(!document.body.dataset.cornerHud)el('btn-ability').textContent = abilityState.cooldown > 0 ? `${soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint'} ${Math.ceil(abilityState.cooldown)} s` : (soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint');
+     const canUseAbilityInPhase = soldier.ability === 'heal'
+       ? ['combat', 'boss', 'escaping', 'preparation'].includes(s.phase)
+       : ['combat', 'boss', 'escaping', 'preparation', 'exploration'].includes(s.phase);
+@@ -309,7 +309,7 @@
+         armamentHost.append(button);
+       }
+     } else if(!showArmament) armamentHost.dataset.reward='';
+-    G.ExpandedUI.tick(player,s,w);G.RiftUI?.tick(player,s);
++    G.ExpandedUI.tick(player,s,w);G.RiftUI?.tick(player,s);G.CornerHUD?.tick(player,s,w);
+     el('field-result').hidden = s.phase !== 'finished';
+     if (s.phase === 'finished') {
+       const r = s.result;
+--- a/js/ui/expanded-ui.js
++++ b/js/ui/expanded-ui.js
+@@ -70,10 +70,10 @@
+    el('terminal-notice').textContent=terminal.notice;
+   }else terminalSignature='';
+   for(let i=0;i<2;i++){
+-   const copy=w.weapons[i],button=el(`btn-field-weapon-${i}`);button.replaceChildren();
+-    for(const text of [copy?`${i+1} · ${copy.name}`:`${i+1} · Ranura vacía`,copy?(isMelee(copy)?'Cuerpo a cuerpo':copy.reload>0?`Recarga ${copy.reload.toFixed(1)}s`:`${Math.floor(copy.ammo)} / ${copy.capacity}`):'Premio de jefe/élite',copy?progressionLine(copy):'']){
+-    const line=document.createElement('small');line.textContent=text;button.append(line);
+-   }
++   const copy=w.weapons[i],button=el(`btn-field-weapon-${i}`);button.replaceChildren();button.classList.toggle('corner-empty',!copy);
++   const labels=[copy?`${i+1} · ${copy.name}`:`${i+1} · Ranura vacía`,copy?(isMelee(copy)?'Cuerpo a cuerpo':copy.reload>0?`Recarga ${copy.reload.toFixed(1)}s`:`${Math.floor(copy.ammo)} / ${copy.capacity}`):'Premio de jefe/élite',copy?progressionLine(copy):''];
++   labels.forEach((text,index)=>{const line=document.createElement(index===0?'strong':'small');line.className=['corner-weapon-name','corner-ammo','corner-progression'][index];line.textContent=text;button.append(line);});
++   if(copy&&!isMelee(copy)){const bar=document.createElement('progress');bar.className='corner-reload';bar.setAttribute('aria-label',`Recarga de arma ${i+1}`);bar.max=copy.reloadTime;bar.value=copy.reload>0?Math.max(0,copy.reloadTime-copy.reload):copy.reloadTime;button.append(bar);}
+    button.disabled=!active;button.setAttribute('aria-label',copy?`Ver mejoras de arma ${i+1}: ${copy.name}`:'Ver equipo, segunda ranura vacía');
+   }
+   el('tactical-status').hidden=!active||!player.infiniteTactical;
+--- a/js/systems/rift-companion.js
++++ b/js/systems/rift-companion.js
+@@ -70,6 +70,7 @@
+   ctx.save();ctx.font='12px monospace';const words=npc.bubble.split(' '),lines=[];let line='';for(const word of words){if((line+' '+word).length>30){lines.push(line);line=word;}else line+=(line?' ':'')+word;}if(line)lines.push(line);
+   const width=230,height=lines.length*15+14,cam=G.Camera;let x=npc.x-width/2,y=npc.y-88-height;
+   if(cam?.left&&cam?.top){const hud=typeof document!=='undefined'?document.getElementById('hud-summary')?.getBoundingClientRect().bottom||0:0;x=Math.max(cam.left()+8/cam.scale,Math.min(x,cam.left()+cam.w-width-8/cam.scale));y=Math.max(cam.top()+(hud+8)/cam.scale,Math.min(y,cam.top()+cam.h-height-84/cam.scale));}
++  if(G.CornerHUD?.placeBubble&&cam?.left&&cam?.top){const position=G.CornerHUD.placeBubble(x,y,width,height,cam);if(!position){ctx.restore();return;}x=position.x;y=position.y;}
+   ctx.fillStyle='#101419ed';ctx.strokeStyle='#eee5ce';ctx.lineWidth=1;ctx.fillRect(x,y,width,height);ctx.strokeRect(x,y,width,height);ctx.fillStyle='#fff1db';ctx.textAlign='left';lines.forEach((s,i)=>ctx.fillText(s,x+8,y+18+i*15));ctx.restore();
+  }
+  return{startRun(){npc=null;usedNames=new Set();},create,update,hurt,drawBubble,equipment,drawables:()=>npc?[{x:npc.x,y:npc.y,draw}]:[],clear(){npc=null;},get state(){return npc?{...npc,used:[...npc.used],anim:undefined}:null;}};
+--- a/js/main.js
++++ b/js/main.js
+@@ -1,7 +1,7 @@
+ /* Arranque local P01. La aplicación completa sigue pendiente de sus fases. */
+ (() => {
+   const NEED = ['U', 'Settings', 'Input', 'Touch', 'Sprites', 'Camera', 'Tiles', 'World',
+-                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'DimensionalRifts', 'InventoryModel', 'InventoryTrial', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'WeaponTerminal', 'ExpandedPractice', 'ExpandedUI', 'FieldRadar', 'CharacterCatalog', 'PersonajesArt', 'AF01ApprovedArt', 'ApprovedFieldWeaponArt', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI','SceneR7','SceneM01A','RiftDirector','WeaponRevisionR1','WeaponRevisionTrial','OperationsMenu','RiftVisuals'];
++                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'DimensionalRifts', 'InventoryModel', 'InventoryTrial', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'WeaponTerminal', 'ExpandedPractice', 'ExpandedUI', 'FieldRadar', 'CharacterCatalog', 'PersonajesArt', 'AF01ApprovedArt', 'ApprovedFieldWeaponArt', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI','SceneR7','SceneM01A','RiftDirector','WeaponRevisionR1','WeaponRevisionTrial','OperationsMenu','RiftVisuals','CornerHUD'];
+   async function boot() {
+     const miss = NEED.filter(k => !window.G || !G[k]);
+     if (miss.length) {
+--- a/dev.html
++++ b/dev.html
+@@ -11,6 +11,7 @@
+ <link rel="manifest" href="manifest.webmanifest">
+ <link rel="stylesheet" href="css/technical.css?v=lot-est-005-r1">
+ <link rel="stylesheet" href="css/operations-menu.css">
++<link rel="stylesheet" href="css/corner-hud.css?v=lot-est-007-r1">
+ <title>SCP Survivor · Expedición</title>
+ <!-- dev.html: página fuente local de P02 -->
+ </head>
+@@ -172,6 +173,7 @@
+ <script defer src="js/systems/rift-companion.js"></script>
+ <script defer src="js/systems/rift-expedition.js"></script>
+ <script defer src="js/ui/rift-ui.js"></script>
++<script defer src="js/ui/corner-hud.js"></script>
+ <script defer src="js/systems/expedition.js"></script>
+ <script defer src="js/game.js"></script>
+ <script defer src="js/net/local-accounts.js"></script>
+--- /dev/null
++++ b/tests/corner-hud.test.js
+@@ -0,0 +1,21 @@
++const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
++const G={};vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../js/ui/corner-hud.js'),'utf8'),{G});
++const fit=G.CornerHUD.fitBubble,viewport={x:0,y:0,width:844,height:390};
++test('NPC text stays in the visible viewport at all four edges',()=>{
++ for(const [x,y]of [[-400,-300],[1000,-300],[-400,1000],[1000,1000]]){
++  const p=fit({x,y,width:220,height:60},[],viewport);assert.ok(p);assert.ok(p.x>=8&&p.y>=8&&p.x+p.width<=836&&p.y+p.height<=382);
++ }
++});
++test('NPC text avoids top HUD, radar and lower controls with safe-area offsets',()=>{
++ const bounds={x:30,y:10,width:784,height:370},blocks=[{x:30,y:10,width:680,height:70},{x:714,y:10,width:100,height:100},{x:30,y:275,width:784,height:105}];
++ const p=fit({x:600,y:35,width:220,height:70},blocks,bounds);assert.ok(p);
++ for(const b of blocks)assert.ok(!(p.x<b.x+b.width+8&&p.x+p.width>b.x-8&&p.y<b.y+b.height+8&&p.y+p.height>b.y-8));
++});
++test('NPC bubble is suppressed when no nonoverlapping area exists',()=>{
++ assert.equal(fit({x:0,y:0,width:220,height:60},[{...viewport}],viewport),null);
++ assert.equal(fit({x:0,y:0,width:900,height:60},[],viewport),null);
++ assert.equal(fit({x:0,y:0,width:220,height:400},[],viewport),null);
++});
++test('NPC layout does not mutate preferred, occupied or camera viewport data',()=>{
++ const p={x:15,y:10,width:220,height:60},blocks=[{x:0,y:0,width:844,height:60}],before=JSON.stringify([p,blocks,viewport]);fit(p,blocks,viewport);assert.equal(JSON.stringify([p,blocks,viewport]),before);
++});
+--- /dev/null
++++ b/tests/hud-007-browser.py
+@@ -0,0 +1,126 @@
++"""LOT007: real DOM/game. Forced loadout/position/HP/timing are explicit QA, not balance evidence."""
++from pathlib import Path
++from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
++from functools import partial
++from threading import Thread
++from playwright.sync_api import sync_playwright
++import json, os, argparse, hashlib, re
++
++ROOT = Path(os.environ.get('SCP_TEST_ROOT', Path(__file__).resolve().parents[1]))
++OUT = Path(os.environ.get('SCP_TEST_OUTPUT', ROOT/'tests/artifacts/lot-est-007'))
++class Quiet(SimpleHTTPRequestHandler):
++ def log_message(self, *args): pass
++ def copyfile(self, *args):
++  try: super().copyfile(*args)
++  except (ConnectionResetError, BrokenPipeError, ConnectionAbortedError): pass
++
++BOUNDS = '''()=>{
++ const ids=['scene-hud','corner-hp','corner-xp','btn-technical-pause','radar-wrap','field-weapons','btn-field-weapon-0','btn-field-weapon-1','btn-ability','corner-stick','corner-objectives','rift-boss-health'];
++ const rows=ids.map(id=>{const n=document.getElementById(id),r=n.getBoundingClientRect();return{id,visible:!n.hidden&&r.width>0&&r.height>0,x:r.x,y:r.y,width:r.width,height:r.height};});
++ const outside=rows.filter(r=>r.visible&&(r.x<-.5||r.y<-.5||r.x+r.width>innerWidth+.5||r.y+r.height>innerHeight+.5));
++ const overlaps=(a,b)=>a.visible&&b.visible&&a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
++ const collisions=[];for(const [a,b]of [['scene-hud','radar-wrap'],['field-weapons','btn-ability'],['field-weapons','corner-stick'],['corner-objectives','radar-wrap']])if(overlaps(rows.find(x=>x.id===a),rows.find(x=>x.id===b)))collisions.push([a,b]);
++ const small=rows.filter(r=>['btn-field-weapon-0','btn-field-weapon-1','btn-ability','btn-technical-pause'].includes(r.id)&&r.visible&&(r.width<44||r.height<44));
++ return{rows,outside,collisions,small,scroll:document.documentElement.scrollHeight>innerHeight||document.documentElement.scrollWidth>innerWidth};
++}'''
++FREEZE = '''()=>({map:G.Expedition.state.v2.mapTime,room:G.RiftExpedition.state.time,elapsed:G.Expedition.state.elapsed,powers:G.RiftPowers.state,ability:G.Game.player.fieldAbility,copies:G.Game.player.fieldWeapons.map(w=>({ammo:w.ammo,reload:w.reload,wait:w.shotWait})),x:G.Game.player.x,y:G.Game.player.y})'''
++def main():
++ ap=argparse.ArgumentParser();ap.add_argument('--probe',action='store_true');ap.add_argument('--live',action='store_true');args=ap.parse_args()
++ OUT.mkdir(parents=True,exist_ok=True);server=None
++ if args.live: base='https://deteco.github.io/SCPSurvivor/'
++ else:
++  server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(ROOT)));Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/'
++ files=['dev.html','css/technical.css','css/operations-menu.css','css/corner-hud.css']+re.findall(r'<script defer src="([^"]+)"', (ROOT/'dev.html').read_text(encoding='utf-8'))
++ if (ROOT/'index.html').exists():files+=['index.html','js/app.min.js']
++ snapshot={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in files}
++ rows=[]
++ try:
++  with sync_playwright() as pw:
++   browser=pw.chromium.launch(headless=True)
++   for index,(w,h) in enumerate([(844,390),(932,430),(390,844),(1280,900)]):
++    context=browser.new_context(viewport={'width':w,'height':h},has_touch=w<1000,is_mobile=w<1000)
++    p=context.new_page();errors=[];p.on('pageerror',lambda e:errors.append(str(e)))
++    mode='16' if index%2 else '32';entry='index.html' if args.live or index%2==0 else 'dev.html'
++    p.goto(f'{base}{entry}?prueba=combate-v2&graficos={mode}');p.wait_for_selector('#btn-technical-start:visible')
++    if index%2:p.select_option('#field-role','medic',force=True)
++    p.click('#btn-technical-start');p.wait_for_function("()=>G.Game.state==='playing'&&!!document.body.dataset.cornerHud")
++    p.evaluate('()=>{G.Game.player.invuln=1e6;}');p.wait_for_timeout(100)
++    b=p.evaluate(BOUNDS);p.screenshot(path=str(OUT/f'{w}x{h}-normal.png'))
++    assert not b['outside'] and not b['collisions'] and not b['small'] and not b['scroll'],b
++    assert p.locator('#btn-ability svg').count()==1
++    record={'viewport':[w,h],'graphics':mode,'soldier':'medic' if index%2 else 'guard','entry':entry,'normal':b}
++    if args.probe: rows.append(record);context.close();continue
++    if w<1000:
++     client=context.new_cdp_session(p)
++     client.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':40,'y':h-48}]})
++     client.send('Input.dispatchTouchEvent',{'type':'touchMove','touchPoints':[{'x':85,'y':h-48}]})
++     p.wait_for_timeout(100);vector=p.evaluate('()=>G.Touch.vector()');assert vector and vector[0]>.9,vector
++     assert p.locator('#corner-stick').is_hidden()
++     client.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]});p.wait_for_timeout(50)
++     assert p.evaluate('()=>G.Touch.vector()===null');record['floatingTouch']=True
++    # Slot actions still open the existing paused equipment; no new equip action.
++    p.click('#btn-field-weapon-0');p.wait_for_function("()=>G.Game.state==='paused'")
++    frozen=p.evaluate(FREEZE);p.wait_for_timeout(160);assert p.evaluate(FREEZE)==frozen
++    for id in ['btn-technical-resume','btn-technical-menu']:
++     rect=p.locator('#'+id).bounding_box();assert rect and rect['y']>=0 and rect['y']+rect['height']<=h,rect
++    p.screenshot(path=str(OUT/f'{w}x{h}-equipo.png'));p.click('#btn-technical-resume')
++    # Disclosed QA loadout makes two current real models visible; use real ability and reload clocks.
++    p.evaluate("()=>{const p=G.Game.player;G.FieldCombat.reset(p,[G.FieldCatalog.makeWeapon('pistol','hud:pistol',[]),G.FieldCatalog.makeWeapon('smg','hud:smg',[])]);p.hp=p.maxHp-7;G.TechnicalUI.ability();const w=p.fieldWeapons[1];w.ammo=0;w.reload=w.reloadTime;for(const c of p.fieldWeapons)c.shotWait=1e6;}")
++    p.wait_for_timeout(80);p.screenshot(path=str(OUT/f'{w}x{h}-recarga.png'))
++    meters=p.evaluate("()=>({hp:document.getElementById('corner-hp').value,real:G.Game.player.hp,label:document.getElementById('corner-ability-label').textContent,reload:[...document.querySelectorAll('.corner-reload')].map(n=>({value:n.value,max:n.max})),ring:document.getElementById('corner-ability-ring').getAttribute('stroke-dashoffset')})")
++    assert meters['hp']==meters['real'] and ' s' in meters['label'] and len(meters['reload'])==2 and float(meters['ring'])>0,meters
++    p.click('#btn-technical-pause');frozen=p.evaluate(FREEZE);p.wait_for_timeout(160);assert p.evaluate(FREEZE)==frozen;p.click('#btn-technical-resume')
++    p.wait_for_function('()=>G.Game.player.fieldWeapons[1].reload===0',timeout=7000)
++    # Actual level-up path, real choices and paused clocks. XP injection only.
++    p.evaluate("()=>{const p=G.Game.player;G.Pickups.drop('xp',p.x,p.y,(p.xpNext-p.xp)/p.xpMul);}")
++    p.wait_for_selector('#upgrade-cards button:visible');frozen=p.evaluate(FREEZE);p.wait_for_timeout(160);assert p.evaluate(FREEZE)==frozen
++    p.screenshot(path=str(OUT/f'{w}x{h}-mejoras.png'));buttons=p.locator('#upgrade-cards button');assert buttons.count()==3
++    assert not any(x in p.locator('#upgrade-cards').inner_text() for x in ['SUPERVIVENCIA','UTILIDAD'])
++    for button in buttons.all():
++     rect=button.bounding_box();assert rect and rect['width']>=44 and rect['height']>=44 and rect['y']>=0 and rect['y']+rect['height']<=h,rect
++    buttons.first.click();p.wait_for_function("()=>G.Expedition.state.phase!=='levelup'")
++    record['meters']=meters;record['equipmentAndPauseFrozen']=True;record['realLevelChoice']=True
++    # Real room entry + companion; deterministic grade/presence as in the existing rift test.
++    p.goto(f'{base}{entry}?prueba=combate-v2&ensayo=grietas&grado=D2&apoyo=si&graficos={mode}')
++    p.wait_for_selector('#btn-technical-start:visible')
++    if index%2:p.select_option('#field-role','medic',force=True)
++    p.click('#btn-technical-start')
++    p.evaluate('()=>{const p=G.Game.player;p.invuln=1e6;const r=G.RiftExpedition.state.portal;p.x=r.x;p.y=r.y;G.Expedition.update(1/60);}')
++    p.wait_for_function("()=>G.RiftExpedition.state.status==='combat'")
++    p.wait_for_timeout(100);p.screenshot(path=str(OUT/f'{w}x{h}-recinto.png'))
++    room=p.evaluate(BOUNDS);assert not room['outside'] and not room['collisions'] and not room['small'],room
++    assert p.locator('#rift-boss-health').bounding_box()['width']>=100
++    assert 'Larva de Vidrio' in p.locator('#corner-context').text_content()
++    assert 'BIO-' in p.locator('#field-status').text_content() or 'D2' in p.locator('#field-status').text_content()
++    bubble=p.evaluate('''()=>{const cam=G.Camera,n=G.RiftCompanion.state,canvas=document.getElementById('game').getBoundingClientRect();let positions=[];const occupied=['scene-hud','corner-objectives','rift-boss-health','radar-wrap','field-weapons','btn-ability','btn-terminal','chest-status','terminal-prompt','tactical-status','corner-stick'].map(id=>{const n=document.getElementById(id),b=n?.getBoundingClientRect();return n&&!n.hidden&&b.width&&b.height?b:null;}).filter(Boolean);for(const [x,y]of [[0,0],[innerWidth-1,innerHeight-1],[innerWidth/2,innerHeight/2]]){const target=G.CornerHUD.placeBubble(cam.left()+x/cam.scale,cam.top()+y/cam.scale,230,60,cam);if(target){const b={x:canvas.left+(target.x-cam.left())*cam.scale,y:canvas.top+(target.y-cam.top())*cam.scale,width:230*cam.scale,height:60*cam.scale};if(b.x<canvas.left||b.y<canvas.top||b.x+b.width>canvas.right||b.y+b.height>canvas.bottom||occupied.some(o=>b.x<o.right&&b.x+b.width>o.left&&b.y<o.bottom&&b.y+b.height>o.top))throw Error('bubble overlaps HUD or leaves viewport');}positions.push(target);}return{npc:!!n,positions};}''')
++    assert bubble['npc'];record['room']=room;record['bubble']=bubble
++    # Disclosed deterministic fast-forward to retreat warning; clocks/return data stay authoritative.
++    p.evaluate('()=>{const boss=G.EnemyMgr.all().find(e=>e.dimensional);boss.hp=boss.maxHp=1e6;for(let i=0;i<89*30;i++)G.Expedition.update(1/30);}')
++    p.wait_for_timeout(80);p.screenshot(path=str(OUT/f'{w}x{h}-retirada.png'))
++    assert 'RETIRADA' in p.locator('#rift-locator').text_content()
++    suppressed=p.evaluate('()=>{let count=0;const c=document.createElement("canvas").getContext("2d");const fn=c.fillText.bind(c);c.fillText=(...a)=>{count++;fn(...a)};G.RiftCompanion.drawBubble(c,{priority:true});return count===0;}');assert suppressed
++    if index%2==0:
++     p.evaluate("()=>{const p=G.Game.player;for(const id of ['esporario','malla','portador']){G.RiftPowers.victory('qa-hud:'+id,p,{rng:()=>0,anomalyId:id});G.RiftPowers.choose(id,p);}}")
++    # Guarantee the reward branch in QA only; later victories legitimately may grant no power.
++    p.evaluate('()=>{const win=G.RiftPowers.victory;G.RiftPowers.victory=(id,p,options)=>win(id,p,{...options,rng:()=>0});try{G.EnemyMgr.all().find(e=>e.dimensional).hurt(1e9);G.Expedition.update(1/30);}finally{G.RiftPowers.victory=win;}}')
++    p.wait_for_selector('#rift-power-choice button:visible');frozen=p.evaluate(FREEZE);p.wait_for_timeout(160);assert p.evaluate(FREEZE)==frozen
++    p.screenshot(path=str(OUT/f'{w}x{h}-poder.png'));p.locator('#rift-power-choice button').first.click()
++    if index%2==0:
++     p.wait_for_function("()=>document.getElementById('rift-power-title').textContent.startsWith('Nuevo:')")
++     frozen=p.evaluate(FREEZE);p.wait_for_timeout(160);assert p.evaluate(FREEZE)==frozen
++     options=p.locator('#rift-power-options button');assert options.count()==4
++     for button in options.all():
++      rect=button.bounding_box();assert rect and rect['height']>=44 and rect['y']>=0 and rect['y']+rect['height']<=h,rect
++     p.screenshot(path=str(OUT/f'{w}x{h}-reemplazo.png'));options.first.click();record['fourthPowerReplacement']=True
++    p.evaluate('()=>{const p=G.Game.player,r=G.RiftExpedition.state;p.x=r.exit.x;p.y=r.exit.y;G.Expedition.update(1/30);}')
++    assert p.evaluate('()=>!G.RiftExpedition.state.active') and p.evaluate('()=>G.RiftPowers.state.owned.length')==(3 if index%2==0 else 1)
++    record['roomChoiceFrozenAndReturn']=True;record['dangerSuppressesBubble']=True
++    assert not errors,errors;rows.append(record);print(json.dumps({'viewport':[w,h],'status':'PASS'}),flush=True);context.close()
++   browser.close()
++ finally:
++  if server:server.shutdown();server.server_close()
++ drift=[name for name,digest in snapshot.items() if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest]
++ (OUT/'browser.json').write_text(json.dumps({'status':'PASS' if not drift else 'SOURCE_DRIFT','probe':args.probe,'live':args.live,'records':rows,'physicalPhone':False,'runtimeSnapshot':snapshot,'sourceDrift':drift,'method':'Real game/UI; forced HP/loadout/XP/grade/position/fast-forward, third-party victory RNG override and preparatory powers only in QA, not natural balance.'},ensure_ascii=False,indent=2),encoding='utf-8')
++ assert not drift,drift
++ print(json.dumps({'status':'PASS','viewports':len(rows),'probe':args.probe}))
++if __name__=='__main__': main()

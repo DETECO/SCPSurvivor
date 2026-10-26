@@ -1,0 +1,66 @@
+{
+  "dateClient": "2026-10-26",
+  "scope": "LOT-EST-007r1 / MEN-005-A r1 local",
+  "files": [
+    {
+      "path": "1280x900-normal.png",
+      "bytes": 620046,
+      "sha256": "97f2d161faf54adf831f7ede1e78355105ae3843a0bcc519928e233b951942f0"
+    },
+    {
+      "path": "390x844-normal.png",
+      "bytes": 432982,
+      "sha256": "89368e7f3ba0beaa527e7801d253a92b114a4413709ce6828da106e653520d6c"
+    },
+    {
+      "path": "390x844-recinto.png",
+      "bytes": 251558,
+      "sha256": "d98e5617f73db15257ce24495874289d72e8fdc4fe153771a34d29e5a82db33c"
+    },
+    {
+      "path": "844x390-equipo.png",
+      "bytes": 159276,
+      "sha256": "20a1c0c2370a35537e74e73fcf952c9cacc346ea8d607b55cf4612d4b458c058"
+    },
+    {
+      "path": "844x390-mejoras.png",
+      "bytes": 145987,
+      "sha256": "ce7389e46fe387ee760ea8c36d6a396ae92802c04b3125953dfcef85e855be87"
+    },
+    {
+      "path": "844x390-normal.png",
+      "bytes": 404316,
+      "sha256": "d2b96fbb678f8fcf6f47d50680fc5cc6474c62d6ac898dd24b72fc302d16991a"
+    },
+    {
+      "path": "844x390-reemplazo.png",
+      "bytes": 89210,
+      "sha256": "ed7097617554091e27e2466a965c5fbcee734e25eb79073f3e28e2d6b2ead351"
+    },
+    {
+      "path": "932x430-recarga.png",
+      "bytes": 314677,
+      "sha256": "a0d72ad01ebb973283c2f65cd4eae9df9f0db9b5beec7b196ce93b092248a0f7"
+    },
+    {
+      "path": "browser.json",
+      "bytes": 36588,
+      "sha256": "5f3bc06b0006a2dc319817b8d469db7427dfab6624fe0143c8f702affc842b64"
+    },
+    {
+      "path": "CAMBIOS_HUD.diff",
+      "bytes": 40893,
+      "sha256": "d41a4cb4ef3c9575e655a01bc40cd60e168ce59c638884172a45f0f8bd42e62e"
+    },
+    {
+      "path": "CAMBIOS_Y_FUENTES.json",
+      "bytes": 3146,
+      "sha256": "6cb8fc4e9ca789764450c518ad1d7276654f3021bf9ee4549a3fec3669fb72a6"
+    },
+    {
+      "path": "node-tests.log",
+      "bytes": 27442,
+      "sha256": "4cfe61c96f17b49a48dbbb9f5a812356075fa8c55738ecb4edc7fc5e6432ec2a"
+    }
+  ]
+}

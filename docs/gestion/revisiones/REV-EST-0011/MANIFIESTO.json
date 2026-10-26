@@ -1,0 +1,46 @@
+{
+  "revision": "REV-EST-0011",
+  "dateClient": "2026-10-26",
+  "sources": [
+    {
+      "file": "PAUTA_DESARROLLO.md",
+      "snapshot": "fuentes/PAUTA_DESARROLLO.md",
+      "sha256": "defade658fa807751de3a5de29ab393ac8c209299eea1025c431ef0fbab64dbd"
+    },
+    {
+      "file": "docs/gestion/CONTROL_CAMBIOS.md",
+      "snapshot": "fuentes/docs/gestion/CONTROL_CAMBIOS.md",
+      "sha256": "1243cd8c548875ef753b0006f5b3643d405335870f00ebac8ff53432db6324a3"
+    },
+    {
+      "file": "docs/gestion/lotes/LOT-EST-007-r1.md",
+      "snapshot": "fuentes/docs/gestion/lotes/LOT-EST-007-r1.md",
+      "sha256": "03f89e473b09b6d38ae3c4b6cbcf409c1481f0d4081340a3006948efa9a85536"
+    },
+    {
+      "file": "docs/gestion/entregas/PROGRAMACION-HUD-007.md",
+      "snapshot": "fuentes/docs/gestion/entregas/PROGRAMACION-HUD-007.md",
+      "sha256": "10bb1d0b1cb1de3fb20233e951cb9c2749a2cbaaccb83f96873391bce31f6037"
+    },
+    {
+      "file": "docs/PAUTA_MENUS.md",
+      "snapshot": "fuentes/docs/PAUTA_MENUS.md",
+      "sha256": "c40a58f4ac3a05fd6940a8b9c0a714930026fdb63fa8f55d126553152a2ace92"
+    },
+    {
+      "file": "docs/superpowers/specs/2026-10-24-men-005-hud-in-game-design.md",
+      "snapshot": "fuentes/docs/superpowers/specs/2026-10-24-men-005-hud-in-game-design.md",
+      "sha256": "751502454f00d47e0c68a59cea14f42d025d10daac8be6bc67417d4240c3fe72"
+    },
+    {
+      "file": "docs/areas/PERSONAJES.md",
+      "snapshot": "fuentes/docs/areas/PERSONAJES.md",
+      "sha256": "9c1e5b3c08143e1bd64196b92069917b4dff6a240d245ed00443eeb979ccd639"
+    }
+  ],
+  "coverage": "PROGRAMACION-HUD-007 complete plus new PERSONAJES technical export and current partial thread; MENUS approved dependency from REV0010. Other areas use prior REV0010 coverage, not reread.",
+  "characterSourceHashValidation": 12,
+  "formalPersonajesDeliveryAtCut": "not_available_area_active",
+  "referencesPreserved": true,
+  "historicalDecisionsUnchanged": true
+}

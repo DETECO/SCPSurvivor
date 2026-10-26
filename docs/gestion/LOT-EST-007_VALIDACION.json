@@ -1,0 +1,54 @@
+{
+  "lot": "LOT-EST-007r1",
+  "revision": "REV-EST-0011",
+  "dateClient": "2026-10-26",
+  "status": "local_and_publication_clone_PASS_public_pending",
+  "sourceBundle": "460eecf37e",
+  "publicBundle": "92026cde30",
+  "scriptCount": 120,
+  "nodeGame": {
+    "files": 54,
+    "tests": 285,
+    "pass": 285,
+    "fail": 0,
+    "skipped": 0,
+    "excludes": "p05-*"
+  },
+  "publicationCloneTargetedNode": {
+    "tests": 22,
+    "pass": 22,
+    "fail": 0
+  },
+  "browser": {
+    "local": {
+      "hudViewports": 4,
+      "weaponMounts": 352,
+      "incapacitatedPoses": 64,
+      "combatCases": 8,
+      "animationStates": 24,
+      "javascriptErrors": 0,
+      "physicalPhone": false
+    },
+    "clon": {
+      "hudViewports": 4,
+      "weaponMounts": 352,
+      "incapacitatedPoses": 64,
+      "combatCases": 8,
+      "animationStates": 24,
+      "javascriptErrors": 0,
+      "physicalPhone": false
+    }
+  },
+  "buildCheck": {
+    "source": "PROGRAMACION report PASS",
+    "publicationClone": "fresh build and --check PASS"
+  },
+  "publicCspUnchanged": true,
+  "publicSdkAndConfigUnchanged": {
+    "js/vendor/firebase-client.js": "21128b23930e1ba252d595195911065e92cc578bf0c4c7f9218a9670fa45cd2c",
+    "config/firebase-public.json": "52b4099163862211cffd5f6f36ea8afd3c75f4dbb132d350e323872ff394e95b"
+  },
+  "method": "Deterministic QA fixtures explicitly inject loadout, HP, XP, position, time and reward RNG; actual UI, renderer, attack/return logic. No natural balance, physical phone or human acceptance claim.",
+  "knownExcludedFailures": "P05 prior full run: 322/328 pass, five workerd compatibility failures and one skip. Not rerun or changed by this visual lot.",
+  "scope": "Accepted MEN-005-A plus common-scale technical repair of guard, medic and four supports in16/32; preserves accepted originals and gameplay."
+}

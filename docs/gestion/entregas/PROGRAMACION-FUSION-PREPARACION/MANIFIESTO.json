@@ -1,0 +1,41 @@
+{
+  "status": "isolated_pose_trial_only",
+  "authority": "EST-ARM-001r1 / LOT-EST-002r1; continuing direct user request25/10",
+  "gameRuntimeModified": false,
+  "published": false,
+  "gate": "pose_validation_pending",
+  "files": [
+    {
+      "path": "BASELINE.json",
+      "sha256": "c27df79a59c12eaf6aab485cd3ffee7208676434e89ae748396c379f419bbed0"
+    },
+    {
+      "path": "gate.json",
+      "sha256": "1c0e1202564cca82fc7fbabe0ad99133b48aafc3e0aa0c9da1036bb885be2400"
+    },
+    {
+      "path": "guardia-16-fase0.png",
+      "sha256": "637c732225ca204c1ff36af8081d62e4261ef9037f317daa589ac20bc24daf7e"
+    },
+    {
+      "path": "guardia-16-fase1.png",
+      "sha256": "9884d836a2e904b942694fd6fd0fcc4056e8fbfd3e4a6432c3e5f4cfdcbeaad2"
+    },
+    {
+      "path": "guardia-32-fase2.png",
+      "sha256": "32a382537875b3d9761dc8871788ce51c988b702fe55fab5ac707e590485e1a3"
+    },
+    {
+      "path": "medico-32-fase1.png",
+      "sha256": "020d6f9293cf25106d911f7fcce84d33db0f2d9bf899399801600fbee4894564"
+    },
+    {
+      "path": "poses.json",
+      "sha256": "c7a30e09a03c6ec2caec9b3109364403d522feed7c11ee697a44009356e48379"
+    },
+    {
+      "path": "RENDERER_PROPUESTO.diff",
+      "sha256": "dacbf9d6e00518a79154acb0c35898182cf7a499ef824a7d5fa6306fe18d059f"
+    }
+  ]
+}

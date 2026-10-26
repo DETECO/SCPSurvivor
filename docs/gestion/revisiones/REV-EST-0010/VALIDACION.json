@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "snapshotsMatched": 16,
+  "localLinksChecked": 10,
+  "historicalTasksUnchanged": true,
+  "coverageAreas": 7,
+  "runtimeChangedByConsolidation": false,
+  "publicVersion": "0.38",
+  "consolidationScope": "local_documents_only"
+}

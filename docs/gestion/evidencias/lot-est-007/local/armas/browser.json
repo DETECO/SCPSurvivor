@@ -1,0 +1,5045 @@
+{
+  "status": "PASS",
+  "base": "http://127.0.0.1:50583/",
+  "poses": 352,
+  "records": [
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/E.png",
+        "16/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SE.png",
+        "16/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/S.png",
+        "16/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SW.png",
+        "16/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/W.png",
+        "16/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NW.png",
+        "16/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/N.png",
+        "16/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NE.png",
+        "16/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/E.png",
+        "16/baton/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SE.png",
+        "16/baton/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/S.png",
+        "16/baton/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SW.png",
+        "16/baton/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/W.png",
+        "16/baton/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NW.png",
+        "16/baton/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/N.png",
+        "16/baton/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NE.png",
+        "16/baton/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/baton/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/E.png",
+        "16/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SE.png",
+        "16/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/S.png",
+        "16/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SW.png",
+        "16/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/W.png",
+        "16/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NW.png",
+        "16/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/N.png",
+        "16/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NE.png",
+        "16/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/E.png",
+        "16/baton/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SE.png",
+        "16/baton/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/S.png",
+        "16/baton/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SW.png",
+        "16/baton/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/W.png",
+        "16/baton/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NW.png",
+        "16/baton/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/N.png",
+        "16/baton/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NE.png",
+        "16/baton/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/AF01/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "16",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/E.png",
+        "32/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SE.png",
+        "32/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/S.png",
+        "32/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SW.png",
+        "32/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/W.png",
+        "32/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NW.png",
+        "32/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/N.png",
+        "32/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NE.png",
+        "32/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/E.png",
+        "32/baton/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SE.png",
+        "32/baton/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/S.png",
+        "32/baton/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SW.png",
+        "32/baton/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/W.png",
+        "32/baton/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NW.png",
+        "32/baton/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/N.png",
+        "32/baton/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NE.png",
+        "32/baton/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/baton/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/E.png",
+        "32/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SE.png",
+        "32/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/S.png",
+        "32/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SW.png",
+        "32/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/W.png",
+        "32/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NW.png",
+        "32/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/N.png",
+        "32/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "smg",
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NE.png",
+        "32/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/E.png",
+        "32/baton/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SE.png",
+        "32/baton/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/S.png",
+        "32/baton/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SW.png",
+        "32/baton/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/W.png",
+        "32/baton/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NW.png",
+        "32/baton/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/N.png",
+        "32/baton/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "pistol",
+        "baton"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NE.png",
+        "32/baton/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_delgada",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_fitness",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "pistol"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/AF01/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "smg"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/smg/NE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 0,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/E.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 1,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SE.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 2,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/S.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 3,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/SW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 4,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/W.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 5,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NW.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 6,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/N.png"
+      ]
+    },
+    {
+      "actor": "apoyo_curvy",
+      "mode": "32",
+      "direction": 7,
+      "models": [
+        "shotgun"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/shotgun/NE.png"
+      ]
+    }
+  ],
+  "combat": [
+    {
+      "mode": "16",
+      "weapons": [
+        {
+          "model": "pistol",
+          "shots": 1,
+          "damage": 10,
+          "interval": 0.5,
+          "range": 320,
+          "capacity": 12,
+          "reloadTime": 1.5
+        },
+        {
+          "model": "smg",
+          "shots": 1,
+          "damage": 6,
+          "interval": 0.15,
+          "range": 280,
+          "capacity": 24,
+          "reloadTime": 1.8
+        },
+        {
+          "model": "shotgun",
+          "shots": 6,
+          "damage": 12,
+          "interval": 0.9,
+          "range": 180,
+          "capacity": 6,
+          "reloadTime": 2.2
+        },
+        {
+          "model": "baton",
+          "shots": 0,
+          "damage": 18,
+          "interval": 0.7,
+          "range": 64,
+          "capacity": 0,
+          "reloadTime": 0
+        }
+      ]
+    },
+    {
+      "mode": "32",
+      "weapons": [
+        {
+          "model": "pistol",
+          "shots": 1,
+          "damage": 10,
+          "interval": 0.5,
+          "range": 320,
+          "capacity": 12,
+          "reloadTime": 1.5
+        },
+        {
+          "model": "smg",
+          "shots": 1,
+          "damage": 6,
+          "interval": 0.15,
+          "range": 280,
+          "capacity": 24,
+          "reloadTime": 1.8
+        },
+        {
+          "model": "shotgun",
+          "shots": 6,
+          "damage": 12,
+          "interval": 0.9,
+          "range": 180,
+          "capacity": 6,
+          "reloadTime": 2.2
+        },
+        {
+          "model": "baton",
+          "shots": 0,
+          "damage": 18,
+          "interval": 0.7,
+          "range": 64,
+          "capacity": 0,
+          "reloadTime": 0
+        }
+      ]
+    }
+  ],
+  "animations": [
+    {
+      "mode": "16",
+      "records": [
+        {
+          "model": "pistol",
+          "states": [
+            {
+              "state": "reposo",
+              "image": null
+            },
+            {
+              "state": "disparo/golpe",
+              "image": null
+            },
+            {
+              "state": "recarga",
+              "image": null
+            }
+          ]
+        },
+        {
+          "model": "smg",
+          "states": [
+            {
+              "state": "reposo",
+              "image": [
+                6.379999999999999,
+                1.2699999999999996,
+                12,
+                12
+              ]
+            },
+            {
+              "state": "disparo/golpe",
+              "image": [
+                5.82,
+                1.2699999999999996,
+                12,
+                12
+              ]
+            },
+            {
+              "state": "recarga",
+              "image": [
+                6.379999999999999,
+                1.67,
+                12,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "model": "shotgun",
+          "states": [
+            {
+              "state": "reposo",
+              "image": [
+                6.379999999999999,
+                2.0199999999999996,
+                12,
+                12
+              ]
+            },
+            {
+              "state": "disparo/golpe",
+              "image": [
+                5.82,
+                2.0199999999999996,
+                12,
+                12
+              ]
+            },
+            {
+              "state": "recarga",
+              "image": [
+                6.379999999999999,
+                2.42,
+                12,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "model": "baton",
+          "states": [
+            {
+              "state": "reposo",
+              "image": [
+                7.879999999999999,
+                2.0199999999999996,
+                12,
+                12
+              ]
+            },
+            {
+              "state": "disparo/golpe",
+              "image": [
+                8.089438957350556,
+                0.9645517529173642,
+                12,
+                12
+              ]
+            },
+            {
+              "state": "recarga",
+              "image": [
+                5.0127598199100625,
+                5.094505098764088,
+                12,
+                12
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "32",
+      "records": [
+        {
+          "model": "pistol",
+          "states": [
+            {
+              "state": "reposo",
+              "image": null
+            },
+            {
+              "state": "disparo/golpe",
+              "image": null
+            },
+            {
+              "state": "recarga",
+              "image": null
+            }
+          ]
+        },
+        {
+          "model": "smg",
+          "states": [
+            {
+              "state": "reposo",
+              "image": [
+                12.759999999999998,
+                2.9399999999999977,
+                24,
+                24
+              ]
+            },
+            {
+              "state": "disparo/golpe",
+              "image": [
+                11.64,
+                2.9399999999999977,
+                24,
+                24
+              ]
+            },
+            {
+              "state": "recarga",
+              "image": [
+                12.759999999999998,
+                3.740000000000002,
+                24,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "model": "shotgun",
+          "states": [
+            {
+              "state": "reposo",
+              "image": [
+                14.259999999999998,
+                2.9399999999999977,
+                24,
+                24
+              ]
+            },
+            {
+              "state": "disparo/golpe",
+              "image": [
+                13.14,
+                2.9399999999999977,
+                24,
+                24
+              ]
+            },
+            {
+              "state": "recarga",
+              "image": [
+                14.259999999999998,
+                3.740000000000002,
+                24,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "model": "baton",
+          "states": [
+            {
+              "state": "reposo",
+              "image": [
+                15.759999999999998,
+                4.439999999999998,
+                24,
+                24
+              ]
+            },
+            {
+              "state": "disparo/golpe",
+              "image": [
+                16.17887791470111,
+                2.3291035058347287,
+                24,
+                24
+              ]
+            },
+            {
+              "state": "recarga",
+              "image": [
+                10.775519639820125,
+                11.339010197528179,
+                24,
+                24
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "javascriptErrors": [],
+  "incapacitatedPoses": 64,
+  "sourceSnapshot": {
+    "index.html": "500ece7a41b1dd366b78d27117cd490600e10ed3bcca1b6c6a932731bba08f40",
+    "js/app.min.js": "3479cf2d3430f4f5406d3ecb0978497ed7dd2b8b3b3098341ba5fb099b3cee37",
+    "js/data/character-proportions.js": "27083cea8ac62e21615ffb2986fc04a4490f634abbcd83511d76be947a917ee1",
+    "js/ui/personajes-art.js": "fc5af7db1e3b9bbf776666619d911338065c52b651febba8947ab61e738effd5",
+    "assets/proporciones-personajes-20261025/catalogo.json": "da97c10a373ce08ff580bc9fc1618122cb72cd6053f570e7957c9265d1797719"
+  },
+  "sourceDrift": [],
+  "physicalPhone": false,
+  "method": "Actual renderer/combat on final cut with disclosed deterministic pose/loadout/world/HP fixtures. No natural balance claim."
+}

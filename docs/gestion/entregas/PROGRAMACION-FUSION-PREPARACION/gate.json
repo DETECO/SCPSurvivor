@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "map": 2,
+  "station": {
+    "visible": true,
+    "operational": false,
+    "reason": "pose_validation_pending",
+    "stationId": "fusion-station:qa-pose-only:2",
+    "map": 2
+  }
+}

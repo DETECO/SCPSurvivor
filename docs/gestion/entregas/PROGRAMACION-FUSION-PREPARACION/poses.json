@@ -1,0 +1,7124 @@
+{
+  "status": "PASS",
+  "poseCount": 384,
+  "models": [
+    "CC04",
+    "TE01",
+    "F24"
+  ],
+  "phases": "-70deg,contact,+70deg for blades;0/.09/0 flash for TE01. Visual samples of approved140deg arc; no combat/timing claim.",
+  "maxArmReachRatio": 0.5129889611296821,
+  "gameSourceUnchanged": true,
+  "fusionGate": "closed",
+  "physicalPhone": false,
+  "limitations": [
+    "Experimental renderer extension only; no gameplay integration/attack/room/reward validation",
+    "No automatic acceptance that secondary support may be omitted; coordinator/rig review required"
+  ],
+  "records": [
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.23235426937831105,
+        0.22065635798591138
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.18849467508654383,
+        0.3209115351046222
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.24097667885997992,
+        0.3680475024340569
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3069595678481321,
+        0.3258519405226754
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.2991839953432202,
+        0.2987069055565449
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.19418285585440817,
+        0.339764483982697
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.16275993122018953,
+        0.33546592134267966
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.21929032958681802,
+        0.24760409345442302
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.31125564753912494,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.44292396709254733,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.4135679974193557,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.35477655820248327,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.37211441872762735,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.23235426937831105,
+        0.22065635798591138
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.18849467508654383,
+        0.3209115351046222
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.24097667885997992,
+        0.3680475024340569
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3069595678481321,
+        0.3258519405226754
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.2991839953432202,
+        0.2987069055565449
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.19418285585440817,
+        0.339764483982697
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.16275993122018953,
+        0.33546592134267966
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.21929032958681802,
+        0.24760409345442302
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.25929616544919243,
+        0.208386659841747
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png",
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3626007014216252,
+        0.2151708773826733
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png",
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.39075442624820167,
+        0.2760887538455704
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png",
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3374050831294617,
+        0.27324302962164415
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png",
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3197348310746565,
+        0.1806239186818844
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png",
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.35951741784548347,
+        0.1255049541905441
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png",
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3384441187407094,
+        0.20934421415458312
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png",
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.24924701449444317,
+        0.24369703888883273
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png",
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37526709238221245,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.44292396709254733,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.33738018706646067,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37211441872762735,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.2809672189508947,
+        0.14916433890176298
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.3478936462775278,
+        0.22856366157247426
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.4145031853013918,
+        0.21954498400100145
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.3833738641997046,
+        0.15656991919762986
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.32349289984480345,
+        0.15508062419270827
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.25808451917786146,
+        0.18723955941142204
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.3469875943387602,
+        0.14866068747318498
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.3757871823596438,
+        0.06917991328736732
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37526709238221245,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.44292396709254733,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.33738018706646067,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37211441872762735,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.21914607000811118,
+        0.17902513789968155
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png",
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.2690191418463846,
+        0.19025277951423414
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png",
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.22588713996153031,
+        0.24839484696748435
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png",
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.16183003747969324,
+        0.2399153327240197
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png",
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.18337120820892247,
+        0.14577379737113252
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png",
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.19818854992212537,
+        0.1005180575175834
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png",
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.13647344063956185,
+        0.1886796226411321
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png",
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.11602171766234581,
+        0.2161958212452842
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png",
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4523637692920043,
+        0.1581422596139367
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.48004165888920436,
+        0.12259549440961183
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.5129889611296821,
+        0.04283308735301365
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4336481346814645,
+        0.03845930876061802
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.36289325646126236,
+        0.06821641705949469
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4178389301196998,
+        0.03424340369427108
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.5052315941636372,
+        0.050924922683708386
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.48314705340714,
+        0.12809797257692532
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.31125564753912494,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.44292396709254733,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4135679974193557,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.35477655820248327,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.37211441872762735,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4523637692920043,
+        0.1581422596139367
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.48004165888920436,
+        0.12259549440961183
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.5129889611296821,
+        0.04283308735301365
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4336481346814645,
+        0.03845930876061802
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.36289325646126236,
+        0.06821641705949469
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4178389301196998,
+        0.03424340369427108
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.5052315941636372,
+        0.050924922683708386
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.48314705340714,
+        0.12809797257692532
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.2086965437491719,
+        0.208386659841747
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png",
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.12588066725491923,
+        0.2151708773826733
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png",
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.06198153354083273,
+        0.2760887538455704
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png",
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.12366077627364386,
+        0.27324302962164415
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png",
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.1328835066199239,
+        0.1806239186818844
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png",
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.09399634926833406,
+        0.1255049541905441
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png",
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.1407956154677974,
+        0.20934421415458312
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png",
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.21190598360255916,
+        0.24369703888883273
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png",
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.23235426937831105,
+        0.22065635798591138
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.18849467508654383,
+        0.3209115351046222
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.24097667885997992,
+        0.3680475024340569
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3069595678481321,
+        0.3258519405226754
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.2991839953432202,
+        0.2987069055565449
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.19418285585440817,
+        0.339764483982697
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.16275993122018953,
+        0.33546592134267966
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.21929032958681802,
+        0.24760409345442302
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.31125564753912494,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.44292396709254733,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.4135679974193557,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.35477655820248327,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.37211441872762735,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.23235426937831105,
+        0.22065635798591138
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.18849467508654383,
+        0.3209115351046222
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.24097667885997992,
+        0.3680475024340569
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3069595678481321,
+        0.3258519405226754
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.2991839953432202,
+        0.2987069055565449
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.19418285585440817,
+        0.339764483982697
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.16275993122018953,
+        0.33546592134267966
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.21929032958681802,
+        0.24760409345442302
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.25929616544919243,
+        0.208386659841747
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png",
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3626007014216252,
+        0.2151708773826733
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png",
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.39075442624820167,
+        0.2760887538455704
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png",
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3374050831294617,
+        0.27324302962164415
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png",
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3197348310746565,
+        0.1806239186818844
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png",
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.35951741784548347,
+        0.1255049541905441
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png",
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.3384441187407094,
+        0.20934421415458312
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png",
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 0,
+      "armReach": [
+        0.24924701449444317,
+        0.24369703888883273
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png",
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37526709238221245,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.44292396709254733,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.33738018706646067,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37211441872762735,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.2809672189508947,
+        0.14916433890176298
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.3478936462775278,
+        0.22856366157247426
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.4145031853013918,
+        0.21954498400100145
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.3833738641997046,
+        0.15656991919762986
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.32349289984480345,
+        0.15508062419270827
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.25808451917786146,
+        0.18723955941142204
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.3469875943387602,
+        0.14866068747318498
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.3757871823596438,
+        0.06917991328736732
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37526709238221245,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.44292396709254733,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.33738018706646067,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.37211441872762735,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.21914607000811118,
+        0.17902513789968155
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png",
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.2690191418463846,
+        0.19025277951423414
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png",
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.22588713996153031,
+        0.24839484696748435
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png",
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.16183003747969324,
+        0.2399153327240197
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png",
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.18337120820892247,
+        0.14577379737113252
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png",
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.19818854992212537,
+        0.1005180575175834
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png",
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.13647344063956185,
+        0.1886796226411321
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png",
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 1,
+      "armReach": [
+        0.11602171766234581,
+        0.2161958212452842
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png",
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4523637692920043,
+        0.1581422596139367
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.48004165888920436,
+        0.12259549440961183
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.5129889611296821,
+        0.04283308735301365
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4336481346814645,
+        0.03845930876061802
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.36289325646126236,
+        0.06821641705949469
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4178389301196998,
+        0.03424340369427108
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.5052315941636372,
+        0.050924922683708386
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.48314705340714,
+        0.12809797257692532
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.31125564753912494,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.44292396709254733,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4135679974193557,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.35477655820248327,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.37211441872762735,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4523637692920043,
+        0.1581422596139367
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.48004165888920436,
+        0.12259549440961183
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.5129889611296821,
+        0.04283308735301365
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4336481346814645,
+        0.03845930876061802
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.36289325646126236,
+        0.06821641705949469
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.4178389301196998,
+        0.03424340369427108
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.5052315941636372,
+        0.050924922683708386
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.48314705340714,
+        0.12809797257692532
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.2086965437491719,
+        0.208386659841747
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/S.png",
+        "16/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.12588066725491923,
+        0.2151708773826733
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SW.png",
+        "16/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.06198153354083273,
+        0.2760887538455704
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/W.png",
+        "16/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.12366077627364386,
+        0.27324302962164415
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NW.png",
+        "16/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.1328835066199239,
+        0.1806239186818844
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/N.png",
+        "16/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.09399634926833406,
+        0.1255049541905441
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/NE.png",
+        "16/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.1407956154677974,
+        0.20934421415458312
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/E.png",
+        "16/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "16",
+      "phase": 2,
+      "armReach": [
+        0.21190598360255916,
+        0.24369703888883273
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "16/CC04/SE.png",
+        "16/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.21216629675680385,
+        0.22065635798591138
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.18849467508654383,
+        0.3209115351046222
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.2253818693544124,
+        0.3680475024340569
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3069595678481321,
+        0.3258519405226754
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.27671784511801706,
+        0.2987069055565449
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.19418285585440823,
+        0.339764483982697
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.14373906904443035,
+        0.33546592134267966
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.219290329586818,
+        0.247604093454423
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.34315317507273624,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.42378329976091555,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3151910692837758,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3551035555387329,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.21216629675680385,
+        0.22065635798591138
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.18849467508654383,
+        0.3209115351046222
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.2253818693544124,
+        0.3680475024340569
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3069595678481321,
+        0.3258519405226754
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.27671784511801706,
+        0.2987069055565449
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.19418285585440823,
+        0.339764483982697
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.15935845510467767,
+        0.33546592134267966
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.219290329586818,
+        0.247604093454423
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.2592961654491924,
+        0.208386659841747
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png",
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3626007014216252,
+        0.21517087738267318
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png",
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.39075442624820167,
+        0.2760887538455704
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png",
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3374050831294617,
+        0.27324302962164415
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png",
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3197348310746565,
+        0.1806239186818844
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png",
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3595174178454836,
+        0.1255049541905441
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png",
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3384441187407094,
+        0.20934421415458318
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png",
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.2492470144944432,
+        0.24369703888883273
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png",
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.35545099543572806,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.42378329976091555,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3151910692837758,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3551035555387329,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3133304590404514,
+        0.14916433890176298
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.34789364627752767,
+        0.22856366157247418
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.39606080361006435,
+        0.21954498400100145
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.39680550692087463,
+        0.1565699191976298
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.2824310272548858,
+        0.15508062419270827
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.25808451917786146,
+        0.18723955941142204
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3311652308987917,
+        0.14866068747318495
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3757871823596438,
+        0.06917991328736732
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.35545099543572806,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.42378329976091555,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3237539213082986,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3551035555387329,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.21914607000811118,
+        0.17902513789968155
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png",
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.2690191418463846,
+        0.19025277951423414
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png",
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.22588713996153031,
+        0.24839484696748435
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png",
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.16183003747969318,
+        0.2399153327240197
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png",
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.18337120820892247,
+        0.14577379737113252
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png",
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.19818854992212537,
+        0.1005180575175834
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png",
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.13647344063956182,
+        0.1886796226411321
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png",
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.11602171766234581,
+        0.2161958212452842
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png",
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.42970569911208084,
+        0.1581422596139367
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48004165888920436,
+        0.12259549440961183
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48992610518776364,
+        0.04283308735301359
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.4336481346814645,
+        0.03845930876061802
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.34010270788444574,
+        0.06821641705949469
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.4178389301196998,
+        0.03424340369427108
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48329263963392477,
+        0.050924922683708386
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48314705340714,
+        0.12809797257692532
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.34315317507273624,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.42378329976091555,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.3151910692837758,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.3551035555387329,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.42970569911208084,
+        0.1581422596139367
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48004165888920436,
+        0.12259549440961183
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.49473405561780537,
+        0.04283308735301359
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.4336481346814645,
+        0.03845930876061802
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.34010270788444574,
+        0.06821641705949469
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.4178389301196998,
+        0.03424340369427108
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48329263963392477,
+        0.050924922683708386
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48314705340714,
+        0.12809797257692532
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.2086965437491719,
+        0.208386659841747
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png",
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.12588066725491923,
+        0.21517087738267318
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png",
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.06198153354083277,
+        0.2760887538455704
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png",
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.12366077627364386,
+        0.27324302962164415
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png",
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.13288350661992387,
+        0.1806239186818844
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png",
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.09399634926833406,
+        0.1255049541905441
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png",
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.1407956154677974,
+        0.20934421415458318
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png",
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "guardia",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.21190598360255927,
+        0.24369703888883273
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png",
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.21216629675680385,
+        0.22065635798591138
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.18849467508654383,
+        0.3209115351046222
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.2253818693544124,
+        0.3680475024340569
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3069595678481321,
+        0.3258519405226754
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.27671784511801706,
+        0.2987069055565449
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.19418285585440823,
+        0.339764483982697
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.14373906904443035,
+        0.33546592134267966
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.219290329586818,
+        0.247604093454423
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.34315317507273624,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.42378329976091555,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3151910692837758,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3551035555387329,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.21216629675680385,
+        0.22065635798591138
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.18849467508654383,
+        0.3209115351046222
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.2253818693544124,
+        0.3680475024340569
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3069595678481321,
+        0.3258519405226754
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.27671784511801706,
+        0.2987069055565449
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.19418285585440823,
+        0.339764483982697
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.15935845510467767,
+        0.33546592134267966
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.219290329586818,
+        0.247604093454423
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.2592961654491924,
+        0.208386659841747
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png",
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3626007014216252,
+        0.21517087738267318
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png",
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.39075442624820167,
+        0.2760887538455704
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png",
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3374050831294617,
+        0.27324302962164415
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png",
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3197348310746565,
+        0.1806239186818844
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png",
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3595174178454836,
+        0.1255049541905441
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png",
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.3384441187407094,
+        0.20934421415458318
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png",
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 0,
+      "armReach": [
+        0.2492470144944432,
+        0.24369703888883273
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png",
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.35545099543572806,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.42378329976091555,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3151910692837758,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3551035555387329,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3133304590404514,
+        0.14916433890176298
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.34789364627752767,
+        0.22856366157247418
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.39606080361006435,
+        0.21954498400100145
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.39680550692087463,
+        0.1565699191976298
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.2824310272548858,
+        0.15508062419270827
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.25808451917786146,
+        0.18723955941142204
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3311652308987917,
+        0.14866068747318495
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3757871823596438,
+        0.06917991328736732
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.35545099543572806,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.42378329976091555,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3237539213082986,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.3551035555387329,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.21914607000811118,
+        0.17902513789968155
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png",
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.2690191418463846,
+        0.19025277951423414
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png",
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.22588713996153031,
+        0.24839484696748435
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png",
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.16183003747969318,
+        0.2399153327240197
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png",
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.18337120820892247,
+        0.14577379737113252
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png",
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.19818854992212537,
+        0.1005180575175834
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png",
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.13647344063956182,
+        0.1886796226411321
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png",
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 1,
+      "armReach": [
+        0.11602171766234581,
+        0.2161958212452842
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png",
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.42970569911208084,
+        0.1581422596139367
+      ],
+      "direction": 0,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48004165888920436,
+        0.12259549440961183
+      ],
+      "direction": 1,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48992610518776364,
+        0.04283308735301359
+      ],
+      "direction": 2,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.4336481346814645,
+        0.03845930876061802
+      ],
+      "direction": 3,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.34010270788444574,
+        0.06821641705949469
+      ],
+      "direction": 4,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.4178389301196998,
+        0.03424340369427108
+      ],
+      "direction": 5,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48329263963392477,
+        0.050924922683708386
+      ],
+      "direction": 6,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48314705340714,
+        0.12809797257692532
+      ],
+      "direction": 7,
+      "models": [
+        "CC04"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.34315317507273624,
+        0.18337120820892241
+      ],
+      "direction": 0,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.37471742951734255,
+        0.2633319839141348
+      ],
+      "direction": 1,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.42378329976091555,
+        0.2504495957273638
+      ],
+      "direction": 2,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.428763073487612,
+        0.18605516912542353
+      ],
+      "direction": 3,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.3151910692837758,
+        0.1882153022471871
+      ],
+      "direction": 4,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.2855451088385227,
+        0.21841764179627485
+      ],
+      "direction": 5,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.3551035555387329,
+        0.17414074767267998
+      ],
+      "direction": 6,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.4039113721698561,
+        0.10214437841462468
+      ],
+      "direction": 7,
+      "models": [
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/TE01/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.42970569911208084,
+        0.1581422596139367
+      ],
+      "direction": 0,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48004165888920436,
+        0.12259549440961183
+      ],
+      "direction": 1,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.49473405561780537,
+        0.04283308735301359
+      ],
+      "direction": 2,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.4336481346814645,
+        0.03845930876061802
+      ],
+      "direction": 3,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.34010270788444574,
+        0.06821641705949469
+      ],
+      "direction": 4,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.4178389301196998,
+        0.03424340369427108
+      ],
+      "direction": 5,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/NE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48329263963392477,
+        0.050924922683708386
+      ],
+      "direction": 6,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.48314705340714,
+        0.12809797257692532
+      ],
+      "direction": 7,
+      "models": [
+        "F24"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/F24/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.2086965437491719,
+        0.208386659841747
+      ],
+      "direction": 0,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/S.png",
+        "32/TE01/E.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.12588066725491923,
+        0.21517087738267318
+      ],
+      "direction": 1,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SW.png",
+        "32/TE01/SE.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.06198153354083277,
+        0.2760887538455704
+      ],
+      "direction": 2,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/W.png",
+        "32/TE01/S.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.12366077627364386,
+        0.27324302962164415
+      ],
+      "direction": 3,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NW.png",
+        "32/TE01/SW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.13288350661992387,
+        0.1806239186818844
+      ],
+      "direction": 4,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/N.png",
+        "32/TE01/W.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.09399634926833406,
+        0.1255049541905441
+      ],
+      "direction": 5,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/NE.png",
+        "32/TE01/NW.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.1407956154677974,
+        0.20934421415458318
+      ],
+      "direction": 6,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/E.png",
+        "32/TE01/N.png"
+      ]
+    },
+    {
+      "actor": "medico",
+      "mode": "32",
+      "phase": 2,
+      "armReach": [
+        0.21190598360255927,
+        0.24369703888883273
+      ],
+      "direction": 7,
+      "models": [
+        "CC04",
+        "TE01"
+      ],
+      "arms": 2,
+      "hands": 2,
+      "originals": [
+        "32/CC04/SE.png",
+        "32/TE01/NE.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "dateStarted": "2026-10-25",
+  "dateClientClose": "2026-10-26",
+  "lot": "LOT-EST-007r1",
+  "revision": "REV-EST-0010",
+  "control": "0.12",
+  "ownedSourceFiles": [
+    "js/ui/corner-hud.js",
+    "css/corner-hud.css",
+    "js/ui/technical-ui.js",
+    "js/ui/expanded-ui.js",
+    "js/systems/rift-companion.js",
+    "js/main.js",
+    "dev.html",
+    "tests/corner-hud.test.js",
+    "tests/hud-007-browser.py"
+  ],
+  "unchangedReferencesAndMechanics": [
+    {
+      "file": "js/ui/personajes-art.js",
+      "unchanged": true
+    },
+    {
+      "file": "js/data/character-catalog.js",
+      "unchanged": true
+    },
+    {
+      "file": "js/systems/field-combat.js",
+      "unchanged": true
+    },
+    {
+      "file": "js/systems/field-abilities.js",
+      "unchanged": true
+    },
+    {
+      "file": "js/systems/rift-expedition.js",
+      "unchanged": true
+    },
+    {
+      "file": "js/systems/rift-powers.js",
+      "unchanged": true
+    },
+    {
+      "file": "js/core/touch.js",
+      "unchanged": true
+    },
+    {
+      "file": "css/technical.css",
+      "unchanged": true
+    },
+    {
+      "file": "docs/gestion/lotes/LOT-EST-007-r1.md",
+      "unchanged": true
+    },
+    {
+      "file": "docs/PAUTA_MENUS.md",
+      "unchanged": true
+    },
+    {
+      "file": "docs/superpowers/specs/2026-10-24-men-005-hud-in-game-design.md",
+      "unchanged": true
+    },
+    {
+      "file": "design-proposals/menus/propuestas-20261024/01-hud-esquinas.png",
+      "unchanged": true
+    }
+  ],
+  "concurrentChange": {
+    "owner": "PERSONAJES",
+    "file": "js/data/character-proportions.js",
+    "sha256": "27083cea8ac62e21615ffb2986fc04a4490f634abbcd83511d76be947a917ee1",
+    "treatment": "Preserved new dev.html script; observed by final HUD browser cut. Not attributed to HUD nor validated as complete proportions repair."
+  },
+  "runtimeBundle": "460eecf37e",
+  "finalBrowserDateClient": "2026-10-26",
+  "runtimeFilesCheckedForDrift": 126,
+  "browserSourceDrift": [],
+  "ownSourceHashes": {
+    "js/ui/corner-hud.js": "d5459e21a1a1fab446705766d6e6510519705ac3850abe84911ecfe6f3d4efea",
+    "css/corner-hud.css": "34ea39fe944fa14235f4919cc81cdc4e23f88a5c8bb8bc8ee9a3ae5ecdda39bd",
+    "js/ui/technical-ui.js": "d52547f5012d428fa6bac8c38e517e05cafd1fbb68b53646bb3769600e799c78",
+    "js/ui/expanded-ui.js": "c2b875a036f6d5de29fd9becb1e8098a2a5d40bf9cbad1284e3ab2eb1a8ac8cf",
+    "js/systems/rift-companion.js": "4580649b1ad4515d5e995f304b8963575285c27085194aecd8808b2373dbd985",
+    "js/main.js": "b4b23c847b1155ed03e3061954971a7f3ec344ed65df959f8d84eeff68eaf2e7",
+    "dev.html": "341f7708819583c7759096eeec4b98c4d03f2ee08509187091a96626c4024bb8",
+    "tests/corner-hud.test.js": "7b9e2059a8540254f86d81602c8445cc40023c1c9db8bdeb026764a80f9a8845",
+    "tests/hud-007-browser.py": "e8013f72afb4b533cf0fb9678499e26250ac1e100fd0e5b18955e58fd8fc95b1"
+  },
+  "buildCheck": {
+    "command": "npm.cmd run build:check",
+    "exitCode": 0,
+    "scripts": 120,
+    "sdkBytes": 227131,
+    "sandboxReadRestrictionResolvedWithApprovedEscalation": true
+  }
+}

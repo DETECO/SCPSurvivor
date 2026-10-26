@@ -1,0 +1,276 @@
+{
+  "revision": "REV-EST-0010",
+  "dateClient": "2026-10-25",
+  "scope": "Recent turns only. In-progress work remains in progress at the reading cut.",
+  "areas": [
+    {
+      "area": "ARMAS",
+      "threadId": "01a164ea-cca2-74b2-a034-5f6a7c949cbd",
+      "threadTitle": "ARMAS",
+      "status": {
+        "type": "active",
+        "activeFlags": []
+      },
+      "scope": "Dos turnos recientes; en ARMAS y PERSONAJES también se volvió a leer el turno activo. No es el historial completo.",
+      "turns": [
+        {
+          "id": "01a17537-9f35-7fc3-bbd9-28334b74ceb5",
+          "status": "inProgress",
+          "userMessages": [
+            {
+              "id": "01a17537-a199-7673-9f68-8c1c6e1d6aee",
+              "text": "<send_user_message_question_reply>\n[{\"answer\":\"Sí, publica ese visor privado\",\"question\":\"El visor ya está preparado. ¿Autorizas publicar únicamente sus 10 propuestas animadas y 24 PNG de personajes/anomalías, sin datos de cuentas ni código del juego, en el sitio privado «SCP Survivor · Poderes anómalos A/B» para darte el enlace de iOS? La revisión automática bloqueó la conexión al repositorio de Sites y exige concretar este alcance.\",\"questionItemId\":\"[\\\"request_user_input_async\\\",\\\"call_d55a8d0b4aa74b2ea1a92e9fce2fd4ea\\\",0]\"}]\n</send_user_message_question_reply>"
+            }
+          ],
+          "finalMessages": []
+        },
+        {
+          "id": "01a1742d-ef99-7543-be84-7f4c3456e563",
+          "status": "completed",
+          "userMessages": [
+            {
+              "id": "01a1742d-f058-7960-95ff-d07dfd4e51d8",
+              "text": "Continua"
+            }
+          ],
+          "finalMessages": [
+            "El visor ya está preparado. ¿Autorizas publicar únicamente sus 10 propuestas animadas y 24 PNG de personajes/anomalías, sin datos de cuentas ni código del juego, en el sitio privado «SCP Survivor · Poderes anómalos A/B» para darte el enlace de iOS? La revisión automática bloqueó la conexión al repositorio de Sites y exige concretar este alcance.\n- Sí, publica ese visor privado\n- Conservar solo los archivos locales",
+            "Registré tu aprobación de **Subfusil, Escopeta y Porra** en la pauta de ARMAS R3.\n\nDiseñé estas **diez propuestas animadas**, con los colores de cada monstruo:\n\n| Anomalía | Versión A | Versión B |\n|---|---|---|\n| Esporario Blanco | Pulso de esporas | Raíces de contención |\n| Larva de Vidrio | Cápsula vítrea | Agujas de vidrio |\n| Malla Tendinosa | Látigo tendinoso | Cerco filamentoso |\n| Portador de Espinas | Corona de espinas | Placas de defensa |\n| Huésped de Cuarentena | Brote de cuarentena | Membrana de rechazo |\n\n![Vista móvil del visor](</C:/Users/DELL/Documents/Codex/2026-10-22/este-hilo-sera-para-el-dise-2/outputs/poderes-anomalos-v1/VISOR-MOVIL.png>)\n\n**¿Autorizas publicar únicamente este visor y sus 24 PNG en el sitio privado de Sites para darte el enlace de iOS?**\n\nLa revisión automática rechazó la conexión porque consideró insuficientemente verificado el alcance del envío. El diseño está guardado y comprobado; **el enlace para iOS todavía no está publicado**.\n\n"
+          ]
+        }
+      ],
+      "currentProgress": [
+        "Encontré la causa del fallo: la carpeta del visor pertenece al entorno aislado y la herramienta de publicación la rechaza al ejecutarse fuera de él. La habilitaré solo para esta ejecución y esta carpeta, sin cambiar la configuración global.\n\n",
+        "Los archivos ya están subidos y verificados. Sites está desplegando el visor con acceso privado; en cuanto confirme que está listo, te paso el enlace.\n\n"
+      ]
+    },
+    {
+      "area": "PERSONAJES",
+      "threadId": "01a160be-4bf0-7883-b313-604e7ce76652",
+      "threadTitle": "PERSONAJES",
+      "status": {
+        "type": "active",
+        "activeFlags": []
+      },
+      "scope": "Dos turnos recientes; en ARMAS y PERSONAJES también se volvió a leer el turno activo. No es el historial completo.",
+      "turns": [
+        {
+          "id": "01a17536-719e-7b32-b5bd-ae9474280497",
+          "status": "inProgress",
+          "userMessages": [
+            {
+              "id": "01a17536-7433-74d0-82e1-9becae60da4b",
+              "text": "# Files mentioned by the user:\n\n## Imagen pegada 1.jpg: C:\\Users\\DELL\\.codex\\codex-remote-attachments\\01a160be-4bf0-7883-b313-604e7ce76652\\72B147A7-8F98-4808-8062-28E836DD1B1E\\1-Imagen-pegada-1.jpg\n## Imagen pegada 2.jpg: C:\\Users\\DELL\\.codex\\codex-remote-attachments\\01a160be-4bf0-7883-b313-604e7ce76652\\72B147A7-8F98-4808-8062-28E836DD1B1E\\2-Imagen-pegada-2.jpg\n\n## My request:\nHay un error en las piernas de los personajes, son mas pequeño quesu cuerpo, no concuerdan segun su tamaño. Resuelvelo revisa los compañero si sufren lo mismo"
+            }
+          ],
+          "finalMessages": []
+        },
+        {
+          "id": "01a17308-69b8-7c81-b676-37be76790edc",
+          "status": "completed",
+          "userMessages": [
+            {
+              "id": "01a17308-6a48-7471-8e00-471407841889",
+              "text": "Soluciona como implementar esto que tienes pendiente, quiero implementar las compañeras de contencion,"
+            }
+          ],
+          "finalMessages": [
+            "Ya implementé **localmente** las compañeras **delgada, fitness y curvy**:\n\n- Modos **16×16 y 32×32**, ocho vistas y caminata.\n- Dos brazos articulados y pistola AF01 orientada al objetivo.\n- Nombres femeninos y personalidades independientes.\n- Incapacitación sin arma visible.\n\n**Verificado:** 27 pruebas y seis escenarios de navegador aprobados.\n\n[Probar compañera fitness](http://127.0.0.1:8882/index.html?prueba=combate-v2&ensayo=grietas&apoyo=si&companera=fitness&graficos=32). Inicia la expedición y cruza la grieta.\n\n[Ver cambios](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/design-proposals/companeras-modulares-r3-20261025/CAMBIOS.diff). Esta revisión todavía no está publicada en la web pública.\n\n"
+          ]
+        }
+      ],
+      "currentProgress": [
+        "Estoy usando la habilidad de diagnóstico para localizar la causa antes de corregirla. Revisaré tanto las piezas originales como la forma en que el juego las escala y une al cuerpo.\n",
+        "Encontré la causa: el exportador reducía las piernas al 35% de la casilla y el torso al 56%, con escalas distintas. Eso deformó la proporción de los dibujos originales y también afecta a los apoyos y las compañeras. Corregiré la exportación para usar una escala común en ambas partes y actualizaré tanto el menú como la partida.\n"
+      ]
+    },
+    {
+      "area": "NIVELES",
+      "threadId": "01a1457a-3dba-75b3-badf-018086fb9bda",
+      "threadTitle": "NIVELES",
+      "status": {
+        "type": "idle"
+      },
+      "scope": "Dos turnos recientes; en ARMAS y PERSONAJES también se volvió a leer el turno activo. No es el historial completo.",
+      "turns": [
+        {
+          "id": "01a17309-16f6-7bf0-ba39-52504eddc546",
+          "status": "completed",
+          "userMessages": [
+            {
+              "id": "01a17309-198b-7ae2-8ac3-d1913a53ac2d",
+              "text": "Lo solucionaste ?"
+            }
+          ],
+          "finalMessages": [
+            "**Sí, PROGRAMACION ya corrigió el traslado y lo probó localmente:** ahora la grieta lleva a un recinto separado con una de las cinco anomalías aprobadas, congela el mapa de origen y permite regresar.\n\n**La publicación aún no está confirmada**, así que el enlace público podría seguir mostrando la versión anterior. La animación detallada de absorción según cada portal también sigue pendiente.\n\n[Informe de implementación](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/gestion/informes/LOT-EST-005-programacion.md)"
+          ]
+        },
+        {
+          "id": "01a16ff7-94a1-74a0-ae11-dea4c779d27d",
+          "status": "completed",
+          "userMessages": [
+            {
+              "id": "01a16ff7-978f-7b13-942b-95ccd88b9230",
+              "text": "Continua"
+            }
+          ],
+          "finalMessages": [
+            "Identifiqué la causa: la grieta activa el prototipo antiguo y genera al Custodio en el mismo mapa.\n\nDejé lista [NIVELES-GRIETAS-001 r1](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/gestion/entregas/NIVELES-GRIETAS-001.md), enlazada en mi pauta, con:\n\n- Seis transiciones de entrada según el portal.\n- Cinco recintos de ensayo para las BIO aprobadas.\n- Origen congelado, escape alcanzable y retorno tras reclamar la victoria.\n\n**La corrección del juego sigue pendiente de implementación y pruebas en PROGRAMACION**, único integrador asignado. No dupliqué cambios de código.\n\n"
+          ]
+        }
+      ],
+      "currentProgress": [
+        "Voy a comprobar si PROGRAMACION ya integró y probó la corrección.\n\n",
+        "**Sí, PROGRAMACION ya corrigió el traslado y lo probó localmente:** ahora la grieta lleva a un recinto separado con una de las cinco anomalías aprobadas, congela el mapa de origen y permite regresar.\n\n**La publicación aún no está confirmada**, así que el enlace público podría seguir mostrando la versión anterior. La animación detallada de absorción según cada portal también sigue pendiente.\n\n[Informe de implementación](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/gestion/informes/LOT-EST-005-programacion.md)"
+      ]
+    },
+    {
+      "area": "MENUS",
+      "threadId": "01a16600-8b86-7a31-839f-1e84ba543bb3",
+      "threadTitle": "MENUS",
+      "status": {
+        "type": "idle"
+      },
+      "scope": "Dos turnos recientes; en ARMAS y PERSONAJES también se volvió a leer el turno activo. No es el historial completo.",
+      "turns": [
+        {
+          "id": "01a1742e-35f6-74f3-bc2d-cdb547738013",
+          "status": "completed",
+          "userMessages": [
+            {
+              "id": "01a1742e-36ac-71a0-b841-f237ca0ceeff",
+              "text": "Continua"
+            }
+          ],
+          "finalMessages": [
+            "Registré la aprobación de **MEN-005-A r1 — HUD anclado a las esquinas** en [PAUTA_MENUS.md](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/PAUTA_MENUS.md:44), con fecha, cita literal, recurso y dependencias. Actualicé también la [ficha MEN-005](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/superpowers/specs/2026-10-24-men-005-hud-in-game-design.md:13), conservando las tres propuestas. **B y C siguen sin aprobarse.**\n\nComprobé los enlaces a las láminas y a la evidencia de PROGRAMACION. No ejecuté pruebas de software porque el cambio fue documental. Queda pendiente que PROGRAMACION revise, integre y documente las pruebas del HUD.\n\n"
+          ]
+        },
+        {
+          "id": "01a17305-8079-78d0-93fa-e08d181e8702",
+          "status": "failed",
+          "userMessages": [
+            {
+              "id": "01a1730f-9ef3-7d11-abf2-81923ddf65f4",
+              "text": "Apruebo la opción 1 por ahora ."
+            }
+          ],
+          "finalMessages": []
+        }
+      ],
+      "currentProgress": [
+        "Registré la aprobación de **MEN-005-A r1 — HUD anclado a las esquinas** en [PAUTA_MENUS.md](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/PAUTA_MENUS.md:44), con fecha, cita literal, recurso y dependencias. Actualicé también la [ficha MEN-005](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/superpowers/specs/2026-10-24-men-005-hud-in-game-design.md:13), conservando las tres propuestas. **B y C siguen sin aprobarse.**\n\nComprobé los enlaces a las láminas y a la evidencia de PROGRAMACION. No ejecuté pruebas de software porque el cambio fue documental. Queda pendiente que PROGRAMACION revise, integre y documente las pruebas del HUD.\n\n"
+      ]
+    },
+    {
+      "area": "SONIDO",
+      "threadId": "01a16600-1ef2-7871-aeec-86430d1a2e41",
+      "threadTitle": "SONIDO",
+      "status": {
+        "type": "notLoaded"
+      },
+      "scope": "Dos turnos recientes; en ARMAS y PERSONAJES también se volvió a leer el turno activo. No es el historial completo.",
+      "turns": [
+        {
+          "id": "01a16ff7-3fc2-7570-8f2a-27721f15189e",
+          "status": "completed",
+          "userMessages": [
+            {
+              "id": "01a16ff7-43fb-7bb1-a167-25c404afdd94",
+              "text": "Continua"
+            }
+          ],
+          "finalMessages": [
+            "Guardé el inventario en [SONIDO-GRIETAS-001.md](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/gestion/entregas/SONIDO-GRIETAS-001.md) y comprobé que sus enlaces abren archivos existentes.\n\nEl informe separa los cues provisionales de los sonidos aprobados: hay un requisito de alerta al abrir la grieta, pero no encontré sonidos finales aprobados para entrada, escape, retorno o anomalías. El sonido característico del compañero sigue pendiente; debe permanecer en silencio hasta que se diseñe y acepte. La falta de esos sonidos no bloquea las salas, el combate ni los textos autorizados. No generé audio ni modifiqué el runtime o las pautas maestras.\n\n"
+          ]
+        },
+        {
+          "id": "01a16efe-bc91-7f73-a73e-7943b4ac86f8",
+          "status": "failed",
+          "userMessages": [],
+          "finalMessages": []
+        }
+      ],
+      "currentProgress": [
+        "Los registros distinguen el requisito de alerta sonora del sonido provisional ya conectado; no encontré un recurso final aprobado para las transiciones nuevas. Guardaré el inventario con los hooks posibles y dejaré claro que las grietas y sus textos pueden avanzar mientras el compañero permanece sin sonido característico aceptado.",
+        "Guardé el inventario en [SONIDO-GRIETAS-001.md](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/gestion/entregas/SONIDO-GRIETAS-001.md) y comprobé que sus enlaces abren archivos existentes.\n\nEl informe separa los cues provisionales de los sonidos aprobados: hay un requisito de alerta al abrir la grieta, pero no encontré sonidos finales aprobados para entrada, escape, retorno o anomalías. El sonido característico del compañero sigue pendiente; debe permanecer en silencio hasta que se diseñe y acepte. La falta de esos sonidos no bloquea las salas, el combate ni los textos autorizados. No generé audio ni modifiqué el runtime o las pautas maestras.\n\n"
+      ]
+    },
+    {
+      "area": "ICONO APP",
+      "threadId": "01a1468c-b1ec-7371-a2c0-70ef7b30af7b",
+      "threadTitle": "ICONO APP",
+      "status": {
+        "type": "notLoaded"
+      },
+      "scope": "Dos turnos recientes; en ARMAS y PERSONAJES también se volvió a leer el turno activo. No es el historial completo.",
+      "turns": [
+        {
+          "id": "01a1697c-4bbd-7062-b668-f5c3b3a7bc3a",
+          "status": "completed",
+          "userMessages": [
+            {
+              "id": "01a1697c-4cda-7d52-bb66-3d17b929015d",
+              "text": "continua.\n"
+            }
+          ],
+          "finalMessages": [
+            "Registré la aprobación como **ICON-APP-001/R1** en [ICONO_APP.md](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/areas/ICONO_APP.md), con la cita, fecha, recurso y dependencias. Comprobé que el PNG aprobado coincide con [el icono de marca](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/assets/brand/scp-survivor.png) mediante SHA-256. La implementación se consulta en [PRESENTACION_INTEGRADA.md](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/PRESENTACION_INTEGRADA.md).\n\nQueda pendiente que **ESTRUCTURA consolide su índice y registro de cambios** para reflejar esta pauta y aprobación.\n\n"
+          ]
+        },
+        {
+          "id": "01a168fe-6287-7bc1-8279-871fd47ca3d1",
+          "status": "failed",
+          "userMessages": [
+            {
+              "id": "01a168fe-665a-7670-b3df-b997cc388098",
+              "text": "Eres responsable de [ICONO APP] en SCP Survivor. Trabaja en la carpeta SCP-SURVIVOR del proyecto.\nLee PAUTA_DESARROLLO.md como índice y consulta únicamente tu pauta y las reglas relacionadas con la tarea.\nDiseña dentro de tu área. Presenta opciones identificables. Cuando Iván acepte claramente una propuesta, guarda en tu pauta: ID/revisión, decisión exacta, fecha, cita de aprobación, recurso elegido y dependencias. Actualiza el resumen vigente y conserva lo sustituido como historial.\n“Me gusta”, “acepto” o “elijo” son suficientes si el referente es inequívoco. Si no lo es, pregunta únicamente cuál opción acepta. No extiendas una aceptación a otras propuestas o revisiones posteriores.\nRegistra dependencias de otras áreas sin modificar sus pautas por iniciativa propia. Deja visibles los cambios que requieren consolidación en ESTRUCTURA.\nEnlaza la evidencia de PROGRAMACION para conocer la implementación; no mantengas otra lista que pueda quedar desactualizada.\nTermina indicando brevemente qué decisión guardaste, en qué archivo y qué queda pendiente. No afirmes que guardaste algo sin comprobarlo ni envíes mensajes a otros hilos sin autorización.\n"
+            }
+          ],
+          "finalMessages": []
+        }
+      ],
+      "currentProgress": [
+        "Continúo con el registro documental. La pauta vigente ya menciona el icono 3 con «SCP»; ahora ubicaré la pauta específica de ICONO APP para comprobar que conserva la cita, la revisión y el recurso aprobado.",
+        "Registré la aprobación como **ICON-APP-001/R1** en [ICONO_APP.md](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/areas/ICONO_APP.md), con la cita, fecha, recurso y dependencias. Comprobé que el PNG aprobado coincide con [el icono de marca](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/assets/brand/scp-survivor.png) mediante SHA-256. La implementación se consulta en [PRESENTACION_INTEGRADA.md](C:/Users/DELL/.codex/.chatgpt-projects/g-p-6acf92395ad481919aad7153c0ca0e1f/SCP-SURVIVOR/docs/PRESENTACION_INTEGRADA.md).\n\nQueda pendiente que **ESTRUCTURA consolide su índice y registro de cambios** para reflejar esta pauta y aprobación.\n\n"
+      ]
+    },
+    {
+      "area": "PROGRAMACION",
+      "threadId": "01a13aeb-020a-7d62-8256-3d42a6e61877",
+      "threadTitle": "PROGRAMACION",
+      "status": {
+        "type": "idle"
+      },
+      "scope": "Dos turnos recientes; en ARMAS y PERSONAJES también se volvió a leer el turno activo. No es el historial completo.",
+      "turns": [
+        {
+          "id": "01a1757c-20d2-7d00-b0db-0d5bee325f7e",
+          "status": "completed",
+          "userMessages": [],
+          "finalMessages": [
+            "El juego actualizado sigue activo. La aprobación del montaje quedó registrada; la fusión permanece como ensayo separado hasta el siguiente lote.\n\nLa revisión automática rechazó publicar el cierre documental por falta de autorización explícita. ESTRUCTURA ya la solicitó; ese rechazo no afecta al juego publicado."
+          ]
+        },
+        {
+          "id": "01a17533-e0e9-7e61-aa48-badbaf42207d",
+          "status": "completed",
+          "userMessages": [
+            {
+              "id": "01a17533-e1b4-7003-af6e-17ef3c353c4e",
+              "text": "Aprueba. Y continua"
+            }
+          ],
+          "finalMessages": [
+            "Aprobación registrada. [Las armas corregidas ya están publicadas](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&revision=0.38).\n\nContinué con **katana + láser → hoja fotónica**: preparé y comprobé 384 montajes en una prueba aislada. Quedan pendientes el combate, la sala y la confirmación para habilitar la fusión jugable.\n\n"
+          ]
+        }
+      ],
+      "currentProgress": [
+        "Conservo el ensayo de fusión separado y el juego publicado sin cambios, hasta recibir el siguiente lote coordinado.\n\nLa revisión automática rechazó publicar el cierre documental por falta de autorización explícita. ESTRUCTURA ya solicitó esa autorización a Iván; no repetiré la publicación desde este hilo.",
+        "El juego actualizado sigue activo. La aprobación del montaje quedó registrada; la fusión permanece como ensayo separado hasta el siguiente lote.\n\nLa revisión automática rechazó publicar el cierre documental por falta de autorización explícita. ESTRUCTURA ya la solicitó; ese rechazo no afecta al juego publicado."
+      ]
+    }
+  ]
+}

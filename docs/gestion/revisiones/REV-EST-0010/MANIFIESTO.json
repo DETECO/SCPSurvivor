@@ -1,0 +1,134 @@
+{
+  "revision": "REV-EST-0010",
+  "dateClient": "2026-10-25",
+  "scope": "Consolidación incremental de siete áreas; dos turnos recientes por área, con seguimiento de los turnos activos ARMAS/PERSONAJES. No todos los historiales.",
+  "files": [
+    {
+      "source": "PAUTA_DESARROLLO.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/PAUTA_DESARROLLO.md",
+      "sha256": "829d565630c24f5e2f0aee5563ba6f14ec6f06303be484bfa3c1abd4a380d22b",
+      "coverage": "Índice previo0.11, cabecera y referencias de los lotes005/006.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/CONTROL_CAMBIOS.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/gestion/CONTROL_CAMBIOS.md",
+      "sha256": "ad1095611a417fca78b92b7958b8e09ad43876ac7955b2b2922bd4e0ff907693",
+      "coverage": "Control0.11, revisiones recientes y lotes citados; historial conservado.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/PAUTA_ARMAS.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/PAUTA_ARMAS.md",
+      "sha256": "f97725379b3f80bc31bf89fee1bb8f728c4bad20cb0a109cf244af358df6b2f4",
+      "coverage": "ResumenR3 y dependencias; hash idéntico al corteREV0009. No se relee el catálogo90.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/areas/PERSONAJES.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/areas/PERSONAJES.md",
+      "sha256": "9c1e5b3c08143e1bd64196b92069917b4dff6a240d245ed00443eeb979ccd639",
+      "coverage": "ÍndiceR3, entrega y límites; incidencia nueva consultada en turno activo.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/PAUTA_CREACION_ESCENARIOS.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/PAUTA_CREACION_ESCENARIOS.md",
+      "sha256": "e240d0bcff7739b0e0d52aa0bc2dc9ae30640d9d2b40a3b76848540c3373bc16",
+      "coverage": "DiferenciasR7.4→R7.5, escalaA y entrega de grietas, no todas las láminas históricas.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/PAUTA_MENUS.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/PAUTA_MENUS.md",
+      "sha256": "c40a58f4ac3a05fd6940a8b9c0a714930026fdb63fa8f55d126553152a2ace92",
+      "coverage": "Cambios nuevos: resumen y aprobaciónMEN005A; se preservan los antecedentes.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/superpowers/specs/2026-10-24-men-005-hud-in-game-design.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/superpowers/specs/2026-10-24-men-005-hud-in-game-design.md",
+      "sha256": "751502454f00d47e0c68a59cea14f42d025d10daac8be6bc67417d4240c3fe72",
+      "coverage": "Ficha completa; lámina01inspeccionada, B/C no aceptadas.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/PAUTA_SONIDO.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/PAUTA_SONIDO.md",
+      "sha256": "e7827eeb43712d243a15e22c33cc29f6360799d5d15d03c8efc739a46be3250e",
+      "coverage": "Misma revisión/hash queREV0007; selecciónSON001 y dependencias.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/areas/ICONO_APP.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/areas/ICONO_APP.md",
+      "sha256": "b74310e074c5c31899cdc9c61b770eff0e6966fd5c383036c174a55b026476c3",
+      "coverage": "Misma revisión/hash queREV0007; aprobación e índice resueltos.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/entregas/SONIDO-GRIETAS-001.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/gestion/entregas/SONIDO-GRIETAS-001.md",
+      "sha256": "3dcfac062f40ed250a4c3a1ac188d9ee7b94f3d5e01a0afe91f59a8724488022",
+      "coverage": "Inventario y límites sin audioNPCfinal; integraciónSON001 contrastada.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/entregas/PROGRAMACION-FUSION-PREPARACION.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/gestion/entregas/PROGRAMACION-FUSION-PREPARACION.md",
+      "sha256": "840626c3f4bb6b74cd51f3d2ccd63194aac06d5a008482fedc3d41c6fad0ae1a",
+      "coverage": "Informe completo del overlay, pruebas y límites.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/entregas/PROGRAMACION-FUSION-PREPARACION/gate.json",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/gestion/entregas/PROGRAMACION-FUSION-PREPARACION/gate.json",
+      "sha256": "1c0e1202564cca82fc7fbabe0ad99133b48aafc3e0aa0c9da1036bb885be2400",
+      "coverage": "Gate de ensayo:visible,operationalfalse,pose_validation_pending.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/lotes/LOT-EST-002-r1.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/gestion/lotes/LOT-EST-002-r1.md",
+      "sha256": "e622053957680f78c4ec8e683a3641ec8509ebd384e0d6452afda7dcedbc8b9c",
+      "coverage": "Contrato completo de primera fusión y dependencias, sin cambiar reglas.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/LOT-EST-005_PUBLICACION.json",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/gestion/LOT-EST-005_PUBLICACION.json",
+      "sha256": "b1d4412d25a22a3b9e56340c41f99cdb4d6a78e94eb5e5748fa5705695e93f96",
+      "coverage": "Recibo histórico de mecánicas y NPC; no se repitió su suite.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/LOT-EST-006_PUBLICACION.json",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/gestion/LOT-EST-006_PUBLICACION.json",
+      "sha256": "d4b51c30c17dbf1ed4359658415b67f741c8583dd68aca3a61820d848a8d8569",
+      "coverage": "Recibo de montaje público/aceptación; verificación documental nueva17/17.",
+      "readback": "matched"
+    },
+    {
+      "source": "docs/gestion/ACEPTACION_LOT006_2026-10-25.md",
+      "snapshot": "docs/gestion/revisiones/REV-EST-0010/fuentes/docs/gestion/ACEPTACION_LOT006_2026-10-25.md",
+      "sha256": "ec1df7c6307cdc35ddd58e9fdd666adf912dc2865a79753b1cd2b5d915d9d29d",
+      "coverage": "Aceptación recuperada del montaje, no prueba física.",
+      "readback": "matched"
+    }
+  ],
+  "resources": [
+    {
+      "path": "design-proposals/menus/propuestas-20261024/01-hud-esquinas.png",
+      "sha256": "301016a7bcea9106c2274e3d80376a5d3370ad6d93b6730d4febdae2d5fb046e",
+      "decision": "MEN-005-A r1",
+      "inspected": true
+    }
+  ],
+  "publicBaseline": {
+    "version": "0.38",
+    "runtime": "4adf3bed24e9a2f3ecd69ce54db286f794e3cd94",
+    "metadata": "1143a4fb1fa5349d68c90c1de4f715fd8b9fb9da",
+    "bundle": "be687713b2",
+    "metadataReadback": "17/17SHA256 matched"
+  }
+}

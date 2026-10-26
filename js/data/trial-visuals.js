@@ -15,7 +15,7 @@ G.TrialVisuals=(()=>{
    for(const[dex,id]of Object.entries(mapping)){
     const meta=G.SPRITE_META[dex],catalog=G.CharacterCatalog.modes[mode][id],logical=meta.a.Idle;
     meta.fallbackBase=meta.base;meta.fallbackExt=meta.ext;meta.fallbackAnimations=meta.a;
-    meta.base=`assets/personajes-20261022/${mode}/${id}`;meta.ext='png';meta.sample=1;meta.characterId=id;meta.characterSize=Number(mode);
+    meta.base=catalog.runtimeBase||`assets/personajes-20261022/${mode}/${id}`;meta.ext='png';meta.sample=1;meta.characterId=id;meta.characterSize=Number(mode);
     // Native actors share the existing 56-unit human cell; the boss retains its
     // original 128-unit cell. This is display geometry, never collision metadata.
     const cell=dex==='warden01'?logical.h:28,anchor=catalog.actions.Idle.anchor;

@@ -1,0 +1,43 @@
+{
+  "scope": "isolated_pose_validation_only",
+  "origin": "SCP-SURVIVOR existing source",
+  "authority": "EST-ARM-001r1 / LOT-EST-002r1",
+  "files": [
+    {
+      "path": "js/ui/personajes-art.js",
+      "sha256": "fc5af7db1e3b9bbf776666619d911338065c52b651febba8947ab61e738effd5"
+    },
+    {
+      "path": "js/ui/approved-field-weapon-art.js",
+      "sha256": "ebb73ff585952185a1b0b6e6e5737e22d6edd4990137f5e74c70bfbf51e287c2"
+    },
+    {
+      "path": "js/main.js",
+      "sha256": "fdbdc374a275642d73720a5cb959f80989a45b09857c9dddda47469133e305c6"
+    },
+    {
+      "path": "dev.html",
+      "sha256": "ddbe26cabe0d16b862e1818528432ba25dc4c173c6d9f5d18507c6a23f73869c"
+    },
+    {
+      "path": "index.html",
+      "sha256": "b089c4b277dd0cc0bdb94f540193b84e058787dd06163e3750b9a1b97a88b319"
+    },
+    {
+      "path": "js/app.min.js",
+      "sha256": "e208130d0fba1122bc7608e578e522a4bf5e9ee3c543315b4e835899c1434fa2"
+    },
+    {
+      "path": "docs/gestion/lotes/LOT-EST-002-r1.md",
+      "sha256": "e622053957680f78c4ec8e683a3641ec8509ebd384e0d6452afda7dcedbc8b9c"
+    },
+    {
+      "path": "docs/CIERRE_ARMAS_PROGRESION_FUSION_V1.md",
+      "sha256": "3ab619be7e3c3ceab468f4862efd65bd8e1b61ae00abc8e0408b95a8c1567016"
+    },
+    {
+      "path": "docs/referencias/armas/armas-prueba-direccionales-v1/catalogo.json",
+      "sha256": "a53c49b946f72d8d05226fc24a655433df1a8b5af13e3dd136603278f031f401"
+    }
+  ]
+}

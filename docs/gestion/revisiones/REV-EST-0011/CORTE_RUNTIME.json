@@ -1,0 +1,522 @@
+{
+  "dateClient": "2026-10-26",
+  "lot": "LOT-EST-007r1",
+  "sourceBundle": "460eecf37e",
+  "files": [
+    {
+      "file": "js/main.js",
+      "sourceSha256": "b4b23c847b1155ed03e3061954971a7f3ec344ed65df959f8d84eeff68eaf2e7",
+      "publishedCutSha256": "b4b23c847b1155ed03e3061954971a7f3ec344ed65df959f8d84eeff68eaf2e7",
+      "beforeSha256": "fdbdc374a275642d73720a5cb959f80989a45b09857c9dddda47469133e305c6"
+    },
+    {
+      "file": "js/data/trial-visuals.js",
+      "sourceSha256": "bc075de3e4a551ded5358dc625c8f6406e879afe56c06550e7af647732dd1ae1",
+      "publishedCutSha256": "bc075de3e4a551ded5358dc625c8f6406e879afe56c06550e7af647732dd1ae1",
+      "beforeSha256": "88ea3c302cffaf8b6a4704c4314b6d778fd84d2781b03f591b254c3a7d38e9ac"
+    },
+    {
+      "file": "js/data/character-proportions.js",
+      "sourceSha256": "27083cea8ac62e21615ffb2986fc04a4490f634abbcd83511d76be947a917ee1",
+      "publishedCutSha256": "27083cea8ac62e21615ffb2986fc04a4490f634abbcd83511d76be947a917ee1",
+      "beforeSha256": null
+    },
+    {
+      "file": "js/systems/rift-companion.js",
+      "sourceSha256": "4580649b1ad4515d5e995f304b8963575285c27085194aecd8808b2373dbd985",
+      "publishedCutSha256": "acaa4ca5b080f1095b5d980289eae056695e547cbd6a8329737233c024b58a2d",
+      "beforeSha256": "f040dfd091a75a7acf3f10c428161070d36ba340321b15f2cc7a2f5340f6cd6e"
+    },
+    {
+      "file": "js/ui/corner-hud.js",
+      "sourceSha256": "d5459e21a1a1fab446705766d6e6510519705ac3850abe84911ecfe6f3d4efea",
+      "publishedCutSha256": "d5459e21a1a1fab446705766d6e6510519705ac3850abe84911ecfe6f3d4efea",
+      "beforeSha256": null
+    },
+    {
+      "file": "js/ui/expanded-ui.js",
+      "sourceSha256": "c2b875a036f6d5de29fd9becb1e8098a2a5d40bf9cbad1284e3ab2eb1a8ac8cf",
+      "publishedCutSha256": "5dfd8f835147bca08d856511eb8f0a030445fd2e0024a0ff2f835e796df57170",
+      "beforeSha256": "37de3c42ab59530afe853e70b06263e22edc6f4aa5b6bcbcd29308806210de28"
+    },
+    {
+      "file": "js/ui/technical-ui.js",
+      "sourceSha256": "d52547f5012d428fa6bac8c38e517e05cafd1fbb68b53646bb3769600e799c78",
+      "publishedCutSha256": "f3c19ad1009d73fef6d3eff50b91177844d4da79d456541752df1209bc4c3ebd",
+      "beforeSha256": "9b43332034cf6eba32691fe97e2bcf2aa5f92f9e4458010da2a91d66971b2e16"
+    },
+    {
+      "file": "css/corner-hud.css",
+      "sourceSha256": "34ea39fe944fa14235f4919cc81cdc4e23f88a5c8bb8bc8ee9a3ae5ecdda39bd",
+      "publishedCutSha256": "34ea39fe944fa14235f4919cc81cdc4e23f88a5c8bb8bc8ee9a3ae5ecdda39bd",
+      "beforeSha256": null
+    },
+    {
+      "file": "tests/corner-hud.test.js",
+      "sourceSha256": "7b9e2059a8540254f86d81602c8445cc40023c1c9db8bdeb026764a80f9a8845",
+      "publishedCutSha256": "7b9e2059a8540254f86d81602c8445cc40023c1c9db8bdeb026764a80f9a8845",
+      "beforeSha256": null
+    },
+    {
+      "file": "tests/hud-007-browser.py",
+      "sourceSha256": "e8013f72afb4b533cf0fb9678499e26250ac1e100fd0e5b18955e58fd8fc95b1",
+      "publishedCutSha256": "e8013f72afb4b533cf0fb9678499e26250ac1e100fd0e5b18955e58fd8fc95b1",
+      "beforeSha256": null
+    },
+    {
+      "file": "tests/proporciones-personajes.test.js",
+      "sourceSha256": "18b3691deae14dc34185b1cf7edf2a91b47b03f290d855e98d48333f4fba37e2",
+      "publishedCutSha256": "18b3691deae14dc34185b1cf7edf2a91b47b03f290d855e98d48333f4fba37e2",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/catalogo.json",
+      "sourceSha256": "da97c10a373ce08ff580bc9fc1618122cb72cd6053f570e7957c9265d1797719",
+      "publishedCutSha256": "da97c10a373ce08ff580bc9fc1618122cb72cd6053f570e7957c9265d1797719",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo/Attack.png",
+      "sourceSha256": "9b4f8ee8664d98d5f10d6fb853fc625763500f72e5a5d196e1f0e47088bad516",
+      "publishedCutSha256": "9b4f8ee8664d98d5f10d6fb853fc625763500f72e5a5d196e1f0e47088bad516",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo/Hurt.png",
+      "sourceSha256": "46ac4d249d05b87f169305cf1acf1819e5aa97df4daa9d786648892740b97b8f",
+      "publishedCutSha256": "46ac4d249d05b87f169305cf1acf1819e5aa97df4daa9d786648892740b97b8f",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo/Idle.png",
+      "sourceSha256": "12d7803c376e19c308882dac12de79a6645b0ff92c2f144b687fb6c6d260e78a",
+      "publishedCutSha256": "12d7803c376e19c308882dac12de79a6645b0ff92c2f144b687fb6c6d260e78a",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo/Neutralized.png",
+      "sourceSha256": "9c60b54144111bff97ef0628caf0a6baf639c687b1280e8ff4fbccb7208e633c",
+      "publishedCutSha256": "9c60b54144111bff97ef0628caf0a6baf639c687b1280e8ff4fbccb7208e633c",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo/Partes.png",
+      "sourceSha256": "2b508e9b1a6563bb32070753e926c6bbcf9ea5660e1ec20826ea5c66a2565b9b",
+      "publishedCutSha256": "2b508e9b1a6563bb32070753e926c6bbcf9ea5660e1ec20826ea5c66a2565b9b",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo/Walk.png",
+      "sourceSha256": "dab5564a471a684c36de3b4690227df222628c1f4cab34f91232e207d33a1359",
+      "publishedCutSha256": "dab5564a471a684c36de3b4690227df222628c1f4cab34f91232e207d33a1359",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_curvy/Attack.png",
+      "sourceSha256": "8c00c28500ef650fe14c0fddf8d1bac5733a5761c6ec5227519e16b9743f0275",
+      "publishedCutSha256": "8c00c28500ef650fe14c0fddf8d1bac5733a5761c6ec5227519e16b9743f0275",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_curvy/Hurt.png",
+      "sourceSha256": "bd20d389db564425ee4386266ec08b9292be79ddbd0a7507a1c4751e575dfe8b",
+      "publishedCutSha256": "bd20d389db564425ee4386266ec08b9292be79ddbd0a7507a1c4751e575dfe8b",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_curvy/Idle.png",
+      "sourceSha256": "a3bc5a164b3ae095d4a5f4928dab5dd4621ec823f7d2d46e2a60c797809d8dec",
+      "publishedCutSha256": "a3bc5a164b3ae095d4a5f4928dab5dd4621ec823f7d2d46e2a60c797809d8dec",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_curvy/Neutralized.png",
+      "sourceSha256": "8e90266d887c84c66675e36b7889cd6509720edd0b760175f17c4f97f9b302a6",
+      "publishedCutSha256": "8e90266d887c84c66675e36b7889cd6509720edd0b760175f17c4f97f9b302a6",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_curvy/Partes.png",
+      "sourceSha256": "9a01df119ae96cd9548b2999241a090b3baef7e8fb7a7bceabbcf53013f92b4b",
+      "publishedCutSha256": "9a01df119ae96cd9548b2999241a090b3baef7e8fb7a7bceabbcf53013f92b4b",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_curvy/Walk.png",
+      "sourceSha256": "b177da693443319ce8f2b5216c88c3f6cd896e68b1fa7995f301b5ef275ee968",
+      "publishedCutSha256": "b177da693443319ce8f2b5216c88c3f6cd896e68b1fa7995f301b5ef275ee968",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_delgada/Attack.png",
+      "sourceSha256": "015aa5d1f38f8b4bdd7b577e50cb114b6f4b673fe93639ecf2d26aa69cd34b90",
+      "publishedCutSha256": "015aa5d1f38f8b4bdd7b577e50cb114b6f4b673fe93639ecf2d26aa69cd34b90",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_delgada/Hurt.png",
+      "sourceSha256": "c612f3a446fb83124a7af571a590a484c262f63aae3aace1e0e1ebbb89e78eac",
+      "publishedCutSha256": "c612f3a446fb83124a7af571a590a484c262f63aae3aace1e0e1ebbb89e78eac",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_delgada/Idle.png",
+      "sourceSha256": "3f637148af247e0d50d353d72acb0914005c3a809e73de2e2515726cf326e072",
+      "publishedCutSha256": "3f637148af247e0d50d353d72acb0914005c3a809e73de2e2515726cf326e072",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_delgada/Neutralized.png",
+      "sourceSha256": "54e23d8c256b664aae308c9f352961026d7ccde84e0939c11a557329835eb091",
+      "publishedCutSha256": "54e23d8c256b664aae308c9f352961026d7ccde84e0939c11a557329835eb091",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_delgada/Partes.png",
+      "sourceSha256": "1d74ff9f2dc0746d44704056d62c9ea286777685777d481c769c09290afe0d14",
+      "publishedCutSha256": "1d74ff9f2dc0746d44704056d62c9ea286777685777d481c769c09290afe0d14",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_delgada/Walk.png",
+      "sourceSha256": "8a11d31cb728eb9956739dc90c2b0f54c81191b66d08ed05c628f7adb38363f2",
+      "publishedCutSha256": "8a11d31cb728eb9956739dc90c2b0f54c81191b66d08ed05c628f7adb38363f2",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_fitness/Attack.png",
+      "sourceSha256": "9cdf0352726afba0a0e4e1546a18306d93493c8a7a6836b4f43bba58aec81580",
+      "publishedCutSha256": "9cdf0352726afba0a0e4e1546a18306d93493c8a7a6836b4f43bba58aec81580",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_fitness/Hurt.png",
+      "sourceSha256": "53ebf580cdaede72a085806da3a616ca9ea0abbd2817fb29044b4f24b52162d3",
+      "publishedCutSha256": "53ebf580cdaede72a085806da3a616ca9ea0abbd2817fb29044b4f24b52162d3",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_fitness/Idle.png",
+      "sourceSha256": "22ffc601d6d64d3c2e50f6a925970b4262f16b5eacf599f1b842fdb7bfa3c191",
+      "publishedCutSha256": "22ffc601d6d64d3c2e50f6a925970b4262f16b5eacf599f1b842fdb7bfa3c191",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_fitness/Neutralized.png",
+      "sourceSha256": "b4854751146d3a6c816ea2d7fdc069dfb2f0d41b01e40899426e076813564a39",
+      "publishedCutSha256": "b4854751146d3a6c816ea2d7fdc069dfb2f0d41b01e40899426e076813564a39",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_fitness/Partes.png",
+      "sourceSha256": "7390795bde5ba79cb4999204da27562906fdeebbe633010a264b10c5a275d007",
+      "publishedCutSha256": "7390795bde5ba79cb4999204da27562906fdeebbe633010a264b10c5a275d007",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/apoyo_fitness/Walk.png",
+      "sourceSha256": "b6492eeeda686cdc7ca9ce50bd3d3d9340e417726d7653531ae610e2fc581fbc",
+      "publishedCutSha256": "b6492eeeda686cdc7ca9ce50bd3d3d9340e417726d7653531ae610e2fc581fbc",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/guardia/Attack.png",
+      "sourceSha256": "ab509ed2770e915e7d467c681f97f55de497e6521cf0ebf4d12d52ec8324fb59",
+      "publishedCutSha256": "ab509ed2770e915e7d467c681f97f55de497e6521cf0ebf4d12d52ec8324fb59",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/guardia/Hurt.png",
+      "sourceSha256": "a6a00c6f71148e829cf927ee3f7d526bc849839a4f127135101f7f697e223e98",
+      "publishedCutSha256": "a6a00c6f71148e829cf927ee3f7d526bc849839a4f127135101f7f697e223e98",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/guardia/Idle.png",
+      "sourceSha256": "b8d4810a7c71961b3b1a6e985261562aac1cdccfe01ae63d195761770cb86d71",
+      "publishedCutSha256": "b8d4810a7c71961b3b1a6e985261562aac1cdccfe01ae63d195761770cb86d71",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/guardia/Neutralized.png",
+      "sourceSha256": "2ab9d8bd18262ef4a785df8993e4363143c33b406a8c265e4208cb8f10f4e479",
+      "publishedCutSha256": "2ab9d8bd18262ef4a785df8993e4363143c33b406a8c265e4208cb8f10f4e479",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/guardia/Partes.png",
+      "sourceSha256": "09610cd943d134110bc7a85cc4ae83a6b9dca33b9ed62234255567091487ce69",
+      "publishedCutSha256": "09610cd943d134110bc7a85cc4ae83a6b9dca33b9ed62234255567091487ce69",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/guardia/Walk.png",
+      "sourceSha256": "72a7b29a7a5110ad9aa14b9a930099f247433d6e78ba11078465261565461269",
+      "publishedCutSha256": "72a7b29a7a5110ad9aa14b9a930099f247433d6e78ba11078465261565461269",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/medico/Attack.png",
+      "sourceSha256": "a689b383d7e4ca9e5f04ce02d5c86b81ac9a470443ab67532760101f40bdf91a",
+      "publishedCutSha256": "a689b383d7e4ca9e5f04ce02d5c86b81ac9a470443ab67532760101f40bdf91a",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/medico/Hurt.png",
+      "sourceSha256": "78d83e7cc2a4ad509485edec3d0a8274c5dfd90f6af3e8dd939a1d0b9835a2da",
+      "publishedCutSha256": "78d83e7cc2a4ad509485edec3d0a8274c5dfd90f6af3e8dd939a1d0b9835a2da",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/medico/Idle.png",
+      "sourceSha256": "c76d7bf41fb4cba24fe4c150b1339f4fba9b0fc76165d004e54823087cf29d8d",
+      "publishedCutSha256": "c76d7bf41fb4cba24fe4c150b1339f4fba9b0fc76165d004e54823087cf29d8d",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/medico/Neutralized.png",
+      "sourceSha256": "6d7701ffaef04237a5ac47d6c7b7e0c9632ff6431b1033aae81a3f2a913293c1",
+      "publishedCutSha256": "6d7701ffaef04237a5ac47d6c7b7e0c9632ff6431b1033aae81a3f2a913293c1",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/medico/Partes.png",
+      "sourceSha256": "75183d034e89138a94fa873d2e8dd669deec39fdf2e6bba4bb3c7ad6d2873d0e",
+      "publishedCutSha256": "75183d034e89138a94fa873d2e8dd669deec39fdf2e6bba4bb3c7ad6d2873d0e",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/16/medico/Walk.png",
+      "sourceSha256": "6184e9346960f007ffd1598fd084fd4daa6e26d1ebefdbb850e59e4dfa33e827",
+      "publishedCutSha256": "6184e9346960f007ffd1598fd084fd4daa6e26d1ebefdbb850e59e4dfa33e827",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo/Attack.png",
+      "sourceSha256": "07b2331dcd7541d5584f3036adb9014b55469c2d5289f536633f93e8b257e3e5",
+      "publishedCutSha256": "07b2331dcd7541d5584f3036adb9014b55469c2d5289f536633f93e8b257e3e5",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo/Hurt.png",
+      "sourceSha256": "0a68f72f2aa54a4bac779237f854a240f4d243365f643d8505836ceac247dac8",
+      "publishedCutSha256": "0a68f72f2aa54a4bac779237f854a240f4d243365f643d8505836ceac247dac8",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo/Idle.png",
+      "sourceSha256": "9adb3b93f7f12795d90f8b743a834dd66b7e141b4616905c940cc68536be5518",
+      "publishedCutSha256": "9adb3b93f7f12795d90f8b743a834dd66b7e141b4616905c940cc68536be5518",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo/Neutralized.png",
+      "sourceSha256": "074b39836eebd1ba3c2f2b758d017d4c78d0731a39d1037c1e16bc36f0b0cedb",
+      "publishedCutSha256": "074b39836eebd1ba3c2f2b758d017d4c78d0731a39d1037c1e16bc36f0b0cedb",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo/Partes.png",
+      "sourceSha256": "14bbbc2a76af29efad3a7726ea00b32ef8f399c8eeef782955b60da850d696a2",
+      "publishedCutSha256": "14bbbc2a76af29efad3a7726ea00b32ef8f399c8eeef782955b60da850d696a2",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo/Walk.png",
+      "sourceSha256": "5e46db0334c8021c443e00ab7a59267d6b18d4184ef592afce72d432ef34f48c",
+      "publishedCutSha256": "5e46db0334c8021c443e00ab7a59267d6b18d4184ef592afce72d432ef34f48c",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_curvy/Attack.png",
+      "sourceSha256": "ba4e5342e29e7d8989d0f0af7bb7cc222a523558cffbf546cd839e23479ba2f8",
+      "publishedCutSha256": "ba4e5342e29e7d8989d0f0af7bb7cc222a523558cffbf546cd839e23479ba2f8",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_curvy/Hurt.png",
+      "sourceSha256": "ec5d96f0f00b75b666fc708359e9c15ebfe68e17c3c2e432300acfc2d5b9cf57",
+      "publishedCutSha256": "ec5d96f0f00b75b666fc708359e9c15ebfe68e17c3c2e432300acfc2d5b9cf57",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_curvy/Idle.png",
+      "sourceSha256": "2bde8ca0744bf73289b58d441ba455208c3887712005d8ef8e9aac5a0e60434c",
+      "publishedCutSha256": "2bde8ca0744bf73289b58d441ba455208c3887712005d8ef8e9aac5a0e60434c",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_curvy/Neutralized.png",
+      "sourceSha256": "b636e28eb32061db1602d02f31e4e5646cc0a7feb15bae539127aba44de7339d",
+      "publishedCutSha256": "b636e28eb32061db1602d02f31e4e5646cc0a7feb15bae539127aba44de7339d",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_curvy/Partes.png",
+      "sourceSha256": "f1cb610a15fe91d6b918c96ccfb1f4448d51d08a314841cb1128c7ff6a6c634a",
+      "publishedCutSha256": "f1cb610a15fe91d6b918c96ccfb1f4448d51d08a314841cb1128c7ff6a6c634a",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_curvy/Walk.png",
+      "sourceSha256": "ded94128343c02753cd00a814af767e5834f65dd94fa19e4065ac658871baa06",
+      "publishedCutSha256": "ded94128343c02753cd00a814af767e5834f65dd94fa19e4065ac658871baa06",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_delgada/Attack.png",
+      "sourceSha256": "5fbe3b4b24e45ebad327647ca744899ae5bf4b31a3fe1368408b95f9f95eb65d",
+      "publishedCutSha256": "5fbe3b4b24e45ebad327647ca744899ae5bf4b31a3fe1368408b95f9f95eb65d",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_delgada/Hurt.png",
+      "sourceSha256": "793b7d1128347a19d6107fe5c6add2d31f12363f9e99af0ff870391aef4801e5",
+      "publishedCutSha256": "793b7d1128347a19d6107fe5c6add2d31f12363f9e99af0ff870391aef4801e5",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_delgada/Idle.png",
+      "sourceSha256": "9fad44227f764ce9d8c3ce5d9669e823ee41d0481853b5d92f444b9841ded4b2",
+      "publishedCutSha256": "9fad44227f764ce9d8c3ce5d9669e823ee41d0481853b5d92f444b9841ded4b2",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_delgada/Neutralized.png",
+      "sourceSha256": "07853b6788e677ba9659888a9b7a0395f206c0d3612cf1867a5217b4ad4af528",
+      "publishedCutSha256": "07853b6788e677ba9659888a9b7a0395f206c0d3612cf1867a5217b4ad4af528",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_delgada/Partes.png",
+      "sourceSha256": "c0f74149962717d54808333f5164221a96a7cc0b0000d03f03517d6e0de71393",
+      "publishedCutSha256": "c0f74149962717d54808333f5164221a96a7cc0b0000d03f03517d6e0de71393",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_delgada/Walk.png",
+      "sourceSha256": "616fbf21e78faf65b0e66ae5093eb6e69864f3b63c776f2c70ac3899eb5d5be2",
+      "publishedCutSha256": "616fbf21e78faf65b0e66ae5093eb6e69864f3b63c776f2c70ac3899eb5d5be2",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_fitness/Attack.png",
+      "sourceSha256": "831634e749e4c792947ec1cc096448372cedc19cc7fe8a22ec6b70684ed594c2",
+      "publishedCutSha256": "831634e749e4c792947ec1cc096448372cedc19cc7fe8a22ec6b70684ed594c2",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_fitness/Hurt.png",
+      "sourceSha256": "88499b1820d00a2c916e3ff3fe72785dc585d3ebca7b9d799f921eca3798afb8",
+      "publishedCutSha256": "88499b1820d00a2c916e3ff3fe72785dc585d3ebca7b9d799f921eca3798afb8",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_fitness/Idle.png",
+      "sourceSha256": "91f446a0a728a5931c5ff390f7521d1d10b3f0ef7a870113f48eb01071eff9fc",
+      "publishedCutSha256": "91f446a0a728a5931c5ff390f7521d1d10b3f0ef7a870113f48eb01071eff9fc",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_fitness/Neutralized.png",
+      "sourceSha256": "3f1d2ad067eb7550da4b71c52689b4a9d2a4b606e67275a511dce9a525a9a132",
+      "publishedCutSha256": "3f1d2ad067eb7550da4b71c52689b4a9d2a4b606e67275a511dce9a525a9a132",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_fitness/Partes.png",
+      "sourceSha256": "db19afad4a1b191311566d6f8aa0d4d2a4bcb6b5509eca81fecfffcd65dbb95d",
+      "publishedCutSha256": "db19afad4a1b191311566d6f8aa0d4d2a4bcb6b5509eca81fecfffcd65dbb95d",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/apoyo_fitness/Walk.png",
+      "sourceSha256": "8f75a2884b01ccacb055bb0b645ba70377a2e008aa5d1e3dfe4f0f41122d2f50",
+      "publishedCutSha256": "8f75a2884b01ccacb055bb0b645ba70377a2e008aa5d1e3dfe4f0f41122d2f50",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/guardia/Attack.png",
+      "sourceSha256": "c4292c768416a3d3f824017325015c3279fd85b15d989be33ac2193dc412b238",
+      "publishedCutSha256": "c4292c768416a3d3f824017325015c3279fd85b15d989be33ac2193dc412b238",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/guardia/Hurt.png",
+      "sourceSha256": "42f75a8d561806d2569f5f00dfec54fefc2bc14bf68cf41dfee0e05b1ba66e3a",
+      "publishedCutSha256": "42f75a8d561806d2569f5f00dfec54fefc2bc14bf68cf41dfee0e05b1ba66e3a",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/guardia/Idle.png",
+      "sourceSha256": "e4a32464fbd1230aea8e80fd26457f04876ece8975bb30e50019611e1dcdf384",
+      "publishedCutSha256": "e4a32464fbd1230aea8e80fd26457f04876ece8975bb30e50019611e1dcdf384",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/guardia/Neutralized.png",
+      "sourceSha256": "21fbbf315f348d2f21c44f276057735219c74c58542e5d638f52c5dc0c833149",
+      "publishedCutSha256": "21fbbf315f348d2f21c44f276057735219c74c58542e5d638f52c5dc0c833149",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/guardia/Partes.png",
+      "sourceSha256": "653406168c8900b2649d902c5874ef54c75afb1bfa6b250649b93426b9f3b4fb",
+      "publishedCutSha256": "653406168c8900b2649d902c5874ef54c75afb1bfa6b250649b93426b9f3b4fb",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/guardia/Walk.png",
+      "sourceSha256": "6caceab533575d14633e01872baf21e46a9c91f7edaa0527135584301a99eec4",
+      "publishedCutSha256": "6caceab533575d14633e01872baf21e46a9c91f7edaa0527135584301a99eec4",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/medico/Attack.png",
+      "sourceSha256": "060ca35ad45fb0ba6c2a0e55f6ec47bade0f25b07ff86d66eefb62aa1a910538",
+      "publishedCutSha256": "060ca35ad45fb0ba6c2a0e55f6ec47bade0f25b07ff86d66eefb62aa1a910538",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/medico/Hurt.png",
+      "sourceSha256": "08d63d1d5d47f4fe051efec9645e89cce2df9b916b194a4ef49a1ea8685dc87e",
+      "publishedCutSha256": "08d63d1d5d47f4fe051efec9645e89cce2df9b916b194a4ef49a1ea8685dc87e",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/medico/Idle.png",
+      "sourceSha256": "2865710ff6bc54c5ff0ea4a57dfe3ba157f3fba215307ff6d6478bf5c635a7bf",
+      "publishedCutSha256": "2865710ff6bc54c5ff0ea4a57dfe3ba157f3fba215307ff6d6478bf5c635a7bf",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/medico/Neutralized.png",
+      "sourceSha256": "b763c13341b4ae064761f9aaf3e113833745ff91874734fa7e71a3588e5aa0ca",
+      "publishedCutSha256": "b763c13341b4ae064761f9aaf3e113833745ff91874734fa7e71a3588e5aa0ca",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/medico/Partes.png",
+      "sourceSha256": "940d1e66afd2bb60ecfb017fa7684b3f6b7c804dc45d0ed8e00acde015b6ab34",
+      "publishedCutSha256": "940d1e66afd2bb60ecfb017fa7684b3f6b7c804dc45d0ed8e00acde015b6ab34",
+      "beforeSha256": null
+    },
+    {
+      "file": "assets/proporciones-personajes-20261025/32/medico/Walk.png",
+      "sourceSha256": "2c864802dd18e51d02c994aac3e80d9653861f9be3b9f2fc3ef1ba3931f7a666",
+      "publishedCutSha256": "2c864802dd18e51d02c994aac3e80d9653861f9be3b9f2fc3ef1ba3931f7a666",
+      "beforeSha256": null
+    }
+  ],
+  "devHtml": {
+    "beforeSha256": "682ae758e09bf46eb0aef9b1567b3daf2a66657cf5c55955dd383c50e5039f0a",
+    "afterSha256": "917192955dc6816bce0909106552ff64e1861f6881477a83e39543bdf5a8d3b1"
+  },
+  "preserved": {
+    "js/vendor/firebase-client.js": "21128b23930e1ba252d595195911065e92cc578bf0c4c7f9218a9670fa45cd2c",
+    "config/firebase-public.json": "52b4099163862211cffd5f6f36ea8afd3c75f4dbb132d350e323872ff394e95b"
+  },
+  "publicCspUnchanged": true,
+  "sourceAndPublicTextDifferencesMayOnlyBeLineEndings": true,
+  "scope": "HUD MEN-005-A and technical common-scale repair of six approved humans; no fusion or private power viewer."
+}

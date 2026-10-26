@@ -1,0 +1,99 @@
+{
+  "dateClient": "2026-10-25",
+  "scope": "LOT-EST-007 r1 / MEN-005-A r1",
+  "revision": "REV-EST-0010",
+  "control": "0.12",
+  "approvalMessage": "01a1730f-9ef3-7d11-abf2-81923ddf65f4",
+  "continuationMessage": "01a17533-e1b4-7003-af6e-17ef3c353c4e",
+  "publicBaseline": "1143a4fb1fa5349d68c90c1de4f715fd8b9fb9da",
+  "files": [
+    {
+      "source": "dev.html",
+      "sha256": "ddbe26cabe0d16b862e1818528432ba25dc4c173c6d9f5d18507c6a23f73869c"
+    },
+    {
+      "source": "index.html",
+      "sha256": "b089c4b277dd0cc0bdb94f540193b84e058787dd06163e3750b9a1b97a88b319"
+    },
+    {
+      "source": "js/app.min.js",
+      "sha256": "e208130d0fba1122bc7608e578e522a4bf5e9ee3c543315b4e835899c1434fa2"
+    },
+    {
+      "source": "js/main.js",
+      "sha256": "fdbdc374a275642d73720a5cb959f80989a45b09857c9dddda47469133e305c6"
+    },
+    {
+      "source": "js/ui/technical-ui.js",
+      "sha256": "d9f59056c1bd3b476aaab78727ca6d6046afd3056850c4e8bd558629945f3d7f"
+    },
+    {
+      "source": "js/ui/expanded-ui.js",
+      "sha256": "a03ab3bef8e71bba5af3c78bdd0cab15dbc2c4427d995b20a0bccb70820cf752"
+    },
+    {
+      "source": "js/ui/rift-ui.js",
+      "sha256": "e3b333121d92098ca217cac6ed8b46b44172dc782460aa10a351a3ac3d98c452"
+    },
+    {
+      "source": "js/systems/rift-companion.js",
+      "sha256": "37171c3601d5bcba180f3c73698ad749c4f36b64165a5f82d1fd0b4abdfde34a"
+    },
+    {
+      "source": "js/ui/personajes-art.js",
+      "sha256": "fc5af7db1e3b9bbf776666619d911338065c52b651febba8947ab61e738effd5"
+    },
+    {
+      "source": "js/data/character-catalog.js",
+      "sha256": "2d7a98bc3b7d451ec786280e8f65bb8fa62aaa268f54342c3875248928ec1205"
+    },
+    {
+      "source": "js/systems/field-combat.js",
+      "sha256": "c920d2baa1a318062a8bbccc46c0338916357391b53fb3cccbf1ce0454e6cd0c"
+    },
+    {
+      "source": "js/systems/field-abilities.js",
+      "sha256": "55caeea584de0cc9e3763d4723a0fb0724da3216f59d6e98d7b57b0641fbf158"
+    },
+    {
+      "source": "js/systems/rift-expedition.js",
+      "sha256": "80eef1c58def6ad168f6f38a4d47e528f57e337828c5faa65e3cab58b618fcb0"
+    },
+    {
+      "source": "js/systems/rift-powers.js",
+      "sha256": "3f0b0c16db8c1d4908913867a2edbeb9fca82255b42043e0b0933dfb1559a12e"
+    },
+    {
+      "source": "js/core/touch.js",
+      "sha256": "39327d5483410133e6dba900c5b91d0952688f7ba1ec1c895de98cbc83bb5637"
+    },
+    {
+      "source": "css/technical.css",
+      "sha256": "e1fd5ebc741d489b58ee9ef293b0802d85fb7aa5b41220816205aaa1a925da6c"
+    },
+    {
+      "source": "docs/gestion/lotes/LOT-EST-007-r1.md",
+      "sha256": "03f89e473b09b6d38ae3c4b6cbcf409c1481f0d4081340a3006948efa9a85536"
+    },
+    {
+      "source": "docs/gestion/REV-EST-0010_CONSOLIDADO.md",
+      "sha256": "66a480c73b8ad45a1a384dbb15859df2d53cc3bd345b7e7a899cd3501ff06d22"
+    },
+    {
+      "source": "docs/gestion/CONTROL_CAMBIOS.md",
+      "sha256": "1243cd8c548875ef753b0006f5b3643d405335870f00ebac8ff53432db6324a3"
+    },
+    {
+      "source": "docs/PAUTA_MENUS.md",
+      "sha256": "c40a58f4ac3a05fd6940a8b9c0a714930026fdb63fa8f55d126553152a2ace92"
+    },
+    {
+      "source": "docs/superpowers/specs/2026-10-24-men-005-hud-in-game-design.md",
+      "sha256": "751502454f00d47e0c68a59cea14f42d025d10daac8be6bc67417d4240c3fe72"
+    },
+    {
+      "source": "design-proposals/menus/propuestas-20261024/01-hud-esquinas.png",
+      "sha256": "301016a7bcea9106c2274e3d80376a5d3370ad6d93b6730d4febdae2d5fb046e"
+    }
+  ]
+}

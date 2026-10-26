@@ -1,0 +1,12 @@
+{
+  "lot": "LOT-EST-007r1",
+  "version": "0.39",
+  "status": "prepared_not_published",
+  "dateClient": "2026-10-26",
+  "bundle": "92026cde30",
+  "scripts": 120,
+  "url": "https://deteco.github.io/SCPSurvivor/",
+  "runtimeCommit": null,
+  "manualAcceptance": "pending",
+  "physicalPhone": false
+}

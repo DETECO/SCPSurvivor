@@ -70,6 +70,7 @@ G.RiftCompanion=(()=>{
   ctx.save();ctx.font='12px monospace';const words=npc.bubble.split(' '),lines=[];let line='';for(const word of words){if((line+' '+word).length>30){lines.push(line);line=word;}else line+=(line?' ':'')+word;}if(line)lines.push(line);
   const width=230,height=lines.length*15+14,cam=G.Camera;let x=npc.x-width/2,y=npc.y-88-height;
   if(cam?.left&&cam?.top){const hud=typeof document!=='undefined'?document.getElementById('hud-summary')?.getBoundingClientRect().bottom||0:0;x=Math.max(cam.left()+8/cam.scale,Math.min(x,cam.left()+cam.w-width-8/cam.scale));y=Math.max(cam.top()+(hud+8)/cam.scale,Math.min(y,cam.top()+cam.h-height-84/cam.scale));}
+  if(G.CornerHUD?.placeBubble&&cam?.left&&cam?.top){const position=G.CornerHUD.placeBubble(x,y,width,height,cam);if(!position){ctx.restore();return;}x=position.x;y=position.y;}
   ctx.fillStyle='#101419ed';ctx.strokeStyle='#eee5ce';ctx.lineWidth=1;ctx.fillRect(x,y,width,height);ctx.strokeRect(x,y,width,height);ctx.fillStyle='#fff1db';ctx.textAlign='left';lines.forEach((s,i)=>ctx.fillText(s,x+8,y+18+i*15));ctx.restore();
  }
  return{startRun(){npc=null;usedNames=new Set();},create,update,hurt,drawBubble,equipment,drawables:()=>npc?[{x:npc.x,y:npc.y,draw}]:[],clear(){npc=null;},get state(){return npc?{...npc,used:[...npc.used],anim:undefined}:null;}};

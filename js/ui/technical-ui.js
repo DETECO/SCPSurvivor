@@ -169,7 +169,7 @@ G.TechnicalUI = (() => {
       if (key === 'q') { event.preventDefault(); switchWeapon(0); }
       else if (key === 'e') { event.preventDefault(); switchWeapon(1); }
     });
-    compactHud();G.ExpandedUI.init();
+    compactHud();G.ExpandedUI.init();G.CornerHUD?.init();
     el('boot').hidden = true; state('ui');
   }
   function state(value) {
@@ -179,7 +179,7 @@ G.TechnicalUI = (() => {
     }
     document.body.dataset.technicalState = value;G.RiftUI?.hide();
     if(el('art-resource-status'))el('art-resource-status').hidden=true;
-    G.ExpandedUI.state(value);
+    G.ExpandedUI.state(value);G.CornerHUD?.state(value);
     el('technical-ready').hidden = value !== 'ui';
     el('technical-pause').hidden = value !== 'paused';
     for (const id of ['scene-hud', 'scene-footer', 'field-controls', 'field-status']) el(id).hidden = value !== 'playing';
@@ -251,7 +251,7 @@ G.TechnicalUI = (() => {
     el('rift-alert').hidden=!rift.alert||s.phase==='finished'||s.phase==='levelup';
     if(el('rift-alert').textContent!==rift.alert)el('rift-alert').textContent=rift.alert;
     const abilityState = w.currentability || {};
-    el('btn-ability').textContent = abilityState.cooldown > 0 ? `${soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint'} ${Math.ceil(abilityState.cooldown)} s` : (soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint');
+    if(!document.body.dataset.cornerHud)el('btn-ability').textContent = abilityState.cooldown > 0 ? `${soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint'} ${Math.ceil(abilityState.cooldown)} s` : (soldier.ability === 'heal' ? 'Primeros auxilios' : 'Sprint');
     const canUseAbilityInPhase = soldier.ability === 'heal'
       ? ['combat', 'boss', 'escaping', 'preparation'].includes(s.phase)
       : ['combat', 'boss', 'escaping', 'preparation', 'exploration'].includes(s.phase);
@@ -309,7 +309,7 @@ G.TechnicalUI = (() => {
         armamentHost.append(button);
       }
     } else if(!showArmament) armamentHost.dataset.reward='';
-    G.ExpandedUI.tick(player,s,w);G.RiftUI?.tick(player,s);
+    G.ExpandedUI.tick(player,s,w);G.RiftUI?.tick(player,s);G.CornerHUD?.tick(player,s,w);
     el('field-result').hidden = s.phase !== 'finished';
     if (s.phase === 'finished') {
       const r = s.result;
