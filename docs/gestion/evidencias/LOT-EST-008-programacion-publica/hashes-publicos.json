@@ -1,0 +1,202 @@
+{
+  "checkedAtUTC": "2026-10-27T01:07:23.136710+00:00",
+  "commit": "72969306342e84c2d012f2f3941a600c295d0250",
+  "url": "https://deteco.github.io/SCPSurvivor/",
+  "bundle": "92f07645d0",
+  "total": 24,
+  "matched": 24,
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 10656,
+      "sha256Public": "e2266ba874cfbd5bc4e085a08f373db01cfb4861b0a0cf2f01818861ae807380",
+      "sha256Commit": "e2266ba874cfbd5bc4e085a08f373db01cfb4861b0a0cf2f01818861ae807380",
+      "matched": true
+    },
+    {
+      "path": "js/app.min.js",
+      "status": 200,
+      "bytes": 1671185,
+      "sha256Public": "80d225df65397219103ccbc3c6a91fe18cb4d7895aa6b5bce7fa32a7c2498ecf",
+      "sha256Commit": "80d225df65397219103ccbc3c6a91fe18cb4d7895aa6b5bce7fa32a7c2498ecf",
+      "matched": true
+    },
+    {
+      "path": "js/world/rift-room-art.js",
+      "status": 200,
+      "bytes": 12325,
+      "sha256Public": "5f1e019d1b54bdf43253979de7407d9d96e3936d9ff0d2daa164c26aa4ec4b51",
+      "sha256Commit": "5f1e019d1b54bdf43253979de7407d9d96e3936d9ff0d2daa164c26aa4ec4b51",
+      "matched": true
+    },
+    {
+      "path": "js/systems/rift-expedition.js",
+      "status": 200,
+      "bytes": 13550,
+      "sha256Public": "44f5a88eb943a06fb78b7bb2a4d1c9058e7bf58e2ae5d797db3f722dd880d353",
+      "sha256Commit": "44f5a88eb943a06fb78b7bb2a4d1c9058e7bf58e2ae5d797db3f722dd880d353",
+      "matched": true
+    },
+    {
+      "path": "README.md",
+      "status": 200,
+      "bytes": 11370,
+      "sha256Public": "4f5de1a84f9993b58e034738e65b8c1be064496ae2cd6c92b62dc1ca9de83ba9",
+      "sha256Commit": "4f5de1a84f9993b58e034738e65b8c1be064496ae2cd6c92b62dc1ca9de83ba9",
+      "matched": true
+    },
+    {
+      "path": "docs/gestion/entregas/PROGRAMACION-JUGABILIDAD-008-CARGA-R2.md",
+      "status": 200,
+      "bytes": 2830,
+      "sha256Public": "65a65eb9ac47bfea837ae9ee784094e70226e95498cba06345ee4a1dd78e542b",
+      "sha256Commit": "65a65eb9ac47bfea837ae9ee784094e70226e95498cba06345ee4a1dd78e542b",
+      "matched": true
+    },
+    {
+      "path": "tests/artifacts/lot-est-008/loading-r2/MANIFIESTO.json",
+      "status": 200,
+      "bytes": 2714,
+      "sha256Public": "f7fd7fda8a7c67144ecb16a8e24841799fb0c3ecbeea5e3e5a740359348dbd2c",
+      "sha256Commit": "f7fd7fda8a7c67144ecb16a8e24841799fb0c3ecbeea5e3e5a740359348dbd2c",
+      "matched": true
+    },
+    {
+      "path": "dev.html",
+      "status": 200,
+      "bytes": 17361,
+      "sha256Public": "0af0c2bc6634c35ecfdb8f4b587d14b2a385f7dcb338bb2edbf3487684a71aa5",
+      "sha256Commit": "0af0c2bc6634c35ecfdb8f4b587d14b2a385f7dcb338bb2edbf3487684a71aa5",
+      "matched": true
+    },
+    {
+      "path": "RoadmapSCP.json",
+      "status": 200,
+      "bytes": 437541,
+      "sha256Public": "0ed03eceddf5eb6299ebeb90bd2e1ca7ec70d7ee8793eb200469549494333d35",
+      "sha256Commit": "0ed03eceddf5eb6299ebeb90bd2e1ca7ec70d7ee8793eb200469549494333d35",
+      "matched": true
+    },
+    {
+      "path": "assets/powers/16/POD-01-A.png",
+      "status": 200,
+      "bytes": 309764,
+      "sha256Public": "6152288d43a46e61a5f04f75124aa3de61ffe263015964d144f5ff518810b3bc",
+      "sha256Commit": "6152288d43a46e61a5f04f75124aa3de61ffe263015964d144f5ff518810b3bc",
+      "matched": true
+    },
+    {
+      "path": "assets/powers/32/POD-01-A.png",
+      "status": 200,
+      "bytes": 190811,
+      "sha256Public": "945500e4e8132e21038fef787961f1e24b1551750112ad6be6dc0e6b13120058",
+      "sha256Commit": "945500e4e8132e21038fef787961f1e24b1551750112ad6be6dc0e6b13120058",
+      "matched": true
+    },
+    {
+      "path": "assets/powers/16/POD-02-A.png",
+      "status": 200,
+      "bytes": 118921,
+      "sha256Public": "a83cd12e1feb72afb08243e75e63b6a87baaa0373f6f01a6428034ecb18add7a",
+      "sha256Commit": "a83cd12e1feb72afb08243e75e63b6a87baaa0373f6f01a6428034ecb18add7a",
+      "matched": true
+    },
+    {
+      "path": "assets/powers/32/POD-02-A.png",
+      "status": 200,
+      "bytes": 92897,
+      "sha256Public": "6842ed519ed801a9af6c66ee0c82fd2904259082d292612895f1e28b9745a852",
+      "sha256Commit": "6842ed519ed801a9af6c66ee0c82fd2904259082d292612895f1e28b9745a852",
+      "matched": true
+    },
+    {
+      "path": "assets/powers/16/POD-03-A.png",
+      "status": 200,
+      "bytes": 128910,
+      "sha256Public": "12924ea89e0b78c8ae5428db97536e89b639898b7adaf0f44b1162d778f8df1f",
+      "sha256Commit": "12924ea89e0b78c8ae5428db97536e89b639898b7adaf0f44b1162d778f8df1f",
+      "matched": true
+    },
+    {
+      "path": "assets/powers/32/POD-03-A.png",
+      "status": 200,
+      "bytes": 100692,
+      "sha256Public": "ec9aaa775116a2421b7cb6cf8779dbac5dc64885d34a247010c4124ca42828bc",
+      "sha256Commit": "ec9aaa775116a2421b7cb6cf8779dbac5dc64885d34a247010c4124ca42828bc",
+      "matched": true
+    },
+    {
+      "path": "assets/powers/16/POD-04-A.png",
+      "status": 200,
+      "bytes": 174606,
+      "sha256Public": "0df397e290056ae949dd7e0b9a0b207cf2c784be9bc18a1928648f2e2585822a",
+      "sha256Commit": "0df397e290056ae949dd7e0b9a0b207cf2c784be9bc18a1928648f2e2585822a",
+      "matched": true
+    },
+    {
+      "path": "assets/powers/32/POD-04-A.png",
+      "status": 200,
+      "bytes": 127833,
+      "sha256Public": "63b7c0d5b7e26711cdb8940355260324119f3e367107a3eb27b5ba627b4a01ff",
+      "sha256Commit": "63b7c0d5b7e26711cdb8940355260324119f3e367107a3eb27b5ba627b4a01ff",
+      "matched": true
+    },
+    {
+      "path": "assets/powers/16/POD-05-B.png",
+      "status": 200,
+      "bytes": 603299,
+      "sha256Public": "0a8ae7e88b420589e6de60d3becbb1edb918cd63c23eb73ce12a12d43ae18f2d",
+      "sha256Commit": "0a8ae7e88b420589e6de60d3becbb1edb918cd63c23eb73ce12a12d43ae18f2d",
+      "matched": true
+    },
+    {
+      "path": "assets/powers/32/POD-05-B.png",
+      "status": 200,
+      "bytes": 347513,
+      "sha256Public": "b47fab5a6722cfd94e3b52241afafd9183f7151339e7852db5d90a4e41915f85",
+      "sha256Commit": "b47fab5a6722cfd94e3b52241afafd9183f7151339e7852db5d90a4e41915f85",
+      "matched": true
+    },
+    {
+      "path": "assets/levels/bio-c1/01-cultivo-invadido-clean-r2.png",
+      "status": 200,
+      "bytes": 2723235,
+      "sha256Public": "8a34e7ffb92bda77e6f05fd9620303154211328e0e535f6800b88947ed00f33d",
+      "sha256Commit": "8a34e7ffb92bda77e6f05fd9620303154211328e0e535f6800b88947ed00f33d",
+      "matched": true
+    },
+    {
+      "path": "assets/levels/bio-c1/02-galeria-del-fluido-clean-r2.png",
+      "status": 200,
+      "bytes": 2466145,
+      "sha256Public": "84bad4c3c1219abc3ad715da9dec900cdd3f5fb69d97a4f6e5ee72340711d1d7",
+      "sha256Commit": "84bad4c3c1219abc3ad715da9dec900cdd3f5fb69d97a4f6e5ee72340711d1d7",
+      "matched": true
+    },
+    {
+      "path": "assets/levels/bio-c1/03-camara-de-anclajes-clean-r2.png",
+      "status": 200,
+      "bytes": 2473802,
+      "sha256Public": "a3b314c3f0811d681f745034f32b83fe98881ec910b47a48c0368579ad2bbc1e",
+      "sha256Commit": "a3b314c3f0811d681f745034f32b83fe98881ec910b47a48c0368579ad2bbc1e",
+      "matched": true
+    },
+    {
+      "path": "assets/levels/bio-c1/04-patio-de-contencion-clean-r2.png",
+      "status": 200,
+      "bytes": 2550195,
+      "sha256Public": "a5e253b5c1a18ae5eb9bc3879fc17c733295dc91d39eb26e423e3d174c6fc6cc",
+      "sha256Commit": "a5e253b5c1a18ae5eb9bc3879fc17c733295dc91d39eb26e423e3d174c6fc6cc",
+      "matched": true
+    },
+    {
+      "path": "assets/levels/bio-c1/05-nucleo-de-cuarentena-clean-r2.png",
+      "status": 200,
+      "bytes": 2550007,
+      "sha256Public": "7268edb28f7e510e129683d28a695e4340d59935ace1f000fad9ae83c51762b5",
+      "sha256Commit": "7268edb28f7e510e129683d28a695e4340d59935ace1f000fad9ae83c51762b5",
+      "matched": true
+    }
+  ]
+}

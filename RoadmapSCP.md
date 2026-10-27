@@ -1,10 +1,10 @@
 # Roadmap SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-26).** Demo pública acreditada0.39. LOT008 implementado y revisado localmente para publicación0.40: cristalesXP, compañero vivo al regresar, cámara uniforme, cinco salasC1-r2 aceptadas, variedad/BIO más exigentes, cinco poderes elegidos y presión progresiva. Publicación nueva pendiente de recibo; fusión/ARM-JUG001 fuera del lote; balance humano/teléfono pendientes. AvanceV2 sin calcular.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-26).** Demo 0.40.1 publicada y comprobada: cristales XP diferenciados, compañero que regresa vivo, cámara uniforme, cinco salas C1-r2 aceptadas, variedad, cinco poderes elegidos y oleadas progresivas. Correctivo de carga verificado con demora real de 15 segundos y cinco recorridos públicos independientes. Balance humano y teléfono físico pendientes; fusión fuera de este lote. Avance V2 sin calcular.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
-**Demo disponible:** [guía](docs/gestion/informes/LOT-EST-007-juanillo.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas&apoyo=si&graficos=16&revision=0.39) · [jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=32&revision=0.39). Sin cuentas ni guardado; aceptación de Iván pendiente.
+**Demo disponible:** [guía](docs/PRUEBA_JUGABILIDAD_008.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas&apoyo=si&graficos=32&revision=0.40.1) · [jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=32&revision=0.40.1). Sin cuentas ni guardado; aceptación de Iván pendiente.
 
 **Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
 
@@ -58,7 +58,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-**Versión 0.39 — 2026-10-26 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
+**Versión 0.40.1 — 2026-10-26 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
 
 ## 1. Estado vigente
 
@@ -924,6 +924,7 @@ Los registros anteriores permanecen intactos. V0.11 y su documentación están e
 | CHG-046 | 2026-10-26 | LOT007: HUD aceptado y reparacion tecnica de proporciones publicados/verificados. Control0.13/REV0011;285tests juego,92hashes publicos. Tareas/pesos historicos intactos; avanceV2 sin calcular. |  |
 | CHG-047 | 2026-10-26 | REV0012/Control0.14: seleccionR4 de poderes y salasC1 consolidadas; LOT008 autorizado para correcciones de jugabilidad. Version publica permanece0.39; sin modificar tareas/pesos historicos ni aprobar ARM-JUG001 por extension. |  |
 | CHG-048 | 2026-10-26 | LOT008 implementado y revisado localmente;316tests,64hashes,QApropia5grietas/HUD4/352montajes. AD01 consolida aprobaciónC1-r2. Autorizada publicación0.40 aPROGRAMACION; pendiente recibo público. Tareas/pesos históricos intactos. |  |
+| CHG-049 | 2026-10-26 | Cierre LOT008 / control0.15: demo0.40.1 publicada y verificada,318 pruebas del juego,13 grupos públicos y12 de poderes,24 archivos; QA independiente5grietas y demora real15s. AD01 yAD02 consolidadas;53 tareas y52/100 históricos intactos, balance/telefono pendientes. |  |
 
 ## 13. Continuar en Windows/Codex Local
 

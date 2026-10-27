@@ -1,0 +1,14 @@
+{
+  "state": "partial_public_QA_incomplete",
+  "runtimeCommit": "b542e8348d7a8ac2b7d5ae91a5f047c8fa34b724",
+  "bundle": "2598b62fda",
+  "completedTiers": [
+    "D1",
+    "D2",
+    "D3"
+  ],
+  "failure": "D4 wait for combat timed out after30000ms; no final contracts PASS was written",
+  "corroboration": "PROGRAMACION reported varying C1 image asset_timeout at D3/32; root did not capture its own failure state on first attempt",
+  "action": "PROGRAMACION isolates network timing and loading guard; no complete public matrix claim",
+  "physicalPhone": false
+}

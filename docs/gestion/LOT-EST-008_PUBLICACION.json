@@ -1,0 +1,57 @@
+{
+  "lot": "LOT-EST-008 r1 + correctivo técnico de carga r2",
+  "revision": "REV-EST-0012 + AD01 C1-r2 + AD02 carga",
+  "version": "0.40.1",
+  "dateClient": "2026-10-26",
+  "status": "published_verified_trial",
+  "firstRuntimeCommit": "b542e8348d7a8ac2b7d5ae91a5f047c8fa34b724",
+  "correctiveCommit": "72969306342e84c2d012f2f3941a600c295d0250",
+  "bundle": "92f07645d0",
+  "scripts": 125,
+  "url": "https://deteco.github.io/SCPSurvivor/",
+  "practiceUrl": "https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas",
+  "pages": {
+    "status": "served_matching_commit",
+    "criticalFiles": 24,
+    "matched": 24,
+    "evidence": "evidencias/LOT-EST-008-programacion-publica/hashes-publicos.json"
+  },
+  "localVerification": {
+    "nodePassed": 318,
+    "nodeFailed": 0,
+    "browserGroupsSource": 13,
+    "browserGroupsPublicClone": 13,
+    "powerGroupsSource": 12,
+    "buildCheck": "PASS: Firebase SDK 227024 bytes, 125 scripts"
+  },
+  "publicVerification": {
+    "browserGroups": 13,
+    "bossModes": 10,
+    "powerGroups": 12,
+    "javascriptErrors": 0,
+    "physicalPhone": false,
+    "browserEvidence": "evidencias/LOT-EST-008-programacion-publica/browser.json",
+    "powerEvidence": "evidencias/LOT-EST-008-programacion-publica/powers.json"
+  },
+  "incident": {
+    "firstPublishedVersion": "0.40",
+    "observed": "Intermittent C1 plate asset_timeout on public D3/32; independent review also observed D4 wait",
+    "correction": "Plate preload at portal opening, shared cache by resource, 10s notice, 30s bounded technical return without reward",
+    "report": "entregas/PROGRAMACION-JUGABILIDAD-008-CARGA-R2.md"
+  },
+  "independentPublicReview": {
+    "status": "PASS",
+    "rooms": 5,
+    "javascriptErrors": 0,
+    "evidence": "evidencias/LOT-EST-008-programacion-publica/revision-independiente.json",
+    "method": "Branches reached with disclosed QA injections; not natural balance."
+  },
+  "manualAcceptance": "pending_for_balance_and_visual_feel",
+  "limitations": [
+    "No physical phone or Safari hardware test",
+    "15 bot fights are technical difficulty evidence, not final human balance",
+    "C1 interiors are five fixed approved compositions",
+    "P05 services remain disabled; fusion gate remains closed"
+  ],
+  "scope": "SCP Survivor game LOT008, C1-r2 approved visuals, R4 powers and roadmap; preserves public SDK/CSP/config. No accounts, service activation, fusion or ARM-JUG-001 integration."
+}

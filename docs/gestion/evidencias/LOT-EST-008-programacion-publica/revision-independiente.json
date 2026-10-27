@@ -1,0 +1,1650 @@
+{
+  "base": "https://deteco.github.io/SCPSurvivor/",
+  "rooms": [
+    {
+      "tier": "D1",
+      "before": {
+        "scale": 0.76171875,
+        "portal": {
+          "id": "map:2:string:126048233:2:QA:rift:60",
+          "status": "open",
+          "tier": "D1",
+          "x": 368,
+          "y": 624,
+          "remaining": 44.85003333333334,
+          "style": 1,
+          "sector": 2,
+          "label": "D1 · GRIETA · 45 s"
+        },
+        "map": 2
+      },
+      "inside": {
+        "scale": 0.76171875,
+        "rift": {
+          "enabled": true,
+          "practice": true,
+          "portal": {
+            "id": "map:2:string:126048233:2:QA:rift:60",
+            "status": "consumed",
+            "tier": "D1",
+            "x": 368,
+            "y": 624,
+            "remaining": 44.83336666666668,
+            "style": 1,
+            "sector": 2,
+            "label": "D1 · GRIETA · 45 s"
+          },
+          "director": {
+            "mapId": "126048233:2:QA",
+            "mapNumber": 2,
+            "activeSeconds": 60.16663333333332,
+            "opportunities": [
+              {
+                "id": "map:2:string:126048233:2:QA:rift:60",
+                "mapId": "126048233:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "outcome": "request",
+                "request": {
+                  "id": "map:2:string:126048233:2:QA:rift:60",
+                  "mapId": "126048233:2:QA",
+                  "mapNumber": 2,
+                  "atSeconds": 60,
+                  "tier": "D1",
+                  "status": "pending"
+                }
+              }
+            ],
+            "requests": [
+              {
+                "id": "map:2:string:126048233:2:QA:rift:60",
+                "mapId": "126048233:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1",
+                "status": "confirmed"
+              }
+            ],
+            "appearances": [
+              {
+                "requestId": "map:2:string:126048233:2:QA:rift:60",
+                "mapId": "126048233:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1"
+              }
+            ],
+            "appearanceCount": 1
+          },
+          "notice": "",
+          "technicalFailures": [],
+          "active": true,
+          "id": "map:2:string:126048233:2:QA:rift:60:encounter:1",
+          "time": 0,
+          "transition": 0,
+          "status": "combat",
+          "claimed": false,
+          "escape": "waiting",
+          "escapeAt": 90,
+          "escapeRemaining": 95,
+          "loadingWait": 2.916599999999998,
+          "tier": "D1",
+          "anomalyId": "esporario",
+          "name": "Esporario Blanco",
+          "roomName": "Cultivo invadido",
+          "bossHp": 800,
+          "bossMaxHp": 800,
+          "exit": {
+            "x": -1.25,
+            "y": -26.25
+          },
+          "reward": null,
+          "originFrozen": true
+        },
+        "npc": {
+          "name": "Paula",
+          "personality": "ENTU",
+          "tier": "D1",
+          "rarity": "Normal",
+          "appearance": "curvy",
+          "characterId": "apoyo_curvy",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-03",
+          "weapon": {
+            "model": "smg",
+            "name": "Subfusil de apoyo Normal",
+            "resource": null,
+            "damage": 3,
+            "interval": 0.15,
+            "capacity": 24,
+            "reloadTime": 1.8,
+            "range": 280,
+            "speed": 450,
+            "spread": 12,
+            "pellets": 1
+          },
+          "ammo": 24,
+          "capacity": 24,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 45,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 25.625,
+          "y": 183.125,
+          "tx": 25.625,
+          "ty": 183.125,
+          "aim": 0,
+          "wait": 1,
+          "flash": 0,
+          "invuln": 0,
+          "age": 0,
+          "bubble": "¡Soy Paula! Me alegra encontrarte. Vamos a hacer equipo.",
+          "bubbleTime": 5,
+          "used": [
+            "presentation"
+          ],
+          "observedShots": 1,
+          "anim": null,
+          "lastCode": "presentation"
+        }
+      },
+      "hurt": {
+        "name": "Paula",
+        "personality": "ENTU",
+        "tier": "D1",
+        "rarity": "Normal",
+        "appearance": "curvy",
+        "characterId": "apoyo_curvy",
+        "gender": "F",
+        "r": 12,
+        "biography": "generic-home",
+        "homeUsed": false,
+        "presentationId": "PRES-03",
+        "weapon": {
+          "model": "smg",
+          "name": "Subfusil de apoyo Normal",
+          "resource": null,
+          "damage": 3,
+          "interval": 0.15,
+          "capacity": 24,
+          "reloadTime": 1.8,
+          "range": 280,
+          "speed": 450,
+          "spread": 12,
+          "pellets": 1
+        },
+        "ammo": 24,
+        "capacity": 24,
+        "reserveInfinite": true,
+        "reload": 0,
+        "reloads": 0,
+        "shots": 0,
+        "hp": 38,
+        "maxHp": 45,
+        "incapacitated": false,
+        "dead": false,
+        "x": 6.634500000000003,
+        "y": 183.125,
+        "tx": -62.375,
+        "ty": 183.125,
+        "aim": 0,
+        "wait": 0.8000999999999994,
+        "flash": 0,
+        "invuln": 0.4835,
+        "age": 0.19990000000000058,
+        "bubble": "¡Soy Paula! Me alegra encontrarte. Vamos a hacer equipo.",
+        "bubbleTime": 4.800099999999998,
+        "used": [
+          "presentation"
+        ],
+        "observedShots": 1,
+        "anim": null,
+        "lastCode": "presentation"
+      },
+      "acquired": [
+        {
+          "id": "esporario",
+          "rank": 1,
+          "remaining": 0,
+          "activations": 0,
+          "name": "Pulso de esporas",
+          "interval": 9
+        }
+      ],
+      "after": {
+        "active": false,
+        "npc": {
+          "name": "Paula",
+          "personality": "ENTU",
+          "tier": "D1",
+          "rarity": "Normal",
+          "appearance": "curvy",
+          "characterId": "apoyo_curvy",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-03",
+          "weapon": {
+            "model": "smg",
+            "name": "Subfusil de apoyo Normal",
+            "resource": null,
+            "damage": 3,
+            "interval": 0.15,
+            "capacity": 24,
+            "reloadTime": 1.8,
+            "range": 280,
+            "speed": 450,
+            "spread": 12,
+            "pellets": 1
+          },
+          "ammo": 24,
+          "capacity": 24,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 38,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 320,
+          "y": 624,
+          "tx": 320,
+          "ty": 624,
+          "aim": 0,
+          "wait": 0.6833333333333332,
+          "flash": 0,
+          "invuln": 0.3667333333333339,
+          "age": 0.31666666666666665,
+          "bubble": "¡Lo conseguimos! Necesitaba una buena noticia.",
+          "bubbleTime": 4.933366666666666,
+          "used": [
+            "presentation",
+            "15"
+          ],
+          "observedShots": 1,
+          "anim": null,
+          "lastCode": "15"
+        },
+        "scale": 0.76171875,
+        "owned": [
+          {
+            "id": "esporario",
+            "rank": 1,
+            "remaining": 0,
+            "activations": 0,
+            "name": "Pulso de esporas",
+            "interval": 9
+          }
+        ]
+      },
+      "outsideDeath": null
+    },
+    {
+      "tier": "D2",
+      "before": {
+        "scale": 0.9285714285714286,
+        "portal": {
+          "id": "map:2:string:3760500159:2:QA:rift:60",
+          "status": "open",
+          "tier": "D2",
+          "x": 240,
+          "y": 752,
+          "remaining": 44.883366666666674,
+          "style": 1,
+          "sector": 2,
+          "label": "D2 · GRIETA · 45 s"
+        },
+        "map": 2
+      },
+      "inside": {
+        "scale": 0.9285714285714286,
+        "rift": {
+          "enabled": true,
+          "practice": true,
+          "portal": {
+            "id": "map:2:string:3760500159:2:QA:rift:60",
+            "status": "consumed",
+            "tier": "D2",
+            "x": 240,
+            "y": 752,
+            "remaining": 44.85010000000001,
+            "style": 1,
+            "sector": 2,
+            "label": "D2 · GRIETA · 45 s"
+          },
+          "director": {
+            "mapId": "3760500159:2:QA",
+            "mapNumber": 2,
+            "activeSeconds": 60.14989999999999,
+            "opportunities": [
+              {
+                "id": "map:2:string:3760500159:2:QA:rift:60",
+                "mapId": "3760500159:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "outcome": "request",
+                "request": {
+                  "id": "map:2:string:3760500159:2:QA:rift:60",
+                  "mapId": "3760500159:2:QA",
+                  "mapNumber": 2,
+                  "atSeconds": 60,
+                  "tier": "D1",
+                  "status": "pending"
+                }
+              }
+            ],
+            "requests": [
+              {
+                "id": "map:2:string:3760500159:2:QA:rift:60",
+                "mapId": "3760500159:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1",
+                "status": "confirmed"
+              }
+            ],
+            "appearances": [
+              {
+                "requestId": "map:2:string:3760500159:2:QA:rift:60",
+                "mapId": "3760500159:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1"
+              }
+            ],
+            "appearanceCount": 1
+          },
+          "notice": "",
+          "technicalFailures": [],
+          "active": true,
+          "id": "map:2:string:3760500159:2:QA:rift:60:encounter:1",
+          "time": 0,
+          "transition": 0,
+          "status": "combat",
+          "claimed": false,
+          "escape": "waiting",
+          "escapeAt": 90,
+          "escapeRemaining": 95,
+          "loadingWait": 2.199900000000001,
+          "tier": "D2",
+          "anomalyId": "larva",
+          "name": "Larva de Vidrio",
+          "roomName": "Galería del fluido",
+          "bossHp": 1300,
+          "bossMaxHp": 1300,
+          "exit": {
+            "x": 1.25,
+            "y": -63.75
+          },
+          "reward": null,
+          "originFrozen": true
+        },
+        "npc": {
+          "name": "Lucía",
+          "personality": "CARI",
+          "tier": "D2",
+          "rarity": "Normal",
+          "appearance": "fitness",
+          "characterId": "apoyo_fitness",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-04",
+          "weapon": {
+            "model": "shotgun",
+            "name": "Escopeta de apoyo Normal",
+            "resource": null,
+            "damage": 3,
+            "interval": 0.9,
+            "capacity": 6,
+            "reloadTime": 2.2,
+            "range": 180,
+            "speed": 350,
+            "spread": 30,
+            "pellets": 6
+          },
+          "ammo": 6,
+          "capacity": 6,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 45,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 41.25,
+          "y": 167.5,
+          "tx": 41.25,
+          "ty": 167.5,
+          "aim": 0,
+          "wait": 1,
+          "flash": 0,
+          "invuln": 0,
+          "age": 0,
+          "bubble": "Me llamo Lucía. Qué bueno encontrar compañía. Estoy contigo.",
+          "bubbleTime": 5,
+          "used": [
+            "presentation"
+          ],
+          "observedShots": 1,
+          "anim": null,
+          "lastCode": "presentation"
+        }
+      },
+      "hurt": {
+        "name": "Lucía",
+        "personality": "CARI",
+        "tier": "D2",
+        "rarity": "Normal",
+        "appearance": "fitness",
+        "characterId": "apoyo_fitness",
+        "gender": "F",
+        "r": 12,
+        "biography": "generic-home",
+        "homeUsed": false,
+        "presentationId": "PRES-04",
+        "weapon": {
+          "model": "shotgun",
+          "name": "Escopeta de apoyo Normal",
+          "resource": null,
+          "damage": 3,
+          "interval": 0.9,
+          "capacity": 6,
+          "reloadTime": 2.2,
+          "range": 180,
+          "speed": 350,
+          "spread": 30,
+          "pellets": 6
+        },
+        "ammo": 6,
+        "capacity": 6,
+        "reserveInfinite": true,
+        "reload": 0,
+        "reloads": 0,
+        "shots": 0,
+        "hp": 38,
+        "maxHp": 45,
+        "incapacitated": false,
+        "dead": false,
+        "x": 25.42299999999983,
+        "y": 167.5,
+        "tx": -46.75,
+        "ty": 167.5,
+        "aim": 0,
+        "wait": 0.8334000000000004,
+        "flash": 0,
+        "invuln": 0.5,
+        "age": 0.1665999999999995,
+        "bubble": "Me llamo Lucía. Qué bueno encontrar compañía. Estoy contigo.",
+        "bubbleTime": 4.833399999999998,
+        "used": [
+          "presentation"
+        ],
+        "observedShots": 1,
+        "anim": null,
+        "lastCode": "presentation"
+      },
+      "acquired": [
+        {
+          "id": "larva",
+          "rank": 1,
+          "remaining": 0,
+          "activations": 0,
+          "name": "Cápsula vítrea",
+          "interval": 10
+        }
+      ],
+      "after": {
+        "active": false,
+        "npc": {
+          "name": "Lucía",
+          "personality": "CARI",
+          "tier": "D2",
+          "rarity": "Normal",
+          "appearance": "fitness",
+          "characterId": "apoyo_fitness",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-04",
+          "weapon": {
+            "model": "shotgun",
+            "name": "Escopeta de apoyo Normal",
+            "resource": null,
+            "damage": 3,
+            "interval": 0.9,
+            "capacity": 6,
+            "reloadTime": 2.2,
+            "range": 180,
+            "speed": 350,
+            "spread": 30,
+            "pellets": 6
+          },
+          "ammo": 6,
+          "capacity": 6,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 38,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 192,
+          "y": 752,
+          "tx": 192,
+          "ty": 752,
+          "aim": 0,
+          "wait": 0.7334333333333326,
+          "flash": 0,
+          "invuln": 0.40003333333333224,
+          "age": 0.26656666666666723,
+          "bubble": "Me alegra que lo hayamos conseguido. Ojalá ahora podamos descansar un poco.",
+          "bubbleTime": 4.949966666666666,
+          "used": [
+            "presentation",
+            "15"
+          ],
+          "observedShots": 1,
+          "anim": null,
+          "lastCode": "15"
+        },
+        "scale": 0.9285714285714286,
+        "owned": [
+          {
+            "id": "larva",
+            "rank": 1,
+            "remaining": 0,
+            "activations": 0,
+            "name": "Cápsula vítrea",
+            "interval": 10
+          }
+        ]
+      },
+      "outsideDeath": null
+    },
+    {
+      "tier": "D3",
+      "before": {
+        "scale": 0.76171875,
+        "portal": {
+          "id": "map:2:string:1682467185:2:QA:rift:60",
+          "status": "open",
+          "tier": "D3",
+          "x": 112,
+          "y": 624,
+          "remaining": 44.866733333333336,
+          "style": 6,
+          "sector": 2,
+          "label": "D3 · GRIETA · 45 s"
+        },
+        "map": 2
+      },
+      "inside": {
+        "scale": 0.76171875,
+        "rift": {
+          "enabled": true,
+          "practice": true,
+          "portal": {
+            "id": "map:2:string:1682467185:2:QA:rift:60",
+            "status": "consumed",
+            "tier": "D3",
+            "x": 112,
+            "y": 624,
+            "remaining": 44.85006666666667,
+            "style": 6,
+            "sector": 2,
+            "label": "D3 · GRIETA · 45 s"
+          },
+          "director": {
+            "mapId": "1682467185:2:QA",
+            "mapNumber": 2,
+            "activeSeconds": 60.14993333333333,
+            "opportunities": [
+              {
+                "id": "map:2:string:1682467185:2:QA:rift:60",
+                "mapId": "1682467185:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "outcome": "request",
+                "request": {
+                  "id": "map:2:string:1682467185:2:QA:rift:60",
+                  "mapId": "1682467185:2:QA",
+                  "mapNumber": 2,
+                  "atSeconds": 60,
+                  "tier": "D1",
+                  "status": "pending"
+                }
+              }
+            ],
+            "requests": [
+              {
+                "id": "map:2:string:1682467185:2:QA:rift:60",
+                "mapId": "1682467185:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1",
+                "status": "confirmed"
+              }
+            ],
+            "appearances": [
+              {
+                "requestId": "map:2:string:1682467185:2:QA:rift:60",
+                "mapId": "1682467185:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1"
+              }
+            ],
+            "appearanceCount": 1
+          },
+          "notice": "",
+          "technicalFailures": [],
+          "active": true,
+          "id": "map:2:string:1682467185:2:QA:rift:60:encounter:1",
+          "time": 0,
+          "transition": 0,
+          "status": "combat",
+          "claimed": false,
+          "escape": "waiting",
+          "escapeAt": 90,
+          "escapeRemaining": 95,
+          "loadingWait": 1.633300000000001,
+          "tier": "D3",
+          "anomalyId": "malla",
+          "name": "Malla Tendinosa",
+          "roomName": "Cámara de anclajes",
+          "bossHp": 2000,
+          "bossMaxHp": 2000,
+          "exit": {
+            "x": -18.75,
+            "y": -9.375
+          },
+          "reward": null,
+          "originFrozen": true
+        },
+        "npc": {
+          "name": "Martina",
+          "personality": "GRUN",
+          "tier": "D3",
+          "rarity": "Normal",
+          "appearance": "delgada",
+          "characterId": "apoyo_delgada",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-12",
+          "weapon": {
+            "model": "shotgun",
+            "name": "Escopeta de apoyo Normal",
+            "resource": null,
+            "damage": 3,
+            "interval": 0.9,
+            "capacity": 6,
+            "reloadTime": 2.2,
+            "range": 180,
+            "speed": 350,
+            "spread": 30,
+            "pellets": 6
+          },
+          "ammo": 6,
+          "capacity": 6,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 45,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 39.375,
+          "y": 173.75,
+          "tx": 39.375,
+          "ty": 173.75,
+          "aim": 0,
+          "wait": 1,
+          "flash": 0,
+          "invuln": 0,
+          "age": 0,
+          "bubble": "Soy Martina. Estoy contigo.",
+          "bubbleTime": 5,
+          "used": [
+            "presentation"
+          ],
+          "observedShots": 1,
+          "anim": null,
+          "lastCode": "presentation"
+        }
+      },
+      "hurt": {
+        "name": "Martina",
+        "personality": "GRUN",
+        "tier": "D3",
+        "rarity": "Normal",
+        "appearance": "delgada",
+        "characterId": "apoyo_delgada",
+        "gender": "F",
+        "r": 12,
+        "biography": "generic-home",
+        "homeUsed": false,
+        "presentationId": "PRES-12",
+        "weapon": {
+          "model": "shotgun",
+          "name": "Escopeta de apoyo Normal",
+          "resource": null,
+          "damage": 3,
+          "interval": 0.9,
+          "capacity": 6,
+          "reloadTime": 2.2,
+          "range": 180,
+          "speed": 350,
+          "spread": 30,
+          "pellets": 6
+        },
+        "ammo": 6,
+        "capacity": 6,
+        "reserveInfinite": true,
+        "reload": 0,
+        "reloads": 0,
+        "shots": 0,
+        "hp": 38,
+        "maxHp": 45,
+        "incapacitated": false,
+        "dead": false,
+        "x": 26.7115,
+        "y": 173.75,
+        "tx": -48.625,
+        "ty": 173.75,
+        "aim": 0,
+        "wait": 0.8667000000000001,
+        "flash": 0,
+        "invuln": 0.5,
+        "age": 0.13329999999999972,
+        "bubble": "Soy Martina. Estoy contigo.",
+        "bubbleTime": 4.866700000000001,
+        "used": [
+          "presentation"
+        ],
+        "observedShots": 1,
+        "anim": null,
+        "lastCode": "presentation",
+        "losAt": 3595.0999999046326,
+        "los": true
+      },
+      "acquired": [
+        {
+          "id": "malla",
+          "rank": 1,
+          "remaining": 0,
+          "activations": 0,
+          "name": "Látigo tendinoso",
+          "interval": 8
+        }
+      ],
+      "after": {
+        "active": false,
+        "npc": {
+          "name": "Martina",
+          "personality": "GRUN",
+          "tier": "D3",
+          "rarity": "Normal",
+          "appearance": "delgada",
+          "characterId": "apoyo_delgada",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-12",
+          "weapon": {
+            "model": "shotgun",
+            "name": "Escopeta de apoyo Normal",
+            "resource": null,
+            "damage": 3,
+            "interval": 0.9,
+            "capacity": 6,
+            "reloadTime": 2.2,
+            "range": 180,
+            "speed": 350,
+            "spread": 30,
+            "pellets": 6
+          },
+          "ammo": 6,
+          "capacity": 6,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 38,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 64,
+          "y": 624,
+          "tx": 64,
+          "ty": 624,
+          "aim": 0,
+          "wait": 0.7834333333333331,
+          "flash": 0,
+          "invuln": 0.41673333333333296,
+          "age": 0.21656666666666674,
+          "bubble": "Terminó. Bien. Ya puedo quejarme con menos urgencia.",
+          "bubbleTime": 4.950066666666666,
+          "used": [
+            "presentation",
+            "15"
+          ],
+          "observedShots": 1,
+          "anim": null,
+          "lastCode": "15",
+          "losAt": 3595.0999999046326,
+          "los": true
+        },
+        "scale": 0.76171875,
+        "owned": [
+          {
+            "id": "malla",
+            "rank": 1,
+            "remaining": 0,
+            "activations": 0,
+            "name": "Látigo tendinoso",
+            "interval": 8
+          }
+        ]
+      },
+      "outsideDeath": null
+    },
+    {
+      "tier": "D4",
+      "before": {
+        "scale": 0.9285714285714286,
+        "portal": {
+          "id": "map:2:string:2746339954:2:QA:rift:60",
+          "status": "open",
+          "tier": "D4",
+          "x": 1008,
+          "y": 112,
+          "remaining": 44.88333333333334,
+          "style": 4,
+          "sector": 2,
+          "label": "D4 · GRIETA · 45 s"
+        },
+        "map": 2
+      },
+      "inside": {
+        "scale": 0.9285714285714286,
+        "rift": {
+          "enabled": true,
+          "practice": true,
+          "portal": {
+            "id": "map:2:string:2746339954:2:QA:rift:60",
+            "status": "consumed",
+            "tier": "D4",
+            "x": 1008,
+            "y": 112,
+            "remaining": 44.866666666666674,
+            "style": 4,
+            "sector": 2,
+            "label": "D4 · GRIETA · 45 s"
+          },
+          "director": {
+            "mapId": "2746339954:2:QA",
+            "mapNumber": 2,
+            "activeSeconds": 60.133333333333326,
+            "opportunities": [
+              {
+                "id": "map:2:string:2746339954:2:QA:rift:60",
+                "mapId": "2746339954:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "outcome": "request",
+                "request": {
+                  "id": "map:2:string:2746339954:2:QA:rift:60",
+                  "mapId": "2746339954:2:QA",
+                  "mapNumber": 2,
+                  "atSeconds": 60,
+                  "tier": "D1",
+                  "status": "pending"
+                }
+              }
+            ],
+            "requests": [
+              {
+                "id": "map:2:string:2746339954:2:QA:rift:60",
+                "mapId": "2746339954:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1",
+                "status": "confirmed"
+              }
+            ],
+            "appearances": [
+              {
+                "requestId": "map:2:string:2746339954:2:QA:rift:60",
+                "mapId": "2746339954:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1"
+              }
+            ],
+            "appearanceCount": 1
+          },
+          "notice": "",
+          "technicalFailures": [],
+          "active": true,
+          "id": "map:2:string:2746339954:2:QA:rift:60:encounter:1",
+          "time": 0,
+          "transition": 0,
+          "status": "combat",
+          "claimed": false,
+          "escape": "waiting",
+          "escapeAt": 90,
+          "escapeRemaining": 95,
+          "loadingWait": 0.8666000000000004,
+          "tier": "D4",
+          "anomalyId": "portador",
+          "name": "Portador de Espinas",
+          "roomName": "Patio de contención",
+          "bossHp": 3000,
+          "bossMaxHp": 3000,
+          "exit": {
+            "x": -1.25,
+            "y": -76.25
+          },
+          "reward": null,
+          "originFrozen": true
+        },
+        "npc": {
+          "name": "Emilia",
+          "personality": "FRIA",
+          "tier": "D4",
+          "rarity": "Rara",
+          "appearance": "fitness",
+          "characterId": "apoyo_fitness",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-12",
+          "weapon": {
+            "model": "pistol",
+            "name": "Pistola de apoyo Rara",
+            "resource": "AF01",
+            "damage": 5.75,
+            "interval": 0.475,
+            "capacity": 12,
+            "reloadTime": 1.5,
+            "range": 320,
+            "speed": 400,
+            "spread": 4,
+            "pellets": 1
+          },
+          "ammo": 12,
+          "capacity": 12,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 45,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 41.25,
+          "y": 167.5,
+          "tx": 41.25,
+          "ty": 167.5,
+          "aim": 0,
+          "wait": 1,
+          "flash": 0,
+          "invuln": 0,
+          "age": 0,
+          "bubble": "Soy Emilia. Estoy contigo.",
+          "bubbleTime": 5,
+          "used": [
+            "presentation"
+          ],
+          "observedShots": 0,
+          "anim": null,
+          "lastCode": "presentation"
+        }
+      },
+      "hurt": {
+        "name": "Emilia",
+        "personality": "FRIA",
+        "tier": "D4",
+        "rarity": "Rara",
+        "appearance": "fitness",
+        "characterId": "apoyo_fitness",
+        "gender": "F",
+        "r": 12,
+        "biography": "generic-home",
+        "homeUsed": false,
+        "presentationId": "PRES-12",
+        "weapon": {
+          "model": "pistol",
+          "name": "Pistola de apoyo Rara",
+          "resource": "AF01",
+          "damage": 5.75,
+          "interval": 0.475,
+          "capacity": 12,
+          "reloadTime": 1.5,
+          "range": 320,
+          "speed": 400,
+          "spread": 4,
+          "pellets": 1
+        },
+        "ammo": 12,
+        "capacity": 12,
+        "reserveInfinite": true,
+        "reload": 0,
+        "reloads": 0,
+        "shots": 0,
+        "hp": 38,
+        "maxHp": 45,
+        "incapacitated": false,
+        "dead": false,
+        "x": 23.8365,
+        "y": 167.5,
+        "tx": -46.75,
+        "ty": 167.5,
+        "aim": 0,
+        "wait": 0.8167000000000001,
+        "flash": 0,
+        "invuln": 0.5,
+        "age": 0.18329999999999977,
+        "bubble": "Soy Emilia. Estoy contigo.",
+        "bubbleTime": 4.816700000000001,
+        "used": [
+          "presentation"
+        ],
+        "observedShots": 0,
+        "anim": null,
+        "lastCode": "presentation"
+      },
+      "acquired": [
+        {
+          "id": "portador",
+          "rank": 1,
+          "remaining": 0,
+          "activations": 0,
+          "name": "Corona de espinas",
+          "interval": 11
+        }
+      ],
+      "after": {
+        "active": false,
+        "npc": {
+          "name": "Emilia",
+          "personality": "FRIA",
+          "tier": "D4",
+          "rarity": "Rara",
+          "appearance": "fitness",
+          "characterId": "apoyo_fitness",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-12",
+          "weapon": {
+            "model": "pistol",
+            "name": "Pistola de apoyo Rara",
+            "resource": "AF01",
+            "damage": 5.75,
+            "interval": 0.475,
+            "capacity": 12,
+            "reloadTime": 1.5,
+            "range": 320,
+            "speed": 400,
+            "spread": 4,
+            "pellets": 1
+          },
+          "ammo": 12,
+          "capacity": 12,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 38,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 960,
+          "y": 112,
+          "tx": 960,
+          "ty": 112,
+          "aim": 0,
+          "wait": 0.7167333333333332,
+          "flash": 0,
+          "invuln": 0.4000333333333332,
+          "age": 0.2832666666666666,
+          "bubble": "Victoria confirmada. El peligro de este encuentro terminó.",
+          "bubbleTime": 4.950066666666667,
+          "used": [
+            "presentation",
+            "15"
+          ],
+          "observedShots": 0,
+          "anim": null,
+          "lastCode": "15"
+        },
+        "scale": 0.9285714285714286,
+        "owned": [
+          {
+            "id": "portador",
+            "rank": 1,
+            "remaining": 0,
+            "activations": 0,
+            "name": "Corona de espinas",
+            "interval": 11
+          }
+        ]
+      },
+      "outsideDeath": null
+    },
+    {
+      "tier": "D5",
+      "before": {
+        "scale": 0.76171875,
+        "portal": {
+          "id": "map:2:string:2051608011:2:QA:rift:60",
+          "status": "open",
+          "tier": "D5",
+          "x": 112,
+          "y": 880,
+          "remaining": 44.86653333333334,
+          "style": 3,
+          "sector": 2,
+          "label": "D5 · GRIETA · 45 s"
+        },
+        "map": 2
+      },
+      "inside": {
+        "scale": 0.76171875,
+        "rift": {
+          "enabled": true,
+          "practice": true,
+          "portal": {
+            "id": "map:2:string:2051608011:2:QA:rift:60",
+            "status": "consumed",
+            "tier": "D5",
+            "x": 112,
+            "y": 880,
+            "remaining": 44.84986666666667,
+            "style": 3,
+            "sector": 2,
+            "label": "D5 · GRIETA · 45 s"
+          },
+          "director": {
+            "mapId": "2051608011:2:QA",
+            "mapNumber": 2,
+            "activeSeconds": 60.15013333333333,
+            "opportunities": [
+              {
+                "id": "map:2:string:2051608011:2:QA:rift:60",
+                "mapId": "2051608011:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "outcome": "request",
+                "request": {
+                  "id": "map:2:string:2051608011:2:QA:rift:60",
+                  "mapId": "2051608011:2:QA",
+                  "mapNumber": 2,
+                  "atSeconds": 60,
+                  "tier": "D1",
+                  "status": "pending"
+                }
+              }
+            ],
+            "requests": [
+              {
+                "id": "map:2:string:2051608011:2:QA:rift:60",
+                "mapId": "2051608011:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1",
+                "status": "confirmed"
+              }
+            ],
+            "appearances": [
+              {
+                "requestId": "map:2:string:2051608011:2:QA:rift:60",
+                "mapId": "2051608011:2:QA",
+                "mapNumber": 2,
+                "atSeconds": 60,
+                "tier": "D1"
+              }
+            ],
+            "appearanceCount": 1
+          },
+          "notice": "",
+          "technicalFailures": [],
+          "active": true,
+          "id": "map:2:string:2051608011:2:QA:rift:60:encounter:1",
+          "time": 0,
+          "transition": 0,
+          "status": "combat",
+          "claimed": false,
+          "escape": "waiting",
+          "escapeAt": 90,
+          "escapeRemaining": 95,
+          "loadingWait": 0.8665000000000003,
+          "tier": "D5",
+          "anomalyId": "huesped",
+          "name": "Huésped de Cuarentena",
+          "roomName": "Núcleo de cuarentena",
+          "bossHp": 4400,
+          "bossMaxHp": 4400,
+          "exit": {
+            "x": 13.75,
+            "y": 5.625
+          },
+          "reward": null,
+          "originFrozen": true
+        },
+        "npc": {
+          "name": "Martina",
+          "personality": "ANAL",
+          "tier": "D5",
+          "rarity": "Legendaria",
+          "appearance": "delgada",
+          "characterId": "apoyo_delgada",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-09",
+          "weapon": {
+            "model": "smg",
+            "name": "Subfusil de apoyo Legendaria",
+            "resource": null,
+            "damage": 4.5,
+            "interval": 0.1275,
+            "capacity": 24,
+            "reloadTime": 1.8,
+            "range": 280,
+            "speed": 450,
+            "spread": 12,
+            "pellets": 1
+          },
+          "ammo": 24,
+          "capacity": 24,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 45,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 39.375,
+          "y": 173.75,
+          "tx": 39.375,
+          "ty": 173.75,
+          "aim": 0,
+          "wait": 1,
+          "flash": 0,
+          "invuln": 0,
+          "age": 0,
+          "bubble": "Soy Martina. Tengo miedo y quiero salir, pero voy a ayudarte.",
+          "bubbleTime": 5,
+          "used": [
+            "presentation"
+          ],
+          "observedShots": 1,
+          "anim": null,
+          "lastCode": "presentation"
+        }
+      },
+      "hurt": {
+        "name": "Martina",
+        "personality": "ANAL",
+        "tier": "D5",
+        "rarity": "Legendaria",
+        "appearance": "delgada",
+        "characterId": "apoyo_delgada",
+        "gender": "F",
+        "r": 12,
+        "biography": "generic-home",
+        "homeUsed": false,
+        "presentationId": "PRES-09",
+        "weapon": {
+          "model": "smg",
+          "name": "Subfusil de apoyo Legendaria",
+          "resource": null,
+          "damage": 4.5,
+          "interval": 0.1275,
+          "capacity": 24,
+          "reloadTime": 1.8,
+          "range": 280,
+          "speed": 450,
+          "spread": 12,
+          "pellets": 1
+        },
+        "ammo": 24,
+        "capacity": 24,
+        "reserveInfinite": true,
+        "reload": 0,
+        "reloads": 0,
+        "shots": 0,
+        "hp": 38,
+        "maxHp": 45,
+        "incapacitated": false,
+        "dead": false,
+        "x": 28.2885,
+        "y": 173.75,
+        "tx": -48.625,
+        "ty": 173.75,
+        "aim": 0,
+        "wait": 0.8832999999999996,
+        "flash": 0,
+        "invuln": 0.5,
+        "age": 0.11670000000000026,
+        "bubble": "Soy Martina. Tengo miedo y quiero salir, pero voy a ayudarte.",
+        "bubbleTime": 4.883300000000001,
+        "used": [
+          "presentation"
+        ],
+        "observedShots": 1,
+        "anim": null,
+        "lastCode": "presentation",
+        "losAt": 2803.2000000476837,
+        "los": true
+      },
+      "acquired": [
+        {
+          "id": "huesped",
+          "rank": 1,
+          "remaining": 0,
+          "activations": 0,
+          "name": "Membrana de rechazo",
+          "interval": 14
+        }
+      ],
+      "after": {
+        "active": false,
+        "npc": {
+          "name": "Martina",
+          "personality": "ANAL",
+          "tier": "D5",
+          "rarity": "Legendaria",
+          "appearance": "delgada",
+          "characterId": "apoyo_delgada",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-09",
+          "weapon": {
+            "model": "smg",
+            "name": "Subfusil de apoyo Legendaria",
+            "resource": null,
+            "damage": 4.5,
+            "interval": 0.1275,
+            "capacity": 24,
+            "reloadTime": 1.8,
+            "range": 280,
+            "speed": 450,
+            "spread": 12,
+            "pellets": 1
+          },
+          "ammo": 24,
+          "capacity": 24,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 38,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 64,
+          "y": 880,
+          "tx": 64,
+          "ty": 880,
+          "aim": 0,
+          "wait": 0.800033333333333,
+          "flash": 0,
+          "invuln": 0.41673333333333346,
+          "age": 0.19996666666666685,
+          "bubble": "La victoria está confirmada. Ahora podemos pensar en volver.",
+          "bubbleTime": 4.950066666666667,
+          "used": [
+            "presentation",
+            "15"
+          ],
+          "observedShots": 1,
+          "anim": null,
+          "lastCode": "15",
+          "losAt": 2803.2000000476837,
+          "los": true
+        },
+        "scale": 0.76171875,
+        "owned": [
+          {
+            "id": "huesped",
+            "rank": 1,
+            "remaining": 0,
+            "activations": 0,
+            "name": "Membrana de rechazo",
+            "interval": 14
+          }
+        ]
+      },
+      "outsideDeath": {
+        "old": {
+          "name": "Martina",
+          "personality": "ANAL",
+          "tier": "D5",
+          "rarity": "Legendaria",
+          "appearance": "delgada",
+          "characterId": "apoyo_delgada",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-09",
+          "weapon": {
+            "model": "smg",
+            "name": "Subfusil de apoyo Legendaria",
+            "resource": null,
+            "damage": 4.5,
+            "interval": 0.1275,
+            "capacity": 24,
+            "reloadTime": 1.8,
+            "range": 280,
+            "speed": 450,
+            "spread": 12,
+            "pellets": 1
+          },
+          "ammo": 24,
+          "capacity": 24,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 38,
+          "maxHp": 45,
+          "incapacitated": false,
+          "dead": false,
+          "x": 64,
+          "y": 880,
+          "tx": 64,
+          "ty": 880,
+          "aim": 0,
+          "wait": 0.04993333333333305,
+          "flash": 0,
+          "invuln": 0,
+          "age": 0.9500666666666667,
+          "bubble": "La victoria está confirmada. Ahora podemos pensar en volver.",
+          "bubbleTime": 4.199966666666668,
+          "used": [
+            "presentation",
+            "15"
+          ],
+          "observedShots": 1,
+          "anim": null,
+          "lastCode": "15",
+          "losAt": 2803.2000000476837,
+          "los": true
+        },
+        "dead": {
+          "name": "Martina",
+          "personality": "ANAL",
+          "tier": "D5",
+          "rarity": "Legendaria",
+          "appearance": "delgada",
+          "characterId": "apoyo_delgada",
+          "gender": "F",
+          "r": 12,
+          "biography": "generic-home",
+          "homeUsed": false,
+          "presentationId": "PRES-09",
+          "weapon": {
+            "model": "smg",
+            "name": "Subfusil de apoyo Legendaria",
+            "resource": null,
+            "damage": 4.5,
+            "interval": 0.1275,
+            "capacity": 24,
+            "reloadTime": 1.8,
+            "range": 280,
+            "speed": 450,
+            "spread": 12,
+            "pellets": 1
+          },
+          "ammo": 24,
+          "capacity": 24,
+          "reserveInfinite": true,
+          "reload": 0,
+          "reloads": 0,
+          "shots": 0,
+          "hp": 0,
+          "maxHp": 45,
+          "incapacitated": true,
+          "dead": true,
+          "x": 64,
+          "y": 880,
+          "tx": 64,
+          "ty": 880,
+          "aim": 0,
+          "wait": 0.04993333333333305,
+          "flash": 0,
+          "invuln": 0.5,
+          "age": 0.9500666666666667,
+          "bubble": "",
+          "bubbleTime": 4.199966666666668,
+          "used": [
+            "presentation",
+            "15"
+          ],
+          "observedShots": 1,
+          "anim": null,
+          "lastCode": "15",
+          "losAt": 2803.2000000476837,
+          "los": true
+        }
+      }
+    }
+  ],
+  "javascriptErrors": [],
+  "physicalPhone": false,
+  "method": "Actual game in browser. Positions/HP/lethal damage injected only to reach lifecycle/reward branches, not natural difficulty.",
+  "xp": [
+    {
+      "kind": "pursuer",
+      "baseXP": 12,
+      "total": 12,
+      "items": [
+        {
+          "kind": "xp",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "kind": "biological",
+      "baseXP": 20,
+      "total": 20,
+      "items": [
+        {
+          "kind": "xp",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "kind": "boss",
+      "baseXP": 220,
+      "total": 220,
+      "items": [
+        {
+          "kind": "xpBig",
+          "value": 220
+        }
+      ]
+    }
+  ],
+  "crystals": [
+    {
+      "value": 12,
+      "fills": [
+        "#000000",
+        "#478348",
+        "#8cdb80",
+        "rgba(255, 255, 255, 0.8)"
+      ]
+    },
+    {
+      "value": 20,
+      "fills": [
+        "#000000",
+        "#2a8fd0",
+        "#7fe0ff",
+        "rgba(255, 255, 255, 0.8)"
+      ]
+    },
+    {
+      "value": 84,
+      "fills": [
+        "#000000",
+        "#713cb3",
+        "#c18aff",
+        "#c18aff",
+        "#c18aff",
+        "rgba(255, 255, 255, 0.8)"
+      ]
+    },
+    {
+      "value": 220,
+      "fills": [
+        "#000000",
+        "#c08a10",
+        "#ffd373",
+        "rgba(255, 255, 255, 0.8)"
+      ]
+    }
+  ],
+  "status": "PASS",
+  "snapshot": {
+    "index.html": "e2266ba874cfbd5bc4e085a08f373db01cfb4861b0a0cf2f01818861ae807380",
+    "js/app.min.js": "80d225df65397219103ccbc3c6a91fe18cb4d7895aa6b5bce7fa32a7c2498ecf",
+    "js/core/camera.js": "4d4a5855285bca4b1a32c7d7eae6cc1ab40efcb4ffa2616b81688114990f41c1",
+    "js/systems/rift-expedition.js": "44f5a88eb943a06fb78b7bb2a4d1c9058e7bf58e2ae5d797db3f722dd880d353",
+    "js/systems/rift-companion.js": "683b622f095fa866f2217f609d585fbf5bc76d4ef369b42bb301db5780446ec5",
+    "js/systems/rift-powers.js": "7e95927233a069f00229caf1b18ef9df0d93fcf9983280ace034d247e803e4a4",
+    "js/entities/pickup.js": "6308fc5c923417d128f3b520f70cb9031b9065a4935434529f3b1921c3cc7100"
+  },
+  "sourceDrift": []
+}

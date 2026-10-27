@@ -1,6 +1,8 @@
 # Control de cambios — ESTRUCTURA
 
-Revisión de control **0.14** · 26/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+Revisión de control **0.15** · 26/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+
+**Cierre público posterior de REV-EST-0012 / LOT008:** demo0.40.1 publicada en `main` (`72969306342e84c2d012f2f3941a600c295d0250`), con [AD02 de carga](REV-EST-0012_ADENDA_CARGA.md), [recibo técnico](LOT-EST-008_PUBLICACION.json) y [validación independiente](LOT-EST-008_VALIDACION.json).318/318 pruebas Node,13 grupos de navegador y12 de poderes en Pages,24/24 archivos críticos y cinco grietas revisadas independientemente PASS. La carga lenta real de15,17s conservó origen y HP; fallos y límite30s regresan sin premio. Balance humano, teléfono físico y aceptación final pendientes. El párrafo0.14 siguiente queda como registro histórico de la autorización previa.
 
 **REV-EST-0012 / LOT008r1:**[nuevas decisiones y diagnóstico](REV-EST-0012_CONSOLIDADO.md). Implementado localmente por PROGRAMACION y [corte conforme tras revisión de Juanillo](informes/LOT-EST-008-juanillo.md):316pruebas Node,68hashes y QA independiente de cinco recorridos/HUD4/352montajes. [AD01](REV-EST-0012_ADENDA_C1_R2.md) consolida NIVELESR7.9/APR-003 y cierra CON-NIV-08 sin reemplazar las fuentes originales. [Lote](lotes/LOT-EST-008-r1.md), [corte conservado](revisiones/REV-EST-0012/MANIFIESTO.json) y [entrega](entregas/PROGRAMACION-JUGABILIDAD-008-CORTE-LOCAL.md). PROGRAMACION autorizado a publicar0.40; recibo/verificación pública pendientes. Base acreditada0.39; balance/teléfono pendientes.
 

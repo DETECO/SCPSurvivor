@@ -1,0 +1,198 @@
+{
+  "status": "PASS",
+  "before": {
+    "active": true,
+    "time": 60.10993333333332,
+    "hp": 100,
+    "npcHp": 45
+  },
+  "at11Seconds": {
+    "rift": {
+      "enabled": true,
+      "practice": true,
+      "portal": {
+        "id": "map:2:string:248295611:2:QA:rift:60",
+        "status": "consumed",
+        "tier": "D1",
+        "x": 1008,
+        "y": 368,
+        "remaining": 44.89006666666668,
+        "style": 1,
+        "sector": 2,
+        "label": "D1 · GRIETA · 45 s"
+      },
+      "director": {
+        "mapId": "248295611:2:QA",
+        "mapNumber": 2,
+        "activeSeconds": 60.10993333333332,
+        "opportunities": [
+          {
+            "id": "map:2:string:248295611:2:QA:rift:60",
+            "mapId": "248295611:2:QA",
+            "mapNumber": 2,
+            "atSeconds": 60,
+            "outcome": "request",
+            "request": {
+              "id": "map:2:string:248295611:2:QA:rift:60",
+              "mapId": "248295611:2:QA",
+              "mapNumber": 2,
+              "atSeconds": 60,
+              "tier": "D1",
+              "status": "pending"
+            }
+          }
+        ],
+        "requests": [
+          {
+            "id": "map:2:string:248295611:2:QA:rift:60",
+            "mapId": "248295611:2:QA",
+            "mapNumber": 2,
+            "atSeconds": 60,
+            "tier": "D1",
+            "status": "confirmed"
+          }
+        ],
+        "appearances": [
+          {
+            "requestId": "map:2:string:248295611:2:QA:rift:60",
+            "mapId": "248295611:2:QA",
+            "mapNumber": 2,
+            "atSeconds": 60,
+            "tier": "D1"
+          }
+        ],
+        "appearanceCount": 1
+      },
+      "notice": "La sala dimensional sigue cargando…",
+      "technicalFailures": [],
+      "active": true,
+      "id": "map:2:string:248295611:2:QA:rift:60:encounter:1",
+      "time": 0,
+      "transition": 0.5,
+      "status": "entering",
+      "claimed": false,
+      "escape": "waiting",
+      "escapeAt": 90,
+      "escapeRemaining": 95,
+      "loadingWait": 11.016066666666664,
+      "tier": "D1",
+      "anomalyId": "esporario",
+      "name": "Esporario Blanco",
+      "roomName": "Cultivo invadido",
+      "bossHp": 800,
+      "bossMaxHp": 800,
+      "exit": {
+        "x": -1.25,
+        "y": -26.25
+      },
+      "reward": null,
+      "originFrozen": true
+    },
+    "time": 60.10993333333332,
+    "hp": 100,
+    "npcHp": 45
+  },
+  "after": {
+    "rift": {
+      "enabled": true,
+      "practice": true,
+      "portal": {
+        "id": "map:2:string:248295611:2:QA:rift:60",
+        "status": "consumed",
+        "tier": "D1",
+        "x": 1008,
+        "y": 368,
+        "remaining": 44.89006666666668,
+        "style": 1,
+        "sector": 2,
+        "label": "D1 · GRIETA · 45 s"
+      },
+      "director": {
+        "mapId": "248295611:2:QA",
+        "mapNumber": 2,
+        "activeSeconds": 60.10993333333332,
+        "opportunities": [
+          {
+            "id": "map:2:string:248295611:2:QA:rift:60",
+            "mapId": "248295611:2:QA",
+            "mapNumber": 2,
+            "atSeconds": 60,
+            "outcome": "request",
+            "request": {
+              "id": "map:2:string:248295611:2:QA:rift:60",
+              "mapId": "248295611:2:QA",
+              "mapNumber": 2,
+              "atSeconds": 60,
+              "tier": "D1",
+              "status": "pending"
+            }
+          }
+        ],
+        "requests": [
+          {
+            "id": "map:2:string:248295611:2:QA:rift:60",
+            "mapId": "248295611:2:QA",
+            "mapNumber": 2,
+            "atSeconds": 60,
+            "tier": "D1",
+            "status": "confirmed"
+          }
+        ],
+        "appearances": [
+          {
+            "requestId": "map:2:string:248295611:2:QA:rift:60",
+            "mapId": "248295611:2:QA",
+            "mapNumber": 2,
+            "atSeconds": 60,
+            "tier": "D1"
+          }
+        ],
+        "appearanceCount": 1
+      },
+      "notice": "",
+      "technicalFailures": [],
+      "active": true,
+      "id": "map:2:string:248295611:2:QA:rift:60:encounter:1",
+      "time": 0,
+      "transition": 0,
+      "status": "combat",
+      "claimed": false,
+      "escape": "waiting",
+      "escapeAt": 90,
+      "escapeRemaining": 95,
+      "loadingWait": 14.999266666666603,
+      "tier": "D1",
+      "anomalyId": "esporario",
+      "name": "Esporario Blanco",
+      "roomName": "Cultivo invadido",
+      "bossHp": 800,
+      "bossMaxHp": 800,
+      "exit": {
+        "x": -1.25,
+        "y": -26.25
+      },
+      "reward": null,
+      "originFrozen": true
+    },
+    "time": 60.10993333333332,
+    "hp": 100,
+    "npcHp": 45
+  },
+  "requests": [
+    {
+      "url": "http://127.0.0.1:62695/assets/levels/bio-c1/01-cultivo-invadido-clean-r2.png",
+      "start": 1676801.968,
+      "delivered": 1676817.14
+    }
+  ],
+  "errors": [],
+  "snapshot": {
+    "index.html": "e2266ba874cfbd5bc4e085a08f373db01cfb4861b0a0cf2f01818861ae807380",
+    "js/app.min.js": "80d225df65397219103ccbc3c6a91fe18cb4d7895aa6b5bce7fa32a7c2498ecf",
+    "js/systems/rift-expedition.js": "44f5a88eb943a06fb78b7bb2a4d1c9058e7bf58e2ae5d797db3f722dd880d353",
+    "js/world/rift-room-art.js": "5f1e019d1b54bdf43253979de7407d9d96e3936d9ff0d2daa164c26aa4ec4b51"
+  },
+  "sourceDrift": [],
+  "physicalPhone": false,
+  "method": "Local clone in real browser; one room PNG response held for 15 actual seconds. Forced contact only; no invulnerability, healing, elapsed-time jump or lethal damage."
+}

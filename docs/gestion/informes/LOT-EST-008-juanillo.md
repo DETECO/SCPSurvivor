@@ -22,3 +22,15 @@ Los quince combates del bot usan armas/recargas/daño/vida reales, sin invulnera
 Las cifras de BIO, XP, oleadas y poderes son **ensayo técnico**, no balance final aceptado por Iván. Las pruebas de flujo sí inyectan posición, HP o daño para recorrer estados y no prueban dificultad natural. No se probaron teléfono físico, Safari real ni todas las40combinaciones BIO×formato×resolución. Las cinco salas C1 son fijas; variantes interiores procedurales pendientes.
 
 Se autoriza a PROGRAMACION publicar el corte y verificar Pages/recursos/recorridos públicos, conservando SDK/config/CSP del clon. Fusión/ARM-JUG-001, ultimate, gachas, cuentas, persistencia y servicios reales conservan sus estados anteriores; no se activan mediante este lote. La publicación y el cierre documental se acreditarán con sus recibos nuevos.
+
+## Correctivo R2 de carga — verificación adicional
+
+El primer despliegue0.40 se publicó, pero las matrices públicas quedaron incompletas por `asset_timeout` variable de las salas. Se conserva ese intento como evidencia parcial y no se contabiliza como matriz aprobada. [AD02 técnica](../REV-EST-0012_ADENDA_CARGA.md) autoriza corregir la carga sin cambiar diseño ni balance. [Entrega R2](../entregas/PROGRAMACION-JUGABILIDAD-008-CARGA-R2.md).
+
+Revisión del correctivo: **14/14 archivos coinciden** con el manifiesto `f7fd7fda8a7c67144ecb16a8e24841799fb0c3ecbeea5e3e5a740359348dbd2c`. Se adelanta la petición al portal, se comparte la imagen por recurso y se avisa a10s con guarda30s. PROGRAMACION comprueba318/318 pruebas Node y trece grupos de navegador en fuente y clon, incluidas rutas de fallo; no se repite el balance porque no cambia combate.
+
+Prueba independiente adicional en navegador local: una respuesta PNG retenida **15,17 segundos reales**, una única solicitud y reutilización al generar otra geometría. A los11s la entrada seguía esperando; después comenzó combate sin perder HP del jugador/compañero ni tiempo del origen. Sin invulnerabilidad, curación, salto de reloj ni daño letal para este caso; solo contacto forzado para entrar. Sin errores JS ni deriva. [Registro exacto](../evidencias/LOT-EST-008-juanillo/carga-lenta-real-15s.json). Pendiente la nueva matriz pública secuencial y su recibo para cerrar0.40.1.
+
+## Cierre público posterior a la revisión local
+
+PROGRAMACION publicó el correctivo0.40.1 en `main` (`72969306342e84c2d012f2f3941a600c295d0250`) y comprobó13 grupos de navegador,12 de poderes y24/24 archivos críticos en Pages. La revisión independiente posterior de Juanillo terminó **PASS** para las cinco grietas: recompensas correspondientes, XP/cristales exactos, regreso del apoyo con HP/arma conservados, muerte del apoyo y escala constante, sin errores JavaScript. [Evidencia independiente](../evidencias/LOT-EST-008-juanillo/publica-0401/contratos.json) · [validación consolidada](../LOT-EST-008_VALIDACION.json) · [recibo técnico](../LOT-EST-008_PUBLICACION.json). Estos resultados sustituyen el pendiente público señalado arriba; el balance humano y el teléfono físico aún no se han aceptado/probado.

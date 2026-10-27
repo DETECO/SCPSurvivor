@@ -1,6 +1,6 @@
 # Correctivo técnico de carga de salas — LOT-EST-008 r2
 
-26/10/2026 · PROGRAMACION · base pública 0.40 `b542e8348d7a8ac2b7d5ae91a5f047c8fa34b724` · **comprobado localmente; publicación correctiva pendiente de recibo**.
+26/10/2026 · PROGRAMACION · base pública 0.40 `b542e8348d7a8ac2b7d5ae91a5f047c8fa34b724` · **correctivo 0.40.1 publicado y comprobado** en `72969306342e84c2d012f2f3941a600c295d0250`.
 
 ## Incidente y causa
 
@@ -19,6 +19,6 @@ El juego solicitaba la lámina de aproximadamente 2,5 MB **al entrar** en cada s
 
 Se escribió primero una prueba roja que reproducía la ausencia de precarga y reutilización. Después del arreglo: **318/318** pruebas Node del juego, navegador local **13/13 grupos** en la fuente y en el clon público preparado, incluidos D1–D5 en 16/32, aviso y entrada después de 15 segundos simulados de carga, fallo 404 y límite de 30 segundos sin premio. El chequeo de construcción pública conserva SDK/config/CSP y confirma 125 scripts. El ensayo de poderes 12/12 pasó tras el cambio local; no se repitió la medición de 15 combates porque este correctivo no cambia daño, IA ni economía.
 
-La primera versión pública 0.40 sirve de evidencia del incidente y permanece identificada por su commit. Este documento necesita el recibo posterior del correctivo y una nueva prueba sobre Pages para acreditar el resultado público. No hubo prueba en teléfono físico.
+La primera versión pública 0.40 conserva la evidencia del incidente. En 0.40.1, Pages sirvió 24/24 archivos clave idénticos al commit. La matriz pública pasó 13/13 grupos y los poderes 12/12; una revisión independiente recorrió las cinco grietas sin errores JavaScript. [Recibo público](../LOT-EST-008_PUBLICACION.json) y [evidencias](../evidencias/LOT-EST-008-programacion-publica/hashes-publicos.json). No hubo prueba en teléfono físico ni aceptación humana del balance.
 
 [Manifiesto y registros de prueba](../../../tests/artifacts/lot-est-008/loading-r2/MANIFIESTO.json).

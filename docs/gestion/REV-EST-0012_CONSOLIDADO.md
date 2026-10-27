@@ -1,5 +1,7 @@
 # REV-EST-0012 — jugabilidad, grietas y decisiones nuevas
 
+**Estado de cierre posterior:** LOT008 y el correctivo técnico [AD02](REV-EST-0012_ADENDA_CARGA.md) se publicaron como demo0.40.1. El [recibo](LOT-EST-008_PUBLICACION.json) y la [validación independiente](LOT-EST-008_VALIDACION.json) acreditan cinco recorridos públicos y el correctivo de carga, sin ampliar el alcance de diseño. Balance humano, teléfono físico y aceptación final continúan pendientes. El registro cronológico inicial que sigue conserva su contexto anterior a la publicación.
+
 **Actualización del encargo:** [corte implementado y revisado localmente](informes/LOT-EST-008-juanillo.md), publicación0.40 autorizada a PROGRAMACION y pendiente de recibo público. [AD01](REV-EST-0012_ADENDA_C1_R2.md) incorpora la aprobación posterior C1-r2/APR-003. El registro inicial y sus fuentes preservadas que siguen conservan su momento y alcance.
 
 26/10/2026 · Juanillo / ESTRUCTURA · Control0.14. **Decisiones consolidadas y LOT008 encargado; implementación/publicación pendientes de evidencia nueva.**

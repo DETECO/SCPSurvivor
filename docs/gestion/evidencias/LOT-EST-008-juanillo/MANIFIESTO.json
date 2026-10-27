@@ -1,5 +1,5 @@
 {
-  "status": "local_review_PASS_public_pending",
+  "status": "published_verified_trial",
   "dateClient": "2026-10-26",
   "lot": "LOT-EST-008r1",
   "files": [
@@ -42,8 +42,34 @@
     {
       "file": "lectura-corte-local-68.json",
       "sha256": "2fe72e3967ba1618c9c96083426c7e12e0a6b98e4184950841e4582b2cab2952"
+    },
+    {
+      "file": "lectura-carga-r2.json",
+      "sha256": "bbead901f264a1f8c612adb9fcc4d0488bdd72774fe15fe97985936f10c5382f"
+    },
+    {
+      "file": "carga-lenta-real-15s.json",
+      "sha256": "ee4371e312ade08258b430bd7a0d992f027bce4cb5a8b7ead48ae491c45e7d0e"
+    },
+    {
+      "file": "publica-primer-intento-incompleto.json",
+      "sha256": "0608e1a453824e2cc5e081066420ea3eca303fc803152e6e7db8e4dc4abafcb3"
+    },
+    {
+      "file": "publica-0401/contratos.json",
+      "sha256": "6f8e306f32dc7cb3ffbb5b601d56c0165e05f95caf87a5d5a84b1d579f5f2c79"
+    },
+    {
+      "file": "publica-0401/pages.json",
+      "sha256": "a3a621cbe25536206edc1ee8f0f47ecb86585f077eebb973c6c9aed28433b96f"
+    },
+    {
+      "file": "publica-hud-040/browser.json",
+      "sha256": "14f5bcb7cd503b672cdb45b7aff9face12f1b3109dd15fee3ca82e8ce6a59f85"
     }
   ],
   "physicalPhone": false,
-  "sourceCodeEditedByReviewer": false
+  "sourceCodeEditedByReviewer": false,
+  "version": "0.40.1",
+  "runtimeCommit": "72969306342e84c2d012f2f3941a600c295d0250"
 }

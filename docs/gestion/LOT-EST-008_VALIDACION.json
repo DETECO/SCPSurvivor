@@ -1,0 +1,53 @@
+{
+  "revision": "REV-EST-0012 + AD01 + AD02",
+  "control": "0.15",
+  "lot": "LOT-EST-008 r1 + correctivo de carga r2",
+  "version": "0.40.1",
+  "dateClient": "2026-10-26",
+  "status": "published_verified_trial",
+  "runtimeCommit": "72969306342e84c2d012f2f3941a600c295d0250",
+  "firstRuntimeCommit": "b542e8348d7a8ac2b7d5ae91a5f047c8fa34b724",
+  "bundle": "92f07645d0",
+  "nodeGame": {
+    "tests": 318,
+    "pass": 318,
+    "fail": 0
+  },
+  "programmingPublic": {
+    "browserGroups": 13,
+    "bioModeCases": 10,
+    "powerGroups": 12,
+    "fileMatches": 24,
+    "javascriptErrors": 0
+  },
+  "independentPublic": {
+    "status": "PASS",
+    "rooms": 5,
+    "xpEnemyKinds": 3,
+    "crystalTiers": 4,
+    "javascriptErrors": 0,
+    "sourceDrift": [],
+    "evidence": "docs/gestion/evidencias/LOT-EST-008-juanillo/publica-0401/contratos.json"
+  },
+  "independentEarlierRegression": {
+    "hudFormatsLocalFull": 4,
+    "hudFormatsPublicProbe": 4,
+    "mounts": 352,
+    "incapacitatedPoses": 64,
+    "animations": 24,
+    "combatCases": 8,
+    "scope": "LOT008 initial gameplay cut; loading-only fix does not change these systems"
+  },
+  "independentSlowLoading": {
+    "actualResponseHeldSeconds": 15.171999999787658,
+    "requests": 1,
+    "originAndHPFrozen": true,
+    "method": "real browser and delayed local PNG response, forced contact only"
+  },
+  "programmingReceipt": "docs/gestion/LOT-EST-008_PUBLICACION.json",
+  "physicalPhone": false,
+  "balanceAccepted": false,
+  "fusionEnabled": false,
+  "realServicesEnabled": false,
+  "scope": "Current requested gameplay fixes and loading correction; not complete product acceptance."
+}

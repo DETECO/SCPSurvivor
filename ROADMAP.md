@@ -1,10 +1,10 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-26).** Demo pública acreditada0.39. LOT008 implementado y revisado localmente para publicación0.40: cristalesXP, compañero vivo al regresar, cámara uniforme, cinco salasC1-r2 aceptadas, variedad/BIO más exigentes, cinco poderes elegidos y presión progresiva. Publicación nueva pendiente de recibo; fusión/ARM-JUG001 fuera del lote; balance humano/teléfono pendientes. AvanceV2 sin calcular.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-26).** Demo 0.40.1 publicada y comprobada: cristales XP diferenciados, compañero que regresa vivo, cámara uniforme, cinco salas C1-r2 aceptadas, variedad, cinco poderes elegidos y oleadas progresivas. Correctivo de carga verificado con demora real de 15 segundos y cinco recorridos públicos independientes. Balance humano y teléfono físico pendientes; fusión fuera de este lote. Avance V2 sin calcular.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
-**Demo disponible:** [guía](docs/gestion/informes/LOT-EST-007-juanillo.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas&apoyo=si&graficos=16&revision=0.39) · [jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=32&revision=0.39). Sin cuentas ni guardado; aceptación de Iván pendiente.
+**Demo disponible:** [guía](docs/PRUEBA_JUGABILIDAD_008.md) · [prueba rápida](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas&apoyo=si&graficos=32&revision=0.40.1) · [jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&graficos=32&revision=0.40.1). Sin cuentas ni guardado; aceptación de Iván pendiente.
 
 **Avance V2: sin calcular.** El52/100 pertenece al diseño anterior. Pendiente revisar alcance, criterios y pesos del diseño V2. Retirar funciones no concede puntos ni reduce automáticamente el denominador.
 
@@ -58,7 +58,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-Versión **0.39**, 2026-10-26. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
+Versión **0.40.1**, 2026-10-26. Juego existente, entrega **P05-local-01 / alfa 0.5 local**. Fuente editable: [RoadmapSCP.json](RoadmapSCP.json); registro completo generado: [RoadmapSCP.md](RoadmapSCP.md). V0.11 se conserva en docs/historial-local/alfa-0.4/.
 
 ## Avance basado en evidencia
 
