@@ -8126,7 +8126,7 @@
     "latestConsolidation": {
       "id": "REV-EST-0012",
       "control": "0.15",
-      "dateClient": "2026-10-26",
+      "dateClient": "2026-10-27",
       "path": "docs/gestion/REV-EST-0012_CIERRE.md",
       "status": "execution_consolidated_published_verified",
       "coverage": "ARMAS R4/R6; NIVELES R7.9/APR-003; PERSONAJES004; actual public0.39 reproduction and independent local LOT008 tests; not all histories.",
