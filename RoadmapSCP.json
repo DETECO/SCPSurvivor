@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "planVersion": "0.40.1",
-  "updatedOn": "2026-10-26",
+  "updatedOn": "2026-10-27",
   "timezone": "America/Santiago",
   "canonicalPath": "RoadmapSCP.json",
   "generatedView": "RoadmapSCP.md",
@@ -5997,6 +5997,11 @@
       "id": "CHG-049",
       "date": "2026-10-26",
       "description": "Cierre LOT008 / control0.15: demo0.40.1 publicada y verificada,318 pruebas del juego,13 grupos públicos y12 de poderes,24 archivos; QA independiente5grietas y demora real15s. AD01 yAD02 consolidadas;53 tareas y52/100 históricos intactos, balance/telefono pendientes."
+    },
+    {
+      "id": "CHG-050",
+      "date": "2026-10-27",
+      "description": "Cierre documental final: enlaces al consolidado y respaldo conservado, estado público inequívoco y guía histórica referida a0.40.1. Tareas y pruebas históricas sin cambios."
     }
   ],
   "derivedProgress": {
@@ -6739,7 +6744,7 @@
   "activeDesignRevision": {
     "id": "V2-ESTRUCTURA",
     "title": "Avance por mapas; sin extracción, accesorios físicos ni mochilas",
-    "updatedOn": "2026-10-26",
+    "updatedOn": "2026-10-27",
     "status": "rift_trial_published_verified_pending_human_balance",
     "authority": "EST-ORG-002 r1 / EST-GRI-002 r1 / EST-NPC-001 r1 / LOT-EST-005 r2",
     "summary": "Demo 0.40.1 publicada y comprobada: cristales XP diferenciados, compañero que regresa vivo, cámara uniforme, cinco salas C1-r2 aceptadas, variedad, cinco poderes elegidos y oleadas progresivas. Correctivo de carga verificado con demora real de 15 segundos y cinco recorridos públicos independientes. Balance humano y teléfono físico pendientes; fusión fuera de este lote. Avance V2 sin calcular.",
@@ -8125,7 +8130,7 @@
       "path": "docs/gestion/REV-EST-0012_CIERRE.md",
       "status": "execution_consolidated_published_verified",
       "coverage": "ARMAS R4/R6; NIVELES R7.9/APR-003; PERSONAJES004; actual public0.39 reproduction and independent local LOT008 tests; not all histories.",
-      "nextPreparedLot": "LOT-EST-008r1",
+      "nextPreparedLot": "LOT-EST-002r1",
       "selectedPowers": [
         "POD-01-A",
         "POD-02-A",
@@ -8140,7 +8145,8 @@
         "docs/gestion/REV-EST-0012_ADENDA_CARGA.md"
       ],
       "runtimePublication": "0.40.1",
-      "runtimeCommit": "72969306342e84c2d012f2f3941a600c295d0250"
+      "runtimeCommit": "72969306342e84c2d012f2f3941a600c295d0250",
+      "closureDateClient": "2026-10-27"
     },
     "previousTechnicalLot": {
       "id": "LOT-EST-006 r1",

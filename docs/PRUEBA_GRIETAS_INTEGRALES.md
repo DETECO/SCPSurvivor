@@ -1,5 +1,7 @@
 # Prueba jugable de grietas — LOT-EST-005 r2
 
+**Registro histórico de LOT005. La [guía vigente de 0.40.1 / LOT008](PRUEBA_JUGABILIDAD_008.md) sustituye sus reglas posteriores de salas, poderes, compañero persistente y carga. Se conserva el contenido original que sigue como evidencia de aquella entrega.**
+
 25/10/2026 · REV-EST-0008 / EST-NPC-001r1 · ENSAYO-GRI-001 r1 + ENSAYO-NPC-RESERVA-r3 · PROGRAMACION. **Publicado y comprobado**, runtime92fc1fd/bundleadec3ec93c. [Recibo público](gestion/LOT-EST-005_PUBLICACION.json). No equivale a aceptación humana o balance final.
 
 ## Cómo probar

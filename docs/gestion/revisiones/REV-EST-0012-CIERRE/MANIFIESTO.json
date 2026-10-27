@@ -1,0 +1,33 @@
+{
+  "revision": "REV-EST-0012-CIERRE",
+  "beforeControl": "0.14",
+  "afterControl": "0.15",
+  "dateClient": "2026-10-26",
+  "sources": [
+    {
+      "file": "PAUTA_DESARROLLO.md",
+      "snapshot": "fuentes/PAUTA_DESARROLLO.md",
+      "sha256": "d9444abb3105ed42d55fd318d60babfcd0733a0247627279f6e71a8143355f3e"
+    },
+    {
+      "file": "docs/gestion/CONTROL_CAMBIOS.md",
+      "snapshot": "fuentes/docs/gestion/CONTROL_CAMBIOS.md",
+      "sha256": "939f317f2e5ffe49739aa307886e387a009bc449684ddca8c4bc3005f511c61f"
+    },
+    {
+      "file": "RoadmapSCP.json",
+      "snapshot": "fuentes/RoadmapSCP.json",
+      "sha256": "0ed03eceddf5eb6299ebeb90bd2e1ca7ec70d7ee8793eb200469549494333d35"
+    },
+    {
+      "file": "docs/gestion/informes/LOT-EST-008-juanillo.md",
+      "snapshot": "fuentes/docs/gestion/informes/LOT-EST-008-juanillo.md",
+      "sha256": "7f8efa7398a3c77f809aab5cc22a02308b874ba6dfa40ddacfd17fefb3f5d683"
+    },
+    {
+      "file": "docs/PRUEBA_GRIETAS_INTEGRALES.md",
+      "snapshot": "fuentes/docs/PRUEBA_GRIETAS_INTEGRALES.md",
+      "sha256": "254d1083f938669ff34145d9bfb0cfa51192a9c7725a3555be1ad3494b427c34"
+    }
+  ]
+}

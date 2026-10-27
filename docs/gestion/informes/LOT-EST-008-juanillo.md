@@ -1,5 +1,7 @@
 # Revisión independiente de LOT-EST-008 — Juanillo
 
+**Estado actual: demo 0.40.1 publicada y comprobada.** [Recibo de PROGRAMACION](../LOT-EST-008_PUBLICACION.json) y [validación independiente](../LOT-EST-008_VALIDACION.json). Los cortes iniciales que siguen se conservan como antecedentes; la comprobación pública final figura al final de este informe.
+
 26/10/2026 · REV-EST-0012 + AD01 · **Corte local conforme; publicación autorizada a PROGRAMACION, comprobación pública pendiente.**
 
 Se resolvieron las causas reproducidas en 0.39: práctica fijada en D1/semilla repetida, cámara distinta entre zonas, compañero eliminado al regresar, XP idéntica de regulares, poderes anteriores a la selección R4 y presión insuficiente. Se integran las cinco salas C1-r2 visualmente aprobadas; [AD01](../REV-EST-0012_ADENDA_C1_R2.md) cierra CON-NIV-08 preservando el corte anterior.

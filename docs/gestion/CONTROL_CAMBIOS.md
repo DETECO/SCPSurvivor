@@ -1,6 +1,6 @@
 # Control de cambios — ESTRUCTURA
 
-Revisión de control **0.15** · 26/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+Revisión de control **0.15** · 27/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
 
 **Cierre público posterior de REV-EST-0012 / LOT008:** demo0.40.1 publicada en `main` (`72969306342e84c2d012f2f3941a600c295d0250`), con [AD02 de carga](REV-EST-0012_ADENDA_CARGA.md), [recibo técnico](LOT-EST-008_PUBLICACION.json) y [validación independiente](LOT-EST-008_VALIDACION.json).318/318 pruebas Node,13 grupos de navegador y12 de poderes en Pages,24/24 archivos críticos y cinco grietas revisadas independientemente PASS. La carga lenta real de15,17s conservó origen y HP; fallos y límite30s regresan sin premio. Balance humano, teléfono físico y aceptación final pendientes. El párrafo0.14 siguiente queda como registro histórico de la autorización previa.
 

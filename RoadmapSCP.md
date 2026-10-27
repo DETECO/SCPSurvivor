@@ -1,6 +1,6 @@
 # Roadmap SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-26).** Demo 0.40.1 publicada y comprobada: cristales XP diferenciados, compañero que regresa vivo, cámara uniforme, cinco salas C1-r2 aceptadas, variedad, cinco poderes elegidos y oleadas progresivas. Correctivo de carga verificado con demora real de 15 segundos y cinco recorridos públicos independientes. Balance humano y teléfono físico pendientes; fusión fuera de este lote. Avance V2 sin calcular.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-27).** Demo 0.40.1 publicada y comprobada: cristales XP diferenciados, compañero que regresa vivo, cámara uniforme, cinco salas C1-r2 aceptadas, variedad, cinco poderes elegidos y oleadas progresivas. Correctivo de carga verificado con demora real de 15 segundos y cinco recorridos públicos independientes. Balance humano y teléfono físico pendientes; fusión fuera de este lote. Avance V2 sin calcular.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
@@ -58,7 +58,7 @@ Las reglas, tareas, porcentajes y prioridades registradas debajo describen el di
 
 **Prototipo de grietas — 16/10/2026 (solo local, en validación).** Prueba directa `?prueba=grieta`; apariciones opcionales `?grietas=local`. Posición física alcanzable, **ingreso instantáneo por contacto, sin botón ni espera**, apertura45s activas, cierre, indicador de dirección/distancia/tiempo, sonido y alerta. Sin cuentas ni persistencia P05. **Aceptación manual de Iván pendiente; global52/100 sin cambios de pesos.** P09 conserva audio/aviso/localizador como requisitos. Esta ampliación no está publicada: la entrega GitHub previa corresponde a P05 y roadmapv0.12. Ver [prueba manual](docs/PRUEBA_GRIETAS.md), [pauta visual](docs/OBSERVACIONES_VISUALES.md) y [validación técnica](docs/GRIETAS-VALIDACION.md).
 
-**Versión 0.40.1 — 2026-10-26 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
+**Versión 0.40.1 — 2026-10-27 (America/Santiago). Global: 52 %.** Fuente editable única: [RoadmapSCP.json](RoadmapSCP.json). La vista se genera con node tools/render-roadmap.js. Resumen práctico: [ROADMAP.md](ROADMAP.md).
 
 ## 1. Estado vigente
 
@@ -925,6 +925,7 @@ Los registros anteriores permanecen intactos. V0.11 y su documentación están e
 | CHG-047 | 2026-10-26 | REV0012/Control0.14: seleccionR4 de poderes y salasC1 consolidadas; LOT008 autorizado para correcciones de jugabilidad. Version publica permanece0.39; sin modificar tareas/pesos historicos ni aprobar ARM-JUG001 por extension. |  |
 | CHG-048 | 2026-10-26 | LOT008 implementado y revisado localmente;316tests,64hashes,QApropia5grietas/HUD4/352montajes. AD01 consolida aprobaciónC1-r2. Autorizada publicación0.40 aPROGRAMACION; pendiente recibo público. Tareas/pesos históricos intactos. |  |
 | CHG-049 | 2026-10-26 | Cierre LOT008 / control0.15: demo0.40.1 publicada y verificada,318 pruebas del juego,13 grupos públicos y12 de poderes,24 archivos; QA independiente5grietas y demora real15s. AD01 yAD02 consolidadas;53 tareas y52/100 históricos intactos, balance/telefono pendientes. |  |
+| CHG-050 | 2026-10-27 | Cierre documental final: enlaces al consolidado y respaldo conservado, estado público inequívoco y guía histórica referida a0.40.1. Tareas y pruebas históricas sin cambios. |  |
 
 ## 13. Continuar en Windows/Codex Local
 
