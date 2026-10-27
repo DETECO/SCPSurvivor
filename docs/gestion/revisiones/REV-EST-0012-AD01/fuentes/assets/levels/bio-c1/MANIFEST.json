@@ -1,0 +1,62 @@
+{
+  "revision": "NIV-BIO-C1-r2",
+  "date": "2026-10-26",
+  "method": "imagegen edits of the five C1 references; originals preserved",
+  "assets": [
+    {
+      "file": "01-cultivo-invadido-clean-r2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "8a34e7ffb92bda77e6f05fd9620303154211328e0e535f6800b88947ed00f33d",
+      "approvedSource": "design-proposals/niveles/anomalias-compactas-c1-20261026/01-cultivo-invadido.png",
+      "approvedSha256": "52facfdbad8315616a871ec3debaeeb39c1e0a0e32bd732b38d7c2febda018c6",
+      "edit": "Remove guard and active anomaly, preserve environmental architecture and lighting"
+    },
+    {
+      "file": "02-galeria-del-fluido-clean-r2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "84bad4c3c1219abc3ad715da9dec900cdd3f5fb69d97a4f6e5ee72340711d1d7",
+      "approvedSource": "design-proposals/niveles/anomalias-compactas-c1-20261026/02-galeria-del-fluido.png",
+      "approvedSha256": "6a04a4efc7bb31abb550002626bad20ae1136c73a678f3c78430cb22d4536ad5",
+      "edit": "Remove guard and active anomaly, preserve environmental architecture and lighting"
+    },
+    {
+      "file": "03-camara-de-anclajes-clean-r2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "a3b314c3f0811d681f745034f32b83fe98881ec910b47a48c0368579ad2bbc1e",
+      "approvedSource": "design-proposals/niveles/anomalias-compactas-c1-20261026/03-camara-de-anclajes.png",
+      "approvedSha256": "978a0a712e1f7d8d9b96ce48ba4567c091c1851fe717b3fa74b53be38bba6606",
+      "edit": "Remove guard and active anomaly, preserve environmental architecture and lighting"
+    },
+    {
+      "file": "04-patio-de-contencion-clean-r2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "a5e253b5c1a18ae5eb9bc3879fc17c733295dc91d39eb26e423e3d174c6fc6cc",
+      "approvedSource": "design-proposals/niveles/anomalias-compactas-c1-20261026/04-patio-de-contencion.png",
+      "approvedSha256": "91494565144cb0be9b6c33d7fc3850ae1b5e64d7770105ebf0cb0a9f65b76514",
+      "edit": "Remove guard and active anomaly, preserve environmental architecture and lighting"
+    },
+    {
+      "file": "05-nucleo-de-cuarentena-clean-r2.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "7268edb28f7e510e129683d28a695e4340d59935ace1f000fad9ae83c51762b5",
+      "approvedSource": "design-proposals/niveles/anomalias-compactas-c1-20261026/05-nucleo-de-cuarentena.png",
+      "approvedSha256": "99851df47b707a7706a4916ffef72c4aafecf918b88c9922cc7aa1a089736051",
+      "edit": "Remove guard and active anomaly, preserve environmental architecture and lighting"
+    }
+  ]
+}

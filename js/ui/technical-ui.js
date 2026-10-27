@@ -9,7 +9,7 @@ G.TechnicalUI = (() => {
     G.Audio.unlock();
     const selected = options();
     if (!selected) return;
-    if(G.MapTrial?.enabled)selected.seed=1337;
+    // Generic expeditions choose a fresh seed; explicit QA seed remains in options.
     G.Game.startTechnical(G.ExpandedPractice.prepare(selected));
   }
   function ability() {

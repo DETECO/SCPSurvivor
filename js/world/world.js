@@ -72,6 +72,7 @@ G.World = (() => {
   }
 
   function terrainRaw(tx, ty) {
+    if(fixture?.riftArt)return G.RiftRooms.blocked(fixture.riftArt,(tx+.5)*TS,(ty+.5)*TS)?WALL:FLOOR;
     if (fixture) {
       if (tx <= fixture.minX || tx >= fixture.maxX || ty <= fixture.minY || ty >= fixture.maxY) return WALL;
       return fixtureWallSet.has(tx + ',' + ty) ? WALL : FLOOR;
@@ -209,9 +210,9 @@ G.World = (() => {
 
   const tileOf = v => Math.floor(v / TS);
 
-  function kindAt(x, y) { return KIND[terrainAt(tileOf(x), tileOf(y))]; }
-  function isWall(x, y) { return terrainAt(tileOf(x), tileOf(y)) === WALL; }
-  function isLiquid(x, y) { return terrainAt(tileOf(x), tileOf(y)) === LIQUID; }
+  function kindAt(x, y) { return fixture?.riftArt?(G.RiftRooms.blocked(fixture.riftArt,x,y)?'wall':'floor'):KIND[terrainAt(tileOf(x), tileOf(y))]; }
+  function isWall(x, y) { return fixture?.riftArt?G.RiftRooms.blocked(fixture.riftArt,x,y):terrainAt(tileOf(x), tileOf(y)) === WALL; }
+  function isLiquid(x, y) { return !fixture?.riftArt&&terrainAt(tileOf(x), tileOf(y)) === LIQUID; }
   function liquidKind() { return G.Tiles.BIOMES[biome].liquid; }
 
   /**
@@ -241,6 +242,7 @@ G.World = (() => {
 
   /** ¿Se puede pasar por esta casilla andando? (pathing.js) */
   function walkable(tx, ty) {
+    if(fixture?.riftArt)return !G.RiftRooms.blocked(fixture.riftArt,(tx+.5)*TS,(ty+.5)*TS,12);
     const t = terrainAt(tx, ty);
     if (t === WALL) return false;
     if (t === LIQUID && (LIQ[liquidKind()] || {}).dmg) return false;   // lava, veneno, descarga
@@ -250,6 +252,7 @@ G.World = (() => {
 
   /** ¿Hay sitio para que algo de radio r esté aquí? */
   function isFree(x, y, r = 12, allowLiquid = false) {
+    if(fixture?.riftArt)return !G.RiftRooms.blocked(fixture.riftArt,x,y,r);
     const t0x = tileOf(x - r), t1x = tileOf(x + r), t0y = tileOf(y - r), t1y = tileOf(y + r);
     for (let ty = t0y; ty <= t1y; ty++) for (let tx = t0x; tx <= t1x; tx++) {
       const t = terrainAt(tx, ty);
@@ -304,6 +307,7 @@ G.World = (() => {
    * Devuelve true si ha chocado con algo.
    */
   function collide(e) {
+    if(fixture?.riftArt)return G.RiftRooms.collide(fixture.riftArt,e);
     const r = e.r;
     let hit = false;
     for (let pass = 0; pass < 2; pass++) {
@@ -345,6 +349,7 @@ G.World = (() => {
 
   /** ¿Choca un proyectil aquí? Devuelve 'wall', el prop sólido, o null. */
   function projectileBlock(x, y, r) {
+    if(fixture?.riftArt)return G.RiftRooms.blocked(fixture.riftArt,x,y,r)?'wall':null;
     const tx = tileOf(x), ty = tileOf(y);
     if (terrainAt(tx, ty) === WALL) return 'wall';
     for (let b = -1; b <= 1; b++) for (let a = -1; a <= 1; a++) {
@@ -463,6 +468,7 @@ G.World = (() => {
   }
 
   function drawGround(ctx, cam) {
+    if(fixture?.riftArt){ctx.fillStyle='#080b0d';ctx.fillRect(cam.left(),cam.top(),cam.w,cam.h);return;}
     ctx.imageSmoothingEnabled = false;
     const k = fadeK();
     for (const [cx, cy] of visibleChunks(cam)) {
@@ -502,6 +508,7 @@ G.World = (() => {
 
   /** Props visibles, para mezclarlos en el orden por Y con las entidades. */
   function visibleProps(cam) {
+    if(fixture?.riftArt)return [];
     if(G.SceneR7 && fixture?.layout===G.SceneR7.id)return G.SceneR7.visibleProps(fixture,cam);
     const out = [];
     for (const [cx, cy] of visibleChunks(cam, 60)) {

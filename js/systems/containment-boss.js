@@ -38,6 +38,7 @@
       if (e.bossDimensionalWarn < 1e-8) {
         e.bossDimensionalWarn = 0;
         const origin={x:e.bossDimensionalX,y:e.bossDimensionalY};
+        G.RiftCompanion?.hurtArea?.(origin,DIMENSIONAL_RANGE,e.dmg,e);
         if (Math.hypot(pl.x-origin.x,pl.y-origin.y) <= DIMENSIONAL_RANGE+(pl.r||0) &&
             hasLine(e,pl.x,pl.y) && hasLine(origin,pl.x,pl.y)) pl.hurt(e.dmg);
         G.FX?.ring?.(e.bossDimensionalX,e.bossDimensionalY,DIMENSIONAL_RANGE,DIMENSIONAL_RANGE*1.3,'#ff5964',.28,3);
@@ -89,6 +90,7 @@
       if (e.anim && e.anim.loop) e.anim.loop('Idle');
       if (!e.bossWarn) {
         e.bossCd = half ? 2 : 2.5;
+        G.RiftCompanion?.hurtArea?.({x:e.bossStrikeX,y:e.bossStrikeY},STRIKE_RANGE,e.dmg,e);
         const dx = pl.x - e.bossStrikeX, dy = pl.y - e.bossStrikeY;
         const reach = STRIKE_RANGE + (pl.r || 0);
         if (dx * dx + dy * dy <= reach * reach && hasLine(e, pl.x, pl.y)) {

@@ -1,6 +1,8 @@
 # Control de cambios — ESTRUCTURA
 
-Revisión de control **0.13** · 26/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+Revisión de control **0.14** · 26/10/2026 · Responsable: **Juanillo / ESTRUCTURA**.
+
+**REV-EST-0012 / LOT008r1:**[nuevas decisiones y diagnóstico](REV-EST-0012_CONSOLIDADO.md). Implementado localmente por PROGRAMACION y [corte conforme tras revisión de Juanillo](informes/LOT-EST-008-juanillo.md):316pruebas Node,68hashes y QA independiente de cinco recorridos/HUD4/352montajes. [AD01](REV-EST-0012_ADENDA_C1_R2.md) consolida NIVELESR7.9/APR-003 y cierra CON-NIV-08 sin reemplazar las fuentes originales. [Lote](lotes/LOT-EST-008-r1.md), [corte conservado](revisiones/REV-EST-0012/MANIFIESTO.json) y [entrega](entregas/PROGRAMACION-JUGABILIDAD-008-CORTE-LOCAL.md). PROGRAMACION autorizado a publicar0.40; recibo/verificación pública pendientes. Base acreditada0.39; balance/teléfono pendientes.
 
 **REV-EST-0011 / LOT007 r1:**[HUD y proporciones publicados/comprobados en0.39](REV-EST-0011_CONSOLIDADO.md). Se preservan MEN-005-A y el encargo técnico de PERSONAJES.285 pruebas de juego, cuatro formatos,352 montajes,92/92hashes públicos. [Informe](informes/LOT-EST-007-juanillo.md) · [recibo](LOT-EST-007_PUBLICACION.json). Aceptación visual/física y entrega formal de PERSONAJES separadas de la validación propia. PróximoLOT002;fusión siguecerrada.
 
@@ -47,6 +49,14 @@ La activación inicial no preparó un lote. Posteriormente, REV-EST-0003 registr
 - **Reemplazo:** activa para este hilo las instrucciones de coordinación antes propuestas; no aprueba por inferencia todos los apartados del protocolo V2 ni cambia el nivel/modelo de los agentes.
 
 ## Decisiones generales
+
+### EST-JUG-001 · Revisión 1 · Aprobada en objetivos — experiencia, compañero y grietas
+
+- **Fecha/fuente:**26/10/2026, instrucciones directas de Iván en ESTRUCTURA y aclaración «Cristales de experiencia». Mensaje individual no expuesto; alcance registrado en [REV-EST-0012](revisiones/REV-EST-0012/DECISIONES.json).
+- **Decisión:** el compañero que sobrevive sale con el jugador, sigue ayudando, conserva su vida y puede morir; mantener el tamaño de cámara de la grieta durante los mapas; mostrar variedad aprobada de portales, salas y anomalías; aumentar tamaño/dificultad de BIO y presión progresiva de normales; integrar los poderes seleccionados con activación perceptible; diferenciar valor, color, forma y tamaño de los cristales XP.
+- **Precedencia:** sustituye el descarte del compañero al regresar y el encuadre vertical distinto entre zonas. No transfiere su arma al inventario del jugador ni elimina las tasas, la recarga o los límites de crédito/remate. Cinco BIO y cinco salas no sustituyen los seis estilos de portal. La selección de poderes ARMAS R4 prevalece sobre el catálogo de ensayo anterior.
+- **Parámetros:** los números de XP, presión y BIO se identifican como ENSAYO-JUG-002 r1; los cinco poderes usan [ENSAYO-POD-002 r1](ENSAYO_PODERES_002-r1.json). Son calibración técnica autorizada para probar estos objetivos, **no balance final aceptado por Iván**.
+- **Ejecución/evidencia:** [LOT-EST-008 r1](lotes/LOT-EST-008-r1.md); PROGRAMACION integra/prueba/publica, ESTRUCTURA revisa el corte. Este registro no acredita una publicación nueva.
 
 ### EST-NPC-001 · Revisión 1 · Aprobada — Compañero, arma aleatoria y reserva infinita
 

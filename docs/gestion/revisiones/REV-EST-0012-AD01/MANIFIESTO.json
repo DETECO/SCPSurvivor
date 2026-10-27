@@ -1,0 +1,54 @@
+{
+  "revision": "REV-EST-0012-AD01",
+  "parent": "REV-EST-0012",
+  "dateClient": "2026-10-26",
+  "sources": [
+    {
+      "file": "docs/PAUTA_CREACION_ESCENARIOS.md",
+      "snapshot": "fuentes/docs/PAUTA_CREACION_ESCENARIOS.md",
+      "sha256": "74f07fc6ec2936783c28affff23199ac713d6e5f90a411d430f096452660d0ad"
+    },
+    {
+      "file": "docs/NIVELES_BIO_C1_R2_APROBACION.md",
+      "snapshot": "fuentes/docs/NIVELES_BIO_C1_R2_APROBACION.md",
+      "sha256": "59cd2462fd45060aacfcfca7b0d4cc5eed27632d7ad1d4edc26c20fb0f4c50a9"
+    },
+    {
+      "file": "docs/NIVELES_BIO_C1_IMPLEMENTACION_R2.md",
+      "snapshot": "fuentes/docs/NIVELES_BIO_C1_IMPLEMENTACION_R2.md",
+      "sha256": "c6493d4d8b4149d9921af7b92caf025ffa4365b15996c217bca8e7905700bab9"
+    },
+    {
+      "file": "docs/NIVELES_BIO_C1_APROBACION.md",
+      "snapshot": "fuentes/docs/NIVELES_BIO_C1_APROBACION.md",
+      "sha256": "43e0411d0016d1397cbb0041942a730ce1f357dba7686c947bc77673952359ab"
+    },
+    {
+      "file": "assets/levels/bio-c1/MANIFEST.json",
+      "snapshot": "fuentes/assets/levels/bio-c1/MANIFEST.json",
+      "sha256": "5217b396b7b5ee7ff3393b23240a8506826e8cb5f1d8b7876759b70141cb925d"
+    }
+  ],
+  "approvedAssets": [
+    {
+      "file": "assets/levels/bio-c1/01-cultivo-invadido-clean-r2.png",
+      "sha256": "8a34e7ffb92bda77e6f05fd9620303154211328e0e535f6800b88947ed00f33d"
+    },
+    {
+      "file": "assets/levels/bio-c1/02-galeria-del-fluido-clean-r2.png",
+      "sha256": "84bad4c3c1219abc3ad715da9dec900cdd3f5fb69d97a4f6e5ee72340711d1d7"
+    },
+    {
+      "file": "assets/levels/bio-c1/03-camara-de-anclajes-clean-r2.png",
+      "sha256": "a3b314c3f0811d681f745034f32b83fe98881ec910b47a48c0368579ad2bbc1e"
+    },
+    {
+      "file": "assets/levels/bio-c1/04-patio-de-contencion-clean-r2.png",
+      "sha256": "a5e253b5c1a18ae5eb9bc3879fc17c733295dc91d39eb26e423e3d174c6fc6cc"
+    },
+    {
+      "file": "assets/levels/bio-c1/05-nucleo-de-cuarentena-clean-r2.png",
+      "sha256": "7268edb28f7e510e129683d28a695e4340d59935ace1f000fad9ae83c51762b5"
+    }
+  ]
+}

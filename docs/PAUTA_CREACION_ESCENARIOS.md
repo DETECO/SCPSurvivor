@@ -1,23 +1,67 @@
 # Pauta de creación de escenarios — SCP Survivor
-Revisión documental R7.4 · 23/10/2026 · Área responsable: NIVELES.
+Revisión documental R7.10 · 26/10/2026 · Área responsable: NIVELES.
 Diseños conservados: M01-R7 y GRIETAS-V1. Animación NIV-GRI-009 r1 aprobada visualmente por Iván el 23/10/2026.
 
 ## Autoridad y estado
 Iván pidió un escenario Backrooms que se llene de monstruos, con profundidad 2.5D, un poco de difuminado, espacios abiertos y delimitados, módulos y laberinto amplio. Solicitó ampliar y rediseñar la distribución, evitando que todo parezca copiado. Estas instrucciones posteriores sustituyen el plano repetitivo de 24 recintos como objetivo de esta nueva propuesta.
 
-Iván validó R7 como escenario inicial el 22/10/2026: «ME GUSTO ESTE ESCENARIO. LO VALIDO.». El diseño mide **480 × 320 casillas** y pasa a ser la referencia vigente. R5 se conserva como antecedente en su registro. El alcance de implementación se consulta en la evidencia de PROGRAMACION enlazada más abajo; no se duplica su lista de estados.
+Iván validó R7 como escenario inicial el 22/10/2026: «ME GUSTO ESTE ESCENARIO. LO VALIDO.». Su plano original de 480 × 320 conserva la aprobación artística como antecedente. Posteriormente acepta M01 de **240 × 160 casillas y cámara vertical 512** mediante NIV-ESC-008-A / EST-ESC-001 r1, registrado el 23/10 en [LOT-EST-003 r1](gestion/lotes/LOT-EST-003-r1.md). R5 se conserva como antecedente. El alcance de implementación se consulta en PROGRAMACION; no se duplica su lista de estados.
 
 Índice de entrada: [PAUTA_DESARROLLO.md](../PAUTA_DESARROLLO.md). Para las dependencias de grietas se consultaron los documentos locales [dado, revisión 2.1](GRIETAS_DADO_POR_MINUTO_V2.md) y [corte de ESTRUCTURA del 23/10](ESTRUCTURA_SYNC_2026-10-23.md). Esto no declara una nueva lectura del hilo completo. Las reglas de otras áreas se referencian; NIVELES no las modifica.
 
 Las láminas son conceptos de composición, ambiente y ocupación. No son atlas de tiles, planos métricos ni evidencia de un generador ya implementado.
 
+## Mapas BIO compactos C1 — cinco conceptos aprobados
+
+26/10/2026 · Iván pide mapas de cada anomalía inspirados en su lore, con protección/obstáculos y tamaño contenido. Se crean **NIV-BIO01-C1…NIV-BIO05-C1**: Cultivo invadido, Galería del fluido, Cámara de anclajes, Patio de contención y Núcleo de cuarentena. [Cinco imágenes, fundamento y dependencias](../design-proposals/niveles/anomalias-compactas-c1-20261026/LEEME.md).
+
+**NIV-BIO-C1-APR-001, 26/10/2026:** Iván aprueba las cinco C1 y encarga implementarlas: «arobados, ahora desarrollalos para dejarlos listo.  me gustaria que los implmentaras asi, estilo 2.5D con luces, particulas, sombras ...». Se eligen los cinco PNG C1 del paquete, conservados sin edición. [Decisión exacta, recursos, revisiones y dependencias](NIVELES_BIO_C1_APROBACION.md). No se atribuye una aprobación humana a la implementación aún no revisada.
+
+**Corrección de fidelidad NIV-BIO-C1-FID-002, 26/10/2026:** Iván indica «continua, pero adapta los lvl tal cual me los presentaste ?. puedes replicarlos tal cual ....». Se retira la simplificación geométrica de C1-r1 como objetivo visual. C1-r2 usa las cinco imágenes C1 como referencia directa, produce versiones sin guardia/anomalía pintados y traza sus estructuras y capas de profundidad. Es un encargo de corrección, no una nueva aprobación humana del resultado. [Recursos derivados y hashes](../assets/levels/bio-c1/MANIFEST.json).
+
+**Aprobación visual NIV-BIO-C1-APR-003, 26/10/2026:** «aprobados, muy buen diseño.». Iván acepta los cinco resultados C1-r2 de la galería: Cultivo invadido, Galería del fluido, Cámara de anclajes, Patio de contención y Núcleo de cuarentena. [Decisión exacta, recursos, hashes y dependencias](NIVELES_BIO_C1_R2_APROBACION.md). Sustituye únicamente el estado visual pendiente de R2; no acredita publicación, balance ni teléfono físico. La pauta R7.8 anterior queda en el historial enlazado desde ese registro.
+
+Dependencias **CON-NIV-08**, pendientes de consolidación en ESTRUCTURA: C1-r2 sustituye las salas de ensayo mediante arte fiel y contornos de colisión; las seis apariencias de grieta siguen siendo independientes. Implementación local por encargo directo de Iván, evidencias y límites en [informe vigente para PROGRAMACION](NIVELES_BIO_C1_IMPLEMENTACION_R2.md); esa evidencia es la referencia para el código, sin duplicar una lista de implementación aquí. PERSONAJES conserva identidades/atlas/proporciones. No se modifica otra pauta ni se envían mensajes a otros hilos.
+
+El estado pendiente sustituido queda en [pauta R7.6 respaldada](historial-niveles/BIO-C1-antes-implementacion-20261026/PAUTA_CREACION_ESCENARIOS.md); se conserva también el [historial previo a C1](historial-niveles/PAUTA_antes_mapas_BIO_C1_2026-10-26_070250.md).
+
+La simplificación C1-r1 y la pauta R7.7 quedan en [historial anterior a la corrección](historial-niveles/BIO-C1-r1-antes-fidelidad-20261026/).
+
+## Cuatro mapas grandes P1 — encargo y propuestas pendientes
+
+26/10/2026 · **NIV-MAPAS-GRANDES-P1**. Después de registrar la aprobación BIO C1-r2, Iván encarga rediseñar el principal y presentar mapas nuevos antes de desarrollarlos. Aclara la cantidad: «Cuatro en total: principal + tres nuevos».
+
+- **NIV-M01-R8-P1 — Complejo Liminal:** rediseño visual/espacial del principal Backrooms, conservando el presupuesto vigente 240×160.
+- **NIV-M02-P1 — Dársena de Transferencia:** nuevo ambiente de logística y maquinaria.
+- **NIV-M03-P1 — Invernadero de Contención:** nuevo complejo de cultivo y procesamiento de muestras.
+- **NIV-M04-P1 — Archivo de Cuarentena:** nuevo ambiente de archivo institucional y servicios clínicos.
+
+[Cuatro láminas y fichas](../design-proposals/niveles/mapas-grandes-p1-20261026/LEEME.md) · [Galería preliminar](../design-proposals/niveles/mapas-grandes-p1-20261026/VISTA_PRELIMINAR.html) · [Recursos y hashes](../design-proposals/niveles/mapas-grandes-p1-20261026/MANIFIESTO.json).
+
+**Estado: las cuatro propuestas P1 están pendientes de elección.** No se han aplicado al runtime. La aprobación de las cinco salas BIO C1-r2 no se extiende al nuevo principal ni a M02–M04. M01-R7 con escala NIV-ESC-008-A sigue vigente hasta una aceptación nueva inequívoca. Los acercamientos son conceptos visuales, no pruebas de cámara o geometría; los grafos de zonas solo comprueban su relación conceptual.
+
+**CON-NIV-09:** ESTRUCTURA consolida las opciones/revisiones que Iván acepte; PROGRAMACION desarrolla y valida geometría, navegación, rutas, capacidad de hordas y futura generación modular. MENUS/PERSONAJES conservan sus decisiones de encuadre y proporción. Este encargo preliminar no modifica LOT008 ni las pautas de otras áreas y no autoriza mensajes a sus hilos. Implementación y publicación se consultan en las evidencias de PROGRAMACION, sin duplicar su estado aquí.
+
 ## Resumen vigente y registro de decisiones
 
-- **M01-R7:** concepto visual aprobado. Tras la prueba en móvil, Iván solicita corregir sus proporciones; la escala 480 × 320 queda bajo revisión. [NIV-ESC-008 r1](NIVELES_AJUSTE_ESCALA_008.md) presenta A: 240 × 160 + encuadre cercano (recomendada), y B: conservar perímetro + encuadre cercano. Ninguna opción nueva está aceptada todavía.
+- **NIV-MAPAS-GRANDES-P1:** principal rediseñado más tres mapas nuevos presentados como cuatro preliminares, pendientes de elección. No sustituyen M01 vigente ni se incluyen en la aprobación BIO. Ver CON-NIV-09 y paquete P1 arriba.
+- **NIV-BIO01-C1-r2…NIV-BIO05-C1-r2:** cinco adaptaciones visuales aceptadas el 26/10/2026 mediante NIV-BIO-C1-APR-003: «aprobados, muy buen diseño.». [Recursos y alcance](NIVELES_BIO_C1_R2_APROBACION.md). La evidencia técnica se consulta en el informe enlazado; pendientes de consolidación/publicación y teléfono físico no se dan por resueltos por esta aceptación.
+- **NIV-BIO01-C1…NIV-BIO05-C1:** cinco conceptos aceptados el 26/10/2026; registro NIV-BIO-C1-APR-001. [Aprobación y recursos](NIVELES_BIO_C1_APROBACION.md). Consolidación CON-NIV-08 visible arriba; verificación del ejecutable y publicación se consultan en el informe enlazado.
+- **M01 vigente — NIV-ESC-008-A / EST-ESC-001 r1:** opción A aceptada el 23/10: 240 × 160 y cámara más cercana en móvil vertical, ancho 512. [Fuente de aceptación](gestion/lotes/LOT-EST-003-r1.md). Sustituye las dimensiones R7 originales y el estado pendiente A/B de la pauta anterior; conserva sus materiales y proporciones de actores.
 - **GRIETAS-V1, 01–06:** seis diseños visuales aprobados como catálogo. No hay una elección única ni correspondencia aprobada con los cinco niveles de peligro.
 - **NIV-GRI-009 r1:** seis animaciones de portal aprobadas visualmente por Iván el 23/10/2026: «apruebo.». [Registro, recursos y dependencias](NIVELES_APROBACION_GRIETAS_ANIMACION_009.md); implementación y verificaciones en [evidencia de PROGRAMACION](PROGRAMACION_GRIETAS_ANIMACION_009.md). Publicación y teléfono físico se consultan allí; esta aprobación no elige la escala NIV-ESC-008.
 - **M01-R5:** aprobación histórica sustituida por M01-R7 como referencia inicial. No se aplica a R6 ni a revisiones futuras.
-- Los diseños estáticos conservan su aprobación del 22/10. El 23/10 se aprueba la animación NIV-GRI-009 r1 y se conserva la solicitud de corrección de escala sin aceptar A ni B.
+- **NIVELES-GRIETAS-001 r1:** [ficha concreta de recinto/entrada/retorno](gestion/entregas/NIVELES-GRIETAS-001.md), entregada el 24/10 para LOT-EST-005. Cinco salas de ensayo, roster BIO-01–05 y seis transiciones independientes del peligro. Composiciones y parámetros nuevos son de ensayo; no se declaran arte final aprobado ni runtime corregido.
+- Los diseños estáticos conservan su aprobación del 22/10. El 23/10 se aprueban NIV-GRI-009 r1 y la opción A mediante ESTRUCTURA. El 24/10 se registra el encargo de corregir la entrada a grietas y la entrega documental asociada.
+
+### Decisión de escala recuperada de ESTRUCTURA y encargo vigente
+
+| ID/revisión | Decisión exacta y fecha | Cita literal | Recursos y dependencias |
+|---|---|---|---|
+| NIV-ESC-008-A r1 / EST-ESC-001 r1 | Aceptar M01 240 × 160 y cámara más cercana en móvil vertical; 23/10/2026. Sustituye 480 × 320 para la siguiente prueba de M01. | «A: mapa 240×160 y cámara más cercana en móvil vertical (recomendada).» | [LOT-EST-003](gestion/lotes/LOT-EST-003-r1.md), [ficha A original](NIVELES_AJUSTE_ESCALA_008.md). PROGRAMACION construye/prueba; PERSONAJES conserva proporciones; ESTRUCTURA ya consolidó esa aceptación. |
+| NIVELES-GRIETAS-001 r1 | Corregir el contacto sin traslado y definir entrada animada según la grieta con anomalía aprobada; encargo del 24/10/2026. No es aprobación del arte nuevo de salas. | «Quiero que soluciones un error con las grietas. Al entrar en una, no nos mete en ella. Tiene que haber un animacion de entrar, dependiendo de la grieta que nos aparzca.» | [Entrega única para PROGRAMACION](gestion/entregas/NIVELES-GRIETAS-001.md); cita íntegra allí. ESTRUCTURA coordina LOT-EST-005; PROGRAMACION es el único integrador; PERSONAJES aporta BIO y MENUS/SONIDO sus eventos. |
+
+La pauta sustituida se conserva en [historial R7.4](historial-niveles/PAUTA_R7.4_antes_entrega_grietas_2026-10-24_194909.md).
 
 | ID / revisión | Decisión exacta y alcance | Fecha de aprobación | Cita literal de Iván | Recurso elegido | Dependencias |
 |---|---|---|---|---|---|
@@ -37,14 +81,15 @@ La cita común aprueba las seis grietas mostradas, sin aprobar su mecánica de a
 
 Se solicita revisar las proporciones de la prueba. [Diagnóstico y opciones A/B](NIVELES_AJUSTE_ESCALA_008.md). A recomienda 240 × 160 casillas y ancho visible de 512 unidades en móvil vertical. B mantiene 480 × 320 con el mismo encuadre cercano. La cámara actual usa ancho visible fijo: reducir solo el mapa no agranda al personaje.
 
-Estado: propuesta nueva pendiente de aceptación; no se extiende a ella la validación de R7. Dependencias: PROGRAMACION (geometría/cámara/pruebas), MENUS (ocupación de pantalla), PERSONAJES (proporciones conservadas) y ESTRUCTURA (consolidación de escala). Recursos actuales conservados. La pauta previa queda en [historial](historial-niveles/PAUTA_antes_ajuste_escala_2026-10-23_152337.md).
+Estado actualizado el 24/10 desde la aceptación posterior registrada en ESTRUCTURA: opción A aceptada el 23/10 como NIV-ESC-008-A / EST-ESC-001 r1; B no elegida. Dependencias: PROGRAMACION (geometría/cámara/pruebas), MENUS (ocupación de pantalla) y PERSONAJES (proporciones conservadas). [Fuente y cita de aceptación](gestion/lotes/LOT-EST-003-r1.md). Recursos actuales conservados; el estado inicialmente pendiente se conserva en [historial](historial-niveles/PAUTA_antes_ajuste_escala_2026-10-23_152337.md).
 
 ## Dependencias y cambios que requieren consolidación en ESTRUCTURA
 
-- **CON-NIV-06 — Animación:** consolidar la aprobación visual de NIV-GRI-009 r1, del 23/10/2026, cita «apruebo.», según su registro. No cambia azar, tiers, contacto, ventana de entrada, premios ni la revisión de escala pendiente.
+- **CON-NIV-06 — Animación:** aprobación visual de NIV-GRI-009 r1, del 23/10/2026, cita «apruebo.», recogida en el corte REV-EST-0006. No cambia azar, tiers, contacto, ventana de entrada, premios ni la escala M01-A aceptada. La nueva transición de cruce se describe como ensayo en NIVELES-GRIETAS-001.
 
-- **CON-NIV-01 — Escala histórica:** M01-R7 de 480 × 320 conserva su aprobación original; la solicitud posterior NIV-ESC-008 abre su revisión para la siguiente prueba. No consolidar 160 × 100 ni R5 como referencia vigente por retroceso automático.
-- **CON-NIV-05 — Corrección de proporciones:** ESTRUCTURA debe consolidar la opción de NIV-ESC-008 que Iván acepte. Por ahora A y B son propuestas; no se da por aceptado el nuevo tamaño ni el encuadre.
+- **CON-NIV-01 — Escala histórica:** M01-R7 de 480 × 320 conserva su aprobación original como antecedente; NIV-ESC-008-A / EST-ESC-001 sustituye sus dimensiones para la prueba actual de M01. No volver a 160 × 100, R5 o R7 original por inferencia.
+- **CON-NIV-05 — Corrección de proporciones:** consolidada en ESTRUCTURA mediante LOT-EST-003 r1. PROGRAMACION conserva su evidencia de implementación; no reabrir la elección A/B.
+- **CON-NIV-07 — Recintos y cruce:** consumir NIVELES-GRIETAS-001 r1 en LOT-EST-005. Congelar origen, transición por apariencia, cinco BIO aprobadas y retorno/escape. Parámetros de salas/transición/escape señalados como ensayo; aceptación visual de la futura composición pendiente. No duplicar runtime ni modificar maestro/control desde NIVELES.
 - **CON-NIV-02 — Grietas:** registrar que los seis aspectos están aprobados. Las referencias de ESTRUCTURA que aún los llamen propuestas artísticas requieren consolidación; la peligrosidad sigue siendo un eje separado.
 - **CON-NIV-03 — Señalización de peligro:** falta proponer y aceptar cómo mostrar D1–D5 sobre cualquiera de los seis aspectos, sin depender solo del color. NIVELES diseña la señal visual; ESTRUCTURA confirma su significado y compatibilidad con la entrada por contacto.
 - **CON-NIV-04 — Procedural y hordas:** el contrato espacial R7 conserva rutas alternativas y variedad. ESTRUCTURA coordina su relación con el ritmo de cinco minutos; la implementación y su evidencia pertenecen a PROGRAMACION.
@@ -53,6 +98,8 @@ Estado: propuesta nueva pendiente de aceptación; no se extiende a ella la valid
 No se han modificado pautas de otras áreas ni enviado mensajes a otros hilos.
 
 ## Evidencia de implementación — PROGRAMACION
+
+Para la corrección integral de grietas, consultar [REGISTRO_IMPLEMENTACION](gestion/REGISTRO_IMPLEMENTACION.md), vinculado al encargo [LOT-EST-005 r1](gestion/lotes/LOT-EST-005-r1.md). La ficha [NIVELES-GRIETAS-001](gestion/entregas/NIVELES-GRIETAS-001.md) es un contrato de construcción, no evidencia de un traslado ya ejecutado.
 
 Para la animación NIV-GRI-009 r1, consultar [PROGRAMACION_GRIETAS_ANIMACION_009.md](PROGRAMACION_GRIETAS_ANIMACION_009.md). La pauta conserva el encargo; no copia su lista de estados ni resultados de pruebas.
 
@@ -97,7 +144,7 @@ Las siguientes propuestas de NIVELES tendrán ID y revisión identificables. Al 
 - Mochilas y accesorios físicos de arma quedan fuera del recorrido nuevo.
 
 ## 2. Escala, diversidad y movimiento
-Diseño aprobado M01-R7: **480 × 320 casillas**, 32 unidades por casilla. Superficie de 153.600 casillas, 2,4 veces R5. Actores y objetos conservan su escala de mundo. La nueva inclinación visual y el difuminado no cambian colisiones, radios o velocidad por sí mismos.
+Escala vigente de M01 — NIV-ESC-008-A / EST-ESC-001 r1: **240 × 160 casillas**, 32 unidades por casilla; superficie de 38.400 casillas y ancho visible objetivo de 512 unidades en móvil vertical. La escala original R7 de 480 × 320 queda en su historial. Actores y objetos conservan sus proporciones de mundo; inclinación visual y difuminado no cambian física ni velocidad.
 
 Combinar seis familias en una distribución irregular:
 - Plaza abierta con pilares espaciados y varias conexiones.
@@ -110,8 +157,8 @@ Combinar seis familias en una distribución irregular:
 Las familias se repiten con variantes y giros compatibles; no se acepta llenar el escenario con una cuadrícula de copias idénticas. Abierto no significa vacío: usar pilares, pantallas y mobiliario de borde para dar referencias sin consumir el centro de maniobra.
 
 Medidas nominales propuestas:
-- Enlaces principales y pasos del laberinto: 20–28 casillas.
-- Aberturas de recintos: 12–16 casillas.
+- Enlaces principales y pasos del laberinto de la opción A: 10–14 casillas libres, sujetos a validación física.
+- Aberturas de recintos de la opción A: 6–8 casillas libres, sujetos a validación física.
 - Dos o más áreas amplias, incluida la arena del jefe.
 - Al menos dos salidas separadas por recinto transitable; las más delimitadas prefieren tres.
 - Circuito exterior y cruces internos que permitan volver a otra zona sin retroceder por el mismo acceso.
@@ -184,4 +231,4 @@ La cantidad de figuras dibujadas no determina capacidad, balance ni límite de e
 ## 8. Aplicación actual
 M01 R7 — Backrooms modular 2.5D. Entrega en design-proposals/escenarios/mapa01-r7-modular-backrooms-25d-20261022. El plano mezcla plazas, recintos, grupos modulares, laberinto amplio y servicios, con una arena abierta.
 
-Vigencia: M01-R7 y GRIETAS-V1 / 01–06, según el registro de esta pauta, más el encargo visual NIV-GRI-009 r1. R5 y su aprobación se conservan como historial; los estudios intermedios R6 no gobiernan el trazado. La implementación se consulta en la evidencia de PROGRAMACION. NIV-ESC-008 sigue pendiente de elección.
+Vigencia: M01 con escala NIV-ESC-008-A / EST-ESC-001 r1 y arte base R7, GRIETAS-V1 / 01–06 y su animación aprobada NIV-GRI-009 r1. NIVELES-GRIETAS-001 r1 concreta recintos y traslado de ensayo para LOT-EST-005; no declara su aceptación artística ni ejecución. R5 y el plano R7 original se conservan como historial. La implementación se consulta en PROGRAMACION.

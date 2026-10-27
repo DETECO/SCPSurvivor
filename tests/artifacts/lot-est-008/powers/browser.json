@@ -1,0 +1,163 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "mode": 16,
+      "id": "esporario",
+      "earlyDamage": 18,
+      "actual": {
+        "readOnly": true,
+        "damage": 18,
+        "cycles": 0,
+        "name": "Pulso de esporas"
+      },
+      "drawCalls": 2,
+      "selectedPng": "powers/16/POD-01-A.png"
+    },
+    {
+      "mode": 16,
+      "id": "larva",
+      "earlyDamage": 9.600000000000364,
+      "actual": {
+        "readOnly": true,
+        "damage": 24.00000000000182,
+        "cycles": 0,
+        "name": "Cápsula vítrea"
+      },
+      "drawCalls": 3,
+      "selectedPng": "powers/16/POD-02-A.png"
+    },
+    {
+      "mode": 16,
+      "id": "malla",
+      "earlyDamage": 24,
+      "actual": {
+        "readOnly": true,
+        "damage": 24,
+        "cycles": 0,
+        "name": "Látigo tendinoso"
+      },
+      "drawCalls": 3,
+      "selectedPng": "powers/16/POD-03-A.png"
+    },
+    {
+      "mode": 16,
+      "id": "portador",
+      "earlyDamage": 0,
+      "actual": {
+        "readOnly": true,
+        "damage": 6,
+        "cycles": 0,
+        "name": "Corona de espinas"
+      },
+      "drawCalls": 3,
+      "selectedPng": "powers/16/POD-04-A.png"
+    },
+    {
+      "mode": 16,
+      "id": "huesped",
+      "earlyDamage": 10,
+      "actual": {
+        "readOnly": true,
+        "damage": 10,
+        "cycles": 0,
+        "name": "Membrana de rechazo"
+      },
+      "drawCalls": 2,
+      "selectedPng": "powers/16/POD-05-B.png"
+    },
+    {
+      "mode": 16,
+      "replacement": {
+        "needs": true,
+        "accepted": true,
+        "ids": [
+          "esporario",
+          "larva",
+          "portador"
+        ]
+      },
+      "hudViewports": 4
+    },
+    {
+      "mode": 32,
+      "id": "esporario",
+      "earlyDamage": 18,
+      "actual": {
+        "readOnly": true,
+        "damage": 18,
+        "cycles": 0,
+        "name": "Pulso de esporas"
+      },
+      "drawCalls": 1,
+      "selectedPng": "powers/32/POD-01-A.png"
+    },
+    {
+      "mode": 32,
+      "id": "larva",
+      "earlyDamage": 9.600000000000364,
+      "actual": {
+        "readOnly": true,
+        "damage": 24.00000000000182,
+        "cycles": 0,
+        "name": "Cápsula vítrea"
+      },
+      "drawCalls": 1,
+      "selectedPng": "powers/32/POD-02-A.png"
+    },
+    {
+      "mode": 32,
+      "id": "malla",
+      "earlyDamage": 24,
+      "actual": {
+        "readOnly": true,
+        "damage": 24,
+        "cycles": 0,
+        "name": "Látigo tendinoso"
+      },
+      "drawCalls": 1,
+      "selectedPng": "powers/32/POD-03-A.png"
+    },
+    {
+      "mode": 32,
+      "id": "portador",
+      "earlyDamage": 0,
+      "actual": {
+        "readOnly": true,
+        "damage": 6,
+        "cycles": 0,
+        "name": "Corona de espinas"
+      },
+      "drawCalls": 1,
+      "selectedPng": "powers/32/POD-04-A.png"
+    },
+    {
+      "mode": 32,
+      "id": "huesped",
+      "earlyDamage": 10,
+      "actual": {
+        "readOnly": true,
+        "damage": 10,
+        "cycles": 0,
+        "name": "Membrana de rechazo"
+      },
+      "drawCalls": 1,
+      "selectedPng": "powers/32/POD-05-B.png"
+    },
+    {
+      "mode": 32,
+      "replacement": {
+        "needs": true,
+        "accepted": true,
+        "ids": [
+          "esporario",
+          "larva",
+          "portador"
+        ]
+      },
+      "hudViewports": 4
+    }
+  ],
+  "live": false,
+  "method": "Actual damage/projectiles/renderer on forced stationary targets and isolated world; not natural balance or phone."
+}

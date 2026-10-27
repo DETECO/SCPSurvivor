@@ -37,7 +37,7 @@ G.Expedition = (() => {
     geometry=v2()&&sector===1&&(G.MapTrial.expanded||G.MapTrial.rewardRiftPractice)&&G.SceneR7 ? (G.SceneM01A?G.SceneM01A.generate(mapSeed):G.SceneR7.generate(mapSeed)) : v2()&&G.SectorMaps.generateV2?G.SectorMaps.generateV2(mapSeed):G.SectorMaps.generate(mapSeed,{boss:kind==='boss'});
     G.World.reset(mapSeed);G.World.setFixture(geometry.fixture);G.Camera.setSceneView?.(geometry.fixture.sceneRevision||null);G.World.setBiome(1,true);G.Path.clear();G.Pickups.clear();G.EnemyMgr.clear();G.Projectiles.clear();
     pl.x=geometry.entry.x;pl.y=geometry.entry.y;exit.x=geometry.exit.x;exit.y=geometry.exit.y;
-    G.Camera.x=pl.x;G.Camera.y=pl.y;G.Path.update(1,[pl]);G.Touch.reset();G.Input.reset();objectives=[];boss=null;
+    G.Camera.x=pl.x;G.Camera.y=pl.y;G.Path.update(1,[pl]);G.Touch.reset();G.Input.reset();G.RiftCompanion?.placeNear?.(pl);objectives=[];boss=null;
     if(v2()){
       mapTime=G.RiftExpedition?.practice&&sector===2?60:sector===1&&G.MapTrial.quick?(G.MapTrial.startTime??270):0;
       doorOpen=false;bossSpawned=false;bossDefeated=false;spawnClosed=false;spawnClock=0;sectorWaves=0;
@@ -103,14 +103,14 @@ G.Expedition = (() => {
       if(spawnClosed||mapTime>=(G.MapTrial.duration??300)||G.EnemyMgr.count>=cap)return false;
       const pos=freeSpawn();if(!pos)return false;
       const def=spawned%4===3?G.Content.biological:G.Content.pursuer;
-      const e=G.EnemyMgr.add(new G.Enemy(def,pos[0],pos[1],scale(1+Math.floor(mapTime/60))));objectives.push(e);spawned++;return true;
+      const e=G.EnemyMgr.add(new G.Enemy(def,pos[0],pos[1],G.ExpeditionPressure.at(sector,mapTime).scale));objectives.push(e);spawned++;return true;
     }
     if((objective==='neutralize'&&spawned>=quota)||(objective==='survive'&&waveTime>=60)||G.EnemyMgr.count>=G.Spawner.CAP)return false;
     const pos=freeSpawn();if(!pos)return false;
     const def=(sector===1&&wave===1)||spawned%4!==3?G.Content.pursuer:G.Content.biological;
     const e=G.EnemyMgr.add(new G.Enemy(def,pos[0],pos[1],scale()));objectives.push(e);spawned++;return true;
   }
-  function trialEnemyCap(){return Math.min(24,G.Spawner.CAP)-(bossSpawned?0:1)-(G.MapTrial.rewardRiftPractice&&G.DimensionalRifts?.state.status==='open'?1:0);}
+  function trialEnemyCap(){if(G.MapTrial.rewardRiftPractice)return Math.min(24,G.Spawner.CAP)-(bossSpawned?0:1)-(G.DimensionalRifts?.state.status==='open'?1:0);return G.ExpeditionPressure.at(sector,mapTime,G.Spawner.CAP,(bossSpawned?0:1)+(G.MapTrial.rewardRiftPractice&&G.DimensionalRifts?.state.status==='open'?1:0)).cap;}
   function trialBoss(){
     if(bossSpawned||spawnClosed)return;
     // The mandatory boss is independent of the regular enemy cap and camera visibility.
@@ -142,7 +142,7 @@ G.Expedition = (() => {
     const points=(geometry.spawnPoints||[]).filter(p=>Math.hypot(p.x-pl.x,p.y-pl.y)>=140&&Math.hypot(p.x-pl.x,p.y-pl.y)<=900&&G.World.isFree(p.x,p.y,18)&&G.Path.reachable(p.x,p.y,pl));
     points.sort((a,b)=>Math.hypot(a.x-pl.x,a.y-pl.y)-Math.hypot(b.x-pl.x,b.y-pl.y));
     const p=points[0];if(!p)return;
-    const sc=scale(1);elite=G.EnemyMgr.add(new G.Enemy(G.Content.pursuer,p.x,p.y,{...sc,hp:sc.hp*6,dmg:sc.dmg*1.3}));elite.elite=true;elite.name='Élite de armamento';
+    const sc=scale(1);elite=G.EnemyMgr.add(new G.Enemy(G.Content.pursuer,p.x,p.y,{...sc,hp:sc.hp*6,dmg:sc.dmg*1.3}));elite.xp=84;elite.elite=true;elite.name='Élite de armamento';
     G.Spawner.say('PRÁCTICA · vence a la élite para adelantar tu segunda arma',5,true);
   }
   function eliteVictory(){if(elite?.dead&&!eliteDefeated){eliteDefeated=true;offerTrialReward('elite',elite);}}
@@ -330,11 +330,11 @@ G.Expedition = (() => {
     if(G.MapTrial.rewardRiftPractice)useRift(); // Contacto instantáneo, sin botón y sin limpiar el escenario.
     G.Camera.follow(pl.x,pl.y,dt);G.World.update(dt,G.Camera);G.FX.update(dt);G.Spawner.tickBanner(dt);
     if(!spawnClosed){
-      spawnClock+=dt*Math.min(2,.55+.06*(sector-1)+mapTime/200);
-      while(spawnClock>=1){if(!spawnOne()){spawnClock=Math.min(1,spawnClock);break;}spawnClock--;}
+      spawnClock+=dt*G.ExpeditionPressure.at(sector,mapTime).rate;
+      while(spawnClock>=1){if(!spawnOne()){spawnClock=0;break;}spawnClock--;}
     }
     G.Path.update(dt,[pl]);G.EnemyMgr.update(dt,[pl]);G.Projectiles.update(dt,pl,G.EnemyMgr.all());
-    G.Combat.resolve(dt,pl,elapsed);G.MapTrial.updateAllies?.(dt,pl);G.Pickups.update(dt,pl,collect);
+    G.Combat.resolve(dt,pl,elapsed);G.RiftCompanion?.update(dt,pl);G.RiftCompanion?.receiveDamage?.();G.MapTrial.updateAllies?.(dt,pl);G.Pickups.update(dt,pl,collect);
     if(pl.dead||pl.hp<=0){finish('death');return;}
     trialVictory();trialRiftVictory();eliteVictory();promptUpgrade();if(phase==='levelup')return;
     G.ExplorationChests?.tick(dt,mapTime,pl);

@@ -1,0 +1,145 @@
+{
+  "revision": "REV-EST-0012",
+  "dateClient": "2026-10-26",
+  "sources": [
+    {
+      "file": "PAUTA_DESARROLLO.md",
+      "snapshot": "fuentes/PAUTA_DESARROLLO.md",
+      "sha256": "d408609572e4d386c4f6fbd1c25560094f1b077bde99979b150d70e70e6e8309"
+    },
+    {
+      "file": "docs/gestion/CONTROL_CAMBIOS.md",
+      "snapshot": "fuentes/docs/gestion/CONTROL_CAMBIOS.md",
+      "sha256": "53f06b2903c17dd2b0382d032932af9f954364866045c264090f12c4a4750801"
+    },
+    {
+      "file": "docs/PAUTA_ARMAS.md",
+      "snapshot": "fuentes/docs/PAUTA_ARMAS.md",
+      "sha256": "0a903e7b4eabefed8852484624c84db6dde1b35cb41e2c9ea163e494a5fcb8a5"
+    },
+    {
+      "file": "docs/referencias/armas/poderes-anomalos-v1/SELECCION_PODERES_2026-10-26.md",
+      "snapshot": "fuentes/docs/referencias/armas/poderes-anomalos-v1/SELECCION_PODERES_2026-10-26.md",
+      "sha256": "d0a7faaf41f4c9e9df5524d13ffda52050e1185988cc352edb4a285a0eb3656f"
+    },
+    {
+      "file": "docs/referencias/armas/poderes-anomalos-v1/SELECCION_PODERES_2026-10-26.json",
+      "snapshot": "fuentes/docs/referencias/armas/poderes-anomalos-v1/SELECCION_PODERES_2026-10-26.json",
+      "sha256": "1ca71f9471c3cab11abdd31ba395192e6d5df3d71013931f8abb7cc0c0bea925"
+    },
+    {
+      "file": "docs/referencias/armas/entregas/ARM-JUG-001-r1/ENTREGA.md",
+      "snapshot": "fuentes/docs/referencias/armas/entregas/ARM-JUG-001-r1/ENTREGA.md",
+      "sha256": "fd23b20b6f0e29eb233e1c14a29cc79ee2c0afd32e92e3875a5f0f769ef335b4"
+    },
+    {
+      "file": "docs/PAUTA_CREACION_ESCENARIOS.md",
+      "snapshot": "fuentes/docs/PAUTA_CREACION_ESCENARIOS.md",
+      "sha256": "7e6e7a574c8fca5364b6feb3679e3adc25930c69a6bb0d2ba93bbf827fe61a3a"
+    },
+    {
+      "file": "docs/NIVELES_BIO_C1_APROBACION.md",
+      "snapshot": "fuentes/docs/NIVELES_BIO_C1_APROBACION.md",
+      "sha256": "9c8ce2e593aece43fa902db00b48146f1df2e0e2e9dd1a45cc8bc21b64d2bd4c"
+    },
+    {
+      "file": "docs/NIVELES_BIO_C1_IMPLEMENTACION.md",
+      "snapshot": "fuentes/docs/NIVELES_BIO_C1_IMPLEMENTACION.md",
+      "sha256": "88e4768f9fff05a3b7e7d77817dc199ae427fb062237c03af7043b5019988fd6"
+    },
+    {
+      "file": "docs/NIVELES_APROBACION_GRIETAS_ANIMACION_009.md",
+      "snapshot": "fuentes/docs/NIVELES_APROBACION_GRIETAS_ANIMACION_009.md",
+      "sha256": "3b4f4c47a82227ad4aaa9129694ae8bdccfe0b564f90f7707642f7353fd36144"
+    },
+    {
+      "file": "docs/gestion/entregas/PERSONAJES-PROPORCIONES-004.md",
+      "snapshot": "fuentes/docs/gestion/entregas/PERSONAJES-PROPORCIONES-004.md",
+      "sha256": "767af8bb327d2b3c07ef5cf3fd374ab8a23b72aa542f7d9aabcc5f80cb94d0ff"
+    },
+    {
+      "file": "docs/gestion/lotes/LOT-EST-008-r1.md",
+      "snapshot": "fuentes/docs/gestion/lotes/LOT-EST-008-r1.md",
+      "sha256": "02b7451738c007ddfb29302109762fa31a7d865c51e430ead49b05ae0f983f3b"
+    }
+  ],
+  "selectedFx": [
+    {
+      "power": "POD-01-A",
+      "file": "docs/referencias/armas/poderes-anomalos-v1/fx-atlas/16/POD-01-A.png",
+      "sha256": "6152288d43a46e61a5f04f75124aa3de61ffe263015964d144f5ff518810b3bc",
+      "resolution": 16
+    },
+    {
+      "power": "POD-01-A",
+      "file": "docs/referencias/armas/poderes-anomalos-v1/fx-atlas/32/POD-01-A.png",
+      "sha256": "945500e4e8132e21038fef787961f1e24b1551750112ad6be6dc0e6b13120058",
+      "resolution": 32
+    },
+    {
+      "power": "POD-02-A",
+      "file": "docs/referencias/armas/poderes-anomalos-v1/fx-atlas/16/POD-02-A.png",
+      "sha256": "a83cd12e1feb72afb08243e75e63b6a87baaa0373f6f01a6428034ecb18add7a",
+      "resolution": 16
+    },
+    {
+      "power": "POD-02-A",
+      "file": "docs/referencias/armas/poderes-anomalos-v1/fx-atlas/32/POD-02-A.png",
+      "sha256": "6842ed519ed801a9af6c66ee0c82fd2904259082d292612895f1e28b9745a852",
+      "resolution": 32
+    },
+    {
+      "power": "POD-03-A",
+      "file": "docs/referencias/armas/poderes-anomalos-v1/fx-atlas/16/POD-03-A.png",
+      "sha256": "12924ea89e0b78c8ae5428db97536e89b639898b7adaf0f44b1162d778f8df1f",
+      "resolution": 16
+    },
+    {
+      "power": "POD-03-A",
+      "file": "docs/referencias/armas/poderes-anomalos-v1/fx-atlas/32/POD-03-A.png",
+      "sha256": "ec9aaa775116a2421b7cb6cf8779dbac5dc64885d34a247010c4124ca42828bc",
+      "resolution": 32
+    },
+    {
+      "power": "POD-04-A",
+      "file": "docs/referencias/armas/poderes-anomalos-v1/fx-atlas/16/POD-04-A.png",
+      "sha256": "0df397e290056ae949dd7e0b9a0b207cf2c784be9bc18a1928648f2e2585822a",
+      "resolution": 16
+    },
+    {
+      "power": "POD-04-A",
+      "file": "docs/referencias/armas/poderes-anomalos-v1/fx-atlas/32/POD-04-A.png",
+      "sha256": "63b7c0d5b7e26711cdb8940355260324119f3e367107a3eb27b5ba627b4a01ff",
+      "resolution": 32
+    },
+    {
+      "power": "POD-05-B",
+      "file": "docs/referencias/armas/poderes-anomalos-v1/fx-atlas/16/POD-05-B.png",
+      "sha256": "0a8ae7e88b420589e6de60d3becbb1edb918cd63c23eb73ce12a12d43ae18f2d",
+      "resolution": 16
+    },
+    {
+      "power": "POD-05-B",
+      "file": "docs/referencias/armas/poderes-anomalos-v1/fx-atlas/32/POD-05-B.png",
+      "sha256": "b47fab5a6722cfd94e3b52241afafd9183f7151339e7852db5d90a4e41915f85",
+      "resolution": 32
+    }
+  ],
+  "publicBaseline": {
+    "metadata": "ca2e2f0478c4b8392fee4f68337ee04505aa501a",
+    "runtime": "8cdac5846ec7cf7c0b9fa95c226120b723644e2e",
+    "bundle": "92026cde30"
+  },
+  "areaState": {
+    "ARMAS": "R6 route and R4 selected powers; ARM-JUG candidate deferred",
+    "NIVELES": "R7.7/C1 approved; C1-r2 candidate has no final verified delivery",
+    "PERSONAJES": "proportions004 delivered and already public",
+    "PROGRAMACION": "LOT008 dispatched; no implementation claimed"
+  },
+  "coverage": "Five recent ARMAS turns, two NIVELES turns, two PERSONAJES and PROGRAMACION turns; local new dependencies. No full-history audit.",
+  "failedParallelAudits": {
+    "count": 3,
+    "reason": "usage limit",
+    "findingsAttributed": false
+  }
+}

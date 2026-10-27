@@ -1,6 +1,6 @@
 # Roadmap vigente — SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-26).** Demo0.39 publicada/comprobada: HUD MEN-005-A y proporciones de seis humanos16/32 corregidas; grietas/BIO/poderes/NPC con arma aleatoria y reserva infinita conservados.285pruebas de juego, cuatro formatos publicos,352montajes y92hashesPASS. Aceptacion visual nueva y telefono fisico pendientes. REV0011/Control0.13; siguienteLOT002 con gate de fusion cerrado.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-26).** Demo pública acreditada0.39. LOT008 implementado y revisado localmente para publicación0.40: cristalesXP, compañero vivo al regresar, cámara uniforme, cinco salasC1-r2 aceptadas, variedad/BIO más exigentes, cinco poderes elegidos y presión progresiva. Publicación nueva pendiente de recibo; fusión/ARM-JUG001 fuera del lote; balance humano/teléfono pendientes. AvanceV2 sin calcular.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 

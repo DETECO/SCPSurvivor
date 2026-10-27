@@ -1,0 +1,12 @@
+{
+  "revision": "REV-EST-0012-AD01",
+  "decision": "NIV-BIO-C1-APR-003",
+  "dateClient": "2026-10-26",
+  "sourceThread": "01a1457a-3dba-75b3-badf-018086fb9bda",
+  "turnId": "01a17864-ecec-7b72-97ce-04bd6b35445a",
+  "messageId": "msg_01a17864-f06e-77d2-87d0-0491cf452eaa",
+  "quote": "aprobados, muy buen diseño.",
+  "reference": "five C1-r2 rooms in VISTA_IMPLEMENTADA.html",
+  "scope": "visual approval only; no automatic publication, balance or physical-device validation",
+  "retrieval": "Local session read after read_thread rejected one oversized turn; ambient browser context used only to identify the displayed gallery."
+}

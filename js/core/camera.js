@@ -8,6 +8,7 @@ G.Camera = {
   VIEW_W: 768,              // un 20% más de vista que al principio (640)
   shake: 0,
   _sx: 0, _sy: 0,
+  roomBounds: null,
 
   /** Recalcula la escala para el tamaño actual del canvas. */
   dpr: 1,
@@ -19,10 +20,25 @@ G.Camera = {
   resize(cssW, cssH, dpr = 1) {
     this.cssW=cssW;this.cssH=cssH;
     this.dpr = dpr;
-    const viewW=this.sceneView==='NIV-ESC-008-A-r1'&&cssH>cssW?512:this.VIEW_W;
+    const viewW=(G.MapTrial?.enabled||this.sceneView==='NIV-ESC-008-A-r1')&&cssH>cssW?512:this.VIEW_W;
     this.scale = Math.min(cssW / viewW, cssH / this.MIN_VIEW_H);
     this.w = cssW / this.scale;
     this.h = cssH / this.scale;
+    if (this.roomBounds) this.clampTo(this.roomBounds);
+  },
+
+  /** Keep a compact room in view; center an axis when the view is larger. */
+  clampTo(bounds) {
+    const axis = (value, size, lo, hi) => size >= hi - lo
+      ? (lo + hi) / 2
+      : Math.max(lo + size / 2, Math.min(value, hi - size / 2));
+    this.x = axis(this.x, this.w, bounds.left, bounds.right);
+    this.y = axis(this.y, this.h, bounds.top, bounds.bottom);
+  },
+
+  setRoomBounds(bounds) {
+    this.roomBounds = bounds || null;
+    if (this.roomBounds) this.clampTo(this.roomBounds);
   },
 
   setSceneView(revision) {
@@ -33,6 +49,7 @@ G.Camera = {
   follow(tx, ty, dt) {
     this.x = G.U.damp(this.x, tx, 9, dt);
     this.y = G.U.damp(this.y, ty, 9, dt);
+    if (this.roomBounds) this.clampTo(this.roomBounds);
     if (this.shake > 0) {
       this.shake = Math.max(0, this.shake - dt * 2.4);
       const a = this.shake * 7;

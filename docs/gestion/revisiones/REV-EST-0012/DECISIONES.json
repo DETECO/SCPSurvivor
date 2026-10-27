@@ -1,0 +1,44 @@
+{
+  "dateClient": "2026-10-26",
+  "decisions": [
+    {
+      "id": "EST-JUG-001",
+      "revision": "r1",
+      "authority": "direct current request from Ivan plus CONTINUA",
+      "scope": [
+        "XP crystals differ by value/shape/color/size",
+        "companion follows out alive with preserved HP and can die",
+        "same rift camera scale on all maps",
+        "larger/harder varied BIO",
+        "approved power effects visible/effective",
+        "progressive waves"
+      ],
+      "parameters": "ENSAYO-JUG-002r1; not human-validated balance"
+    },
+    {
+      "id": "ARM-POD-SEL-001",
+      "revision": "r1",
+      "userMessage": "01a17593-fdd0-7263-acb4-af41b5a82370",
+      "selected": [
+        "POD-01-A",
+        "POD-02-A",
+        "POD-03-A",
+        "POD-04-A",
+        "POD-05-B"
+      ]
+    },
+    {
+      "id": "NIV-BIO-C1-APR-001",
+      "revision": "C1",
+      "userMessage": "01a177c6-8f02-7153-ba1d-7a785a5d29f6",
+      "fidelityMessage": "01a17825-ce34-72b3-81ca-4cc1c6a45c56",
+      "scope": "five approved compact rooms; faithful integration and QA pending"
+    },
+    {
+      "id": "ARM-RUTA-001",
+      "revision": "r1",
+      "userMessage": "01a1782a-1bc0-77e0-8cf9-17abd0031299",
+      "scope": "area delivers, ESTRUCTURA consolidates, PROGRAMACION implements/publishes; ARM-JUG not auto-approved"
+    }
+  ]
+}

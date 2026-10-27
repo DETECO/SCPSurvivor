@@ -1,0 +1,724 @@
+{
+  "status": "PASS",
+  "live": false,
+  "records": [
+    {
+      "tier": 1,
+      "mode": 16,
+      "viewport": [
+        390,
+        844
+      ],
+      "entry": {
+        "active": true,
+        "tier": "D1",
+        "style": 1
+      },
+      "room": {
+        "tier": "D1",
+        "body": 128,
+        "hp": 800,
+        "room": "NIV-BIO-C1-r2",
+        "free": true,
+        "scale": 0.76171875,
+        "sameScale": true,
+        "readOnly": true,
+        "originFrozen": true,
+        "camera": {
+          "x": -14.375,
+          "y": 0,
+          "w": 512,
+          "h": 1108.0205128205127,
+          "bounds": {
+            "left": -480,
+            "right": 480,
+            "top": -320,
+            "bottom": 320
+          }
+        }
+      },
+      "path": {
+        "patterns": [
+          0,
+          1,
+          2
+        ],
+        "initial": 271.06531979781545,
+        "closest": 0
+      },
+      "return": {
+        "active": false,
+        "sameNpc": true,
+        "hp": 31,
+        "ammo": 3,
+        "reload": 0.49,
+        "origin": true,
+        "clock": true,
+        "scale": true,
+        "roomBounds": null,
+        "power": "esporario"
+      },
+      "mapCarry": {
+        "sector": 3,
+        "same": true,
+        "hp": 31,
+        "ammo": 12,
+        "dead": false,
+        "before": {
+          "phase": "combat",
+          "v2": {
+            "mapTime": 300,
+            "doorOpen": true,
+            "bossSpawned": true,
+            "bossDefeated": true,
+            "spawnClosed": true,
+            "quick": false,
+            "allies": [
+              {
+                "x": 4908,
+                "y": 3048,
+                "dex": "support01",
+                "fleeing": false,
+                "hidden": false
+              },
+              {
+                "x": 4980,
+                "y": 3048,
+                "dex": "support01",
+                "fleeing": false,
+                "hidden": false
+              }
+            ],
+            "infinite": true,
+            "elite": null
+          },
+          "exit": {
+            "x": 4944,
+            "y": 3024,
+            "r": 72
+          }
+        },
+        "after": {
+          "phase": "combat",
+          "v2": {
+            "mapTime": 0,
+            "doorOpen": false,
+            "bossSpawned": false,
+            "bossDefeated": false,
+            "spawnClosed": false,
+            "quick": false,
+            "allies": [],
+            "infinite": true,
+            "elite": null
+          },
+          "distance": 5553.821027004741
+        }
+      },
+      "outside": {
+        "same": true,
+        "fired": true,
+        "hurt": true,
+        "dead": true,
+        "sameDead": true,
+        "noAfter": true
+      }
+    },
+    {
+      "tier": 1,
+      "mode": 32,
+      "viewport": [
+        844,
+        390
+      ],
+      "entry": {
+        "active": true,
+        "tier": "D1",
+        "style": 2
+      },
+      "room": {
+        "tier": "D1",
+        "body": 128,
+        "hp": 800,
+        "room": "NIV-BIO-C1-r2",
+        "free": true,
+        "scale": 0.9285714285714286,
+        "sameScale": true,
+        "readOnly": true,
+        "originFrozen": true,
+        "camera": {
+          "x": -14.375,
+          "y": 110,
+          "w": 908.9230769230769,
+          "h": 420,
+          "bounds": {
+            "left": -480,
+            "right": 480,
+            "top": -320,
+            "bottom": 320
+          }
+        }
+      },
+      "path": {
+        "patterns": [
+          0,
+          1,
+          2
+        ],
+        "initial": 270.41441040627586,
+        "closest": 0
+      },
+      "return": {
+        "active": false,
+        "sameNpc": true,
+        "hp": 31,
+        "ammo": 3,
+        "reload": 0.49,
+        "origin": true,
+        "clock": true,
+        "scale": true,
+        "roomBounds": null,
+        "power": "esporario"
+      },
+      "mapCarry": null,
+      "outside": null
+    },
+    {
+      "tier": 2,
+      "mode": 16,
+      "viewport": [
+        1280,
+        900
+      ],
+      "entry": {
+        "active": true,
+        "tier": "D2",
+        "style": 3
+      },
+      "room": {
+        "tier": "D2",
+        "body": 136,
+        "hp": 1300,
+        "room": "NIV-BIO-C1-r2",
+        "free": true,
+        "scale": 1.6666666666666667,
+        "sameScale": true,
+        "readOnly": true,
+        "originFrozen": true,
+        "camera": {
+          "x": 1.25,
+          "y": 50,
+          "w": 768,
+          "h": 540,
+          "bounds": {
+            "left": -480,
+            "right": 480,
+            "top": -320,
+            "bottom": 320
+          }
+        }
+      },
+      "path": {
+        "patterns": [
+          0,
+          1,
+          2
+        ],
+        "initial": 179.064456590717,
+        "closest": 0
+      },
+      "return": {
+        "active": false,
+        "sameNpc": true,
+        "hp": 31,
+        "ammo": 3,
+        "reload": 0.49,
+        "origin": true,
+        "clock": true,
+        "scale": true,
+        "roomBounds": null,
+        "power": "larva"
+      },
+      "mapCarry": null,
+      "outside": null
+    },
+    {
+      "tier": 2,
+      "mode": 32,
+      "viewport": [
+        932,
+        430
+      ],
+      "entry": {
+        "active": true,
+        "tier": "D2",
+        "style": 4
+      },
+      "room": {
+        "tier": "D2",
+        "body": 136,
+        "hp": 1300,
+        "room": "NIV-BIO-C1-r2",
+        "free": true,
+        "scale": 1.0238095238095237,
+        "sameScale": true,
+        "readOnly": true,
+        "originFrozen": true,
+        "camera": {
+          "x": 1.25,
+          "y": 109.99999999999997,
+          "w": 910.3255813953489,
+          "h": 420.00000000000006,
+          "bounds": {
+            "left": -480,
+            "right": 480,
+            "top": -320,
+            "bottom": 320
+          }
+        }
+      },
+      "path": {
+        "patterns": [
+          0,
+          1,
+          2
+        ],
+        "initial": 210.98654416635472,
+        "closest": 0
+      },
+      "return": {
+        "active": false,
+        "sameNpc": true,
+        "hp": 31,
+        "ammo": 3,
+        "reload": 0.49,
+        "origin": true,
+        "clock": true,
+        "scale": true,
+        "roomBounds": null,
+        "power": "larva"
+      },
+      "mapCarry": null,
+      "outside": null
+    },
+    {
+      "tier": 3,
+      "mode": 16,
+      "viewport": [
+        390,
+        844
+      ],
+      "entry": {
+        "active": true,
+        "tier": "D3",
+        "style": 5
+      },
+      "room": {
+        "tier": "D3",
+        "body": 144,
+        "hp": 2000,
+        "room": "NIV-BIO-C1-r2",
+        "free": true,
+        "scale": 0.76171875,
+        "sameScale": true,
+        "readOnly": true,
+        "originFrozen": true,
+        "camera": {
+          "x": -0.625,
+          "y": 0,
+          "w": 512,
+          "h": 1108.0205128205127,
+          "bounds": {
+            "left": -480,
+            "right": 480,
+            "top": -320,
+            "bottom": 320
+          }
+        }
+      },
+      "path": {
+        "patterns": [
+          0,
+          1,
+          2
+        ],
+        "initial": 314.8444691894845,
+        "closest": 0
+      },
+      "return": {
+        "active": false,
+        "sameNpc": true,
+        "hp": 31,
+        "ammo": 3,
+        "reload": 0.49,
+        "origin": true,
+        "clock": true,
+        "scale": true,
+        "roomBounds": null,
+        "power": "malla"
+      },
+      "mapCarry": null,
+      "outside": null
+    },
+    {
+      "tier": 3,
+      "mode": 32,
+      "viewport": [
+        844,
+        390
+      ],
+      "entry": {
+        "active": true,
+        "tier": "D3",
+        "style": 6
+      },
+      "room": {
+        "tier": "D3",
+        "body": 144,
+        "hp": 2000,
+        "room": "NIV-BIO-C1-r2",
+        "free": true,
+        "scale": 0.9285714285714286,
+        "sameScale": true,
+        "readOnly": true,
+        "originFrozen": true,
+        "camera": {
+          "x": -0.625,
+          "y": 110,
+          "w": 908.9230769230769,
+          "h": 420,
+          "bounds": {
+            "left": -480,
+            "right": 480,
+            "top": -320,
+            "bottom": 320
+          }
+        }
+      },
+      "path": {
+        "patterns": [
+          0,
+          1,
+          2
+        ],
+        "initial": 305.57395561280055,
+        "closest": 0
+      },
+      "return": {
+        "active": false,
+        "sameNpc": true,
+        "hp": 31,
+        "ammo": 3,
+        "reload": 0.49,
+        "origin": true,
+        "clock": true,
+        "scale": true,
+        "roomBounds": null,
+        "power": "malla"
+      },
+      "mapCarry": null,
+      "outside": null
+    },
+    {
+      "tier": 4,
+      "mode": 16,
+      "viewport": [
+        1280,
+        900
+      ],
+      "entry": {
+        "active": true,
+        "tier": "D4",
+        "style": 1
+      },
+      "room": {
+        "tier": "D4",
+        "body": 152,
+        "hp": 3000,
+        "room": "NIV-BIO-C1-r2",
+        "free": true,
+        "scale": 1.6666666666666667,
+        "sameScale": true,
+        "readOnly": true,
+        "originFrozen": true,
+        "camera": {
+          "x": 1.25,
+          "y": 50,
+          "w": 768,
+          "h": 540,
+          "bounds": {
+            "left": -480,
+            "right": 480,
+            "top": -320,
+            "bottom": 320
+          }
+        }
+      },
+      "path": {
+        "patterns": [
+          0,
+          1,
+          2
+        ],
+        "initial": 366.83911629070326,
+        "closest": 0
+      },
+      "return": {
+        "active": false,
+        "sameNpc": true,
+        "hp": 31,
+        "ammo": 3,
+        "reload": 0.49,
+        "origin": true,
+        "clock": true,
+        "scale": true,
+        "roomBounds": null,
+        "power": "portador"
+      },
+      "mapCarry": null,
+      "outside": null
+    },
+    {
+      "tier": 4,
+      "mode": 32,
+      "viewport": [
+        932,
+        430
+      ],
+      "entry": {
+        "active": true,
+        "tier": "D4",
+        "style": 2
+      },
+      "room": {
+        "tier": "D4",
+        "body": 152,
+        "hp": 3000,
+        "room": "NIV-BIO-C1-r2",
+        "free": true,
+        "scale": 1.0238095238095237,
+        "sameScale": true,
+        "readOnly": true,
+        "originFrozen": true,
+        "camera": {
+          "x": 1.25,
+          "y": 109.99999999999997,
+          "w": 910.3255813953489,
+          "h": 420.00000000000006,
+          "bounds": {
+            "left": -480,
+            "right": 480,
+            "top": -320,
+            "bottom": 320
+          }
+        }
+      },
+      "path": {
+        "patterns": [
+          0,
+          1,
+          2
+        ],
+        "initial": 388.21314831591394,
+        "closest": 0
+      },
+      "return": {
+        "active": false,
+        "sameNpc": true,
+        "hp": 31,
+        "ammo": 3,
+        "reload": 0.49,
+        "origin": true,
+        "clock": true,
+        "scale": true,
+        "roomBounds": null,
+        "power": "portador"
+      },
+      "mapCarry": null,
+      "outside": null
+    },
+    {
+      "tier": 5,
+      "mode": 16,
+      "viewport": [
+        390,
+        844
+      ],
+      "entry": {
+        "active": true,
+        "tier": "D5",
+        "style": 3
+      },
+      "room": {
+        "tier": "D5",
+        "body": 160,
+        "hp": 4400,
+        "room": "NIV-BIO-C1-r2",
+        "free": true,
+        "scale": 0.76171875,
+        "sameScale": true,
+        "readOnly": true,
+        "originFrozen": true,
+        "camera": {
+          "x": -0.625,
+          "y": 0,
+          "w": 512,
+          "h": 1108.0205128205127,
+          "bounds": {
+            "left": -480,
+            "right": 480,
+            "top": -320,
+            "bottom": 320
+          }
+        }
+      },
+      "path": {
+        "patterns": [
+          0,
+          1,
+          2
+        ],
+        "initial": 356.642014216758,
+        "closest": 0
+      },
+      "return": {
+        "active": false,
+        "sameNpc": true,
+        "hp": 31,
+        "ammo": 3,
+        "reload": 0.49,
+        "origin": true,
+        "clock": true,
+        "scale": true,
+        "roomBounds": null,
+        "power": "huesped"
+      },
+      "mapCarry": null,
+      "outside": null
+    },
+    {
+      "tier": 5,
+      "mode": 32,
+      "viewport": [
+        844,
+        390
+      ],
+      "entry": {
+        "active": true,
+        "tier": "D5",
+        "style": 4
+      },
+      "room": {
+        "tier": "D5",
+        "body": 160,
+        "hp": 4400,
+        "room": "NIV-BIO-C1-r2",
+        "free": true,
+        "scale": 0.9285714285714286,
+        "sameScale": true,
+        "readOnly": true,
+        "originFrozen": true,
+        "camera": {
+          "x": -0.625,
+          "y": 110,
+          "w": 908.9230769230769,
+          "h": 420,
+          "bounds": {
+            "left": -480,
+            "right": 480,
+            "top": -320,
+            "bottom": 320
+          }
+        }
+      },
+      "path": {
+        "patterns": [
+          0,
+          1,
+          2
+        ],
+        "initial": 356.1105814054667,
+        "closest": 0
+      },
+      "return": {
+        "active": false,
+        "sameNpc": true,
+        "hp": 31,
+        "ammo": 3,
+        "reload": 0.49,
+        "origin": true,
+        "clock": true,
+        "scale": true,
+        "roomBounds": null,
+        "power": "huesped"
+      },
+      "mapCarry": null,
+      "outside": null
+    },
+    {
+      "genericRound": [
+        {
+          "tier": "D5",
+          "style": 1,
+          "scale": 0.9285714285714286
+        },
+        {
+          "tier": "D4",
+          "style": 6,
+          "scale": 0.9285714285714286
+        },
+        {
+          "tier": "D2",
+          "style": 2,
+          "scale": 0.9285714285714286
+        },
+        {
+          "tier": "D1",
+          "style": 3,
+          "scale": 0.9285714285714286
+        },
+        {
+          "tier": "D3",
+          "style": 5,
+          "scale": 0.9285714285714286
+        },
+        {
+          "tier": "D1",
+          "style": 4,
+          "scale": 0.9285714285714286
+        }
+      ],
+      "explicitSelection": true,
+      "xpMultiplierOnce": {
+        "once": 18,
+        "afterSecond": 18,
+        "remaining": 0
+      }
+    },
+    {
+      "failure": "asset_failed",
+      "result": {
+        "active": false,
+        "reason": "asset_failed",
+        "npc": null,
+        "origin": true,
+        "scale": true,
+        "roomBounds": null,
+        "reward": null
+      }
+    },
+    {
+      "failure": "asset_timeout",
+      "result": {
+        "active": false,
+        "reason": "asset_timeout",
+        "npc": null,
+        "origin": true,
+        "scale": true,
+        "roomBounds": null,
+        "reward": null
+      }
+    }
+  ],
+  "physicalPhone": false,
+  "method": "Injected invulnerability and branch damage only for identity/flow/pose QA. Difficulty is measured separately without invulnerability."
+}

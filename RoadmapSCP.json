@@ -5982,6 +5982,16 @@
       "id": "CHG-046",
       "date": "2026-10-26",
       "description": "LOT007: HUD aceptado y reparacion tecnica de proporciones publicados/verificados. Control0.13/REV0011;285tests juego,92hashes publicos. Tareas/pesos historicos intactos; avanceV2 sin calcular."
+    },
+    {
+      "id": "CHG-047",
+      "date": "2026-10-26",
+      "description": "REV0012/Control0.14: seleccionR4 de poderes y salasC1 consolidadas; LOT008 autorizado para correcciones de jugabilidad. Version publica permanece0.39; sin modificar tareas/pesos historicos ni aprobar ARM-JUG001 por extension."
+    },
+    {
+      "id": "CHG-048",
+      "date": "2026-10-26",
+      "description": "LOT008 implementado y revisado localmente;316tests,64hashes,QApropia5grietas/HUD4/352montajes. AD01 consolida aprobaciónC1-r2. Autorizada publicación0.40 aPROGRAMACION; pendiente recibo público. Tareas/pesos históricos intactos."
     }
   ],
   "derivedProgress": {
@@ -6713,7 +6723,7 @@
     "updatedOn": "2026-10-26",
     "status": "rift_trial_published_verified_pending_human_balance",
     "authority": "EST-ORG-002 r1 / EST-GRI-002 r1 / EST-NPC-001 r1 / LOT-EST-005 r2",
-    "summary": "Demo0.39 publicada/comprobada: HUD MEN-005-A y proporciones de seis humanos16/32 corregidas; grietas/BIO/poderes/NPC con arma aleatoria y reserva infinita conservados.285pruebas de juego, cuatro formatos publicos,352montajes y92hashesPASS. Aceptacion visual nueva y telefono fisico pendientes. REV0011/Control0.13; siguienteLOT002 con gate de fusion cerrado.",
+    "summary": "Demo pública acreditada0.39. LOT008 implementado y revisado localmente para publicación0.40: cristalesXP, compañero vivo al regresar, cámara uniforme, cinco salasC1-r2 aceptadas, variedad/BIO más exigentes, cinco poderes elegidos y presión progresiva. Publicación nueva pendiente de recibo; fusión/ARM-JUG001 fuera del lote; balance humano/teléfono pendientes. AvanceV2 sin calcular.",
     "pautaPath": "PAUTA_DESARROLLO.md",
     "changePlanPath": "docs/PLAN_CAMBIOS_ESTRUCTURA.md",
     "decisionsPath": "docs/ESTRUCTURA_DECISIONES.md",
@@ -8078,23 +8088,33 @@
       "loadingRecovery": "failed_asset_or_10_active_seconds_returns_frozen_origin_no_reward_no_reroll"
     },
     "nextTechnicalLot": {
-      "id": "LOT-EST-002r1",
-      "path": "docs/gestion/lotes/LOT-EST-002-r1.md",
-      "status": "pending_rig_attack_station_integration",
-      "fusionGate": "closed",
-      "nextStep": "Revalidate384poses on corrected rig, then real CC04/TE01/F24 attacks and station flow."
+      "id": "LOT-EST-008r1",
+      "path": "docs/gestion/lotes/LOT-EST-008-r1.md",
+      "status": "local_review_PASS_awaiting_public_verification",
+      "implementer": "PROGRAMACION",
+      "publisher": "PROGRAMACION after ESTRUCTURA review",
+      "published": false,
+      "manualAcceptance": "pending",
+      "review": "docs/gestion/informes/LOT-EST-008-juanillo.md"
     },
     "latestConsolidation": {
-      "id": "REV-EST-0011",
-      "control": "0.13",
-      "path": "docs/gestion/REV-EST-0011_CONSOLIDADO.md",
+      "id": "REV-EST-0012",
+      "control": "0.14",
       "dateClient": "2026-10-26",
-      "status": "execution_consolidated_published_verified",
-      "coverage": "Incremental HUD delivery and character technical export; other areas referenceREV0010. Not a full-history audit.",
-      "runtimeChanged": true,
-      "nextPreparedLot": "LOT-EST-002r1",
+      "path": "docs/gestion/REV-EST-0012_CONSOLIDADO.md",
+      "status": "implemented_local_review_PASS_publication_in_progress",
+      "coverage": "ARMAS R4/R6; NIVELES R7.9/APR-003; PERSONAJES004; actual public0.39 reproduction and independent local LOT008 tests; not all histories.",
+      "nextPreparedLot": "LOT-EST-008r1",
+      "runtimePublicationStill": "0.39",
+      "selectedPowers": [
+        "POD-01-A",
+        "POD-02-A",
+        "POD-03-A",
+        "POD-04-A",
+        "POD-05-B"
+      ],
       "fusionGate": "closed",
-      "powersAB": "No choice; private viewer excluded."
+      "adenda": "docs/gestion/REV-EST-0012_ADENDA_C1_R2.md"
     },
     "previousTechnicalLot": {
       "id": "LOT-EST-006 r1",
@@ -8165,6 +8185,56 @@
         "pistol"
       ],
       "parameters": "approved_trial_values_not_final_balance"
+    },
+    "previousConsolidation": {
+      "id": "REV-EST-0011",
+      "control": "0.13",
+      "path": "docs/gestion/REV-EST-0011_CONSOLIDADO.md",
+      "dateClient": "2026-10-26",
+      "status": "execution_consolidated_published_verified",
+      "coverage": "Incremental HUD delivery and character technical export; other areas referenceREV0010. Not a full-history audit.",
+      "runtimeChanged": true,
+      "nextPreparedLot": "LOT-EST-002r1",
+      "fusionGate": "closed",
+      "powersAB": "No choice; private viewer excluded."
+    },
+    "selectedPowerDesign": {
+      "id": "ARM-POD-SEL-001r1",
+      "status": "implemented_local_review_PASS_publication_pending",
+      "choices": [
+        "POD-01-A",
+        "POD-02-A",
+        "POD-03-A",
+        "POD-04-A",
+        "POD-05-B"
+      ],
+      "source": "docs/referencias/armas/poderes-anomalos-v1/SELECCION_PODERES_2026-10-26.json",
+      "trial": "docs/gestion/ENSAYO_PODERES_002-r1.json"
+    },
+    "jugabilidadTrial": {
+      "lot": "LOT-EST-008r1",
+      "targetVersion": "0.40",
+      "status": "local_review_PASS_public_pending",
+      "report": "docs/gestion/informes/LOT-EST-008-juanillo.md",
+      "programmingReport": "docs/gestion/entregas/PROGRAMACION-JUGABILIDAD-008-CORTE-LOCAL.md",
+      "localNode": {
+        "tests": 316,
+        "pass": 316,
+        "fail": 0
+      },
+      "independentReview": {
+        "rooms": 5,
+        "xpTypes": 3,
+        "crystalTiers": 4,
+        "hudFormats": 4,
+        "mounts": 352,
+        "incapacitatedPoses": 64,
+        "animationCases": 24,
+        "combatCases": 8,
+        "physicalPhone": false
+      },
+      "balanceAccepted": false,
+      "proceduralRiftInteriorVariants": false
     }
   }
 }

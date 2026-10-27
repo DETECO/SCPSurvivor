@@ -4,8 +4,8 @@ G.Content = (() => {
   const guard = soldier('guard','guard01'), medic = soldier('medic','medic01');
   const fixture = Object.freeze({ minX: -12, maxX: 12, minY: -10, maxY: 10,
     walls: Object.freeze([[3, -5], [3, -4], [3, -3], [3, -2], [3, 2], [3, 3], [3, 4], [3, 5], [-5, -4], [-4, -4], [-5, 4], [-4, 4]].map(Object.freeze)) });
-  const pursuer = Object.freeze({ dex: 'pursuer01', name: 'Perseguidor', hp: 30, spd: 60, dmg: 10, xp: 14, radius: 12, behavior: 'pursuer', containment: true });
-  const biological = Object.freeze({ dex: 'biological01', name: 'Biológico', hp: 24, spd: 50, dmg: 12, xp: 14, radius: 14, behavior: 'biological', containment: true });
+  const pursuer = Object.freeze({ dex: 'pursuer01', name: 'Perseguidor', hp: 30, spd: 60, dmg: 10, xp: 12, radius: 12, behavior: 'pursuer', containment: true });
+  const biological = Object.freeze({ dex: 'biological01', name: 'Biológico', hp: 24, spd: 50, dmg: 12, xp: 20, radius: 14, behavior: 'biological', containment: true });
   const boss = Object.freeze({ dex: 'warden01', name: 'Custodio', hp: 600, spd: 45, dmg: 30, xp: 220, radius: 22, behavior: 'containmentBoss', containment: true });
   const sectors = [1, -1].map(sign => ({ minX: -24, maxX: 24, minY: -24, maxY: 24,
     walls: Array.from({length: 47}, (_,i) => i-23).filter(y => y < -2 || y > 1).map(y => [6*sign,y])

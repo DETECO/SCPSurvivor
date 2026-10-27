@@ -17,7 +17,7 @@
       G.Content.install(); G.TrialVisuals.install();
       if(G.MapTrial?.expanded||G.MapTrial?.rewardRiftPractice)await G.SceneR7.preload();
       await G.AF01ApprovedArt.preload();
-      G.ApprovedFieldWeaponArt.preload();
+      G.ApprovedFieldWeaponArt.preload();G.RiftPowerArt.preload();
       G.Game.init({ technical: true }); G.TechnicalUI.init(); G.InventoryTrial.init(); G.AccountUI.init(); G.TrialVisuals.initUI(); G.OperationsMenu.init();
     } catch (e) { G.TechnicalUI.fail(e); }
   }

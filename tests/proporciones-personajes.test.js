@@ -10,3 +10,10 @@ test('menu atlas and runtime parts use the same corrected revision, without chan
   const a=G.CharacterCatalog.modes[n][id];assert.match(a.runtimeBase,/proporciones-personajes/);assert.equal(a.partsPathRuntime,a.runtimeBase+'/Partes.png');assert.equal(a.fallbackPathRuntime,a.runtimeBase+'/Idle.png');assert.equal(a.actions.Idle.frameWidth,n);assert.equal(a.actions.Idle.anchor.y,n-1);assert(a.anatomy.commonScale>0);
  }
 });
+test('installed menu atlas follows corrected human assets and preserves combat geometry and enemy art',()=>{
+ for(const n of [16,32]){const G=load();G.MapTrial={expanded:true};G.SPRITE_META={};G.FieldCatalog={soldiers:{}};G.Tiles={BIOMES:{1:{}}};const c={G,window:{location:{search:'?graficos='+n}},URLSearchParams};
+  vm.runInNewContext(fs.readFileSync(require.resolve('../js/data/field-catalog.js'),'utf8'),c);vm.runInNewContext(fs.readFileSync(require.resolve('../js/data/content.js'),'utf8'),c);G.Content.install();const before=JSON.parse(JSON.stringify(G.SPRITE_META));vm.runInNewContext(fs.readFileSync(require.resolve('../js/data/trial-visuals.js'),'utf8'),c);G.TrialVisuals.install();
+  for(const dex of ['guard01','medic01','support01']){const a=G.SPRITE_META[dex];assert.match(a.base,/proporciones-personajes/);for(const k of ['w','h','ax','ay'])assert.equal(a.a.Idle[k],(before[dex]||before.guard01).a.Idle[k])}
+  assert.equal(G.SPRITE_META.pursuer01.base,`assets/personajes-20261022/${n}/perseguidor`);
+ }
+});

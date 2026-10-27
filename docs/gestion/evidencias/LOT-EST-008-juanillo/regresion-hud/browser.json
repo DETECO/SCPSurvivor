@@ -1,0 +1,1164 @@
+{
+  "status": "PASS",
+  "probe": false,
+  "live": false,
+  "records": [
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "graphics": "32",
+      "soldier": "guard",
+      "entry": "index.html",
+      "normal": {
+        "rows": [
+          {
+            "id": "scene-hud",
+            "visible": true,
+            "x": 8,
+            "y": 8,
+            "width": 736,
+            "height": 46
+          },
+          {
+            "id": "corner-hp",
+            "visible": true,
+            "x": 239,
+            "y": 39.5,
+            "width": 218,
+            "height": 7
+          },
+          {
+            "id": "corner-xp",
+            "visible": true,
+            "x": 465,
+            "y": 39.5,
+            "width": 218,
+            "height": 7
+          },
+          {
+            "id": "btn-technical-pause",
+            "visible": true,
+            "x": 691,
+            "y": 9,
+            "width": 48,
+            "height": 44
+          },
+          {
+            "id": "radar-wrap",
+            "visible": true,
+            "x": 752,
+            "y": 8,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "field-weapons",
+            "visible": true,
+            "x": 259,
+            "y": 314,
+            "width": 326,
+            "height": 68
+          },
+          {
+            "id": "btn-field-weapon-0",
+            "visible": true,
+            "x": 259,
+            "y": 314,
+            "width": 160,
+            "height": 68
+          },
+          {
+            "id": "btn-field-weapon-1",
+            "visible": true,
+            "x": 425,
+            "y": 314,
+            "width": 160,
+            "height": 68
+          },
+          {
+            "id": "btn-ability",
+            "visible": true,
+            "x": 752,
+            "y": 298,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "corner-stick",
+            "visible": true,
+            "x": 8,
+            "y": 298,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "corner-objectives",
+            "visible": true,
+            "x": 8,
+            "y": 60,
+            "width": 736,
+            "height": 50
+          },
+          {
+            "id": "rift-boss-health",
+            "visible": false,
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "outside": [],
+        "collisions": [],
+        "small": [],
+        "scroll": false
+      },
+      "floatingTouch": true,
+      "meters": {
+        "hp": 93,
+        "real": 93,
+        "label": "Sprint 20 s",
+        "reload": [
+          {
+            "value": 1.5,
+            "max": 1.5
+          },
+          {
+            "value": 0.2333000000000005,
+            "max": 1.8
+          }
+        ],
+        "ring": "285.65502972628144"
+      },
+      "equipmentAndPauseFrozen": true,
+      "realLevelChoice": true,
+      "room": {
+        "rows": [
+          {
+            "id": "scene-hud",
+            "visible": true,
+            "x": 8,
+            "y": 8,
+            "width": 736,
+            "height": 46
+          },
+          {
+            "id": "corner-hp",
+            "visible": true,
+            "x": 239,
+            "y": 39.5,
+            "width": 218,
+            "height": 7
+          },
+          {
+            "id": "corner-xp",
+            "visible": true,
+            "x": 465,
+            "y": 39.5,
+            "width": 218,
+            "height": 7
+          },
+          {
+            "id": "btn-technical-pause",
+            "visible": true,
+            "x": 691,
+            "y": 9,
+            "width": 48,
+            "height": 44
+          },
+          {
+            "id": "radar-wrap",
+            "visible": true,
+            "x": 752,
+            "y": 8,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "field-weapons",
+            "visible": true,
+            "x": 259,
+            "y": 314,
+            "width": 326,
+            "height": 68
+          },
+          {
+            "id": "btn-field-weapon-0",
+            "visible": true,
+            "x": 259,
+            "y": 314,
+            "width": 160,
+            "height": 68
+          },
+          {
+            "id": "btn-field-weapon-1",
+            "visible": true,
+            "x": 425,
+            "y": 314,
+            "width": 160,
+            "height": 68
+          },
+          {
+            "id": "btn-ability",
+            "visible": true,
+            "x": 752,
+            "y": 298,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "corner-stick",
+            "visible": true,
+            "x": 8,
+            "y": 298,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "corner-objectives",
+            "visible": true,
+            "x": 8,
+            "y": 60,
+            "width": 736,
+            "height": 50
+          },
+          {
+            "id": "rift-boss-health",
+            "visible": true,
+            "x": 284,
+            "y": 116,
+            "width": 460,
+            "height": 8
+          }
+        ],
+        "outside": [],
+        "collisions": [],
+        "small": [],
+        "scroll": false
+      },
+      "bubble": {
+        "npc": true,
+        "positions": [
+          {
+            "x": -444.5961538461538,
+            "y": 27.076923076923066
+          },
+          {
+            "x": 217.0961538461538,
+            "y": 42.15384615384616
+          },
+          {
+            "x": 1.25,
+            "y": 110
+          }
+        ]
+      },
+      "fourthPowerReplacement": true,
+      "roomChoiceFrozenAndReturn": true,
+      "dangerSuppressesBubble": true
+    },
+    {
+      "viewport": [
+        932,
+        430
+      ],
+      "graphics": "16",
+      "soldier": "medic",
+      "entry": "dev.html",
+      "normal": {
+        "rows": [
+          {
+            "id": "scene-hud",
+            "visible": true,
+            "x": 8,
+            "y": 8,
+            "width": 824,
+            "height": 46
+          },
+          {
+            "id": "corner-hp",
+            "visible": true,
+            "x": 268.328125,
+            "y": 39.5,
+            "width": 247.328125,
+            "height": 7
+          },
+          {
+            "id": "corner-xp",
+            "visible": true,
+            "x": 523.65625,
+            "y": 39.5,
+            "width": 247.328125,
+            "height": 7
+          },
+          {
+            "id": "btn-technical-pause",
+            "visible": true,
+            "x": 778.984375,
+            "y": 9,
+            "width": 48,
+            "height": 44
+          },
+          {
+            "id": "radar-wrap",
+            "visible": true,
+            "x": 840,
+            "y": 8,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "field-weapons",
+            "visible": true,
+            "x": 303,
+            "y": 354,
+            "width": 326,
+            "height": 68
+          },
+          {
+            "id": "btn-field-weapon-0",
+            "visible": true,
+            "x": 303,
+            "y": 354,
+            "width": 160,
+            "height": 68
+          },
+          {
+            "id": "btn-field-weapon-1",
+            "visible": true,
+            "x": 469,
+            "y": 354,
+            "width": 160,
+            "height": 68
+          },
+          {
+            "id": "btn-ability",
+            "visible": true,
+            "x": 840,
+            "y": 338,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "corner-stick",
+            "visible": true,
+            "x": 8,
+            "y": 338,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "corner-objectives",
+            "visible": true,
+            "x": 8,
+            "y": 60,
+            "width": 824,
+            "height": 50
+          },
+          {
+            "id": "rift-boss-health",
+            "visible": false,
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "outside": [],
+        "collisions": [],
+        "small": [],
+        "scroll": false
+      },
+      "floatingTouch": true,
+      "meters": {
+        "hp": 100,
+        "real": 100,
+        "label": "Primeros auxilios 30 s",
+        "reload": [
+          {
+            "value": 1.5,
+            "max": 1.5
+          },
+          {
+            "value": 0.26669999999999927,
+            "max": 1.8
+          }
+        ],
+        "ring": "286.4570783307429"
+      },
+      "equipmentAndPauseFrozen": true,
+      "realLevelChoice": true,
+      "room": {
+        "rows": [
+          {
+            "id": "scene-hud",
+            "visible": true,
+            "x": 8,
+            "y": 8,
+            "width": 824,
+            "height": 46
+          },
+          {
+            "id": "corner-hp",
+            "visible": true,
+            "x": 268.328125,
+            "y": 39.5,
+            "width": 247.328125,
+            "height": 7
+          },
+          {
+            "id": "corner-xp",
+            "visible": true,
+            "x": 523.65625,
+            "y": 39.5,
+            "width": 247.328125,
+            "height": 7
+          },
+          {
+            "id": "btn-technical-pause",
+            "visible": true,
+            "x": 778.984375,
+            "y": 9,
+            "width": 48,
+            "height": 44
+          },
+          {
+            "id": "radar-wrap",
+            "visible": true,
+            "x": 840,
+            "y": 8,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "field-weapons",
+            "visible": true,
+            "x": 303,
+            "y": 354,
+            "width": 326,
+            "height": 68
+          },
+          {
+            "id": "btn-field-weapon-0",
+            "visible": true,
+            "x": 303,
+            "y": 354,
+            "width": 160,
+            "height": 68
+          },
+          {
+            "id": "btn-field-weapon-1",
+            "visible": true,
+            "x": 469,
+            "y": 354,
+            "width": 160,
+            "height": 68
+          },
+          {
+            "id": "btn-ability",
+            "visible": true,
+            "x": 840,
+            "y": 338,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "corner-stick",
+            "visible": true,
+            "x": 8,
+            "y": 338,
+            "width": 84,
+            "height": 84
+          },
+          {
+            "id": "corner-objectives",
+            "visible": true,
+            "x": 8,
+            "y": 60,
+            "width": 824,
+            "height": 50
+          },
+          {
+            "id": "rift-boss-health",
+            "visible": true,
+            "x": 372,
+            "y": 116,
+            "width": 460,
+            "height": 8
+          }
+        ],
+        "outside": [],
+        "collisions": [],
+        "small": [],
+        "scroll": false
+      },
+      "bubble": {
+        "npc": true,
+        "positions": [
+          {
+            "x": -446.09883720930236,
+            "y": 15.255813953488328
+          },
+          {
+            "x": 218.5988372093023,
+            "y": 28.930232558139494
+          },
+          {
+            "x": 1.25,
+            "y": 109.99999999999997
+          }
+        ]
+      },
+      "roomChoiceFrozenAndReturn": true,
+      "dangerSuppressesBubble": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "graphics": "32",
+      "soldier": "guard",
+      "entry": "index.html",
+      "normal": {
+        "rows": [
+          {
+            "id": "scene-hud",
+            "visible": true,
+            "x": 8,
+            "y": 8,
+            "width": 290,
+            "height": 78
+          },
+          {
+            "id": "corner-hp",
+            "visible": true,
+            "x": 14,
+            "y": 69.5,
+            "width": 111,
+            "height": 7
+          },
+          {
+            "id": "corner-xp",
+            "visible": true,
+            "x": 131,
+            "y": 69.5,
+            "width": 111,
+            "height": 7
+          },
+          {
+            "id": "btn-technical-pause",
+            "visible": true,
+            "x": 248,
+            "y": 25,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "id": "radar-wrap",
+            "visible": true,
+            "x": 306,
+            "y": 8,
+            "width": 76,
+            "height": 76
+          },
+          {
+            "id": "field-weapons",
+            "visible": true,
+            "x": 91,
+            "y": 760,
+            "width": 208,
+            "height": 76
+          },
+          {
+            "id": "btn-field-weapon-0",
+            "visible": true,
+            "x": 91,
+            "y": 760,
+            "width": 102,
+            "height": 76
+          },
+          {
+            "id": "btn-field-weapon-1",
+            "visible": true,
+            "x": 197,
+            "y": 760,
+            "width": 102,
+            "height": 76
+          },
+          {
+            "id": "btn-ability",
+            "visible": true,
+            "x": 312,
+            "y": 766,
+            "width": 70,
+            "height": 70
+          },
+          {
+            "id": "corner-stick",
+            "visible": true,
+            "x": 8,
+            "y": 766,
+            "width": 70,
+            "height": 70
+          },
+          {
+            "id": "corner-objectives",
+            "visible": true,
+            "x": 8,
+            "y": 92,
+            "width": 290,
+            "height": 54
+          },
+          {
+            "id": "rift-boss-health",
+            "visible": false,
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "outside": [],
+        "collisions": [],
+        "small": [],
+        "scroll": false
+      },
+      "floatingTouch": true,
+      "meters": {
+        "hp": 93,
+        "real": 93,
+        "label": "Sprint 20 s",
+        "reload": [
+          {
+            "value": 1.5,
+            "max": 1.5
+          },
+          {
+            "value": 0.26659999999999995,
+            "max": 1.8
+          }
+        ],
+        "ring": "285.1738005636045"
+      },
+      "equipmentAndPauseFrozen": true,
+      "realLevelChoice": true,
+      "room": {
+        "rows": [
+          {
+            "id": "scene-hud",
+            "visible": true,
+            "x": 8,
+            "y": 8,
+            "width": 290,
+            "height": 78
+          },
+          {
+            "id": "corner-hp",
+            "visible": true,
+            "x": 14,
+            "y": 69.5,
+            "width": 111,
+            "height": 7
+          },
+          {
+            "id": "corner-xp",
+            "visible": true,
+            "x": 131,
+            "y": 69.5,
+            "width": 111,
+            "height": 7
+          },
+          {
+            "id": "btn-technical-pause",
+            "visible": true,
+            "x": 248,
+            "y": 25,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "id": "radar-wrap",
+            "visible": true,
+            "x": 306,
+            "y": 8,
+            "width": 76,
+            "height": 76
+          },
+          {
+            "id": "field-weapons",
+            "visible": true,
+            "x": 91,
+            "y": 760,
+            "width": 208,
+            "height": 76
+          },
+          {
+            "id": "btn-field-weapon-0",
+            "visible": true,
+            "x": 91,
+            "y": 760,
+            "width": 102,
+            "height": 76
+          },
+          {
+            "id": "btn-field-weapon-1",
+            "visible": true,
+            "x": 197,
+            "y": 760,
+            "width": 102,
+            "height": 76
+          },
+          {
+            "id": "btn-ability",
+            "visible": true,
+            "x": 312,
+            "y": 766,
+            "width": 70,
+            "height": 70
+          },
+          {
+            "id": "corner-stick",
+            "visible": true,
+            "x": 8,
+            "y": 766,
+            "width": 70,
+            "height": 70
+          },
+          {
+            "id": "corner-objectives",
+            "visible": true,
+            "x": 8,
+            "y": 92,
+            "width": 290,
+            "height": 54
+          },
+          {
+            "id": "rift-boss-health",
+            "visible": true,
+            "x": 8,
+            "y": 152,
+            "width": 290,
+            "height": 8
+          }
+        ],
+        "outside": [],
+        "collisions": [],
+        "small": [],
+        "scroll": false
+      },
+      "bubble": {
+        "npc": true,
+        "positions": [
+          {
+            "x": -244.2474358974359,
+            "y": -333.4564102564102
+          },
+          {
+            "x": 16.747435897435878,
+            "y": -333.4564102564102
+          },
+          {
+            "x": 1.25,
+            "y": 0
+          }
+        ]
+      },
+      "fourthPowerReplacement": true,
+      "roomChoiceFrozenAndReturn": true,
+      "dangerSuppressesBubble": true
+    },
+    {
+      "viewport": [
+        1280,
+        900
+      ],
+      "graphics": "16",
+      "soldier": "medic",
+      "entry": "dev.html",
+      "normal": {
+        "rows": [
+          {
+            "id": "scene-hud",
+            "visible": true,
+            "x": 12,
+            "y": 12,
+            "width": 1132,
+            "height": 54
+          },
+          {
+            "id": "corner-hp",
+            "visible": true,
+            "x": 374.328125,
+            "y": 48,
+            "width": 345.328125,
+            "height": 7
+          },
+          {
+            "id": "corner-xp",
+            "visible": true,
+            "x": 729.65625,
+            "y": 48,
+            "width": 345.34375,
+            "height": 7
+          },
+          {
+            "id": "btn-technical-pause",
+            "visible": true,
+            "x": 1085,
+            "y": 17,
+            "width": 52,
+            "height": 44
+          },
+          {
+            "id": "radar-wrap",
+            "visible": true,
+            "x": 1156,
+            "y": 12,
+            "width": 112,
+            "height": 112
+          },
+          {
+            "id": "field-weapons",
+            "visible": true,
+            "x": 457,
+            "y": 810,
+            "width": 366,
+            "height": 78
+          },
+          {
+            "id": "btn-field-weapon-0",
+            "visible": true,
+            "x": 457,
+            "y": 810,
+            "width": 180,
+            "height": 78
+          },
+          {
+            "id": "btn-field-weapon-1",
+            "visible": true,
+            "x": 643,
+            "y": 810,
+            "width": 180,
+            "height": 78
+          },
+          {
+            "id": "btn-ability",
+            "visible": true,
+            "x": 1172,
+            "y": 792,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "id": "corner-stick",
+            "visible": false,
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          {
+            "id": "corner-objectives",
+            "visible": true,
+            "x": 12,
+            "y": 72,
+            "width": 1132,
+            "height": 60.59375
+          },
+          {
+            "id": "rift-boss-health",
+            "visible": false,
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "outside": [],
+        "collisions": [],
+        "small": [],
+        "scroll": false
+      },
+      "meters": {
+        "hp": 100,
+        "real": 100,
+        "label": "Primeros auxilios 30 s",
+        "reload": [
+          {
+            "value": 1.5,
+            "max": 1.5
+          },
+          {
+            "value": 0.3999000000000006,
+            "max": 1.8
+          }
+        ],
+        "ring": "285.1738005636045"
+      },
+      "equipmentAndPauseFrozen": true,
+      "realLevelChoice": true,
+      "room": {
+        "rows": [
+          {
+            "id": "scene-hud",
+            "visible": true,
+            "x": 12,
+            "y": 12,
+            "width": 1132,
+            "height": 54
+          },
+          {
+            "id": "corner-hp",
+            "visible": true,
+            "x": 374.328125,
+            "y": 48,
+            "width": 345.328125,
+            "height": 7
+          },
+          {
+            "id": "corner-xp",
+            "visible": true,
+            "x": 729.65625,
+            "y": 48,
+            "width": 345.34375,
+            "height": 7
+          },
+          {
+            "id": "btn-technical-pause",
+            "visible": true,
+            "x": 1085,
+            "y": 17,
+            "width": 52,
+            "height": 44
+          },
+          {
+            "id": "radar-wrap",
+            "visible": true,
+            "x": 1156,
+            "y": 12,
+            "width": 112,
+            "height": 112
+          },
+          {
+            "id": "field-weapons",
+            "visible": true,
+            "x": 457,
+            "y": 810,
+            "width": 366,
+            "height": 78
+          },
+          {
+            "id": "btn-field-weapon-0",
+            "visible": true,
+            "x": 457,
+            "y": 810,
+            "width": 180,
+            "height": 78
+          },
+          {
+            "id": "btn-field-weapon-1",
+            "visible": true,
+            "x": 643,
+            "y": 810,
+            "width": 180,
+            "height": 78
+          },
+          {
+            "id": "btn-ability",
+            "visible": true,
+            "x": 1172,
+            "y": 792,
+            "width": 96,
+            "height": 96
+          },
+          {
+            "id": "corner-stick",
+            "visible": false,
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          {
+            "id": "corner-objectives",
+            "visible": true,
+            "x": 12,
+            "y": 72,
+            "width": 1132,
+            "height": 60.59375
+          },
+          {
+            "id": "rift-boss-health",
+            "visible": true,
+            "x": 684,
+            "y": 138.59375,
+            "width": 460,
+            "height": 8
+          }
+        ],
+        "outside": [],
+        "collisions": [],
+        "small": [],
+        "scroll": false
+      },
+      "bubble": {
+        "npc": true,
+        "positions": [
+          {
+            "x": -377.95,
+            "y": -135.64375
+          },
+          {
+            "x": -377.95,
+            "y": 255.2
+          },
+          {
+            "x": 1.25,
+            "y": 50
+          }
+        ]
+      },
+      "roomChoiceFrozenAndReturn": true,
+      "dangerSuppressesBubble": true
+    }
+  ],
+  "physicalPhone": false,
+  "runtimeSnapshot": {
+    "dev.html": "3c9f28928651b36c03ac2b78bb1bb2d4775b76824f474ffa8bdf473949311880",
+    "css/technical.css": "e1fd5ebc741d489b58ee9ef293b0802d85fb7aa5b41220816205aaa1a925da6c",
+    "css/operations-menu.css": "9a90a4575fc37ef5aa36222bff5309cc1df86b850f9a28256424afb19f76dcee",
+    "css/corner-hud.css": "33083fb9923906a49ea8ee640c2e6d8ebe106ecbfbff94464c81c69a83a3618a",
+    "js/core/util.js": "bb123c2cdcdc7aeb72765b7ef48ef996affdc59cd3daca64339af3bb8d94d1ad",
+    "js/systems/map-trial.js": "54c00be706917b3d252398fb458fe23a93486196bcfb3c09f47ab8e78ebe85ae",
+    "js/systems/exploration-chests.js": "bd151af2b05dd69e493dcf0ecbf3ac30e9bd9937ad7b506c578cafdcd3c8fe1b",
+    "js/systems/event-rewards.js": "c86271a52e5a2ea76999ca8a2527b98f5e0d5c4c21e69e754489b741f7fd7bc3",
+    "js/vendor/firebase-client.js": "aaa9806e4a1cedbd8ec274f008f2f9622bacb9275eb6e38e840da6350c092d82",
+    "js/data/field-catalog.js": "b8b719b0e12d0a42b8fd2110c2f9e08d0d93c82c7af8038f5cee3ad64d9d7454",
+    "js/systems/inventory-model.js": "7079647041b55ad9a6b3b100730486f8b25e929f5cb612fa2ede33290e6d4d46",
+    "js/systems/weapon-revision-r1.js": "5a640bd57bd673d393ef710e73ad9dd38da01237d59c4dbd2bc2bf80944587e8",
+    "js/systems/weapon-revision-trial.js": "26dc7e6db6861eb1f54640bf13ea72c1d46f2df09abae2c16fea0ea9612b8120",
+    "js/systems/field-stats.js": "a77e9a4cef09da9dac8bef789464a47c69e8f29abec272be6dacd296159c6f23",
+    "js/core/i18n.js": "082ac2eb9dfb92e9ee645e4977e6e9206a4506c1ef656f4c55fdb392969a3630",
+    "js/data/lang-en.js": "40b6a187e068d9ef539a1149b1a3147b16e7ecdd33f9c09e5e3489ef00a49b16",
+    "js/core/settings.js": "a505851e6934476a96ca30ef6f7b8c7d3baf45d31b1783bf8f16024ebd6ef17c",
+    "js/data/music.js": "7ef62707e91bdfd073d274d1edb03c2bf43bbb0428c44e57e58d86011a747a14",
+    "js/data/pokedex.js": "d33494dbb6eae2ccc07cb81756eeb69e81d5679b01e2dc609cad61b706af41f4",
+    "js/data/sprites-meta.js": "c719091bb7ce284bce5b4fdc93eeb0b93a096f1302e8e3466142de05323b311a",
+    "js/core/firebase-config.js": "849cb8cc5002ee7696bd94c9dc480c8d37b5a8f09f8bd9c1c00ffb62e18bdf48",
+    "js/core/db.js": "8afaef7064f627ea7b36f2782da95e21ec2adff1604fead3855aa11643a56c98",
+    "js/core/audio.js": "8b84c8b6760a8dc18b2c6a325e2cd956552d182f4cba886ab317abafe0bfe7ca",
+    "js/core/input.js": "b8b65df657958784857f3b8780d1a6f91e5f9650d82cefa90c76b91c2720156c",
+    "js/core/touch.js": "39327d5483410133e6dba900c5b91d0952688f7ba1ec1c895de98cbc83bb5637",
+    "js/core/sprites.js": "ee4021c85540a25c33dcb978794c50535dcc903a39ec8dd6271b4a28bd6b9d20",
+    "js/core/camera.js": "4d4a5855285bca4b1a32c7d7eae6cc1ab40efcb4ffa2616b81688114990f41c1",
+    "js/core/guard.js": "509b95f0f57adb455ebcb1c8b063abf0882bd9dd1125829c68d00e7b8bf839c7",
+    "js/data/moves.js": "edaf62c3b018b62b37cb222916b53d01cf5d18f411e35afafc599575725479e8",
+    "js/data/types.js": "52910f46f49a2d5535ed1e2d7eced8ccef342ceebd46649c6d3059c3a9ca048f",
+    "js/data/starters.js": "9c03f970324627affa43c9b223c3b20eb5d9d0ec1f8d775608387ff67556045d",
+    "js/data/enemies.js": "45e792889131544d0e168c67ceb935cdd7143d65ca4a4984b20ac196f55ba379",
+    "js/data/upgrades.js": "161b33dfeb2c768fdd7c5261c23744b3f2a791fb3b9e2d9622ed7134ae400a08",
+    "js/data/items.js": "757b69dc229cc834a3cb339a71b57ef980e284259f885176fdfe3efd1fc9df94",
+    "js/data/missions.js": "3ccab6c3b48d1d58be10652dda73d78b619ef05fba6bfb4fa1b2bc0972b62323",
+    "js/data/achievements.js": "e9689ec54e34475a1cd10858a53ebe17dbf0c3ca65328688dc7aad59ff2d1aba",
+    "js/data/funding.js": "5db114d20806d03bf1441d4ab532d8d9406fabbbfa2a5e186cf080d9d60b8f6a",
+    "js/world/tiles.js": "d7576178d27a39170ba0dea73218bf07f30eedd6b0381c1c7e10d8d4246fdd92",
+    "js/world/world.js": "03694143a4b373f0b3e59b2c8e13034030b95c59ed310dea79d2b3ea58bdf525",
+    "js/world/sector-maps.js": "68dde25d395766e09a4d03b7dfeaca08eb167ec1b6520d57c75bb6d7b9927d1e",
+    "js/data/scene-r7-data.js": "98385c9e11a40180d41d84af6d7d861d581e2037c02ee2a6fc8cf6bab351e29c",
+    "js/world/scene-r7.js": "ef9d0f506e51475bcf11ff86f7ba52a0cb8e076d2f3c9f03fc64d3864b90ab70",
+    "js/world/scene-m01-a.js": "0656c04b05f5380369e7a735f900b315d70316feb2e6f095f7320d8fc005c5d1",
+    "js/entities/vfx.js": "e54ce69d910ef43915907c534e388847fd755d0be5ddc1eed00a52267dd7fc33",
+    "js/entities/fx.js": "ab9bdee73cf5932fd9b5c7114ccbcc72880de8ffe02634004eb4bae4dbf97eaa",
+    "js/entities/projectile.js": "3180e81266527d73042d043e673d4184b454a268385a16258d3f70e961afe34f",
+    "js/systems/biological-ai.js": "8fb6470a27a60a114b5f6adb97104ca721931aab92271af96dcd7921018ae83d",
+    "js/systems/containment-boss.js": "bef1bcd390459a50f4d2a3ef923ee14cd9dcfbcec0473f48a352dc2bc6e72503",
+    "js/systems/containment-ai.js": "5e938fc0f0455af1540ccc710a28bd812b4d43a820a3f0fb43acab73e5a6a143",
+    "js/entities/enemy.js": "9bb1331b81f48504d5cf6eaa479ed27aa63df8522ee8d04aae92ddd415e4d012",
+    "js/entities/pickup.js": "42884936d5a4f86aa34b0af69242ab67a0ea1c2501a37224390699497778a79b",
+    "js/entities/player.js": "6bb2a9b8fe9fcc16ef14c9fd35469df3dcbc9e0efd4b0f43d7ff908c2084bb12",
+    "js/systems/combat.js": "8a1403ea7ca5d23e7cb0d6378cb00bf60c8b286fa8cfc8dfef1c05825711d350",
+    "js/systems/spawner.js": "fd794d8fec277d0fb651fa1b21a841c2c93b5acac9dbf39a31addf08959b4e0b",
+    "js/systems/levelup.js": "4c43bb8af49e773d8d5fdb2291d68be78368fb9aefeb479434ef04c65ff54fa1",
+    "js/systems/gacha.js": "67f0b60df55cc53a5b825110aae2ba924f07449e68856c9506cc6b8b5c6dce21",
+    "js/systems/interact.js": "03abe269f61e2c6ffb04e0868428043dadb2aaa074bca0c88d2d4662adb787eb",
+    "js/systems/rift.js": "27771e9cf466d8cfb6a3fd3544405030202f5812accd598cf9b92350f9b3d6b9",
+    "js/systems/events.js": "7793a7c684e0ed0b0210666643553bd2263b2b20b4e697f9a08cf490fbefe88a",
+    "js/systems/weather.js": "d4aba1dd993795e2067c673d2f823e6b9629463daa1edc4d5580493e117619fe",
+    "js/systems/pathing.js": "9cae696d01bf7351d9d60907de37f4d800720dbfd7abd1d68b179811b30adda2",
+    "js/systems/progress.js": "0bb9bead529f37388e4db82897c0c8f91be11214eaf8241e6b304e84fe6daeb0",
+    "js/systems/hazards.js": "578f2c0b190342cba9f9e4615dc3a7fe9a75c1ed8390b180247ffe6f9f03c7c7",
+    "js/net/social.js": "9c19769f9914a836ea25e8ec95a2a7d1ec8e8f2b1daade43f236ac21e1fe6026",
+    "js/net/signups.js": "bea23363f8e0653be0ae5dd3e6b8fba663db34fffd37267c703554ac1817f04a",
+    "js/net/net.js": "ff80d49c569f6f187f2cf8cb304df913036d1c068385a9aaa649081a824bebde",
+    "js/net/coop.js": "732c30e70119b5d125a812e67b94700b307fd63532643f4a9882f44d0c4d7ebd",
+    "js/net/ranking.js": "5f7fe7c31bcd6088f887d162dc644add765126cfb33aa21556f62cf2dc65ec46",
+    "js/ui/icons.js": "3f7a5b4d3735eb3ee4459f5be719c659df93a81095424a227a6ac42b4b0ce49d",
+    "js/ui/ui.js": "5c4dab132c6730e73c6242310b9529865e67ec26615152d01ad8dc6540250b7b",
+    "js/ui/hud.js": "83209132e75a70d562bd372c018cd0ca3b03cd9101945ea468a7cb7bb2ec7664",
+    "js/ui/login.js": "96129e9d6c298e068c5756e3fa9e5d25b9c0ec60d484e6fabc578b3da2508c1f",
+    "js/ui/test.js": "1c8ef567fcb33b43011d86a14ba55999f8f9811b50e7514d1533ca49663c1d9b",
+    "js/ui/menu.js": "1d0a66f7930cf3346a9eca2a958931f3b4cfb8a37eb57db005a95f2854b31bb5",
+    "js/ui/slots.js": "08dcfc80596f2b303e45c1e7c148a529fb75f116e4c4a0478e9e3dce63449b68",
+    "js/ui/gacha-ui.js": "ce69b47f1c3c0e65489688f30566d3d690bb7c075bce466aea5801f5a87a83c3",
+    "js/ui/run-ui.js": "5a1c2ea0ca8880d7f1fdf20b4221427d21bad9b5936c69357c5343aa23f502fc",
+    "js/ui/social-ui.js": "3486e80b508b344d64e0a6fae7fdc0c2e4fc5d7f7f4b84a87a6a40f7ead5a44e",
+    "js/ui/ranking-ui.js": "77c6951674627c390f5b43868b0bedc157d92fef3f441c07ff49604304b97d2a",
+    "js/ui/goals-ui.js": "0f52abe07cb4cd2167c0de25e4203f0838715d4294de9d3b22c8f41203bf840d",
+    "js/ui/settings-ui.js": "d5103c7c684e7cb2b9a43fe10212ab5a7b3f1a3f09404dfb563779a4baffea2d",
+    "js/ui/support-ui.js": "e321c3afc6e29aece8edd82cdb9c63f32349c18f990c35fea05e4a21b435823c",
+    "js/data/content.js": "d8534ae73edf70574f3417ff23188fe9b35700c91f824d193ff1ed47b11b0358",
+    "js/data/character-catalog.js": "2d7a98bc3b7d451ec786280e8f65bb8fa62aaa268f54342c3875248928ec1205",
+    "js/data/companion-characters.js": "01e3f6ef60299b70e355c8464ef978a3a5928a37c89594d6240ada814cf76fe1",
+    "js/data/character-proportions.js": "27083cea8ac62e21615ffb2986fc04a4490f634abbcd83511d76be947a917ee1",
+    "js/data/trial-visuals.js": "bc075de3e4a551ded5358dc625c8f6406e879afe56c06550e7af647732dd1ae1",
+    "js/ui/personajes-art.js": "fc5af7db1e3b9bbf776666619d911338065c52b651febba8947ab61e738effd5",
+    "js/ui/af01-approved-art.js": "34095e023d8dc94883e22dd078b696b7ed466964b6696d385e17deb1cc9882b4",
+    "js/ui/approved-field-weapon-art.js": "ebb73ff585952185a1b0b6e6e5737e22d6edd4990137f5e74c70bfbf51e287c2",
+    "js/ui/trial-weapon-art.js": "0f153fb69acc2495dc6f15de093fa50817cd38eb47d45ea9e4169f8e947b6a1c",
+    "js/ui/field-loadout.js": "ff7976e305f349957fd63eca6ceb39eba2808829c93f081e33937b718f574c59",
+    "js/systems/dimensional-rifts.js": "7861fabbafe49afa07ac8ace482c35de9ea43412fcdda3dd2d225f82958ec081",
+    "js/systems/rift-director.js": "d7a3e324ebfdf0612ad5d5c0fbc8a61d9ecb916dd73b921a835c45ba1e8ae79f",
+    "js/ui/technical-ui.js": "086a41fcf0489df8c11c2cc5fe84ee720f31abd391b0a38922aa39939b645a32",
+    "js/ui/inventory-trial.js": "7b7d8ef01ba34c4c48624c783d45bf1b046b92bc3a82abfc54764a60ce60b289",
+    "js/systems/field-abilities.js": "55caeea584de0cc9e3763d4723a0fb0724da3216f59d6e98d7b57b0641fbf158",
+    "js/systems/field-combat.js": "c920d2baa1a318062a8bbccc46c0338916357391b53fb3cccbf1ce0454e6cd0c",
+    "js/systems/infinite-progression.js": "42f996df0df585c7df5a2b37611e05273a3fc91c7de9ba5e7200984d00f845f9",
+    "js/systems/armament-rewards.js": "55e1ef12df9a741672b29918c7fe7913440d281efec9c569ba320a66ad993521",
+    "js/systems/weapon-terminal.js": "892c81999797a5522d592eefaf4dda42c9a56ca5665874b553f25185941cc626",
+    "js/systems/expanded-practice.js": "0d293cbfa9d67227a5e5bcfeb57e539f90930d6dbc27dd2f1c05e83dc078f472",
+    "js/ui/field-radar.js": "952a027f81daf7d545aac48d87e27b6b5c103f67c297c013e97b4e59c73d6f6e",
+    "js/ui/expanded-ui.js": "c2b875a036f6d5de29fd9becb1e8098a2a5d40bf9cbad1284e3ab2eb1a8ac8cf",
+    "js/ui/operations-menu.js": "5350558afb8f4955e3810f1f0939244c51e4ffed7b46d56545b57b5017fdce75",
+    "js/ui/rift-visuals.js": "0b7423e062b65becef48ed26fe702e3a05d9b6df53fb4d79db56ef0d5a6b48bd",
+    "js/systems/field-upgrades.js": "19aa8dd99ca7b64b13c733cd535173dff54dbf737d52fd68c35227b44dd00cf1",
+    "js/data/bio-catalogue.js": "92ba5b0ff2fed008cc5ae02c1d6d97af4b733d84ce5e21917726954b7c57718f",
+    "js/data/rift-dialogues.js": "8ba25fe32a255bf9b589fc887a7a29704c72fd84d888a1db17a4fdccc7ae86bf",
+    "js/world/rift-room-art.js": "8983a7a6a2517a939a3014058de12c486a65be591ea235800e6d7d9a96effef5",
+    "js/world/rift-rooms.js": "ee3d758c59b4ff8a2995ddcc8a223e7df40d07270f49887e7b3f37882adef757",
+    "js/systems/rift-session.js": "5a191d42974e1f53405b752aa76004f126921e31555a84d2303cddd1fe505bc1",
+    "js/systems/rift-anomalies.js": "1511a3a9dd6bf3a8c1948845ab1fd849a15b4e28e3791ee4292935ce979c643e",
+    "js/data/rift-power-tuning.js": "9081134b449f7abd9f68d9811f540cf3419696e615bb1bde3bfb52abf0a6d01e",
+    "js/systems/rift-powers.js": "2cf912aa47e3ef2b07f9791456a0ca3618999d09897b9d4f74c3024415de6bb7",
+    "js/ui/rift-power-art.js": "2e114920ddf88476d76308e62d2f76a046f4bc1f66468b3d558b9e0055470214",
+    "js/systems/rift-companion.js": "ec6c16d51b61e7aedf722bd0cb488f584043c5bf7343c624a9d865a6b5fcb415",
+    "js/systems/rift-practice.js": "6c9812ec8adf4030a9aed5a06911cd7f53e8b472633eb51eae3fd5fde14c34fb",
+    "js/systems/rift-expedition.js": "6a4954731618ca017bc8e2307f279dfb25552f537982a5e7b86e5b7ee7beed39",
+    "js/ui/rift-ui.js": "e3b333121d92098ca217cac6ed8b46b44172dc782460aa10a351a3ac3d98c452",
+    "js/ui/corner-hud.js": "f4da61aedafe32e45f39787e213594f132f0e0230b5ac1b635b86d65304273c0",
+    "js/systems/expedition-pressure.js": "ddc94c2be2da7be6f5bfcf4db4081013f83a3ad1217e15a7d1970e3ce5f86db2",
+    "js/systems/expedition.js": "1215e5b2580b83b304101be5db570ee79f5b37c8b01116b48ba7606680b15c2d",
+    "js/game.js": "a435c128ec48286b6a309592e68d707b7d47ee7de158c665febcc4604a279b64",
+    "js/net/local-accounts.js": "96f48c8644b415590f21868aac67959ed83d92c3e38e4054972bf93645f252b2",
+    "js/systems/run-checkpoint.js": "dd6a1127d1a2c14862c9e24eee0a0bde21fa31c5c8f72d6bca13ecc37d7101ba",
+    "js/systems/run-continuity.js": "5c1e21ab6e87902317c84ef30ac53206ab4f071bcf9a0330d30a6b98fdba21d8",
+    "js/ui/account-ui.js": "dc6adbe29b833449cbc53e523fb7b753deeb6737cc85326d8e229c684a75d375",
+    "js/main.js": "cb818aed43af7afb3e2305745f5d1234c44f93831c300dd8c637fd1605be1ea7",
+    "index.html": "d0fc762bd7759beb28a66e4dbc2239070a09d8df7c7b00d6c5081b783bfc11f8",
+    "js/app.min.js": "7ac256abe7ad3568256cfbcf3e1e49fc1c71b6ff3abf735eff438fc6c9da98da"
+  },
+  "sourceDrift": [],
+  "method": "Real game/UI; forced HP/loadout/XP/grade/position/fast-forward, third-party victory RNG override and preparatory powers only in QA, not natural balance."
+}

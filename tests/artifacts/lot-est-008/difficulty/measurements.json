@@ -1,0 +1,332 @@
+{
+  "status": "measured",
+  "records": [
+    {
+      "tier": 1,
+      "loadout": [
+        "pistol"
+      ],
+      "forcedNpc": "no",
+      "measurement": {
+        "seconds": 65.7,
+        "outcome": "death",
+        "hp": 0,
+        "bossHp": 380,
+        "bossMaxHp": 800,
+        "damageDealt": 420,
+        "damageTaken": 100,
+        "shots": 56,
+        "stalledFrames": 748,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 1,
+      "loadout": [
+        "pistol",
+        "smg"
+      ],
+      "forcedNpc": "no",
+      "measurement": {
+        "seconds": 24.6,
+        "outcome": "victory",
+        "hp": 91,
+        "bossHp": 0,
+        "bossMaxHp": 800,
+        "damageDealt": 800,
+        "damageTaken": 9,
+        "shots": 128,
+        "stalledFrames": 42,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 1,
+      "loadout": [
+        "pistol",
+        "smg"
+      ],
+      "forcedNpc": "si",
+      "measurement": {
+        "seconds": 21.200000000000003,
+        "outcome": "victory",
+        "hp": 91,
+        "bossHp": 0,
+        "bossMaxHp": 800,
+        "damageDealt": 800,
+        "damageTaken": 9,
+        "shots": 101,
+        "stalledFrames": 0,
+        "companion": {
+          "hp": 27,
+          "dead": false,
+          "shots": 72
+        },
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 2,
+      "loadout": [
+        "pistol"
+      ],
+      "forcedNpc": "no",
+      "measurement": {
+        "seconds": 86.7,
+        "outcome": "victory",
+        "hp": 100,
+        "bossHp": 0,
+        "bossMaxHp": 1300,
+        "damageDealt": 1300,
+        "damageTaken": 0,
+        "shots": 135,
+        "stalledFrames": 408,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 2,
+      "loadout": [
+        "pistol",
+        "smg"
+      ],
+      "forcedNpc": "no",
+      "measurement": {
+        "seconds": 33.25,
+        "outcome": "victory",
+        "hp": 100,
+        "bossHp": 0,
+        "bossMaxHp": 1300,
+        "damageDealt": 1300,
+        "damageTaken": 0,
+        "shots": 197,
+        "stalledFrames": 0,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 2,
+      "loadout": [
+        "pistol",
+        "smg"
+      ],
+      "forcedNpc": "si",
+      "measurement": {
+        "seconds": 24.55,
+        "outcome": "victory",
+        "hp": 100,
+        "bossHp": 0,
+        "bossMaxHp": 1300,
+        "damageDealt": 1300,
+        "damageTaken": 0,
+        "shots": 148,
+        "stalledFrames": 0,
+        "companion": {
+          "hp": 34,
+          "dead": false,
+          "shots": 101
+        },
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 3,
+      "loadout": [
+        "pistol"
+      ],
+      "forcedNpc": "no",
+      "measurement": {
+        "seconds": 144.5,
+        "outcome": "death",
+        "hp": 0,
+        "bossHp": 160,
+        "bossMaxHp": 2000,
+        "damageDealt": 1840,
+        "damageTaken": 100,
+        "shots": 197,
+        "stalledFrames": 76,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 3,
+      "loadout": [
+        "pistol",
+        "smg"
+      ],
+      "forcedNpc": "no",
+      "measurement": {
+        "seconds": 50.6,
+        "outcome": "victory",
+        "hp": 61,
+        "bossHp": 0,
+        "bossMaxHp": 2000,
+        "damageDealt": 2000,
+        "damageTaken": 39,
+        "shots": 306,
+        "stalledFrames": 5,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 3,
+      "loadout": [
+        "pistol",
+        "smg"
+      ],
+      "forcedNpc": "si",
+      "measurement": {
+        "seconds": 41.050000000000004,
+        "outcome": "victory",
+        "hp": 74,
+        "bossHp": 0,
+        "bossMaxHp": 2000,
+        "damageDealt": 2000,
+        "damageTaken": 26,
+        "shots": 249,
+        "stalledFrames": 5,
+        "companion": {
+          "hp": 0,
+          "dead": true,
+          "shots": 144
+        },
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 4,
+      "loadout": [
+        "pistol"
+      ],
+      "forcedNpc": "no",
+      "measurement": {
+        "seconds": 143.3,
+        "outcome": "death",
+        "hp": 0,
+        "bossHp": 1000,
+        "bossMaxHp": 3000,
+        "damageDealt": 2000,
+        "damageTaken": 100,
+        "shots": 214,
+        "stalledFrames": 139,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 4,
+      "loadout": [
+        "pistol",
+        "smg"
+      ],
+      "forcedNpc": "no",
+      "measurement": {
+        "seconds": 81.55000000000001,
+        "outcome": "victory",
+        "hp": 55,
+        "bossHp": 0,
+        "bossMaxHp": 3000,
+        "damageDealt": 3000,
+        "damageTaken": 45,
+        "shots": 463,
+        "stalledFrames": 139,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 4,
+      "loadout": [
+        "pistol",
+        "smg"
+      ],
+      "forcedNpc": "si",
+      "measurement": {
+        "seconds": 76.25,
+        "outcome": "victory",
+        "hp": 55,
+        "bossHp": 0,
+        "bossMaxHp": 3000,
+        "damageDealt": 3000,
+        "damageTaken": 45,
+        "shots": 431,
+        "stalledFrames": 139,
+        "companion": {
+          "hp": 0,
+          "dead": true,
+          "shots": 15
+        },
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 5,
+      "loadout": [
+        "pistol"
+      ],
+      "forcedNpc": "no",
+      "measurement": {
+        "seconds": 43.900000000000006,
+        "outcome": "death",
+        "hp": 0,
+        "bossHp": 3740,
+        "bossMaxHp": 4400,
+        "damageDealt": 660,
+        "damageTaken": 100,
+        "shots": 69,
+        "stalledFrames": 488,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 5,
+      "loadout": [
+        "pistol",
+        "smg"
+      ],
+      "forcedNpc": "no",
+      "measurement": {
+        "seconds": 43.900000000000006,
+        "outcome": "death",
+        "hp": 0,
+        "bossHp": 2642,
+        "bossMaxHp": 4400,
+        "damageDealt": 1758,
+        "damageTaken": 100,
+        "shots": 261,
+        "stalledFrames": 488,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    },
+    {
+      "tier": 5,
+      "loadout": [
+        "pistol",
+        "smg"
+      ],
+      "forcedNpc": "si",
+      "measurement": {
+        "seconds": 43.900000000000006,
+        "outcome": "death",
+        "hp": 0,
+        "bossHp": 2327,
+        "bossMaxHp": 4400,
+        "damageDealt": 2073,
+        "damageTaken": 100,
+        "shots": 261,
+        "stalledFrames": 488,
+        "companion": null,
+        "invulnerabilityInjected": false
+      }
+    }
+  ],
+  "method": "Deterministic rudimentary kiting bot; seeded setup/room contact/loadout controlled. Real damage/defense/reload, no invulnerability/healing/lethal injection. Bot is not human acceptance or final balance."
+}

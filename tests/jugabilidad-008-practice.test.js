@@ -1,0 +1,3 @@
+const{test}=require('node:test'),assert=require('node:assert/strict');
+test('008 generic practice covers each BIO and portal without repeating in its round',()=>{const p=require('../js/systems/rift-practice.js').create({rng:()=>.3}),rows=Array.from({length:30},()=>p.next());for(let n=0;n<30;n+=5)assert.equal(new Set(rows.slice(n,n+5).map(r=>r.tier)).size,5);for(let n=0;n<30;n+=6)assert.equal(new Set(rows.slice(n,n+6).map(r=>r.style)).size,6);});
+test('008 explicit encounter/style is deterministic and limited to practice',()=>{const p=require('../js/systems/rift-practice.js').create();p.select({tier:'D5',style:'6'});for(let i=0;i<10;i++)assert.deepEqual(p.next(),{tier:'D5',style:6});});

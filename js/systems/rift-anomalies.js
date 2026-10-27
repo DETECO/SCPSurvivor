@@ -1,11 +1,11 @@
 /* Five approved BIO identities/attacks. All numeric tuning: ENSAYO-GRI-001 r1. */
 G.RiftAnomalies=(()=>{
  const catalog=[
-  {id:'esporario',name:'Esporario Blanco',tier:'D1',hp:500,r:24,windup:1.25,recovery:1.4,damage:9,color:'#ede0ae',attacks:['Abanico de esporas','Brinco de raíz','Latigazo rasante'],patterns:['spores','jump','sweep']},
-  {id:'larva',name:'Larva de Vidrio',tier:'D2',hp:700,r:24,windup:1.3,recovery:1.3,damage:11,color:'#a6d4cf',attacks:['Cápsula de fluido','Salto de resorte','Carrera de cuchillas'],patterns:['pool','jump','dash']},
-  {id:'malla',name:'Malla Tendinosa',tier:'D3',hp:950,r:26,windup:1.4,recovery:1.2,damage:13,color:'#d77f91',attacks:['Líneas de tensión','Salto de anclaje','Tijera orgánica'],patterns:['lines','jump','scissors']},
-  {id:'portador',name:'Portador de Espinas',tier:'D4',hp:1200,r:28,windup:1.4,recovery:1.2,damage:15,color:'#caad79',attacks:['Salva en abanico','Embestida de hombro','Salto de estaca'],patterns:['fan','dash','jump']},
-  {id:'huesped',name:'Huésped de Cuarentena',tier:'D5',hp:1600,r:32,windup:1.6,recovery:1.4,damage:18,color:'#cda99d',attacks:['Brote de cuarentena','Salto de masa','Barrido de membrana'],patterns:['zones','jump','sweep']}
+  {id:'esporario',name:'Esporario Blanco',tier:'D1',hp:800,visualSize:128,speed:52,r:24,windup:1.25,recovery:.95,damage:9,color:'#ede0ae',attacks:['Abanico de esporas','Brinco de raíz','Latigazo rasante'],patterns:['spores','jump','sweep']},
+  {id:'larva',name:'Larva de Vidrio',tier:'D2',hp:1300,visualSize:136,speed:56,r:24,windup:1.3,recovery:.9,damage:11,color:'#a6d4cf',attacks:['Cápsula de fluido','Salto de resorte','Carrera de cuchillas'],patterns:['pool','jump','dash']},
+  {id:'malla',name:'Malla Tendinosa',tier:'D3',hp:2000,visualSize:144,speed:56,r:26,windup:1.4,recovery:.85,damage:13,color:'#d77f91',attacks:['Líneas de tensión','Salto de anclaje','Tijera orgánica'],patterns:['lines','jump','scissors']},
+  {id:'portador',name:'Portador de Espinas',tier:'D4',hp:3000,visualSize:152,speed:54,r:28,windup:1.4,recovery:.85,damage:15,color:'#caad79',attacks:['Salva en abanico','Embestida de hombro','Salto de estaca'],patterns:['fan','dash','jump']},
+  {id:'huesped',name:'Huésped de Cuarentena',tier:'D5',hp:4400,visualSize:160,speed:50,r:30,windup:1.6,recovery:.95,damage:18,color:'#cda99d',attacks:['Brote de cuarentena','Salto de masa','Barrido de membrana'],patterns:['zones','jump','sweep']}
  ];
  const cache=new Map(),failed=new Set();
  function image(path){if(!cache.has(path)){const im=new Image();im.onerror=()=>failed.add(path);im.onload=()=>failed.delete(path);im.src='assets/anomalias-biologicas/'+path;cache.set(path,im);}return cache.get(path);}
@@ -27,9 +27,9 @@ G.RiftAnomalies=(()=>{
  class Biological extends G.Enemy{
   constructor(profile,geometry){
    super({...G.Content?.boss,name:profile.name,containment:true,radius:profile.r,hp:profile.hp,spd:48,dmg:profile.damage,xp:0},geometry.bossSpawn.x,geometry.bossSpawn.y,{hp:1,spd:1,dmg:1},true);
-   this.profile=profile;this.bioId=profile.id;this.name=profile.name;this.dimensional=true;this.bodyH=80;this.clock=0;this.attackIndex=-1;this.phase='rest';this.pt=1;this.zones=[];this.target=null;this.angle=0;this.action='Idle';this.actionTime=0;this.height=0;this.touchCd=Infinity;
+   this.profile=profile;this.bioId=profile.id;this.name=profile.name;this.dimensional=true;this.bodyH=profile.visualSize;this.clock=0;this.attackIndex=-1;this.phase='rest';this.pt=1;this.zones=[];this.target=null;this.angle=0;this.action='Idle';this.actionTime=0;this.height=0;this.touchCd=Infinity;
   }
-  get visualBodyH(){return 88;}
+  get visualBodyH(){return this.profile.visualSize;}
   prepare(player){
    this.attackIndex=(this.attackIndex+1)%3;this.pattern=this.profile.patterns[this.attackIndex];this.action='Attack'+(this.attackIndex+1);this.actionTime=0;this.phase='windup';this.pt=this.profile.windup;
    this.angle=Math.atan2(player.y-this.y,player.x-this.x);const distance=Math.min(240,Math.hypot(player.x-this.x,player.y-this.y));
@@ -69,7 +69,7 @@ G.RiftAnomalies=(()=>{
    if(this.dead)return;
    this.pt-=dt;
    if(this.phase==='rest'){
-    const dx=player.x-this.x,dy=player.y-this.y,d=Math.hypot(dx,dy);if(d>160){this.x+=dx/d*48*(1-this.slow)*dt;this.y+=dy/d*48*(1-this.slow)*dt;G.World.collide(this);this.action='Walk';}else this.action='Idle';
+    const dx=player.x-this.x,dy=player.y-this.y,d=Math.hypot(dx,dy);const direct=()=>{for(let n=8;n<d;n+=8)if(G.World.projectileBlock?.(this.x+dx*n/d,this.y+dy*n/d,2))return false;return true;};if(d>160||!direct()){const route=G.Path?.dirFor(this,player)||[dx/d,dy/d];this.x+=route[0]*this.profile.speed*(1-this.slow)*dt;this.y+=route[1]*this.profile.speed*(1-this.slow)*dt;G.World.collide(this);this.action='Walk';}else this.action='Idle';
     if(this.pt<=0)this.prepare(player);return;
    }
    if(this.phase==='windup'){if(this.pt<=0)this.execute();return;}
@@ -83,7 +83,7 @@ G.RiftAnomalies=(()=>{
      if(this.pattern==='jump'&&this.pt<=0){this.landedThisFrame=true;this.lastLanding=this.zones.slice();if(this.zones.some(z=>contains(z,player)))player.hurt(this.dmg);}
     }else for(const z of this.zones){z.t=this.attackElapsed;if(z.t>=z.delay&&z.t<=z.delay+z.life&&contains(z,player))player.hurt(this.dmg);}
     if(this.pt<=0){this.height=0;this.zones=[];this.phase='recovery';this.pt=this.profile.recovery;}
-   }else if(this.phase==='recovery'&&this.pt<=0){this.phase='rest';this.pt=.7;this.action='Idle';this.actionTime=0;}
+   }else if(this.phase==='recovery'&&this.pt<=0){this.phase='rest';this.pt=.45;this.action='Idle';this.actionTime=0;}
   }
   die(){if(this.dead)return;this.dead=true;this.hp=0;this.fade=1.8;this.zones=[];this.height=0;this.action='Death';this.actionTime=0;G.Audio?.sfx('bossDown');}
   showHurt(d,color){this.flash=.09;G.FX.dmgText(this.x,this.y-this.visualBodyH-4,d,color,true);}
@@ -105,14 +105,14 @@ G.RiftAnomalies=(()=>{
    }else if(a.loop)ms%=a.totalMs;else ms=Math.min(ms,a.totalMs-1);
    let frame=0;while(frame<a.frames-1&&ms>=a.durations[frame]){ms-=a.durations[frame++];}
    const angles=window.BIO_CATALOGO.angles;let dir=0,best=99;angles.forEach((angle,i)=>{const d=Math.abs(Math.atan2(Math.sin(angle-this.angle),Math.cos(angle-this.angle)));if(d<best){best=d;dir=i;}});
-   const scale=96/mode,im=image(a.path);ctx.save();ctx.globalAlpha=this.dead?Math.max(0,this.fade/1.8):1;
+   const size=this.profile.visualSize,scale=size/mode,im=image(a.path);ctx.save();ctx.globalAlpha=this.dead?Math.max(0,this.fade/1.8):1;
    ctx.fillStyle='#0007';ctx.beginPath();ctx.ellipse(this.x,this.y,this.r,10,0,0,Math.PI*2);ctx.fill();
    if(this.pattern==='pool'&&this.phase==='attack'&&this.attackElapsed<.65){const k=this.attackElapsed/.65,x=this.start.x+(this.target.x-this.start.x)*k,y=this.start.y+(this.target.y-this.start.y)*k-Math.sin(Math.PI*k)*60;ctx.fillStyle=this.profile.color;ctx.beginPath();ctx.ellipse(x,y,9,6,-this.angle,0,Math.PI*2);ctx.fill();}
-   if(im.complete&&im.naturalWidth)ctx.drawImage(im,frame*mode,dir*mode,mode,mode,this.x-a.bodyAnchor.x*scale,this.y-a.bodyAnchor.y*scale,96,96);
+   if(im.complete&&im.naturalWidth)ctx.drawImage(im,frame*mode,dir*mode,mode,mode,this.x-a.bodyAnchor.x*scale,this.y-a.bodyAnchor.y*scale,size,size);
    if(a.fx){const fx=image(a.fx),n=a.fxFrameWidth;if(fx.complete&&fx.naturalWidth)ctx.drawImage(fx,frame*n,dir*n,n,n,this.x-a.fxAnchor.x*scale,this.y-a.fxAnchor.y*scale,n*scale,n*scale);}
    ctx.restore();
   }
  }
- function create({tier,geometry,anomalyId}){const profile=catalog.find(p=>p.id===anomalyId)||catalog.find(p=>p.tier===tier);if(!profile)throw Error('Unknown biological anomaly');return new Biological(profile,geometry);}
+ function create({tier,geometry,anomalyId,mapNumber=2}){const base=catalog.find(p=>p.id===anomalyId)||catalog.find(p=>p.tier===tier);if(!base)throw Error('Unknown biological anomaly');const profile={...base,hp:Math.round(base.hp*Math.min(2.5,1+.10*Math.max(0,mapNumber-2)))};return new Biological(profile,geometry);}
  return{catalog,create,preload,ready,loading,retryFailed,contains};
 })();

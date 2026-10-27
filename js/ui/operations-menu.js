@@ -274,7 +274,7 @@ G.OperationsMenu = (() => {
     const startSlot = root.querySelector('.operations-start-slot');
     startButton.textContent = G.RiftExpedition?.practice ? 'Iniciar práctica de grietas' : G.MapTrial.quick ? 'Iniciar práctica rápida' : G.MapTrial.rewardRiftPractice ? 'Iniciar prueba de grieta' : G.MapTrial.chestPractice ? 'Iniciar prueba de cofres' : 'Iniciar expedición';
     startButton.classList.add('operations-expedition-start');
-    startSlot.append(startButton);
+    startSlot.append(startButton);G.RiftPractice?.initUI();
 
     const graphics = byId('character-graphics');
     if (graphics) { graphics.hidden = false; root.querySelector('.operations-settings-display').append(graphics); }

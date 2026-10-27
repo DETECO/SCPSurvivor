@@ -1,0 +1,12 @@
+{
+  "manifestSHA256": "5005e976150b0e1361a8f838accf373d4a265e0e3f9e49507593354c06942379",
+  "files": 64,
+  "mismatches": [],
+  "approvedC1": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ]
+}

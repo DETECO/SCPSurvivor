@@ -1,6 +1,6 @@
 # Roadmap SCP Survivor
 
-**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-26).** Demo0.39 publicada/comprobada: HUD MEN-005-A y proporciones de seis humanos16/32 corregidas; grietas/BIO/poderes/NPC con arma aleatoria y reserva infinita conservados.285pruebas de juego, cuatro formatos publicos,352montajes y92hashesPASS. Aceptacion visual nueva y telefono fisico pendientes. REV0011/Control0.13; siguienteLOT002 con gate de fusion cerrado.
+**Diseño vigente V2-ESTRUCTURA — Avance por mapas; sin extracción, accesorios físicos ni mochilas (2026-10-26).** Demo pública acreditada0.39. LOT008 implementado y revisado localmente para publicación0.40: cristalesXP, compañero vivo al regresar, cámara uniforme, cinco salasC1-r2 aceptadas, variedad/BIO más exigentes, cinco poderes elegidos y presión progresiva. Publicación nueva pendiente de recibo; fusión/ARM-JUG001 fuera del lote; balance humano/teléfono pendientes. AvanceV2 sin calcular.
 
 [Pauta vigente](PAUTA_DESARROLLO.md) · [Plan de cambios](docs/PLAN_CAMBIOS_ESTRUCTURA.md) · [Decisiones y pendientes](docs/ESTRUCTURA_DECISIONES.md) · [Últimos cambios de combate](docs/PLAN_DESARROLLO_V2_INFINITO.md)
 
@@ -922,6 +922,8 @@ Los registros anteriores permanecen intactos. V0.11 y su documentación están e
 | CH-044 | 2026-10-25 |  |  |
 | CHG-045 | 2026-10-25 | ARMASR3 aceptado:LOT006 implementa montaje proporcional de48sprites,sin cambios de reglas o servicios. Publicación por recibo propio, sin aumentar52/100histórico. |  |
 | CHG-046 | 2026-10-26 | LOT007: HUD aceptado y reparacion tecnica de proporciones publicados/verificados. Control0.13/REV0011;285tests juego,92hashes publicos. Tareas/pesos historicos intactos; avanceV2 sin calcular. |  |
+| CHG-047 | 2026-10-26 | REV0012/Control0.14: seleccionR4 de poderes y salasC1 consolidadas; LOT008 autorizado para correcciones de jugabilidad. Version publica permanece0.39; sin modificar tareas/pesos historicos ni aprobar ARM-JUG001 por extension. |  |
+| CHG-048 | 2026-10-26 | LOT008 implementado y revisado localmente;316tests,64hashes,QApropia5grietas/HUD4/352montajes. AD01 consolida aprobaciónC1-r2. Autorizada publicación0.40 aPROGRAMACION; pendiente recibo público. Tareas/pesos históricos intactos. |  |
 
 ## 13. Continuar en Windows/Codex Local
 

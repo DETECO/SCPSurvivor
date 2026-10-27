@@ -20,7 +20,7 @@ function setup(seed=1337,quick=false,enabled=true,options={}){
   G.ExplorationChests={runs:0,resets:[],ticks:[],startRun(){this.runs++},reset(g,o){this.resets.push({g,o})},tick(...args){this.ticks.push(args)},draw(){},state:{chests:[]}};
  }
  if(options.prepare)options.prepare(G,player);
- for(const file of ['../js/data/field-catalog.js','../js/systems/field-stats.js','../js/systems/field-abilities.js','../js/systems/expedition.js'])vm.runInNewContext(fs.readFileSync(require.resolve(file),'utf8'),{G,Math});G.Expedition.start(player,{seed});
+ for(const file of ['../js/data/field-catalog.js','../js/systems/field-stats.js','../js/systems/field-abilities.js','../js/systems/expedition-pressure.js','../js/systems/expedition.js'])vm.runInNewContext(fs.readFileSync(require.resolve(file),'utf8'),{G,Math});G.Expedition.start(player,{seed});
  function clearWave(){for(let step=0;step<500;step++){for(const e of G.EnemyMgr.all()){if(!e.dead){e.dead=true;player.kills++;}}G.Expedition.update(1);if(G.Expedition.state.phase==='preparation')return;}throw Error('wave stuck')}
  function clearSector(){for(let n=0;n<G.Expedition.state.sectorWaves;n++){clearWave();G.Expedition.ready()}player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;}
  return {G,player,clearWave,clearSector};
@@ -134,7 +134,7 @@ test('V2 quick solo primer mapa, jefe garantizado con cap y respeta nivel/pausa'
 test('V2 mezcla enemigos y escala con tiempo sin cerrar oleadas ni exceder cap normal',()=>{
  const {G}=setup();assert.ok(G.EnemyMgr.all().some(e=>e.def===G.Content.biological));
  G.Expedition.update(60);assert.equal(G.Expedition.state.phase,'combat');assert.equal(G.Expedition.state.totals.wavesCompleted,0);
- assert.ok(G.EnemyMgr.all().some(e=>e.sc.hp>1));G.Expedition.update(180);assert.equal(G.EnemyMgr.count,24);
+ assert.ok(G.EnemyMgr.all().some(e=>e.sc.hp>1));G.Expedition.update(180);assert.equal(G.EnemyMgr.count,40);
  const boss=G.EnemyMgr.all().find(e=>e.boss);assert.ok(boss);boss.dead=true;G.Expedition.update(.01);G.Expedition.update(.01);
  assert.equal(G.Expedition.state.totals.bossesDefeated,1);assert.equal(G.Expedition.state.sector,1);
  const copy=setup();assert.equal(copy.G.Expedition.state.mapSeed,G.Expedition.state.mapSeed);

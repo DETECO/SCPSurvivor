@@ -550,7 +550,7 @@ G.Game = (() => {
         if(propSet.has(entity)) G.World.drawProp(ctx,entity,time); else entity.draw(ctx);
         if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:false});
       }
-      G.Projectiles.draw(ctx); G.FX.draw(ctx);G.RiftExpedition?.drawOverlay(ctx);
+      G.Projectiles.draw(ctx); G.FX.draw(ctx);G.RiftPowerArt?.draw(ctx,pl);G.RiftExpedition?.drawOverlay(ctx);
     }
     ctx.restore(); G.World.drawVignette(ctx, w, h);G.RiftExpedition?.drawScreen(ctx,w,h);
     G.Touch.clearButtons(); G.Touch.draw(ctx);

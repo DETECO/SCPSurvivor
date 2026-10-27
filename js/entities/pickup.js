@@ -32,7 +32,18 @@ G.Pickups = (() => {
   function clear() { list = []; }
   function all() { return list; }
 
+  const isXp = kind => kind === 'xp' || kind === 'xpBig';
+  function xpAppearance(value) {
+    const tier=value<13?0:value<30?1:value<100?2:3;
+    return [
+      {tier:0,color:'#8cdb80',glow:'#478348',r:4,shape:'fragment'},
+      {tier:1,color:'#7fe0ff',glow:'#2a8fd0',r:5.5,shape:'crystal'},
+      {tier:2,color:'#c18aff',glow:'#713cb3',r:7.5,shape:'cluster'},
+      {tier:3,color:'#ffd373',glow:'#c08a10',r:10,shape:'core'}
+    ][tier];
+  }
   function push(o) {
+    if(isXp(o.kind)&&(!Number.isFinite(o.value)||o.value<=0))return;
     // En cooperativo sólo el anfitrión crea objetos (las copias llegan por la red).
     if (G.Coop.active && !G.Coop.isHost) return;
     o.id = nextId++;
@@ -41,21 +52,23 @@ G.Pickups = (() => {
     if (list.length > MAX) {
       // Fusiona los dos más antiguos de XP para no crecer sin límite.
       const i = list.findIndex(p => p.kind === 'xp' || p.kind === 'xpBig');
-      if (i >= 0) {
-        const a = list.splice(i, 1)[0];
-        const j = list.findIndex(p => p.kind === 'xp' || p.kind === 'xpBig');
-        if (j >= 0) { list[j].value += a.value; list[j].kind = 'xpBig'; }
-        if (G.Coop.isHost) G.Coop.pickupGone(a.id);
-      } else {
-        const a = list.shift();
-        if (G.Coop.isHost) G.Coop.pickupGone(a.id);
+      const j=list.findIndex((p,index)=>index!==i&&isXp(p.kind));
+      if(i>=0&&j>=0){
+        const a=list[i],target=list[j];target.value+=a.value;target.kind=target.value>=30?'xpBig':'xp';list.splice(i,1);
+        if(G.Coop.isHost){G.Coop.pickupGone(a.id);G.Coop.pickupAdded(target);}
+      }else{
+        // Keep a lone XP crystal even among 420 non-XP pickups.
+        const index=list.findIndex(p=>!isXp(p.kind)),a=list.splice(index,1)[0];
+        if(G.Coop.isHost)G.Coop.pickupGone(a.id);
       }
     }
   }
 
   /** Copia de un objeto del anfitrión. */
   function addRemote(id, kind, x, y, value) {
-    if (list.some(p => p.id === id)) return;
+    if(isXp(kind)&&(!Number.isFinite(value)||value<=0))return;
+    const existing=list.find(p=>p.id===id);
+    if(existing){existing.kind=kind;existing.value=value;return;}
     const o = orb(kind, x, y, value);
     o.id = id;
     list.push(o);
@@ -71,11 +84,13 @@ G.Pickups = (() => {
   function pullAll() { for (const o of list) o.pulled = true; }
 
   function dropXp(x, y, value, boss = false, legend = false) {
+    if(!Number.isFinite(value)||value<=0)return;
     if (boss) {
       // Los jefes revientan en un montón de orbes grandes + recompensas.
-      for (let i = 0; i < 14; i++) {
+      const count=Math.min(14,Math.ceil(value)),base=Math.floor(value/count),remainder=value-base*count;
+      for (let i = 0; i < count; i++) {
         const a = Math.random() * 6.2832, d = G.U.rand(10, 70);
-        push(orb('xpBig', x + Math.cos(a) * d, y + Math.sin(a) * d, Math.ceil(value / 14)));
+        push(orb('xpBig', x + Math.cos(a) * d, y + Math.sin(a) * d, base+Math.max(0,Math.min(1,remainder-i))));
       }
       push(orb('heal', x + 24, y, 0));
       push(orb('magnet', x - 24, y, 0));
@@ -99,6 +114,7 @@ G.Pickups = (() => {
   }
 
   function orb(kind, x, y, value) {
+    if(isXp(kind))kind=value>=30?'xpBig':'xp';
     const a = Math.random() * 6.2832;
     return {
       kind, x, y, value,
@@ -152,7 +168,7 @@ G.Pickups = (() => {
   function draw(ctx) {
     for (const p of list) {
       if (!G.Camera.sees(p.x, p.y, 30)) continue;
-      const k = KIND[p.kind];
+      const k = isXp(p.kind)?xpAppearance(p.value):KIND[p.kind];
       const bounce = Math.abs(Math.sin(p.t * 0.8)) * 3;
       const r = k.r;
       const y = p.y - 6 - bounce;
@@ -168,10 +184,11 @@ G.Pickups = (() => {
       ctx.globalAlpha = 1;
       ctx.fillStyle = k.color;
       if (p.kind === 'xp' || p.kind === 'xpBig') {
+        if(k.shape==='cluster'){for(const dx of [-4,4]){ctx.beginPath();ctx.moveTo(p.x+dx,y-r*.75);ctx.lineTo(p.x+dx+3,y);ctx.lineTo(p.x+dx,y+r*.75);ctx.lineTo(p.x+dx-3,y);ctx.closePath();ctx.fill();}}
         ctx.beginPath();
-        ctx.moveTo(p.x, y - r); ctx.lineTo(p.x + r * 0.78, y);
-        ctx.lineTo(p.x, y + r); ctx.lineTo(p.x - r * 0.78, y);
-        ctx.closePath(); ctx.fill();
+        if(k.shape==='core'){ctx.moveTo(p.x,y-r);ctx.lineTo(p.x+r*.8,y-r*.5);ctx.lineTo(p.x+r*.8,y+r*.5);ctx.lineTo(p.x,y+r);ctx.lineTo(p.x-r*.8,y+r*.5);ctx.lineTo(p.x-r*.8,y-r*.5);ctx.closePath();ctx.fill();}
+        if(k.shape==='fragment'){ctx.moveTo(p.x-r*.6,y+r);ctx.lineTo(p.x+r*.6,y+r*.3);ctx.lineTo(p.x,y-r);ctx.closePath();ctx.fill();}
+        else if(k.shape!=='core'){ctx.moveTo(p.x,y-r);ctx.lineTo(p.x+r*.78,y);ctx.lineTo(p.x,y+r);ctx.lineTo(p.x-r*.78,y);ctx.closePath();ctx.fill();}
       } else if (p.kind === 'coin') {
         // Moneda que gira: elipse que se estrecha.
         const sx = Math.max(0.25, Math.abs(Math.cos(p.t * 0.9)));
@@ -200,5 +217,5 @@ G.Pickups = (() => {
 
   function exportData(){return JSON.parse(JSON.stringify(list));}
   function restoreData(items){list=JSON.parse(JSON.stringify(items));nextId=Math.max(1,...list.map(p=>p.id+1));}
-  return { suspend, resume, clear, all, dropXp, drop, update, draw, addRemote, removeId, pullAll, exportData,restoreData,KIND, get count() { return list.length; } };
+  return { suspend, resume, clear, all, dropXp, drop, update, draw, addRemote, removeId, pullAll, exportData,restoreData,KIND,xpAppearance, get count() { return list.length; } };
 })();

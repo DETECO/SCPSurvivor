@@ -22,6 +22,8 @@ G.CornerHUD = (() => {
     const hints = node('div', 'corner-hints');
     for (const id of ['tactical-status', 'terminal-prompt', 'chest-status']) hints.append(el(id));
     el('viewport').append(hints);
+    const powers=node('div','corner-powers');powers.setAttribute('aria-label','Poderes automáticos');
+    const powerNotice=node('div','corner-power-notice');powerNotice.setAttribute('role','status');hints.append(powers,powerNotice);
     const hint = node('div', 'corner-stick'); hint.setAttribute('aria-hidden', 'true');
     hint.append(node('span', 'corner-stick-knob'), node('small', 'corner-stick-label', 'MOVER'));
     el('viewport').append(hint);
@@ -54,6 +56,11 @@ G.CornerHUD = (() => {
     // The body may contain a modal outside #viewport. Its existing game state owns input/pausing.
     document.body.toggleAttribute('data-corner-choice', ['levelup', 'armament', 'terminal'].includes(state.phase) || !!G.RiftExpedition?.state.reward);
     el('corner-objectives').setAttribute('aria-label', G.RiftExpedition?.state.active ? 'Recinto dimensional y avisos' : `Mapa ${state.sector} y avisos`);
+    const powerState=G.RiftPowers?.state;
+    el('corner-powers').replaceChildren();
+    for(const power of powerState?.owned||[]){const box=node('span','corner-power-'+power.id),name=node('strong','corner-power-name-'+power.id,power.name),status=node('small','corner-power-state-'+power.id,`NV ${power.rank===6?'MAX':power.rank} · ${powerState.cycles.some(c=>c.id===power.id)?'ACTIVO':power.remaining>0?Math.ceil(power.remaining)+' s':'PREPARADO'}`);box.append(name,status);el('corner-powers').append(box);}
+    el('corner-powers').hidden=!powerState?.owned.length;
+    el('corner-power-notice').textContent=powerState?.notice||'';el('corner-power-notice').hidden=!powerState?.notice||!el('rift-alert').hidden||!el('map-alert').hidden;
     const room = G.RiftExpedition?.state;
     el('corner-context').textContent = room?.active ? `${room.tier} · ${room.name}` : `MAPA ${state.sector}`;
   }
@@ -86,7 +93,7 @@ G.CornerHUD = (() => {
     };
     if (visible('rift-alert') || visible('map-alert')) return null;
     const bounds = el('game').getBoundingClientRect(), scale = camera.scale;
-    const occupied = ['scene-hud', 'corner-objectives', 'rift-boss-health', 'radar-wrap', 'field-weapons', 'btn-ability', 'btn-terminal', 'chest-status', 'terminal-prompt', 'tactical-status', 'corner-stick'].map(visible).filter(Boolean);
+    const occupied = ['scene-hud', 'corner-objectives', 'corner-hints', 'rift-boss-health', 'radar-wrap', 'field-weapons', 'btn-ability', 'btn-terminal', 'chest-status', 'terminal-prompt', 'tactical-status', 'corner-stick'].map(visible).filter(Boolean);
     const p = fitBubble({x: bounds.left + (x - camera.left()) * scale, y: bounds.top + (y - camera.top()) * scale, width: width * scale, height: height * scale}, occupied, {x: bounds.left, y: bounds.top, width: bounds.width, height: bounds.height});
     return p ? {x: camera.left() + (p.x - bounds.left) / scale, y: camera.top() + (p.y - bounds.top) / scale} : null;
   }

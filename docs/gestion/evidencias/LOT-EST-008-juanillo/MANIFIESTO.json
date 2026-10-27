@@ -1,0 +1,49 @@
+{
+  "status": "local_review_PASS_public_pending",
+  "dateClient": "2026-10-26",
+  "lot": "LOT-EST-008r1",
+  "files": [
+    {
+      "file": "lectura-corte-local.json",
+      "sha256": "24fcb39381769e5e96c2f891e6dbd7f004c35dc4551ec1562318d26aba1d8ec0"
+    },
+    {
+      "file": "candidato/contratos.json",
+      "sha256": "7486387dbb7394cdc0bb7a69f73b69a133d0dcb15e2f6f4e76b8a8c4b9c9f457"
+    },
+    {
+      "file": "regresion-hud/browser.json",
+      "sha256": "b1dd83b299a9228284d8ce231f5067514f751f902fa182736ab26d8b9e4a7423"
+    },
+    {
+      "file": "regresion-armas/browser.json",
+      "sha256": "8c1c365fc70e5aef71aa6daf07d2e2298267e52d668bc9acf3664fe744886557"
+    },
+    {
+      "file": "candidato/cristal-12.png",
+      "sha256": "4f8cbe0f8d0a8c0d3968c36f3f8dd2c8a72fb52b565b948d0f6bee98011d4648"
+    },
+    {
+      "file": "candidato/cristal-20.png",
+      "sha256": "16cd5aabda97c79d94be335b1562758363660eb1108b740b2cb24310ac489ee7"
+    },
+    {
+      "file": "candidato/cristal-84.png",
+      "sha256": "cc1b1d7f306a7962a226ba5345e0069ec35ed4321d7ca889545118afe48f036e"
+    },
+    {
+      "file": "candidato/cristal-220.png",
+      "sha256": "6012ccba4584672d020af9b37b01cf8e552a38fe3d73f9c5202f8a476d254cdb"
+    },
+    {
+      "file": "lectura-corte-local-65.json",
+      "sha256": "a132965e7a1b57c067d55ae37d50e12535aca4be272201052cea365a0e65880e"
+    },
+    {
+      "file": "lectura-corte-local-68.json",
+      "sha256": "2fe72e3967ba1618c9c96083426c7e12e0a6b98e4184950841e4582b2cab2952"
+    }
+  ],
+  "physicalPhone": false,
+  "sourceCodeEditedByReviewer": false
+}

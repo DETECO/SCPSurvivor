@@ -1,0 +1,362 @@
+{
+  "lot": "LOT-EST-008 r1",
+  "revision": "REV-EST-0012",
+  "state": "local_review_not_published",
+  "publicBase": "ca2e2f0478c4b8392fee4f68337ee04505aa501a",
+  "bundle": "dcc443cb5c",
+  "runtime": [
+    {
+      "path": "css/corner-hud.css",
+      "bytes": 11626,
+      "sha256": "33083fb9923906a49ea8ee640c2e6d8ebe106ecbfbff94464c81c69a83a3618a"
+    },
+    {
+      "path": "dev.html",
+      "bytes": 17610,
+      "sha256": "3c9f28928651b36c03ac2b78bb1bb2d4775b76824f474ffa8bdf473949311880"
+    },
+    {
+      "path": "index.html",
+      "bytes": 10771,
+      "sha256": "d0fc762bd7759beb28a66e4dbc2239070a09d8df7c7b00d6c5081b783bfc11f8"
+    },
+    {
+      "path": "js/app.min.js",
+      "bytes": 1670860,
+      "sha256": "7ac256abe7ad3568256cfbcf3e1e49fc1c71b6ff3abf735eff438fc6c9da98da"
+    },
+    {
+      "path": "js/core/camera.js",
+      "bytes": 3124,
+      "sha256": "4d4a5855285bca4b1a32c7d7eae6cc1ab40efcb4ffa2616b81688114990f41c1"
+    },
+    {
+      "path": "js/data/content.js",
+      "bytes": 2718,
+      "sha256": "d8534ae73edf70574f3417ff23188fe9b35700c91f824d193ff1ed47b11b0358"
+    },
+    {
+      "path": "js/data/rift-power-tuning.js",
+      "bytes": 12129,
+      "sha256": "9081134b449f7abd9f68d9811f540cf3419696e615bb1bde3bfb52abf0a6d01e"
+    },
+    {
+      "path": "js/entities/pickup.js",
+      "bytes": 9708,
+      "sha256": "42884936d5a4f86aa34b0af69242ab67a0ea1c2501a37224390699497778a79b"
+    },
+    {
+      "path": "js/game.js",
+      "bytes": 36905,
+      "sha256": "a435c128ec48286b6a309592e68d707b7d47ee7de158c665febcc4604a279b64"
+    },
+    {
+      "path": "js/main.js",
+      "bytes": 2096,
+      "sha256": "cb818aed43af7afb3e2305745f5d1234c44f93831c300dd8c637fd1605be1ea7"
+    },
+    {
+      "path": "js/systems/containment-boss.js",
+      "bytes": 6750,
+      "sha256": "bef1bcd390459a50f4d2a3ef923ee14cd9dcfbcec0473f48a352dc2bc6e72503"
+    },
+    {
+      "path": "js/systems/expedition.js",
+      "bytes": 28653,
+      "sha256": "1215e5b2580b83b304101be5db570ee79f5b37c8b01116b48ba7606680b15c2d"
+    },
+    {
+      "path": "js/systems/expedition-pressure.js",
+      "bytes": 673,
+      "sha256": "ddc94c2be2da7be6f5bfcf4db4081013f83a3ad1217e15a7d1970e3ce5f86db2"
+    },
+    {
+      "path": "js/systems/rift-anomalies.js",
+      "bytes": 11954,
+      "sha256": "1511a3a9dd6bf3a8c1948845ab1fd849a15b4e28e3791ee4292935ce979c643e"
+    },
+    {
+      "path": "js/systems/rift-companion.js",
+      "bytes": 11099,
+      "sha256": "ec6c16d51b61e7aedf722bd0cb488f584043c5bf7343c624a9d865a6b5fcb415"
+    },
+    {
+      "path": "js/systems/rift-expedition.js",
+      "bytes": 13309,
+      "sha256": "6a4954731618ca017bc8e2307f279dfb25552f537982a5e7b86e5b7ee7beed39"
+    },
+    {
+      "path": "js/systems/rift-powers.js",
+      "bytes": 8450,
+      "sha256": "2cf912aa47e3ef2b07f9791456a0ca3618999d09897b9d4f74c3024415de6bb7"
+    },
+    {
+      "path": "js/systems/rift-practice.js",
+      "bytes": 2087,
+      "sha256": "6c9812ec8adf4030a9aed5a06911cd7f53e8b472633eb51eae3fd5fde14c34fb"
+    },
+    {
+      "path": "js/ui/corner-hud.js",
+      "bytes": 7728,
+      "sha256": "f4da61aedafe32e45f39787e213594f132f0e0230b5ac1b635b86d65304273c0"
+    },
+    {
+      "path": "js/ui/operations-menu.js",
+      "bytes": 19903,
+      "sha256": "5350558afb8f4955e3810f1f0939244c51e4ffed7b46d56545b57b5017fdce75"
+    },
+    {
+      "path": "js/ui/rift-power-art.js",
+      "bytes": 1511,
+      "sha256": "2e114920ddf88476d76308e62d2f76a046f4bc1f66468b3d558b9e0055470214"
+    },
+    {
+      "path": "js/ui/technical-ui.js",
+      "bytes": 25904,
+      "sha256": "086a41fcf0489df8c11c2cc5fe84ee720f31abd391b0a38922aa39939b645a32"
+    },
+    {
+      "path": "js/world/rift-room-art.js",
+      "bytes": 12101,
+      "sha256": "8983a7a6a2517a939a3014058de12c486a65be591ea235800e6d7d9a96effef5"
+    },
+    {
+      "path": "js/world/rift-rooms.js",
+      "bytes": 310,
+      "sha256": "ee3d758c59b4ff8a2995ddcc8a223e7df40d07270f49887e7b3f37882adef757"
+    },
+    {
+      "path": "js/world/world.js",
+      "bytes": 29900,
+      "sha256": "03694143a4b373f0b3e59b2c8e13034030b95c59ed310dea79d2b3ea58bdf525"
+    }
+  ],
+  "selectedPowerAssets": [
+    {
+      "path": "assets/powers/16/POD-01-A.png",
+      "bytes": 309764,
+      "sha256": "6152288d43a46e61a5f04f75124aa3de61ffe263015964d144f5ff518810b3bc"
+    },
+    {
+      "path": "assets/powers/32/POD-01-A.png",
+      "bytes": 190811,
+      "sha256": "945500e4e8132e21038fef787961f1e24b1551750112ad6be6dc0e6b13120058"
+    },
+    {
+      "path": "assets/powers/16/POD-02-A.png",
+      "bytes": 118921,
+      "sha256": "a83cd12e1feb72afb08243e75e63b6a87baaa0373f6f01a6428034ecb18add7a"
+    },
+    {
+      "path": "assets/powers/32/POD-02-A.png",
+      "bytes": 92897,
+      "sha256": "6842ed519ed801a9af6c66ee0c82fd2904259082d292612895f1e28b9745a852"
+    },
+    {
+      "path": "assets/powers/16/POD-03-A.png",
+      "bytes": 128910,
+      "sha256": "12924ea89e0b78c8ae5428db97536e89b639898b7adaf0f44b1162d778f8df1f"
+    },
+    {
+      "path": "assets/powers/32/POD-03-A.png",
+      "bytes": 100692,
+      "sha256": "ec9aaa775116a2421b7cb6cf8779dbac5dc64885d34a247010c4124ca42828bc"
+    },
+    {
+      "path": "assets/powers/16/POD-04-A.png",
+      "bytes": 174606,
+      "sha256": "0df397e290056ae949dd7e0b9a0b207cf2c784be9bc18a1928648f2e2585822a"
+    },
+    {
+      "path": "assets/powers/32/POD-04-A.png",
+      "bytes": 127833,
+      "sha256": "63b7c0d5b7e26711cdb8940355260324119f3e367107a3eb27b5ba627b4a01ff"
+    },
+    {
+      "path": "assets/powers/16/POD-05-B.png",
+      "bytes": 603299,
+      "sha256": "0a8ae7e88b420589e6de60d3becbb1edb918cd63c23eb73ce12a12d43ae18f2d"
+    },
+    {
+      "path": "assets/powers/32/POD-05-B.png",
+      "bytes": 347513,
+      "sha256": "b47fab5a6722cfd94e3b52241afafd9183f7151339e7852db5d90a4e41915f85"
+    }
+  ],
+  "approvedC1R2Assets": [
+    {
+      "path": "assets/levels/bio-c1/01-cultivo-invadido-clean-r2.png",
+      "bytes": 2723235,
+      "sha256": "8a34e7ffb92bda77e6f05fd9620303154211328e0e535f6800b88947ed00f33d"
+    },
+    {
+      "path": "assets/levels/bio-c1/02-galeria-del-fluido-clean-r2.png",
+      "bytes": 2466145,
+      "sha256": "84bad4c3c1219abc3ad715da9dec900cdd3f5fb69d97a4f6e5ee72340711d1d7"
+    },
+    {
+      "path": "assets/levels/bio-c1/03-camara-de-anclajes-clean-r2.png",
+      "bytes": 2473802,
+      "sha256": "a3b314c3f0811d681f745034f32b83fe98881ec910b47a48c0368579ad2bbc1e"
+    },
+    {
+      "path": "assets/levels/bio-c1/04-patio-de-contencion-clean-r2.png",
+      "bytes": 2550195,
+      "sha256": "a5e253b5c1a18ae5eb9bc3879fc17c733295dc91d39eb26e423e3d174c6fc6cc"
+    },
+    {
+      "path": "assets/levels/bio-c1/05-nucleo-de-cuarentena-clean-r2.png",
+      "bytes": 2550007,
+      "sha256": "7268edb28f7e510e129683d28a695e4340d59935ace1f000fad9ae83c51762b5"
+    }
+  ],
+  "authority": [
+    {
+      "path": "docs/gestion/lotes/LOT-EST-008-r1.md",
+      "bytes": 13414,
+      "sha256": "02b7451738c007ddfb29302109762fa31a7d865c51e430ead49b05ae0f983f3b"
+    },
+    {
+      "path": "docs/gestion/ENSAYO_PODERES_002-r1.json",
+      "bytes": 6071,
+      "sha256": "ca4621446534e40d4adb0f32f5030e3ae331bb22a2da4e3bbd1508fed11edfe4"
+    },
+    {
+      "path": "docs/NIVELES_BIO_C1_R2_APROBACION.md",
+      "bytes": 3141,
+      "sha256": "59cd2462fd45060aacfcfca7b0d4cc5eed27632d7ad1d4edc26c20fb0f4c50a9"
+    },
+    {
+      "path": "docs/referencias/armas/poderes-anomalos-v1/SELECCION_PODERES_2026-10-26.json",
+      "bytes": 25036,
+      "sha256": "1ca71f9471c3cab11abdd31ba395192e6d5df3d71013931f8abb7cc0c0bea925"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "tests/artifacts/lot-est-008/node-full-final.log",
+      "bytes": 31091,
+      "sha256": "19dd6f85c28eb8820bbb9800ad9974904c1cb6a7fd3be6b34d21ba152a1fc085"
+    },
+    {
+      "path": "tests/artifacts/lot-est-008/browser/browser.json",
+      "bytes": 15610,
+      "sha256": "b9f7b567af5b13742aa36f45e291b117ef84508d91f45d52e31eed1e4b5b8959"
+    },
+    {
+      "path": "tests/artifacts/lot-est-008/powers/browser.json",
+      "bytes": 3645,
+      "sha256": "33200e2efde5a8cedf09d6f4f241f8130595bd20a264054ef862e6bec685db37"
+    },
+    {
+      "path": "tests/artifacts/lot-est-008/difficulty/measurements.json",
+      "bytes": 7527,
+      "sha256": "73d75fb7cadcbeff5581a7dad7d187edeb048af0061ed952ca61677dc02187be"
+    }
+  ],
+  "publicationRule": "Copy only reviewed game changes into public clone, regenerate bundle/index preserving public CSP/Firebase vendor/config; do not include private viewer or inactive service changes.",
+  "documentation": [
+    {
+      "path": "docs/gestion/entregas/PROGRAMACION-JUGABILIDAD-008-CORTE-LOCAL.md",
+      "bytes": 6004,
+      "sha256": "fa7b885eaf9a4a6552580e782791acbfa31b56e6bfa9f26a9c83fe6cc589a604"
+    },
+    {
+      "path": "docs/gestion/REGISTRO_IMPLEMENTACION.md",
+      "bytes": 34281,
+      "sha256": "26588258f683514f8e5c5062402e6d7ed778e618b46347268687e18dbd6e8c6d"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-26-jugabilidad-008.md",
+      "bytes": 3228,
+      "sha256": "e74e6998abdd47bf0e848355b620db3014ec9854a78abf642d56afc79fbc7e82"
+    }
+  ],
+  "testSources": [
+    {
+      "path": "tests/jugabilidad-008-xp-camera.test.js",
+      "bytes": 3455,
+      "sha256": "024ec52bef18cbd61f1548890393c6d6ef158391ec0b9bd0ded73690de38ba01"
+    },
+    {
+      "path": "tests/jugabilidad-008-companion.test.js",
+      "bytes": 2708,
+      "sha256": "cf08bb7a8d8972f3865b4fa03e698b5d7aa33f92b19c0ee0e452536370d5f2fa"
+    },
+    {
+      "path": "tests/jugabilidad-008-practice.test.js",
+      "bytes": 695,
+      "sha256": "ee25087fb2656d5c6ccd22f6045d2dfab31ea647d3e1ac9aeb04c4289ad81bd4"
+    },
+    {
+      "path": "tests/jugabilidad-008-pressure.test.js",
+      "bytes": 835,
+      "sha256": "1e89ebc0ea4feee4bff0865fafac5a4ebbcff439ad7b46191ebb556dc8e96678"
+    },
+    {
+      "path": "tests/jugabilidad-008-bio.test.js",
+      "bytes": 639,
+      "sha256": "51f1f2d9fff68a7ad9039d04a2ca9058429fd3d3f5ffea6a066fc1bfd45fcd56"
+    },
+    {
+      "path": "tests/jugabilidad-008-bio-radius.test.js",
+      "bytes": 2028,
+      "sha256": "ce9b141890239583ee2b072cb2b4155531ee0212585e51eb3b817c0d367bd950"
+    },
+    {
+      "path": "tests/jugabilidad-008-powers.test.js",
+      "bytes": 3283,
+      "sha256": "3134041c0842a15e180a15bcf34b8a56319b0b9ecafdb51bc90675b811921743"
+    },
+    {
+      "path": "tests/jugabilidad-008-browser.py",
+      "bytes": 12614,
+      "sha256": "08a36cacbc37d2b7337766763f8ec530b3559d6e22793090f32f82570630d4ab"
+    },
+    {
+      "path": "tests/jugabilidad-008-power-browser.py",
+      "bytes": 5795,
+      "sha256": "df287ce385efdacd3c1e6da2728b08e23347e38cbdb8f15be31decac41e4a6ac"
+    },
+    {
+      "path": "tests/jugabilidad-008-difficulty.py",
+      "bytes": 4656,
+      "sha256": "c63a7d9d0b70eb76efea77ec418be8838ae578333b02707a25ac5f7ea620db04"
+    },
+    {
+      "path": "tests/p03-director.test.js",
+      "bytes": 13828,
+      "sha256": "6d0fd916ffd313307f849efe861ffc7e35b4b928dccb6315c22cd1f46411549c"
+    },
+    {
+      "path": "tests/rift-powers.test.js",
+      "bytes": 2477,
+      "sha256": "a63e8765a272b5396e4e5935814c27f03c95ca844508d5e64ab20dfe703033d1"
+    },
+    {
+      "path": "tests/v2-map-director.test.js",
+      "bytes": 16775,
+      "sha256": "569e990e316f0c7d5ebe6971387a426eb1de4561c7087a467140d7cf7368b2c8"
+    },
+    {
+      "path": "tests/rift-rooms-c1.test.js",
+      "bytes": 1887,
+      "sha256": "7f6ad01048ed970fe8f578e6482d95e022047bcd4c323c4c0d657219a8439c0e"
+    },
+    {
+      "path": "tests/proporciones-personajes.test.js",
+      "bytes": 2690,
+      "sha256": "dcec4d5c88b6812d22bf1c142418ca5945a66724fe2ddf62807b7a097011006e"
+    },
+    {
+      "path": "tests/rift-anomalies.test.js",
+      "bytes": 2120,
+      "sha256": "a28e414b6f234a625801017d320751bf7379175579688f0bf2ca434056b960d3"
+    },
+    {
+      "path": "tests/rift-rooms.test.js",
+      "bytes": 1086,
+      "sha256": "d80b76b5686f95f64f892a2a9fdb66ca0b18bd7a3d6e25ff5aa1987501470fa4"
+    }
+  ]
+}
