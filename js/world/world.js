@@ -242,6 +242,7 @@ G.World = (() => {
 
   /** ¿Se puede pasar por esta casilla andando? (pathing.js) */
   function walkable(tx, ty) {
+    if(fixture?.m01p1)return !G.SceneM01P1.blocked(fixture.m01p1,(tx+.5)*TS,(ty+.5)*TS,12);
     if(fixture?.riftArt)return !G.RiftRooms.blocked(fixture.riftArt,(tx+.5)*TS,(ty+.5)*TS,12);
     const t = terrainAt(tx, ty);
     if (t === WALL) return false;
@@ -252,6 +253,7 @@ G.World = (() => {
 
   /** ¿Hay sitio para que algo de radio r esté aquí? */
   function isFree(x, y, r = 12, allowLiquid = false) {
+    if(fixture?.m01p1)return !G.SceneM01P1.blocked(fixture.m01p1,x,y,r);
     if(fixture?.riftArt)return !G.RiftRooms.blocked(fixture.riftArt,x,y,r);
     const t0x = tileOf(x - r), t1x = tileOf(x + r), t0y = tileOf(y - r), t1y = tileOf(y + r);
     for (let ty = t0y; ty <= t1y; ty++) for (let tx = t0x; tx <= t1x; tx++) {
@@ -307,6 +309,7 @@ G.World = (() => {
    * Devuelve true si ha chocado con algo.
    */
   function collide(e) {
+    if(fixture?.m01p1)return G.SceneM01P1.collide(fixture.m01p1,e);
     if(fixture?.riftArt)return G.RiftRooms.collide(fixture.riftArt,e);
     const r = e.r;
     let hit = false;
@@ -349,6 +352,7 @@ G.World = (() => {
 
   /** ¿Choca un proyectil aquí? Devuelve 'wall', el prop sólido, o null. */
   function projectileBlock(x, y, r) {
+    if(fixture?.m01p1)return G.SceneM01P1.blocked(fixture.m01p1,x,y,r)?'wall':null;
     if(fixture?.riftArt)return G.RiftRooms.blocked(fixture.riftArt,x,y,r)?'wall':null;
     const tx = tileOf(x), ty = tileOf(y);
     if (terrainAt(tx, ty) === WALL) return 'wall';
@@ -450,7 +454,7 @@ G.World = (() => {
     // interpola por píxel para que las manchas tengan bordes orgánicos.
     const S = 6 * G.Tiles.T;
     const dirtField = (gx, gy) => fbm(gx / S, gy / S, seed + 303);
-    img = G.SceneR7 && fixture?.layout===G.SceneR7.id ? G.SceneR7.paintChunk(cx,cy,N,fixture,seed) : G.Tiles.paintChunk(cx, cy, N, at, dirtField, bi, seed);
+    img = fixture?.m01p1 ? G.SceneM01P1.paintChunk(cx,cy,N,fixture,seed) : G.SceneR7 && fixture?.layout===G.SceneR7.id ? G.SceneR7.paintChunk(cx,cy,N,fixture,seed) : G.Tiles.paintChunk(cx, cy, N, at, dirtField, bi, seed);
     if (cache.size > MAX_IMAGES) cache.delete(cache.keys().next().value);
     cache.set(k, img);
     return img;
@@ -509,6 +513,7 @@ G.World = (() => {
   /** Props visibles, para mezclarlos en el orden por Y con las entidades. */
   function visibleProps(cam) {
     if(fixture?.riftArt)return [];
+    if(fixture?.m01p1)return G.SceneM01P1.visibleProps(fixture,cam);
     if(G.SceneR7 && fixture?.layout===G.SceneR7.id)return G.SceneR7.visibleProps(fixture,cam);
     const out = [];
     for (const [cx, cy] of visibleChunks(cam, 60)) {
@@ -518,6 +523,7 @@ G.World = (() => {
   }
 
   function drawProp(ctx, p, t) {
+    if(p.type==='m01p1')return G.SceneM01P1.drawProp(ctx,p);
     if(p.r7)return G.SceneR7.drawProp(ctx,p,G.Game?.player);
     const P = G.Sprites.PX;
     const variant = p.type === 'grass' ? (Math.sin(t * 2.4 + p.wiggle) > 0.55 ? 1 : 0)

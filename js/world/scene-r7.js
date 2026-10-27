@@ -42,7 +42,7 @@ G.SceneR7=(()=>{
   for(let y=0;y<N;y++)for(let xx=0;xx<N;xx++){
    const tx=cx*N+xx,ty=cy*N+y,ox=xx*T,oy=y*T,h=G.U.hash(tx,ty,seed),outside=tx<=fixture.minX||tx>=fixture.maxX||ty<=fixture.minY||ty>=fixture.maxY;
    const compact=fixture.sceneRevision==='NIV-ESC-008-A-r1';
-   const ivory=compact?(tx<20&&ty<39||tx>215&&ty>138):(tx<40&&ty<60||tx>440&&ty>276),service=compact?ty>120&&tx<158:ty>218&&tx<315;
+   const ivory=fixture.m01p1?false:compact?(tx<20&&ty<39||tx>215&&ty>138):(tx<40&&ty<60||tx>440&&ty>276),service=fixture.m01p1?tx>24&&tx<46&&ty>5&&ty<23:compact?ty>120&&tx<158:ty>218&&tx<315;
    rect(outside?'#131717':ivory?'#d6cba4':service?'#747762':'#a58b45',ox,oy,T,T);
    if(outside){rect('#3b4145',ox+1,oy+1,T-2,T-2);rect('#8b9892',ox+1,oy+1,T-2,1);continue;}
    if(materialsReady){const q=Math.floor(materials.width/2),patch=q/4,sx=(ivory?q:0)+(tx%4)*patch,sy=(ivory||service?q:0)+(ty%4)*patch;x.save();x.globalAlpha=.56;x.drawImage(materials,sx,sy,patch,patch,ox,oy,T,T);x.restore();}

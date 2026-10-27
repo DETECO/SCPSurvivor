@@ -1,7 +1,7 @@
 /* Arranque local P01. La aplicación completa sigue pendiente de sus fases. */
 (() => {
   const NEED = ['U', 'Settings', 'Input', 'Touch', 'Sprites', 'Camera', 'Tiles', 'World',
-                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'DimensionalRifts', 'InventoryModel', 'InventoryTrial', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'WeaponTerminal', 'ExpandedPractice', 'ExpandedUI', 'FieldRadar', 'CharacterCatalog', 'PersonajesArt', 'AF01ApprovedArt', 'ApprovedFieldWeaponArt', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI','SceneR7','SceneM01A','RiftDirector','WeaponRevisionR1','WeaponRevisionTrial','OperationsMenu','RiftVisuals','CornerHUD'];
+                'Player', 'Weather', 'EnemyMgr', 'Projectiles', 'FX', 'Content', 'FieldCatalog', 'FieldStats', 'FieldAbilities', 'FieldLoadout', 'DimensionalRifts', 'InventoryModel', 'InventoryTrial', 'TechnicalUI', 'FieldCombat', 'ContainmentAI', 'BiologicalAI', 'ContainmentBoss', 'SectorMaps', 'FieldUpgrades', 'WeaponTerminal', 'ExpandedPractice', 'ExpandedUI', 'FieldRadar', 'CharacterCatalog', 'PersonajesArt', 'AF01ApprovedArt', 'ApprovedFieldWeaponArt', 'Expedition', 'Game', 'LocalAccounts', 'RunCheckpoint', 'RunContinuity', 'AccountUI','SceneR7','SceneM01A','SceneM01P1','RiftDirector','WeaponRevisionR1','WeaponRevisionTrial','OperationsMenu','RiftVisuals','CornerHUD'];
   async function boot() {
     const miss = NEED.filter(k => !window.G || !G[k]);
     if (miss.length) {
@@ -16,9 +16,11 @@
     try {
       G.Content.install(); G.TrialVisuals.install();
       if(G.MapTrial?.expanded||G.MapTrial?.rewardRiftPractice)await G.SceneR7.preload();
+      if(G.SceneM01P1.active())await G.SceneM01P1.preload();
       await G.AF01ApprovedArt.preload();
       G.ApprovedFieldWeaponArt.preload();G.RiftPowerArt.preload();
       G.Game.init({ technical: true }); G.TechnicalUI.init(); G.InventoryTrial.init(); G.AccountUI.init(); G.TrialVisuals.initUI(); G.OperationsMenu.init();
+      if(G.SceneM01P1.active()){document.title='SCP Survivor · Extracto piloto M01';document.getElementById('btn-technical-start').textContent='Probar extracto M01 P1';}
     } catch (e) { G.TechnicalUI.fail(e); }
   }
   if (document.readyState === 'loading') addEventListener('DOMContentLoaded', boot);

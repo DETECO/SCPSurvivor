@@ -34,7 +34,7 @@ G.Expedition = (() => {
     extractionAvailable=false;
     if(!v2()&&kind==='normal'&&sector>=3){extractionAvailable=rng()<.25||drought>=3;drought=extractionAvailable?0:drought+1;}
     mapSeed=Math.imul(runSeed^sector,0x45d9f3b)>>>0;spawnRng=random(mapSeed);
-    geometry=v2()&&sector===1&&(G.MapTrial.expanded||G.MapTrial.rewardRiftPractice)&&G.SceneR7 ? (G.SceneM01A?G.SceneM01A.generate(mapSeed):G.SceneR7.generate(mapSeed)) : v2()&&G.SectorMaps.generateV2?G.SectorMaps.generateV2(mapSeed):G.SectorMaps.generate(mapSeed,{boss:kind==='boss'});
+    geometry=v2()&&sector===1&&G.SceneM01P1?.active()?G.SceneM01P1.generate(mapSeed):v2()&&sector===1&&(G.MapTrial.expanded||G.MapTrial.rewardRiftPractice)&&G.SceneR7 ? (G.SceneM01A?G.SceneM01A.generate(mapSeed):G.SceneR7.generate(mapSeed)) : v2()&&G.SectorMaps.generateV2?G.SectorMaps.generateV2(mapSeed):G.SectorMaps.generate(mapSeed,{boss:kind==='boss'});
     G.World.reset(mapSeed);G.World.setFixture(geometry.fixture);G.Camera.setSceneView?.(geometry.fixture.sceneRevision||null);G.World.setBiome(1,true);G.Path.clear();G.Pickups.clear();G.EnemyMgr.clear();G.Projectiles.clear();
     pl.x=geometry.entry.x;pl.y=geometry.entry.y;exit.x=geometry.exit.x;exit.y=geometry.exit.y;
     G.Camera.x=pl.x;G.Camera.y=pl.y;G.Path.update(1,[pl]);G.Touch.reset();G.Input.reset();G.RiftCompanion?.placeNear?.(pl);objectives=[];boss=null;

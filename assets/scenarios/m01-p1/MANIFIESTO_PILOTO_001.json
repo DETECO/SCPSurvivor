@@ -1,0 +1,20 @@
+{
+  "id": "NIV-M01-P1-PILOTO-001",
+  "revision": "1",
+  "fecha": "2026-10-27",
+  "estado": "recursos tecnicos entregados; integracion y aceptacion visual final pendientes",
+  "generacion": "imagegen integrada, referencia P1 y dos ediciones de ajuste; PNG final copiado sin postproceso",
+  "archivos": [
+    {"ruta":"design-proposals/niveles/mapas-grandes-p1-20261026/01-m01-complejo-liminal-p1.png","rol":"referencia visual aprobada, preservada","sha256":"8cf9f88d24f630e52adf99964fa321d17c92a49b5eb8698d16af24909aeafff0"},
+    {"ruta":"assets/scenarios/m01-p1/m01-p1-piloto-atlas-001.png","rol":"atlas derivado piloto, ocho sprites transparentes","sha256":"75e53b6042feb4b763296d7703f871c9c5a30aecfbbb8ac4d98282ed8c317c95"},
+    {"ruta":"assets/scenarios/m01-p1/CATALOGO_PILOTO_001.json","rol":"rectangulos, anclajes, escalas y huellas propuestas","sha256":"4b1bfc4cfcedd01bb72061dc409273a55fd82f3a9af921cd344245c94c7db021"},
+    {"ruta":"assets/scenarios/m01-r7/materiales-r7-v1.png","rol":"materialario existente reutilizado sin edicion","sha256":"9e1d9fb12a6900137ac1df67eaa071e6e638cc194f69aad8be2356708fd6f2a4"},
+    {"ruta":"docs/gestion/entregas/NIVELES-M01-P1-PILOTO-001.md","rol":"entrega y limites","sha256":"48302a45adf4ee892caf99ebec67957d8299ee47c6ea387383e4678f7a1a9cde"}
+  ],
+  "fidelidad": {
+    "comprobado": ["ocho piezas identificables del lenguaje M01", "alfa real", "rectangulos independientes con margen >=4 px a alfa >=16", "referencia P1 y materialario R7 sin cambios"],
+    "pendiente": ["escala visual en juego con actor real", "ajuste de huellas y oclusion", "teselado de materiales", "paredes, esquinas y puerta de produccion", "aprobacion humana de este derivado"]
+  },
+  "runtimeModificadoPorNiveles": false,
+  "publicado": false
+}

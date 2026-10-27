@@ -62,7 +62,7 @@ G.CornerHUD = (() => {
     el('corner-powers').hidden=!powerState?.owned.length;
     el('corner-power-notice').textContent=powerState?.notice||'';el('corner-power-notice').hidden=!powerState?.notice||!el('rift-alert').hidden||!el('map-alert').hidden;
     const room = G.RiftExpedition?.state;
-    el('corner-context').textContent = room?.active ? `${room.tier} · ${room.name}` : `MAPA ${state.sector}`;
+    el('corner-context').textContent = room?.active ? `${room.tier} · ${room.name}` : G.World?.fixture?.m01p1 ? 'M01 · PILOTO' : `MAPA ${state.sector}`;
   }
   function state(value) {
     if (!initialized) return;

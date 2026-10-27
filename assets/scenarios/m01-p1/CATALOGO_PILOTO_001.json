@@ -1,0 +1,48 @@
+{
+  "id": "NIV-M01-P1-PILOTO-001",
+  "revision": "1",
+  "fecha": "2026-10-27",
+  "estado": "recurso piloto tecnico; arte derivado pendiente de aceptacion visual final",
+  "atlas": {
+    "archivo": "m01-p1-piloto-atlas-001.png",
+    "anchoPx": 1536,
+    "altoPx": 1024,
+    "modo": "RGBA",
+    "sha256": "75e53b6042feb4b763296d7703f871c9c5a30aecfbbb8ac4d98282ed8c317c95",
+    "rectFormato": "x,y,ancho,alto; origen superior izquierdo; limite derecho/inferior excluido",
+    "anclajeFormato": "x,y locales al rectangulo, punto de suelo para ordenar por profundidad",
+    "alphaParaMascara": "umbral >=16; nunca incluir pixels de suelo fuera de la silueta"
+  },
+  "referenciaAprobada": {
+    "id": "NIV-M01-R8-P1",
+    "archivo": "../../../design-proposals/niveles/mapas-grandes-p1-20261026/01-m01-complejo-liminal-p1.png",
+    "sha256": "8cf9f88d24f630e52adf99964fa321d17c92a49b5eb8698d16af24909aeafff0"
+  },
+  "materialarioReutilizado": {
+    "archivo": "../m01-r7/materiales-r7-v1.png",
+    "anchoPx": 1254,
+    "altoPx": 1254,
+    "sha256": "9e1d9fb12a6900137ac1df67eaa071e6e638cc194f69aad8be2356708fd6f2a4",
+    "materiales": [
+      {"id":"suelo_ocre","rectPx":[0,0,627,627],"uso":"recepcion y plaza; textura de alfombra ocre"},
+      {"id":"papel_mural","rectPx":[627,0,627,627],"uso":"paramentos verticales calidos"},
+      {"id":"superficie_tecnica","rectPx":[0,627,627,627],"uso":"servicios y nucleo tecnico; baldosa gris"}
+    ]
+  },
+  "escalaReferencia": {
+    "marcoHumanoUnidades": 56,
+    "cuerpoOpacoHumanoAproximadoUnidades": [46,49],
+    "camaraVerticalUnidades": 512,
+    "nota": "medidas siguientes son propuestas tecnicas del piloto, no aceptacion humana ni colision validada"
+  },
+  "piezas": [
+    {"id":"mostrador_recepcion","orden":1,"rectPx":[30,106,485,390],"anclajePx":[243,380],"dibujoUnidades":[104,84],"alturaSugeridaUnidades":36,"huellaSugerida":{"tipo":"cajas_locales","cajasXYWH":[[-35,-3,70,13],[-50,-20,15,20],[35,-20,15,20]],"interiorLibre":true},"nota":"tres tramos aproximan el mostrador curvo; la planta no crea colision separada"},
+    {"id":"escritorio_monitor","orden":2,"rectPx":[556,221,318,280],"anclajePx":[159,264],"dibujoUnidades":[66,58],"alturaSugeridaUnidades":33,"huellaSugerida":{"tipo":"cajas_locales","cajasXYWH":[[-29,-13,58,26]]}},
+    {"id":"archivadores_dobles","orden":3,"rectPx":[894,151,217,320],"anclajePx":[109,307],"dibujoUnidades":[46,68],"alturaSugeridaUnidades":64,"huellaSugerida":{"tipo":"cajas_locales","cajasXYWH":[[-20,-10,40,20]]}},
+    {"id":"tabique_bajo_l","orden":4,"rectPx":[1172,160,335,350],"anclajePx":[168,338],"dibujoUnidades":[76,79],"alturaSugeridaUnidades":36,"huellaSugerida":{"tipo":"cajas_locales","cajasXYWH":[[-36,-8,72,10],[-36,-36,12,28]],"interiorLibre":true},"nota":"esquina en L visible; no cerrar su interior con convex hull"},
+    {"id":"pilar","orden":5,"rectPx":[93,524,143,394],"anclajePx":[72,382],"dibujoUnidades":[24,66],"alturaSugeridaUnidades":65,"huellaSugerida":{"tipo":"cajas_locales","cajasXYWH":[[-9,-9,18,18]]}},
+    {"id":"consola_tecnica","orden":6,"rectPx":[346,593,312,320],"anclajePx":[156,308],"dibujoUnidades":[62,64],"alturaSugeridaUnidades":48,"huellaSugerida":{"tipo":"cajas_locales","cajasXYWH":[[-27,-12,54,24]]}},
+    {"id":"banco_taller","orden":7,"rectPx":[717,585,394,374],"anclajePx":[197,362],"dibujoUnidades":[84,80],"alturaSugeridaUnidades":50,"huellaSugerida":{"tipo":"cajas_locales","cajasXYWH":[[-41,-13,82,26]]}},
+    {"id":"sillas_par","orden":8,"rectPx":[1176,718,305,206],"anclajePx":[153,196],"dibujoUnidades":[62,42],"alturaSugeridaUnidades":30,"huellaSugerida":{"tipo":"cajas_locales","cajasXYWH":[[-25,-8,20,16],[5,-8,20,16]],"interiorLibre":true}}
+  ]
+}
