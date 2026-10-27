@@ -1,5 +1,7 @@
 # PROGRAMACION — LOT-EST-008 r1, corte local
 
+Este informe conserva la prueba del corte inicial con retorno técnico a los 10 segundos. El [correctivo de carga r2](PROGRAMACION-JUGABILIDAD-008-CARGA-R2.md) adelanta la descarga, reutiliza las láminas y amplía la espera técnica acotada a 30 segundos; sus comprobaciones y publicación se registran por separado.
+
 26/10/2026 · REV-EST-0012 · **Implementado y comprobado localmente; no publicado.** Base pública anterior 0.39, runtime `8cdac584`, bundle `92026cde30`; nuevo bundle local `dcc443cb5c`, 125 scripts. Respaldo previo `development-backups/lot-est-008-r1/CORTE_ANTES_008.zip` y SHA de 718 archivos. Sólo PROGRAMACION escribió runtime/tests/bundle.
 
 ## Fuentes y cambios durante el trabajo

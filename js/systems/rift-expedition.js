@@ -20,6 +20,7 @@ G.RiftExpedition=(()=>{
   const tier=practice?(forcedTier||practiceChoice.tier):request.tier;
   const rolledStyle=practice?practiceChoice.style:1+Math.floor(rng()*6),style=practice&&/^[1-6]$/.test(q.get('estilo')||'')?Number(q.get('estilo')):rolledStyle;
   portal={id:request.id,status:'open',tier,x:point.x,y:point.y,remaining:Math.max(0,45-(mapTime-request.atSeconds)),style,sector:mapNumber,label:`${tier} · GRIETA · 45 s`};
+  const bioId=G.RiftAnomalies.catalog.find(c=>c.tier===tier)?.id;if(bioId)G.RiftRooms.preloadById(bioId);
   announce(`${practice?'PRÁCTICA · ':''}${tier} · Grieta dimensional abierta. Entra caminando · 45s.`);return true;
  }
  function startMap(geometry,number,seed,player){
@@ -35,14 +36,15 @@ G.RiftExpedition=(()=>{
   if(!portal||portal.status!=='open'||room||player.dead)return false;
   origin={position:{x:player.x,y:player.y,_px:player._px,_py:player._py,_vx:player._vx,_vy:player._vy},camera:{x:G.Camera.x,y:G.Camera.y,shake:G.Camera.shake,_sx:G.Camera._sx,_sy:G.Camera._sy,sceneView:G.Camera.sceneView},tokens:{},companion:G.RiftCompanion.captureTransfer?.()};
   for(const name of services)origin.tokens[name]=G[name].suspend();
-  portal.status='consumed';notice='';noticeTime=0;const geometry=G.RiftRooms.generate(G.RiftAnomalies.catalog.find(c=>c.tier===portal.tier).id);
+  portal.status='consumed';notice='';noticeTime=0;const bioId=G.RiftAnomalies.catalog.find(c=>c.tier===portal.tier).id;
+  G.RiftRooms.preloadById(bioId);const geometry=G.RiftRooms.generate(bioId);
   G.RiftRooms.preload(geometry);G.World.reset((serial+1)^0x71f1);G.World.setFixture(geometry.fixture);G.World.setBiome(1,true);G.Camera.setSceneView(geometry.fixture.sceneRevision);
   player.x=geometry.entry.x;player.y=geometry.entry.y;player._px=player.x;player._py=player.y;player._vx=player._vy=0;
   G.Camera.x=player.x;G.Camera.y=player.y;G.Camera.shake=0;G.Camera._sx=G.Camera._sy=0;
   G.Camera.setRoomBounds(geometry.bounds);
   G.Path.update(1,[player]);
   const id=`${portal.id}:encounter:${++serial}`,session=G.RiftSession.create(id),boss=G.EnemyMgr.add(G.RiftAnomalies.create({tier:portal.tier,geometry,mapNumber}));
-  room={id,geometry,session,boss,style:portal.style,reward:null,warningShown:false,escapeShown:false,outcome:null,loadingWait:0};G.RiftAnomalies.retryFailed(boss.bioId);
+  room={id,geometry,session,boss,style:portal.style,reward:null,warningShown:false,escapeShown:false,outcome:null,loadingWait:0,loadNoticeShown:false};G.RiftAnomalies.retryFailed(boss.bioId);
   const npcRng=practice&&['si','no'].includes(q.get('apoyo'))?(()=>{let first=true;return()=>{if(first){first=false;return q.get('apoyo')==='si'?0:.99;}return rng();};})():rng;
   G.RiftCompanion.enterRoom({tier:portal.tier,rng:npcRng,geometry,player,appearance:practice?q.get('companera'):undefined});G.Audio?.sfx('rift');return true;
  }
@@ -79,9 +81,11 @@ G.RiftExpedition=(()=>{
   if(before==='entering'){
    const bio=G.RiftAnomalies.loading(room.boss.bioId),environment=G.RiftRooms.loading(room.geometry),load={ready:bio.ready&&environment.ready,failed:[...bio.failed,...environment.failed],pending:[...bio.pending,...environment.pending]};
    if(!load.ready){room.loadingWait+=dt;
-    if(load.failed.length||room.loadingWait>=10){failures.push({encounterId:room.id,anomalyId:room.boss.bioId,reason:load.failed.length?'asset_failed':'asset_timeout',assets:(load.failed.length?load.failed:load.pending).slice()});leave(player,'technical_failure');}
+    if(!room.loadNoticeShown&&room.loadingWait>=10){room.loadNoticeShown=true;notice='La sala dimensional sigue cargando…';noticeTime=6;}
+    if(load.failed.length||room.loadingWait>=30){failures.push({encounterId:room.id,anomalyId:room.boss.bioId,reason:load.failed.length?'asset_failed':'asset_timeout',assets:(load.failed.length?load.failed:load.pending).slice()});leave(player,'technical_failure');}
     return true;
    }
+   if(room.loadNoticeShown){notice='';noticeTime=0;}
   }
   room.session.tick(dt);
   if(before==='entering')return true;

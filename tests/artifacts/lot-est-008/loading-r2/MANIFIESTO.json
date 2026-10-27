@@ -1,0 +1,78 @@
+{
+  "lot": "LOT-EST-008 r2",
+  "basePublicCommit": "b542e8348d7a8ac2b7d5ae91a5f047c8fa34b724",
+  "state": "corrective_local_ready",
+  "sourceBundle": "803a8ea8d4",
+  "files": [
+    {
+      "path": "js/world/rift-room-art.js",
+      "bytes": 12325,
+      "sha256": "5f1e019d1b54bdf43253979de7407d9d96e3936d9ff0d2daa164c26aa4ec4b51"
+    },
+    {
+      "path": "js/systems/rift-expedition.js",
+      "bytes": 13686,
+      "sha256": "1160ac95cb254b44aa672af397634f1bb547d7693a7fdca7e37c9433e9489356"
+    },
+    {
+      "path": "tests/jugabilidad-008-loading.test.js",
+      "bytes": 1589,
+      "sha256": "e3796cb8fe10489bc9532ae629dffbd1221425e3b67e0cd386d4c0905002e835"
+    },
+    {
+      "path": "tests/jugabilidad-008-browser.py",
+      "bytes": 13817,
+      "sha256": "64ee9e138a8e596dc0f05d243c38ddd33a301d0deabe237e0b0487c6343b4fa4"
+    },
+    {
+      "path": "js/app.min.js",
+      "bytes": 1671292,
+      "sha256": "b3337dc70cbae5036e79a893b223be3c30a05699b0f139a668d2b94f86dbae2d"
+    },
+    {
+      "path": "index.html",
+      "bytes": 10771,
+      "sha256": "f6e1d634e52209ae154d53479dcb8409fea97470dd448a769e82afd486661688"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11370,
+      "sha256": "4f5de1a84f9993b58e034738e65b8c1be064496ae2cd6c92b62dc1ca9de83ba9"
+    },
+    {
+      "path": "docs/gestion/entregas/PROGRAMACION-JUGABILIDAD-008-CARGA-R2.md",
+      "bytes": 2830,
+      "sha256": "65a65eb9ac47bfea837ae9ee784094e70226e95498cba06345ee4a1dd78e542b"
+    },
+    {
+      "path": "docs/gestion/entregas/PROGRAMACION-JUGABILIDAD-008-CORTE-LOCAL.md",
+      "bytes": 6323,
+      "sha256": "3f704a8e94199e72239060cd4628eec371a29099b7d80de1c47ae7c7861687a0"
+    },
+    {
+      "path": "docs/gestion/REGISTRO_IMPLEMENTACION.md",
+      "bytes": 35459,
+      "sha256": "b19eb136b43f3f9bfc41d5b78f9558d26d99ef94b909781fa52720a43fc315a4"
+    },
+    {
+      "path": "tests/artifacts/lot-est-008/loading-r2/browser-public-clone.json",
+      "bytes": 15608,
+      "sha256": "245882dc3ab5e1a9b83756c5fcca126b6b5941c0eec10b21dbe983c04dc4d1ae"
+    },
+    {
+      "path": "tests/artifacts/lot-est-008/loading-r2/browser-source.json",
+      "bytes": 15609,
+      "sha256": "8203011a06004917b113d7349e4f7e6272257f0b12b8ad52b54ef106140f6d72"
+    },
+    {
+      "path": "tests/artifacts/lot-est-008/loading-r2/node-source.log",
+      "bytes": 31218,
+      "sha256": "d154fc0db4e0fd3f76ecb37d3d534df9a79a09ac65c9f7d645785819044f2e22"
+    },
+    {
+      "path": "tests/artifacts/lot-est-008/loading-r2/powers-source.json",
+      "bytes": 3645,
+      "sha256": "8bae8e6d5d23a71bec41a45b74528fd17c400c296c0e491f79cc0c5164291d60"
+    }
+  ]
+}

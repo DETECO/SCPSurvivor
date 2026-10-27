@@ -2,7 +2,7 @@
  * Coordinates below refer to the 1536x1024 approved illustrations, not a tile approximation.
  */
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;if(root.G)root.G.RiftRoomArt=api;})(globalThis,()=>{
- const S=.625,OX=-480,OY=-320,assets=new WeakMap();
+ const S=.625,OX=-480,OY=-320,assets=new Map();
  const box=(x,y,w,h,z=64)=>({foot:[[x,y],[x+w,y],[x+w,y+h],[x,y+h]],height:z});
  const shape=(foot,height=70)=>({foot,height});
  const themes={
@@ -81,11 +81,14 @@
   g.fixture={minX:-16,maxX:16,minY:-12,maxY:12,walls,props:[],staticNavigation:true,sceneRevision:'NIV-ESC-008-A-r1',riftArt:{structures:g.structures,limit:g.limit}};return g;
  }
  function preload(g){
-  if(assets.has(g))return;const src='assets/levels/bio-c1/'+g.theme.slug+'-clean-r2.png',state={src,ready:false,failed:false,image:new Image()};assets.set(g,state);state.image.onload=()=>{state.ready=true;};state.image.onerror=()=>{state.failed=true;};state.image.src=src;
+  const key=g.theme.slug;if(assets.has(key))return;
+  const src='assets/levels/bio-c1/'+key+'-clean-r2.png',state={src,ready:false,failed:false,image:new Image()};assets.set(key,state);
+  state.image.onload=()=>{state.ready=true;};state.image.onerror=()=>{state.failed=true;};state.image.src=src;
  }
- function loading(g){preload(g);const a=assets.get(g);return{ready:a.ready,failed:a.failed?[a.src]:[],pending:a.ready||a.failed?[]:[a.src]};}
+ function preloadById(id){const theme=themes[id];if(!theme)return false;const key=theme.slug;if(assets.get(key)?.failed)assets.delete(key);preload({theme});return true;}
+ function loading(g){preload(g);const a=assets.get(g.theme.slug);return{ready:a.ready,failed:a.failed?[a.src]:[],pending:a.ready||a.failed?[]:[a.src]};}
  function path(ctx,poly){ctx.beginPath();poly.forEach(([x,y],i)=>i?ctx.lineTo(OX+x*S,OY+y*S):ctx.moveTo(OX+x*S,OY+y*S));ctx.closePath();}
- function plate(ctx,g){const a=assets.get(g);if(a?.ready)ctx.drawImage(a.image,0,48,1536,976,OX,OY+48*S,960,976*S);}
+ function plate(ctx,g){const a=assets.get(g.theme.slug);if(a?.ready)ctx.drawImage(a.image,0,48,1536,976,OX,OY+48*S,960,976*S);}
  function drawGround(ctx,g,time,calm=false){
   preload(g);ctx.save();ctx.imageSmoothingEnabled=false;plate(ctx,g);
   // Restrained live bloom over the original baked lighting; no replacement palette.
@@ -112,5 +115,5 @@
    if(g.theme.kind==='bubbles'){ctx.strokeRect(Math.round(x),Math.round(y),2,3);}else{ctx.fillRect(Math.round(x),Math.round(y),i%5===0?2:1,g.theme.kind==='sparks'?3:1);}
   }ctx.restore();
  }
- return{themes,generate,blocked,collide,preload,loading,drawGround,drawables,drawAtmosphere,point};
+ return{themes,generate,blocked,collide,preload,preloadById,loading,drawGround,drawables,drawAtmosphere,point};
 });

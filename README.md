@@ -1,5 +1,7 @@
 # SCP Survivor
 
+**Correctivo 0.40.1 · carga de salas C1-r2:** las láminas empiezan a cargarse cuando aparece el portal y se reutilizan al repetir una sala. Si la conexión demora, el juego avisa a los 10 segundos y permite hasta 30 segundos activos antes de regresar de forma segura, sin premio. [Detalle y pruebas](docs/gestion/entregas/PROGRAMACION-JUGABILIDAD-008-CARGA-R2.md).
+
 **Demo 0.40 · LOT-EST-008 r1 · 26/10/2026:** cristales de XP diferenciados, apoyo persistente que combate fuera de la grieta, cámara vertical uniforme, cinco salas BIO C1-r2 aprobadas, jefes más exigentes, cinco poderes anómalos con arte 16/32 y presión progresiva de enemigos. [Jugar](https://deteco.github.io/SCPSurvivor/?prueba=combate-v2&ensayo=grietas) · [Roadmap](RoadmapSCP.md) · [Alcance y pruebas](docs/gestion/entregas/PROGRAMACION-JUGABILIDAD-008-CORTE-LOCAL.md) · [Revisión independiente](docs/gestion/informes/LOT-EST-008-juanillo.md). Las cifras de dificultad y poderes son de ensayo; el balance requiere prueba humana. No activa cuentas, guardado, fusión ni servicios reales.
 
 ## Historial de versiones anteriores

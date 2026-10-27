@@ -12,7 +12,7 @@ class Quiet(SimpleHTTPRequestHandler):
  def copyfile(self,*args):
   try:super().copyfile(*args)
   except(ConnectionResetError,BrokenPipeError,ConnectionAbortedError):pass
-CONTACT='''()=>{const p=G.Game.player;p.invuln=1e6;for(const w of p.fieldWeapons)w.shotWait=1e6;const r=G.RiftExpedition.state.portal;window.qaOrigin={enemies:G.EnemyMgr.all(),shots:G.Projectiles.all(),pickups:G.Pickups.all(),fixture:G.World.fixture,time:G.Expedition.state.v2.mapTime};window.qaScale=G.Camera.scale;p.x=r.x;p.y=r.y;G.Expedition.update(.01);qaOrigin.time=G.Expedition.state.v2.mapTime;return{active:G.RiftExpedition.state.active,tier:r.tier,style:r.style};}'''
+CONTACT='''()=>{const p=G.Game.player;p.invuln=1e6;for(const w of p.fieldWeapons)w.shotWait=1e6;const r=G.RiftExpedition.state.portal;window.qaOrigin={enemies:G.EnemyMgr.all(),shots:G.Projectiles.all(),pickups:G.Pickups.all(),fixture:G.World.fixture,time:G.Expedition.state.v2.mapTime,hp:p.hp};window.qaScale=G.Camera.scale;p.x=r.x;p.y=r.y;G.Expedition.update(.01);qaOrigin.time=G.Expedition.state.v2.mapTime;return{active:G.RiftExpedition.state.active,tier:r.tier,style:r.style};}'''
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--smoke',action='store_true');ap.add_argument('--live',action='store_true');args=ap.parse_args();OUT.mkdir(parents=True,exist_ok=True);server=None;records=[]
  if args.live:base='https://deteco.github.io/SCPSurvivor/'
@@ -25,8 +25,15 @@ def main():
    if args.smoke:cases=[(1,32),(5,16)]
    for i,(tier,mode)in enumerate(cases):
     w,h=[(390,844),(844,390),(1280,900),(932,430)][i%4];context=browser.new_context(viewport={'width':w,'height':h},has_touch=w<1000,is_mobile=w<1000);p=context.new_page();errors=[];p.on('pageerror',lambda e:errors.append(str(e)))
-    p.goto(f'{base}index.html?prueba=combate-v2&ensayo=grietas&grado=D{tier}&estilo={i%6+1}&apoyo=si&graficos={mode}');p.wait_for_selector('#btn-technical-start:visible');p.click('#btn-technical-start');p.wait_for_function("()=>G.Game.state==='playing'")
+    p.goto(f'{base}index.html?prueba=combate-v2&ensayo=grietas&grado=D{tier}&estilo={i%6+1}&apoyo=si&graficos={mode}');p.wait_for_selector('#btn-technical-start:visible')
+    if i==0:
+     with p.expect_request('**/assets/levels/bio-c1/01-cultivo-invadido-clean-r2.png',timeout=5000):p.click('#btn-technical-start')
+    else:p.click('#btn-technical-start')
+    p.wait_for_function("()=>G.Game.state==='playing'")
     entered=p.evaluate(CONTACT);assert entered['active'] and entered['tier']==f'D{tier}',entered
+    if i==0:
+     delayed=p.evaluate('''()=>{const original=G.RiftRooms.loading;try{G.RiftRooms.loading=()=>({ready:false,failed:[],pending:['qa-slow-plate']});G.Expedition.update(10.01);G.Expedition.update(5);const s=G.RiftExpedition.state;return{active:s.active,status:s.status,notice:s.notice,loadingWait:s.loadingWait,failures:s.technicalFailures.length,originFrozen:G.Expedition.state.v2.mapTime===qaOrigin.time,hpSame:G.Game.player.hp===qaOrigin.hp};}finally{G.RiftRooms.loading=original;}}''')
+     assert delayed['active'] and delayed['status']=='entering' and delayed['loadingWait']>=15 and 'cargando' in delayed['notice'].lower() and delayed['failures']==0 and delayed['originFrozen'] and delayed['hpSame'],delayed
     try:p.wait_for_function("()=>G.RiftExpedition.state.status==='combat'")
     except Exception:
      print(json.dumps({'loadingFailure':f'D{tier}/{mode}','state':p.evaluate('()=>G.RiftExpedition.state'),'errors':errors}),flush=True);raise
@@ -73,7 +80,10 @@ def main():
     assert p.evaluate(CONTACT)['active']
     if failure=='asset_failed':p.wait_for_timeout(200)
     else:p.evaluate("()=>{G.RiftRooms.loading=()=>({ready:false,failed:[],pending:['qa-held-room']});}")
-    result=p.evaluate('''kind=>{if(kind==='asset_timeout')G.Expedition.update(10.01);else for(let i=0;i<20&&G.RiftExpedition.state.active;i++)G.Expedition.update(.05);const s=G.RiftExpedition.state;return{active:s.active,reason:s.technicalFailures.at(-1)?.reason,npc:G.RiftCompanion.entity,origin:G.EnemyMgr.all()===qaOrigin.enemies&&G.Projectiles.all()===qaOrigin.shots&&G.Pickups.all()===qaOrigin.pickups&&G.World.fixture===qaOrigin.fixture,scale:G.Camera.scale===qaScale,roomBounds:G.Camera.roomBounds,reward:G.RiftPowers.state.pending};}''',failure)
+    if failure=='asset_timeout':
+     mid=p.evaluate("()=>{G.Expedition.update(10.01);const s=G.RiftExpedition.state;return{active:s.active,status:s.status,notice:s.notice,loadingWait:s.loadingWait}}")
+     assert mid['active'] and mid['status']=='entering' and 'cargando' in mid['notice'].lower(),mid
+    result=p.evaluate('''kind=>{if(kind==='asset_timeout')G.Expedition.update(20.01);else for(let i=0;i<20&&G.RiftExpedition.state.active;i++)G.Expedition.update(.05);const s=G.RiftExpedition.state;return{active:s.active,reason:s.technicalFailures.at(-1)?.reason,npc:G.RiftCompanion.entity,origin:G.EnemyMgr.all()===qaOrigin.enemies&&G.Projectiles.all()===qaOrigin.shots&&G.Pickups.all()===qaOrigin.pickups&&G.World.fixture===qaOrigin.fixture,scale:G.Camera.scale===qaScale,roomBounds:G.Camera.roomBounds,reward:G.RiftPowers.state.pending};}''',failure)
     assert result['active'] is False and result['reason']==failure and result['npc'] is None and result['origin'] and result['scale'] and result['roomBounds'] is None and result['reward'] is None,result
     records.append({'failure':failure,'result':result});p.close()
    browser.close()
