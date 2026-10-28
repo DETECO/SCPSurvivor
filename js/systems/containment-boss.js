@@ -67,7 +67,7 @@
 
     const alive = livingMinions(e);
     const enemyCount = G.EnemyMgr && Number.isFinite(G.EnemyMgr.count) ? G.EnemyMgr.count : 0;
-    const capacity = Math.max(0, Math.min(MAX_MINIONS - alive, CAP - enemyCount));
+    const capacity = Math.max(0, Math.min(MAX_MINIONS - alive, (G.Expedition?.enemyCap ?? CAP) - enemyCount));
     if (e.bossSummonWarn > 0) {
       e.bossSummonWarn = Math.max(0, e.bossSummonWarn - dt);
       if (e.bossSummonWarn < 1e-8) {

@@ -48,6 +48,49 @@ function rewardSetup(practice=false){
  }});
  return{...fixture,offers,rewards};
 }
+test('012 real director reaches eighty including boss, excludes allies, and closes at exactly 300',()=>{
+ const {G,player}=setup(1337,false,true,{prepare(G){G.MapTrial.infinite=true;}});
+ G.Expedition.update(239.999);assert.ok(G.EnemyMgr.count<=34);
+ G.MapTrial.allies.push({hp:100},{hp:100});
+ G.Expedition.update(.001);assert.ok(G.EnemyMgr.all().some(e=>e.boss));
+ for(let i=0;i<1100;i++){G.Expedition.update(.05);assert.ok(G.EnemyMgr.count<=80);}
+ assert.equal(G.EnemyMgr.count,80);
+ const boss=G.EnemyMgr.all().find(e=>e.boss);
+ assert.equal(G.Expedition.summon(boss,2),0);
+ G.EnemyMgr.all().find(e=>!e.boss).dead=true;G.EnemyMgr.update();
+ assert.equal(G.Expedition.summon(boss,2),1);assert.equal(G.EnemyMgr.count,80);
+ const time=G.Expedition.state.v2.mapTime;G.Expedition.awaitArmament();G.Expedition.update(50);
+ assert.equal(G.Expedition.state.v2.mapTime,time);G.Expedition.resolveArmament();
+ G.Expedition.update(300-G.Expedition.state.v2.mapTime);
+ assert.equal(G.Expedition.state.v2.mapTime,300);assert.equal(G.MapTrial.arrivals,1);
+ const count=G.EnemyMgr.count;assert.equal(G.Expedition.summon(boss,4),0);G.Expedition.update(30);assert.equal(G.EnemyMgr.count,count);
+ player.x=G.Expedition.state.exit.x;player.y=G.Expedition.state.exit.y;assert.equal(G.Expedition.useExit(),false);
+});
+test('012 mandatory boss respects eighty even when its free position becomes available late',()=>{
+ const {G}=setup();G.World.isFree=()=>false;G.Expedition.update(240);
+ assert.equal(G.Expedition.state.v2.bossSpawned,false);
+ while(G.EnemyMgr.count<79)G.EnemyMgr.add(new G.Enemy(G.Content.pursuer,0,0,{hp:1}));
+ G.World.isFree=()=>true;G.Expedition.update(.1);
+ assert.equal(G.Expedition.state.v2.bossSpawned,true);assert.equal(G.EnemyMgr.count,80);
+});
+test('012 a delayed boss waits for a slot without deleting enemies, and legacy rift practice keeps its cap',()=>{
+ const {G}=setup();G.World.isFree=()=>false;G.Expedition.update(240);
+ while(G.EnemyMgr.count<80)G.EnemyMgr.add(new G.Enemy(G.Content.pursuer,0,0,{hp:1}));
+ G.World.isFree=()=>true;G.Expedition.update(.1);
+ assert.equal(G.Expedition.state.v2.bossSpawned,false);assert.equal(G.EnemyMgr.count,80);
+ G.EnemyMgr.all()[0].dead=true;G.EnemyMgr.update();G.Expedition.update(.1);
+ assert.equal(G.Expedition.state.v2.bossSpawned,true);assert.equal(G.EnemyMgr.count,80);
+ const old=rewardSetup(true);old.G.Expedition.update(240);
+ for(let i=0;i<100;i++)old.G.Expedition.update(.5);
+ assert.ok(old.G.EnemyMgr.count<=24);assert.ok(old.G.EnemyMgr.all().some(e=>e.boss));
+});
+test('012 missing live objective reserves capacity until recovered, without losing it',()=>{
+ const {G}=setup();G.Expedition.update(240);
+ assert.equal(G.EnemyMgr.count,80);
+ const list=G.EnemyMgr.all(),index=list.findIndex(e=>!e.boss),missing=list[index];list.splice(index,1);
+ assert.equal(G.EnemyMgr.count,79);G.Expedition.update(1);
+ assert.ok(G.EnemyMgr.get(missing.id));assert.equal(G.EnemyMgr.count,80);
+});
 test('infinite armament choice freezes time and crossing resolves reward and XP before preserving build',()=>{
  const rewards=[],claims=[];let waiting=false;
  const {G,player}=setup(42,true,true,{prepare(G){
@@ -134,7 +177,7 @@ test('V2 quick solo primer mapa, jefe garantizado con cap y respeta nivel/pausa'
 test('V2 mezcla enemigos y escala con tiempo sin cerrar oleadas ni exceder cap normal',()=>{
  const {G}=setup();assert.ok(G.EnemyMgr.all().some(e=>e.def===G.Content.biological));
  G.Expedition.update(60);assert.equal(G.Expedition.state.phase,'combat');assert.equal(G.Expedition.state.totals.wavesCompleted,0);
- assert.ok(G.EnemyMgr.all().some(e=>e.sc.hp>1));G.Expedition.update(180);assert.equal(G.EnemyMgr.count,40);
+ assert.ok(G.EnemyMgr.all().some(e=>e.sc.hp>1));G.Expedition.update(180);assert.equal(G.EnemyMgr.count,80);
  const boss=G.EnemyMgr.all().find(e=>e.boss);assert.ok(boss);boss.dead=true;G.Expedition.update(.01);G.Expedition.update(.01);
  assert.equal(G.Expedition.state.totals.bossesDefeated,1);assert.equal(G.Expedition.state.sector,1);
  const copy=setup();assert.equal(copy.G.Expedition.state.mapSeed,G.Expedition.state.mapSeed);

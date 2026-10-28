@@ -97,10 +97,17 @@ G.Expedition = (() => {
     }
     return null;
   }
+  // Live objectives temporarily removed by EnemyMgr are restored by recover().
+  // Reserve their slots before spawning, so recovery cannot exceed the cap.
+  function trialPopulation(){
+    let count=G.EnemyMgr.count;
+    for(const e of objectives)if(!e.dead&&!G.EnemyMgr.get(e.id))count++;
+    return count;
+  }
   function spawnOne(){
     if(v2()){
       const cap=trialEnemyCap();
-      if(spawnClosed||mapTime>=(G.MapTrial.duration??300)||G.EnemyMgr.count>=cap)return false;
+      if(spawnClosed||mapTime>=(G.MapTrial.duration??300)||trialPopulation()>=cap)return false;
       const pos=freeSpawn();if(!pos)return false;
       const def=spawned%4===3?G.Content.biological:G.Content.pursuer;
       const e=G.EnemyMgr.add(new G.Enemy(def,pos[0],pos[1],G.ExpeditionPressure.at(sector,mapTime).scale));objectives.push(e);spawned++;return true;
@@ -113,6 +120,7 @@ G.Expedition = (() => {
   function trialEnemyCap(){if(G.MapTrial.rewardRiftPractice)return Math.min(24,G.Spawner.CAP)-(bossSpawned?0:1)-(G.DimensionalRifts?.state.status==='open'?1:0);return G.ExpeditionPressure.at(sector,mapTime,G.Spawner.CAP,(bossSpawned?0:1)+(G.MapTrial.rewardRiftPractice&&G.DimensionalRifts?.state.status==='open'?1:0)).cap;}
   function trialBoss(){
     if(bossSpawned||spawnClosed)return;
+    if(trialPopulation()>=G.ExpeditionPressure.limit(mapTime,G.Spawner.CAP))return;
     // The mandatory boss is independent of the regular enemy cap and camera visibility.
     const points=[geometry.bossSpawn,...geometry.spawnPoints,geometry.entry].filter(Boolean);
     const usable=p=>G.World.isFree(p.x,p.y,22)&&G.Path.reachable(p.x,p.y,pl);
@@ -269,7 +277,7 @@ G.Expedition = (() => {
     if(v2()&&(spawnClosed||mapTime>=(G.MapTrial.duration??300)))return 0;
     if(!owner||owner.dead||(v2()?(![boss,riftBoss].includes(owner)||!['combat','boss'].includes(phase)):owner!==boss||!['boss','escaping'].includes(phase)))return 0;
     owner.minions=owner.minions.filter(e=>!e.dead);let made=0;
-    const max=Math.min(count,4-owner.minions.length,(v2()?trialEnemyCap():G.Spawner.CAP)-G.EnemyMgr.count);
+    const max=Math.min(count,4-owner.minions.length,(v2()?trialEnemyCap():G.Spawner.CAP)-(v2()?trialPopulation():G.EnemyMgr.count));
     for(let i=0;i<max;i++){
       let pos=null;
       for(let n=0;n<16;n++){const a=(n+i*8)*Math.PI/8,x=owner.x+Math.cos(a)*100,y=owner.y+Math.sin(a)*100;
@@ -405,5 +413,5 @@ G.Expedition = (() => {
     else if(phase==='boss')boss=G.EnemyMgr.add(new G.Enemy(G.Content.boss,geometry.bossSpawn.x,geometry.bossSpawn.y,scale(1),true));
     G.Touch.reset();G.Input.reset();
   }
-  return{start,update,choose,ready,useExit,useRift,summon,finish,draw,captureState,restoreState,awaitArmament,resolveArmament,awaitTerminal,resolveTerminal,get state(){return snapshot();}};
+  return{start,update,choose,ready,useExit,useRift,summon,finish,draw,captureState,restoreState,awaitArmament,resolveArmament,awaitTerminal,resolveTerminal,get enemyCap(){return v2()&&!G.RiftExpedition?.state.active?trialEnemyCap():G.Spawner.CAP;},get state(){return snapshot();}};
 })();

@@ -94,3 +94,9 @@ test('dead boss frames do not advance or issue pending summons', () => {
   assert.equal(e.bossSummonWarn, 0.5);
   assert.deepEqual(calls, []);
 });
+test('012 Warden uses expedition capacity without raising the fallback cap of other modes',()=>{
+ const {G,e,pl,calls}=setup();pl.x=1000;G.EnemyMgr.count=79;G.Expedition.enemyCap=80;
+ e.bossSummonWarn=.1;G.ContainmentBoss.tick(e,.1,pl);assert.deepEqual(calls,[1]);
+ G.EnemyMgr.count=80;e.bossSummonWarn=.1;G.ContainmentBoss.tick(e,.1,pl);assert.deepEqual(calls,[1]);
+ delete G.Expedition.enemyCap;G.EnemyMgr.count=64;e.bossSummonWarn=.1;G.ContainmentBoss.tick(e,.1,pl);assert.deepEqual(calls,[1]);
+});
