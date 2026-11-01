@@ -83,6 +83,19 @@ body:has(#technical-ready:not([hidden]) .lobby-014:not([hidden])) #gacha-trial-o
   box-shadow: 0 0 7px 2px #ffbc3c5c;
   animation: lobby-014-particle-rise 7.4s ease-in-out var(--particle-delay) infinite;
 }
+/* Static particle coordinates comply with the page CSP. */
+.lobby-014-particle-1{--particle-x:8%;--particle-y:22%;--particle-delay:0s;}
+.lobby-014-particle-2{--particle-x:18%;--particle-y:73%;--particle-delay:1.8s;}
+.lobby-014-particle-3{--particle-x:29%;--particle-y:38%;--particle-delay:3.6s;}
+.lobby-014-particle-4{--particle-x:41%;--particle-y:84%;--particle-delay:0.9s;}
+.lobby-014-particle-5{--particle-x:53%;--particle-y:18%;--particle-delay:4.7s;}
+.lobby-014-particle-6{--particle-x:61%;--particle-y:67%;--particle-delay:2.3s;}
+.lobby-014-particle-7{--particle-x:72%;--particle-y:31%;--particle-delay:5.4s;}
+.lobby-014-particle-8{--particle-x:81%;--particle-y:78%;--particle-delay:1.2s;}
+.lobby-014-particle-9{--particle-x:91%;--particle-y:43%;--particle-delay:3.1s;}
+.lobby-014-particle-10{--particle-x:37%;--particle-y:10%;--particle-delay:6.2s;}
+.lobby-014-particle-11{--particle-x:66%;--particle-y:91%;--particle-delay:4.1s;}
+.lobby-014-particle-12{--particle-x:13%;--particle-y:52%;--particle-delay:5.8s;}
 .lobby-014-stage,
 .lobby-014-actions { position: relative; min-width: 0; min-height: 0; }
 .lobby-014-stage {

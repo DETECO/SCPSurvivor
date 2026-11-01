@@ -3,11 +3,7 @@ G.Lobby014 = (() => {
   const ROOT_SELECTOR = '#operations-menu';
   const HOME_SELECTOR = '.operations-screen[data-screen="home"]';
   const HOME_LAYOUT_SELECTOR = '.operations-home-layout';
-  const PARTICLES = [
-    [8, 22, 0], [18, 73, 1.8], [29, 38, 3.6], [41, 84, .9],
-    [53, 18, 4.7], [61, 67, 2.3], [72, 31, 5.4], [81, 78, 1.2],
-    [91, 43, 3.1], [37, 10, 6.2], [66, 91, 4.1], [13, 52, 5.8],
-  ];
+  const PARTICLE_COUNT = 12;
   let instance = null;
 
   function shouldUseLandscape({ width = 0, height = 0, pointerCoarse = false, forceMobile } = {}) {
@@ -17,8 +13,8 @@ G.Lobby014 = (() => {
   }
 
   function readParticles() {
-    return PARTICLES.map(([x, y, delay], index) =>
-      `<i class="lobby-014-particle lobby-014-particle-${index + 1}" style="--particle-x:${x}%;--particle-y:${y}%;--particle-delay:${delay}s" aria-hidden="true"></i>`
+    return Array.from({ length: PARTICLE_COUNT }, (_, index) =>
+      `<i class="lobby-014-particle lobby-014-particle-${index + 1}" aria-hidden="true"></i>`
     ).join('');
   }
 
