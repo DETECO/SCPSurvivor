@@ -230,9 +230,11 @@ G.TechnicalUI = (() => {
         const chestName=c=>G.MapTrial.infinite&&['boss','elite'].includes(c.type)?'Cofre de armamento':c.type==='boss'?'Cofre del jefe':c.type==='rift'?'Cofre dimensional':'Cofre de exploración';
         const hint=chest?`${chestName(chest)} ${chestArrow} ${Math.ceil(Math.hypot(cx,cy))} u · ${chest.progress>0?`abriendo ${Math.floor(chest.progress/3.5*100)} %`:'acércate y permanece 3,5 s'}`:
           chests.chests.some(c=>!c.opened)?'Cofre sin descubrir · explora el mapa':chests.chests.length?'Cofres abiertos':'Explora · puede aparecer un cofre';
-        const outcome=G.MapTrial.infinite?G.ArmamentRewards.state.notice:chests.chests.some(c=>c.opened)?chests.notice:'';
+        const legacyOutcome=G.MapTrial.infinite?G.ArmamentRewards.state.notice:chests.chests.some(c=>c.opened)?chests.notice:'';
+        const outcome=G.GachaTrial?.enabled?[...new Set([chests.chests.some(c=>c.opened&&!c.rewardId)?chests.notice:'',legacyOutcome].filter(Boolean))].join(' · '):legacyOutcome;
         el('chest-status').hidden=!canShow||!(chest||outcome||chests.ticketTotal>0);
-        el('chest-status').textContent=`${chest?hint:outcome}${chest&&outcome?' · '+outcome:''}${chests.ticketTotal>0?' · '+chests.ticketTotal+' tickets ficticios':''}`;
+        const balance=G.GachaTrial?.enabled?G.GachaTrial.state.wallet:null;
+        el('chest-status').textContent=`${chest?hint:outcome}${chest&&outcome?' · '+outcome:''}${balance?` · GACHA prueba: ${balance.gray} gris / ${balance.gold} dorado`:chests.ticketTotal>0?' · '+chests.ticketTotal+' tickets ficticios':''}`;
       }
     }
     const resourceNote=el('art-resource-status');

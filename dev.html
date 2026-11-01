@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' http://127.0.0.1:9099 http://127.0.0.1:5001 https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://scp-survivor.firebaseapp.com https://us-central1-scp-survivor.cloudfunctions.net; style-src 'self'; img-src 'self' data:; font-src 'self'; frame-src http://127.0.0.1:9099 https://scp-survivor.firebaseapp.com; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' http://127.0.0.1:9099 http://127.0.0.1:5001 https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://scp-survivor.firebaseapp.com https://us-central1-scp-survivor.cloudfunctions.net https://scp-survivor-accounts.ivan-vivanco-t.workers.dev; style-src 'self'; img-src 'self' data:; font-src 'self'; frame-src http://127.0.0.1:9099 https://scp-survivor.firebaseapp.com; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#081311">
 <link rel="icon" type="image/png" href="assets/brand/scp-survivor.png">
@@ -12,6 +12,9 @@
 <link rel="stylesheet" href="css/technical.css?v=lot-est-005-r1">
 <link rel="stylesheet" href="css/operations-menu.css">
 <link rel="stylesheet" href="css/corner-hud.css?v=lot-est-008-r1">
+<link rel="stylesheet" href="css/gacha-trial.css">
+<link rel="stylesheet" href="css/armory-014.css">
+<link rel="stylesheet" href="css/lobby-014.css">
 <title>SCP Survivor · Expedición</title>
 <!-- dev.html: página fuente local de P02 -->
 </head>
@@ -56,6 +59,7 @@
 <!-- scripts:begin -->
 <script defer src="js/core/util.js"></script>
 <script defer src="js/systems/map-trial.js"></script>
+<script defer src="js/systems/gacha-trial.js"></script>
 <script defer src="js/systems/exploration-chests.js"></script>
 <script defer src="js/systems/event-rewards.js"></script>
 <script defer src="js/vendor/firebase-client.js"></script>
@@ -97,6 +101,8 @@
 <script defer src="js/world/scene-r7.js"></script>
 <script defer src="js/world/scene-m01-a.js"></script>
 <script defer src="js/world/scene-m01-p1.js"></script>
+<script defer src="js/world/scene-p1-maps.js"></script>
+<script defer src="js/systems/scene-darkness.js"></script>
 <!-- entidades -->
 <script defer src="js/entities/vfx.js"></script>
 <script defer src="js/entities/fx.js"></script>
@@ -154,6 +160,7 @@
 <script defer src="js/systems/dimensional-rifts.js"></script>
 <script defer src="js/systems/rift-director.js"></script>
 <script defer src="js/ui/technical-ui.js"></script>
+<script defer src="js/ui/gacha-trial-ui.js"></script>
 <script defer src="js/ui/inventory-trial.js"></script>
 <script defer src="js/systems/field-abilities.js"></script>
 <script defer src="js/systems/field-combat.js"></script>
@@ -164,6 +171,8 @@
 <script defer src="js/ui/field-radar.js"></script>
 <script defer src="js/ui/expanded-ui.js"></script>
 <script defer src="js/ui/operations-menu.js"></script>
+<script defer src="js/ui/armory-014.js"></script>
+<script defer src="js/ui/lobby-014.js"></script>
 <script defer src="js/ui/rift-visuals.js"></script>
 <script defer src="js/systems/field-upgrades.js"></script>
 <script defer src="js/data/bio-catalogue.js"></script>

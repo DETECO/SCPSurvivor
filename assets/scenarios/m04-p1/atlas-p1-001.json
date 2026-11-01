@@ -1,0 +1,239 @@
+{
+  "id": "NIV-M04-P1-ATLAS-P1-001",
+  "estado": "recurso derivado para pruebas, dimensiones y colisiones por validar",
+  "imagen": {
+    "archivo": "atlas-p1-001.png",
+    "anchoPx": 1536,
+    "altoPx": 1024,
+    "modo": "RGBA",
+    "sha256": "0c3a63ede00cc4d8e8c40e807018e4860b826f3e0a1ebaff56a7db04cf817675"
+  },
+  "extraccion": "x,y,ancho,alto; limites derecho e inferior excluidos; margen de 4 px alrededor de alfa >=16 cuando disponible",
+  "piezas": [
+    {
+      "id": "archivadores",
+      "rectPx": [
+        46,
+        141,
+        274,
+        327
+      ],
+      "anclajePx": [
+        137.0,
+        319
+      ],
+      "dibujoUnidades": [
+        48,
+        57.28
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -20.16,
+            -6.0,
+            40.32,
+            12
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "estanteria_archivo",
+      "rectPx": [
+        363,
+        125,
+        303,
+        362
+      ],
+      "anclajePx": [
+        151.5,
+        354
+      ],
+      "dibujoUnidades": [
+        76,
+        90.8
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -31.92,
+            -9.5,
+            63.84,
+            19.0
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "mostrador",
+      "rectPx": [
+        702,
+        134,
+        457,
+        359
+      ],
+      "anclajePx": [
+        228.5,
+        351
+      ],
+      "dibujoUnidades": [
+        105,
+        82.48
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -44.1,
+            -13.0,
+            88.2,
+            26
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "escritorio",
+      "rectPx": [
+        1174,
+        176,
+        345,
+        300
+      ],
+      "anclajePx": [
+        172.5,
+        292
+      ],
+      "dibujoUnidades": [
+        82,
+        71.3
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -34.44,
+            -10.25,
+            68.88,
+            20.5
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "tabique_esquina",
+      "rectPx": [
+        44,
+        588,
+        465,
+        319
+      ],
+      "anclajePx": [
+        232.5,
+        311
+      ],
+      "dibujoUnidades": [
+        112,
+        76.83
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -47.04,
+            -13.0,
+            94.08,
+            26
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "carro_clinico",
+      "rectPx": [
+        563,
+        626,
+        257,
+        285
+      ],
+      "anclajePx": [
+        128.5,
+        277
+      ],
+      "dibujoUnidades": [
+        62,
+        68.75
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -26.04,
+            -7.75,
+            52.08,
+            15.5
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "pilar",
+      "rectPx": [
+        892,
+        540,
+        191,
+        381
+      ],
+      "anclajePx": [
+        95.5,
+        373
+      ],
+      "dibujoUnidades": [
+        30,
+        59.84
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -12.6,
+            -6.0,
+            25.2,
+            12
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "armario_clinico",
+      "rectPx": [
+        1200,
+        546,
+        287,
+        387
+      ],
+      "anclajePx": [
+        143.5,
+        379
+      ],
+      "dibujoUnidades": [
+        55,
+        74.16
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -23.1,
+            -6.88,
+            46.2,
+            13.75
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    }
+  ],
+  "nota": "Recurso generado con imagegen a partir de la lamina P1 aprobada; no es aprobacion humana de esta revision."
+}

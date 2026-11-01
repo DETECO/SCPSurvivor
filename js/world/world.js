@@ -242,6 +242,7 @@ G.World = (() => {
 
   /** ¿Se puede pasar por esta casilla andando? (pathing.js) */
   function walkable(tx, ty) {
+    if(fixture?.p1full)return !G.SceneP1Full.blocked(fixture.p1full,(tx+.5)*TS,(ty+.5)*TS,12);
     if(fixture?.m01p1)return !G.SceneM01P1.blocked(fixture.m01p1,(tx+.5)*TS,(ty+.5)*TS,12);
     if(fixture?.riftArt)return !G.RiftRooms.blocked(fixture.riftArt,(tx+.5)*TS,(ty+.5)*TS,12);
     const t = terrainAt(tx, ty);
@@ -253,6 +254,7 @@ G.World = (() => {
 
   /** ¿Hay sitio para que algo de radio r esté aquí? */
   function isFree(x, y, r = 12, allowLiquid = false) {
+    if(fixture?.p1full)return !G.SceneP1Full.blocked(fixture.p1full,x,y,r);
     if(fixture?.m01p1)return !G.SceneM01P1.blocked(fixture.m01p1,x,y,r);
     if(fixture?.riftArt)return !G.RiftRooms.blocked(fixture.riftArt,x,y,r);
     const t0x = tileOf(x - r), t1x = tileOf(x + r), t0y = tileOf(y - r), t1y = tileOf(y + r);
@@ -309,6 +311,7 @@ G.World = (() => {
    * Devuelve true si ha chocado con algo.
    */
   function collide(e) {
+    if(fixture?.p1full)return G.SceneP1Full.collide(fixture.p1full,e);
     if(fixture?.m01p1)return G.SceneM01P1.collide(fixture.m01p1,e);
     if(fixture?.riftArt)return G.RiftRooms.collide(fixture.riftArt,e);
     const r = e.r;
@@ -352,6 +355,7 @@ G.World = (() => {
 
   /** ¿Choca un proyectil aquí? Devuelve 'wall', el prop sólido, o null. */
   function projectileBlock(x, y, r) {
+    if(fixture?.p1full)return G.SceneP1Full.blocked(fixture.p1full,x,y,r)?'wall':null;
     if(fixture?.m01p1)return G.SceneM01P1.blocked(fixture.m01p1,x,y,r)?'wall':null;
     if(fixture?.riftArt)return G.RiftRooms.blocked(fixture.riftArt,x,y,r)?'wall':null;
     const tx = tileOf(x), ty = tileOf(y);
@@ -454,7 +458,7 @@ G.World = (() => {
     // interpola por píxel para que las manchas tengan bordes orgánicos.
     const S = 6 * G.Tiles.T;
     const dirtField = (gx, gy) => fbm(gx / S, gy / S, seed + 303);
-    img = fixture?.m01p1 ? G.SceneM01P1.paintChunk(cx,cy,N,fixture,seed) : G.SceneR7 && fixture?.layout===G.SceneR7.id ? G.SceneR7.paintChunk(cx,cy,N,fixture,seed) : G.Tiles.paintChunk(cx, cy, N, at, dirtField, bi, seed);
+    img = fixture?.p1full ? G.SceneP1Full.paintChunk(cx,cy,N,fixture,seed) : fixture?.m01p1 ? G.SceneM01P1.paintChunk(cx,cy,N,fixture,seed) : G.SceneR7 && fixture?.layout===G.SceneR7.id ? G.SceneR7.paintChunk(cx,cy,N,fixture,seed) : G.Tiles.paintChunk(cx, cy, N, at, dirtField, bi, seed);
     if (cache.size > MAX_IMAGES) cache.delete(cache.keys().next().value);
     cache.set(k, img);
     return img;
@@ -513,6 +517,7 @@ G.World = (() => {
   /** Props visibles, para mezclarlos en el orden por Y con las entidades. */
   function visibleProps(cam) {
     if(fixture?.riftArt)return [];
+    if(fixture?.p1full)return G.SceneP1Full.visibleProps(fixture,cam);
     if(fixture?.m01p1)return G.SceneM01P1.visibleProps(fixture,cam);
     if(G.SceneR7 && fixture?.layout===G.SceneR7.id)return G.SceneR7.visibleProps(fixture,cam);
     const out = [];
@@ -523,6 +528,7 @@ G.World = (() => {
   }
 
   function drawProp(ctx, p, t) {
+    if(p.type==='p1-object'||p.type==='p1-wall')return G.SceneP1Full.drawProp(ctx,p,fixture,G.Game?.player);
     if(p.type==='m01p1')return G.SceneM01P1.drawProp(ctx,p);
     if(p.r7)return G.SceneR7.drawProp(ctx,p,G.Game?.player);
     const P = G.Sprites.PX;

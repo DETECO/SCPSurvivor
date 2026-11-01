@@ -541,6 +541,7 @@ G.Game = (() => {
     G.World.drawGround(ctx, G.Camera);
     if (pl && state !== 'ui') {
       G.Pickups.draw(ctx); G.Expedition.draw(ctx, {riftLayer:'ground'});
+      pl._sceneFlashlight=null;
       const props = G.World.visibleProps(G.Camera);
       const rift = G.RiftExpedition?.state.active?null:G.DimensionalRifts?.drawable?.();
       const entities = [...G.EnemyMgr.drawables(G.Camera), ...(G.RiftExpedition?.state.active?[]:(G.MapTrial?.drawables?.()||[])),...(G.RiftExpedition?.drawables()||[]), ...props, ...(rift ? [rift] : []), pl].sort((a,b) => a.y - b.y);
@@ -550,7 +551,10 @@ G.Game = (() => {
         if(propSet.has(entity)) G.World.drawProp(ctx,entity,time); else entity.draw(ctx);
         if (entity === pl) G.FieldCombat.drawWeapon(ctx, pl, {behind:false});
       }
-      G.Projectiles.draw(ctx); G.FX.draw(ctx);G.RiftPowerArt?.draw(ctx,pl);G.RiftExpedition?.drawOverlay(ctx);
+      const dark=G.SceneDarkness?.enabled?.()&&G.SceneDarkness.current()>0;
+      if(!dark)G.Projectiles.draw(ctx);G.FX.draw(ctx);G.RiftPowerArt?.draw(ctx,pl);
+      if(dark){G.SceneDarkness.draw(ctx,pl,G.Camera);G.Projectiles.draw(ctx);G.RiftExpedition?.drawTelegraph(ctx);}
+      G.RiftExpedition?.drawOverlay(ctx);
     }
     ctx.restore(); G.World.drawVignette(ctx, w, h);G.RiftExpedition?.drawScreen(ctx,w,h);
     G.Touch.clearButtons(); G.Touch.draw(ctx);

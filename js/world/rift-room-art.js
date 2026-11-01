@@ -2,7 +2,9 @@
  * Coordinates below refer to the 1536x1024 approved illustrations, not a tile approximation.
  */
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;if(root.G)root.G.RiftRoomArt=api;})(globalThis,()=>{
- const S=.625,OX=-480,OY=-320,assets=new Map();
+ // Approved trial scale: keep the 56-unit character frame and scale every
+ // environment coordinate through this single source-to-world transform.
+ const S=.8,WIDTH=1536*S,HEIGHT=1024*S,OX=-WIDTH/2,OY=-HEIGHT/2,assets=new Map();
  const box=(x,y,w,h,z=64)=>({foot:[[x,y],[x+w,y],[x+w,y+h],[x,y+h]],height:z});
  const shape=(foot,height=70)=>({foot,height});
  const themes={
@@ -72,13 +74,27 @@
    }
   }e.x=OX+x*S;e.y=OY+y*S;return hit;
  }
- function hull(points){const a=points.slice().sort((p,q)=>p[0]-q[0]||p[1]-q[1]),cross=(o,p,q)=>(p[0]-o[0])*(q[1]-o[1])-(p[1]-o[1])*(q[0]-o[0]),lo=[],hi=[];for(const p of a){while(lo.length>1&&cross(lo.at(-2),lo.at(-1),p)<=0)lo.pop();lo.push(p);}for(const p of a.slice().reverse()){while(hi.length>1&&cross(hi.at(-2),hi.at(-1),p)<=0)hi.pop();hi.push(p);}return lo.slice(0,-1).concat(hi.slice(0,-1));}
+ // D3 U-wall silhouette traced from the approved plate. Keep it separate from
+ // the physical footprint: foreground repainting may cover only this opaque
+ // wall, never the open floor at [560,462] or [430,530].
+ const mallaUWallMask=[[299,382],[332,396],[333,476],[396,548],[504,548],[528,490],[546,482],[579,499],[569,530],[544,572],[503,611],[396,610],[299,551]];
+ // Rasterize each vertical interval independently. A convex hull would fill
+ // the free floor between the arms of U- and L-shaped structures.
+ function makeMask(poly,height){
+  const step=2,left=Math.floor(Math.min(...poly.map(p=>p[0]))),right=Math.ceil(Math.max(...poly.map(p=>p[0]))),columns=[];
+  for(let x=left;x<right;x+=step){const sample=Math.min(x+step/2,right-.001),ys=[];
+   for(let i=0;i<poly.length;i++){const a=poly[i],b=poly[(i+1)%poly.length];if((a[0]<=sample&&sample<b[0])||(b[0]<=sample&&sample<a[0]))ys.push(a[1]+(b[1]-a[1])*(sample-a[0])/(b[0]-a[0]));}
+   ys.sort((a,b)=>a-b);const spans=[];for(let i=0;i+1<ys.length;i+=2){const lo=ys[i]-height,hi=ys[i+1],prev=spans.at(-1);if(prev&&lo<=prev[1])prev[1]=Math.max(prev[1],hi);else spans.push([lo,hi]);}columns.push(spans);
+  }return{left,right,step,columns};
+ }
+ function maskContains(mask,x,y){const i=Math.floor((x-mask.left)/mask.step);return i>=0&&i<mask.columns.length&&mask.columns[i].some(([top,bottom])=>y>=top&&y<=bottom);}
  function generate(id){
   const theme=themes[id];if(!theme)throw Error('Unknown rift room');
-  const structures=theme.structures.map((b,index)=>({...b,index,box:{left:Math.min(...b.foot.map(p=>p[0])),right:Math.max(...b.foot.map(p=>p[0])),top:Math.min(...b.foot.map(p=>p[1])),bottom:Math.max(...b.foot.map(p=>p[1]))},mask:hull([...b.foot,...b.foot.map(([x,y])=>[x,y-b.height])])}));
-  const g={id:'NIV-BIO-C1-r2:'+id,bio:id,revision:'NIV-BIO-C1-r2',name:theme.name,theme,structures,color:'#222726',limit:{left:88,right:1450,top:166,bottom:844},tags:{yellowPaper:false,repeatedCorridors:false,biologicalRoom:true},entry:point(theme.entry),bossSpawn:point(theme.boss),escape:point(theme.exit),bounds:{left:OX,right:480,top:OY,bottom:320}};
-  const walls=[];for(let ty=-12;ty<=12;ty++)for(let tx=-16;tx<=16;tx++)if(blocked(g,tx*32+16,ty*32+16,12))walls.push([tx,ty]);
-  g.fixture={minX:-16,maxX:16,minY:-12,maxY:12,walls,props:[],staticNavigation:true,sceneRevision:'NIV-ESC-008-A-r1',riftArt:{structures:g.structures,limit:g.limit}};return g;
+  const structures=theme.structures.map((b,index)=>{const box={left:Math.min(...b.foot.map(p=>p[0])),right:Math.max(...b.foot.map(p=>p[0])),top:Math.min(...b.foot.map(p=>p[1])),bottom:Math.max(...b.foot.map(p=>p[1]))},d3Mask=id==='malla'&&index===6;return{...b,index,box,mask:makeMask(d3Mask?mallaUWallMask:b.foot,d3Mask?0:b.height)};});
+  const g={id:'NIV-BIO-C1-r2:'+id,bio:id,revision:'NIV-BIO-C1-r2',name:theme.name,theme,structures,color:'#222726',limit:{left:88,right:1450,top:166,bottom:844},tags:{yellowPaper:false,repeatedCorridors:false,biologicalRoom:true},entry:point(theme.entry),bossSpawn:point(theme.boss),escape:point(theme.exit),bounds:{left:OX,right:OX+WIDTH,top:OY,bottom:OY+HEIGHT}};
+  const minX=Math.floor(OX/32),maxX=Math.ceil((OX+WIDTH)/32)-1,minY=Math.floor(OY/32),maxY=Math.ceil((OY+HEIGHT)/32)-1;
+  const walls=[];for(let ty=minY;ty<=maxY;ty++)for(let tx=minX;tx<=maxX;tx++)if(blocked(g,tx*32+16,ty*32+16,12))walls.push([tx,ty]);
+  g.fixture={minX,maxX,minY,maxY,walls,props:[],staticNavigation:true,sceneRevision:'NIV-ESC-008-A-r1',riftArt:{structures:g.structures,limit:g.limit}};return g;
  }
  function preload(g){
   const key=g.theme.slug;if(assets.has(key))return;
@@ -87,13 +103,13 @@
  }
  function preloadById(id){const theme=themes[id];if(!theme)return false;const key=theme.slug;if(assets.get(key)?.failed)assets.delete(key);preload({theme});return true;}
  function loading(g){preload(g);const a=assets.get(g.theme.slug);return{ready:a.ready,failed:a.failed?[a.src]:[],pending:a.ready||a.failed?[]:[a.src]};}
- function path(ctx,poly){ctx.beginPath();poly.forEach(([x,y],i)=>i?ctx.lineTo(OX+x*S,OY+y*S):ctx.moveTo(OX+x*S,OY+y*S));ctx.closePath();}
- function plate(ctx,g){const a=assets.get(g.theme.slug);if(a?.ready)ctx.drawImage(a.image,0,48,1536,976,OX,OY+48*S,960,976*S);}
+ function maskPath(ctx,mask,x0,x1){ctx.beginPath();const first=Math.max(0,Math.floor((x0-mask.left)/mask.step)),last=Math.min(mask.columns.length,Math.ceil((x1-mask.left)/mask.step));for(let i=first;i<last;i++){const x=mask.left+i*mask.step;for(const [top,bottom] of mask.columns[i])ctx.rect(OX+x*S,OY+top*S,Math.min(mask.step,mask.right-x)*S,(bottom-top)*S);}}
+ function plate(ctx,g){const a=assets.get(g.theme.slug);if(a?.ready)ctx.drawImage(a.image,0,48,1536,976,OX,OY+48*S,WIDTH,976*S);}
  function drawGround(ctx,g,time,calm=false){
   preload(g);ctx.save();ctx.imageSmoothingEnabled=false;plate(ctx,g);
   // Restrained live bloom over the original baked lighting; no replacement palette.
   for(const [i,x]of[180,440,760,1110,1360].entries()){
-   const p=point([x,190]),r=50,grad=ctx.createRadialGradient(p.x,p.y,1,p.x,p.y,r);grad.addColorStop(0,g.theme.light+'24');grad.addColorStop(1,g.theme.light+'00');ctx.globalAlpha=calm?.18:.22+.06*Math.sin(time*.8+i);ctx.fillStyle=grad;ctx.fillRect(p.x-r,p.y-r,r*2,r*2);
+   const p=point([x,190]),r=80*S,grad=ctx.createRadialGradient(p.x,p.y,1,p.x,p.y,r);grad.addColorStop(0,g.theme.light+'24');grad.addColorStop(1,g.theme.light+'00');ctx.globalAlpha=calm?.18:.22+.06*Math.sin(time*.8+i);ctx.fillStyle=grad;ctx.fillRect(p.x-r,p.y-r,r*2,r*2);
   }ctx.restore();
  }
  function drawables(g,player){
@@ -103,17 +119,17 @@
    for(let x=b.box.left;x<b.box.right;x+=32){
     const mid=Math.min(x+16,b.box.right),crossings=[];for(let i=0;i<b.foot.length;i++){const a=b.foot[i],c=b.foot[(i+1)%b.foot.length];if(mid>=Math.min(a[0],c[0])&&mid<=Math.max(a[0],c[0])&&a[0]!==c[0])crossings.push(a[1]+(c[1]-a[1])*(mid-a[0])/(c[0]-a[0]));}
     const base=crossings.length?Math.max(...crossings):b.box.bottom;
-    out.push({y:OY+base*S,draw:ctx=>{ctx.save();ctx.beginPath();ctx.rect(OX+x*S,OY,Math.min(32,b.box.right-x)*S,640);ctx.clip();path(ctx,b.mask);ctx.clip();if(player&&inside(b.mask,(player.x-OX)/S,(player.y-OY)/S)&&!blocked(g,player.x,player.y,player.r))ctx.globalAlpha=.5;plate(ctx,g);ctx.restore();}});
+    out.push({y:OY+base*S,draw:ctx=>{ctx.save();ctx.beginPath();ctx.rect(OX+x*S,OY,Math.min(32,b.box.right-x)*S,HEIGHT);ctx.clip();maskPath(ctx,b.mask,x,x+32);ctx.clip();if(player&&maskContains(b.mask,(player.x-OX)/S,(player.y-OY)/S)&&!blocked(g,player.x,player.y,player.r))ctx.globalAlpha=.5;plate(ctx,g);ctx.restore();}});
    }
   }
   // The perimeter's raised faces also occlude correctly at the near edge.
-  out.push({y:230,draw:ctx=>{ctx.save();ctx.beginPath();ctx.rect(OX,OY+844*S,960,180*S);ctx.clip();plate(ctx,g);ctx.restore();}});return out;
+  out.push({y:OY+(844+36)*S,draw:ctx=>{ctx.save();ctx.beginPath();ctx.rect(OX,OY+844*S,WIDTH,180*S);ctx.clip();plate(ctx,g);ctx.restore();}});return out;
  }
  function drawAtmosphere(ctx,g,time,calm=false){
   const t=calm?0:time;ctx.save();ctx.fillStyle=g.theme.light;ctx.strokeStyle=g.theme.light;
-  for(let i=0;i<(calm?8:32);i++){const x=OX+130*S+((i*109+Math.sin(t*.3+i)*9+760)%760),y=OY+180*S+((i*71-t*7+1e6)%380);if(blocked(g,x,y))continue;ctx.globalAlpha=.16+.1*Math.sin(t+i);
+  for(let i=0;i<(calm?8:32);i++){const x=OX+(130+((i*174.4+Math.sin(t*.3+i)*14.4+1216)%1216))*S,y=OY+(180+((i*113.6-t*11.2+1e6)%608))*S;if(blocked(g,x,y))continue;ctx.globalAlpha=.16+.1*Math.sin(t+i);
    if(g.theme.kind==='bubbles'){ctx.strokeRect(Math.round(x),Math.round(y),2,3);}else{ctx.fillRect(Math.round(x),Math.round(y),i%5===0?2:1,g.theme.kind==='sparks'?3:1);}
   }ctx.restore();
  }
- return{themes,generate,blocked,collide,preload,preloadById,loading,drawGround,drawables,drawAtmosphere,point};
+ return{themes,generate,blocked,collide,preload,preloadById,loading,drawGround,drawables,drawAtmosphere,point,makeMask,maskContains};
 });

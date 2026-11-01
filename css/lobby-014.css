@@ -1,0 +1,725 @@
+/* MEN-006-A r1: adaptación exclusiva del lobby en móvil horizontal. */
+body:has(#technical-ready:not([hidden]) .lobby-014:not([hidden])) #gacha-trial-open { display:none; }
+.operations-menu .lobby-014[hidden] { display: none !important; }
+.operations-menu .operations-home-layout[hidden] { display: none !important; }
+.operations-menu.lobby-014-horizontal .operations-screen[data-screen="home"] {
+  position: relative;
+}
+.operations-menu.lobby-014-horizontal .lobby-014:not([hidden]) {
+  --lobby-014-ink: #f2eedb;
+  --lobby-014-muted: #a4b8aa;
+  --lobby-014-amber: #f3c344;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .96fr);
+  align-items: stretch;
+  gap: clamp(8px, 1.5vw, 20px);
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  color: var(--lobby-014-ink);
+  font-family: monospace;
+}
+.lobby-014-world,
+.lobby-014-world-mid,
+.lobby-014-world-floor,
+.lobby-014-world-capsule,
+.lobby-014-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.lobby-014-world { z-index: -1; overflow: hidden; background: #07100e; }
+.lobby-014-world::before {
+  position: absolute;
+  inset: -3%;
+  content: "";
+  background-image: linear-gradient(90deg, #06100ec9 0%, #07100e66 49%, #07100ebf 100%),
+    linear-gradient(0deg, #030806d9 0%, #07100e24 45%, #03080675 100%),
+    url("../assets/brand/sala-preparacion-v1.png");
+  background-position: center;
+  background-size: cover;
+  filter: blur(1.15px) saturate(.82);
+  transform: scale(1.035);
+  animation: lobby-014-room-drift 22s ease-in-out infinite alternate;
+}
+.lobby-014-world-mid {
+  inset: 0 0 20%;
+  background: radial-gradient(ellipse at 50% 54%, #e6a31c22 0, transparent 43%),
+    linear-gradient(90deg, transparent 20%, #9bb9a812 50%, transparent 80%);
+  transform: translate3d(0, 0, 0);
+  animation: lobby-014-mid-drift 13s ease-in-out infinite alternate;
+}
+.lobby-014-world-floor {
+  top: 57%;
+  background: linear-gradient(0deg, #050a09f2, #111b1766 55%, transparent),
+    repeating-linear-gradient(90deg, #8b98690d 0 1px, transparent 1px 9.5%),
+    repeating-linear-gradient(0deg, #c39c3311 0 1px, transparent 1px 23px);
+  transform: perspective(300px) rotateX(12deg) scale(1.18);
+  transform-origin: top center;
+}
+.lobby-014-world-capsule {
+  inset: 14% 23% 8% 36%;
+  border: 1px solid #d1aa4740;
+  border-radius: 48% 48% 8px 8px;
+  background: linear-gradient(90deg, #f6cf5326, transparent 18% 82%, #f6cf5326),
+    linear-gradient(0deg, #f6cf5316, transparent 55%);
+  box-shadow: 0 0 34px #e9a62d20, inset 0 0 18px #e9a62d10;
+  clip-path: polygon(18% 0, 82% 0, 100% 12%, 100% 100%, 0 100%, 0 12%);
+  animation: lobby-014-capsule-glow 5.8s ease-in-out infinite alternate;
+}
+.lobby-014-particle {
+  position: absolute;
+  left: var(--particle-x);
+  top: var(--particle-y);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  opacity: .62;
+  background: #ffd978;
+  box-shadow: 0 0 7px 2px #ffbc3c5c;
+  animation: lobby-014-particle-rise 7.4s ease-in-out var(--particle-delay) infinite;
+}
+.lobby-014-stage,
+.lobby-014-actions { position: relative; min-width: 0; min-height: 0; }
+.lobby-014-stage {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  align-items: end;
+  justify-items: center;
+  padding: 3px 0 2px;
+  text-align: center;
+}
+.lobby-014-location {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  justify-self: start;
+  margin: 0 0 2px 3px;
+  color: var(--lobby-014-muted);
+  font: 700 clamp(9px, 1.25vw, 13px)/1.2 monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.lobby-014-location strong {
+  color: var(--lobby-014-amber);
+  font-size: 1.35em;
+  text-shadow: 0 0 11px #ffbc3c88;
+}
+.lobby-014-platform {
+  position: absolute;
+  left: 11%;
+  right: 11%;
+  bottom: 25%;
+  height: 17%;
+  border: 2px solid #ebbd44;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #e9bb4d35 0, #090e0d 64%);
+  box-shadow: 0 0 11px #f4c74899, inset 0 0 13px #dca72c5c;
+  transform: perspective(220px) rotateX(47deg);
+  animation: lobby-014-platform-pulse 3.6s ease-in-out infinite alternate;
+}
+.lobby-014-actor {
+  z-index: 1;
+  align-self: end;
+  width: auto;
+  height: clamp(104px, 34vh, 174px);
+  max-height: 100%;
+  margin: 0 0 1px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 5px 7px #000c);
+}
+.lobby-014-soldier-copy { z-index: 2; margin-top: -2px; text-shadow: 0 2px 5px #000; }
+.lobby-014-soldier-name {
+  margin: 0;
+  color: var(--lobby-014-ink);
+  font: 900 clamp(13px, 1.8vw, 19px)/1.1 monospace;
+  letter-spacing: .08em;
+}
+.lobby-014-soldier-ability {
+  margin: 3px 0 0;
+  color: var(--lobby-014-muted);
+  font-size: clamp(10px, 1.3vw, 13px);
+}
+.lobby-014-role-picker { z-index: 2; display: flex; gap: 7px; margin-top: 5px; }
+.operations-menu .lobby-014-role {
+  min-width: clamp(86px, 11vw, 126px);
+  min-height: 34px;
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid #6b8c78;
+  background: #071a16dd;
+  color: var(--lobby-014-ink);
+  font: 800 11px/1 monospace;
+  text-transform: uppercase;
+  touch-action: manipulation;
+}
+.operations-menu .lobby-014-role[aria-pressed="true"] {
+  border-color: var(--lobby-014-amber);
+  background: linear-gradient(130deg, #78551fdd, #152820ee);
+  box-shadow: inset 0 0 0 1px #e1b63c55, 0 0 10px #d99e2d30;
+}
+.lobby-014-actions {
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+  align-content: center;
+  gap: clamp(6px, 1.2vh, 12px);
+  padding: 3px 1px 2px;
+}
+.lobby-014-start-slot { min-width: 0; }
+.operations-menu .lobby-014-actions .operations-expedition-start {
+  position: relative;
+  min-height: clamp(48px, 12vh, 70px);
+  margin: 0;
+  padding: 8px 12px 8px 44px;
+  border: 2px solid #ffe58d;
+  box-shadow: inset 0 0 0 3px #bf8b28, 0 5px 17px #e5a62944;
+  background: linear-gradient(135deg, #ffda60, #e9a925);
+  color: #111b15;
+  font: 900 clamp(14px, 2.1vw, 23px)/1.05 monospace;
+  text-align: left;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  animation: lobby-014-cta-glow 3.2s ease-in-out infinite;
+}
+.operations-menu .lobby-014-actions .operations-expedition-start::before {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  content: "";
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 16px solid #12231a;
+  transform: translateY(-50%);
+}
+.lobby-014-gacha {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: clamp(46px, 10vh, 60px);
+  margin: 0;
+  padding: 7px 12px;
+  overflow: hidden;
+  border: 1px solid #efc553;
+  background: linear-gradient(145deg, #1b3028f2, #090f0deF);
+  color: var(--lobby-014-ink);
+  text-align: left;
+  box-shadow: inset 0 0 0 2px #d6a93522, 0 4px 12px #0007;
+  touch-action: manipulation;
+}
+.lobby-014-gacha:not(:disabled) { animation: lobby-014-gacha-pulse 2.8s ease-in-out infinite; }
+.lobby-014-gacha:disabled { cursor: not-allowed; opacity: .68; }
+.lobby-014-gacha-icon {
+  display: grid;
+  flex: 0 0 37px;
+  width: 37px;
+  height: 37px;
+  place-items: center;
+  border: 1px solid #f5cf62;
+  background: radial-gradient(circle, #f3c54455, #101a14 70%);
+  color: #ffdc73;
+  font-size: 27px;
+  line-height: 1;
+  text-shadow: 0 0 10px #f2b73599;
+}
+.lobby-014-gacha-copy { display: grid; min-width: 0; gap: 3px; }
+.lobby-014-gacha-copy strong { color: #ffdc73; font: 900 clamp(14px, 1.8vw, 19px)/1 monospace; letter-spacing: .13em; }
+.lobby-014-gacha-copy small { color: #d5dccb; font: 10px/1.2 monospace; }
+.lobby-014-gacha-pulse {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #ffe98a;
+  opacity: 0;
+  pointer-events: none;
+  animation: lobby-014-light-sweep 3.6s ease-in-out infinite;
+}
+.lobby-014-gacha-status { margin: -4px 0 0; color: #f4d68b; font: 10px/1.3 monospace; }
+.lobby-014-gacha-status[hidden] { display: none !important; }
+.lobby-014-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; min-height: 0; }
+.operations-menu .lobby-014-nav button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  min-width: 0;
+  min-height: 34px;
+  margin: 0;
+  padding: 5px 9px;
+  border: 1px solid #517462;
+  background: linear-gradient(145deg, #17352cdd, #071914ee);
+  color: var(--lobby-014-ink);
+  font: 800 clamp(10px, 1.3vw, 13px)/1 monospace;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  touch-action: manipulation;
+}
+.lobby-014-nav button span { width: 22px; color: #efc550; font-size: 20px; text-align: center; }
+.operations-menu .lobby-014-actions button:focus-visible,
+.operations-menu .lobby-014-role:focus-visible,
+.operations-menu .lobby-014-nav button:focus-visible {
+  outline: 2px solid #fff1b7;
+  outline-offset: 2px;
+}
+
+@keyframes lobby-014-room-drift {
+  from { transform: scale(1.035) translate3d(-.35%, 0, 0); }
+  to { transform: scale(1.055) translate3d(.35%, -.2%, 0); }
+}
+@keyframes lobby-014-mid-drift {
+  from { transform: translate3d(-.4%, 0, 0); }
+  to { transform: translate3d(.4%, -.25%, 0); }
+}
+@keyframes lobby-014-capsule-glow { from { opacity: .48; } to { opacity: .85; } }
+@keyframes lobby-014-platform-pulse { from { box-shadow: 0 0 8px #f4c74877, inset 0 0 9px #dca72c3c; } to { box-shadow: 0 0 16px #f4c748aa, inset 0 0 17px #dca72c66; } }
+@keyframes lobby-014-cta-glow { 0%, 100% { box-shadow: inset 0 0 0 3px #bf8b28, 0 5px 17px #e5a62933; } 50% { box-shadow: inset 0 0 0 3px #bf8b28, 0 5px 22px #f0b73988; } }
+@keyframes lobby-014-gacha-pulse { 0%, 100% { box-shadow: inset 0 0 0 2px #d6a93522, 0 4px 12px #0007; } 50% { box-shadow: inset 0 0 0 2px #d6a93570, 0 4px 17px #d9a53266; } }
+@keyframes lobby-014-light-sweep { 0%, 62%, 100% { opacity: 0; transform: translateX(-16%); } 72% { opacity: .72; } 86% { opacity: 0; transform: translateX(16%); } }
+@keyframes lobby-014-particle-rise { 0%, 100% { opacity: .14; transform: translate3d(0, 7px, 0) scale(.7); } 45% { opacity: .74; } 60% { transform: translate3d(6px, -9px, 0) scale(1.15); } }
+
+@media (max-height: 420px) {
+  .operations-menu.lobby-014-horizontal .lobby-014:not([hidden]) { gap: 5px; }
+  .lobby-014-stage { padding-block: 0; }
+  .lobby-014-role-picker { margin-top: 2px; }
+  .operations-menu .lobby-014-role { min-height: 30px; }
+  .lobby-014-actions { gap: 5px; padding-block: 0; }
+  .operations-menu .lobby-014-actions .operations-expedition-start { min-height: 44px; }
+  .lobby-014-gacha { min-height: 42px; }
+  .lobby-014-gacha-icon { width: 31px; height: 31px; flex-basis: 31px; }
+  .operations-menu .lobby-014-nav button { min-height: 29px; padding-block: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lobby-014-world::before,
+  .lobby-014-world-mid,
+  .lobby-014-world-capsule,
+  .lobby-014-particle,
+  .lobby-014-platform,
+  .lobby-014-gacha:not(:disabled),
+  .lobby-014-gacha-pulse,
+  .operations-menu .lobby-014-actions .operations-expedition-start {
+    animation: none !important;
+  }
+}
+
+/* La imagen aprobada ocupa el marco completo; los controles vivos la tapan en su misma composición. */
+#technical-ready:has(.operations-menu.lobby-014-horizontal) {
+  background: linear-gradient(180deg, #03080724, #03080736),
+    url("../assets/ui/lobby-014/MEN-006-A-ala-de-contencion.png") center / cover no-repeat !important;
+}
+#technical-ready:has(.operations-menu.lobby-014-horizontal) .operations-host {
+  position: relative;
+  z-index: 2;
+  padding: clamp(8px, 1.5vw, 14px);
+  border-color: #80907c88;
+  background: transparent;
+  box-shadow: none;
+}
+#technical-ready:has(.operations-menu.lobby-014-horizontal)::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 auto;
+  height: clamp(62px, 19vh, 82px);
+  content: "";
+  background: linear-gradient(180deg, #040a09ed 0%, #040a09b8 73%, transparent 100%);
+  pointer-events: none;
+}
+.operations-menu.lobby-014-horizontal { position: relative; z-index: 2; }
+.operations-menu.lobby-014-horizontal .operations-heading {
+  position: relative;
+  z-index: 3;
+  gap: 10px;
+  margin: 0 0 2px;
+  min-height: 46px;
+  padding: 3px 5px;
+  background: linear-gradient(90deg, #040a09fd 0 45%, #040a09df 58%, #040a0990 72%, transparent 100%);
+  border-bottom: 1px solid #c19b3a55;
+}
+.operations-menu.lobby-014-horizontal .operations-brand {
+  min-height: 46px;
+  padding-left: 48px;
+}
+.operations-menu.lobby-014-horizontal .operations-brand:before {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+}
+.operations-menu.lobby-014-horizontal .operations-brand h1 {
+  margin-bottom: 2px;
+  font-size: clamp(21px, 3.1vw, 30px);
+  line-height: .96;
+}
+.operations-menu.lobby-014-horizontal .operations-brand .eyebrow {
+  margin-bottom: 3px;
+  font-size: clamp(7px, 1vw, 9px);
+}
+.operations-menu.lobby-014-horizontal .operations-brand .developer-credit {
+  font-size: 9px;
+}
+.operations-menu.lobby-014-horizontal .operations-stamp {
+  font-size: 8px;
+  padding: 4px 6px;
+}
+.operations-menu.lobby-014-horizontal .operations-screen[data-screen="home"] {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: visible;
+}
+.operations-menu.lobby-014-horizontal .lobby-014:not([hidden]) {
+  display: block;
+  position: relative;
+  flex: 1 1 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: visible;
+  isolation: auto;
+}
+.lobby-014-world {
+  inset: calc(-1 * (clamp(56px, 18vh, 78px) + 12px)) -24px -24px;
+  z-index: 0;
+  overflow: visible;
+  background: transparent;
+}
+.lobby-014-world::before {
+  inset: 0;
+  background: radial-gradient(ellipse at 56% 47%, #f5b53818, transparent 19%),
+    linear-gradient(90deg, #03090720, transparent 28% 88%, #03090726);
+  filter: none;
+  transform: none;
+  animation: none;
+}
+.lobby-014-world-mid {
+  inset: 4% 5% 12%;
+  background: radial-gradient(ellipse at 55% 51%, #ffc54b19, transparent 23%),
+    radial-gradient(ellipse at 23% 70%, #cda23616, transparent 29%),
+    linear-gradient(90deg, transparent 36%, #92bdad10 50%, transparent 63%);
+  translate: var(--lobby-014-tilt-x, 0px) var(--lobby-014-tilt-y, 0px);
+  animation: lobby-014-mid-drift 13s ease-in-out infinite alternate;
+}
+.lobby-014-world-floor {
+  top: 61%;
+  background: linear-gradient(0deg, #03080688, #08100e1c 70%, transparent),
+    repeating-linear-gradient(90deg, #ebc44a12 0 1px, transparent 1px 13%),
+    repeating-linear-gradient(0deg, #d7e1ce0c 0 1px, transparent 1px 28px);
+  translate: calc(var(--lobby-014-tilt-x, 0px) * .35) calc(var(--lobby-014-tilt-y, 0px) * .25);
+  transform: perspective(360px) rotateX(7deg) scale(1.07);
+  transform-origin: top center;
+  animation: lobby-014-floor-drift 16s linear infinite;
+}
+.lobby-014-world-capsule {
+  inset: 20% 38% 22% 49%;
+  border: 1px solid #ffdc7266;
+  border-radius: 42% 42% 7px 7px;
+  background: linear-gradient(90deg, #fff0a92a, transparent 17% 84%, #ffdc7238),
+    linear-gradient(0deg, #ffa92c30 0%, transparent 58%);
+  box-shadow: 0 0 20px #ffb52a55, inset 0 0 11px #ffe0784c;
+  clip-path: polygon(16% 0, 84% 0, 100% 12%, 100% 100%, 0 100%, 0 12%);
+  translate: calc(var(--lobby-014-tilt-x, 0px) * .6) calc(var(--lobby-014-tilt-y, 0px) * .45);
+  animation: lobby-014-capsule-glow 4.6s ease-in-out infinite alternate;
+}
+.lobby-014-world-capsule::before,
+.lobby-014-world-capsule::after {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  content: "";
+  border: 1px solid #ffdb6977;
+  background: linear-gradient(90deg, #1b211b, #9f7028 10%, #101814 19% 81%, #bb8d36 92%, #141b16);
+}
+.lobby-014-world-capsule::before { top: 0; height: 12%; border-radius: 50%; }
+.lobby-014-world-capsule::after { bottom: -1px; height: 16%; box-shadow: 0 0 10px #ffbb3c88; }
+.lobby-014-particle { z-index: 2; width: 2px; height: 2px; opacity: .76; }
+.lobby-014-particle:nth-child(3n) { width: 4px; height: 4px; }
+.lobby-014-stage,
+.lobby-014-actions { position: absolute; z-index: 2; }
+.lobby-014-stage {
+  inset: 0 auto 0 0;
+  display: block;
+  width: 48%;
+  padding: 0;
+  text-align: center;
+}
+.lobby-014-stage::before {
+  position: absolute;
+  z-index: 1;
+  left: 28%;
+  top: 12%;
+  width: 44%;
+  height: 53%;
+  content: "";
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #06100ef2 0 26%, #06100eb8 43%, transparent 73%);
+  pointer-events: none;
+}
+.lobby-014-location {
+  position: absolute;
+  z-index: 3;
+  left: 151%;
+  top: 0;
+  gap: 6px;
+  margin: 0;
+  padding: 2px 7px;
+  background: linear-gradient(90deg, transparent, #08100edf 20% 85%, transparent);
+  font-size: clamp(8px, 1.05vw, 11px);
+  white-space: nowrap;
+  text-shadow: 0 1px 5px #000;
+}
+.lobby-014-location strong { font-size: 1.2em; }
+.lobby-014-platform {
+  position: absolute;
+  z-index: 2;
+  left: 17%;
+  top: 58%;
+  right: auto;
+  bottom: auto;
+  width: 66%;
+  height: 26%;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  transform: none;
+  animation: none;
+}
+.lobby-014-platform-bottom,
+.lobby-014-platform-side,
+.lobby-014-platform-belt,
+.lobby-014-platform-top { position: absolute; display: block; }
+.lobby-014-platform-bottom {
+  left: 4%;
+  right: 4%;
+  bottom: 4%;
+  height: 54%;
+  border: 2px solid #272a25;
+  border-radius: 0 0 48% 48%;
+  background: repeating-linear-gradient(90deg, #151b18 0 8%, #3e4239 8.5% 10%, #171c19 11% 20%);
+  box-shadow: 0 12px 15px #000b, 0 3px 0 #cf9e35;
+}
+.lobby-014-platform-side {
+  left: 3%;
+  right: 3%;
+  top: 24%;
+  height: 47%;
+  border: 1px solid #747361;
+  background: repeating-linear-gradient(90deg, #171d19 0 7%, #665a3d 7.5% 9%, #20231e 10% 20%);
+  box-shadow: inset 0 5px 0 #e6b949, inset 0 -4px 0 #0b0f0d, 0 4px 9px #000b;
+}
+.lobby-014-platform-belt {
+  left: 8%;
+  right: 8%;
+  top: 55%;
+  height: 7%;
+  background: repeating-linear-gradient(90deg, #f0bf3b 0 12px, #171b17 12px 21px);
+  border-top: 1px solid #ffe788;
+  border-bottom: 1px solid #090d0b;
+}
+.lobby-014-platform-top {
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 52%;
+  border: 3px solid #41443a;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #eac75b 0 5%, #3e4138 15%, #111714 51%, #d9a833 54%, #111613 61%, #4b4b3b 67%, #171b17 73%);
+  box-shadow: 0 0 15px #f1b73366, inset 0 0 9px #f2c44766;
+}
+.lobby-014-actor {
+  position: absolute;
+  z-index: 4;
+  left: 47%;
+  top: 7%;
+  align-self: auto;
+  height: min(48vh, 190px);
+  max-height: 66%;
+  margin: 0;
+  transform: translateX(-50%) scale(1.08);
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 7px 5px #000e);
+}
+.lobby-014-soldier-copy {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 73%;
+  width: 66%;
+  margin: 0;
+  padding: 3px 4px;
+  transform: translateX(-50%);
+  border-top: 1px solid #efc64c;
+  border-bottom: 1px solid #706238;
+  background: linear-gradient(90deg, #090f0ef5, #171b17ed 50%, #090f0ef5);
+  text-shadow: 0 2px 4px #000;
+}
+.lobby-014-soldier-name { font-size: clamp(12px, 1.7vw, 17px); }
+.lobby-014-soldier-ability { margin: 1px 0 0; font-size: 10px; }
+.lobby-014-role-picker {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 1%;
+  margin: 0;
+  transform: translateX(-50%);
+}
+.operations-menu .lobby-014-role {
+  min-width: clamp(74px, 9vw, 100px);
+  min-height: 30px;
+  border-color: #668675;
+  background: #07120feF;
+  box-shadow: 0 2px 5px #000b;
+  font-size: 9px;
+}
+.lobby-014-actions {
+  inset: 15% 2% 5% 63%;
+  display: block;
+  padding: 0;
+}
+.lobby-014-start-slot {
+  position: absolute;
+  inset: 0 -20px auto 0;
+  height: 36%;
+}
+.operations-menu .lobby-014-actions .operations-expedition-start {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 8px 9px 8px 42px;
+  border-color: #ffec9f;
+  box-shadow: inset 0 0 0 3px #cb9428, 0 6px 15px #000b;
+  background: linear-gradient(135deg, #ffd656, #f2b22b 70%, #e7a323);
+  font-size: clamp(15px, 2.8vw, 26px);
+  text-align: center;
+}
+.operations-menu .lobby-014-actions .operations-expedition-start::before {
+  left: 14px;
+  border-top-width: 11px;
+  border-bottom-width: 11px;
+  border-left-width: 15px;
+}
+.lobby-014-gacha {
+  position: absolute;
+  z-index: 4;
+  left: -33%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  width: 33%;
+  height: 30%;
+  min-height: 0;
+  padding: 4px 3px;
+  border: 2px solid #c99c34;
+  background: linear-gradient(110deg, #181c16f7, #34281cfa 45%, #151b16f7);
+  box-shadow: inset 0 0 0 3px #0b110e, 0 5px 12px #000c, 0 0 13px #f2b83688;
+  text-align: center;
+}
+.lobby-014-gacha::before,
+.lobby-014-gacha::after {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  height: 6px;
+  content: "";
+  border: 1px solid #594c2f;
+  background: repeating-linear-gradient(90deg, #111714 0 9px, #d3a437 9px 12px);
+}
+.lobby-014-gacha::before { top: 3px; }
+.lobby-014-gacha::after { bottom: 3px; }
+.lobby-014-gacha-icon {
+  flex-basis: auto;
+  width: 23px;
+  height: 23px;
+  align-self: center;
+  font-size: 20px;
+}
+.lobby-014-gacha-copy { justify-items: center; gap: 2px; }
+.lobby-014-gacha-copy strong { font-size: 11px; letter-spacing: .07em; }
+.lobby-014-gacha-copy small { font-size: 7px; line-height: 1.1; }
+.lobby-014-gacha-pulse { inset: 8px 2px; }
+.lobby-014-gacha-status {
+  position: absolute;
+  left: -33%;
+  top: 81%;
+  width: 33%;
+  margin: 0;
+  padding: 2px;
+  background: #08100ef0;
+  font-size: 8px;
+}
+.operations-menu .lobby-014-gacha {
+  width: 33%;
+  min-width: 0;
+  max-width: 124px;
+  height: 30%;
+  min-height: 0;
+  margin: 0;
+}
+.lobby-014-nav {
+  position: absolute;
+  inset: 38% 0 12%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(64px, 1fr) minmax(30px, .46fr);
+  gap: 5px;
+  align-content: stretch;
+}
+.operations-menu .lobby-014-nav button {
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-height: 0;
+  padding: 4px;
+  border: 1px solid #8cb4a2;
+  background: linear-gradient(145deg, #0b251ffe, #05130ffe);
+  box-shadow: inset 0 0 0 2px #070e0d, 0 4px 12px #000b;
+  font-size: clamp(11px, 1.5vw, 15px);
+  letter-spacing: .07em;
+  text-align: center;
+}
+.lobby-014-nav button span { width: auto; color: #f2eedb; font-size: clamp(21px, 3vw, 30px); line-height: .9; }
+.operations-menu .lobby-014-nav button:nth-child(n+3) {
+  flex-direction: row;
+  gap: 4px;
+  border-color: #516b5d;
+  background: #071510f5;
+  font-size: 9px;
+  letter-spacing: .04em;
+}
+.lobby-014-nav button:nth-child(n+3) span { font-size: 14px; }
+@keyframes lobby-014-floor-drift {
+  from { background-position: center, 0 0, 0 0; }
+  to { background-position: center, 22px 0, 0 28px; }
+}
+@media (max-height: 420px) {
+  .operations-menu.lobby-014-horizontal .operations-heading { min-height: 40px; }
+  .operations-menu.lobby-014-horizontal .operations-brand { min-height: 40px; }
+  .operations-menu.lobby-014-horizontal .operations-brand:before { width: 34px; height: 34px; }
+  .operations-menu.lobby-014-horizontal .operations-brand h1 { font-size: clamp(19px, 2.7vw, 24px); }
+  .lobby-014-actions { inset: 15% 2% 4% 63%; }
+  .operations-menu .lobby-014-nav button { font-size: 10px; }
+  .operations-menu .lobby-014-nav button:nth-child(n+3) { min-height: 26px; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lobby-014-world-mid,
+  .lobby-014-world-floor { animation: none !important; }
+}
+
+/* Demo notice wraps on narrow screens so the game title stays legible. */
+@media (max-width: 720px) and (orientation: portrait) {
+  .operations-heading .operations-stamp {
+    flex: 0 0 95px;
+    max-width: 95px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+  }
+}

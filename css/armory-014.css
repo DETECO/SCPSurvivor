@@ -1,0 +1,596 @@
+/* Keep the operations viewport stretched around the mounted armory page. */
+.operations-armory-slot { width: 100%; height: 100%; min-height: 0; flex: 1 1 auto; }
+#technical-ready:has(.operations-screen[data-screen="weapons"]:not([hidden]) #armory-014) {
+  padding: 0;
+  place-items: stretch;
+}
+#technical-ready:has(.operations-screen[data-screen="weapons"]:not([hidden]) #armory-014) .operations-host {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+#technical-ready:has(.operations-screen[data-screen="weapons"]:not([hidden]) #armory-014) .operations-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+#technical-ready:has(.operations-screen[data-screen="weapons"]:not([hidden]) #armory-014) .operations-heading { display: none; }
+#technical-ready:has(.operations-screen[data-screen="weapons"]:not([hidden]) #armory-014) .operations-screen[data-screen="weapons"] {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+body:has(.operations-screen[data-screen="weapons"]:not([hidden]) #armory-014) #gacha-trial-open { display: none; }
+
+/* technical.css positions page-level header/main globally; restore armory grid items. */
+#armory-014 > .armory014-head,
+#armory-014 > .armory014-body {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  width: auto;
+  height: auto;
+  pointer-events: auto;
+}
+
+/* MEN-007 r1: control room, floating approved sprite, framed data, weapon rail. */
+#armory-014,
+#armory-014 * {
+  box-sizing: border-box;
+}
+
+#armory-014 {
+  --armory-ink: #f6f2e5;
+  --armory-gold: #f8bd2e;
+  --armory-gold-hot: #ffd74a;
+  --armory-teal: #197365;
+  --armory-panel: rgba(1, 19, 16, .94);
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(5px, 1vh, 12px);
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: clamp(8px, 1.4vw, 20px);
+  color: var(--armory-ink);
+  background:
+    linear-gradient(180deg, rgba(1, 8, 7, .38) 0%, rgba(1, 10, 8, .46) 46%, rgba(1, 8, 7, .72) 100%),
+    url('../assets/brand/sala-preparacion-v1.png') center center / cover no-repeat,
+    #07100e;
+  font-family: Arial, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+
+#armory-014::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(ellipse at 28% 57%, rgba(253, 170, 25, .13), transparent 42%);
+  content: '';
+  pointer-events: none;
+}
+
+.armory014-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: clamp(46px, 7.5vh, 78px);
+  padding: 0 clamp(4px, 1vw, 18px);
+  background: linear-gradient(90deg, rgba(1, 10, 8, .82), rgba(1, 10, 8, .35), transparent);
+}
+
+.armory014-brand {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.4vw, 18px);
+  min-width: 0;
+}
+
+.armory014-logo {
+  display: block;
+  width: clamp(42px, 5.2vw, 72px);
+  height: clamp(42px, 5.2vw, 72px);
+  flex: 0 0 auto;
+  object-fit: cover;
+  border: 2px solid rgba(251, 190, 48, .8);
+  border-radius: 13px;
+  box-shadow: 0 0 14px rgba(246, 177, 30, .34);
+}
+
+.armory014-brand-copy h2 {
+  margin: 0;
+  color: #f8f5e9;
+  font: 900 clamp(21px, 3.2vw, 45px)/.92 'Pixelify', Impact, 'Arial Narrow', sans-serif;
+  letter-spacing: .045em;
+  text-shadow: 0 2px 0 #12130c, 0 0 12px rgba(0, 0, 0, .75);
+}
+
+.armory014-brand-copy > span {
+  display: block;
+  margin-top: 5px;
+  color: var(--armory-gold-hot);
+  font: 700 clamp(9px, 1.25vw, 16px)/1 'Pixelify', 'Arial Narrow', sans-serif;
+  letter-spacing: .24em;
+  text-shadow: 0 2px 0 #171208;
+}
+
+.armory014-location {
+  padding: 6px 10px;
+  border: 1px solid rgba(248, 189, 46, .58);
+  background: rgba(1, 13, 10, .68);
+  color: #e7d6a0;
+  font: 700 clamp(9px, 1vw, 12px)/1.2 'Pixelify', monospace;
+  letter-spacing: .09em;
+  white-space: nowrap;
+}
+
+.armory014-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(330px, .92fr);
+  gap: clamp(8px, 1.2vw, 18px);
+  min-width: 0;
+  min-height: 0;
+}
+
+.armory014-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.armory014-light {
+  position: absolute;
+  inset: 12% 8% 8%;
+  background: radial-gradient(ellipse at 50% 62%, rgba(255, 184, 34, .36), rgba(255, 173, 14, .11) 33%, transparent 69%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.armory014-platform {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  width: min(77%, 600px);
+  height: clamp(20px, 6vh, 58px);
+  transform: translateX(-50%) perspective(240px) rotateX(52deg);
+  border: 3px solid rgba(255, 190, 37, .88);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 200, 42, .24), rgba(3, 13, 10, .78) 63%);
+  box-shadow: 0 0 12px rgba(255, 185, 29, .78), inset 0 0 12px rgba(255, 176, 22, .38);
+  pointer-events: none;
+}
+
+.armory014-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: clamp(180px, 32vw, 390px);
+  height: clamp(135px, 38vh, 340px);
+  max-width: 72%;
+  max-height: 78%;
+  margin-top: -6%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 16px 14px rgba(0, 0, 0, .72)) drop-shadow(0 0 18px rgba(255, 190, 40, .34));
+  animation: armory014-float 3.4s ease-in-out infinite;
+}
+
+.armory014-detail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  padding: clamp(12px, 1.5vw, 24px);
+  border: 2px solid rgba(173, 139, 59, .92);
+  background:
+    linear-gradient(135deg, rgba(3, 24, 20, .97), rgba(0, 12, 10, .94)),
+    var(--armory-panel);
+  box-shadow: inset 0 0 0 3px rgba(20, 47, 37, .88), 0 10px 22px rgba(0, 0, 0, .34);
+}
+
+.armory014-detail::before,
+.armory014-detail::after {
+  position: absolute;
+  width: 34px;
+  height: 20px;
+  border-color: var(--armory-gold);
+  border-style: solid;
+  content: '';
+  pointer-events: none;
+}
+
+.armory014-detail::before {
+  top: 5px;
+  left: 5px;
+  border-width: 2px 0 0 2px;
+}
+
+.armory014-detail::after {
+  right: 5px;
+  bottom: 5px;
+  border-width: 0 2px 2px 0;
+}
+
+.armory014-detail-head {
+  padding: 2px 4px 8px;
+  border-bottom: 1px solid rgba(36, 121, 99, .9);
+}
+
+.armory014-eyebrow {
+  margin: 0 0 5px;
+  color: #55b197;
+  font: 700 clamp(10px, 1.1vw, 14px)/1 'Pixelify', monospace;
+  letter-spacing: .13em;
+}
+
+.armory014-detail h3 {
+  margin: 0;
+  color: #f7f3e8;
+  font: 800 clamp(17px, 2.25vw, 30px)/1.12 'Pixelify', Impact, 'Arial Narrow', sans-serif;
+  letter-spacing: .025em;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, .8);
+}
+
+.armory014-status {
+  min-height: 1.4em;
+  margin: clamp(7px, 1vh, 12px) 4px;
+  color: #71c9af;
+  font-size: clamp(11px, 1vw, 14px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.armory014-status[data-state='pendiente'],
+.armory014-status[data-state='mode-unavailable'],
+.armory014-status[data-state='fusion-unavailable'] {
+  color: #f3c548;
+}
+
+.armory014-status[data-state='implemented-unavailable'] {
+  color: #c2c7bc;
+}
+
+.armory014-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(5px, .7vw, 10px);
+  min-height: 0;
+  margin: 0;
+}
+
+.armory014-metric {
+  display: grid;
+  grid-template-columns: clamp(26px, 3vw, 42px) minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  align-content: center;
+  min-width: 0;
+  min-height: clamp(44px, 7vh, 74px);
+  padding: clamp(5px, .8vw, 10px);
+  border: 1px solid rgba(31, 119, 99, .94);
+  border-radius: 5px;
+  background: linear-gradient(135deg, rgba(2, 30, 24, .84), rgba(1, 15, 12, .85));
+  box-shadow: inset 0 0 0 1px rgba(2, 7, 6, .65);
+}
+
+.armory014-metric-icon {
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: #f0f1e9;
+  font: 700 clamp(18px, 2vw, 27px)/1 Arial, sans-serif;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 255, 255, .27);
+}
+
+.armory014-metric dt {
+  overflow: hidden;
+  color: #f2eee2;
+  font: 700 clamp(9px, .9vw, 12px)/1.15 'Pixelify', 'Arial Narrow', sans-serif;
+  letter-spacing: .04em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.armory014-metric dd {
+  margin: 2px 0 0;
+  color: #fff8dd;
+  font: 800 clamp(16px, 2vw, 26px)/1 'Pixelify', 'Arial Narrow', sans-serif;
+}
+
+.armory014-metric-note {
+  grid-column: 2;
+  margin-top: 3px;
+  color: #b8d5c9;
+  font-size: clamp(9px, .9vw, 12px);
+  line-height: 1.05;
+}
+
+.armory014-no-profile {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  min-height: clamp(78px, 14vh, 150px);
+  padding: clamp(12px, 2vw, 24px);
+  border: 1px solid rgba(31, 119, 99, .94);
+  background: rgba(0, 14, 11, .65);
+  color: #d6dfd5;
+  font-size: clamp(12px, 1.2vw, 16px);
+  line-height: 1.45;
+}
+
+.armory014-controls {
+  display: grid;
+  grid-template-columns: minmax(112px, .44fr) 42px minmax(0, 3.2fr) 42px minmax(132px, .58fr);
+  grid-template-areas: 'back prev cards next equip';
+  align-items: stretch;
+  gap: clamp(4px, .6vw, 9px);
+  min-width: 0;
+  min-height: clamp(68px, 11vh, 112px);
+}
+
+#armory-014 button {
+  margin: 0;
+  color: var(--armory-ink);
+  font-family: 'Pixelify', 'Arial Narrow', sans-serif;
+  font-size: clamp(12px, 1.1vw, 17px);
+  font-weight: 700;
+  line-height: 1.1;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+#armory-014 button:focus-visible {
+  outline: 3px solid #fff0ac;
+  outline-offset: 2px;
+}
+
+.armory014-back,
+.armory014-page,
+.armory014-card {
+  border: 1px solid #28725f;
+  background: linear-gradient(155deg, rgba(4, 38, 30, .96), rgba(1, 19, 15, .97));
+  box-shadow: inset 0 0 0 1px rgba(2, 7, 6, .75), 0 4px 8px rgba(0, 0, 0, .32);
+}
+
+#armory-014 .armory014-back {
+  grid-area: back;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 2px solid #28725f;
+  font-size: clamp(12px, 1.25vw, 18px);
+  text-transform: uppercase;
+}
+
+.armory014-back > span:first-child {
+  font: 700 30px/.7 Arial, sans-serif;
+}
+
+.armory014-page {
+  min-width: 0;
+  border-radius: 4px;
+  font: 700 36px/.8 Arial, sans-serif !important;
+}
+
+.armory014-controls [data-armory-prev] { grid-area: prev; }
+.armory014-controls [data-armory-next] { grid-area: next; }
+
+.armory014-page:disabled {
+  opacity: .42;
+  cursor: default !important;
+}
+
+.armory014-cards {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(4px, .6vw, 9px);
+  min-width: 0;
+  min-height: 0;
+}
+
+#armory-014 .armory014-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  justify-items: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  padding: 3px clamp(2px, .5vw, 8px);
+  border-radius: 4px;
+  text-align: center;
+}
+
+#armory-014 .armory014-card[aria-pressed='true'] {
+  border: 2px solid var(--armory-gold-hot);
+  background: linear-gradient(150deg, rgba(78, 59, 5, .94), rgba(20, 27, 12, .96));
+  box-shadow: 0 0 11px rgba(248, 189, 46, .3), inset 0 0 12px rgba(248, 189, 46, .12);
+}
+
+.armory014-card img {
+  display: block;
+  width: min(76%, 80px);
+  height: min(58%, 58px);
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .8));
+}
+
+.armory014-card-code {
+  overflow: hidden;
+  max-width: 100%;
+  color: #f6f1e3;
+  font: 700 clamp(11px, 1.3vw, 16px)/1 'Pixelify', monospace;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.armory014-card-tag {
+  min-height: 1.15em;
+  margin-top: 2px;
+  color: #f6c944;
+  font: 700 clamp(8px, .8vw, 10px)/1 'Pixelify', monospace;
+  letter-spacing: .05em;
+}
+
+.armory014-card[aria-pressed='true']::after {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  width: 19px;
+  height: 19px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--armory-gold-hot);
+  color: #11150b;
+  content: '✓';
+  font: 800 13px/1 Arial, sans-serif;
+}
+
+#armory-014 .armory014-equip {
+  grid-area: equip;
+  min-width: 0;
+  padding: 8px;
+  border: 2px solid #ffe16a;
+  background: linear-gradient(180deg, #ffd047, #e7a909);
+  color: #17170d;
+  font-size: clamp(15px, 1.6vw, 22px);
+  text-transform: uppercase;
+  text-shadow: 0 1px rgba(255, 255, 255, .34);
+  box-shadow: inset 0 0 0 2px rgba(143, 91, 3, .3), 0 5px 12px rgba(0, 0, 0, .38);
+}
+
+#armory-014 .armory014-equip:disabled {
+  border-color: #7e8076;
+  background: linear-gradient(180deg, #72786f, #434b42);
+  color: #e5e4d9;
+  cursor: not-allowed;
+  text-shadow: none;
+}
+
+@keyframes armory014-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@media (min-width: 1100px) and (orientation: landscape) {
+  .armory014-cards { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .armory014-image { width: min(36vw, 450px); height: min(44vh, 430px); }
+  .armory014-metric { min-height: clamp(58px, 8vh, 84px); }
+}
+
+@media (orientation: portrait) {
+  #armory-014 {
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 5px;
+    padding: 8px;
+    background-position: center, 29% center, center;
+  }
+
+  .armory014-head {
+    min-height: clamp(48px, 7vh, 62px);
+    justify-content: center;
+    padding: 0 2px;
+  }
+
+  .armory014-logo {
+    width: clamp(42px, 12vw, 54px);
+    height: clamp(42px, 12vw, 54px);
+  }
+
+  .armory014-brand-copy h2 { font-size: clamp(22px, 7.2vw, 30px); }
+  .armory014-brand-copy > span { font-size: clamp(9px, 2.8vw, 12px); }
+  .armory014-location { display: none; }
+
+  .armory014-body {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1.02fr) minmax(0, .98fr);
+    gap: 6px;
+  }
+
+  .armory014-stage { min-height: 0; }
+  .armory014-image { width: min(62vw, 250px); height: min(27vh, 230px); }
+  .armory014-platform { bottom: 7%; width: min(78%, 360px); height: 30px; }
+  .armory014-light { inset: 8% 6% 0; }
+
+  .armory014-detail { padding: 9px; }
+  .armory014-detail-head { padding: 1px 3px 6px; }
+  .armory014-eyebrow { margin-bottom: 3px; font-size: 10px; }
+  .armory014-detail h3 { font-size: clamp(15px, 4.7vw, 19px); }
+  .armory014-status { margin: 5px 3px; font-size: 11px; }
+  .armory014-metrics { gap: 5px; }
+  .armory014-metric { min-height: clamp(42px, 6.3vh, 55px); padding: 4px 5px; }
+  .armory014-metric-icon { font-size: 19px; }
+  .armory014-metric dt { font-size: 9px; }
+  .armory014-metric dd { font-size: clamp(15px, 4.5vw, 20px); }
+  .armory014-metric-note { font-size: 9px; }
+  .armory014-no-profile { min-height: 82px; }
+
+  .armory014-controls {
+    grid-template-columns: 35px minmax(0, 1fr) 35px;
+    grid-template-rows: minmax(58px, 1fr) 42px 42px;
+    grid-template-areas:
+      'prev cards next'
+      'equip equip equip'
+      'back back back';
+    gap: 5px;
+    min-height: 152px;
+  }
+
+  .armory014-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+  .armory014-card img { width: 68%; height: 42px; }
+  .armory014-card-code { font-size: clamp(10px, 3vw, 12px); }
+  .armory014-card-tag { font-size: 8px; }
+  #armory-014 .armory014-page { font-size: 31px !important; }
+  #armory-014 .armory014-equip, #armory-014 .armory014-back { min-height: 40px; }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  #armory-014 { gap: 4px; padding: 7px 10px; }
+  .armory014-head { min-height: 38px; }
+  .armory014-logo { width: 38px; height: 38px; }
+  .armory014-brand-copy h2 { font-size: clamp(19px, 3vh, 26px); }
+  .armory014-brand-copy > span { margin-top: 2px; font-size: 9px; }
+  .armory014-body { grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr); gap: 6px; }
+  .armory014-image { width: min(25vw, 230px); height: 25vh; }
+  .armory014-platform { bottom: 8%; height: 18px; }
+  .armory014-detail { padding: 7px 9px; }
+  .armory014-detail-head { padding-bottom: 4px; }
+  .armory014-eyebrow { margin-bottom: 2px; font-size: 9px; }
+  .armory014-detail h3 { font-size: clamp(14px, 2.7vh, 20px); }
+  .armory014-status { margin: 3px; font-size: 10px; }
+  .armory014-metric { min-height: 38px; padding: 3px 5px; }
+  .armory014-metric-icon { font-size: 17px; }
+  .armory014-metric dt { font-size: 9px; }
+  .armory014-metric dd { font-size: 16px; }
+  .armory014-controls { min-height: 62px; }
+  .armory014-card img { height: 36px; }
+  .armory014-card-tag { font-size: 7px; }
+  #armory-014 .armory014-back, #armory-014 .armory014-equip { padding: 4px; font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .armory014-image { animation: none; }
+}

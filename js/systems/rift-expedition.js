@@ -4,10 +4,10 @@ G.RiftExpedition=(()=>{
  const practice=enabled()&&q.get('ensayo')==='grietas';
  const forcedTier=practice&&/^D[1-5]$/.test(q.get('grado')||'')?q.get('grado'):null;
  let practiceChoice=null;
- let director=null,rng=Math.random,portal=null,room=null,origin=null,map=null,mapNumber=1,serial=0,notice='',noticeTime=0,failures=[];
+ let director=null,rng=Math.random,darknessRng=Math.random,portal=null,room=null,origin=null,map=null,mapNumber=1,serial=0,notice='',noticeTime=0,failures=[];
  const services=['World','Path','EnemyMgr','Projectiles','Pickups','Combat','FX','Spawner','RiftPowers'];
  function seeded(seed){let n=seed>>>0;return()=>((n=(Math.imul(n,1664525)+1013904223)>>>0)/4294967296);}
- function startRun(seed){if(practice)practiceChoice=G.RiftPractice.next();clear();failures=[];rng=practice?seeded(seed^0x5fac194b):Math.random;director=G.RiftDirector.create({rng});G.RiftPowers.startRun();G.RiftCompanion.startRun();serial=0;}
+ function startRun(seed){if(practice)practiceChoice=G.RiftPractice.next();clear();failures=[];rng=practice?seeded(seed^0x5fac194b):Math.random;darknessRng=seeded(seed^0x2936ab17);director=G.RiftDirector.create({rng});G.RiftPowers.startRun();G.RiftCompanion.startRun();serial=0;}
  function announce(text){notice=text;noticeTime=6;G.Audio?.sfx('riftOpen');}
  function locate(player){
   const terminal=G.WeaponTerminal?.state?.point,chests=G.ExplorationChests?.state?.chests||[];
@@ -44,7 +44,9 @@ G.RiftExpedition=(()=>{
   G.Camera.setRoomBounds(geometry.bounds);
   G.Path.update(1,[player]);
   const id=`${portal.id}:encounter:${++serial}`,session=G.RiftSession.create(id),boss=G.EnemyMgr.add(G.RiftAnomalies.create({tier:portal.tier,geometry,mapNumber}));
-  room={id,geometry,session,boss,style:portal.style,reward:null,warningShown:false,escapeShown:false,outcome:null,loadingWait:0,loadNoticeShown:false};G.RiftAnomalies.retryFailed(boss.bioId);
+  const forced=practice&&['si','no'].includes(q.get('oscuridad'))?q.get('oscuridad')==='si':null;
+  const darkness=G.SceneDarkness?.enabled?.()? (forced??G.SceneDarkness.rollRift(darknessRng)):false;
+  room={id,geometry,session,boss,darkness,style:portal.style,reward:null,warningShown:false,escapeShown:false,outcome:null,loadingWait:0,loadNoticeShown:false};G.RiftAnomalies.retryFailed(boss.bioId);
   const npcRng=practice&&['si','no'].includes(q.get('apoyo'))?(()=>{let first=true;return()=>{if(first){first=false;return q.get('apoyo')==='si'?0:.99;}return rng();};})():rng;
   G.RiftCompanion.enterRoom({tier:portal.tier,rng:npcRng,geometry,player,appearance:practice?q.get('companera'):undefined});G.Audio?.sfx('rift');return true;
  }
@@ -125,12 +127,13 @@ G.RiftExpedition=(()=>{
   const s=room.session.state,items=[...G.RiftRooms.drawables(room.geometry,G.Game.player),...G.RiftCompanion.drawables()];if(s.status==='victory'||['warning','open'].includes(s.escape))items.push({y:room.geometry.escape.y+35,draw:ctx=>drawPortal(ctx,exitPortal(),s.time,room.style,'body')});return items;
  }
  function drawOverlay(ctx){if(!room){G.RiftCompanion.drawBubble(ctx,{priority:(G.MapTrial?.alertTime||0)>0});return;}const s=room.session.state;G.RiftRooms.drawAtmosphere(ctx,room.geometry,s.time,G.Settings.get('calm'));G.RiftCompanion.drawBubble(ctx,{priority:['warning','open'].includes(s.escape)||['windup','attack'].includes(room.boss.phase)});}
+ function drawTelegraph(ctx){if(room&&room.darkness)room.boss.drawGround(ctx);}
  function drawScreen(ctx,w,h){
   if(!room||room.session.state.status!=='entering')return;
   const s=room.session.state;ctx.save();ctx.fillStyle='rgba(5,5,11,.87)';ctx.fillRect(0,0,w,h);ctx.translate(w/2,h/2);ctx.scale(2.2,2.2);
   drawPortal(ctx,{x:0,y:0,status:'active',label:'CRUCE DIMENSIONAL'},.5-s.transition,room.style,'all');ctx.restore();
  }
  function clear(){if(room){G.EnemyMgr.clear();G.Projectiles.clear();G.Pickups.clear();G.Combat.clearFields();G.FX.clear();G.Path.clear();}G.Camera.setRoomBounds(null);room=null;origin=null;portal=null;map=null;notice='';noticeTime=0;G.RiftCompanion?.clear();G.RiftPowers?.clear();}
- function state(){return{enabled:enabled(),practice,portal:portal?{...portal}:null,director:director?.getState(),notice:noticeTime>0?notice:'',technicalFailures:failures.map(f=>({...f})),active:!!room,...(room?{...room.session.state,loadingWait:room.loadingWait,tier:room.boss.profile.tier,anomalyId:room.boss.bioId,name:room.boss.name,roomName:room.geometry.name,bossHp:Math.max(0,room.boss.hp),bossMaxHp:room.boss.maxHp,exit:{...room.geometry.escape},reward:G.RiftPowers.state.pending,originFrozen:true}: {})};}
- return{startRun,startMap,updateOrigin,checkContact,updateRoom,drawGround,drawables,drawOverlay,drawScreen,chooseReward,rejectReward,leave,clear,practice,get state(){return state();}};
+ function state(){return{enabled:enabled(),practice,portal:portal?{...portal}:null,director:director?.getState(),notice:noticeTime>0?notice:'',technicalFailures:failures.map(f=>({...f})),active:!!room,...(room?{...room.session.state,darkness:room.darkness,loadingWait:room.loadingWait,tier:room.boss.profile.tier,anomalyId:room.boss.bioId,name:room.boss.name,roomName:room.geometry.name,bossHp:Math.max(0,room.boss.hp),bossMaxHp:room.boss.maxHp,exit:{...room.geometry.escape},reward:G.RiftPowers.state.pending,originFrozen:true}: {})};}
+ return{startRun,startMap,updateOrigin,checkContact,updateRoom,drawGround,drawables,drawOverlay,drawTelegraph,drawScreen,chooseReward,rejectReward,leave,clear,practice,get state(){return state();}};
 })();

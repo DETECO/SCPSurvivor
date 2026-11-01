@@ -17,10 +17,12 @@
       G.Content.install(); G.TrialVisuals.install();
       if(G.MapTrial?.expanded||G.MapTrial?.rewardRiftPractice)await G.SceneR7.preload();
       if(G.SceneM01P1.active())await G.SceneM01P1.preload();
+      if(G.SceneP1Full.active())await G.SceneP1Full.preload();
       await G.AF01ApprovedArt.preload();
       G.ApprovedFieldWeaponArt.preload();G.RiftPowerArt.preload();
-      G.Game.init({ technical: true }); G.TechnicalUI.init(); G.InventoryTrial.init(); G.AccountUI.init(); G.TrialVisuals.initUI(); G.OperationsMenu.init();
+      G.Game.init({ technical: true }); G.TechnicalUI.init(); G.InventoryTrial.init(); G.AccountUI.init(); G.TrialVisuals.initUI(); G.OperationsMenu.init(); G.GachaTrialUI?.init(); G.Lobby014?.init(); G.OperationsMenu.render();
       if(G.SceneM01P1.active()){document.title='SCP Survivor · Extracto piloto M01';document.getElementById('btn-technical-start').textContent='Probar extracto M01 P1';}
+      if(G.SceneP1Full.active()){document.title='SCP Survivor · Prueba cuatro mapas P1';document.getElementById('btn-technical-start').textContent='Probar cuatro mapas P1';}
     } catch (e) { G.TechnicalUI.fail(e); }
   }
   if (document.readyState === 'loading') addEventListener('DOMContentLoaded', boot);

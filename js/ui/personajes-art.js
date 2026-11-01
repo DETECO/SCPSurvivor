@@ -47,7 +47,7 @@ G.PersonajesArt=(()=>{
   bone(ctx,img,a.cat.parts[48],shoulder,e,Math.max(2,Math.round(a.n*(a.cat.rig?.armWidth??.1))));bone(ctx,img,a.cat.parts[49],e,hand,Math.max(2,Math.round(a.n*(a.cat.rig?.armWidth??.08))));
  }
  function aimFor(pl,w){const t=w._aimTarget;return t&&!t.dead&&t.hp>0&&Number.isFinite(t.x)&&Number.isFinite(t.y)?Math.atan2(t.y-pl.y,t.x-pl.x):Number.isFinite(pl.weaponAim)?pl.weaponAim:Number.isFinite(pl.aim)?pl.aim:0;}
- function armed(ctx,a,p,img,w,angle,index,count){
+ function armed(ctx,a,p,img,w,angle,index,count,onLamp){
   const n=a.n,wa=angle+(w.model==='baton'&&w.flash>0?-.7+(1-Math.min(1,w.flash/.12))*1.4:0),ca=Math.cos(wa),sa=Math.sin(wa),side=count===2?(index===0?1:-1):0;
   const native=w.model!=='pistol',recoil=native&&w.model!=='baton'?n*.035*Math.min(1,(w.flash||0)/.09):0,lower=native&&w.reload>0?n*.025:0;
   const pivot={x:p.origin.x+ca*(n*.18-recoil)-sa*side*n*.09,y:p.origin.y+sa*(n*.18-recoil)+ca*side*n*.09+lower};
@@ -65,12 +65,15 @@ G.PersonajesArt=(()=>{
    ctx.restore();
   }
   paintHand(hands[0]);
+  if(index===0&&onLamp&&G.SceneDarkness?.enabled?.()&&G.SceneDarkness.on()){
+   const target=approved?.muzzle||approved?.tip||hand(n*.3,0),k=G.SceneDarkness.progress(),lamp={x:target.x-ca*n*.3*(1-k),y:target.y-sa*n*.3*(1-k)};ctx.save();ctx.globalAlpha*=k;ctx.translate(lamp.x,lamp.y);ctx.rotate(wa);ctx.fillStyle='#263039';ctx.fillRect(-n*.13,n*.03,n*.16,n*.1);ctx.fillStyle='#fff2b6';ctx.fillRect(n*.01,n*.045,Math.max(1,n*.035),Math.max(1,n*.06));ctx.restore();onLamp(lamp,wa);
+  }
  }
  function drawWeapons(ctx,pl,options={},weapons=[]){
   if(!enabled()||!pl||pl.dead)return false;const a=asset(G.SPRITE_META[pl.anim?.dex]?.characterId);if(!a?.ready)return false;
   const copies=weapons.slice(0,2).filter(w=>models.has(w?.model)),p=pose(a,pl,pl.anim),alpha=pl.invuln>0&&Math.floor(pl.invuln*18)%2?.45:1;
   for(let i=0;i<copies.length;i++){const angle=aimFor(pl,copies[i]);if(Object.prototype.hasOwnProperty.call(options,'behind')&&(Math.sin(angle)<0)!==!!options.behind)continue;
-   at(ctx,a,pl.anim,pl.x,pl.y,{alpha,flash:pl.flash>0,softFlash:true},img=>armed(ctx,a,p,img,copies[i],angle,i,copies.length));
+   at(ctx,a,pl.anim,pl.x,pl.y,{alpha,flash:pl.flash>0,softFlash:true},img=>armed(ctx,a,p,img,copies[i],angle,i,copies.length,(lamp,aim)=>{const s=56/a.n*(pl.anim.scale??1);pl._sceneFlashlight={x:pl.x+(lamp.x-a.n/2)*s,y:pl.y+(lamp.y-(a.n-1))*s,aim};}));
   }return true;
  }
  function drawAlly(ctx,ally){

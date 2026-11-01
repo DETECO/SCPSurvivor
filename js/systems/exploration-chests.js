@@ -16,11 +16,14 @@ G.ExplorationChests = (() => {
   function roll(){const n=rng();return Number.isFinite(n)?Math.max(0,Math.min(1-Number.EPSILON,n)):1-Number.EPSILON;}
   function startRun(){
     ticketTotal=0;chests=[];eventChests=[];candidates=[];attempts=0;cursor=0;practice=false;notice='';
+    G.GachaTrial?.beginRun();
   }
   function spawn(point,isPractice=false){
     if(!point||chests.length>=cap)return;
+    const tickets=1+Math.floor(roll()*maxTickets);
+    const denominations=G.GachaTrial?.enabled?Array.from({length:tickets},()=>roll()<.05?'gold':'gray'):null;
     chests.push({id:point.id,x:point.x,y:point.y,opened:false,discovered:false,progress:0,
-      tickets:1+Math.floor(roll()*maxTickets),practice:isPractice});
+      tickets,denominations,practice:isPractice});
     notice=isPractice?'Cofre de práctica · tickets ficticios · acércate para descubrirlo.':
       'Ha aparecido un cofre de exploración · busca en el sector.';
   }
@@ -80,14 +83,21 @@ G.ExplorationChests = (() => {
       const near=chest.discovered&&Math.hypot(player.x-chest.x,player.y-chest.y)<=RADIUS&&clearLine(player,chest);
       chest.progress=Math.max(0,Math.min(OPEN_TIME,chest.progress+(near?dt:-1.5*dt)));
       if(chest.progress>=OPEN_TIME-1e-9){
-        chest.progress=OPEN_TIME;chest.opened=true;
+        chest.progress=OPEN_TIME;
+        if(!chest.rewardId&&chest.denominations&&G.GachaTrial?.enabled){
+          const gray=chest.denominations.filter(x=>x==='gray').length,gold=chest.denominations.length-gray;
+          const receipt=G.GachaTrial.credit(`${G.GachaTrial.state.run}:${chest.id}`,{gray,gold});
+          if(!receipt.ok){notice='No se pudo acreditar el cofre de prueba.';continue;}
+        }
+        chest.opened=true;
         if(chest.rewardId){
           const service=G.MapTrial?.infinite?G.ArmamentRewards:G.EventRewards;
           const result=service?.claim(chest.rewardId,player);
           notice=result?.description||'Premio no aplicado · estado incompatible.';
         }else{
           ticketTotal+=chest.tickets;
-          notice=`${chest.practice?'Práctica · ':''}Cofre abierto · +${chest.tickets} tickets ficticios.`;
+          notice=chest.denominations?`Cofre de prueba · +${chest.denominations.filter(x=>x==='gray').length} gris y +${chest.denominations.filter(x=>x==='gold').length} dorado.`:
+            `${chest.practice?'Práctica · ':''}Cofre abierto · +${chest.tickets} tickets ficticios.`;
         }
       }
     }
@@ -108,6 +118,6 @@ G.ExplorationChests = (() => {
       ctx.restore();
     }
   }
-  return{startRun,reset,addReward,tick,draw,get state(){return{chests:allChests().map(c=>({...c})),ticketTotal:ticketTotal+(G.EventRewards?.state.ticketTotal||0),
+  return{startRun,reset,addReward,tick,draw,get state(){return{chests:allChests().map(c=>({...c,...(c.denominations?{denominations:c.denominations.slice()}: {})})),ticketTotal:ticketTotal+(G.EventRewards?.state.ticketTotal||0),
     spawned:chests.length,eventCount:eventChests.length,attempts,cap,chance,practice,notice};}};
 })();

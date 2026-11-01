@@ -79,7 +79,7 @@ G.OperationsMenu = (() => {
   function template() {
     return `<div class="operations-heading">
       <div class="operations-brand"></div>
-      <span class="operations-stamp">VERSIÓN DE PRUEBA</span>
+      <span class="operations-stamp">VERSIÓN DE PRUEBA · MAPAS Y ARTE PROVISIONALES</span>
     </div>
     <div class="operations-screen" data-screen="home">
       <div class="operations-home-layout">
@@ -152,6 +152,26 @@ G.OperationsMenu = (() => {
     loadApprovedWeaponCatalog().then(catalog => {
       if (host.isConnected) host.innerHTML = approvedWeaponCardsMarkup(catalog);
     });
+  }
+
+  // Preserve the previous gallery as a fallback if the new armory cannot mount.
+  function mountArmory() {
+    const screen = root?.querySelector('[data-screen="weapons"]');
+    if (!screen || !G.Armory014?.mount) return false;
+    const previous = Array.from(screen.children);
+    const host = document.createElement('div');
+    host.className = 'operations-armory-slot';
+    screen.append(host);
+    try {
+      const controller = G.Armory014.mount(host, { onBack: () => setScreen('home') });
+      if (!controller) { host.remove(); return false; }
+      previous.forEach(node => { node.hidden = true; });
+      return true;
+    } catch (error) {
+      host.remove();
+      console.warn('[SCP Survivor] No se pudo abrir la armería; se conserva la galería anterior.', error);
+      return false;
+    }
   }
 
   function setScreen(next) {
@@ -280,6 +300,7 @@ G.OperationsMenu = (() => {
     if (graphics) { graphics.hidden = false; root.querySelector('.operations-settings-display').append(graphics); }
     configurePracticeLinks();
     buildApprovedWeaponCards();
+    mountArmory();
 
     root.addEventListener('click', event => {
       const role = event.target.closest('[data-role]');

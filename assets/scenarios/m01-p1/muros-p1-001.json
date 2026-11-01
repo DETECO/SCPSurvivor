@@ -1,0 +1,225 @@
+{
+  "id": "NIV-M01-P1-MUROS-P1-001",
+  "estado": "recurso derivado para pruebas, dimensiones y colisiones por validar",
+  "imagen": {
+    "archivo": "muros-p1-001.png",
+    "anchoPx": 1536,
+    "altoPx": 1024,
+    "modo": "RGBA",
+    "sha256": "bb8dc7f15b2e518dbb4529195028b6bda86a087c6cb1c50777c12cbcdc6a9f1d"
+  },
+  "extraccion": "x,y,ancho,alto; limites derecho e inferior excluidos; margen de 4 px alrededor de alfa >=16 cuando disponible",
+  "piezas": [
+    {
+      "id": "pared_frente",
+      "rectPx": [
+        49,
+        119,
+        390,
+        335
+      ],
+      "anclajePx": [
+        195.0,
+        327
+      ],
+      "dibujoUnidades": [
+        112,
+        96.21
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -47.04,
+            -13.0,
+            94.08,
+            26
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "pared_oblicua",
+      "rectPx": [
+        521,
+        122,
+        294,
+        309
+      ],
+      "anclajePx": [
+        147.0,
+        301
+      ],
+      "dibujoUnidades": [
+        90,
+        94.59
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -37.8,
+            -11.25,
+            75.6,
+            22.5
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "terminacion_doble",
+      "rectPx": [
+        945,
+        154,
+        163,
+        282
+      ],
+      "anclajePx": [
+        81.5,
+        274
+      ],
+      "dibujoUnidades": [
+        32,
+        55.36
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -13.44,
+            -6.0,
+            26.88,
+            12
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "pilar_luz",
+      "rectPx": [
+        1251,
+        83,
+        173,
+        360
+      ],
+      "anclajePx": [
+        86.5,
+        352
+      ],
+      "dibujoUnidades": [
+        28,
+        58.27
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -11.76,
+            -6.0,
+            23.52,
+            12
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "marco_abierto",
+      "rectPx": [
+        47,
+        502,
+        383,
+        410
+      ],
+      "anclajePx": [
+        191.5,
+        402
+      ],
+      "dibujoUnidades": [
+        104,
+        111.33
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "puerta_seguridad",
+      "rectPx": [
+        492,
+        501,
+        366,
+        423
+      ],
+      "anclajePx": [
+        183.0,
+        415
+      ],
+      "dibujoUnidades": [
+        104,
+        120.2
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -43.68,
+            -13.0,
+            87.36,
+            26
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "lampara",
+      "rectPx": [
+        909,
+        630,
+        307,
+        197
+      ],
+      "anclajePx": [
+        153.5,
+        189
+      ],
+      "dibujoUnidades": [
+        70,
+        44.92
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    },
+    {
+      "id": "armario_tecnico",
+      "rectPx": [
+        1280,
+        558,
+        193,
+        334
+      ],
+      "anclajePx": [
+        96.5,
+        326
+      ],
+      "dibujoUnidades": [
+        38,
+        65.76
+      ],
+      "huellaPropuesta": {
+        "cajasXYWH": [
+          [
+            -15.96,
+            -6.0,
+            31.92,
+            12
+          ]
+        ],
+        "validacion": "pendiente de ajuste con sprite y navegacion real"
+      }
+    }
+  ],
+  "nota": "Recurso generado con imagegen a partir de la lamina P1 aprobada; no es aprobacion humana de esta revision."
+}
