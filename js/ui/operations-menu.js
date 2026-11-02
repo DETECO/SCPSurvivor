@@ -117,13 +117,13 @@ G.OperationsMenu = (() => {
           <div class="operations-detail-stage"><canvas class="operations-preview-canvas operations-soldier-preview" data-role="selected" width="180" height="190" aria-label="Vista del soldado elegido"></canvas><p class="operations-selected-name"></p><p class="operations-selected-ability"></p></div>
           <div class="operations-detail-card"><h3>Habilidad</h3><p class="operations-detail-ability"></p></div>
           <div class="operations-detail-card"><span>Vida base</span><strong class="operations-health"></strong></div>
-          <div class="operations-detail-card"><button class="operations-detail-weapon" type="button" data-open-screen="weapons"><span>Arsenal visual aprobado</span><strong class="operations-weapon-name"></strong><small>Ver 9 armas y F24</small></button></div>
+          <div class="operations-detail-card"><button class="operations-detail-weapon" type="button" data-open-screen="weapons"><span>Arsenal visual aprobado</span><strong class="operations-weapon-name"></strong><small>Ver catálogo de armas</small></button></div>
         </div>
       </div>
       <div class="operations-footer-actions"><button type="button" data-open-screen="home">Volver</button><button type="button" class="operations-confirm" data-confirm-soldier>Confirmar Guardia</button></div>
     </section>
     <section class="operations-screen" data-screen="weapons" hidden aria-labelledby="operations-weapons-title">
-      <div class="operations-subhead"><button type="button" class="operations-back" data-open-screen="home" aria-label="Volver al menú">‹</button><div><h2 id="operations-weapons-title">Armas aprobadas</h2><p>Vista previa de los nueve diseños y la fusión F24.</p></div></div>
+      <div class="operations-subhead"><button type="button" class="operations-back" data-open-screen="home" aria-label="Volver al menú">‹</button><div><h2 id="operations-weapons-title">Armas aprobadas</h2><p>Vista previa de diseños y de la fusión F24.</p></div></div>
       <div class="operations-weapon-grid"></div>
       <div class="operations-footer-actions"><button type="button" data-open-screen="home">Volver</button></div>
     </section>
@@ -194,7 +194,9 @@ G.OperationsMenu = (() => {
       ? 'Aumenta tu velocidad durante 2 s.' : 'Recupera vida durante la expedición.';
     root.querySelector('.operations-health').textContent = statText(role).replace(/^Vida base /, '').split(' · ')[0];
     root.querySelector('.operations-confirm').textContent = `Confirmar ${name}`;
-    for (const node of root.querySelectorAll('.operations-weapon-name')) node.textContent = '9 armas + F24';
+    const catalog = G.Armory014?.getCards?.() || [];
+    const summary = catalog.length ? `${catalog.length} diseños · ${catalog.filter(card => card.selectable).length} equipables` : 'Ver catálogo';
+    for (const node of root.querySelectorAll('.operations-weapon-name')) node.textContent = summary;
     for (const button of root.querySelectorAll('.operations-role-card')) button.setAttribute('aria-pressed', String(button.dataset.role === role));
   }
 
@@ -264,8 +266,9 @@ G.OperationsMenu = (() => {
     const mode = graphicsMode();
     const boss = root.querySelector('[data-practice="boss"]');
     const rift = root.querySelector('[data-practice="rift"]');
-    boss.href = `?prueba=combate-v2&rapida=1&graficos=${mode}`;
-    rift.href = `?prueba=combate-v2&ensayo=grietas&graficos=${mode}`;
+    const trialGacha = G.GachaTrial?.enabled === true ? '&gacha=prueba' : '';
+    boss.href = `?prueba=combate-v2&rapida=1&graficos=${mode}${trialGacha}`;
+    rift.href = `?prueba=combate-v2&ensayo=grietas&graficos=${mode}${trialGacha}`;
   }
 
   function init() {

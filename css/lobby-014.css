@@ -736,3 +736,57 @@ body:has(#technical-ready:not([hidden]) .lobby-014:not([hidden])) #gacha-trial-o
     line-height: 1.2;
   }
 }
+
+/* INC-MOVIL-002: the reference is a mockup with controls painted in it. */
+#technical-ready:has(.operations-menu.lobby-014-horizontal) {
+  background: linear-gradient(180deg, #03080758, #03080780),
+    url('../assets/brand/sala-preparacion-v1.png') center / cover no-repeat !important;
+}
+@media (orientation: landscape) {
+  .operations-menu.lobby-014-horizontal .lobby-014-actions {
+    inset: 0 0 0 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    overflow: hidden;
+  }
+  .operations-menu.lobby-014-horizontal .lobby-014-location {
+    left: 2%; top: 0;
+  }
+  .operations-menu.lobby-014-horizontal .lobby-014-start-slot {
+    position: static; inset: auto; height: auto;
+    display: flex; flex-direction: column; gap: 4px;
+    flex: 0 0 auto;
+  }
+  .operations-menu.lobby-014-horizontal #rift-practice-settings {
+    margin: 0; gap: 4px;
+  }
+  .operations-menu.lobby-014-horizontal #rift-practice-settings label {
+    font-size: 9px;
+  }
+  .operations-menu.lobby-014-horizontal #rift-practice-settings select {
+    min-height: 36px; font-size: 10px;
+  }
+  .operations-menu.lobby-014-horizontal .lobby-014-actions .operations-expedition-start {
+    height: auto; min-height: 44px; font-size: clamp(12px, 1.9vw, 18px);
+  }
+  .operations-menu.lobby-014-horizontal .lobby-014-gacha {
+    position: relative; inset: auto; width: 100%; max-width: none;
+    height: auto; min-height: 44px; flex-direction: row;
+  }
+  .operations-menu.lobby-014-horizontal .lobby-014-gacha::before,
+  .operations-menu.lobby-014-horizontal .lobby-014-gacha::after { display: none; }
+  .operations-menu.lobby-014-horizontal .lobby-014-gacha-status {
+    position: static; width: auto; margin: 0;
+  }
+  .operations-menu.lobby-014-horizontal .lobby-014-nav {
+    position: static; inset: auto; flex: 0 1 auto;
+    grid-template-rows: repeat(2, minmax(36px, 1fr));
+  }
+  .operations-menu.lobby-014-horizontal .lobby-014-nav button,
+  .operations-menu.lobby-014-horizontal .lobby-014-nav button:nth-child(n+3) {
+    min-height: 36px; flex-direction: row; font-size: 10px;
+  }
+  .operations-menu.lobby-014-horizontal .lobby-014-nav button span { font-size: 16px; }
+}

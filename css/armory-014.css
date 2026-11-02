@@ -594,3 +594,29 @@ body:has(.operations-screen[data-screen="weapons"]:not([hidden]) #armory-014) #g
 @media (prefers-reduced-motion: reduce) {
   .armory014-image { animation: none; }
 }
+
+/* INC-MOVIL-002: grid items must stay inside their rows on short screens. */
+.armory014-body { align-items: stretch; }
+.armory014-image {
+  width: min(70%, 225px); height: auto; max-height: 95%;
+  aspect-ratio: 1 / 1; object-fit: contain;
+}
+#armory-014 {
+  padding-top: max(8px, env(safe-area-inset-top));
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+}
+@media (orientation: portrait) and (max-height: 700px) {
+  .armory014-body { grid-template-rows: minmax(60px, 1fr) minmax(0, 1.7fr); }
+  .armory014-detail { padding: 5px; }
+  .armory014-detail-head { padding: 1px 2px 3px; }
+  .armory014-eyebrow { margin-bottom: 2px; font-size: 9px; }
+  .armory014-detail h3 { font-size: 15px; }
+  .armory014-status { margin: 2px; font-size: 11px; }
+  .armory014-metrics { gap: 3px; }
+  .armory014-metric { min-height: 38px; padding: 2px 4px; }
+  .armory014-metric dt { font-size: 10px; }
+  .armory014-metric dd { font-size: 16px; }
+  .armory014-metric-note { margin-top: 1px; font-size: 9px; }
+  .armory014-controls { grid-template-rows: minmax(54px, 1fr) 40px 40px; min-height: 142px; }
+  #armory-014 .armory014-equip, #armory-014 .armory014-back { min-height: 40px; }
+}

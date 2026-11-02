@@ -119,3 +119,68 @@ body[data-operations-menu="true"][data-technical-state="ui"]>header{display:none
   .operations-approved-weapon-card p{font-size:7px}
 }
 @media(max-width:720px) and (orientation:landscape){.operations-weapon-grid{grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:5px}.operations-approved-weapon-card{grid-template-columns:26px minmax(0,1fr);gap:4px;padding:4px}.operations-approved-weapon-card img{width:24px;height:24px}.operations-approved-weapon-card h3{font-size:9px}.operations-approved-weapon-card p{font-size:7px}}
+
+/* Keep the trial shortcut in the menu instead of on top of gameplay. */
+.operations-actions:has(#gacha-trial-open) {
+  display: grid; grid-template-columns: 1fr 1fr; align-content: center; gap: 6px;
+}
+.operations-actions:has(#gacha-trial-open) > .operations-start-slot,
+.operations-actions:has(#gacha-trial-open) > .operations-nav { grid-column: 1 / -1; }
+.operations-actions #gacha-trial-open {
+  position: static; min-width: 0; min-height: 44px; margin: 0;
+  padding: 5px; font-size: 11px; transform: none;
+}
+.operations-actions:has(#gacha-trial-open) > .operations-weapon-summary { margin: 0; min-height: 44px; }
+
+@media (orientation: portrait) and (max-height: 620px) {
+  .operations-brand .developer-credit { font-size: 8px; white-space: nowrap; }
+  .operations-brand .eyebrow { font-size: 7px; white-space: nowrap; }
+  .operations-stage { padding: 3px; }
+  .operations-stage > h2 { margin-bottom: 3px; padding-bottom: 3px; font-size: 12px; }
+  .operations-main-actor { grid-template-columns: 40px minmax(0, 1fr); margin-bottom: 3px; }
+  .operations-main-preview { width: 36px; height: 36px; }
+  .operations-role-cards .operations-mini-preview { display: none; }
+  .operations-menu .operations-role-cards .operations-role-card { min-height: 42px; }
+  .operations-actions .operations-weapon-summary { font-size: 10px; line-height: 1.1; }
+  .operations-actions .operations-weapon-summary .operations-weapon-icon { display: none; }
+  .operations-detail-card:has(.operations-detail-weapon) { grid-column: 1 / -1; }
+  .operations-menu .operations-detail-weapon { grid-template-columns: 1fr 1fr; gap: 2px; font-size: 10px; }
+  .operations-detail-weapon small { grid-column: 1 / -1; }
+}
+@media (orientation: landscape) and (max-height: 520px) {
+  .operations-screen[data-screen='soldiers'] .operations-subhead { margin-bottom: 4px; padding-bottom: 4px; }
+  .operations-soldier-layout {
+    flex: 1; min-height: 0; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 8px;
+  }
+  .operations-soldier-detail {
+    min-height: 0; grid-template-columns: 80px repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 5px;
+  }
+  .operations-detail-stage { grid-row: 1 / span 2; min-height: 0; padding: 4px; }
+  .operations-soldier-preview { width: 62px; height: 65px; }
+  .operations-detail-card { min-height: 0; padding: 5px; overflow: hidden; }
+  .operations-detail-card h3 { margin-bottom: 2px; font-size: 11px; }
+  .operations-detail-card p, .operations-detail-card > span { font-size: 10px; }
+  .operations-detail-card strong { font-size: 16px; }
+  .operations-detail-card:has(.operations-detail-weapon) { grid-column: 2 / -1; }
+  .operations-menu .operations-detail-weapon { gap: 2px; font-size: 10px; }
+  .operations-detail-weapon strong { font-size: 12px; }
+  .operations-screen[data-screen='soldiers'] .operations-footer-actions { margin-top: 4px; padding-top: 4px; }
+  .operations-screen[data-screen='soldiers'] .operations-footer-actions button { min-height: 38px; padding: 5px; }
+  .operations-screen:is([data-screen='practices'], [data-screen='settings']) .operations-subhead {
+    margin-bottom: 4px; padding-bottom: 4px;
+  }
+  .operations-screen:is([data-screen='practices'], [data-screen='settings']) .operations-footer-actions {
+    margin-top: 4px; padding-top: 4px;
+  }
+  .operations-screen:is([data-screen='practices'], [data-screen='settings']) .operations-footer-actions button {
+    min-height: 38px; padding: 5px;
+  }
+  .operations-practice-grid { flex: 1; min-height: 0; gap: 8px; }
+  .operations-practice-card { min-height: 0; gap: 4px; padding: 8px; }
+  .operations-practice-card strong { font-size: 15px; }
+  .operations-practice-card small, .operations-practice-go { font-size: 11px; margin-top: 0; }
+  .operations-settings-display { flex: 1; min-height: 0; padding: 8px; }
+  .operations-settings-display label { margin-bottom: 5px; font-size: 13px; }
+  .operations-settings-display small { margin-top: 5px; font-size: 11px; line-height: 1.2; }
+}

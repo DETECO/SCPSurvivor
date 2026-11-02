@@ -10,7 +10,14 @@ G.CornerHUD = (() => {
   function meter(id, label) {
     const group = node('span', id + '-group'), text = node('span', id + '-text');
     const bar = node('progress', id); bar.setAttribute('aria-label', label);
-    group.className = 'corner-meter'; group.append(text, bar); return group;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 44 44'); svg.setAttribute('aria-hidden', 'true'); svg.classList.add('corner-meter-dial');
+    for (const suffix of ['track', 'ring']) {
+      const circle = document.createElementNS(svg.namespaceURI, 'circle');
+      circle.id = id + '-' + suffix; circle.setAttribute('cx', '22'); circle.setAttribute('cy', '22'); circle.setAttribute('r', '18');
+      circle.setAttribute('stroke-dasharray', String(2 * Math.PI * 18)); svg.append(circle);
+    }
+    group.className = 'corner-meter'; group.append(svg, text, bar); return group;
   }
   function init() {
     if (initialized || !G.MapTrial?.enabled || !el('hud-summary')) return;
@@ -44,6 +51,10 @@ G.CornerHUD = (() => {
     hp.max = Math.max(1, player.maxHp); hp.value = Math.max(0, player.hp);
     el('corner-hp-text').textContent = `VIDA ${Math.ceil(player.hp)}/${Math.ceil(player.maxHp)}`;
     xp.max = Math.max(1, player.xpNext); xp.value = Math.max(0, player.xp);
+    for (const [id, progress] of [['corner-hp-ring', hp], ['corner-xp-ring', xp]]) {
+      const fraction = Math.max(0, Math.min(1, progress.value / progress.max));
+      el(id).setAttribute('stroke-dashoffset', String(2 * Math.PI * 18 * (1 - fraction)));
+    }
     el('corner-xp-text').textContent = `NV ${player.level} · XP ${Math.floor(player.xp)}/${player.xpNext}${state.pending ? ' · +' + state.pending : ''}`;
     const a = weapons.currentability || G.FieldAbilities.state(player);
     const name = a.kind === 'heal' ? 'Primeros auxilios' : 'Sprint';

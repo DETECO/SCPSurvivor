@@ -84,6 +84,10 @@ G.Lobby014 = (() => {
     home.append(lobby);
 
     const lobbyStartSlot = lobby.querySelector('#lobby-014-start-slot');
+    const practiceSettings = legacyStartSlot.querySelector('#rift-practice-settings');
+    const gachaShortcut = doc.getElementById('gacha-trial-open');
+    const gachaOriginalParent = gachaShortcut?.parentNode;
+    if (gachaShortcut) home.querySelector('.operations-actions')?.append(gachaShortcut);
     const gachaButton = lobby.querySelector('[data-lobby-gacha]');
     const gachaStatus = lobby.querySelector('[data-lobby-gacha-status]');
     const queryCoarsePointer = () => !!win.matchMedia?.('(pointer: coarse)').matches;
@@ -122,7 +126,9 @@ G.Lobby014 = (() => {
       root.classList.toggle('lobby-014-horizontal', active);
       homeLayout.hidden = active;
       lobby.hidden = !active;
-      (active ? lobbyStartSlot : legacyStartSlot).append(startButton);
+      const startSlot = active ? lobbyStartSlot : legacyStartSlot;
+      if (practiceSettings) startSlot.append(practiceSettings);
+      startSlot.append(startButton);
       if (!active) disableGyroscope();
       if (active) refreshGacha();
       return active;
@@ -185,7 +191,9 @@ G.Lobby014 = (() => {
         media?.removeEventListener?.('change', onChange);
         if (!media?.removeEventListener) media?.removeListener?.(onChange);
         gachaButton.removeEventListener('click', onGachaClick);
+        if (practiceSettings) legacyStartSlot.append(practiceSettings);
         legacyStartSlot.append(startButton);
+        if (gachaShortcut && gachaOriginalParent) gachaOriginalParent.append(gachaShortcut);
         homeLayout.hidden = false;
         root.classList.remove('lobby-014-horizontal');
         lobby.remove();
