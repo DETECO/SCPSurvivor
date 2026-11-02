@@ -62,6 +62,11 @@ G.FieldStats = (() => {
     return next;
   }
   function weapon(pl, copy) {
+    if (G.PlayableArsenal?.active()) {
+      const result = G.PlayableArsenal.stats(typeof copy === 'string' ? copy : copy?.model, copy?.level || 1, player(pl || {}));
+      if (!result) throw new Error('Unknown playable weapon');
+      return result;
+    }
     if (G.WeaponRevisionTrial?.active()) {
       return copy?.preview === true
         ? G.WeaponRevisionTrial.previewEffective(pl, copy)

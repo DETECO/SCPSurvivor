@@ -5,15 +5,15 @@ G.Armory014 = (() => {
     ['smg', 'Subfusil', 'smg'],
     ['shotgun', 'Escopeta', 'shotgun'],
     ['baton', 'Porra', 'baton'],
-    ['AR01', 'Granada de fragmentación'],
-    ['CC04', 'Katana de contención'],
-    ['IN03', 'Lanzallamas de contención'],
-    ['FR07', 'Rifle Tres Eslabones'],
-    ['PE04', 'Lanzamisiles de contención'],
-    ['RU04', 'Ballesta de recuperación'],
-    ['TE01', 'Emisor láser'],
-    ['AN09', 'Reloj prestado'],
-    ['F24', 'Hoja fotónica de contención']
+    ['AR01', 'Granada de fragmentación', 'AR01'],
+    ['CC04', 'Katana de contención', 'CC04'],
+    ['IN03', 'Lanzallamas de contención', 'IN03'],
+    ['FR07', 'Rifle Tres Eslabones', 'FR07'],
+    ['PE04', 'Lanzamisiles de contención', 'PE04'],
+    ['RU04', 'Ballesta de recuperación', 'RU04'],
+    ['TE01', 'Emisor láser', 'TE01'],
+    ['AN09', 'Reloj prestado', 'AN09'],
+    ['F24', 'Hoja fotónica de contención', 'F24']
   ];
   const own = (object, key) => Object.prototype.hasOwnProperty.call(object || {}, key);
   const optionFor = (select, model) => Array.from(select?.options || []).find(option => option.value === model && !option.disabled);
@@ -21,10 +21,17 @@ G.Armory014 = (() => {
 
   function getCards({ weaponSelect = document.getElementById('loadout-weapon-0') } = {}) {
     return definitions.map(([id, name, model]) => {
+      const profile = G.PlayableArsenal?.get?.(id);
       const implemented = !!model && own(G.FieldCatalog?.models, model);
-      const selectable = implemented && !!optionFor(weaponSelect, model) && (!revision() || model === 'pistol');
+      const selectable = id !== 'F24' && profile?.fusionOnly !== true && implemented && !!optionFor(weaponSelect, model) && (!revision() || model === 'pistol');
       let stats = null;
-      if (selectable && G.FieldStats?.weapon) {
+      if (id === 'F24' && G.PlayableArsenal?.stats) {
+        try {
+          stats = G.PlayableArsenal.stats('F24');
+        } catch (_) {
+          stats = null;
+        }
+      } else if (selectable && G.FieldStats?.weapon) {
         try {
           stats = G.FieldStats.weapon(
             { training: {}, tempStats: {} },
@@ -39,7 +46,11 @@ G.Armory014 = (() => {
       else if (selectable) status = 'disponible';
       else if (implemented) status = 'implemented-unavailable';
       else if (id === 'baton' && G.MapTrial?.expanded !== true) status = 'mode-unavailable';
-      return { id, name, model: model || null, implemented, selectable, stats, status };
+      const profileLabel = profileLabelFor(stats);
+      const card = { id, name, model: model || null, implemented, selectable, stats, status, profileLabel };
+      card.metrics = stats ? metricRows(stats) : [];
+      card.statusText = displayStatus(card);
+      return card;
     });
   }
 
@@ -65,21 +76,32 @@ G.Armory014 = (() => {
   }
 
   function displayStatus(card) {
-    if (card.status === 'fusion-unavailable') return 'Fusión · no disponible';
-    if (card.status === 'disponible') return 'Arma inicial disponible para esta prueba';
-    if (card.status === 'implemented-unavailable') return 'Implementada · no disponible como inicial en esta prueba';
-    if (card.status === 'mode-unavailable') return 'Disponible solo en el ensayo ampliado';
-    return 'Diseño aprobado · pendiente de implementación';
+    let status;
+    if (card.status === 'fusion-unavailable') status = 'Ficha F24 FINAL consultable · fusión pendiente de validar sala y poses.';
+    else if (card.status === 'disponible') status = 'Arma inicial disponible para esta prueba';
+    else if (card.status === 'implemented-unavailable') status = 'Implementada · no disponible como inicial en esta prueba';
+    else if (card.status === 'mode-unavailable') status = 'Disponible solo en el ensayo ampliado';
+    else status = 'Diseño aprobado · pendiente de implementación';
+    return card.profileLabel ? `${status} ${card.profileLabel}.` : status;
+  }
+
+  function profileLabelFor(stats) {
+    if (!stats?.trialOnly) return '';
+    const source = String(stats.tuning || '').trim();
+    if (/ARM-JUG-001.*valores de prueba/i.test(source)) return `Perfil provisional de ensayo · ${source}`;
+    if (source) return `Perfil de ensayo · ${source}`;
+    return 'Perfil de ensayo · parámetros por validar';
   }
 
   function metricRows(stats) {
     const number = value => Number.isInteger(value) ? String(value) : String(value).replace('.', ',');
+    const noAmmo = stats.ammoFree === true || stats.family === 'melee' || Number(stats.capacity) === 0;
     const rows = [
       { icon: '✹', label: 'Daño', value: number(stats.damage), note: stats.pellets > 1 ? `por perdigón · ${stats.pellets} perdigones` : '' },
       { icon: '◴', label: 'Intervalo', value: `${number(stats.interval)} s` },
       { icon: '⌖', label: 'Alcance', value: `${number(stats.range)} u` },
-      { icon: '▱', label: 'Cargador', value: stats.family === 'melee' ? '—' : number(stats.capacity) },
-      { icon: '↻', label: 'Recarga', value: stats.family === 'melee' ? '—' : `${number(stats.reloadTime)} s` }
+      { icon: '▱', label: 'Cargador', value: noAmmo ? '—' : number(stats.capacity), note: noAmmo ? 'Sin munición; no aplica cargador ni recarga.' : '' },
+      { icon: '↻', label: 'Recarga', value: noAmmo ? '—' : `${number(stats.reloadTime)} s` }
     ];
     return rows;
   }
@@ -142,13 +164,13 @@ G.Armory014 = (() => {
       image.src = imageFor(selected);
       image.alt = selected.name;
       const status = query('.armory014-status');
-      status.textContent = displayStatus(selected);
+      status.textContent = selected.statusText || displayStatus(selected);
       status.dataset.state = selected.status;
 
       const metrics = query('.armory014-metrics');
       metrics.replaceChildren();
       if (selected.stats) {
-        for (const row of metricRows(selected.stats)) {
+        for (const row of selected.metrics || metricRows(selected.stats)) {
           const item = document.createElement('div');
           item.className = 'armory014-metric';
           const icon = document.createElement('span');
@@ -185,7 +207,7 @@ G.Armory014 = (() => {
         button.className = 'armory014-card';
         button.dataset.armoryWeapon = modelKey;
         button.setAttribute('aria-pressed', String(card.id === selected.id));
-        button.setAttribute('aria-label', `${card.name}. ${displayStatus(card)}.`);
+        button.setAttribute('aria-label', `${card.name}. ${card.statusText || displayStatus(card)}.`);
         const art = document.createElement('img');
         art.src = imageFor(card);
         art.alt = '';
@@ -195,7 +217,7 @@ G.Armory014 = (() => {
         code.textContent = card.id.toUpperCase();
         const tag = document.createElement('small');
         tag.className = 'armory014-card-tag';
-        tag.textContent = card.status === 'fusion-unavailable' ? 'FUSIÓN' : card.selectable ? '' : 'PENDIENTE';
+        tag.textContent = card.status === 'fusion-unavailable' ? 'FUSIÓN' : card.profileLabel ? 'ENSAYO' : card.selectable ? '' : 'PENDIENTE';
         button.append(art, code, tag);
         button.addEventListener('click', () => { chosen = card.id; render(); });
         cardsHost.append(button);

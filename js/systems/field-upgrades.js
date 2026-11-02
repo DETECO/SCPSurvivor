@@ -102,7 +102,13 @@ G.FieldUpgrades = (() => {
   }
   function infiniteCandidates(pl){
     const out=[],seen=new Set(),s=statsFor(pl),P=G.InfiniteProgression;
+    if(G.PlayableArsenal?.active()){
+      if((pl.fieldWeapons||[]).some(G.PlayableArsenal.canUpgrade))out.push({key:'weapon:arsenal',category:'weapon',w:8,title:'Arma · +1 nivel',
+        desc:'Una copia equipada elegible al azar. Cinco mejoras: nivel 1 → 2 → 3 → 4 → 5 → MAX.',
+        apply(p){const eligible=(p.fieldWeapons||[]).filter(G.PlayableArsenal.canUpgrade);return !!eligible.length&&G.FieldCombat.upgrade(eligible[Math.floor(Math.random()*eligible.length)].id);}});
+    }
     for(const copy of pl.fieldWeapons||[]){
+      if(G.PlayableArsenal?.active())break;
       if(!copy||typeof copy.id!=='string'||seen.has(copy.id)||!Object.prototype.hasOwnProperty.call(G.FieldCatalog.models,copy.model)||!P.ensure(copy))continue;
       seen.add(copy.id);
       for(const branch of P.branches){

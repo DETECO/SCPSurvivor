@@ -55,7 +55,11 @@ G.Projectiles = (() => {
         continue;
       }
 
-      if (p.t >= p.life) { list.splice(i, 1); continue; }
+      if (p.t >= p.life) {
+        // Let the swept resolver check the final segment before expiry/explosion.
+        if(p.fieldWeapon&&p.onExpire){const step=Math.max(0,dt-(p.t-p.life));p.px=p.x;p.py=p.y;p.x+=p.vx*step;p.y+=p.vy*step;p.expiring=true;continue;}
+        list.splice(i, 1); continue;
+      }
 
       // Bumerán: a los `boom` segundos se da la vuelta (y puede volver a
       // golpear a los mismos) y vuelve a su dueño; al llegar, desaparece.
@@ -123,6 +127,7 @@ G.Projectiles = (() => {
       ctx.beginPath(); ctx.ellipse(p.x, p.y, p.r * 1.5, p.r * 0.6, 0, 0, 6.2832); ctx.fill();
     }
     for (const p of list) {
+      if(G.ArsenalAttacks?.drawProjectile(ctx,p))continue;
       const v = p.vis || G.VFX.forType('normal');
       const shape = v.proj;
       const a = p.orb ? 1 : Math.min(1, (p.life - p.t) * 4);

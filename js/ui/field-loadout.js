@@ -2,7 +2,7 @@
 G.FieldLoadout = (() => {
   const el = id => document.getElementById(id);
   const revision = () => G.WeaponRevisionTrial?.active() === true;
-  const weapons = revision() ? ['pistol'] : ['pistol', 'smg', 'shotgun', ...(G.MapTrial?.expanded?['baton']:[])];
+  const weapons = G.PlayableArsenal?.active() ? G.PlayableArsenal.ids() : revision() ? ['pistol'] : ['pistol', 'smg', 'shotgun', ...(G.MapTrial?.expanded?['baton']:[])];
   let soldierId = 'guard';
   let models = revision() ? ['pistol', 'pistol'] : ['pistol', 'smg'];
   let mods = [[], []];
@@ -25,6 +25,8 @@ G.FieldLoadout = (() => {
     }
     if (G.MapTrial?.infinite) el("loadout-weapon-1").closest("section").hidden = true;
     renderMods(); preview();
+    const requested = new URLSearchParams(window.location.search).get('arma');
+    if (G.PlayableArsenal?.active() && weapons.includes(requested)) select(requested);
   }
   function renderMods() {
     for (let i = 0; i < 2; i++) {
@@ -66,6 +68,13 @@ G.FieldLoadout = (() => {
     }
     el('loadout-preview-summary').textContent = G.MapTrial?.infinite ? `Vida ${stats.maxHp} · empiezas con una sola arma. La segunda se obtiene en un cofre de armamento; ambas disparan automáticamente.` : `Vida ${stats.maxHp} · velocidad 165 · mejoras permanentes 0/10.`;
   }
+  function select(model) {
+    if (!weapons.includes(model)) return false;
+    init();
+    const control = el('loadout-weapon-0');
+    control.value = model; models[0] = model; mods[0] = []; preview();
+    return true;
+  }
   function options() {
     init();
     const error = el('loadout-error');
@@ -77,5 +86,5 @@ G.FieldLoadout = (() => {
     if (revision()) return { soldierId, loadout: [G.FieldCatalog.makeWeapon('pistol', 'local:1', [])] };
     return { soldierId, loadout: (G.MapTrial?.infinite ? models.slice(0,1) : models).map((model, i) => G.FieldCatalog.makeWeapon(model, `local:${i + 1}`, G.MapTrial?.enabled?[]:mods[i])) };
   }
-  return { init, options };
+  return { init, options, select, get selected() { return models[0]; } };
 })();

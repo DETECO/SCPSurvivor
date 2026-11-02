@@ -4,6 +4,7 @@ G.ExpandedPractice=(()=>{
  const keys=['power','rhythm','handling','specialization'];
  const branches=rank=>Object.fromEntries(keys.map(k=>[k,rank]));
  function prepare(options){
+  if(G.PlayableArsenal?.fusionPractice())return {...options,loadout:['CC04','TE01'].map((model,i)=>({...G.FieldCatalog.makeWeapon(model,'fusion-practice:'+i,[]),level:6}))};
   const mode=active();if(!mode)return options;
   const model=mode==='melee'?'baton':options.loadout[0].model;
   const first=G.FieldCatalog.makeWeapon(model,'local:1',[]);first.branches=branches(0);
@@ -13,6 +14,11 @@ G.ExpandedPractice=(()=>{
   if(mode==='terminal')first.branches.power=2;
   if(mode==='maximos'||mode==='saturacion')first.branches=branches(6);
   if(mode==='saturacion')second.branches=branches(6);
+  if(G.PlayableArsenal?.active()){
+   if(mode==='terminal')first.level=3;
+   if(mode==='maximos'||mode==='saturacion')first.level=6;
+   if(mode==='saturacion')second.level=6;
+  }
   return next;
  }
  function apply(p){

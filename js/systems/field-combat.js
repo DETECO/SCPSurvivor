@@ -26,7 +26,8 @@ G.FieldCombat = (() => {
         if(w.shotWait!==undefined&&(!Number.isFinite(w.shotWait)||w.shotWait<0))throw new Error('Invalid per-copy timer');
         copy.shotWait=w.shotWait||0;Object.defineProperty(copy,'_aimTarget',{value:null,writable:true});
       }
-      copy.level = Math.max(1, Math.min(5, w.level || 1));
+      copy.level = Math.max(1, Math.min(G.PlayableArsenal?.active()?6:5, w.level || 1));
+      if(G.PlayableArsenal?.active())for(const key of ['attackCount','reloadExtraReady','pendingExtra','pendingProjection'])if(w[key]!==undefined)copy[key]=typeof w[key]==='object'&&w[key]!==null?{...w[key]}:w[key];
       copy.ammo = Number.isFinite(w.ammo) ? w.ammo : null;
       copy.reload = Number.isFinite(w.reload) ? Math.max(0,w.reload) : 0;
       copy.reloadTime = Number.isFinite(w.reloadTime) ? w.reloadTime : 0;
@@ -40,7 +41,7 @@ G.FieldCombat = (() => {
   }
   function sync(pl,copy) {
     const e=effective(pl,copy), cap=Math.max(1,e.capacity|0);
-    if(e.family==='melee'){copy.ammo=0;copy.reload=0;copy.reloadTime=0;copy._initialized=true;return e;}
+    if(e.family==='melee'||e.ammoFree){copy.ammo=0;copy.reload=0;copy.reloadTime=0;copy._initialized=true;return e;}
     if (copy._initialized !== true) { if (!Number.isFinite(copy.ammo)) copy.ammo=cap; copy._initialized=true; }
     copy.ammo=Math.min(cap,Math.max(0,copy.ammo));
     if (copy.reload>0 && copy.reloadTime>0 && e.reloadTime!==copy.reloadTime) copy.reload=copy.reload/copy.reloadTime*e.reloadTime;
@@ -48,9 +49,11 @@ G.FieldCombat = (() => {
     return e;
   }
   function reset(pl,loadout) {
+    if(G.PlayableArsenal?.active()&&loadout?.some(w=>G.PlayableArsenal.get(w.model)?.fusionOnly))throw Error('F24 is obtained only through fusion');
     const revision=G.WeaponRevisionTrial;
     if(revision?.active())loadout=revision.prepareLoadout(loadout);
     weapons=cloneLoadout(loadout); currentPlayer=pl||null; activeIndex=0; shotWait=0; switchRemaining=0; shots=0; aimTarget=null;
+    if(G.PlayableArsenal?.active()&&pl)pl.arsenalFusionUsed=false;
     if (pl) { pl.fieldWeapons=weapons; for (const w of weapons) sync(pl,w); }
     if(revision?.active())revision.bindPlayer(pl,weapons);
   }
@@ -142,6 +145,7 @@ G.FieldCombat = (() => {
   }
   function tick(dt,pl,fireAllowed) {
     dt=Math.max(0,dt||0);
+    if(G.PlayableArsenal?.active()&&(G.Game?.state!=='playing'||['levelup','armament','terminal','paused','finished','idle'].includes(G.Expedition?.state?.phase)))return;
     const timerDt=G.WeaponRevisionTrial?.active()?G.WeaponRevisionTrial.timerStep(dt):dt;
     shotWait=Math.max(0,shotWait-timerDt); switchRemaining=Math.max(0,switchRemaining-timerDt);
     if (!pl) return; currentPlayer=pl; pl.fieldWeapons=weapons;
@@ -152,17 +156,23 @@ G.FieldCombat = (() => {
         w.reload=Math.max(0,w.reload-timerDt);
         if (w.reload===0) {
           w.ammo=e.capacity;
+          if(G.PlayableArsenal?.active())w.reloadExtraReady=true;
           if(G.WeaponRevisionTrial?.active())G.WeaponRevisionTrial.completeReload(w.id);
         }
       }
       const extra=G.WeaponRevisionTrial?.active()&&canFireRevisionExtra(pl,fireAllowed)
         ?G.WeaponRevisionTrial.advanceExtra(w,timerDt):null;
       if(extra)fireExtra(pl,w,e,extra);
+      if(G.PlayableArsenal?.active()&&fireAllowed&&!pl.dead&&pl.hp>0)G.ArsenalAttacks.tick(w,timerDt,pl,e);
     }
     if(infinite()){
       if(pl.dead||!(pl.hp>0)||!fireAllowed)return;
       for(const copy of weapons){
         const e=effective(pl,copy);if(copy.reload>0||copy.shotWait>0)continue;
+        if(G.PlayableArsenal?.active()){
+          if(!e.ammoFree&&copy.ammo<=0){beginReload(pl,copy,e);continue;}
+          const target=targetFor(pl,copy);if(target&&G.ArsenalAttacks.fire(pl,copy,e,target))shots++;continue;
+        }
         if(e.family==='melee'){const target=targetFor(pl,copy);if(target)strike(pl,copy,e,target);continue;}
         if(copy.ammo<=0){beginReload(pl,copy,e);continue;}
         const target=targetFor(pl,copy);if(target)fire(pl,copy,e,target);
@@ -194,12 +204,14 @@ G.FieldCombat = (() => {
     return true;
   }
   function acquire(model,id){
+    if(G.PlayableArsenal?.active()&&G.PlayableArsenal.get(model)?.fusionOnly)return false;
     if(!infinite()||!currentPlayer||currentPlayer.dead||!(currentPlayer.hp>0)||weapons.length!==1||
       typeof id!=='string'||!id.trim()||weapons.some(w=>w.id===id)||!Object.prototype.hasOwnProperty.call(G.FieldCatalog.models,model)||!G.FieldCatalog.validateMods(model,[]))return false;
     if(G.WeaponRevisionTrial?.active()&&!G.WeaponRevisionTrial.allowRuntimeAcquire(model,id))return false;
     const next=cloneLoadout([{model,id,mods:[]}])[0];sync(currentPlayer,next);weapons.push(next);currentPlayer.fieldWeapons=weapons;return true;
   }
   function replace(id,model,newId){
+    if(G.PlayableArsenal?.active()&&G.PlayableArsenal.get(model)?.fusionOnly)return false;
     const index=weapons.findIndex(w=>w.id===id);
     if(G.MapTrial?.expanded!==true||G.Expedition?.state?.phase!=='terminal'||!currentPlayer||currentPlayer.dead||!(currentPlayer.hp>0)||
       currentPlayer.fieldWeapons!==weapons||index<0||typeof newId!=='string'||!newId.trim()||weapons.some(w=>w.id===newId)||
@@ -213,6 +225,7 @@ G.FieldCombat = (() => {
   }
   function upgrade(id,branch) {
     const w=weapons.find(x=>x.id===id);
+    if(G.PlayableArsenal?.active())return !!w&&!branch&&G.PlayableArsenal.upgrade(w);
     if(G.WeaponRevisionTrial?.active())return !!w&&!branch&&G.WeaponRevisionTrial.advanceCopy(id).ok;
     if(infinite())return !!w&&G.InfiniteProgression.upgrade(w,branch);
     if(!w||w.level>=5)return false; w.level++; return true;
@@ -220,7 +233,7 @@ G.FieldCombat = (() => {
   function clearTemporary(pl) {
     currentPlayer=pl||currentPlayer;
     if(G.WeaponRevisionTrial?.active())G.WeaponRevisionTrial.resetProgress();
-    else for(const w of weapons){w.level=1;if(infinite())w.branches=Object.fromEntries(G.InfiniteProgression.branches.map(k=>[k,0]));}
+    else for(const w of weapons){w.level=1;w.pendingExtra=null;w.pendingProjection=null;if(infinite())w.branches=Object.fromEntries(G.InfiniteProgression.branches.map(k=>[k,0]));}
     if(infinite()&&pl)pl.infiniteTactical=null;
     if(pl){pl.tempStats={};if(G.FieldStats?.apply)G.FieldStats.apply(pl);}
   }
@@ -244,14 +257,23 @@ G.FieldCombat = (() => {
   }
   function sprint(pl) { return G.FieldAbilities?.sprint?G.FieldAbilities.sprint(pl):false; }
   function exportData(){
-    return {weapons:weapons.map(w=>({id:w.id,model:w.model,mods:w.mods.slice(),level:w.level,ammo:w.ammo,reload:w.reload,reloadTime:w.reloadTime,...(infinite()?{branches:{...w.branches},shotWait:w.shotWait}:{})})),
-      activeIndex,shotWait,switchRemaining,shots};
+    return {weapons:weapons.map(w=>({id:w.id,model:w.model,mods:w.mods.slice(),level:w.level,ammo:w.ammo,reload:w.reload,reloadTime:w.reloadTime,...(G.PlayableArsenal?.active()?{attackCount:w.attackCount||0,reloadExtraReady:!!w.reloadExtraReady,pendingExtra:w.pendingExtra?{...w.pendingExtra}:null,pendingProjection:w.pendingProjection?{...w.pendingProjection,seen:[...w.pendingProjection.seen]}:null}:{}),...(infinite()?{branches:{...w.branches},shotWait:w.shotWait}:{})})),
+      activeIndex,shotWait,switchRemaining,shots,...(G.PlayableArsenal?.active()?{arsenalFusionUsed:!!currentPlayer?.arsenalFusionUsed}:{})};
   }
   function restoreData(data,pl){
     const next=cloneLoadout(data.weapons);
     if(infinite()&&(!Number.isInteger(data.activeIndex)||data.activeIndex<0||data.activeIndex>=next.length||![data.shotWait,data.switchRemaining,data.shots].every(n=>Number.isFinite(n)&&n>=0)))throw new Error("Invalid infinite combat state");
     weapons=next;currentPlayer=pl;activeIndex=data.activeIndex;shotWait=data.shotWait;switchRemaining=data.switchRemaining;shots=data.shots;aimTarget=null;
     pl.fieldWeapons=weapons;for(const w of weapons)sync(pl,w);
+    if(G.PlayableArsenal?.active())pl.arsenalFusionUsed=!!data.arsenalFusionUsed;
   }
-  return {reset,tick,switchTo,configureMods,acquire,replace,upgrade,clearTemporary,targetFor,drawWeapon,sprint,getstate,exportData,restoreData,getweapons:()=>weapons,get state(){return getstate();}};
+  function fusionPreview(){
+    return {...G.PlayableArsenal.fusionBlocker(),used:!!currentPlayer?.arsenalFusionUsed,description:'F24: fusión pendiente de validar sala y poses. CC04 MAX + TE01 MAX.'};
+  }
+  function fuse(){
+    if(!fusionPreview().ready||G.Game?.state!=='playing'||G.Expedition?.state?.phase!=='terminal'||!G.WeaponTerminal?.state.open)return false;
+    const next=cloneLoadout([{model:'F24',id:`fusion:${weapons[0].id}:${weapons[1].id}`,mods:[],level:1}])[0];
+    sync(currentPlayer,next);weapons.splice(0,2,next);activeIndex=0;currentPlayer.arsenalFusionUsed=true;return true;
+  }
+  return {reset,tick,switchTo,configureMods,acquire,replace,upgrade,clearTemporary,targetFor,drawWeapon,sprint,getstate,exportData,restoreData,fusionPreview,fuse,getweapons:()=>weapons,get state(){return getstate();}};
 })();

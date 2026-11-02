@@ -2,7 +2,7 @@
 G.WeaponTerminal=(()=>{
  let point=null,owner=null,near=false,opened=false,slots=[],notice='',serial=0,key='';
  const enabled=()=>G.MapTrial?.expanded===true;
- const models=()=>G.WeaponRevisionTrial?.active()?['pistol']:Object.keys(G.FieldCatalog.models).filter(k=>['pistol','smg','shotgun','baton'].includes(k));
+ const models=()=>G.PlayableArsenal?.active()?G.PlayableArsenal.ids():G.WeaponRevisionTrial?.active()?['pistol']:Object.keys(G.FieldCatalog.models).filter(k=>['pistol','smg','shotgun','baton'].includes(k));
  const alive=p=>!!p&&!p.dead&&p.hp>0;
  function clearLine(p,q){
   const d=Math.hypot(q.x-p.x,q.y-p.y),n=Math.max(1,Math.ceil(d/8));
@@ -15,6 +15,10 @@ G.WeaponTerminal=(()=>{
   if(!enabled()||!geometry?.entry||!owner)return;
   const entry=geometry.entry,exit=geometry.exit;
   const valid=p=>p&&Number.isFinite(p.x)&&Number.isFinite(p.y)&&G.World.isFree(p.x,p.y,18)&&G.Path.reachable(p.x,p.y,owner)&&(!exit||Math.hypot(p.x-exit.x,p.y-exit.y)>100);
+  if(G.PlayableArsenal?.fusionPractice()){
+   const p=[[40,0],[0,40],[-40,0],[0,-40]].map(([x,y])=>({x:owner.x+x,y:owner.y+y})).find(valid);
+   if(p){point=p;near=true;return;}
+  }
   const candidates=(geometry.spawnPoints||[]).filter(p=>valid(p)&&Math.hypot(p.x-entry.x,p.y-entry.y)>=100&&Math.hypot(p.x-entry.x,p.y-entry.y)<=900)
    .sort((a,b)=>Math.hypot(a.x-entry.x,a.y-entry.y)-Math.hypot(b.x-entry.x,b.y-entry.y));
   const fallback=[{x:entry.x+96,y:entry.y},{x:entry.x,y:entry.y+96},{x:entry.x-96,y:entry.y},{x:entry.x,y:entry.y-96}].find(valid);
@@ -27,7 +31,7 @@ G.WeaponTerminal=(()=>{
    G.Expedition.state.pending||G.ArmamentRewards?.state.pending||!owner.fieldWeapons?.length)return false;
   slots=owner.fieldWeapons.map(w=>({id:w.id,model:w.model}));
   if(G.Expedition.awaitTerminal()!==true){slots=[];return false;}
-  opened=true;near=true;notice=G.WeaponRevisionTrial?.active()
+  opened=true;near=true;notice=G.PlayableArsenal?.active()?'Elige una copia y su reemplazo de nivel 1, o consulta la fusión CC04 + TE01.':G.WeaponRevisionTrial?.active()
    ?'Elige la copia que reemplazarás. La nueva Pistola AF01 empieza en nivel 1.'
    :'Elige la ranura y el modelo. La nueva arma empieza sin sus ramas propias.';return true;
  }

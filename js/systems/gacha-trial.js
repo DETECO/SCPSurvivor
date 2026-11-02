@@ -5,7 +5,7 @@
   const loc=root.window?.location;if(!loc)return false;
   const local=['localhost','127.0.0.1','[::1]','::1'].includes(loc.hostname);
   const pages=loc.protocol==='https:'&&loc.hostname==='deteco.github.io'&&loc.pathname.startsWith('/SCPSurvivor/');
-  const q=new URLSearchParams(loc.search);return (local||pages)&&q.get('gacha')==='prueba'&&!q.has('cuentas')&&root.G.MapTrial?.enabled===true;
+  const q=new URLSearchParams(loc.search);const trial=q.get('gacha')==='prueba'||(!q.has('gacha')&&root.G.MapTrial?.expanded===true);return (local||pages)&&trial&&!q.has('cuentas')&&root.G.MapTrial?.enabled===true;
  }});
 })(globalThis,()=>{
  const names={characters:'Personaje',weapons:'Arma',ultimates:'Ultimate'};

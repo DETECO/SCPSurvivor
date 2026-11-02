@@ -6,7 +6,7 @@ G.ExpandedUI=(()=>{
  const revision=()=>G.WeaponRevisionTrial?.active()===true;
  const isMelee=w=>(w.effective?.family||G.FieldCatalog.models[w.model]?.family)==='melee';
  const branchLine=w=>G.InfiniteProgression.branches.map((k,i)=>`${['P','R','M','E'][i]}${w.branches?.[k]===6?'5+':w.branches?.[k]||0}`).join(' · ');
- const progressionLine=w=>revision()?G.WeaponRevisionTrial.levelLabel(w):branchLine(w);
+ const progressionLine=w=>G.PlayableArsenal?.active()?G.PlayableArsenal.label(w):revision()?G.WeaponRevisionTrial.levelLabel(w):branchLine(w);
  function init(){
   if(!enabled())return;document.body.dataset.expandedTrial='true';
   const r1=revision();
@@ -18,9 +18,23 @@ G.ExpandedUI=(()=>{
   G.TrialVisuals.initUI();
   el('infinite-test-note').textContent=r1?'AF01: nivel 1–5 y MAX por copia. Toca una tarjeta para consultar el nivel. CC04, TE01 y fusión siguen pendientes.':'Cuatro ramas por copia, cinco rangos y un extra. Toca una tarjeta de arma para pausar y consultar tu equipo. Poderes de grieta en ensayo; ultimate pendiente.';
   el('technical-intro').textContent=r1?'Prueba AF01 r1 parcial · progresión y combate de pistola.':'T1B + T1C · Combate, reemplazo de armas y orientación.';
+  if(G.PlayableArsenal?.active()){
+   el('terminal-title').nextElementSibling.textContent='La nueva arma empieza en nivel 1. Conservas la otra copia y las mejoras generales. La fusión F24 permanece pendiente de validar sala y poses.';
+   el('expanded-test-note').textContent='ARM-JUG-001 r1 · Doce armas iniciales, nueve categorías, escala 1–5–MAX; fusión F24 pendiente. Valores de prueba; sin cuentas ni guardado.';
+   el('infinite-test-note').textContent='Cada copia llega a MAX con cinco mejoras. F24: receta CC04 MAX + TE01 MAX; sala y poses pendientes de validación.';
+  }
   el('btn-technical-start').textContent=r1?'Iniciar prueba AF01 r1':mode?'Iniciar práctica · '+({terminal:'terminal',maximos:'ramas máximas',saturacion:'saturación',melee:'cuerpo a cuerpo'})[mode]:'Iniciar T1B + T1C';
   el('btn-terminal').onclick=()=>{if(G.WeaponTerminal.open())tick(G.Game.player,G.Expedition.state,G.FieldCombat.state);};
   el('btn-terminal-close').onclick=()=>G.WeaponTerminal.close();
+  if(G.PlayableArsenal?.active()){
+   const box=document.createElement('section');box.id='arsenal-fusion-box';
+   const text=document.createElement('p');text.id='arsenal-fusion-description';
+   const preview=document.createElement('button');preview.id='arsenal-fusion-preview';preview.type='button';preview.textContent='Ver fusión F24';
+   const confirm=document.createElement('button');confirm.id='arsenal-fusion-confirm';confirm.type='button';confirm.textContent='Confirmar fusión · consumir ambas armas';confirm.hidden=true;
+   preview.onclick=()=>{const state=G.FieldCombat.fusionPreview();text.textContent=state.description;confirm.hidden=!state.ready;};
+   confirm.onclick=()=>{if(G.FieldCombat.fuse()){confirm.hidden=true;G.WeaponTerminal.close();}};
+   box.append(text,preview,confirm);el('terminal-notice').after(box);
+  }
   el('btn-terminal-confirm').onclick=()=>{
    G.WeaponTerminal.choose(Number(el('terminal-slot').value),el('terminal-model').value);
    tick(G.Game.player,G.Expedition.state,G.FieldCombat.state);
@@ -35,12 +49,12 @@ G.ExpandedUI=(()=>{
   for(const [i,copy]of w.weapons.entries()){
    const title=document.createElement('strong');title.textContent=`Arma ${i+1} · ${copy.name}`;
    const branches=document.createElement('p');branches.textContent=progressionLine(copy);
-   const stats=document.createElement('p');stats.textContent=`Daño ${Number(copy.effective.damage.toFixed(1))} · intervalo ${copy.effective.interval.toFixed(2)}s · alcance ${Math.round(copy.effective.range)}${isMelee(copy)?' · cuerpo a cuerpo, sin munición':` · cargador ${copy.capacity} · recarga ${copy.reloadTime.toFixed(2)}s`}`;
+   const stats=document.createElement('p');stats.textContent=`Daño ${Number(copy.effective.damage.toFixed(1))} · intervalo ${copy.effective.interval.toFixed(2)}s · alcance ${Math.round(copy.effective.range)}${isMelee(copy)?' · cuerpo a cuerpo, sin munición':copy.effective.ammoFree?' · sin munición':` · cargador ${copy.capacity} · recarga ${copy.reloadTime.toFixed(2)}s`}`;
    host.append(title,branches,stats);
   }
   const general=document.createElement('p');general.textContent='Generales: '+G.FieldStats.temporaryKeys.map(k=>`${k} ${player.tempStats[k]===6?'5+extra':player.tempStats[k]||0}`).join(' · ');host.append(general);
   const powers=document.createElement('p');powers.textContent='Poderes '+(G.RiftPowers?.state.owned.length||0)+'/3: '+((G.RiftPowers?.state.owned||[]).map(p=>p.name+' '+(p.rank===6?'MAX':p.rank+'/5')).join(' · ')||'ninguno');host.append(powers);
-  const future=document.createElement('p');future.textContent=revision()?'Prueba parcial AF01 · fusión pendiente; no habilita CC04 ni TE01.':'Poderes temporales automáticos de ensayo. Ultimate manual pendiente.';host.append(future);
+  const future=document.createElement('p');future.textContent=G.PlayableArsenal?.active()?'F24: receta CC04 MAX + TE01 MAX; sala y poses pendientes de validación.':revision()?'Prueba parcial AF01 · fusión pendiente; no habilita CC04 ni TE01.':'Poderes temporales automáticos de ensayo. Ultimate manual pendiente.';host.append(future);
  }
  function openBuild(){
   if(!enabled()||G.Game.state!=='playing'||!['combat','boss'].includes(G.Expedition.state.phase))return;
@@ -68,12 +82,16 @@ G.ExpandedUI=(()=>{
     for(const model of terminal.models){const o=document.createElement('option');o.value=model;o.textContent=G.FieldCatalog.models[model].name;el('terminal-model').append(o);}
    }
    el('terminal-notice').textContent=terminal.notice;
-  }else terminalSignature='';
+   if(G.PlayableArsenal?.active()){
+    const fusion=G.FieldCombat.fusionPreview();el('arsenal-fusion-description').textContent=fusion.description+(fusion.used?' Ya utilizada.':fusion.ready?' Lista para confirmar.':'');
+    el('arsenal-fusion-preview').disabled=!fusion.ready;
+   }
+  }else {terminalSignature='';if(el('arsenal-fusion-confirm'))el('arsenal-fusion-confirm').hidden=true;}
   for(let i=0;i<2;i++){
    const copy=w.weapons[i],button=el(`btn-field-weapon-${i}`);button.replaceChildren();button.classList.toggle('corner-empty',!copy);
-   const labels=[copy?`${i+1} · ${copy.name}`:`${i+1} · Ranura vacía`,copy?(isMelee(copy)?'Cuerpo a cuerpo':copy.reload>0?`Recarga ${copy.reload.toFixed(1)}s`:`${Math.floor(copy.ammo)} / ${copy.capacity}`):'Premio de jefe/élite',copy?progressionLine(copy):''];
+   const labels=[copy?`${i+1} · ${copy.name}`:`${i+1} · Ranura vacía`,copy?(isMelee(copy)?'Cuerpo a cuerpo':copy.effective?.ammoFree?'Pausa '+copy.effective.interval.toFixed(2)+' s':copy.reload>0?`Recarga ${copy.reload.toFixed(1)}s`:`${Math.floor(copy.ammo)} / ${copy.capacity}`):'Premio de jefe/élite',copy?progressionLine(copy):''];
    labels.forEach((text,index)=>{const line=document.createElement(index===0?'strong':'small');line.className=['corner-weapon-name','corner-ammo','corner-progression'][index];line.textContent=text;button.append(line);});
-   if(copy&&!isMelee(copy)){const bar=document.createElement('progress');bar.className='corner-reload';bar.setAttribute('aria-label',`Recarga de arma ${i+1}`);bar.max=copy.reloadTime;bar.value=copy.reload>0?Math.max(0,copy.reloadTime-copy.reload):copy.reloadTime;button.append(bar);}
+   if(copy&&!isMelee(copy)&&!copy.effective?.ammoFree){const bar=document.createElement('progress');bar.className='corner-reload';bar.setAttribute('aria-label',`Recarga de arma ${i+1}`);bar.max=copy.reloadTime;bar.value=copy.reload>0?Math.max(0,copy.reloadTime-copy.reload):copy.reloadTime;button.append(bar);}
    button.disabled=!active;button.setAttribute('aria-label',copy?`Ver mejoras de arma ${i+1}: ${copy.name}`:'Ver equipo, segunda ranura vacía');
   }
   el('tactical-status').hidden=!active||!player.infiniteTactical;

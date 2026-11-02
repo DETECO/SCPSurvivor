@@ -66,7 +66,7 @@ G.Expedition = (() => {
   }
   function start(player,options={}){
     pl=player;pl.fieldMode=true;pl.r=12;pl.soldierId=options.soldierId||pl.soldierId||'guard';pl.tempStats={};
-    sector=G.RiftExpedition?.practice?2:1;wave=1;elapsed=0;result=null;pending=0;cards=[];interaction=0;drought=0;upgradesApplied=0;pendingXp=0;resumePhase='combat';
+    sector=G.RiftExpedition?.practice||G.PlayableArsenal?.fusionPractice()?2:1;wave=1;elapsed=0;result=null;pending=0;cards=[];interaction=0;drought=0;upgradesApplied=0;pendingXp=0;resumePhase='combat';
     totals={wavesCompleted:0,sectorsCompleted:0,bossesDefeated:0,bossesEvaded:0};
     runSeed=Number.isFinite(options.seed)?options.seed>>>0:(Math.random()*0xffffffff)>>>0;
     G.RiftExpedition?.startRun(runSeed);

@@ -6,6 +6,7 @@ G.FieldCatalog = (() => {
     shotgun: { id: 'shotgun', name: 'Escopeta', damage: 6, interval: 0.9, capacity: 6, reloadTime: 2.2, range: 180, speed: 350, spread: 30, pellets: 6, pierce: 0, compatibleMods: ['grip', 'assisted', 'reinforced', 'extended'] },
     baton: { id:'baton', name:'Porra de ensayo', trialOnly:true, family:'melee', damage:18, interval:.7, capacity:0, reloadTime:0, range:64, speed:0, spread:0, pellets:0, pierce:0, arc:Math.PI/2, maxTargets:3, compatibleMods:[] }
   };
+  if (G.PlayableArsenal?.active()) Object.assign(rawModels, G.PlayableArsenal.profiles);
   const rawMods = {
     grip: { id: 'grip', name: 'Empuñadura', spread: -0.30 },
     assisted: { id: 'assisted', name: 'Asistida', reloadTime: -0.15 },

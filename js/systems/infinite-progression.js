@@ -10,6 +10,7 @@ G.InfiniteProgression=(()=>{
    Object.keys(copy.branches).length===4&&branches.every(k=>Number.isInteger(copy.branches[k])&&copy.branches[k]>=0&&copy.branches[k]<=6);
  }
  function upgrade(copy,branch){
+  if(G.PlayableArsenal?.active())return !branch&&G.PlayableArsenal.upgrade(copy);
   if(!enabled()||!ensure(copy))return false;
   const key=branch??branches.find(k=>copy.branches[k]<6);
   if(!branches.includes(key)||copy.branches[key]>=6)return false;
@@ -36,6 +37,6 @@ G.InfiniteProgression=(()=>{
   pl.infiniteTactical.remaining=Math.max(0,pl.infiniteTactical.remaining-dt);
   if(pl.infiniteTactical.remaining===0){pl.infiniteTactical=null;G.FieldStats?.apply(pl);}
  }
- function describe(copy){return ensure(copy)?branches.map(k=>`${labels[k]} ${copy.branches[k]===6?'5 + extra':copy.branches[k]+'/5'}`).join(' · '):'Ramas incompatibles';}
+ function describe(copy){if(G.PlayableArsenal?.active())return G.PlayableArsenal.label(copy);return ensure(copy)?branches.map(k=>`${labels[k]} ${copy.branches[k]===6?'5 + extra':copy.branches[k]+'/5'}`).join(' · '):'Ramas incompatibles';}
  return{ensure,upgrade,applyWeapon,grantTactical,tick,describe,amount,branches:branches.slice()};
 })();

@@ -614,7 +614,7 @@ G.Combat = (() => {
     for (const event of events) {
       const atX = sx + ux * event.distance, atY = sy + uy * event.distance;
       p.x = atX; p.y = atY;
-      if (event.stop) { stopped = true; break; }
+      if (event.stop) { if(p.onImpact){p.x-=ux*4;p.y-=uy*4;}stopped = true; break; }
       if (event.prop) {
         const prop = event.prop;
         if (p.phits.has(prop.id) || prop.hp <= 0) continue;
@@ -635,14 +635,19 @@ G.Combat = (() => {
           if(dealt>0){const xp=e.xp;if(p.allySupport)e.xp=0;e.hurt(dealt, p.color, ux, uy, p.knock || 0);if(p.allySupport){e.xp=xp;if(e.dead)e._alliedKill=true;}}
           if (p.owner) { p.owner.onDealt(p.dmg); p.owner.dmgDealt += p.dmg; }
         }
+        p.onEnemy?.(e);
         if (p.pierce > 0) p.pierce--;
         else { stopped = true; break; }
       }
     }
     if (stopped) {
+      p.onImpact?.(p);
       G.FX.burst(p.x, p.y - G.LIFT, p.color, 5, 80);
       projectiles.splice(index, 1);
-    } else { p.x = sx + dx; p.y = sy + dy; }
+    } else {
+      p.x = sx + dx; p.y = sy + dy;
+      if(p.expiring){p.onExpire?.(p);projectiles.splice(index,1);}
+    }
   }
 
   function resolve(dt, pl, now) {
